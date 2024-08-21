@@ -4,6 +4,7 @@ import {
   useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvBaseTheme } from "@hitachivantara/uikit-styles";
 
 import {
   fixedForwardRef,
@@ -67,7 +68,7 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
  */
 const mapVariant = (
   variant: HvButtonVariant,
-  theme?: string,
+  theme?: HvBaseTheme,
 ): HvButtonVariant => {
   if (theme === "ds3") return variant;
 
@@ -118,7 +119,7 @@ export const HvButton = fixedForwardRef(function HvButton<
   const { activeTheme } = useTheme();
   const variant = mapVariant(
     variantProp ?? (icon ? "secondaryGhost" : "primary"),
-    activeTheme?.name,
+    activeTheme?.base,
   );
 
   const handleClick: HvButtonProps["onClick"] = (e) => {

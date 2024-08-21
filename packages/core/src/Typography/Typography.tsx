@@ -104,7 +104,7 @@ export const HvTypography = fixedForwardRef(function HvTypography<
   const { classes, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
-  const variant = mapVariant(variantProp, activeTheme?.name);
+  const variant = mapVariant(variantProp, activeTheme?.base);
 
   const Component =
     ComponentProp || (paragraph && "p") || HvTypographyMap[variant] || "span";

@@ -118,7 +118,7 @@ export interface HvThemeStructure<Mode extends string = string>
     HvThemeTypography,
     Omit<HvThemeTokens, "colors"> {
   name: string;
-  base?: HvBaseTheme;
+  base: HvBaseTheme;
   colors: {
     modes: Record<Mode, HvThemeColorModeStructure>;
   };

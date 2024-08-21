@@ -1,3 +1,5 @@
+import { HvBaseTheme } from "@hitachivantara/uikit-styles";
+
 export const typographyVariants = [
   "display",
   "title1",
@@ -73,7 +75,7 @@ const isLegacyVariant = (variant: string) => {
   ].includes(variant);
 };
 
-export const mapVariant = (variant: Variant, theme?: string) => {
+export const mapVariant = (variant: Variant, theme?: HvBaseTheme) => {
   if (theme === "ds3") return variant;
   const mappedVariant = mappableVariants.get(variant);
 
