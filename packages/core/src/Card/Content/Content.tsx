@@ -1,7 +1,10 @@
 import MuiCardContent, {
   CardContentProps as MuiCardContentProps,
 } from "@mui/material/CardContent";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./Content.styles";
 
@@ -17,15 +20,17 @@ export interface HvCardContentProps
   classes?: HvCardContentClasses;
 }
 
-export const HvCardContent = ({
-  id,
-  classes: classesProp,
-  className,
-  children,
-  onClick,
-  ...others
-}: HvCardContentProps) => {
+export const HvCardContent = (props: HvCardContentProps) => {
+  const {
+    id,
+    classes: classesProp,
+    className,
+    children,
+    onClick,
+    ...others
+  } = useDefaultProps("HvCardContent", props);
   const { classes, cx } = useClasses(classesProp);
+
   return (
     <MuiCardContent
       id={id}

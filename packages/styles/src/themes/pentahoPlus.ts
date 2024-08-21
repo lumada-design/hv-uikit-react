@@ -730,6 +730,63 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvCard: {
+      classes: {
+        root: {
+          // TODO: replace with a color from `theme.colors`
+          outline: `1px solid ${theme.palette.slate[200]}`,
+          overflow: "hidden",
+          height: "fit-content",
+          borderRadius: theme.space.sm,
+          "&:hover": {
+            // TODO: replace with a color from `theme.colors`
+            backgroundColor: theme.palette.blue[100],
+            borderColor: theme.colors.primary_20,
+          },
+          "& > :last-child:not(.HvCardMedia-root)": {
+            paddingBottom: theme.space.sm,
+          },
+          "& .HvCard-semanticContainer": {
+            display: "none",
+          },
+          "&.HvCard-selected": {
+            // TODO: replace with a color from `theme.colors`
+            outline: `1px solid ${theme.palette.blue[600]}`,
+            "&:focus": {},
+          },
+          "&.HvCard-selectable": {
+            "&:hover": {
+              outline: `1px solid ${theme.colors.primary_20}`,
+            },
+          },
+          "& .HvActionBar-root": {
+            padding: `${theme.space.xs} ${theme.space.sm}`,
+            borderTop: "none",
+          },
+        },
+      },
+    },
+    HvCardHeader: {
+      classes: {
+        root: {
+          flexDirection: "row-reverse",
+          padding: `${theme.space.xs} ${theme.space.sm}`,
+        },
+        action: {
+          paddingLeft: 0,
+        },
+      },
+    },
+    HvCardContent: {
+      classes: {
+        content: {
+          padding: `${theme.space.xs} ${theme.space.sm}`,
+          "&:last-child": {
+            paddingBottom: theme.space.xs,
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
