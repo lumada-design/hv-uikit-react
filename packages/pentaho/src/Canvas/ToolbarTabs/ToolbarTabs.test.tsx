@@ -79,6 +79,22 @@ describe("CanvasToolbarTabs", () => {
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 
+  it("triggers onTabChange and onChange when adding a tab with keyboard", async () => {
+    const user = userEvent.setup();
+    const onTabChangeMock = vi.fn();
+    const onChangeMock = vi.fn();
+    render(<Sample onTabChange={onTabChangeMock} onChange={onChangeMock} />);
+    const dropdownMenu = screen.getByRole("button", { name: "Dropdown menu" });
+    expect(dropdownMenu).toBeInTheDocument();
+
+    await user.keyboard("{tab}"); // first tab
+    await user.keyboard("{tab}"); // dropdown menu
+    await user.keyboard("{tab}"); // create button
+    await user.keyboard("{enter}"); // add
+    expect(onTabChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+  });
+
   it("triggers onChange when editing a tab", async () => {
     const user = userEvent.setup();
     const onChangeMock = vi.fn();
@@ -117,5 +133,15 @@ describe("CanvasToolbarTabs", () => {
     await user.keyboard("{tab}");
     await user.keyboard("{arrowright}");
     expect(onTabChangeMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("doesn't trigger onTabChange when only using the tab key to navigate", async () => {
+    const user = userEvent.setup();
+    const onTabChangeMock = vi.fn();
+    render(<Sample onTabChange={onTabChangeMock} />);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{tab}");
+    expect(onTabChangeMock).not.toHaveBeenCalled();
   });
 });

@@ -152,6 +152,46 @@ test("switches the selected tab when uncontrolled", async ({ page }) => {
   await expect(unSelectedTab).toContainText("Tab 1");
 });
 
+test("switches the selected tab when using the keyboard", async ({ page }) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  let unSelectedTab = page.getByRole("tab", { selected: false });
+  await expect(selectedTab).toContainText("Tab 1");
+  await expect(unSelectedTab).toContainText("Tab 2");
+
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("ArrowRight");
+  selectedTab = page.getByRole("tab", { selected: true });
+  unSelectedTab = page.getByRole("tab", { selected: false });
+  await expect(selectedTab).toContainText("Tab 2");
+  await expect(unSelectedTab).toContainText("Tab 1");
+
+  await page.keyboard.press("ArrowLeft");
+  selectedTab = page.getByRole("tab", { selected: true });
+  unSelectedTab = page.getByRole("tab", { selected: false });
+  await expect(selectedTab).toContainText("Tab 1");
+  await expect(unSelectedTab).toContainText("Tab 2");
+});
+
+test("doesn't switch the selected tab when only using the tab key to navigate", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  let unSelectedTab = page.getByRole("tab", { selected: false });
+  await expect(selectedTab).toContainText("Tab 1");
+  await expect(unSelectedTab).toContainText("Tab 2");
+
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Tab");
+  selectedTab = page.getByRole("tab", { selected: true });
+  unSelectedTab = page.getByRole("tab", { selected: false });
+  await expect(selectedTab).toContainText("Tab 1");
+  await expect(unSelectedTab).toContainText("Tab 2");
+});
+
 test("render overflow actions when the tab content is overflowing", async ({
   page,
 }) => {

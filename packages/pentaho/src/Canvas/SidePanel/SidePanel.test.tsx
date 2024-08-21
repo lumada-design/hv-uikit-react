@@ -91,6 +91,12 @@ const expectSimplePanelOpened = () => {
   expect(closeBtn).toBeInTheDocument();
 };
 
+const assertSelectedTab = (val: string) =>
+  expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(val);
+
+const assertNotSelectedTab = (val: string) =>
+  expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(val);
+
 describe("CanvasSidePanel", () => {
   it("does not show tabs when not provided", () => {
     renderSimplePanel({ tabs: [] });
@@ -98,7 +104,7 @@ describe("CanvasSidePanel", () => {
     expect(tabList).toBeNull();
   });
 
-  it("shows and hides the content and tabs when toggled and defaultOpen is false", async () => {
+  it("shows and hides the content and triggers onToggle when toggled and defaultOpen is false", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     renderSimplePanel({ onToggle: clickMock });
@@ -115,7 +121,7 @@ describe("CanvasSidePanel", () => {
     expectSimplePanelClosed();
   });
 
-  it("hides and shows the content and tabs when toggled and defaultOpen is true", async () => {
+  it("hides and shows the content and triggers onToggle when toggled and defaultOpen is true", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     renderSimplePanel({ onToggle: clickMock, defaultOpen: true });
@@ -132,7 +138,7 @@ describe("CanvasSidePanel", () => {
     expectSimplePanelOpened();
   });
 
-  it("shows and hides the content and tabs when toggled and controlled", async () => {
+  it("shows and hides the content and triggers onToggle when toggled and controlled", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     render(<ControlledPanel onToggle={clickMock} />);
@@ -149,28 +155,71 @@ describe("CanvasSidePanel", () => {
     expectSimplePanelClosed();
   });
 
-  it("triggers onTabChange when a tab is clicked", async () => {
+  it("shows and hides the content and triggers onToggle when toggled with keyboard", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    render(<ControlledPanel onToggle={clickMock} />);
+    expectSimplePanelClosed();
+
+    // Open
+    await user.keyboard("{tab}");
+    await user.keyboard("{enter}");
+    expect(clickMock).toHaveBeenCalledOnce();
+    expectSimplePanelOpened();
+
+    // Close
+    await user.keyboard("{enter}");
+    expect(clickMock).toHaveBeenCalledTimes(2);
+    expectSimplePanelClosed();
+  });
+
+  it("triggers onTabChange and changes selected tab when a tab is clicked", async () => {
     const user = userEvent.setup();
     const clickMock = vi.fn();
     renderSimplePanel({ onTabChange: clickMock, defaultOpen: true });
 
     const panelTabs = screen.getAllByRole("tab");
     expect(panelTabs).toHaveLength(tabs.length);
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      tabs[0].content,
-    );
-    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
-      tabs[1].content,
-    );
+    assertSelectedTab(tabs[0].content);
+    assertNotSelectedTab(tabs[1].content);
 
     await user.click(panelTabs[1]);
     expect(clickMock).toHaveBeenCalledOnce();
-    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
-      tabs[0].content,
-    );
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      tabs[1].content,
-    );
+    assertNotSelectedTab(tabs[0].content);
+    assertSelectedTab(tabs[1].content);
+  });
+
+  it("triggers onTabChange and changes selected tab when a tab is clicked with keyboard", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    renderSimplePanel({ onTabChange: clickMock, defaultOpen: true });
+    assertNotSelectedTab(tabs[1].content);
+    assertSelectedTab(tabs[0].content);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{arrowright}");
+    expect(clickMock).toHaveBeenCalledOnce();
+    assertNotSelectedTab(tabs[0].content);
+    assertSelectedTab(tabs[1].content);
+
+    await user.keyboard("{arrowleft}");
+    expect(clickMock).toHaveBeenCalledTimes(2);
+    assertNotSelectedTab(tabs[1].content);
+    assertSelectedTab(tabs[0].content);
+  });
+
+  it("doesn't trigger onTabChange and change selected tab when only using tab key to navigate", async () => {
+    const user = userEvent.setup();
+    const clickMock = vi.fn();
+    renderSimplePanel({ onTabChange: clickMock, defaultOpen: true });
+    assertNotSelectedTab(tabs[1].content);
+    assertSelectedTab(tabs[0].content);
+
+    await user.keyboard("{tab}");
+    await user.keyboard("{tab}");
+    expect(clickMock).not.toHaveBeenCalled();
+    assertNotSelectedTab(tabs[1].content);
+    assertSelectedTab(tabs[0].content);
   });
 
   it("overrides labels", async () => {
@@ -195,20 +244,12 @@ describe("CanvasSidePanel", () => {
 
     const panelTabs = screen.getAllByRole("tab");
     expect(panelTabs).toHaveLength(tabs.length);
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      tabs[1].content,
-    );
-    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
-      tabs[0].content,
-    );
+    assertSelectedTab(tabs[1].content);
+    assertNotSelectedTab(tabs[0].content);
 
     await user.click(panelTabs[0]);
     expect(clickMock).toHaveBeenCalledOnce();
-    expect(screen.getByRole("tab", { selected: false })).toHaveTextContent(
-      tabs[1].content,
-    );
-    expect(screen.getByRole("tab", { selected: true })).toHaveTextContent(
-      tabs[0].content,
-    );
+    assertNotSelectedTab(tabs[1].content);
+    assertSelectedTab(tabs[0].content);
   });
 });

@@ -332,6 +332,20 @@ test("changes selected tab when using the keyboard", async ({ page }) => {
   await expect(selectedTab).toContainText("My tab with a very long label");
 });
 
+test("doesn't change selected tab when only using the tab key to navigate", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  let selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Tab");
+  selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+});
+
 test("selects previous tab when tab is closed", async ({ page }) => {
   await goToUncontrolledSample(page);
 
@@ -419,6 +433,20 @@ test("uses previous value when trying to clear a tab label", async ({
   await labelEditor.click();
   await labelEditor.clear();
   await page.keyboard.press("Enter");
+
+  const selectedTab = page.getByRole("tab", { selected: true });
+  await expect(selectedTab).toContainText("My first tab");
+});
+
+test("uses previous value when clicking on escape when editing label", async ({
+  page,
+}) => {
+  await goToUncontrolledSample(page);
+
+  const labelEditor = page.getByText("My first tab");
+  await labelEditor.click();
+  await labelEditor.fill("123");
+  await page.keyboard.press("Escape");
 
   const selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("My first tab");
