@@ -19,6 +19,7 @@ import {
   Forwards,
   Job,
 } from "@hitachivantara/uikit-react-icons";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 const classes = {
   header: css({
@@ -71,10 +72,12 @@ export const Custom = () => {
     <HvVerticalNavigation open={!collapsed} useIcons>
       <div
         className={classes.header}
-        style={{
-          // @ts-ignore
-          "--header-alignment": collapsed ? "center" : "stretch",
-        }}
+        style={mergeStyles(
+          {},
+          {
+            "--header-alignment": collapsed ? "center" : "stretch",
+          },
+        )}
       >
         {collapsed ? (
           <>

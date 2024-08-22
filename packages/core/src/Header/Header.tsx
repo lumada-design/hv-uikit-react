@@ -40,10 +40,7 @@ export const HvHeader = (props: HvHeaderProps) => {
 
   return (
     <header
-      style={{
-        // @ts-ignore
-        "--header-position": position,
-      }}
+      style={{ position }}
       className={cx(
         classes.root,
         classes.backgroundColor,

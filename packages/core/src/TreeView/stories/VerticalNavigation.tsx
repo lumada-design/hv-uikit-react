@@ -11,6 +11,7 @@ import {
   useHvTreeItem,
 } from "@hitachivantara/uikit-react-core";
 import { DropDownXS } from "@hitachivantara/uikit-react-icons";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 interface CustomTreeItemProps extends HvTreeItemProps {
   /** Triggered when the tree item is expanded */
@@ -44,10 +45,13 @@ const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
       <HvTreeItem
         ref={ref}
         nodeId={nodeId}
-        style={{
-          ["--level" as string]: level,
-          pointerEvents: disabled ? "none" : undefined,
-        }}
+        style={mergeStyles(
+          {},
+          {
+            "--level": level,
+            pointerEvents: disabled ? "none" : undefined,
+          },
+        )}
         classes={{
           group: classes.group,
           content: classes.content,

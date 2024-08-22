@@ -13,6 +13,7 @@ import {
   useFlowNodeEdges,
   useHvNode,
 } from "@hitachivantara/uikit-react-lab";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const classes = {
@@ -88,10 +89,12 @@ export const Node = ({ id, groupId = "teapot", input, output }: NodeProps) => {
 
   return (
     <div
-      style={{
-        // @ts-ignore
-        "--color": color,
-      }}
+      style={mergeStyles(
+        {},
+        {
+          "--color": color,
+        },
+      )}
       className={cx("nowheel", classes.root)}
       onMouseEnter={toggleShowActions}
       onMouseLeave={toggleShowActions}

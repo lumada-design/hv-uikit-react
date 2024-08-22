@@ -6,6 +6,7 @@ import {
   HvTypography,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 import { HvUseNodeParams, useHvNode } from "../hooks";
 import {
@@ -139,10 +140,12 @@ export const HvFlowBaseNode = ({
 
   return (
     <div
-      style={{
-        // @ts-ignore
-        "--node-color": color,
-      }}
+      style={mergeStyles(
+        {},
+        {
+          "--node-color": color,
+        },
+      )}
       className={cx(
         "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
         classes.root,
@@ -164,10 +167,12 @@ export const HvFlowBaseNode = ({
       </NodeToolbar>
       <div className={classes.headerContainer}>
         <div
-          style={{
-            // @ts-ignore
-            "--icon-color": iconColor,
-          }}
+          style={mergeStyles(
+            {},
+            {
+              "--icon-color": iconColor,
+            },
+          )}
           className={classes.titleContainer}
         >
           {icon}
