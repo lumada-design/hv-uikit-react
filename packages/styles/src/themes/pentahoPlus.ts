@@ -430,12 +430,11 @@ const pentahoPlus = makeTheme((theme) => ({
     HvMultiButton: {
       classes: {
         multiple: {
-          borderRadius: theme.radii.full,
           "& button.HvMultiButton-button": {
             borderColor: "transparent",
             "&.HvMultiButton-firstButton": {
               borderColor: "transparent",
-              borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,
+              borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
               "&:disabled": {
                 borderColor: "transparent",
                 "&:hover": {
@@ -445,7 +444,7 @@ const pentahoPlus = makeTheme((theme) => ({
             },
             "&.HvMultiButton-lastButton": {
               borderColor: "transparent",
-              borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
+              borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
               "&:disabled": {
                 borderColor: "transparent",
                 "&:hover": {
@@ -454,7 +453,6 @@ const pentahoPlus = makeTheme((theme) => ({
               },
             },
             "&.HvMultiButton-selected": {
-              borderRadius: theme.radii.full,
               borderColor: "transparent",
               color: theme.colors.primary,
               backgroundColor: theme.colors.atmo1,
@@ -479,15 +477,29 @@ const pentahoPlus = makeTheme((theme) => ({
             "&:not(.HvMultiButton-firstButton)": {
               marginLeft: 0,
             },
+            "&:not(.HvMultiButton-firstButton, .HvMultiButton-lastButton)": {
+              borderRadius: theme.radii.none,
+            },
+            "&:not(&.HvMultiButton-selected)": {
+              boxShadow: "none",
+            },
           },
         },
         vertical: {
-          borderRadius: theme.radii.full,
           "& button.HvMultiButton-button": {
-            borderRadius: theme.radii.full,
             borderColor: "transparent",
+            "&.HvMultiButton-selected": {
+              borderRadius: theme.radii.none,
+              borderColor: "transparent",
+              color: theme.colors.primary,
+              backgroundColor: theme.colors.atmo1,
+              "&:disabled": {
+                borderColor: "transparent",
+                "&:hover": { borderColor: "transparent" },
+              },
+            },
             "&.HvMultiButton-firstButton": {
-              borderRadius: theme.radii.full,
+              borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
               borderColor: "transparent",
               "&:disabled": {
                 borderColor: "transparent",
@@ -495,18 +507,8 @@ const pentahoPlus = makeTheme((theme) => ({
               },
             },
             "&.HvMultiButton-lastButton": {
-              borderRadius: theme.radii.full,
+              borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
               borderColor: "transparent",
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": { borderColor: "transparent" },
-              },
-            },
-            "&.HvMultiButton-selected": {
-              borderRadius: theme.radii.full,
-              borderColor: "transparent",
-              color: theme.colors.primary,
-              backgroundColor: theme.colors.atmo1,
               "&:disabled": {
                 borderColor: "transparent",
                 "&:hover": { borderColor: "transparent" },
