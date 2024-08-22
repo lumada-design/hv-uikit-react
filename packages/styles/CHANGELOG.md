@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.32.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.32.0...@hitachivantara/uikit-styles@5.32.1) (2024-08-22)
+
+### Bug Fixes
+
+- **DatePicker:** calendar spacing ([#4291](https://github.com/lumada-design/hv-uikit-react/issues/4291)) ([7afe152](https://github.com/lumada-design/hv-uikit-react/commit/7afe15213e850075a65e00183791e91c78101622))
+- **theme:** theme.base required & usage in components ([#4292](https://github.com/lumada-design/hv-uikit-react/issues/4292)) ([576707c](https://github.com/lumada-design/hv-uikit-react/commit/576707cbfb1388e505b1336a3c5f512071e8f153))
+- **types:** add exports types declaration ([#4280](https://github.com/lumada-design/hv-uikit-react/issues/4280)) ([da844fc](https://github.com/lumada-design/hv-uikit-react/commit/da844fc7a8d6a6ce2e2893e80887f3c5d795d376))
+- **typography:** add missing letter-spacing ([#4285](https://github.com/lumada-design/hv-uikit-react/issues/4285)) ([0738492](https://github.com/lumada-design/hv-uikit-react/commit/0738492484a063169c2c5507ed505e3ea83bd084))
+
+### Performance Improvements
+
+- **theme:** use color-mix for theme.alpha coloring ([#4281](https://github.com/lumada-design/hv-uikit-react/issues/4281)) ([50e5536](https://github.com/lumada-design/hv-uikit-react/commit/50e553621a1273f5d758d587dd82499511b8633e))
+
 # [5.32.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.31.1...@hitachivantara/uikit-styles@5.32.0) (2024-08-15)
 
 ### Features

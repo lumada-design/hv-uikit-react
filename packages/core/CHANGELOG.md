@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.69.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.68.1...@hitachivantara/uikit-react-core@5.69.0) (2024-08-22)
+
+### Bug Fixes
+
+- **DatePicker:** calendar spacing ([#4291](https://github.com/lumada-design/hv-uikit-react/issues/4291)) ([7afe152](https://github.com/lumada-design/hv-uikit-react/commit/7afe15213e850075a65e00183791e91c78101622))
+- **Switch:** improve onChange types ([#4286](https://github.com/lumada-design/hv-uikit-react/issues/4286)) ([25e4544](https://github.com/lumada-design/hv-uikit-react/commit/25e45449d6fa05127362c7c74b0c1c1f9d579a6b))
+- **theme:** theme.base required & usage in components ([#4292](https://github.com/lumada-design/hv-uikit-react/issues/4292)) ([576707c](https://github.com/lumada-design/hv-uikit-react/commit/576707cbfb1388e505b1336a3c5f512071e8f153))
+- **ToolbarTabs:** accessibility and styles ([#4283](https://github.com/lumada-design/hv-uikit-react/issues/4283)) ([12ff083](https://github.com/lumada-design/hv-uikit-react/commit/12ff0832bb47039915ac99f1fc9b1cf67ce15d0f))
+- **types:** add exports types declaration ([#4280](https://github.com/lumada-design/hv-uikit-react/issues/4280)) ([da844fc](https://github.com/lumada-design/hv-uikit-react/commit/da844fc7a8d6a6ce2e2893e80887f3c5d795d376))
+
+### Features
+
+- **Provider:** align MUI theme with UI Kit tokens ([#4284](https://github.com/lumada-design/hv-uikit-react/issues/4284)) ([53bb256](https://github.com/lumada-design/hv-uikit-react/commit/53bb256ee17257325b36016526a5c1106f4c683a))
+
 ## [5.68.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.68.0...@hitachivantara/uikit-react-core@5.68.1) (2024-08-19)
 
 ### Bug Fixes

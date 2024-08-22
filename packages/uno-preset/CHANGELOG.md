@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.28](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.27...@hitachivantara/uikit-uno-preset@0.2.28) (2024-08-22)
+
+### Bug Fixes
+
+- **types:** add exports types declaration ([#4280](https://github.com/lumada-design/hv-uikit-react/issues/4280)) ([da844fc](https://github.com/lumada-design/hv-uikit-react/commit/da844fc7a8d6a6ce2e2893e80887f3c5d795d376))
+
 ## [0.2.27](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.26...@hitachivantara/uikit-uno-preset@0.2.27) (2024-08-15)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset

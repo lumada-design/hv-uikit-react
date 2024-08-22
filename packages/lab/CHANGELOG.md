@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.38.2...@hitachivantara/uikit-react-lab@5.39.0) (2024-08-22)
+
+### Bug Fixes
+
+- **types:** add exports types declaration ([#4280](https://github.com/lumada-design/hv-uikit-react/issues/4280)) ([da844fc](https://github.com/lumada-design/hv-uikit-react/commit/da844fc7a8d6a6ce2e2893e80887f3c5d795d376))
+
+### Features
+
+- **Flow:** add groups to subflow sample ([#4272](https://github.com/lumada-design/hv-uikit-react/issues/4272)) ([db058f8](https://github.com/lumada-design/hv-uikit-react/commit/db058f80e056c77608fb389b356f51569abd604e))
+
 ## [5.38.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.38.1...@hitachivantara/uikit-react-lab@5.38.2) (2024-08-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.3...@hitachivantara/uikit-react-pentaho@0.4.4) (2024-08-22)
+
+### Bug Fixes
+
+- **ToolbarTabs:** accessibility and styles ([#4283](https://github.com/lumada-design/hv-uikit-react/issues/4283)) ([12ff083](https://github.com/lumada-design/hv-uikit-react/commit/12ff0832bb47039915ac99f1fc9b1cf67ce15d0f))
+- **types:** add exports types declaration ([#4280](https://github.com/lumada-design/hv-uikit-react/issues/4280)) ([da844fc](https://github.com/lumada-design/hv-uikit-react/commit/da844fc7a8d6a6ce2e2893e80887f3c5d795d376))
+
+### Performance Improvements
+
+- **theme:** use color-mix for theme.alpha coloring ([#4281](https://github.com/lumada-design/hv-uikit-react/issues/4281)) ([50e5536](https://github.com/lumada-design/hv-uikit-react/commit/50e553621a1273f5d758d587dd82499511b8633e))
+
 ## [0.4.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.2...@hitachivantara/uikit-react-pentaho@0.4.3) (2024-08-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho
