@@ -568,6 +568,41 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvHeader: {
+      classes: {
+        root: {
+          borderBottom: `1px solid ${theme.colors.atmo3}`,
+          boxShadow: "none",
+        },
+      },
+    },
+    HvHeaderBrand: {
+      classes: {
+        separator: {
+          backgroundColor: theme.colors.atmo4,
+          margin: theme.spacing(0, "md"),
+          height: 32,
+        },
+      },
+    },
+    HvHeaderMenuBarBar: {
+      classes: {
+        active: {
+          boxShadow: "none",
+          borderBottom: `1px solid ${theme.colors.atmo3}`,
+        },
+        list: {
+          "& li:hover > .HvHeader-MenuBar-hidden": {
+            boxShadow: "none",
+            borderBottom: `1px solid ${theme.colors.atmo3}`,
+          },
+          "& li:focus-within > .HvHeader-MenuBar-hidden": {
+            boxShadow: "none",
+            borderBottom: `1px solid ${theme.colors.atmo3}`,
+          },
+        },
+      },
+    },
     HvVerticalNavigation: {
       classes: {
         root: {

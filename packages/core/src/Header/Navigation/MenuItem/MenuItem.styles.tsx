@@ -41,6 +41,7 @@ const item: CSSInterpolation = {
   },
 };
 
+// TODO - rename to HvHeaderMenuItem (the actual component's name) in v6
 export const { staticClasses, useClasses } = createClasses(
   "HvHeader-MenuItem",
   {

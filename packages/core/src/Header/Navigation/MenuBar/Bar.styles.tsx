@@ -16,6 +16,7 @@ const hide = {
   transitionDuration: "300ms",
 };
 
+// TODO - rename to HvHeaderMenuBar (the actual component's name) in v6
 export const { staticClasses, useClasses } = createClasses("HvHeader-MenuBar", {
   root: {
     left: 0,
