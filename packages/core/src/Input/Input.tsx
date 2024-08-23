@@ -164,11 +164,11 @@ export interface HvInputProps
   /** If `true` it should autofocus. */
   autoFocus?: boolean;
   /** If `true` the clear button is disabled. */
-  disableClear?: boolean;
+  disableClear?: boolean; // TODO - rename in v6 since it doesn't disable but hides the button
   /** If `true` the reveal password button is disabled. Valid only when type is "password". */
-  disableRevealPassword?: boolean;
+  disableRevealPassword?: boolean; // TODO - rename in v6 since it doesn't disable but hides the button
   /** If `true` the search button is disabled. Valid only when type is "search". */
-  disableSearchButton?: boolean;
+  disableSearchButton?: boolean; // TODO - rename in v6 since it doesn't disable but hides the button
   /**
    * If `true` the validation icon adornment is visible. Defaults to `false`.
    *
