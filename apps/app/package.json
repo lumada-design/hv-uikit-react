@@ -43,7 +43,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.5.4",
+    "typescript": "^5.4.2",
     "unocss": "^0.58.5",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.2"

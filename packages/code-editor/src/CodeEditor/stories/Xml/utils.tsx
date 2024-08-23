@@ -52,8 +52,9 @@ export const buildTree = (xml: string) => {
           if (!Array.isArray(structure[found])) {
             structure[found] = [structure[found]];
           }
-          if (Array.isArray(structure[found]))
-            structure[found].push(childStructure);
+          if (Array.isArray(structure[found])) {
+            (structure[found] as any[]).push(childStructure);
+          }
         } else {
           structure[nodeKey] = childStructure;
         }
