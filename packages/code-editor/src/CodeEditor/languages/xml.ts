@@ -162,16 +162,16 @@ export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
       if (
         lastOpenedTag &&
         elements?.[lastOpenedTag] &&
-        elements[lastOpenedTag].length > 0
+        elements[lastOpenedTag]!.length > 0
       ) {
         const attrs = lastWordWritten.word
-          ? elements[lastOpenedTag].filter((attr) =>
+          ? elements[lastOpenedTag]!.filter((attr) =>
               attr.startsWith(lastWordWritten.word),
             )
           : elements[lastOpenedTag];
 
         suggestions.push(
-          ...attrs.map((atr) => ({
+          ...attrs!.map((atr) => ({
             label: atr,
             kind: monaco.languages.CompletionItemKind.Field,
             // eslint-disable-next-line no-template-curly-in-string
