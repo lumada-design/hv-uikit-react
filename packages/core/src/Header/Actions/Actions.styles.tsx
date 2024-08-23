@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { buttonClasses } from "../../Button";
 
+// TODO - rename to HvHeaderActions (the actual component's name) in v6
 export const { staticClasses, useClasses } = createClasses("HvHeader-Actions", {
   root: {
     backgroundColor: "transparent",

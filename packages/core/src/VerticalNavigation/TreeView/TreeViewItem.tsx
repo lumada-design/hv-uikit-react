@@ -9,6 +9,7 @@ import {
 } from "react";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
+  mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -490,10 +491,12 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               showAvatar={!icon && useIcons}
               isOpen={isOpen}
               hasAnyChildWithData={hasAnyChildWithData}
-              style={{
-                // @ts-expect-error csstype doesn't support CSS vars
-                "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
-              }}
+              style={mergeStyles(
+                {},
+                {
+                  "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
+                },
+              )}
               className={classes.icon}
             />
 

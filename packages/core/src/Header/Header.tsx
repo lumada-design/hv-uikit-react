@@ -36,21 +36,15 @@ export const HvHeader = (props: HvHeaderProps) => {
     ...others
   } = useDefaultProps("HvHeader", props);
 
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
     <header
+      style={{ position }}
       className={cx(
         classes.root,
         classes.backgroundColor,
-        css({
-          position,
-          ...(position === "fixed" && {
-            top: 0,
-            left: "auto",
-            right: 0,
-          }),
-        }),
+        { [classes.fixed]: position === "fixed" },
         className,
       )}
       {...others}

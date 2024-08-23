@@ -119,11 +119,12 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
 
   return (
     <div
-      style={{
-        // @ts-ignore
-        "--node-border-color": status ? status.color : color,
-        "--icon-bg-color": color,
-      }}
+      style={
+        {
+          "--node-border-color": status ? status.color : color,
+          "--icon-bg-color": color,
+        } as React.CSSProperties
+      }
       className={cx(
         "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
         classes.root,

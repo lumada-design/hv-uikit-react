@@ -11,8 +11,8 @@ export const { staticClasses, useClasses } = createClasses("HvHeader", {
     boxSizing: "border-box",
     flexShrink: 0,
     zIndex: theme.zIndices.banner,
-    boxShadow: theme.colors.shadow,
     borderTop: "none",
+    boxShadow: theme.colors.shadow,
   },
   header: {
     display: "flex",
@@ -20,10 +20,10 @@ export const { staticClasses, useClasses } = createClasses("HvHeader", {
     width: "100%",
     height: "100%",
     padding: `0 ${theme.space.sm}`,
-    boxShadow: theme.colors.shadow,
     "& > *:not(nav)": {
       zIndex: 2,
     },
   },
+  fixed: { position: "fixed", top: 0, left: "auto", right: 0 },
   backgroundColor: {},
 });
