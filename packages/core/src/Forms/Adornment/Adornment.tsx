@@ -62,7 +62,8 @@ export const HvAdornment = forwardRef<
   ) => {
     const { classes, cx } = useClasses(classesProp);
 
-    const { elementStatus = "" } = useContext(HvFormElementContext);
+    const { elementStatus = "", elementDisabled } =
+      useContext(HvFormElementContext);
 
     const { input } = useContext(HvFormElementDescriptorsContext);
 
@@ -82,12 +83,17 @@ export const HvAdornment = forwardRef<
           classes.root,
           classes.adornment,
           classes.adornmentButton,
-          { [classes.hideIcon]: !displayIcon },
+          {
+            [classes.hideIcon]: !displayIcon,
+            [classes.disabled]: elementDisabled,
+          },
           className,
         )}
         onClick={onClick}
         onMouseDown={(event) => event.preventDefault()}
         onKeyDown={noop}
+        disabled={elementDisabled}
+        aria-disabled={elementDisabled}
         {...others}
       >
         <div className={classes.icon}>{icon}</div>
@@ -100,7 +106,10 @@ export const HvAdornment = forwardRef<
           classes.root,
           classes.adornment,
           classes.adornmentIcon,
-          { [classes.hideIcon]: !displayIcon },
+          {
+            [classes.hideIcon]: !displayIcon,
+            [classes.disabled]: elementDisabled,
+          },
           className,
         )}
         role="presentation"

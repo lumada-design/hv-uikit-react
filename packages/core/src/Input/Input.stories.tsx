@@ -23,8 +23,9 @@ const showcaseDecorator: Decorator = (Story) => (
   <div
     className={css({
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "flex-start",
       flexFlow: "row wrap",
+      gap: theme.space.sm,
       "& > div": {
         width: 200,
       },
@@ -135,8 +136,25 @@ export const Variants: StoryObj<HvInputProps> = {
           validationMessages={validationMessages}
         />
         <HvInput
+          disabled
+          type="password"
+          label="Disabled"
+          description="Enter password"
+          placeholder="Enter password"
+          validationMessages={validationMessages}
+        />
+        <HvInput
           type="search"
           label="Search"
+          description="Search for a value"
+          placeholder="Search..."
+          validationMessages={validationMessages}
+          onEnter={(event, value) => console.log("Searching", value)}
+        />
+        <HvInput
+          disabled
+          type="search"
+          label="Disabled"
           description="Search for a value"
           placeholder="Search..."
           validationMessages={validationMessages}
