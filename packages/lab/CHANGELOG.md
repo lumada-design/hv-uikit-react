@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.39.0...@hitachivantara/uikit-react-lab@5.40.0) (2024-08-26)
+
+### Features
+
+- **header:** pentaho theme updates and duplicated shadow removed ([#4298](https://github.com/lumada-design/hv-uikit-react/issues/4298)) ([e6135e3](https://github.com/lumada-design/hv-uikit-react/commit/e6135e31b789fbf1d47389c2a625e3ff06b36e48))
+
 # [5.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.38.2...@hitachivantara/uikit-react-lab@5.39.0) (2024-08-22)
 
 ### Bug Fixes

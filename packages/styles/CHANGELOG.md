@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.33.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.32.1...@hitachivantara/uikit-styles@5.33.0) (2024-08-26)
+
+### Bug Fixes
+
+- **MultiButton:** pentaho theme css ([#4297](https://github.com/lumada-design/hv-uikit-react/issues/4297)) ([2f5a738](https://github.com/lumada-design/hv-uikit-react/commit/2f5a7381ee0df717a8ae99a7de55001825b7d2e1))
+
+### Features
+
+- **Card:** add pentaho plus styles ([a2dd60d](https://github.com/lumada-design/hv-uikit-react/commit/a2dd60d4547646aa8927eb13f54103058fef5e27))
+- **header:** pentaho theme updates and duplicated shadow removed ([#4298](https://github.com/lumada-design/hv-uikit-react/issues/4298)) ([e6135e3](https://github.com/lumada-design/hv-uikit-react/commit/e6135e31b789fbf1d47389c2a625e3ff06b36e48))
+
 ## [5.32.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.32.0...@hitachivantara/uikit-styles@5.32.1) (2024-08-22)
 
 ### Bug Fixes

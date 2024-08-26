@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.1...@hitachivantara/uikit-react-utils@0.2.2) (2024-08-26)
+
+### Bug Fixes
+
+- **utils:** CJS by default to align with other UI Kit packages ([#4302](https://github.com/lumada-design/hv-uikit-react/issues/4302)) ([daefc2e](https://github.com/lumada-design/hv-uikit-react/commit/daefc2ed080590243ccfecb047bff3ac3f371dcf))
+
 ## [0.2.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.0...@hitachivantara/uikit-react-utils@0.2.1) (2024-08-22)
 
 ### Bug Fixes

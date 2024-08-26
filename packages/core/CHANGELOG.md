@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.70.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.69.0...@hitachivantara/uikit-react-core@5.70.0) (2024-08-26)
+
+### Bug Fixes
+
+- **input:** search and reveal adornments not disabled when input disabled ([#4300](https://github.com/lumada-design/hv-uikit-react/issues/4300)) ([fceeb18](https://github.com/lumada-design/hv-uikit-react/commit/fceeb1862ede2b0175ce247ce3f59697fbec1d5e))
+
+### Features
+
+- **Card:** add pentaho plus styles ([a2dd60d](https://github.com/lumada-design/hv-uikit-react/commit/a2dd60d4547646aa8927eb13f54103058fef5e27))
+- **header:** pentaho theme updates and duplicated shadow removed ([#4298](https://github.com/lumada-design/hv-uikit-react/issues/4298)) ([e6135e3](https://github.com/lumada-design/hv-uikit-react/commit/e6135e31b789fbf1d47389c2a625e3ff06b36e48))
+
 # [5.69.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.68.1...@hitachivantara/uikit-react-core@5.69.0) (2024-08-22)
 
 ### Bug Fixes
