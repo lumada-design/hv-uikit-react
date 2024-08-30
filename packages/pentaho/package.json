@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
     "directory": "packages/pentaho"
   },
   "license": "Apache-2.0",
