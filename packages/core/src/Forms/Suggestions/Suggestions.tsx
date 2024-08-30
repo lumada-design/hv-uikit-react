@@ -1,12 +1,12 @@
 import { forwardRef, useContext, useEffect, useRef, useState } from "react";
-import MuiPopper from "@mui/material/Popper";
+import {
+  ClickAwayListener,
+  ClickAwayListenerProps,
+} from "@mui/base/ClickAwayListener";
+import { Popper as MuiPopper } from "@mui/base/Popper";
 import { useForkRef } from "@mui/material/utils";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import {
-  HvClickOutsideEvent,
-  useClickOutside,
-} from "../../hooks/useClickOutside";
 import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
 import { HvBaseProps } from "../../types/generic";
@@ -26,7 +26,9 @@ export interface HvSuggestion {
 }
 
 export interface HvSuggestionsProps extends HvBaseProps {
-  /** Whether suggestions is visible. */
+  /** Whether suggestions is visible */
+  open?: boolean;
+  /** Whether suggestions is visible. @deprecated use `open` instead */
   expanded?: boolean;
   /** The HTML element Suggestions attaches to. */
   anchorEl?: HTMLElement | null;
@@ -35,7 +37,7 @@ export interface HvSuggestionsProps extends HvBaseProps {
   /** Function called when a suggestion is selected */
   onSuggestionSelected?: (event: React.MouseEvent, value: HvSuggestion) => void;
   /** Function called when suggestion list is closed */
-  onClose?: (event: HvClickOutsideEvent) => void;
+  onClose?: ClickAwayListenerProps["onClickAway"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSuggestionsClasses;
 }
@@ -46,6 +48,7 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
     className,
     classes: classesProp,
     expanded = false,
+    open: openProp,
     anchorEl,
     suggestionValues = [],
     onClose,
@@ -60,13 +63,8 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
   const ref = useRef<HTMLDivElement>(null);
   const forkedRef = useForkRef(ref, extRef);
 
+  // TODO: remove controlled+uncontrolled `expanded` prop in v6
   const [isOpen, setIsOpen] = useState(expanded);
-
-  useClickOutside(ref, (event) => {
-    setIsOpen(false);
-    onClose?.(event);
-  });
-
   useEffect(() => {
     setIsOpen(expanded);
   }, [expanded]);
@@ -78,32 +76,31 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
       className={cx(classes.root, className)}
       {...others}
     >
-      <MuiPopper
-        open={isOpen}
-        disablePortal
-        anchorEl={anchorEl}
-        className={classes.popper}
+      <ClickAwayListener
+        onClickAway={(event) => {
+          setIsOpen(false);
+          onClose?.(event);
+        }}
       >
-        <HvSelectionList
-          className={classes.list}
-          id={setId(localId, "list")}
-          onChange={onSuggestionSelected}
+        <MuiPopper
+          open={openProp ?? isOpen}
+          disablePortal
+          anchorEl={anchorEl}
+          className={classes.popper}
         >
-          {suggestionValues?.map((item, i) => {
-            const itemKey = item.id || setId("item", i);
-
-            return (
-              <HvListItem
-                key={itemKey}
-                value={item}
-                disabled={item.disabled || undefined}
-              >
+          <HvSelectionList
+            className={classes.list}
+            id={setId(localId, "list")}
+            onChange={onSuggestionSelected}
+          >
+            {suggestionValues?.map((item) => (
+              <HvListItem key={item.id} value={item} disabled={item.disabled}>
                 {item.label}
               </HvListItem>
-            );
-          })}
-        </HvSelectionList>
-      </MuiPopper>
+            ))}
+          </HvSelectionList>
+        </MuiPopper>
+      </ClickAwayListener>
     </div>
   );
 });

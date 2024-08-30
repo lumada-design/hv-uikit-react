@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
@@ -8,8 +8,9 @@ import {
   HvSuggestions,
   HvSuggestionsProps,
 } from "@hitachivantara/uikit-react-core";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
-import countryList from "../../Input/countries";
+import { allCountries } from "../../Input/countries";
 
 const meta: Meta<typeof HvSuggestions> = {
   title: "Guides/Forms/Form Element Blocks/Suggestions",
@@ -28,14 +29,13 @@ export const Main: StoryObj<HvSuggestionsProps> = {
     classes: { control: { disable: true } },
   },
   render: () => {
-    const suggestions = countryList;
     const [open, setOpen] = useState(false);
     const [suggestionList, setSuggestionList] = useState<string[]>([]);
     const [value, setValue] = useState("");
     const inputRef = useRef<HTMLElement>(null);
 
     const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
-      const matches = suggestions.filter((v) =>
+      const matches = allCountries.filter((v) =>
         v.toUpperCase().startsWith(val.toUpperCase()),
       );
       const newList = val.length >= 1 ? matches : [];
@@ -55,7 +55,7 @@ export const Main: StoryObj<HvSuggestionsProps> = {
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (evt.code === "Esc") {
+      if (evt.code === "Escape") {
         inputRef?.current?.focus();
         setOpen(false);
       } else if (evt.code === "Tab") {
@@ -82,7 +82,7 @@ export const Main: StoryObj<HvSuggestionsProps> = {
             inputProps={{ "aria-labelledby": "countries" }}
           />
           <HvSuggestions
-            expanded={open}
+            open={open}
             anchorEl={inputRef.current?.parentElement}
             onClose={() => setOpen(false)}
             onKeyDown={handleSuggestionsKey}
@@ -104,8 +104,8 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
 
     // Server-side mock function
     const fetchCountries = (input: string) =>
-      new Promise((resolve) => {
-        const countries = countryList
+      new Promise<string[]>((resolve) => {
+        const countries = allCountries
           .filter((c) => c.toUpperCase().includes(input.toUpperCase()))
           .slice(0, 8);
 
@@ -117,8 +117,8 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
       setOpen(false);
       if (val.length < 1) return;
       fetchCountries(val).then((countries) => {
-        setSuggestionList(countries as string[]);
-        setOpen((countries as string[]).length >= 1);
+        setSuggestionList(countries);
+        setOpen(countries.length >= 1);
       });
     };
 
@@ -133,7 +133,7 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (evt.code === "Esc") {
+      if (evt.code === "Escape") {
         inputRef?.current?.focus();
         setOpen(false);
       } else if (evt.code === "Tab") {
@@ -160,7 +160,7 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
             inputProps={{ "aria-labelledby": "countries" }}
           />
           <HvSuggestions
-            expanded={open}
+            open={open}
             anchorEl={inputRef.current?.parentElement}
             onClose={() => setOpen(false)}
             onKeyDown={handleSuggestionsKey}
@@ -173,23 +173,18 @@ export const ServerSideSuggestions: StoryObj<HvSuggestionsProps> = {
   },
 };
 
-export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
+export const CustomOpen: StoryObj<HvSuggestionsProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Custom opening on focus or down arrow key",
+      },
+    },
+  },
   render: () => {
-    const suggestions = countryList;
     const [open, setOpen] = useState(false);
-    const [suggestionList, setSuggestionList] = useState<string[]>([]);
     const [value, setValue] = useState("");
     const inputRef = useRef<HTMLElement>(null);
-
-    const handleChange: HvBaseInputProps["onChange"] = (e, val) => {
-      const matches = suggestions.filter((v) =>
-        v.toUpperCase().startsWith(val.toUpperCase()),
-      );
-      const newList = val.length >= 1 ? matches : [];
-      setSuggestionList(newList);
-      setOpen(newList.length > 0);
-      setValue(val);
-    };
 
     const handleSelection: HvSuggestionsProps["onSuggestionSelected"] = (
       e,
@@ -204,12 +199,12 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
     const handleKey: HvBaseInputProps["onKeyDown"] = (e) => {
       if (e.code === "ArrowDown") {
         setOpen(true);
-        document.getElementById("suggestions-list-item-0")?.focus();
+        document.querySelector<HTMLLIElement>("#suggestions li")?.focus();
       }
     };
 
     const handleSuggestionsKey: HvSuggestionsProps["onKeyDown"] = (evt) => {
-      if (evt.code === "Esc") {
+      if (evt.code === "Escape") {
         inputRef?.current?.focus();
         setOpen(false);
       } else if (evt.code === "Tab") {
@@ -221,9 +216,12 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
       }
     };
 
-    const values = suggestionList
-      .map((label, id) => ({ id: String(id), label }))
-      .slice(0, 6);
+    const values = useMemo(() => {
+      return allCountries
+        .filter((v) => v.toUpperCase().startsWith(value.toUpperCase()))
+        .slice(0, 6)
+        .map((label, id) => ({ id: String(id), label }));
+    }, [value]);
 
     return (
       <HvFormElement>
@@ -232,13 +230,32 @@ export const OpenWithDownArrow: StoryObj<HvSuggestionsProps> = {
             value={value}
             inputRef={inputRef}
             placeholder="Insert country"
-            onChange={handleChange}
+            onChange={(evt, val) => {
+              if (val.length > 0) setOpen(true);
+              setValue(val);
+            }}
             onKeyDown={handleKey}
+            onClick={(evt) => {
+              evt.stopPropagation();
+              if (!value) setOpen(true);
+            }}
+            endAdornment={
+              <DropDownXS
+                style={{
+                  cursor: "pointer",
+                  rotate: open ? "180deg" : undefined,
+                }}
+                onClick={(evt) => {
+                  evt.stopPropagation();
+                  setOpen((v) => !v);
+                }}
+              />
+            }
             inputProps={{ "aria-labelledby": "countries" }}
           />
           <HvSuggestions
             id="suggestions"
-            expanded={open}
+            open={open}
             anchorEl={inputRef.current?.parentElement}
             onClose={() => setOpen(false)}
             onKeyDown={handleSuggestionsKey}
