@@ -1,15 +1,18 @@
 import { forwardRef, memo } from "react";
 import styled from "@emotion/styled";
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import {
+  getColor,
+  HvColorAny,
+  HvSize,
+  theme,
+} from "@hitachivantara/uikit-styles";
 
 import { isSemantic, isXS } from "./utils";
-
-const getDims = (size: number) => ({ width: size, height: size });
 
 const calcSize = (size: number, isLarger = false) =>
   isLarger ? size + 8 : size;
 
-export const getColorVars = (colorArray: string[]) => {
+const getColorVars = (colorArray: string[]) => {
   return colorArray.reduce<Record<string, string>>((acc, value, index) => {
     acc[`--color-${index}`] = value;
     return acc;
@@ -17,38 +20,45 @@ export const getColorVars = (colorArray: string[]) => {
 };
 
 /** sizes for the <svg> icon */
-const svgSizeMap: Record<IconSize, number> = {
-  XS: 12,
-  S: 16,
-  M: 32,
-  L: 96,
+const getSvgSize = (size: IconBaseProps["size"] | IconSize) => {
+  switch (size) {
+    case "xs":
+    case "XS":
+      return 12;
+    case "sm":
+    case "S":
+    case undefined:
+      return 16;
+    case "md":
+    case "M":
+      return 32;
+    case "lg":
+    case "L":
+      return 96;
+    case "xl":
+      return 112;
+    default:
+      return size;
+  }
 };
 
-const getSizeStyles = (iconSize: IconSize, iconName: string) => {
-  const isLarger = isSemantic(iconName);
-  if (iconSize === "S" && !isLarger) return; // use default values
-  const baseSize = svgSizeMap[iconSize] || svgSizeMap.S;
-  // container has 8px margin on each side, except for XS which has 10px
-  const containerSize = baseSize + 2 * (iconSize === "XS" ? 10 : 8);
+const getSizeStyles = (
+  iconName: string,
+  size: IconBaseProps["size"] = isXS(iconName) ? "XS" : "S",
+) => {
+  const baseSize = getSvgSize(size);
+  const fontSize = calcSize(baseSize, isSemantic(iconName));
+  if (fontSize === 16) return; // use default values
+
+  const containerSize = baseSize + 2 * (baseSize === 12 ? 10 : 8);
 
   return {
+    fontSize,
     "--size": `${containerSize}px`,
-    "--svgSize": `${calcSize(baseSize, isLarger)}px`,
   };
 };
 
-export const getIconSize = (
-  iconSize?: IconSize,
-  hasSpecialSize?: boolean,
-  width?: number,
-  height?: number,
-) => {
-  if (width && height) return { width, height };
-
-  return getDims(calcSize(svgSizeMap[iconSize || "S"], hasSpecialSize));
-};
-
-export const getIconColors = (
+const getIconColors = (
   palette: string[] = [],
   color?: HvColorAny | HvColorAny[],
   semantic?: string,
@@ -91,11 +101,13 @@ export interface IconBaseProps
    * @example ["brand", "inherit"]
    */
   color?: HvColorAny | HvColorAny[];
-  /** Sets one of the standard sizes of the icons */
+  /** The size of the SVG icon */
+  size?: HvSize | IconSize | number;
+  /** Sets one of the standard sizes of the icons @deprecated use `size` instead */
   iconSize?: IconSize;
   /**
    * A string that will override the viewbox of the svg
-   * @deprecated NOT RECOMMENDED TO OVERRIDE. use `svgProps.viewBox` instead
+   * @deprecated DO NOT OVERRIDE viewbox - use the `size` instead
    */
   viewbox?: string;
   /**
@@ -127,6 +139,8 @@ export const StyledIconBase = styled("div")({
   // TODO: inherit color in v6?
   // color: "inherit",
   // TODO: remove box in v6?
+  fontSize: 16,
+  // box has a minimum size of 32px (`xs` & `sm`)
   width: "var(--size, 32px)",
   height: "var(--size, 32px)",
   transition: "rotate 0.2s ease",
@@ -136,10 +150,9 @@ const StyledSvg = styled("svg")({
   margin: "auto",
   color: "inherit",
   fill: "currentcolor",
-  // width: "1em",
-  // height: "1em",
-  // TODO: inherit size in v6?
-  // fontSize: "var(--svgSize, 16px)",
+  width: "1em",
+  height: "1em",
+  fontSize: "inherit",
 });
 
 export type IconType = React.ForwardRefExoticComponent<IconBaseProps>;
@@ -171,15 +184,14 @@ const IconBaseInternal = (
     // keep aria-label for `HvTooltip`+icon compatibility
     "aria-label": ariaLabel,
     color,
-    iconSize: iconSizeProp,
+    size,
+    iconSize,
     style: styleProp,
 
     svgProps,
     ...others
   } = props;
   const colorArray = getIconColors(palette, color, semantic, inverted);
-  const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
-  const sizeStyles = getIconSize(iconSize, isSemantic(iconName), width, height);
   const title = titleProp ?? ariaLabel;
 
   return (
@@ -188,7 +200,7 @@ const IconBaseInternal = (
       data-name={iconName}
       style={{
         ...getColorVars(colorArray),
-        ...getSizeStyles(iconSize, iconName),
+        ...getSizeStyles(iconName, size ?? iconSize),
         ...styleProp,
       }}
       {...others}
@@ -197,8 +209,8 @@ const IconBaseInternal = (
         viewBox={viewBoxProp ?? viewBox}
         focusable={false}
         role={title ? "img" : "none"}
-        // TODO: deprecate width/height in favour of `size`
-        style={sizeStyles}
+        // TODO: remove in v6
+        style={width && height ? { width, height } : undefined}
         {...svgProps}
       >
         {title ? <title>{title}</title> : null}

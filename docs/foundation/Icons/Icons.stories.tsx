@@ -33,7 +33,7 @@ const disabledArgs = {
 
 export const Main: StoryObj<typeof IconBase> = {
   args: {
-    iconSize: "S",
+    size: "sm",
     color: "secondary",
   },
   argTypes: {
@@ -54,7 +54,7 @@ export const CustomColors = {
   render: () => (
     <Bookmark
       color={["brand", "secondary"]}
-      iconSize="M"
+      size="M"
       title="Click to bookmark"
     />
   ),
@@ -73,8 +73,8 @@ export const Accessibility = {
   },
   render: () => (
     <>
-      <Machine iconSize="M" />
-      <Level4 title="Warning!" iconSize="M" color="negative" />
+      <Machine size="M" />
+      <Level4 title="Warning!" size="M" color="negative" />
       <HvIconButton title="Close" onClick={() => {}}>
         <Close />
       </HvIconButton>
@@ -89,11 +89,7 @@ export const CustomSize = {
     },
   },
   render: () => (
-    <CheckboxCheck
-      width={200}
-      height={200}
-      style={{ width: 240, height: 240 }}
-    />
+    <CheckboxCheck size={200} style={{ width: 240, height: 240 }} />
   ),
 };
 
@@ -102,7 +98,7 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
     iconName: "CheckboxCheck",
     spriteUrl: "./assets/icons.svg",
     color: "secondary",
-    iconSize: "S",
+    size: "sm",
   },
   argTypes: {
     ...disabledArgs,
@@ -175,6 +171,12 @@ export const TestSizes: StoryObj<IconBaseProps> = {
         <CheckboxCheck iconSize="S" />
         <CheckboxCheck iconSize="M" />
         <CheckboxCheck iconSize="L" />
+        <CheckboxCheck size="xs" />
+        <CheckboxCheck size="sm" />
+        <CheckboxCheck size="md" />
+        <CheckboxCheck size="lg" />
+        <CheckboxCheck size="xl" />
+        <CheckboxCheck size={120} />
       </div>
 
       <div className="flex">
@@ -182,6 +184,12 @@ export const TestSizes: StoryObj<IconBaseProps> = {
         <SpriteCheckbox iconSize="S" />
         <SpriteCheckbox iconSize="M" />
         <SpriteCheckbox iconSize="L" />
+        <SpriteCheckbox size="xs" />
+        <SpriteCheckbox size="sm" />
+        <SpriteCheckbox size="md" />
+        <SpriteCheckbox size="lg" />
+        <SpriteCheckbox size="xl" />
+        <SpriteCheckbox size={120} />
       </div>
 
       <div className="flex">
@@ -190,6 +198,8 @@ export const TestSizes: StoryObj<IconBaseProps> = {
           height={100}
           style={{ width: 140, height: 140 }}
         />
+        <CheckboxCheck size={100} style={{ width: 140, height: 140 }} />
+        <CheckboxCheck size={100} />
       </div>
     </>
   ),
