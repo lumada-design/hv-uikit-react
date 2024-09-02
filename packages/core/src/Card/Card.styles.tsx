@@ -5,6 +5,7 @@ import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvCard", {
   root: {
+    height: "fit-content",
     overflow: "visible",
     position: "relative",
     outline: `1px solid ${theme.colors.atmo4}`,

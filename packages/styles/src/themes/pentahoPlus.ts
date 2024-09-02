@@ -771,7 +771,6 @@ const pentahoPlus = makeTheme((theme) => ({
           // TODO: replace with a color from `theme.colors`
           outline: `1px solid ${theme.palette.slate[200]}`,
           overflow: "hidden",
-          height: "fit-content",
           borderRadius: theme.space.sm,
           "&:hover": {
             // TODO: replace with a color from `theme.colors`
