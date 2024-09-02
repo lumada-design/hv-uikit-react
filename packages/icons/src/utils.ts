@@ -1,4 +1,4 @@
-import type { IconBaseProps, IconSize } from "./IconBase";
+import type { IconBaseProps } from "./IconBase";
 
 const selectors = ["Checkbox", "RadioButton"];
 
@@ -30,7 +30,7 @@ const getCustomSize = (size: number, iconName: string) =>
   isSemantic(iconName) ? size + 8 : size;
 
 /** sizes for the <svg> icon */
-const getSvgSize = (size: IconBaseProps["size"] | IconSize) => {
+const getSvgSize = (size: IconBaseProps["size"]) => {
   switch (size) {
     case "xs":
     case "XS":

@@ -30,6 +30,7 @@ packages/icons/src/*
 !packages/icons/src/IconBase.tsx
 !packages/icons/src/IconSprite.tsx
 !packages/icons/src/utils.ts
+!packages/icons/src/IconContainer.tsx
 
 *.tgz
 .nx
