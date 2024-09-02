@@ -1,7 +1,7 @@
 import { type HvColor } from "@hitachivantara/uikit-styles";
 
-import { getIconSize, IconBase, IconBaseProps } from "./IconBase";
-import { isSelector, isSemantic, isSort, isXS } from "./utils";
+import { IconBase, IconBaseProps } from "./IconBase";
+import { isSelector, isSort } from "./utils";
 
 const getSecondaryColor = (iconName: string): HvColor => {
   if (isSelector(iconName)) return "atmo1";
@@ -25,34 +25,14 @@ export interface HvIconSpriteProps
 export const HvIconSprite = ({
   spriteUrl,
   iconName,
-  color,
-  iconSize: iconSizeProp,
-  height,
-  width,
   ...others
 }: HvIconSpriteProps) => {
-  const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
-
   // this color array is fragile... we know it currently covers all the existing icons
   const baseColors: HvColor[] = ["secondary", getSecondaryColor(iconName)];
 
-  const size = getIconSize(iconSize, isSemantic(iconName), width, height);
-
   return (
-    <IconBase
-      iconName={iconName}
-      iconSize={iconSize}
-      color={color}
-      palette={baseColors}
-      height={size.height}
-      width={size.width}
-      {...others}
-    >
-      <use
-        href={`${spriteUrl}#${iconName}`}
-        height={size.height}
-        width={size.width}
-      />
+    <IconBase iconName={iconName} palette={baseColors} {...others}>
+      <use href={`${spriteUrl}#${iconName}`} />
     </IconBase>
   );
 };
