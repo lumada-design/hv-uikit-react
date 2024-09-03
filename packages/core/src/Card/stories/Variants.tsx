@@ -9,7 +9,12 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { LocationPin, WorldGlobe } from "@hitachivantara/uikit-react-icons";
+import {
+  Level0Good,
+  Level3Bad,
+  LocationPin,
+  WorldGlobe,
+} from "@hitachivantara/uikit-react-icons";
 
 const classes = {
   root: css({
@@ -55,7 +60,12 @@ const classes = {
 export const Variants = () => {
   return (
     <div className={classes.root}>
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard
+        className={classes.card}
+        bgcolor="atmo1"
+        statusColor="positive"
+        icon={<Level0Good iconSize="S" color="positive" />}
+      >
         <HvCardMedia
           component="img"
           alt="Nature"
@@ -71,7 +81,12 @@ export const Variants = () => {
         </HvCardContent>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard
+        className={classes.card}
+        bgcolor="atmo1"
+        statusColor="negative"
+        icon={<Level3Bad color="negative" />}
+      >
         <HvCardHeader
           title={
             <HvTypography variant="title4">The island of Madeira</HvTypography>
@@ -82,7 +97,6 @@ export const Variants = () => {
               <HvTypography variant="caption2">Portugal</HvTypography>
             </div>
           }
-          icon={<WorldGlobe />}
         />
         <HvCardMedia
           component="img"
@@ -92,7 +106,7 @@ export const Variants = () => {
         />
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard className={classes.card} bgcolor="atmo1" statusColor="warning">
         <HvCardHeader
           title="The island of Madeira"
           subheader={
@@ -105,7 +119,7 @@ export const Variants = () => {
         />
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard className={classes.card} bgcolor="atmo1" statusColor="neutral">
         <HvCardHeader
           title="The island of Madeira"
           subheader={
@@ -125,7 +139,7 @@ export const Variants = () => {
         </HvCardContent>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard className={classes.card} bgcolor="atmo1" statusColor="cat1">
         <HvCardHeader
           title={
             <div className={classes.header}>
@@ -151,7 +165,7 @@ export const Variants = () => {
         </HvActionBar>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1">
+      <HvCard className={classes.card} bgcolor="atmo1" statusColor="cat2">
         <HvCardContent>
           <HvTypography>
             Madeira is a stunning Portuguese archipelago known for its lush
