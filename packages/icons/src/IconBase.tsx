@@ -129,6 +129,7 @@ export const StyledIconBase = styled("div")({
   // TODO: remove box in v6?
   width: "var(--size, 32px)",
   height: "var(--size, 32px)",
+  transition: "rotate 0.2s ease",
 });
 
 const StyledSvg = styled("svg")({

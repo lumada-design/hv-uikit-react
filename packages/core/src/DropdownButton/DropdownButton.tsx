@@ -50,11 +50,7 @@ export const HvDropdownButton = forwardRef<
   const { classes, cx } = useClasses(classesProp);
 
   const endIcon = icon ? undefined : (
-    <DropDownXS
-      iconSize="XS"
-      style={{ rotate: open ? "180deg" : undefined }}
-      className={classes.arrow}
-    />
+    <DropDownXS iconSize="XS" style={{ rotate: open ? "180deg" : undefined }} />
   );
 
   return (

@@ -186,7 +186,6 @@ const Page = () => {
         <DropUpXS
           iconSize="XS"
           style={{ rotate: !minimize ? "180deg" : undefined }}
-          className={classes.toggleIcon}
         />
       ),
     },

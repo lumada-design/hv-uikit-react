@@ -36,7 +36,6 @@ export const classes = {
     top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight})`,
     height: `calc(100% - ${theme.header.height} - ${theme.header.secondLevelHeight})`,
   }),
-  toggleIcon: css({ transition: "rotate 0.2s ease" }),
   titleRoot: css({
     display: "flex",
     width: "100%",
