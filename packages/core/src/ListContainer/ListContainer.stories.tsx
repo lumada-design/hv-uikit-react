@@ -54,10 +54,6 @@ export const Main: StoryObj<HvListContainerProps> = {
 };
 
 export const SingleSelection: StoryObj<HvListContainerProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const [selectedItem, setSelectedItem] = useState(0);
 

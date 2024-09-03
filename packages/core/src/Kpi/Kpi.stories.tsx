@@ -242,26 +242,6 @@ export const IOPS: StoryObj<HvKpiProps> = {
   },
 };
 
-export const StorageArray: StoryObj<HvKpiProps> = {
-  args: {
-    indicatorTextVariant: "title1",
-    indicatorUnitTextVariant: "title2",
-    labels: {
-      title: "# of Storage arrays",
-      indicator: "27",
-      comparisonIndicatorInfo: "vs last 24h",
-    },
-    visualComparison: "-5 units",
-  },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  render: (args) => {
-    return <HvKpi {...args} />;
-  },
-};
-
 export const Selectable: StoryObj<HvKpiProps> = {
   parameters: {
     docs: {

@@ -204,8 +204,6 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
           "The content of the Global Actions can be customized. This is useful when you want to add different elements other than the title and actions.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const classes = {

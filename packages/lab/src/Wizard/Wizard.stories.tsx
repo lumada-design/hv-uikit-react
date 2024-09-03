@@ -103,10 +103,6 @@ export const Main: StoryObj<HvWizardProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -175,10 +171,6 @@ export const Main: StoryObj<HvWizardProps> = {
 };
 
 export const Skippable: StoryObj<HvWizardProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

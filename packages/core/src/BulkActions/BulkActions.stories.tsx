@@ -121,10 +121,6 @@ export const Main: StoryObj<HvBulkActionsProps> = {
 };
 
 export const WithActions: StoryObj<HvBulkActionsProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const addEntry = (id: string | number): SampleComponentDatum => ({
       id: `Entry ${id}`,

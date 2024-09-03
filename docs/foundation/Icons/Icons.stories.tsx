@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { HvIconButton } from "@hitachivantara/uikit-react-core";
 import {
-  Abacus,
   Bookmark,
   CheckboxCheck,
   Close,
@@ -129,20 +128,11 @@ export const Test: StoryObj<IconBaseProps> = {
     color: ["secondary", "negative", "positive"],
   },
   render: (args) => (
-    <>
-      <div className="flex flex-wrap">
-        {Object.entries(icons).map(([name, Icon]) => (
-          <Icon key={name} {...args} />
-        ))}
-      </div>
-      <div className="flex">
-        {/* Visual test for icon size */}
-        <Abacus {...args} iconSize="XS" />
-        <Abacus {...args} iconSize="S" />
-        <Abacus {...args} iconSize="M" />
-        <Abacus {...args} iconSize="L" />
-      </div>
-    </>
+    <div className="flex flex-wrap">
+      {Object.entries(icons).map(([name, Icon]) => (
+        <Icon key={name} {...args} />
+      ))}
+    </div>
   ),
 };
 
@@ -157,18 +147,49 @@ export const TestSprites: StoryObj<HvIconSpriteProps> = {
     color: ["secondary", "negative", "positive"],
   },
   render: (args) => (
+    <div className="flex flex-wrap">
+      {Object.keys(icons).map((name) => (
+        <HvIconSprite {...args} key={name} iconName={name} />
+      ))}
+    </div>
+  ),
+};
+
+const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
+  <HvIconSprite
+    spriteUrl="./assets/icons.svg"
+    iconName="CheckboxCheck"
+    {...props}
+  />
+);
+
+export const TestSizes: StoryObj<IconBaseProps> = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+    docs: { disable: true },
+  },
+  render: () => (
     <>
-      <div className="flex flex-wrap">
-        {Object.keys(icons).map((name) => (
-          <HvIconSprite {...args} key={name} iconName={name} />
-        ))}
-      </div>
       <div className="flex">
-        {/* Visual test for icon size */}
-        <HvIconSprite {...args} iconName="Abacus" iconSize="XS" />
-        <HvIconSprite {...args} iconName="Abacus" iconSize="S" />
-        <HvIconSprite {...args} iconName="Abacus" iconSize="M" />
-        <HvIconSprite {...args} iconName="Abacus" iconSize="L" />
+        <CheckboxCheck iconSize="XS" />
+        <CheckboxCheck iconSize="S" />
+        <CheckboxCheck iconSize="M" />
+        <CheckboxCheck iconSize="L" />
+      </div>
+
+      <div className="flex">
+        <SpriteCheckbox iconSize="XS" />
+        <SpriteCheckbox iconSize="S" />
+        <SpriteCheckbox iconSize="M" />
+        <SpriteCheckbox iconSize="L" />
+      </div>
+
+      <div className="flex">
+        <CheckboxCheck
+          width={100}
+          height={100}
+          style={{ width: 140, height: 140 }}
+        />
       </div>
     </>
   ),

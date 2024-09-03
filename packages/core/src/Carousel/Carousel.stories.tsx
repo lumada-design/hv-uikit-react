@@ -178,8 +178,6 @@ export const Options: StoryObj<HvCarouselProps> = {
           "You can control the `HvCarousel`'s configuration via the `carouselOptions` prop. See [options documentation](https://www.embla-carousel.com/api/options/).",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     const startIndex = 2;

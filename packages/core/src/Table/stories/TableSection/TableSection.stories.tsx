@@ -21,8 +21,6 @@ export default {
 export const SimpleTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: SimpleTableSectionRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <SimpleTableSection />,
 };

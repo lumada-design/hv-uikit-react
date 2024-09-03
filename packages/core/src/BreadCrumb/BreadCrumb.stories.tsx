@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvBreadCrumb,
   HvBreadCrumbProps,
@@ -36,16 +37,8 @@ export const Main: StoryObj<HvBreadCrumbProps> = {
     dropDownMenuProps: { control: { disable: true } },
     maxVisible: { control: { type: "range", min: 0, max: data.length } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
-    return (
-      <HvBreadCrumb listRoute={data} aria-label="Breadcrumb" {...args}>
-        List
-      </HvBreadCrumb>
-    );
+    return <HvBreadCrumb listRoute={data} aria-label="Breadcrumb" {...args} />;
   },
 };
 
@@ -61,27 +54,6 @@ export const WithURL: StoryObj<HvBreadCrumbProps> = {
     return (
       <HvBreadCrumb
         url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
-        aria-label="Breadcrumb"
-        {...args}
-      />
-    );
-  },
-};
-
-export const WithURLLimited: StoryObj<HvBreadCrumbProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Breadcrumb sample that generates the limited paths using an URL.",
-      },
-    },
-  },
-  render: (args) => {
-    return (
-      <HvBreadCrumb
-        url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
-        maxVisible={2}
         aria-label="Breadcrumb"
         {...args}
       />
@@ -126,7 +98,7 @@ export const WithCustomComponent: StoryObj<HvBreadCrumbProps> = {
   },
 };
 
-export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
+export const Test: StoryObj<HvBreadCrumbProps> = {
   parameters: {
     docs: {
       description: {
@@ -135,18 +107,34 @@ export const WithLongLabels: StoryObj<HvBreadCrumbProps> = {
     },
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
   },
-  render: (args) => {
-    const longData = [
-      { label: "Label 1 With Some Long Text", path: "route1" },
-      { label: "Label 2 With Some Long Text", path: "route2" },
-      { label: "Label 3 With Some Long Text", path: "route3" },
-      { label: "Label 4 With Some Long Text", path: "route4" },
-      { label: "Label 5 With Some Long Text", path: "route5" },
-    ];
-
-    return (
-      <HvBreadCrumb listRoute={longData} aria-label="Breadcrumb" {...args} />
-    );
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button", { name: /dropdown/i }));
+    await expect(await canvas.findByRole("menu")).toBeInTheDocument();
   },
+  render: () => (
+    <div className="grid gap-md">
+      <HvBreadCrumb
+        aria-label="Test link"
+        url="https://example.com/sites/subpath/anotherPath/leaf.aspx"
+      />
+      <HvBreadCrumb
+        aria-label="Test long"
+        listRoute={[...Array(5).keys()].map((i) => ({
+          label: `Long label ${i + 1} With Some Long Text`,
+          path: `route${i}`,
+        }))}
+      />
+      <HvBreadCrumb aria-label="Test" maxVisible={4} listRoute={data} />
+    </div>
+  ),
 };

@@ -86,47 +86,26 @@ const entries = [
   { name: "Forward", description: "Update Build" },
 ];
 
-const getDate = (): string => {
-  const start = new Date(2018, 1, 1);
-  const end = new Date();
-  const date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
-  );
-
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDay()}`;
+const getDate = (i: number): string => {
+  return new Date(2018, 4, i * 3).toISOString().slice(0, 10);
 };
 
-const getRandomStatus = (): number => {
-  return Math.floor(Math.random() * 4);
-};
+const getServerID = (i: number): number => Math.floor(100000000 + 17 * i);
 
-const getServerID = (): number =>
-  Math.floor(100000000 + Math.random() * 1000000000);
-
-const getBuild = (): string => {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let result = "";
-  const charactersLength = characters.length;
-  for (let i = 0; i < 6; i += 1) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-};
-
-const getRandEntry = () => entries[Math.floor(Math.random() * entries.length)];
+const getOption = <T,>(opts: T[], i: number) => opts[i % opts.length];
 
 export const createEntry = (i: number): ListViewEntry => {
-  const entry = getRandEntry();
+  const entry = getOption(entries, i);
+  const serverId = getServerID(i);
 
   return {
     id: `${i + 1}`,
     name: entry.name,
     description: entry.description,
-    serverId: getServerID(),
-    created: getDate(),
-    build: getBuild(),
-    status: getRandomStatus(),
+    serverId,
+    created: getDate(i),
+    build: btoa(String(serverId)).slice(5),
+    status: i % 4,
   };
 };
 
@@ -134,27 +113,23 @@ export const createEntry = (i: number): ListViewEntry => {
 
 export type TrendData = (string | number)[][];
 
-const getRandom = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min) + min);
-};
-
 export const getTrendData = (variation: string): TrendData => {
   if (variation === "up") {
     return [
       ["Count", "Requests"],
-      ["1", getRandom(200, 500)],
-      ["2", getRandom(500, 1000)],
-      ["3", getRandom(1000, 2000)],
-      ["4", getRandom(2000, 3000)],
+      ["1", 265],
+      ["2", 734],
+      ["3", 1420],
+      ["4", 2780],
     ];
   }
 
   return [
     ["Count", "Requests"],
-    ["1", getRandom(2000, 3000)],
-    ["2", getRandom(1000, 2000)],
-    ["3", getRandom(500, 1000)],
-    ["4", getRandom(200, 500)],
+    ["1", 2780],
+    ["2", 1420],
+    ["3", 734],
+    ["4", 265],
   ];
 };
 
