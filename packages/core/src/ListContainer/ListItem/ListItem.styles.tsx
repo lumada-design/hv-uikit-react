@@ -15,6 +15,7 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     position: "relative",
+    alignContent: "center",
 
     "&:not(:last-child)": {
       marginBottom: "8px",
