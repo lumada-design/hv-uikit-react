@@ -58,7 +58,4 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
   arrowContainer: {
     marginRight: theme.spacing(-2),
   },
-  arrow: {
-    transition: "rotate 0.2s ease",
-  },
 });
