@@ -773,7 +773,7 @@ const pentahoPlus = makeTheme((theme) => ({
           overflow: "hidden",
           height: "fit-content",
           borderRadius: theme.space.sm,
-          "&:hover": {
+          "&.HvCard-selectable:hover": {
             // TODO: replace with a color from `theme.colors`
             backgroundColor: theme.palette.blue[100],
             borderColor: theme.colors.primary_20,
