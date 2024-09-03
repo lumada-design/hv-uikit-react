@@ -4,8 +4,6 @@ import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { isSemantic, isXS } from "./utils";
 
-const getDims = (size: number) => ({ width: size, height: size });
-
 const calcSize = (size: number, isLarger = false) =>
   isLarger ? size + 8 : size;
 
@@ -28,24 +26,11 @@ const getSizeStyles = (iconSize: IconSize, iconName: string) => {
   const isLarger = isSemantic(iconName);
   if (iconSize === "S" && !isLarger) return; // use default values
   const baseSize = svgSizeMap[iconSize] || svgSizeMap.S;
-  // container has 8px margin on each side, except for XS which has 10px
-  const containerSize = baseSize + 2 * (iconSize === "XS" ? 10 : 8);
 
   return {
-    "--size": `${containerSize}px`,
-    "--svgSize": `${calcSize(baseSize, isLarger)}px`,
+    margin: (iconSize === "XS" ? 10 : 8) - (isLarger ? 4 : 0),
+    fontSize: calcSize(baseSize, isLarger),
   };
-};
-
-export const getIconSize = (
-  iconSize?: IconSize,
-  hasSpecialSize?: boolean,
-  width?: number,
-  height?: number,
-) => {
-  if (width && height) return { width, height };
-
-  return getDims(calcSize(svgSizeMap[iconSize || "S"], hasSpecialSize));
 };
 
 export const getIconColors = (
@@ -122,23 +107,14 @@ export interface IconBaseProps
   svgProps?: React.SVGProps<SVGSVGElement>;
 }
 
-export const StyledIconBase = styled("div")({
-  display: "flex",
-  // TODO: inherit color in v6?
-  // color: "inherit",
-  // TODO: remove box in v6?
-  width: "var(--size, 32px)",
-  height: "var(--size, 32px)",
-});
-
 const StyledSvg = styled("svg")({
-  margin: "auto",
+  margin: 8,
   color: "inherit",
   fill: "currentcolor",
-  // width: "1em",
-  // height: "1em",
+  width: "1em",
+  height: "1em",
   // TODO: inherit size in v6?
-  // fontSize: "var(--svgSize, 16px)",
+  fontSize: 16,
 });
 
 export type IconType = React.ForwardRefExoticComponent<IconBaseProps>;
@@ -178,32 +154,29 @@ const IconBaseInternal = (
   } = props;
   const colorArray = getIconColors(palette, color, semantic, inverted);
   const iconSize = iconSizeProp ?? (isXS(iconName) ? "XS" : "S");
-  const sizeStyles = getIconSize(iconSize, isSemantic(iconName), width, height);
   const title = titleProp ?? ariaLabel;
 
   return (
-    <StyledIconBase
+    <StyledSvg
+      // @ts-expect-error align types
       ref={ref}
       data-name={iconName}
       style={{
         ...getColorVars(colorArray),
         ...getSizeStyles(iconSize, iconName),
+        ...((width || height) && { fontSize: width || height }),
         ...styleProp,
       }}
+      viewBox={viewBoxProp ?? viewBox}
+      focusable={false}
+      role={title ? "img" : "none"}
+      // TODO: deprecate width/height in favour of `size`
+      {...svgProps}
       {...others}
     >
-      <StyledSvg
-        viewBox={viewBoxProp ?? viewBox}
-        focusable={false}
-        role={title ? "img" : "none"}
-        // TODO: deprecate width/height in favour of `size`
-        style={sizeStyles}
-        {...svgProps}
-      >
-        {title ? <title>{title}</title> : null}
-        {children}
-      </StyledSvg>
-    </StyledIconBase>
+      {title ? <title>{title}</title> : null}
+      {children}
+    </StyledSvg>
   );
 };
 
