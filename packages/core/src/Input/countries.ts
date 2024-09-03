@@ -224,6 +224,6 @@ export const countries = [
   ],
 ];
 
-const allCountries = countries.reduce((acc, val) => acc.concat(val), []).sort();
+export const allCountries = countries.flat().sort();
 
 export default allCountries;
