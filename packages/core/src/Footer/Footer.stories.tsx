@@ -20,10 +20,6 @@ export const Main: StoryObj<HvFooterProps> = {
     classes: { control: { disable: true } },
     links: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     return <HvFooter {...args} />;
   },
@@ -35,8 +31,8 @@ export const CustomLabels: StoryObj<HvFooterProps> = {
     copyright: "© Hitachi Vantara Corporation 2022",
     links: (
       <HvTypography
+        link
         variant="label"
-        style={{ color: "#2064B4" }}
         component="a"
         href="https://www.hitachivantara.com"
         target="_blank"

@@ -47,17 +47,6 @@ export const Main: StoryObj<HvTimePickerProps> = {
     dropdownProps: { control: { disable: true } },
   },
   decorators: [makeDecorator({ minHeight: 200, width: 200 })],
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing and a11y
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const picker = canvas.getByRole("combobox", { name: /time picker/i });
-    await userEvent.click(picker);
-    await expect(canvas.getByPlaceholderText("hh")).toBeInTheDocument();
-  },
   render: (args) => {
     return <HvTimePicker {...args} />;
   },

@@ -53,8 +53,6 @@ const images = [
   "https://images.unsplash.com/photo-1600715502630-c9300abe78a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
 ];
 
-const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
-
 export const getStatusIcon = (
   color?: AssetInventoryEntry["statusColor"] | string,
 ) => {
@@ -177,16 +175,8 @@ export const actions: HvBulkActionsProps["actions"] = [
 ];
 
 export const views: HvControlsProps["views"] = [
-  {
-    id: "card",
-    "aria-label": "Select card view",
-    icon: <Cards />,
-  },
-  {
-    id: "list",
-    "aria-label": "Select list view",
-    icon: <List />,
-  },
+  { id: "card", "aria-label": "Select card view", icon: <Cards /> },
+  { id: "list", "aria-label": "Select list view", icon: <List /> },
 ];
 
 export const rightControlValues: HvRightControlProps["values"] = [
@@ -228,7 +218,7 @@ export const rightControlValues: HvRightControlProps["values"] = [
   },
 ];
 
-const getOption = (opts: string[], i: number) => opts[i % opts.length];
+const getOption = <T,>(opts: T[], i: number) => opts[i % opts.length];
 
 const getTime = (priority: string, index: number) => {
   let i = priority === "High" ? index + 4 : index + 3;
@@ -237,18 +227,7 @@ const getTime = (priority: string, index: number) => {
   return `${i % 12}:${i % 60}:${i % 60}`;
 };
 
-const getPriority = (i: number) =>
-  (i % 2 > 0 && "High") || (i % 2 < 0 && "Medium") || "Low";
-
-const getRandomStatus = () => {
-  const colors = [
-    "neutral",
-    "positive",
-    "negative",
-    "warning",
-  ] satisfies HvColor[];
-  return colors[Math.floor(Math.random() * 5)];
-};
+const getPriority = (i: number) => getOption(["High", "Medium", "Low"], i);
 
 export const createEntry = (i: number): AssetInventoryEntry => {
   return {
@@ -260,8 +239,8 @@ export const createEntry = (i: number): AssetInventoryEntry => {
     priority: getPriority(i),
     time: getTime(getPriority(i), i),
     temperature: `${i + 35}º C`,
-    statusColor: getRandomStatus(),
-    image: getRandomImage(),
+    statusColor: getOption(["neutral", "positive", "negative", "warning"], i),
+    image: getOption(images, i),
   };
 };
 

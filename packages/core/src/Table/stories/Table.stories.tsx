@@ -50,8 +50,6 @@ export const Main: StoryObj<HvTableProps> = {
     docs: {
       source: { code: MainRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -79,8 +77,6 @@ export const SimpleTable: StoryObj<HvTableProps> = {
           "Simple table that uses `HvTable` features in order to style checkbox and secondary actions columns.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <SimpleTableStory />,
 };

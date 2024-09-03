@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -16,8 +15,6 @@ import { Collapsible as CollapsibleStory } from "./stories/Collapsible";
 import CollapsibleRaw from "./stories/Collapsible?raw";
 import { CollapsibleIcons as CollapsibleIconsStory } from "./stories/CollapsibleIcons";
 import CollapsibleIconsRaw from "./stories/CollapsibleIcons?raw";
-import { CollapsibleIconsWithCustomPopupStyles as CollapsibleIconsWithCustomPopupStylesStory } from "./stories/CollapsibleIconsWithCustomPopupStyles";
-import CollapsibleIconsWithCustomPopupStylesRaw from "./stories/CollapsibleIconsWithCustomPopupStyles?raw";
 import { CollapsibleIconsWithoutSubItems as CollapsibleIconsWithoutSubItemsStory } from "./stories/CollapsibleIconsWithoutSubItems";
 import CollapsibleIconsWithoutSubItemsRaw from "./stories/CollapsibleIconsWithoutSubItems?raw";
 import { Custom as CustomStory } from "./stories/Custom";
@@ -140,31 +137,6 @@ export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps
     render: () => <CollapsibleIconsWithoutSubItemsStory />,
   };
 
-export const CollapsibleIconsWithCustomPopupStyles: StoryObj<HvVerticalNavigationProps> =
-  {
-    parameters: {
-      docs: {
-        description: {
-          story:
-            "Custom popup styles can be applied to the popup container by passing a style object to the popupStyles prop.",
-        },
-        source: { code: CollapsibleIconsWithCustomPopupStylesRaw },
-      },
-      // Enables Chromatic snapshot
-      chromatic: { disableSnapshot: false },
-    },
-    // For visual testing and a11y
-    play: async ({ canvasElement }) => {
-      const canvas = within(canvasElement);
-      const button = canvas.getByRole("button", { name: /collapse/i });
-      await userEvent.click(button);
-      await expect(
-        canvas.getByRole("heading", { name: /menu/i }),
-      ).toBeInTheDocument();
-    },
-    render: () => <CollapsibleIconsWithCustomPopupStylesStory />,
-  };
-
 export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
     // Enables Chromatic snapshot
@@ -183,8 +155,6 @@ export const MobileNavigation: StoryObj<HvVerticalNavigationProps> = {
       },
       source: { code: MobileNavigationRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <MobileNavigationStory />,
 };

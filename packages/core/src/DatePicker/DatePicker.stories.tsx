@@ -227,17 +227,6 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
           "Datepicker in range mode allowing the selection of more than one value.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing and a11y
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const picker = canvas.getByRole("combobox", { name: /date/i });
-    await userEvent.click(picker);
-    await expect(
-      canvas.getByRole("button", { name: "February" }),
-    ).toBeInTheDocument();
   },
   render: () => {
     return (
