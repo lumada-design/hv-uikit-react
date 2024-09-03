@@ -3,8 +3,8 @@ import { Time } from "@internationalized/date";
 import { useForkRef } from "@mui/material/utils";
 import { useTimeField } from "@react-aria/datepicker";
 import {
-  TimeFieldStateOptions,
   useTimeFieldState,
+  type TimeFieldStateOptions,
 } from "@react-stately/datepicker";
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import {
@@ -32,11 +32,6 @@ const toTime = (value?: HvTimePickerValue | null) => {
   if (!value) return value;
   const { hours, minutes, seconds } = value;
   return new Time(hours, minutes, seconds);
-};
-
-const getFormat = (timeFormat?: TimeFormat) => {
-  if (timeFormat == null) return 24;
-  return timeFormat === "12" ? 12 : 24;
 };
 
 export { staticClasses as timePickerClasses };
@@ -93,7 +88,7 @@ export interface HvTimePickerProps
    * If undefined, the component will use a format according to the passed locale.
    */
   timeFormat?: TimeFormat;
-  /** Whether to show the seconds when using the native time picker */
+  /** Whether to visually show the seconds control */
   showSeconds?: boolean;
   /** Locale that will provide the time format(12 or 24 hour format). It is "overwritten" by `showAmPm` */
   locale?: string;
@@ -112,17 +107,6 @@ export interface HvTimePickerProps
   escapeWithReference?: boolean;
   /** Extra properties to be passed to the TimePicker's dropdown. */
   dropdownProps?: Partial<HvBaseDropdownProps>;
-  /**
-   * The label of the form element.
-   *
-   * The form element must be labeled for accessibility reasons.
-   * If not provided, an aria-label or aria-labelledby must be provided instead.
-   */
-  label?: React.ReactNode;
-  /**
-   * Provide additional descriptive text for the form element.
-   */
-  description?: React.ReactNode;
 }
 
 /**
@@ -189,8 +173,8 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
       isRequired: required,
       isReadOnly: readOnly,
       isDisabled: disabled,
-      granularity: "second",
-      hourCycle: getFormat(timeFormat),
+      granularity: showSeconds === false ? "minute" : "second",
+      hourCycle: timeFormat === "12" ? 12 : 24,
       onChange: (value) => {
         const { hour: hours, minute: minutes, second: seconds } = value;
         onChange?.({ hours, minutes, seconds });

@@ -140,6 +140,11 @@ export const Variants: StoryObj<HvTimePickerProps> = {
           statusMessage="This is an invalid time"
           defaultValue={value}
         />
+        <HvTimePicker
+          showSeconds={false}
+          label="Hide Seconds"
+          defaultValue={value}
+        />
       </div>
     );
   },
