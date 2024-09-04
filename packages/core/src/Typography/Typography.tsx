@@ -101,7 +101,7 @@ export const HvTypography = fixedForwardRef(function HvTypography<
     disabled = false,
     ...others
   } = useDefaultProps("HvTypography", props);
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
   const { activeTheme } = useTheme();
 
   const variant = mapVariant(variantProp, activeTheme?.base);
@@ -113,6 +113,7 @@ export const HvTypography = fixedForwardRef(function HvTypography<
     <Component
       ref={ref}
       className={cx(
+        css({ ...activeTheme?.typography[variant] }),
         classes.root,
         classes[variant],
         {
