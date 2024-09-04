@@ -5,13 +5,11 @@ export const { staticClasses, useClasses } = createClasses(
   "HvVerticalNavigationActions",
   {
     root: {
-      display: "block",
-      background: theme.colors.atmo1,
+      display: "flex",
+      flexDirection: "column",
       marginTop: "auto",
 
-      "& :not(:last-child)": {
-        marginBottom: "8px",
-      },
+      gap: theme.space.xs,
     },
     hide: {
       display: "none",

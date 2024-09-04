@@ -9,9 +9,14 @@ export const { staticClasses, useClasses } = createClasses(
       alignItems: "center",
       borderLeft: `4px solid transparent`,
       minHeight: "48px",
+      color: "inherit",
       marginBottom: "8px",
       "& > button": {
         marginLeft: "auto",
+      },
+
+      "& .HvListItem-startAdornment .color0": {
+        fill: "currentColor",
       },
     },
     listItemSelected: {
@@ -21,7 +26,9 @@ export const { staticClasses, useClasses } = createClasses(
     listItemFocus: {
       background: theme.colors.atmo3,
     },
-    forwardButton: {},
+    forwardButton: {
+      color: "inherit",
+    },
     listContainer: {},
     listItemDisabled: {},
   },

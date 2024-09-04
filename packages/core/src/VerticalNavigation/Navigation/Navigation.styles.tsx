@@ -1,13 +1,10 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses(
   "HvVerticalNavigationTree",
   {
     root: {
       display: "block",
-      background: theme.colors.atmo1,
-
       overflowY: "auto",
     },
     list: {},

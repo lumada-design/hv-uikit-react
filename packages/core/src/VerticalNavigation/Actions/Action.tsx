@@ -1,11 +1,10 @@
-import { useCallback, useContext } from "react";
+import { useContext } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvTypography, HvTypographyProps } from "../../Typography";
-import { isKey } from "../../utils/keyboardUtils";
+import { HvButton, HvButtonProps } from "../../Button";
 import { setId } from "../../utils/setId";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
 import { staticClasses, useClasses } from "./Action.styles";
@@ -15,19 +14,13 @@ export { staticClasses as actionClasses };
 export type HvVerticalNavigationActionClasses = ExtractNames<typeof useClasses>;
 
 export interface HvVerticalNavigationActionProps
-  extends Omit<HvTypographyProps, "classes" | "onClick"> {
+  extends Omit<HvButtonProps, "classes" | "icon"> {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvVerticalNavigationActionClasses;
   /** Visual label. */
   label?: string;
   /** Icon. */
   icon?: React.ReactNode;
-  /** Callback called when clicked. */
-  onClick?: (
-    event:
-      | React.KeyboardEvent<HTMLDivElement>
-      | React.MouseEvent<HTMLDivElement>,
-  ) => void;
 }
 
 export const HvVerticalNavigationAction = (
@@ -39,7 +32,6 @@ export const HvVerticalNavigationAction = (
     id,
     label = "",
     icon,
-    onClick,
     ...others
   } = useDefaultProps("HvVerticalNavigationAction", props);
 
@@ -47,21 +39,11 @@ export const HvVerticalNavigationAction = (
 
   const { classes, cx } = useClasses(classesProp);
 
-  const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (!onClick || (!isKey(event, "Enter") && !isKey(event, "Space"))) {
-        return;
-      }
-      onClick(event);
-    },
-    [onClick],
-  );
-
   return (
-    <HvTypography
+    <HvButton
       id={setId(id, "button")}
-      component="div"
-      role="button"
+      variant="secondaryGhost"
+      icon={!isOpen}
       className={cx(
         classes.action,
         {
@@ -70,14 +52,11 @@ export const HvVerticalNavigationAction = (
         },
         className,
       )}
-      tabIndex={0}
       {...(!isOpen && { "aria-label": label })}
-      onKeyDown={handleKeyDown}
-      onClick={onClick}
       {...others}
     >
       {icon}
       {isOpen && label}
-    </HvTypography>
+    </HvButton>
   );
 };

@@ -21,15 +21,8 @@ const navigationData = [
     label: "Hardware",
     icon: <BarChart />,
     data: [
-      {
-        id: "01-01",
-        label: "Ambient Monitoring",
-        icon: <BarChart />,
-      },
-      {
-        id: "01-02",
-        label: "Server Status Summary",
-      },
+      { id: "01-01", label: "Ambient Monitoring", icon: <BarChart /> },
+      { id: "01-02", label: "Server Status Summary" },
     ],
   },
   {
@@ -37,27 +30,14 @@ const navigationData = [
     label: "System",
     icon: <Deploy />,
     data: [
-      {
-        id: "02-01",
-        label: "Buckets",
-        icon: <Deploy />,
-      },
-      {
-        id: "02-02",
-        label: "Admin Users",
-      },
+      { id: "02-01", label: "Buckets", icon: <Deploy /> },
+      { id: "02-02", label: "Admin Users" },
       {
         id: "02-03",
         label: "Log Bundle",
         data: [
-          {
-            id: "02-03-01",
-            label: "Rest API",
-          },
-          {
-            id: "02-03-02",
-            label: "License",
-          },
+          { id: "02-03-01", label: "Rest API" },
+          { id: "02-03-02", label: "License" },
         ],
       },
     ],
@@ -66,26 +46,14 @@ const navigationData = [
     id: "03",
     label: "System 2",
     data: [
-      {
-        id: "03-01",
-        label: "Buckets",
-      },
-      {
-        id: "03-02",
-        label: "Admin Users",
-      },
+      { id: "03-01", label: "Buckets" },
+      { id: "03-02", label: "Admin Users" },
       {
         id: "03-03",
         label: "Log Bundle",
         data: [
-          {
-            id: "03-03-01",
-            label: "Rest API",
-          },
-          {
-            id: "03-03-02",
-            label: "License",
-          },
+          { id: "03-03-01", label: "Rest API" },
+          { id: "03-03-02", label: "License" },
         ],
       },
     ],
@@ -96,15 +64,11 @@ export const CollapsibleIcons = () => {
   const [value, setValue] = useState("01-01");
   const [show, setShow] = useState(false);
 
-  const handleIsExpanded = () => {
-    setShow(!show);
-  };
-
   return (
     <HvVerticalNavigation open={show} useIcons>
       <HvVerticalNavigationHeader
         title="Menu"
-        onCollapseButtonClick={handleIsExpanded}
+        onCollapseButtonClick={() => setShow(!show)}
         collapseButtonProps={{
           "aria-label": "collapseButton",
           "aria-expanded": show,

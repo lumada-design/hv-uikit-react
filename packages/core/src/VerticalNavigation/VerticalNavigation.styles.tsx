@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses(
 
       width: "220px",
 
-      background: theme.colors.atmo1,
+      backgroundColor: theme.colors.atmo1,
       boxShadow: theme.colors.shadow,
       clipPath: "inset(0px -12px 0px 0px)",
 
