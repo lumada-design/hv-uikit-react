@@ -15,11 +15,16 @@ export const { staticClasses, useClasses } = createClasses(
     },
     collapseButton: {
       marginLeft: "auto",
+      color: "inherit",
       "&$minimized": {
         marginLeft: 0,
       },
     },
-    backButton: {},
-    title: {},
+    backButton: {
+      color: "inherit",
+    },
+    title: {
+      color: "inherit",
+    },
   },
 );

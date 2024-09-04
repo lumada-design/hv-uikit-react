@@ -99,7 +99,7 @@ export const HvVerticalNavigationSlider = (
                 className={classes.forwardButton}
                 aria-label={forwardButtonAriaLabel}
               >
-                <DropRightXS />
+                <DropRightXS color="currentcolor" />
               </HvButton>
             ) : undefined
           }

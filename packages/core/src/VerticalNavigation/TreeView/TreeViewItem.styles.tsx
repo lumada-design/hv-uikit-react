@@ -43,6 +43,7 @@ export const { staticClasses, useClasses } = createClasses(
       width: "100%",
       display: "flex",
       justifyContent: "flex-start",
+      color: "inherit",
       alignItems: "center",
       height: "32px",
       borderLeft: `4px solid transparent`,
@@ -138,6 +139,9 @@ export const { staticClasses, useClasses } = createClasses(
     },
     icon: {
       display: "flex",
+      "& .color0": {
+        fill: "currentColor",
+      },
       "> div:first-of-type": {
         marginLeft: "var(--icon-margin-left)",
       },

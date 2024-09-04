@@ -7,13 +7,14 @@ import {
   useRef,
   useState,
 } from "react";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS, Forwards } from "@hitachivantara/uikit-react-icons";
 import {
   mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvAvatar } from "../../Avatar";
 import { useForkRef } from "../../hooks/useForkRef";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
@@ -24,7 +25,6 @@ import {
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
-import { IconWrapper } from "./IconWrapper";
 import {
   TreeViewControlContext,
   TreeViewStateContext,
@@ -449,10 +449,12 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             component={isLink ? "a" : "div"}
             {...(isLink ? buttonLinkProps : null)}
             ref={contentRef}
-            className={cx(classes.content, {
-              [classes.link]: isLink,
-              [classes.minimized]: !isOpen,
-            })}
+            classes={{
+              root: cx(classes.content, {
+                [classes.link]: isLink,
+                [classes.minimized]: !isOpen,
+              }),
+            }}
             variant="body"
             disabled={disabled}
             onClick={handleClick}
@@ -484,21 +486,29 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                   "aria-label": payload?.label,
                 })}
           >
-            <IconWrapper
-              icon={useIcons && icon}
-              label={payload?.label}
-              hasChildren={hasChildren}
-              showAvatar={!icon && useIcons}
-              isOpen={isOpen}
-              hasAnyChildWithData={hasAnyChildWithData}
-              style={mergeStyles(
-                {},
-                {
-                  "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
-                },
-              )}
+            <div
               className={classes.icon}
-            />
+              style={mergeStyles(undefined, {
+                "--icon-margin-left": hasAnyChildWithData ? "auto" : "unset",
+              })}
+            >
+              {!icon && useIcons ? (
+                <HvAvatar
+                  variant="square"
+                  size="xs"
+                  backgroundColor="secondary_80"
+                >
+                  {payload?.label?.substring(0, 1)}
+                </HvAvatar>
+              ) : (
+                useIcons && icon
+              )}
+              {hasChildren && !isOpen ? (
+                <Forwards iconSize="XS" />
+              ) : (
+                hasAnyChildWithData && !isOpen && <div />
+              )}
+            </div>
 
             {isOpen && (
               <div
@@ -511,7 +521,12 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               </div>
             )}
 
-            {isOpen && expandable && (expanded ? <DropUpXS /> : <DropDownXS />)}
+            {isOpen && expandable && (
+              <DropDownXS
+                color="currentcolor"
+                style={{ rotate: expanded ? "180deg" : undefined }}
+              />
+            )}
           </HvTypography>
         </HvTooltip>
       );

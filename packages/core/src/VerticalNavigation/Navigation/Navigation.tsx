@@ -13,7 +13,7 @@ import {
   HvVerticalNavigationSlider,
   HvVerticalNavigationSliderProps,
 } from "../NavigationSlider";
-import { getParentItemById } from "../NavigationSlider/utils/NavigationSlider.utils";
+import { getParentItemById } from "../NavigationSlider/utils";
 import {
   HvVerticalNavigationTreeView,
   HvVerticalNavigationTreeViewItem,
