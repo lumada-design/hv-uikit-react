@@ -51,9 +51,6 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     margin: 0,
     padding: 0,
     height: "fit-content",
-    "& > *": {
-      margin: -1,
-    },
   },
   subtle: {
     backgroundColor: "transparent",

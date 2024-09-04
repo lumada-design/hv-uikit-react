@@ -22,8 +22,5 @@ export const { staticClasses, useClasses } = createClasses(name, {
       ...outlineStyles,
     },
   },
-  iconContainer: {
-    width: "32px",
-    height: "32px",
-  },
+  iconContainer: {},
 });
