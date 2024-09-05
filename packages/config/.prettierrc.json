@@ -1,8 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
-  ],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
 
   "importOrder": [
     "<BUILTIN_MODULES>",
@@ -15,5 +12,11 @@
     "",
     "^[./]"
   ],
-  "importOrderTypeScriptVersion": "5.5.4"
+
+  "overrides": [
+    {
+      "files": ["*.hbs", "pnpm-lock.yaml", "yarn.lock"],
+      "options": { "rangeEnd": 0 }
+    }
+  ]
 }
