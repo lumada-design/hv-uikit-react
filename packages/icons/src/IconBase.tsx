@@ -59,7 +59,21 @@ export interface IconBaseProps
    * @example ["brand", "inherit"]
    */
   color?: HvColorAny | HvColorAny[];
-  /** The size of the SVG icon */
+  /**
+   * The size of the SVG icon. Takes in a `number` in pixels or any `HvSize` or `IconSize`.
+   *
+   * Using this new prop:
+   * - overrides the deprecated `iconSize`, `height`, and `width` props
+   * - makes the icon use the `"currentcolor"`, if the `color` isn't passed
+   *
+   * @example
+   * size={16} // 16px
+   * size="S" // 16px
+   * size="sm" // 16px
+   * size="md" // 32px
+   *
+   * @default "S"
+   */
   size?: HvSize | IconSize | number;
   /** Sets one of the standard sizes of the icons @deprecated use `size` instead */
   iconSize?: IconSize;
@@ -152,12 +166,19 @@ const IconBaseInternal = (
   const colorArray = getIconColors(palette, color, semantic, inverted);
   const title = titleProp ?? ariaLabel;
 
+  /** Whether the icon colors should be inherited. Used for icons:
+   * - using the new `size` prop (backwards compatibility) - TODO: make default in v6
+   * - without a custom user-provided `color`
+   * - with a single `palette` color
+   */
+  const inheritColor = !!size && !color && palette?.length === 1;
+
   return (
     <StyledIconBase
       ref={ref}
       data-name={iconName}
       style={{
-        ...getColorVars(colorArray),
+        ...(!inheritColor && getColorVars(colorArray)),
         ...getSizeStyles(iconName, size ?? iconSize),
         ...styleProp,
       }}
