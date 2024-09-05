@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -15,8 +16,6 @@ import { Collapsible as CollapsibleStory } from "./stories/Collapsible";
 import CollapsibleRaw from "./stories/Collapsible?raw";
 import { CollapsibleIcons as CollapsibleIconsStory } from "./stories/CollapsibleIcons";
 import CollapsibleIconsRaw from "./stories/CollapsibleIcons?raw";
-import { CollapsibleIconsWithoutSubItems as CollapsibleIconsWithoutSubItemsStory } from "./stories/CollapsibleIconsWithoutSubItems";
-import CollapsibleIconsWithoutSubItemsRaw from "./stories/CollapsibleIconsWithoutSubItems?raw";
 import { Custom as CustomStory } from "./stories/Custom";
 import CustomRaw from "./stories/Custom?raw";
 import { Main as MainStory } from "./stories/Main";
@@ -25,6 +24,7 @@ import { MobileNavigation as MobileNavigationStory } from "./stories/MobileNavig
 import MobileNavigationRaw from "./stories/MobileNavigation?raw";
 import { SliderMode as SliderModeStory } from "./stories/SliderMode";
 import SliderModeRaw from "./stories/SliderMode?raw";
+import { Test as TestStory } from "./stories/Test";
 import { TreeViewMode as TreeViewModeStory } from "./stories/TreeViewMode";
 import TreeViewModeRaw from "./stories/TreeViewMode?raw";
 import { WithoutActions as WithoutActionsStory } from "./stories/WithoutActions";
@@ -50,9 +50,7 @@ const meta: Meta<typeof HvVerticalNavigation> = {
     HvVerticalNavigationSlider,
   },
   decorators: [
-    (Story) => (
-      <div style={{ display: "flex", width: 220, height: 530 }}>{Story()}</div>
-    ),
+    (Story) => <div style={{ display: "flex", height: 530 }}>{Story()}</div>,
   ],
 };
 
@@ -65,8 +63,6 @@ export const Main: StoryObj<HvVerticalNavigationProps> = {
   },
   argTypes: {},
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     docs: { source: { code: MainRaw } },
   },
   render: (args) => <MainStory {...args} />,
@@ -82,16 +78,12 @@ export const TreeViewMode: StoryObj<HvVerticalNavigationProps> = {
       },
       source: { code: TreeViewModeRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <TreeViewModeStory />,
 };
 
 export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     docs: { source: { code: WithoutActionsRaw } },
   },
   render: () => <WithoutActionsStory />,
@@ -99,8 +91,6 @@ export const WithoutActions: StoryObj<HvVerticalNavigationProps> = {
 
 export const Collapsible: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     docs: { source: { code: CollapsibleRaw } },
   },
   render: () => <CollapsibleStory />,
@@ -115,32 +105,12 @@ export const CollapsibleIcons: StoryObj<HvVerticalNavigationProps> = {
       },
       source: { code: CollapsibleIconsRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <CollapsibleIconsStory />,
 };
 
-export const CollapsibleIconsWithoutSubItems: StoryObj<HvVerticalNavigationProps> =
-  {
-    parameters: {
-      docs: {
-        description: {
-          story:
-            "When collapsed in icon mode and no item has sub item, the panel will be have a smaller width.",
-        },
-        source: { code: CollapsibleIconsWithoutSubItemsRaw },
-      },
-      // Enables Chromatic snapshot
-      chromatic: { disableSnapshot: false },
-    },
-    render: () => <CollapsibleIconsWithoutSubItemsStory />,
-  };
-
 export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
     docs: { source: { code: SliderModeRaw } },
   },
   render: () => <SliderModeStory />,
@@ -170,5 +140,42 @@ export const Custom: StoryObj<HvVerticalNavigationProps> = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button", { name: /jobs/i }));
+    await userEvent.keyboard("{tab}");
+    expect(canvas.getByRole("button", { name: /charts/i })).toHaveFocus();
+  },
   render: () => <CustomStory />,
+};
+
+export const Test: StoryObj<HvVerticalNavigationProps> = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          { id: "landmark-unique", enabled: false },
+          { id: "color-contrast", enabled: false },
+        ],
+      },
+    },
+    chromatic: { disableSnapshot: false, delay: 5000 },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const buttons = canvas.getAllByRole("button", { name: "collapseButton" });
+    await userEvent.click(buttons[0]);
+    const hwButtons = canvas.getAllByRole("button", { name: /hardware/i });
+    expect(hwButtons).toHaveLength(2);
+    await userEvent.click(hwButtons[1]);
+  },
+  render: () => (
+    <div className="flex gap-sm">
+      <TestStory />
+      <TestStory mode="treeview" collapsible defaultExpanded />
+      <SliderModeStory />
+      <CollapsibleIconsStory />
+      <CollapsibleIconsStory />
+    </div>
+  ),
 };

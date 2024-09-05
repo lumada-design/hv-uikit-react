@@ -2,6 +2,7 @@ import { useState } from "react";
 import { css } from "@emotion/css";
 import {
   HvButton,
+  HvButtonProps,
   HvTypography,
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -19,16 +20,14 @@ import {
   Forwards,
   Job,
 } from "@hitachivantara/uikit-react-icons";
-import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 const classes = {
   header: css({
     display: "flex",
     flexDirection: "column",
     gap: theme.space.md,
-    alignItems: "var(--header-alignment)",
-    "& span": { color: theme.colors.base_light },
-    "& svg *.color0": { fill: theme.colors.base_light },
+    "& span": { color: "inherit" },
+    "& svg *.color0": { fill: "inherit" },
   }),
   appName: css({
     display: "flex",
@@ -42,28 +41,34 @@ const classes = {
     position: "absolute",
     top: 0,
     right: 0,
-    "& svg *.color0": { fill: theme.colors.base_light },
   }),
 };
 
 const data = [
   { id: "00", label: "Jobs", icon: <Job /> },
-  {
-    id: "01",
-    label: "Charts",
-    icon: <BarChart />,
-  },
-  {
-    id: "02",
-    label: "Deployment",
-    icon: <Deploy />,
-  },
-  {
-    id: "03",
-    label: "Cloud",
-    icon: <Cloud />,
-  },
+  { id: "01", label: "Charts", icon: <BarChart /> },
+  { id: "02", label: "Deployment", icon: <Deploy /> },
+  { id: "03", label: "Cloud", icon: <Cloud /> },
 ];
+
+interface CollapsibleButtonProps extends Omit<HvButtonProps, "icon"> {
+  collapsed: boolean;
+  label: React.ReactNode;
+  icon: React.ReactNode;
+}
+
+const CollapsibleButton = ({
+  collapsed,
+  label,
+  icon,
+  ...others
+}: CollapsibleButtonProps) => {
+  const props = collapsed
+    ? { "aria-label": String(label), children: icon, icon: true }
+    : { startIcon: icon, children: label };
+
+  return <HvButton {...props} {...others} />;
+};
 
 export const Custom = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -72,34 +77,29 @@ export const Custom = () => {
     <HvVerticalNavigation open={!collapsed} useIcons>
       <div
         className={classes.header}
-        style={mergeStyles(
-          {},
-          {
-            "--header-alignment": collapsed ? "center" : "stretch",
-          },
-        )}
+        style={{ alignItems: collapsed ? "center" : "stretch" }}
       >
         {collapsed ? (
-          <>
-            <Favorite />
-            <HvButton icon variant="primary" aria-label="Create">
-              <Add />
-            </HvButton>
-          </>
+          <Favorite />
         ) : (
-          <>
-            <div className={classes.appName}>
-              <Favorite />
-              <HvTypography variant="label">Custom App</HvTypography>
-            </div>
-            <HvButton endIcon={<Add />}>Create</HvButton>
-          </>
+          <div className={classes.appName}>
+            <Favorite />
+            <HvTypography variant="label">Custom App</HvTypography>
+          </div>
         )}
+        <CollapsibleButton
+          collapsed={collapsed}
+          variant="primary"
+          icon={<Add />}
+          label="Create"
+        />
       </div>
       <HvVerticalNavigationTree data={data} />
       <HvVerticalNavigationActions>
         <div className={classes.collapseBtn}>
-          {!collapsed && <Backwards className={classes.collapseIcon} />}
+          {!collapsed && (
+            <Backwards color="currentcolor" className={classes.collapseIcon} />
+          )}
           <HvVerticalNavigationAction
             label={collapsed ? "Expand menu" : "Collapse menu"}
             icon={collapsed ? <Forwards /> : undefined}
