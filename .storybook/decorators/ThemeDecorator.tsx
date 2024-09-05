@@ -55,15 +55,13 @@ export const ThemeDecorator: Decorator = (Story) => {
         theme={theme}
         colorMode={mode}
       >
-        <HvVizProvider>
-          <div
-            ref={containerRef}
-            className="hv-story-sample"
-            style={{ padding: 20 }}
-          >
-            <Story />
-          </div>
-        </HvVizProvider>
+        <div
+          ref={containerRef}
+          className="hv-story-sample"
+          style={{ padding: 20 }}
+        >
+          <Story />
+        </div>
       </HvProvider>
     </>
   );

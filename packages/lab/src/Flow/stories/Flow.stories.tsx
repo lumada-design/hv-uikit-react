@@ -8,6 +8,7 @@ import {
   HvFlowProps,
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
+import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 import { BaseHook as BaseHookStory } from "./BaseHook";
 import BaseHookRaw from "./BaseHook?raw";
@@ -52,6 +53,7 @@ const meta: Meta<typeof HvFlow> = {
       },
     },
   },
+  decorators: [(Story) => <HvVizProvider>{Story()}</HvVizProvider>],
 };
 export default meta;
 
