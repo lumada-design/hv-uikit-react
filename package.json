@@ -49,6 +49,7 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@hitachivantara/uikit-config": "*",
     "@hookform/resolvers": "^3.3.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@mdx-js/react": "^2.3.0",
@@ -106,7 +107,6 @@
     "lint-staged": "^15.2.2",
     "npm-run-all2": "^6.2.2",
     "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.9",
     "pretty-quick": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -134,6 +134,10 @@
     "eslint-plugin-jsx-a11y": {
       "aria-query": "^5.3.0"
     }
+  },
+  "prettier": "@hitachivantara/uikit-config/prettier",
+  "license-compliance": {
+    "extends": "@hitachivantara/uikit-config/licenses"
   },
   "husky": {
     "hooks": {

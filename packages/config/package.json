@@ -1,0 +1,39 @@
+{
+  "name": "@hitachivantara/uikit-config",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "UI Kit Sharable projects configurations",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "sideEffects": false,
+  "keywords": [
+    "hitachi-vantara",
+    "config",
+    "ui-kit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/config"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+  },
+  "scripts": {},
+  "exports": {
+    "./prettier": "./.prettierrc.json",
+    "./licenses": "./licenses/index.js"
+  },
+  "peerDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+    "prettier": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "license-compliance": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
