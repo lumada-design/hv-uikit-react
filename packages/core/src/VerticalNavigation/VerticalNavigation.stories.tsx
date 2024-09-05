@@ -140,6 +140,12 @@ export const Custom: StoryObj<HvVerticalNavigationProps> = {
     // Enables Chromatic snapshot
     chromatic: { disableSnapshot: false },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button", { name: /jobs/i }));
+    await userEvent.keyboard("{tab}");
+    expect(canvas.getByRole("button", { name: /charts/i })).toHaveFocus();
+  },
   render: () => <CustomStory />,
 };
 

@@ -606,7 +606,8 @@ const pentahoPlus = makeTheme((theme) => ({
     HvVerticalNavigation: {
       classes: {
         root: {
-          background: slate[900],
+          color: theme.colors.base_light,
+          backgroundColor: slate[900],
           borderRight: `1px solid ${slate[500]}`,
           "& > :not(nav:first-of-type)": {
             borderTop: `1px solid ${slate[500]}`,
@@ -623,51 +624,13 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
-    HvVerticalNavigationActions: {
-      classes: {
-        root: {
-          background: slate[900],
-        },
-      },
-    },
     HvVerticalNavigationAction: {
       classes: {
         action: {
-          color: theme.colors.base_light,
           borderRadius: "8px",
-          "& svg *.color0": { fill: theme.colors.base_light },
-          "&:hover": {
+          "&:hover, &:focus": {
             backgroundColor: slate[700],
           },
-          "&:focus": {
-            backgroundColor: slate[700],
-          },
-        },
-      },
-    },
-    HvVerticalNavigationHeader: {
-      classes: {
-        root: {
-          "& svg *.color0": { fill: theme.colors.base_light },
-        },
-        backButton: {
-          "& svg *.color0": { fill: theme.colors.base_light },
-        },
-        collapseButton: {
-          "& svg *.color0": { fill: theme.colors.base_light },
-        },
-        title: {
-          color: theme.colors.base_light,
-        },
-      },
-    },
-    HvVerticalNavigationTree: {
-      classes: {
-        root: {
-          background: slate[900],
-        },
-        navigationPopup: {
-          color: theme.colors.base_light,
         },
       },
     },
@@ -677,8 +640,6 @@ const pentahoPlus = makeTheme((theme) => ({
           minHeight: "32px",
           borderLeft: "unset",
           borderRadius: "8px",
-          color: theme.colors.base_light,
-          "& svg *.color0": { fill: theme.colors.base_light },
           "&.HvIsFocused": {
             backgroundColor: slate[700],
           },
@@ -692,9 +653,6 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: neutral[800],
           "& .HvListItem-startAdornment": { backgroundColor: "transparent" },
           "& .HvListItem-endAdornment": { backgroundColor: "transparent" },
-          "&& svg *.color0": {
-            fill: neutral[500],
-          },
         },
         listItemSelected: {
           background: blue[950],
@@ -703,18 +661,8 @@ const pentahoPlus = makeTheme((theme) => ({
         listItemFocus: {
           background: slate[700],
         },
-        forwardButton: {
-          "& svg *.color0": { fill: theme.colors.base_light },
-        },
         listContainer: {
           padding: theme.space.sm,
-        },
-      },
-    },
-    HvVerticalNavigationTreeView: {
-      classes: {
-        root: {
-          background: slate[900],
         },
       },
     },
@@ -723,29 +671,19 @@ const pentahoPlus = makeTheme((theme) => ({
         content: {
           borderLeft: "unset",
           borderRadius: "8px",
-          "& svg *.color0": { fill: theme.colors.base_light },
           ".HvVerticalNavigationTreeViewItem-selected>&": {
             background: blue[950],
             borderLeft: "unset",
           },
-          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&):hover":
+          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&)":
             {
-              background: slate[700],
-            },
-          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&):focus-visible":
-            {
-              background: slate[700],
-            },
-          ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&).focus-visible":
-            {
-              background: slate[700],
+              "&:hover, &:focus-visible, &.focus-visible": {
+                background: slate[700],
+              },
             },
           ".HvVerticalNavigationTreeViewItem-focused>&": {
             background: slate[700],
           },
-        },
-        label: {
-          color: theme.colors.base_light,
         },
         disabled: {
           "& .HvVerticalNavigationTreeViewItem-label": {
@@ -753,9 +691,6 @@ const pentahoPlus = makeTheme((theme) => ({
           },
           "& .HvVerticalNavigationTreeViewItem-content": {
             background: neutral[800],
-            "& svg *.color0": {
-              fill: neutral[500],
-            },
           },
         },
         icon: {
