@@ -1,3 +1,5 @@
+import type { IconBaseProps, IconSize } from "./IconBase";
+
 const selectors = ["Checkbox", "RadioButton"];
 
 const largerIcons = [
@@ -22,3 +24,46 @@ export const isSort = (iconName: string) => iconName.startsWith("Sort");
 export const isSemantic = (iconName: string) => largerIcons.includes(iconName);
 
 export const isXS = (iconName: string) => iconName.endsWith("XS");
+
+// TODO: remove in v6?
+const getCustomSize = (size: number, iconName: string) =>
+  isSemantic(iconName) ? size + 8 : size;
+
+/** sizes for the <svg> icon */
+const getSvgSize = (size: IconBaseProps["size"] | IconSize) => {
+  switch (size) {
+    case "xs":
+    case "XS":
+      return 12;
+    case "sm":
+    case "S":
+    case undefined:
+      return 16;
+    case "md":
+    case "M":
+      return 32;
+    case "lg":
+    case "L":
+      return 96;
+    case "xl":
+      return 112;
+    default:
+      return size;
+  }
+};
+
+export const getSizeStyles = (
+  iconName: string,
+  size: IconBaseProps["size"] = isXS(iconName) ? "XS" : "S",
+) => {
+  const baseSize = getSvgSize(size);
+  const fontSize = getCustomSize(baseSize, iconName);
+  if (fontSize === 16) return; // use default values
+
+  const containerSize = baseSize + 2 * (baseSize === 12 ? 10 : 8);
+
+  return {
+    fontSize,
+    "--size": `${containerSize}px`,
+  };
+};

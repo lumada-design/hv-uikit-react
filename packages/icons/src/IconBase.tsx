@@ -7,55 +7,13 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
-import { isSemantic, isXS } from "./utils";
-
-const calcSize = (size: number, isLarger = false) =>
-  isLarger ? size + 8 : size;
+import { getSizeStyles } from "./utils";
 
 const getColorVars = (colorArray: string[]) => {
   return colorArray.reduce<Record<string, string>>((acc, value, index) => {
     acc[`--color-${index}`] = value;
     return acc;
   }, {});
-};
-
-/** sizes for the <svg> icon */
-const getSvgSize = (size: IconBaseProps["size"] | IconSize) => {
-  switch (size) {
-    case "xs":
-    case "XS":
-      return 12;
-    case "sm":
-    case "S":
-    case undefined:
-      return 16;
-    case "md":
-    case "M":
-      return 32;
-    case "lg":
-    case "L":
-      return 96;
-    case "xl":
-      return 112;
-    default:
-      return size;
-  }
-};
-
-const getSizeStyles = (
-  iconName: string,
-  size: IconBaseProps["size"] = isXS(iconName) ? "XS" : "S",
-) => {
-  const baseSize = getSvgSize(size);
-  const fontSize = calcSize(baseSize, isSemantic(iconName));
-  if (fontSize === 16) return; // use default values
-
-  const containerSize = baseSize + 2 * (baseSize === 12 ? 10 : 8);
-
-  return {
-    fontSize,
-    "--size": `${containerSize}px`,
-  };
 };
 
 const getIconColors = (
