@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.71.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.70.0...@hitachivantara/uikit-react-core@5.71.0) (2024-09-05)
+
+### Bug Fixes
+
+- **ListItem:** align content to center ([e174098](https://github.com/lumada-design/hv-uikit-react/commit/e1740983c7f45120e8859731ac7b641cd42bbf51))
+- **Suggestions:** onClose & controlled open prop ([#4304](https://github.com/lumada-design/hv-uikit-react/issues/4304)) ([c7dc92b](https://github.com/lumada-design/hv-uikit-react/commit/c7dc92b5682f9e27883038ac70a12ef8e668f779))
+
+### Features
+
+- **TimePicker:** allow hiding seconds ([8c6aa3d](https://github.com/lumada-design/hv-uikit-react/commit/8c6aa3d7d41ee2a3bab06d0316e7b669bb833e62))
+
 # [5.70.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.69.0...@hitachivantara/uikit-react-core@5.70.0) (2024-08-26)
 
 ### Bug Fixes
