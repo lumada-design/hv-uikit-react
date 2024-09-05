@@ -12,6 +12,7 @@ import {
   HvBarChart,
   HvDonutChart,
   HvLineChart,
+  HvVizProvider,
 } from "@hitachivantara/uikit-react-viz";
 
 const meta: Meta<typeof HvDashboard> = {
@@ -102,7 +103,7 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
     const [canResize, setCanResize] = useState(true);
 
     return (
-      <>
+      <HvVizProvider>
         <HvButton
           variant="secondaryGhost"
           startIcon={<Tool />}
@@ -157,7 +158,7 @@ export const DataDriven: StoryObj<HvDashboardProps> = {
             );
           })}
         </HvDashboard>
-      </>
+      </HvVizProvider>
     );
   },
 };

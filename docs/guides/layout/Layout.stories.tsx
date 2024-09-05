@@ -12,7 +12,7 @@ import {
   theme,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { HvBarChart } from "@hitachivantara/uikit-react-viz";
+import { HvBarChart, HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 export default {
   title: "Guides/Layout",
@@ -107,27 +107,29 @@ export const Grid: StoryObj = {
               }),
             }}
           >
-            <HvBarChart
-              height={300}
-              data={{
-                Group: ["Group 1", "Group 2", "Group 3"],
-                "Sales Target": [2300, 1000, 7800],
-                "Sales Per Rep": [6000, 3900, 1000],
-                "Monthly Sales": [3700, 6700, 1100],
-                Target: [2100, 7700, 3000],
-                Cash: [500, 7600, 7800],
-              }}
-              groupBy="Group"
-              measures={[
-                "Sales Target",
-                "Sales Per Rep",
-                "Monthly Sales",
-                "Target",
-                "Cash",
-              ]}
-              horizontal
-              grid={{ bottom: 0 }}
-            />
+            <HvVizProvider>
+              <HvBarChart
+                height={300}
+                data={{
+                  Group: ["Group 1", "Group 2", "Group 3"],
+                  "Sales Target": [2300, 1000, 7800],
+                  "Sales Per Rep": [6000, 3900, 1000],
+                  "Monthly Sales": [3700, 6700, 1100],
+                  Target: [2100, 7700, 3000],
+                  Cash: [500, 7600, 7800],
+                }}
+                groupBy="Group"
+                measures={[
+                  "Sales Target",
+                  "Sales Per Rep",
+                  "Monthly Sales",
+                  "Target",
+                  "Cash",
+                ]}
+                horizontal
+                grid={{ bottom: 0 }}
+              />
+            </HvVizProvider>
           </HvCardContent>
         </HvCard>
       </HvGrid>

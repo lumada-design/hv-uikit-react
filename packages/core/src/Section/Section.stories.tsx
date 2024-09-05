@@ -7,7 +7,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { Duplicate, Ticket } from "@hitachivantara/uikit-react-icons";
-import { HvDonutChart } from "@hitachivantara/uikit-react-viz";
+import { HvDonutChart, HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 import { HvActionsGeneric } from "../ActionsGeneric";
 import { HvButton } from "../Button";
@@ -141,11 +141,13 @@ export const WithActions: StoryObj<HvSectionProps> = {
           </HvTypography>
 
           <div className={classes.root}>
-            <HvDonutChart
-              data={data}
-              groupBy="Country"
-              measure="Tickets Sold"
-            />
+            <HvVizProvider>
+              <HvDonutChart
+                data={data}
+                groupBy="Country"
+                measure="Tickets Sold"
+              />
+            </HvVizProvider>
             <div className={classes.content}>
               <Ticket iconSize="M" />
               <HvTypography variant="title3">
