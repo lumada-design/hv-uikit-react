@@ -80,12 +80,39 @@ export const Variants: StoryObj<HvButtonProps> = {
       <HvButton variant="positive">Positive</HvButton>
       <HvButton variant="positiveSubtle">Positive Subtle</HvButton>
       <HvButton variant="positiveGhost">Positive Ghost</HvButton>
+      <HvButton variant="positive" disabled>
+        Positive
+      </HvButton>
+      <HvButton variant="positiveSubtle" disabled>
+        Positive Subtle
+      </HvButton>
+      <HvButton variant="positiveGhost" disabled>
+        Positive Ghost
+      </HvButton>
       <HvButton variant="warning">Warning</HvButton>
       <HvButton variant="warningSubtle">Warning Subtle</HvButton>
       <HvButton variant="warningGhost">Warning Ghost</HvButton>
+      <HvButton variant="warning" disabled>
+        Warning
+      </HvButton>
+      <HvButton variant="warningSubtle" disabled>
+        Warning Subtle
+      </HvButton>
+      <HvButton variant="warningGhost" disabled>
+        Warning Ghost
+      </HvButton>
       <HvButton variant="negative">Negative</HvButton>
       <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
       <HvButton variant="negativeGhost">Negative Ghost</HvButton>
+      <HvButton variant="negative" disabled>
+        Negative
+      </HvButton>
+      <HvButton variant="negativeSubtle" disabled>
+        Negative Subtle
+      </HvButton>
+      <HvButton variant="negativeGhost" disabled>
+        Negative Ghost
+      </HvButton>
     </>
   ),
 };
@@ -351,6 +378,15 @@ export const Test: StoryObj = {
       <HvButton size="sm" variant="positiveGhost" disabled>
         Positive Ghost
       </HvButton>
+      <HvButton variant="positive" disabled>
+        Positive
+      </HvButton>
+      <HvButton variant="positiveSubtle" disabled>
+        Positive Subtle
+      </HvButton>
+      <HvButton variant="positiveGhost" disabled>
+        Positive Ghost
+      </HvButton>
       <HvButton size="md" variant="warning">
         Warning
       </HvButton>
@@ -369,6 +405,15 @@ export const Test: StoryObj = {
       <HvButton size="md" variant="warningGhost" disabled>
         Warning Ghost
       </HvButton>
+      <HvButton variant="warning" disabled>
+        Warning
+      </HvButton>
+      <HvButton variant="warningSubtle" disabled>
+        Warning Subtle
+      </HvButton>
+      <HvButton variant="warningGhost" disabled>
+        Warning Ghost
+      </HvButton>
       <HvButton size="lg" variant="negative">
         Negative
       </HvButton>
@@ -385,6 +430,15 @@ export const Test: StoryObj = {
         Negative Subtle
       </HvButton>
       <HvButton size="lg" variant="negativeGhost" disabled>
+        Negative Ghost
+      </HvButton>
+      <HvButton variant="negative" disabled>
+        Negative
+      </HvButton>
+      <HvButton variant="negativeSubtle" disabled>
+        Negative Subtle
+      </HvButton>
+      <HvButton variant="negativeGhost" disabled>
         Negative Ghost
       </HvButton>
 

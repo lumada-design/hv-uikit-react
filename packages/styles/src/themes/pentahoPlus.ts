@@ -62,6 +62,8 @@ const pentahoPlus = makeTheme((theme) => ({
         pp: {
           primary: blue[600],
           primaryAction: blue[700],
+          primaryStrong: blue[800],
+          primarySubtle: blue[200],
           primaryDimmed: blue[100],
           success: green[600],
           successAction: green[700],
@@ -94,7 +96,7 @@ const pentahoPlus = makeTheme((theme) => ({
           bgSurface: slate[50],
           bgActive: slate[200],
           bgHover: blue[100],
-          bgDisabled: slate[200],
+          bgDisabled: neutral[200],
           bgOverlay: `color-mix(in srgb, ${slate[900]} 60%, transparent)`,
           dimmer: "#FFFFFF",
         },
@@ -139,6 +141,8 @@ const pentahoPlus = makeTheme((theme) => ({
         pp: {
           primary: blue[400],
           primaryAction: blue[300],
+          primaryStrong: blue[200],
+          primarySubtle: blue[900],
           primaryDimmed: blue[950],
           success: green[600],
           successAction: green[500],
@@ -171,7 +175,7 @@ const pentahoPlus = makeTheme((theme) => ({
           bgSurface: slate[900],
           bgActive: slate[900],
           bgHover: blue[950],
-          bgDisabled: slate[900],
+          bgDisabled: neutral[900],
           bgOverlay: `color-mix(in srgb, ${slate[900]} 40%, transparent)`,
           dimmer: "#000000",
         },
@@ -472,40 +476,134 @@ const pentahoPlus = makeTheme((theme) => ({
     HvButton: {
       classes: {
         root: {
+          border: "none",
           borderRadius: theme.radii.full,
           padding: theme.spacing(0, "sm"),
-          "&:active": {
-            boxShadow: `inset 0 1px 2px 0 #00000033`, // 33 = 20% opacity
+          [`&[data-color="positive"]`]: {
+            "&:hover": {
+              backgroundColor: theme.colors.pp.successAction,
+            },
+            "&:active": {
+              backgroundColor: theme.colors.pp.successStrong,
+            },
           },
-        },
-        disabled: {
-          "&:active": {
-            boxShadow: "none",
+          [`&[data-color="negative"]`]: {
+            "&:hover": {
+              backgroundColor: theme.colors.pp.errorAction,
+            },
+            "&:active": {
+              backgroundColor: theme.colors.pp.errorStrong,
+            },
+          },
+          [`&[data-color="warning"]`]: {
+            "&:hover": {
+              backgroundColor: theme.colors.pp.warningAction,
+            },
+            "&:active": {
+              backgroundColor: theme.colors.pp.warningStrong,
+            },
           },
         },
         primary: {
           "&:hover": {
-            backgroundColor: theme.colors.primary_80,
+            backgroundColor: theme.colors.pp.primaryAction,
           },
           "&:active": {
-            backgroundColor: theme.colors.primary_80,
-            boxShadow: `inset 0 1px 2px 0 #0000004D`, // 4D = 30% opacity
+            backgroundColor: theme.colors.pp.primaryStrong,
           },
         },
         subtle: {
-          borderColor: "transparent",
+          borderTop: `1px solid ${theme.colors.atmo1}`,
+          borderBottom: `1px solid ${theme.colors.atmo4}`,
           backgroundColor: theme.colors.atmo1,
-          boxShadow: theme.colors.shadow,
+          "&:hover": {
+            backgroundColor: theme.colors.pp.bgHover,
+          },
+          "&:active": {
+            backgroundColor: theme.colors.pp.primarySubtle,
+            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
+            border: "none",
+          },
           "&.HvButton-disabled": {
-            backgroundColor: theme.colors.atmo3,
-            boxShadow: "none",
+            backgroundColor: theme.colors.pp.bgDisabled,
             "&:hover": {
-              backgroundColor: theme.colors.atmo3,
-            },
-            "&:active": {
-              boxShadow: "none",
+              backgroundColor: theme.colors.pp.bgDisabled,
             },
           },
+          "&[data-color=positive]": {
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.successDimmed,
+            },
+          },
+          [`&[data-color="negative"]`]: {
+            color: theme.colors.negative_120,
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.errorDimmed,
+            },
+          },
+          [`&[data-color="warning"]`]: {
+            color: theme.colors.warning_120,
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.warningDimmed,
+            },
+          },
+        },
+        ghost: {
+          "&:hover": {
+            backgroundColor: theme.colors.pp.primaryDimmed,
+          },
+          "&:active": {
+            backgroundColor: theme.colors.pp.primarySubtle,
+            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
+            border: "none",
+          },
+          [`&[data-color="positive"]`]: {
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.successDimmed,
+            },
+          },
+          [`&[data-color="negative"]`]: {
+            color: theme.colors.negative_120,
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.errorDimmed,
+            },
+          },
+          [`&[data-color="warning"]`]: {
+            color: theme.colors.warning_120,
+            "&:hover,&:active": {
+              backgroundColor: theme.colors.pp.warningDimmed,
+            },
+          },
+        },
+
+        semantic: {
+          "&:hover": {
+            backgroundColor: theme.colors.pp.primaryDimmed,
+          },
+          "&:active": {
+            backgroundColor: theme.colors.pp.primarySubtle,
+            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
+            border: "none",
+          },
+        },
+
+        disabled: {
+          border: "none",
+          backgroundColor: theme.colors.pp.bgDisabled,
+          color: theme.colors.pp.textDisabled,
+          "&:hover": {
+            backgroundColor: theme.colors.pp.bgDisabled,
+          },
+          "&[data-color=positive],&[data-color=warning],&[data-color=negative]":
+            {
+              color: theme.colors.pp.textDisabled,
+              "&:hover,&:active": {
+                backgroundColor: theme.colors.pp.bgDisabled,
+              },
+              "&.HvButton-ghost": {
+                backgroundColor: "transparent",
+              },
+            },
         },
       },
     },

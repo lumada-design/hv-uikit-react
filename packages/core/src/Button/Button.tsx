@@ -170,6 +170,7 @@ export const HvButton = fixedForwardRef(function HvButton<
         sizeStyles && css(sizeStyles),
         className,
       )}
+      data-color={color}
       onClick={handleClick}
       onMouseDown={handleMouseDown}
       {...(Component === "button" && { type: "button" })}
