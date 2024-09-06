@@ -22,7 +22,6 @@ interface VerticalNavigationContextValue {
   useIcons: boolean;
   slider?: boolean;
   headerTitle?: string;
-  setHeaderTitle?: React.Dispatch<React.SetStateAction<string | undefined>>;
 
   parentItem?: any;
   setParentItem?: React.Dispatch<React.SetStateAction<any>>;

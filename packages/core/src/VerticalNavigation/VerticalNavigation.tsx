@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { forwardRef, useCallback, useMemo, useState } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -67,7 +67,10 @@ export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
  *
  * Both modes are available via the `mode` property and each app should choose the most appropriate.
  */
-export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
+export const HvVerticalNavigation = forwardRef<
+  HTMLDivElement,
+  HvVerticalNavigationProps
+>((props, ref) => {
   const {
     id,
     className,
@@ -83,8 +86,6 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
   const [parentData, setParentData] = useState<NavigationData[]>([]);
 
   const [parentSelected, setParentSelected] = useState();
-
-  const [headerTitle, setHeaderTitle] = useState<string | undefined>();
 
   // navigationSlider
   const withParentData = useMemo(
@@ -104,21 +105,18 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
     [parentData],
   );
 
-  useEffect(
-    () => setHeaderTitle(parentItem?.label),
-    [parentItem, setParentItem],
-  );
+  const headerTitle = useMemo(() => parentItem?.label, [parentItem]);
 
   const navigateToParentHandler = useCallback(() => {
     setParentItem(getParentItemById(withParentData, parentItem.id));
-  }, [parentItem, setParentItem, withParentData]);
+  }, [parentItem, withParentData]);
 
   const navigateToChildHandler = useCallback(
     (event: any, item: any) => {
       setParentItem(getNavigationItemById(withParentData, item.id));
       event.stopPropagation();
     },
-    [setParentItem, withParentData],
+    [withParentData],
   );
 
   const value = useMemo(
@@ -127,7 +125,6 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
       useIcons,
       slider,
       headerTitle,
-      setHeaderTitle,
 
       parentItem,
       setParentItem,
@@ -146,7 +143,6 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
       useIcons,
       slider,
       headerTitle,
-      setHeaderTitle,
       parentItem,
       setParentItem,
       withParentData,
@@ -158,10 +154,11 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
     ],
   );
 
-  const content = (
+  return (
     <VerticalNavigationContext.Provider value={value}>
       <div
         id={id}
+        ref={ref}
         className={cx(
           classes.root,
           {
@@ -177,6 +174,4 @@ export const HvVerticalNavigation = (props: HvVerticalNavigationProps) => {
       </div>
     </VerticalNavigationContext.Provider>
   );
-
-  return content;
-};
+});
