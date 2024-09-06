@@ -22,9 +22,30 @@ jobs:
     name: Tests
     uses: ./.github/workflows/tests.yml
 
-  artifacts:
-    name: Artifacts
-    uses: ./.github/workflows/documentation.yml
-    secrets: inherit
-    with:
-      publish-folder: pr-${{ github.event.number }}
+  deploy:
+    name: Deploy
+    runs-on: [self-hosted, Linux]
+
+    concurrency:
+      group: pr-${{ github.event.number }}
+
+    env:
+      PUBLISH_FOLDER: uikit-pr-${{ github.event.number }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install-dependencies
+
+      - run: npm run build:app -- --base=/${{env.PUBLISH_FOLDER}}/
+
+      #- run: rsync -avz --delete apps/app/dist/* ${{secrets.DEPLOY_USER}}@${{secrets.DEPLOY_HOST}}:nginx/public/$PUBLISH_FOLDER
+
+      - name: Deploy
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avz --delete
+          path: apps/app/dist/*
+          remote_path: nginx/public/$PUBLISH_FOLDER
+          remote_host: ${{secrets.DEPLOY_HOST}}
+          remote_user: ${{secrets.DEPLOY_USER}}
+          remote_key: ${{secrets.DEPLOY_SSH_KEY}}
