@@ -882,36 +882,19 @@ const ds3 = makeTheme((theme) => ({
     },
     HvHeaderMenuItem: {
       classes: {
-        menu: {
-          marginTop: "2px",
-          paddingBottom: "0px",
-          paddingTop: "0px",
-          borderTop: `2px solid ${theme.colors.atmo2}`,
+        root: {
+          borderTop: "2px solid transparent",
           borderBottom: "none",
-        },
-        menubar: {
-          marginTop: "2px",
-          paddingBottom: "0px",
-          paddingTop: "0px",
-          borderTop: `2px solid ${theme.colors.atmo1}`,
-          borderBottom: "none",
+          color: theme.colors.secondary,
         },
         selected: {
+          borderBottom: "none",
+          color: theme.colors.brand,
           "&.HvHeader-MenuItem-menu": {
             borderTop: "2px solid transparent",
-            borderBottom: "none",
-            paddingTop: "0px",
-            "& > * > span": {
-              color: theme.colors.brand,
-            },
           },
           "&.HvHeader-MenuItem-menubar": {
-            borderTop: `2px solid ${theme.colors.brand}`,
-            borderBottom: "none",
-            paddingTop: "0px",
-            "& > * > span": {
-              color: theme.colors.brand,
-            },
+            borderTop: "2px solid currentcolor",
           },
         },
       },

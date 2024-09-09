@@ -22,6 +22,7 @@ const item: CSSInterpolation = {
   },
   "& span": {
     display: "inline-flex",
+    color: "inherit",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
@@ -47,57 +48,25 @@ export const { staticClasses, useClasses } = createClasses(
   {
     root: {
       display: "inline",
-      "&:hover": {
+      height: "100%",
+      borderBottom: "4px solid transparent",
+
+      ":hover, :focus-within": {
         backgroundColor: theme.colors.containerBackgroundHover,
       },
-      "&:focus-within": {
-        backgroundColor: theme.colors.containerBackgroundHover,
-      },
     },
-    menu: {
-      marginTop: 0,
-      paddingBottom: "4px",
-      paddingTop: "4px",
-      height: "100%",
-      borderTop: "none",
-      borderBottom: `4px solid ${theme.colors.atmo2}`,
-    },
-    menubar: {
-      marginTop: "0px",
-      paddingBottom: "4px",
-      paddingTop: "4px",
-      height: "100%",
-      borderTop: `0px solid ${theme.colors.atmo1}`,
-      borderBottom: `${"4px"} solid ${theme.colors.atmo1}`,
-    },
+    menu: {},
+    menubar: {},
     selected: {
-      "&$menu": {
-        marginTop: 0,
-        paddingBottom: 0,
-        borderTop: "none",
-        borderBottom: `4px solid ${theme.colors.secondary}`,
-        paddingTop: "4px",
-        height: "100%",
-        "& > * > span": {
-          color: theme.colors.secondary,
-        },
-      },
-      "&$menubar": {
-        marginTop: 0,
-        paddingBottom: 0,
-        borderTop: "none",
-        borderBottom: `4px solid ${theme.colors.secondary}`,
-        paddingTop: "4px",
-        height: "100%",
-      },
+      borderColor: theme.colors.secondary,
+      color: theme.colors.secondary,
     },
+    item,
     link: {
       textDecoration: "none",
-      ...item,
-    } as CSSInterpolation,
+    },
     button: {
       color: "inherit",
-      ...item,
-    } as CSSInterpolation,
+    },
   },
 );

@@ -104,12 +104,6 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
     dispatch?.({ type: "setItemFocused", itemFocused: event.currentTarget });
   };
 
-  const itemProps = {
-    onClick: actionHandler,
-    onKeyDown: actionHandler,
-    onFocus: handleFocus,
-  };
-
   const label = (
     <HvTypography
       component="span"
@@ -131,10 +125,16 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
     itemTarget = target;
   }
 
+  // TODO: change to "a" only in v6, as buttons aren't accessible links. Allow custom `ItemComponent` to be passed
+  const ItemComponent = itemHref ? "a" : "div";
+  // TODO: allow any custom props to be passed
+  const itemProps = itemHref
+    ? { href: itemHref, target: itemTarget, "aria-label": item.label }
+    : { role: "button", tabIndex: 0 };
+
   return (
     <li
       id={id}
-      key={item.label}
       className={cx(
         classes.root,
         {
@@ -145,36 +145,23 @@ export const HvHeaderMenuItem = (props: HvHeaderMenuItemProps) => {
         className,
       )}
     >
-      {itemHref ? (
-        <a
-          className={classes.link}
-          href={itemHref}
-          target={itemTarget}
-          {...itemProps}
-          aria-current={isCurrent}
-          // Fix for a possible bug in playwright where, even though hidden from screen readers and not appearing in the accessibility
-          // tree, due to the styling duplication (span::after - using 'data-text'), locators have to double the name.
-          aria-label={item.label}
-        >
-          {label}
-        </a>
-      ) : (
-        // keeping this code path for backwards compatibility, but
-        // shouldn't really be used as it's not accessible
-        <div
-          className={classes.button}
-          role="button"
-          {...itemProps}
-          tabIndex={0}
-          aria-current={isCurrent}
-        >
-          {label}
-        </div>
-      )}
+      <ItemComponent
+        className={cx(classes.item, {
+          [classes.link]: itemHref,
+          [classes.button]: !itemHref,
+        })}
+        onFocus={handleFocus}
+        onClick={actionHandler}
+        onKeyDown={actionHandler}
+        aria-current={isCurrent}
+        {...itemProps}
+      >
+        {label}
+      </ItemComponent>
       {/* Limits levels to no more than 2. More than that is not expected and not in DS. */}
       {hasSubLevel && currentLevel < levels && currentLevel < 2 && (
         <Bar data={data} type="menu">
-          {data.map((itm: HvHeaderNavigationItemProp) => (
+          {data.map((itm) => (
             <HvHeaderMenuItem
               key={itm.id}
               item={itm}
