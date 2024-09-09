@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -20,7 +21,10 @@ export interface HvHeaderBrandProps extends HvBaseProps {
 /**
  * Header component is used to render a header bar with logo and brand name, navigation and actions.
  */
-export const HvHeaderBrand = (props: HvHeaderBrandProps) => {
+export const HvHeaderBrand = forwardRef<
+  React.ElementRef<"div">,
+  HvHeaderBrandProps
+>((props, ref) => {
   const {
     classes: classesProp,
     logo,
@@ -32,7 +36,7 @@ export const HvHeaderBrand = (props: HvHeaderBrandProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
       {logo}
       {logo && name && <div className={classes.separator} />}
       {name && (
@@ -42,4 +46,4 @@ export const HvHeaderBrand = (props: HvHeaderBrandProps) => {
       )}
     </div>
   );
-};
+});
