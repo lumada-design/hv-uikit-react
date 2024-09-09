@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.72.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.71.0...@hitachivantara/uikit-react-core@5.72.0) (2024-09-09)
+
+### Bug Fixes
+
+- **VerticalNavigation:** forwardRef & remove useEffect ([#4320](https://github.com/lumada-design/hv-uikit-react/issues/4320)) ([23a638c](https://github.com/lumada-design/hv-uikit-react/commit/23a638ce074d0b47626b39765b03a760bc8fc9ea))
+
+### Features
+
+- **icons:** add rotate animation ([e92eaaa](https://github.com/lumada-design/hv-uikit-react/commit/e92eaaa09b8252cdca170b1a166759398e03769d))
+
 # [5.71.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.70.0...@hitachivantara/uikit-react-core@5.71.0) (2024-09-05)
 
 ### Bug Fixes

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.10.10...@hitachivantara/uikit-react-icons@5.11.0) (2024-09-09)
+
+### Features
+
+- **icons:** add rotate animation ([e92eaaa](https://github.com/lumada-design/hv-uikit-react/commit/e92eaaa09b8252cdca170b1a166759398e03769d))
+- **icons:** add size prop ([93a3a97](https://github.com/lumada-design/hv-uikit-react/commit/93a3a976ea3785b5c59a4df4eabbee564cb3a920))
+- **icons:** inherit color when using `size` ([91dfa56](https://github.com/lumada-design/hv-uikit-react/commit/91dfa5660aa431dca7012cd57c815a3b914ce70b))
+
 ## [5.10.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.10.9...@hitachivantara/uikit-react-icons@5.10.10) (2024-08-26)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

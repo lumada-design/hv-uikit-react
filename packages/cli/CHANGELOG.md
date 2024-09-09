@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.17.1...@hitachivantara/hv-uikit-cli@1.18.0) (2024-09-09)
+
+### Features
+
+- **icons:** add rotate animation ([e92eaaa](https://github.com/lumada-design/hv-uikit-react/commit/e92eaaa09b8252cdca170b1a166759398e03769d))
+
 ## [1.17.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.17.0...@hitachivantara/hv-uikit-cli@1.17.1) (2024-09-05)
 
 **Note:** Version bump only for package @hitachivantara/hv-uikit-cli
