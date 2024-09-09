@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -14,7 +15,10 @@ export interface HvHeaderActionsProps extends HvBaseProps {
   classes?: HvHeaderActionsClasses;
 }
 
-export const HvHeaderActions = (props: HvHeaderActionsProps) => {
+export const HvHeaderActions = forwardRef<
+  React.ElementRef<"div">,
+  HvHeaderActionsProps
+>((props, ref) => {
   const {
     classes: classesProp,
     className,
@@ -25,8 +29,8 @@ export const HvHeaderActions = (props: HvHeaderActionsProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
       {children}
     </div>
   );
-};
+});

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -34,7 +35,10 @@ export interface HvHeaderNavigationProps
   levels?: 1 | 2;
 }
 
-export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
+export const HvHeaderNavigation = forwardRef<
+  React.ElementRef<"nav">,
+  HvHeaderNavigationProps
+>((props, ref) => {
   const {
     data,
     selected,
@@ -58,7 +62,7 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
   return (
     <SelectionContext.Provider value={selectionPath}>
       <FocusProvider>
-        <nav className={cx(classes.root, className)} {...others}>
+        <nav ref={ref} className={cx(classes.root, className)} {...others}>
           <HvHeaderMenuBar
             data={data}
             type="menubar"
@@ -70,4 +74,4 @@ export const HvHeaderNavigation = (props: HvHeaderNavigationProps) => {
       </FocusProvider>
     </SelectionContext.Provider>
   );
-};
+});
