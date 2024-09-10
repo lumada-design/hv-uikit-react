@@ -40,10 +40,6 @@ export const Main: StoryObj<HvRadioGroupProps> = {
 };
 
 export const Variants: StoryObj<HvRadioGroupProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const classes = {
       root: css({
@@ -85,8 +81,6 @@ export const Horizontal: StoryObj<HvRadioGroupProps> = {
     docs: {
       description: { story: "Layout radio buttons horizontally." },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     return (

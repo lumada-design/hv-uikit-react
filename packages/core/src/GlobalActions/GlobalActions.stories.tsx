@@ -50,10 +50,6 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
     classes: { control: { disable: true } },
     backButton: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     const backButton = (
       <HvButton aria-label="Back" icon>
@@ -258,6 +254,33 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
           ]}
         />
       </HvGlobalActions>
+    );
+  },
+};
+
+export const Test: StoryObj<HvGlobalActionsProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: () => {
+    const backButton = (
+      <HvButton aria-label="Back" icon>
+        <Backwards />
+      </HvButton>
+    );
+
+    return (
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <HvGlobalActions title="Title">
+          <HvButton variant="primary">Click</HvButton>
+        </HvGlobalActions>
+        <HvGlobalActions title="Title" variant="section">
+          <HvButton variant="primary">Click</HvButton>
+        </HvGlobalActions>
+        <HvGlobalActions title="Title" backButton={backButton}>
+          <HvButton variant="primary">Click</HvButton>
+        </HvGlobalActions>
+      </div>
     );
   },
 };

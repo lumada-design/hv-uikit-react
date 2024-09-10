@@ -74,8 +74,6 @@ export const Actions: StoryObj<HvCarouselProps> = {
           Deleting a slide will turn show the low-cardinality dots instead of arrow pagination. Can be overridden with `showDots`",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     const [index, setIndex] = useState(0);
@@ -124,8 +122,6 @@ export const Embedded: StoryObj<HvCarouselProps> = {
         A custom `height` is set as the default `16/9` aspect-ratio doesn't fit.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     const images = [
@@ -141,10 +137,10 @@ export const Embedded: StoryObj<HvCarouselProps> = {
     ];
 
     return (
-      <HvCard bgcolor="atmo1" style={{ width: 350 }}>
+      <HvCard bgcolor="atmo1" style={{ width: 300 }}>
         <HvCardHeader title="Image Carousel" />
         <HvCardMedia role="none">
-          <HvCarousel xs height={400}>
+          <HvCarousel xs height={300}>
             {images.map(({ src, name }) => (
               <HvCarouselSlide
                 key={src}

@@ -270,7 +270,6 @@ export const Multiple: StoryObj<HvSectionProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => (
@@ -290,7 +289,6 @@ export const Test: StoryObj = {
           dui pharetra quis.
         </HvTypography>
       </HvSection>
-      <br />
       <HvSection>
         <HvTypography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor
@@ -299,7 +297,6 @@ export const Test: StoryObj = {
           dapibus accumsan est, a pharetra velit consequat et.
         </HvTypography>
       </HvSection>
-      <br />
       <HvSection expandable title="My Section">
         <HvTypography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor
@@ -308,7 +305,6 @@ export const Test: StoryObj = {
           dapibus accumsan est, a pharetra velit consequat et.
         </HvTypography>
       </HvSection>
-      <br />
       <HvSection raisedHeader expandable title="My Section">
         <HvTypography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor
@@ -317,7 +313,6 @@ export const Test: StoryObj = {
           dapibus accumsan est, a pharetra velit consequat et.
         </HvTypography>
       </HvSection>
-      <br />
       <HvSection
         expandable
         expanded={false}

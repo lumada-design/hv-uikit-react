@@ -75,8 +75,6 @@ export const Variants: StoryObj<HvDropdownProps> = {
         code: VariantsRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   decorators: [
     (Story) => (
@@ -94,7 +92,7 @@ export const Variants: StoryObj<HvDropdownProps> = {
       </div>
     ),
   ],
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
@@ -131,17 +129,16 @@ export const MultiSelection: StoryObj<HvDropdownProps> = {
         code: MultiSelectionRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   decorators: [widthDecorator],
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox");
     await userEvent.click(picker);
     await expect(canvas.getByRole("list")).toBeInTheDocument();
   },
-  render: () => <MultiSelectionStory />,
+  render: (args) => <MultiSelectionStory {...args} />,
 };
 
 export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
@@ -189,4 +186,33 @@ export const CustomDropdown: StoryObj<HvBaseDropdownProps> = {
   },
   decorators: [widthDecorator],
   render: () => <CustomDropdownStory />,
+};
+
+export const Test: StoryObj<HvBaseDropdownProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: (args, context: any) => {
+    const values = [
+      { label: "value 1" },
+      { label: "value 2" },
+      { label: "value 3" },
+      { label: "value 4" },
+    ];
+
+    return (
+      <div style={{ display: "flex", gap: 5 }}>
+        <div style={{ display: "flex", flexDirection: "column", width: 150 }}>
+          <HvDropdown disabled label="Disabled" values={values} />
+          <HvDropdown readOnly label="Read-only" values={values} />
+          <HvDropdown status="invalid" label="Invalid" values={values} />
+          <HvDropdown label="Empty" />
+          <HvDropdown required label="Required" values={values} expanded />
+        </div>
+        <div style={{ display: "flex", width: 300 }}>
+          {MultiSelection.render?.({ expanded: true }, context)}
+        </div>
+      </div>
+    );
+  },
 };

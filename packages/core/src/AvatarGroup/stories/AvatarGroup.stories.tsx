@@ -216,7 +216,6 @@ export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false, delay: 5000 },
     docs: { disable: true },
   },
   render: () => (

@@ -13,6 +13,7 @@ import { ResetToDefault as ResetToDefaultStory } from "./ResetToDefault";
 import ResetToDefaultRaw from "./ResetToDefault?raw";
 import { Uncontrolled as UncontrolledStory } from "./Uncontrolled";
 import UncontrolledRaw from "./Uncontrolled?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const widthDecorator: Decorator = (Story) => (
   <div style={{ width: 180 }}>{Story()}</div>
@@ -43,8 +44,7 @@ export const Main: StoryObj<HvFilterGroupProps> = {
         code: MainRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

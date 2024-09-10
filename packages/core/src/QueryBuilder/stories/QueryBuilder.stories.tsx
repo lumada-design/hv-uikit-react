@@ -14,6 +14,7 @@ import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 import { ReadOnly as ReadOnlyStory } from "./ReadOnly";
 import ReadOnlyRaw from "./ReadOnly?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvQueryBuilder> = {
   title: "Widgets/Query Builder",
@@ -39,8 +40,7 @@ export const Main: StoryObj<HvQueryBuilderProps> = {
         code: MainRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: (args) => {
     return <MainStory {...args} />;
@@ -58,8 +58,7 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
         code: InitialQueryRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: () => <InitialQueryStory />,
 };
@@ -74,8 +73,7 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
         code: ReadOnlyRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: () => <ReadOnlyStory />,
 };

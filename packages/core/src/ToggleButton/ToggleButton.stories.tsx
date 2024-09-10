@@ -65,8 +65,6 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
         story: "Showcasing multiple samples of the Toggle Button.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     return (

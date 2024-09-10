@@ -60,10 +60,6 @@ export const Variants: StoryObj<HvRadioProps> = {
       </div>
     ),
   ],
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const styles = {
       root: css({
@@ -306,4 +302,61 @@ export const Custom: StoryObj<HvRadioProps> = {
       </div>
     );
   },
+};
+
+export const Test: StoryObj<HvRadioProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: () => (
+    <div>
+      <HvRadio disabled name="disabled" label="Disabled" value="1" />
+      <HvRadio
+        disabled
+        name="disabled"
+        defaultChecked
+        label="Disabled"
+        value="1"
+      />
+      <HvRadio readOnly name="readonly" label="Readonly" value="1" />
+      <HvRadio
+        readOnly
+        name="readonly"
+        defaultChecked
+        label="Readonly"
+        value="1"
+      />
+      <HvRadio required name="required" label="Required" value="1" />
+      <HvRadio
+        required
+        name="required"
+        defaultChecked
+        label="Required"
+        value="1"
+      />
+      <HvRadio
+        status="invalid"
+        statusMessage="Oh no!"
+        name="invalid"
+        label="Invalid"
+        value="1"
+      />
+      <HvRadio
+        status="invalid"
+        statusMessage="Oh no!"
+        name="invalid"
+        defaultChecked
+        label="Invalid"
+        value="1"
+      />
+      <HvRadio semantic name="semantic" label="Semantic" value="1" />
+      <HvRadio
+        semantic
+        name="semantic"
+        defaultChecked
+        label="Semantic"
+        value="1"
+      />
+    </div>
+  ),
 };

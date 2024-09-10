@@ -260,12 +260,11 @@ export const WithNavigation: StoryObj<HvStackProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => (
     <>
-      <div style={{ display: "flex", gap: 20 }}>
+      <div style={{ display: "flex", gap: theme.space.sm }}>
         <HvStack>
           <Box>1</Box>
           <Box>2</Box>
@@ -291,22 +290,26 @@ export const Test: StoryObj = {
           <Box>4</Box>
         </HvStack>
       </div>
-      <br />
-      <br />
-      <HvStack divider direction="row">
-        <Box>1</Box>
-        <Box>2</Box>
-        <Box>3</Box>
-        <Box>4</Box>
-      </HvStack>
-      <br />
-      <br />
-      <HvStack direction="row">
-        <Box>1</Box>
-        <Box>2</Box>
-        <Box>3</Box>
-        <Box>4</Box>
-      </HvStack>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: theme.space.sm,
+        }}
+      >
+        <HvStack divider direction="row">
+          <Box>1</Box>
+          <Box>2</Box>
+          <Box>3</Box>
+          <Box>4</Box>
+        </HvStack>
+        <HvStack direction="row">
+          <Box>1</Box>
+          <Box>2</Box>
+          <Box>3</Box>
+          <Box>4</Box>
+        </HvStack>
+      </div>
     </>
   ),
 };

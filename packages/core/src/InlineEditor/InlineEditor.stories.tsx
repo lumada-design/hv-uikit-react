@@ -6,7 +6,6 @@ import {
   HvInlineEditor,
   HvInlineEditorProps,
   HvInput,
-  HvTypography,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
@@ -80,37 +79,32 @@ export const LargeVariants = () => {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => {
     return (
-      <HvContainer>
-        <HvTypography variant="title3">Enabled</HvTypography>
-        <br />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 5,
+          justifyContent: "start",
+          alignItems: "start",
+        }}
+      >
         <HvInlineEditor />
-        <br />
         <HvInlineEditor showIcon />
-        <br />
-        <HvTypography variant="title3">Disabled</HvTypography>
-        <br />
         <HvInlineEditor disabled />
-        <br />
         <HvInlineEditor disabled showIcon />
-        <br />
-        <HvTypography variant="title3">Typography Variants</HvTypography>
-        <br />
-        <HvGrid container>
-          {variants.map((variant) => (
-            <HvGrid item key={variant} xs={12} sm={6} style={{ minHeight: 64 }}>
-              <HvInlineEditor
-                variant={variant}
-                value="Very very very long text that is likely to be truncated"
-              />
-            </HvGrid>
-          ))}
-        </HvGrid>
-      </HvContainer>
+        {variants.map((variant) => (
+          <div style={{ maxWidth: 300 }} key={variant}>
+            <HvInlineEditor
+              variant={variant}
+              value="Very very very long text that is likely to be truncated"
+            />
+          </div>
+        ))}
+      </div>
     );
   },
 };

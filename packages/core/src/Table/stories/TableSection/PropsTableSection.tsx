@@ -89,7 +89,7 @@ export const PropsTableSection = () => {
       title={<HvTypography variant="title3">Sample Table</HvTypography>}
       actions={actions}
       expandable
-      defaultExpanded={false}
+      defaultExpanded
     >
       <HvTableContainer tabIndex={0}>
         <HvTable {...getTableProps()}>

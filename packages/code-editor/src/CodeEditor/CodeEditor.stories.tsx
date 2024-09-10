@@ -8,6 +8,7 @@ import { MainStory } from "./stories/Main";
 import MainStoryRaw from "./stories/Main?raw";
 import { XmlStory } from "./stories/Xml";
 import XmlStoryRaw from "./stories/Xml?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvCodeEditor> = {
   title: "Widgets/Code Editor",
@@ -17,11 +18,10 @@ export default meta;
 
 export const Main: StoryObj<HvCodeEditorProps> = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
     docs: {
       source: { code: MainStoryRaw },
     },
+    ...setupChromatic(["DS5 dawn"], 5000),
   },
   render: () => <MainStory />,
 };
@@ -33,8 +33,6 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
         story: "Yaml editor.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
   },
   render: () => {
     const defaultValueYaml =

@@ -18,6 +18,7 @@ import { HvLineChart, HvLineChartProps } from "@hitachivantara/uikit-react-viz";
 import { vizDecorator } from "../BaseChart/stories/utils";
 import { emptyCellMode } from "../types/generic";
 import { chartData } from "./mockData";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvLineChart> = {
   title: "Visualizations/Line Chart",
@@ -893,7 +894,7 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
 /** This tests if the horizontal slider resets when removed */
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(["DS5 dawn"], 5000),
     docs: { disable: true },
   },
   decorators: [

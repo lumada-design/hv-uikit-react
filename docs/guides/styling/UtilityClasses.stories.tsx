@@ -11,6 +11,8 @@ import {
   InProgress,
 } from "@hitachivantara/uikit-react-icons";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 export default {
   title: "Guides/Styling/Utility Classes",
 };
@@ -68,7 +70,7 @@ export const Animations: StoryObj = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
   },
   render: () => (

@@ -19,7 +19,7 @@ import {
 const classes = {
   root: css({
     display: "flex",
-    gap: theme.space.lg,
+    gap: theme.space.sm,
     flexWrap: "wrap",
   }),
   card: css({

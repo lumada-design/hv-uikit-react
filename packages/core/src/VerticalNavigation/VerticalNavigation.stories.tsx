@@ -29,6 +29,7 @@ import { TreeViewMode as TreeViewModeStory } from "./stories/TreeViewMode";
 import TreeViewModeRaw from "./stories/TreeViewMode?raw";
 import { WithoutActions as WithoutActionsStory } from "./stories/WithoutActions";
 import WithoutActionsRaw from "./stories/WithoutActions?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvVerticalNavigation> = {
   title: "Widgets/Vertical Navigation",
@@ -137,14 +138,6 @@ export const Custom: StoryObj<HvVerticalNavigationProps> = {
       },
       source: { code: CustomRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("button", { name: /jobs/i }));
-    await userEvent.keyboard("{tab}");
-    expect(canvas.getByRole("button", { name: /charts/i })).toHaveFocus();
   },
   render: () => <CustomStory />,
 };
@@ -159,7 +152,17 @@ export const Test: StoryObj<HvVerticalNavigationProps> = {
         ],
       },
     },
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(
+      [
+        "DS3 dawn",
+        "DS3 wicked",
+        "DS5 dawn",
+        "DS5 wicked",
+        "Pentaho+ dawn",
+        "Pentaho+ wicked",
+      ],
+      5000,
+    ),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

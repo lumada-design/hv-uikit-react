@@ -177,7 +177,7 @@ export const AlternativeLayout = () => {
   );
 
   return (
-    <>
+    <div>
       <div
         style={{ display: "flex", alignItems: "baseline", marginBottom: 20 }}
       >
@@ -214,6 +214,6 @@ export const AlternativeLayout = () => {
         </div>
       </div>
       {table}
-    </>
+    </div>
   );
 };

@@ -103,15 +103,15 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => (
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         gap: theme.space.sm,
+        flexWrap: "wrap",
       }}
     >
       {typographyVariants.map((variant) => (

@@ -39,10 +39,6 @@ export const Main: StoryObj<HvBladesProps> = {
     classes: { control: { disable: true } },
     children: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     const classes = {
       blueContainer: css({

@@ -29,10 +29,6 @@ export const Main: StoryObj<HvLoadingProps> = {
 };
 
 export const Variants: StoryObj<HvLoadingProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   decorators: [
     (Story) => (
       <div style={{ display: "flex", justifyContent: "space-around" }}>

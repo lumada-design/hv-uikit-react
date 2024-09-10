@@ -90,11 +90,9 @@ export const Variants: StoryObj<HvDatePickerProps> = {
           "Date Pickers in their various form state variants. `value` is used to configure the _uncontrolled_ initial value.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   decorators: [unsetDecorator],
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
@@ -306,11 +304,7 @@ export const Controlled: StoryObj<HvDatePickerProps> = {
 };
 
 export const WithSelectionList: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /date/i });
@@ -319,7 +313,7 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
       canvas.getByRole("button", { name: "September" }),
     ).toBeInTheDocument();
   },
-  render: () => {
+  render: (args) => {
     const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
     const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
     const [trueStartDate, setTrueStartDate] = useState(new Date(2020, 8, 5));
@@ -404,6 +398,7 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
           setEndDate(trueEndDate);
         }}
         showClear
+        {...args}
       />
     );
   },
@@ -502,6 +497,32 @@ export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
           </div>
         </HvGrid>
       </HvGrid>
+    );
+  },
+};
+
+export const Test: StoryObj<HvDatePickerProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  decorators: [unsetDecorator],
+  render: (args, context: any) => {
+    const value = new Date("2023-01-01");
+    return (
+      <div style={{ display: "flex", gap: 5 }}>
+        <div style={{ display: "flex", flexDirection: "column", width: 340 }}>
+          <HvDatePicker disabled label="Disabled" value={value} />
+          <HvDatePicker readOnly label="Read-only" value={value} />
+          <HvDatePicker
+            label="Invalid"
+            status="invalid"
+            statusMessage="This is an invalid date"
+            value={value}
+          />
+          <HvDatePicker required label="Required" value={value} expanded />
+        </div>
+        <div> {WithSelectionList.render?.({ expanded: true }, context)}</div>
+      </div>
     );
   },
 };
