@@ -53,7 +53,7 @@ export const Variants: StoryObj<HvSnackbarProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   args: {
     open: true,

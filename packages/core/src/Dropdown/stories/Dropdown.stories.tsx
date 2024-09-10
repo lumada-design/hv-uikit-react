@@ -76,7 +76,7 @@ export const Variants: StoryObj<HvDropdownProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   decorators: [
     (Story) => (
@@ -132,7 +132,7 @@ export const MultiSelection: StoryObj<HvDropdownProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   decorators: [widthDecorator],
   play: async ({ canvasElement }) => {

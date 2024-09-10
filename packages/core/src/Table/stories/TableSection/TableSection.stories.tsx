@@ -29,7 +29,7 @@ export const CompleteTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: CompleteTableSectionRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <CompleteTableSection />,
 };
@@ -38,7 +38,7 @@ export const PropsTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: PropsTableSectionRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {

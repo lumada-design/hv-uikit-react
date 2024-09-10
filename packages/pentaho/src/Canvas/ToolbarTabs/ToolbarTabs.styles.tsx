@@ -24,6 +24,7 @@ export const { staticClasses, useClasses } = createClasses(
       boxShadow: theme.colors.shadow,
       borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
       transition: "width 0.3s ease",
+      height: TAB_HEIGHT,
     },
     tabsContainer: {
       display: "flex",

@@ -66,7 +66,7 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

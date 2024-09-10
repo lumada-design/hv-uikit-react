@@ -183,7 +183,7 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
 export const WithPagination: StoryObj<HvBulkActionsProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {

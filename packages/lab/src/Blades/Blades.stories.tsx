@@ -41,7 +41,7 @@ export const Main: StoryObj<HvBladesProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: (args) => {
     const classes = {

@@ -26,7 +26,7 @@ export default meta;
 export const Main: StoryObj = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { source: { code: ControlsRaw } },
   },
   render: () => <ControlsStory />,

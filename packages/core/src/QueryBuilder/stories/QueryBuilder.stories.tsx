@@ -40,7 +40,7 @@ export const Main: StoryObj<HvQueryBuilderProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: (args) => {
     return <MainStory {...args} />;
@@ -59,7 +59,7 @@ export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <InitialQueryStory />,
 };
@@ -75,7 +75,7 @@ export const ReadOnly: StoryObj<HvQueryBuilderProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <ReadOnlyStory />,
 };

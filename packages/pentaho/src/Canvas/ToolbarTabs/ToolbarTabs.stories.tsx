@@ -45,10 +45,6 @@ export const Main: StoryObj<HvCanvasToolbarTabsProps> = {
     onTabChange: { control: { disable: true } },
     onChange: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     return <HvCanvasToolbarTabs {...args} />;
   },

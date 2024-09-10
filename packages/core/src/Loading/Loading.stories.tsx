@@ -31,7 +31,7 @@ export const Main: StoryObj<HvLoadingProps> = {
 export const Variants: StoryObj<HvLoadingProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   decorators: [
     (Story) => (

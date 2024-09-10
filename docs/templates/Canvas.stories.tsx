@@ -8,6 +8,7 @@ import {
 
 import Canvas from "../../templates/Canvas";
 import CanvasRaw from "../../templates/Canvas?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Templates/Canvas",
@@ -32,8 +33,7 @@ export const Main: StoryObj = {
         code: CanvasRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(["Pentaho+ dawn", "Pentaho+ wicked"], 5000),
   },
   // For visual testing
   play: async ({ canvasElement }) => {

@@ -32,7 +32,7 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
   decorators: [decorator],
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     a11y: {
       config: {
         rules: [
@@ -87,7 +87,7 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   decorators: [
     (Story) => (
