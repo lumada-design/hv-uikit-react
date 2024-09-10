@@ -10,6 +10,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvScrollToHorizontal> = {
   title: "Components/Scroll To/Horizontal",
   component: HvScrollToHorizontal,
@@ -28,8 +30,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
     options: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: (args) => {
     const options = [

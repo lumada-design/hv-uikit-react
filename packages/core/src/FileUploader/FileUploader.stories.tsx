@@ -169,8 +169,6 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
           "The `HvFileUploaderPreview` component is available to facilitate the styling of the button (when clickable) and the detection of image unloading.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const [open, setOpen] = useState<boolean>(false);

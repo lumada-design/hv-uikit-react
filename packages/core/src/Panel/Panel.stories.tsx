@@ -9,6 +9,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Close, Edit } from "@hitachivantara/uikit-react-icons";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvPanel> = {
   title: "Components/Panel",
   component: HvPanel,
@@ -20,8 +22,7 @@ export const Main: StoryObj<HvPanelProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: () => {
     return (

@@ -14,6 +14,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 export default {
   title: "Components/Time Picker",
   component: HvTimePicker,
@@ -94,15 +96,13 @@ export const Variants: StoryObj<HvTimePickerProps> = {
           "Time Pickers in their various form state variants. `defaultValue` is used to configure the _uncontrolled_ initial value.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const picker = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(picker);
-    await expect(canvas.getByPlaceholderText("hh")).toBeInTheDocument();
   },
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
@@ -189,8 +189,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
           "Use the `timeFormat` prop to force either the 12-hour or 24-hour clock format.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   decorators: [makeDecorator({ minHeight: 200, width: 220 })],
   // For visual testing and a11y

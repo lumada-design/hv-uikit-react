@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { HvButton, theme } from "@hitachivantara/uikit-react-core";
+import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import {
   HvCanvasBottomPanel,
@@ -39,12 +39,6 @@ export const Main: StoryObj<HvCanvasBottomPanelProps> = {
 };
 
 const classes = {
-  root: css({
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.space.sm,
-  }),
-  buttons: css({ display: "flex", gap: theme.space.sm }),
   panel: css({ position: "relative" }),
 };
 
@@ -63,16 +57,14 @@ const tabs: HvCanvasBottomPanelProps["tabs"] = [
   { id: 1, title: "Tab 2" },
 ];
 
-export const Test: StoryObj = {
+export const AutomationTest: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false, delay: 5000 },
     docs: { disable: true },
   },
   render: () => {
     const [minimize, setMinimize] = useState(false);
     const [open, setOpen] = useState(true);
     const [selectedTab, setSelectedTab] = useState(tabs[0].id);
-    const [extraOpen, setExtraOpen] = useState(true);
 
     const handleAction: HvCanvasBottomPanelProps["onAction"] = (
       event,
@@ -81,18 +73,13 @@ export const Test: StoryObj = {
     ) => alert(`You clicked action ${action.label} for ${tabId}.`);
 
     return (
-      <div className={classes.root}>
-        <div className={classes.buttons}>
-          <HvButton onClick={() => setOpen((prev) => !prev)}>
-            Toggle Open
-          </HvButton>
-          <HvButton onClick={() => setMinimize((prev) => !prev)}>
-            Toggle Minimize
-          </HvButton>
-          <HvButton onClick={() => setExtraOpen((prev) => !prev)}>
-            Toggle Extra Tests
-          </HvButton>
-        </div>
+      <>
+        <HvButton onClick={() => setOpen((prev) => !prev)}>
+          Toggle Open
+        </HvButton>
+        <HvButton onClick={() => setMinimize((prev) => !prev)}>
+          Toggle Minimize
+        </HvButton>
         <HvCanvasBottomPanel
           open={open}
           className={classes.panel}
@@ -107,62 +94,75 @@ export const Test: StoryObj = {
         >
           Content
         </HvCanvasBottomPanel>
-
-        {extraOpen && (
-          <>
-            <HvCanvasBottomPanel
-              open
-              className={classes.panel}
-              tabs={tabs}
-              leftActions={[leftActions[0]]}
-              rightActions={[rightActions[0], rightActions[1]]}
-            >
-              Content
-            </HvCanvasBottomPanel>
-            <br />
-            <HvCanvasBottomPanel
-              open
-              className={classes.panel}
-              tabs={[
-                {
-                  id: 1,
-                  title: "Tab 2",
-                },
-              ]}
-              leftActions={[leftActions[0]]}
-              rightActions={[rightActions[0], rightActions[1]]}
-            >
-              Content
-            </HvCanvasBottomPanel>
-            <HvCanvasBottomPanel
-              open
-              minimize
-              className={classes.panel}
-              tabs={tabs}
-              leftActions={[leftActions[0]]}
-              rightActions={[rightActions[0], rightActions[1]]}
-            >
-              Content
-            </HvCanvasBottomPanel>
-            <br />
-            <HvCanvasBottomPanel
-              open
-              minimize
-              className={classes.panel}
-              tabs={[
-                {
-                  id: 1,
-                  title: "Tab 2",
-                },
-              ]}
-              leftActions={[leftActions[0]]}
-              rightActions={[rightActions[0], rightActions[1]]}
-            >
-              Content
-            </HvCanvasBottomPanel>
-          </>
-        )}
-      </div>
+      </>
     );
   },
+};
+
+export const Test: StoryObj = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: () => (
+    <>
+      <HvCanvasBottomPanel
+        open
+        className={classes.panel}
+        tabs={tabs}
+        leftActions={leftActions}
+        rightActions={rightActions}
+        overflowActions={[...leftActions, ...rightActions]}
+      >
+        Content
+      </HvCanvasBottomPanel>
+      <HvCanvasBottomPanel
+        open
+        className={classes.panel}
+        tabs={tabs}
+        leftActions={[leftActions[0]]}
+        rightActions={[rightActions[0], rightActions[1]]}
+      >
+        Content
+      </HvCanvasBottomPanel>
+      <HvCanvasBottomPanel
+        open
+        className={classes.panel}
+        tabs={[
+          {
+            id: 1,
+            title: "Tab 2",
+          },
+        ]}
+        leftActions={[leftActions[0]]}
+        rightActions={[rightActions[0], rightActions[1]]}
+      >
+        Content
+      </HvCanvasBottomPanel>
+      <HvCanvasBottomPanel
+        open
+        minimize
+        className={classes.panel}
+        tabs={tabs}
+        leftActions={[leftActions[0]]}
+        rightActions={[rightActions[0], rightActions[1]]}
+      >
+        Content
+      </HvCanvasBottomPanel>
+      <HvCanvasBottomPanel
+        open
+        minimize
+        className={classes.panel}
+        tabs={[
+          {
+            id: 1,
+            title: "Tab 2",
+          },
+        ]}
+        leftActions={[leftActions[0]]}
+        rightActions={[rightActions[0], rightActions[1]]}
+      >
+        Content
+      </HvCanvasBottomPanel>
+    </>
+  ),
 };

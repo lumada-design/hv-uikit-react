@@ -63,7 +63,7 @@ const initialState = {
       type: "factTable",
     },
   ],
-  viewport: { x: 100, y: 500, zoom: 1 },
+  viewport: { x: 50, y: 50, zoom: 1 },
 };
 
 const dimensionTableDataObject: HierarchyData[] = [

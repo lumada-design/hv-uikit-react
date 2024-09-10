@@ -51,10 +51,6 @@ export const Main: StoryObj<HvCheckBoxProps> = {
 };
 
 export const Variants: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const styles = {
       root: css({
@@ -291,4 +287,46 @@ export const Custom: StoryObj<HvCheckBoxProps> = {
       </div>
     );
   },
+};
+
+export const Test: StoryObj<HvCheckBoxProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: () => (
+    <>
+      <HvCheckBox disabled label="Checkbox 1" />
+      <HvCheckBox defaultChecked disabled label="Checkbox 2" />
+      <HvCheckBox indeterminate disabled label="Checkbox 3" />
+      <HvCheckBox readOnly label="Checkbox 1" />
+      <HvCheckBox defaultChecked readOnly label="Checkbox 2" />
+      <HvCheckBox indeterminate readOnly label="Checkbox 3" />
+      <HvCheckBox required label="Checkbox 1" />
+      <HvCheckBox required defaultChecked label="Checkbox 2" />
+      <HvCheckBox required indeterminate label="Checkbox 3" />
+      <HvCheckBox
+        status="invalid"
+        statusMessage="No way for this to be valid!"
+        label="Checkbox 1"
+      />
+      <HvCheckBox
+        status="invalid"
+        statusMessage="No way for this to be valid!"
+        defaultChecked
+        label="Checkbox 2"
+      />
+      <HvCheckBox
+        status="invalid"
+        statusMessage="No way for this to be valid!"
+        indeterminate
+        label="Checkbox 3"
+      />
+      <HvCheckBox aria-label="Checkbox 1" />
+      <HvCheckBox defaultChecked aria-label="Checkbox 2" />
+      <HvCheckBox indeterminate aria-label="Checkbox 3" />
+      <HvCheckBox semantic aria-label="Checkbox 1" />
+      <HvCheckBox semantic defaultChecked aria-label="Checkbox 2" />
+      <HvCheckBox semantic indeterminate aria-label="Checkbox 3" />
+    </>
+  ),
 };

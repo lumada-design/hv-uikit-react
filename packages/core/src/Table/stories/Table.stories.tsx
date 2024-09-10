@@ -1,5 +1,6 @@
 import { StoryObj } from "@storybook/react";
 import {
+  HvSimpleGrid,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -22,6 +23,7 @@ import { ResponsiveTable as ResponsiveTableStory } from "./TableSamples/Responsi
 import ResponsiveTableRaw from "./TableSamples/ResponsiveTable?raw";
 import { SimpleTable as SimpleTableStory } from "./TableSamples/SimpleTable";
 import SimpleTableRaw from "./TableSamples/SimpleTable?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Visualizations/Table",
@@ -62,8 +64,6 @@ export const NoData: StoryObj<HvTableProps> = {
         story: "Table with no data available.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <NoDataStory />,
 };
@@ -89,8 +89,6 @@ export const GroupedRows: StoryObj<HvTableProps> = {
         story: "A table example with grouped rows.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <GroupedRowsStory />,
 };
@@ -116,8 +114,29 @@ export const ListRow: StoryObj<HvTableProps> = {
         story: "List row variant of the table.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <ListRowStory />,
+};
+
+export const Test: StoryObj = {
+  parameters: {
+    ...setupChromatic([
+      "DS3 dawn",
+      "DS3 wicked",
+      "DS5 dawn",
+      "DS5 wicked",
+      "Pentaho+ dawn",
+      "Pentaho+ wicked",
+    ]),
+    docs: { disable: true },
+  },
+  render: (args, context: any) => (
+    <HvSimpleGrid cols={2}>
+      {ListRow.render?.(ListRow.args as any, context)}
+      {GroupedRows.render?.(GroupedRows.args as any, context)}
+      {NoData.render?.(NoData.args as any, context)}
+      {Main.render?.(Main.args as any, context)}
+      {SimpleTable.render?.(SimpleTable.args as any, context)}
+    </HvSimpleGrid>
+  ),
 };

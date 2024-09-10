@@ -258,7 +258,6 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => (

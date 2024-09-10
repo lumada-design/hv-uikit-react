@@ -4,6 +4,8 @@ import {
   HvOverflowTooltipProps,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvOverflowTooltip> = {
   title: "Components/Tooltip/Overflow Tooltip",
   component: HvOverflowTooltip,
@@ -36,8 +38,7 @@ export const Main: StoryObj<HvOverflowTooltipProps> = {
     ),
   ],
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(["DS5 dawn"], 5000),
   },
   render: (args) => {
     return <HvOverflowTooltip {...args} />;

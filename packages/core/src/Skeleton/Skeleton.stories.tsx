@@ -52,8 +52,6 @@ export const Variants: StoryObj<HvSkeletonProps> = {
           "The `HvSkeleton` component can have different variants to represent different shapes and sizes.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     return (

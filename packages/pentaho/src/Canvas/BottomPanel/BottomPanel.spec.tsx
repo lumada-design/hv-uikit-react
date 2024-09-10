@@ -3,22 +3,23 @@ import { expect, test, type Page } from "@playwright/test";
 // Playwright tests were added because unit tests were not working properly since the
 // component's layout changes according with the screen width
 
-const hideExtraTests = async (page: Page) => {
-  const btn = page.getByRole("button", { name: "Toggle Extra Tests" });
-  await btn.click();
-};
-
 const goToControlledSample = async (page: Page) => {
-  page.goto(
-    "./iframe.html?args=&id=pentaho-canvas-bottom-panel--test&viewMode=story",
+  await page.goto(
+    "./iframe.html?args=&id=pentaho-canvas-bottom-panel--automation-test&viewMode=story",
   );
-  await hideExtraTests(page);
+
+  // Wait for the root element of the Storybook to be visible
+  return page.waitForSelector("#storybook-root", { state: "visible" });
 };
 
-const goToUncontrolledSample = async (page: Page) =>
-  page.goto(
+const goToUncontrolledSample = async (page: Page) => {
+  await page.goto(
     "./iframe.html?args=&id=pentaho-canvas-bottom-panel--main&viewMode=story",
   );
+
+  // Wait for the root element of the Storybook to be visible
+  return page.waitForSelector("#storybook-root", { state: "visible" });
+};
 
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 800, height: 500 });

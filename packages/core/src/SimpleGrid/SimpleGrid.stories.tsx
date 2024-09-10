@@ -6,6 +6,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const style = {
   display: "flex",
   justifyContent: "center",
@@ -30,8 +32,7 @@ export const Main: StoryObj<HvSimpleGridProps> = {
     breakpoints: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: (args) => {
     return (

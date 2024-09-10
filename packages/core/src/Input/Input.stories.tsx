@@ -90,8 +90,6 @@ export const Variants: StoryObj<HvInputProps> = {
           "Inputs in their various state variants. `HvInput` also has custom support for various `type` attributes, such as `email` and `password`.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   decorators: [showcaseDecorator],
   args: {

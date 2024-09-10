@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
 import {
   HvOverflowTooltip,
   HvTag,
@@ -230,20 +229,7 @@ export const SelectableControlled: StoryObj<HvTagProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", {
-      name: /asset 2/i,
-      pressed: false,
-    });
-    await userEvent.click(button);
-    await expect(
-      canvas.getByRole("button", { name: /asset 2/i, pressed: true }),
-    ).toBeInTheDocument();
   },
   render: () => (
     <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -267,6 +253,7 @@ export const Test: StoryObj = {
       <HvTag
         label="Asset 2"
         selectable
+        selected
         color="negative"
         classes={{ root: css({ color: theme.colors.negative_20 }) }}
       />

@@ -8,6 +8,8 @@ import {
   useWidth,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvGrid> = {
   title: "Components/Grid/Grid",
   component: HvGrid,
@@ -120,8 +122,7 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
           "Grid using the Design System's column definitions. The number of columns is based on the current breakpoint. Resize the browser to see the number of columns change.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: () => {
     const width = useWidth();

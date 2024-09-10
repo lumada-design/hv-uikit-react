@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
+  HvSimpleGrid,
   HvTab,
   HvTabs,
   HvTabsProps,
@@ -279,25 +280,23 @@ export const OnlyIcons: StoryObj<HvTabsProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
   },
   render: () => (
-    <>
+    <HvSimpleGrid
+      cols={3}
+      style={{ alignItems: "start", justifyContent: "start" }}
+    >
       <HvTabs value={0}>
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
         <HvTab label="Clickable tab 3" />
       </HvTabs>
-      <br />
-      <br />
       <HvTabs value={0} variant="fullWidth">
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
         <HvTab label="Clickable tab 3" />
       </HvTabs>
-      <br />
-      <br />
       <HvTabs value={0}>
         <HvTab
           label="Clickable tab 1"
@@ -315,8 +314,6 @@ export const Test: StoryObj = {
           iconPosition="start"
         />
       </HvTabs>
-      <br />
-      <br />
       <HvTabs value={0}>
         <HvTab
           label="Clickable tab 1"
@@ -334,19 +331,15 @@ export const Test: StoryObj = {
           iconPosition="top"
         />
       </HvTabs>
-      <br />
-      <br />
       <HvTabs value={0}>
         <HvTab icon={<Alert />} aria-label="Alert" />
         <HvTab icon={<Reload />} aria-label="Reload" />
         <HvTab icon={<Calendar />} aria-label="Calendar" />
       </HvTabs>
-      <br />
-      <br />
       <HvTabs value={0}>
         <HvTab label={<HvBadge showCount count={2} text="Track events" />} />
         <HvTab label={<HvBadge count={1} text="Vehicle events" />} />
       </HvTabs>
-    </>
+    </HvSimpleGrid>
   ),
 };

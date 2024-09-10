@@ -47,8 +47,6 @@ export const Variants: StoryObj<HvBannerProps> = {
           "Banner with custom icon with base color on the semantic background.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const actionArray = (id: string) => [
@@ -64,62 +62,71 @@ export const Variants: StoryObj<HvBannerProps> = {
     );
 
     return (
-      <div>
-        <HvTypography variant="title3">Semantics</HvTypography>
-        <BannerContent content="This is a default banner." variant="default" />
-        <BannerContent
-          content="This is a success banner."
-          variant="success"
-          showIcon
-        />
-        <BannerContent
-          content="This is a warning banner."
-          variant="warning"
-          showIcon
-        />
-        <BannerContent
-          content="This is an error banner."
-          variant="error"
-          showIcon
-        />
-        <br />
-        <HvTypography variant="title3">Actions</HvTypography>
-        <br />
-        <HvBanner
-          open
-          offset={0}
-          label="This is a banner."
-          showIcon
-          actions={[{ id: "post", label: "Action", disabled: false }]}
-          onAction={(event, action) => console.log("Clicked", action)}
-          className={css({ position: "relative", top: 0 })}
-        />
-        <BannerContent
-          content="This is a banner with two actions."
-          actions={actionArray("banner3")}
-          actionsPosition="inline"
-        />
-        <BannerContent
-          content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
-          actions={actionArray("banner1")}
-          actionsPosition="bottom-right"
-        />
-        <BannerContent
-          content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
-          actions={actionArray("banner2")}
-          actionsPosition="bottom-right"
-        />
-        <br />
-        <HvTypography variant="title3">Custom icon</HvTypography>
-        <BannerContent
-          content="This is a banner with a custom icon."
-          customIcon={<Info color="base_dark" />}
-        />
-        <BannerContent
-          content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-          customIcon={<Info color="base_dark" />}
-        />
-      </div>
+      <>
+        <div>
+          <HvTypography variant="title3">Semantics</HvTypography>
+          <BannerContent
+            content="This is a default banner."
+            variant="default"
+          />
+          <BannerContent
+            content="This is a success banner."
+            variant="success"
+            showIcon
+          />
+          <BannerContent
+            content="This is a warning banner."
+            variant="warning"
+            showIcon
+          />
+          <BannerContent
+            content="This is an error banner."
+            variant="error"
+            showIcon
+          />
+        </div>
+        <div>
+          <br />
+          <HvTypography variant="title3">Actions</HvTypography>
+          <br />
+          <HvBanner
+            open
+            offset={0}
+            label="This is a banner."
+            showIcon
+            actions={[{ id: "post", label: "Action", disabled: false }]}
+            onAction={(event, action) => console.log("Clicked", action)}
+            className={css({ position: "relative", top: 0 })}
+          />
+          <BannerContent
+            content="This is a banner with two actions."
+            actions={actionArray("banner3")}
+            actionsPosition="inline"
+          />
+          <BannerContent
+            content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
+            actions={actionArray("banner1")}
+            actionsPosition="bottom-right"
+          />
+          <BannerContent
+            content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
+            actions={actionArray("banner2")}
+            actionsPosition="bottom-right"
+          />
+        </div>
+        <div>
+          <br />
+          <HvTypography variant="title3">Custom icon</HvTypography>
+          <BannerContent
+            content="This is a banner with a custom icon."
+            customIcon={<Info color="base_dark" />}
+          />
+          <BannerContent
+            content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
+            customIcon={<Info color="base_dark" />}
+          />
+        </div>
+      </>
     );
   },
 };

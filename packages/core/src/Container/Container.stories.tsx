@@ -8,6 +8,8 @@ import {
   useWidth,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvContainer> = {
   title: "Components/Container",
   component: HvContainer,
@@ -25,8 +27,7 @@ export const Main: StoryObj<HvContainerProps> = {
     component: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: (args) => {
     const classes = {

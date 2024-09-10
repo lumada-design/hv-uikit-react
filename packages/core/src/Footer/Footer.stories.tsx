@@ -45,10 +45,6 @@ export const CustomLabels: StoryObj<HvFooterProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     return <HvFooter {...args} />;
   },

@@ -10,6 +10,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 export default {
   title: "Guides/Provider",
   component: HvProvider,
@@ -83,10 +85,9 @@ export const Main: StoryObj<HvProviderProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
   },
-
   render: () => {
     return (
       <HvProvider

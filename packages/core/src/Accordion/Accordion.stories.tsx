@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
 import {
   Breakpoint,
   HvAccordion,
@@ -75,53 +74,40 @@ export const Main: StoryObj<HvAccordionProps> = {
 };
 
 export const Disabled: StoryObj<HvAccordionProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: "System" });
-    await userEvent.click(button);
-    await expect(canvas.getAllByRole("listitem")).toHaveLength(2);
-  },
-  render: () => {
-    return (
-      <div style={{ maxWidth: 300 }}>
-        <HvAccordion label="Analytics" headingLevel={3} disabled>
-          <HvListContainer
-            className={classes.listContainer}
-            interactive
-            condensed
-          >
-            <HvListItem>Views</HvListItem>
-            <HvListItem>Parameters</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-        <HvAccordion label="System" headingLevel={3}>
-          <HvListContainer
-            className={classes.listContainer}
-            interactive
-            condensed
-          >
-            <HvListItem>Settings</HvListItem>
-            <HvListItem>Network</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-        <HvAccordion label="Data" headingLevel={3} disabled>
-          <HvListContainer
-            className={classes.listContainer}
-            interactive
-            condensed
-          >
-            <HvListItem>Storage</HvListItem>
-            <HvListItem>Memory</HvListItem>
-          </HvListContainer>
-        </HvAccordion>
-      </div>
-    );
-  },
+  render: () => (
+    <div style={{ maxWidth: 300 }}>
+      <HvAccordion label="Analytics" headingLevel={3} disabled>
+        <HvListContainer
+          className={classes.listContainer}
+          interactive
+          condensed
+        >
+          <HvListItem>Views</HvListItem>
+          <HvListItem>Parameters</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      <HvAccordion label="System" headingLevel={3}>
+        <HvListContainer
+          className={classes.listContainer}
+          interactive
+          condensed
+        >
+          <HvListItem>Settings</HvListItem>
+          <HvListItem>Network</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      <HvAccordion label="Data" headingLevel={3} disabled>
+        <HvListContainer
+          className={classes.listContainer}
+          interactive
+          condensed
+        >
+          <HvListItem>Storage</HvListItem>
+          <HvListItem>Memory</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+    </div>
+  ),
 };
 
 export const Controlled: StoryObj<HvAccordionProps> = {

@@ -2,6 +2,7 @@ import { StoryObj } from "@storybook/react";
 
 import { TableComplete } from "./TableCompleteSample";
 import TableCompleteRaw from "./TableCompleteSample?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Visualizations/Table/Complete Table",
@@ -10,8 +11,7 @@ export default {
 export const CompleteStory: StoryObj = {
   parameters: {
     docs: { source: { code: TableCompleteRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   render: () => <TableComplete />,
 };

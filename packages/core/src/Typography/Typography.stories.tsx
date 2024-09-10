@@ -6,6 +6,8 @@ import {
   typographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 export default { title: "Foundation/Typography", component: HvTypography };
 
 export const Main: StoryObj<HvTypographyProps> = {
@@ -103,7 +105,7 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
   },
   render: () => (

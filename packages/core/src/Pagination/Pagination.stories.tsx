@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "@emotion/styled";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvPagination,
@@ -7,18 +7,20 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const StyledBox = styled("div")({
-  display: "flex",
-  flexWrap: "wrap",
-  "&>span": {
-    width: "100px",
-    padding: "8px 12px",
-    margin: "12px",
-    textAlign: "center",
-    borderRadius: "4px",
-    background: theme.colors.atmo1,
-  },
-});
+const classes = {
+  root: css({
+    display: "flex",
+    flexWrap: "wrap",
+    "&>span": {
+      width: "100px",
+      padding: "8px 12px",
+      margin: "12px",
+      textAlign: "center",
+      borderRadius: "4px",
+      background: theme.colors.atmo1,
+    },
+  }),
+};
 
 const meta: Meta<typeof HvPagination> = {
   title: "Components/Pagination",
@@ -31,10 +33,6 @@ export const Main: StoryObj<HvPaginationProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
     const data = [...Array(64).keys()];
@@ -45,12 +43,12 @@ export const Main: StoryObj<HvPaginationProps> = {
     const numPages = Math.ceil(data.length / pageSize);
 
     return (
-      <>
-        <StyledBox>
+      <div>
+        <div className={classes.root}>
           {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
             <span key={i}>{`Item ${i + 1}`}</span>
           ))}
-        </StyledBox>
+        </div>
         <HvPagination
           pages={numPages}
           page={page}
@@ -62,7 +60,7 @@ export const Main: StoryObj<HvPaginationProps> = {
           onPageSizeChange={setPageSize}
           labels={{ pageSizeEntryName: "items" }}
         />
-      </>
+      </div>
     );
   },
 };

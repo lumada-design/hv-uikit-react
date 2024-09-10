@@ -1,10 +1,13 @@
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { theme } from "@hitachivantara/uikit-react-core";
+import {
+  HvStepNavigation,
+  HvStepNavigationProps,
+} from "@hitachivantara/uikit-react-lab";
 
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
 import { dotClasses, HvDot, HvSimpleNavigation } from "./SimpleNavigation";
-import { HvStepNavigation, HvStepNavigationProps } from "./StepNavigation";
 
 type StepType = Pick<
   HvStepProps,
@@ -107,15 +110,13 @@ export const Variants: StoryObj<HvStepNavigationProps> = {
           "Variants of the step navigation component with titles and with tooltips shown on hover.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: 80,
+        gap: theme.space.lg,
       }}
     >
       <HvStepNavigation

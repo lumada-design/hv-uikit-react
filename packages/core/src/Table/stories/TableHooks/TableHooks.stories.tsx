@@ -46,6 +46,7 @@ import { UseHvSortBy } from "./UseHvSortBy";
 import UseHvSortByRaw from "./UseHvSortBy?raw";
 import { UseHvTableSticky } from "./UseHvTableSticky";
 import UseHvTableStickyRaw from "./UseHvTableSticky?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Visualizations/Table/Table Hooks",
@@ -59,8 +60,7 @@ export const UseHvHooksStory: StoryObj = {
 export const AlternativeLayoutStory: StoryObj = {
   parameters: {
     docs: { source: { code: AlternativeLayoutRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   render: () => <AlternativeLayout />,
 };
@@ -68,8 +68,7 @@ export const AlternativeLayoutStory: StoryObj = {
 export const ColumnResizeStory: StoryObj = {
   parameters: {
     docs: { source: { code: ColumnResizeRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   render: () => <ColumnResize />,
 };
@@ -114,8 +113,7 @@ export const UseHvSortByStory: StoryObj = {
 export const UseHvRowExpandStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvRowExpandRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -132,8 +130,7 @@ export const UseHvRowExpandStory: StoryObj = {
 export const UseHvGroupByStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvGroupByRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -148,8 +145,7 @@ export const UseHvGroupByStory: StoryObj = {
 export const UseHvTableStickyStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvTableStickyRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   render: () => <UseHvTableSticky />,
 };
@@ -157,8 +153,7 @@ export const UseHvTableStickyStory: StoryObj = {
 export const UseHvHeaderGroupsStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvHeaderGroupsRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
     a11y: {
       config: {
         rules: [
@@ -180,7 +175,7 @@ export const UseHvRowStateStory: StoryObj = {
 /** This was created to test grouped headers with sticky columns */
 export const TestHeaders: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
     a11y: {
       config: {

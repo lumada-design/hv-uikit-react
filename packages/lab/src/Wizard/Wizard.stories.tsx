@@ -19,6 +19,7 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import mockText from "./mockData";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",
@@ -99,11 +100,10 @@ const RandomFormComponent = () => {
 };
 
 export const Main: StoryObj<HvWizardProps> = {
-  args: {},
   argTypes: {
     classes: { control: { disable: true } },
   },
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /show wizard/i });
@@ -171,7 +171,7 @@ export const Main: StoryObj<HvWizardProps> = {
 };
 
 export const Skippable: StoryObj<HvWizardProps> = {
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /show wizard/i });
@@ -237,8 +237,7 @@ export const Skippable: StoryObj<HvWizardProps> = {
 
 export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

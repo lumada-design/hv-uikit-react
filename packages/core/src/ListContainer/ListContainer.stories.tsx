@@ -169,15 +169,9 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 };
 
 export const WithIcons: StoryObj<HvListContainerProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     return (
-      <>
-        <HvTypography variant="title3">Start Icons</HvTypography>
-        <br />
+      <div style={{ display: "flex", gap: theme.space.sm }}>
         <HvPanel style={{ maxWidth: 220 }}>
           <HvListContainer
             interactive
@@ -200,9 +194,6 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
             </HvListItem>
           </HvListContainer>
         </HvPanel>
-        <br />
-        <HvTypography variant="title3">Navigation Icons</HvTypography>
-        <br />
         <HvPanel style={{ overflow: "auto", maxWidth: 220 }}>
           <HvListContainer
             condensed
@@ -226,7 +217,7 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
             <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
           </HvListContainer>
         </HvPanel>
-      </>
+      </div>
     );
   },
 };

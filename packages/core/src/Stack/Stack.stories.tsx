@@ -19,6 +19,8 @@ import {
   Tool,
 } from "@hitachivantara/uikit-react-icons";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const Box = styled("div")({
   display: "flex",
   color: theme.colors.base_dark,
@@ -260,7 +262,7 @@ export const WithNavigation: StoryObj<HvStackProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
   },
   render: () => (

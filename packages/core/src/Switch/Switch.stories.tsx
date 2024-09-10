@@ -58,10 +58,6 @@ export const Main: StoryObj<HvSwitchProps> = {
 
 export const Variants: StoryObj<HvSwitchProps> = {
   decorators: [decorator],
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const styles = {
       group: css({

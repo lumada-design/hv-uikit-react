@@ -30,6 +30,7 @@ import {
 
 import { Selectable as SelectableStory } from "./stories/Selectable";
 import SelectableStoryRaw from "./stories/Selectable?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvKpi> = {
   title: "Visualizations/KPI",
@@ -74,8 +75,7 @@ export const Main: StoryObj<HvKpiProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   render: (args) => {
     return <HvKpi {...args} />;

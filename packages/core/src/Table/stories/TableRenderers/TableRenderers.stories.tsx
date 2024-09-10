@@ -18,6 +18,7 @@ import { TagColumnRenderer } from "./TagColumnRenderer";
 import TagColumnRendererRaw from "./TagColumnRenderer?raw";
 import { TextColumnRenderer } from "./TextColumnRenderer";
 import TextColumnRendererRaw from "./TextColumnRenderer?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Visualizations/Table/Table Renderers",
@@ -26,8 +27,7 @@ export default {
 export const AllColumnRenderersStory: StoryObj = {
   parameters: {
     docs: { source: { code: AllColumnRenderersRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   render: () => <AllColumnRenderers />,
 };
