@@ -2,7 +2,7 @@ import { Preview } from "@storybook/react";
 
 import DocsContainer from "./blocks/DocsContainer";
 import { DocsPage } from "./blocks/DocsPage";
-import { ThemeDecorator } from "./decorators/ThemeDecorator";
+import { withThemeDecorator } from "./decorators/withThemeDecorator.decorator";
 
 import "uno.css";
 
@@ -89,6 +89,6 @@ export const parameters: Preview["parameters"] = {
 
 export default {
   parameters,
-  decorators: [ThemeDecorator],
+  decorators: [withThemeDecorator()],
   tags: ["autodocs"],
 } satisfies Preview;

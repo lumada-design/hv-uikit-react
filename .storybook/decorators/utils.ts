@@ -1,13 +1,19 @@
-import { HvThemeStructure, themes } from "../../../packages/styles/src";
+import { useEffect, useRef } from "react";
+import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 
-const STORAGE_KEY = "sb-uikit-theme";
+const STORAGE_KEY = "sb-uikit-stories-theme";
 const DEFAULT_THEME = "ds5";
+
+export interface Theme {
+  label: string;
+  mode: string;
+}
 
 export const setLocalTheme = (value: string) => {
   localStorage?.setItem(STORAGE_KEY, value);
 };
 
-export const getLocalTheme = () => {
+const getLocalTheme = () => {
   return localStorage?.getItem(STORAGE_KEY);
 };
 
@@ -17,36 +23,45 @@ export const getInitialTheme = (themes: Theme[]) => {
     "(prefers-color-scheme: dark)",
   ).matches;
 
-  const initialTheme = localTheme ? localTheme.split("-")[0] : DEFAULT_THEME;
+  const initialTheme = localTheme ? localTheme.split(" ")[0] : DEFAULT_THEME;
   const initialMode = localTheme
-    ? localTheme.split("-")[1]
+    ? localTheme.split(" ")[1]
     : `${prefersDark ? "wicked" : "dawn"}`;
 
   return (
-    themes.find((theme) => theme.name === `${initialTheme}-${initialMode}`) ||
+    themes.find((theme) => theme.label === `${initialTheme} ${initialMode}`) ||
     themes[0]
   );
 };
 
-const toPascalCase = (str: string) =>
-  str.replace(
-    /\w\S*/g,
-    (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
-  );
+/** Return a `ref` that adds/removes `dark` class variant depending on `mode` */
+export const useDarkClass = <T extends HTMLElement = HTMLDivElement>(
+  mode: string,
+) => {
+  const ref = useRef<T>(null);
 
+  useEffect(() => {
+    if (mode === "wicked") {
+      ref.current?.classList.add("dark");
+    } else {
+      ref.current?.classList.remove("dark");
+    }
+  }, [mode]);
+
+  return ref;
+};
+
+/** Returns an array with the available themes */
 export const getThemesList = (themes: Record<string, HvThemeStructure>) => {
   const themesList: Theme[] = [];
 
   Object.keys(themes).forEach((themeName) => {
     const theme = themes[themeName];
     const colorModes = Object.keys(theme.colors.modes);
-
     colorModes.forEach((colorMode) => {
       const isDark = colorMode.includes("dark") || colorMode.includes("wicked");
-
       themesList.push({
-        name: `${themeName}-${colorMode}`,
-        label: `${toPascalCase(themeName)} ${colorMode}`,
+        label: `${themeName} ${colorMode}`,
         mode: isDark ? "dark" : "light",
       });
     });

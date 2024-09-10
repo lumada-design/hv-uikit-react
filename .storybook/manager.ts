@@ -19,9 +19,13 @@ addons.setConfig({
             "https://lumada-design.github.io/uikit/master",
           )
         ) {
-          // Hide "Test" stories in the production build
+          // Hide "Test" and "AutomationTest" stories in the production build
           // We need them in other cases for Chromatic and development
-          return !item.name.startsWith("Test");
+          return (
+            !item.name.startsWith("Test") &&
+            !item.name.startsWith("Automation") &&
+            !item.title.includes("Test")
+          );
         }
         return true;
       },
