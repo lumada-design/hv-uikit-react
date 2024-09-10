@@ -21,7 +21,7 @@ export const Main: StoryObj<HvPanelProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

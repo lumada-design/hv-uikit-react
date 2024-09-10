@@ -17,6 +17,7 @@ import { Selectable as SelectableStory } from "./stories/Selectable";
 import SelectableRaw from "./stories/Selectable?raw";
 import { Variants as VariantsStory } from "./stories/Variants";
 import VariantsRaw from "./stories/Variants?raw";
+import { getModes } from ".storybook/getModes";
 
 const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
@@ -56,7 +57,10 @@ export const Variants: StoryObj<HvCardProps> = {
       source: { code: VariantsRaw },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: {
+      disableSnapshot: false,
+      modes: getModes(["Pentaho+ dawn", "DS3 dawn"]),
+    },
   },
   render: () => <VariantsStory />,
 };

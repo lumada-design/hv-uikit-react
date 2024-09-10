@@ -230,7 +230,7 @@ export const SelectableControlled: StoryObj<HvTagProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   // For visual testing

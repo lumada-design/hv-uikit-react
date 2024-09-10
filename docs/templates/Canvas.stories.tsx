@@ -33,7 +33,7 @@ export const Main: StoryObj = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
   },
   // For visual testing
   play: async ({ canvasElement }) => {

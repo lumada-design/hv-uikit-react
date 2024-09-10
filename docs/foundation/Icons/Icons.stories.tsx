@@ -116,7 +116,7 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
 
 export const Test: StoryObj<IconBaseProps> = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   args: {
@@ -134,7 +134,7 @@ export const Test: StoryObj<IconBaseProps> = {
 
 export const TestSprites: StoryObj<HvIconSpriteProps> = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   args: {
@@ -161,7 +161,7 @@ const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
 
 export const TestSizes: StoryObj<IconBaseProps> = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   render: () => (

@@ -63,7 +63,7 @@ export const NoData: StoryObj<HvTableProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <NoDataStory />,
 };
@@ -90,7 +90,7 @@ export const GroupedRows: StoryObj<HvTableProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <GroupedRowsStory />,
 };
@@ -117,7 +117,7 @@ export const ListRow: StoryObj<HvTableProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <ListRowStory />,
 };

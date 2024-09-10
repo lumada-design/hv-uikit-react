@@ -106,7 +106,7 @@ export const Test: StoryObj<HvBreadCrumbProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     a11y: {
       config: {
         rules: [

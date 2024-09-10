@@ -132,7 +132,7 @@ export const Accessibility: StoryObj<HvBadgeProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   render: () => (

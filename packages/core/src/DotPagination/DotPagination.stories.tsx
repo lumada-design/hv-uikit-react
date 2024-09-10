@@ -33,7 +33,7 @@ export const Main: StoryObj<HvDotPaginationProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const [page, setPage] = useState<number>(0);

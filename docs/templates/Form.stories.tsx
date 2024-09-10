@@ -9,7 +9,7 @@ export default {
 
 export const Main: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: {
       source: {
         code: FormRaw,

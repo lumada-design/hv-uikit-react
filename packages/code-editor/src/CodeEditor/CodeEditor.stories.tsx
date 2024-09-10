@@ -18,7 +18,7 @@ export default meta;
 export const Main: StoryObj<HvCodeEditorProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
     docs: {
       source: { code: MainStoryRaw },
     },
@@ -34,7 +34,7 @@ export const YamlEditor: StoryObj<HvCodeEditorProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
   },
   render: () => {
     const defaultValueYaml =

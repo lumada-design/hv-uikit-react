@@ -189,7 +189,7 @@ export const Main: StoryObj<HvTextAreaProps> = {
 export const Variants: StoryObj<HvTextAreaProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const classes = {

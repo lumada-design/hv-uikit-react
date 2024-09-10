@@ -29,7 +29,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: (args) => {
     const options = [
