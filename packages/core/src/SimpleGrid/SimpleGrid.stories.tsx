@@ -6,9 +6,6 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const range = (max: number, min = 1) =>
-  Array.from(Array(max), (v, i) => i + min);
-
 const style = {
   display: "flex",
   justifyContent: "center",
@@ -39,8 +36,8 @@ export const Main: StoryObj<HvSimpleGridProps> = {
   render: (args) => {
     return (
       <HvSimpleGrid className={css({ "& > div": style })} {...args}>
-        {range(5).map((i) => (
-          <div key={i}>{i}</div>
+        {[...Array(5).keys()].map((i) => (
+          <div key={i}>{i + 1}</div>
         ))}
       </HvSimpleGrid>
     );
@@ -65,8 +62,8 @@ export const BreakpointsGrid: StoryObj<HvSimpleGridProps> = {
         cols={cols}
         className={css({ "& > div": style })}
       >
-        {range(5).map((i) => (
-          <div key={i}>{i}</div>
+        {[...Array(5).keys()].map((i) => (
+          <div key={i}>{i + 1}</div>
         ))}
       </HvSimpleGrid>
     );
