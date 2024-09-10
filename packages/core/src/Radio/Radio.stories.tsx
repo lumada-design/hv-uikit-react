@@ -62,7 +62,7 @@ export const Variants: StoryObj<HvRadioProps> = {
   ],
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     const styles = {

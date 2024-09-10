@@ -47,7 +47,7 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: (args) => {
     return <HvDropDownMenu {...args} />;

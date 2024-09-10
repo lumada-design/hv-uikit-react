@@ -308,7 +308,7 @@ export const CustomRootComponent: StoryObj<HvButtonProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   render: () => (

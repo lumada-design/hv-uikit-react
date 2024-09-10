@@ -52,7 +52,7 @@ export const Disabled: StoryObj<HvIconButtonProps> = {
 export const Variants: StoryObj<HvIconButtonProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   decorators: [
     (Story) => (

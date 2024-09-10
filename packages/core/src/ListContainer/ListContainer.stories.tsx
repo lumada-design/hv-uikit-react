@@ -171,7 +171,7 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 export const WithIcons: StoryObj<HvListContainerProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (

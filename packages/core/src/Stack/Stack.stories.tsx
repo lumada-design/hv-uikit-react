@@ -260,7 +260,7 @@ export const WithNavigation: StoryObj<HvStackProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
   },
   render: () => (

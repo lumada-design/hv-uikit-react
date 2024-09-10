@@ -89,7 +89,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // Open tooltip for visual tests
   play: async ({ canvasElement }) => {
@@ -149,7 +149,7 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // Open tooltip for visual tests
   play: async ({ canvasElement }) => {

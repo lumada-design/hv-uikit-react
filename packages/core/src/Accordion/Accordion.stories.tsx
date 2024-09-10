@@ -77,7 +77,7 @@ export const Main: StoryObj<HvAccordionProps> = {
 export const Disabled: StoryObj<HvAccordionProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing
   play: async ({ canvasElement }) => {

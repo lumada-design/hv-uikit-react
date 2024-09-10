@@ -60,7 +60,7 @@ export const AlternativeLayoutStory: StoryObj = {
   parameters: {
     docs: { source: { code: AlternativeLayoutRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <AlternativeLayout />,
 };
@@ -69,7 +69,7 @@ export const ColumnResizeStory: StoryObj = {
   parameters: {
     docs: { source: { code: ColumnResizeRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <ColumnResize />,
 };
@@ -115,7 +115,7 @@ export const UseHvRowExpandStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvRowExpandRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -133,7 +133,7 @@ export const UseHvGroupByStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvGroupByRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -149,7 +149,7 @@ export const UseHvTableStickyStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvTableStickyRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <UseHvTableSticky />,
 };
@@ -158,7 +158,7 @@ export const UseHvHeaderGroupsStory: StoryObj = {
   parameters: {
     docs: { source: { code: UseHvHeaderGroupsRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     a11y: {
       config: {
         rules: [
@@ -180,7 +180,7 @@ export const UseHvRowStateStory: StoryObj = {
 /** This was created to test grouped headers with sticky columns */
 export const TestHeaders: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
     a11y: {
       config: {

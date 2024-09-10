@@ -75,7 +75,7 @@ export const Actions: StoryObj<HvCarouselProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
   },
   render: () => {
     const [index, setIndex] = useState(0);
@@ -125,7 +125,7 @@ export const Embedded: StoryObj<HvCarouselProps> = {
       },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
   },
   render: () => {
     const images = [

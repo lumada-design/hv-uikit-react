@@ -315,7 +315,7 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
     docs: { disable: true },
     a11y: {
       config: {

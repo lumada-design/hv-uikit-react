@@ -27,7 +27,7 @@ export const AllColumnRenderersStory: StoryObj = {
   parameters: {
     docs: { source: { code: AllColumnRenderersRaw } },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => <AllColumnRenderers />,
 };

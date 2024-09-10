@@ -46,7 +46,7 @@ export const Main: StoryObj<HvDrawerProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

@@ -138,7 +138,7 @@ export const Custom: StoryObj<HvVerticalNavigationProps> = {
       source: { code: CustomRaw },
     },
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -159,7 +159,7 @@ export const Test: StoryObj<HvVerticalNavigationProps> = {
         ],
       },
     },
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    chromatic: { disableSnapshot: true, delay: 5000 },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

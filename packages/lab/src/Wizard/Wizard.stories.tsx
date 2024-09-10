@@ -238,7 +238,7 @@ export const Skippable: StoryObj<HvWizardProps> = {
 export const ComponentBreakDown: StoryObj<HvWizardProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

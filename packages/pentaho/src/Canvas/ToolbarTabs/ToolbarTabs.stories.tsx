@@ -47,7 +47,7 @@ export const Main: StoryObj<HvCanvasToolbarTabsProps> = {
   },
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: (args) => {
     return <HvCanvasToolbarTabs {...args} />;

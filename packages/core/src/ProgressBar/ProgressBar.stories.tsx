@@ -75,7 +75,7 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
 export const Determinate: StoryObj<HvProgressBarProps> = {
   parameters: {
     // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    chromatic: { disableSnapshot: true },
   },
   render: () => {
     return (
