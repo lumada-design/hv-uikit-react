@@ -2,6 +2,7 @@ import { forwardRef, memo } from "react";
 import styled from "@emotion/styled";
 import {
   getColor,
+  HvColor,
   HvColorAny,
   HvSize,
   theme,
@@ -35,8 +36,7 @@ const getIconColors = (
 
   // TODO: remove in v6
   if (semantic) {
-    colorArray[0] =
-      theme.colors?.[semantic as keyof typeof theme.colors] || colorArray[0];
+    colorArray[0] = theme.colors?.[semantic as HvColor] || colorArray[0];
   }
 
   // TODO: remove in v6

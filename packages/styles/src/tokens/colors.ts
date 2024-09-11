@@ -1,5 +1,69 @@
 import type { Property } from "csstype";
 
+interface ColorTokens {
+  // #region semantic
+  primary: string;
+  primaryAction: string;
+  // primaryStrong: string;
+  primaryDimmed: string;
+  success: string;
+  successAction: string;
+  successStrong: string;
+  successDimmed: string;
+  warning: string;
+  warningAction: string;
+  warningStrong: string;
+  warningDimmed: string;
+  error: string;
+  errorAction: string;
+  errorStrong: string;
+  errorDimmed: string;
+  neutral: string;
+  neutralAction: string;
+  neutralStrong: string;
+  neutralDimmed: string;
+  // #endregion
+
+  // #region text
+  /** primary text color */
+  text: string;
+  /** secondary text color */
+  textSubtle: string;
+  /** disabled text color */
+  textDisabled: string;
+  /** dimmed text, close to the bgColor, used for contrasting with semantic backgrounds */
+  textDimmed: string; // usage of both subtle & dimmed is confusing
+  /** primary link color */
+  link: string;
+  /** active link color, when hovered/focused */
+  linkActive: string;
+  /** visited link color */
+  // #endregion
+
+  // #region borders
+  divider: string;
+  dividerSubtle: string;
+  dividerDimmed: string;
+  // #endregion
+
+  // #region backgrounds
+  /** default page backgroung */
+  bgPage: string;
+  /** default surface background (for Header, Tooltip, Dialog, Drawer, etc. */
+  bgSurface: string;
+  /** background for :active action */
+  bgActive: string;
+  /** background for :hover actions */
+  bgHover: string;
+  /** background for disabled elements */
+  bgDisabled: string;
+  /** overlay background (for Dialog, dropdowns, etc.) */
+  bgOverlay: string;
+  /** color to use for opacity */
+  dimmer: string;
+  // #endregion
+}
+
 const base = {
   base_light: "#FBFCFC",
   base_dark: "#414141",
@@ -135,7 +199,6 @@ const categorical = {
 const common = {
   ...base,
   ...categorical,
-  // TODO: add "base palette" colors?
 };
 
 // #region Light palette
@@ -202,6 +265,46 @@ const utilsLight = {
   backgroundColor: atmosphereLight.atmo2,
   containerBackgroundHover: accentLight.primary_20,
 };
+
+const newLight = {
+  primary: accentLight.primary,
+  primaryAction: accentLight.primary_80,
+  primaryDimmed: accentLight.primary_20,
+  success: semanticLight.positive,
+  successAction: semanticLight.positive_80,
+  successStrong: semanticLight.positive_120,
+  successDimmed: semanticLight.positive_20,
+  warning: semanticLight.warning,
+  warningAction: semanticLight.warning_120,
+  warningStrong: semanticLight.warning_140,
+  warningDimmed: semanticLight.warning_20,
+  error: semanticLight.negative,
+  errorAction: semanticLight.negative_80,
+  errorStrong: semanticLight.negative_120,
+  errorDimmed: semanticLight.negative_20,
+  neutral: semanticLight.neutral,
+  neutralAction: semanticLight.neutral,
+  neutralStrong: semanticLight.neutral,
+  neutralDimmed: semanticLight.neutral_20,
+
+  text: accentLight.secondary,
+  textSubtle: accentLight.secondary_80,
+  textDisabled: accentLight.secondary_60,
+  textDimmed: atmosphereLight.atmo1,
+  link: accentLight.primary,
+  linkActive: accentLight.primary,
+
+  divider: atmosphereLight.atmo4,
+  dividerSubtle: atmosphereLight.atmo3,
+  dividerDimmed: atmosphereLight.atmo2,
+  bgPage: atmosphereLight.atmo2,
+  bgSurface: atmosphereLight.atmo1,
+  bgActive: atmosphereLight.atmo3,
+  bgHover: accentLight.primary_20,
+  bgDisabled: atmosphereLight.atmo3,
+  bgOverlay: `color-mix(in srgb, ${atmosphereLight.atmo4} 80%, transparent)`,
+  dimmer: "#FFFFFF",
+} satisfies ColorTokens;
 // #endregion
 
 // #region Dark palette
@@ -263,12 +366,51 @@ const shadowDark = {
   shad1: "rgba(0,0,0,.16)",
   shadow: "0 3px 5px rgba(0,0,0,.16)",
 };
-// #endregion
 
 const utilsDark = {
   backgroundColor: atmosphereDark.atmo2,
   containerBackgroundHover: accentDark.primary_20,
 };
+
+const newDark = {
+  primary: accentDark.primary,
+  primaryAction: accentDark.primary_80,
+  primaryDimmed: accentDark.primary_20,
+  success: semanticDark.positive,
+  successAction: semanticDark.positive_80,
+  successStrong: semanticDark.positive_120,
+  successDimmed: semanticDark.positive_20,
+  warning: semanticDark.warning,
+  warningAction: semanticDark.warning_120,
+  warningStrong: semanticDark.warning_140,
+  warningDimmed: semanticDark.warning_20,
+  error: semanticDark.negative,
+  errorAction: semanticDark.negative_80,
+  errorStrong: semanticDark.negative_120,
+  errorDimmed: semanticDark.negative_20,
+  neutral: semanticDark.neutral,
+  neutralAction: semanticDark.neutral,
+  neutralStrong: semanticDark.neutral,
+  neutralDimmed: semanticDark.neutral_20,
+
+  text: accentDark.secondary,
+  textSubtle: accentDark.secondary_80,
+  textDisabled: accentDark.secondary_60,
+  textDimmed: atmosphereDark.atmo1,
+  link: accentDark.primary,
+  linkActive: accentDark.primary,
+
+  divider: atmosphereDark.atmo4,
+  dividerSubtle: atmosphereDark.atmo3,
+  dividerDimmed: atmosphereDark.atmo2,
+  bgPage: atmosphereDark.atmo2,
+  bgSurface: atmosphereDark.atmo1,
+  bgActive: atmosphereDark.atmo3,
+  bgHover: accentDark.primary_20,
+  bgDisabled: atmosphereDark.atmo3,
+  bgOverlay: `color-mix(in srgb, ${atmosphereDark.atmo4} 80%, transparent)`,
+  dimmer: "#000000",
+} satisfies ColorTokens;
 // #endregion
 
 export const colors = {
@@ -280,6 +422,8 @@ export const colors = {
     ...supportLight,
     ...shadowLight,
     ...utilsLight,
+    /** new Pentaho+ colors @internal @deprecated INTERNAL USE ONLY */
+    pp: newLight,
   },
   dark: {
     ...accentDark,
@@ -288,6 +432,8 @@ export const colors = {
     ...supportDark,
     ...shadowDark,
     ...utilsDark,
+    /** new Pentaho+ colors @internal @deprecated INTERNAL USE ONLY */
+    pp: newDark,
   },
 };
 
@@ -300,7 +446,9 @@ export type HvSupportColor = keyof typeof supportLight;
 export type HvCategoricalColor = keyof typeof categorical;
 
 /** A type with all the accepted colors from the color palette */
-export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
+export type HvColor =
+  | keyof typeof colors.common
+  | Exclude<keyof typeof colors.light, "pp">;
 
 /**
  * A type representing an `HvColor` from the palette or any other color string
