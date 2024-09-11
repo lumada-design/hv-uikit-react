@@ -1,19 +1,18 @@
-import type { CSSObject } from "@emotion/serialize";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvBreakpoints, theme } from "@hitachivantara/uikit-styles";
 
-import { Breakpoint, Spacing } from "./types";
+import type { Breakpoint } from "./SimpleGrid";
 
 export const { staticClasses, useClasses } = createClasses("HvSimpleGrid", {
-  root: {},
+  root: {
+    display: "grid",
+    boxSizing: "border-box",
+    gridTemplateColumns: `repeat(var(--cols, 1), minmax(0, 1fr))`,
+  },
 });
 
-function size(props: { size: any; sizes: any }) {
-  if (typeof props.size === "number") {
-    return props.size;
-  }
-
-  return props.sizes[props.size] || props.size || props.sizes.md;
+function getSize(size?: number) {
+  return size || Number(theme.breakpoints.values.md);
 }
 
 function getSortedBreakpoints(breakpoints: Breakpoint[]) {
@@ -23,51 +22,37 @@ function getSortedBreakpoints(breakpoints: Breakpoint[]) {
 
   const property = "maxWidth" in breakpoints[0] ? "maxWidth" : "minWidth";
   const sorted = [...breakpoints].sort(
-    (a, b) =>
-      size({ size: b[property], sizes: theme.breakpoints }) -
-      size({ size: a[property], sizes: theme.breakpoints }),
+    (a, b) => getSize(b[property]) - getSize(a[property]),
   );
 
   return property === "minWidth" ? sorted.reverse() : sorted;
 }
 
-export const getContainerStyle = ({
-  breakpoints,
-  spacing,
-  cols,
-}: {
-  breakpoints?: Breakpoint[];
-  spacing: Spacing;
-  cols?: number;
-}) => {
+export const getContainerStyle = (
+  breakpoints?: Breakpoint[],
+  spacing: HvBreakpoints = "sm",
+  cols = 1,
+) => {
   return {
-    boxSizing: "border-box",
-    display: "grid",
-    gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+    // TODO: review/document precedence of cols/spacing vs breakpoints[cols/spacing]
+    "--cols": cols,
     gap: theme.space[spacing],
+
     ...(breakpoints &&
       getSortedBreakpoints(breakpoints).reduce<
         Record<string, React.CSSProperties>
       >((acc, breakpoint) => {
         const property = "maxWidth" in breakpoint ? "max-width" : "min-width";
-        const breakpointSize = size({
-          size:
-            property === "max-width"
-              ? breakpoint.maxWidth
-              : breakpoint.minWidth,
-          sizes: theme.breakpoints,
-        });
+        const breakpointSize = getSize(
+          property === "max-width" ? breakpoint.maxWidth : breakpoint.minWidth,
+        );
 
-        acc[
-          `@media (${property}: ${
-            breakpointSize + (property === "max-width" ? 0 : 1)
-          }px)`
-        ] = {
-          gridTemplateColumns: `repeat(${breakpoint.cols}, minmax(0, 1fr))`,
-          gap: theme.space[spacing],
+        acc[`@media (${property}: ${breakpointSize}px)`] = {
+          ["--cols" as string]: breakpoint.cols,
+          gap: theme.space[breakpoint.spacing || spacing],
         };
 
         return acc;
       }, {})),
-  } satisfies CSSObject;
+  };
 };
