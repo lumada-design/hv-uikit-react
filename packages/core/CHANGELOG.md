@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.72.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.72.0...@hitachivantara/uikit-react-core@5.72.1) (2024-09-12)
+
+### Bug Fixes
+
+- **Header:** add ref to Header components ([4207ec6](https://github.com/lumada-design/hv-uikit-react/commit/4207ec65fef22f90b39f6c0fdadcfe8a62b55d73))
+- **SimpleGrid:** breakpoints spacing ([#4322](https://github.com/lumada-design/hv-uikit-react/issues/4322)) ([89fbd23](https://github.com/lumada-design/hv-uikit-react/commit/89fbd2326a19e838af26941e4087bc0b6ff2bc36))
+
 # [5.72.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.71.0...@hitachivantara/uikit-react-core@5.72.0) (2024-09-09)
 
 ### Bug Fixes
