@@ -10,7 +10,7 @@ import { useTimeout } from "./useTimeout";
 const fmt = (timestamp: any, locale: any, showSeconds?: boolean) => {
   const timestampMs =
     String(timestamp).length > 11 ? timestamp : timestamp * 1000;
-  return formatTimeAgo(new Date(timestampMs), locale, showSeconds);
+  return formatTimeAgo(timestampMs, locale, showSeconds);
 };
 
 export default function useTimeAgo(

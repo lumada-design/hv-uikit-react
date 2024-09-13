@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
-import dayjs from "dayjs";
 import {
   HvRadio,
   HvRadioGroup,
@@ -8,12 +8,6 @@ import {
   HvTimeAgoProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
-
-import "dayjs/locale/fr";
-import "dayjs/locale/de";
-import "dayjs/locale/pt";
-
-import { css } from "@emotion/css";
 
 const styles = {
   root: css({
@@ -44,7 +38,7 @@ export default meta;
 
 export const Main: StoryObj<HvTimeAgoProps> = {
   args: {
-    timestamp: dayjs().valueOf(),
+    timestamp: new Date().getTime(),
     locale: "en",
     disableRefresh: false,
     showSeconds: false,
@@ -62,19 +56,21 @@ export const Main: StoryObj<HvTimeAgoProps> = {
 
 const dates = [
   new Date(),
-  new Date().setSeconds(new Date().getSeconds() - 30),
+  new Date().setSeconds(new Date().getSeconds() - 10),
+  new Date().setSeconds(new Date().getSeconds() - 90),
   new Date().setMinutes(new Date().getMinutes() - 1),
   new Date().setMinutes(new Date().getMinutes() - 10),
   new Date().setMinutes(new Date().getMinutes() - 59),
   new Date().setMinutes(new Date().getMinutes() - 80),
   new Date().setHours(0),
   new Date().setDate(new Date().getDate() - 1),
-  new Date().setDate(new Date().getDate() - new Date().getDay()),
   new Date().setDate(0),
   new Date().setMonth(new Date().getMonth() - 1),
-  new Date().setMonth(new Date().getMonth() - 2),
-  new Date().setMonth(new Date().getMonth() - 4),
-  new Date().setFullYear(new Date().getFullYear() - 1),
+  new Date().setSeconds(new Date().getSeconds() + 90),
+  new Date().setMinutes(new Date().getMinutes() + 5),
+  new Date().setHours(23, 59, 59, 999),
+  new Date().setDate(new Date().getDate() + 1),
+  new Date().setMonth(new Date().getMonth() + 6),
 ].map((date) => date.valueOf());
 
 export const Samples: StoryObj<HvTimeAgoProps> = {
@@ -106,10 +102,7 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
   parameters: {
     docs: {
       description: {
-        story:
-          "Sample dates and locale controlled externally.<br /> \
-        `HvTimeAgo` leverages `dayjs` for locales and custom dates. To use a locale, import it with `dayjs/locale/{locale}`<br />\
-        Locale strings can be overridden using [dayjs.updateLocale](https://day.js.org/docs/en/plugin/update-locale)",
+        story: "Sample dates and locale controlled externally.",
       },
     },
   },
@@ -132,6 +125,7 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
             <HvRadio label="🇫🇷 French" value="fr" />
             <HvRadio label="🇩🇪 German" value="de" />
             <HvRadio label="🇵🇹 Portuguese" value="pt" />
+            <HvRadio label="🇯🇵 Japanese" value="ja" />
           </HvRadioGroup>
         </div>
         <table className={styles.table}>
@@ -146,7 +140,7 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
               <tr key={dateTs}>
                 <td>{new Date(dateTs).toISOString()}</td>
                 <td aria-label="Time ago">
-                  <HvTimeAgo timestamp={dateTs} locale={locale} />
+                  <HvTimeAgo timestamp={dateTs} locale={locale} showSeconds />
                 </td>
               </tr>
             ))}
