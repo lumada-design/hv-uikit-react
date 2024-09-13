@@ -15,7 +15,7 @@ export function useHvTreeItem(nodeId: string) {
   const selected = instance ? instance.isNodeSelected(nodeId) : false;
   const disabled = instance ? instance.isNodeDisabled(nodeId) : false;
 
-  const handleExpansion = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleExpansion = (event: React.MouseEvent) => {
     if (!instance || disabled) return;
 
     if (!focused) {
@@ -31,7 +31,7 @@ export function useHvTreeItem(nodeId: string) {
     }
   };
 
-  const handleSelection = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleSelection = (event: React.MouseEvent) => {
     if (!instance || disabled) return;
 
     if (!focused) {
@@ -52,7 +52,7 @@ export function useHvTreeItem(nodeId: string) {
     }
   };
 
-  const preventSelection = (event: React.MouseEvent<HTMLDivElement>) => {
+  const preventSelection = (event: React.MouseEvent) => {
     if (event.shiftKey || event.ctrlKey || event.metaKey || disabled) {
       // Prevent text selection
       event.preventDefault();
