@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import dayjs from "dayjs";
 import {
@@ -6,7 +6,6 @@ import {
   HvRadioGroup,
   HvTimeAgo,
   HvTimeAgoProps,
-  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -61,24 +60,25 @@ export const Main: StoryObj<HvTimeAgoProps> = {
   },
 };
 
+const dates = [
+  new Date(),
+  new Date().setSeconds(new Date().getSeconds() - 30),
+  new Date().setMinutes(new Date().getMinutes() - 1),
+  new Date().setMinutes(new Date().getMinutes() - 10),
+  new Date().setMinutes(new Date().getMinutes() - 59),
+  new Date().setMinutes(new Date().getMinutes() - 80),
+  new Date().setHours(0),
+  new Date().setDate(new Date().getDate() - 1),
+  new Date().setDate(new Date().getDate() - new Date().getDay()),
+  new Date().setDate(0),
+  new Date().setMonth(new Date().getMonth() - 1),
+  new Date().setMonth(new Date().getMonth() - 2),
+  new Date().setMonth(new Date().getMonth() - 4),
+  new Date().setFullYear(new Date().getFullYear() - 1),
+].map((date) => date.valueOf());
+
 export const Samples: StoryObj<HvTimeAgoProps> = {
   render: () => {
-    const dates = useMemo(
-      () =>
-        [
-          dayjs(),
-          dayjs().subtract(1, "minutes"),
-          dayjs().subtract(10, "minutes"),
-          dayjs().subtract(59, "minutes"),
-          dayjs().hour(0),
-          dayjs().day(0),
-          dayjs().date(0),
-          dayjs().month(-2),
-          dayjs().month(-4),
-        ].map((date) => date.valueOf()),
-      [],
-    );
-
     return (
       <table className={styles.table}>
         <thead>
@@ -88,11 +88,11 @@ export const Samples: StoryObj<HvTimeAgoProps> = {
           </tr>
         </thead>
         <tbody>
-          {dates.map((dateTs, idx) => (
-            <tr key={`${dateTs}-${idx}`}>
+          {dates.map((dateTs) => (
+            <tr key={dateTs}>
               <td>{new Date(dateTs).toISOString()}</td>
               <td aria-label="Time ago">
-                <HvTimeAgo timestamp={dateTs} />
+                <HvTimeAgo timestamp={dateTs} showSeconds />
               </td>
             </tr>
           ))}
@@ -115,7 +115,6 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
   },
   render: () => {
     const [locale, setLocale] = useState("en");
-    const [time /* , setTime */] = useState(Date.now());
 
     return (
       <div className={css(styles.container)}>
@@ -127,7 +126,6 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
               // dynamically import locales. if the supported locales are known beforehand,
               // its preferable to import them statically, to avoid bundling unnecessary locales
               setLocale(newLocale);
-              dayjs.updateLocale("fr", {});
             }}
           >
             <HvRadio label="🇬🇧 English" value="en" />
@@ -136,12 +134,24 @@ export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
             <HvRadio label="🇵🇹 Portuguese" value="pt" />
           </HvRadioGroup>
         </div>
-        <div>
-          <HvTypography variant="title3">
-            <HvTimeAgo timestamp={time} locale={locale} />
-          </HvTypography>
-          <span>{new Date(time).toISOString()}</span>
-        </div>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>ISO Date</th>
+              <th>{"<TimeAgo />"}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dates.map((dateTs) => (
+              <tr key={dateTs}>
+                <td>{new Date(dateTs).toISOString()}</td>
+                <td aria-label="Time ago">
+                  <HvTimeAgo timestamp={dateTs} locale={locale} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   },

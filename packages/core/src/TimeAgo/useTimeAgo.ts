@@ -14,12 +14,14 @@ const fmt = (timestamp: any, locale: any, showSeconds?: boolean) => {
 };
 
 export default function useTimeAgo(
-  timestamp: number | undefined,
+  timestamp = Date.now(),
   options?: Pick<HvTimeAgoProps, "locale" | "disableRefresh" | "showSeconds">,
 ) {
   const { locale, disableRefresh = false, showSeconds = false } = options || {};
-  const [timeAgo, setTimeAgo] = useState(fmt(timestamp, locale, showSeconds));
-  const refreshTime = disableRefresh ? 0 : timeAgo.delay * 1000;
+  const [timeAgo, setTimeAgo] = useState(() =>
+    fmt(timestamp, locale, showSeconds),
+  );
+  const refreshTime = disableRefresh ? 0 : 10_000;
 
   useEffect(() => {
     const newTimeAgo = fmt(timestamp, locale, showSeconds);
@@ -31,5 +33,5 @@ export default function useTimeAgo(
     setTimeAgo(newTimeAgo);
   }, refreshTime);
 
-  return timeAgo.timeAgo;
+  return timeAgo;
 }

@@ -26,10 +26,10 @@ export type HvTimeAgoProps<C extends React.ElementType = "p"> =
        */
       timestamp?: number;
       /**
-       * The locale to be used. Should be on of the dayjs supported locales and explicitly imported
-       * @see https://day.js.org/docs/en/i18n/i18n
+       * The locale to be used. Should be on of the JS supported locales
+       * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument
        */
-      locale?: string;
+      locale?: Intl.LocalesArgument;
       /**
        * The element to render when the timestamp is null or 0
        * Defaults to `—` (Em Dash)
@@ -59,7 +59,7 @@ export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
     classes: classesProp,
     className,
     timestamp,
-    locale: localeProp = "en",
+    locale = "en",
     component: Component = HvTypography,
     emptyElement = "—",
     disableRefresh = false,
@@ -69,7 +69,6 @@ export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
   } = useDefaultProps("HvTimeAgo", props);
 
   const { classes, cx } = useClasses(classesProp);
-  const locale = localeProp || "en";
   const timeAgo = useTimeAgo(timestamp, {
     locale,
     disableRefresh,
