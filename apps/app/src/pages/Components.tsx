@@ -1,319 +1,453 @@
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Global } from "@emotion/react";
+import { useCallback, useState } from "react";
 import {
+  HvAccordion,
+  HvActionBar,
+  HvActionGeneric,
+  HvAvatar,
+  HvBannerContent,
+  HvBreadCrumb,
+  HvBulkActions,
   HvButton,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvCardMedia,
   HvCheckBox,
-  HvCheckBoxGroup,
-  HvContainer,
+  HvColorPicker,
+  HvDatePicker,
+  HvEmptyState,
+  HvGlobalActions,
+  HvGrid,
+  HvIconButton,
+  HvInput,
+  HvListContainer,
+  HvListItem,
+  HvMultiButton,
+  HvOption,
+  HvPagination,
+  HvPanel,
+  HvProgressBar,
+  HvRadio,
+  HvRadioGroup,
+  HvSelect,
+  HvSelectionList,
+  HvSlider,
+  HvSwitch,
+  HvTab,
+  HvTable,
+  HvTableBody,
+  HvTableCell,
+  HvTableContainer,
+  HvTableHead,
+  HvTableHeader,
+  HvTableRow,
+  HvTableSection,
+  HvTabs,
+  HvTag,
+  HvTagsInput,
+  HvTimePicker,
+  HvToggleButton,
   HvTypography,
-  theme,
+  useHvBulkActions,
+  useHvPagination,
+  useHvRowSelection,
+  useHvTable,
+  useHvTableSticky,
 } from "@hitachivantara/uikit-react-core";
-
+// eslint-disable-next-line no-restricted-imports
 import {
-  Avatar,
-  Badge,
-  BreadCrumb,
-  BulkActions,
-  Buttons,
-  Calendar,
-  Cards,
-  CheckBox,
-  Dialogs,
-  DotPagination,
-  DropDownMenu,
-  EmptyState,
-  FileUploader,
-  Icons,
-  Input,
-  Loading,
-  Pagination,
-  ProgressBar,
-  Radio,
-  Snackbars,
-  Switch,
-  Tags,
-  TagsInput,
-  Tooltip,
-  Typography,
-  VerticalNavigation,
-} from "~/components/components";
+  AssetEvent,
+  makeData,
+} from "@hitachivantara/uikit-react-core/src/Table/stories/storiesUtils";
+import {
+  Backwards,
+  Ban,
+  Cloud,
+  DataStore,
+  Delete,
+  Duplicate,
+  Favorite,
+  FavoriteSelected,
+  Lock,
+  Preview,
+  Share,
+  Upload,
+} from "@hitachivantara/uikit-react-icons";
 
-// const coreStories = import.meta.glob("../../../../packages/core/src/**/*.stories.tsx");
-/*
-const imports = Object.values(coreStories);
-const Stories = await imports[0]();
-// const componentsList = Promise.all(imports.map((import) => import()));
-console.log(Stories?.Main.render);
-*/
+const Tabs = () => {
+  const [value, setValue] = useState(0);
 
-const componentsList = [
-  {
-    id: "avatar",
-    content: <Avatar />,
-    title: "Avatar",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-avatar--main",
-  },
-  {
-    id: "badge",
-    content: <Badge />,
-    title: "Badge",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-badge--main",
-  },
-  {
-    id: "breadcrumb",
-    content: <BreadCrumb />,
-    title: "Breadcrumb",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/widgets-breadcrumb--main",
-  },
-  {
-    id: "bulkactions",
-    content: <BulkActions />,
-    title: "Bulk Actions",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/widgets-bulk-actions--main",
-  },
-  {
-    id: "button",
-    content: <Buttons />,
-    title: "Button",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-button-button--main",
-  },
-  {
-    id: "calendar",
-    content: <Calendar />,
-    title: "Calendar",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-button-button--main",
-  },
-  {
-    id: "card",
-    content: <Cards />,
-    title: "Card",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-card--main",
-  },
-  {
-    id: "checkbox",
-    content: <CheckBox />,
-    title: "Checkbox",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-checkbox-checkbox--main",
-  },
-  {
-    id: "dialog",
-    content: <Dialogs />,
-    title: "Dialog",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-dialog--main",
-  },
-  {
-    id: "dotpagination",
-    content: <DotPagination />,
-    title: "Dot Pagination",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-pagination-dot-pagination--main",
-  },
-  {
-    id: "dropdownmenu",
-    content: <DropDownMenu />,
-    title: "Dropdown Menu",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-dropdown-dropdown-menu--main",
-  },
-  {
-    id: "emptystate",
-    content: <EmptyState />,
-    title: "Empty State",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-empty-state--main",
-  },
-  {
-    id: "fileuploader",
-    content: <FileUploader />,
-    title: "File Uploaded",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/widgets-file-uploader--main",
-  },
-  {
-    id: "icons",
-    content: <Icons />,
-    title: "Icons",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/foundation-icons--icons",
-  },
-  {
-    id: "input",
-    content: <Input />,
-    title: "Input",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-input--main",
-  },
-  {
-    id: "loading",
-    content: <Loading />,
-    title: "Loading",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-loading-loading--main",
-  },
-  {
-    id: "pagination",
-    content: <Pagination />,
-    title: "Pagination",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-pagination--main",
-  },
-  {
-    id: "progressbar",
-    content: <ProgressBar />,
-    title: "Progress Bar",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-loading-progress-bar--main",
-  },
-  {
-    id: "snackbar",
-    content: <Snackbars />,
-    title: "Snackbar",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-snackbar--main",
-  },
-  {
-    id: "radio",
-    content: <Radio />,
-    title: "Radio",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-radio-radio--main",
-  },
-  {
-    id: "switch",
-    content: <Switch />,
-    title: "Switch",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-switch--main",
-  },
-  {
-    id: "tags",
-    content: <Tags />,
-    title: "Tags",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-tag-tag--main",
-  },
-  {
-    id: "tagsinput",
-    content: <TagsInput />,
-    title: "Tags Input",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-tag-tags-input--main",
-  },
-  {
-    id: "tooltip",
-    content: <Tooltip />,
-    title: "Tooltip",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/components-tooltip-tooltip--main",
-  },
-  {
-    id: "typography",
-    content: <Typography />,
-    title: "Typography",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/foundation-typography--main",
-  },
-  {
-    id: "verticalnavigation",
-    content: <VerticalNavigation />,
-    title: "Vertical Navigation",
-    link: "https://lumada-design.github.io/uikit/master/?path=/docs/foundation-typography--main",
-  },
-];
-
-const Component = ({
-  id,
-  title,
-  link,
-  content,
-}: {
-  id: string;
-  title: string;
-  link: string;
-  content: React.ReactElement;
-}) => {
   return (
-    <div className="p-sm mb-lg">
-      <div className="flex items-center justify-between mb-sm">
-        <HvTypography variant="title2" component="a" href={`#${id}`}>
-          {title}
-        </HvTypography>
-        <HvButton
-          component="a"
-          href={link}
-          target="_blank"
-          className="px-md py-xs"
-          variant="secondarySubtle"
-        >
-          Docs
-        </HvButton>
-      </div>
-      <div className="pl-md flex flex-col gap-xs">{content}</div>
-    </div>
+    <HvTabs
+      variant="fullWidth"
+      orientation="horizontal"
+      value={value}
+      onChange={(_, val) => setValue(val)}
+    >
+      <HvTab icon={<DataStore />} iconPosition="start" label="Tab 1" />
+      <HvTab icon={<DataStore />} iconPosition="start" label="Tab 2" />
+      <HvTab icon={<DataStore />} iconPosition="start" label="Tab 3" />
+    </HvTabs>
   );
 };
 
-const initialSelection = [
-  "avatar",
-  "button",
-  "card",
-  "emptystate",
-  "input",
-  "loading",
-  "snackbar",
-  "typography",
-];
+const MultiButtons = () => {
+  const [selection, setSelection] = useState([0, 2, 3, 5]);
 
-const Components = () => {
-  const [params, setParams] = useSearchParams();
-  const [selection, setSelection] = useState(
-    params.get("selection")?.split(",") ?? initialSelection,
-  );
-
-  useEffect(() => {
-    setParams({ selection: selection.join(",") }, { replace: true });
-  }, [selection, setParams]);
-
-  const componentsToShow = useMemo(
-    () =>
-      componentsList.map((c) => ({ ...c, selected: selection.includes(c.id) })),
-    [selection],
-  );
-
-  const handleClick = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleChange = (idx: number) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter((v) => v !== idx)
+      : [...selection, idx];
+    setSelection(newSelection);
   };
+
+  const buttons = ["Monday", "Tuesday", "Wednesday", "Thursday"];
+
+  return (
+    <HvMultiButton>
+      {buttons.map((button, i) => (
+        <HvButton
+          key={`${buttons[i]}`}
+          aria-label={button}
+          selected={selection.includes(i)}
+          onClick={() => handleChange(i)}
+        >
+          {button[0]}
+        </HvButton>
+      ))}
+    </HvMultiButton>
+  );
+};
+
+const Panel1 = () => (
+  <HvPanel className="grid gap-xs">
+    <Tabs />
+    <HvBannerContent
+      showIcon
+      variant="success"
+      content="Check out the UI Kit library!"
+    />
+    <HvBannerContent showIcon variant="error" content="An error has ocurred" />
+    <div>
+      <HvAccordion label="Analytics" defaultExpanded>
+        <HvTypography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+          feugiat urna nec mauris tempor sodales ac quis massa. Integer eu velit
+          mi. In aliquet vehicula nisi id aliquam.
+        </HvTypography>
+      </HvAccordion>
+      <HvAccordion label="System">
+        <HvListContainer interactive condensed>
+          <HvListItem>Settings</HvListItem>
+          <HvListItem>Network</HvListItem>
+        </HvListContainer>
+      </HvAccordion>
+      <HvAccordion label="Hidden Data" disabled>
+        <h2>Secret stuff!</h2>
+      </HvAccordion>
+    </div>
+    <HvProgressBar
+      value={64}
+      classes={{
+        root: "px-sm",
+        progressBar: "bg-positive",
+      }}
+    />
+    <div className="flex gap-xs">
+      <HvColorPicker iconOnly defaultValue="#C62828" />
+      <HvSwitch />
+      <HvCheckBox label="" />
+      <HvCheckBox defaultChecked label="Check" />
+      <HvRadioGroup orientation="horizontal" classes={{ group: "gap-0" }}>
+        <HvRadio label="" value="1" />
+        <HvRadio label="" value="2" defaultChecked />
+      </HvRadioGroup>
+    </div>
+    <div style={{ width: 200 }}>
+      <MultiButtons />
+    </div>
+    <HvSelectionList label="Options">
+      <HvListItem value="1">List Item 1</HvListItem>
+      <HvListItem value="2">List Item 2</HvListItem>
+      <HvListItem value="3">List Item 3</HvListItem>
+    </HvSelectionList>
+  </HvPanel>
+);
+
+const Panel2 = () => (
+  <HvPanel className="grid gap-sm overflow-unset">
+    <HvTypography variant="title3" className="text-primary">
+      This is a form title
+    </HvTypography>
+    <HvInput
+      label="Username"
+      description="Fill in your username here"
+      placeholder="john12doe"
+    />
+    <HvInput
+      type="password"
+      label="Password"
+      defaultValue="very-secret-password"
+    />
+    <HvSelect
+      name="country"
+      label="Country"
+      description="Select your favorite country"
+      placeholder="Select country"
+    >
+      <HvOption value="ar">Argentina</HvOption>
+      <HvOption value="bg">Belgium</HvOption>
+      <HvOption value="pt">Portugal</HvOption>
+      <HvOption value="pl">Poland</HvOption>
+      <HvOption value="sp">Spain</HvOption>
+    </HvSelect>
+    <HvSlider
+      label="Rating zone"
+      hideInput
+      defaultValues={[4, 8]}
+      minPointValue={0}
+      maxPointValue={10}
+    />
+    <HvDatePicker
+      label="Date"
+      rangeMode
+      startValue={new Date("2020-07-20")}
+      endValue={new Date("2020-07-25")}
+    />
+    <HvTimePicker
+      label="Time"
+      defaultValue={{ hours: 20, minutes: 21, seconds: 22 }}
+    />
+    <HvTagsInput
+      label="Project Tags"
+      defaultValue={["react", "ui", "library"]}
+    />
+    <div className="flex flex-wrap justify-end">
+      <HvButton variant="primaryGhost" startIcon={<Upload />}>
+        Submit results
+      </HvButton>
+    </div>
+  </HvPanel>
+);
+
+const Card1 = () => (
+  <HvCard bgcolor="atmo1">
+    <HvCardHeader
+      avatar={<HvAvatar backgroundColor="rebeccapurple">AB</HvAvatar>}
+      title={
+        <HvTypography variant="title4">Madeira Island, Portugal</HvTypography>
+      }
+      subheader={
+        <div className="flex gap-2px">
+          <HvTag color="cat3" label="Nature" />
+          <HvTag color="cat1" label="Ocean" />
+          <HvTag color="cat5" label="Vertigo" />
+        </div>
+      }
+    />
+    <HvCardMedia
+      component="img"
+      alt="madeira island image"
+      height={240}
+      image="https://i.imgur.com/hYWplFv.png"
+    />
+    <HvCardContent>
+      <HvTypography variant="body" className="mt-xs">
+        Not just an island, but a sanctuary of rugged cliffs, the resilience of
+        volcanic landscapes, the vibrancy of lush forests, the tenacity of life,
+        and the serene embrace of the Atlantic Ocean.
+      </HvTypography>
+    </HvCardContent>
+
+    <HvActionBar>
+      <HvCheckBox
+        value="value"
+        inputProps={{
+          "aria-label": "Tick to select the wilted and scorched leaves card.",
+        }}
+      />
+      <HvToggleButton
+        defaultSelected
+        aria-label="Star"
+        className="text-warning_140"
+        selectedIcon={<FavoriteSelected />}
+        notSelectedIcon={<Favorite />}
+      />
+      <div style={{ flex: 1 }} />
+      <HvButton variant="secondaryGhost" startIcon={<Share />}>
+        Share
+      </HvButton>
+    </HvActionBar>
+  </HvCard>
+);
+
+/** Client-side paginated HvTable with bulk actions */
+const Table = () => {
+  const [data, setData] = useState(() => makeData(64));
+
+  const {
+    getTableProps,
+    getTableHeadProps,
+    getTableBodyProps,
+    prepareRow,
+    headerGroups,
+    page,
+    selectedFlatRows,
+    toggleAllRowsSelected,
+    getHvBulkActionsProps,
+    getHvPaginationProps,
+  } = useHvTable<AssetEvent>(
+    { data, stickyHeader: true },
+    useHvTableSticky,
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions,
+  );
+
+  const handleAction = useCallback(
+    (evt: React.SyntheticEvent, action: HvActionGeneric) => {
+      const selected = selectedFlatRows.map((el) => el.original);
+
+      switch (action.id) {
+        case "duplicate": {
+          const newEls = selected.map((el) => ({
+            ...el,
+            id: `${el.id}-copy`,
+            name: `${el.name}-copy`,
+          }));
+          setData([...data, ...newEls]);
+          break;
+        }
+        case "delete": {
+          const selectedIds = selected.map((el) => el.id);
+          toggleAllRowsSelected?.(false);
+          setData(data.filter((el) => !selectedIds.includes(el.id)));
+          break;
+        }
+        case "lock":
+        case "preview":
+        default:
+          break;
+      }
+    },
+    [data, selectedFlatRows, toggleAllRowsSelected],
+  );
+
+  const EmptyStateRow = useCallback(
+    () => (
+      <HvTableRow>
+        <HvTableCell colSpan={100} style={{ height: 96 }}>
+          <HvEmptyState message="No data to display." icon={<Ban />} />
+        </HvTableCell>
+      </HvTableRow>
+    ),
+    [],
+  );
 
   return (
     <>
-      <Global styles={{ html: { scrollBehavior: "smooth" } }} />
-      <div
-        className="fixed w-[200px] left-0 overflow-y-scroll py-sm px-xs bg-atmo1 z-overlay"
-        style={{
-          height: `calc(100% - ${theme.header.height})`,
-          top: theme.header.height,
-        }}
-      >
-        <div className="flex flex-col">
-          <HvCheckBoxGroup
-            showSelectAll
-            value={selection}
-            onChange={(event, newSelection) => setSelection(newSelection)}
-          >
-            {componentsToShow.map((c) => (
-              <HvCheckBox
-                key={c.id}
-                value={c.id}
-                label={c.title}
-                onClick={() => handleClick(c.id)}
-                labelProps={{
-                  // checked labels only scroll to element
-                  style: { color: c.selected ? undefined : theme.colors.atmo4 },
-                  onClick: (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    handleClick(c.id);
-                  },
-                }}
-              />
+      <HvBulkActions
+        {...getHvBulkActionsProps?.()}
+        maxVisibleActions={1}
+        onAction={handleAction}
+        actions={[
+          { id: "duplicate", label: "Duplicate", icon: <Duplicate /> },
+          { id: "delete", label: "Delete", icon: <Delete /> },
+          { id: "lock", label: "Lock", icon: <Lock /> },
+          { id: "preview", label: "Preview", icon: <Preview /> },
+        ]}
+      />
+      <HvTableContainer className="max-h-400px">
+        <HvTable {...getTableProps()}>
+          <HvTableHead {...getTableHeadProps?.()}>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow
+                {...headerGroup.getHeaderGroupProps()}
+                key={headerGroup.getHeaderGroupProps().key}
+              >
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.getHeaderProps().key}
+                  >
+                    {col.render("Header")}
+                  </HvTableHeader>
+                ))}
+              </HvTableRow>
             ))}
-          </HvCheckBoxGroup>
-        </div>
-      </div>
-      <HvContainer maxWidth="md">
-        {componentsToShow.map((c) => (
-          <div key={c.id} id={c.id} style={{ scrollMarginTop: 64 + 10 }}>
-            {!!c.selected && <Component {...c} />}
-          </div>
-        ))}
-      </HvContainer>
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {page?.length ? (
+              page.map((row) => {
+                prepareRow(row);
+                const { key, ...rowProps } = row.getRowProps();
+
+                return (
+                  <HvTableRow key={key} {...rowProps}>
+                    {row.cells.map((cell) => (
+                      <HvTableCell
+                        {...cell.getCellProps()}
+                        key={cell.getCellProps().key}
+                      >
+                        {cell.render("Cell")}
+                      </HvTableCell>
+                    ))}
+                  </HvTableRow>
+                );
+              })
+            ) : (
+              <EmptyStateRow />
+            )}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      {page?.length > 0 && <HvPagination {...getHvPaginationProps?.()} />}
     </>
   );
 };
 
-export { Components as Component };
+/**
+ * Hero component containing a showcase of the UI Kit components
+ */
+export const Component = () => {
+  console.count("render");
+
+  return (
+    <HvGrid container>
+      <HvGrid item xs={12}>
+        <HvGlobalActions
+          variant="global"
+          title="UI Kit Component Library"
+          backButton={
+            <HvIconButton title="Back">
+              <Backwards />
+            </HvIconButton>
+          }
+        >
+          <HvButton startIcon={<Cloud />}>Publish</HvButton>
+        </HvGlobalActions>
+      </HvGrid>
+
+      <HvGrid item xs={12}>
+        <HvBreadCrumb
+          aria-label="Navigation"
+          url="https://lumada-design.github.io/uikit-app/master/templates/welcome"
+        />
+      </HvGrid>
+      <HvGrid item xs={12} sm={6} lg={4}>
+        <Panel1 />
+      </HvGrid>
+      <HvGrid item xs={12} sm={6} lg={4}>
+        <Panel2 />
+      </HvGrid>
+      <HvGrid item xs={12} sm={6} lg={4}>
+        <HvTableSection>
+          <Table />
+        </HvTableSection>
+      </HvGrid>
+      <HvGrid item xs={12} sm={6} lg={4}>
+        <Card1 />
+      </HvGrid>
+    </HvGrid>
+  );
+};
