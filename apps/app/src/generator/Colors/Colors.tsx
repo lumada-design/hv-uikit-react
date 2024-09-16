@@ -6,7 +6,7 @@ import {
   HvTypography,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { HvThemeTokens } from "@hitachivantara/uikit-styles";
+import { HvColor } from "@hitachivantara/uikit-styles";
 
 import { useGeneratorContext } from "~/generator/GeneratorContext";
 
@@ -106,7 +106,7 @@ const Colors = (): JSX.Element => {
                         <HvTypography variant="label">{c}</HvTypography>
                         <HvTypography>
                           {customTheme?.colors?.modes?.[selectedMode]?.[
-                            c as keyof HvThemeTokens["colors"]
+                            c as HvColor
                           ] || groupColors[c]}
                         </HvTypography>
                       </div>
@@ -117,7 +117,7 @@ const Colors = (): JSX.Element => {
                         iconOnly
                         defaultValue={
                           customTheme?.colors?.modes?.[selectedMode]?.[
-                            c as keyof HvThemeTokens["colors"]
+                            c as HvColor
                           ] || groupColors[c]
                         }
                         onChangeComplete={(color) =>

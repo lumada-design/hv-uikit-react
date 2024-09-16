@@ -95,7 +95,8 @@ export type HvThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
 export type SpacingValue = number | HvThemeBreakpoint | (string & {});
 
 // Theme colors
-export type HvThemeColors = typeof colors.common & typeof colors.light;
+export type HvThemeColors = typeof colors.common &
+  Omit<typeof colors.light, "pp">;
 
 // Base themes: DS3 and DS5
 export type HvBaseTheme = "ds3" | "ds5" | "pentahoPlus";
