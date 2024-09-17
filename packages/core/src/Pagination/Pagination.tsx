@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import Hidden from "@mui/material/Hidden";
+import { useMediaQuery, useTheme } from "@mui/material";
 import {
   Backwards,
   End,
@@ -119,6 +119,9 @@ export const HvPagination = (props: HvPaginationProps) => {
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
+  const muiTheme = useTheme();
+  const isXsDown = useMediaQuery(muiTheme.breakpoints.down("xs"));
+
   const [pageInput, setPageInput] = useState(page);
 
   const changePage = useCallback(
@@ -172,14 +175,14 @@ export const HvPagination = (props: HvPaginationProps) => {
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
-            <Hidden xsDown>
+            {!isXsDown && (
               <HvTypography
                 component="span"
                 className={classes?.pageSizeTextContainer}
               >
                 {labels?.pageSizePrev}
               </HvTypography>
-            </Hidden>
+            )}
             <HvSelect
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
@@ -198,14 +201,14 @@ export const HvPagination = (props: HvPaginationProps) => {
                 </Option>
               ))}
             </HvSelect>
-            <Hidden xsDown>
+            {!isXsDown && (
               <HvTypography
                 component="span"
                 className={classes.pageSizeTextContainer}
               >
                 {labels?.pageSizeEntryName}
               </HvTypography>
-            </Hidden>
+            )}
           </>
         )}
       </div>
