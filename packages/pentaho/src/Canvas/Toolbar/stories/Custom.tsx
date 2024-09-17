@@ -38,7 +38,7 @@ export const CustomStory = () => (
         <Backwards />
       </HvButton>
     }
-    title={<HvInlineEditor value="Toolbar Title" variant="title4" />}
+    title={<HvInlineEditor defaultValue="Toolbar Title" variant="title4" />}
     classes={{ root: classes.toolbar }}
   >
     <HvIconButton title="Undo">
