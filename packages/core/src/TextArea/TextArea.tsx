@@ -251,7 +251,7 @@ export const HvTextArea = forwardRef<
   const performValidation = useCallback(() => {
     const inputValidity = validateInput(
       inputRef.current,
-      value,
+      String(value),
       required,
       minCharQuantity,
       maxCharQuantity,
@@ -303,7 +303,7 @@ export const HvTextArea = forwardRef<
 
     const inputValidity = performValidation();
 
-    onBlur?.(event as any, value, inputValidity);
+    onBlur?.(event as any, String(value), inputValidity);
   };
 
   /**
@@ -334,7 +334,7 @@ export const HvTextArea = forwardRef<
     // Reset validation status to standBy (only when status is uncontrolled)
     setValidationState(validationStates.standBy);
 
-    onFocus?.(event as any, value);
+    onFocus?.(event as any, String(value));
   };
 
   const isScrolledDown = useCallback(() => {
@@ -456,7 +456,7 @@ export const HvTextArea = forwardRef<
           id={setId(elementId, "charCounter")}
           className={classes.characterCounter}
           separator={middleCountLabel}
-          currentCharQuantity={value.length}
+          currentCharQuantity={String(value).length}
           maxCharQuantity={maxCharQuantity}
           {...countCharProps}
         />

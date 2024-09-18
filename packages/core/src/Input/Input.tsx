@@ -1,6 +1,5 @@
 import {
   cloneElement,
-  forwardRef,
   isValidElement,
   useCallback,
   useEffect,
@@ -8,7 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
 import { useForkRef } from "@mui/material/utils";
 import {
   CloseXS,
@@ -55,6 +53,7 @@ import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvTooltip } from "../Tooltip";
+import { fixedForwardRef } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Input.styles";
@@ -62,8 +61,6 @@ import { staticClasses, useClasses } from "./Input.styles";
 export { staticClasses as inputClasses };
 
 export type HvInputClasses = ExtractNames<typeof useClasses>;
-
-type InputElement = HTMLInputElement | HTMLTextAreaElement;
 
 export interface HvValidationMessages {
   /** The value when a validation fails. */
@@ -84,14 +81,18 @@ export interface HvInputSuggestion {
   value?: string;
 }
 
-export interface HvInputProps
-  extends Omit<HvBaseInputProps, "onBlur" | "onFocus" | "onKeyDown"> {
+export interface HvInputProps<
+  InputElement extends HTMLElement = HTMLInputElement | HTMLTextAreaElement,
+> extends Omit<
+    HvBaseInputProps,
+    "onChange" | "onBlur" | "onFocus" | "onKeyDown"
+  > {
   /** The form element name. */
   name?: string;
   /** The value of the form element. */
-  value?: string;
+  value?: React.InputHTMLAttributes<InputElement>["value"];
   /** When uncontrolled, defines the initial input value. */
-  defaultValue?: string;
+  defaultValue?: React.InputHTMLAttributes<InputElement>["value"];
   /**
    * The label of the form element.
    *
@@ -123,6 +124,11 @@ export interface HvInputProps
    *
    * Also called when the search button is clicked (when type is "search").
    */
+  /**
+   * The function that will be executed onChange, allows modification of the input,
+   * it receives the value. If a new value should be presented it must returned it.
+   */
+  onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
   onEnter?: (
     event: React.KeyboardEvent<InputElement> | React.MouseEvent,
     value: string,
@@ -145,10 +151,7 @@ export interface HvInputProps
    * The function that will be executed onKeyDown, allows checking the value state,
    * it receives the event and value.
    */
-  onKeyDown?: (
-    event: React.KeyboardEvent<InputElement> | React.MouseEvent,
-    value: string,
-  ) => void;
+  onKeyDown?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   /** The input type. */
   type?: React.HTMLInputTypeAttribute;
   /** The placeholder value of the input. */
@@ -157,13 +160,6 @@ export interface HvInputProps
   labels?: HvInputLabels & Record<string, any>;
   /** An Object containing the various texts associated with the input. */
   validationMessages?: HvValidationMessages;
-  /** Attributes applied to the input element. */
-  inputProps?: MuiInputBaseComponentProps;
-  /**
-   * Allows passing a ref to the underlying input
-   * @deprecated Use `ref` directly instead
-   * */
-  inputRef?: HvBaseInputProps["inputRef"];
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: (value: string) => HvInputSuggestion[] | null;
   /**
@@ -247,11 +243,9 @@ const changeInputValue = (input: HTMLInputElement | null, value = "") => {
 /**
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
-export const HvInput = forwardRef<
-  // no-indent
-  InputElement,
-  HvInputProps
->(function HvInput(props, ref) {
+export const HvInput = fixedForwardRef(function HvInput<
+  InputElement extends HTMLElement = HTMLInputElement | HTMLTextAreaElement,
+>(props: HvInputProps<InputElement>, ref: React.Ref<InputElement>) {
   const {
     classes: classesProp,
     className,
@@ -345,7 +339,7 @@ export const HvInput = forwardRef<
   const performValidation = useCallback(() => {
     const inputValidity = validateInput(
       inputRef.current,
-      value,
+      String(value),
       required,
       minCharQuantity,
       maxCharQuantity,
@@ -475,7 +469,7 @@ export const HvInput = forwardRef<
     // set the input value (only when value is uncontrolled)
     setValue(newValue);
 
-    onChange?.(event, newValue);
+    onChange?.(event as any, newValue);
 
     if (canShowSuggestions) {
       // an edge case might be a controlled input whose onChange callback
@@ -500,7 +494,7 @@ export const HvInput = forwardRef<
 
     const inputValidity = performValidation();
 
-    onBlur?.(event, value, inputValidity);
+    onBlur?.(event as any, String(value), inputValidity);
   };
 
   /**
@@ -513,7 +507,7 @@ export const HvInput = forwardRef<
     // reset validation status to standBy (only when status is uncontrolled)
     setValidationState(validationStates.standBy);
 
-    onFocus?.(event, value);
+    onFocus?.(event as any, String(value));
   };
 
   const getSuggestions = (li: number | null) => {
@@ -539,10 +533,10 @@ export const HvInput = forwardRef<
       const li = getSuggestions(0);
       li?.focus();
     } else if (isKey(event, "Enter")) {
-      onEnter?.(event, value);
+      onEnter?.(event as any, String(value));
     }
 
-    onKeyDown?.(event, value);
+    onKeyDown?.(event as any, String(value));
   };
 
   /** Clears the suggestion list on blur. */
@@ -627,7 +621,7 @@ export const HvInput = forwardRef<
    */
   const handleSearch = useCallback<NonNullable<HvAdornmentProps["onClick"]>>(
     (event) => {
-      onEnter?.(event, value);
+      onEnter?.(event, String(value));
     },
     [onEnter, value],
   );
@@ -862,7 +856,7 @@ export const HvInput = forwardRef<
 
             // trigger suggestions when focusing the input
             if (canShowSuggestions && suggestOnFocus) {
-              suggestionHandler(value);
+              suggestionHandler(String(value));
             }
           },
 
