@@ -5,32 +5,71 @@ import { validateXML } from "xmllint-wasm";
 // model - editor content
 // position - position of the pointer
 
-type Elements = Record<string, string[] | undefined>; // element name (key) / attributes (value)
+type Elements = Record<string, { attributes?: string[]; children?: string[] }>; // element name (key)
+
+/** Gets the attributes and children elements of an element */
+const parseElement = (element: Element) => {
+  const elementAttributes: string[] = [];
+  const elementChildren: string[] = [];
+
+  // Look for element complex type
+  const complexType = element.getElementsByTagNameNS("*", "complexType")[0];
+
+  if (complexType) {
+    // Look for sequence within complex type
+    const sequence = complexType.getElementsByTagNameNS("*", "sequence")[0];
+
+    // Get all children
+    if (sequence) {
+      const children = Array.from(sequence.childNodes).filter((node) =>
+        node.nodeName.includes(":element"),
+      );
+      if (children.length > 0) {
+        Array.from(children).forEach((child) => {
+          if (child instanceof Element) {
+            const childName = child.getAttribute("name");
+            if (childName) elementChildren.push(childName);
+          }
+        });
+      }
+    }
+
+    // Get all attributes
+    const attributes = Array.from(complexType.childNodes).filter((node) =>
+      node.nodeName.includes(":attribute"),
+    );
+    if (attributes.length > 0) {
+      Array.from(attributes).forEach((attr) => {
+        if (attr instanceof Element) {
+          const attrName = attr.getAttribute("name");
+          if (attrName) elementAttributes.push(attrName);
+        }
+      });
+    }
+  }
+
+  return [elementAttributes, elementChildren];
+};
 
 /**
- * Gets elements and their attributes from XSD schema.
+ * Gets elements and their children and attributes from XSD schema.
  */
 const getXsdElementsAndAttributes = (value: string): Elements => {
   const elements: Elements = {};
   try {
     // Parse XSD schema string into a DOM object
     const parser = new DOMParser();
-    const schemaDoc = parser.parseFromString(value, "application/xml");
+    const schemaDoc = parser.parseFromString(value, "text/xml");
 
-    // Get all elements and their attributes
-    for (const element of schemaDoc.getElementsByTagName("xs:element")) {
+    // Get all elements and their children and attributes
+    for (const element of schemaDoc.getElementsByTagNameNS("*", "element")) {
       const elementName = element.getAttribute("name");
-      if (elementName) {
-        const attributes = element.getElementsByTagName("xs:attribute");
-        if (attributes && attributes.length > 0) {
-          const elementAttributes = [];
-          for (const attribute of attributes) {
-            const attributeName = attribute.getAttribute("name");
-            if (attributeName) elementAttributes.push(attributeName);
-          }
-          elements[elementName] = elementAttributes;
-        } else elements[elementName] = undefined;
-      }
+      const [elementAttributes, elementChildren] = parseElement(element);
+      if (elementName)
+        elements[elementName] = {
+          attributes: elementAttributes,
+          children: elementChildren,
+        };
     }
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -40,10 +79,10 @@ const getXsdElementsAndAttributes = (value: string): Elements => {
 };
 
 /**
- * Gets the last opened (but not closed) tag to suggest attributes
+ * Gets the last opened tag to suggest attributes (closed = false) or children (closed = true)
  * Source code from: https://mono.software/2017/04/11/custom-intellisense-with-monaco-editor/
  */
-const getLastOpenedTag = (content: string) => {
+const getLastOpenedTag = (content: string, closed = false) => {
   // Get all tags inside of the content
   const tags = content.match(/<\/*(?=\S*)([a-zA-Z-]+)/g);
   if (!tags) return undefined;
@@ -71,7 +110,9 @@ const getLastOpenedTag = (content: string) => {
         ) {
           // Last open tag found
           content = content.substring(tagPosition);
-          return content.indexOf(">") === -1 ? tag : undefined;
+          const opened = content.indexOf(">") === -1;
+          if (!closed) return opened ? tag : undefined;
+          return opened ? undefined : tag;
         }
 
         // Remove the last closed tag since it
@@ -125,31 +166,6 @@ export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
 
       const suggestions: object[] = [];
       const lastWordWritten = model.getWordUntilPosition(position);
-
-      // Suggestions to show when opening a tag (by typing "<")
-      const lastTypedChar = model.getValueInRange({
-        startLineNumber: position.lineNumber,
-        startColumn: position.column - 1,
-        endLineNumber: position.lineNumber,
-        endColumn: position.column,
-      });
-      if (lastTypedChar === "<" && elements) {
-        suggestions.push(
-          ...Object.keys(elements).map((element) => ({
-            label: element,
-            kind: monaco.languages.CompletionItemKind.Field,
-            insertText: element,
-            range: {
-              startLineNumber: position.lineNumber,
-              startColumn: position.column,
-              endLineNumber: position.lineNumber,
-              endColumn: position.column,
-            },
-          })),
-        );
-      }
-
-      // Suggestions to show when looking for attributes in a tag (by using keys)
       const textUntilCursor = String(
         model.getValueInRange({
           startLineNumber: 1,
@@ -158,24 +174,56 @@ export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
           endColumn: position.column,
         }),
       );
+
+      // Suggestions to show when opening a tag (by typing "<")
+      const lastTypedChar = model.getValueInRange({
+        startLineNumber: position.lineNumber,
+        startColumn: position.column - 1,
+        endLineNumber: position.lineNumber,
+        endColumn: position.column,
+      });
+      const parentTag = getLastOpenedTag(textUntilCursor, true);
+      if (lastTypedChar === "<" && elements) {
+        let children: string[] | undefined;
+        if (parentTag) children = elements[parentTag]?.children;
+        else if (root && !String(fullContent.slice(0, -1)).trim())
+          children = [root];
+
+        if (children)
+          for (const child of children) {
+            suggestions.push({
+              label: child,
+              kind: monaco.languages.CompletionItemKind.Field,
+              insertText: child,
+              range: {
+                startLineNumber: position.lineNumber,
+                startColumn: position.column,
+                endLineNumber: position.lineNumber,
+                endColumn: position.column,
+              },
+            });
+          }
+      }
+
+      // Suggestions to show when looking for attributes in a tag (by using keys)
       const lastOpenedTag = getLastOpenedTag(textUntilCursor);
       if (
         lastOpenedTag &&
         elements?.[lastOpenedTag] &&
-        elements[lastOpenedTag]!.length > 0
+        elements[lastOpenedTag].attributes &&
+        elements[lastOpenedTag].attributes!.length > 0
       ) {
-        const attrs = lastWordWritten.word
-          ? elements[lastOpenedTag]!.filter((attr) =>
+        const attributes = lastWordWritten.word
+          ? elements[lastOpenedTag].attributes!.filter((attr) =>
               attr.startsWith(lastWordWritten.word),
             )
-          : elements[lastOpenedTag];
-
-        suggestions.push(
-          ...attrs!.map((atr) => ({
-            label: atr,
+          : elements[lastOpenedTag].attributes!;
+        for (const attribute of attributes) {
+          suggestions.push({
+            label: attribute,
             kind: monaco.languages.CompletionItemKind.Field,
             // eslint-disable-next-line no-template-curly-in-string
-            insertText: `${atr}="${"${0:}"}"`, // ${0:} used to position the cursor
+            insertText: `${attribute}="${"${0:}"}"`, // ${0:} used to position the cursor
             insertTextRules:
               monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
             range: {
@@ -184,8 +232,8 @@ export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
               endLineNumber: position.lineNumber,
               endColumn: lastWordWritten.endColumn,
             },
-          })),
-        );
+          });
+        }
       }
 
       return {
