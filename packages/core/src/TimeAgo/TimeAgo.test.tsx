@@ -28,7 +28,31 @@ describe("TimeAgo with timestamp", () => {
     const timestamp = Date.now();
     render(<HvTimeAgo timestamp={timestamp} />);
 
-    expect(screen.getByText("a few seconds")).toBeVisible();
+    expect(screen.getByText("now")).toBeVisible();
+  });
+
+  it("should contain the relative time when the day is yesterday", () => {
+    const timestamp = new Date().setDate(new Date().getDate() - 1);
+    render(<HvTimeAgo timestamp={timestamp} />);
+
+    expect(screen.getByText(/^yesterday/)).toBeVisible();
+  });
+
+  it("should contain the relative time when the day is tomorrow", () => {
+    const timestamp = new Date().setDate(new Date().getDate() + 1);
+    render(<HvTimeAgo timestamp={timestamp} />);
+
+    expect(screen.getByText(/^tomorrow/)).toBeVisible();
+  });
+});
+
+describe("TimeAgo with custom locale", () => {
+  it("should present the time in the appropriate locale", () => {
+    const timestamp = new Date(2024, 0, 1, 15, 0, 0).getTime();
+    render(<HvTimeAgo timestamp={timestamp} locale="en-US" />);
+    expect(screen.getByText("Jan 1, 2024, 3:00 PM")).toBeVisible();
+    render(<HvTimeAgo timestamp={timestamp} locale="en-GB" />);
+    expect(screen.getByText("1 Jan 2024, 15:00")).toBeVisible();
   });
 });
 
@@ -46,14 +70,14 @@ describe("TimeAgo with justText", () => {
     const timestamp = Date.now();
     render(<HvTimeAgo justText timestamp={timestamp} />);
 
-    expect(screen.getByText("a few seconds")).toBeInTheDocument();
+    expect(screen.getByText("now")).toBeInTheDocument();
   });
 
   it("should not render the custom component", () => {
     const timestamp = Date.now();
     render(<HvTimeAgo justText timestamp={timestamp} component="button" />);
 
-    expect(screen.getByText("a few seconds")).toBeInTheDocument();
+    expect(screen.getByText("now")).toBeInTheDocument();
     expect(screen.queryByRole("button")).toBeNull();
   });
 });
