@@ -1,4 +1,5 @@
 import { type Monaco } from "@monaco-editor/react";
+import formatter from "xml-formatter";
 import { validateXML } from "xmllint-wasm";
 
 // Helpful notes
@@ -350,9 +351,12 @@ export const handleXmlKeyDown = (event: any, editor: any, monaco: Monaco) => {
 
 /** XML custom options. */
 export const xmlOptions = {
-  formatOnType: true,
-  formatOnPaste: true,
   autoClosingBrackets: false,
-  tabSize: 2,
-  autoIndent: "full",
 };
+
+/** XML code formatter. */
+export const xmlFormatter = (unformattedCode: string) =>
+  formatter(unformattedCode, {
+    collapseContent: true,
+    forceSelfClosingEmptyTag: true,
+  });

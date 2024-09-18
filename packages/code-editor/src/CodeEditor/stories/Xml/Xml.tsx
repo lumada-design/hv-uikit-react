@@ -38,18 +38,18 @@ const xsdSchema = `<?xml version="1.0" encoding="UTF-8"?>
 </xs:schema>`;
 
 const defaultValue = `<library>
-  <book isbn="123-0-456-0-789">
-    <title>Demon Copperhead</title>
-    <author>Barbara Kingsolver</author>
-    <year>2022</year>
-    <genre>Historical Fiction</genre>
-  </book>
-  <book isbn="987-0-654-0-321">
-    <title>Assassin's Apprentice</title>
-    <author>Robin Hobb</author>
-    <year>1995</year>
-    <genre>Fantasy</genre>
-  </book>
+    <book isbn="123-0-456-0-789">
+        <title>Demon Copperhead</title>
+        <author>Barbara Kingsolver</author>
+        <year>2022</year>
+        <genre>Historical Fiction</genre>
+    </book>
+    <book isbn="987-0-654-0-321">
+        <title>Assassin's Apprentice</title>
+        <author>Robin Hobb</author>
+        <year>1995</year>
+        <genre>Fantasy</genre>
+    </book>
 </library>`;
 
 export const XmlStory = () => {
