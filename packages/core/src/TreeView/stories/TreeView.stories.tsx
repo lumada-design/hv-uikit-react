@@ -16,6 +16,7 @@ import { Main as MainStory } from "./Main";
 import MainStoryRaw from "./Main?raw";
 import { VerticalNavigation as VerticalNavigationStory } from "./VerticalNavigation";
 import VerticalNavigationStoryRaw from "./VerticalNavigation?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 // Function to emulate pausing between interactions
 const sleep = (ms: number) =>
@@ -39,8 +40,7 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -78,8 +78,7 @@ export const DataObject: StoryObj<HvTreeViewProps<false>> = {
           "Sometimes the tree data is in an object shape. These can be easily converted to `HvTreeItem` nodes using a recursive `renderItem` function.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -117,8 +116,7 @@ export const VerticalNavigation: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: VerticalNavigationStoryRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // For visual testing
   play: async ({ canvasElement }) => {

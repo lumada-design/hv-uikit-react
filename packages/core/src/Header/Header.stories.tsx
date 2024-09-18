@@ -315,7 +315,6 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
     docs: { disable: true },
     a11y: {
       config: {
@@ -327,9 +326,7 @@ export const Test: StoryObj = {
     },
   },
   render: () => (
-    <div
-      style={{ padding: 20, display: "flex", flexDirection: "column", gap: 20 }}
-    >
+    <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
       <HvHeader position="relative">
         <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
         <HvHeaderNavigation data={navigationDataMain} />

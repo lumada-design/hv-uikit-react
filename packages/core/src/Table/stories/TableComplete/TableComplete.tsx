@@ -268,7 +268,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
   };
 
   return (
-    <>
+    <div>
       {showBulkActions && page.length > 0 && (
         <HvBulkActions
           maxVisibleActions={maxVisibleActions}
@@ -317,6 +317,6 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           {...getHvPaginationProps?.()}
         />
       )}
-    </>
+    </div>
   );
 };

@@ -40,10 +40,6 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
 };
 
 export const Variants: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const classes = {
       root: css({

@@ -105,8 +105,6 @@ export const Test: StoryObj<HvBreadCrumbProps> = {
         story: "Breadcrumb with long labels.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     a11y: {
       config: {
         rules: [
@@ -116,6 +114,7 @@ export const Test: StoryObj<HvBreadCrumbProps> = {
       },
     },
   },
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: /dropdown/i }));

@@ -7,11 +7,12 @@ import {
   HvIconSprite,
   HvIconSpriteProps,
   IconBase,
-  IconBaseProps,
   icons,
   Level4,
   Machine,
 } from "@hitachivantara/uikit-react-icons";
+
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof IconBase> = {
   title: "Foundation/Icons",
@@ -114,43 +115,6 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
   },
 };
 
-export const Test: StoryObj<IconBaseProps> = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-    docs: { disable: true },
-  },
-  args: {
-    iconSize: "M",
-    color: ["secondary", "negative", "positive"],
-  },
-  render: (args) => (
-    <div className="flex flex-wrap">
-      {Object.entries(icons).map(([name, Icon]) => (
-        <Icon key={name} {...args} />
-      ))}
-    </div>
-  ),
-};
-
-export const TestSprites: StoryObj<HvIconSpriteProps> = {
-  parameters: {
-    chromatic: { disableSnapshot: false },
-    docs: { disable: true },
-  },
-  args: {
-    iconSize: "M",
-    spriteUrl: "./assets/icons.svg",
-    color: ["secondary", "negative", "positive"],
-  },
-  render: (args) => (
-    <div className="flex flex-wrap">
-      {Object.keys(icons).map((name) => (
-        <HvIconSprite {...args} key={name} iconName={name} />
-      ))}
-    </div>
-  ),
-};
-
 const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
   <HvIconSprite
     spriteUrl="./assets/icons.svg"
@@ -159,48 +123,69 @@ const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
   />
 );
 
-export const TestSizes: StoryObj<IconBaseProps> = {
+/** Visual tests for icons, icons sprites, colors, and sizes */
+export const Test: StoryObj = {
   parameters: {
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
     docs: { disable: true },
   },
-  render: () => (
-    <>
-      <div className="flex">
-        <CheckboxCheck iconSize="XS" />
-        <CheckboxCheck iconSize="S" />
-        <CheckboxCheck iconSize="M" />
-        <CheckboxCheck iconSize="L" />
-        <CheckboxCheck size="xs" />
-        <CheckboxCheck size="sm" />
-        <CheckboxCheck size="md" />
-        <CheckboxCheck size="lg" />
-        <CheckboxCheck size="xl" />
-        <CheckboxCheck size={120} />
-      </div>
+  render: () => {
+    return (
+      <>
+        <div className="flex flex-wrap">
+          {Object.entries(icons).map(([name, Icon]) => (
+            <Icon
+              key={name}
+              color={["secondary", "negative", "positive"]}
+              iconSize="S"
+            />
+          ))}
+        </div>
 
-      <div className="flex">
-        <SpriteCheckbox iconSize="XS" />
-        <SpriteCheckbox iconSize="S" />
-        <SpriteCheckbox iconSize="M" />
-        <SpriteCheckbox iconSize="L" />
-        <SpriteCheckbox size="xs" />
-        <SpriteCheckbox size="sm" />
-        <SpriteCheckbox size="md" />
-        <SpriteCheckbox size="lg" />
-        <SpriteCheckbox size="xl" />
-        <SpriteCheckbox size={120} />
-      </div>
+        <div className="flex flex-wrap">
+          {Object.keys(icons).map((name) => (
+            <HvIconSprite
+              key={name}
+              iconName={name}
+              color={["secondary", "negative", "positive"]}
+              iconSize="S"
+              spriteUrl="./assets/icons.svg"
+            />
+          ))}
+        </div>
 
-      <div className="flex">
-        <CheckboxCheck
-          width={100}
-          height={100}
-          style={{ width: 140, height: 140 }}
-        />
-        <CheckboxCheck size={100} style={{ width: 140, height: 140 }} />
-        <CheckboxCheck size={100} />
-      </div>
-    </>
-  ),
+        <div className="flex">
+          <CheckboxCheck iconSize="XS" />
+          <CheckboxCheck iconSize="S" />
+          <CheckboxCheck iconSize="M" />
+          <CheckboxCheck iconSize="L" />
+          <CheckboxCheck size="xs" />
+          <CheckboxCheck size="sm" />
+          <CheckboxCheck size="md" />
+          <CheckboxCheck size="lg" />
+          <CheckboxCheck size="xl" />
+          <CheckboxCheck size={120} />
+
+          <SpriteCheckbox iconSize="XS" />
+          <SpriteCheckbox iconSize="S" />
+          <SpriteCheckbox iconSize="M" />
+          <SpriteCheckbox iconSize="L" />
+          <SpriteCheckbox size="xs" />
+          <SpriteCheckbox size="sm" />
+          <SpriteCheckbox size="md" />
+          <SpriteCheckbox size="lg" />
+          <SpriteCheckbox size="xl" />
+          <SpriteCheckbox size={120} />
+
+          <CheckboxCheck
+            width={100}
+            height={100}
+            style={{ width: 140, height: 140 }}
+          />
+          <CheckboxCheck size={100} style={{ width: 140, height: 140 }} />
+          <CheckboxCheck size={100} />
+        </div>
+      </>
+    );
+  },
 };

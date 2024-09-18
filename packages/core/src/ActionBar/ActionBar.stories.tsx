@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvActionBar,
@@ -9,7 +8,7 @@ import {
 
 const containerDecorator: Decorator = (Story) => (
   <div
-    className={css({
+    style={{
       position: "relative",
       margin: "auto",
       backgroundColor: theme.colors.atmo1,
@@ -17,7 +16,7 @@ const containerDecorator: Decorator = (Story) => (
       width: "400px",
       display: "flex",
       alignItems: "flex-end",
-    })}
+    }}
   >
     {Story()}
   </div>
@@ -35,22 +34,16 @@ export const Main: StoryObj<HvActionBarProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  render: () => {
-    return (
-      <HvActionBar className={css({ gap: theme.space.xs })}>
-        <HvButton variant="secondaryGhost">Help</HvButton>
-        <div style={{ flex: 1 }} aria-hidden="true">
-          &nbsp;
-        </div>
-        <HvButton variant="secondaryGhost">Save</HvButton>
-        <HvButton variant="secondaryGhost">Cancel</HvButton>
-      </HvActionBar>
-    );
-  },
+  render: () => (
+    <HvActionBar style={{ gap: theme.space.xs }}>
+      <HvButton variant="secondaryGhost">Help</HvButton>
+      <div style={{ flex: 1 }} aria-hidden="true">
+        &nbsp;
+      </div>
+      <HvButton variant="secondaryGhost">Save</HvButton>
+      <HvButton variant="secondaryGhost">Cancel</HvButton>
+    </HvActionBar>
+  ),
 };
 
 export const DualAction: StoryObj<HvActionBarProps> = {
@@ -61,12 +54,10 @@ export const DualAction: StoryObj<HvActionBarProps> = {
       },
     },
   },
-  render: () => {
-    return (
-      <HvActionBar className={css({ gap: theme.space.xs })}>
-        <HvButton variant="secondaryGhost">Save</HvButton>
-        <HvButton variant="secondaryGhost">Cancel</HvButton>
-      </HvActionBar>
-    );
-  },
+  render: () => (
+    <HvActionBar style={{ gap: theme.space.xs }}>
+      <HvButton variant="secondaryGhost">Save</HvButton>
+      <HvButton variant="secondaryGhost">Cancel</HvButton>
+    </HvActionBar>
+  ),
 };

@@ -54,10 +54,6 @@ export const Main: StoryObj<HvBladeProps> = {
 };
 
 export const Variants: StoryObj<HvBladeProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     return (
       <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>

@@ -13,6 +13,8 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvDrawer> = {
   title: "Widgets/Drawer",
   component: HvDrawer,
@@ -45,8 +47,7 @@ export const Main: StoryObj<HvDrawerProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
 import {
   HvActionGeneric,
   HvBulkActions,
@@ -181,17 +180,6 @@ export const WithActions: StoryObj<HvBulkActionsProps> = {
 };
 
 export const WithPagination: StoryObj<HvBulkActionsProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const checkbox = canvas.getByRole("checkbox", { name: /All/i });
-    await userEvent.click(checkbox);
-    await expect(canvas.getByRole("button", { name: /add/i })).toBeEnabled();
-  },
   render: () => {
     const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
 
@@ -291,4 +279,34 @@ export const WithPagination: StoryObj<HvBulkActionsProps> = {
       </>
     );
   },
+};
+
+export const Test: StoryObj<HvBulkActionsProps> = {
+  parameters: {
+    docs: { disable: true },
+  },
+  render: () => (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <HvBulkActions
+        numTotal={10}
+        numSelected={0}
+        actions={actions}
+        maxVisibleActions={2}
+        showSelectAllPages
+      />
+      <HvBulkActions
+        numTotal={10}
+        numSelected={5}
+        actions={actions}
+        maxVisibleActions={2}
+        showSelectAllPages
+      />
+      <HvBulkActions
+        numTotal={10}
+        numSelected={5}
+        actions={actions}
+        maxVisibleActions={2}
+      />
+    </div>
+  ),
 };

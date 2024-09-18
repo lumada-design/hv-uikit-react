@@ -120,8 +120,6 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
           "Grid using the Design System's column definitions. The number of columns is based on the current breakpoint. Resize the browser to see the number of columns change.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => {
     const width = useWidth();
@@ -129,7 +127,7 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
     const columns = Array.from({ length: 24 }, (_, index) => index + 1);
 
     return (
-      <>
+      <div>
         <HvTypography variant="label">{`Current width: ${width} (${BREAKPOINT_COLUMNS[width]} columns)`}</HvTypography>
         <HvGrid container columns="auto">
           {columns.map((value) => (
@@ -138,7 +136,7 @@ export const TheDesignSystemColumns: StoryObj<HvGridProps> = {
             </HvGrid>
           ))}
         </HvGrid>
-      </>
+      </div>
     );
   },
 };

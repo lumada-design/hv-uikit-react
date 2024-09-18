@@ -13,6 +13,7 @@ import { CustomControls as CustomControlsStory } from "./stories/CustomControls"
 import CustomControlsRaw from "./stories/CustomControls?raw";
 import { MixedControls as MixedControlsStory } from "./stories/MixedControls";
 import MixedControlsRaw from "./stories/MixedControls?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvControls> = {
   title: "Widgets/Controls",
@@ -25,9 +26,8 @@ export default meta;
 
 export const Main: StoryObj = {
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     docs: { source: { code: ControlsRaw } },
+    ...setupChromatic(),
   },
   render: () => <ControlsStory />,
 };

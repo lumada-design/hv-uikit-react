@@ -6,6 +6,7 @@ import {
   HvListItem,
   HvSelectionList,
   HvSelectionListProps,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvSelectionList> = {
@@ -44,16 +45,13 @@ export const Main: StoryObj<HvSelectionListProps> = {
 };
 
 export const Variants: StoryObj<HvSelectionListProps> = {
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: () => {
     const classes = {
       root: css({
         display: "flex",
         justifyContent: "space-around",
         flexWrap: "wrap",
+        gap: theme.space.xs,
         "& > div": {
           width: 175,
         },

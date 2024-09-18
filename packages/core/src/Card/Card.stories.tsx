@@ -55,8 +55,6 @@ export const Variants: StoryObj<HvCardProps> = {
       },
       source: { code: VariantsRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <VariantsStory />,
 };

@@ -28,8 +28,6 @@ export const SimpleTableSectionStory: StoryObj = {
 export const CompleteTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: CompleteTableSectionRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <CompleteTableSection />,
 };
@@ -37,15 +35,6 @@ export const CompleteTableSectionStory: StoryObj = {
 export const PropsTableSectionStory: StoryObj = {
   parameters: {
     docs: { source: { code: PropsTableSectionRaw } },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: /expand/i });
-    await userEvent.click(button);
-    await expect(canvas.getByText("Event 1")).toBeInTheDocument();
   },
   render: () => <PropsTableSection />,
 };
@@ -68,7 +57,7 @@ export const TableSettingsStory: StoryObj = {
   parameters: {
     docs: { source: { code: TableSettingsRaw } },
   },
-  // For a11y testing
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: /settings/i });

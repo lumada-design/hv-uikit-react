@@ -29,10 +29,6 @@ export const Main: StoryObj<HvSimpleGridProps> = {
   argTypes: {
     breakpoints: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     return (
       <HvSimpleGrid className={css({ "& > div": style })} {...args}>

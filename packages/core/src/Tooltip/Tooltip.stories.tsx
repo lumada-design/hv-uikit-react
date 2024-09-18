@@ -10,6 +10,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Play } from "@hitachivantara/uikit-react-icons";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const meta: Meta<typeof HvTooltip> = {
   title: "Components/Tooltip/Tooltip",
   component: HvTooltip,
@@ -88,8 +90,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         If the component doesn't do so, a workaround is to wrap it in a `div`.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // Open tooltip for visual tests
   play: async ({ canvasElement }) => {
@@ -148,8 +149,7 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
           and is not keyboard-navigable, therefore it shouldn't be too complex or contain interactable elements.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(),
   },
   // Open tooltip for visual tests
   play: async ({ canvasElement }) => {

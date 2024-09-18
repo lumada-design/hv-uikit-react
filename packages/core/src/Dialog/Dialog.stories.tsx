@@ -18,6 +18,7 @@ import { MainStory } from "./stories/MainStory";
 import MainStoryRaw from "./stories/MainStory?raw";
 import { SemanticVariantsStory } from "./stories/SemanticVariantsStory";
 import SemanticVariantsStoryRaw from "./stories/SemanticVariantsStory?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvDialog> = {
   title: "Components/Dialog",
@@ -48,8 +49,7 @@ export const Main: StoryObj<HvDialogProps> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
@@ -70,8 +70,7 @@ export const SemanticVariants: StoryObj<HvDialogProps> = {
           "The `HvDialog` component can receive a `variant` prop to set the status of the dialog. `HvDialogTitle` also accepts a `variant` prop that changes the icon. Alternatively, the `customIcon` prop allows for any custom icon",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
   },
   decorators: [
     (Story) => (

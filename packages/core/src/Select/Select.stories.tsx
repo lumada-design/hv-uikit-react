@@ -5,6 +5,7 @@ import {
   HvOptionGroup,
   HvSelect,
   HvSelectProps,
+  HvSimpleGrid,
 } from "@hitachivantara/uikit-react-core";
 
 import ControlledStory from "./stories/Controlled";
@@ -31,8 +32,6 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
   },
   decorators: [decorator],
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
     a11y: {
       config: {
         rules: [
@@ -46,7 +45,7 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
       },
     },
   },
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox", { name: /country/i });
@@ -86,15 +85,13 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
         story: "Selects in their various form state variants.",
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   decorators: [
     (Story) => (
       <div className="flex flex-wrap gap-sm [&>*]:w-[200px]">{Story()}</div>
     ),
   ],
-  // For visual testing and a11y
+  // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox", { name: /required/i });
@@ -156,4 +153,63 @@ export const Controlled: StoryObj<HvSelectProps<{}, false>> = {
     (Story) => <div className="flex gap-sm min-h-[300px]">{Story()}</div>,
   ],
   render: () => <ControlledStory />,
+};
+
+export const Test: StoryObj<HvSelectProps<{}, false>> = {
+  parameters: {
+    docs: { disable: true },
+    a11y: {
+      config: {
+        rules: [
+          // Axe isn't (incorrectly) identifying the ul <-> li hierarchy
+          // on HvSelect with grouping (HvOptionGroup)
+          { id: "list", enabled: false },
+          { id: "listitem", enabled: false },
+          { id: "aria-required-parent", enabled: false },
+          { id: "aria-required-children", enabled: false },
+        ],
+      },
+    },
+  },
+  render: () => (
+    <HvSimpleGrid cols={2}>
+      <div>
+        <HvSelect disabled label="Disabled" placeholder="Select an option">
+          <HvOption value="op">Option</HvOption>
+        </HvSelect>
+        <HvSelect readOnly label="Read-only" placeholder="Select an option">
+          <HvOption value="op">Option</HvOption>
+        </HvSelect>
+        <HvSelect
+          status="invalid"
+          label="Invalid"
+          statusMessage="This is always invalid"
+          placeholder="Select an option"
+        >
+          <HvOption value="op">Option</HvOption>
+        </HvSelect>
+        <HvSelect required label="Required" placeholder="Select an option" open>
+          <HvOption value="op1">Option 1</HvOption>
+          <HvOption value="op2">Option 2</HvOption>
+        </HvSelect>
+      </div>
+      <HvSelect
+        required
+        name="country"
+        label="Country"
+        description="Select your favorite country"
+        placeholder="Select country"
+        open
+      >
+        <HvOptionGroup label="America">
+          <HvOption value="ar">Argentina</HvOption>
+          <HvOption value="us">United States</HvOption>
+        </HvOptionGroup>
+        <HvOptionGroup label="Europe">
+          <HvOption value="bg">Belgium</HvOption>
+          <HvOption value="pt">Portugal</HvOption>
+        </HvOptionGroup>
+      </HvSelect>
+    </HvSimpleGrid>
+  ),
 };

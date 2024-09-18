@@ -16,6 +16,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 // #region Styled components
 
 const StyledRoot = styled("div")({
@@ -73,8 +75,7 @@ export const Main: StoryObj<HvLoginProps> = {
     classes: { control: { disable: true } },
   },
   parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false, delay: 5000 },
+    ...setupChromatic(["DS5 dawn"], 5000),
   },
   render: () => {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {

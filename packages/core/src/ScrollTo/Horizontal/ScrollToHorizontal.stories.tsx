@@ -27,10 +27,6 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
     classes: { control: { disable: true } },
     options: { control: { disable: true } },
   },
-  parameters: {
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
-  },
   render: (args) => {
     const options = [
       { label: "Server status summary", value: "mainId1" },
@@ -62,7 +58,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
     };
 
     return (
-      <>
+      <div>
         <HvScrollToHorizontal
           {...args}
           scrollElementId="pageContentId"
@@ -80,7 +76,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
             </HvPanel>
           ))}
         </HvContainer>
-      </>
+      </div>
     );
   },
 };

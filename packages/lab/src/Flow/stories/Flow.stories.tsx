@@ -30,6 +30,7 @@ import { SubFlow as SubFlowStory } from "./SubFlow";
 import SubFlowRaw from "./SubFlow?raw";
 import { Visualizations as VisualizationsStory } from "./Visualizations";
 import VisualizationsRaw from "./Visualizations?raw";
+import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
@@ -64,8 +65,7 @@ export const Main: StoryObj<HvFlowProps> = {
         code: MainRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS5 dawn", "DS5 wicked"]),
   },
   // For visual testing
   play: async ({ canvasElement }) => {
@@ -91,8 +91,7 @@ export const InitialState: StoryObj<HvFlowProps> = {
         code: InitialStateRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
+    ...setupChromatic(["DS5 dawn", "DS5 wicked"]),
   },
   render: () => <InitialStateStory />,
 };
@@ -194,8 +193,6 @@ export const BaseHook: StoryObj<HvFlowProps> = {
         code: BaseHookRaw,
       },
     },
-    // Enables Chromatic snapshot
-    chromatic: { disableSnapshot: false },
   },
   render: () => <BaseHookStory />,
 };
