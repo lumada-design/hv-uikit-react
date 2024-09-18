@@ -59,7 +59,8 @@ export function fixedForwardRef<T, P = {}>(
   // TODO: change `React.ReactElement | null` to `React.ReactNode` in v6 (requires ts@5+)
   render: (props: P, ref: React.Ref<T>) => React.ReactElement | null,
 ): (props: P & React.RefAttributes<T>) => React.ReactElement | null {
-  return forwardRef(render) as any;
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70361#issuecomment-2327456092
+  return forwardRef(render as any) as any;
 }
 
 // Source code from: https://github.com/piotrwitek/utility-types/blob/master/src/mapped-types.ts
