@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { forwardRef, useContext } from "react";
 import { css as emotionCss, Global } from "@emotion/react";
 import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
 import {
   InputBaseProps,
   InputBaseComponentProps as MuiInputBaseComponentProps,
 } from "@mui/material/InputBase";
+import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -52,7 +53,7 @@ const baseInputStyles = emotionCss({
 });
 
 export interface HvBaseInputProps
-  extends Omit<MuiInputProps, "onChange" | "classes"> {
+  extends Omit<MuiInputProps, "onChange" | "classes" | "ref"> {
   /** The input name. */
   name?: string;
   /** The value of the input, when controlled. */
@@ -93,7 +94,11 @@ export interface HvBaseInputProps
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accessible form.
  */
-export const HvBaseInput = (props: HvBaseInputProps) => {
+export const HvBaseInput = forwardRef<
+  // no-indent
+  unknown,
+  HvBaseInputProps
+>(function HvBaseInput(props, ref) {
   const {
     classes: classesProp,
     className = "",
@@ -123,6 +128,8 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
     required,
     formElementContext,
   );
+
+  const forkedRef = useForkRef(ref, inputRef);
 
   const localInvalid = invalid || formElementProps.status === "invalid";
 
@@ -182,7 +189,7 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
             ...inputProps,
             ...ariaProps,
           }}
-          inputRef={inputRef}
+          inputRef={forkedRef}
           multiline={multiline}
           rows={10}
           {...others}
@@ -193,4 +200,4 @@ export const HvBaseInput = (props: HvBaseInputProps) => {
       </div>
     </>
   );
-};
+});
