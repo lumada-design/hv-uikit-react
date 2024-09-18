@@ -1,10 +1,6 @@
 import { forwardRef, useContext } from "react";
 import { css as emotionCss, Global } from "@emotion/react";
-import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
-import {
-  InputBaseProps,
-  InputBaseComponentProps as MuiInputBaseComponentProps,
-} from "@mui/material/InputBase";
+import MuiInputBase, { InputBaseProps } from "@mui/material/InputBase";
 import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
@@ -53,13 +49,16 @@ const baseInputStyles = emotionCss({
 });
 
 export interface HvBaseInputProps
-  extends Omit<MuiInputProps, "onChange" | "classes" | "ref"> {
+  extends Omit<
+    InputBaseProps,
+    "onChange" | "classes" | "ref" | "color" | "size"
+  > {
   /** The input name. */
   name?: string;
   /** The value of the input, when controlled. */
-  value?: string;
+  value?: React.InputHTMLAttributes<HTMLInputElement>["value"];
   /** The initial value of the input, when uncontrolled. */
-  defaultValue?: string;
+  defaultValue?: React.InputHTMLAttributes<HTMLInputElement>["value"];
   /** If `true` the input is disabled. */
   disabled?: boolean;
   /** Indicates that the input is not editable. */
@@ -72,19 +71,16 @@ export interface HvBaseInputProps
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     value: string,
   ) => void;
-  /** The input type. */
-  type?: string;
-  /** Label inside the input used to help user. */
-  placeholder?: string;
   /** If true, a textarea element will be rendered. */
   multiline?: boolean;
   /** If true and multiline is also true the textarea element will be resizable. */
   resizable?: boolean;
   /** Denotes if the input is in an invalid state. */
   invalid?: boolean;
-  /** Attributes applied to the input element. */
-  inputProps?: MuiInputBaseComponentProps;
-  /** Allows passing a ref to the underlying input */
+  /**
+   * Allows passing a ref to the underlying input
+   * @deprecated Use `ref` directly instead
+   * */
   inputRef?: InputBaseProps["inputRef"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBaseInputClasses;
@@ -96,7 +92,7 @@ export interface HvBaseInputProps
  */
 export const HvBaseInput = forwardRef<
   // no-indent
-  unknown,
+  React.ElementRef<"input">,
   HvBaseInputProps
 >(function HvBaseInput(props, ref) {
   const {
@@ -143,10 +139,6 @@ export const HvBaseInput = forwardRef<
     id,
   );
 
-  const onChangeHandler: MuiInputProps["onChange"] = (event) => {
-    onChange?.(event, event.target.value);
-  };
-
   return (
     <>
       <Global styles={baseInputStyles} />
@@ -158,7 +150,7 @@ export const HvBaseInput = forwardRef<
           [classes.readOnly]: formElementProps.readOnly,
         })}
       >
-        <MuiInput
+        <MuiInputBase
           id={id}
           name={formElementProps.name}
           value={value}
@@ -167,7 +159,7 @@ export const HvBaseInput = forwardRef<
           placeholder={placeholder}
           readOnly={!!formElementProps.readOnly}
           disabled={formElementProps.disabled}
-          onChange={onChangeHandler}
+          onChange={(event) => onChange?.(event, event.target.value)}
           className={cx({
             [classes.inputRootInvalid]: localInvalid,
             [classes.inputRootReadOnly]: formElementProps.readOnly,

@@ -144,7 +144,7 @@ export const Fields = (props: FieldsProps) => {
         ref={redInputRef}
         className={classes.single}
         label="R"
-        value={`${internalRed}`}
+        value={internalRed}
         onChange={(event, value) => onChangeRbg(event, value, "r")}
         onBlur={() => setInternalRed(rgb?.r)}
         disableClear
@@ -153,7 +153,7 @@ export const Fields = (props: FieldsProps) => {
         ref={greenInputRef}
         className={classes.single}
         label="G"
-        value={`${internalGreen}`}
+        value={internalGreen}
         onChange={(event, value) => onChangeRbg(event, value, "g")}
         onBlur={() => setInternalGreen(rgb?.g)}
         disableClear
@@ -162,7 +162,7 @@ export const Fields = (props: FieldsProps) => {
         ref={blueInputRef}
         className={classes.single}
         label="B"
-        value={`${internalBlue}`}
+        value={internalBlue}
         onChange={(event, value) => onChangeRbg(event, value, "b")}
         onBlur={() => setInternalBlue(rgb?.b)}
         disableClear
