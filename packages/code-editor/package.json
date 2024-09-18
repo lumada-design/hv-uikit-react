@@ -41,6 +41,7 @@
     "@hitachivantara/uikit-react-utils": "^0.2.4",
     "@hitachivantara/uikit-styles": "^5.33.2",
     "@monaco-editor/react": "^4.5.1",
+    "xml-formatter": "^3.6.3",
     "xmllint-wasm": "^4.0.2"
   },
   "devDependencies": {

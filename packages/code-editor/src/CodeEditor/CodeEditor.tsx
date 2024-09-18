@@ -59,7 +59,7 @@ export const HvCodeEditor = ({
 
   const language = languageProp ?? defaultLanguage;
 
-  const editorRef = useRef(null);
+  const editorRef = useRef<any>(null);
 
   // Merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions: EditorProps["options"] = {
@@ -96,6 +96,27 @@ export const HvCodeEditor = ({
   useEffect(() => {
     handleActiveThemes();
   }, [handleActiveThemes]);
+
+  const handleFormatCode = () => {
+    // Get language plugin
+    const languagePlugin = language ? languagePlugins[language] : undefined;
+
+    if (!languagePlugin) return;
+
+    const { formatter } = languagePlugin;
+
+    // Format code
+    if (editorRef.current && formatter) {
+      try {
+        const unformattedCode = editorRef.current.getValue();
+        const formattedCode = formatter(unformattedCode);
+        editorRef.current.setValue(formattedCode);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        if (import.meta.env.DEV) console.error(error);
+      }
+    }
+  };
 
   const handleBeforeMount: EditorProps["beforeMount"] = (monaco) => {
     beforeMountProp?.(monaco);
@@ -152,6 +173,10 @@ export const HvCodeEditor = ({
     // Listen for key down events
     if (keyDownListener)
       editor.onKeyDown((event: any) => keyDownListener(event, editor, monaco));
+
+    // Listen for events to auto format code: on paste and on blur
+    editor.onDidBlurEditorText(() => handleFormatCode());
+    editor.onDidPaste(() => handleFormatCode());
   };
 
   return (
