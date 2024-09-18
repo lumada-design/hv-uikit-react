@@ -273,6 +273,7 @@ export const palette = {
   neutral,
   blue,
   red,
+  amber,
   orange,
   yellow,
   lime,

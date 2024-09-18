@@ -4,7 +4,8 @@ interface ColorTokens {
   // #region semantic
   primary: string;
   primaryAction: string;
-  // primaryStrong: string;
+  primaryStrong: string;
+  primarySubtle: string;
   primaryDimmed: string;
   success: string;
   successAction: string;
@@ -269,6 +270,8 @@ const utilsLight = {
 const newLight = {
   primary: accentLight.primary,
   primaryAction: accentLight.primary_80,
+  primaryStrong: accentLight.primary_80,
+  primarySubtle: accentLight.primary_20,
   primaryDimmed: accentLight.primary_20,
   success: semanticLight.positive,
   successAction: semanticLight.positive_80,
@@ -375,6 +378,8 @@ const utilsDark = {
 const newDark = {
   primary: accentDark.primary,
   primaryAction: accentDark.primary_80,
+  primaryStrong: accentDark.primary_80,
+  primarySubtle: accentDark.primary_20,
   primaryDimmed: accentDark.primary_20,
   success: semanticDark.positive,
   successAction: semanticDark.positive_80,
