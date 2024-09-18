@@ -130,7 +130,7 @@ export const ExternalIconsStory: StoryObj<HvIconContainerProps> = {
     docs: {
       description: {
         story:
-          'Most of our components that use icons are expecting them to have certain size containers. The `HvIconContainer` component component allows you to use external components without breaking the component behavior. Here we exemplify this usage with <a href="https://docs.fontawesome.com/v5/web/use-with/react/">`Font Awesome`</a> icons.',
+          'Most of our components that use icons are expecting them to have certain size containers. The `HvIconContainer` component allows you to use external components without breaking the component behavior. Here we exemplify this usage with <a href="https://docs.fontawesome.com/v5/web/use-with/react/">`Font Awesome`</a> icons.',
       },
       source: { code: ExternalIconsRaw },
     },
