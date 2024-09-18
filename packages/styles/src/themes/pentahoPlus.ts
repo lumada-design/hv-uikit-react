@@ -547,6 +547,10 @@ const pentahoPlus = makeTheme((theme) => ({
               backgroundColor: theme.colors.pp.warningDimmed,
             },
           },
+          "&:HvButton-disabled": {
+            backgroundColor: theme.colors.pp.bgDisabled,
+            borderColor: theme.colors.pp.bgDisabled,
+          },
         },
         ghost: {
           "&:hover": {
@@ -745,6 +749,24 @@ const pentahoPlus = makeTheme((theme) => ({
         openDown: {
           borderRadius:
             "calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2) 0px 0px",
+        },
+        disabled: {
+          backgroundColor: theme.colors.pp.bgDisabled,
+          borderColor: theme.colors.pp.bgDisabled,
+          "&.HvButton-subtle": {
+            backgroundColor: theme.colors.pp.bgDisabled,
+            borderColor: theme.colors.pp.bgDisabled,
+            "&:hover": {
+              backgroundColor: theme.colors.pp.bgDisabled,
+            },
+          },
+          "&.HvButton-ghost": {
+            backgroundColor: theme.colors.pp.bgDisabled,
+            borderColor: theme.colors.pp.bgDisabled,
+            "&:hover": {
+              backgroundColor: theme.colors.pp.bgDisabled,
+            },
+          },
         },
       },
     },
