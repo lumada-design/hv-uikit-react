@@ -8,6 +8,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import { HvIconContainer } from "./IconContainer";
 import { getSizeStyles } from "./utils";
 
 const getColorVars = (colorArray: string[]) => {
@@ -106,18 +107,6 @@ export interface IconBaseProps
   svgProps?: React.SVGProps<SVGSVGElement>;
 }
 
-export const StyledIconBase = styled("div")({
-  display: "flex",
-  // TODO: inherit color in v6?
-  // color: "inherit",
-  // TODO: remove box in v6?
-  fontSize: 16,
-  // box has a minimum size of 32px (`xs` & `sm`)
-  width: "var(--size, 32px)",
-  height: "var(--size, 32px)",
-  transition: "rotate 0.2s ease",
-});
-
 const StyledSvg = styled("svg")({
   margin: "auto",
   color: "inherit",
@@ -174,14 +163,15 @@ const IconBaseInternal = (
   const inheritColor = !!size && !color && palette?.length === 1;
 
   return (
-    <StyledIconBase
+    <HvIconContainer
       ref={ref}
       data-name={iconName}
       style={{
         ...(!inheritColor && getColorVars(colorArray)),
-        ...getSizeStyles(iconName, size ?? iconSize),
+        ...getSizeStyles(iconName ?? "", size),
         ...styleProp,
       }}
+      size={size ?? iconSize}
       {...others}
     >
       <StyledSvg
@@ -195,7 +185,7 @@ const IconBaseInternal = (
         {title ? <title>{title}</title> : null}
         {children}
       </StyledSvg>
-    </StyledIconBase>
+    </HvIconContainer>
   );
 };
 

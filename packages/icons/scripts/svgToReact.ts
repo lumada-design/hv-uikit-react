@@ -71,6 +71,7 @@ async function main() {
   const indexFile = `
 export * from "./IconBase";
 export * from "./IconSprite";
+export * from "./IconContainer";
 ${allDirs.map(makeHeaders).join("")}
 `;
   await fs.writeFile(resolve("src/index.ts"), indexFile);

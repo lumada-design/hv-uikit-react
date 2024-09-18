@@ -1,9 +1,13 @@
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvIconButton } from "@hitachivantara/uikit-react-core";
 import {
   Bookmark,
   CheckboxCheck,
   Close,
+  HvIconContainer,
+  HvIconContainerProps,
   HvIconSprite,
   HvIconSpriteProps,
   IconBase,
@@ -12,6 +16,8 @@ import {
   Machine,
 } from "@hitachivantara/uikit-react-icons";
 
+import { ExternalIcons } from "./ExternalIcons";
+import ExternalIconsRaw from "./ExternalIcons?raw";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof IconBase> = {
@@ -71,6 +77,9 @@ export const Accessibility = {
           If icons trigger actions, they should be wrapped in a tooltip and a button. For this, use `HvIconButton` with the `title` attribute.',
       },
     },
+    controls: {
+      disable: true,
+    },
   },
   render: () => (
     <>
@@ -113,6 +122,20 @@ export const IconSprites: StoryObj<HvIconSpriteProps> = {
   render: (args) => {
     return <HvIconSprite {...args} />;
   },
+};
+
+export const ExternalIconsStory: StoryObj<HvIconContainerProps> = {
+  name: "External Icons",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Most of our components that use icons are expecting them to have certain size containers. The `HvIconContainer` component allows you to use external components without breaking the component behavior. Here we exemplify this usage with <a href="https://docs.fontawesome.com/v5/web/use-with/react/">`Font Awesome`</a> icons.',
+      },
+      source: { code: ExternalIconsRaw },
+    },
+  },
+  render: () => <ExternalIcons />,
 };
 
 const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
@@ -184,6 +207,24 @@ export const Test: StoryObj = {
           />
           <CheckboxCheck size={100} style={{ width: 140, height: 140 }} />
           <CheckboxCheck size={100} />
+        </div>
+
+        <div className="flex">
+          <HvIconContainer size="xs">
+            <FontAwesomeIcon icon={faAdd} />
+          </HvIconContainer>
+          <HvIconContainer size="sm">
+            <FontAwesomeIcon icon={faAdd} />
+          </HvIconContainer>
+          <HvIconContainer size="md">
+            <FontAwesomeIcon icon={faAdd} />
+          </HvIconContainer>
+          <HvIconContainer size="lg">
+            <FontAwesomeIcon icon={faAdd} />
+          </HvIconContainer>
+          <HvIconContainer size="xl">
+            <FontAwesomeIcon icon={faAdd} />
+          </HvIconContainer>
         </div>
       </>
     );
