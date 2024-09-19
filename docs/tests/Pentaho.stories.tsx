@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Test as BottomPanelTestStory } from "packages/pentaho/src/Canvas/BottomPanel/BottomPanel.stories";
-import { Main as ToolbarTabsMainStory } from "packages/pentaho/src/Canvas/ToolbarTabs/ToolbarTabs.stories";
+import { Test as ToolbarTabsTestStory } from "packages/pentaho/src/Canvas/ToolbarTabs/ToolbarTabs.stories";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
 import { setupChromatic } from ".storybook/setupChromatic";
@@ -31,7 +31,7 @@ export const Test: StoryObj = {
       style={{ alignItems: "start", justifyContent: "start" }}
     >
       {BottomPanelTestStory.render?.(BottomPanelTestStory.args as any, context)}
-      {ToolbarTabsMainStory.render?.(ToolbarTabsMainStory.args as any, context)}
+      {ToolbarTabsTestStory.render?.(ToolbarTabsTestStory.args as any, context)}
     </HvSimpleGrid>
   ),
 };
