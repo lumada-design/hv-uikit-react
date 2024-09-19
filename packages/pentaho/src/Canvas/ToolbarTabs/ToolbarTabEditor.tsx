@@ -90,6 +90,14 @@ interface ToolbarTabEditorProps
   onEditChange?: (value: boolean) => void;
 }
 
+const sanitize = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
 export const ToolbarTabEditor = ({
   id,
   className,
@@ -109,7 +117,11 @@ export const ToolbarTabEditor = ({
 
   const contentEditableRef = useRef<HTMLSpanElement>(null);
 
-  const [value, setValue] = useControlled(valueProp, defaultValueProp);
+  // Sanitize content
+  const [value, setValue] = useControlled(
+    valueProp ? sanitize(valueProp) : valueProp,
+    defaultValueProp ? sanitize(defaultValueProp) : defaultValueProp,
+  );
   const [cachedValue, setCachedValue] = useState(value);
   const [isEditing, setIsEditing] = useControlled(editProp, false);
 
@@ -142,7 +154,8 @@ export const ToolbarTabEditor = ({
   }, [isEditing, value]);
 
   const handleInput: HvTypographyProps["onInput"] = (event) => {
-    const newValue = (event.target as any).innerText || "";
+    // Sanitize content
+    const newValue = sanitize((event.target as any).textContent) || "";
     setValue(newValue);
     onInputProp?.(event);
     onChangeProp?.(event, newValue);
