@@ -521,6 +521,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
           "&:active": {
             backgroundColor: theme.colors.pp.primarySubtle,
+            borderTop: `1px solid ${theme.colors.pp.primarySubtle}`,
             borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
             border: "none",
           },
