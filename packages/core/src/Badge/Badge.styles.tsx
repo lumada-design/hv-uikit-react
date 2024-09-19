@@ -2,7 +2,7 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const labelBaseStyle: React.CSSProperties = {
-  ...theme.typography.label,
+  ...theme.typography.caption2,
   padding: "0 5px",
   color: theme.colors.atmo1,
   lineHeight: "16px",
