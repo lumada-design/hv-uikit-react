@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.8...@hitachivantara/uikit-react-pentaho@0.4.9) (2024-09-19)
+
+### Bug Fixes
+
+- **ToolbarTabs:** dark theme ([2585d16](https://github.com/lumada-design/hv-uikit-react/commit/2585d16badd13774e653f177ad90e1c040143c2f))
+
 ## [0.4.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.7...@hitachivantara/uikit-react-pentaho@0.4.8) (2024-09-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho

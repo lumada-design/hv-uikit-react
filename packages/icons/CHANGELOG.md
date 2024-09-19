@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.12.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.11.1...@hitachivantara/uikit-react-icons@5.12.0) (2024-09-19)
+
+### Features
+
+- **IconContainer:** add icon container component ([#4306](https://github.com/lumada-design/hv-uikit-react/issues/4306)) ([b7cb4eb](https://github.com/lumada-design/hv-uikit-react/commit/b7cb4eb417ae45368b15a8f3d32c6232c2e747d4))
+- **theme:** add Pentaho+ tokens (internal) ([#4327](https://github.com/lumada-design/hv-uikit-react/issues/4327)) ([31a48b9](https://github.com/lumada-design/hv-uikit-react/commit/31a48b995549e2b8f7a7795e2bc2bfd214b66d97))
+
 ## [5.11.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.11.0...@hitachivantara/uikit-react-icons@5.11.1) (2024-09-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

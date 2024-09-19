@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.34.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.33.2...@hitachivantara/uikit-styles@5.34.0) (2024-09-19)
+
+### Features
+
+- **Button:** review `HvButton` styles according to latest PD specs ([#4319](https://github.com/lumada-design/hv-uikit-react/issues/4319)) ([bbedaa6](https://github.com/lumada-design/hv-uikit-react/commit/bbedaa6f643a4b0e2408f0e93feb6329cf7543af))
+- **theme:** add Pentaho+ tokens (internal) ([#4327](https://github.com/lumada-design/hv-uikit-react/issues/4327)) ([31a48b9](https://github.com/lumada-design/hv-uikit-react/commit/31a48b995549e2b8f7a7795e2bc2bfd214b66d97))
+
 ## [5.33.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.33.1...@hitachivantara/uikit-styles@5.33.2) (2024-09-12)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

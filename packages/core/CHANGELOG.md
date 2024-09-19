@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.73.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.72.1...@hitachivantara/uikit-react-core@5.73.0) (2024-09-19)
+
+### Bug Fixes
+
+- **TimeAgo:** respect locale ([#4335](https://github.com/lumada-design/hv-uikit-react/issues/4335)) ([86e761d](https://github.com/lumada-design/hv-uikit-react/commit/86e761de6c98db01537940fea5684b1557bd39c5))
+- **TreeView:** widen useHvTreeView handler types ([#4333](https://github.com/lumada-design/hv-uikit-react/issues/4333)) ([a0162f1](https://github.com/lumada-design/hv-uikit-react/commit/a0162f1648fc1e6a2a84a977c5bbb74ca4447d55))
+
+### Features
+
+- **Button:** review `HvButton` styles according to latest PD specs ([#4319](https://github.com/lumada-design/hv-uikit-react/issues/4319)) ([bbedaa6](https://github.com/lumada-design/hv-uikit-react/commit/bbedaa6f643a4b0e2408f0e93feb6329cf7543af))
+- **IconContainer:** add icon container component ([#4306](https://github.com/lumada-design/hv-uikit-react/issues/4306)) ([b7cb4eb](https://github.com/lumada-design/hv-uikit-react/commit/b7cb4eb417ae45368b15a8f3d32c6232c2e747d4))
+
 ## [5.72.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.72.0...@hitachivantara/uikit-react-core@5.72.1) (2024-09-12)
 
 ### Bug Fixes
