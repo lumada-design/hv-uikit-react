@@ -4,7 +4,7 @@ import {
   getXmlCompletionProvider,
   getXmlValidationMarkers,
   handleXmlKeyDown,
-  xmlFormatter,
+  hvXmlFormatter,
   xmlOptions,
 } from "./languages/xml";
 
@@ -19,7 +19,11 @@ type ValidationMarker = (
   schema?: string, // needed for XML language
 ) => Promise<object[]>;
 type KeyDownListener = (event: any, editor: any, monaco: Monaco) => void;
-type Formatter = (unformattedCode: string) => Promise<string> | string;
+export type Formatter = (
+  content: string,
+  editor: any,
+  monaco: Monaco,
+) => Promise<string | undefined>;
 
 interface LanguagePlugin {
   completionProvider?: CompletionProvider;
@@ -35,7 +39,7 @@ const xmlLanguagePlugin = (): LanguagePlugin => {
     validationMarker: getXmlValidationMarkers,
     keyDownListener: handleXmlKeyDown,
     editorOptions: xmlOptions,
-    formatter: xmlFormatter,
+    formatter: hvXmlFormatter,
   };
 };
 

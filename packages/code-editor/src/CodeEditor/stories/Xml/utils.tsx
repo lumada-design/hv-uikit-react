@@ -89,9 +89,11 @@ const classes = {
 export const Header = ({
   onClickSearch,
   onClickTree,
+  onFormat,
 }: {
   onClickSearch: HvButtonProps["onClick"];
   onClickTree: HvButtonProps["onClick"];
+  onFormat: HvButtonProps["onClick"];
 }) => (
   <div className={classes.headerRoot}>
     <HvTypography variant="label">XML</HvTypography>
@@ -102,6 +104,9 @@ export const Header = ({
     </HvButton>
     <HvButton variant="primaryGhost" onClick={onClickTree}>
       XML Tree
+    </HvButton>
+    <HvButton variant="primaryGhost" onClick={onFormat}>
+      Format
     </HvButton>
   </div>
 );
