@@ -479,105 +479,21 @@ const pentahoPlus = makeTheme((theme) => ({
           border: "none",
           borderRadius: theme.radii.full,
           padding: theme.spacing(0, "sm"),
-          [`&[data-color="positive"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.successAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.successStrong,
-            },
-          },
-          [`&[data-color="negative"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.errorAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.errorStrong,
-            },
-          },
-          [`&[data-color="warning"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.warningAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.warningStrong,
-            },
-          },
-        },
-        primary: {
-          "&:hover": {
-            backgroundColor: theme.colors.pp.primaryAction,
-          },
-          "&:active": {
-            backgroundColor: theme.colors.pp.primaryStrong,
-          },
         },
         subtle: {
           borderTop: `1px solid ${theme.colors.atmo1}`,
           borderBottom: `1px solid ${theme.colors.atmo4}`,
           backgroundColor: theme.colors.atmo1,
-          "&:hover": {
-            backgroundColor: theme.colors.pp.bgHover,
-          },
           "&:active": {
-            backgroundColor: theme.colors.pp.primarySubtle,
             borderTop: `1px solid ${theme.colors.pp.primarySubtle}`,
             borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
             border: "none",
           },
-          "&.HvButton-disabled": {
-            backgroundColor: theme.colors.pp.bgDisabled,
-            "&:hover": {
-              backgroundColor: theme.colors.pp.bgDisabled,
-            },
-          },
-          "&[data-color=positive]": {
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.successDimmed,
-            },
-          },
-          [`&[data-color="negative"]`]: {
-            color: theme.colors.negative_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.errorDimmed,
-            },
-          },
-          [`&[data-color="warning"]`]: {
-            color: theme.colors.warning_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.warningDimmed,
-            },
-          },
-          "&:HvButton-disabled": {
-            backgroundColor: theme.colors.pp.bgDisabled,
-            borderColor: theme.colors.pp.bgDisabled,
-          },
         },
         ghost: {
-          "&:hover": {
-            backgroundColor: theme.colors.pp.primaryDimmed,
-          },
           "&:active": {
-            backgroundColor: theme.colors.pp.primarySubtle,
             borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
             border: "none",
-          },
-          [`&[data-color="positive"]`]: {
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.successDimmed,
-            },
-          },
-          [`&[data-color="negative"]`]: {
-            color: theme.colors.negative_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.errorDimmed,
-            },
-          },
-          [`&[data-color="warning"]`]: {
-            color: theme.colors.warning_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.warningDimmed,
-            },
           },
         },
 
@@ -599,16 +515,6 @@ const pentahoPlus = makeTheme((theme) => ({
           "&:hover": {
             backgroundColor: theme.colors.pp.bgDisabled,
           },
-          "&[data-color=positive],&[data-color=warning],&[data-color=negative]":
-            {
-              color: theme.colors.pp.textDisabled,
-              "&:hover,&:active": {
-                backgroundColor: theme.colors.pp.bgDisabled,
-              },
-              "&.HvButton-ghost": {
-                backgroundColor: "transparent",
-              },
-            },
         },
       },
     },

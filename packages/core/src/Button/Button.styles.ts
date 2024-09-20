@@ -1,5 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
+import { getColor, theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
 import { HvButtonRadius, HvButtonSize } from "./types";
@@ -14,19 +14,21 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     whiteSpace: "nowrap",
 
     // Background color common for almost all variants
-    "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+    ":hover": {
+      backgroundColor: "hsl(from var(--color) h s calc(l * 0.9) / .2)",
     },
-    "&:focus-visible": {
+    ":focus-visible": {
       ...outlineStyles,
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: "hsl(from var(--color) h s calc(l * 0.9) / .2)",
     },
 
     // Default button - no size specified
     fontFamily: theme.fontFamily.body,
     ...theme.typography.label,
+    color: "var(--color)",
+    backgroundColor: "transparent",
     height: "var(--HvButton-height)",
-    border: "1px solid currentcolor",
+    border: "1px solid var(--color)",
     borderRadius: theme.radii.base,
     padding: theme.spacing(0, "sm"),
   },
@@ -38,13 +40,12 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   },
   focusVisible: {},
   disabled: {
+    "--color": theme.colors.atmo3,
     cursor: "not-allowed",
     color: theme.colors.secondary_60,
-    borderColor: theme.colors.atmo3,
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: "transparent",
     "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.atmo3,
-      borderColor: theme.colors.atmo3,
+      backgroundColor: "transparent",
     },
   },
   icon: {
@@ -55,25 +56,25 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       margin: -1,
     },
   },
-  subtle: {
-    backgroundColor: "transparent",
-    "&$disabled": {
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        backgroundColor: "transparent",
-      },
-    },
-  },
+  subtle: {},
   ghost: {
     borderColor: "transparent",
-    backgroundColor: "transparent",
     "&$disabled": {
       borderColor: "transparent",
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        borderColor: "transparent",
-        backgroundColor: "transparent",
-      },
+    },
+    "&:hover, &:focus-visible": {
+      borderColor: "transparent",
+    },
+  },
+  contained: {
+    color: theme.colors.atmo1, // `color-contrast(var(--color) vs ${theme.colors.base_light}, ${theme.colors.base_dark})`,
+    backgroundColor: "var(--color)",
+    "&:hover, &:focus-visible": {
+      backgroundColor: "color-mix(in srgb, var(--color) 90%, #333)",
+      borderColor: "color-mix(in srgb, var(--color) 90%, #333)",
+    },
+    "&$disabled, &$disabled:hover": {
+      backgroundColor: theme.colors.atmo3,
     },
   },
   semantic: {
@@ -99,38 +100,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   secondary: {},
 });
 
-export const getColoringStyle = (color: string, type?: string) => {
-  if (type)
-    return {
-      color:
-        theme.colors[
-          (color !== "warning"
-            ? color
-            : `${color}_140`) as keyof typeof theme.colors
-        ],
-    };
-
-  const bg =
-    theme.colors[
-      (color !== "warning"
-        ? color
-        : `${color}_120`) as keyof typeof theme.colors
-    ];
-  const hoverBg =
-    theme.colors[
-      (color !== "warning"
-        ? `${color}_80`
-        : `${color}_140`) as keyof typeof theme.colors
-    ];
-  return {
-    color: theme.colors.atmo1,
-    backgroundColor: bg,
-    borderColor: bg,
-    "&:hover, &:focus-visible": {
-      backgroundColor: hoverBg,
-      borderColor: hoverBg,
-    },
-  };
+export const getColoringStyle = (color: string) => {
+  return { "--color": getColor(color) };
 };
 
 export const getRadiusStyles = (radius: HvButtonRadius) => ({

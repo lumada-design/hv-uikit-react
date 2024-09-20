@@ -1,10 +1,9 @@
 import { useMemo } from "react";
 import {
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { HvBaseTheme } from "@hitachivantara/uikit-styles";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import {
   fixedForwardRef,
@@ -24,6 +23,8 @@ import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
 
 export { buttonClasses };
 
+export type HvButtonType = "contained" | "subtle" | "ghost";
+
 export type HvButtonClasses = ExtractNames<typeof useClasses>;
 
 export type HvButtonProps<C extends React.ElementType = "button"> =
@@ -42,6 +43,8 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       startIcon?: React.ReactNode;
       /** Element placed after the children. */
       endIcon?: React.ReactNode;
+      color?: HvColorAny;
+      type?: HvButtonType;
       /** Button size. */
       size?: HvButtonSize;
       /** Button border radius. */
@@ -62,34 +65,6 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
   >;
 
 /**
- * Normalize the button variant. It's meant to give us some retro-compatibility with
- * the DS 3.6 API.
- * @returns the normalized variant in DS 5 API
- */
-const mapVariant = (
-  variant: HvButtonVariant,
-  theme?: HvBaseTheme,
-): HvButtonVariant => {
-  if (theme === "ds3") return variant;
-
-  const deprecatedVariantMap: Record<string, HvButtonVariant> = {
-    secondary: "secondarySubtle",
-    ghost: "primaryGhost",
-  };
-
-  const mappedVariant = deprecatedVariantMap[variant];
-
-  if (import.meta.env.DEV && mappedVariant) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`,
-    );
-  }
-
-  return mappedVariant || variant;
-};
-
-/**
  * Button component is used to trigger an action or event.
  */
 export const HvButton = fixedForwardRef(function HvButton<
@@ -98,7 +73,9 @@ export const HvButton = fixedForwardRef(function HvButton<
   const {
     classes: classesProp,
     children,
-    variant: variantProp, // TODO - should we split into two props (color and type) in v6?
+    variant: variantProp,
+    color: colorProp,
+    type: typeProp,
     disabled = false,
     className,
     startIcon,
@@ -116,11 +93,7 @@ export const HvButton = fixedForwardRef(function HvButton<
     ...others
   } = useDefaultProps("HvButton", props);
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme } = useTheme();
-  const variant = mapVariant(
-    variantProp ?? (icon ? "secondaryGhost" : "primary"),
-    activeTheme?.base,
-  );
+  const variant = variantProp ?? (icon ? "secondaryGhost" : "primary");
 
   const handleClick: HvButtonProps["onClick"] = (e) => {
     if (disabled) return;
@@ -133,15 +106,19 @@ export const HvButton = fixedForwardRef(function HvButton<
   };
 
   const [color, type] = useMemo(() => {
+    if (colorProp || typeProp) {
+      return [colorProp ?? "secondary", typeProp ?? "ghost"];
+    }
+
+    if (variant === "secondary") return ["secondary", "subtle"];
+    if (variant === "ghost") return ["primary", "ghost"];
+    if (variant === "semantic") return ["inherit", "ghost"];
+
     const result = variant.split(/(?=[A-Z])/);
-    if (
-      result[0] === "ghost" ||
-      result[0] === "semantic" ||
-      (result[0] === "secondary" && !result[1])
-    )
-      return [];
-    return result.map((x) => x.toLowerCase());
-  }, [variant]);
+    if (!result[1]) return [result[0], "contained"];
+
+    return result.map((x) => x.toLowerCase()) as [HvColorAny, HvButtonType];
+  }, [colorProp, typeProp, variant]);
 
   const sizeStyles = useMemo(
     () =>
@@ -159,7 +136,7 @@ export const HvButton = fixedForwardRef(function HvButton<
       className={cx(
         classes.root,
         type && classes[type as keyof HvButtonClasses],
-        color && css(getColoringStyle(color, type)),
+        color && css(getColoringStyle(color)),
         classes[variant as keyof HvButtonClasses], // Placed after type and color CSS for DS3 override
         radius && css(getRadiusStyles(radius)),
         overrideIconColors && css(getOverrideColors()),

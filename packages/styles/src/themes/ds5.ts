@@ -185,10 +185,17 @@ const ds5 = makeTheme((theme) => ({
       textDecoration: "underline",
     },
   },
-  components: {} satisfies Record<
-    string,
-    Record<string, any> | { classes?: CSSProperties }
-  >,
+  components: {
+    HvButton: {
+      classes: {
+        root: {
+          "&:hover, &:focus-visible": {
+            backgroundColor: theme.colors.containerBackgroundHover,
+          },
+        },
+      },
+    },
+  } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
     secondLevelHeight: "56px",

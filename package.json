@@ -139,6 +139,7 @@
       "aria-query": "^5.3.0"
     }
   },
+  "packageManager": "npm@10.8.1+sha256.b8807aebb9656758e2872fa6e7c564b506aa2faa9297439a478d471d2fe32483",
   "prettier": "@hitachivantara/uikit-config/prettier",
   "license-compliance": {
     "extends": "@hitachivantara/uikit-config/licenses"
