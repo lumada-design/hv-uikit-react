@@ -46,6 +46,8 @@ interface ToolbarTabsTab {
   id: string;
   label: string;
   icon?: React.ReactNode;
+  /** Whether the tab is fixed and can't be removed. Defaults to `false`, i.e., all tabs are removable by default. */
+  fixed?: boolean;
 }
 
 export interface HvCanvasToolbarTabsProps
@@ -56,10 +58,10 @@ export interface HvCanvasToolbarTabsProps
   defaultTabs?: ToolbarTabsTab[];
   /** Id of the selected tab if it needs to be controlled. */
   selectedTabId?: string;
-  /** Defines the icon to be placed before the label when a new tab is created. If not defined, no icon is used. */
+  /** Defines the icon to be placed before the label when a new tab is created through the "Create new" button. If not defined, no icon is used. */
   icon?: React.ReactNode;
-  /** Defines whether or not the tabs are editable. */
-  allowTabEdit?: boolean;
+  /** Whether the tabs are editable or not. Default to `false`. */
+  disableTabEdit?: boolean;
   /** Callback triggered when a tab changes/is clicked. */
   onTabChange?: (
     event: React.SyntheticEvent | null,
@@ -74,6 +76,8 @@ export interface HvCanvasToolbarTabsProps
   labels?: Partial<typeof DEFAULT_LABELS>;
   /** A Jss Object used to override or extend the styles applied. */
   classes?: HvCanvasToolbarTabsClasses;
+  /** Whether the "Create new" button, which enables to create new tabs, is hidden. Defaults to `false`. */
+  hideCreateNew?: boolean;
 }
 
 /**
@@ -88,7 +92,8 @@ export const HvCanvasToolbarTabs = forwardRef<
     className,
     selectedTabId: selectedTabIdProp,
     icon: iconProp,
-    allowTabEdit = true,
+    disableTabEdit = false,
+    hideCreateNew = false,
     tabs: tabsProp,
     defaultTabs: defaultTabsProp = [],
     labels: labelsProp,
@@ -171,8 +176,12 @@ export const HvCanvasToolbarTabs = forwardRef<
     handleChangeTabs(event, newTabs);
   };
 
-  const handleKeyDownTab = (event: React.KeyboardEvent, tabId: string) => {
-    if (isKey(event, "Delete") || isKey(event, "Backspace")) {
+  const handleKeyDownTab = (
+    event: React.KeyboardEvent,
+    tabId: string,
+    removable: boolean,
+  ) => {
+    if (removable && (isKey(event, "Delete") || isKey(event, "Backspace"))) {
       handleDeleteTab(event, tabId);
 
       // We don't want the click to also select the tab
@@ -247,6 +256,7 @@ export const HvCanvasToolbarTabs = forwardRef<
           >
             {visibleTabs.map((tab, index) => {
               const btnSelected = selectedTab === tab.id;
+              const removable = !tab.fixed;
               return (
                 <HvCanvasPanelTab
                   style={{
@@ -256,13 +266,15 @@ export const HvCanvasToolbarTabs = forwardRef<
                   id={String(tab.id)}
                   className={classes.tab}
                   value={tab.id}
-                  onKeyDown={(event) => handleKeyDownTab(event, tab.id)}
+                  onKeyDown={(event) =>
+                    handleKeyDownTab(event, tab.id, removable)
+                  }
                 >
                   <div className={classes.tabContent}>
                     {tab.icon && (
                       <div className={classes.tabIconContainer}>{tab.icon}</div>
                     )}
-                    {!btnSelected || !allowTabEdit ? (
+                    {!btnSelected || disableTabEdit ? (
                       <HvOverflowTooltip
                         classes={{
                           tooltipAnchor: classes.tabLabel,
@@ -287,18 +299,20 @@ export const HvCanvasToolbarTabs = forwardRef<
                         onKeyDown={(e) => e.stopPropagation()}
                       />
                     )}
-                    <div className={classes.closeIconContainer}>
-                      <CloseXS
-                        aria-hidden
-                        iconSize="XS"
-                        onClick={(event) => {
-                          handleDeleteTab(event, tab.id);
+                    {removable && (
+                      <div className={classes.closeIconContainer}>
+                        <CloseXS
+                          aria-hidden
+                          size="xs"
+                          onClick={(event) => {
+                            handleDeleteTab(event, tab.id);
 
-                          // We don't want the click to also select the tab
-                          event.stopPropagation();
-                        }}
-                      />
-                    </div>
+                            // We don't want the click to also select the tab
+                            event.stopPropagation();
+                          }}
+                        />
+                      </div>
+                    )}
                     {selectedTab !== tab.id &&
                       visibleTabs[index + 1]?.id !== selectedTab && (
                         <div className={classes.tabDivider} />
@@ -326,13 +340,15 @@ export const HvCanvasToolbarTabs = forwardRef<
       </div>
       <div ref={actionsRef} className={classes.actionsContainer}>
         {children}
-        <HvButton
-          variant="primaryGhost"
-          startIcon={<AddAlt />}
-          onClick={handleCreateNew}
-        >
-          {labels.create}
-        </HvButton>
+        {!hideCreateNew && (
+          <HvButton
+            variant="primaryGhost"
+            startIcon={<AddAlt />}
+            onClick={handleCreateNew}
+          >
+            {labels.create}
+          </HvButton>
+        )}
       </div>
     </div>
   );

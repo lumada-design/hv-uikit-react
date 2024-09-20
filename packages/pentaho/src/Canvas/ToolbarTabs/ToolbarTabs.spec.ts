@@ -18,6 +18,15 @@ const goToNotEditableSample = (page: Page) =>
     "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--not-editable&viewMode=story",
   );
 
+const goToNotRemovableSample = (page: Page) => {
+  page.goto(
+    "./iframe.html?args=&id=pentaho-canvas-toolbar-tabs--not-removable&viewMode=story",
+  );
+
+  // Wait for the root element of the Storybook to be visible
+  return page.waitForSelector("#storybook-root", { state: "visible" });
+};
+
 test.beforeEach(async ({ page }) => {
   page.setViewportSize({ width: 650, height: 500 });
 });
@@ -409,7 +418,7 @@ test("adds tab with icon when defined", async ({ page }) => {
   await expect(leaf).toBeVisible();
 });
 
-test("can't rename selected tab when allowTabEdit is set to false", async ({
+test("can't rename selected tab when disableTabEdit is set to true", async ({
   page,
 }) => {
   await goToNotEditableSample(page);
@@ -450,4 +459,23 @@ test("uses previous value when clicking on escape when editing label", async ({
 
   const selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("My first tab");
+});
+
+test("can't close tab through UI and keyboard when the fixed property is set to true for a tab", async ({
+  page,
+}) => {
+  await goToNotRemovableSample(page);
+
+  // Try to close tab through keyboard
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Delete");
+  expect(page.getByRole("tab", { name: "Tab 1" })).toBeVisible();
+  expect(page.getByRole("tab", { name: "Tab 2" })).toBeVisible();
+
+  // Close only removable tab
+  const closeBtn = page.locator("[data-name=CloseXS]").first();
+  await closeBtn.click();
+  expect(await page.getByRole("tab").all()).toHaveLength(1);
+  expect(await page.getByRole("tab").allTextContents()).toEqual(["Tab 1"]);
+  expect(await page.locator("[data-name=CloseXS]").all()).toHaveLength(0);
 });

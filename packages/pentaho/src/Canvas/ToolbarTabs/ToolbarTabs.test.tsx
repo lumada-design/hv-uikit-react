@@ -144,4 +144,16 @@ describe("CanvasToolbarTabs", () => {
     await user.keyboard("{tab}");
     expect(onTabChangeMock).not.toHaveBeenCalled();
   });
+
+  it("shows 'Create new' button by default", () => {
+    render(<Sample />);
+    const createButton = screen.getByRole("button", { name: "Create new" });
+    expect(createButton).toBeInTheDocument();
+  });
+
+  it("doesn't show 'Create new' button when hideCreateNew is true", () => {
+    render(<Sample hideCreateNew />);
+    const createButton = screen.queryByRole("button", { name: "Create new" });
+    expect(createButton).not.toBeInTheDocument();
+  });
 });
