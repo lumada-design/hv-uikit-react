@@ -1,5 +1,15 @@
-import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
-import { Pause, Play, Stop } from "@hitachivantara/uikit-react-icons";
+import {
+  HvButton,
+  HvButtonProps,
+  HvIconButton,
+} from "@hitachivantara/uikit-react-core";
+import {
+  Abacus,
+  HvIconContainer,
+  Pause,
+  Play,
+  Stop,
+} from "@hitachivantara/uikit-react-icons";
 
 const VariantGroup = ({ color, children, ...others }: HvButtonProps) => {
   const variantProps = ["contained", "subtle", "ghost"] as const;
@@ -63,9 +73,40 @@ const Buttons = () => (
   </div>
 );
 
+const Icons = () => (
+  <div className="flex gap-sm items-center text-brand text-60px">
+    <Abacus size={"inherit" as any} />
+    <HvIconButton
+      title="Close"
+      style={{ color: "inherit", fontSize: "inherit" }}
+    >
+      <div className="i-ph-x" />
+    </HvIconButton>
+    <HvIconButton
+      title="Close"
+      style={{ color: "inherit", fontSize: "inherit" }}
+    >
+      <HvIconContainer size={"inherit" as any}>
+        <div className="i-ph-x" />
+      </HvIconContainer>
+    </HvIconButton>
+    <div className="i-ph-acorn" />
+    <div className="i-tabler-accessible" />
+    <span>This is some text</span>
+  </div>
+);
+
 export const Component = () => {
   return (
     <div className="grid gap-lg">
+      <Icons />
+      <HvButton
+        className="w-160px"
+        startIcon={<div className="i-ph-download text-lg mr-4px" />}
+        variant="primary"
+      >
+        Button
+      </HvButton>
       <Buttons />
     </div>
   );
