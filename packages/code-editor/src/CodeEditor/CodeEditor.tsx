@@ -3,7 +3,7 @@ import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
-import { languagePlugins } from "./plugins";
+import { Formatter, languagePlugins } from "./plugins";
 
 export { staticClasses as codeEditorClasses };
 
@@ -20,6 +20,12 @@ export interface HvCodeEditorProps extends EditorProps {
   options?: EditorProps["options"];
   /** XSD schema used to validate the code editor content when the language is set to `xml`. */
   xsdSchema?: string;
+  /**
+   * Whether to disable code auto format or not. Code format happens on mount, on blur, and on paste.
+   * Supported languages: `XML`.
+   * Defaults to `false`.
+   */
+  disableAutoFormat?: boolean;
 }
 
 const defaultCodeEditorOptions: EditorProps["options"] = {
@@ -51,6 +57,7 @@ export const HvCodeEditor = ({
   defaultLanguage,
   language: languageProp,
   xsdSchema,
+  disableAutoFormat = false,
   onMount: onMountProp,
   beforeMount: beforeMountProp,
   ...others
@@ -97,24 +104,19 @@ export const HvCodeEditor = ({
     handleActiveThemes();
   }, [handleActiveThemes]);
 
-  const handleFormatCode = () => {
-    // Get language plugin
-    const languagePlugin = language ? languagePlugins[language] : undefined;
-
-    if (!languagePlugin) return;
-
-    const { formatter } = languagePlugin;
-
-    // Format code
-    if (editorRef.current && formatter) {
-      try {
-        const unformattedCode = editorRef.current.getValue();
-        const formattedCode = formatter(unformattedCode);
-        editorRef.current.setValue(formattedCode);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        if (import.meta.env.DEV) console.error(error);
-      }
+  const handleFormatCode = async (
+    editor: any,
+    monaco: any,
+    formatter: Formatter,
+  ) => {
+    try {
+      const model = editor.getModel();
+      const content = model.getValue();
+      const formattedCode = await formatter(content, editor, monaco);
+      if (formattedCode) editorRef.current.setValue(formattedCode);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      if (import.meta.env.DEV) console.error(error);
     }
   };
 
@@ -140,6 +142,7 @@ export const HvCodeEditor = ({
       editorOptions,
       keyDownListener,
       validationMarker,
+      formatter,
     } = languagePlugin;
 
     // Update options
@@ -174,9 +177,19 @@ export const HvCodeEditor = ({
     if (keyDownListener)
       editor.onKeyDown((event: any) => keyDownListener(event, editor, monaco));
 
-    // Listen for events to auto format code: on paste and on blur
-    editor.onDidBlurEditorText(() => handleFormatCode());
-    editor.onDidPaste(() => handleFormatCode());
+    // Listen for events to auto format code
+    if (formatter && !disableAutoFormat) {
+      // On mount
+      handleFormatCode(editor, monaco, formatter);
+
+      // On blur
+      editor.onDidBlurEditorText(() =>
+        handleFormatCode(editor, monaco, formatter),
+      );
+
+      // On paste
+      editor.onDidPaste(() => handleFormatCode(editor, monaco, formatter));
+    }
   };
 
   return (

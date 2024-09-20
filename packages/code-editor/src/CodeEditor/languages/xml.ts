@@ -1,5 +1,5 @@
 import { type Monaco } from "@monaco-editor/react";
-import formatter from "xml-formatter";
+import formatter, { XMLFormatterOptions } from "xml-formatter";
 import { validateXML } from "xmllint-wasm";
 
 // Helpful notes
@@ -354,9 +354,31 @@ export const xmlOptions = {
   autoClosingBrackets: false,
 };
 
-/** XML code formatter. */
-export const xmlFormatter = (unformattedCode: string) =>
-  formatter(unformattedCode, {
-    collapseContent: true,
-    forceSelfClosingEmptyTag: true,
-  });
+/**
+ * XML code formatter.
+ * When the code has errors, it is not formatted and `undefined` is returned.
+ * @param content Current code editor content
+ * @param editor Editor instance
+ * @param monaco Monaco instance
+ * @param options XML formatter options
+ * @returns `string with the formatted code or `undefined`
+ */
+export const hvXmlFormatter = async (
+  content: string,
+  editor: any,
+  monaco: Monaco,
+  options?: XMLFormatterOptions,
+) => {
+  const validation = await getXmlValidationMarkers(content, editor, monaco); // without schema for XML
+  const hasError = validation.some(
+    (marker: any) => marker?.severity === monaco.MarkerSeverity.Error,
+  );
+
+  // Format only if there are no errors
+  return hasError
+    ? undefined
+    : formatter(content, {
+        collapseContent: true,
+        ...options,
+      });
+};

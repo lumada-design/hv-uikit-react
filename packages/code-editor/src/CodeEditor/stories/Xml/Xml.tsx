@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
+  hvXmlFormatter,
 } from "@hitachivantara/uikit-react-code-editor";
 import {
   HvButtonProps,
@@ -9,6 +10,7 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvTreeView,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 // The code for these utils can be found at: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/code-editor/src/CodeEditor/stories/Xml/utils.tsx
@@ -60,11 +62,24 @@ export const XmlStory = () => {
     attributes: Attributes;
   }>();
   const [defaultExpandedKeys, setDefaultExpandedKeys] = useState<string[]>([]);
+  const [hasErrors, setHasErrors] = useState(false);
 
   const editorRef = useRef<any>(null);
+  const monacoRef = useRef<any>(null);
 
-  const handleMount: HvCodeEditorProps["onMount"] = (editor) => {
+  const handleMount: HvCodeEditorProps["onMount"] = (editor, monaco) => {
     editorRef.current = editor;
+    monacoRef.current = monaco;
+
+    // Listen for errors for validation state
+    monaco.editor.onDidChangeMarkers(() => {
+      const model = editor.getModel();
+      const markers = monaco.editor.getModelMarkers({ resource: model.uri });
+      const errors = markers.some(
+        (marker: any) => marker.severity === monaco.MarkerSeverity.Error,
+      );
+      setHasErrors(errors);
+    });
   };
 
   const handleOpenSearch: HvButtonProps["onClick"] = () => {
@@ -81,10 +96,33 @@ export const XmlStory = () => {
     setOpened(true);
   };
 
+  const handleFormat = async () => {
+    try {
+      const content = editorRef.current.getValue();
+      const formattedCode = await hvXmlFormatter(
+        content,
+        editorRef.current,
+        monacoRef.current,
+      );
+      if (formattedCode) editorRef.current.setValue(formattedCode);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      if (import.meta.env.DEV) console.error(error);
+    }
+  };
+
   return (
     <div>
-      <Header onClickTree={handleClickTree} onClickSearch={handleOpenSearch} />
+      <HvTypography variant="label">
+        Has errors: {String(hasErrors)}
+      </HvTypography>
+      <Header
+        onClickTree={handleClickTree}
+        onClickSearch={handleOpenSearch}
+        onFormat={handleFormat}
+      />
       <HvCodeEditor
+        disableAutoFormat // formatting manually
         height={270}
         language="xml"
         value={editorValue}
