@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.9...@hitachivantara/uikit-react-pentaho@0.5.0) (2024-09-23)
+
+### Bug Fixes
+
+- **ToolbarTabs:** inline edit content sanitised ([#4347](https://github.com/lumada-design/hv-uikit-react/issues/4347)) ([784f36d](https://github.com/lumada-design/hv-uikit-react/commit/784f36d2b2f7d4c8d8068bba05c9073c92f11e64))
+
+### Features
+
+- **ToolbarTabs:** create new and remove tab optional ([#4349](https://github.com/lumada-design/hv-uikit-react/issues/4349)) ([9eea86b](https://github.com/lumada-design/hv-uikit-react/commit/9eea86bd3ec8a2e89400da11f7a899d6cd67e6f1))
+
 ## [0.4.9](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.4.8...@hitachivantara/uikit-react-pentaho@0.4.9) (2024-09-19)
 
 ### Bug Fixes

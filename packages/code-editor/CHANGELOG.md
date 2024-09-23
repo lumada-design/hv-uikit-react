@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.4.0...@hitachivantara/uikit-react-code-editor@5.5.0) (2024-09-23)
+
+### Features
+
+- export xml code formatter and optional auto format ([#4350](https://github.com/lumada-design/hv-uikit-react/issues/4350)) ([93f7352](https://github.com/lumada-design/hv-uikit-react/commit/93f735283ddd6f89f2a6bccf4c2e6d63d2d4f38b))
+
 # [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.3.4...@hitachivantara/uikit-react-code-editor@5.4.0) (2024-09-19)
 
 ### Features
