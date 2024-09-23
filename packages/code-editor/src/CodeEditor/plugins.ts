@@ -1,48 +1,55 @@
 import { type Monaco } from "@monaco-editor/react";
 
 import {
-  getXmlCompletionProvider,
-  getXmlValidationMarkers,
-  handleXmlKeyDown,
+  hvXmlCompletionProvider,
   hvXmlFormatter,
-  xmlOptions,
+  hvXmlKeyDownListener,
+  hvXmlOptions,
+  hvXmlValidator,
 } from "./languages/xml";
 
-type CompletionProvider = (
-  monaco: Monaco,
-  schema?: string, // needed for XML language
-) => object;
-type ValidationMarker = (
-  content: string,
-  editor: any,
-  monaco: Monaco,
-  schema?: string, // needed for XML language
-) => Promise<object[]>;
-type KeyDownListener = (event: any, editor: any, monaco: Monaco) => void;
 export type Formatter = (
   content: string,
   editor: any,
   monaco: Monaco,
 ) => Promise<string | undefined>;
 
-interface LanguagePlugin {
-  completionProvider?: CompletionProvider;
-  validationMarker?: ValidationMarker;
-  keyDownListener?: KeyDownListener;
-  editorOptions?: object;
+export interface LanguagePlugin {
+  completionProvider?: (monaco: Monaco) => object;
+  validator?: (
+    content: string,
+    editor: any,
+    monaco: Monaco,
+  ) => Promise<object[]>;
   formatter?: Formatter;
+  keyDownListener?: (event: any, editor: any, monaco: Monaco) => void;
+  editorOptions?: object;
 }
 
-const xmlLanguagePlugin = (): LanguagePlugin => {
+interface XmlLanguagePlugin
+  extends Omit<LanguagePlugin, "completionProvider" | "validator"> {
+  completionProvider?: (monaco: Monaco, schema?: string) => object;
+  validator?: (
+    content: string,
+    editor: any,
+    monaco: Monaco,
+    schema?: string,
+  ) => Promise<object[]>;
+}
+
+const xmlLanguagePlugin = (): XmlLanguagePlugin => {
   return {
-    completionProvider: getXmlCompletionProvider,
-    validationMarker: getXmlValidationMarkers,
-    keyDownListener: handleXmlKeyDown,
-    editorOptions: xmlOptions,
+    completionProvider: hvXmlCompletionProvider,
+    validator: hvXmlValidator,
     formatter: hvXmlFormatter,
+    keyDownListener: hvXmlKeyDownListener,
+    editorOptions: hvXmlOptions,
   };
 };
 
-export const languagePlugins: Record<string, LanguagePlugin> = {
+export const languagePlugins: Record<
+  string,
+  LanguagePlugin | XmlLanguagePlugin
+> = {
   xml: xmlLanguagePlugin(),
 };
