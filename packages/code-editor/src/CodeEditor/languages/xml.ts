@@ -129,7 +129,7 @@ const getLastOpenedTag = (content: string, closed = false) => {
 /**
  * Triggers suggestions for specific cases.
  */
-export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
+export const hvXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
   const elements = schema ? getXsdElementsAndAttributes(schema) : undefined;
   const root = elements ? Object.keys(elements)[0] : undefined;
   const emptySuggestions = root
@@ -247,7 +247,7 @@ export const getXmlCompletionProvider = (monaco: Monaco, schema?: string) => {
 /**
  * Validates XML with XSD schema and create error markers to show on code editor.
  */
-export const getXmlValidationMarkers = async (
+export const hvXmlValidator = async (
   content: string,
   editor: any,
   monaco: Monaco,
@@ -299,7 +299,11 @@ export const getXmlValidationMarkers = async (
  * Auto-completes a tag when closing it: writing ">" after "<root" will automatically add "</root>"
  * Source code from: https://github.com/microsoft/monaco-editor/issues/221
  */
-export const handleXmlKeyDown = (event: any, editor: any, monaco: Monaco) => {
+export const hvXmlKeyDownListener = (
+  event: any,
+  editor: any,
+  monaco: Monaco,
+) => {
   if (event.browserEvent.key === ">") {
     const model = editor.getModel();
     const edits: any[] = [];
@@ -350,7 +354,7 @@ export const handleXmlKeyDown = (event: any, editor: any, monaco: Monaco) => {
 };
 
 /** XML custom options. */
-export const xmlOptions = {
+export const hvXmlOptions = {
   autoClosingBrackets: false,
 };
 
@@ -369,7 +373,7 @@ export const hvXmlFormatter = async (
   monaco: Monaco,
   options?: XMLFormatterOptions,
 ) => {
-  const validation = await getXmlValidationMarkers(content, editor, monaco); // without schema for XML
+  const validation = await hvXmlValidator(content, editor, monaco); // without schema for XML
   const hasError = validation.some(
     (marker: any) => marker?.severity === monaco.MarkerSeverity.Error,
   );

@@ -1,1 +1,6 @@
-export { hvXmlFormatter } from "./xml";
+export {
+  hvXmlFormatter,
+  hvXmlKeyDownListener,
+  hvXmlValidator,
+  hvXmlCompletionProvider,
+} from "./xml";

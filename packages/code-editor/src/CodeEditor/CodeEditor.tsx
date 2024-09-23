@@ -3,7 +3,7 @@ import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
-import { Formatter, languagePlugins } from "./plugins";
+import { Formatter, LanguagePlugin, languagePlugins } from "./plugins";
 
 export { staticClasses as codeEditorClasses };
 
@@ -26,6 +26,8 @@ export interface HvCodeEditorProps extends EditorProps {
    * Defaults to `false`.
    */
   disableAutoFormat?: boolean;
+  /** Language plugin. This will override the default language plugin used internally. */
+  languagePlugin?: LanguagePlugin;
 }
 
 const defaultCodeEditorOptions: EditorProps["options"] = {
@@ -60,6 +62,7 @@ export const HvCodeEditor = ({
   disableAutoFormat = false,
   onMount: onMountProp,
   beforeMount: beforeMountProp,
+  languagePlugin: languagePluginProp,
   ...others
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
@@ -130,7 +133,8 @@ export const HvCodeEditor = ({
     onMountProp?.(editor, monaco);
 
     // Get language plugin
-    const languagePlugin = language ? languagePlugins[language] : undefined;
+    const languagePlugin =
+      languagePluginProp ?? (language ? languagePlugins[language] : undefined);
 
     if (!languagePlugin) return;
 
@@ -141,7 +145,7 @@ export const HvCodeEditor = ({
       completionProvider,
       editorOptions,
       keyDownListener,
-      validationMarker,
+      validator,
       formatter,
     } = languagePlugin;
 
@@ -160,17 +164,12 @@ export const HvCodeEditor = ({
       );
 
     // Validate content and get error markers
-    if (validationMarker)
+    if (validator)
       editor.onDidChangeModelContent(async () => {
         const model = editor.getModel();
         const content = model.getValue();
-        const validation = await validationMarker(
-          content,
-          editor,
-          monaco,
-          xsdSchema,
-        );
-        monaco.editor.setModelMarkers(model, language, validation);
+        const validate = await validator(content, editor, monaco, xsdSchema);
+        monaco.editor.setModelMarkers(model, language, validate);
       });
 
     // Listen for key down events
