@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <BackgroundWrapper
       style={{
-        backgroundImage: `url(https://lumada-design.github.io/assets/welcome-${mode}.png)`,
+        backgroundImage: `url(https://lumada-design.github.io/assets/welcome-${mode}.webp)`,
       }}
     >
       <Wrapper>
