@@ -63,7 +63,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    environment: "jsdom",
+    environment: "happy-dom",
     setupFiles: resolve(__dirname, "test.setup.tsx"),
     include: ["**/*.test.{ts,tsx}"],
     exclude: ["node_modules", "dist"],
