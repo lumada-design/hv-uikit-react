@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.73.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.1...@hitachivantara/uikit-react-core@5.73.2) (2024-09-23)
+
+### Bug Fixes
+
+- **Badge:** add pentaho plus styles ([bdfb197](https://github.com/lumada-design/hv-uikit-react/commit/bdfb1973c838e144e2b0f6569c714eb0c9189340))
+
 ## [5.73.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.0...@hitachivantara/uikit-react-core@5.73.1) (2024-09-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

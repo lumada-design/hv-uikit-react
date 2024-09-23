@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.5.0...@hitachivantara/uikit-react-code-editor@5.6.0) (2024-09-23)
+
+### Features
+
+- **CodeEditor:** export xml plugin and enable override ([#4351](https://github.com/lumada-design/hv-uikit-react/issues/4351)) ([392aaac](https://github.com/lumada-design/hv-uikit-react/commit/392aaac30593b2f2df913fd8f6ca5c0cf2b4e400))
+
 # [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.4.0...@hitachivantara/uikit-react-code-editor@5.5.0) (2024-09-23)
 
 ### Features
