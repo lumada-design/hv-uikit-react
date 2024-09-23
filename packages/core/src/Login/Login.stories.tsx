@@ -133,7 +133,7 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     };
 
     return (
-      <HvLogin background="https://lumada-design.github.io/assets/login-bg2.jpg">
+      <HvLogin background="https://lumada-design.github.io/assets/login-bg2.png">
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 

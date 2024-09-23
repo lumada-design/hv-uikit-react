@@ -249,7 +249,7 @@ const Card1 = () => (
       component="img"
       alt="madeira island image"
       height={240}
-      image="https://i.imgur.com/hYWplFv.png"
+      image="https://lumada-design.github.io/assets/madeira.webp"
     />
     <HvCardContent>
       <HvTypography variant="body" className="mt-xs">
