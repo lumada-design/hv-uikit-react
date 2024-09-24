@@ -56,7 +56,7 @@ Here's an example anatomy of a `HvComp` component:
 
 ```ts
 // HvComp.styles.ts
-import { createClasses } from "../utils/classes";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 export const { staticClasses, useClasses } = createClasses("HvComp", {
   /** Applied to the root element */
@@ -81,8 +81,12 @@ export const { staticClasses, useClasses } = createClasses("HvComp", {
 
 ```tsx
 // HvComp.tsx
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
+
 import { HvBaseProps } from "../types/generic";
-import { ExtractNames } from "../utils/classes";
 import { staticClasses, useClasses } from "./MyComp.styles";
 
 // export `staticClasses` 👇 as `compClasses` (camelCase, no `Hv`)
@@ -114,7 +118,7 @@ export interface HvCompProps extends HvBaseProps<HTMLDivElement> {
 export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
   const {
     children,
-    // fix collisions 👇 by renaming to `xProp`
+    // fix collisions 👇 by renaming to `<x>Prop`
     classes: classesProp,
     className,
     // 👇 make booleans be opt-in (default is false/undefined)
@@ -179,7 +183,7 @@ export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
       // 👇 forward others according to the types
       {...others}
     >
-      <HvButton className={classes.button} onClick={handleClick}>
+      <HvButton className={classes.button} onClick={handleButtonClick}>
         {buttonContent}
       </HvButton>
       {selected && renderContent}
