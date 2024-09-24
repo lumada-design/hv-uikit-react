@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
+  hvLanguagePlugins,
   hvXmlFormatter,
 } from "@hitachivantara/uikit-react-code-editor";
 import {
@@ -111,6 +112,11 @@ export const XmlStory = () => {
     }
   };
 
+  const languagePlugin = {
+    ...hvLanguagePlugins.xml,
+    schema: xsdSchema,
+  };
+
   return (
     <div>
       <HvTypography variant="label">
@@ -127,7 +133,7 @@ export const XmlStory = () => {
         language="xml"
         value={editorValue}
         onChange={(content) => setEditorValue(content ?? "")}
-        xsdSchema={xsdSchema}
+        languagePlugin={languagePlugin}
         onMount={handleMount}
       />
       <HvDialog

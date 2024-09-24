@@ -3,7 +3,7 @@ import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
-import { Formatter, LanguagePlugin, languagePlugins } from "./plugins";
+import { Formatter, hvLanguagePlugins, LanguagePlugin } from "./plugins";
 
 export { staticClasses as codeEditorClasses };
 
@@ -18,8 +18,6 @@ export interface HvCodeEditorProps extends EditorProps {
   defaultValue?: string;
   /** The properties of the editor object in Monaco. */
   options?: EditorProps["options"];
-  /** XSD schema used to validate the code editor content when the language is set to `xml`. */
-  xsdSchema?: string;
   /**
    * Whether to disable code auto format or not. Code format happens on mount, on blur, and on paste.
    * Supported languages: `XML`.
@@ -58,7 +56,6 @@ export const HvCodeEditor = ({
   editorProps,
   defaultLanguage,
   language: languageProp,
-  xsdSchema,
   disableAutoFormat = false,
   onMount: onMountProp,
   beforeMount: beforeMountProp,
@@ -70,6 +67,7 @@ export const HvCodeEditor = ({
   const language = languageProp ?? defaultLanguage;
 
   const editorRef = useRef<any>(null);
+  const completionProviderRef = useRef<any>(null);
 
   // Merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions: EditorProps["options"] = {
@@ -134,7 +132,8 @@ export const HvCodeEditor = ({
 
     // Get language plugin
     const languagePlugin =
-      languagePluginProp ?? (language ? languagePlugins[language] : undefined);
+      languagePluginProp ??
+      (language ? hvLanguagePlugins[language] : undefined);
 
     if (!languagePlugin) return;
 
@@ -156,19 +155,32 @@ export const HvCodeEditor = ({
         ...editorOptions,
       });
 
+    // Register completion provider, but first dispose of any previous one
+    if (completionProviderRef.current) {
+      completionProviderRef.current.dispose(); // Clean up previous provider
+    }
+
     // Register completion provider
-    if (completionProvider)
-      monaco.languages.registerCompletionItemProvider(
-        language,
-        completionProvider(monaco, xsdSchema),
-      );
+    if (completionProvider) {
+      const providerDisposable =
+        monaco.languages.registerCompletionItemProvider(
+          language,
+          completionProvider(monaco, languagePlugin.schema),
+        );
+      completionProviderRef.current = providerDisposable;
+    }
 
     // Validate content and get error markers
     if (validator)
       editor.onDidChangeModelContent(async () => {
         const model = editor.getModel();
         const content = model.getValue();
-        const validate = await validator(content, editor, monaco, xsdSchema);
+        const validate = await validator(
+          content,
+          editor,
+          monaco,
+          languagePlugin.schema,
+        );
         monaco.editor.setModelMarkers(model, language, validate);
       });
 
@@ -190,6 +202,15 @@ export const HvCodeEditor = ({
       editor.onDidPaste(() => handleFormatCode(editor, monaco, formatter));
     }
   };
+
+  useEffect(() => {
+    return () => {
+      // Cleanup on unmount
+      if (completionProviderRef.current) {
+        completionProviderRef.current.dispose();
+      }
+    };
+  }, []);
 
   return (
     <div className={classes.root}>

@@ -1,6 +1,12 @@
 import { type Monaco } from "@monaco-editor/react";
 
 import {
+  hvSqlCompletionProvider,
+  hvSqlFormatter,
+  hvSqlOptions,
+  hvSqlValidator,
+} from "./languages/sql";
+import {
   hvXmlCompletionProvider,
   hvXmlFormatter,
   hvXmlKeyDownListener,
@@ -12,6 +18,7 @@ export type Formatter = (
   content: string,
   editor: any,
   monaco: Monaco,
+  options?: any,
 ) => Promise<string | undefined>;
 
 export interface LanguagePlugin {
@@ -24,6 +31,7 @@ export interface LanguagePlugin {
   formatter?: Formatter;
   keyDownListener?: (event: any, editor: any, monaco: Monaco) => void;
   editorOptions?: object;
+  schema?: string;
 }
 
 interface XmlLanguagePlugin
@@ -37,19 +45,30 @@ interface XmlLanguagePlugin
   ) => Promise<object[]>;
 }
 
-const xmlLanguagePlugin = (): XmlLanguagePlugin => {
-  return {
-    completionProvider: hvXmlCompletionProvider,
-    validator: hvXmlValidator,
-    formatter: hvXmlFormatter,
-    keyDownListener: hvXmlKeyDownListener,
-    editorOptions: hvXmlOptions,
-  };
+interface SqlLanguagePlugin extends Omit<LanguagePlugin, "completionProvider"> {
+  completionProvider?: (monaco: Monaco, schema?: string) => object;
+  formatter?: Formatter;
+}
+
+const xmlLanguagePlugin: XmlLanguagePlugin = {
+  completionProvider: hvXmlCompletionProvider,
+  validator: hvXmlValidator,
+  formatter: hvXmlFormatter,
+  keyDownListener: hvXmlKeyDownListener,
+  editorOptions: hvXmlOptions,
 };
 
-export const languagePlugins: Record<
+const sqlLanguagePlugin: SqlLanguagePlugin = {
+  completionProvider: hvSqlCompletionProvider,
+  validator: hvSqlValidator,
+  formatter: hvSqlFormatter,
+  editorOptions: hvSqlOptions,
+};
+
+export const hvLanguagePlugins: Record<
   string,
-  LanguagePlugin | XmlLanguagePlugin
+  LanguagePlugin | XmlLanguagePlugin | SqlLanguagePlugin
 > = {
-  xml: xmlLanguagePlugin(),
+  xml: xmlLanguagePlugin,
+  sql: sqlLanguagePlugin,
 };
