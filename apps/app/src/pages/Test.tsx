@@ -1,3 +1,5 @@
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   HvButton,
   HvButtonProps,
@@ -76,6 +78,12 @@ const Buttons = () => (
 const Icons = () => (
   <div className="flex gap-sm items-center text-brand text-60px">
     <Abacus size={"inherit" as any} />
+
+    <FontAwesomeIcon icon={faPlus} />
+    <HvIconContainer color="negative" size="M">
+      <FontAwesomeIcon icon={faPlus} />
+    </HvIconContainer>
+
     <HvIconButton
       title="Close"
       style={{ color: "inherit", fontSize: "inherit" }}
