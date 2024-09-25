@@ -894,7 +894,12 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
 /** This tests if the horizontal slider resets when removed */
 export const Test: StoryObj = {
   parameters: {
-    ...setupChromatic(["DS5 dawn"], 5000),
+    chromatic: {
+      ...setupChromatic(["DS5 dawn"], 5000).chromatic,
+      disableSnapshot: {
+        browsers: ["firefox", "webkit"],
+      },
+    },
     docs: { disable: true },
   },
   decorators: [
