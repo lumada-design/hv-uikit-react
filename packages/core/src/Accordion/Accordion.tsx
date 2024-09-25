@@ -1,15 +1,13 @@
 import { useCallback, useMemo } from "react";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+import { DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
+import { useExpandable } from "../hooks/useExpandable";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyVariants } from "../Typography";
-import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Accordion.styles";
 
 export { staticClasses as accordionClasses };
@@ -62,23 +60,25 @@ export const HvAccordion = (props: HvAccordionProps) => {
     disableEventHandling,
     ...others
   } = useDefaultProps("HvAccordion", props);
-
-  const id = useUniqueId(idProp);
-
   const { classes, cx } = useClasses(classesProp);
 
-  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const { isOpen, toggleOpen, buttonProps, regionProps } = useExpandable({
+    id: idProp,
+    expanded,
+    disabled,
+    defaultExpanded,
+  });
 
   const handleAction = useCallback(
     (event: React.SyntheticEvent) => {
       if (!disabled) {
         onChange?.(event, isOpen);
-        setIsOpen(!isOpen);
+        toggleOpen();
         return true;
       }
       return false;
     },
-    [disabled, onChange, isOpen, setIsOpen],
+    [disabled, onChange, isOpen, toggleOpen],
   );
 
   const handleClick = useCallback(
@@ -122,14 +122,10 @@ export const HvAccordion = (props: HvAccordionProps) => {
     [disableEventHandling, handleAction],
   );
 
-  const accordionHeaderId = setId(id, "button");
-  const accordionContainer = setId(id, "container");
   const accordionHeader = useMemo(() => {
-    const color = disabled ? "secondary_60" : undefined;
-
     const accordionButton = (
       <HvTypography
-        id={accordionHeaderId}
+        {...buttonProps}
         component="div"
         role="button"
         className={cx(classes.label, { [classes.disabled]: disabled })}
@@ -138,10 +134,11 @@ export const HvAccordion = (props: HvAccordionProps) => {
         onKeyDown={handleKeyDown}
         onClick={handleClick}
         variant={labelVariant}
-        aria-expanded={isOpen}
-        aria-disabled={disabled}
       >
-        {isOpen ? <DropUpXS color={color} /> : <DropDownXS color={color} />}
+        <DropUpXS
+          color={disabled ? "secondary_60" : undefined}
+          style={{ rotate: isOpen ? undefined : "180deg" }}
+        />
         {label}
       </HvTypography>
     );
@@ -159,7 +156,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
     handleClick,
     handleKeyDown,
     label,
-    accordionHeaderId,
+    buttonProps,
     disabled,
     headingLevel,
     isOpen,
@@ -167,14 +164,12 @@ export const HvAccordion = (props: HvAccordionProps) => {
   ]);
 
   return (
-    <div id={id} className={cx(classes.root, className)} {...others}>
+    <div id={idProp} className={cx(classes.root, className)} {...others}>
       {accordionHeader}
       <div
-        id={accordionContainer}
-        role="region"
-        aria-labelledby={accordionHeaderId}
         className={cx(classes.container, { [classes.hidden]: !isOpen })}
         hidden={!isOpen}
+        {...regionProps}
         {...containerProps}
       >
         {children}
