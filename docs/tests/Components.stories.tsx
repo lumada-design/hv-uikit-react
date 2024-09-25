@@ -246,6 +246,10 @@ export const Test3: StoryObj = {
     },
   },
   tags: ["skipTestRunner"],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button", { name: /october/i }));
+  },
   render: (args, context: any) => (
     <>
       {InlineEditorTestStory.render?.(

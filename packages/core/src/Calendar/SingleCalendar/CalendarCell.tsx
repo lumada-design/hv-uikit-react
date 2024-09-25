@@ -4,6 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvButtonBase, HvButtonBaseProps } from "../../ButtonBase";
 import { HvTypography } from "../../Typography";
 import CalendarModel from "../model";
 import { DateRangeProp } from "../types";
@@ -24,7 +25,6 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
   const {
     classes: classesProp,
     onChange,
-    onKeyDown,
     calendarValue,
     firstDayOfCurrentMonth,
     value,
@@ -69,24 +69,17 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
     }
   };
 
-  const handleKeyDown = (event: any) => {
-    onKeyDown?.(event);
-  };
-
   const renderDate = () => (
-    <button
+    <HvButtonBase
       ref={buttonEl}
-      type="button"
-      className={cx(classes.cellContainer, {
-        [classes.focusSelection]: inMonth,
-      })}
+      className={classes.cellContainer}
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
       disabled={isDateDisabled || !inMonth}
       data-in-month={inMonth}
       {...others}
     >
       <HvTypography
+        component="span"
         variant={isCellToday ? "label" : "body"}
         className={cx(classes.calendarDate, {
           [classes.calendarDateSelected]: inMonth && isCellSelected,
@@ -103,7 +96,7 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
       >
         {value?.getDate()}
       </HvTypography>
-    </button>
+    </HvButtonBase>
   );
 
   return (
@@ -119,15 +112,12 @@ export const HvCalendarCell = (props: HvCalendarCellProps) => {
   );
 };
 
-export interface HvCalendarCellProps {
+export interface HvCalendarCellProps
+  extends Omit<HvButtonBaseProps, "value" | "classes" | "onChange"> {
   /**
    * A Jss Object used to override or extend the component styles.
    */
   classes?: HvCalendarCellClasses;
-  /**
-   * Identifier.
-   */
-  id?: string;
   /**
    * The text to be shown on the main part of the header.
    */
@@ -150,7 +140,6 @@ export interface HvCalendarCellProps {
   onFocus?: React.FocusEventHandler<any>;
 
   calendarModel?: CalendarModel;
-  onKeyDown?: (event: KeyboardEvent) => void;
 
   today?: Date;
   minimumDate?: Date;

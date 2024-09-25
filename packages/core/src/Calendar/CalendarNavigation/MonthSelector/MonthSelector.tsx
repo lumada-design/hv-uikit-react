@@ -1,7 +1,6 @@
+import { HvButtonBase } from "packages/core/src/ButtonBase";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import { HvTypography } from "../../../Typography";
-import { isKey } from "../../../utils/keyboardUtils";
 import { ViewMode } from "../../enums";
 import { DateRangeProp, VisibilitySelectorActions } from "../../types";
 import { getMonthNamesList } from "../../utils";
@@ -24,12 +23,7 @@ export const HvMonthSelector = ({
   const { classes, cx } = useClasses(classesProp);
 
   const listMonthNamesShort = getMonthNamesList(locale, "short");
-  const onKeyDownHandler = (event: any, index: number) => {
-    if (isKey(event, "Enter")) {
-      onChange?.(event, "month", index + 1);
-      onViewModeChange("calendar");
-    }
-  };
+
   return (
     <div
       className={cx(classes.calendarMonthlyGrid, {
@@ -38,26 +32,19 @@ export const HvMonthSelector = ({
       })}
     >
       {listMonthNamesShort.map((monthName, index) => (
-        <div
-          className={classes.focusSelection}
+        <HvButtonBase
           key={monthName}
-          role="button"
+          className={cx(classes.calendarMonthlyCell, {
+            [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth,
+          })}
           onClick={(event) => {
             onChange?.(event, "month", index + 1);
             onViewModeChange("calendar");
           }}
-          onKeyDown={(event) => onKeyDownHandler(event, index)}
-          tabIndex={0}
           {...others}
         >
-          <HvTypography
-            className={cx(classes.calendarMonthlyCell, {
-              [classes.calendarMonthlyCellSelected]: index + 1 === visibleMonth,
-            })}
-          >
-            {monthName}
-          </HvTypography>
-        </div>
+          {monthName}
+        </HvButtonBase>
       ))}
     </div>
   );

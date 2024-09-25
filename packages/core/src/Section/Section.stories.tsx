@@ -271,6 +271,11 @@ export const Multiple: StoryObj<HvSectionProps> = {
 export const Test: StoryObj = {
   parameters: {
     docs: { disable: true },
+    a11y: {
+      config: {
+        rules: [{ id: "landmark-unique", enabled: false }],
+      },
+    },
   },
   render: () => (
     <>

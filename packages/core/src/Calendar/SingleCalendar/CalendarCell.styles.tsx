@@ -1,33 +1,13 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../../utils/focusUtils";
-
 const hover = {
   backgroundColor: theme.colors.containerBackgroundHover,
   cursor: "pointer",
 };
 
 export const { staticClasses, useClasses } = createClasses("HvCalendarCell", {
-  cellContainer: {
-    cursor: "pointer",
-    border: 0,
-    padding: 0,
-    margin: 0,
-    backgroundColor: "transparent",
-  },
-  focusSelection: {
-    "&:hover": {
-      ...hover,
-    },
-    "&:focus": {
-      outline: "none",
-    },
-    "&:focus-visible": {
-      ...hover,
-      ...outlineStyles,
-    },
-  },
+  cellContainer: {},
   calendarDate: {
     display: "flex",
     justifyContent: "center",

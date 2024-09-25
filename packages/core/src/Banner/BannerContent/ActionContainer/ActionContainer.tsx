@@ -49,7 +49,6 @@ export const HvActionContainer = (props: HvActionContainerProps) => {
         variant="semantic"
         aria-label="Close"
         onClick={onClose}
-        tabIndex={0}
         {...others}
       >
         <Close iconSize="XS" className={classes.iconContainer} color="base2" />
