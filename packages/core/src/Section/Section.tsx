@@ -1,15 +1,13 @@
 import { forwardRef } from "react";
-import { Down, Up } from "@hitachivantara/uikit-react-icons";
+import { Down } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
-import { useControlled } from "../hooks/useControlled";
-import { useUniqueId } from "../hooks/useUniqueId";
+import { useExpandable } from "../hooks/useExpandable";
 import { HvBaseProps } from "../types/generic";
-import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Section.styles";
 
 export { staticClasses as sectionClasses };
@@ -64,23 +62,20 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       children,
       ...others
     } = useDefaultProps("HvSection", props);
-
     const { classes, cx } = useClasses(classesProp);
 
-    const [isOpen, setIsOpen] = useControlled(
+    const { isOpen, toggleOpen, buttonProps, regionProps } = useExpandable({
+      id,
       expanded,
-      Boolean(defaultExpanded),
-    );
-
-    const elementId = useUniqueId(id);
-    const contentId = setId(elementId, "content");
+      defaultExpanded,
+    });
 
     const showContent = expandable ? !!isOpen : true;
 
     return (
       <div
         ref={ref}
-        id={elementId}
+        id={id}
         className={cx(classes.root, className)}
         {...others}
       >
@@ -94,15 +89,14 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
               <HvButton
                 icon
                 onClick={(event) => {
-                  setIsOpen((o) => !o);
+                  toggleOpen();
                   onToggle?.(event, !isOpen);
                 }}
-                aria-expanded={isOpen}
-                aria-controls={contentId}
                 aria-label={isOpen ? "Collapse" : "Expand"}
+                {...buttonProps}
                 {...expandButtonProps}
               >
-                {isOpen ? <Up /> : <Down />}
+                <Down style={{ rotate: isOpen ? "180deg" : undefined }} />
               </HvButton>
             )}
             {title}
@@ -111,12 +105,12 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
         )}
         <div
           ref={contentRef}
-          id={contentId}
           hidden={!isOpen}
           className={cx(classes.content, {
             [classes.hidden]: !showContent,
             [classes.spaceTop]: !(title || actions || expandable),
           })}
+          {...(expandable && regionProps)}
         >
           {children}
         </div>

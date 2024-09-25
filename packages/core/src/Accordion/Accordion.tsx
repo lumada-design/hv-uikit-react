@@ -5,6 +5,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvButtonBase } from "../ButtonBase";
 import { useExpandable } from "../hooks/useExpandable";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyVariants } from "../Typography";
@@ -69,74 +70,33 @@ export const HvAccordion = (props: HvAccordionProps) => {
     defaultExpanded,
   });
 
-  const handleAction = useCallback(
+  const handleClick = useCallback(
     (event: React.SyntheticEvent) => {
       if (!disabled) {
         onChange?.(event, isOpen);
         toggleOpen();
-        return true;
       }
-      return false;
-    },
-    [disabled, onChange, isOpen, toggleOpen],
-  );
 
-  const handleClick = useCallback(
-    (event: React.SyntheticEvent) => {
-      handleAction(event);
       if (!disableEventHandling) {
         event.preventDefault();
         event.stopPropagation();
       }
     },
-    [disableEventHandling, handleAction],
-  );
-
-  const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLDivElement>) => {
-      let isEventHandled = false;
-      const { key } = event;
-
-      if (
-        event.altKey ||
-        event.ctrlKey ||
-        event.metaKey ||
-        event.currentTarget !== event.target
-      ) {
-        return;
-      }
-      switch (key) {
-        case "Enter":
-        case " ":
-          isEventHandled = handleAction(event);
-          break;
-        default:
-          return;
-      }
-
-      if (isEventHandled && !disableEventHandling) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    },
-    [disableEventHandling, handleAction],
+    [disableEventHandling, disabled, isOpen, onChange, toggleOpen],
   );
 
   const accordionHeader = useMemo(() => {
     const accordionButton = (
       <HvTypography
         {...buttonProps}
-        component="div"
-        role="button"
+        component={HvButtonBase}
         className={cx(classes.label, { [classes.disabled]: disabled })}
         disabled={disabled}
-        tabIndex={0}
-        onKeyDown={handleKeyDown}
         onClick={handleClick}
         variant={labelVariant}
       >
         <DropUpXS
-          color={disabled ? "secondary_60" : undefined}
+          color="inherit"
           style={{ rotate: isOpen ? undefined : "180deg" }}
         />
         {label}
@@ -154,7 +114,6 @@ export const HvAccordion = (props: HvAccordionProps) => {
     cx,
     classes,
     handleClick,
-    handleKeyDown,
     label,
     buttonProps,
     disabled,

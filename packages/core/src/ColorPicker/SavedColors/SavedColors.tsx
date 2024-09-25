@@ -73,7 +73,6 @@ export const SavedColors = (props: SavedColorsProps) => {
               className={classes.removeButton}
               variant="secondarySubtle"
               onClick={() => onRemoveColor(color, index)}
-              tabIndex={0}
               aria-label={deleteButtonAriaLabel}
             >
               <CloseXS aria-hidden iconSize="XS" />
