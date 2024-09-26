@@ -1,12 +1,45 @@
 import { useRef, useState } from "react";
+import { css } from "@emotion/css";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
-  hvLanguagePlugins,
   hvSqlFormatter,
 } from "@hitachivantara/uikit-react-code-editor";
+import {
+  HvButton,
+  HvButtonProps,
+  HvTypography,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+import { Code } from "@hitachivantara/uikit-react-icons";
 
-import { Header } from "./utils";
+const classes = {
+  headerRoot: css({
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    border: `1px solid ${theme.colors.atmo4}`,
+    borderBottom: "none",
+    background: theme.colors.atmo1,
+    padding: theme.spacing("xs", "sm"),
+    gap: theme.space.xs,
+  }),
+};
+
+export const Header = ({
+  onFormat,
+}: {
+  onFormat: HvButtonProps["onClick"];
+}) => (
+  <div className={classes.headerRoot}>
+    <HvTypography variant="label">SQL</HvTypography>
+    <Code />
+    <div style={{ flex: 1 }} />
+    <HvButton variant="primaryGhost" onClick={onFormat}>
+      Format
+    </HvButton>
+  </div>
+);
 
 const dbSchema = `
 CREATE DATABASE OnlineStore;
@@ -70,11 +103,6 @@ export const SqlStory = () => {
     }
   };
 
-  const languagePlugin = {
-    ...hvLanguagePlugins.sql,
-    schema: dbSchema,
-  };
-
   return (
     <div>
       <Header onFormat={handleFormat} />
@@ -83,8 +111,8 @@ export const SqlStory = () => {
         language="sql"
         value={editorValue}
         onChange={(content) => setEditorValue(content ?? "")}
-        languagePlugin={languagePlugin}
         onMount={handleMount}
+        schema={dbSchema}
       />
     </div>
   );

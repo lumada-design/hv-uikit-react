@@ -9,6 +9,30 @@ import {
 
 import { Header } from "./utils";
 
+const completionProvider = (monaco: Monaco) => {
+  return {
+    provideCompletionItems: () => {
+      const suggestions = ["Suggestion1", "Suggestion2", "Suggestion3"].map(
+        (label) => ({
+          label,
+          kind: monaco.languages.CompletionItemKind.Keyword,
+          insertText: label,
+          documentation: `Custom suggestion: ${label}`,
+          sortText: "1",
+        }),
+      );
+      return {
+        suggestions,
+      };
+    },
+  };
+};
+
+const customPlugin = {
+  ...hvLanguagePlugins.xml,
+  completionProvider,
+};
+
 export const CustomPluginStory = () => {
   const [editorValue, setEditorValue] = useState("");
 
@@ -36,30 +60,6 @@ export const CustomPluginStory = () => {
       // eslint-disable-next-line no-console
       if (import.meta.env.DEV) console.error(error);
     }
-  };
-
-  const completionProvider = (monaco: Monaco) => {
-    return {
-      provideCompletionItems: () => {
-        const suggestions = ["Suggestion1", "Suggestion2", "Suggestion3"].map(
-          (label) => ({
-            label,
-            kind: monaco.languages.CompletionItemKind.Keyword,
-            insertText: label,
-            documentation: `Custom suggestion: ${label}`,
-            sortText: "1",
-          }),
-        );
-        return {
-          suggestions,
-        };
-      },
-    };
-  };
-
-  const customPlugin = {
-    ...hvLanguagePlugins.xml,
-    completionProvider,
   };
 
   return (

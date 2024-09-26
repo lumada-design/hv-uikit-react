@@ -3,7 +3,8 @@ import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
-import { Formatter, hvLanguagePlugins, LanguagePlugin } from "./plugins";
+import { hvLanguagePlugins } from "./plugins";
+import { Formatter, LanguagePlugin } from "./types";
 
 export { staticClasses as codeEditorClasses };
 
@@ -18,6 +19,8 @@ export interface HvCodeEditorProps extends EditorProps {
   defaultValue?: string;
   /** The properties of the editor object in Monaco. */
   options?: EditorProps["options"];
+  /** Schema used to validate the code editor content. */
+  schema?: string;
   /**
    * Whether to disable code auto format or not. Code format happens on mount, on blur, and on paste.
    * Supported languages: `XML`.
@@ -53,6 +56,7 @@ const defaultCodeEditorOptions: EditorProps["options"] = {
 export const HvCodeEditor = ({
   classes: classesProp,
   options,
+  schema,
   editorProps,
   defaultLanguage,
   language: languageProp,
@@ -156,16 +160,14 @@ export const HvCodeEditor = ({
       });
 
     // Register completion provider, but first dispose of any previous one
-    if (completionProviderRef.current) {
-      completionProviderRef.current.dispose(); // Clean up previous provider
-    }
+    completionProviderRef.current?.dispose(); // Clean up previous provider
 
     // Register completion provider
     if (completionProvider) {
       const providerDisposable =
         monaco.languages.registerCompletionItemProvider(
           language,
-          completionProvider(monaco, languagePlugin.schema),
+          completionProvider(monaco, schema),
         );
       completionProviderRef.current = providerDisposable;
     }
@@ -175,12 +177,7 @@ export const HvCodeEditor = ({
       editor.onDidChangeModelContent(async () => {
         const model = editor.getModel();
         const content = model.getValue();
-        const validate = await validator(
-          content,
-          editor,
-          monaco,
-          languagePlugin.schema,
-        );
+        const validate = await validator(content, editor, monaco, schema);
         monaco.editor.setModelMarkers(model, language, validate);
       });
 

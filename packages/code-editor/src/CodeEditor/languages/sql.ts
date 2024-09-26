@@ -1,6 +1,7 @@
 import { type Monaco } from "@monaco-editor/react";
 import { format, FormatOptionsWithLanguage } from "sql-formatter";
 
+import { LanguagePlugin } from "../types";
 import { sqlKeywords } from "./sqlKeywords";
 
 // Helpful notes
@@ -225,4 +226,13 @@ export const hvSqlFormatter = async (
   } catch (error) {
     return content;
   }
+};
+
+export interface SqlLanguagePlugin extends Omit<LanguagePlugin, "schema"> {}
+
+export const sqlLanguagePlugin: SqlLanguagePlugin = {
+  completionProvider: hvSqlCompletionProvider,
+  validator: hvSqlValidator,
+  formatter: hvSqlFormatter,
+  editorOptions: hvSqlOptions,
 };

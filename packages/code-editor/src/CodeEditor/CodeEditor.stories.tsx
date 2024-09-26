@@ -79,7 +79,7 @@ export const CustomPlugin: StoryObj<HvCodeEditorProps> = {
     docs: {
       description: {
         story:
-          "A Code Editor with a custom language plugin that extends the Code Editor's own XML language plugin to show different suggestions.",
+          "A Code Editor with a custom language plugin that extends the Code Editor's own XML language plugin to show different suggestions and format the code differently.",
       },
       source: { code: CustomPluginStoryRaw },
     },
