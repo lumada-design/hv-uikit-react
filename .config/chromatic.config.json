@@ -1,4 +1,5 @@
 {
+  "$schema": "https://www.chromatic.com/config-file.schema.json",
   "projectId": "Project:66a1254d9d7ebf301ff1bebb",
   "buildScriptName": "build:doc:test",
   "skip": "dependabot/**"
