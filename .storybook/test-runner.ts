@@ -62,9 +62,10 @@ const config: TestRunnerConfig = {
 
     // Apply story-level a11y rules
     await configureAxe(page, {
-      rules: specificA11yRules.concat(
-        storyContext.parameters?.a11y?.config?.rules,
-      ),
+      rules: [
+        ...specificA11yRules,
+        ...(storyContext.parameters?.a11y?.config?.rules || []),
+      ],
     });
 
     const axeResults = await getAxeResults(page, "#storybook-root");
