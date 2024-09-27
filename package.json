@@ -33,7 +33,7 @@
     "lint": "eslint . --ext .ts,.tsx --cache",
     "lint:fix": "npm run lint -- --fix",
     "lint-staged": "lint-staged",
-    "typecheck": "lerna run typecheck",
+    "typecheck": "tsc --noEmit",
     "depcheck": "npx -y owasp-dependency-check --project uikit -o reports --cveStartYear 2015",
     "publish-dry": "lerna publish --no-push --registry \"http://localhost:4873/\"",
     "publish": "lerna publish",

@@ -5,9 +5,6 @@
       "dependsOn": ["^build"],
       "cache": true
     },
-    "typecheck": {
-      "cache": true
-    },
     "test": {
       "cache": true
     }
