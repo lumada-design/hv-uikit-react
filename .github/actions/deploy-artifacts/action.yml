@@ -1,5 +1,5 @@
 name: Artifacts
-description: Deploy UI Kit Artifact
+description: Deploy UI Kit Artifacts to Org GitHub Pages
 
 runs:
   using: "composite"
@@ -24,12 +24,11 @@ runs:
         token: ${{ env.GITHUB_TOKEN }}
         env: ${{ env.PUBLISH_FOLDER }}
         ref: ${{ env.DEPLOYMENT_REF }}
-        desc: ${{ env.PUBLISH_MESSAGE }}
 
     - name: Checkout Artifacts Repository
       uses: actions/checkout@v4
       with:
-        repository: ${{ env.PUBLISH_REPO }}
+        repository: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
         ref: master
         token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
         path: gh-docs
@@ -52,7 +51,7 @@ runs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git pull
         git add -A ${PUBLISH_FOLDER}
-        git commit -m "${PUBLISH_MESSAGE}"
+        git commit -m "docs: ${ARTIFACT} for ${PUBLISH_FOLDER}"
         git push
       shell: bash
 
@@ -65,4 +64,4 @@ runs:
         env: ${{env.PUBLISH_FOLDER}}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-        env_url: ${{env.URL}}
+        env_url: https://${{ github.repository_owner }}.github.io/${{ env.PUBLISH_FOLDER }}/
