@@ -3,6 +3,7 @@ import { Test as BottomPanelTestStory } from "packages/pentaho/src/Canvas/Bottom
 import { Test as ToolbarTabsTestStory } from "packages/pentaho/src/Canvas/ToolbarTabs/ToolbarTabs.stories";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
+import { renderStory } from "./utils";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 /** Visual tests for components from the Pentaho package */
@@ -30,8 +31,8 @@ export const Test: StoryObj = {
       cols={2}
       style={{ alignItems: "start", justifyContent: "start" }}
     >
-      {BottomPanelTestStory.render?.(BottomPanelTestStory.args as any, context)}
-      {ToolbarTabsTestStory.render?.(ToolbarTabsTestStory.args as any, context)}
+      {renderStory(BottomPanelTestStory, context)}
+      {renderStory(ToolbarTabsTestStory, context)}
     </HvSimpleGrid>
   ),
 };

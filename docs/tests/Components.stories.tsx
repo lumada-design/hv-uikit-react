@@ -56,6 +56,7 @@ import { Variants as TextAreaVariantsStory } from "packages/core/src/TextArea/Te
 import { Multiple as ToggleButtonMultipleStory } from "packages/core/src/ToggleButton/ToggleButton.stories";
 import { Test as TypographyTestStory } from "packages/core/src/Typography/Typography.stories";
 
+import { renderStory } from "./utils";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 /** Visual tests for components from the Core package */
@@ -109,52 +110,28 @@ export const Test: StoryObj = {
         >
           <div>
             <div style={{ display: "flex", height: 180 }}>
-              {AccordionDisabledStory.render?.(
-                AccordionDisabledStory.args as any,
-                context,
-              )}
-              {DotPaginationMainStory.render?.(
-                DotPaginationMainStory.args as any,
-                context,
-              )}
-              {DropDownMenuMainStory.render?.(
-                DropDownMenuMainStory.args as any,
-                context,
-              )}
+              {renderStory(AccordionDisabledStory, context)}
+              {renderStory(DotPaginationMainStory, context)}
+              {renderStory(DropDownMenuMainStory, context)}
             </div>
             <div>
-              {EmptyStateMinimalStory.render?.(
-                EmptyStateMinimalStory.args as any,
-                context,
-              )}
-              {EmptyStateWithActionStory.render?.(
-                EmptyStateWithActionStory.args as any,
-                context,
-              )}
+              {renderStory(EmptyStateMinimalStory, context)}
+              {renderStory(EmptyStateWithActionStory, context)}
             </div>
           </div>
-          {CheckBoxGroupVariantsStory.render?.(
-            CheckBoxGroupVariantsStory.args as any,
-            context,
-          )}
+          {renderStory(CheckBoxGroupVariantsStory, context)}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-            {InputVariantsStory.render?.(
-              InputVariantsStory.args as any,
-              context,
-            )}
+            {renderStory(InputVariantsStory, context)}
           </div>
         </HvSimpleGrid>
         <HvSimpleGrid
           cols={3}
           style={{ alignItems: "start", justifyContent: "start" }}
         >
-          {BannerVariantsStory.render?.(
-            BannerVariantsStory.args as any,
-            context,
-          )}
+          {renderStory(BannerVariantsStory, context)}
         </HvSimpleGrid>
       </div>
-      {DropdownTestStory.render?.(DropdownTestStory.args as any, context)}
+      {renderStory(DropdownTestStory, context)}
     </div>
   ),
 };
@@ -189,28 +166,22 @@ export const Test2: StoryObj = {
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <>
-      {ButtonTestStory.render?.(ButtonTestStory.args as any, context)}
+      {renderStory(ButtonTestStory, context)}
       <br />
       <HvSimpleGrid
         cols={2}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {CardVariantsStory.render?.(CardVariantsStory.args as any, context)}
+        {renderStory(CardVariantsStory, context)}
         <div style={{ display: "flex" }}>
-          {AvatarGroupTestStory.render?.(
-            AvatarGroupTestStory.args as any,
-            context,
-          )}
-          {BadgeTestStory.render?.(BadgeTestStory.args as any, context)}
-          {AvatarTestStory.render?.(AvatarTestStory.args as any, context)}
+          {renderStory(AvatarGroupTestStory, context)}
+          {renderStory(BadgeTestStory, context)}
+          {renderStory(AvatarTestStory, context)}
         </div>
       </HvSimpleGrid>
       <br />
       <HvSimpleGrid cols={5}>
-        {SnackbarVariantsStory.render?.(
-          SnackbarVariantsStory.args as any,
-          context,
-        )}
+        {renderStory(SnackbarVariantsStory, context)}
       </HvSimpleGrid>
     </>
   ),
@@ -252,53 +223,27 @@ export const Test3: StoryObj = {
   },
   render: (args, context: any) => (
     <>
-      {InlineEditorTestStory.render?.(
-        InlineEditorTestStory.args as any,
-        context,
-      )}
+      {renderStory(InlineEditorTestStory, context)}
       <br />
       <div style={{ display: "flex" }}>
         <div style={{ width: 1200 }}>
-          {DatePickerTestStory.render?.(
-            DatePickerTestStory.args as any,
-            context,
-          )}
+          {renderStory(DatePickerTestStory, context)}
         </div>
         <HvSimpleGrid
           cols={1}
           style={{ alignItems: "start", justifyContent: "start" }}
         >
           <div style={{ display: "flex", gap: 12 }}>
-            {ListContainerWithIconsStory.render?.(
-              ListContainerWithIconsStory.args as any,
-              context,
-            )}
+            {renderStory(ListContainerWithIconsStory, context)}
             <div>
-              {LoadingVariantsStory.render?.(
-                LoadingVariantsStory.args as any,
-                context,
-              )}
+              {renderStory(LoadingVariantsStory, context)}
               <br />
-              {SkeletonVariantsStory.render?.(
-                SkeletonVariantsStory.args as any,
-                context,
-              )}
+              {renderStory(SkeletonVariantsStory, context)}
             </div>
-            <div>
-              {SwitchVariantsStory.render?.(
-                SwitchVariantsStory.args as any,
-                context,
-              )}
-            </div>
+            <div>{renderStory(SwitchVariantsStory, context)}</div>
           </div>
-          {SelectionListVariantsStory.render?.(
-            SelectionListVariantsStory.args as any,
-            context,
-          )}
-          {ProgressBarVariantsStory.render?.(
-            ProgressBarVariantsStory.args as any,
-            context,
-          )}
+          {renderStory(SelectionListVariantsStory, context)}
+          {renderStory(ProgressBarVariantsStory, context)}
         </HvSimpleGrid>
       </div>
     </>
@@ -340,36 +285,20 @@ export const Test4: StoryObj = {
         style={{ alignItems: "start", justifyContent: "start" }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-          {RadioGroupVariantsStory.render?.(
-            RadioGroupVariantsStory.args as any,
-            context,
-          )}
-          {RadioGroupHorizontalStory.render?.(
-            RadioGroupHorizontalStory.args as any,
-            context,
-          )}
-          {RadioTestStory.render?.(RadioTestStory.args as any, context)}
+          {renderStory(RadioGroupVariantsStory, context)}
+          {renderStory(RadioGroupHorizontalStory, context)}
+          {renderStory(RadioTestStory, context)}
         </div>
         <div style={{ height: 360 }}>
-          {SelectTestStory.render?.(SelectTestStory.args as any, context)}
+          {renderStory(SelectTestStory, context)}
         </div>
-        <div>
-          {SliderRangeVariantsStory.render?.(
-            SliderRangeVariantsStory.args as any,
-            context,
-          )}
-        </div>
-        <div>
-          {SliderVariantsStory.render?.(
-            SliderVariantsStory.args as any,
-            context,
-          )}
-        </div>
+        <div>{renderStory(SliderRangeVariantsStory, context)}</div>
+        <div>{renderStory(SliderVariantsStory, context)}</div>
       </HvSimpleGrid>
       <br />
-      {MultiButtonTestStory.render?.(MultiButtonTestStory.args as any, context)}
+      {renderStory(MultiButtonTestStory, context)}
       <br />
-      {TabsTestStory.render?.(TabsTestStory.args as any, context)}
+      {renderStory(TabsTestStory, context)}
     </>
   ),
 };
@@ -405,31 +334,19 @@ export const Test5: StoryObj = {
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <>
-      {CheckBoxTestStory.render?.(CheckBoxTestStory.args as any, context)}
-      {TagTestStory.render?.(TagTestStory.args as any, context)}
+      {renderStory(CheckBoxTestStory, context)}
+      {renderStory(TagTestStory, context)}
       <HvSimpleGrid
         cols={3}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {TagsInputVariantsStory.render?.(
-          TagsInputVariantsStory.args as any,
-          context,
-        )}
+        {renderStory(TagsInputVariantsStory, context)}
         <div>
-          {TextAreaVariantsStory.render?.(
-            TextAreaVariantsStory.args as any,
-            context,
-          )}
-          {IconButtonVariantsStory.render?.(
-            IconButtonVariantsStory.args as any,
-            context,
-          )}
-          {ToggleButtonMultipleStory.render?.(
-            ToggleButtonMultipleStory.args as any,
-            context,
-          )}
+          {renderStory(TextAreaVariantsStory, context)}
+          {renderStory(IconButtonVariantsStory, context)}
+          {renderStory(ToggleButtonMultipleStory, context)}
         </div>
-        {PaginationMainStory.render?.(PaginationMainStory.args as any, context)}
+        {renderStory(PaginationMainStory, context)}
       </HvSimpleGrid>
     </>
   ),
@@ -469,26 +386,20 @@ export const Test6: StoryObj = {
             alignItems: "flex-end",
           }}
         >
-          {OverflowTooltipMainStory.render?.(
-            OverflowTooltipMainStory.args as any,
-            context,
-          )}
+          {renderStory(OverflowTooltipMainStory, context)}
         </div>
-        {GridTheDesignSystemColumnsStory.render?.(
-          GridTheDesignSystemColumnsStory.args as any,
-          context,
-        )}
-        {StackTestStory.render?.(StackTestStory.args as any, context)}
+        {renderStory(GridTheDesignSystemColumnsStory, context)}
+        {renderStory(StackTestStory, context)}
       </HvSimpleGrid>
       <br />
       <HvSimpleGrid
         cols={4}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {ContainerMainStory.render?.(ContainerMainStory.args as any, context)}
-        {KpiMainStory.render?.(KpiMainStory.args as any, context)}
-        {PanelMainStory.render?.(PanelMainStory.args as any, context)}
-        {SimpleGridMainStory.render?.(SimpleGridMainStory.args as any, context)}
+        {renderStory(ContainerMainStory, context)}
+        {renderStory(KpiMainStory, context)}
+        {renderStory(PanelMainStory, context)}
+        {renderStory(SimpleGridMainStory, context)}
       </HvSimpleGrid>
     </>
   ),
@@ -511,19 +422,13 @@ export const Test7: StoryObj = {
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <>
-      {TypographyTestStory.render?.(TypographyTestStory.args as any, context)}
+      {renderStory(TypographyTestStory, context)}
       <HvSimpleGrid
         cols={2}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {ScrollToHorizontalMainStory.render?.(
-          ScrollToHorizontalMainStory.args as any,
-          context,
-        )}
-        {ScrollToVerticalMainStory.render?.(
-          ScrollToVerticalMainStory.args as any,
-          context,
-        )}
+        {renderStory(ScrollToHorizontalMainStory, context)}
+        {renderStory(ScrollToVerticalMainStory, context)}
       </HvSimpleGrid>
     </>
   ),

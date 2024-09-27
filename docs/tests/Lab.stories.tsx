@@ -5,6 +5,7 @@ import { Main as DashboardMainStory } from "packages/lab/src/Dashboard/Dashboard
 import { Variants as StepNavigationVariantsStory } from "packages/lab/src/StepNavigation/StepNavigation.stories";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
+import { renderStory } from "./utils";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 /** Visual tests for components from the Lab package */
@@ -45,14 +46,11 @@ export const Test: StoryObj = {
         cols={2}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {DashboardMainStory.render?.(DashboardMainStory.args as any, context)}
-        {BladesMainStory.render?.(BladesMainStory.args as any, context)}
-        {BladeVariantsStory.render?.(BladeVariantsStory.args as any, context)}
+        {renderStory(DashboardMainStory, context)}
+        {renderStory(BladesMainStory, context)}
+        {renderStory(BladeVariantsStory, context)}
       </HvSimpleGrid>
-      {StepNavigationVariantsStory.render?.(
-        StepNavigationVariantsStory.args as any,
-        context,
-      )}
+      {renderStory(StepNavigationVariantsStory, context)}
     </>
   ),
 };
