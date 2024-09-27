@@ -3,7 +3,7 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 export const { staticClasses, useClasses } = createClasses("HvTextArea", {
   root: { display: "inline-block", width: "100%" },
   disabled: {},
-  resizable: { width: "100%" },
+  resizable: { width: "fit-content" },
   invalid: {},
   baseInput: { clear: "both", float: "left" },
   input: {},

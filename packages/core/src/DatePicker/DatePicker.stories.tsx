@@ -12,6 +12,7 @@ import {
   HvGrid,
   HvListContainer,
   HvListItem,
+  HvPanel,
   HvRadio,
   HvRadioGroup,
   HvTypography,
@@ -182,7 +183,7 @@ export const WithActions: StoryObj<HvDatePickerProps> = {
     return (
       <HvDatePicker
         showActions
-        value={new Date(1970, 1, 2)}
+        value={new Date("1970-02-03")}
         placeholder="Select date"
         aria-label="Date"
       />
@@ -232,8 +233,8 @@ export const RangeMode: StoryObj<HvDatePickerProps> = {
         aria-label="Date"
         placeholder="Select a range"
         rangeMode
-        startValue={new Date(2020, 1, 1)}
-        endValue={new Date(2020, 1, 10)}
+        startValue={new Date("2020-02-02")}
+        endValue={new Date("2020-02-10")}
         labels={{
           applyLabel: "Apply",
           cancelLabel: "Cancel",
@@ -256,10 +257,10 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
       <HvDatePicker
         aria-label="Date"
         placeholder="Select date"
-        value={new Date(2020, 0, 15)}
+        value={new Date("2020-01-15")}
         calendarProps={{
-          minimumDate: new Date(2020, 0, 10),
-          maximumDate: new Date(2020, 0, 20),
+          minimumDate: new Date("2020-01-10"),
+          maximumDate: new Date("2020-01-20"),
         }}
       />
     );
@@ -267,11 +268,9 @@ export const NearInvalid: StoryObj<HvDatePickerProps> = {
 };
 
 export const Controlled: StoryObj<HvDatePickerProps> = {
-  decorators: [
-    (Story) => <div style={{ display: "flex", gap: 10 }}>{Story()}</div>,
-  ],
+  decorators: [(Story) => <div className="flex gap-xs">{Story()}</div>],
   render: () => {
-    const [date, setDate] = useState<Date | undefined>(new Date(2020, 0, 1));
+    const [date, setDate] = useState(new Date("2020-01-02"));
     const [open, setOpen] = useState(false);
 
     const addDay = () => {
@@ -289,7 +288,7 @@ export const Controlled: StoryObj<HvDatePickerProps> = {
           aria-label="Date"
           placeholder="Select date"
           value={date}
-          onChange={(d) => setDate(d)}
+          onChange={(d) => setDate(d!)}
           onToggle={toggleOpen}
         />
         <HvButton variant="secondarySubtle" onClick={addDay}>
@@ -307,17 +306,16 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
   // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const picker = canvas.getByRole("combobox", { name: /date/i });
-    await userEvent.click(picker);
-    await expect(
-      canvas.getByRole("button", { name: "September" }),
-    ).toBeInTheDocument();
+    await userEvent.click(canvas.getByRole("combobox", { name: /date/i }));
+    await userEvent.click(canvas.getByRole("button", { name: /october/i }));
+    const decemberButton = canvas.getByRole("button", { name: /dec/i });
+    await expect(decemberButton).toBeInTheDocument();
   },
   render: (args) => {
-    const [startDate, setStartDate] = useState(new Date(2020, 8, 5));
-    const [endDate, setEndDate] = useState(new Date(2020, 8, 10));
-    const [trueStartDate, setTrueStartDate] = useState(new Date(2020, 8, 5));
-    const [trueEndDate, setTrueEndDate] = useState(new Date(2020, 8, 10));
+    const [startDate, setStartDate] = useState(new Date("2020-09-05"));
+    const [endDate, setEndDate] = useState(new Date("2020-09-10"));
+    const [trueStartDate, setTrueStartDate] = useState(new Date("2020-09-05"));
+    const [trueEndDate, setTrueEndDate] = useState(new Date("2020-09-10"));
 
     useEffect(() => {
       setStartDate(trueStartDate);
@@ -358,11 +356,7 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
     };
 
     const options = (
-      <HvListContainer
-        role="menu"
-        style={{ padding: "40px 20px", minWidth: 160 }}
-        interactive
-      >
+      <HvListContainer role="menu" style={{ minWidth: 100 }} interactive>
         <HvListItem role="menuitem" disabled>
           Today
         </HvListItem>
@@ -384,7 +378,7 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
     return (
       <HvDatePicker
         aria-label="Date"
-        startAdornment={options}
+        startAdornment={<HvPanel>{options}</HvPanel>}
         rangeMode
         startValue={startDate}
         endValue={endDate}

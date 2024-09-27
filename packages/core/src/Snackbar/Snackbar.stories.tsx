@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvButton,
   HvOverflowTooltip,
   HvSnackbar,
   HvSnackbarContent,
@@ -121,68 +119,6 @@ export const Variants: StoryObj<HvSnackbarProps> = {
               data="This message uses HvOverflowTooltip with paragraphOverflow to display ellipsis and a tooltip because it has a very very very very very very very very very very long text that takes more than 3 lines."
             />
           }
-        />
-      </>
-    );
-  },
-};
-
-export const Controller: StoryObj<HvSnackbarProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Different Snackbar variants with controller.",
-      },
-    },
-  },
-  render: () => {
-    const SimpleSnackbar = ({ variant, ...others }: HvSnackbarProps) => {
-      const [open, setOpen] = useState(false);
-
-      return (
-        <div style={{ marginBottom: 10 }}>
-          <HvButton
-            onClick={() => setOpen(true)}
-            variant="secondarySubtle"
-            style={{ width: "150px", textTransform: "capitalize" }}
-          >
-            {variant}
-          </HvButton>
-          <HvSnackbar
-            open={open}
-            onClose={(event, reason) => {
-              if (reason === "clickaway") return;
-              setOpen(false);
-            }}
-            offset={0}
-            variant={variant}
-            {...others}
-          />
-        </div>
-      );
-    };
-
-    return (
-      <>
-        <SimpleSnackbar
-          variant="default"
-          showIcon
-          label="This is a snackbar."
-        />
-        <SimpleSnackbar
-          variant="success"
-          showIcon
-          label="This is a success message."
-        />
-        <SimpleSnackbar
-          variant="warning"
-          showIcon
-          label="This is a warning message."
-        />
-        <SimpleSnackbar
-          variant="error"
-          showIcon
-          label="This is an error message."
         />
       </>
     );
