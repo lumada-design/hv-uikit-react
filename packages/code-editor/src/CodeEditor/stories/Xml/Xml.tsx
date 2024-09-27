@@ -127,8 +127,8 @@ export const XmlStory = () => {
         language="xml"
         value={editorValue}
         onChange={(content) => setEditorValue(content ?? "")}
-        xsdSchema={xsdSchema}
         onMount={handleMount}
+        schema={xsdSchema}
       />
       <HvDialog
         fullWidth

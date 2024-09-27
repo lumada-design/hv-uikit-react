@@ -2,6 +2,8 @@ import { type Monaco } from "@monaco-editor/react";
 import formatter, { XMLFormatterOptions } from "xml-formatter";
 import { validateXML } from "xmllint-wasm";
 
+import { LanguagePlugin } from "../types";
+
 // Helpful notes
 // model - editor content
 // position - position of the pointer
@@ -385,4 +387,14 @@ export const hvXmlFormatter = async (
         collapseContent: true,
         ...options,
       });
+};
+
+export interface XmlLanguagePlugin extends LanguagePlugin {}
+
+export const xmlLanguagePlugin: XmlLanguagePlugin = {
+  completionProvider: hvXmlCompletionProvider,
+  validator: hvXmlValidator,
+  formatter: hvXmlFormatter,
+  keyDownListener: hvXmlKeyDownListener,
+  editorOptions: hvXmlOptions,
 };

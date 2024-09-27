@@ -4,3 +4,4 @@ export {
   hvXmlValidator,
   hvXmlCompletionProvider,
 } from "./xml";
+export { hvSqlFormatter, hvSqlValidator, hvSqlCompletionProvider } from "./sql";
