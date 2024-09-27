@@ -27,7 +27,6 @@
   "scripts": {
     "build": "npm run clean && vite build",
     "clean": "npx rimraf dist package",
-    "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {

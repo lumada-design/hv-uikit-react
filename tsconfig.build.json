@@ -4,6 +4,7 @@
     "target": "ES2022",
     "lib": ["DOM", "ES2022", "dom.iterable"],
     "moduleResolution": "Node",
+    "noEmit": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

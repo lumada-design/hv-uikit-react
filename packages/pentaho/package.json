@@ -28,7 +28,6 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "clean": "npx rimraf dist package",
-    "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
   "peerDependencies": {
