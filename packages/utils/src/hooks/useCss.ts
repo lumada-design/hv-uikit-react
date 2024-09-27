@@ -54,7 +54,7 @@ const cssFactory = (() => {
 
     const cx = (...args: any) => merge(cache.registered, css, clsx(args));
 
-    return { css, cx };
+    return { css, cx } as const;
   }
 
   return innerCssFactory;

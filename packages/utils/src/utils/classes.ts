@@ -6,13 +6,21 @@ export type ExtractNames<
   T extends (...args: any) => { classes: Record<string, any>; cx: any },
 > = Partial<ReturnType<T>["classes"]>;
 
-const getClasses = <T extends string, N extends string>(keys: T[], name: N) => {
-  const classesObj: Record<string, string> = {};
-  keys.forEach((key: string) => {
-    classesObj[key] = `${name}-${key}`;
-  });
-  return classesObj as { [P in T]: `${N}-${P}` };
-};
+/** Maps over an object, preserving the original keys */
+function mapObject<T extends Record<string, any>, Value extends any>(
+  /** Input object to convert */
+  inputObject: T,
+  /** Function to map over each entry */
+  mapFn: (key: string, value: T[keyof T]) => Value,
+) {
+  return Object.entries(inputObject).reduce(
+    (acc, [key, value]) => {
+      acc[key as keyof T] = mapFn(key, value);
+      return acc;
+    },
+    {} as { [J in keyof T]: Value },
+  );
+}
 
 const deepRenameKeys = <T extends object>(
   obj: T,
@@ -44,35 +52,36 @@ const replace$ = <T extends object>(stylesObj: T, name: string): T => {
 };
 
 /** Utility function to create classes for a component. */
-export function createClasses<Name extends string, ClassName extends string>(
+export function createClasses<
+  Name extends string,
+  Styles extends Record<string, CSSInterpolation>,
+>(
   /** Component name in PascalCase (ie. `HvTableCell`). */
   name: Name,
-  stylesObject: Record<ClassName, CSSInterpolation>,
+  stylesObject: Styles,
 ) {
   const styles = replace$(stylesObject, name);
 
-  const staticClasses = getClasses(Object.keys(styles) as ClassName[], name);
+  const staticClasses = mapObject(styles, (key) => `${name}-${key}`);
 
   /**
    * Hook that takes in a component's `classesProp` overrides, and returns the
    * concatenated static/internal/override `classes`, and the cached `cx` and `css` utilities.
    */
   function useClasses(
-    classesProp: Partial<Record<ClassName, string>> = {},
+    classesProp: Partial<Record<keyof Styles, string>> = {},
     /** Whether to add the static classes. Disable when included by `classesProp` */
     addStatic = true,
   ) {
     const { cx, css } = useCss();
 
-    const mergeClasses = (key: ClassName) =>
-      cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]);
+    /** Object with the merged static+internal+external classes */
+    const classes = mapObject(styles, (key) =>
+      cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]),
+    );
 
-    const classes = Object.fromEntries(
-      Object.keys(styles).map((key) => [key, mergeClasses(key as ClassName)]),
-    ) as { [P in ClassName]: string };
-
-    return { classes, css, cx };
+    return { classes, css, cx } as const;
   }
 
-  return { useClasses, staticClasses };
+  return { useClasses, staticClasses } as const;
 }
