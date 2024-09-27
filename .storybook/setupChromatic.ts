@@ -6,6 +6,7 @@ import { allModes } from "./modes";
 export const setupChromatic = (
   values: (keyof typeof allModes)[] = ["DS5 dawn"],
   delay = 0,
+  options?: Record<string, any>, // TODO: import typings & merge with delay
 ) => {
   const modes = values.reduce<Record<string, object>>((acc, cur) => {
     acc[cur] = allModes[cur];
@@ -17,6 +18,7 @@ export const setupChromatic = (
       disableSnapshot: false, // enable Chromatic snapshot
       delay,
       modes,
+      ...options,
     },
   };
 };
