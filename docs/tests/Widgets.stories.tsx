@@ -18,6 +18,7 @@ import { Test as GlobalActionsTestStory } from "packages/core/src/GlobalActions/
 import { Test as HeaderTestStory } from "packages/core/src/Header/Header.stories";
 import { Test as SectionTestStory } from "packages/core/src/Section/Section.stories";
 
+import { renderStory } from "./utils";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 /** Visual tests for widgets from the Core package */
@@ -62,18 +63,9 @@ export const Test: StoryObj = {
         cols={3}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {AppSwitcherMainStory.render?.(
-          AppSwitcherMainStory.args as any,
-          context,
-        )}
-        {AppSwitcherManyEntriesStory.render?.(
-          AppSwitcherManyEntriesStory.args as any,
-          context,
-        )}
-        {FileUploaderWithPreviewThumbnailsStory.render?.(
-          FileUploaderWithPreviewThumbnailsStory.args as any,
-          context,
-        )}
+        {renderStory(AppSwitcherMainStory, context)}
+        {renderStory(AppSwitcherManyEntriesStory, context)}
+        {renderStory(FileUploaderWithPreviewThumbnailsStory, context)}
       </HvSimpleGrid>
       <HvSimpleGrid
         cols={2}
@@ -82,28 +74,19 @@ export const Test: StoryObj = {
           justifyContent: "start",
         }}
       >
-        {BreadCrumbTestStory.render?.(BreadCrumbTestStory.args as any, context)}
+        {renderStory(BreadCrumbTestStory, context)}
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          {ActionBarMainStory.render?.(ActionBarMainStory.args as any, context)}
-          {FooterCustomLabelsStory.render?.(
-            FooterCustomLabelsStory.args as any,
-            context,
-          )}
-          {GlobalActionsTestStory.render?.(
-            GlobalActionsTestStory.args as any,
-            context,
-          )}
+          {renderStory(ActionBarMainStory, context)}
+          {renderStory(FooterCustomLabelsStory, context)}
+          {renderStory(GlobalActionsTestStory, context)}
         </div>
       </HvSimpleGrid>
       <HvSimpleGrid
         cols={2}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {BulkActionsTestStory.render?.(
-          BulkActionsTestStory.args as any,
-          context,
-        )}
-        {HeaderTestStory.render?.(HeaderTestStory.args as any, context)}
+        {renderStory(BulkActionsTestStory, context)}
+        {renderStory(HeaderTestStory, context)}
       </HvSimpleGrid>
     </>
   ),
@@ -141,21 +124,12 @@ export const Test2: StoryObj = {
         style={{ alignItems: "start", justifyContent: "start" }}
       >
         <div style={{ display: "flex", gap: 5 }}>
-          {CarouselEmbeddedStory.render?.(
-            CarouselEmbeddedStory.args as any,
-            context,
-          )}
+          {renderStory(CarouselEmbeddedStory, context)}
           <div style={{ width: 650 }}>
-            {CarouselActionsStory.render?.(
-              CarouselActionsStory.args as any,
-              context,
-            )}
+            {renderStory(CarouselActionsStory, context)}
           </div>
         </div>
-        {ColorPickerTestStory.render?.(
-          ColorPickerTestStory.args as any,
-          context,
-        )}
+        {renderStory(ColorPickerTestStory, context)}
       </HvSimpleGrid>
       <br />
       <br />
@@ -164,7 +138,7 @@ export const Test2: StoryObj = {
         cols={4}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        {SectionTestStory.render?.(SectionTestStory.args as any, context)}
+        {renderStory(SectionTestStory, context)}
       </HvSimpleGrid>
     </>
   ),
