@@ -53,7 +53,7 @@ export const XMLEditor: StoryObj<HvCodeEditorProps> = {
     docs: {
       description: {
         story:
-          "XML is one of the languages supported, and it can be enabled by setting the `language` property to `xml`. A XML schema can also be provided through the `languagePlugin.schema` property. By providing a XML schema, the XML written will be validated against the schema showing errors. Providing a schema will also enable the code editor to show suggestions when opening a tag (`<`), writing an attribute, and when clicking on the CTRL and SPACE keys at the same time. By default, the XML code editor is formatted automatically. The property `disableAutoFormat` can be set to `true` to disable this behavior. You can also format manually the code using the `hvXmlFormatter` util.",
+          "XML is one of the languages supported, and it can be enabled by setting the `language` property to `xml`. A XML schema can also be provided through the `schema` property. By providing a XML schema, the XML written will be validated against the schema showing errors. Providing a schema will also enable the code editor to show suggestions when opening a tag (`<`), writing an attribute, and when clicking on the CTRL and SPACE keys at the same time. By default, the XML code editor is formatted automatically. The property `disableAutoFormat` can be set to `true` to disable this behavior. You can also format manually the code using the `hvXmlFormatter` util.",
       },
       source: { code: XmlStoryRaw },
     },
@@ -66,7 +66,7 @@ export const SQLEditor: StoryObj<HvCodeEditorProps> = {
     docs: {
       description: {
         story:
-          "SQL is one of the languages supported, and it can be enabled by setting the `language` property to `sql`. A SQL schema can also be provided through the `languagePlugin.schema` property. Providing a SQL schema will enable the code editor to show suggestions when writing the query, and when clicking on the CTRL and SPACE keys at the same time.",
+          "SQL is one of the languages supported, and it can be enabled by setting the `language` property to `sql`. A SQL schema can also be provided through the `schema` property. Providing a SQL schema will enable the code editor to show suggestions when writing the query, and when clicking on the CTRL and SPACE keys at the same time.",
       },
       source: { code: SqlStoryRaw },
     },

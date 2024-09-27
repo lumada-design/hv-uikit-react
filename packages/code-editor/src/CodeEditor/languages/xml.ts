@@ -389,7 +389,7 @@ export const hvXmlFormatter = async (
       });
 };
 
-export interface XmlLanguagePlugin extends Omit<LanguagePlugin, "schema"> {}
+export interface XmlLanguagePlugin extends LanguagePlugin {}
 
 export const xmlLanguagePlugin: XmlLanguagePlugin = {
   completionProvider: hvXmlCompletionProvider,

@@ -76,13 +76,32 @@ const parseErrorMessage = (errorString: string) => {
   return null;
 };
 
-const isKeyword = (word: string) => {
-  // Some keywords are compounded ("PRIMARY KEY", "ORDER BY", etc.)
-  if (word === "BY" || word === "KEY") {
-    return true;
+/**
+ * Get the last keyword entered in the query.
+ */
+function getLastKeyword(model: any) {
+  const content = model.getValue();
+
+  // This regex ignores punctuation and special characters
+  const words = content.split(/[\s,.!?;:()]+/);
+
+  for (let i = words.length - 1; i >= 0; i--) {
+    let word = words[i];
+
+    if (word === "BY" || word === "KEY" || word === "JOIN") {
+      const j = i - 1;
+      if (j !== -1) {
+        word = `${words[j]} ${word}`;
+      }
+    }
+
+    if (sqlKeywords.includes(word.toUpperCase())) {
+      return word;
+    }
   }
-  return sqlKeywords.includes(word.toUpperCase());
-};
+
+  return "";
+}
 
 /**
  * Triggers suggestions for specific cases.
@@ -90,10 +109,19 @@ const isKeyword = (word: string) => {
 export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
   const tablesNames = schema ? getTablesNames(schema) : [];
   const columnNames = schema ? getColumnNames(schema) : [];
-  const showColumnsKeywords = ["SELECT", "WHERE", "BY", "HAVING", "DISTINCT"];
+  const showColumnsKeywords = [
+    "SELECT",
+    "WHERE",
+    "ORDER BY",
+    "GROUP BY",
+    "HAVING",
+    "DISTINCT",
+    "AND",
+    "OR",
+  ];
 
   return {
-    provideCompletionItems: (model: any, position: any) => {
+    provideCompletionItems: (model: any) => {
       // If no text is typed, show a suggestion to select all columns from a table
       if (model.getValue() === "") {
         const emptySuggestions = {
@@ -114,22 +142,9 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
         sortText: "1",
       }));
 
-      const lineUntilPosition = model.getLineContent(position.lineNumber);
-      const words = lineUntilPosition
-        .substring(0, position.column - 1)
-        .trim()
-        .split(" ");
-      const lastWord = words.pop();
-      const secondLastWord = words.pop() || "";
+      const lastKeyword = getLastKeyword(model);
 
-      const isLastWordKeyword = isKeyword(lastWord.toUpperCase());
-
-      // Show suggestions if the last word is "FROM" or if it's at the beginning of a new line
-      if (
-        (isLastWordKeyword && lastWord.toUpperCase() === "FROM") ||
-        (!isLastWordKeyword && secondLastWord.toUpperCase() === "FROM") ||
-        lastWord === ""
-      ) {
+      if (lastKeyword === "FROM" || lastKeyword.includes("JOIN")) {
         const tableSuggestions = tablesNames.map((tableName) => ({
           label: tableName,
           kind: monaco.languages.CompletionItemKind.Variable,
@@ -142,17 +157,7 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
         return { suggestions: [...tableSuggestions, ...keywordSuggestions] };
       }
 
-      if (
-        (isLastWordKeyword &&
-          showColumnsKeywords.some((k) =>
-            k.endsWith(lastWord.toUpperCase()),
-          )) ||
-        (!isLastWordKeyword &&
-          showColumnsKeywords.some((k) =>
-            k.endsWith(secondLastWord.toUpperCase()),
-          )) ||
-        lastWord === ""
-      ) {
+      if (showColumnsKeywords.includes(lastKeyword)) {
         const columnsSuggestions = columnNames.map((columnName) => ({
           label: columnName,
           kind: monaco.languages.CompletionItemKind.Variable,
@@ -228,7 +233,7 @@ export const hvSqlFormatter = async (
   }
 };
 
-export interface SqlLanguagePlugin extends Omit<LanguagePlugin, "schema"> {}
+export interface SqlLanguagePlugin extends LanguagePlugin {}
 
 export const sqlLanguagePlugin: SqlLanguagePlugin = {
   completionProvider: hvSqlCompletionProvider,

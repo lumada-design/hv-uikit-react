@@ -4,7 +4,6 @@ import {
   HvCodeEditor,
   HvCodeEditorProps,
   hvLanguagePlugins,
-  hvXmlFormatter,
 } from "@hitachivantara/uikit-react-code-editor";
 
 import { Header } from "./utils";
@@ -47,7 +46,7 @@ export const CustomPluginStory = () => {
   const handleFormat = async () => {
     try {
       const content = editorRef.current.getValue();
-      const formattedCode = await hvXmlFormatter(
+      const formattedCode = await customPlugin.formatter?.(
         content,
         editorRef.current,
         monacoRef.current,
