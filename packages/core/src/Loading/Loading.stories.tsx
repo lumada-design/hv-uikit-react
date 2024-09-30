@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvButtonProps,
   HvLoading,
   HvLoadingProps,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvLoading> = {
@@ -48,105 +47,40 @@ export const Variants: StoryObj<HvLoadingProps> = {
   },
 };
 
-const Button = ({
-  label,
-  variant,
-  color = "base_dark",
-}: {
-  label: string;
-  variant?: HvButtonProps["variant"];
-  color?: HvLoadingProps["color"];
-}) => {
+const LoadingButton = ({ onClick, ...others }: HvButtonProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const activateTimer = () => {
-    if (!isLoading) {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    }
-  };
-
   return (
-    <div style={{ textAlign: "center" }}>
-      <HvTypography
-        variant="caption1"
-        style={{
-          marginBottom: "5px",
-        }}
-      >
-        {label}
-      </HvTypography>
-      <HvButton variant={variant} onClick={activateTimer}>
-        {(!isLoading && "Submit") || (
-          <HvLoading small hidden={!isLoading} color={color} />
-        )}
-      </HvButton>
-    </div>
+    <HvButton
+      style={{ width: 120 }}
+      onClick={async (event) => {
+        setIsLoading(true);
+        await onClick?.(event);
+        setIsLoading(false);
+      }}
+      {...others}
+    >
+      {!isLoading ? (
+        "Submit"
+      ) : (
+        <HvLoading small hidden={!isLoading} color="inherit" />
+      )}
+    </HvButton>
   );
 };
 
 export const Buttons = () => {
+  const handleClick = async () => {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 2000);
+    });
+  };
+
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <Button variant="primary" label="Primary button" color="base_light" />
-      <Button variant="secondarySubtle" label="Secondary Subtle button" />
-      <Button variant="secondaryGhost" label="Secondary Ghost button" />
+      <LoadingButton variant="primary" onClick={handleClick} />
+      <LoadingButton variant="secondarySubtle" onClick={handleClick} />
+      <LoadingButton variant="secondaryGhost" onClick={handleClick} />
     </div>
   );
-};
-
-const ButtonDeterminate = ({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) => (
-  <div>
-    <HvTypography variant="caption1">{label}</HvTypography>
-    <br />
-    {children}
-  </div>
-);
-
-const Progress = ({
-  label,
-  inc,
-}: {
-  label: (val: number) => React.ReactNode;
-  inc: React.SetStateAction<number>;
-}) => {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setValue(inc);
-    }, 500);
-    return () => clearInterval(interval);
-  }, [inc]);
-
-  return <HvLoading label={label?.(value)} />;
-};
-
-export const Determinate: StoryObj<HvLoadingProps> = {
-  render: () => {
-    return (
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <ButtonDeterminate label="Determine w/ percentages">
-          <Progress
-            label={(v) => `${v}%`}
-            inc={(v) => (v === 100 ? 0 : v + 5)}
-          />
-        </ButtonDeterminate>
-        <ButtonDeterminate label="Determine w/ progress">
-          <Progress
-            label={(v) => `${v}M/75M`}
-            inc={(v) => (v >= 75 ? 0 : Math.round(v + 5))}
-          />
-        </ButtonDeterminate>
-      </div>
-    );
-  },
 };

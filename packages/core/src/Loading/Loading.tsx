@@ -1,4 +1,5 @@
 import {
+  mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -36,6 +37,7 @@ export const HvLoading = (props: HvLoadingProps) => {
     small,
     label,
     classes: classesProp,
+    style,
     className,
     ...others
   } = useDefaultProps("HvLoading", props);
@@ -43,15 +45,15 @@ export const HvLoading = (props: HvLoadingProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const size = small ? "small" : "regular";
-  const colorVariant = color ? "Color" : "";
-  const variant = `${size}${colorVariant}` as const;
+  const colorVariant = color && (`${size}Color` as const);
 
-  const inline = {
-    backgroundColor: getColor(color, small ? "secondary" : "brand"),
-  };
   return (
     <div
       hidden={!!hidden}
+      style={mergeStyles(style, {
+        color: getColor(color, small ? "secondary" : "brand"),
+        "--customColor": getColor(color),
+      })}
       className={cx(
         classes.root,
         {
@@ -65,8 +67,12 @@ export const HvLoading = (props: HvLoadingProps) => {
         {range(3).map((e) => (
           <div
             key={e}
-            style={inline}
-            className={cx(classes.loadingBar, classes[variant])}
+            className={cx(
+              classes.loadingBar,
+              // TODO: hoist to parent & remove unused `colorVariant` in v6
+              classes[size],
+              classes[colorVariant!],
+            )}
           />
         ))}
       </div>
