@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.74.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.2...@hitachivantara/uikit-react-core@5.74.0) (2024-09-30)
+
+### Bug Fixes
+
+- accordion & button usage across components ([1683212](https://github.com/lumada-design/hv-uikit-react/commit/168321290a4fb534e09eac2c0f73c3be9d35a952))
+
+### Features
+
+- **ButtonBase:** add component ([bc8440a](https://github.com/lumada-design/hv-uikit-react/commit/bc8440ac16f65b269bd2ff6b9503967e81bd803d))
+
 ## [5.73.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.1...@hitachivantara/uikit-react-core@5.73.2) (2024-09-23)
 
 ### Bug Fixes
