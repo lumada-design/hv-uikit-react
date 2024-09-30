@@ -7,6 +7,8 @@ import {
   HvPanel,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 export default {
   title: "Components/Loading/Loading Container",
   component: HvLoadingContainer,
@@ -21,6 +23,9 @@ export const Main: StoryObj<HvLoadingContainerProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
+  },
+  parameters: {
+    ...setupChromatic(),
   },
   render: (args) => (
     <HvLoadingContainer style={{ display: "inline-flex" }} {...args}>

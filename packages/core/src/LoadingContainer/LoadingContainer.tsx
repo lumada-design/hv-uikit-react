@@ -43,9 +43,7 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const ariaLabel =
-    ariaLabelProp || (typeof label === "string" && label)
-      ? (label as string)
-      : "Loading";
+    ariaLabelProp || (typeof label === "string" && label) || "Loading";
 
   return (
     <div className={cx(classes.root, className)} {...others}>
@@ -56,7 +54,9 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
         label={label}
         hidden={hidden}
         aria-label={ariaLabel}
-        style={mergeStyles({}, { "--opacity": opacity })}
+        style={mergeStyles(undefined, {
+          "--opacity": opacity && `${opacity * 100}%`,
+        })}
       />
       {children}
     </div>
