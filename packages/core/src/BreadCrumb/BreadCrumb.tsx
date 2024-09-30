@@ -59,22 +59,19 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
 
   // build the listPath object list
   if (url != null) {
-    listPath = [];
+    // get URL origin
+    const baseUrl = url.match(/^.*\/\/[^/]+/) ?? "";
 
-    // get the domain
-    const baseUrl = url.match(/^.*\/\/[^/]+/);
+    // get URL pathname
+    const pathNames = url
+      .replace(/^.*\/\/[^/]+/, "")
+      .split("/")
+      .filter(Boolean);
 
-    // get url without domain
-    const urlWithoutDomain = url.replace(/^.*\/\/[^/]+/, "");
-
-    const pathNames = urlWithoutDomain.split("/").filter((x) => x);
-
-    pathNames.map((elem, index) =>
-      listPath.push({
-        label: decodeURI(elem),
-        path: `${baseUrl}/${pathNames.slice(0, index + 1).join("/")}`,
-      }),
-    );
+    listPath = pathNames.map((elem, index) => ({
+      label: decodeURI(elem),
+      path: `${baseUrl}/${pathNames.slice(0, index + 1).join("/")}`,
+    }));
   }
 
   const breadcrumbPath =
