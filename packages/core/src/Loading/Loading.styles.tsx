@@ -1,73 +1,5 @@
-import { keyframes } from "@emotion/react";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-const interval = 0.11;
-
-const bars = {
-  "&:nth-of-type(1)": {
-    animationDelay: "0",
-  },
-  "&:nth-of-type(2)": {
-    animationDelay: `${interval * 2}s`,
-  },
-  "&:nth-of-type(3)": {
-    animationDelay: `${interval * 4}s`,
-  },
-};
-
-const small = {
-  width: "2px",
-  height: "18px",
-  margin: "0px 2px",
-  ...bars,
-};
-
-const regular = {
-  width: "4px",
-  height: "30px",
-  margin: "0 3px",
-  ...bars,
-};
-
-const regularAnimation = keyframes`
-  0% { 
-    transform: scale(1);
-    background-color: ${theme.colors.brand};
-  }
-  50% { 
-    transform: scale(1, 0.6); 
-    background-color: ${theme.colors.secondary};
-  }
-`;
-
-const regularColorAnimation = keyframes`
-  0% { 
-    transform: scale(1);
-  }
-  50% { 
-    transform: scale(1, 0.6); 
-  }
-`;
-
-const smallAnimation = keyframes`
-  0% { 
-    transform: scale(1);
-  }
-  50% { 
-    transform: scale(1, 0.223); 
-  }
-  100%: {},
-`;
-
-const smallColorAnimation = keyframes`
-  0% { 
-    transform: scale(1);
-  }
-  50% { 
-    transform: scale(1, 0.223); 
-  }
-`;
 
 export const { staticClasses, useClasses } = createClasses("HvLoading", {
   root: {
@@ -75,36 +7,50 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    gap: theme.space.xs,
   },
-  barContainer: { display: "flex" },
-  loadingBar: {
-    display: "inline-block",
+  barContainer: {
+    display: "flex",
+    justifyContent: "space-around",
 
-    "@keyframes loading-small": {
-      "0%": {
-        transform: "scale(1)",
-      },
-      "50%": {
-        transform: "scale(1,0.223)",
-      },
-      "100%": {},
+    ":has($regular)": {
+      width: 30,
+      height: 30,
+    },
+
+    ":has($small)": {
+      "--scaleY": "0.223",
+      width: 18,
+      height: 18,
     },
   },
-  label: { marginTop: "15px" },
+  loadingBar: {
+    backgroundColor: "currentcolor",
+    display: "inline-block",
+    animation: "loading 1s ease-in-out infinite",
+    // TODO: make this the default when it has better support
+    width: "round(up, 0.11em, 2px)",
+
+    "@keyframes loading": {
+      "50%": {
+        transform: "scale(1, var(--scaleY, 0.6))",
+        backgroundColor: `var(--customColor, ${theme.colors.secondary})`,
+      },
+    },
+
+    ":nth-of-type(2)": { animationDelay: "0.22s" },
+    ":nth-of-type(3)": { animationDelay: "0.44s" },
+  },
+  label: {},
   overlay: {},
   blur: {},
   hidden: { display: "none" },
-  small: { animation: `${smallAnimation} 1s ease-in-out infinite`, ...small },
+  small: {
+    width: 2,
+  },
   regular: {
-    animation: `${regularAnimation} 1s ease-in-out infinite`,
-    ...regular,
+    width: 4,
   },
-  smallColor: {
-    animation: `${smallColorAnimation} 1s ease-in-out infinite`,
-    ...small,
-  },
-  regularColor: {
-    animation: `${regularColorAnimation} 1s ease-in-out infinite`,
-    ...regular,
-  },
+  smallColor: {},
+  regularColor: {},
 });
