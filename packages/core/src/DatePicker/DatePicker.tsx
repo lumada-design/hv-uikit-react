@@ -478,6 +478,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
             placeholder: cx(classes.inputText, {
               [classes.dateText]: dateString,
             }),
+            container: classes.container,
           }}
           readOnly={readOnly}
           disabled={disabled}
