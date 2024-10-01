@@ -45,4 +45,5 @@ export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
     color: "inherit",
     fontWeight: theme.typography.label.fontWeight,
   },
+  container: {},
 });
