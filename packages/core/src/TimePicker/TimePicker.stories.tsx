@@ -1,18 +1,15 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { css } from "@emotion/css";
 import type { CSSInterpolation } from "@emotion/serialize";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvButton,
-  HvInput,
-  HvSwitch,
   HvTimePicker,
   HvTimePickerProps,
   HvTimePickerValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 
 import { setupChromatic } from ".storybook/setupChromatic";
 
@@ -208,65 +205,6 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
         label="Time Picker"
         defaultValue={{ hours: 19, minutes: 30, seconds: 14 }}
       />
-    );
-  },
-};
-
-export const Native: StoryObj<HvTimePickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "The `HvInput` component can be configured with the `type='time'` to use the native picker. \
-          This can be useful for providing a better mobile experience. Disabled state must be managed by the user",
-      },
-    },
-  },
-  decorators: [makeDecorator({ minHeight: 200 })],
-  render: () => {
-    const ref = useRef<HTMLInputElement>(null);
-    const [disabled, setDisabled] = useState(false);
-    const [showSeconds, setShowSeconds] = useState(false);
-
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-      event.preventDefault();
-      const formData = new FormData(event.currentTarget);
-      const data = Object.fromEntries(formData.entries());
-      alert(JSON.stringify(data));
-    };
-
-    return (
-      <form onSubmit={handleSubmit}>
-        <HvInput
-          required
-          disabled={disabled}
-          name="scheduleTime"
-          label="Schedule"
-          inputRef={ref}
-          style={{ width: 200 }}
-          inputProps={{ type: "time", step: showSeconds ? 1 : 60 }}
-          endAdornment={
-            <TimeIcon
-              color={disabled ? "secondary_60" : undefined}
-              onClick={() => ref.current?.showPicker()}
-            />
-          }
-        />
-        <br />
-        <HvSwitch
-          name="disabled"
-          label="Disabled"
-          onChange={(evt, val) => setDisabled(val)}
-        />
-        <br />
-        <HvSwitch
-          name="showSeconds"
-          label="Show Seconds"
-          onChange={(evt, val) => setShowSeconds(val)}
-        />
-        <br />
-        <HvButton type="submit">Submit</HvButton>
-      </form>
     );
   },
 };

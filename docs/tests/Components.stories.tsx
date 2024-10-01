@@ -22,7 +22,7 @@ import {
 import { TheDesignSystemColumns as GridTheDesignSystemColumnsStory } from "packages/core/src/Grid/Grid.stories";
 import { Variants as IconButtonVariantsStory } from "packages/core/src/IconButton/IconButton.stories";
 import { Test as InlineEditorTestStory } from "packages/core/src/InlineEditor/InlineEditor.stories";
-import { Variants as InputVariantsStory } from "packages/core/src/Input/Input.stories";
+import { Test as InputTestStory } from "packages/core/src/Input/Input.stories";
 import { Main as KpiMainStory } from "packages/core/src/Kpi/Kpi.stories";
 import { WithIcons as ListContainerWithIconsStory } from "packages/core/src/ListContainer/ListContainer.stories";
 import { Variants as LoadingVariantsStory } from "packages/core/src/Loading/Loading.stories";
@@ -121,7 +121,7 @@ export const Test: StoryObj = {
           </div>
           {renderStory(CheckBoxGroupVariantsStory, context)}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-            {renderStory(InputVariantsStory, context)}
+            {renderStory(InputTestStory, context)}
           </div>
         </HvSimpleGrid>
         <HvSimpleGrid
