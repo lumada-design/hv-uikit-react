@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvIconButton,
@@ -7,7 +6,7 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Close, Edit } from "@hitachivantara/uikit-react-icons";
+import { Close } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvPanel> = {
   title: "Components/Panel",
@@ -30,65 +29,42 @@ export const Main: StoryObj<HvPanelProps> = {
 
 export const WithScroll: StoryObj<HvPanelProps> = {
   render: () => {
+    const chars = "abcdefghijklmnopqrstuvwxyz";
     return (
-      <HvPanel style={{ width: 400, height: 400 }}>
-        <div style={{ height: 600, backgroundColor: theme.colors.atmo4 }} />
+      <HvPanel
+        style={{ width: 300, height: 300, letterSpacing: "1rem" }}
+        tabIndex={0}
+      >
+        {[...chars].map((char, i) => (
+          <div key={i}>{i === 0 ? chars : char}</div>
+        ))}
       </HvPanel>
     );
   },
 };
 
-export const FullWidth: StoryObj<HvPanelProps> = {
+export const Modal: StoryObj<HvPanelProps> = {
   render: () => {
     return (
-      <HvPanel style={{ width: "100%", height: "200px" }}>
+      <HvPanel
+        style={{
+          width: "100%",
+          height: "200px",
+          boxShadow: theme.colors.shadow,
+        }}
+      >
         <HvTypography>Panel Content</HvTypography>
         <HvIconButton
-          title="Edit"
+          title="Close"
           style={{
             position: "absolute",
             top: theme.space.sm,
             right: theme.space.sm,
           }}
         >
-          <Edit />
+          <Close />
         </HvIconButton>
       </HvPanel>
-    );
-  },
-};
-
-const Overlay = styled("div")({
-  backgroundColor: theme.colors.atmo3,
-  opacity: 0.8,
-  width: "100%",
-  padding: theme.space.md,
-});
-
-export const Modal: StoryObj<HvPanelProps> = {
-  render: () => {
-    return (
-      <Overlay>
-        <HvPanel
-          style={{
-            width: "100%",
-            height: "200px",
-            boxShadow: theme.colors.shadow,
-          }}
-        >
-          <HvTypography>Panel Content</HvTypography>
-          <HvIconButton
-            title="Close"
-            style={{
-              position: "absolute",
-              top: theme.space.sm,
-              right: theme.space.sm,
-            }}
-          >
-            <Close />
-          </HvIconButton>
-        </HvPanel>
-      </Overlay>
     );
   },
 };

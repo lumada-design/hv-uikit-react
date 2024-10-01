@@ -3,13 +3,13 @@ import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import parser from "html-react-parser";
 import {
-  HvDropdown,
   HvEmptyState,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
-  HvListValue,
+  HvOption,
   HvPanel,
+  HvSelect,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -192,27 +192,18 @@ export const ScopedSearch: StoryObj = {
   },
   render: () => {
     const [results, setResults] = useState<string[] | null>(null);
-
-    const [filter, setFilter] = useState<string>("All");
+    const [filter, setFilter] = useState("All");
 
     const classes = {
       container: css({
         display: "flex",
+        gap: theme.space.xs,
         maxWidth: 610,
       }),
-      root: css({
-        width: 160,
-        minWidth: "unset",
-        marginRight: 3,
-      }),
       dropdown: css({
-        width: "100%",
+        width: 200,
       }),
-      width: css({
-        width: 160,
-        minWidth: "unset",
-      }),
-      inputRoot: css({
+      input: css({
         width: "100%",
       }),
       result: css({
@@ -246,16 +237,7 @@ export const ScopedSearch: StoryObj = {
         }))
         .slice(0, 6);
 
-    const values = useMemo(
-      () => [
-        { label: "All", value: "All", selected: true },
-        ...continents.map((c) => ({
-          label: c,
-          value: c,
-        })),
-      ],
-      [],
-    );
+    const values = useMemo(() => ["All", ...continents], []);
 
     const handleSearch: HvInputProps["onEnter"] = (_, value) => {
       const newResults: string[] = [];
@@ -274,29 +256,25 @@ export const ScopedSearch: StoryObj = {
     return (
       <>
         <div className={classes.container}>
-          <HvDropdown
+          <HvSelect
+            className={classes.dropdown}
+            defaultValue="All"
             aria-label="Filter country"
-            classes={{
-              root: classes.root,
-              dropdown: classes.dropdown,
-              rootList: classes.width,
-            }}
-            onChange={(value) => {
-              const newFilter =
-                ((value as HvListValue)?.label as string) || "All";
-              setFilter(newFilter);
-            }}
-            values={values}
-          />
+            onChange={(evt, val) => setFilter(val!)}
+          >
+            {values.map((val) => (
+              <HvOption key={val} value={val}>
+                {val}
+              </HvOption>
+            ))}
+          </HvSelect>
           <HvInput
             type="search"
             aria-label="Search country data"
             placeholder="Search"
             onEnter={handleSearch}
             suggestionListCallback={filterHighlighted}
-            classes={{
-              root: classes.inputRoot,
-            }}
+            className={classes.input}
           />
         </div>
         {results != null && (

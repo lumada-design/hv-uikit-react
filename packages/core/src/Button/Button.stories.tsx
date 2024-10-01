@@ -1,10 +1,6 @@
 import { css } from "@emotion/css";
 import { StoryObj } from "@storybook/react";
-import {
-  HvButton,
-  HvButtonProps,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 import {
   Delete,
   Favorite,
@@ -256,14 +252,7 @@ export const Icons: StoryObj<HvButtonProps> = {
 export const Semantic: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <div
-        style={{
-          display: "flex",
-          gap: 20,
-          backgroundColor: theme.colors.neutral_20,
-          padding: 20,
-        }}
-      >
+      <div className="flex gap-sm p-sm text-base_dark bg-neutral_20">
         {Story()}
       </div>
     ),

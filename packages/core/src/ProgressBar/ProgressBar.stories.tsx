@@ -10,7 +10,7 @@ import { ProgressBarSimulator } from "./ProgressBarSimulator";
 const meta: Meta<typeof HvProgressBar> = {
   title: "Components/Loading/Progress Bar",
   component: HvProgressBar,
-  decorators: [(Story) => <div style={{ padding: 20 }}>{Story()}</div>],
+  decorators: [(Story) => <div className="pl-sm">{Story()}</div>],
 };
 export default meta;
 
@@ -72,39 +72,37 @@ export const Progressive: StoryObj<HvProgressBarProps> = {
   },
 };
 
-export const Determinate: StoryObj<HvProgressBarProps> = {
+export const Variants: StoryObj<HvProgressBarProps> = {
+  decorators: [
+    (Story) => (
+      <div className="grid items-center gap-sm [&>span]:text-center">
+        {Story()}
+      </div>
+    ),
+  ],
   render: () => {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <>
         <HvTypography variant="label">Start</HvTypography>
         <HvProgressBar value={0} aria-label="Example Determined Progress Bar" />
-        <br /> <br />
         <HvTypography variant="label">Success</HvTypography>
         <HvProgressBar
           value={100}
           status="completed"
           aria-label="Example Determined Progress Bar"
         />
-        <br /> <br />
         <HvTypography variant="label">Loading</HvTypography>
         <HvProgressBar
           value={40}
           aria-label="Example Determined Loading Progress Bar"
         />
-        <br /> <br />
         <HvTypography variant="label">Error</HvTypography>
         <HvProgressBar
           value={30}
           status="error"
           aria-label="Example Determined Error Progress Bar"
         />
-      </div>
+      </>
     );
   },
 };

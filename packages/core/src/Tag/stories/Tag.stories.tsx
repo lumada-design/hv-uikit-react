@@ -24,8 +24,6 @@ export default meta;
 export const Main: StoryObj<HvTagProps> = {
   args: {
     label: "Tag Label",
-    onClick: () => console.log("click"),
-    onDelete: () => console.log("delete"),
     type: "semantic",
     color: "neutral_20",
     disabled: false,
@@ -38,6 +36,30 @@ export const Main: StoryObj<HvTagProps> = {
   },
   render: (args) => {
     return <HvTag {...args} />;
+  },
+};
+
+export const Variants: StoryObj<HvTagProps> = {
+  decorators: [
+    (Story) => <div className="grid grid-cols-6 gap-sm">{Story()}</div>,
+  ],
+  render: () => {
+    return (
+      <>
+        <HvTag label="Informational" />
+        <HvTag label="Success" color="positive_20" />
+        <HvTag label="Warning" color="negative_20" />
+        <HvTag label="Error" color="warning_20" />
+        <HvTag label="Custom" color="#22FF45" />
+        <HvTag label="Disabled" disabled />
+        <HvTag label="Categorical" type="categorical" />
+        <HvTag label="Docs" type="categorical" color="cat2" />
+        <HvTag label="Fix" type="categorical" color="cat3" />
+        <HvTag label="Deprecated" type="categorical" color="cat5" />
+        <HvTag label="Custom" type="categorical" color="#22FF45" />
+        <HvTag label="Disabled" type="categorical" disabled />
+      </>
+    );
   },
 };
 
@@ -54,145 +76,12 @@ export const LongLabelText: StoryObj<HvTagProps> = {
   },
 };
 
-export const Semantical: StoryObj<HvTagProps> = {
+export const WithActions: StoryObj<HvTagProps> = {
   render: () => {
     return (
       <>
-        <HvTag label="Informational" />
-        <HvTag color="positive_20" label="Success" />
-        <HvTag color="negative_20" label="Warning" />
-        <HvTag color="warning_20" label="Error" />
-      </>
-    );
-  },
-};
-
-export const Categorical: StoryObj<HvTagProps> = {
-  render: () => {
-    return (
-      <>
-        <HvTag label="Feat" onClick={() => alert("Hello")} type="categorical" />
-        <HvTag
-          label="Docs"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat2"
-        />
-        <HvTag
-          label="Fix"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat3"
-        />
-        <HvTag
-          label="New"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat4"
-        />
-        <HvTag
-          label="Deprecated"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat5"
-        />
-        <HvTag label="No Click" type="categorical" color="#22FF45" />
-      </>
-    );
-  },
-};
-
-export const DisabledTags: StoryObj<HvTagProps> = {
-  render: () => {
-    return (
-      <>
-        <HvTag label="Informational" disabled />
-        <HvTag
-          label="Success"
-          disabled
-          onDelete={() => {
-            alert("On Delete Action");
-          }}
-        />
-      </>
-    );
-  },
-};
-
-export const WithDeleteAction: StoryObj<HvTagProps> = {
-  render: () => {
-    return (
-      <>
-        <HvTag
-          label="Informational"
-          onDelete={() => {
-            alert("On Delete Action");
-          }}
-        />
-        <HvTag
-          label="Success"
-          color="positive_20"
-          onDelete={() => {
-            alert("On Delete Action");
-          }}
-        />
-        <HvTag
-          label="Warning"
-          color="negative_20"
-          onDelete={() => {
-            alert("On Delete Action");
-          }}
-        />
-        <HvTag
-          label="Error"
-          color="warning_20"
-          onDelete={() => {
-            alert("On Delete Action");
-          }}
-        />
-      </>
-    );
-  },
-};
-
-export const CategoricalTagsDisabled: StoryObj<HvTagProps> = {
-  render: () => {
-    return (
-      <>
-        <HvTag
-          label="Feat"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          disabled
-        />
-        <HvTag
-          label="Docs"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat2"
-          disabled
-        />
-        <HvTag
-          label="Fix"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat3"
-          disabled
-        />
-        <HvTag
-          label="New"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat4"
-          disabled
-        />
-        <HvTag
-          label="Deprecated"
-          onClick={() => alert("Hello")}
-          type="categorical"
-          color="cat5"
-          disabled
-        />
+        <HvTag label="Click me!" onClick={() => alert("Clicked!")} />
+        <HvTag label="Delete me!" onDelete={() => alert("Deleted!")} />
       </>
     );
   },
@@ -239,13 +128,7 @@ export const Test: StoryObj = {
       <HvTag color="positive_20" label="Success" />
       <HvTag color="negative_20" label="Warning" />
       <HvTag color="warning_20" label="Error" />
-      <HvTag
-        label="Success"
-        color="positive_20"
-        onDelete={() => {
-          alert("On Delete Action");
-        }}
-      />
+      <HvTag label="Success" color="positive_20" onDelete={() => {}} />
       <HvTag label="Feat" type="categorical" />
       <HvTag label="Feat" type="categorical" disabled />
       <HvTag label="Docs" type="categorical" color="cat2" />

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { css } from "@emotion/css";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   HvToggleButton,
   HvToggleButtonProps,
@@ -16,6 +17,7 @@ import {
   FavoriteSelected,
   ForwardsEmpty,
   ForwardsSelected,
+  HvIconContainer,
   LightOff,
   LightOn,
   Like,
@@ -26,18 +28,9 @@ import {
   UpSelected,
 } from "@hitachivantara/uikit-react-icons";
 
-import { ToggleEye } from "./ToggleEye";
-
-const flexDecorator: Decorator = (Story) => (
-  <div style={{ display: "flex", alignItems: "end", flexWrap: "wrap" }}>
-    {Story()}
-  </div>
-);
-
 const meta: Meta<typeof HvToggleButton> = {
   title: "Components/Toggle Button",
   component: HvToggleButton,
-  decorators: [flexDecorator],
 };
 export default meta;
 
@@ -66,6 +59,7 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
       },
     },
   },
+  decorators: [(Story) => <div className="flex gap-sm">{Story()}</div>],
   render: () => {
     return (
       <>
@@ -74,56 +68,47 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           aria-label="Favorite"
           notSelectedIcon={<Favorite />}
           selectedIcon={<FavoriteSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Backwards"
           notSelectedIcon={<BackwardsEmpty />}
           selectedIcon={<BackwardsSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Up"
           notSelectedIcon={<UpEmpty />}
           selectedIcon={<UpSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           disabled
           aria-label="Down"
           notSelectedIcon={<DownEmpty />}
           selectedIcon={<DownSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Forward"
           notSelectedIcon={<ForwardsEmpty />}
           selectedIcon={<ForwardsSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Like"
           notSelectedIcon={<Like />}
           selectedIcon={<LikeSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Dislike"
           notSelectedIcon={<Dislike />}
           selectedIcon={<DislikeSelected />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Light"
           notSelectedIcon={<LightOff />}
           selectedIcon={<LightOn />}
-          style={{ margin: "0 10px 5px 0" }}
         />
         <HvToggleButton
           aria-label="Lock"
           notSelectedIcon={<Unlock />}
           selectedIcon={<Lock />}
-          style={{ margin: "0 10px 5px 0" }}
           disabled
         />
       </>
@@ -183,13 +168,28 @@ export const Animated: StoryObj<HvToggleButtonProps> = {
     },
   },
   render: () => {
-    const [select, setSelect] = useState(true);
-
-    const toggleState = () => setSelect(!select);
+    const [selected, setSelected] = useState(true);
 
     return (
-      <HvToggleButton selected={select} onClick={toggleState} aria-label="Eye">
-        <ToggleEye selected={select} />
+      <HvToggleButton
+        selected={selected}
+        onClick={() => setSelected((s) => !s)}
+        aria-label="Eye"
+      >
+        <HvIconContainer>
+          <svg viewBox="0 0 16 16" height={16} width={16} fill="currentColor">
+            <path d="M8,5a3,3,0,1,0,3,3A3,3,0,0,0,8,5Zm0,5a2,2,0,1,1,2-2A2,2,0,0,1,8,10Z" />
+            <path d="M8,2C4,2,0,8,0,8s3.58,6,8,6,8-6,8-6S12,2,8,2Zm4.91,8.33C11.73,11.55,9.92,13,8,13s-3.75-1.47-4.94-2.69A17.83,17.83,0,0,1,1.21,8a22.36,22.36,0,0,1,2-2.35C5,3.93,6.64,3,8,3s3,.94,4.79,2.71a21.07,21.07,0,0,1,2,2.32A17.31,17.31,0,0,1,12.91,10.33Z" />
+            <rect
+              className={css({ transition: "width .2s ease-in-out" })}
+              width={selected ? 19.8 : 0}
+              x="-1.9"
+              y="7.5"
+              height="1"
+              transform="translate(-3.31 8.01) rotate(-45)"
+            />
+          </svg>
+        </HvIconContainer>
       </HvToggleButton>
     );
   },

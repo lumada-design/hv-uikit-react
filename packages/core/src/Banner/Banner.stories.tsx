@@ -8,7 +8,6 @@ import {
   HvBannerProps,
   HvButton,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
@@ -167,10 +166,7 @@ export const BannerController: StoryObj<HvBannerProps> = {
             variant={variant}
             showIcon
             actions={
-              <HvButton
-                variant="secondaryGhost"
-                style={{ color: theme.colors.base_dark }}
-              >
+              <HvButton variant="secondaryGhost" style={{ color: "inherit" }}>
                 Action
               </HvButton>
             }

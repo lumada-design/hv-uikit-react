@@ -30,7 +30,7 @@ import { Test as MultiButtonTestStory } from "packages/core/src/MultiButton/stor
 import { Main as OverflowTooltipMainStory } from "packages/core/src/OverflowTooltip/OverflowTooltip.stories";
 import { Main as PaginationMainStory } from "packages/core/src/Pagination/Pagination.stories";
 import { Main as PanelMainStory } from "packages/core/src/Panel/Panel.stories";
-import { Determinate as ProgressBarDeterminateStory } from "packages/core/src/ProgressBar/ProgressBar.stories";
+import { Variants as ProgressBarVariantsStory } from "packages/core/src/ProgressBar/ProgressBar.stories";
 import { Test as RadioTestStory } from "packages/core/src/Radio/Radio.stories";
 import {
   Horizontal as RadioGroupHorizontalStory,
@@ -295,8 +295,8 @@ export const Test3: StoryObj = {
             SelectionListVariantsStory.args as any,
             context,
           )}
-          {ProgressBarDeterminateStory.render?.(
-            ProgressBarDeterminateStory.args as any,
+          {ProgressBarVariantsStory.render?.(
+            ProgressBarVariantsStory.args as any,
             context,
           )}
         </HvSimpleGrid>

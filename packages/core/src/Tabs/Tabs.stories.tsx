@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { css } from "@emotion/css";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
@@ -57,12 +58,12 @@ export const FullWidth: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
     return (
-      <HvTabs variant="fullWidth" value={value} onChange={handleChange}>
+      <HvTabs
+        variant="fullWidth"
+        value={value}
+        onChange={(_, val) => setValue(val)}
+      >
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
         <HvTab label="Clickable tab 3" />
@@ -83,22 +84,14 @@ export const ContentChanging: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    const renderContent = (page: number) => (
-      <HvTypography style={{ padding: 8 * 3 }}>{`Page ${page}`}</HvTypography>
-    );
-
     return (
       <>
-        <HvTabs value={value} onChange={handleChange}>
+        <HvTabs value={value} onChange={(_, val) => setValue(val)}>
           <HvTab label="Clickable tab 1" />
           <HvTab label="Clickable tab 2" />
           <HvTab label="Clickable tab 3" />
         </HvTabs>
-        {renderContent(value)}
+        <HvTypography style={{ padding: 16 }}>{`Page ${value}`}</HvTypography>
       </>
     );
   },
@@ -108,24 +101,16 @@ export const TextSize: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    const StyledHvTab = styled(HvTab)({
+    const StyledHvTab = styled(HvTab, { label: "StyledHvTab" })({
+      ...theme.typography.title2,
       minHeight: 48,
-      color: theme.colors.secondary,
-      fontSize: "22px",
-      letterSpacing: "0.02em",
-      lineHeight: "30px",
-      fontWeight: 400,
     });
 
     return (
-      <HvTabs value={value} onChange={handleChange}>
-        <StyledHvTab label="Clickable tab 1" />
-        <StyledHvTab disabled label="Disabled tab 2" />
-        <StyledHvTab label="Clickable tab 3" />
+      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
+        <StyledHvTab label="Large tab 1" />
+        <StyledHvTab disabled label="Large tab 2" />
+        <StyledHvTab label="Large tab 3" />
       </HvTabs>
     );
   },
@@ -135,19 +120,11 @@ export const CenteredTabs: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
     return (
       <HvTabs
         value={value}
-        onChange={handleChange}
-        sx={{
-          "& .MuiTabs-flexContainer": {
-            justifyContent: "center",
-          },
-        }}
+        onChange={(_, val) => setValue(val)}
+        classes={{ flexContainer: css({ justifyContent: "center" }) }}
       >
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
@@ -168,18 +145,11 @@ export const WithBadges: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    const StyledHvTab = styled(HvTab)({
+    const StyledHvTab = styled(HvTab, { label: "StyledHvTab" })({
       minHeight: 48,
       justifyContent: "center",
       "& div p": {
-        color: theme.colors.secondary,
-        fontSize: "22px",
-        letterSpacing: "0.02em",
-        lineHeight: "30px",
+        ...theme.typography.title3,
         fontWeight: 400,
       },
       "&.Mui-selected": {
@@ -190,7 +160,7 @@ export const WithBadges: StoryObj<HvTabsProps> = {
     });
 
     return (
-      <HvTabs value={value} onChange={handleChange}>
+      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
         <StyledHvTab
           label={<HvBadge showCount count={2} text="Track events" />}
         />
@@ -200,7 +170,7 @@ export const WithBadges: StoryObj<HvTabsProps> = {
   },
 };
 
-export const HorizontalIcons: StoryObj<HvTabsProps> = {
+export const Icons: StoryObj<HvTabsProps> = {
   render: () => {
     const [value, setValue] = useState(0);
 
@@ -209,71 +179,49 @@ export const HorizontalIcons: StoryObj<HvTabsProps> = {
     };
 
     return (
-      <HvTabs value={value} onChange={handleChange}>
-        <HvTab
-          label="Clickable tab 1"
-          icon={<DataStore />}
-          iconPosition="start"
-        />
-        <HvTab
-          label="Clickable tab 2"
-          icon={<DataStore />}
-          iconPosition="start"
-        />
-        <HvTab
-          label="Clickable tab 3"
-          icon={<DataStore />}
-          iconPosition="start"
-        />
-      </HvTabs>
-    );
-  },
-};
-
-export const VerticalIcons: StoryObj<HvTabsProps> = {
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    return (
-      <HvTabs value={value} onChange={handleChange}>
-        <HvTab
-          label="Clickable tab 1"
-          icon={<Helicopter />}
-          iconPosition="top"
-        />
-        <HvTab
-          label="Clickable tab 2"
-          icon={<Helicopter />}
-          iconPosition="top"
-        />
-        <HvTab
-          label="Clickable tab 3"
-          icon={<Helicopter />}
-          iconPosition="top"
-        />
-      </HvTabs>
-    );
-  },
-};
-
-export const OnlyIcons: StoryObj<HvTabsProps> = {
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    return (
-      <HvTabs value={value} onChange={handleChange}>
-        <HvTab icon={<Alert />} aria-label="Alert" />
-        <HvTab icon={<Reload />} aria-label="Reload" />
-        <HvTab icon={<Calendar />} aria-label="Calendar" />
-      </HvTabs>
+      <>
+        <HvTabs value={value} onChange={handleChange}>
+          <HvTab
+            label="Clickable tab 1"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+          <HvTab
+            label="Clickable tab 2"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+          <HvTab
+            label="Clickable tab 3"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+        </HvTabs>
+        <br />
+        <HvTabs value={value} onChange={handleChange}>
+          <HvTab
+            label="Clickable tab 1"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+          <HvTab
+            label="Clickable tab 2"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+          <HvTab
+            label="Clickable tab 3"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+        </HvTabs>
+        <br />
+        <HvTabs value={value} onChange={handleChange}>
+          <HvTab icon={<Alert />} aria-label="Alert" />
+          <HvTab icon={<Reload />} aria-label="Reload" />
+          <HvTab icon={<Calendar />} aria-label="Calendar" />
+        </HvTabs>
+      </>
     );
   },
 };
