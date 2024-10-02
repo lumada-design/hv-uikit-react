@@ -1,0 +1,108 @@
+@import "uno.css";
+@import "@unocss/reset/tailwind-compat.css";
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  /* @apply !text-2xl !font-semibold; */
+}
+
+h2 {
+  /* @apply !text-xl !border-none; */
+}
+
+h3 {
+  /* @apply !text-lg; */
+}
+
+h4 {
+  /* @apply !text-lg !font-medium; */
+}
+
+body,
+.nextra-nav-container-blur,
+.nextra-sidebar-footer,
+.nextra-toc-footer,
+.nextra-sidebar-container a {
+  background-color: transparent;
+}
+
+/* .nextra-sidebar-container {
+  @apply w-[14rem];
+}
+
+.nextra-nav-container nav,
+.nextra-nav-container + div {
+  @apply max-w-[85rem];
+}
+
+.nextra-nav-container nav {
+  @apply px-8;
+}
+
+.nextra-nav-container + div {
+  @apply mt-5 px-2;
+}
+
+.nextra-nav-container a:last-of-type svg {
+  @apply w-5;
+}
+
+.nextra-nav-container button div svg {
+  @apply w-4 h-4;
+}
+
+.nextra-search {
+  @apply w-[13rem];
+}
+
+.nextra-toc {
+  @apply w-[14rem];
+}
+
+.nextra-toc a {
+  @apply font-normal;
+} 
+
+.nextra-scrollbar a._text-primary-800,
+.nextra-scrollbar a._text-primary-600 {
+  @apply font-medium text-slate-800 dark:text-slate-200;
+} */
+
+.nextra-sidebar-footer,
+.nextra-toc-footer,
+.nextra-breadcrumb {
+  display: none;
+}
+
+/* .nextra-code pre code {
+  @apply text-[0.8rem];
+}
+
+article div:last-child a {
+  @apply text-base;
+}
+
+article div:last-child svg {
+  @apply w-[1rem] h-[1rem];
+}
+
+@media only screen and (max-width: 768px) {
+  .nextra-nav-container + div {
+    @apply px-0;
+  }
+
+  .nextra-sidebar-container {
+    @apply w-full;
+  }
+
+  .nextra-search {
+    @apply w-full;
+  }
+
+  article main {
+    @apply !px-8;
+  }
+} */
