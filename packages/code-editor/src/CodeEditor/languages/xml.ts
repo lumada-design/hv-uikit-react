@@ -332,7 +332,7 @@ export const hvXmlKeyDownListener = (
 
       // Look for the tag we are currently closing
       const tag = String(lineBeforeChange).match(
-        /<([\w-]+)(?![^>]*\/>)[^>]*$/,
+        /<([\w-]+)(?![^>]*\/>)[^>/]*$/,
       )?.[1];
       if (tag) {
         // Add the closing tag
