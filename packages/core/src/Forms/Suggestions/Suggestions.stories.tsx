@@ -10,7 +10,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
-import { allCountries } from "../../Input/countries";
+import { allCountries } from "../../Input/stories/countries";
 
 const meta: Meta<typeof HvSuggestions> = {
   title: "Guides/Forms/Form Element Blocks/Suggestions",

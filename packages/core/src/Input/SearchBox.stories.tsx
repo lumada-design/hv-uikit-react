@@ -15,7 +15,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Fail } from "@hitachivantara/uikit-react-icons";
 
-import countryNamesArray, { continents, countries } from "./countries";
+import countryNamesArray, { continents, countries } from "./stories/countries";
 
 /**
  * A search box is a text input box with the dedicated function of accepting user input to be searched for in a database.

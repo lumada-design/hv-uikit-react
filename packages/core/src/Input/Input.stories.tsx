@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
-  HvButton,
   HvFormStatus,
   HvGrid,
   HvInfoMessage,
@@ -15,9 +14,11 @@ import {
   HvValidationMessages,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Map } from "@hitachivantara/uikit-react-icons";
+import { Calendar, Map, Time } from "@hitachivantara/uikit-react-icons";
 
-import countryNamesArray from "./countries";
+import ControlledStory from "./stories/Controlled";
+import ControlledRaw from "./stories/Controlled?raw";
+import countryNamesArray from "./stories/countries";
 
 const showcaseDecorator: Decorator = (Story) => (
   <div
@@ -134,25 +135,8 @@ export const Variants: StoryObj<HvInputProps> = {
           validationMessages={validationMessages}
         />
         <HvInput
-          disabled
-          type="password"
-          label="Disabled"
-          description="Enter password"
-          placeholder="Enter password"
-          validationMessages={validationMessages}
-        />
-        <HvInput
           type="search"
           label="Search"
-          description="Search for a value"
-          placeholder="Search..."
-          validationMessages={validationMessages}
-          onEnter={(event, value) => console.log("Searching", value)}
-        />
-        <HvInput
-          disabled
-          type="search"
-          label="Disabled"
           description="Search for a value"
           placeholder="Search..."
           validationMessages={validationMessages}
@@ -191,55 +175,13 @@ export const Accessibility: StoryObj<HvInputProps> = {
 export const Controlled: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
+      source: { code: ControlledRaw },
       description: {
         story: "Changing the input value from outside the input component.",
       },
     },
   },
-  render: () => {
-    const [value, setValue] = useState("Initial value");
-
-    return (
-      <>
-        <div
-          className={css({
-            marginBottom: theme.space.md,
-            "& button": { marginRight: theme.space.xs },
-          })}
-        >
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => setValue("First value")}
-          >
-            First value
-          </HvButton>
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => setValue("Second value")}
-          >
-            Second value
-          </HvButton>
-          <HvButton
-            variant="secondarySubtle"
-            onClick={() => setValue("Third value")}
-          >
-            Third value
-          </HvButton>
-          <HvButton variant="secondarySubtle" onClick={() => setValue("")}>
-            Clear value
-          </HvButton>
-        </div>
-
-        <HvInput
-          label="Label"
-          placeholder="Enter value"
-          value={value}
-          // to be possible to change the input value by user action
-          onChange={(event, newValue) => setValue(newValue)}
-        />
-      </>
-    );
-  },
+  render: () => <ControlledStory />,
 };
 
 export const InvalidState: StoryObj<HvInputProps> = {
@@ -453,7 +395,7 @@ export const CustomProps: StoryObj<HvInputProps> = {
     docs: {
       description: {
         story:
-          "Using the input props to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
+          "Using `inputProps` to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
       },
     },
   },
@@ -468,6 +410,58 @@ export const CustomProps: StoryObj<HvInputProps> = {
           maxLength: 25,
         }}
       />
+    );
+  },
+};
+
+export const CustomVariants: StoryObj<HvInputProps> = {
+  decorators: [showcaseDecorator],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Using the `inputProps` to configure custom [HTML input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input). This can be useful for providing a better mobile experience.",
+      },
+    },
+  },
+  render: () => {
+    const timeRef = useRef<HTMLInputElement>(null);
+    const dateRef = useRef<HTMLInputElement>(null);
+    const dateTimeRef = useRef<HTMLInputElement>(null);
+
+    return (
+      <>
+        <HvInput
+          label="Number"
+          placeholder="Insert a number"
+          inputProps={{ type: "number", min: 10, max: 99 }}
+        />
+        <HvInput
+          ref={dateRef}
+          label="Date"
+          placeholder="Insert text"
+          inputProps={{ type: "date" }}
+          endAdornment={
+            <Calendar onClick={() => dateRef.current?.showPicker()} />
+          }
+        />
+        <HvInput
+          ref={dateTimeRef}
+          label="Datetime-local"
+          placeholder="Insert text"
+          inputProps={{ type: "datetime-local", step: 1 }}
+          endAdornment={
+            <Calendar onClick={() => dateTimeRef.current?.showPicker()} />
+          }
+        />
+        <HvInput
+          ref={timeRef}
+          label="Time"
+          placeholder="Insert text"
+          inputProps={{ type: "time", step: 1 }}
+          endAdornment={<Time onClick={() => timeRef.current?.showPicker()} />}
+        />
+      </>
     );
   },
 };
@@ -563,6 +557,107 @@ export const PrefixAndSuffix: StoryObj<HvInputProps> = {
           />
           <HvTypography>.lumada.org</HvTypography>
         </div>
+      </>
+    );
+  },
+};
+
+export const Test: StoryObj<HvInputProps> = {
+  decorators: [showcaseDecorator],
+  args: {
+    description: "Enter name",
+    placeholder: "Insert first name",
+  },
+  render: (args) => {
+    const validationMessages: HvValidationMessages = {
+      error: "Invalid value!",
+      maxCharError: "Value is too long!",
+      minCharError: "Value is too short!",
+      requiredError: "Value is required!",
+      typeMismatchError: "Type is incorrect!",
+    };
+
+    return (
+      <>
+        <HvInput aria-label="default" className="self-end" />
+        <HvInput disabled aria-label="default" className="self-end" />
+        <HvInput label="Default value" defaultValue="value!" />
+        <HvInput required label="Required" {...args} />
+        <HvInput disabled label="Disabled" {...args} />
+        <HvInput readOnly label="Readonly" {...args} />
+        <HvInput
+          required
+          label="Invalid"
+          status="invalid"
+          statusMessage="Oh no!"
+          {...args}
+        />
+        <HvInput
+          required
+          type="email"
+          label="Email"
+          description="Enter email"
+          placeholder="example@domain.com"
+          showValidationIcon
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          type="password"
+          label="Password"
+          description="Enter password"
+          placeholder="Enter password"
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          disabled
+          type="password"
+          label="Disabled"
+          description="Enter password"
+          placeholder="Enter password"
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          type="search"
+          label="Search"
+          description="Search for a value"
+          placeholder="Search..."
+          validationMessages={validationMessages}
+          onEnter={(event, value) => console.log("Searching", value)}
+        />
+        <HvInput
+          disabled
+          type="search"
+          label="Disabled"
+          description="Search for a value"
+          placeholder="Search..."
+          validationMessages={validationMessages}
+          onEnter={(event, value) => console.log("Searching", value)}
+        />
+        <HvInput
+          required
+          type="number"
+          label="Number"
+          description="With 2-3 digits"
+          placeholder="Pick a number"
+          showValidationIcon
+          minCharQuantity={2}
+          maxCharQuantity={3}
+          validationMessages={validationMessages}
+        />
+        <HvInput
+          required
+          inputProps={{ type: "number", min: 10, max: 99 }}
+          label="Number native"
+          placeholder="Pick a number"
+        />
+        <HvInput
+          required
+          disabled
+          defaultValue="60"
+          inputProps={{ type: "number", min: 10, max: 99 }}
+          label="Number native"
+          placeholder="Pick a number"
+        />
       </>
     );
   },
