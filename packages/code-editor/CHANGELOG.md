@@ -3,12 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.6.0...@hitachivantara/uikit-react-code-editor@5.7.0) (2024-09-30)
-
-### Features
-
-- **CodeEditor:** add SQL support ([#4353](https://github.com/lumada-design/hv-uikit-react/issues/4353)) ([377c0e8](https://github.com/lumada-design/hv-uikit-react/commit/377c0e81b4a8ce697c96617f223ff4a509fa6807))
-
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.5.0...@hitachivantara/uikit-react-code-editor@5.6.0) (2024-09-23)
 
 ### Features
