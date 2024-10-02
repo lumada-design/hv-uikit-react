@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   createClasses,
   ExtractNames,
@@ -7,6 +7,7 @@ import {
   isKey,
   theme,
   useControlled,
+  useEnhancedEffect,
 } from "@hitachivantara/uikit-react-core";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 
@@ -149,7 +150,7 @@ export const ToolbarTabEditor = ({
   };
 
   // Update cursor when value updates: otherwise it goes to the start
-  useLayoutEffect(() => {
+  useEnhancedEffect(() => {
     if (isEditing) moveCursorToEnd();
   }, [isEditing, value]);
 

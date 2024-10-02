@@ -36,6 +36,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
 
   // colors
   colors: {
+    ...baseTheme.colors,
     inherit: "inherit",
     current: "currentColor",
     transparent: "transparent",

@@ -1,5 +1,7 @@
 import * as React from "react"; // this can be optimized when react 17 support is dropped
 
+import { useEnhancedEffect } from "./useEnhancedEffect";
+
 /** Credit: https://github.com/radix-ui/primitives/blob/main/packages/react/id/src/id.tsx
  *  Modified slightly to suit our purposes.
  */
@@ -19,7 +21,7 @@ export const useUniqueId = (
 ): string => {
   const [id, setId] = React.useState<string | undefined>(useReactId());
 
-  React.useLayoutEffect(() => {
+  useEnhancedEffect(() => {
     // eslint-disable-next-line no-plusplus
     if (!deterministicId) setId((reactId) => reactId ?? String(count++));
   }, [deterministicId, idPrefix]);

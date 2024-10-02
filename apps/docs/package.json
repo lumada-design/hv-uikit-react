@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "npx serve dist"
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
@@ -16,16 +16,25 @@
     "@hitachivantara/uikit-react-pentaho": "*",
     "@hitachivantara/uikit-react-viz": "*",
     "@hitachivantara/uikit-styles": "*",
-    "next": "^14.0.4",
-    "nextra": "^2.13.2",
-    "nextra-theme-docs": "^2.13.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@hitachivantara/uikit-uno-preset": "*",
+    "@unocss/reset": "^0.62.4",
+    "next": "^14.2.7",
+    "nextra": "3.0.0-alpha.22",
+    "nextra-theme-docs": "3.0.0-alpha.22",
+    "prism-react-renderer": "^2.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-live-runner": "^1.0.7",
+    "react-runner": "^1.0.5",
+    "rehype-mdx-code-props": "^3.0.1",
+    "unocss": "^0.62.4"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
+    "@types/node": "22.5.2",
+    "@types/react": "^18.3.5",
+    "@unocss/webpack": "^0.62.4",
+    "autoprefixer": "^10.4.20",
     "string-replace-loader": "^3.1.0",
-    "typescript": "^5.4.2"
+    "typescript": "^5.5.4"
   }
 }

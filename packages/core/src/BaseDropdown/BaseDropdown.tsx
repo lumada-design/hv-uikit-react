@@ -29,6 +29,7 @@ import { useForkRef } from "../hooks/useForkRef";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
+import { getDocument } from "../utils/document";
 import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
@@ -303,6 +304,10 @@ const BaseDropdown = forwardRef<
       : defaultHeaderElement;
 
   const containerComponent = (() => {
+    if (!getDocument()) {
+      return null;
+    }
+
     /**
      *  Handle keyboard inside children container.
      */

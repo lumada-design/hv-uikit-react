@@ -1,0 +1,73 @@
+import { Card, Cards, Steps, Tabs } from "nextra/components";
+
+# Get Started
+
+## Play Online
+
+If you just want to play around with **UI Kit** without setting up a project, you can use one of our online sandboxes:
+
+<Cards>
+  <Cards.Card
+    title="Open on StackBlitz →"
+    href="https://stackblitz.com/github.com/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts"
+  />
+  <Cards.Card
+    title="Open on CodeSandbox →"
+    href="https://codesandbox.io/p/sandbox/github.com/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts"
+  />
+</Cards>
+
+## Automatic Installation
+
+Using the [CLI]() is the easiest way to start a **UI Kit** project. You can initialize your project directly via the CLI:
+
+```bash
+npx @hitachivantara/hv-uikit-cli@latest create
+```
+
+## Manual Installation
+
+If you prefer not to use the CLI, follow these steps to manually set up **UI Kit** in your project:
+
+<Steps>
+
+### Install packages
+
+To use **UI Kit** in your project, run the following command:  
+[`Emotion`](https://emotion.sh/docs/introduction) and [`MUI`](https://mui.com/) are peer dependencies and must be included in your project.
+
+```bash
+npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
+```
+
+### Provider Setup
+
+It is essential to add the **UI Kit** Provider at the root of your application.
+
+```javascript
+// 1. import `Provider` component
+import { HvProvider } from "@hitachivantara/uikit-react-core";
+
+function App() {
+  // 2. Wrap Provider at the root of your app
+  return (
+    <HvProvider>
+      <YourApplication />
+    </HvProvider>
+  );
+}
+```
+
+### Use the components
+
+After setting up the provider, you can start using the components provided.
+
+```javascript
+import { HvTypography } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => {
+  return <HvTypography>Hello from the NEXT UI team!</HvTypography>;
+};
+```
+
+</Steps>

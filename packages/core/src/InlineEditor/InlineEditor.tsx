@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -8,6 +8,7 @@ import {
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
+import { useEnhancedEffect } from "../hooks/useEnhancedEffect";
 import { HvInput, HvInputProps } from "../Input";
 import {
   fixedForwardRef,
@@ -93,7 +94,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   const typographyStyles = activeTheme?.typography[variant] || {};
   const { lineHeight } = typographyStyles;
 
-  useLayoutEffect(() => {
+  useEnhancedEffect(() => {
     const input = inputRef.current;
     if (editMode && input) {
       input.focus();
