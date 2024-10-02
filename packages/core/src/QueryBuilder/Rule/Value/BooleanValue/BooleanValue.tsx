@@ -28,7 +28,7 @@ export const BooleanValue = ({ id, value = true }: BooleanValueProps) => {
       values={values}
       readOnly={readOnly}
       onChange={(selected) => {
-        if (selected && !Array.isArray(selected) && selected.id) {
+        if (selected?.id) {
           dispatchAction({
             type: "set-value",
             id,

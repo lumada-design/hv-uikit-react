@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
@@ -19,6 +19,7 @@ import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListValue } from "../List";
+import { fixedForwardRef } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Dropdown.styles";
@@ -31,8 +32,11 @@ export type HvDropdownClasses = ExtractNames<typeof useClasses>;
 
 export type HvDropdownStatus = "standBy" | "valid" | "invalid";
 
-export interface HvDropdownProps
-  extends Omit<HvFormElementProps, "value" | "onChange">,
+export interface HvDropdownProps<
+  // TODO: make default `false` in v6
+  Multiple extends boolean = boolean,
+  OptionValue extends HvListValue = HvListValue,
+> extends Omit<HvFormElementProps, "value" | "onChange">,
     Pick<
       HvBaseDropdownProps,
       | "placement"
@@ -74,15 +78,17 @@ export interface HvDropdownProps
   /**
    * The callback fired when the value changes.
    */
-  onChange?: (selected: HvListValue | HvListValue[] | undefined) => void;
+  onChange?: (
+    selected: Multiple extends true ? OptionValue[] : OptionValue | undefined,
+  ) => void;
   /**
    * The list to be rendered by the dropdown.
    */
-  values?: HvListValue[];
+  values?: OptionValue[];
   /**
    * If `true` the dropdown is multiSelect, if `false` the dropdown is single select.
    */
-  multiSelect?: boolean;
+  multiSelect?: Multiple;
   /**
    * If `true` the dropdown is rendered with a search bar, if `false` there won't be a search bar.
    */
@@ -176,380 +182,378 @@ export type HvDropdownLabelsProps = HvDropdownLabels;
 /**
  * A dropdown list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
  */
-export const HvDropdown = forwardRef<HTMLDivElement, HvDropdownProps>(
-  (props, ref) => {
-    const {
-      classes: classesProp,
-      className,
+export const HvDropdown = fixedForwardRef(function HvDropdown<
+  Multiple extends boolean = false,
+  OptionValue extends HvListValue = HvListValue,
+>(
+  props: HvDropdownProps<Multiple, OptionValue>,
+  ref: React.Ref<HTMLDivElement>,
+) {
+  const {
+    classes: classesProp,
+    className,
 
-      id,
-      name,
+    id,
+    name,
 
-      required = false,
-      disabled = false,
-      readOnly = false,
+    required = false,
+    disabled = false,
+    readOnly = false,
 
-      label,
-      "aria-label": ariaLabel,
-      "aria-labelledby": ariaLabelledBy,
-      description,
-      "aria-describedby": ariaDescribedBy,
+    label,
+    "aria-label": ariaLabel,
+    "aria-labelledby": ariaLabelledBy,
+    description,
+    "aria-describedby": ariaDescribedBy,
 
-      placeholder = "Select...",
+    placeholder = "Select...",
 
-      onChange,
+    onChange,
 
-      status,
-      statusMessage,
-      "aria-errormessage": ariaErrorMessage,
+    status,
+    statusMessage,
+    "aria-errormessage": ariaErrorMessage,
 
-      onCancel,
-      onToggle,
-      onClickOutside,
+    onCancel,
+    onToggle,
+    onClickOutside,
 
-      onFocus,
-      onBlur,
+    onFocus,
+    onBlur,
 
-      values,
-      multiSelect = false,
-      showSearch = false,
-      expanded,
-      defaultExpanded = false,
-      notifyChangesOnFirstRender = false,
-      labels: labelsProp,
-      hasTooltips = false,
-      disablePortal = false,
-      singleSelectionToggle = true,
-      placement,
-      variableWidth = false,
-      popperProps = {},
-      height,
-      maxHeight,
-      virtualized = false,
-      baseDropdownProps = {},
-      listProps = {},
-      ...others
-    } = useDefaultProps("HvDropdown", props);
+    values,
+    multiSelect = false,
+    showSearch,
+    expanded,
+    defaultExpanded,
+    notifyChangesOnFirstRender,
+    labels: labelsProp,
+    hasTooltips,
+    disablePortal,
+    singleSelectionToggle = true,
+    placement,
+    variableWidth,
+    popperProps = {},
+    height,
+    maxHeight,
+    virtualized,
+    baseDropdownProps = {},
+    listProps = {},
+    ...others
+  } = useDefaultProps("HvDropdown", props);
 
-    const { classes, cx } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
-    const labels = useLabels(DEFAULT_LABELS, labelsProp);
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-    const elementId = useUniqueId(id);
+  const elementId = useUniqueId(id);
 
-    const [validationState, setValidationState] = useControlled<HvFormStatus>(
-      status,
-      "standBy",
-    );
+  const [validationState, setValidationState] = useControlled<HvFormStatus>(
+    status,
+    "standBy",
+  );
 
-    const [validationMessage] = useControlled(statusMessage, "Required");
+  const [validationMessage] = useControlled(statusMessage, "Required");
 
-    const [isOpen, setIsOpen] = useControlled(
-      expanded,
-      Boolean(defaultExpanded),
-    );
-    const [selectionLabel, setSelectionLabel] = useState(
+  const [isOpen, setIsOpen] = useControlled(expanded, Boolean(defaultExpanded));
+  const [selectionLabel, setSelectionLabel] = useState(
+    getSelectionLabel(labels, placeholder, multiSelect, values),
+  );
+
+  const [internalValues, setInternalValues] = useState(values);
+
+  // Hack - Keeping track of internal values for validation purposes since useState is async
+  const internalValuesRef = useRef(values);
+
+  useEffect(() => {
+    setInternalValues(values);
+    internalValuesRef.current = values;
+  }, [values]);
+
+  useEffect(() => {
+    setSelectionLabel(
       getSelectionLabel(labels, placeholder, multiSelect, values),
     );
+  }, [labels, multiSelect, placeholder, values]);
 
-    const [internalValues, setInternalValues] = useState(values);
-
-    // Hack - Keeping track of internal values for validation purposes since useState is async
-    const internalValuesRef = useRef(values);
-
-    useEffect(() => {
-      setInternalValues(values);
-      internalValuesRef.current = values;
-    }, [values]);
-
-    useEffect(() => {
-      setSelectionLabel(
-        getSelectionLabel(labels, placeholder, multiSelect, values),
-      );
-    }, [labels, multiSelect, placeholder, values]);
-
-    if (import.meta.env.DEV && virtualized && !height) {
-      // eslint-disable-next-line no-console
-      console.error(
-        "Dropdown/List in virtualized mode requires a height. Please define it.",
-      );
-    }
-
-    const dropdownHeaderRef = useRef<HTMLDivElement>();
-
-    const {
-      ref: refProp,
-      dropdownHeaderRef: dropdownHeaderRefProp,
-      ...otherBaseDropdownProps
-    } = baseDropdownProps;
-    const headerForkedRef = useForkRef(
-      dropdownHeaderRefProp,
-      dropdownHeaderRef,
+  if (import.meta.env.DEV && virtualized && !height) {
+    // eslint-disable-next-line no-console
+    console.error(
+      "Dropdown/List in virtualized mode requires a height. Please define it.",
     );
+  }
 
-    const dropdownForkedRef = useForkRef(ref, refProp);
+  const dropdownHeaderRef = useRef<HTMLDivElement>();
 
-    const handleToggle: HvBaseDropdownProps["onToggle"] = (event, open) => {
-      onToggle?.(event, open);
+  const {
+    ref: refProp,
+    dropdownHeaderRef: dropdownHeaderRefProp,
+    ...otherBaseDropdownProps
+  } = baseDropdownProps;
+  const headerForkedRef = useForkRef(dropdownHeaderRefProp, dropdownHeaderRef);
 
-      setIsOpen(open);
+  const dropdownForkedRef = useForkRef(ref, refProp);
 
-      if (!open) {
-        // also run built-in validation when closing without changes
-        // as the user "touched" the input
-        setValidationState(() => {
-          // this will only run if status is uncontrolled
-          if (required) {
-            const hasSelection =
-              getSelected(internalValuesRef.current).length > 0;
+  const handleToggle: HvBaseDropdownProps["onToggle"] = (event, open) => {
+    onToggle?.(event, open);
 
-            if (!hasSelection) {
-              return "invalid";
-            }
-          }
+    setIsOpen(open);
 
-          return "valid";
-        });
-      }
-    };
+    if (!open) {
+      // also run built-in validation when closing without changes
+      // as the user "touched" the input
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required) {
+          const hasSelection =
+            getSelected(internalValuesRef.current).length > 0;
 
-    /** Applies the selected values to the state */
-    const handleSelection: HvDropdownListProps["onChange"] = (
-      listValues,
-      commitChanges,
-      toggle,
-      notifyChanges = true,
-    ) => {
-      const selected = getSelected(listValues);
-
-      if (commitChanges) {
-        setInternalValues(listValues);
-        internalValuesRef.current = listValues;
-
-        setSelectionLabel(
-          getSelectionLabel(labels, placeholder, multiSelect, listValues),
-        );
-
-        setValidationState(() => {
-          // this will only run if status is uncontrolled
-          if (required && selected.length === 0) {
+          if (!hasSelection) {
             return "invalid";
           }
+        }
 
-          return "valid";
-        });
-      }
-      if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
-      if (toggle) {
-        handleToggle(undefined as any, false);
+        return "valid";
+      });
+    }
+  };
 
-        // focus-ring won't be visible even if using the keyboard:
-        // https://github.com/WICG/focus-visible/issues/88
-        dropdownHeaderRef.current?.focus({ preventScroll: true });
-      }
-    };
+  /** Applies the selected values to the state */
+  const handleSelection: HvDropdownListProps["onChange"] = (
+    listValues,
+    commitChanges,
+    toggle,
+    notifyChanges = true,
+  ) => {
+    const selected = getSelected(listValues);
 
-    /**
-     * Handles the `Cancel` action. Both single and ranged modes are handled here.
-     */
-    const handleCancel: HvDropdownListProps["onCancel"] = (evt) => {
-      onCancel?.(evt as any);
+    if (commitChanges) {
+      setInternalValues(listValues as any);
+      internalValuesRef.current = listValues as any;
 
-      handleToggle(evt as any, false);
+      setSelectionLabel(
+        getSelectionLabel(labels, placeholder, multiSelect, listValues),
+      );
+
+      setValidationState(() => {
+        // this will only run if status is uncontrolled
+        if (required && selected.length === 0) {
+          return "invalid";
+        }
+
+        return "valid";
+      });
+    }
+    if (notifyChanges) {
+      onChange?.((multiSelect ? selected : selected[0]) as any);
+    }
+    if (toggle) {
+      handleToggle(undefined as any, false);
 
       // focus-ring won't be visible even if using the keyboard:
       // https://github.com/WICG/focus-visible/issues/88
       dropdownHeaderRef.current?.focus({ preventScroll: true });
-    };
-
-    const handleClickOutside: HvBaseDropdownProps["onClickOutside"] = (evt) => {
-      onClickOutside?.(evt);
-      onCancel?.(evt);
-    };
-
-    const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
-      containerRef,
-    ) => {
-      const inputs = containerRef?.getElementsByTagName("input");
-      if (inputs && inputs.length > 0) {
-        inputs[0].focus();
-        return;
-      }
-      const listItems =
-        containerRef != null
-          ? [...containerRef.getElementsByTagName("li")]
-          : [];
-      listItems.every((listItem) => {
-        if (listItem.tabIndex >= 0) {
-          listItem.focus();
-          return false;
-        }
-        return true;
-      });
-    };
-
-    const buildHeaderLabel = () => {
-      const hasSelection = getSelected(internalValues).length > 0;
-      return labels?.select || !multiSelect ? (
-        <HvTypography
-          component="div"
-          variant="body"
-          className={cx(classes.placeholder, {
-            [classes.selectionDisabled]: disabled,
-            [classes.placeholderClosed]: !(isOpen || hasSelection),
-          })}
-        >
-          {selectionLabel.selected}
-        </HvTypography>
-      ) : (
-        <HvTypography
-          component="div"
-          className={cx(classes.placeholder, {
-            [classes.selectionDisabled]: disabled,
-          })}
-          variant="body"
-        >
-          <b>{selectionLabel.selected}</b>
-          {` ${labels?.multiSelectionConjunction} ${selectionLabel.total}`}
-        </HvTypography>
-      );
-    };
-
-    const hasLabel = label != null;
-    const hasDescription = description != null;
-
-    // the error message area will only be created if:
-    // - an external element that provides an error message isn't identified via aria-errormessage AND
-    //   - both status and statusMessage properties are being controlled OR
-    //   - status is uncontrolled and required is true
-    const canShowError =
-      ariaErrorMessage == null &&
-      ((status !== undefined && statusMessage !== undefined) ||
-        (status === undefined && required));
-
-    const isStateInvalid = isInvalid(validationState);
-
-    let errorMessageId;
-    if (isStateInvalid) {
-      errorMessageId = canShowError
-        ? setId(elementId, "error")
-        : ariaErrorMessage;
     }
+  };
 
-    return (
-      <HvFormElement
-        id={id}
-        name={name}
-        status={validationState}
+  /**
+   * Handles the `Cancel` action. Both single and ranged modes are handled here.
+   */
+  const handleCancel: HvDropdownListProps["onCancel"] = (evt) => {
+    onCancel?.(evt as any);
+
+    handleToggle(evt as any, false);
+
+    // focus-ring won't be visible even if using the keyboard:
+    // https://github.com/WICG/focus-visible/issues/88
+    dropdownHeaderRef.current?.focus({ preventScroll: true });
+  };
+
+  const handleClickOutside: HvBaseDropdownProps["onClickOutside"] = (evt) => {
+    onClickOutside?.(evt);
+    onCancel?.(evt);
+  };
+
+  const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
+    containerRef,
+  ) => {
+    const inputs = containerRef?.getElementsByTagName("input");
+    if (inputs && inputs.length > 0) {
+      inputs[0].focus();
+      return;
+    }
+    const listItems =
+      containerRef != null ? [...containerRef.getElementsByTagName("li")] : [];
+    listItems.every((listItem) => {
+      if (listItem.tabIndex >= 0) {
+        listItem.focus();
+        return false;
+      }
+      return true;
+    });
+  };
+
+  const buildHeaderLabel = () => {
+    const hasSelection = getSelected(internalValues).length > 0;
+    return labels?.select || !multiSelect ? (
+      <HvTypography
+        component="div"
+        variant="body"
+        className={cx(classes.placeholder, {
+          [classes.selectionDisabled]: disabled,
+          [classes.placeholderClosed]: !(isOpen || hasSelection),
+        })}
+      >
+        {selectionLabel.selected}
+      </HvTypography>
+    ) : (
+      <HvTypography
+        component="div"
+        className={cx(classes.placeholder, {
+          [classes.selectionDisabled]: disabled,
+        })}
+        variant="body"
+      >
+        <b>{selectionLabel.selected}</b>
+        {` ${labels?.multiSelectionConjunction} ${selectionLabel.total}`}
+      </HvTypography>
+    );
+  };
+
+  const hasLabel = label != null;
+  const hasDescription = description != null;
+
+  // the error message area will only be created if:
+  // - an external element that provides an error message isn't identified via aria-errormessage AND
+  //   - both status and statusMessage properties are being controlled OR
+  //   - status is uncontrolled and required is true
+  const canShowError =
+    ariaErrorMessage == null &&
+    ((status !== undefined && statusMessage !== undefined) ||
+      (status === undefined && required));
+
+  const isStateInvalid = isInvalid(validationState);
+
+  let errorMessageId;
+  if (isStateInvalid) {
+    errorMessageId = canShowError
+      ? setId(elementId, "error")
+      : ariaErrorMessage;
+  }
+
+  return (
+    <HvFormElement
+      id={id}
+      name={name}
+      status={validationState}
+      disabled={disabled}
+      readOnly={readOnly}
+      required={required}
+      className={cx(
+        classes.root,
+        {
+          [classes.disabled]: disabled,
+        },
+        className,
+      )}
+      {...others}
+    >
+      {(hasLabel || hasDescription) && (
+        <div className={classes.labelContainer}>
+          {hasLabel && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              label={label}
+              className={classes.label}
+            />
+          )}
+
+          {hasDescription && (
+            <HvInfoMessage
+              id={setId(elementId, "description")}
+              className={classes.description}
+            >
+              {description}
+            </HvInfoMessage>
+          )}
+        </div>
+      )}
+      <HvBaseDropdown
+        ref={dropdownForkedRef}
+        id={setId(id, "dropdown")}
+        classes={{
+          root: cx(classes.dropdown, {
+            [classes.readOnly]: readOnly,
+          }),
+          arrow: classes.arrow,
+          header: cx(classes.dropdownHeader, {
+            [classes.dropdownHeaderInvalid]: isStateInvalid,
+          }),
+          headerOpen: classes.dropdownHeaderOpen,
+        }}
+        expanded={isOpen}
         disabled={disabled}
         readOnly={readOnly}
         required={required}
-        className={cx(
-          classes.root,
-          {
-            [classes.disabled]: disabled,
-          },
-          className,
-        )}
-        {...others}
+        disablePortal={disablePortal}
+        placement={placement}
+        popperProps={popperProps}
+        placeholder={buildHeaderLabel()}
+        onToggle={handleToggle}
+        onClickOutside={handleClickOutside}
+        onContainerCreation={setFocusToContent}
+        role="combobox"
+        variableWidth={variableWidth}
+        aria-label={ariaLabel}
+        aria-labelledby={
+          [label && setId(elementId, "label"), ariaLabelledBy]
+            .join(" ")
+            .trim() || undefined
+        }
+        aria-invalid={isStateInvalid ? true : undefined}
+        aria-errormessage={errorMessageId}
+        aria-describedby={
+          [description && setId(elementId, "description"), ariaDescribedBy]
+            .join(" ")
+            .trim() || undefined
+        }
+        onFocus={onFocus}
+        onBlur={onBlur}
+        dropdownHeaderRef={headerForkedRef}
+        {...otherBaseDropdownProps}
       >
-        {(hasLabel || hasDescription) && (
-          <div className={classes.labelContainer}>
-            {hasLabel && (
-              <HvLabel
-                id={setId(elementId, "label")}
-                label={label}
-                className={classes.label}
-              />
-            )}
-
-            {hasDescription && (
-              <HvInfoMessage
-                id={setId(elementId, "description")}
-                className={classes.description}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </div>
-        )}
-        <HvBaseDropdown
-          ref={dropdownForkedRef}
-          id={setId(id, "dropdown")}
+        <HvDropdownList
+          id={setId(elementId, "values")}
           classes={{
-            root: cx(classes.dropdown, {
-              [classes.readOnly]: readOnly,
-            }),
-            arrow: classes.arrow,
-            header: cx(classes.dropdownHeader, {
-              [classes.dropdownHeaderInvalid]: isStateInvalid,
-            }),
-            headerOpen: classes.dropdownHeaderOpen,
+            rootList: classes.rootList,
+            dropdownListContainer: classes.dropdownListContainer,
           }}
-          expanded={isOpen}
-          disabled={disabled}
-          readOnly={readOnly}
-          required={required}
-          disablePortal={disablePortal}
-          placement={placement}
-          popperProps={popperProps}
-          placeholder={buildHeaderLabel()}
-          onToggle={handleToggle}
-          onClickOutside={handleClickOutside}
-          onContainerCreation={setFocusToContent}
-          role="combobox"
-          variableWidth={variableWidth}
+          values={internalValues}
+          multiSelect={multiSelect}
+          showSearch={showSearch}
+          onChange={handleSelection}
+          onCancel={handleCancel}
+          labels={labels}
+          notifyChangesOnFirstRender={notifyChangesOnFirstRender}
+          hasTooltips={hasTooltips}
+          singleSelectionToggle={singleSelectionToggle}
           aria-label={ariaLabel}
-          aria-labelledby={
-            [label && setId(elementId, "label"), ariaLabelledBy]
-              .join(" ")
-              .trim() || undefined
-          }
-          aria-invalid={isStateInvalid ? true : undefined}
-          aria-errormessage={errorMessageId}
-          aria-describedby={
-            [description && setId(elementId, "description"), ariaDescribedBy]
-              .join(" ")
-              .trim() || undefined
-          }
-          onFocus={onFocus}
-          onBlur={onBlur}
-          dropdownHeaderRef={headerForkedRef}
-          {...otherBaseDropdownProps}
+          aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
+          height={height}
+          maxHeight={maxHeight}
+          virtualized={virtualized}
+          {...listProps}
+        />
+      </HvBaseDropdown>
+      {canShowError && (
+        <HvWarningText
+          id={setId(elementId, "error")}
+          disableBorder
+          className={classes.error}
         >
-          <HvDropdownList
-            id={setId(elementId, "values")}
-            classes={{
-              rootList: classes.rootList,
-              dropdownListContainer: classes.dropdownListContainer,
-            }}
-            values={internalValues}
-            multiSelect={multiSelect}
-            showSearch={showSearch}
-            onChange={handleSelection}
-            onCancel={handleCancel}
-            labels={labels}
-            notifyChangesOnFirstRender={notifyChangesOnFirstRender}
-            hasTooltips={hasTooltips}
-            singleSelectionToggle={singleSelectionToggle}
-            aria-label={ariaLabel}
-            aria-labelledby={hasLabel ? setId(elementId, "label") : undefined}
-            height={height}
-            maxHeight={maxHeight}
-            virtualized={virtualized}
-            {...listProps}
-          />
-        </HvBaseDropdown>
-        {canShowError && (
-          <HvWarningText
-            id={setId(elementId, "error")}
-            disableBorder
-            className={classes.error}
-          >
-            {validationMessage}
-          </HvWarningText>
-        )}
-      </HvFormElement>
-    );
-  },
-);
+          {validationMessage}
+        </HvWarningText>
+      )}
+    </HvFormElement>
+  );
+});

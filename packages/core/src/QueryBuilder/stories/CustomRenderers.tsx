@@ -158,11 +158,7 @@ const SelectRenderer = ({
           placeholder={selectRenderers[attribute].placeholder}
           values={values}
           onChange={(selected) => {
-            if (selected && !Array.isArray(selected) && selected.id) {
-              handleUpdateRange("start", selected.id as string);
-            } else {
-              handleUpdateRange("start");
-            }
+            handleUpdateRange("start", selected?.id);
           }}
           maxHeight={200}
         />
@@ -172,11 +168,7 @@ const SelectRenderer = ({
           placeholder={selectRenderers[attribute].placeholder}
           values={values}
           onChange={(selected) => {
-            if (selected && !Array.isArray(selected) && selected.id) {
-              handleUpdateRange("end", selected.id as string);
-            } else {
-              handleUpdateRange("end");
-            }
+            handleUpdateRange("end", selected?.id);
           }}
           maxHeight={200}
         />
@@ -191,15 +183,11 @@ const SelectRenderer = ({
       placeholder={selectRenderers[attribute].placeholder}
       values={values}
       onChange={(selected) => {
-        if (selected && !Array.isArray(selected) && selected.id) {
-          dispatchAction({
-            type: "set-value",
-            id,
-            value: selected.id,
-          });
-        } else {
-          dispatchAction({ type: "set-value", id, value: null });
-        }
+        dispatchAction({
+          type: "set-value",
+          id,
+          value: selected?.id || null,
+        });
       }}
       maxHeight={200}
     />

@@ -48,7 +48,7 @@ export const Operator = ({
       disabled={values.length === 0}
       readOnly={readOnly}
       onChange={(selected) => {
-        if (selected && !Array.isArray(selected) && selected.id) {
+        if (selected?.id) {
           dispatchAction({
             type: "set-operator",
             id,

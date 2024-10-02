@@ -5,7 +5,7 @@ const values = [...Array(80).keys()].map((i) => ({
   selected: i % 6 === 0,
 }));
 
-export const MultiSelection = (props: HvDropdownProps) => (
+export const MultiSelection = (props: HvDropdownProps<boolean, any>) => (
   <HvDropdown
     multiSelect
     showSearch

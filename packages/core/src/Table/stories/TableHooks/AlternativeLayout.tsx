@@ -186,9 +186,7 @@ export const AlternativeLayout = () => {
             label="Select layout"
             values={alternativeLayouts}
             multiSelect={false}
-            onChange={(item) =>
-              setLayoutHook(() => (item as HvListValue)?.hook)
-            }
+            onChange={(item) => setLayoutHook(() => item?.hook)}
           />
         </div>
         <div style={{ display: "flex", alignItems: "center", marginLeft: 20 }}>

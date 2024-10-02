@@ -97,7 +97,7 @@ export const UnitSlider = ({
                 }),
               }}
               onChange={(item) => {
-                if (item) onUnitChange?.(item as HvListValue);
+                if (item) onUnitChange?.(item);
               }}
             />
           )}

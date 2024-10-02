@@ -2,7 +2,6 @@ import { lazy, Suspense, useState } from "react";
 import {
   HvBaseTheme,
   HvDropdown,
-  HvListValue,
   HvLoading,
   HvSnackbar,
   HvSnackbarProps,
@@ -81,7 +80,7 @@ const Sidebar = () => {
                 selected: name === selectedTheme,
               }))}
               onChange={(base) => {
-                handleThemeChange((base as HvListValue)?.value, selectedMode);
+                handleThemeChange(base?.value as any, selectedMode);
               }}
             />
             <HvTypography variant="label">Mode:</HvTypography>
@@ -91,9 +90,7 @@ const Sidebar = () => {
                 label: name,
                 selected: name === selectedMode,
               }))}
-              onChange={(mode) =>
-                changeTheme(selectedTheme, (mode as HvListValue)?.value)
-              }
+              onChange={(mode) => changeTheme(selectedTheme, mode?.value)}
             />
           </div>
           <div>

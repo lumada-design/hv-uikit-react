@@ -218,7 +218,7 @@ export function hvDropdownColumn<
   placeholder: string,
   disabledPlaceholder: string,
   onChange?: (identifier: string, value: HvListValue) => void,
-  dropdownProps?: HvDropdownProps,
+  dropdownProps?: HvDropdownProps<false>,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {
@@ -229,12 +229,10 @@ export function hvDropdownColumn<
         <HvDropdownColumnCell
           values={value}
           placeholder={disabled ? disabledPlaceholder : placeholder}
-          onChange={(val) => onChange?.(row.id, val)}
+          onChange={(val) => onChange?.(row.id, val!)}
           disabled={disabled}
-          dropdownProps={{
-            "aria-labelledby": setId(id, column.id) || column.id || id, // TODO - to be reviewed because it doesn't make much sense
-            ...dropdownProps,
-          }}
+          aria-labelledby={setId(id, column.id) || column.id || id} // TODO - to be reviewed because it doesn't make much sense
+          {...dropdownProps}
         />
       );
     },
