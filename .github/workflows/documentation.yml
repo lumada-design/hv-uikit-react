@@ -14,7 +14,7 @@ env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
   PUBLISH_STORYBOOK: ${{ inputs.publish-storybook }}
   PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
-  PUBLISH_DOCS: false
+  PUBLISH_DOCS: true
 
 jobs:
   build-artifacts:
@@ -59,14 +59,14 @@ jobs:
         if: ${{ env.PUBLISH_DOCS == 'true' }}
         env:
           NEXTRA_BASE_PATH: /uikit-docs/${{ env.PUBLISH_FOLDER }}
-        run: npm run build:nextra && touch ${{ github.workspace }}/apps/docs/out/.nojekyll
+        run: npm run build:nextra && touch ${{ github.workspace }}/apps/docs/dist/.nojekyll
 
       - name: Archive Nextra Docs
         if: ${{ env.PUBLISH_DOCS == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: nextra-docs
-          path: ${{ github.workspace }}/apps/docs/out
+          path: ${{ github.workspace }}/apps/docs/dist
           retention-days: 2
 
   deploy-artifacts:
