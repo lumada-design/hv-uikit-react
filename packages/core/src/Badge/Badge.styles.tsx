@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
   badgeContainer: { width: 0 },
   badgePosition: {},
   badge: {
-    borderRadius: theme.space.xs,
+    borderRadius: theme.space.sm,
     backgroundColor: theme.colors.secondary,
     float: "left",
     minHeight: "8px",

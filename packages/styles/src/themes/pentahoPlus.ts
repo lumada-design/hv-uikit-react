@@ -363,6 +363,16 @@ const pentahoPlus = makeTheme((theme) => ({
     base: "6px",
   },
   components: {
+    HvBadge: {
+      classes: {
+        showCount: {
+          padding: "2px 5px",
+        },
+        showLabel: {
+          padding: "2px 5px",
+        },
+      },
+    },
     HvBaseCheckBox: {
       classes: {
         root: {
