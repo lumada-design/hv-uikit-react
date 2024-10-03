@@ -1,3 +1,4 @@
+import React, { forwardRef } from "react";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -43,7 +44,10 @@ export interface HvGlobalActionsProps
  * Global Actions are actions that affect the entire page they live in.
  * They should persist while scrolling down the screen.
  */
-export const HvGlobalActions = (props: HvGlobalActionsProps) => {
+export const HvGlobalActions = forwardRef<
+  React.ComponentRef<"div">,
+  HvGlobalActionsProps
+>((props, ref) => {
   const {
     children,
     classes: classesProp,
@@ -67,6 +71,7 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
 
   return (
     <div
+      ref={ref}
       className={cx(
         classes.root,
         {
@@ -106,4 +111,4 @@ export const HvGlobalActions = (props: HvGlobalActionsProps) => {
       </div>
     </div>
   );
-};
+});

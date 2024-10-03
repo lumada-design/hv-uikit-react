@@ -65,7 +65,11 @@ export interface HvAvatarProps extends HvBaseProps {
  * Avatars can be used to represent a user or a brand.
  * They can show an image, an icon or the initial letters of a name, for example.
  */
-export const HvAvatar = forwardRef<any, HvAvatarProps>((props, ref) => {
+export const HvAvatar = forwardRef<
+  // no-indent
+  React.ComponentRef<"div">,
+  HvAvatarProps
+>((props, ref) => {
   const {
     className,
     style,

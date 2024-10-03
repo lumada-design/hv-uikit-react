@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -27,7 +28,11 @@ export interface HvHeaderProps extends HvBaseProps {
 /**
  * Header component is used to render a header bar with logo and brand name, navigation and actions.
  */
-export const HvHeader = (props: HvHeaderProps) => {
+export const HvHeader = forwardRef<
+  // no-indent
+  React.ComponentRef<"header">,
+  HvHeaderProps
+>((props, ref) => {
   const {
     className,
     classes: classesProp,
@@ -40,6 +45,7 @@ export const HvHeader = (props: HvHeaderProps) => {
 
   return (
     <header
+      ref={ref}
       style={{ position }}
       className={cx(
         classes.root,
@@ -52,4 +58,4 @@ export const HvHeader = (props: HvHeaderProps) => {
       <div className={classes.header}>{children}</div>
     </header>
   );
-};
+});

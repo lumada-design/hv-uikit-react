@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   mergeStyles,
   useDefaultProps,
@@ -28,7 +29,10 @@ export interface HvLoadingContainerProps
  *  <MyComponent>
  * </HvLoadingContainer>
  * */
-export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
+export const HvLoadingContainer = forwardRef<
+  React.ComponentRef<"div">,
+  HvLoadingContainerProps
+>((props, ref) => {
   const {
     children,
     className,
@@ -46,7 +50,7 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
     ariaLabelProp || (typeof label === "string" && label) || "Loading";
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
       <HvLoading
         className={classes.loading}
         role="progressbar"
@@ -61,4 +65,4 @@ export const HvLoadingContainer = (props: HvLoadingContainerProps) => {
       {children}
     </div>
   );
-};
+});

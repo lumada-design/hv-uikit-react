@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   useTheme,
@@ -59,7 +60,10 @@ export interface HvBulkActionsProps extends HvBaseProps {
  * Bulk Actions allow users to perform an action on a single or multiple items.
  * Also known as "batch production" of multiple items at once, one stage at a time.
  */
-export const HvBulkActions = (props: HvBulkActionsProps) => {
+export const HvBulkActions = forwardRef<
+  React.ComponentRef<"div">,
+  HvBulkActionsProps
+>((props, ref) => {
   const {
     id,
     className,
@@ -111,6 +115,7 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
 
   return (
     <div
+      ref={ref}
       id={id}
       className={cx(
         classes.root,
@@ -165,4 +170,4 @@ export const HvBulkActions = (props: HvBulkActionsProps) => {
       />
     </div>
   );
-};
+});

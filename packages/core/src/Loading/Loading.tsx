@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   mergeStyles,
   useDefaultProps,
@@ -30,7 +31,11 @@ export interface HvLoadingProps extends HvBaseProps {
 /**
  * Loading provides feedback about a process that is taking place in the application.
  */
-export const HvLoading = (props: HvLoadingProps) => {
+export const HvLoading = forwardRef<
+  // no-indent
+  React.ComponentRef<"div">,
+  HvLoadingProps
+>((props, ref) => {
   const {
     color,
     hidden,
@@ -49,6 +54,7 @@ export const HvLoading = (props: HvLoadingProps) => {
 
   return (
     <div
+      ref={ref}
       hidden={!!hidden}
       style={mergeStyles(style, {
         color: getColor(color, small ? "secondary" : "brand"),
@@ -83,4 +89,4 @@ export const HvLoading = (props: HvLoadingProps) => {
       )}
     </div>
   );
-};
+});

@@ -97,7 +97,11 @@ const applyClassNameToElement = (
 /**
  * ListItem description/documentation paragraph
  */
-export const HvListItem = forwardRef<any, HvListItemProps>((props, ref) => {
+export const HvListItem = forwardRef<
+  // no-indent
+  React.ComponentRef<"li">,
+  HvListItemProps
+>((props, ref) => {
   const {
     classes: classesProp,
     className,

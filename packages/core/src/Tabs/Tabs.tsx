@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import Tabs, { TabsProps as MuiTabsProps } from "@mui/material/Tabs";
 import {
   useDefaultProps,
@@ -36,10 +37,14 @@ export interface HvTabsProps extends Omit<MuiTabsProps, "onChange"> {
  * A Tab is a graphical control element that allows multiple documents or panels to be contained within a single window.
  * Tabs can be used as a navigational widget for switching between sets of documents.
  */
-export const HvTabs = (props: HvTabsProps) => {
+export const HvTabs = forwardRef<
+  // no-indent
+  React.ComponentRef<typeof Tabs>,
+  HvTabsProps
+>((props, ref) => {
   const {
     classes: classesProp,
-    floating = false,
+    floating,
     ...others
   } = useDefaultProps("HvTabs", props);
 
@@ -47,6 +52,7 @@ export const HvTabs = (props: HvTabsProps) => {
 
   return (
     <Tabs
+      ref={ref}
       classes={{
         root: cx(classes.root, { [classes.floating]: floating }),
         flexContainer: classes.flexContainer,
@@ -56,4 +62,4 @@ export const HvTabs = (props: HvTabsProps) => {
       {...others}
     />
   );
-};
+});

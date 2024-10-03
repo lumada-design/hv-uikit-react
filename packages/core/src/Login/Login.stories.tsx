@@ -1,18 +1,14 @@
-import { FormEventHandler, forwardRef } from "react";
 import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   dropdownClasses,
   HvButton,
-  HvButtonProps,
   HvCheckBox,
   HvDropdown,
   HvInput,
-  HvInputProps,
   HvLogin,
   HvLoginProps,
   HvTypography,
-  PolymorphicRef,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -29,16 +25,12 @@ const StyledRoot = styled("div")({
   },
 });
 
-const StyledInput = styled((props: HvInputProps) => <HvInput {...props} />)({
+const StyledInput = styled(HvInput)({
   marginTop: 20,
   height: 90,
 });
 
-const StyledButton = styled(
-  forwardRef((props: HvButtonProps, ref?: PolymorphicRef<"button">) => {
-    return <HvButton {...props} ref={ref} />;
-  }),
-)({
+const StyledButton = styled(HvButton)({
   width: 120,
   float: "right",
   marginTop: theme.spacing(8),
@@ -78,21 +70,21 @@ export const Main: StoryObj<HvLoginProps> = {
     ...setupChromatic(["DS5 dawn"], 5000),
   },
   render: () => {
-    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-      event.preventDefault();
-
-      const formData = new FormData(event.currentTarget);
-      const data = Object.fromEntries(formData.entries());
-
-      alert(JSON.stringify(data, null, 2));
-    };
-
     return (
       <HvLogin background="https://lumada-design.github.io/assets/login-bg1.png">
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+
+              const formData = new FormData(event.currentTarget);
+              const data = Object.fromEntries(formData.entries());
+
+              alert(JSON.stringify(data, null, 2));
+            }}
+          >
             <StyledInput
               required
               name="username"
@@ -124,20 +116,20 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
     classes: { control: { disable: true } },
   },
   render: () => {
-    const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-      event.preventDefault();
-      const formData = new FormData(event.currentTarget);
-      const data = Object.fromEntries(formData.entries());
-
-      alert(JSON.stringify(data, null, 2));
-    };
-
     return (
       <HvLogin background="https://lumada-design.github.io/assets/login-bg2.png">
         <StyledRoot>
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const data = Object.fromEntries(formData.entries());
+
+              alert(JSON.stringify(data, null, 2));
+            }}
+          >
             <StyledInput
               required
               name="username"

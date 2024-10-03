@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -15,7 +16,10 @@ export interface HvActionBarProps extends HvBaseProps {
   classes?: HvActionBarClasses;
 }
 
-export const HvActionBar = (props: HvActionBarProps) => {
+export const HvActionBar = forwardRef<
+  React.ComponentRef<"div">,
+  HvActionBarProps
+>((props, ref) => {
   const {
     classes: classesProp,
     className,
@@ -25,8 +29,8 @@ export const HvActionBar = (props: HvActionBarProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
       {children}
     </div>
   );
-};
+});

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -32,7 +32,10 @@ export interface HvEmptyStateProps
 /**
  * Empty states communicate that there’s no information, data or values to display in a given context.
  */
-export const HvEmptyState = (props: HvEmptyStateProps) => {
+export const HvEmptyState = forwardRef<
+  React.ComponentRef<"div">,
+  HvEmptyStateProps
+>((props, ref) => {
   const {
     action,
     icon,
@@ -64,7 +67,7 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
     );
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
       <div
         className={cx(
           classes.container,
@@ -94,4 +97,4 @@ export const HvEmptyState = (props: HvEmptyStateProps) => {
       </div>
     </div>
   );
-};
+});

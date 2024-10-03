@@ -1,11 +1,14 @@
-import { useCallback } from "react";
+import { forwardRef, useCallback } from "react";
 import Slide, { SlideProps } from "@mui/material/Slide";
 import MuiSnackbar, {
   SnackbarProps as MuiSnackbarProps,
   SnackbarCloseReason,
   SnackbarOrigin,
 } from "@mui/material/Snackbar";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { capitalize } from "../utils/helpers";
@@ -79,28 +82,32 @@ export interface HvSnackbarProps
  * One is the HvSnackbar, which wraps all the positioning, transition, auto hide, etc.
  * The other is the HvSnackbarContent, which allows a finer control and customization of the content of the Snackbar.
  */
-export const HvSnackbar = ({
-  classes: classesProp,
-  className,
-  id,
-  open = false,
-  onClose,
-  label = "",
-  anchorOrigin = { vertical: "top", horizontal: "right" },
-  autoHideDuration = 5000,
-  variant = "default",
-  showIcon = false,
-  customIcon = null,
-  action = null,
-  actionCallback, // TODO - remove in v6
-  onAction,
-  transitionDuration = 300,
-  transitionDirection = "left",
-  container,
-  offset = 60,
-  snackbarContentProps,
-  ...others
-}: HvSnackbarProps) => {
+export const HvSnackbar = forwardRef<
+  React.ComponentRef<typeof MuiSnackbar>,
+  HvSnackbarProps
+>((props, ref) => {
+  const {
+    classes: classesProp,
+    className,
+    id,
+    open = false,
+    onClose,
+    label = "",
+    anchorOrigin = { vertical: "top", horizontal: "right" },
+    autoHideDuration = 5000,
+    variant = "default",
+    showIcon = false,
+    customIcon = null,
+    action = null,
+    actionCallback, // TODO - remove in v6
+    onAction,
+    transitionDuration = 300,
+    transitionDirection = "left",
+    container,
+    offset = 60,
+    snackbarContentProps,
+    ...others
+  } = useDefaultProps("HvSnackbar", props);
   const { classes } = useClasses(classesProp);
 
   const anchorOriginOffset = {
@@ -127,6 +134,7 @@ export const HvSnackbar = ({
 
   return (
     <MuiSnackbar
+      ref={ref}
       style={
         anchorOriginOffset[
           `anchorOrigin${capitalize(anchorOrigin.vertical)}` as keyof typeof anchorOriginOffset
@@ -156,4 +164,4 @@ export const HvSnackbar = ({
       />
     </MuiSnackbar>
   );
-};
+});

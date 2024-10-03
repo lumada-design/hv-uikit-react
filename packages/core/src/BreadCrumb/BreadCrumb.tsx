@@ -1,4 +1,4 @@
-import { isValidElement } from "react";
+import { forwardRef, isValidElement } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -38,7 +38,10 @@ export interface HvBreadCrumbProps
 /**
  * A breadcrumb is a graphical control element frequently used as a navigational aid.
  */
-export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
+export const HvBreadCrumb = forwardRef<
+  React.ComponentRef<"nav">,
+  HvBreadCrumbProps
+>((props, ref) => {
   const {
     classes: classesProp,
     className,
@@ -86,7 +89,7 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
       : listPath;
 
   return (
-    <nav id={id} className={cx(classes.root, className)} {...others}>
+    <nav ref={ref} id={id} className={cx(classes.root, className)} {...others}>
       <ol className={classes.orderedList}>
         {listPath.map((elem, index) => {
           const key = `key_${index}`;
@@ -123,4 +126,4 @@ export const HvBreadCrumb = (props: HvBreadCrumbProps) => {
       </ol>
     </nav>
   );
-};
+});

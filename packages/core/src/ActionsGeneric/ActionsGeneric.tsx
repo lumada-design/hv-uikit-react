@@ -1,4 +1,4 @@
-import { isValidElement } from "react";
+import { forwardRef, isValidElement } from "react";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -66,7 +66,10 @@ export interface HvActionsGenericProps extends HvBaseProps {
   classes?: HvActionsGenericClasses;
 }
 
-export const HvActionsGeneric = (props: HvActionsGenericProps) => {
+export const HvActionsGeneric = forwardRef<
+  React.ComponentRef<"div">,
+  HvActionsGenericProps
+>((props, ref) => {
   const {
     id: idProp,
     classes: classesProp,
@@ -182,6 +185,7 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
 
   return (
     <div
+      ref={ref}
       className={cx(
         classes.root,
         { [classes.actionContainer]: actionOverflow },
@@ -194,4 +198,4 @@ export const HvActionsGeneric = (props: HvActionsGenericProps) => {
         : actions.map((action, idx) => renderButton(action, idx))}
     </div>
   );
-};
+});

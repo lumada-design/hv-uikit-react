@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { forwardRef, useCallback, useMemo } from "react";
 import { DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -44,9 +44,12 @@ export interface HvAccordionProps
 /**
  * A accordion is a design element that expands in place to expose hidden information.
  */
-export const HvAccordion = (props: HvAccordionProps) => {
+export const HvAccordion = forwardRef<
+  React.ComponentRef<"div">,
+  HvAccordionProps
+>((props, ref) => {
   const {
-    id: idProp,
+    id,
     className,
     classes: classesProp,
     disabled = false,
@@ -64,7 +67,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const { isOpen, toggleOpen, buttonProps, regionProps } = useExpandable({
-    id: idProp,
+    id,
     expanded,
     disabled,
     defaultExpanded,
@@ -123,7 +126,7 @@ export const HvAccordion = (props: HvAccordionProps) => {
   ]);
 
   return (
-    <div id={idProp} className={cx(classes.root, className)} {...others}>
+    <div ref={ref} id={id} className={cx(classes.root, className)} {...others}>
       {accordionHeader}
       <div
         className={cx(classes.container, { [classes.hidden]: !isOpen })}
@@ -135,4 +138,4 @@ export const HvAccordion = (props: HvAccordionProps) => {
       </div>
     </div>
   );
-};
+});

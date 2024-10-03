@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   mergeStyles,
   useDefaultProps,
@@ -36,7 +37,11 @@ export interface HvCardProps extends HvBaseProps {
  * linked short representation of a conceptual unit. For that reason,
  * this pattern must be used as an entry-point for further information.
  */
-export const HvCard = (props: HvCardProps) => {
+export const HvCard = forwardRef<
+  // no-indent
+  React.ComponentRef<"div">,
+  HvCardProps
+>((props) => {
   const {
     classes: classesProp,
     style,
@@ -82,4 +87,4 @@ export const HvCard = (props: HvCardProps) => {
       {children}
     </div>
   );
-};
+});

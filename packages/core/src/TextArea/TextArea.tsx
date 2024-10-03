@@ -161,7 +161,10 @@ export interface HvTextAreaProps
 /**
  * A text area is a multiline text input box, with an optional character counter when there is a length limit.
  */
-export const HvTextArea = forwardRef<any, HvTextAreaProps>((props, ref) => {
+export const HvTextArea = forwardRef<
+  React.ComponentRef<"textarea">,
+  HvTextAreaProps
+>((props, ref) => {
   const {
     id,
     className,
