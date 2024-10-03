@@ -46,7 +46,7 @@ export const HvCard = (props: HvCardProps) => {
     selectable = false,
     selected = false,
     statusColor = "sema0",
-    bgcolor,
+    bgcolor = "atmo1",
     ...others
   } = useDefaultProps("HvCard", props);
 

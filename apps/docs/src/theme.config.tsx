@@ -1,4 +1,5 @@
-import { Logo, Main, Pre } from "@docs/components";
+import { Pre } from "@docs/components/code";
+import { Logo, Main } from "@docs/components/common";
 import { ThemeSwitch, type DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
@@ -7,9 +8,15 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase:
     "https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs",
-  head: () => <title>UI Kit</title>,
-  logo: Logo,
-  main: Main,
+  head: () => {
+    return <title>UI Kit</title>;
+  },
+  logo: () => {
+    return <Logo />;
+  },
+  main: ({ children }) => {
+    return <Main>{children}</Main>;
+  },
   components: {
     pre: Pre,
   },
@@ -25,16 +32,15 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: false,
   },
-  color: {
-    hue: 215,
-  },
   feedback: {
     content: null,
   },
   editLink: {
     component: null,
   },
-  gitTimestamp: () => null,
+  color: {
+    hue: 210,
+  },
 };
 
 export default config;

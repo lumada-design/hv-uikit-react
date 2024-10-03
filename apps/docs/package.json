@@ -17,7 +17,9 @@
     "@hitachivantara/uikit-react-viz": "*",
     "@hitachivantara/uikit-styles": "*",
     "@hitachivantara/uikit-uno-preset": "*",
+    "@phosphor-icons/react": "^2.1.7",
     "@unocss/reset": "^0.62.4",
+    "clsx": "^2.1.1",
     "next": "^14.2.7",
     "nextra": "3.0.0-alpha.22",
     "nextra-theme-docs": "3.0.0-alpha.22",
@@ -26,8 +28,7 @@
     "react-dom": "^18.3.1",
     "react-live-runner": "^1.0.7",
     "react-runner": "^1.0.5",
-    "rehype-mdx-code-props": "^3.0.1",
-    "unocss": "^0.62.4"
+    "rehype-mdx-code-props": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "22.5.2",
@@ -35,6 +36,8 @@
     "@unocss/webpack": "^0.62.4",
     "autoprefixer": "^10.4.20",
     "string-replace-loader": "^3.1.0",
-    "typescript": "^5.5.4"
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.5.4",
+    "unocss": "^0.63.2"
   }
 }
