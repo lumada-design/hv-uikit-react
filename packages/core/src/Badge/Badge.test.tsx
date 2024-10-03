@@ -6,38 +6,38 @@ import { HvBadge } from "./Badge";
 
 describe("Badge", () => {
   it("should render a small dot when count>0 without showCount", () => {
-    render(<HvBadge count={12} />);
+    render(<HvBadge label={12} />);
     expect(screen.queryByText("12")).toBeNull();
   });
 
   it("should render correctly with showCount", () => {
-    render(<HvBadge count={12} showCount />);
+    render(<HvBadge label={12} showCount />);
     expect(screen.getByText("12")).toBeInTheDocument();
   });
 
   it("should render correctly with showCount and one-digit count", () => {
-    render(<HvBadge count={9} showCount />);
+    render(<HvBadge label={9} showCount />);
     expect(screen.getByText("9")).toBeInTheDocument();
   });
 
   it("should render nothing when count is 0 even with showCount", () => {
-    render(<HvBadge count={0} showCount />);
+    render(<HvBadge label={0} showCount />);
     expect(screen.queryByText("0")).toBeNull();
   });
 
   it("should render correctly with maxCount", () => {
-    render(<HvBadge count={100} showCount />);
+    render(<HvBadge label={100} showCount />);
     expect(screen.getByText("99+")).toBeInTheDocument();
   });
 
   it("should render correctly with text", () => {
-    render(<HvBadge count={100} showCount text="hello" textVariant="title3" />);
+    render(<HvBadge label={100} showCount text="hello" textVariant="title3" />);
     expect(screen.queryByText("99+")).toBeInTheDocument();
     expect(screen.getByText("hello")).toBeInTheDocument();
   });
 
   it("should render correctly with svg", () => {
-    render(<HvBadge count={100} showCount icon={<Alert title="Alert" />} />);
+    render(<HvBadge label={100} showCount icon={<Alert title="Alert" />} />);
     expect(screen.queryByText("99+")).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "Alert" })).toBeInTheDocument();
   });
@@ -56,5 +56,18 @@ describe("Badge", () => {
     render(<HvBadge label="New!" count={23} showCount />);
     expect(screen.getByText("New!")).toBeInTheDocument();
     expect(screen.queryByText("23")).toBeNull();
+  });
+
+  // TODO: remove in v6
+  describe("deprecated APIs", () => {
+    it("should render a small dot when count>0 without showCount", () => {
+      render(<HvBadge count={12} />);
+      expect(screen.queryByText("12")).toBeNull();
+    });
+
+    it("should render correctly with maxCount", () => {
+      render(<HvBadge count={100} showCount />);
+      expect(screen.getByText("99+")).toBeInTheDocument();
+    });
   });
 });
