@@ -1,10 +1,7 @@
-@tailwind base;
 @import "uno.css";
 
-@media (prefers-color-scheme: light) {
-  .dark {
-    background-color: #151c26;
-  }
+.dark {
+  background-color: #151c26;
 }
 
 main._w-full h1 {

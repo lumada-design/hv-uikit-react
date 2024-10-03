@@ -34,9 +34,7 @@
     "@types/node": "22.5.2",
     "@types/react": "^18.3.5",
     "@unocss/webpack": "^0.62.4",
-    "autoprefixer": "^10.4.20",
     "string-replace-loader": "^3.1.0",
-    "tailwindcss": "^3.4.13",
     "typescript": "^5.5.4",
     "unocss": "^0.63.2"
   }

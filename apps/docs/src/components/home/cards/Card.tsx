@@ -21,7 +21,7 @@ export const Card = ({
   media?: React.ReactNode;
 }) => {
   return (
-    <HvCard>
+    <HvCard className="light:bg-white outline-[var(--uikit-colors-atmo4)]">
       <HvCardHeader
         title={<HvTypography variant="title3">{title}</HvTypography>}
         subheader={<HvTypography variant="caption1">{subtitle}</HvTypography>}
