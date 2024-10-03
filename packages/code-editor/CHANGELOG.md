@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.6.0...@hitachivantara/uikit-react-code-editor@5.7.0) (2024-10-03)
+
+### Bug Fixes
+
+- **CodeEditor:** xml autocomplete not closing selfclosing tag ([#4368](https://github.com/lumada-design/hv-uikit-react/issues/4368)) ([cd959a8](https://github.com/lumada-design/hv-uikit-react/commit/cd959a8ffe0b46bc8fe2c690266228e6c5280b2a))
+
+### Features
+
+- **CodeEditor:** add SQL support ([#4353](https://github.com/lumada-design/hv-uikit-react/issues/4353)) ([377c0e8](https://github.com/lumada-design/hv-uikit-react/commit/377c0e81b4a8ce697c96617f223ff4a509fa6807))
+
+### Reverts
+
+- Revert "chore(release): publish" (#4369) ([6f16a6d](https://github.com/lumada-design/hv-uikit-react/commit/6f16a6dbde951a4dd1b32a08e9a26c71295600f1)), closes [#4369](https://github.com/lumada-design/hv-uikit-react/issues/4369)
+
 # [5.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.5.0...@hitachivantara/uikit-react-code-editor@5.6.0) (2024-09-23)
 
 ### Features

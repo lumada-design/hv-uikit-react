@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.74.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.2...@hitachivantara/uikit-react-core@5.74.0) (2024-10-03)
+
+### Bug Fixes
+
+- accordion & button usage across components ([1683212](https://github.com/lumada-design/hv-uikit-react/commit/168321290a4fb534e09eac2c0f73c3be9d35a952))
+- **Breadcrumb:** support path or empty origin ([#4362](https://github.com/lumada-design/hv-uikit-react/issues/4362)) ([057dd88](https://github.com/lumada-design/hv-uikit-react/commit/057dd88a4ccfbe31e7859d363ae570b45cff8814))
+- **DatePicker:** allow overriding `BaseDropdown-container` css class ([#4366](https://github.com/lumada-design/hv-uikit-react/issues/4366)) ([317e4dd](https://github.com/lumada-design/hv-uikit-react/commit/317e4ddc304f8f360773df1b706b99adab949536))
+- **LoadingContainer:** background opacity ([176babd](https://github.com/lumada-design/hv-uikit-react/commit/176babd5d30af04031cca10315ef3354fbf89456))
+
+### Features
+
+- **ButtonBase:** add component ([bc8440a](https://github.com/lumada-design/hv-uikit-react/commit/bc8440ac16f65b269bd2ff6b9503967e81bd803d))
+- **Loading:** improve color handling ([56ab8cf](https://github.com/lumada-design/hv-uikit-react/commit/56ab8cf645cf75fd77b2c41dbc799538d4f18c39))
+
+### Reverts
+
+- Revert "chore(release): publish" (#4369) ([6f16a6d](https://github.com/lumada-design/hv-uikit-react/commit/6f16a6dbde951a4dd1b32a08e9a26c71295600f1)), closes [#4369](https://github.com/lumada-design/hv-uikit-react/issues/4369)
+
 ## [5.73.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.73.1...@hitachivantara/uikit-react-core@5.73.2) (2024-09-23)
 
 ### Bug Fixes
