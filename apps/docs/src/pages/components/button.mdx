@@ -1,14 +1,245 @@
-import { HvButton } from "@hitachivantara/uikit-react-core";
+import { buttonClasses } from "@hitachivantara/uikit-react-core";
 
-# Button
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
 
-Button component to render button or link
+import { getComponentData } from "../../utils/utils";
 
-## Usage
+export const getStaticProps = async ({ params }) => {
+
+const meta = await getComponentData("Button", "core", buttonClasses)
+
+return {
+props: {
+ssg: {
+meta: meta,
+},
+},
+}
+
+}
+
+<Description />
+
+<Page>
+
+### Variants
+
+```jsx live
+<div
+  style={{
+    display: "grid",
+    gap: 20,
+    gridTemplateColumns: "repeat(3, 140px)",
+  }}
+>
+  <HvButton variant="primary">Primary</HvButton>
+  <HvButton variant="primarySubtle">Primary Subtle</HvButton>
+  <HvButton variant="primaryGhost">Primary Ghost</HvButton>
+  <HvButton disabled variant="primary">
+    Primary
+  </HvButton>
+  <HvButton disabled variant="primarySubtle">
+    Primary Subtle
+  </HvButton>
+  <HvButton disabled variant="primaryGhost">
+    Primary Ghost
+  </HvButton>
+  <div />
+  <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
+  <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
+  <div />
+  <HvButton variant="secondarySubtle" disabled>
+    Secondary Subtle
+  </HvButton>
+  <HvButton variant="secondaryGhost" disabled>
+    Secondary Ghost
+  </HvButton>
+  <HvButton variant="positive">Positive</HvButton>
+  <HvButton variant="positiveSubtle">Positive Subtle</HvButton>
+  <HvButton variant="positiveGhost">Positive Ghost</HvButton>
+  <HvButton variant="positive" disabled>
+    Positive
+  </HvButton>
+  <HvButton variant="positiveSubtle" disabled>
+    Positive Subtle
+  </HvButton>
+  <HvButton variant="positiveGhost" disabled>
+    Positive Ghost
+  </HvButton>
+  <HvButton variant="warning">Warning</HvButton>
+  <HvButton variant="warningSubtle">Warning Subtle</HvButton>
+  <HvButton variant="warningGhost">Warning Ghost</HvButton>
+  <HvButton variant="warning" disabled>
+    Warning
+  </HvButton>
+  <HvButton variant="warningSubtle" disabled>
+    Warning Subtle
+  </HvButton>
+  <HvButton variant="warningGhost" disabled>
+    Warning Ghost
+  </HvButton>
+  <HvButton variant="negative">Negative</HvButton>
+  <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
+  <HvButton variant="negativeGhost">Negative Ghost</HvButton>
+  <HvButton variant="negative" disabled>
+    Negative
+  </HvButton>
+  <HvButton variant="negativeSubtle" disabled>
+    Negative Subtle
+  </HvButton>
+  <HvButton variant="negativeGhost" disabled>
+    Negative Ghost
+  </HvButton>
+</div>
+```
+
+### Sizes
 
 ```jsx live
 <>
-  <HvButton>Primary</HvButton>
-  <HvButton variant="secondarySubtle">Secondary</HvButton>
+  <HvButton variant="primary" size="sm">
+    Small
+  </HvButton>
+  <HvButton variant="warningSubtle" size="md">
+    Medium
+  </HvButton>
+  <HvButton variant="positive" size="lg">
+    Large
+  </HvButton>
+  <HvButton icon variant="negativeGhost" size="md" aria-label="Play">
+    <Play />
+  </HvButton>
+  <HvButton icon variant="primarySubtle" size="lg" aria-label="Play">
+    <Play />
+  </HvButton>
 </>
 ```
+
+### Focusable when disabled
+
+If you still need the button to be focusable when disabled for accessibility purposes, you can set the `focusableWhenDisabled` property to `true`.
+When using this property, the buttons will continue to be read by screen readers when disabled.
+
+```jsx live
+<HvButton disabled focusableWhenDisabled>
+  Primary
+</HvButton>
+```
+
+### With icon
+
+Use the `startIcon` or `endIcon` props to insert an icon on the button.
+You can also use an icon directly as a child of the `HvButton` component if you only want a clickable icon. In this case it might be useful
+to check the `HvIconButton` component as it wraps the clickable icon with an `HvTooltip` component.
+
+```jsx live
+<div
+  style={{
+    display: "flex",
+    flexFlow: "column",
+    gap: 10,
+    "& > div": {
+      display: "flex",
+      gap: 20,
+    },
+  }}
+>
+  <div>
+    <HvButton icon aria-label="Play" variant="primaryGhost">
+      <Play iconSize="M" />
+    </HvButton>
+    <HvButton icon aria-label="Pause">
+      <Pause iconSize="M" />
+    </HvButton>
+    <HvButton icon disabled aria-label="Stop">
+      <Stop iconSize="M" />
+    </HvButton>
+  </div>
+  <div>
+    <HvButton startIcon={<Play />} variant="primaryGhost">
+      Play
+    </HvButton>
+    <HvButton startIcon={<Pause />} variant="secondaryGhost">
+      Pause
+    </HvButton>
+    <HvButton disabled startIcon={<Stop />} variant="secondaryGhost">
+      Stop
+    </HvButton>
+  </div>
+  <div>
+    <HvButton endIcon={<Play />} variant="primaryGhost">
+      Play
+    </HvButton>
+    <HvButton endIcon={<Pause />} variant="secondaryGhost">
+      Pause
+    </HvButton>
+    <HvButton endIcon={<Stop />} disabled variant="secondaryGhost">
+      Stop
+    </HvButton>
+  </div>
+</div>
+```
+
+### Semantic buttons
+
+If you need a button that exists on a semantic container you can set the `variant` prop to `semantic`.
+
+```jsx live
+<div className="flex gap-sm p-sm text-base_dark bg-neutral_20">
+  <HvButton variant="semantic" startIcon={<Favorite />}>
+    Favorite
+  </HvButton>
+  <HvButton variant="semantic" startIcon={<Refresh />}>
+    Refresh
+  </HvButton>
+  <HvButton variant="semantic" startIcon={<Delete />}>
+    Delete
+  </HvButton>
+  <HvButton variant="semantic" icon aria-label="More options">
+    <MoreOptionsVertical />
+  </HvButton>
+</div>
+```
+
+### Custom root component
+
+You can use the `component` prop to change the root component of the button to be other than `button` whether it's a native HTML element or your own custom React component.
+
+```jsx live
+
+interface CustomLinkProps extends HvButtonProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
+  <a href={to} {...others}>
+    {children}
+  </a>
+);
+
+export default function Demo() {
+
+return (
+  <div style={{ display: "flex", gap: 20, padding: 20 }}>
+    <HvButton
+      variant="secondarySubtle"
+      component="a"
+      href="https://lumada-design.github.io/uikit/master"
+      startIcon={<Link />}
+    >
+      Link
+    </HvButton>
+    <HvButton
+      variant="secondarySubtle"
+      component={CustomLink}
+      to="https://lumada-design.github.io/uikit/master"
+      startIcon={<Link />}
+    >
+      Custom link
+    </HvButton>
+  </div>
+)}
+```
+
+</Page>
