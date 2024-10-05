@@ -6,32 +6,31 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-export const Card = ({
-  children,
-  title,
-  subtitle,
-  media,
-  icon,
-}: {
+type CardProps = {
   children: React.ReactNode;
   className?: string;
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
   icon?: React.ReactNode;
   media?: React.ReactNode;
-}) => {
+};
+
+export const Card = ({ children, title, subtitle, media, icon }: CardProps) => {
   return (
-    <HvCard classes={{ root: "bg-white" }}>
+    <HvCard
+      style={{
+        backgroundColor: "var(--uikit-colors-atmo1)",
+        outlineColor: "var(--uikit-colors-atmo4)",
+      }}
+    >
       <HvCardHeader
         title={<HvTypography variant="title3">{title}</HvTypography>}
         subheader={<HvTypography variant="caption1">{subtitle}</HvTypography>}
         icon={icon}
-        classes={{
-          root: "mx-1 mt-1",
-        }}
+        className="!mx-1 !mt-1"
       />
-      {media && <HvCardMedia classes={{ root: "my-1" }}>{media}</HvCardMedia>}
-      <HvCardContent classes={{ content: "px-3" }}>{children}</HvCardContent>
+      {media && <HvCardMedia className="!my-1">{media}</HvCardMedia>}
+      <HvCardContent className="!px-3">{children}</HvCardContent>
     </HvCard>
   );
 };

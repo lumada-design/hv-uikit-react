@@ -16,7 +16,7 @@ export const DataConfig = () => {
 
   return (
     <Card title="Data Management Configuration">
-      <div className="grid gap-sm">
+      <div className="grid gap-2">
         <HvInput
           label="Storage Limit (in GB)"
           placeholder="Enter storage limit"
@@ -34,9 +34,9 @@ export const DataConfig = () => {
           aria-label="backup-frequency"
         />
         <HvCheckBox label="Enable Automatic Data Cleanup" />
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-1">
           <HvButton variant="primary" aria-label="save-config-button">
-            Save Configuration
+            Save
           </HvButton>
         </div>
       </div>
