@@ -36,8 +36,8 @@ export const TeamOverview = () => (
     subtitle="Meet the key players driving data strategy and execution."
   >
     <div className="space-y-2">
-      {teamData.map(({ name, role, imgSrc }, index) => (
-        <div key={index} className="flex items-center space-x-4">
+      {teamData.map(({ name, role, imgSrc }) => (
+        <div key={name} className="flex items-center space-x-5">
           <HvAvatar src={imgSrc} alt={`${name}'s Avatar`} size="md" />
           <div className="flex-1">
             <HvTypography variant="captionLabel">{name}</HvTypography>

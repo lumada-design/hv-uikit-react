@@ -1,4 +1,3 @@
-import UnoCSS from "@unocss/webpack";
 import nextra from "nextra";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 
@@ -13,22 +12,12 @@ const withNextra = nextra({
 
 export default withNextra({
   output: "export",
-  distDir: "dist",
+  distDir: process.env.NODE_ENV === "development" ? ".next" : "dist",
   images: { unoptimized: true },
   basePath: process.env.NEXTRA_BASE_PATH || "",
-  transpilePackages: [
-    "@hitachivantara/uikit-react-core",
-    "@hitachivantara/uikit-react-code-editor",
-    "@hitachivantara/uikit-react-icons",
-    "@hitachivantara/uikit-react-lab",
-    "@hitachivantara/uikit-react-shared",
-    "@hitachivantara/uikit-styles",
-    "@hitachivantara/uikit-react-viz",
-    "@hitachivantara/uikit-react-pentaho",
-  ],
-  webpack: (config, { isServer }) => {
+  transpilePackages: ["@hitachivantara/uikit-react-viz"],
+  webpack: (config) => {
     config.cache = false; // https://github.com/unocss/unocss/pull/1198
-    config.plugins.push(UnoCSS());
 
     config.module.rules.push({
       test: /\.(tsx|ts)$/,

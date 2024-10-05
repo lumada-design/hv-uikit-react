@@ -1,7 +1,7 @@
 import {
   HvProgressBar,
-  HvProgressBarStatus,
   HvTypography,
+  type HvProgressBarStatus,
 } from "@hitachivantara/uikit-react-core";
 
 import { Card } from "./Card";
@@ -17,8 +17,8 @@ export const DataProcessing = () => {
       title="Data Processing Status"
       subtitle="Monitor the performance of current data processing jobs."
     >
-      {processingData.map(({ title, progress, status }, index) => (
-        <div key={index} className="mb-3">
+      {processingData.map(({ title, progress, status }) => (
+        <div key={title} className="mb-5">
           <HvTypography variant="captionLabel">{title}</HvTypography>
           <HvProgressBar
             value={progress}

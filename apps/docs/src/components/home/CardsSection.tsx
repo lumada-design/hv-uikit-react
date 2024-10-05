@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import {
   ApiUsage,
   DataConfig,
@@ -7,11 +9,13 @@ import {
   FinancialPerformance,
   StorageOverview,
   TeamOverview,
-} from "./cards";
+} from "../cards";
 
 export const CardsSection = () => {
   return (
-    <div className="grid md:grid-cols-[10rem_10rem_10rem] gap-4 p-3">
+    <div
+      className={clsx(["grid grid-cols-[10rem_10rem_10rem] gap-4 p-3 mx-auto"])}
+    >
       <div className="space-y-4">
         <DataInsights />
         <DataConfig />
