@@ -1,4 +1,6 @@
-import { Logo, Main, Pre } from "@docs/components";
+import { Pre } from "@docs/components/code";
+import { Logo } from "@docs/components/Logo";
+import { Main } from "@docs/components/Main";
 import { ThemeSwitch, type DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
@@ -25,16 +27,15 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: false,
   },
-  color: {
-    hue: 215,
-  },
   feedback: {
     content: null,
   },
   editLink: {
     component: null,
   },
-  gitTimestamp: () => null,
+  color: {
+    hue: 210,
+  },
 };
 
 export default config;

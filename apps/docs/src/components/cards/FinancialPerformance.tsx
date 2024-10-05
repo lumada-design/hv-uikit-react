@@ -39,9 +39,9 @@ export const FinancialPerformance = () => {
       title="Financial Performance"
       subtitle="Company’s KPIs from the last 12 months."
     >
-      <div className="grid grid-cols-2 gap-xs justify-between">
-        {data.map((value, index) => (
-          <Item key={index} {...value} />
+      <div className="grid grid-cols-2 gap-1 justify-between">
+        {data.map((value) => (
+          <Item key={value.title} {...value} />
         ))}
       </div>
     </Card>

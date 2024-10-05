@@ -10,6 +10,8 @@ export const Main = ({ children }: { children: React.ReactNode }) => {
       themes={[pentahoPlus, ds5]}
       theme="pentahoPlus"
       colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
+      cssTheme="scoped"
+      cssBaseline="none"
     >
       <HvVizProvider>{children}</HvVizProvider>
     </HvProvider>
