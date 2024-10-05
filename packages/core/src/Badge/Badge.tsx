@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -16,22 +17,23 @@ export interface HvBadgeProps extends HvBaseProps {
    * Count is the number of unread notifications.
    * Note count and label are mutually exclusive.
    * count is ignored when label is specified at the same time.
+   * @deprecated use numeric `label` instead
    */
   count?: number;
   /**
-   * True if count should be displayed.
-   * Note showCount and label are mutually exclusive.
-   * showCount is ignored when label is specified at the same time.
+   * True if `count` should be displayed.
+   *
+   * NOTE: `showCount` is ignored when a **non-numeric** `label` is specified.
    */
   showCount?: boolean;
   /** The maximum number of unread notifications to be displayed */
   maxCount?: number;
   /**
-   * Custom text to show in place of count.
-   * Note showCount and label are mutually exclusive.
-   * showCount is ignored when label is specified at the same time.
+   * Badge content to show in.
+   *
+   * If value is numeric, then `showCount` and `maxCount` will show or limit the value respectively.
    */
-  label?: string;
+  label?: React.ReactNode;
   /** Icon which the notification will be attached. */
   icon?: React.ReactNode;
   /** Text which the notification will be attached. */
@@ -45,38 +47,46 @@ export interface HvBadgeProps extends HvBaseProps {
 /**
  * The badge is a component used to notify the user that something has occurred, in the app context.
  */
-export const HvBadge = (props: HvBadgeProps) => {
+export const HvBadge = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvBadgeProps
+>((props, ref) => {
   const {
     classes: classesProp,
     className,
     showCount = false,
-    count = 0,
+    count: countProp = 0,
     maxCount = 99,
-    label = null,
-    icon = null,
-    text = null,
-    textVariant = undefined,
+    label,
+    icon,
+    text,
+    textVariant,
     ...others
   } = useDefaultProps("HvBadge", props);
 
   const { classes, cx } = useClasses(classesProp);
 
-  const renderedCount = count > maxCount ? `${maxCount}+` : count;
+  const count = typeof label === "number" ? label : countProp;
+  const countValue = count > maxCount ? `${maxCount}+` : count;
+  const renderedCount = showCount && count > 0 ? countValue : "";
   // If label is specified and non-empty, render it.
   // If showCount is specified and count > 0, render the count.
   // Otherwise, render nothing on the badge.
   // (Note count=0 should not be rendered to avoid ghosty 0.)
   const renderedCountOrLabel =
-    label || (showCount && count > 0 && renderedCount) || null;
-  const Component =
+    label && typeof label !== "number" ? label : renderedCount;
+  const children =
     icon || (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
 
   return (
-    <div className={cx(classes.root, className)} {...others}>
-      {Component}
-      <div className={Component ? classes.badgeContainer : undefined}>
+    <div ref={ref} className={cx(classes.root, className)} {...others}>
+      {children}
+      <div className={cx({ [classes.badgeContainer]: children })}>
         <div
           className={cx(classes.badgePosition, {
+            [classes.badgeHidden]: !(count > 0 || renderedCountOrLabel),
+            // TODO: remove unnecessary classes in v6 (hoist+rename `badge` to `badgePosition`)
             [classes.badge]: !!(count > 0 || renderedCountOrLabel),
             [classes.showCount]: !!(!label && renderedCountOrLabel),
             [classes.showLabel]: !!label,
@@ -89,4 +99,4 @@ export const HvBadge = (props: HvBadgeProps) => {
       </div>
     </div>
   );
-};
+});
