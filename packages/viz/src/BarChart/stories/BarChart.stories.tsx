@@ -5,7 +5,6 @@ import {
   HvCheckBox,
   HvDropdown,
   HvDropDownMenu,
-  HvListValue,
   HvOption,
   HvSelect,
   HvSelectProps,
@@ -220,7 +219,7 @@ export const CustomStackedBarChart: StoryObj<HvBarChartProps> = {
                 label: css(styles.label),
               }}
               values={timePeriods}
-              onChange={(item) => setTime((item as HvListValue).value)}
+              onChange={(item) => setTime(item?.value || 0)}
             />
             <HvDropDownMenu
               className={css(styles.dropdownPlacement)}

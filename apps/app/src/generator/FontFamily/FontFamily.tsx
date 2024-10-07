@@ -94,9 +94,7 @@ const FontFamily = () => {
         label="Font Family"
         values={fontValues}
         onChange={(item) =>
-          onDropdownClickHandler(
-            (item as HvListValue)?.label as string | undefined,
-          )
+          onDropdownClickHandler(item?.label as string | undefined)
         }
       />
     </div>

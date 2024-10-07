@@ -8,7 +8,6 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvDropdown,
-  HvDropdownProps,
   HvGlobalActions,
   theme,
   useTheme,
@@ -98,6 +97,8 @@ const edges: HvFlowProps["edges"] = [
 
 type Node = ReturnType<HvFlowInstance<NodeData>["getNode"]>;
 
+type Type = keyof typeof types;
+
 export const DynamicHandles = () => {
   const { rootId } = useTheme();
 
@@ -106,33 +107,14 @@ export const DynamicHandles = () => {
   const [open, setOpen] = useState(false);
   const [nodeConfig, setNodeConfig] = useState<Node>();
 
-  const options = useMemo(
-    () =>
-      Object.keys(types).map((key) => {
-        return { id: key, label: key };
-      }),
-    [],
-  );
+  const options = useMemo(() => {
+    return Object.keys(types).map((key) => {
+      return { id: key as Type, label: key as Type };
+    });
+  }, []);
 
   const handleCloseConfig = () => {
     setNodeConfig(undefined);
-  };
-
-  const handleChangeConfig: HvDropdownProps["onChange"] = (value) => {
-    if (
-      value &&
-      !Array.isArray(value) &&
-      nodeConfig &&
-      typeof value.label === "string"
-    ) {
-      setNodeConfig({
-        ...nodeConfig,
-        data: {
-          ...nodeConfig.data,
-          type: value.label as keyof typeof types,
-        },
-      });
-    }
   };
 
   const handleApplyConfig = () => {
@@ -207,7 +189,17 @@ export const DynamicHandles = () => {
           <HvDropdown
             label="Select the type"
             values={options}
-            onChange={handleChangeConfig}
+            onChange={(value) => {
+              if (!value || !nodeConfig) return;
+
+              setNodeConfig({
+                ...nodeConfig,
+                data: {
+                  ...nodeConfig.data,
+                  type: value.label,
+                },
+              });
+            }}
           />
         </HvDialogContent>
         <HvDialogActions>

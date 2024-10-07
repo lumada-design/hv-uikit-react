@@ -234,8 +234,7 @@ export const ThemeStructure = () => {
         <HvDropdown
           classes={{ root: styles.dropdown }}
           onChange={(selected) => {
-            const value = Array.isArray(selected) ? selected[0] : selected;
-            setSelectedTheme(value?.id?.toString() as ThemeName);
+            setSelectedTheme(selected?.id);
           }}
           values={defaultThemes}
         />

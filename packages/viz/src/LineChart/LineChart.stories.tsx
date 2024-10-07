@@ -8,7 +8,6 @@ import {
   HvCheckBox,
   HvDropdown,
   HvDropDownMenu,
-  HvListValue,
   HvTypography,
   Random,
   useTheme,
@@ -346,7 +345,7 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
               aria-label="Country"
               values={countries}
               placement="left"
-              onChange={(item) => setCountry((item as HvListValue).value)}
+              onChange={(item) => setCountry(item?.value ?? "")}
             />
             <HvDropdown
               aria-label="Time Period"
@@ -357,7 +356,7 @@ export const CustomMultipleLinesChart: StoryObj<HvLineChartProps> = {
                 label: css(styles.label),
               }}
               values={timePeriods}
-              onChange={(item) => setTime((item as HvListValue).value)}
+              onChange={(item) => setTime(item?.value ?? 0)}
             />
             <HvDropDownMenu
               className={css(styles.dropdownPlacement)}

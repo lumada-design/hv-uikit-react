@@ -4,7 +4,6 @@ import {
   HvDropdown,
   HvDropdownStatus,
   HvGrid,
-  HvListValue,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -50,7 +49,7 @@ export const ExternalErrorMessage = () => {
             required
             aria-errormessage="birth-error"
             onChange={(value) => {
-              if ((value as HvListValue[]).length === 0) {
+              if (value.length === 0) {
                 setBirthErrorMessage(
                   "Select at least one value from dropdown 1.",
                 );
@@ -71,14 +70,14 @@ export const ExternalErrorMessage = () => {
             onChange={(value) => {
               setDeathValidationState("invalid");
 
-              if ((value as HvListValue[]).length === 0) {
+              if (value.length === 0) {
                 setDeathErrorMessage(
                   "Select at least one value from dropdown 2.",
                 );
               } else {
                 setDeathErrorMessage(
                   `Dropdown 2 is always invalid, even with ${
-                    (value as HvListValue[]).length
+                    value.length
                   } items selected.`,
                 );
               }

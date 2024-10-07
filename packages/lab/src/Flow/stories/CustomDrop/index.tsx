@@ -8,7 +8,6 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvDropdown,
-  HvDropdownProps,
   HvGlobalActions,
   theme,
   useTheme,
@@ -102,18 +101,6 @@ export const CustomDrop = () => {
     setPrecipitationConfig(undefined);
   };
 
-  const handleChangeConfig: HvDropdownProps["onChange"] = (value) => {
-    if (value && !Array.isArray(value) && precipitationConfig) {
-      setPrecipitationConfig({
-        ...precipitationConfig,
-        data: {
-          ...precipitationConfig.data,
-          country: value.label,
-        },
-      });
-    }
-  };
-
   const handleApplyConfig = () => {
     if (precipitationConfig) {
       reactFlowInstance?.setNodes((nds) => nds.concat(precipitationConfig));
@@ -183,7 +170,17 @@ export const CustomDrop = () => {
           <HvDropdown
             label="Select the country"
             values={options}
-            onChange={handleChangeConfig}
+            onChange={(value) => {
+              if (!value || !precipitationConfig) return;
+
+              setPrecipitationConfig({
+                ...precipitationConfig,
+                data: {
+                  ...precipitationConfig.data,
+                  country: value.label,
+                },
+              });
+            }}
           />
         </HvDialogContent>
         <HvDialogActions>

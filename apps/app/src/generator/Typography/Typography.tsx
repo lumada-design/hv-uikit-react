@@ -107,7 +107,7 @@ const Typography = () => {
     const map = new Map<string, { value: number; unit: string }>(updatedSizes);
 
     const t = updatedSizes.get(typographyName);
-    const unit = (item as HvListValue).label?.toString() || "px";
+    const unit = item.label?.toString() || "px";
 
     let fontSize = 0;
     if (t) {
@@ -315,8 +315,7 @@ const Typography = () => {
                   onChange={(item) =>
                     lineHeightChangedHandler(
                       t,
-                      (item as HvListValue)
-                        ?.label as keyof HvThemeTokens["lineHeights"],
+                      item?.label as keyof HvThemeTokens["lineHeights"],
                     )
                   }
                 />
@@ -324,9 +323,7 @@ const Typography = () => {
                   label="Font weight"
                   values={getFontWeights(t)}
                   classes={{ root: "w-[130px]" }}
-                  onChange={(item) =>
-                    fontWeightChangedHandler(t, (item as HvListValue)?.value)
-                  }
+                  onChange={(item) => fontWeightChangedHandler(t, item?.value)}
                 />
               </div>
             </div>

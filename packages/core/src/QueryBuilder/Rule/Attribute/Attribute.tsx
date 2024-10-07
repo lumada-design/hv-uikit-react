@@ -44,7 +44,7 @@ export const Attribute = ({
       status={isInvalid ? "invalid" : "valid"}
       statusMessage={labels.rule.attribute.exists}
       onChange={(selected) => {
-        if (selected && !Array.isArray(selected)) {
+        if (selected) {
           const attributeId = selected.id;
 
           const type =

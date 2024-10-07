@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   HvDropdown,
   HvListValue,
@@ -12,7 +12,6 @@ import { extractFontSizeUnit } from "~/generator/utils";
 const FontSizes = () => {
   const { activeTheme } = useTheme();
   const { updateCustomTheme } = useGeneratorContext();
-  const [fontSizes, setFontSizes] = useState<HvListValue[]>([]);
   const [fontSize, setFontSize] = useState(""); // base, sm, ...
   const [fontValue, setFontValue] = useState<number>(); // 14, 16, ...
   const [unit, setUnit] = useState("px"); // px, rem, ...
@@ -24,14 +23,12 @@ const FontSizes = () => {
     markDigits: 0,
   });
 
-  useEffect(() => {
-    const sizes: HvListValue[] = [];
-    if (activeTheme) {
-      Object.keys(activeTheme.fontSizes).forEach((size) => {
-        sizes.push({ label: size });
-      });
-    }
-    setFontSizes(sizes);
+  const fontSizes = useMemo(() => {
+    if (!activeTheme) return [];
+
+    return Object.keys(activeTheme.fontSizes).map((size) => ({
+      label: size,
+    }));
   }, [activeTheme]);
 
   const onSizeChangedHandler = (size?: string) => {
@@ -104,11 +101,7 @@ const FontSizes = () => {
           label="Font Sizes"
           classes={{ root: "w-[120px]" }}
           values={fontSizes}
-          onChange={(item) =>
-            onSizeChangedHandler(
-              (item as HvListValue)?.label as string | undefined,
-            )
-          }
+          onChange={(item) => onSizeChangedHandler(item?.label)}
         />
       </div>
       <UnitSlider

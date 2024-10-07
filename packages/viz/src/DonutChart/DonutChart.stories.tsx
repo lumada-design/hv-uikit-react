@@ -5,7 +5,6 @@ import {
   HvCheckBox,
   HvDropdown,
   HvDropDownMenu,
-  HvListValue,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
@@ -219,7 +218,7 @@ export const WithControls: StoryObj<HvDonutChartProps> = {
                 label: css(styles.label),
               }}
               values={timePeriods}
-              onChange={(item) => setTime((item as HvListValue).value)}
+              onChange={(item) => setTime(item?.value || 0)}
             />
             <HvDropDownMenu
               className={css(styles.dropdownPlacement)}
