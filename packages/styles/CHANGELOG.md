@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.34.2...@hitachivantara/uikit-styles@5.35.0) (2024-10-07)
+
+### Features
+
+- **Badge:** label prop supports ReactNode & handles numbers ([#4373](https://github.com/lumada-design/hv-uikit-react/issues/4373)) ([6027ef4](https://github.com/lumada-design/hv-uikit-react/commit/6027ef4c0113ce5ab01235d661bcaa75df7f941c))
+
 ## [5.34.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.34.1...@hitachivantara/uikit-styles@5.34.2) (2024-10-03)
 
 ### Reverts
