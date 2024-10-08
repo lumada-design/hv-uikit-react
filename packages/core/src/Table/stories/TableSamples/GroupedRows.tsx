@@ -11,13 +11,13 @@ import {
 
 import { getGroupedRowsColumns, makeData } from "../storiesUtils";
 
+const style = {
+  borderRight: `1px solid ${theme.colors.atmo4}`,
+};
+
 export const GroupedRows = () => {
   const columns = getGroupedRowsColumns();
   const data = makeData(8);
-
-  const style = {
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
-  };
 
   return (
     <HvTableContainer>
@@ -25,7 +25,7 @@ export const GroupedRows = () => {
         <HvTableHead>
           <HvTableRow>
             {columns.map((el, index) => (
-              <HvTableHeader key={el.Header} {...(index === 0 && { ...style })}>
+              <HvTableHeader key={el.Header} {...(index === 0 && { style })}>
                 {el.Header}
               </HvTableHeader>
             ))}
@@ -35,10 +35,7 @@ export const GroupedRows = () => {
           {data.map((el, index) => (
             <HvTableRow key={el.id}>
               {index % 3 === 0 && (
-                <HvTableCell
-                  rowSpan={3}
-                  style={{ verticalAlign: "top", ...style }}
-                >
+                <HvTableCell rowSpan={3} style={style}>
                   {el.name}
                 </HvTableCell>
               )}

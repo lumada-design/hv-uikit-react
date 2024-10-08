@@ -7,6 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     "--cell-height": "32px",
     height: "var(--cell-height)",
     verticalAlign: "inherit",
+    alignContent: "inherit",
     textAlign: "left",
     padding: theme.spacing(0, 1, 0, 4),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
@@ -14,6 +15,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   head: {
     paddingTop: 8,
     verticalAlign: "top",
+    alignContent: "start",
     ...theme.typography.label,
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     backgroundColor: theme.colors.atmo1,
@@ -34,6 +36,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
 
     "&$sortable": {
       verticalAlign: "initial",
+      alignContent: "initial",
       paddingTop: 0,
       paddingLeft: 0,
       cursor: "pointer",
