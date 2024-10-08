@@ -73,7 +73,7 @@ export const HvWizard = ({
   classes: classesProp,
   ...others
 }: HvWizardProps) => {
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const [context, setContext] = useState<HvWizardTabs>({});
   const [summary, setSummary] = useState(false);
@@ -117,8 +117,7 @@ export const HvWizard = ({
   return (
     <HvWizardContext.Provider value={value}>
       <HvWizardContainer
-        className={className}
-        classes={{ root: classes.root }}
+        className={cx(classes.root, className)}
         handleClose={handleClose}
         open={open}
         {...others}
