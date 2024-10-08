@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   CodeEditor,
   LiveError,
@@ -45,7 +45,7 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
   return (
     <LiveProvider code={code} scope={scope} theme={themes.dracula}>
       <LiveProvider code={code} scope={{ ...scope }} theme={themes.dracula}>
-        <LivePreview className="flex gap-3 p-3 border border-atmo3 rounded-t-lg" />
+        <LivePreview className="flex gap-2 p-3 border border-[var(--uikit-colors-atmo4)] rounded-t-round mt-4" />
         <CodeEditor
           value={code}
           onChange={handleCodeChange}

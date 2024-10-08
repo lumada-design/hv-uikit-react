@@ -16,9 +16,9 @@ export const DataSecurity = () => {
       subtitle="Incidents from the last 30 days."
       icon={<SystemActivity color="primary" />}
     >
-      <div className="grid grid-cols-3 gap-sm">
-        {securityData.map(({ title, count, color }, index) => (
-          <div key={index}>
+      <div className="grid grid-cols-3">
+        {securityData.map(({ title, count, color }) => (
+          <div key={title}>
             <HvTypography variant="captionLabel" className="mb-1">
               {title}
             </HvTypography>

@@ -1,3 +1,4 @@
+import { CodesandboxLogo, Lightning } from "@phosphor-icons/react";
 import { Card, Cards, Steps, Tabs } from "nextra/components";
 
 # Get Started
@@ -8,12 +9,16 @@ If you just want to play around with **UI Kit** without setting up a project, yo
 
 <Cards>
   <Cards.Card
-    title="Open on StackBlitz →"
+    icon={<Lightning />}
+    title="Open on StackBlitz"
     href="https://stackblitz.com/github.com/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts"
+    target="_blank"
   />
   <Cards.Card
-    title="Open on CodeSandbox →"
+    icon={<CodesandboxLogo />}
+    title="Open on CodeSandbox"
     href="https://codesandbox.io/p/sandbox/github.com/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts"
+    target="_blank"
   />
 </Cards>
 
@@ -33,10 +38,10 @@ If you prefer not to use the CLI, follow these steps to manually set up **UI Kit
 
 ### Install packages
 
-To use **UI Kit** in your project, run the following command:  
-[`Emotion`](https://emotion.sh/docs/introduction) and [`MUI`](https://mui.com/) are peer dependencies and must be included in your project.
+[`Emotion`](https://emotion.sh/docs/introduction) and [`MUI`](https://mui.com/) are peer dependencies and must be included in your project.  
+To use **UI Kit** in your project, run the following command:
 
-```bash
+```sh npm2yarn
 npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
 ```
 
@@ -44,7 +49,7 @@ npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui
 
 It is essential to add the **UI Kit** Provider at the root of your application.
 
-```javascript
+```js
 // 1. import `Provider` component
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 

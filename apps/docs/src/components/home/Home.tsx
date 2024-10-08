@@ -1,32 +1,34 @@
-import { CSSProperties } from "react";
+import clsx from "clsx";
 
 import { CardsSection } from "./CardsSection";
 import { HeroSection } from "./HeroSection";
 
-const styles: { [key: string]: CSSProperties } = {
-  backgroundPattern: {
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    background: "transparent",
-    backgroundImage:
-      "linear-gradient(#f4f4f4 0.1em, transparent 0.1em), linear-gradient(90deg, #f4f4f4 0.1em, transparent 0.1em)",
-    backgroundSize: "4em 4em",
-  },
-};
-
 export const Home = () => (
-  <main className="absolute inset-0 md:overflow-hidden">
-    <div style={styles.backgroundPattern} />
-    <div className="mt-8 mx-auto bg-gradient-to-r from-white to-[#F1F5F9] h-[calc(100vh_-_64px)]">
-      <div className="relative max-w-[1440px] mx-auto grid md:grid-cols-[40%_60%] h-full">
+  <div
+    className={clsx(
+      "absolute inset-0 md:overflow-hidden",
+      "mt-[var(--nextra-navbar-height)]",
+    )}
+  >
+    {/* Background grid */}
+    <div className="absolute h-full w-full bg-[radial-gradient(var(--uikit-colors-secondary\\_80),transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+
+    {/* Blue gradient background blur */}
+    <div className="absolute bottom-0 z-[-2] h-screen w-screen bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,var(--uikit-colors-primary\\_20),transparent)]" />
+
+    {/* Main content area */}
+    <main className="h-full">
+      <div className="relative max-w-[44rem] mx-auto grid h-full md:grid-cols-[42%_58%]">
+        {/* Hero Section */}
         <section className="flex flex-col justify-center">
           <HeroSection />
         </section>
-        <section className="flex flex-col justify-center">
+
+        {/* Cards Section */}
+        <section className="flex flex-col justify-center overflow-x-auto md:overflow-x-visible">
           <CardsSection />
         </section>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 );

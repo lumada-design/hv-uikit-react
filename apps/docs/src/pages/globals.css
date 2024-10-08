@@ -1,0 +1,66 @@
+@unocss all;
+
+.dark {
+  background-color: #151c26;
+}
+
+article > main h2 {
+  @apply !border-none;
+}
+
+body,
+.nextra-nav-container-blur,
+.nextra-sidebar-footer,
+.nextra-toc-footer,
+.nextra-sidebar-container a {
+  background-color: transparent;
+}
+
+.nextra-sidebar-container {
+  @apply w-[7rem];
+}
+
+.nextra-nav-container nav,
+.nextra-nav-container + div {
+  @apply max-w-[44rem];
+}
+
+.nextra-nav-container nav {
+  @apply px-3;
+}
+
+.nextra-nav-container + div {
+  @apply mt-4;
+}
+
+.nextra-nav-container a:last-of-type svg {
+  @apply w-2.5;
+}
+
+.nextra-nav-container button div svg {
+  @apply w-2 h-2;
+}
+
+.nextra-toc {
+  @apply w-[7rem];
+}
+
+.nextra-toc a {
+  @apply font-normal;
+}
+
+.nextra-scrollbar a._text-primary-800,
+.nextra-scrollbar a._text-primary-600 {
+  @apply font-medium text-slate-800 dark:text-slate-200;
+}
+
+.nextra-sidebar-footer,
+.nextra-toc-footer {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .nextra-sidebar-container {
+    @apply w-full;
+  }
+}
