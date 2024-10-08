@@ -7,6 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the component root class. */
   root: {
     verticalAlign: "inherit",
+    alignContent: "inherit",
     textAlign: "left",
     padding: `calc(${theme.space.xs} - 2px ) ${theme.space.xs} calc(${
       theme.space.xs
@@ -16,7 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the cell when it's in the table head. */
   head: {
     height: 52,
-    verticalAlign: "top",
+    alignContent: "start",
 
     backgroundColor: theme.colors.atmo1,
     borderTop: "1px solid transparent",
@@ -103,7 +104,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when its variant is list and actions. */
   variantListactions: {
-    verticalAlign: "middle",
+    alignContent: "center",
     borderLeft: "none",
     paddingLeft: "0",
     textAlign: "center",
