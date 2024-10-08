@@ -37,7 +37,7 @@ export const GroupedRows = () => {
               {index % 3 === 0 && (
                 <HvTableCell
                   rowSpan={3}
-                  style={{ verticalAlign: "top", ...style }}
+                  style={{ alignContent: "start", ...style }}
                 >
                   {el.name}
                 </HvTableCell>
