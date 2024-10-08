@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { HvWizard } from "./Wizard";
@@ -39,12 +39,13 @@ describe("HvWizard", () => {
         handleSubmit={() => {}}
         classes={{ root: "customClassesRoot" }}
       >
-        <div>content</div>
+        <div data-title="MyContentTitle">content</div>
       </HvWizard>,
     );
 
     expect(document.querySelector(".customClassName")).toBeInTheDocument();
     expect(document.querySelector(".customClassesRoot")).toBeInTheDocument();
+    expect(screen.getByLabelText(/MyContentTitle/i)).toBeInTheDocument();
   });
 
   it("moves across the pages when clicking the wizard actions", () => {

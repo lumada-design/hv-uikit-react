@@ -1,4 +1,6 @@
-import React, {
+import {
+  Children,
+  cloneElement,
   useCallback,
   useContext,
   useEffect,
@@ -47,20 +49,7 @@ export const HvWizardContent = ({
 
   const { context, setContext, summary, tab } = useContext(HvWizardContext);
 
-  const arrayChildren = React.Children.toArray(children) as ChildElement[];
-
-  const initialContext = arrayChildren.reduce<HvWizardTabs>(
-    (acc, child, index) => {
-      const invalid =
-        "mustValidate" in child.props && child.props.mustValidate === true
-          ? false
-          : null;
-      const valid = invalid ?? (index === 0 || null);
-      acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
-      return acc;
-    },
-    {},
-  );
+  const arrayChildren = Children.toArray(children) as ChildElement[];
 
   const summaryRef = useRef<HTMLElement>();
   const resizedRef = useRef({ height: 0, width: 0 });
@@ -100,6 +89,19 @@ export const HvWizardContent = ({
   }, [tab, sizes, summary, updateSummaryMeasures]);
 
   useEffect(() => {
+    const initialContext = arrayChildren.reduce<HvWizardTabs>(
+      (acc, child, index) => {
+        const invalid =
+          "mustValidate" in child.props && child.props.mustValidate === true
+            ? false
+            : null;
+        const valid = invalid ?? (index === 0 || null);
+        acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
+        return acc;
+      },
+      {},
+    );
+
     setContext(initialContext);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -159,13 +161,9 @@ export const HvWizardContent = ({
           })}
           indentContent
         >
-          {React.Children.map(arrayChildren, (child, index) => {
-            if (index === tab) {
-              return React.cloneElement(child as React.ReactElement, {
-                tab,
-              });
-            }
-            return null;
+          {Children.map(arrayChildren, (child, index) => {
+            if (index !== tab) return null;
+            return cloneElement(child as React.ReactElement, { tab });
           })}
         </HvDialogContent>
       </HvLoadingContainer>
