@@ -26,10 +26,8 @@ export interface HvWizardContainerProps
 export const HvWizardContainer = (props: HvWizardContainerProps) => {
   const {
     classes: classesProp,
-    className,
     children,
     handleClose,
-    open,
     ...others
   } = useDefaultProps("HvWizardContainer", props);
   const { classes } = useClasses(classesProp);
@@ -37,11 +35,10 @@ export const HvWizardContainer = (props: HvWizardContainerProps) => {
   return (
     <HvDialog
       classes={{
+        root: classes.root,
         closeButton: classes.closeButton,
         paper: classes.paper,
       }}
-      className={classes.root}
-      open={open}
       onClose={handleClose}
       maxWidth="lg"
       {...others}

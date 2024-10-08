@@ -32,7 +32,7 @@ const meta: Meta<typeof HvWizard> = {
 };
 export default meta;
 
-const RandomFormComponent = () => {
+const RandomFormComponent = (props: Record<string, any>) => {
   const { context, setContext, tab } = useContext(HvWizardContext);
   const [formData, setFormData] = useState({});
 
@@ -80,7 +80,7 @@ const RandomFormComponent = () => {
   };
 
   return (
-    <form noValidate>
+    <form noValidate {...props}>
       <HvGrid container>
         <HvGrid item xs={12}>
           <HvInput
@@ -142,8 +142,7 @@ export const Main: StoryObj<HvWizardProps> = {
           // This will only appear if hasSummary is true
           summaryContent={<div>Small summary example</div>}
         >
-          {/* @ts-ignore */}
-          <div name="Review Model">
+          <div data-title="Review Model">
             <HvTypography variant="title2" component="h2">
               1. API details
             </HvTypography>
@@ -152,18 +151,15 @@ export const Main: StoryObj<HvWizardProps> = {
               multiline but 2 lines are the maximum recommended.
             </HvTypography>
           </div>
-          {/* @ts-ignore */}
-          <RandomFormComponent name="randomForm" mustValidate />
-          {/* @ts-ignore */}
-          <div name="Review Parameters">
+          <RandomFormComponent data-title="randomForm" mustValidate />
+          <div data-title="Review Parameters">
             <HvTypography variant="title2" component="h2">
               2. Deployment details
             </HvTypography>
             <br />
             {mockText}
           </div>
-          {/* @ts-ignore */}
-          <div name="last">Last</div>
+          <div data-title="last">Last</div>
         </HvWizard>
       </>
     );
@@ -207,8 +203,7 @@ export const Skippable: StoryObj<HvWizardProps> = {
           loading={loading}
           handleSubmit={mockSubmit}
         >
-          {/* @ts-ignore */}
-          <div name="Review Model">
+          <div data-title="Review Model">
             <HvTypography variant="title3" component="h2">
               1. API details
             </HvTypography>
@@ -217,18 +212,15 @@ export const Skippable: StoryObj<HvWizardProps> = {
               multiline but 2 lines are the maximum recommended.
             </HvTypography>
           </div>
-          {/* @ts-ignore */}
-          <RandomFormComponent name="randomForm" mustValidate />
-          {/* @ts-ignore */}
-          <div name="Review Parameters">
+          <RandomFormComponent data-title="randomForm" mustValidate />
+          <div data-title="Review Parameters">
             <HvTypography variant="title3" component="h2">
               2. Deployment details
             </HvTypography>
             <br />
             {mockText}
           </div>
-          {/* @ts-ignore */}
-          <div name="last">Last</div>
+          <div data-title="last">Last</div>
         </HvWizard>
       </>
     );

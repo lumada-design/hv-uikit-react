@@ -1,13 +1,12 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { HvWizard } from "./Wizard";
 
 describe("HvWizard", () => {
-  const mockOnClose = vi.fn();
-  const mockOnSubmit = vi.fn();
-
   it("renders the component as expected", () => {
+    const mockOnClose = vi.fn();
+    const mockOnSubmit = vi.fn();
     const { getByText, queryByText, getByRole } = render(
       <HvWizard
         open
@@ -31,7 +30,28 @@ describe("HvWizard", () => {
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
 
-  it("should move across the pages when clicking the wizard actions", () => {
+  it("forwards className & classes", () => {
+    render(
+      <HvWizard
+        open
+        className="customClassName"
+        onClose={() => {}}
+        handleSubmit={() => {}}
+        classes={{ root: "customClassesRoot" }}
+      >
+        <div data-title="MyContentTitle">content</div>
+      </HvWizard>,
+    );
+
+    expect(document.querySelector(".customClassName")).toBeInTheDocument();
+    expect(document.querySelector(".customClassesRoot")).toBeInTheDocument();
+    expect(screen.getByLabelText(/MyContentTitle/i)).toBeInTheDocument();
+  });
+
+  it("moves across the pages when clicking the wizard actions", () => {
+    const mockOnClose = vi.fn();
+    const mockOnSubmit = vi.fn();
+
     const { getByText, queryByText, getByRole, queryByRole } = render(
       <HvWizard
         open

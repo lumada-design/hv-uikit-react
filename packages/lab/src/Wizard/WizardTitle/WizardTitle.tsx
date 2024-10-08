@@ -73,19 +73,17 @@ export const HvWizardTitle = ({
   useEffect(() => {
     const contextArray = Object.entries(context);
 
-    if (contextArray.length) {
-      const updatedSteps: HvStepProps[] = contextArray.map(
-        ([, childState], index) => {
-          return {
-            title: childState?.name ?? `${index + 1}`,
-            state: switchTabState(childState, tab, index),
-            onClick: () => setTab(index),
-          };
-        },
-      );
+    if (!contextArray.length) return;
 
-      setSteps(updatedSteps);
-    }
+    const updatedSteps = contextArray.map<HvStepProps>(
+      ([, childState], index) => ({
+        title: childState?.["data-title"] ?? childState?.name ?? `${index + 1}`,
+        state: switchTabState(childState, tab, index),
+        onClick: () => setTab(index),
+      }),
+    );
+
+    setSteps(updatedSteps);
   }, [context, tab, setTab]);
 
   return (
