@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvContainer,
   HvGrid,
@@ -14,6 +14,10 @@ const meta: Meta<HvInlineEditorProps> = {
   component: HvInlineEditor,
 };
 export default meta;
+
+const decorator: Decorator = (Story) => (
+  <div style={{ width: 300 }}>{Story()}</div>
+);
 
 const variants: HvTypographyVariants[] = [
   "display",
@@ -35,21 +39,27 @@ export const Main: StoryObj<typeof HvInlineEditor<typeof HvInput>> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  render: (args) => {
-    return (
-      <div style={{ width: 300 }}>
-        <HvInlineEditor {...args} />
-      </div>
-    );
-  },
+  decorators: [decorator],
+  render: (args) => <HvInlineEditor {...args} />,
 };
 
 export const Disabled: StoryObj<HvInlineEditorProps> = {
+  decorators: [decorator],
+  render: () => <HvInlineEditor disabled />,
+};
+
+export const Controlled: StoryObj<HvInlineEditorProps> = {
+  decorators: [decorator],
   render: () => {
+    const [value, setValue] = useState("My value");
+
     return (
-      <div style={{ width: 300 }}>
-        <HvInlineEditor disabled />
-      </div>
+      <HvInlineEditor
+        value={value}
+        onChange={(event, newValue) => setValue(newValue)}
+        onBlur={(event, newValue) => setValue(newValue)}
+        onKeyDown={(event, newValue) => setValue(newValue)}
+      />
     );
   },
 };
