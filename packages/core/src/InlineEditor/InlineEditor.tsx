@@ -46,6 +46,13 @@ export type HvInlineEditorProps<C extends React.ElementType = typeof HvInput> =
       ) => void;
       /** Called when the input value changes. */
       onChange?: (event: React.SyntheticEvent, value: string) => void;
+      /** Called when there's a keydown event on the input. */
+      onKeyDown?: (
+        event:
+          | React.KeyboardEvent<HTMLTextAreaElement | HTMLInputElement>
+          | React.MouseEvent,
+        value: string,
+      ) => void;
       /** Props passed to the HvButton component */
       buttonProps?: HvButtonProps;
       /** Props passed to the HvTypography text component */
@@ -116,11 +123,13 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   };
 
   const handleKeyDown: HvInputProps["onKeyDown"] = (event) => {
+    let newValue = value;
     if (isKey(event, "Esc")) {
+      newValue = cachedValue;
       setEditMode(false);
-      setValue(cachedValue);
+      setValue(newValue);
     }
-    onKeyDown?.(event as any);
+    onKeyDown?.(event, newValue);
   };
 
   const handleChange: HvInputProps["onChange"] = (event, val) => {
