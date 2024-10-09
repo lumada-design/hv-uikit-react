@@ -1,7 +1,30 @@
+import { useState } from "react";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
-import { HvInput } from ".";
+import { HvInput, HvInputProps } from ".";
+
+const Suggestions = ({ ...others }: Partial<HvInputProps>) => {
+  const [value, setValue] = useState("");
+
+  const suggestionHandler: HvInputProps["suggestionListCallback"] = (
+    val: string,
+  ) => {
+    if (!val && value) return null; // cleared
+    return [{ id: "value", label: "value" }]; // all other cases
+  };
+
+  return (
+    <HvInput
+      label="Select a country"
+      value={value}
+      onChange={(event, val) => setValue(val)}
+      suggestionListCallback={suggestionHandler}
+      {...others}
+    />
+  );
+};
 
 describe("Input", () => {
   it("renders the input element", () => {
@@ -56,5 +79,27 @@ describe("Input", () => {
 
     expect(screen.getByLabelText("My input")).toBeDisabled(); // can't find by role searchbox since password inputs don't have a role...
     expect(screen.getByLabelText("Reveal password")).toBeDisabled(); // role can't be used since the parent has aria-hidden
+  });
+
+  it("does not trigger the suggestions on focus by default", async () => {
+    const user = userEvent.setup();
+    render(<Suggestions />);
+
+    const input = screen.getByRole("textbox", {
+      name: "Select a country",
+    });
+    await user.click(input);
+    expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+  });
+
+  it("triggers the suggestions on focus when suggestOnFocus is true", async () => {
+    const user = userEvent.setup();
+    render(<Suggestions suggestOnFocus />);
+
+    const input = screen.getByRole("textbox", {
+      name: "Select a country",
+    });
+    await user.click(input);
+    expect(screen.getByRole("tooltip")).toBeInTheDocument();
   });
 });

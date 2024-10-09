@@ -156,6 +156,17 @@ export interface HvInputProps
   /** The function that will be executed to received an array of objects that has a label and id to create list of suggestion */
   suggestionListCallback?: (value: string) => HvInputSuggestion[] | null;
   /**
+   * If enabled, the suggestions list will be rendered using a portal.
+   * If disabled, it will be under the DOM hierarchy of the parent component.
+   * @default false
+   * */
+  enablePortal?: boolean;
+  /**
+   * Whether the suggestions should be triggered once the input is focused and not only when typing.
+   * @default false
+   * */
+  suggestOnFocus?: boolean;
+  /**
    * The custom validation function, it receives the value and must return
    * either `true` for valid or `false` for invalid, default validations would only
    * occur if this function is null or undefined
@@ -236,6 +247,8 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
     required = false,
     readOnly = false,
     disabled = false,
+    enablePortal = false,
+    suggestOnFocus = false,
     label,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
@@ -549,15 +562,22 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
   /**
    * Clears the input value from the state and refocus the input.
    */
-  const handleClear = useCallback(() => {
-    // reset validation status to standBy (only when status is uncontrolled)
-    setValidationState(validationStates.standBy);
+  const handleClear = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      // reset validation status to standBy (only when status is uncontrolled)
+      setValidationState(validationStates.standBy);
 
-    changeInputValue(inputRef.current, "");
+      changeInputValue(inputRef.current, "");
 
-    // we want to focus the input when clicked and not active
-    setTimeout(focusInput);
-  }, [setValidationState]);
+      // prevent triggering the suggestions when clicking on the clear button when suggestOnFocus is true
+      if (canShowSuggestions && suggestOnFocus) event.stopPropagation();
+      else {
+        // we want to focus the input when clicked and not active
+        setTimeout(focusInput);
+      }
+    },
+    [canShowSuggestions, setValidationState, suggestOnFocus],
+  );
 
   const clearButton = useMemo(() => {
     if (!showClear) {
@@ -822,6 +842,22 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
           // prevent browsers auto-fill/suggestions when we have our own
           autoComplete: canShowSuggestions ? "off" : undefined,
 
+          onFocus: (event) => {
+            inputProps.onFocus?.(event);
+
+            // trigger suggestions when focusing the input
+            if (canShowSuggestions && suggestOnFocus) {
+              suggestionHandler(value);
+            }
+          },
+
+          onClick: (event) => {
+            inputProps.onClick?.(event);
+
+            // prevent closing the suggestions when clicking on the input when suggestOnFocus is true
+            if (canShowSuggestions && suggestOnFocus) event.stopPropagation();
+          },
+
           ...inputProps,
         }}
         inputRef={forkedRef}
@@ -846,6 +882,7 @@ export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
             onKeyDown={onSuggestionKeyDown}
             onSuggestionSelected={suggestionSelectedHandler}
             suggestionValues={suggestionValues}
+            enablePortal={enablePortal}
           />
         </>
       )}

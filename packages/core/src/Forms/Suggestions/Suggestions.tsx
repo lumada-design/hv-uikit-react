@@ -3,13 +3,14 @@ import {
   ClickAwayListener,
   ClickAwayListenerProps,
 } from "@mui/base/ClickAwayListener";
-import { Popper as MuiPopper } from "@mui/base/Popper";
+import { Popper } from "@mui/base/Popper";
 import { useForkRef } from "@mui/material/utils";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
 import { HvBaseProps } from "../../types/generic";
+import { getContainerElement } from "../../utils/document";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../FormElement";
 import { staticClasses, useClasses } from "./Suggestions.styles";
@@ -28,7 +29,10 @@ export interface HvSuggestion {
 export interface HvSuggestionsProps extends HvBaseProps {
   /** Whether suggestions is visible */
   open?: boolean;
-  /** Whether suggestions is visible. @deprecated use `open` instead */
+  /**
+   * Whether suggestions is visible.
+   * @deprecated use `open` instead.
+   * */
   expanded?: boolean;
   /** The HTML element Suggestions attaches to. */
   anchorEl?: HTMLElement | null;
@@ -40,6 +44,12 @@ export interface HvSuggestionsProps extends HvBaseProps {
   onClose?: ClickAwayListenerProps["onClickAway"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSuggestionsClasses;
+  /**
+   * If enabled, the suggestions list will be rendered using a portal.
+   * If disabled, it will be under the DOM hierarchy of the parent component.
+   * @default false
+   * */
+  enablePortal?: boolean;
 }
 
 export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
@@ -48,6 +58,7 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
     className,
     classes: classesProp,
     expanded = false,
+    enablePortal = false,
     open: openProp,
     anchorEl,
     suggestionValues = [],
@@ -55,7 +66,10 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
     onSuggestionSelected,
     ...others
   } = props;
+
   const { classes, cx } = useClasses(classesProp);
+
+  const { rootId } = useTheme();
 
   const { elementId } = useContext(HvFormElementContext);
   const localId = id ?? setId(elementId, "suggestions");
@@ -82,11 +96,20 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
           onClose?.(event);
         }}
       >
-        <MuiPopper
+        <Popper
+          style={{
+            // @ts-ignore
+            "--popper-width": enablePortal
+              ? `${anchorEl?.clientWidth}px`
+              : "100%",
+          }}
           open={openProp ?? isOpen}
-          disablePortal
+          disablePortal={!enablePortal}
+          container={enablePortal ? getContainerElement(rootId) : undefined}
           anchorEl={anchorEl}
-          className={classes.popper}
+          className={cx(classes.popper, {
+            [classes.portal]: enablePortal,
+          })}
         >
           <HvSelectionList
             className={classes.list}
@@ -99,7 +122,7 @@ export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
               </HvListItem>
             ))}
           </HvSelectionList>
-        </MuiPopper>
+        </Popper>
       </ClickAwayListener>
     </div>
   );
