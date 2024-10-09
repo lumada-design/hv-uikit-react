@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.76.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.75.0...@hitachivantara/uikit-react-core@5.76.0) (2024-10-09)
+
+### Bug Fixes
+
+- **InlineEditor:** value not updated on escape when controlled ([#4379](https://github.com/lumada-design/hv-uikit-react/issues/4379)) ([039e057](https://github.com/lumada-design/hv-uikit-react/commit/039e057eddc113b1a5cb5ff745a3896ad5c82359))
+
+### Features
+
+- **Dropdown:** allow generic values and onChange ([#4363](https://github.com/lumada-design/hv-uikit-react/issues/4363)) ([00f4b38](https://github.com/lumada-design/hv-uikit-react/commit/00f4b38314edb0b77e6960fc9ea606e09a2333f6))
+
 # [5.75.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.74.0...@hitachivantara/uikit-react-core@5.75.0) (2024-10-07)
 
 ### Features

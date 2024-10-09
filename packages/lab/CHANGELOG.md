@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.41.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.40.8...@hitachivantara/uikit-react-lab@5.41.0) (2024-10-09)
+
+### Bug Fixes
+
+- **Wizard:** `className` forwarding & `data-title` for title ([#4376](https://github.com/lumada-design/hv-uikit-react/issues/4376)) ([31ea011](https://github.com/lumada-design/hv-uikit-react/commit/31ea0116c22b48164e713e7ca6c9211bd0df938d))
+
+### Features
+
+- **Dropdown:** allow generic values and onChange ([#4363](https://github.com/lumada-design/hv-uikit-react/issues/4363)) ([00f4b38](https://github.com/lumada-design/hv-uikit-react/commit/00f4b38314edb0b77e6960fc9ea606e09a2333f6))
+
 ## [5.40.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.40.7...@hitachivantara/uikit-react-lab@5.40.8) (2024-10-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

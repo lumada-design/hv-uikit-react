@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.15.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.14.8...@hitachivantara/uikit-react-viz@5.15.0) (2024-10-09)
+
+### Features
+
+- **Dropdown:** allow generic values and onChange ([#4363](https://github.com/lumada-design/hv-uikit-react/issues/4363)) ([00f4b38](https://github.com/lumada-design/hv-uikit-react/commit/00f4b38314edb0b77e6960fc9ea606e09a2333f6))
+
 ## [5.14.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.14.7...@hitachivantara/uikit-react-viz@5.14.8) (2024-10-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz
