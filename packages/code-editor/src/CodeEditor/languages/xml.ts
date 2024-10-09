@@ -330,9 +330,9 @@ export const hvXmlKeyDownListener = (
         endColumn: selection.endColumn,
       });
 
-      // Look for the tag we are currently closing
+      // Look for the tag we are currently closing and shouldn't have opened attributes
       const tag = String(lineBeforeChange).match(
-        /<([\w-]+)(?![^>]*\/>)[^>/]*$/,
+        /<([\w-]+)\s*(?:(?:\s+[\w-]+\s*=\s*(?:"[^"]*"|'[^']*'))*)\s*$/,
       )?.[1];
       if (tag) {
         // Add the closing tag
