@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.77.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.76.0...@hitachivantara/uikit-react-core@5.77.0) (2024-10-10)
+
+### Features
+
+- **Input:** enable portal for suggestions and suggest on focus ([#4380](https://github.com/lumada-design/hv-uikit-react/issues/4380)) ([1c7d74c](https://github.com/lumada-design/hv-uikit-react/commit/1c7d74cdadda51cc7d2485fafc18a7f15ae34b6f))
+
 # [5.76.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.75.0...@hitachivantara/uikit-react-core@5.76.0) (2024-10-09)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.7.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.7.1...@hitachivantara/uikit-react-code-editor@5.7.2) (2024-10-10)
+
+### Bug Fixes
+
+- **CodeEditor:** not autoclosing tag if attributes are opened ([#4381](https://github.com/lumada-design/hv-uikit-react/issues/4381)) ([1a4eeb6](https://github.com/lumada-design/hv-uikit-react/commit/1a4eeb6b846b12c2a12634685097d33615093203))
+
 ## [5.7.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.7.0...@hitachivantara/uikit-react-code-editor@5.7.1) (2024-10-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-code-editor
