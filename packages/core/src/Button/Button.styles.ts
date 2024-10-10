@@ -5,6 +5,9 @@ import { outlineStyles } from "../utils/focusUtils";
 import { HvButtonRadius, HvButtonSize } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
+  /**
+   * Classes applied to the root element
+   */
   root: {
     display: "inline-flex",
     alignItems: "center",

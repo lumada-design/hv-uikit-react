@@ -35,6 +35,11 @@ export default withNextra({
       ],
     });
 
+    // fix for error "Module not found: Can't resolve 'fs'" during build.
+    if (!config.resolve.fallback) config.resolve.fallback = {};
+
+    config.resolve.fallback.fs = false;
+
     return config;
   },
 });
