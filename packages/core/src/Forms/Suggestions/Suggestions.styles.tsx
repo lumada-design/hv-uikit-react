@@ -10,9 +10,12 @@ export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
     width: "100%",
   },
   popper: {
-    width: "100%",
+    width: "var(--popper-width)",
     position: "absolute",
-    transform: "translate3d(0, -1px, 0) !important",
     zIndex: theme.zIndices.tooltip,
+    ":not($portal)": {
+      transform: "translate3d(0, -1px, 0) !important",
+    },
   },
+  portal: {},
 });
