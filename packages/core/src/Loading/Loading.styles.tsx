@@ -11,6 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
   },
   barContainer: {
     display: "flex",
+    alignItems: "center",
     justifyContent: "space-around",
 
     ":has($regular)": {
@@ -19,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     },
 
     ":has($small)": {
-      "--scaleY": "0.223",
+      "--height": "40%",
       width: 18,
       height: 18,
     },
@@ -30,10 +31,11 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     animation: "loading 1s ease-in-out infinite",
     // TODO: make this the default when it has better support
     width: "round(up, 0.11em, 2px)",
+    height: "100%",
 
     "@keyframes loading": {
       "50%": {
-        transform: "scale(1, var(--scaleY, 0.6))",
+        height: "var(--height, 60%)",
         backgroundColor: `var(--customColor, ${theme.colors.secondary})`,
       },
     },
