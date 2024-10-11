@@ -18,7 +18,7 @@ interface LiveProps {
   children: string;
 }
 
-const classes = {
+export const classes = {
   editor: css({
     fontFamily:
       "source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace",
@@ -112,7 +112,7 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
       }}
       theme={themes.dracula}
     >
-      <LivePreview className="flex gap-3 p-2 mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
+      <LivePreview className="flex flex-wrap gap-3 p-2 mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
 
       <div className={classes.editorContainer}>
         <CodeEditor
