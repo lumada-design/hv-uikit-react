@@ -20,7 +20,7 @@ export type {
   HvCategoricalColor,
   HvColor,
   HvColorAny,
-  // SIZES
+  HvRadius,
   HvSize,
 } from "@hitachivantara/uikit-styles";
 

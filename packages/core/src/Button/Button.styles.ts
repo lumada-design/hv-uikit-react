@@ -1,8 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
+import { HvRadius, HvSize, theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
-import { HvButtonRadius, HvButtonSize } from "./types";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
   root: {
@@ -133,7 +132,7 @@ export const getColoringStyle = (color: string, type?: string) => {
   };
 };
 
-export const getRadiusStyles = (radius: HvButtonRadius) => ({
+export const getRadiusStyles = (radius: HvRadius) => ({
   borderRadius: theme.radii[radius],
 });
 
@@ -146,7 +145,7 @@ const sizes = {
   xl: { height: "48px", space: "md", typography: "label" },
 };
 
-export const getSizeStyles = (size: HvButtonSize) => {
+export const getSizeStyles = (size: HvSize) => {
   const { height, space, typography } = sizes[size];
   const { color, ...typoProps } =
     theme.typography[typography as keyof typeof theme.typography];
@@ -157,7 +156,7 @@ export const getSizeStyles = (size: HvButtonSize) => {
   };
 };
 
-export const getIconSizeStyles = (size: HvButtonSize) => {
+export const getIconSizeStyles = (size: HvSize) => {
   const { height } = sizes[size];
   return {
     height,

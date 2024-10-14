@@ -4,7 +4,7 @@ import {
   useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { HvBaseTheme } from "@hitachivantara/uikit-styles";
+import { HvBaseTheme, HvRadius, HvSize } from "@hitachivantara/uikit-styles";
 
 import {
   fixedForwardRef,
@@ -20,7 +20,7 @@ import {
   getSizeStyles,
   useClasses,
 } from "./Button.styles";
-import { HvButtonRadius, HvButtonSize, HvButtonVariant } from "./types";
+import { HvButtonVariant } from "./types";
 
 export { buttonClasses };
 
@@ -43,9 +43,9 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       /** Element placed after the children. */
       endIcon?: React.ReactNode;
       /** Button size. */
-      size?: HvButtonSize;
+      size?: HvSize;
       /** Button border radius. */
-      radius?: HvButtonRadius;
+      radius?: HvRadius;
       /** Defines the default colors of the button are forced into the icon. */
       overrideIconColors?: boolean;
       /** A Jss Object used to override or extend the styles applied. */
