@@ -189,8 +189,9 @@ export const Test: StoryObj<HvSelectProps<{}, false>> = {
           <HvOption value="op">Option</HvOption>
         </HvSelect>
         <HvSelect required label="Required" placeholder="Select an option" open>
-          <HvOption value="op1">Option 1</HvOption>
-          <HvOption value="op2">Option 2</HvOption>
+          {[...Array(100).keys()].map((i) => (
+            <HvOption key={i} value={i}>{`Option ${i}`}</HvOption>
+          ))}
         </HvSelect>
       </div>
       <HvSelect
