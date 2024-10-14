@@ -5,10 +5,11 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvSize } from "@hitachivantara/uikit-styles";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { useBaseDropdownContext } from "../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
-import { HvButtonSize, HvButtonVariant } from "../Button";
+import { HvButtonVariant } from "../Button";
 import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
@@ -79,7 +80,7 @@ export interface HvDropDownMenuProps
   /** The variant to be used in the header. */
   variant?: HvButtonVariant;
   /** Button size. */
-  size?: HvButtonSize;
+  size?: HvSize;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvDropDownMenuClasses;
   /** An object containing all the labels. */
