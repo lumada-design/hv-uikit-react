@@ -30,7 +30,7 @@ export interface HvFooterProps extends HvBaseProps {
 export const HvFooter = (props: HvFooterProps) => {
   const {
     name = "Hitachi Vantara",
-    copyright = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`,
+    copyright = `© Hitachi Vantara LLC ${new Date().getFullYear()}. All Rights Reserved.`,
     links,
     classes: classesProp,
     className,

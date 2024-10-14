@@ -968,6 +968,9 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvFooter: {
+      name: "Pentaho+",
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
