@@ -5,7 +5,26 @@ import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvLoading } from "../Loading";
 import { HvButton } from "./Button";
-import { buttonVariant } from "./types";
+
+const buttonVariant = [
+  "primary",
+  "primarySubtle",
+  "primaryGhost",
+  "positive",
+  "positiveSubtle",
+  "positiveGhost",
+  "negative",
+  "negativeSubtle",
+  "negativeGhost",
+  "warning",
+  "warningSubtle",
+  "warningGhost",
+  "secondarySubtle",
+  "secondaryGhost",
+  "semantic",
+  "secondary",
+  "ghost",
+] as const;
 
 describe("Button", () => {
   it("renders the content", () => {

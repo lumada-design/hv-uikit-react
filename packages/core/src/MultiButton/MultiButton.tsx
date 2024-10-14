@@ -9,8 +9,9 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvSize } from "@hitachivantara/uikit-styles";
 
-import { HvButtonSize, HvButtonVariant } from "../Button";
+import { HvButtonVariant } from "../Button";
 import { HvBaseProps } from "../types/generic";
 import { staticClasses, useClasses } from "./MultiButton.styles";
 
@@ -27,7 +28,7 @@ export interface HvMultiButtonProps extends HvBaseProps {
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMultiButtonClasses;
   /** Button size. */
-  size?: HvButtonSize;
+  size?: HvSize;
   /** Add a split between buttons */
   split?: boolean;
 }

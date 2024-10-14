@@ -1,33 +1,19 @@
-export const buttonVariant = [
-  "primary",
-  "primarySubtle",
-  "primaryGhost",
-  "positive",
-  "positiveSubtle",
-  "positiveGhost",
-  "negative",
-  "negativeSubtle",
-  "negativeGhost",
-  "warning",
-  "warningSubtle",
-  "warningGhost",
-  "secondarySubtle",
-  "secondaryGhost",
-  "semantic",
-  // deprecated props
-  "secondary",
-  "ghost",
-] as const;
-export type HvButtonVariant = (typeof buttonVariant)[number];
+import { HvRadius, HvSize } from "@hitachivantara/uikit-styles";
 
-export const buttonSize = ["xs", "sm", "md", "lg", "xl"] as const;
-export type HvButtonSize = (typeof buttonSize)[number];
+// "contained" has no suffix
+type TypeSuffix = "" | "Subtle" | "Ghost";
 
-export const buttonRadius = [
-  "none",
-  "base",
-  "round",
-  "circle",
-  "full",
-] as const;
-export type HvButtonRadius = (typeof buttonRadius)[number];
+export type HvButtonVariant =
+  | "ghost"
+  | `primary${TypeSuffix}`
+  | `secondary${TypeSuffix}`
+  | `positive${TypeSuffix}`
+  | `negative${TypeSuffix}`
+  | `warning${TypeSuffix}`
+  | "semantic";
+
+/** @deprecated use `HvSize` */
+export type HvButtonSize = HvSize;
+
+/** @deprecated use `HvRadius` */
+export type HvButtonRadius = HvRadius;
