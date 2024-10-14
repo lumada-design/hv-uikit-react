@@ -26,6 +26,7 @@ const pentahoPlus = makeTheme((theme) => ({
         type: "light",
         ...colors.common,
         ...colors.light,
+        brand: blue[600],
         containerBackgroundHover: `color-mix(in srgb, ${blue[600]} 10%, transparent)`,
         backgroundColor: slate[100],
         atmo1: slate[50],
@@ -363,6 +364,13 @@ const pentahoPlus = makeTheme((theme) => ({
     base: "6px",
   },
   components: {
+    HvLoading: {
+      classes: {
+        loadingBar: {
+          borderRadius: 1,
+        },
+      },
+    },
     HvBadge: {
       classes: {
         badgePosition: {
