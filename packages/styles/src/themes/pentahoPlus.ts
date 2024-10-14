@@ -183,7 +183,7 @@ const pentahoPlus = makeTheme((theme) => ({
     },
   },
   fontFamily: {
-    body: "Inter",
+    body: "Inter, Arial, Helvetica, sans-serif",
   },
   typography: {
     display: {
