@@ -10,18 +10,26 @@ interface ColorTokens {
   success: string;
   successAction: string;
   successStrong: string;
+  successBorder: string;
+  successSubtle: string;
   successDimmed: string;
   warning: string;
   warningAction: string;
   warningStrong: string;
+  warningBorder: string;
+  warningSubtle: string;
   warningDimmed: string;
   error: string;
   errorAction: string;
   errorStrong: string;
+  errorBorder: string;
+  errorSubtle: string;
   errorDimmed: string;
   neutral: string;
   neutralAction: string;
   neutralStrong: string;
+  neutralBorder: string;
+  neutralSubtle: string;
   neutralDimmed: string;
   // #endregion
 
@@ -276,18 +284,26 @@ const newLight = {
   success: semanticLight.positive,
   successAction: semanticLight.positive_80,
   successStrong: semanticLight.positive_120,
+  successBorder: semanticLight.positive_20,
+  successSubtle: semanticLight.positive_20,
   successDimmed: semanticLight.positive_20,
   warning: semanticLight.warning,
   warningAction: semanticLight.warning_120,
   warningStrong: semanticLight.warning_140,
+  warningBorder: semanticLight.warning_20,
+  warningSubtle: semanticLight.warning_20,
   warningDimmed: semanticLight.warning_20,
   error: semanticLight.negative,
   errorAction: semanticLight.negative_80,
   errorStrong: semanticLight.negative_120,
+  errorBorder: semanticLight.negative_20,
+  errorSubtle: semanticLight.negative_20,
   errorDimmed: semanticLight.negative_20,
   neutral: semanticLight.neutral,
   neutralAction: semanticLight.neutral,
   neutralStrong: semanticLight.neutral,
+  neutralBorder: semanticLight.neutral_20,
+  neutralSubtle: semanticLight.neutral_20,
   neutralDimmed: semanticLight.neutral_20,
 
   text: accentLight.secondary,
@@ -384,18 +400,26 @@ const newDark = {
   success: semanticDark.positive,
   successAction: semanticDark.positive_80,
   successStrong: semanticDark.positive_120,
+  successBorder: semanticDark.positive_20,
+  successSubtle: semanticDark.positive_20,
   successDimmed: semanticDark.positive_20,
   warning: semanticDark.warning,
   warningAction: semanticDark.warning_120,
   warningStrong: semanticDark.warning_140,
+  warningBorder: semanticDark.warning_20,
+  warningSubtle: semanticDark.warning_20,
   warningDimmed: semanticDark.warning_20,
   error: semanticDark.negative,
   errorAction: semanticDark.negative_80,
   errorStrong: semanticDark.negative_120,
+  errorBorder: semanticDark.negative_20,
+  errorSubtle: semanticDark.negative_20,
   errorDimmed: semanticDark.negative_20,
   neutral: semanticDark.neutral,
   neutralAction: semanticDark.neutral,
   neutralStrong: semanticDark.neutral,
+  neutralBorder: semanticDark.neutral_20,
+  neutralSubtle: semanticDark.neutral_20,
   neutralDimmed: semanticDark.neutral_20,
 
   text: accentDark.secondary,

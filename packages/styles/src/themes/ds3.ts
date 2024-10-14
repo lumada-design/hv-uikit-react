@@ -477,9 +477,7 @@ const ds3 = makeTheme((theme) => ({
           backgroundColor: theme.colors.atmo1,
           borderColor: theme.colors.atmo4,
         },
-        ghost: {
-          color: theme.colors.secondary,
-        },
+        ghost: {},
         disabled: {
           "&:not(.HvButton-ghost):not(.HvButton-semantic)": {
             backgroundColor: theme.colors.atmo3,

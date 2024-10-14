@@ -4,6 +4,8 @@ import { HvRadius, HvSize } from "@hitachivantara/uikit-styles";
 type TypeSuffix = "" | "Subtle" | "Ghost";
 
 export type HvButtonVariant =
+  | "contained"
+  | "subtle"
   | "ghost"
   | `primary${TypeSuffix}`
   | `secondary${TypeSuffix}`
