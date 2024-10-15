@@ -1,9 +1,14 @@
-import { buttonClasses } from "@hitachivantara/uikit-react-core";
+import {
+  buttonClasses,
+  buttonVariant,
+  HvButton,
+  HvSize,
+} from "@hitachivantara/uikit-react-core";
 
 import { Description } from "@docs/components/Description";
 import { Page } from "@docs/components/Page";
 
-import ButtonVariants from "./ButtonVariants";
+import Playground from "./Playground";
 
 import { getComponentData } from "../../utils/utils";
 
@@ -27,7 +32,32 @@ meta: meta,
 
 ### Variants
 
-<ButtonVariants />
+<Playground
+  Component={HvButton}
+  componentName="HvButton"
+  controls={{
+    variant: {
+      type: "select",
+      values: buttonVariant,
+      defaultValue: "primary",
+    },
+    size: {
+      type: "select",
+      values: ["sm", "md", "lg"],
+      defaultValue: "md",
+    },
+    radius: {
+      type: "select",
+      values: ["none", "base", "round", "circle", "full"],
+      defaultValue: "base",
+    },
+    disabled: {
+      type: "check",
+    },
+  }}
+>
+  Test Button
+</Playground>
 
 ### Sizes
 
@@ -62,7 +92,7 @@ to check the `HvIconButton` component as it wraps the clickable icon with an `Hv
   <HvButton startIcon={<Play />} variant="primary">
     Play
   </HvButton>
-  <HvButton endIcon={<Pause />} variant="secondary">
+  <HvButton endIcon={<Pause />} variant="secondarySubtle">
     Pause
   </HvButton>
   <HvButton icon aria-label="Play" variant="primaryGhost">

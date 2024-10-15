@@ -1,7 +1,9 @@
-import { avatarClasses } from "@hitachivantara/uikit-react-core";
+import { avatarClasses, HvAvatar } from "@hitachivantara/uikit-react-core";
 
 import { Description } from "@docs/components/Description";
 import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
 
 import { getComponentData } from "../../utils/utils";
 
@@ -22,6 +24,26 @@ meta: meta,
 <Description />
 
 <Page>
+
+### Usage
+
+<Playground
+  Component={HvAvatar}
+  componentName="HvAvatar"
+  controls={{
+    size: {
+      type: "select",
+      values: ["xs", "sm", "md", "lg", "xl"],
+      defaultValue: "md",
+    },
+    variant: {
+      type: "select",
+      values: ["circle", "square"],
+      defaultValue: "circle",
+    },
+  }}
+  componentProps={{ alt: "Beatrice", src: "https://i.imgur.com/bE7vg3N.png" }}
+/>
 
 ### Image Avatars
 
