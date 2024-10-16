@@ -3,11 +3,12 @@ import {
   TableExpandedToggleProps,
   UseExpandedRowProps,
 } from "react-table";
-import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
 import { HvTypography } from "../../Typography";
+import type { HvCellProps } from "./useTable";
 
 // #region ##### TYPES #####
 
@@ -46,10 +47,9 @@ export const CellWithExpandButton = ({
   row,
   cell,
   labels: labelsProp,
-}: any) => {
+}: HvCellProps<any>) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
-
-  const { onClick } = row.getToggleRowExpandedProps();
+  const rowProps = row.getToggleRowExpandedProps?.();
 
   return (
     <>
@@ -61,9 +61,9 @@ export const CellWithExpandButton = ({
             : labels.expandRowButtonAriaLabel
         }
         aria-expanded={row.isExpanded}
-        onClick={onClick}
+        onClick={rowProps?.onClick}
       >
-        {row.isExpanded ? <DropDownXS /> : <DropUpXS />}
+        <DropDownXS style={{ rotate: row.isExpanded ? "180deg" : undefined }} />
       </HvButton>
       {cell?.value && (
         <HvTypography variant="label" component="span">
