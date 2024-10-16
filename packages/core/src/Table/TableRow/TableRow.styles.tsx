@@ -9,6 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
     color: "inherit",
     backgroundColor: theme.colors.atmo1,
     verticalAlign: "middle",
+    alignContent: "center",
     outline: 0,
   },
   /** Styles applied to the component root when inside a `HvTableHead`. */
