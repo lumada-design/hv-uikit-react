@@ -404,21 +404,30 @@ const pentahoPlus = makeTheme((theme) => ({
           "& svg": {
             width: 16,
             height: 16,
-            border: `1px solid ${theme.colors.secondary}`,
+            backgroundColor: theme.colors.pp.bgSurface,
+            border: `1px solid ${theme.colors.pp.textSubtle}`,
+          },
+          "&:hover": {
+            backgroundColor: theme.colors.pp.bgHover,
           },
         },
         checked: {
           "& svg": {
-            border: `1px solid ${theme.colors.primary}`,
-            backgroundColor: theme.colors.atmo1,
-            color: theme.colors.primary,
+            borderColor: theme.colors.primary,
+            backgroundColor: theme.colors.primary,
           },
           "&.HvBaseRadio-disabled": {
             "& svg": {
-              border: `1px solid ${theme.colors.secondary_60}`,
-              backgroundColor: theme.colors.atmo3,
-              color: theme.colors.secondary_60,
+              borderColor: theme.colors.pp.textDisabled,
+              backgroundColor: theme.colors.pp.textDisabled,
+              color: theme.colors.pp.bgDisabled,
             },
+          },
+        },
+        disabled: {
+          "& svg": {
+            border: `1px solid ${theme.colors.pp.textDisabled}`,
+            backgroundColor: theme.colors.pp.bgDisabled,
           },
         },
       },
