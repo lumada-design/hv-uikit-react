@@ -1,7 +1,6 @@
 import {
   Children,
   cloneElement,
-  Fragment,
   isValidElement,
   ReactElement,
   useMemo,
@@ -13,13 +12,7 @@ import {
 
 import { HvButtonSize, HvButtonVariant } from "../Button";
 import { HvBaseProps } from "../types/generic";
-import { setId } from "../utils/setId";
-import {
-  getSplitContainerColor,
-  getSplitContainerHeight,
-  staticClasses,
-  useClasses,
-} from "./MultiButton.styles";
+import { staticClasses, useClasses } from "./MultiButton.styles";
 
 export { staticClasses as multiButtonClasses };
 export type HvMultiButtonClasses = ExtractNames<typeof useClasses>;
@@ -41,7 +34,6 @@ export interface HvMultiButtonProps extends HvBaseProps {
 
 export const HvMultiButton = (props: HvMultiButtonProps) => {
   const {
-    id,
     className,
     children,
     classes: classesProp,
@@ -52,18 +44,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     split,
     ...others
   } = useDefaultProps("HvMultiButton", props);
-  const { classes, cx, css } = useClasses(classesProp);
-
-  const [color, type] = useMemo(() => {
-    const result = variant.split(/(?=[A-Z])/);
-    if (
-      result[0] === "ghost" ||
-      result[0] === "semantic" ||
-      (result[0] === "secondary" && !result[1])
-    )
-      return [];
-    return result.map((x) => x.toLowerCase());
-  }, [variant]);
+  const { classes, cx } = useClasses(classesProp);
 
   // Filter children: remove invalid and undefined/null
   const buttons = useMemo(() => {
@@ -78,7 +59,6 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
 
   return (
     <div
-      id={id}
       className={cx(
         classes.root,
         {
@@ -94,36 +74,17 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
     >
       {buttons.map((child, index) => {
         const childIsSelected = !!child.props.selected;
-        const btnKey = setId([id, index]);
-        return (
-          <Fragment key={btnKey}>
-            {cloneElement(child, {
-              variant,
-              disabled: disabled || child.props.disabled,
-              size,
-              className: cx(child.props.className, classes.button, {
-                [classes.firstButton]: index === 0,
-                [classes.lastButton]: index === buttons.length - 1,
-                [classes.selected]: childIsSelected,
-              }),
-            })}
-            {split && index < buttons.length - 1 && (
-              <div
-                className={cx(
-                  classes.splitContainer,
-                  color && css(getSplitContainerColor(color, type, disabled)),
-                  size && css(getSplitContainerHeight(size)),
-                  {
-                    [classes.splitDisabled]: disabled,
-                  },
-                  classes[variant as keyof HvMultiButtonClasses], // TODO - remove in v6
-                )}
-              >
-                <div className={classes.split} />
-              </div>
-            )}
-          </Fragment>
-        );
+        return cloneElement(child, {
+          key: index,
+          variant,
+          disabled: disabled || child.props.disabled,
+          size,
+          className: cx(child.props.className, classes.button, {
+            [classes.firstButton]: index === 0,
+            [classes.lastButton]: index === buttons.length - 1,
+            [classes.selected]: childIsSelected,
+          }),
+        });
       })}
     </div>
   );

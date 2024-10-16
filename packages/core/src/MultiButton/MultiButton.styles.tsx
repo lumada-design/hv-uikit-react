@@ -1,8 +1,6 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvButtonSize } from "../Button";
-import { getColoringStyle, getSizeStyles } from "../Button/Button.styles";
 import { dropDownMenuClasses } from "../DropDownMenu";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
@@ -101,45 +99,41 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     width: "fit-content",
     background: theme.colors.atmo1,
 
-    // Button
-    "& button$button": {
-      "&$firstButton": {
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
-        "& + div$splitContainer": {
-          marginLeft: -1,
-        },
-      },
-      "&$lastButton": {
-        borderTopLeftRadius: 0,
-        borderBottomLeftRadius: 0,
-      },
-    },
-
-    // Dropdown Menu
-    [`& .${dropDownMenuClasses.root}`]: {
-      "&:has($firstButton)": {
-        "& + div$splitContainer": {
-          marginRight: -1,
-        },
-      },
-    },
-    "& $button$firstButton > button": {
-      marginRight: -1.5,
-      borderTopRightRadius: 0,
-      borderBottomRightRadius: 0,
-    },
-    "& $button$lastButton > button": {
-      marginLeft: -1.5,
+    // HvButton, HvDropDownMenu
+    "& button$button:not($firstButton), & $button:not($firstButton) button": {
       borderTopLeftRadius: 0,
       borderBottomLeftRadius: 0,
+      "&:not([aria-controls])": {
+        borderLeftWidth: 0,
+      },
     },
+    // HvButton, HvDropDownMenu
+    "& button$button:not($lastButton), & $button:not($lastButton) button": {
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+      "&:not([aria-controls])": {
+        borderRightWidth: 0,
+      },
+
+      "&::after": {
+        content: "''",
+        position: "absolute",
+        inset: "4px -1px 4px auto",
+        width: 1,
+        zIndex: 1,
+        height: "auto",
+        backgroundColor: "currentcolor",
+      },
+    },
+    // HvDropDownMenu
     [`& .${dropDownMenuClasses.iconSelected}`]: {
       zIndex: 2,
     },
   },
   splitGroupDisabled: { background: theme.colors.atmo3 },
-  button: {},
+  button: {
+    position: "relative",
+  },
   selected: {},
   vertical: {
     flexDirection: "column",
@@ -201,23 +195,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
     },
   },
-  split: {
-    width: 1,
-    height: "100%",
-    background: "currentColor",
-  },
-  splitContainer: {
-    display: "flex",
-    justifyContent: "center",
-    zIndex: 1,
-    width: 2,
-    paddingTop: 4,
-    paddingBottom: 4,
-    height: "calc(32px - 2px)",
-  },
-  splitDisabled: {
-    color: theme.colors.secondary_60,
-  },
   firstButton: {},
   lastButton: {},
 
@@ -228,21 +205,4 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   secondary: {},
   secondarySubtle: {},
   secondaryGhost: {},
-});
-
-export const getSplitContainerColor = (
-  color: string,
-  type?: string,
-  disabled?: boolean,
-) => ({
-  color: getColoringStyle(color, type).color,
-  backgroundColor: disabled
-    ? theme.colors.atmo3
-    : type === "subtle"
-      ? theme.colors.atmo1
-      : "transparent",
-});
-
-export const getSplitContainerHeight = (size: HvButtonSize) => ({
-  height: `calc(${getSizeStyles(size).height} - 2px)`,
 });
