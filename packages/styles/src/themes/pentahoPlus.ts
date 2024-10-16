@@ -66,6 +66,9 @@ const pentahoPlus = makeTheme((theme) => ({
           primaryStrong: blue[800],
           primarySubtle: blue[200],
           primaryDimmed: blue[100],
+          secondary: slate[700],
+          secondarySubtle: slate[500],
+          secondaryDimmed: slate[300],
           success: green[600],
           successAction: green[700],
           successStrong: green[800],
@@ -145,6 +148,9 @@ const pentahoPlus = makeTheme((theme) => ({
           primaryStrong: blue[200],
           primarySubtle: blue[900],
           primaryDimmed: blue[950],
+          secondary: slate[50],
+          secondarySubtle: slate[400],
+          secondaryDimmed: slate[700],
           success: green[600],
           successAction: green[500],
           successStrong: green[300],
@@ -434,14 +440,27 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseSwitch: {
       classes: {
         root: {
+          "&:hover": {
+            backgroundColor: theme.colors.pp.bgHover,
+          },
           "& .HvBaseSwitch-switchBase": {
+            "& .HvBaseSwitch-thumb": {
+              backgroundColor: theme.colors.pp.bgSurface,
+              borderColor: theme.colors.pp.bgSurface,
+              boxShadow: `0px 1px 1px 0px color-mix(in srgb, ${slate[700]} 16%, transparent)`,
+            },
+            "+.HvBaseSwitch-track": {
+              height: 14,
+              backgroundColor: theme.colors.pp.secondaryDimmed,
+              borderColor: theme.colors.pp.secondarySubtle,
+            },
             "&.HvBaseSwitch-checked": {
               "& .HvBaseSwitch-thumb": {
-                border: `1px solid ${theme.colors.primary}`,
+                border: `1px solid ${theme.colors.pp.bgSurface}`,
               },
               "+.HvBaseSwitch-track": {
-                backgroundColor: theme.colors.primary,
-                borderColor: theme.colors.primary,
+                backgroundColor: theme.colors.pp.primary,
+                borderColor: theme.colors.pp.primaryStrong,
               },
             },
           },
