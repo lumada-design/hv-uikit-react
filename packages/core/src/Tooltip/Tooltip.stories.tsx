@@ -1,3 +1,4 @@
+import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
@@ -6,7 +7,7 @@ import {
   HvTooltip,
   HvTooltipProps,
   HvTypography,
-  tooltipClasses,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Play } from "@hitachivantara/uikit-react-icons";
 
@@ -151,6 +152,9 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     },
     ...setupChromatic(),
   },
+  decorators: [
+    (Story) => <div className="flex justify-around mt-200px">{Story()}</div>,
+  ],
   // Open tooltip for visual tests
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -160,6 +164,23 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     await expect(tooltip).toBeInTheDocument();
   },
   render: () => {
+    const classes = {
+      verticalTooltip: css({
+        display: "flex",
+        flexDirection: "column",
+        gap: theme.space.xs,
+      }),
+      separator: css({
+        margin: theme.spacing(1, -2),
+        borderBottom: `3px solid ${theme.colors.atmo2}`,
+      }),
+      tabularContent: css({
+        display: "flex",
+        justifyContent: "space-between",
+        gap: theme.space.xs,
+      }),
+    };
+
     const longTextTooltip = (
       <span style={{ maxWidth: 250 }}>
         Tooltips can showcase truncated text. The text should be concise and not
@@ -168,36 +189,31 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     );
 
     const multilineContent1 = (
-      <div>
-        <div className={tooltipClasses.title}>
-          <HvTypography variant="label">January</HvTypography>
-        </div>
-        <div className={tooltipClasses.valueWrapper}>
-          {[
-            ["Sales", "52,000 units"],
-            ["Profit", "50%"],
-          ].map(([name, value]) => (
-            <div key={name} className={tooltipClasses.values}>
-              <HvTypography variant="label">{name}</HvTypography>
-              <div className={tooltipClasses.separator} />
-              <HvTypography>{value}</HvTypography>
-            </div>
-          ))}
-        </div>
+      <div className={classes.verticalTooltip}>
+        <HvTypography variant="label">January</HvTypography>
+        <div className={classes.separator} />
+        {[
+          ["Sales", "52,000 units"],
+          ["Profit", "50%"],
+        ].map(([name, value]) => (
+          <div key={name} className={classes.tabularContent}>
+            <HvTypography variant="label">{name}</HvTypography>
+            <HvTypography>{value}</HvTypography>
+          </div>
+        ))}
       </div>
     );
 
     const multilineContent2 = (
-      <div className={tooltipClasses.valueWrapper}>
+      <div className={classes.verticalTooltip}>
         {[
           ["Status", "Open"],
           ["Date", "12/08/2018"],
           ["Assignee", "Management"],
           ["Approval", "Not yet requested"],
         ].map(([name, value]) => (
-          <div key={name} className={tooltipClasses.values}>
+          <div key={name} className={classes.tabularContent}>
             <HvTypography variant="label">{name}</HvTypography>
-            <div className={tooltipClasses.separator} />
             <HvTypography>{value}</HvTypography>
           </div>
         ))}
@@ -205,23 +221,17 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
     );
 
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          padding: "200px 20px 0",
-        }}
-      >
+      <>
         <HvTooltip title={longTextTooltip}>
           <HvButton variant="secondaryGhost">Long text tooltip</HvButton>
         </HvTooltip>
-        <HvTooltip title={multilineContent1} useSingle={false}>
+        <HvTooltip title={multilineContent1}>
           <HvButton variant="secondaryGhost">Multiline content 1</HvButton>
         </HvTooltip>
-        <HvTooltip title={multilineContent2} useSingle={false}>
+        <HvTooltip title={multilineContent2}>
           <HvButton variant="secondaryGhost">Multiline content 2</HvButton>
         </HvTooltip>
-      </div>
+      </>
     );
   },
 };

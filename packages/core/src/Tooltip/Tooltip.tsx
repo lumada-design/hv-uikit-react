@@ -47,6 +47,7 @@ export interface HvTooltipProps extends Omit<MuiTooltipProps, "classes"> {
   TransitionProps?: MuiTooltipProps["TransitionProps"];
   /**
    * Defines if should use a single or multiline tooltip.
+   * @deprecated tooltips already support multiline and can be styled accordingly.
    */
   useSingle?: boolean;
   /**

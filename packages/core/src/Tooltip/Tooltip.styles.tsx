@@ -5,13 +5,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvTooltip", {
   root: {},
   tooltip: {},
-  tooltipMulti: {},
   popper: {
-    [`& .${MuitooltipClasses.popper}`]: {
-      opacity: 1,
-    },
+    // TODO: move this to `tooltip` in v6 and make class always be applied
     [`& .${MuitooltipClasses.tooltip}`]: {
-      fontFamily: theme.fontFamily.body,
       ...theme.typography.body,
       display: "flex",
       width: "fit-content",
@@ -56,18 +52,28 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
       padding: theme.space.sm,
     },
     "& $tooltip": {
-      padding: "15px 20px",
+      padding: theme.space.sm,
       borderRadius: theme.radii.round,
       "& p": {
         wordBreak: "break-word",
       },
     },
   },
+  // TODO: remove in v6
+  /** @deprecated */
+  tooltipMulti: {},
+  /** @deprecated */
   title: {},
+  /** @deprecated */
   valuesContainer: {},
+  /** @deprecated */
   values: {},
+  /** @deprecated */
   color: {},
+  /** @deprecated */
   separatorColor: {},
+  /** @deprecated */
   separator: {},
+  /** @deprecated */
   valueWrapper: {},
 });
