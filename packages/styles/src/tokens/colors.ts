@@ -63,6 +63,10 @@ interface ColorTokens {
   /** color to use for opacity */
   dimmer: string;
   // #endregion
+
+  // #region borders
+  borderDisabled: string;
+  // #endregion
 }
 
 const base = {
@@ -307,6 +311,8 @@ const newLight = {
   bgDisabled: atmosphereLight.atmo3,
   bgOverlay: `color-mix(in srgb, ${atmosphereLight.atmo4} 80%, transparent)`,
   dimmer: "#FFFFFF",
+
+  borderDisabled: atmosphereLight.atmo3,
 } satisfies ColorTokens;
 // #endregion
 
@@ -415,6 +421,8 @@ const newDark = {
   bgDisabled: atmosphereDark.atmo3,
   bgOverlay: `color-mix(in srgb, ${atmosphereDark.atmo4} 80%, transparent)`,
   dimmer: "#000000",
+
+  borderDisabled: atmosphereDark.atmo3,
 } satisfies ColorTokens;
 // #endregion
 
