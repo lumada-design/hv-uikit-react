@@ -36,6 +36,9 @@ const config: DocsThemeConfig = {
   color: {
     hue: 210,
   },
+  toc: {
+    title: "Table of Contents",
+  },
   gitTimestamp: () => null,
 };
 

@@ -1,0 +1,103 @@
+import { badgeClasses } from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+
+const meta = await getComponentData("Badge", "core", badgeClasses)
+
+return {
+props: {
+ssg: {
+meta: meta,
+},
+},
+}
+
+}
+
+<Description />
+
+<Page>
+
+### With icon
+
+Use the `icon` prop to specify a icon to use with the badge.
+
+```jsx live
+<>
+  <HvBadge count={0} icon={<Alert />} />
+  <HvBadge count={1} icon={<Alert />} />
+  <HvBadge showCount count={8} icon={<Alert />} />
+  <HvBadge showCount count={88} icon={<Alert />} />
+  <HvBadge showCount count={888} icon={<Alert />} />
+  <HvBadge label="100%" icon={<Alert />} />
+</>
+```
+
+### Maximum value
+
+Use the `maxCount` prop to specify the maximum value to be displayed. Above that value a '+' sign is displayed.
+
+```jsx live
+<>
+  <HvBadge showCount count={10} maxCount={9} />
+  <HvBadge showCount count={100} maxCount={99} />
+  <HvBadge showCount count={1000} maxCount={999} />
+</>
+```
+
+### With text
+
+To display text with the badge you can use the `text` prop along with the `textVariant` prop to specify the typography variant to use.
+
+```jsx live
+<>
+  <HvBadge count={0} text="Events" textVariant="label" />
+  <HvBadge count={1} text="Events" textVariant="label" />
+  <HvBadge showCount count={8} text="Events" textVariant="title4" />
+  <HvBadge showCount count={88} text="Events" textVariant="title4" />
+  <HvBadge showCount count={888} text="Events" textVariant="title3" />
+  <HvBadge label="100%" text="Events" textVariant="title2" />
+</>
+```
+
+### With state
+
+A badge sample using react hooks to set the number of events.
+
+```jsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [count, setCount] = useState(1);
+  const addCount = () => setCount(count * 2);
+
+  return (
+    <>
+      <HvButton onClick={addCount}>Double Value</HvButton>
+      <HvBadge showCount count={count} text="Events" textVariant="title4" />
+    </>
+  );
+}
+```
+
+### Accessibility
+
+If you want to specify a custom aria-label, use the `role` prop.
+
+```jsx live
+<HvBadge
+  showCount
+  count={25}
+  text="Events"
+  textVariant="title4"
+  role="status"
+  aria-label="25 unread notifications"
+/>
+```
+
+</Page>
