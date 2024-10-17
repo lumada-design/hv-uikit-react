@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.78.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.77.0...@hitachivantara/uikit-react-core@5.78.0) (2024-10-17)
+
+### Bug Fixes
+
+- **Select:** add maxHeight ([#4382](https://github.com/lumada-design/hv-uikit-react/issues/4382)) ([3628ba4](https://github.com/lumada-design/hv-uikit-react/commit/3628ba4f4acaf579851f1507bf383d4d038e9d78))
+- **Table:** add `alignContent` for non-table displays ([#4377](https://github.com/lumada-design/hv-uikit-react/issues/4377)) ([aa09a86](https://github.com/lumada-design/hv-uikit-react/commit/aa09a86498f916e73ddce3312210d6a591a20cd9))
+- **Table:** row expansion arrow direction & types ([#4391](https://github.com/lumada-design/hv-uikit-react/issues/4391)) ([2e7f922](https://github.com/lumada-design/hv-uikit-react/commit/2e7f9229313aaaefd3c40c9cbb82ac32e3905313))
+- **Tooltip:** align styles & deprecate external classes ([#4390](https://github.com/lumada-design/hv-uikit-react/issues/4390)) ([ab5b6d6](https://github.com/lumada-design/hv-uikit-react/commit/ab5b6d6e55c284a3f362c928b87662c6742592a3))
+
+### Features
+
+- **Footer:** update to PD 0.2 specs ([#4385](https://github.com/lumada-design/hv-uikit-react/issues/4385)) ([229dc8e](https://github.com/lumada-design/hv-uikit-react/commit/229dc8e885712930a5340917c0257c6f8a2c7e59))
+- **Loading:** update to PD 0.2 specs ([#4383](https://github.com/lumada-design/hv-uikit-react/issues/4383)) ([e9a56b1](https://github.com/lumada-design/hv-uikit-react/commit/e9a56b1d182caafab5491275abf2aa0564367acf))
+
 # [5.77.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.76.0...@hitachivantara/uikit-react-core@5.77.0) (2024-10-10)
 
 ### Features

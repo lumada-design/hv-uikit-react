@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.35.0...@hitachivantara/uikit-styles@5.36.0) (2024-10-17)
+
+### Features
+
+- **CheckBox:** align with PD 0.2 specs ([#4387](https://github.com/lumada-design/hv-uikit-react/issues/4387)) ([341597b](https://github.com/lumada-design/hv-uikit-react/commit/341597b3846501dbe29d503fa42077e33ce04048))
+- **Footer:** update to PD 0.2 specs ([#4385](https://github.com/lumada-design/hv-uikit-react/issues/4385)) ([229dc8e](https://github.com/lumada-design/hv-uikit-react/commit/229dc8e885712930a5340917c0257c6f8a2c7e59))
+- **Loading:** update to PD 0.2 specs ([#4383](https://github.com/lumada-design/hv-uikit-react/issues/4383)) ([e9a56b1](https://github.com/lumada-design/hv-uikit-react/commit/e9a56b1d182caafab5491275abf2aa0564367acf))
+- **Radio:** align with PD 0.2 specs ([#4388](https://github.com/lumada-design/hv-uikit-react/issues/4388)) ([71984d6](https://github.com/lumada-design/hv-uikit-react/commit/71984d60446f8c71844e07236c28b1809030a071))
+
 # [5.35.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.34.2...@hitachivantara/uikit-styles@5.35.0) (2024-10-07)
 
 ### Features
