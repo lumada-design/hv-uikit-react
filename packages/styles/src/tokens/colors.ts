@@ -7,6 +7,9 @@ interface ColorTokens {
   primaryStrong: string;
   primarySubtle: string;
   primaryDimmed: string;
+  secondary: string;
+  secondarySubtle: string;
+  secondaryDimmed: string;
   success: string;
   successAction: string;
   successStrong: string;
@@ -273,6 +276,9 @@ const newLight = {
   primaryStrong: accentLight.primary_80,
   primarySubtle: accentLight.primary_20,
   primaryDimmed: accentLight.primary_20,
+  secondary: accentLight.secondary,
+  secondarySubtle: accentLight.secondary_60,
+  secondaryDimmed: accentLight.secondary_60,
   success: semanticLight.positive,
   successAction: semanticLight.positive_80,
   successStrong: semanticLight.positive_120,
@@ -381,6 +387,9 @@ const newDark = {
   primaryStrong: accentDark.primary_80,
   primarySubtle: accentDark.primary_20,
   primaryDimmed: accentDark.primary_20,
+  secondary: accentDark.secondary,
+  secondarySubtle: accentDark.secondary_60,
+  secondaryDimmed: accentDark.secondary_60,
   success: semanticDark.positive,
   successAction: semanticDark.positive_80,
   successStrong: semanticDark.positive_120,
