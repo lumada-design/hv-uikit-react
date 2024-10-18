@@ -185,10 +185,52 @@ const ds5 = makeTheme((theme) => ({
       textDecoration: "underline",
     },
   },
-  components: {} satisfies Record<
-    string,
-    Record<string, any> | { classes?: CSSProperties }
-  >,
+  components: {
+    HvButton: {
+      classes: {
+        contained: {
+          "&[data-color=primary]:not(:disabled)": {
+            backgroundColor: theme.colors.primary,
+            "&:hover, &:focus-visible": {
+              backgroundColor: theme.colors.primary_80,
+              borderColor: theme.colors.primary_80,
+            },
+          },
+          "&[data-color=positive]:not(:disabled)": {
+            backgroundColor: theme.colors.positive,
+            "&:hover, &:focus-visible": {
+              backgroundColor: theme.colors.positive_80,
+              borderColor: theme.colors.positive_80,
+            },
+          },
+          "&[data-color=warning]:not(:disabled)": {
+            backgroundColor: theme.colors.warning_120,
+            "&:hover, &:focus-visible": {
+              backgroundColor: theme.colors.warning_140,
+              borderColor: theme.colors.warning_140,
+            },
+          },
+          "&[data-color=negative]:not(:disabled)": {
+            backgroundColor: theme.colors.negative,
+            "&:hover, &:focus-visible": {
+              backgroundColor: theme.colors.negative_80,
+              borderColor: theme.colors.negative_80,
+            },
+          },
+        },
+        subtle: {
+          "&[data-color=warning]:not(:disabled)": {
+            color: theme.colors.warning_140,
+          },
+        },
+        ghost: {
+          "&[data-color=warning]:not(:disabled)": {
+            color: theme.colors.warning_140,
+          },
+        },
+      },
+    },
+  } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
     secondLevelHeight: "56px",

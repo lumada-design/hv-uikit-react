@@ -5,3 +5,5 @@ export const radii = {
   circle: "50%",
   full: "9999px",
 };
+
+export type HvRadius = keyof typeof radii;
