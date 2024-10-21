@@ -55,59 +55,32 @@ export const Variants: StoryObj<HvButtonProps> = {
       <HvButton variant="primarySubtle">Primary Subtle</HvButton>
       <HvButton variant="primaryGhost">Primary Ghost</HvButton>
       <HvButton disabled variant="primary">
-        Primary
+        Disabled
       </HvButton>
       <HvButton disabled variant="primarySubtle">
-        Primary Subtle
+        Disabled Subtle
       </HvButton>
       <HvButton disabled variant="primaryGhost">
-        Primary Ghost
+        Disabled Ghost
       </HvButton>
       <div />
       <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
       <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
-      <div />
-      <HvButton variant="secondarySubtle" disabled>
-        Secondary Subtle
-      </HvButton>
-      <HvButton variant="secondaryGhost" disabled>
-        Secondary Ghost
-      </HvButton>
       <HvButton variant="positive">Positive</HvButton>
       <HvButton variant="positiveSubtle">Positive Subtle</HvButton>
       <HvButton variant="positiveGhost">Positive Ghost</HvButton>
-      <HvButton variant="positive" disabled>
-        Positive
-      </HvButton>
-      <HvButton variant="positiveSubtle" disabled>
-        Positive Subtle
-      </HvButton>
-      <HvButton variant="positiveGhost" disabled>
-        Positive Ghost
-      </HvButton>
       <HvButton variant="warning">Warning</HvButton>
       <HvButton variant="warningSubtle">Warning Subtle</HvButton>
       <HvButton variant="warningGhost">Warning Ghost</HvButton>
-      <HvButton variant="warning" disabled>
-        Warning
-      </HvButton>
-      <HvButton variant="warningSubtle" disabled>
-        Warning Subtle
-      </HvButton>
-      <HvButton variant="warningGhost" disabled>
-        Warning Ghost
-      </HvButton>
       <HvButton variant="negative">Negative</HvButton>
       <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
       <HvButton variant="negativeGhost">Negative Ghost</HvButton>
-      <HvButton variant="negative" disabled>
-        Negative
+      <HvButton color="rebeccapurple">Custom</HvButton>
+      <HvButton color="rebeccapurple" variant="subtle">
+        Custom Subtle
       </HvButton>
-      <HvButton variant="negativeSubtle" disabled>
-        Negative Subtle
-      </HvButton>
-      <HvButton variant="negativeGhost" disabled>
-        Negative Ghost
+      <HvButton color="rebeccapurple" variant="ghost">
+        Custom Ghost
       </HvButton>
     </>
   ),
@@ -115,17 +88,7 @@ export const Variants: StoryObj<HvButtonProps> = {
 
 export const Sizes: StoryObj<HvButtonProps> = {
   decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 10,
-        }}
-      >
-        {Story()}
-      </div>
-    ),
+    (Story) => <div className="flex flex-wrap gap-sm">{Story()}</div>,
   ],
   render: () => (
     <>
@@ -447,13 +410,13 @@ export const Test: StoryObj = {
         <Play />
       </HvButton>
 
-      <HvButton icon aria-label="Pause" variant="primarySubtle" size="sm">
+      <HvButton icon aria-label="Play" variant="primarySubtle" size="sm">
         <Play />
       </HvButton>
-      <HvButton icon aria-label="Pause" variant="primarySubtle" size="md">
+      <HvButton icon aria-label="Play" variant="primarySubtle" size="md">
         <Play />
       </HvButton>
-      <HvButton icon disabled aria-label="Stop" variant="primary" size="lg">
+      <HvButton icon disabled aria-label="Play" variant="primary" size="lg">
         <Play />
       </HvButton>
 
@@ -481,6 +444,14 @@ export const Test: StoryObj = {
       </HvButton>
       <HvButton endIcon={<Stop />} disabled variant="secondaryGhost">
         Stop
+      </HvButton>
+      <HvButton color="rebeccapurple">rebeccapurple</HvButton>
+      <HvButton variant="subtle" color="rebeccapurple">
+        rebeccapurple
+      </HvButton>
+      <HvButton color="lightcyan">lightcyan</HvButton>
+      <HvButton variant="subtle" color="lightcyan">
+        lightcyan
       </HvButton>
     </div>
   ),

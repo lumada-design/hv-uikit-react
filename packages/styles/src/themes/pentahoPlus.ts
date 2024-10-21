@@ -7,6 +7,7 @@ import {
   amber,
   blue,
   cyan,
+  emerald,
   green,
   neutral,
   orange,
@@ -17,6 +18,33 @@ import {
   slate,
   yellow,
 } from "../tokens/colorsPalette";
+
+/** light-dark alias */
+const ld = (c1: string, c2: string) => `light-dark(${c1}, ${c2})`;
+
+/** custom button using `light-dark` theming scheme */
+const buttonColors = {
+  primary: {
+    subtleBg: ld(blue[50], blue[950]),
+    subtleBorder: ld(blue[200], blue[800]),
+  },
+  secondary: {
+    subtleBg: ld(slate[100], slate[800]),
+    subtleBorder: ld(slate[300], slate[700]),
+  },
+  success: {
+    subtleBorder: ld(green[200], green[800]),
+    subtleBg: ld(emerald[100], green[900]),
+  },
+  warning: {
+    subtleBorder: ld(amber[200], amber[800]),
+    subtleBg: ld(amber[100], amber[900]),
+  },
+  error: {
+    subtleBorder: ld(red[200], red[800]),
+    subtleBg: ld(red[100], red[900]),
+  },
+};
 
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
@@ -529,107 +557,86 @@ const pentahoPlus = makeTheme((theme) => ({
     HvButton: {
       classes: {
         root: {
-          border: "none",
           borderRadius: theme.radii.full,
-          padding: theme.spacing(0, "sm"),
-          [`&[data-color="positive"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.successAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.successStrong,
-            },
-          },
-          [`&[data-color="negative"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.errorAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.errorStrong,
-            },
-          },
-          [`&[data-color="warning"]`]: {
-            "&:hover": {
-              backgroundColor: theme.colors.pp.warningAction,
-            },
-            "&:active": {
-              backgroundColor: theme.colors.pp.warningStrong,
-            },
+          ":where(:not(.HvButton-disabled,.HvButton-contained))": {
+            "&[data-color=positive]": { color: theme.colors.pp.success },
+            "&[data-color=warning]": { color: theme.colors.pp.warning },
+            "&[data-color=negative]": { color: theme.colors.pp.error },
+            ":hover": { backgroundColor: theme.colors.pp.primaryDimmed },
+            ":active": { backgroundColor: theme.colors.pp.primarySubtle },
           },
         },
-        primary: {
-          "&:hover": {
-            backgroundColor: theme.colors.pp.primaryAction,
-          },
-          "&:active": {
-            backgroundColor: theme.colors.pp.primaryStrong,
+        contained: {
+          ":where(:not(.HvButton-disabled))": {
+            color: "#FFFFFF",
+            "&[data-color=primary]": {
+              backgroundColor: blue[600],
+              ":hover": { backgroundColor: blue[700] },
+              ":active": { backgroundColor: blue[800] },
+            },
+            "&[data-color=positive]": {
+              ":hover": { backgroundColor: theme.colors.pp.successAction },
+              ":active": { backgroundColor: theme.colors.pp.successStrong },
+            },
+            "&[data-color=warning]": {
+              ":hover": { backgroundColor: theme.colors.pp.warningAction },
+              ":active": { backgroundColor: theme.colors.pp.warningStrong },
+            },
+            "&[data-color=negative]": {
+              ":hover": { backgroundColor: theme.colors.pp.errorAction },
+              ":active": { backgroundColor: theme.colors.pp.errorStrong },
+            },
           },
         },
         subtle: {
-          borderTop: `1px solid ${theme.colors.atmo1}`,
-          borderBottom: `1px solid ${theme.colors.atmo4}`,
-          backgroundColor: theme.colors.atmo1,
-          "&:hover": {
-            backgroundColor: theme.colors.pp.bgHover,
-          },
-          "&:active": {
-            backgroundColor: theme.colors.pp.primarySubtle,
-            borderTop: `1px solid ${theme.colors.pp.primarySubtle}`,
-            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
-            border: "none",
-          },
-          "&.HvButton-disabled": {
-            backgroundColor: theme.colors.pp.bgDisabled,
-            "&:hover": {
-              backgroundColor: theme.colors.pp.bgDisabled,
+          borderColor: "color-mix(in srgb, currentcolor, transparent 60%)",
+          ":where(:not(.HvButton-disabled))": {
+            "&[data-color=primary]": {
+              backgroundColor: buttonColors.primary.subtleBg,
             },
-          },
-          "&[data-color=positive]": {
-            "&:hover,&:active": {
+            "&[data-color=secondary]": {
+              backgroundColor: buttonColors.secondary.subtleBg,
+            },
+            ":hover": {
+              backgroundColor: theme.colors.pp.primaryDimmed,
+            },
+            ":active": {
+              borderColor: "transparent",
+              backgroundColor: theme.colors.pp.primarySubtle,
+            },
+            "&[data-color=positive]": {
+              borderColor: buttonColors.success.subtleBorder,
               backgroundColor: theme.colors.pp.successDimmed,
+              ":hover": { backgroundColor: buttonColors.success.subtleBg },
+              ":active": { backgroundColor: buttonColors.success.subtleBorder },
             },
-          },
-          [`&[data-color="negative"]`]: {
-            color: theme.colors.negative_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.errorDimmed,
-            },
-          },
-          [`&[data-color="warning"]`]: {
-            color: theme.colors.warning_120,
-            "&:hover,&:active": {
+            "&[data-color=warning]": {
+              borderColor: buttonColors.warning.subtleBorder,
               backgroundColor: theme.colors.pp.warningDimmed,
+              ":hover": { backgroundColor: buttonColors.warning.subtleBg },
+              ":active": { backgroundColor: buttonColors.warning.subtleBorder },
             },
-          },
-          "&:HvButton-disabled": {
-            backgroundColor: theme.colors.pp.bgDisabled,
-            borderColor: theme.colors.pp.bgDisabled,
+            "&[data-color=negative]": {
+              borderColor: buttonColors.error.subtleBorder,
+              backgroundColor: theme.colors.pp.errorDimmed,
+              ":hover": { backgroundColor: buttonColors.error.subtleBg },
+              ":active": { backgroundColor: buttonColors.error.subtleBorder },
+            },
           },
         },
         ghost: {
-          "&:hover": {
-            backgroundColor: theme.colors.pp.primaryDimmed,
-          },
-          "&:active": {
-            backgroundColor: theme.colors.pp.primarySubtle,
-            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
-            border: "none",
-          },
-          [`&[data-color="positive"]`]: {
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.successDimmed,
+          ":where(:not(.HvButton-disabled))": {
+            "&[data-color=positive]": {
+              ":hover": { backgroundColor: theme.colors.pp.successDimmed },
+              ":active": { backgroundColor: buttonColors.success.subtleBg },
             },
-          },
-          [`&[data-color="negative"]`]: {
-            color: theme.colors.negative_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.errorDimmed,
+            "&[data-color=warning]": {
+              ":hover": { backgroundColor: theme.colors.pp.warningDimmed },
+              ":active": { backgroundColor: buttonColors.warning.subtleBg },
             },
-          },
-          [`&[data-color="warning"]`]: {
-            color: theme.colors.warning_120,
-            "&:hover,&:active": {
-              backgroundColor: theme.colors.pp.warningDimmed,
+            "&[data-color=negative]": {
+              ":hover": { backgroundColor: theme.colors.pp.errorDimmed },
+              ":active": { backgroundColor: buttonColors.error.subtleBg },
             },
           },
         },
@@ -646,22 +653,14 @@ const pentahoPlus = makeTheme((theme) => ({
         },
 
         disabled: {
-          border: "none",
-          backgroundColor: theme.colors.pp.bgDisabled,
           color: theme.colors.pp.textDisabled,
-          "&:hover": {
+          ":not(.HvButton-ghost)": {
+            borderColor: "transparent",
             backgroundColor: theme.colors.pp.bgDisabled,
-          },
-          "&[data-color=positive],&[data-color=warning],&[data-color=negative]":
-            {
-              color: theme.colors.pp.textDisabled,
-              "&:hover,&:active": {
-                backgroundColor: theme.colors.pp.bgDisabled,
-              },
-              "&.HvButton-ghost": {
-                backgroundColor: "transparent",
-              },
+            "&:hover, &:active": {
+              backgroundColor: theme.colors.pp.bgDisabled,
             },
+          },
         },
       },
     },
