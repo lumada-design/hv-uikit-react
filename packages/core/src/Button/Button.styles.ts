@@ -1,5 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { HvRadius, HvSize, theme } from "@hitachivantara/uikit-styles";
+import { theme, type HvSize } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
 
@@ -16,20 +16,23 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     whiteSpace: "nowrap",
 
     // Background color common for almost all variants
-    "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+    ":where(:not($disabled))": {
+      ":hover, :focus-visible": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+      },
     },
-    "&:focus-visible": {
+    ":focus-visible": {
       ...outlineStyles,
-      backgroundColor: theme.colors.containerBackgroundHover,
     },
 
     // Default button - no size specified
     fontFamily: theme.fontFamily.body,
     ...theme.typography.label,
+    color: "var(--color, currentcolor)",
+    backgroundColor: "transparent",
     height: "var(--HvButton-height)",
-    border: "1px solid currentcolor",
-    borderRadius: theme.radii.base,
+    border: "1px solid transparent",
+    borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
   },
   startIcon: {
@@ -42,11 +45,11 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.secondary_60,
-    borderColor: theme.colors.atmo3,
-    backgroundColor: theme.colors.atmo3,
-    "&:hover, &:focus-visible": {
-      backgroundColor: theme.colors.atmo3,
-      borderColor: theme.colors.atmo3,
+    backgroundColor: "transparent",
+    borderColor: "transparent",
+    ":hover, :focus-visible": {
+      backgroundColor: "transparent",
+      borderColor: "transparent",
     },
   },
   icon: {
@@ -57,27 +60,22 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       margin: -1,
     },
   },
+  contained: {
+    color: theme.colors.atmo1, // `color-contrast(var(--color) vs ${colors.atmo1}, ${colors.base_light}, ${colors.base_dark})`,
+    backgroundColor: "var(--color)",
+    ":where(:not($disabled))": {
+      ":hover, :focus-visible": {
+        backgroundColor: "color-mix(in srgb, var(--color), black 20%)",
+      },
+      ":active": {
+        backgroundColor: "color-mix(in srgb, var(--color), black 30%)",
+      },
+    },
+  },
   subtle: {
-    backgroundColor: "transparent",
-    "&$disabled": {
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        backgroundColor: "transparent",
-      },
-    },
+    borderColor: "currentcolor",
   },
-  ghost: {
-    borderColor: "transparent",
-    backgroundColor: "transparent",
-    "&$disabled": {
-      borderColor: "transparent",
-      backgroundColor: "transparent",
-      "&:hover, &:focus-visible": {
-        borderColor: "transparent",
-        backgroundColor: "transparent",
-      },
-    },
-  },
+  ghost: {},
   semantic: {
     color: theme.colors.base_dark,
     backgroundColor: "transparent",
@@ -101,61 +99,24 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   secondary: {},
 });
 
-export const getColoringStyle = (color: string, type?: string) => {
-  if (type)
-    return {
-      color:
-        theme.colors[
-          (color !== "warning"
-            ? color
-            : `${color}_140`) as keyof typeof theme.colors
-        ],
-    };
-
-  const bg =
-    theme.colors[
-      (color !== "warning"
-        ? color
-        : `${color}_120`) as keyof typeof theme.colors
-    ];
-  const hoverBg =
-    theme.colors[
-      (color !== "warning"
-        ? `${color}_80`
-        : `${color}_140`) as keyof typeof theme.colors
-    ];
-  return {
-    color: theme.colors.atmo1,
-    backgroundColor: bg,
-    borderColor: bg,
-    "&:hover, &:focus-visible": {
-      backgroundColor: hoverBg,
-      borderColor: hoverBg,
-    },
-  };
-};
-
-export const getRadiusStyles = (radius: HvRadius) => ({
-  borderRadius: theme.radii[radius],
-});
-
 // TODO - remove xs and xl in v6 since they are not DS spec
-const sizes = {
-  xs: { height: "24px", space: "sm", typography: "captionLabel" },
-  sm: { height: "24px", space: "sm", typography: "captionLabel" },
-  md: { height: "32px", space: "sm", typography: "label" },
-  lg: { height: "48px", space: "md", typography: "label" },
-  xl: { height: "48px", space: "md", typography: "label" },
+const sizes: Record<
+  HvSize,
+  { height: string; space?: HvSize; fontSize?: keyof typeof theme.fontSizes }
+> = {
+  xs: { height: "24px", fontSize: "sm" },
+  sm: { height: "24px", fontSize: "sm" },
+  md: { height: "32px" },
+  lg: { height: "48px", space: "md" },
+  xl: { height: "48px", space: "md" },
 };
 
 export const getSizeStyles = (size: HvSize) => {
-  const { height, space, typography } = sizes[size];
-  const { color, ...typoProps } =
-    theme.typography[typography as keyof typeof theme.typography];
+  const { height, space = "sm", fontSize } = sizes[size];
   return {
     height,
     padding: theme.spacing(0, space),
-    ...typoProps,
+    fontSize: fontSize && theme.fontSizes[fontSize],
   };
 };
 

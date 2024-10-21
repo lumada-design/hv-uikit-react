@@ -1,10 +1,16 @@
 import { useMemo } from "react";
 import {
+  mergeStyles,
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { HvBaseTheme, HvRadius, HvSize } from "@hitachivantara/uikit-styles";
+import {
+  getColor,
+  HvColorAny,
+  HvRadius,
+  HvSize,
+  theme,
+} from "@hitachivantara/uikit-styles";
 
 import {
   fixedForwardRef,
@@ -12,17 +18,17 @@ import {
   PolymorphicRef,
 } from "../types/generic";
 import {
-  staticClasses as buttonClasses,
-  getColoringStyle,
   getIconSizeStyles,
   getOverrideColors,
-  getRadiusStyles,
   getSizeStyles,
+  staticClasses,
   useClasses,
 } from "./Button.styles";
 import { HvButtonVariant } from "./types";
 
-export { buttonClasses };
+type Variant = "contained" | "subtle" | "ghost";
+
+export { staticClasses as buttonClasses };
 
 export type HvButtonClasses = ExtractNames<typeof useClasses>;
 
@@ -42,6 +48,8 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       startIcon?: React.ReactNode;
       /** Element placed after the children. */
       endIcon?: React.ReactNode;
+      /** Color of the button. */
+      color?: HvColorAny;
       /** Button size. */
       size?: HvSize;
       /** Button border radius. */
@@ -61,20 +69,9 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
     }
   >;
 
-/**
- * Normalize the button variant. It's meant to give us some retro-compatibility with
- * the DS 3.6 API.
- * @returns the normalized variant in DS 5 API
- */
-const mapVariant = (
-  variant: HvButtonVariant,
-  theme?: HvBaseTheme,
-): HvButtonVariant => {
-  if (theme === "ds3") return variant;
-
+function parseVariant(variant: HvButtonVariant): [HvColorAny, Variant] {
   const deprecatedVariantMap: Record<string, HvButtonVariant> = {
     secondary: "secondarySubtle",
-    ghost: "primaryGhost",
   };
 
   const mappedVariant = deprecatedVariantMap[variant];
@@ -82,13 +79,22 @@ const mapVariant = (
   if (import.meta.env.DEV && mappedVariant) {
     // eslint-disable-next-line no-console
     console.warn(
-      `Button variant '${variant}' is deprecated. Please use '${mappedVariant}'.`,
+      `HvButton variant '${variant}' is deprecated. Please use '${mappedVariant}'.`,
     );
   }
 
-  return mappedVariant || variant;
-};
+  if (variant === "semantic") return ["inherit", "ghost"];
+  if (variant === "secondary") return ["secondary", "subtle"];
+  if (variant === "ghost") return ["primary", "ghost"];
+  if (variant === "contained" || variant === "subtle") {
+    return ["secondary", variant];
+  }
 
+  const result = variant.split(/(?=[A-Z])/);
+  if (!result[1]) return [result[0], "contained"];
+
+  return result.map((x) => x.toLowerCase()) as [HvColorAny, Variant];
+}
 /**
  * Button component is used to trigger an action or event.
  */
@@ -98,12 +104,13 @@ export const HvButton = fixedForwardRef(function HvButton<
   const {
     classes: classesProp,
     children,
-    variant: variantProp, // TODO - should we split into two props (color and type) in v6?
+    icon = false,
+    variant: variantProp = icon ? "secondaryGhost" : "primary",
+    color: colorProp,
     disabled = false,
     className,
     startIcon,
     endIcon,
-    icon = false,
     size,
     radius,
     overrideIconColors = true,
@@ -116,11 +123,8 @@ export const HvButton = fixedForwardRef(function HvButton<
     ...others
   } = useDefaultProps("HvButton", props);
   const { classes, css, cx } = useClasses(classesProp);
-  const { activeTheme } = useTheme();
-  const variant = mapVariant(
-    variantProp ?? (icon ? "secondaryGhost" : "primary"),
-    activeTheme?.base,
-  );
+  const [parsedColor, variant] = parseVariant(variantProp);
+  const color = colorProp ?? parsedColor;
 
   const handleClick: HvButtonProps["onClick"] = (e) => {
     if (disabled) return;
@@ -132,36 +136,23 @@ export const HvButton = fixedForwardRef(function HvButton<
     onMouseDownProp?.(e);
   };
 
-  const [color, type] = useMemo(() => {
-    const result = variant.split(/(?=[A-Z])/);
-    if (
-      result[0] === "ghost" ||
-      result[0] === "semantic" ||
-      (result[0] === "secondary" && !result[1])
-    )
-      return [];
-    return result.map((x) => x.toLowerCase());
-  }, [variant]);
-
   const sizeStyles = useMemo(
-    () =>
-      size ? (icon ? getIconSizeStyles(size) : getSizeStyles(size)) : undefined,
+    () => size && (icon ? getIconSizeStyles(size) : getSizeStyles(size)),
     [size, icon],
   );
 
   return (
     <Component
       ref={ref}
-      style={{
-        ...style,
-        "--HvButton-height": sizeStyles ? sizeStyles.height : "32px",
-      }}
+      style={mergeStyles(style, {
+        "--color": color && getColor(color),
+        "--radius": radius && theme.radii[radius],
+        "--HvButton-height": sizeStyles?.height ?? "32px",
+      })}
       className={cx(
         classes.root,
-        type && classes[type as keyof HvButtonClasses],
-        color && css(getColoringStyle(color, type)),
-        classes[variant as keyof HvButtonClasses], // Placed after type and color CSS for DS3 override
-        radius && css(getRadiusStyles(radius)),
+        classes[variant],
+        classes[variantProp as keyof HvButtonClasses], // Placed after type and color CSS for DS3 override
         overrideIconColors && css(getOverrideColors()),
         {
           [classes.icon]: icon,
