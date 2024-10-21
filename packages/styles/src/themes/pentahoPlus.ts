@@ -517,6 +517,13 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvSelect: {
+      classes: {
+        panel: {
+          borderColor: buttonColors.secondary.subtleBorder,
+        },
+      },
+    },
     HvTag: {
       classes: {
         root: {
@@ -592,9 +599,11 @@ const pentahoPlus = makeTheme((theme) => ({
           borderColor: "color-mix(in srgb, currentcolor, transparent 60%)",
           ":where(:not(.HvButton-disabled))": {
             "&[data-color=primary]": {
+              borderColor: buttonColors.primary.subtleBorder,
               backgroundColor: buttonColors.primary.subtleBg,
             },
             "&[data-color=secondary]": {
+              borderColor: buttonColors.secondary.subtleBorder,
               backgroundColor: buttonColors.secondary.subtleBg,
             },
             ":hover": {
