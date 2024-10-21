@@ -1,14 +1,170 @@
-import { HvButton } from "@hitachivantara/uikit-react-core";
+import {
+  buttonClasses,
+  buttonVariant,
+  HvButton,
+  HvSize,
+} from "@hitachivantara/uikit-react-core";
 
-# Button
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
 
-Button component to render button or link
+import Playground from "./Playground";
 
-## Usage
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+
+const meta = await getComponentData("Button", "core", buttonClasses)
+
+return {
+props: {
+ssg: {
+meta: meta,
+},
+},
+}
+
+}
+
+<Description />
+
+<Page>
+
+### Variants
+
+<Playground
+  Component={HvButton}
+  componentName="HvButton"
+  controls={{
+    variant: {
+      defaultValue: "primary",
+    },
+    size: {
+      defaultValue: "md",
+    },
+    radius: {
+      defaultValue: "base",
+    },
+    disabled: {
+      type: "check",
+    },
+  }}
+>
+  Test Button
+</Playground>
+
+### Sizes
 
 ```jsx live
 <>
-  <HvButton>Primary</HvButton>
-  <HvButton variant="secondarySubtle">Secondary</HvButton>
+  <HvButton size="sm">Small</HvButton>
+  <HvButton size="md">Medium</HvButton>
+  <HvButton size="lg">Large</HvButton>
+  <HvButton icon size="md" aria-label="Play">
+    <Play />
+  </HvButton>
+  <HvButton icon size="lg" aria-label="Play">
+    <Play />
+  </HvButton>
 </>
 ```
+
+### With icon
+
+Use the `startIcon` or `endIcon` props to insert an icon on the button.
+You can also use an icon directly as a child of the `HvButton` component if you only want a clickable icon. In this case it might be useful
+to check the `HvIconButton` component as it wraps the clickable icon with an `HvTooltip` component.
+
+```jsx live
+<div
+  style={{
+    display: "flex",
+    flexFlow: "row",
+    gap: 10,
+  }}
+>
+  <HvButton startIcon={<Play />} variant="primary">
+    Play
+  </HvButton>
+  <HvButton endIcon={<Pause />} variant="secondarySubtle">
+    Pause
+  </HvButton>
+  <HvButton icon aria-label="Play" variant="primaryGhost">
+    <Play iconSize="XS" />
+  </HvButton>
+</div>
+```
+
+### Custom root component
+
+You can use the `component` prop to change the root component of the button to be other than `button` whether it's a native HTML element or your own custom React component.
+
+```jsx live
+
+interface CustomLinkProps extends HvButtonProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
+  <a href={to} {...others}>
+    {children}
+  </a>
+);
+
+export default function Demo() {
+
+return (
+  <div style={{ display: "flex", gap: 20, padding: 20 }}>
+    <HvButton
+      variant="secondarySubtle"
+      component="a"
+      href="https://lumada-design.github.io/uikit/master"
+      startIcon={<Link />}
+    >
+      Link
+    </HvButton>
+    <HvButton
+      variant="secondarySubtle"
+      component={CustomLink}
+      to="https://lumada-design.github.io/uikit/master"
+      startIcon={<Link />}
+    >
+      Custom link
+    </HvButton>
+  </div>
+)}
+```
+
+### Semantic buttons
+
+If you need a button that exists on a semantic container you can set the `variant` prop to `semantic`.
+
+```jsx live
+<div className="flex flex-wrap gap-sm p-sm text-base_dark bg-neutral_20">
+  <HvButton variant="semantic" startIcon={<Favorite />}>
+    Favorite
+  </HvButton>
+  <HvButton variant="semantic" startIcon={<Refresh />}>
+    Refresh
+  </HvButton>
+  <HvButton variant="semantic" startIcon={<Delete />}>
+    Delete
+  </HvButton>
+  <HvButton variant="semantic" icon aria-label="More options">
+    <MoreOptionsVertical />
+  </HvButton>
+</div>
+```
+
+### Focusable when disabled
+
+If you still need the button to be focusable when disabled for accessibility purposes, you can set the `focusableWhenDisabled` property to `true`.
+When using this property, the buttons will continue to be read by screen readers when disabled.
+
+```jsx live
+<HvButton disabled focusableWhenDisabled>
+  Primary
+</HvButton>
+```
+
+</Page>
