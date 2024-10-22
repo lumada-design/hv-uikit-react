@@ -784,6 +784,7 @@ export const ds3 = mergeTheme(ds3Base, {
     HvPagination: {
       classes: {
         root: {
+          ...theme.typography.body,
           [`& .HvPagination-pageSizeInput`]: {
             ...theme.typography.label,
             "&:focus": {
@@ -801,27 +802,11 @@ export const ds3 = mergeTheme(ds3Base, {
         icon: {
           fontSize: 16,
         },
-        pageSizeOptions: {
-          height: 32,
-        },
         pageSizeHeader: {
           height: "unset",
           [`& .HvBaseDropdown-arrowContainer`]: {
             marginTop: 0,
           },
-        },
-        pageSizeTextContainer: {
-          height: 32,
-          ...theme.typography.body,
-        },
-        pageSizeOptionsSelect: {
-          ...theme.typography.body,
-        },
-        totalPagesTextContainer: {
-          ...theme.typography.body,
-        },
-        pageNavigator: {
-          alignItems: "stretch",
         },
       },
     },
