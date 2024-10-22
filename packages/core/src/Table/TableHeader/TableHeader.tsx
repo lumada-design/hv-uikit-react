@@ -1,11 +1,8 @@
 import { forwardRef, useContext, useMemo } from "react";
-import { alpha, hexToRgb } from "@mui/material/styles";
 import {
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvButton, HvButtonProps } from "../../Button";
 import { HvTypography, HvTypographyProps } from "../../Typography";
@@ -100,9 +97,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       sortButtonProps,
       ...others
     } = useDefaultProps("HvTableHeader", props);
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-    const { colors } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -140,16 +136,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         style={style}
         className={cx(
           classes.root,
-          classes[type as keyof HvTableHeaderClasses],
-          type === "body" &&
-            css({
-              [`&.${staticClasses.sorted}`]: {
-                backgroundColor: alpha(
-                  hexToRgb(colors?.atmo1 || theme.colors.atmo1),
-                  0.4,
-                ),
-              },
-            }),
+          classes[type],
           {
             [classes.groupColumnMostLeft]: groupColumnMostLeft,
             [classes.groupColumnMostRight]: groupColumnMostRight,
@@ -180,17 +167,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             ]]: align !== "inherit",
           })}
         >
-          {isHeadCell && sortable && (
-            <HvButton
-              className={classes.sortButton}
-              icon
-              overrideIconColors={false}
-              aria-label="Sort"
-              {...sortButtonProps}
-            >
-              <Sort className={classes.sortIcon} />
-            </HvButton>
-          )}
           <HvTypography
             component="div"
             className={cx({
@@ -203,8 +179,19 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
           >
             {children}
           </HvTypography>
-          {resizable && <div {...resizerProps} className={classes.resizer} />}
+          {isHeadCell && sortable && (
+            <HvButton
+              className={classes.sortButton}
+              icon
+              overrideIconColors={false}
+              aria-label="Sort"
+              {...sortButtonProps}
+            >
+              <Sort className={classes.sortIcon} />
+            </HvButton>
+          )}
         </div>
+        {resizable && <div {...resizerProps} className={classes.resizer} />}
       </Component>
     );
   },

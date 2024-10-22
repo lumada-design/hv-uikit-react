@@ -67,7 +67,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
         className={cx(
           tableSectionContext.filterClassName,
           classes.root,
-          classes[type as keyof HvTableRowClasses],
+          classes[type],
           {
             [classes.hover]: hover,
             [classes.selected]: selected,
