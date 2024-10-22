@@ -137,6 +137,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         className={cx(
           classes.root,
           classes[type],
+          align !== "inherit" && classes[`align${capitalize(align)}`],
+          variant !== "default" && classes[`variant${capitalize(variant)}`],
           {
             [classes.groupColumnMostLeft]: groupColumnMostLeft,
             [classes.groupColumnMostRight]: groupColumnMostRight,
@@ -148,12 +150,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             [classes.stickyColumnMostLeft]: stickyColumnMostLeft,
             [classes.stickyColumnLeastRight]: stickyColumnLeastRight,
             [classes.variantList]: tableContext.variant === "listrow",
-            [classes[
-              `align${capitalize(align)}` as keyof HvTableHeaderClasses
-            ]]: align !== "inherit",
-            [classes[
-              `variant${capitalize(variant)}` as keyof HvTableHeaderClasses
-            ]]: variant !== "default",
           },
           className,
         )}
@@ -161,11 +157,10 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         {...others}
       >
         <div
-          className={cx(classes.headerContent, {
-            [classes[
-              `alignFlex${capitalize(align)}` as keyof HvTableHeaderClasses
-            ]]: align !== "inherit",
-          })}
+          className={cx(
+            classes.headerContent,
+            align !== "inherit" && classes[`alignFlex${capitalize(align)}`],
+          )}
         >
           <HvTypography
             component="div"

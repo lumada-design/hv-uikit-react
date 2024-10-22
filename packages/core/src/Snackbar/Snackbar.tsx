@@ -128,9 +128,7 @@ export const HvSnackbar = ({
   return (
     <MuiSnackbar
       style={
-        anchorOriginOffset[
-          `anchorOrigin${capitalize(anchorOrigin.vertical)}` as keyof typeof anchorOriginOffset
-        ]
+        anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
       }
       classes={classes}
       className={className}
