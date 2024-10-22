@@ -4,7 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvButton, HvButtonProps } from "../../Button";
+import { HvButtonBase, HvButtonBaseProps } from "../../ButtonBase";
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { capitalize } from "../../utils/helpers";
 import {
@@ -62,7 +62,7 @@ export interface HvTableHeaderProps
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTableHeaderClasses;
   /** Extra props to be passed onto the sort button in the header. */
-  sortButtonProps?: HvButtonProps;
+  sortButtonProps?: HvButtonBaseProps;
 }
 
 const defaultComponent = "th";
@@ -164,8 +164,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         >
           <HvTypography
             component="div"
-            className={cx({
-              [classes.headerText]: !paragraph,
+            className={cx(classes.headerText, {
               [classes.headerParagraph]: paragraph,
               [classes.sortableHeaderText]: sortable,
             })}
@@ -175,15 +174,13 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             {children}
           </HvTypography>
           {isHeadCell && sortable && (
-            <HvButton
+            <HvButtonBase
               className={classes.sortButton}
-              icon
-              overrideIconColors={false}
               aria-label="Sort"
               {...sortButtonProps}
             >
               <Sort className={classes.sortIcon} />
-            </HvButton>
+            </HvButtonBase>
           )}
         </div>
         {resizable && <div {...resizerProps} className={classes.resizer} />}

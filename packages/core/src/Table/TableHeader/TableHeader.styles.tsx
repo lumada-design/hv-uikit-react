@@ -3,20 +3,17 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   root: {
-    "--first-row-cell-height": "52px",
+    "--first-row-cell-height": "32px",
     "--cell-height": "32px",
     height: "var(--cell-height)",
     verticalAlign: "inherit",
     alignContent: "inherit",
     textAlign: "left",
-    padding: theme.spacing(0, 1, 0, 4),
+    padding: theme.spacing(0, "xs"),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   head: {
-    paddingTop: 8,
-    verticalAlign: "top",
-    alignContent: "start",
-    ...theme.typography.label,
+    fontWeight: theme.fontWeights.semibold,
     backgroundColor: theme.colors.atmo1,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
 
@@ -34,10 +31,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     },
 
     "&$sortable": {
-      verticalAlign: "initial",
-      alignContent: "initial",
-      paddingTop: 0,
-      paddingLeft: 0,
       cursor: "pointer",
 
       ":hover, :focus-within": {
@@ -53,9 +46,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     ...theme.typography.body,
     ":where($sorted)": {
       backgroundColor: theme.alpha("atmo1", 0.4),
-    },
-    "&$sortable:not($variantNone)": {
-      paddingLeft: 32,
     },
   },
   footer: {},
@@ -83,10 +73,11 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       borderLeft: 0,
     },
   },
-  headerContent: { display: "flex", alignItems: "flex-start", width: "100%" },
+  headerContent: { display: "flex", alignItems: "center", width: "100%" },
   headerText: { overflow: "hidden", textOverflow: "ellipsis" },
-  headerParagraph: { overflow: "hidden", display: "-webkit-box" },
-  sortableHeaderText: { paddingTop: "8px" },
+  headerParagraph: { textOverflow: "inherit", display: "-webkit-box" },
+  /** @deprecated use `sortable: &$headerText` */
+  sortableHeaderText: {},
   sorted: {
     "& $sortIcon": {
       opacity: 1,
@@ -94,12 +85,13 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   },
   sortable: {},
   sortButton: {
-    ":focus-visible": {
+    marginLeft: 4,
+    ":hover,:focus-visible": {
       boxShadow: "none",
       backgroundColor: "transparent",
     },
   },
-  sortIcon: { opacity: 0 },
+  sortIcon: { opacity: 0, width: "fit-content", height: "fit-content" },
   alignLeft: { textAlign: "left" },
   alignRight: { textAlign: "right", flexDirection: "row-reverse" },
   alignCenter: { textAlign: "center" },
