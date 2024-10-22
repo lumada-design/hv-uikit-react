@@ -1,11 +1,8 @@
 import { forwardRef, useContext, useMemo } from "react";
-import { alpha, hexToRgb } from "@mui/material/styles";
 import {
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvButton, HvButtonProps } from "../../Button";
 import { HvTypography, HvTypographyProps } from "../../Typography";
@@ -100,9 +97,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
       sortButtonProps,
       ...others
     } = useDefaultProps("HvTableHeader", props);
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
-    const { colors } = useTheme();
     const tableContext = useContext(TableContext);
     const tableSectionContext = useContext(TableSectionContext);
 
@@ -141,15 +137,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
         className={cx(
           classes.root,
           classes[type],
-          type === "body" &&
-            css({
-              [`&.${staticClasses.sorted}`]: {
-                backgroundColor: alpha(
-                  hexToRgb(colors?.atmo1 || theme.colors.atmo1),
-                  0.4,
-                ),
-              },
-            }),
           align !== "inherit" && classes[`align${capitalize(align)}`],
           variant !== "default" && classes[`variant${capitalize(variant)}`],
           {
@@ -198,8 +185,8 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
           >
             {children}
           </HvTypography>
-          {resizable && <div {...resizerProps} className={classes.resizer} />}
         </div>
+        {resizable && <div {...resizerProps} className={classes.resizer} />}
       </Component>
     );
   },
