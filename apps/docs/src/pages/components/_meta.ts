@@ -5,5 +5,6 @@ export default {
   },
   avatar: "Avatar",
   badge: "Badge",
+  banner: "Banner",
   button: "Button",
 };

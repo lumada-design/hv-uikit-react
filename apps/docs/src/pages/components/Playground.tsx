@@ -43,7 +43,7 @@ const generateCode = (
     .map(([key, value]) =>
       typeof value === "boolean" && value
         ? key
-        : "boolean" && !value
+        : typeof value === "boolean" && !value
           ? ""
           : `${key}="${value}"`,
     )
@@ -51,8 +51,12 @@ const generateCode = (
     .trim();
 
   const componentPropsString = Object.entries(componentProps || {})
-    .map(([key, value]) => `${key}="${value}"`)
-    .join(" ");
+    .map(([key, value]) => {
+      if (key === "style") return "";
+      return typeof value === "boolean" && value ? key : `${key}="${value}"`;
+    })
+    .join(" ")
+    .trim();
 
   const childrenString =
     typeof children === "string"
@@ -103,72 +107,76 @@ export const Playground = ({
     (prop: string, control: Control) => {
       const propMeta = data?.meta.docgen.props[prop];
 
+      // override control type
       if (control.type) {
-        if (control.type === "slider") {
-          const min = 1;
-          const max = propMeta.type.value.length;
+        if (propMeta.type.name === "enum") {
+          if (control.type === "slider") {
+            const min = 1;
+            const max = propMeta.type.value.length;
 
-          const formattedLabel = (label: React.ReactNode) => {
-            if (!label) return "";
-            return propMeta.type.value[
-              parseInt(label as string, 10) - 1
-            ].value.replace(/"/g, "");
-          };
+            const formattedLabel = (label: React.ReactNode) => {
+              if (!label) return "";
+              return propMeta.type.value[
+                parseInt(label as string, 10) - 1
+              ].value.replace(/"/g, "");
+            };
 
-          return (
-            <HvSlider
-              label={prop}
-              hideInput
-              minPointValue={min}
-              maxPointValue={max}
-              markStep={1}
-              divisionQuantity={max - min}
-              classes={{
-                root: css({ width: "100%" }),
-                sliderContainer: css({ padding: 10, paddingTop: 0 }),
-                labelContainer: css({ marginLeft: 0, marginBottom: 8 }),
-              }}
-              values={[
-                propMeta.type.value.findIndex(
-                  (p: any) => p.value.replace(/"/g, "") === propsState[prop],
-                ) + 1 ||
+            return (
+              <HvSlider
+                label={prop}
+                hideInput
+                minPointValue={min}
+                maxPointValue={max}
+                markStep={1}
+                divisionQuantity={max - min}
+                classes={{
+                  root: css({ width: "100%" }),
+                  sliderContainer: css({ padding: 10, paddingTop: 0 }),
+                  labelContainer: css({ marginLeft: 0, marginBottom: 8 }),
+                }}
+                values={[
                   propMeta.type.value.findIndex(
-                    (p: any) =>
-                      p.value.replace(/"/g, "") === control.defaultValue,
-                  ) + 1,
-              ]}
-              formatMark={(label) => formattedLabel(label)}
-              formatTooltip={(label) => formattedLabel(label)}
-              onChange={(values) => {
-                handleSelectChange(
-                  null,
-                  prop,
-                  propMeta.type.value[values[0] - 1]?.value.replace(/"/g, ""),
-                );
-              }}
-            />
-          );
-        }
-        if (control.type === "radio") {
-          return (
-            <HvRadioGroup
-              label={prop}
-              orientation="horizontal"
-              value={propsState[prop] || control.defaultValue}
-              onChange={(e, v) => handleSelectChange(e, prop, v)}
-              classes={{
-                root: css({ width: "100%" }),
-              }}
-            >
-              {propMeta.type.value.map((v: any) => {
-                const value = v.value.replace('"', "").replace('"', "");
-                return <HvRadio key={value} label={value} value={value} />;
-              })}
-            </HvRadioGroup>
-          );
+                    (p: any) => p.value.replace(/"/g, "") === propsState[prop],
+                  ) + 1 ||
+                    propMeta.type.value.findIndex(
+                      (p: any) =>
+                        p.value.replace(/"/g, "") === control.defaultValue,
+                    ) + 1,
+                ]}
+                formatMark={(label) => formattedLabel(label)}
+                formatTooltip={(label) => formattedLabel(label)}
+                onChange={(values) => {
+                  handleSelectChange(
+                    null,
+                    prop,
+                    propMeta.type.value[values[0] - 1]?.value.replace(/"/g, ""),
+                  );
+                }}
+              />
+            );
+          }
+          if (control.type === "radio") {
+            return (
+              <HvRadioGroup
+                label={prop}
+                orientation="horizontal"
+                value={propsState[prop] || control.defaultValue}
+                onChange={(e, v) => handleSelectChange(e, prop, v)}
+                classes={{
+                  root: css({ width: "100%" }),
+                }}
+              >
+                {propMeta.type.value.map((v: any) => {
+                  const value = v.value.replace('"', "").replace('"', "");
+                  return <HvRadio key={value} label={value} value={value} />;
+                })}
+              </HvRadioGroup>
+            );
+          }
         }
       }
 
+      // default control types
       if (propMeta.type.name === "enum") {
         return (
           <HvSelect
@@ -219,13 +227,13 @@ export const Playground = ({
 
   return (
     <>
-      <div className="flex justify-between p-2 mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round">
-        <div className="w-[70%] flex justify-center items-center">
+      <div className="flex justify-between mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round">
+        <div className="w-[70%] flex justify-center items-center p-sm">
           <Component {...propsState} {...componentProps}>
             {children?.props.children}
           </Component>
         </div>
-        <div className="w-[30%] flex flex-col gap-[var(--uikit-space-xs)] justify-center items-center border-l border-[var(--uikit-colors-atmo3)] pl-[var(--uikit-space-xs)]">
+        <div className="w-[30%] flex flex-col gap-xs justify-center items-center border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">
           {Object.keys(controls || {}).map((prop) => {
             const control = controls[prop];
             if (!control) return null;

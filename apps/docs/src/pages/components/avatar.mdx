@@ -8,18 +8,9 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-
-const meta = await getComponentData("Avatar", "core", avatarClasses)
-
-return {
-props: {
-ssg: {
-meta: meta,
-},
-},
-}
-
-}
+  const meta = await getComponentData("Avatar", "core", avatarClasses);
+  return { props: { ssg: { meta: meta } } };
+};
 
 <Description />
 
