@@ -70,21 +70,19 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       defaultExpanded,
     });
 
-    const showContent = expandable ? !!isOpen : true;
+    const hasHeader = title || actions || expandable;
 
     return (
       <div
         ref={ref}
         id={id}
-        className={cx(classes.root, className)}
+        className={cx(classes.root, className, {
+          [classes.raisedHeader]: raisedHeader && isOpen,
+        })}
         {...others}
       >
-        {(title || actions || expandable) && (
-          <div
-            className={cx(classes.header, {
-              [classes.raisedHeader]: raisedHeader && isOpen,
-            })}
-          >
+        {hasHeader && (
+          <div className={classes.header}>
             {expandable && (
               <HvButton
                 icon
@@ -107,8 +105,9 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
           ref={contentRef}
           hidden={!isOpen}
           className={cx(classes.content, {
-            [classes.hidden]: !showContent,
-            [classes.spaceTop]: !(title || actions || expandable),
+            [classes.hidden]: expandable && !isOpen,
+            [classes.spaceTop]: !hasHeader,
+            [classes.hasHeader]: hasHeader,
           })}
           {...(expandable && regionProps)}
         >
