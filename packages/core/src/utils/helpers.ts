@@ -6,8 +6,8 @@ export const range = (length: number, start = 0) => {
   return Array.from({ length: length - start }, (_, i) => i + start);
 };
 
-export const capitalize = (string = "") => {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+export const capitalize = <T extends string>(string: T) => {
+  return (string.charAt(0).toUpperCase() + string.slice(1)) as Capitalize<T>;
 };
 
 export function isEqual(obj1: unknown, obj2: unknown) {
