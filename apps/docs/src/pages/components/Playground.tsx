@@ -9,12 +9,16 @@ import { themes } from "prism-react-renderer";
 import {
   HvCheckBox,
   HvOption,
+  HvRadio,
+  HvRadioGroup,
   HvSelect,
   HvSlider,
 } from "@hitachivantara/uikit-react-core";
 
+type ControlType = "radio" | "slider";
+
 type Control = {
-  type?: string;
+  type?: ControlType;
   defaultValue?: string;
   values?: string[];
 };
@@ -143,6 +147,24 @@ export const Playground = ({
                 );
               }}
             />
+          );
+        }
+        if (control.type === "radio") {
+          return (
+            <HvRadioGroup
+              label={prop}
+              orientation="horizontal"
+              value={propsState[prop] || control.defaultValue}
+              onChange={(e, v) => handleSelectChange(e, prop, v)}
+              classes={{
+                root: css({ width: "100%" }),
+              }}
+            >
+              {propMeta.type.value.map((v: any) => {
+                const value = v.value.replace('"', "").replace('"', "");
+                return <HvRadio key={value} label={value} value={value} />;
+              })}
+            </HvRadioGroup>
           );
         }
       }
