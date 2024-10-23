@@ -1025,6 +1025,27 @@ const pentahoPlus = makeTheme((theme) => ({
     HvFooter: {
       name: "Pentaho+",
     },
+    HvTab: {
+      classes: {
+        root: {
+          "&.HvTab-selected": {
+            color: theme.colors.primary,
+            "& svg *.color0": {
+              fill: "currentcolor",
+            },
+          },
+        },
+      },
+    },
+    HvTabs: {
+      classes: {
+        indicator: {
+          "& > div": {
+            backgroundColor: `${theme.colors.primary}`,
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
