@@ -96,16 +96,13 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
         style={style}
         className={cx(
           classes.root,
-          classes[type as keyof HvTableCellClasses],
+          classes[type],
+          align !== "inherit" && classes[`align${capitalize(align)}`],
+          variant !== "default" && classes[`variant${capitalize(variant)}`],
           {
-            [classes[`align${capitalize(align)}` as keyof HvTableCellClasses]]:
-              align !== "inherit",
             [classes.variantList]: tableContext.variant === "listrow",
             [classes.variantListHead]:
               tableContext.variant === "listrow" && type !== "body",
-            [classes[
-              `variant${capitalize(variant)}` as keyof HvTableCellClasses
-            ]]: variant !== "default",
             [classes.sorted]: sorted,
             [classes.stickyColumn]: stickyColumn,
             [classes.stickyColumnMostLeft]: stickyColumnMostLeft,

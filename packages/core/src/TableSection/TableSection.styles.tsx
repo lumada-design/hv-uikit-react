@@ -14,9 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     // Only apply the border to divide the header and content when both are displayed
     "+ div": { borderTop: `1px solid ${theme.colors.atmo3}` },
   },
-  actions: {
-    right: theme.space.sm,
-  },
+  actions: {},
   content: {
     marginTop: 0,
     padding: 0,
@@ -24,14 +22,14 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     // Apply border radius to the first child if there's not an header
     "&:first-of-type": {
       "& > :first-of-type": {
-        borderTopLeftRadius: theme.radii.round,
-        borderTopRightRadius: theme.radii.round,
+        borderTopLeftRadius: "inherit",
+        borderTopRightRadius: "inherit",
       },
     },
 
     "& > :last-child": {
-      borderBottomLeftRadius: theme.radii.round,
-      borderBottomRightRadius: theme.radii.round,
+      borderBottomLeftRadius: "inherit",
+      borderBottomRightRadius: "inherit",
     },
 
     [`& .${tableContainerClasses.root}`]: {
@@ -94,9 +92,11 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   },
   hidden: {},
   raisedHeader: {
-    "+ div": {
+    "& $content": {
       paddingTop: 0,
     },
   },
-  spaceTop: { paddingTop: 0 },
+  hasHeader: {},
+  /** @deprecated use `hasHeader` instead */
+  spaceTop: {},
 });

@@ -1017,8 +1017,9 @@ const ds3 = makeTheme((theme) => ({
     HvPagination: {
       classes: {
         root: {
+          ...theme.typography.body,
           [`& .HvPagination-pageSizeInput`]: {
-            ...(theme.typography.label as CSSProperties),
+            ...theme.typography.label,
             "&:focus": {
               padding: "unset",
             },
@@ -1035,27 +1036,11 @@ const ds3 = makeTheme((theme) => ({
             height: 16,
           },
         },
-        pageSizeOptions: {
-          height: 32,
-        },
         pageSizeHeader: {
           height: "unset",
           [`& .HvBaseDropdown-arrowContainer`]: {
             marginTop: 0,
           },
-        },
-        pageSizeTextContainer: {
-          height: 32,
-          ...(theme.typography.body as CSSProperties),
-        },
-        pageSizeOptionsSelect: {
-          ...(theme.typography.body as CSSProperties),
-        },
-        totalPagesTextContainer: {
-          ...(theme.typography.body as CSSProperties),
-        },
-        pageNavigator: {
-          alignItems: "stretch",
         },
       },
     },

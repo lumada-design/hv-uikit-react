@@ -3,21 +3,17 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   root: {
-    "--first-row-cell-height": "52px",
+    "--first-row-cell-height": "32px",
     "--cell-height": "32px",
     height: "var(--cell-height)",
     verticalAlign: "inherit",
     alignContent: "inherit",
     textAlign: "left",
-    padding: theme.spacing(0, 1, 0, 4),
+    padding: theme.spacing(0, "xs"),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   head: {
-    paddingTop: 8,
-    verticalAlign: "top",
-    alignContent: "start",
-    ...theme.typography.label,
-    transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    fontWeight: theme.fontWeights.semibold,
     backgroundColor: theme.colors.atmo1,
     borderBottom: `1px solid ${theme.colors.atmo4}`,
 
@@ -35,24 +31,12 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     },
 
     "&$sortable": {
-      verticalAlign: "initial",
-      alignContent: "initial",
-      paddingTop: 0,
-      paddingLeft: 0,
       cursor: "pointer",
 
-      "&:hover": {
-        backgroundColor: "transparent",
-
+      ":hover, :focus-within": {
+        backgroundColor: theme.colors.containerBackgroundHover,
         "& $sortIcon": {
-          visibility: "visible",
-        },
-      },
-      "&:focus-within": {
-        backgroundColor: "transparent",
-
-        "& $sortIcon": {
-          visibility: "visible",
+          opacity: 1,
         },
       },
     },
@@ -60,8 +44,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   body: {
     backgroundColor: "inherit",
     ...theme.typography.body,
-    "&$sortable:not($variantNone)": {
-      paddingLeft: 32,
+    ":where($sorted)": {
+      backgroundColor: theme.alpha("atmo1", 0.4),
     },
   },
   footer: {},
@@ -89,26 +73,25 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       borderLeft: 0,
     },
   },
-  headerContent: { display: "flex", alignItems: "flex-start", width: "100%" },
+  headerContent: { display: "flex", alignItems: "center", width: "100%" },
   headerText: { overflow: "hidden", textOverflow: "ellipsis" },
-  headerParagraph: { overflow: "hidden", display: "-webkit-box" },
-  sortableHeaderText: { paddingTop: "8px" },
+  headerParagraph: { textOverflow: "inherit", display: "-webkit-box" },
+  /** @deprecated use `sortable: &$headerText` */
+  sortableHeaderText: {},
   sorted: {
     "& $sortIcon": {
-      visibility: "visible",
+      opacity: 1,
     },
   },
   sortable: {},
   sortButton: {
-    "$root$sortable &": {
+    marginLeft: 4,
+    ":hover,:focus-visible": {
       boxShadow: "none",
       backgroundColor: "transparent",
-      "&:hover": {
-        backgroundColor: theme.colors.primary_20,
-      },
     },
   },
-  sortIcon: { display: "inline-flex", visibility: "hidden" },
+  sortIcon: { opacity: 0, width: "fit-content", height: "fit-content" },
   alignLeft: { textAlign: "left" },
   alignRight: { textAlign: "right", flexDirection: "row-reverse" },
   alignCenter: { textAlign: "center" },
@@ -140,11 +123,16 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       height: 16,
     },
   },
-  resizable: { borderRight: `solid 1px ${theme.colors.atmo4}` },
-  resizing: { borderRight: `solid 2px ${theme.colors.secondary}` },
+  resizable: {
+    borderRight: `1px solid ${theme.colors.atmo4}`,
+    ":has($resizer:hover)": {
+      borderRight: `2px solid ${theme.colors.primary_80}`,
+    },
+  },
+  resizing: { borderRight: `2px solid ${theme.colors.primary_80}` },
   resizer: {
     display: "inline-block",
-    width: 10,
+    width: 16,
     height: "100%",
     position: "absolute",
     right: 0,

@@ -1,17 +1,13 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-const sortedColor = theme.alpha("primary", 0.1);
-
 export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   /** Styles applied to the component root class. */
   root: {
     verticalAlign: "inherit",
     alignContent: "inherit",
     textAlign: "left",
-    padding: `calc(${theme.space.xs} - 2px ) ${theme.space.xs} calc(${
-      theme.space.xs
-    } - 3px ) ${theme.spacing(4)}`,
+    padding: theme.spacing(0, "xs"),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
   },
   /** Styles applied to the cell when it's in the table head. */
@@ -23,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     backgroundColor: theme.colors.atmo1,
     borderTop: "1px solid transparent",
     borderBottom: `1px solid ${theme.colors.atmo4}`,
-    ...(theme.typography.label as React.CSSProperties),
+    ...theme.typography.label,
   },
   /** Styles applied to the cell when it's in the table body. */
   body: {
@@ -32,11 +28,9 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
       height: 32,
     },
     backgroundColor: "inherit",
-    ...(theme.typography.body as React.CSSProperties),
-    fontFamily: theme.fontFamily.body,
 
     "&$sorted": {
-      backgroundImage: `linear-gradient(to right, ${sortedColor}, ${sortedColor})`,
+      backgroundColor: theme.alpha("primary", 0.1),
     },
   },
   /** Styles applied to the cell when it's in the table footer. */
@@ -171,6 +165,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when it's part of a resizing column. */
   resizing: {
-    borderRight: `solid 2px ${theme.colors.secondary}`,
+    borderRight: `solid 2px ${theme.colors.primary_80}`,
   },
 });
