@@ -1028,11 +1028,13 @@ const pentahoPlus = makeTheme((theme) => ({
     HvTab: {
       classes: {
         root: {
+          paddingLeft: 24,
+          paddingRight: 24,
+          "& svg *.color0": {
+            fill: "currentcolor",
+          },
           "&.HvTab-selected": {
             color: theme.colors.primary,
-            "& svg *.color0": {
-              fill: "currentcolor",
-            },
           },
         },
       },
