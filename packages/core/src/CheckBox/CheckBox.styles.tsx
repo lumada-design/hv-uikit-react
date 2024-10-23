@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
     },
   },
   invalidContainer: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.negative_120}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   },
   checkbox: { height: "32px" },
   invalidCheckbox: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.negative_120}`,
     borderBottomLeftRadius: "0px",
     borderBottomRightRadius: "0px",
   },

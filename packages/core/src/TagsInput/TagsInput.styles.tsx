@@ -107,11 +107,11 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     },
 
     "&$error": {
-      border: `1px solid ${theme.colors.negative}`,
+      border: `1px solid ${theme.colors.negative_120}`,
     },
 
     "&$invalid": {
-      border: `1px solid ${theme.colors.negative}`,
+      border: `1px solid ${theme.colors.negative_120}`,
     },
   },
   tagInputContainerRoot: {

@@ -40,12 +40,12 @@ export interface HvWarningTextProps extends HvBaseProps {
 export const HvWarningText = (props: HvWarningTextProps) => {
   const {
     children,
-    adornment,
-    isVisible,
+    adornment: adornmentProp,
+    isVisible: isVisibleProp,
     classes: classesProp,
     className,
-    id,
-    disabled,
+    id: idProp,
+    disabled: disabledProp,
     disableGutter = false,
     disableBorder = false,
     disableAdornment = false,
@@ -57,13 +57,12 @@ export const HvWarningText = (props: HvWarningTextProps) => {
 
   const { elementId, elementStatus, elementDisabled } =
     useContext(HvFormElementContext);
-  const localDisabled = disabled || elementDisabled;
-  const localVisible = isVisible ?? elementStatus === "invalid";
-  const localId = id ?? setId(elementId, "error");
-  const showWarning = localVisible && !localDisabled;
-  const content = showWarning ? children : "";
-  const localAdornment = adornment || (
-    <Fail iconSize="XS" className={classes.defaultIcon} color="negative" />
+  const disabled = disabledProp || elementDisabled;
+  const visible = isVisibleProp ?? elementStatus === "invalid";
+  const id = idProp ?? setId(elementId, "error");
+  const showWarning = visible && !disabled;
+  const adornment = adornmentProp || (
+    <Fail size="xs" className={classes.defaultIcon} />
   );
 
   return (
@@ -77,9 +76,9 @@ export const HvWarningText = (props: HvWarningTextProps) => {
         className,
       )}
     >
-      {!disableAdornment && localAdornment}
+      {!disableAdornment && adornment}
       <HvTypography
-        id={localId}
+        id={id}
         className={cx(classes.warningText, {
           [classes.topGutter]: !disableGutter,
           [classes.hideText]: hideText,
@@ -90,7 +89,7 @@ export const HvWarningText = (props: HvWarningTextProps) => {
         aria-relevant="additions text"
         {...others}
       >
-        {showWarning && content}
+        {showWarning && children}
       </HvTypography>
     </div>
   );

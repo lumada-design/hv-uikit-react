@@ -2,10 +2,13 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvWarningText", {
-  root: { display: "none" },
-  defaultIcon: { minWidth: "24px", width: "24px", height: "24px" },
-  warningText: {
+  root: {
+    display: "none",
     color: theme.colors.negative_120,
+  },
+  defaultIcon: { width: "24px", height: "24px" },
+  warningText: {
+    color: "inherit",
     paddingRight: theme.space.xs,
   },
   show: { display: "flex" },
@@ -19,5 +22,5 @@ export const { staticClasses, useClasses } = createClasses("HvWarningText", {
     margin: 0,
     overflow: "hidden",
   },
-  topBorder: { borderTop: `solid 1px ${theme.colors.negative}` },
+  topBorder: { borderTop: "1px solid currentcolor" },
 });
