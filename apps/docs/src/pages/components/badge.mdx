@@ -6,24 +6,15 @@ import { Page } from "@docs/components/Page";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-
-const meta = await getComponentData("Badge", "core", badgeClasses)
-
-return {
-props: {
-ssg: {
-meta: meta,
-},
-},
-}
-
-}
+  const meta = await getComponentData("Badge", "core", badgeClasses);
+  return { props: { ssg: { meta: meta } } };
+};
 
 <Description />
 
 <Page>
 
-### With icon
+### Icon
 
 Use the `icon` prop to specify a icon to use with the badge.
 
@@ -50,7 +41,7 @@ Use the `maxCount` prop to specify the maximum value to be displayed. Above that
 </>
 ```
 
-### With text
+### Text
 
 To display text with the badge you can use the `text` prop along with the `textVariant` prop to specify the typography variant to use.
 
@@ -65,7 +56,7 @@ To display text with the badge you can use the `text` prop along with the `textV
 </>
 ```
 
-### With state
+### Controlled count
 
 A badge sample using react hooks to set the number of events.
 
