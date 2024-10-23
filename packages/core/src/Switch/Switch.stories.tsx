@@ -255,3 +255,26 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
     );
   },
 };
+
+export const WithCustomColors: StoryObj<HvSwitchProps> = {
+  parameters: {
+    docs: {
+      description: { story: "With custom colors." },
+    },
+  },
+  decorators: [decorator],
+  render: () => {
+    const [state, setState] = useState(false);
+    return (
+      <>
+        <HvButton onClick={() => setState((prev) => !prev)}>Toggle</HvButton>
+        <HvSwitch
+          checked={state}
+          aria-label="Engine Control"
+          onChange={(_evt, newChecked) => setState(newChecked)}
+          color={state ? "positive" : "negative"}
+        />
+      </>
+    );
+  },
+};

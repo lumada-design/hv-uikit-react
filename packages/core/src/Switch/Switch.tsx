@@ -4,6 +4,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseSwitch } from "../BaseSwitch";
 import {
@@ -24,7 +25,7 @@ export { staticClasses as switchClasses };
 export type HvSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSwitchProps
-  extends Omit<MuiSwitchProps, "onChange" | "classes"> {
+  extends Omit<MuiSwitchProps, "color" | "onChange" | "classes"> {
   /**
    * A Jss Object used to override or extend the styles applied to the switch.
    */
@@ -112,7 +113,12 @@ export interface HvSwitchProps
   ref?: MuiSwitchProps["ref"];
   /** @ignore */
   component?: MuiSwitchProps["component"];
+  /** Color applied to the switch. */
+  color?: HvColorAny;
 }
+
+const isSemantical = (color: HvColorAny) =>
+  ["positive", "negative", "warning"].includes(color);
 
 /**
  * A Switch is <b>binary</b> and work as a digital on/off button.
@@ -150,10 +156,12 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
 
       inputProps,
 
+      color,
+
       ...others
     } = useDefaultProps("HvSwitch", props);
 
-    const { classes, cx } = useClasses(classesProp);
+    const { classes, cx, css } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
 
@@ -247,6 +255,19 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
               "aria-describedby": ariaDescribedBy,
               ...inputProps,
             }}
+            {...(color && {
+              classes: {
+                switchBase: css({
+                  "&&&+.HvBaseSwitch-track,&&&.HvBaseSwitch-checked+.HvBaseSwitch-track":
+                    {
+                      backgroundColor: getColor(color),
+                      borderColor: isSemantical(color)
+                        ? getColor(`${color}_120`)
+                        : "#00000032",
+                    },
+                }),
+              },
+            })}
             {...others}
           />
         </div>

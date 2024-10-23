@@ -100,6 +100,8 @@ const pentahoPlus = makeTheme((theme) => ({
           bgDisabled: neutral[200],
           bgOverlay: `color-mix(in srgb, ${slate[900]} 60%, transparent)`,
           dimmer: "#FFFFFF",
+
+          borderDisabled: neutral[400],
         },
       },
       wicked: {
@@ -163,7 +165,7 @@ const pentahoPlus = makeTheme((theme) => ({
           neutralDimmed: cyan[950],
 
           text: slate[50],
-          textSubtle: slate[300],
+          textSubtle: slate[400],
           textDisabled: neutral[500],
           textDimmed: slate[700],
           link: blue[400],
@@ -178,7 +180,10 @@ const pentahoPlus = makeTheme((theme) => ({
           bgHover: blue[950],
           bgDisabled: neutral[900],
           bgOverlay: `color-mix(in srgb, ${slate[900]} 40%, transparent)`,
+
           dimmer: "#000000",
+
+          borderDisabled: neutral[700],
         },
       },
     },
@@ -471,14 +476,37 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseSwitch: {
       classes: {
         root: {
+          "&:hover": {
+            backgroundColor: theme.colors.pp.bgHover,
+          },
           "& .HvBaseSwitch-switchBase": {
+            "& .HvBaseSwitch-thumb": {
+              backgroundColor: theme.colors.pp.bgSurface,
+              borderColor: theme.colors.pp.bgSurface,
+              boxShadow: `0px 1px 1px 0px color-mix(in srgb, ${slate[700]} 16%, transparent)`,
+            },
+            "+.HvBaseSwitch-track": {
+              height: 14,
+              backgroundColor: theme.colors.pp.textDimmed,
+              borderColor: theme.colors.pp.textSubtle,
+            },
             "&.HvBaseSwitch-checked": {
               "& .HvBaseSwitch-thumb": {
-                border: `1px solid ${theme.colors.primary}`,
+                border: `1px solid ${theme.colors.pp.bgSurface}`,
               },
               "+.HvBaseSwitch-track": {
-                backgroundColor: theme.colors.primary,
-                borderColor: theme.colors.primary,
+                backgroundColor: theme.colors.pp.primary,
+                borderColor: theme.colors.pp.primaryStrong,
+              },
+            },
+            "&.HvBaseSwitch-disabled": {
+              "& .HvBaseSwitch-thumb": {
+                backgroundColor: theme.colors.pp.borderDisabled,
+                borderColor: theme.colors.pp.borderDisabled,
+              },
+              "+.HvBaseSwitch-track": {
+                borderColor: theme.colors.pp.borderDisabled,
+                backgroundColor: theme.colors.pp.bgDisabled,
               },
             },
           },
