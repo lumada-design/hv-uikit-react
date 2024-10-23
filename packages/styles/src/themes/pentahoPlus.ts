@@ -1025,6 +1025,56 @@ const pentahoPlus = makeTheme((theme) => ({
     HvFooter: {
       name: "Pentaho+",
     },
+    HvTab: {
+      classes: {
+        root: {
+          paddingLeft: 16,
+          paddingRight: 16,
+          "& svg *.color0": {
+            fill: "currentcolor",
+          },
+          "&.HvTab-selected": {
+            color: theme.colors.primary,
+          },
+        },
+      },
+    },
+    HvTabs: {
+      classes: {
+        indicator: {
+          "& > div": {
+            backgroundColor: `${theme.colors.primary}`,
+          },
+        },
+        floating: {
+          "& .HvTab-root": {
+            marginTop: 0,
+            "&:hover": {
+              borderRadius: theme.radii.full,
+            },
+            "::after": {
+              display: "none",
+            },
+          },
+          "& .HvTab-selected": {
+            border: `1px solid ${theme.colors.primary}`,
+            borderRadius: theme.radii.full,
+            backgroundColor: theme.colors.pp.bgSurface,
+          },
+          "& .HvTabs-indicator": {
+            display: "none",
+          },
+          "& .HvTabs-flexContainer": {
+            display: "inline-flex",
+            backgroundColor: theme.colors.pp.bgActive,
+            borderRadius: theme.radii.full,
+            "& button:first-of-type": {
+              marginLeft: 0,
+            },
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
