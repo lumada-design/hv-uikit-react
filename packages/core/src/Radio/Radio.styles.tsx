@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     },
   },
   invalidContainer: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.negative_120}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",
@@ -41,7 +41,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     },
   },
   invalidRadio: {
-    borderBottom: `1px solid ${theme.colors.negative}`,
+    borderBottom: `1px solid ${theme.colors.negative_120}`,
 
     "&:hover": {
       borderBottomLeftRadius: "0px",

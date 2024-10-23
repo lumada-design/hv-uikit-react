@@ -27,9 +27,9 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
   dropdownHeader: {},
   dropdownHeaderOpen: {},
   dropdownHeaderInvalid: {
-    border: `1px solid ${theme.colors.negative}`,
+    border: `1px solid ${theme.colors.negative_120}`,
     "&:hover": {
-      border: `1px solid ${theme.colors.negative}`,
+      border: `1px solid ${theme.colors.negative_120}`,
     },
   },
   dropdownPanel: {},
