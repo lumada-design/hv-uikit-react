@@ -28,6 +28,8 @@ export interface HvTabsProps extends Omit<MuiTabsProps, "onChange"> {
   ref?: MuiTabsProps["ref"];
   /** @ignore */
   component?: MuiTabsProps["component"];
+
+  floating?: boolean;
 }
 
 /**
@@ -35,9 +37,13 @@ export interface HvTabsProps extends Omit<MuiTabsProps, "onChange"> {
  * Tabs can be used as a navigational widget for switching between sets of documents.
  */
 export const HvTabs = (props: HvTabsProps) => {
-  const { classes: classesProp, ...others } = useDefaultProps("HvTabs", props);
+  const {
+    classes: classesProp,
+    floating = false,
+    ...others
+  } = useDefaultProps("HvTabs", props);
 
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
     <Tabs
@@ -48,6 +54,7 @@ export const HvTabs = (props: HvTabsProps) => {
         scroller: classes.scroller,
       }}
       TabIndicatorProps={{ children: <div /> }}
+      className={cx(floating && classes.floating)}
       {...others}
     />
   );
