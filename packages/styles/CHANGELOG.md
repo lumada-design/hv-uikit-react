@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.37.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.36.0...@hitachivantara/uikit-styles@5.37.0) (2024-10-24)
+
+### Bug Fixes
+
+- **Select:** align P+ styles with HvButton ([4e84608](https://github.com/lumada-design/hv-uikit-react/commit/4e846081437a6036a8d38f7242add8cb1a1ae784))
+
+### Features
+
+- **Button:** better color handling & align Pentaho+ 0.2 styles ([b5c3f7c](https://github.com/lumada-design/hv-uikit-react/commit/b5c3f7c4c8feb2c7450d40addfee8225d8ddd61d))
+- **Switch:** align with PD 0.2 specs ([#4389](https://github.com/lumada-design/hv-uikit-react/issues/4389)) ([aec1bad](https://github.com/lumada-design/hv-uikit-react/commit/aec1bad297aa3fd11733ea66dc268eb50fd31367))
+
 # [5.36.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.35.0...@hitachivantara/uikit-styles@5.36.0) (2024-10-17)
 
 ### Features
