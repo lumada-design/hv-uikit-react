@@ -40,23 +40,26 @@ const generateCode = (
   children: React.ReactNode,
 ) => {
   const propsString = Object.entries(propsState)
-    .map(([key, value]) =>
-      typeof value === "boolean" && value
-        ? key
-        : typeof value === "boolean" && !value
-          ? ""
-          : `${key}="${value}"`,
+    .filter(
+      ([key, value]) =>
+        key !== "style" && (typeof value !== "boolean" || value),
     )
-    .join(" ")
-    .trim();
+    .map(([key, value]) =>
+      typeof value === "boolean" ? key : `${key}="${value}"`,
+    )
+    .filter(Boolean)
+    .join(" ");
 
   const componentPropsString = Object.entries(componentProps || {})
-    .map(([key, value]) => {
-      if (key === "style") return "";
-      return typeof value === "boolean" && value ? key : `${key}="${value}"`;
-    })
-    .join(" ")
-    .trim();
+    .filter(
+      ([key, value]) =>
+        key !== "style" && (typeof value !== "boolean" || value),
+    )
+    .map(([key, value]) =>
+      typeof value === "boolean" ? key : `${key}="${value}"`,
+    )
+    .filter(Boolean)
+    .join(" ");
 
   const childrenString =
     typeof children === "string"
@@ -71,7 +74,10 @@ const generateCode = (
       ">",
     );
   }
-  return `<${componentName} ${propsString} ${componentPropsString} />`;
+  return `<${componentName} ${propsString} ${componentPropsString} />`.replace(
+    /\s+/g,
+    " ",
+  );
 };
 
 export const Playground = ({
@@ -229,11 +235,11 @@ export const Playground = ({
     <>
       <div className="flex justify-between mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round">
         <div className="w-[70%] flex justify-center items-center p-sm">
-          <Component {...propsState} {...componentProps}>
+          <Component {...componentProps} {...propsState}>
             {children?.props.children}
           </Component>
         </div>
-        <div className="w-[30%] flex flex-col gap-xs justify-center items-center border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">
+        <div className="w-[30%] flex flex-col gap-xs justify-center items-start border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">
           {Object.keys(controls || {}).map((prop) => {
             const control = controls[prop];
             if (!control) return null;

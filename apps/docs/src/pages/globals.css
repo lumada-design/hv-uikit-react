@@ -8,6 +8,20 @@ article > main h2 {
   @apply !border-none;
 }
 
+article > main h3._mt-8 {
+  @apply mt-6;
+}
+
+article > main p:not(:first-child):not(:first-child) {
+  @apply mt-8px;
+}
+
+article > main p,
+article > main p._leading-7 {
+  font-size: 15px;
+  line-height: 24px;
+}
+
 body,
 .nextra-nav-container-blur,
 .nextra-sidebar-footer,
