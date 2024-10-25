@@ -7,4 +7,5 @@ export default {
   badge: "Badge",
   banner: "Banner",
   button: "Button",
+  checkBox: "CheckBox",
 };

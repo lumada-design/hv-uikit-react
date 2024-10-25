@@ -96,7 +96,9 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
       return acc;
     }, {});
 
-    return { ...comps, ...icons };
+    const { theme } = HvCore;
+
+    return { ...comps, ...icons, theme };
   }, [hvComponents, hvIcons]);
 
   const handleCodeChange = (value: string) => {

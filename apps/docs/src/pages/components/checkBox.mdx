@@ -1,0 +1,219 @@
+import {
+  checkBoxClasses,
+  HvCheckBox,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("CheckBox", "core", checkBoxClasses);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+### Usage
+
+<Playground
+  Component={HvCheckBox}
+  componentName="HvCheckBox"
+  controls={{
+    checked: {
+      defaultValue: false,
+    },
+    indeterminate: {
+      defaultValue: false,
+    },
+    required: {
+      defaultValue: true,
+    },
+    disabled: {
+      defaultValue: false,
+    },
+  }}
+  componentProps={{
+    label: "I have read and agree to the terms and conditions",
+    statusMessage: "Please accept the terms and conditions",
+    checked: false,
+    indeterminate: false,
+  }}
+/>
+
+### States
+
+```jsx live
+<HvStack>
+  <HvTypography variant="title3">Disabled</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox disabled label="Checkbox 1" />
+    <HvCheckBox defaultChecked disabled label="Checkbox 2" />
+    <HvCheckBox indeterminate disabled label="Checkbox 3" />
+  </HvStack>
+  <HvTypography variant="title3">Readonly</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox readOnly label="Checkbox 1" />
+    <HvCheckBox defaultChecked readOnly label="Checkbox 2" />
+    <HvCheckBox indeterminate readOnly label="Checkbox 3" />
+  </HvStack>
+  <HvTypography variant="title3">Required</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox required label="Checkbox 1" />
+    <HvCheckBox required defaultChecked label="Checkbox 2" />
+    <HvCheckBox required indeterminate label="Checkbox 3" />
+  </HvStack>
+  <HvTypography variant="title3">Invalid</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox
+      status="invalid"
+      statusMessage="No way for this to be valid!"
+      label="Checkbox 1"
+    />
+    <HvCheckBox
+      status="invalid"
+      statusMessage="No way for this to be valid!"
+      defaultChecked
+      label="Checkbox 2"
+    />
+    <HvCheckBox
+      status="invalid"
+      statusMessage="No way for this to be valid!"
+      indeterminate
+      label="Checkbox 3"
+    />
+  </HvStack>
+  <HvTypography variant="title3">No label</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox aria-label="Checkbox 1" />
+    <HvCheckBox defaultChecked aria-label="Checkbox 2" />
+    <HvCheckBox indeterminate aria-label="Checkbox 3" />
+  </HvStack>
+  <HvTypography variant="title3">Semantic</HvTypography>
+  <HvStack direction="row">
+    <HvCheckBox semantic aria-label="Checkbox 1" />
+    <HvCheckBox semantic defaultChecked aria-label="Checkbox 2" />
+    <HvCheckBox semantic indeterminate aria-label="Checkbox 3" />
+  </HvStack>
+</HvStack>
+```
+
+### Controlled
+
+Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.
+
+```jsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  return (
+    <>
+      <HvCheckBox checked={isChecked} label="Checkbox 1" />
+      <HvCheckBox
+        checked={isChecked}
+        onChange={(_, checked) => setIsChecked(checked)}
+        label="Checkbox 2"
+      />
+    </>
+  );
+}
+```
+
+### External error message
+
+A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The aria-errormessage property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.
+
+```jsx live
+import { useState } from "react";
+import { css } from "@emotion/css";
+
+export default function Demo() {
+  // prettier-ignore
+  const [firstCheckboxErrorMessage, setFirstCheckboxErrorMessage] = useState<string | null>(null);
+  // prettier-ignore
+  const [secondCheckboxErrorMessage, setSecondCheckboxErrorMessage] = useState<string | null>("No way for the second checkbox to be valid!");
+
+  return (
+    <HvGrid container>
+      <HvGrid container item xs={12} md={6}>
+        <HvGrid item xs={12}>
+          <HvCheckBox
+            required
+            defaultChecked
+            aria-errormessage="firstCheckbox-error"
+            onChange={(_, checked) => {
+              if (checked) {
+                setFirstCheckboxErrorMessage(null);
+              } else if (!checked) {
+                setFirstCheckboxErrorMessage(
+                  "You must check the first checkbox",
+                );
+              }
+            }}
+            label="First Checkbox"
+          />
+        </HvGrid>
+        <HvGrid item xs={12}>
+          <HvCheckBox
+            status="invalid"
+            aria-errormessage="secondCheckbox-error"
+            onChange={() => {
+              setSecondCheckboxErrorMessage(
+                "No way for the second checkbox to be valid! I told you!",
+              );
+            }}
+            label="Second Checkbox"
+          />
+        </HvGrid>
+      </HvGrid>
+
+      <HvGrid item xs={12} md={6}>
+        <div
+          className={css({
+            backgroundColor: theme.colors.negative_20,
+            color: theme.colors.base_dark,
+            padding: theme.space.md,
+          })}
+        >
+          <HvTypography
+            component="h4"
+            variant="title4"
+            style={{
+              color: theme.colors.base_dark,
+            }}
+          >
+            Form errors:
+          </HvTypography>
+          <ul
+            className={css({
+              margin: theme.spacing("sm", 0),
+              paddingLeft: theme.space.md,
+            })}
+          >
+            {firstCheckboxErrorMessage && (
+              <li id="firstCheckbox-error" aria-live="polite">
+                {firstCheckboxErrorMessage}
+              </li>
+            )}
+            {secondCheckboxErrorMessage && (
+              <li id="secondCheckbox-error" aria-live="polite">
+                {secondCheckboxErrorMessage}
+              </li>
+            )}
+          </ul>
+        </div>
+      </HvGrid>
+    </HvGrid>
+  );
+}
+```
+
+</Page>

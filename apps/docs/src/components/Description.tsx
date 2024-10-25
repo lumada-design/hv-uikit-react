@@ -39,10 +39,10 @@ export const Description = () => {
   return (
     <>
       <HvTypography variant="title1">{meta.component}</HvTypography>
-      <HvTypography>{meta.docgen?.description}</HvTypography>
+      <p>{meta.docgen?.description}</p>
       <HvGrid
         container
-        maxWidth="sm"
+        maxWidth="md"
         rowSpacing="xs"
         paddingTop={4}
         alignItems="center"
