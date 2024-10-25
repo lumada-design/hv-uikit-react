@@ -6,6 +6,7 @@ import {
   HvBadge,
   HvSimpleGrid,
   HvTab,
+  HvTabProps,
   HvTabs,
   HvTabsProps,
   HvTypography,
@@ -290,4 +291,109 @@ export const Test: StoryObj = {
       </HvTabs>
     </HvSimpleGrid>
   ),
+};
+
+export const Floating: StoryObj<HvTabsProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Tabs in the floating format.",
+      },
+    },
+  },
+  render: () => {
+    const [value, setValue] = useState(0);
+
+    const CustomTab = ({ ...props }: HvTabProps) => (
+      <HvTab
+        className={css({
+          height: 56,
+          paddingLeft: 24,
+          paddingRight: 24,
+          "& .MuiTab-iconWrapper": {
+            "--size": "24px",
+          },
+        })}
+        {...props}
+      />
+    );
+
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
+          <HvTab
+            label="Clickable tab 1"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+          <HvTab
+            label="Clickable tab 2"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+          <HvTab
+            label="Clickable tab 3"
+            icon={<DataStore />}
+            iconPosition="start"
+          />
+        </HvTabs>
+        <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
+          <CustomTab
+            label="Clickable tab 1"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+          <CustomTab
+            label="Clickable tab 2"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+          <CustomTab
+            label="Clickable tab 3"
+            icon={<Helicopter />}
+            iconPosition="top"
+          />
+        </HvTabs>
+        <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
+          <HvTab icon={<Alert />} aria-label="Alert" />
+          <HvTab icon={<Reload />} aria-label="Reload" />
+          <HvTab icon={<Calendar />} aria-label="Calendar" />
+        </HvTabs>
+        <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
+          <HvTab
+            icon={<Alert />}
+            aria-label="Alert"
+            className={css({ height: 48 })}
+          />
+          <HvTab
+            icon={<Reload />}
+            aria-label="Reload"
+            className={css({ height: 48 })}
+          />
+          <HvTab
+            icon={<Calendar />}
+            aria-label="Calendar"
+            className={css({ height: 48 })}
+          />
+        </HvTabs>
+        <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
+          <HvTab
+            icon={<Alert />}
+            aria-label="Alert"
+            className={css({ height: 64 })}
+          />
+          <HvTab
+            icon={<Reload />}
+            aria-label="Reload"
+            className={css({ height: 64 })}
+          />
+          <HvTab
+            icon={<Calendar />}
+            aria-label="Calendar"
+            className={css({ height: 64 })}
+          />
+        </HvTabs>
+      </div>
+    );
+  },
 };

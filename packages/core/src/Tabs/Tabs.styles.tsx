@@ -24,4 +24,5 @@ export const { staticClasses, useClasses } = createClasses("HvTabs", {
       marginLeft: "3px",
     },
   },
+  floating: {},
 });
