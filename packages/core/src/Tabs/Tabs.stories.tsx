@@ -239,12 +239,12 @@ export const Test: StoryObj = {
       <HvTabs value={0}>
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
-        <HvTab label="Clickable tab 3" />
+        <HvTab disabled label="Clickable tab 3" />
       </HvTabs>
       <HvTabs value={0} variant="fullWidth">
         <HvTab label="Clickable tab 1" />
         <HvTab label="Clickable tab 2" />
-        <HvTab label="Clickable tab 3" />
+        <HvTab disabled label="Clickable tab 3" />
       </HvTabs>
       <HvTabs value={0}>
         <HvTab
@@ -258,6 +258,7 @@ export const Test: StoryObj = {
           iconPosition="start"
         />
         <HvTab
+          disabled
           label="Clickable tab 3"
           icon={<DataStore />}
           iconPosition="start"
@@ -275,6 +276,7 @@ export const Test: StoryObj = {
           iconPosition="top"
         />
         <HvTab
+          disabled
           label="Clickable tab 3"
           icon={<Helicopter />}
           iconPosition="top"
@@ -283,7 +285,7 @@ export const Test: StoryObj = {
       <HvTabs value={0}>
         <HvTab icon={<Alert />} aria-label="Alert" />
         <HvTab icon={<Reload />} aria-label="Reload" />
-        <HvTab icon={<Calendar />} aria-label="Calendar" />
+        <HvTab disabled icon={<Calendar />} aria-label="Calendar" />
       </HvTabs>
       <HvTabs value={0}>
         <HvTab label={<HvBadge showCount count={2} text="Track events" />} />

@@ -1052,9 +1052,6 @@ const pentahoPlus = makeTheme((theme) => ({
         root: {
           paddingLeft: 16,
           paddingRight: 16,
-          "& svg *.color0": {
-            fill: "currentcolor",
-          },
           "&.HvTab-selected": {
             color: theme.colors.primary,
           },
