@@ -222,6 +222,15 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvTab: {
+      classes: {
+        root: {
+          "&.HvTab-selected": {
+            color: theme.colors.secondary,
+          },
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",

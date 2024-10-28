@@ -1047,24 +1047,8 @@ const pentahoPlus = makeTheme((theme) => ({
     HvFooter: {
       name: "Pentaho+",
     },
-    HvTab: {
-      classes: {
-        root: {
-          paddingLeft: 16,
-          paddingRight: 16,
-          "&.HvTab-selected": {
-            color: theme.colors.primary,
-          },
-        },
-      },
-    },
     HvTabs: {
       classes: {
-        indicator: {
-          "& > div": {
-            backgroundColor: `${theme.colors.primary}`,
-          },
-        },
         floating: {
           "& .HvTab-root": {
             marginTop: 0,

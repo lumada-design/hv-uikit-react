@@ -6,7 +6,7 @@ import { outlineStyles } from "../utils/focusUtils";
 export const { staticClasses, useClasses } = createClasses("HvTab", {
   root: {
     marginTop: "3px",
-    padding: "0 16px",
+    padding: theme.spacing(0, "sm"),
     minWidth: 70,
     minHeight: 32,
     textTransform: "none",
@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
       },
     },
     "&$selected": {
-      ...theme.typography.label,
+      fontWeight: theme.typography.label.fontWeight,
     },
     "&$disabled": {
       color: theme.colors.secondary_60,
