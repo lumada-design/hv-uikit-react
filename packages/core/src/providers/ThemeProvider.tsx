@@ -125,6 +125,7 @@ export const HvThemeProvider = ({
         MuiButtonBase: {
           defaultProps: {
             disableRipple: true,
+            disableTouchRipple: true,
           },
         },
       },
