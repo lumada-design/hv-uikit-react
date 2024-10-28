@@ -65,6 +65,25 @@ export const Description = () => {
             </HvIconButton>
           </div>
         </HvGrid>
+        {meta.subComponents && (
+          <>
+            <HvGrid item sm={2} xs={12}>
+              <HvTypography variant="label">Sub-components</HvTypography>
+            </HvGrid>
+            <HvGrid item sm={10} xs={12} className={classes.row}>
+              <div className={classes.import}>
+                <pre className={classes.importCode}>
+                  {meta?.subComponents
+                    .map(
+                      (sc: string) =>
+                        meta.subComponentsDocgen[sc].displayName || sc,
+                    )
+                    .join(", ")}
+                </pre>
+              </div>
+            </HvGrid>
+          </>
+        )}
         <HvGrid item sm={2} xs={12}>
           <HvTypography variant="label">Source</HvTypography>
         </HvGrid>

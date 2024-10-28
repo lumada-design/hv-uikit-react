@@ -9,7 +9,7 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Banner", "core", bannerClasses);
+  const meta = await getComponentData("Banner", "core", bannerClasses, null);
   return { props: { ssg: { meta: meta } } };
 };
 
