@@ -1,0 +1,25 @@
+import { cardClasses, HvCard } from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Card", "core", cardClasses, [
+    "Header",
+    "Content",
+    "Media",
+  ]);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+### Usage
+
+</Page>

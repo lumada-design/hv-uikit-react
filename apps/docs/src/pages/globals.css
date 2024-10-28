@@ -86,3 +86,9 @@ body,
     @apply w-full;
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .nextra-toc {
+    display: none !important;
+  }
+}

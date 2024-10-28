@@ -12,6 +12,8 @@ export interface Meta {
   classes: {
     [selector: string]: string;
   };
+  subComponents?: [];
+  subComponentsDocgen?: {};
 }
 
 export interface Docgen {
@@ -53,21 +55,26 @@ function filterInheritedProps(
   );
 }
 
+const getParsedDocgen = (path: string) => {
+  const parser = withDefaultConfig({
+    shouldExtractLiteralValuesFromEnum: true,
+    savePropValueAsString: true,
+  });
+  return parser.parse(path);
+};
+
 export const getComponentData = async (
   componentName: string,
   packageName: string,
   classes: { [selector: string]: string },
+  subComponents?: string[],
 ) => {
   try {
     const componentLocation = `/packages/${packageName}/src/${componentName}/${componentName}.tsx`;
     const path = `${process.cwd()}../../..${componentLocation}`;
     const source = `https://github.com/lumada-design/hv-uikit-react/blob/master${componentLocation}`;
 
-    const parser = withDefaultConfig({
-      shouldExtractLiteralValuesFromEnum: true,
-      savePropValueAsString: true,
-    });
-    const parsed: ComponentDoc[] = parser.parse(path);
+    const parsed: ComponentDoc[] = getParsedDocgen(path);
 
     const cleanedDocgen = cleanUndefinedValues(parsed[0]);
     cleanedDocgen.props = filterInheritedProps(
@@ -75,12 +82,36 @@ export const getComponentData = async (
       componentName,
     );
 
+    let parsedSubComponents: {} = {};
+    if (subComponents && subComponents.length) {
+      subComponents.forEach((subComponent) => {
+        const subComponentLocation = `/packages/${packageName}/src/${componentName}/${subComponent}/${subComponent}.tsx`;
+        const subPath = `${process.cwd()}../../..${subComponentLocation}`;
+
+        const parsedSubComponent: ComponentDoc[] = getParsedDocgen(subPath);
+        const cleanedSubComponentDocgen = cleanUndefinedValues(
+          parsedSubComponent[0],
+        );
+        cleanedSubComponentDocgen.props = filterInheritedProps(
+          cleanedSubComponentDocgen.props,
+          componentName,
+        );
+
+        parsedSubComponents = {
+          ...parsedSubComponents,
+          [subComponent]: cleanedSubComponentDocgen,
+        };
+      });
+    }
+
     return {
       component: componentName,
       source,
       package: packageName || "",
       docgen: cleanedDocgen || {},
       classes,
+      subComponents,
+      subComponentsDocgen: parsedSubComponents,
     } as Meta;
   } catch (error) {
     throw new Error(error as string);
