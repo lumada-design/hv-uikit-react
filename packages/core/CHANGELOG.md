@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.80.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.79.0...@hitachivantara/uikit-react-core@5.80.0) (2024-10-28)
+
+### Features
+
+- **Tabs:** add floating variant ([#4396](https://github.com/lumada-design/hv-uikit-react/issues/4396)) ([a549b4b](https://github.com/lumada-design/hv-uikit-react/commit/a549b4bf283e924603325c7f37410828a2f09686))
+
 # [5.79.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.78.0...@hitachivantara/uikit-react-core@5.79.0) (2024-10-24)
 
 ### Features
