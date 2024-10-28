@@ -12,8 +12,8 @@ article > main h3._mt-8 {
   @apply mt-6;
 }
 
-article > main p:not(:first-child):not(:first-child) {
-  @apply mt-8px;
+article > main h3._mt-8 + p {
+  margin-top: 8px !important;
 }
 
 article > main p,

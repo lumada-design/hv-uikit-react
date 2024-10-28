@@ -8,6 +8,7 @@ import { useData } from "nextra/hooks";
 import { themes } from "prism-react-renderer";
 import {
   HvCheckBox,
+  HvInput,
   HvOption,
   HvRadio,
   HvRadioGroup,
@@ -213,6 +214,21 @@ export const Playground = ({
             onChange={(e: React.ChangeEvent, value: any) =>
               handleSelectChange(e, prop, value)
             }
+          />
+        );
+      }
+
+      console.log(control, propMeta.type);
+      if (propMeta.type.name === "string") {
+        return (
+          <HvInput
+            key={`${prop}`}
+            label={prop}
+            value={propsState[prop] || control.defaultValue}
+            onChange={(e: React.ChangeEvent, value: any) =>
+              handleSelectChange(e, prop, value)
+            }
+            classes={{ root: css({ width: "100%" }) }}
           />
         );
       }

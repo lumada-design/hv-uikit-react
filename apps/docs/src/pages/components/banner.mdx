@@ -27,15 +27,17 @@ export const getStaticProps = async ({ params }) => {
     showIcon: {
       defaultValue: true,
     },
+    label: {
+      defaultValue: "This is an informational message.",
+    },
   }}
   componentProps={{
     open: true,
-    label: "This is an informational message.",
     style: { position: "relative", top: 0 },
   }}
 />
 
-### Aactions
+### Actions
 
 You can add a set of actions to the banner by specifying the `actions` prop. The `onAction` prop is a callback function that is called when an action is clicked.
 
