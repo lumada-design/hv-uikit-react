@@ -7,5 +7,6 @@ export const { useClasses, staticClasses } = createClasses("HvPanel", {
     padding: theme.space.sm,
     backgroundColor: theme.colors.atmo1,
     overflow: "auto",
+    borderRadius: "inherit",
   },
 });
