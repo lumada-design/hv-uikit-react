@@ -6,7 +6,7 @@ import { Page } from "@docs/components/Page";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Badge", "core", badgeClasses, null);
+  const meta = await getComponentData("Badge", "core", badgeClasses, undefined);
   return { props: { ssg: { meta: meta } } };
 };
 

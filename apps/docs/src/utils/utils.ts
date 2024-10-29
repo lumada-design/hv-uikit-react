@@ -110,7 +110,7 @@ export const getComponentData = async (
       package: packageName || "",
       docgen: cleanedDocgen || {},
       classes,
-      subComponents,
+      subComponents: subComponents || [],
       subComponentsDocgen: parsedSubComponents,
     } as Meta;
   } catch (error) {

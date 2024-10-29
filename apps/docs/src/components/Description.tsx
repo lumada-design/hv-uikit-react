@@ -65,7 +65,7 @@ export const Description = () => {
             </HvIconButton>
           </div>
         </HvGrid>
-        {meta.subComponents && (
+        {meta.subComponents.length > 0 && (
           <>
             <HvGrid item sm={2} xs={12}>
               <HvTypography variant="label">Sub-components</HvTypography>
