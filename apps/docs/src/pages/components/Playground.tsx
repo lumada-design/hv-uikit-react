@@ -70,10 +70,10 @@ const generateCode = (
         : "";
 
   if (childrenString !== "") {
-    return `<${componentName} ${propsString} ${componentPropsString}>${childrenString}</${componentName}>`.replace(
-      " >",
-      ">",
-    );
+    return `
+<${componentName} ${propsString} ${componentPropsString}>
+${childrenString}
+</${componentName}>`.replace(" >", ">");
   }
   return `<${componentName} ${propsString} ${componentPropsString} />`.replace(
     /\s+/g,
@@ -114,77 +114,74 @@ export const Playground = ({
     (prop: string, control: Control) => {
       const propMeta = data?.meta.docgen.props[prop];
 
-      // override control type
-      if (control.type) {
-        if (propMeta.type.name === "enum") {
-          if (control.type === "slider") {
-            const min = 1;
-            const max = propMeta.type.value.length;
+      const type = control?.type || propMeta?.type.name;
 
-            const formattedLabel = (label: React.ReactNode) => {
-              if (!label) return "";
-              return propMeta.type.value[
-                parseInt(label as string, 10) - 1
-              ].value.replace(/"/g, "");
-            };
+      const renderSlider = () => {
+        const min = 1;
+        const max = propMeta.type.value.length;
 
-            return (
-              <HvSlider
-                label={prop}
-                hideInput
-                minPointValue={min}
-                maxPointValue={max}
-                markStep={1}
-                divisionQuantity={max - min}
-                classes={{
-                  root: css({ width: "100%" }),
-                  sliderContainer: css({ padding: 10, paddingTop: 0 }),
-                  labelContainer: css({ marginLeft: 0, marginBottom: 8 }),
-                }}
-                values={[
-                  propMeta.type.value.findIndex(
-                    (p: any) => p.value.replace(/"/g, "") === propsState[prop],
-                  ) + 1 ||
-                    propMeta.type.value.findIndex(
-                      (p: any) =>
-                        p.value.replace(/"/g, "") === control.defaultValue,
-                    ) + 1,
-                ]}
-                formatMark={(label) => formattedLabel(label)}
-                formatTooltip={(label) => formattedLabel(label)}
-                onChange={(values) => {
-                  handleSelectChange(
-                    null,
-                    prop,
-                    propMeta.type.value[values[0] - 1]?.value.replace(/"/g, ""),
-                  );
-                }}
-              />
-            );
-          }
-          if (control.type === "radio") {
-            return (
-              <HvRadioGroup
-                label={prop}
-                orientation="horizontal"
-                value={propsState[prop] || control.defaultValue}
-                onChange={(e, v) => handleSelectChange(e, prop, v)}
-                classes={{
-                  root: css({ width: "100%" }),
-                }}
-              >
-                {propMeta.type.value.map((v: any) => {
-                  const value = v.value.replace('"', "").replace('"', "");
-                  return <HvRadio key={value} label={value} value={value} />;
-                })}
-              </HvRadioGroup>
-            );
-          }
-        }
-      }
+        const formattedLabel = (label: React.ReactNode) => {
+          if (!label) return "";
+          return propMeta.type.value[
+            parseInt(label as string, 10) - 1
+          ].value.replace(/"/g, "");
+        };
 
-      // default control types
-      if (propMeta.type.name === "enum") {
+        return (
+          <HvSlider
+            label={prop}
+            hideInput
+            minPointValue={min}
+            maxPointValue={max}
+            markStep={1}
+            divisionQuantity={max - min}
+            classes={{
+              root: css({ width: "100%" }),
+              sliderContainer: css({ padding: 10, paddingTop: 0 }),
+              labelContainer: css({ marginLeft: 0, marginBottom: 8 }),
+            }}
+            values={[
+              propMeta.type.value.findIndex(
+                (p: any) => p.value.replace(/"/g, "") === propsState[prop],
+              ) + 1 ||
+                propMeta.type.value.findIndex(
+                  (p: any) =>
+                    p.value.replace(/"/g, "") === control.defaultValue,
+                ) + 1,
+            ]}
+            formatMark={(label) => formattedLabel(label)}
+            formatTooltip={(label) => formattedLabel(label)}
+            onChange={(values) => {
+              handleSelectChange(
+                null,
+                prop,
+                propMeta.type.value[values[0] - 1]?.value.replace(/"/g, ""),
+              );
+            }}
+          />
+        );
+      };
+
+      const renderRadio = () => {
+        return (
+          <HvRadioGroup
+            label={prop}
+            orientation="horizontal"
+            value={propsState[prop] || control.defaultValue}
+            onChange={(e, v) => handleSelectChange(e, prop, v)}
+            classes={{
+              root: css({ width: "100%" }),
+            }}
+          >
+            {propMeta.type.value.map((v: any) => {
+              const value = v.value.replace('"', "").replace('"', "");
+              return <HvRadio key={value} label={value} value={value} />;
+            })}
+          </HvRadioGroup>
+        );
+      };
+
+      const renderSelect = () => {
         return (
           <HvSelect
             key={`${prop}`}
@@ -203,9 +200,9 @@ export const Playground = ({
             })}
           </HvSelect>
         );
-      }
+      };
 
-      if (propMeta.type.name === "boolean") {
+      const renderCheck = () => {
         return (
           <HvCheckBox
             key={`${prop}`}
@@ -216,10 +213,9 @@ export const Playground = ({
             }
           />
         );
-      }
+      };
 
-      console.log(control, propMeta.type);
-      if (propMeta.type.name === "string") {
+      const renderInput = () => {
         return (
           <HvInput
             key={`${prop}`}
@@ -231,7 +227,16 @@ export const Playground = ({
             classes={{ root: css({ width: "100%" }) }}
           />
         );
-      }
+      };
+
+      if (type === "slider" && propMeta?.type.name === "enum")
+        return renderSlider();
+      if (type === "radio" && propMeta?.type.name === "enum")
+        return renderRadio();
+      if (type === "string") return renderInput();
+      if (type === "check") return renderCheck();
+      if (propMeta?.type.name === "enum") return renderSelect();
+      if (propMeta?.type.name === "boolean") return renderCheck();
 
       return <div>nothing to show...</div>;
     },
@@ -244,7 +249,7 @@ export const Playground = ({
     componentName,
     propsState,
     componentProps || {},
-    children?.props.children || "",
+    children || "",
   );
 
   return (
@@ -252,7 +257,7 @@ export const Playground = ({
       <div className="flex justify-between mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round">
         <div className="w-[70%] flex justify-center items-center p-sm">
           <Component {...componentProps} {...propsState}>
-            {children?.props.children}
+            {children}
           </Component>
         </div>
         <div className="w-[30%] flex flex-col gap-xs justify-center items-start border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">

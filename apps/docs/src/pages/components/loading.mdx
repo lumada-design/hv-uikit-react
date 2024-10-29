@@ -1,0 +1,89 @@
+import { HvLoading, loadingClasses } from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Loading", "core", loadingClasses, null);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvLoading}
+  componentName="HvLoading"
+  controls={{
+    label: {
+      type: "string",
+      defaultValue: "Loading...",
+    },
+    small: {
+      defaultValue: false,
+    },
+  }}
+/>
+
+### Different colors
+
+You can change the default color of the loader by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
+
+```jsx live
+<>
+  <HvLoading color="positive" />
+  <HvLoading color="cat2" />
+  <HvLoading color="aquamarine" />
+  <HvLoading color="#c73aa8" />
+</>
+```
+
+### Button loaders
+
+You can use the loading component to create a button loader. Here is an example of a button that shows a loader when clicked.
+
+```jsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = async () => {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 2000);
+    });
+  };
+
+  return (
+    <HvButton
+      style={{ width: 120 }}
+      onClick={async (event) => {
+        setIsLoading(true);
+        await handleClick();
+        setIsLoading(false);
+      }}
+    >
+      {!isLoading ? (
+        "Submit"
+      ) : (
+        <HvLoading small hidden={!isLoading} color="inherit" />
+      )}
+    </HvButton>
+  );
+}
+```
+
+### Loading container
+
+If you need to show a loader over some content, please check the `HvLoadingContainer` component.
+
+### Skeleton loaders
+
+If you need to show a skeleton loader, please check the `HvSkeleton` component.
+
+</Page>
