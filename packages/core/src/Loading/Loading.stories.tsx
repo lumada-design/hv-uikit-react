@@ -39,7 +39,7 @@ export const Variants: StoryObj<HvLoadingProps> = {
     return (
       <>
         <HvLoading />
-        <HvLoading small />
+        <HvLoading small color="" />
         <HvLoading color="positive" />
         <HvLoading label="Loading" />
       </>

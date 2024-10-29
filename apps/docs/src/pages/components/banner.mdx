@@ -21,14 +21,14 @@ export const getStaticProps = async ({ params }) => {
   Component={HvBanner}
   componentName="HvBanner"
   controls={{
+    label: {
+      defaultValue: "This is an informational message.",
+    },
     variant: {
       defaultValue: "default",
     },
     showIcon: {
       defaultValue: true,
-    },
-    label: {
-      defaultValue: "This is an informational message.",
     },
   }}
   componentProps={{

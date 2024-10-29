@@ -79,6 +79,7 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
         if (component) {
           acc[componentName] = component;
         } else {
+          // eslint-disable-next-line no-console
           console.warn(`Component "${componentName}" not found in HvCore.`);
         }
         return acc;
@@ -91,6 +92,7 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
       if (icon) {
         acc[iconName] = icon;
       } else {
+        // eslint-disable-next-line no-console
         console.warn(`Icon "${iconName}" not found in HvIcons.`);
       }
       return acc;

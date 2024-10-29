@@ -1,0 +1,58 @@
+import {
+  HvLoadingContainer,
+  loadingContainerClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "LoadingContainer",
+    "core",
+    loadingContainerClasses,
+    null,
+  );
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvLoadingContainer}
+  componentName="HvLoadingContainer"
+  controls={{
+    hidden: {
+      type: "check",
+      defaultValue: false,
+    },
+    opacity: {
+      type: "string",
+      defaultValue: 0.8,
+    },
+  }}
+  children={
+    <div
+      style={{
+        height: 200,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "lightgray",
+      }}
+    >
+      My content
+    </div>
+  }
+  componentProps={{
+    style: { width: "100%" },
+  }}
+/>
+
+</Page>

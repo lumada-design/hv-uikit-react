@@ -9,4 +9,6 @@ export default {
   button: "Button",
   card: "Card",
   checkBox: "CheckBox",
+  loading: "Loading",
+  loadingContainer: "LoadingContainer",
 };
