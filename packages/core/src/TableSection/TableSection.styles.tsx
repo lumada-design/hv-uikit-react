@@ -24,14 +24,14 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     // Apply border radius to the first child if there's not an header
     "&:first-of-type": {
       "& > :first-of-type": {
-        borderTopLeftRadius: theme.radii.round,
-        borderTopRightRadius: theme.radii.round,
+        borderTopLeftRadius: "inherit",
+        borderTopRightRadius: "inherit",
       },
     },
 
     "& > :last-child": {
-      borderBottomLeftRadius: theme.radii.round,
-      borderBottomRightRadius: theme.radii.round,
+      borderBottomLeftRadius: "inherit",
+      borderBottomRightRadius: "inherit",
     },
 
     [`& .${tableContainerClasses.root}`]: {
