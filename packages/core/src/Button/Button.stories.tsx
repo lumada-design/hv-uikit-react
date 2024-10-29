@@ -290,10 +290,24 @@ export const Test: StoryObj = {
     docs: { disable: true },
   },
   render: () => (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 20 }}>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
       <HvButton variant="primary">Primary</HvButton>
       <HvButton variant="primarySubtle">Primary Subtle</HvButton>
       <HvButton variant="primaryGhost">Primary Ghost</HvButton>
+      <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
+      <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
+      <div style={{ backgroundColor: "#D8E6F1", padding: 4 }}>
+        <HvButton variant="semantic">Semantic</HvButton>
+      </div>
+      <HvButton variant="positive">Positive</HvButton>
+      <HvButton variant="positiveSubtle">Positive Subtle</HvButton>
+      <HvButton variant="positiveGhost">Positive Ghost</HvButton>
+      <HvButton variant="warning">Warning</HvButton>
+      <HvButton variant="warningSubtle">Warning Subtle</HvButton>
+      <HvButton variant="warningGhost">Warning Ghost</HvButton>
+      <HvButton variant="negative">Negative</HvButton>
+      <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
+      <HvButton variant="negativeGhost">Negative Ghost</HvButton>
       <HvButton disabled variant="primary">
         Primary
       </HvButton>
@@ -302,60 +316,6 @@ export const Test: StoryObj = {
       </HvButton>
       <HvButton disabled variant="primaryGhost">
         Primary Ghost
-      </HvButton>
-      <HvButton variant="secondarySubtle">Secondary Subtle</HvButton>
-      <HvButton variant="secondaryGhost">Secondary Ghost</HvButton>
-      <HvButton variant="secondarySubtle" disabled>
-        Secondary Subtle
-      </HvButton>
-      <HvButton variant="secondaryGhost" disabled>
-        Secondary Ghost
-      </HvButton>
-      <HvButton variant="semantic">Semantic</HvButton>
-      <HvButton size="sm" variant="positive">
-        Positive
-      </HvButton>
-      <HvButton size="sm" variant="positiveSubtle">
-        Positive Subtle
-      </HvButton>
-      <HvButton size="sm" variant="positiveGhost">
-        Positive Ghost
-      </HvButton>
-      <HvButton size="sm" variant="positive" disabled>
-        Positive
-      </HvButton>
-      <HvButton size="sm" variant="positiveSubtle" disabled>
-        Positive Subtle
-      </HvButton>
-      <HvButton size="sm" variant="positiveGhost" disabled>
-        Positive Ghost
-      </HvButton>
-      <HvButton variant="positive" disabled>
-        Positive
-      </HvButton>
-      <HvButton variant="positiveSubtle" disabled>
-        Positive Subtle
-      </HvButton>
-      <HvButton variant="positiveGhost" disabled>
-        Positive Ghost
-      </HvButton>
-      <HvButton size="md" variant="warning">
-        Warning
-      </HvButton>
-      <HvButton size="md" variant="warningSubtle">
-        Warning Subtle
-      </HvButton>
-      <HvButton size="md" variant="warningGhost">
-        Warning Ghost
-      </HvButton>
-      <HvButton size="md" variant="warning" disabled>
-        Warning
-      </HvButton>
-      <HvButton size="md" variant="warningSubtle" disabled>
-        Warning Subtle
-      </HvButton>
-      <HvButton size="md" variant="warningGhost" disabled>
-        Warning Ghost
       </HvButton>
       <HvButton variant="warning" disabled>
         Warning
@@ -366,33 +326,18 @@ export const Test: StoryObj = {
       <HvButton variant="warningGhost" disabled>
         Warning Ghost
       </HvButton>
-      <HvButton size="lg" variant="negative">
-        Negative
-      </HvButton>
-      <HvButton size="lg" variant="negativeSubtle">
-        Negative Subtle
-      </HvButton>
-      <HvButton size="lg" variant="negativeGhost">
-        Negative Ghost
-      </HvButton>
-      <HvButton size="lg" variant="negative" disabled>
-        Negative
-      </HvButton>
-      <HvButton size="lg" variant="negativeSubtle" disabled>
-        Negative Subtle
-      </HvButton>
-      <HvButton size="lg" variant="negativeGhost" disabled>
-        Negative Ghost
-      </HvButton>
-      <HvButton variant="negative" disabled>
-        Negative
-      </HvButton>
-      <HvButton variant="negativeSubtle" disabled>
-        Negative Subtle
-      </HvButton>
-      <HvButton variant="negativeGhost" disabled>
-        Negative Ghost
-      </HvButton>
+
+      {(["sm", "md", "lg"] as const).map((size) => (
+        <HvButton size={size} key={size} variant="warning">
+          {size}
+        </HvButton>
+      ))}
+
+      {(["none", "base", "round", "circle", "full"] as const).map((radius) => (
+        <HvButton radius={radius} key={radius} variant="warning">
+          {radius}
+        </HvButton>
+      ))}
 
       <HvButton icon aria-label="Play" variant="primary">
         <Play />
@@ -407,6 +352,15 @@ export const Test: StoryObj = {
         <Play />
       </HvButton>
       <HvButton icon aria-label="Play" variant="secondaryGhost">
+        <Play />
+      </HvButton>
+      <HvButton icon aria-label="Play" variant="warning">
+        <Play />
+      </HvButton>
+      <HvButton icon aria-label="Play" variant="warningSubtle">
+        <Play />
+      </HvButton>
+      <HvButton icon aria-label="Play" variant="warningGhost">
         <Play />
       </HvButton>
 
@@ -445,12 +399,22 @@ export const Test: StoryObj = {
       <HvButton endIcon={<Stop />} disabled variant="secondaryGhost">
         Stop
       </HvButton>
-      <HvButton color="rebeccapurple">rebeccapurple</HvButton>
-      <HvButton variant="subtle" color="rebeccapurple">
+      <HvButton startIcon={<Play />} color="rebeccapurple">
         rebeccapurple
       </HvButton>
-      <HvButton color="lightcyan">lightcyan</HvButton>
-      <HvButton variant="subtle" color="lightcyan">
+      <HvButton startIcon={<Play />} color="rebeccapurple" variant="subtle">
+        rebeccapurple
+      </HvButton>
+      <HvButton startIcon={<Play />} color="rebeccapurple" variant="ghost">
+        rebeccapurple
+      </HvButton>
+      <HvButton startIcon={<Play />} color="lightcyan">
+        lightcyan
+      </HvButton>
+      <HvButton startIcon={<Play />} color="lightcyan" variant="subtle">
+        lightcyan
+      </HvButton>
+      <HvButton startIcon={<Play />} color="lightcyan" variant="ghost">
         lightcyan
       </HvButton>
     </div>
