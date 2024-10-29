@@ -34,7 +34,7 @@ export const Description = () => {
 
   const [copyText, setCopyText] = useState("Copy code");
 
-  const importCode = `import { ${meta.docgen.displayName} } from "@hitachivantara/uikit-react-core";`;
+  const importCode = `import { ${meta.docgen.displayName} } from "@hitachivantara/uikit-react-${meta.package}";`;
 
   return (
     <>
