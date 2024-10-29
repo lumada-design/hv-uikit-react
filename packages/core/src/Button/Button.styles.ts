@@ -81,10 +81,13 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     backgroundColor: "transparent",
     borderColor: "transparent",
     "&:hover, &:focus-visible": {
-      backgroundColor: "rgba(251, 252, 252, 0.3)",
+      backgroundColor: theme.alpha("base_light", 0.3),
+    },
+    "&:active": {
+      backgroundColor: theme.alpha("base_light", 0.5),
     },
     "&$disabled": {
-      backgroundColor: "rgba(251, 252, 252, 0.1)",
+      backgroundColor: theme.alpha("base_light", 0.1),
     },
   },
 

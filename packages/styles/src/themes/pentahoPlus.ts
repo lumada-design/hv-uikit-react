@@ -614,7 +614,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvButton: {
       classes: {
         root: {
-          borderRadius: theme.radii.full,
+          "--radius": theme.radii.full,
           ":where(:not(.HvButton-disabled,.HvButton-contained))": {
             "&[data-color=positive]": { color: theme.colors.pp.success },
             "&[data-color=warning]": { color: theme.colors.pp.warning },
@@ -700,16 +700,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
 
-        semantic: {
-          "&:hover": {
-            backgroundColor: theme.colors.pp.primaryDimmed,
-          },
-          "&:active": {
-            backgroundColor: theme.colors.pp.primarySubtle,
-            borderBottom: `1px solid ${theme.colors.pp.primarySubtle}`,
-            border: "none",
-          },
-        },
+        semantic: {},
 
         disabled: {
           color: theme.colors.pp.textDisabled,
