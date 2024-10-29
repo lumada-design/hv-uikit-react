@@ -9,7 +9,7 @@ import type {
 export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
   switch (typeof value) {
     case "number":
-      return `calc(${vars.space.base} * ${value}px)`;
+      return value === 0 ? "0" : `calc(${vars.space.base} * ${value}px)`;
     case "string":
       return vars.space[value as HvThemeBreakpoint] || value;
     default:
