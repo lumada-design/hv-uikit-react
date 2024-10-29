@@ -46,6 +46,13 @@ const buttonColors = {
   },
 };
 
+const inputColors = {
+  bg: ld("white", "black"),
+  border: ld(slate[400], slate[600]),
+  borderHover: ld(blue[600], blue[600]),
+  borderActive: ld(slate[700], slate[300]),
+};
+
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
   colors: {
@@ -547,8 +554,23 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvSelect: {
       classes: {
+        root: {
+          "&& .HvButton-secondarySubtle": {
+            border: `1px solid ${inputColors.border}`,
+            backgroundColor: inputColors.bg,
+          },
+          "&& .HvDropdownButton-openUp": {
+            borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
+          },
+          "&& .HvDropdownButton-openDown": {
+            borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
+          },
+        },
+        select: {
+          borderRadius: theme.radii.base,
+        },
         panel: {
-          borderColor: buttonColors.secondary.subtleBorder,
+          border: `1px solid ${inputColors.border}`,
         },
       },
     },
@@ -1070,6 +1092,68 @@ const pentahoPlus = makeTheme((theme) => ({
             borderRadius: theme.radii.full,
             "& button:first-of-type": {
               marginLeft: 0,
+            },
+          },
+        },
+      },
+    },
+    HvBaseInput: {
+      classes: {
+        inputRoot: {
+          border: `1px solid ${inputColors.border}`,
+          backgroundColor: inputColors.bg,
+        },
+        inputRootMultiline: {
+          "&& textarea": {
+            border: `1px solid ${inputColors.border}`,
+            backgroundColor: inputColors.bg,
+          },
+        },
+      },
+    },
+    HvBaseDropdown: {
+      classes: {
+        header: {
+          border: `1px solid ${inputColors.border}`,
+          backgroundColor: inputColors.bg,
+        },
+        headerOpen: {
+          border: `1px solid ${inputColors.border}`,
+          "&:hover": {
+            border: `1px solid ${inputColors.border}`,
+          },
+        },
+        panel: {
+          border: `1px solid ${inputColors.border}`,
+        },
+      },
+    },
+    HvDropDownMenu: {
+      classes: {
+        iconSelected: {
+          "&[data-color=secondary]": {
+            border: `1px solid ${inputColors.border}`,
+          },
+        },
+        baseContainer: {
+          "&[data-popper-placement=bottom-end]": {
+            "& .HvBaseDropdown-panelOpenedDown": {
+              borderRadius: `${theme.radii.base} 0 ${theme.radii.base} ${theme.radii.base}`,
+            },
+          },
+          "&[data-popper-placement=bottom-start]": {
+            "& .HvBaseDropdown-panelOpenedDown": {
+              borderRadius: `0 ${theme.radii.base} ${theme.radii.base} ${theme.radii.base}`,
+            },
+          },
+          "&[data-popper-placement=top-start]": {
+            "& .HvBaseDropdown-panelOpenedUp": {
+              borderRadius: `${theme.radii.base} ${theme.radii.base} ${theme.radii.base} 0`,
+            },
+          },
+          "&[data-popper-placement=top-end]": {
+            "& .HvBaseDropdown-panelOpenedUp": {
+              borderRadius: `${theme.radii.base} ${theme.radii.base} 0 ${theme.radii.base}`,
             },
           },
         },
