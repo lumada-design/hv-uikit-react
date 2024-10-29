@@ -1052,6 +1052,11 @@ const pentahoPlus = makeTheme((theme) => ({
         floating: {
           "& .HvTab-root": {
             marginTop: 0,
+            zIndex: 1,
+            "&:is(.HvTab-selected)": {
+              borderColor: "transparent",
+              backgroundColor: "transparent",
+            },
             "&:hover": {
               borderRadius: theme.radii.full,
             },
@@ -1059,21 +1064,17 @@ const pentahoPlus = makeTheme((theme) => ({
               display: "none",
             },
           },
-          "& .HvTab-selected": {
+          "& .HvTabs-indicator": {
+            height: "100%",
+            backgroundColor: theme.colors.pp.bgSurface,
             border: `1px solid ${theme.colors.primary}`,
             borderRadius: theme.radii.full,
-            backgroundColor: theme.colors.pp.bgSurface,
-          },
-          "& .HvTabs-indicator": {
-            display: "none",
           },
           "& .HvTabs-flexContainer": {
             display: "inline-flex",
             backgroundColor: theme.colors.pp.bgActive,
             borderRadius: theme.radii.full,
-            "& button:first-of-type": {
-              marginLeft: 0,
-            },
+            marginLeft: 0,
           },
         },
       },
