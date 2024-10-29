@@ -12,11 +12,13 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   root: {},
   header: {
     // Only apply the border to divide the header and content when both are displayed
-    "+ div": { borderTop: `1px solid ${theme.colors.atmo3}` },
+    "+ div": {
+      borderTop: `1px solid ${theme.colors.atmo3}`,
+      borderTopLeftRadius: 0,
+      borderTopRightRadius: 0,
+    },
   },
-  actions: {
-    right: theme.space.sm,
-  },
+  actions: {},
   content: {
     marginTop: 0,
     padding: 0,
@@ -94,9 +96,11 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   },
   hidden: {},
   raisedHeader: {
-    "+ div": {
+    "& $content": {
       paddingTop: 0,
     },
   },
-  spaceTop: { paddingTop: 0 },
+  hasHeader: {},
+  /** @deprecated use `hasHeader` instead */
+  spaceTop: {},
 });

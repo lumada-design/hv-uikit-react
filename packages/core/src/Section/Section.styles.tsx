@@ -19,21 +19,25 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     padding: theme.space.sm,
   },
   content: {
-    padding: theme.spacing(0, "sm", "sm", "sm"),
+    padding: theme.space.sm,
+    borderRadius: "inherit",
   },
-  spaceTop: {
-    paddingTop: theme.space.sm,
+  hasHeader: {
+    paddingTop: 0,
   },
+  /** @deprecated use `hasHeader` instead */
+  spaceTop: {},
   actions: {
     display: "flex",
     gap: theme.space.xs,
-    position: "absolute",
-    right: 0,
+    marginLeft: "auto",
   },
   raisedHeader: {
-    zIndex: 1,
-    boxShadow: theme.colors.shadow,
-    "+ div": {
+    "& $header": {
+      zIndex: 1,
+      boxShadow: theme.colors.shadow,
+    },
+    "& $content": {
       paddingTop: theme.space.sm,
     },
   },
