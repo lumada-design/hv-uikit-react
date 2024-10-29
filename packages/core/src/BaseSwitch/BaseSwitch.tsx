@@ -165,7 +165,6 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         disabled={disabled}
         required={required}
         readOnly={readOnly}
-        disableRipple
         onChange={onLocalChange}
         value={value}
         checked={checked}

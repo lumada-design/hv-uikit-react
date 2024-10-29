@@ -48,13 +48,11 @@ export const HvTabs = (props: HvTabsProps) => {
   return (
     <Tabs
       classes={{
-        root: classes.root,
+        root: cx(classes.root, { [classes.floating]: floating }),
         flexContainer: classes.flexContainer,
         indicator: classes.indicator,
         scroller: classes.scroller,
       }}
-      TabIndicatorProps={{ children: <div /> }}
-      className={cx(floating && classes.floating)}
       {...others}
     />
   );

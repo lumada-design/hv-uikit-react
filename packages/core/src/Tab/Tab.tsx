@@ -40,8 +40,6 @@ export const HvTab = (props: HvTabProps) => {
         selected: classes.selected,
         disabled: classes.disabled,
       }}
-      disableRipple
-      disableTouchRipple
       // expose the global class HvIsFocusVisible as a marker
       // not to be styled directly, only as helper in specific css queries
       focusVisibleClassName={cx("HvIsFocusVisible", classes.focusVisible)}

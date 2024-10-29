@@ -6,12 +6,11 @@ import { outlineStyles } from "../utils/focusUtils";
 export const { staticClasses, useClasses } = createClasses("HvTab", {
   root: {
     marginTop: "3px",
-    padding: "0 16px",
+    padding: theme.spacing(0, "sm"),
     minWidth: 70,
     minHeight: 32,
     textTransform: "none",
-    fontFamily: theme.fontFamily.body,
-    ...(theme.typography.body as React.CSSProperties),
+    ...theme.typography.body,
     "&:hover": {
       backgroundColor: theme.colors.containerBackgroundHover,
       borderRadius: theme.radii.base,
@@ -21,10 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
       },
     },
     "&$selected": {
-      color: theme.typography.label.color,
       fontWeight: theme.typography.label.fontWeight,
-      lineHeight: theme.typography.label.lineHeight,
-      letterSpacing: theme.typography.label.letterSpacing,
     },
     "&$disabled": {
       color: theme.colors.secondary_60,
@@ -48,6 +44,9 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
     // Override Mui styling: https://mui.com/material-ui/api/tab/#css
     "& .MuiTab-iconWrapper": {
       margin: 0,
+    },
+    "& svg .color0": {
+      fill: "currentcolor",
     },
   },
   focusVisible: {

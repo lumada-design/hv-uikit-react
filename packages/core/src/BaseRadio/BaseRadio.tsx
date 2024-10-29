@@ -175,7 +175,6 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
         disabled={disabled}
         required={required}
         readOnly={readOnly}
-        disableRipple
         onChange={onLocalChange}
         value={value}
         checked={checked}

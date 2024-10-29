@@ -188,7 +188,6 @@ export const HvBaseCheckBox = forwardRef<
       onFocusVisible={onFocusVisibleCallback}
       onBlur={onBlurCallback}
       color="default"
-      disableRipple
       {...others}
     />
   );
