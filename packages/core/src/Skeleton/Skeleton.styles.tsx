@@ -1,38 +1,5 @@
-import { keyframes } from "@emotion/react";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
-
-const pulse = keyframes`
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-`;
-
-// Animation taken from Material UI:
-// https://github.com/mui/material-ui/blob/master/packages/mui-material/src/Skeleton/Skeleton.js
-const wave = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-`;
-
-const fadeIn = keyframes`
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-`;
 
 export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
   root: {
@@ -44,7 +11,13 @@ export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
   },
   content: {
     opacity: 0,
-    animation: `${fadeIn} 0.5s ease forwards`,
+    animation: "fadeIn 0.5s ease forwards",
+
+    "@keyframes fadeIn": {
+      to: {
+        opacity: 1,
+      },
+    },
   },
   circle: {
     borderRadius: theme.radii.circle,
@@ -58,13 +31,19 @@ export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
     height: "1.5em",
   },
   pulse: {
-    animation: `${pulse} 2s infinite`,
+    animation: "pulse 2s infinite",
+
+    "@keyframes pulse": {
+      "50%": {
+        opacity: "0.5",
+      },
+    },
   },
   wave: {
     overflow: "hidden",
     position: "relative",
     "&::after": {
-      animation: `${wave} 2s linear 0.5s infinite`,
+      animation: "wave 2s linear 0.5s infinite",
       background: `linear-gradient(
             90deg,
             transparent,
@@ -75,6 +54,20 @@ export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
       position: "absolute",
       transform: "translateX(-100%)",
       inset: 0,
+
+      // Animation taken from Material UI:
+      // https://github.com/mui/material-ui/blob/master/packages/mui-material/src/Skeleton/Skeleton.js
+      "@keyframes wave": {
+        "0%": {
+          transform: "translateX(-100%)",
+        },
+        "50%": {
+          transform: "translateX(100%)",
+        },
+        "100%": {
+          transform: "translateX(100%)",
+        },
+      },
     },
   },
 });
