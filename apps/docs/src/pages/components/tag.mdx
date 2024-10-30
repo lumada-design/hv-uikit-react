@@ -1,0 +1,132 @@
+import { HvTag, tagClasses } from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/Description";
+import { Page } from "@docs/components/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Tag", "core", tagClasses, undefined);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvTag}
+  componentName="HvTag"
+  controls={{
+    label: {
+      type: "text",
+      defaultValue: "Tag label",
+    },
+    color: {
+      type: "color",
+      defaultValue: "neutral_20",
+    },
+    disabled: {
+      defaultValue: false,
+    },
+    selectable: {
+      defaultValue: false,
+    },
+  }}
+/>
+
+### Different colors
+
+You can change the default color of the tag by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
+
+```jsx live
+<>
+  <HvTag label="Tag Label" color="positive" />
+  <HvTag label="Tag Label" color="cat2" />
+  <HvTag label="Tag Label" color="aquamarine" />
+  <HvTag label="Tag Label" color="#c73aa8" />
+</>
+```
+
+### Long text
+
+The tag component will automatically truncate the text if it is too long to fit in the container. You can add a tooltip to show the full text when the user hovers over the tag.
+
+```jsx live
+<HvTag
+  label={
+    <HvOverflowTooltip data="This is an example of a extremely long tag" />
+  }
+/>
+```
+
+### Actions
+
+Tags can have actions. Use the `onClick` prop to add an action to the tag.
+
+```jsx live
+<HvTag label="Click me!" onClick={() => alert("Clicked!")} />
+```
+
+### Deletable tags
+
+You can add a delete button to the tag by using the `onDelete` prop.
+
+```jsx live
+<HvTag label="Deletable tag" onDelete={() => alert("Deleted!")} />
+```
+
+### Controlled selectable state
+
+To use the selectable tags in a controlled way, set the `selected` prop to `true` of `false`.
+
+```jsx live
+import { useState } from "react";
+import { css } from "@emotion/css";
+
+export default function Demo() {
+  const [selectedTags, setSelectedTags] = useState(["Asset 1", "Asset 3"]);
+
+  const tags = ["Asset 1", "Asset 2", "Asset 3", "Asset 4"];
+
+  return (
+    <div
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        gap: theme.space.sm,
+      })}
+    >
+      <div className={css({ display: "flex", gap: theme.space.sm })}>
+        {tags.map((tag, i) => (
+          <HvTag
+            key={`${tag}-${i}`}
+            label={tag}
+            selectable
+            selected={selectedTags.includes(tag)}
+            onClick={(event, selected) => {
+              setSelectedTags((prev) =>
+                selected
+                  ? prev.concat(tag)
+                  : prev.filter((item) => item !== tag),
+              );
+            }}
+          />
+        ))}
+      </div>
+      <div className={css({ display: "flex" })}>
+        <HvTypography variant="label">Selected tags:</HvTypography>&nbsp;
+        <HvTypography>{selectedTags.join(", ")}</HvTypography>
+      </div>
+    </div>
+  );
+}
+```
+
+### Related components
+
+- [`HvTagsInput`](/components/tagsInput)
+
+</Page>
