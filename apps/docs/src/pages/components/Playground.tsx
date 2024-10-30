@@ -8,15 +8,17 @@ import { useData } from "nextra/hooks";
 import { themes } from "prism-react-renderer";
 import {
   HvCheckBox,
+  HvColorPicker,
   HvInput,
   HvOption,
   HvRadio,
   HvRadioGroup,
   HvSelect,
   HvSlider,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-type ControlType = "radio" | "slider";
+type ControlType = "radio" | "slider" | "color" | "text";
 
 type Control = {
   type?: ControlType;
@@ -89,6 +91,7 @@ export const Playground = ({
   children,
 }: PlaygroundProps) => {
   const data = useData();
+  const { colors } = useTheme();
 
   const initialState = Object.keys(controls || {}).reduce(
     (state, prop) => {
@@ -216,13 +219,34 @@ export const Playground = ({
       };
 
       const renderInput = () => {
+        const inputValue =
+          propsState[prop] === ""
+            ? ""
+            : (propsState[prop] ?? control.defaultValue);
         return (
           <HvInput
             key={`${prop}`}
             label={prop}
-            value={propsState[prop] || control.defaultValue}
+            value={inputValue}
             onChange={(e: React.ChangeEvent, value: any) =>
               handleSelectChange(e, prop, value)
+            }
+            classes={{ root: css({ width: "100%" }) }}
+          />
+        );
+      };
+
+      const renderColor = () => {
+        const colorValue = propsState[prop].includes("#")
+          ? propsState[prop]
+          : colors?.[propsState[prop]] || control.defaultValue;
+        return (
+          <HvColorPicker
+            key={`${prop}`}
+            label={prop}
+            value={colorValue}
+            onChange={(value: any) =>
+              handleSelectChange(undefined, prop, value)
             }
             classes={{ root: css({ width: "100%" }) }}
           />
@@ -233,14 +257,15 @@ export const Playground = ({
         return renderSlider();
       if (type === "radio" && propMeta?.type.name === "enum")
         return renderRadio();
-      if (type === "string") return renderInput();
+      if (type === "text") return renderInput();
+      if (type === "color") return renderColor();
       if (type === "check") return renderCheck();
       if (propMeta?.type.name === "enum") return renderSelect();
       if (propMeta?.type.name === "boolean") return renderCheck();
 
       return <div>nothing to show...</div>;
     },
-    [data?.meta.docgen.props, propsState],
+    [colors, data?.meta.docgen.props, propsState],
   );
 
   if (!Component) return;

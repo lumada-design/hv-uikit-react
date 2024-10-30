@@ -26,11 +26,15 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvLoading"
   controls={{
     label: {
-      type: "string",
+      type: "text",
       defaultValue: "Loading...",
     },
     small: {
       defaultValue: false,
+    },
+    color: {
+      type: "color",
+      defaultValue: "primary",
     },
   }}
 />
