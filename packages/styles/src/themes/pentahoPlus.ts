@@ -1108,28 +1108,6 @@ const pentahoPlus = makeTheme((theme) => ({
             border: `1px solid ${inputColors.border}`,
           },
         },
-        baseContainer: {
-          "&[data-popper-placement=bottom-end]": {
-            "& .HvBaseDropdown-panelOpenedDown": {
-              borderRadius: `${theme.radii.base} 0 ${theme.radii.base} ${theme.radii.base}`,
-            },
-          },
-          "&[data-popper-placement=bottom-start]": {
-            "& .HvBaseDropdown-panelOpenedDown": {
-              borderRadius: `0 ${theme.radii.base} ${theme.radii.base} ${theme.radii.base}`,
-            },
-          },
-          "&[data-popper-placement=top-start]": {
-            "& .HvBaseDropdown-panelOpenedUp": {
-              borderRadius: `${theme.radii.base} ${theme.radii.base} ${theme.radii.base} 0`,
-            },
-          },
-          "&[data-popper-placement=top-end]": {
-            "& .HvBaseDropdown-panelOpenedUp": {
-              borderRadius: `${theme.radii.base} ${theme.radii.base} 0 ${theme.radii.base}`,
-            },
-          },
-        },
       },
     },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,

@@ -89,9 +89,8 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     color: theme.colors.secondary_80,
   },
   panel: {
-    position: "relative",
-
-    backgroundColor: theme.colors.atmo1,
+    // TODO: remove padding override in v6 (most elements need it)
+    padding: 0,
     border: `1px solid ${theme.colors.secondary}`,
   },
   panelOpenedUp: {

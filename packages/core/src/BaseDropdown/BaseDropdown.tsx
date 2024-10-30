@@ -11,12 +11,7 @@ import { PopperProps, usePopper } from "react-popper";
 import ClickAwayListener, {
   ClickAwayListenerProps,
 } from "@mui/material/ClickAwayListener";
-import {
-  detectOverflow,
-  ModifierArguments,
-  Options,
-  Placement,
-} from "@popperjs/core";
+import { detectOverflow, Options, Placement } from "@popperjs/core";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -27,6 +22,7 @@ import {
 import { useControlled } from "../hooks/useControlled";
 import { useForkRef } from "../hooks/useForkRef";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvPanel } from "../Panel";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { getDocument } from "../utils/document";
@@ -34,8 +30,7 @@ import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./BaseDropdown.styles";
-import BaseDropdownContext from "./BaseDropdownContext";
-import { useBaseDropdownContext } from "./BaseDropdownContext/BaseDropdownContext";
+import { BaseDropdownContext, useBaseDropdownContext } from "./context";
 
 export { staticClasses as baseDropdownClasses };
 
@@ -352,7 +347,7 @@ const BaseDropdown = forwardRef<
                 })}
               />
             )}
-            <div
+            <HvPanel
               // TODO: review in v6. `containerId` needs to be on the role element (`children` has it)
               id={containerId}
               className={cx(classes.panel, {
@@ -361,7 +356,7 @@ const BaseDropdown = forwardRef<
               })}
             >
               {children}
-            </div>
+            </HvPanel>
             {popperPlacement?.includes("top") && (
               <div
                 style={{ width: extensionWidth }}
@@ -434,7 +429,7 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
       placementProp === "right" ? "start" : "end"
     }`;
 
-    const { modifiers: popperPropsModifiers = [], ...otherPopperProps } =
+    const { modifiers: popperPropsModifiers, ...otherPopperProps } =
       popperProps;
 
     const [referenceElement, setReferenceElement] =
@@ -442,73 +437,10 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(
       null,
     );
-    const [popperMaxSize, setPopperMaxSize] = useState<{
-      width?: number;
-      height?: number;
-    }>({});
 
     const onFirstUpdate = useCallback(() => {
       onContainerCreation?.(popperElement);
     }, [onContainerCreation, popperElement]);
-
-    const applyMaxSizeCalculator = useCallback(
-      ({ state }: ModifierArguments<Options>) => {
-        // The `maxSize` modifier provides this data
-        const { width, height } = state.modifiersData.maxSize;
-        if (
-          width !== popperMaxSize?.width ||
-          height !== popperMaxSize?.height
-        ) {
-          setPopperMaxSize({ width, height });
-        }
-
-        state.styles.popper = {
-          ...state.styles.popper,
-          maxWidth: `${width}px`,
-          maxHeight: `${height}px`,
-        };
-      },
-      [popperMaxSize],
-    );
-
-    const widthCalculator = useCallback(
-      ({ state }: ModifierArguments<Options>) => {
-        state.styles.popper.width = `${state.rects.reference.width}px`;
-      },
-      [],
-    );
-
-    const widthCalculatorEffect = useCallback(
-      ({ state }: ModifierArguments<Options>) => {
-        state.elements.popper.style.width = `${
-          (state.elements.reference as any).offsetWidth
-        }px`;
-      },
-      [],
-    );
-
-    const maxSizeCalculator = useCallback(
-      ({ state, name, options }: ModifierArguments<Options>) => {
-        const overflow = detectOverflow(state, options);
-
-        const x = state.modifiersData.preventOverflow?.x || 0;
-        const y = state.modifiersData.preventOverflow?.y || 0;
-
-        const popperWidth = state.rects.popper.width;
-        const popperHeight = state.rects.popper.height;
-
-        const basePlacement = state.placement.split("-")[0];
-
-        const widthProp = basePlacement === "left" ? "left" : "right";
-        const heightProp = basePlacement === "top" ? "top" : "bottom";
-
-        state.modifiersData[name] = {
-          width: popperWidth - overflow[widthProp] - x,
-          height: popperHeight - overflow[heightProp] - y,
-        };
-      },
-      [],
-    );
 
     const modifiers = useMemo<Options["modifiers"]>(
       () => [
@@ -517,33 +449,55 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
           enabled: !variableWidth,
           phase: "beforeWrite",
           requires: ["computeStyles"],
-          fn: widthCalculator,
-          effect: widthCalculatorEffect,
+          fn: ({ state }) => {
+            state.styles.popper.width = `${state.rects.reference.width}px`;
+          },
+          effect: ({ state }) => {
+            state.elements.popper.style.width = `${
+              (state.elements.reference as any).offsetWidth
+            }px`;
+          },
         },
         {
           name: "maxSize",
           enabled: true,
           phase: "main",
           requiresIfExists: ["offset", "preventOverflow", "flip"],
-          fn: maxSizeCalculator,
+          fn: ({ state, name, options }) => {
+            const overflow = detectOverflow(state, options);
+
+            const x = state.modifiersData.preventOverflow?.x || 0;
+            const y = state.modifiersData.preventOverflow?.y || 0;
+
+            const popperWidth = state.rects.popper.width;
+            const popperHeight = state.rects.popper.height;
+
+            const basePlacement = state.placement.split("-")[0];
+
+            const widthProp = basePlacement === "left" ? "left" : "right";
+            const heightProp = basePlacement === "top" ? "top" : "bottom";
+
+            state.modifiersData[name] = {
+              width: popperWidth - overflow[widthProp] - x,
+              height: popperHeight - overflow[heightProp] - y,
+            };
+          },
         },
         {
           name: "applyMaxSize",
           enabled: true,
           phase: "beforeWrite",
           requires: ["maxSize"],
-          fn: applyMaxSizeCalculator,
+          fn: ({ state }) => {
+            // The `maxSize` modifier provides this data
+            const { width, height } = state.modifiersData.maxSize;
+            state.styles.popper.maxWidth = `${width}px`;
+            state.styles.popper.maxHeight = `${height}px`;
+          },
         },
-        ...popperPropsModifiers,
+        ...(popperPropsModifiers || []),
       ],
-      [
-        maxSizeCalculator,
-        applyMaxSizeCalculator,
-        popperPropsModifiers,
-        variableWidth,
-        widthCalculator,
-        widthCalculatorEffect,
-      ],
+      [popperPropsModifiers, variableWidth],
     );
 
     const popper = usePopper(referenceElement, popperElement, {
@@ -555,16 +509,16 @@ export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
 
     const value = useMemo(
       () => ({
-        ...popperMaxSize,
         popperPlacement:
-          popper?.attributes.popper?.["data-popper-placement"] ?? "bottom",
+          (popper?.attributes.popper?.["data-popper-placement"] as Placement) ??
+          "bottom",
         popper,
         popperElement,
         setPopperElement,
         referenceElement,
         setReferenceElement,
       }),
-      [popper, popperElement, popperMaxSize, referenceElement],
+      [popper, popperElement, referenceElement],
     );
 
     return (

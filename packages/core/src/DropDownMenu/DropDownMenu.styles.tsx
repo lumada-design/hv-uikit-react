@@ -3,7 +3,20 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   container: {},
-  baseContainer: {},
+  baseContainer: {
+    "&[data-popper-placement=bottom-end] .HvBaseDropdown-panel": {
+      borderRadius: `${theme.radii.base} 0 ${theme.radii.base} ${theme.radii.base}`,
+    },
+    "&[data-popper-placement=bottom-start] .HvBaseDropdown-panel": {
+      borderRadius: `0 ${theme.radii.base} ${theme.radii.base} ${theme.radii.base}`,
+    },
+    "&[data-popper-placement=top-start] .HvBaseDropdown-panel": {
+      borderRadius: `${theme.radii.base} ${theme.radii.base} ${theme.radii.base} 0`,
+    },
+    "&[data-popper-placement=top-end] .HvBaseDropdown-panel": {
+      borderRadius: `${theme.radii.base} ${theme.radii.base} 0 ${theme.radii.base}`,
+    },
+  },
   root: {
     display: "inline-block",
     width: "auto",
@@ -13,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
     boxShadow: theme.colors.shadow,
   },
   menuListRoot: {
-    backgroundColor: "transparent",
+    padding: theme.space.sm,
   },
   menuList: {},
 });
