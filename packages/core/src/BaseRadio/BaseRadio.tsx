@@ -99,7 +99,7 @@ export const getSelectorIcons = () => {
  * use unless implementing a custom use case not covered by the Radio Button form element.
  */
 export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
-  (props, ref) => {
+  function HvBaseRadio(props, ref) {
     const {
       classes: classesProp,
       className,

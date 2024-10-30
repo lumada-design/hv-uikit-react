@@ -47,7 +47,7 @@ export interface HvAccordionProps
 export const HvAccordion = forwardRef<
   React.ComponentRef<"div">,
   HvAccordionProps
->((props, ref) => {
+>(function HvAccordion(props, ref) {
   const {
     id,
     className,

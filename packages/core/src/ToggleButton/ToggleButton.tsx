@@ -27,7 +27,7 @@ export interface HvToggleButtonProps
 export const HvToggleButton = forwardRef<
   HTMLButtonElement,
   HvToggleButtonProps
->((props, ref) => {
+>(function HvToggleButton(props, ref) {
   const {
     defaultSelected,
     selected,

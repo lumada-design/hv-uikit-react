@@ -63,7 +63,7 @@ export interface HvBulkActionsProps extends HvBaseProps {
 export const HvBulkActions = forwardRef<
   React.ComponentRef<"div">,
   HvBulkActionsProps
->((props, ref) => {
+>(function HvBulkActions(props, ref) {
   const {
     id,
     className,

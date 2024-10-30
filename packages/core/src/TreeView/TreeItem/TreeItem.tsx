@@ -74,7 +74,7 @@ export interface HvTreeItemProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
-  (props, ref) => {
+  function HvTreeItem(props, ref) {
     const {
       id: idProp,
       nodeId,

@@ -45,7 +45,7 @@ export interface HvSectionProps
  * Sections allow grouping information on a page under the same topic.
  */
 export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
-  (props, ref) => {
+  function HvSection(props, ref) {
     const {
       id,
       classes: classesProp,

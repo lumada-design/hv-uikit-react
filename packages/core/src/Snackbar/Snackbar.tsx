@@ -85,7 +85,7 @@ export interface HvSnackbarProps
 export const HvSnackbar = forwardRef<
   React.ComponentRef<typeof MuiSnackbar>,
   HvSnackbarProps
->((props, ref) => {
+>(function HvSnackbar(props, ref) {
   const {
     classes: classesProp,
     className,

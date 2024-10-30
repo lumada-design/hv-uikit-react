@@ -41,7 +41,7 @@ export const HvTabs = forwardRef<
   // no-indent
   React.ComponentRef<typeof Tabs>,
   HvTabsProps
->((props, ref) => {
+>(function HvTabs(props, ref) {
   const {
     classes: classesProp,
     floating,

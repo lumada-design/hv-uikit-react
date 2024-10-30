@@ -164,7 +164,7 @@ export interface HvTextAreaProps
 export const HvTextArea = forwardRef<
   React.ComponentRef<"textarea">,
   HvTextAreaProps
->((props, ref) => {
+>(function HvTextArea(props, ref) {
   const {
     id,
     className,

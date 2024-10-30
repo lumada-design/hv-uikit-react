@@ -35,7 +35,7 @@ export interface HvEmptyStateProps
 export const HvEmptyState = forwardRef<
   React.ComponentRef<"div">,
   HvEmptyStateProps
->((props, ref) => {
+>(function HvEmptyState(props, ref) {
   const {
     action,
     icon,

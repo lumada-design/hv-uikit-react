@@ -75,7 +75,7 @@ export interface HvDrawerProps extends Omit<MuiDrawerProps, "classes"> {
 export const HvDrawer = forwardRef<
   React.ComponentRef<typeof MuiDrawer>,
   HvDrawerProps
->((props, ref) => {
+>(function HvDrawer(props, ref) {
   const {
     className,
     classes: classesProp,

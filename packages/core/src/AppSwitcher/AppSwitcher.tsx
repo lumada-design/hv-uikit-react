@@ -49,7 +49,7 @@ export interface HvAppSwitcherProps extends HvBaseProps {
 export const HvAppSwitcher = forwardRef<
   React.ComponentRef<typeof HvPanel>,
   HvAppSwitcherProps
->((props, ref) => {
+>(function HvAppSwitcher(props, ref) {
   const {
     className,
     classes: classesProp,

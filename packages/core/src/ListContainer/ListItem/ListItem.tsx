@@ -101,7 +101,7 @@ export const HvListItem = forwardRef<
   // no-indent
   React.ComponentRef<"li">,
   HvListItemProps
->((props, ref) => {
+>(function HvListItem(props, ref) {
   const {
     classes: classesProp,
     className,

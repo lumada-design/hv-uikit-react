@@ -93,7 +93,7 @@ export interface HvCarouselProps
 export const HvCarousel = forwardRef<
   React.ComponentRef<typeof HvContainer>,
   HvCarouselProps
->((props, ref) => {
+>(function HvCarousel(props, ref) {
   const {
     className,
     classes: classesProp,

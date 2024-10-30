@@ -48,7 +48,7 @@ export interface HvFilterGroupContentProps
 export const HvFilterGroupContent = forwardRef<
   HTMLDivElement,
   HvFilterGroupContentProps
->((props, ref) => {
+>(function HvFilterGroupContent(props, ref) {
   const {
     id,
     status,

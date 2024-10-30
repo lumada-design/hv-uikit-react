@@ -98,7 +98,7 @@ export interface HvPaginationProps extends HvBaseProps {
 export const HvPagination = forwardRef<
   React.ComponentRef<"div">,
   HvPaginationProps
->((props, ref) => {
+>(function HvPagination(props, ref) {
   const {
     classes: classesProp,
     className,

@@ -138,7 +138,7 @@ const Overflow = ({
  * The AvatarGroup component is used to group multiple avatars.
  */
 export const HvAvatarGroup = forwardRef<HTMLDivElement, HvAvatarGroupProps>(
-  (props, ref) => {
+  function HvAvatarGroup(props, ref) {
     const {
       className,
       style,

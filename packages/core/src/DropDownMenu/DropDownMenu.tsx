@@ -115,7 +115,7 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
 export const HvDropDownMenu = forwardRef<
   React.ComponentRef<typeof HvBaseDropdown>,
   HvDropDownMenuProps
->((props, ref) => {
+>(function HvDropDownMenu(props, ref) {
   const {
     id: idProp,
     classes: classesProp,

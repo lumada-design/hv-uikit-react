@@ -29,7 +29,7 @@ export const HvLogin = forwardRef<
   // no-indent
   React.ComponentRef<"div">,
   HvLoginProps
->((props, ref) => {
+>(function HvLogin(props, ref) {
   const {
     className,
     classes: classesProp,

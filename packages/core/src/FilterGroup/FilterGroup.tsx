@@ -121,7 +121,7 @@ export type HvFilterGroupLabels = Partial<typeof DEFAULT_LABELS>;
  * while we do not provide a better approach for building this component with smaller and more composable parts.
  */
 export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
-  (props, ref) => {
+  function HvFilterGroup(props, ref) {
     const {
       className,
       id,

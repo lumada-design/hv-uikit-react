@@ -77,7 +77,7 @@ export interface HvBannerProps
 export const HvBanner = forwardRef<
   React.ComponentRef<typeof Snackbar>,
   HvBannerProps
->((props, ref) => {
+>(function HvBanner(props, ref) {
   const {
     id,
     classes: classesProp,

@@ -79,7 +79,7 @@ function noopSelection() {
 export const HvVerticalNavigationTreeView = forwardRef<
   HTMLUListElement,
   HvVerticalNavigationTreeViewProps
->((props, ref) => {
+>(function HvVerticalNavigationTreeView(props, ref) {
   const {
     id: idProp,
     className,

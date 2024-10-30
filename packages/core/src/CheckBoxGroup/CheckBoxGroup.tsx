@@ -147,7 +147,7 @@ export interface HvCheckBoxGroupProps
  * A checkbox group is a type of selection list that allows the user to select multiple options through the use of checkboxes.
  */
 export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
-  (props, ref) => {
+  function HvCheckBoxGroup(props, ref) {
     const {
       id,
       classes: classesProp,

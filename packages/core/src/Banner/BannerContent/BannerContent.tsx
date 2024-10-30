@@ -46,7 +46,7 @@ export interface HvBannerContentProps
 }
 
 export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
-  (props, ref) => {
+  function HvBannerContent(props, ref) {
     const {
       id,
       classes: classesProp,

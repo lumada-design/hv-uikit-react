@@ -19,7 +19,7 @@ export interface HvActionBarProps extends HvBaseProps {
 export const HvActionBar = forwardRef<
   React.ComponentRef<"div">,
   HvActionBarProps
->((props, ref) => {
+>(function HvActionBar(props, ref) {
   const {
     classes: classesProp,
     className,

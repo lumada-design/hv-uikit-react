@@ -70,7 +70,7 @@ export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
 export const HvVerticalNavigation = forwardRef<
   HTMLDivElement,
   HvVerticalNavigationProps
->((props, ref) => {
+>(function HvVerticalNavigation(props, ref) {
   const {
     id,
     className,

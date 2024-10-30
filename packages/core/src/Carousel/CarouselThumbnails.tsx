@@ -24,7 +24,7 @@ interface HvCarouselThumbnailsProps
 export const HvCarouselThumbnails = forwardRef<
   HTMLDivElement,
   HvCarouselThumbnailsProps
->((props, ref) => {
+>(function HvCarouselThumbnails(props, ref) {
   const {
     classes: classesProp,
     className,

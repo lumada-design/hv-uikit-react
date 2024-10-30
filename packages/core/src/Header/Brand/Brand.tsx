@@ -24,7 +24,7 @@ export interface HvHeaderBrandProps extends HvBaseProps {
 export const HvHeaderBrand = forwardRef<
   React.ElementRef<"div">,
   HvHeaderBrandProps
->((props, ref) => {
+>(function HvHeaderBrand(props, ref) {
   const {
     classes: classesProp,
     logo,

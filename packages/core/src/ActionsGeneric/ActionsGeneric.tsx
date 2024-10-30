@@ -69,7 +69,7 @@ export interface HvActionsGenericProps extends HvBaseProps {
 export const HvActionsGeneric = forwardRef<
   React.ComponentRef<"div">,
   HvActionsGenericProps
->((props, ref) => {
+>(function HvActionsGeneric(props, ref) {
   const {
     id: idProp,
     classes: classesProp,

@@ -29,7 +29,7 @@ export const HvTab = forwardRef<
   // no-indent
   React.ComponentRef<typeof Tab>,
   HvTabProps
->((props, ref) => {
+>(function HvTab(props, ref) {
   const {
     classes: classesProp,
     iconPosition = "top",

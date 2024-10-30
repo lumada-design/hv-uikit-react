@@ -227,7 +227,11 @@ const changeInputValue = (input: HTMLInputElement | null, value = "") => {
 /**
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
-export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
+export const HvInput = forwardRef<
+  // no-indent
+  InputElement,
+  HvInputProps
+>(function HvInput(props, ref) {
   const {
     classes: classesProp,
     className,

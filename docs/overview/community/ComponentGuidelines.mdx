@@ -115,7 +115,11 @@ export interface HvCompProps extends HvBaseProps<HTMLDivElement> {
 
 // 👇 Add a JSDoc block to the component explaining its purpose
 /** HvComp does some amazing stuff */
-export const HvComp = forwardRef<HTMLDivElement, HvCompProps>((props, ref) => {
+export const HvComp = forwardRef<
+  // no-indent
+  React.ComponentRef<"div">,
+  HvCompProps
+>(function HvComp(props, ref) {
   const {
     children,
     // fix collisions 👇 by renaming to `<x>Prop`

@@ -113,7 +113,7 @@ export interface HvTimePickerProps
  * A Time Picker allows the user to choose a specific time or a time range.
  */
 export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
-  (props, ref) => {
+  function HvTimePicker(props, ref) {
     const {
       classes: classesProp,
       className,

@@ -421,7 +421,7 @@ const BaseDropdown = forwardRef<
 });
 
 export const HvBaseDropdown = forwardRef<HTMLDivElement, HvBaseDropdownProps>(
-  (props, ref) => {
+  function HvBaseDropdown(props, ref) {
     const {
       popperProps = {},
       variableWidth,

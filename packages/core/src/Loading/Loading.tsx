@@ -35,7 +35,7 @@ export const HvLoading = forwardRef<
   // no-indent
   React.ComponentRef<"div">,
   HvLoadingProps
->((props, ref) => {
+>(function HvLoading(props, ref) {
   const {
     color,
     hidden,

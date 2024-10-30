@@ -32,7 +32,7 @@ export interface HvLoadingContainerProps
 export const HvLoadingContainer = forwardRef<
   React.ComponentRef<"div">,
   HvLoadingContainerProps
->((props, ref) => {
+>(function HvLoadingContainer(props, ref) {
   const {
     children,
     className,

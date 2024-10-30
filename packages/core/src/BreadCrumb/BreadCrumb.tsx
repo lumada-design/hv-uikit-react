@@ -41,7 +41,7 @@ export interface HvBreadCrumbProps
 export const HvBreadCrumb = forwardRef<
   React.ComponentRef<"nav">,
   HvBreadCrumbProps
->((props, ref) => {
+>(function HvBreadCrumb(props, ref) {
   const {
     classes: classesProp,
     className,

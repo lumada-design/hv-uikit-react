@@ -47,7 +47,7 @@ export interface HvGlobalActionsProps
 export const HvGlobalActions = forwardRef<
   React.ComponentRef<"div">,
   HvGlobalActionsProps
->((props, ref) => {
+>(function HvGlobalActions(props, ref) {
   const {
     children,
     classes: classesProp,

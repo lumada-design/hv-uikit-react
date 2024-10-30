@@ -65,7 +65,7 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
  * the Toggle Switch and Toggle Button aren't more appropriate.
  */
 export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
-  (props, ref) => {
+  function HvCheckBox(props, ref) {
     const {
       id,
       classes: classesProp,

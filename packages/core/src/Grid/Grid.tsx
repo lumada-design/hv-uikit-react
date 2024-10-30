@@ -252,7 +252,11 @@ const WidthGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
  * The HvGrid sets them to the same value as the vertical gutters, depending on the breakpoint.
  * It can be overridden by setting the `rowSpacing` prop.
  */
-export const HvGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
+export const HvGrid = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvGridProps
+>(function HvGrid(props, ref) {
   const {
     item,
     container,

@@ -69,7 +69,7 @@ export const HvAvatar = forwardRef<
   // no-indent
   React.ComponentRef<"div">,
   HvAvatarProps
->((props, ref) => {
+>(function HvAvatar(props, ref) {
   const {
     className,
     style,

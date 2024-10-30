@@ -127,7 +127,7 @@ const isSemantical = (color: HvColorAny) =>
  * changes in the system.
  */
 export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
-  (props, ref) => {
+  function HvSwitch(props, ref) {
     const {
       classes: classesProp,
       className,

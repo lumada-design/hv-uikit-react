@@ -132,7 +132,7 @@ export interface HvRadioProps
  * respond to the browser's native management of radio inputs checked state.
  */
 export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
-  (props, ref) => {
+  function HvRadio(props, ref) {
     const {
       classes: classesProp,
       className,

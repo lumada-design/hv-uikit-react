@@ -32,7 +32,7 @@ export const HvHeader = forwardRef<
   // no-indent
   React.ComponentRef<"header">,
   HvHeaderProps
->((props, ref) => {
+>(function HvHeader(props, ref) {
   const {
     className,
     classes: classesProp,

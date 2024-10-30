@@ -103,7 +103,7 @@ const DEFAULT_LABELS = {
  * It receives a color string in HEX format and outputs an HEX formatted color.
  */
 export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
-  (props, ref) => {
+  function HvColorPicker(props, ref) {
     const {
       id,
       name,
