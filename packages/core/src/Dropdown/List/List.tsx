@@ -7,7 +7,7 @@ import {
 import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvActionBar } from "../../ActionBar";
-import { useBaseDropdownContext } from "../../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
+import { useBaseDropdownContext } from "../../BaseDropdown/context";
 import { HvButton } from "../../Button";
 import { HvCheckBox } from "../../CheckBox";
 import { HvInput } from "../../Input";
@@ -128,7 +128,7 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
     hasTooltips = false,
     singleSelectionToggle,
     height: heightProp,
-    maxHeight,
+    maxHeight: maxHeightProp,
     virtualized = false,
     ...others
   } = useDefaultProps("HvDropdownList", props);
@@ -138,7 +138,8 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
   const [list, setList] = useState<HvListValue[]>(clone(values));
   const [allSelected, setAllSelected] = useState<boolean>(false);
   const [anySelected, setAnySelected] = useState<boolean>(false);
-  const { width, height } = useBaseDropdownContext();
+  const { popper } = useBaseDropdownContext();
+  const { maxWidth, maxHeight } = popper?.styles.popper || {};
 
   const hasChanges = useMemo(() => {
     return String(getSelectedIds(values)) !== String(getSelectedIds(list));
@@ -349,8 +350,8 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
             id={setId(id, "list")}
             style={mergeStyles(undefined, {
               height: heightProp,
-              "--maxW": width,
-              "--maxH": maxHeight ?? `calc(${height}px - ${elementsSize})`,
+              "--maxW": maxWidth,
+              "--maxH": maxHeightProp ?? `calc(${maxHeight} - ${elementsSize})`,
             })}
             classes={{
               root: cx(classes.dropdownListContainer, {

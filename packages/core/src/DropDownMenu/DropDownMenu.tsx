@@ -1,5 +1,4 @@
 import { forwardRef, useMemo } from "react";
-import { Placement } from "@popperjs/core";
 import { MoreOptionsVertical } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -7,15 +6,14 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { HvSize } from "@hitachivantara/uikit-styles";
 
-import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
-import { useBaseDropdownContext } from "../BaseDropdown/BaseDropdownContext/BaseDropdownContext";
+import { HvBaseDropdown } from "../BaseDropdown";
+import { useBaseDropdownContext } from "../BaseDropdown/context";
 import { HvButtonVariant } from "../Button";
 import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvList, HvListProps, HvListValue } from "../List";
-import { HvPanel } from "../Panel";
 import { HvBaseProps } from "../types/generic";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
 import { isKey } from "../utils/keyboardUtils";
@@ -100,7 +98,7 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
         open={open}
         aria-expanded={open}
         aria-haspopup="menu"
-        placement={popperPlacement as Placement}
+        placement={popperPlacement}
         {...others}
       >
         {children}
@@ -168,12 +166,6 @@ export const HvDropDownMenu = forwardRef<
     event.preventDefault();
   };
 
-  const setFocusToContent: HvBaseDropdownProps["onContainerCreation"] = (
-    containerRef,
-  ) => {
-    containerRef?.getElementsByTagName("li")[0]?.focus();
-  };
-
   const condensed = useMemo(() => dataList.every((el) => !el.icon), [dataList]);
 
   return (
@@ -184,6 +176,7 @@ export const HvDropDownMenu = forwardRef<
       classes={{
         root: classes.root,
         container: classes.baseContainer,
+        panel: classes.menuListRoot,
       }}
       expanded={open && !disabled}
       component={
@@ -210,25 +203,25 @@ export const HvDropDownMenu = forwardRef<
         onToggle?.(e, s);
       }}
       disabled={disabled}
-      onContainerCreation={setFocusToContent}
+      onContainerCreation={(containerEl) => {
+        containerEl?.getElementsByTagName("li")[0]?.focus();
+      }}
       {...others}
     >
-      <HvPanel className={classes.menuListRoot}>
-        <HvList
-          id={listId}
-          values={dataList}
-          selectable={false}
-          condensed={condensed}
-          onClick={(event, item) => {
-            if (!keepOpened) handleClose(event);
-            onClick?.(event, item);
-          }}
-          onKeyDown={handleKeyDown}
-          classes={{
-            root: classes.menuList,
-          }}
-        />
-      </HvPanel>
+      <HvList
+        id={listId}
+        values={dataList}
+        selectable={false}
+        condensed={condensed}
+        onClick={(event, item) => {
+          if (!keepOpened) handleClose(event);
+          onClick?.(event, item);
+        }}
+        onKeyDown={handleKeyDown}
+        classes={{
+          root: classes.menuList,
+        }}
+      />
     </HvBaseDropdown>
   );
 });
