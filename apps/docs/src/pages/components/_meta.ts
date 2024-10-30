@@ -11,4 +11,5 @@ export default {
   checkBox: "CheckBox",
   loading: "Loading",
   loadingContainer: "LoadingContainer",
+  tag: "Tag",
 };
