@@ -39,6 +39,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
   pageSizeOptions: {
     display: "flex",
     position: "absolute",
+    gap: theme.space.xs,
     height: 24,
     top: "50%",
     transform: "translateY(-50%)",
@@ -70,7 +71,6 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
   /** Styles applied to the page size selector dropdown element. */
   pageSizeOptionsSelect: {
     display: "inline-block",
-    margin: `0px ${theme.space.xs}`,
     width: "auto",
 
     ...(theme.typography.caption2 as React.CSSProperties),
