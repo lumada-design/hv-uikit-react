@@ -23,11 +23,11 @@ export interface HvMultiButtonProps extends HvBaseProps {
   disabled?: boolean;
   /** If the MultiButton is to be displayed vertically. */
   vertical?: boolean;
-  /** Category of button to use */
+  /** Button variant to use when in `split` mode */
   variant?: HvButtonVariant;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvMultiButtonClasses;
-  /** Button size. */
+  /** Button size when in `split` mode. */
   size?: HvSize;
   /** Add a split between buttons */
   split?: boolean;
@@ -64,7 +64,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
         classes.root,
         {
           [classes.multiple]: !split,
-          [classes.vertical]: vertical,
+          [classes.vertical]: !split && vertical,
           [classes[variant as keyof HvMultiButtonClasses]]: variant, // TODO - remove in v6
           [classes.splitGroup]: split,
           [classes.splitGroupDisabled]: split && disabled,
@@ -74,16 +74,15 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
       {...others}
     >
       {buttons.map((child, index) => {
-        const childIsSelected = !!child.props.selected;
         return cloneElement(child, {
           key: index,
           variant,
           disabled: disabled || child.props.disabled,
           size,
-          className: cx(child.props.className, classes.button, {
+          className: cx(classes.button, child.props.className, {
             [classes.firstButton]: index === 0,
             [classes.lastButton]: index === buttons.length - 1,
-            [classes.selected]: childIsSelected,
+            [classes.selected]: child.props.selected,
           }),
         });
       })}

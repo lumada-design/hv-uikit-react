@@ -36,10 +36,14 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     padding: theme.spacing(0, "sm"),
   },
   startIcon: {
-    marginLeft: `calc(-1 * ${theme.space.xs})`,
+    marginLeft: theme.spacing(-1),
+    marginTop: -1,
+    marginBottom: -1,
   },
   endIcon: {
-    marginRight: `calc(-1 * ${theme.space.xs})`,
+    marginRight: theme.spacing(-1),
+    marginTop: -1,
+    marginBottom: -1,
   },
   focusVisible: {},
   disabled: {

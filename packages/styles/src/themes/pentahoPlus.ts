@@ -717,103 +717,44 @@ const pentahoPlus = makeTheme((theme) => ({
     HvMultiButton: {
       classes: {
         multiple: {
-          "& button.HvMultiButton-button": {
-            borderColor: "transparent",
+          borderColor: buttonColors.secondary.subtleBorder,
+          "& .HvMultiButton-button": {
+            borderColor: "inherit",
             "&.HvMultiButton-firstButton": {
-              borderColor: "transparent",
-              borderRadius: `${theme.radii.base} 0 0 ${theme.radii.base}`,
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": {
-                  borderColor: "transparent",
-                },
-              },
+              borderRadius: "16px 0 0 16px",
             },
             "&.HvMultiButton-lastButton": {
-              borderColor: "transparent",
-              borderRadius: `0 ${theme.radii.base} ${theme.radii.base} 0`,
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": {
-                  borderColor: "transparent",
-                },
-              },
+              borderRadius: "0 16px 16px 0",
             },
             "&.HvMultiButton-selected": {
-              borderColor: "transparent",
+              borderColor: theme.colors.primary,
               color: theme.colors.primary,
-              backgroundColor: theme.colors.atmo1,
-              "&:hover": {
-                "&:not(:disabled)": {
-                  borderColor: "transparent",
-                },
-                "&:disabled": {
-                  borderColor: "transparent",
-                },
-              },
-              "&:disabled": {
-                borderColor: "transparent",
-              },
-            },
-            "&:disabled": {
-              borderColor: "transparent",
-              "&:hover": {
-                borderColor: "transparent",
-              },
-            },
-            "&:not(.HvMultiButton-firstButton)": {
-              marginLeft: 0,
+              backgroundColor: theme.colors.pp.primaryDimmed,
             },
             "&:not(.HvMultiButton-firstButton, .HvMultiButton-lastButton)": {
-              borderRadius: theme.radii.none,
-            },
-            "&:not(&.HvMultiButton-selected)": {
-              boxShadow: "none",
+              borderRadius: 0,
             },
           },
         },
         vertical: {
-          "& button.HvMultiButton-button": {
-            borderColor: "transparent",
-            "&.HvMultiButton-selected": {
-              borderRadius: theme.radii.none,
-              borderColor: "transparent",
-              color: theme.colors.primary,
-              backgroundColor: theme.colors.atmo1,
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": { borderColor: "transparent" },
-              },
-            },
+          borderColor: buttonColors.secondary.subtleBorder,
+          "& .HvMultiButton-button": {
+            borderColor: "inherit",
             "&.HvMultiButton-firstButton": {
-              borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
-              borderColor: "transparent",
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": { borderColor: "transparent" },
-              },
+              borderRadius: "16px 16px 0 0",
             },
             "&.HvMultiButton-lastButton": {
-              borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-              borderColor: "transparent",
-              "&:disabled": {
-                borderColor: "transparent",
-                "&:hover": { borderColor: "transparent" },
-              },
+              borderRadius: "0 0 16px 16px",
             },
-            "&:disabled": {
-              borderColor: "transparent",
-              "&:hover": { borderColor: "transparent" },
-            },
-            "&:not(.HvMultiButton-firstButton)": {
-              marginTop: 0,
+            "&.HvMultiButton-selected": {
+              borderColor: theme.colors.primary,
+              color: theme.colors.primary,
+              backgroundColor: theme.colors.pp.primaryDimmed,
             },
           },
         },
-        splitGroup: {
-          backgroundColor: "transparent",
-        },
-        splitGroupDisabled: { backgroundColor: "transparent" },
+        splitGroup: {},
+        splitGroupDisabled: {},
       },
     },
     HvDropdownButton: {

@@ -222,6 +222,19 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvMultiButton: {
+      classes: {
+        splitGroup: {
+          // NEXT5 subtle multi-buttons have a custom background
+          "& .HvButton-subtle": {
+            backgroundColor: theme.colors.atmo1,
+          },
+          "&& .HvButton-disabled": {
+            backgroundColor: theme.colors.atmo3,
+          },
+        },
+      },
+    },
     HvTab: {
       classes: {
         root: {
