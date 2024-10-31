@@ -87,8 +87,7 @@ export interface HvDropDownMenuProps
 
 const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
   (props, ref) => {
-    const { open, children, ...others } = props;
-
+    const { open, icon, disabled, ...others } = props;
     const { popperPlacement } = useBaseDropdownContext();
 
     return (
@@ -96,12 +95,13 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
         icon
         ref={ref}
         open={open}
+        disabled={disabled}
         aria-expanded={open}
         aria-haspopup="menu"
         placement={popperPlacement}
         {...others}
       >
-        {children}
+        {icon || <MoreOptionsVertical role="presentation" />}
       </HvDropdownButton>
     );
   },
@@ -172,28 +172,22 @@ export const HvDropDownMenu = forwardRef<
     <HvBaseDropdown
       ref={ref}
       id={id}
-      className={cx(classes.container, className)}
+      className={cx(classes.container, classes.icon, className, {
+        [classes.iconSelected]: open,
+      })}
       classes={{
         root: classes.root,
         container: classes.baseContainer,
         panel: classes.menuListRoot,
       }}
       expanded={open && !disabled}
-      component={
-        <HeaderComponent
-          id={setId(id, "icon-button")}
-          disabled={disabled}
-          className={cx(classes.icon, {
-            [classes.iconSelected]: open,
-          })}
-          size={size}
-          variant={variant ?? category}
-          open={open}
-          aria-label={labels.dropdownMenu}
-        >
-          {icon || <MoreOptionsVertical role="presentation" />}
-        </HeaderComponent>
-      }
+      headerComponent={HeaderComponent}
+      // @ts-expect-error infer HeaderComponent typings
+      size={size}
+      variant={variant ?? category}
+      open={open}
+      aria-label={labels.dropdownMenu}
+      icon={icon}
       placement={placement}
       variableWidth
       disablePortal={disablePortal}
