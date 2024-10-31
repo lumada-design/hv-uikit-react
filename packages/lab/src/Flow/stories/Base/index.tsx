@@ -13,6 +13,7 @@ import { Dashboard } from "./Dashboard";
 import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";
 import { MLModel } from "./MLModel";
+import { SimpleNode } from "./SimpleNode";
 import { Table } from "./Table";
 
 const predefinedLayout = {
@@ -145,6 +146,7 @@ export const nodeTypes: HvFlowProps["nodeTypes"] = {
   lineChart: LineChart,
   table: Table,
   dashboard: Dashboard,
+  simpleNode: SimpleNode,
 } satisfies HvFlowProps["nodeTypes"];
 
 export type NodeType = keyof typeof nodeTypes;

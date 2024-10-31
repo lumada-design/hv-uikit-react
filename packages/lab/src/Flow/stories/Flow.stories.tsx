@@ -10,6 +10,8 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
+import { AutoLayout as AutoLayoutStory } from "./AutoLayout";
+import AutoLayoutRaw from "./AutoLayout?raw";
 import { BaseHook as BaseHookStory } from "./BaseHook";
 import BaseHookRaw from "./BaseHook?raw";
 import { CustomDrop as CustomDropStory } from "./CustomDrop";
@@ -210,4 +212,18 @@ export const SubFlow: StoryObj<HvFlowProps> = {
     },
   },
   render: () => <SubFlowStory />,
+};
+
+export const AutoLayout: StoryObj<HvFlowProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "",
+      },
+      source: {
+        code: AutoLayoutRaw,
+      },
+    },
+  },
+  render: () => <AutoLayoutStory />,
 };
