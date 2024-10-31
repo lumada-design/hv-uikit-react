@@ -3,6 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { buttonClasses } from "../Button";
 
+// TODO: review override
 const disabledStyle = {
   backgroundColor: theme.colors.atmo3,
   borderColor: theme.colors.atmo3,

@@ -7,108 +7,78 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {
     display: "flex",
     alignItems: "center",
-    transition: "none",
     position: "relative",
-    zIndex: 0,
   },
   multiple: {
-    background: theme.colors.atmo2,
+    backgroundColor: theme.colors.atmo2,
 
-    // prevent the focus ring to be hidden by sibling hover background
-    "&>.HvIsFocusVisible": {
-      zIndex: 5,
-    },
+    borderWidth: 0,
+    borderColor: `${theme.colors.atmo4} transparent`,
+    borderRadius: theme.radii.base,
 
-    "& button$button": {
-      minWidth: "unset",
+    "& $button": {
+      minWidth: 32,
+      minHeight: 32,
       width: "100%",
       maxWidth: 200,
       padding: 0,
-      transition: "none",
-      flex: "1 0 0px",
-      borderTop: `solid 1px ${theme.colors.atmo4}`,
-      borderBottom: `solid 1px ${theme.colors.atmo4}`,
-      borderLeft: "solid 1px transparent",
-      borderRight: "solid 1px transparent",
+      flex: 1,
+      borderColor: "inherit",
       borderRadius: 0,
       fontWeight: theme.typography.body.fontWeight,
-      fontSize: theme.typography.body.fontSize,
       "&:disabled": {
         color: theme.colors.secondary_60,
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        "&:hover": {
-          borderTop: `solid 1px ${theme.colors.atmo4}`,
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
-          borderLeft: "solid 1px transparent",
-          borderRight: "solid 1px transparent",
-        },
+        borderColor: "inherit",
+      },
+      "&:hover": {
+        borderColor: "inherit",
       },
       "&$firstButton": {
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-        borderTopLeftRadius: theme.radii.base,
-        borderBottomLeftRadius: theme.radii.base,
+        borderLeftColor: theme.colors.atmo4,
+        borderTopLeftRadius: "inherit",
+        borderBottomLeftRadius: "inherit",
         "&:disabled": {
-          borderLeft: `solid 1px ${theme.colors.atmo4}`,
+          borderLeftColor: theme.colors.atmo4,
         },
       },
       "&$lastButton": {
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-        borderTopRightRadius: theme.radii.base,
-        borderBottomRightRadius: theme.radii.base,
+        borderRightColor: theme.colors.atmo4,
+        borderTopRightRadius: "inherit",
+        borderBottomRightRadius: "inherit",
         "&:disabled": {
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
-        },
-        "&:disabled:hover": {
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
+          borderRightColor: theme.colors.atmo4,
         },
       },
       "&:not($firstButton)": {
         marginLeft: "-1px",
       },
       "&$selected": {
-        background: theme.colors.atmo1,
-        ...theme.typography.label,
-        borderRadius: theme.radii.base,
-        border: `solid 1px ${theme.colors.secondary}`,
+        backgroundColor: theme.colors.atmo1,
+        fontWeight: theme.typography.label.fontWeight,
+        borderRadius: "inherit",
+        borderColor: theme.colors.secondary,
         zIndex: 2,
-        "&:hover": {
-          background: theme.colors.atmo3,
-          "&:not(:disabled)": {
-            border: `solid 1px ${theme.colors.secondary}`,
-          },
-          "&:disabled": {
-            border: `solid 1px ${theme.colors.atmo4}`,
-          },
-        },
-        // prevent the focus ring to be hidden by sibling hover background
-        // even when selected
-        "&.HvIsFocusVisible": {
-          zIndex: 5,
+        "&:hover:not(:disabled),&:focus-visible": {
+          backgroundColor: theme.colors.containerBackgroundHover,
         },
         "&:disabled": {
           zIndex: 1,
-          color: theme.colors.secondary_60,
-          background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.atmo4}`,
+          borderColor: theme.colors.atmo4,
         },
       },
     },
   },
   splitGroup: {
     width: "fit-content",
-    background: theme.colors.atmo1,
 
-    // HvButton, HvDropDownMenu
-    "& button$button:not($firstButton), & $button:not($firstButton) button": {
+    "& $button:not($firstButton)": {
       borderTopLeftRadius: 0,
       borderBottomLeftRadius: 0,
       "&:not([aria-controls])": {
         borderLeftWidth: 0,
       },
     },
-    // HvButton, HvDropDownMenu
-    "& button$button:not($lastButton), & $button:not($lastButton) button": {
+    "& $button:not($lastButton)": {
       borderTopRightRadius: 0,
       borderBottomRightRadius: 0,
       "&:not([aria-controls])": {
@@ -125,51 +95,32 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         backgroundColor: "currentcolor",
       },
     },
-    // HvDropDownMenu
-    [`& .${dropDownMenuClasses.iconSelected}`]: {
-      zIndex: 2,
-    },
   },
-  splitGroupDisabled: { background: theme.colors.atmo3 },
+  splitGroupDisabled: {},
   button: {
     position: "relative",
+    // prevent the focus ring to be hidden by sibling hover background
+    [`&:focus-visible, &.${dropDownMenuClasses.iconSelected}`]: {
+      zIndex: 5,
+    },
   },
   selected: {},
   vertical: {
     flexDirection: "column",
     height: "auto",
-    "& button$button": {
+    borderColor: `transparent ${theme.colors.atmo4}`,
+    "& $button": {
       minWidth: 32,
       width: "100%",
-      borderLeft: `solid 1px ${theme.colors.atmo4}`,
-      borderRight: `solid 1px ${theme.colors.atmo4}`,
-      borderTop: "solid 1px transparent",
-      borderBottom: "solid 1px transparent",
-      "&:disabled": {
-        color: theme.colors.secondary_60,
-        borderLeft: `solid 1px ${theme.colors.atmo4}`,
-        borderRight: `solid 1px ${theme.colors.atmo4}`,
-        borderTop: "solid 1px transparent",
-        borderBottom: "solid 1px transparent",
-        "&:hover": {
-          borderLeft: `solid 1px ${theme.colors.atmo4}`,
-          borderRight: `solid 1px ${theme.colors.atmo4}`,
-          borderTop: "solid 1px transparent",
-          borderBottom: "solid 1px transparent",
-        },
-      },
       "&$firstButton": {
-        borderTop: `solid 1px ${theme.colors.atmo4}`,
-        borderTopLeftRadius: theme.radii.base,
-        borderTopRightRadius: theme.radii.base,
+        borderTopColor: theme.colors.atmo4,
+        borderTopLeftRadius: "inherit",
+        borderTopRightRadius: "inherit",
       },
       "&$lastButton": {
-        borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        borderBottomLeftRadius: theme.radii.base,
-        borderBottomRightRadius: theme.radii.base,
-        "&:disabled:hover": {
-          borderBottom: `solid 1px ${theme.colors.atmo4}`,
-        },
+        borderBottomColor: theme.colors.atmo4,
+        borderBottomLeftRadius: "inherit",
+        borderBottomRightRadius: "inherit",
       },
       "&:not($firstButton)": {
         marginLeft: 0,
@@ -177,24 +128,13 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
       "&$selected": {
         height: 32,
-        width: `calc(100% + 2px) !important`,
-        background: theme.colors.atmo1,
-        ...theme.typography.label,
-        borderRadius: theme.radii.base,
-        border: `solid 1px ${theme.colors.secondary}`,
-        zIndex: 2,
-        "&:hover, &:focus": {
-          background: theme.colors.atmo3,
-        },
-        "&:disabled": {
-          zIndex: 1,
-          color: theme.colors.secondary_60,
-          background: theme.colors.atmo1,
-          border: `solid 1px ${theme.colors.atmo4}`,
-        },
+        width: "calc(100% + 2px)",
+        borderColor: theme.colors.secondary,
       },
     },
   },
+
+  // TODO - review the need for these classes in v6 (use :first-child and :last-child instead)
   firstButton: {},
   lastButton: {},
 

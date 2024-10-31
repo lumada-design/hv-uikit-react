@@ -45,7 +45,8 @@ export const Main: StoryObj<HvMultiButtonProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    size: { control: { type: "select" } },
+    size: { control: { disable: true } },
+    variant: { control: { disable: true } },
   },
   parameters: {
     docs: {
@@ -206,25 +207,19 @@ export const Test: StoryObj = {
           }}
         >
           <HvMultiButton>
-            {["Label 1", "Label2"].map((button) => (
-              <HvButton key={button}>{button}</HvButton>
-            ))}
+            <HvButton>Label 1</HvButton>
+            <HvButton>Label 2</HvButton>
+            <HvButton>Label 3</HvButton>
           </HvMultiButton>
           <HvMultiButton>
-            {["Label 1", "Label2"].map((button, i) => (
-              <HvButton key={button} selected={i === 0}>
-                {button}
-              </HvButton>
-            ))}
+            <HvButton selected>Label 1</HvButton>
+            <HvButton selected>Label 2</HvButton>
+            <HvButton>Label 3</HvButton>
           </HvMultiButton>
-          <HvMultiButton style={{ width: "64px" }}>
-            {[
-              { name: "Label 1", icon: <LocationPin /> },
-              { name: "Label 2", icon: <LocationPin /> },
-              { name: "Label 3", icon: <LocationPin /> },
-            ].map(({ name, icon }, i) => (
+          <HvMultiButton style={{ width: "fit-content" }}>
+            {["Label 1", "Label 2", "Label 3"].map((name, i) => (
               <HvButton key={name} icon aria-label={name} selected={i === 1}>
-                {icon}
+                <LocationPin />
               </HvButton>
             ))}
           </HvMultiButton>
@@ -237,19 +232,19 @@ export const Test: StoryObj = {
           }}
         >
           <HvMultiButton disabled>
-            {["Label 1", "Label2", "Label 3"].map((button) => (
+            {["Label 1", "Label 2", "Label 3"].map((button) => (
               <HvButton key={button}>{button}</HvButton>
             ))}
           </HvMultiButton>
           <HvMultiButton disabled>
-            {["Label 1", "Label2", "Label 3"].map((button, i) => (
+            {["Label 1", "Label 2", "Label 3"].map((button, i) => (
               <HvButton key={button} selected={i === 2}>
                 {button}
               </HvButton>
             ))}
           </HvMultiButton>
           <HvMultiButton>
-            {["Label 1", "Label2", "Label 3", "Label 4"].map((button, i) => (
+            {["Label 1", "Label 2", "Label 3", "Label 4"].map((button, i) => (
               <HvButton
                 key={button}
                 selected={i === 0}
@@ -269,12 +264,12 @@ export const Test: StoryObj = {
           }}
         >
           <HvMultiButton vertical style={{ width: "120px" }}>
-            {["Label 1", "Label2", "Label 3", "Label 4"].map((button) => (
+            {["Label 1", "Label 2", "Label 3", "Label 4"].map((button) => (
               <HvButton key={button}>{button}</HvButton>
             ))}
           </HvMultiButton>
           <HvMultiButton vertical style={{ width: "120px" }}>
-            {["Label 1", "Label2", "Label 3", "Label 4"].map((button, i) => (
+            {["Label 1", "Label 2", "Label 3", "Label 4"].map((button, i) => (
               <HvButton
                 key={button}
                 selected={i === 0 || i === 2}
@@ -284,20 +279,15 @@ export const Test: StoryObj = {
               </HvButton>
             ))}
           </HvMultiButton>
-          <HvMultiButton vertical style={{ width: "32px" }}>
-            {[
-              { name: "Label 1", icon: <LocationPin /> },
-              { name: "Label 2", icon: <LocationPin /> },
-              { name: "Label 3", icon: <LocationPin /> },
-              { name: "Label 4", icon: <LocationPin /> },
-            ].map(({ name, icon }, i) => (
+          <HvMultiButton vertical style={{ width: "fit-content" }}>
+            {["Label 1", "Label 2", "Label 3", "Label 4"].map((name, i) => (
               <HvButton
                 key={name}
                 icon
                 aria-label={name}
                 selected={i === 1 || i === 2}
               >
-                {icon}
+                <LocationPin />
               </HvButton>
             ))}
           </HvMultiButton>
