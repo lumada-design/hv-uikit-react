@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.80.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.0...@hitachivantara/uikit-react-core@5.80.1) (2024-10-31)
+
+### Bug Fixes
+
+- **Button:** radius override & semantic styles ([#4403](https://github.com/lumada-design/hv-uikit-react/issues/4403)) ([6539c8e](https://github.com/lumada-design/hv-uikit-react/commit/6539c8e8925b8efe742c4dbbf6a86485d2743d2a))
+- **Tabs:** disabled icon color & simplify styles overrides ([#4401](https://github.com/lumada-design/hv-uikit-react/issues/4401)) ([7929618](https://github.com/lumada-design/hv-uikit-react/commit/79296185e57b0b5dec2675d36b7c94ca1e3c99b0))
+
 # [5.80.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.79.0...@hitachivantara/uikit-react-core@5.80.0) (2024-10-28)
 
 ### Features

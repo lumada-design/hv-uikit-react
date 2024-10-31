@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-shared",
-  "version": "5.3.11",
+  "version": "5.3.12",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
-    "@hitachivantara/uikit-styles": "^5.38.0"
+    "@hitachivantara/uikit-styles": "^5.39.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

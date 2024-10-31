@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.39.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.38.0...@hitachivantara/uikit-styles@5.39.0) (2024-10-31)
+
+### Bug Fixes
+
+- **Button:** radius override & semantic styles ([#4403](https://github.com/lumada-design/hv-uikit-react/issues/4403)) ([6539c8e](https://github.com/lumada-design/hv-uikit-react/commit/6539c8e8925b8efe742c4dbbf6a86485d2743d2a))
+- intermediary PD design alignment for input elements ([#4399](https://github.com/lumada-design/hv-uikit-react/issues/4399)) ([cd2b5a2](https://github.com/lumada-design/hv-uikit-react/commit/cd2b5a25feeeb92e581ef32d7607b83f10c347b1))
+- **Tabs:** disabled icon color & simplify styles overrides ([#4401](https://github.com/lumada-design/hv-uikit-react/issues/4401)) ([7929618](https://github.com/lumada-design/hv-uikit-react/commit/79296185e57b0b5dec2675d36b7c94ca1e3c99b0))
+
+### Features
+
+- **Tabs:** add animation to tab change in floating mode ([#4402](https://github.com/lumada-design/hv-uikit-react/issues/4402)) ([cfda1d9](https://github.com/lumada-design/hv-uikit-react/commit/cfda1d90ecf121082fc7440109c71e9efda85db0))
+
 # [5.38.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.37.0...@hitachivantara/uikit-styles@5.38.0) (2024-10-28)
 
 ### Features
