@@ -114,7 +114,7 @@ export interface HvTagsInputProps
  * A tags input is a single or multiline control that allows the input of tags.
  */
 export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
-  (props, ref) => {
+  function HvTagsInput(props, ref) {
     const {
       classes: classesProp,
       className,

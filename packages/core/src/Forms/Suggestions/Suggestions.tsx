@@ -52,7 +52,11 @@ export interface HvSuggestionsProps extends HvBaseProps {
   enablePortal?: boolean;
 }
 
-export const HvSuggestions = forwardRef((props: HvSuggestionsProps, extRef) => {
+export const HvSuggestions = forwardRef<
+  // no-indent
+  unknown,
+  HvSuggestionsProps
+>((props, extRef) => {
   const {
     id,
     className,

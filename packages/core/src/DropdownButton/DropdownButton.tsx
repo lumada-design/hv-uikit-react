@@ -33,7 +33,7 @@ export interface HvDropdownButtonProps
 export const HvDropdownButton = forwardRef<
   HTMLButtonElement,
   HvDropdownButtonProps
->((props, ref) => {
+>(function HvDropdownButton(props, ref) {
   const {
     className,
     classes: classesProp,

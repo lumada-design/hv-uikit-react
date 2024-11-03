@@ -45,7 +45,7 @@ export interface HvListContainerProps extends HvBaseProps<HTMLUListElement> {
 export const HvListContainer = forwardRef<
   HTMLUListElement,
   HvListContainerProps
->((props, ref) => {
+>(function HvListContainer(props, ref) {
   const {
     id,
     classes: classesProp,

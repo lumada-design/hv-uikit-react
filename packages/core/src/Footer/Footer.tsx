@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -27,7 +28,11 @@ export interface HvFooterProps extends HvBaseProps {
 /**
  * A Footer is a way of providing extra information at the end of a page.
  */
-export const HvFooter = (props: HvFooterProps) => {
+export const HvFooter = forwardRef<
+  // no-indent
+  React.ComponentRef<"footer">,
+  HvFooterProps
+>(function HvFooter(props, ref) {
   const {
     name = "Hitachi Vantara",
     copyright = `© Hitachi Vantara LLC ${new Date().getFullYear()}. All Rights Reserved.`,
@@ -43,6 +48,7 @@ export const HvFooter = (props: HvFooterProps) => {
 
   return (
     <footer
+      ref={ref}
       className={cx(classes.root, { [classes.small]: isSmDown }, className)}
       {...others}
     >
@@ -56,4 +62,4 @@ export const HvFooter = (props: HvFooterProps) => {
       </div>
     </footer>
   );
-};
+});

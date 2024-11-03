@@ -81,7 +81,11 @@ const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
  * For better data handling and **advanced features** we recommend the use of the utility hooks collection.
  * See the <a href="?id=guides-table-table-hooks--use-hv-hooks&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
  */
-export const HvTable = forwardRef<HTMLElement, HvTableProps>((props, ref) => {
+export const HvTable = forwardRef<
+  // no-indent
+  HTMLElement,
+  HvTableProps
+>(function HvTable(props, ref) {
   const {
     classes: classesProp,
     className,

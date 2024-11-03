@@ -54,7 +54,6 @@ import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvTooltip } from "../Tooltip";
 import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
-import { HvBaseProps } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Input.styles";
@@ -66,10 +65,7 @@ export type HvInputClasses = ExtractNames<typeof useClasses>;
 type InputElement = HTMLInputElement | HTMLTextAreaElement;
 
 export interface HvInputProps
-  extends HvBaseProps<
-    HTMLElement,
-    "onChange" | "onBlur" | "onFocus" | "onKeyDown" | "color"
-  > {
+  extends Omit<HvBaseInputProps, "onBlur" | "onFocus" | "onKeyDown"> {
   /** The form element name. */
   name?: string;
   /** The value of the form element. */
@@ -102,11 +98,6 @@ export interface HvInputProps
   status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
-  /**
-   * The function that will be executed onChange, allows modification of the input,
-   * it receives the value. If a new value should be presented it must returned it.
-   */
-  onChange?: HvBaseInputProps["onChange"];
   /**
    * Callback called when the user submits the value by pressing Enter/Return.
    *
@@ -236,7 +227,11 @@ const changeInputValue = (input: HTMLInputElement | null, value = "") => {
 /**
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
-export const HvInput = forwardRef<InputElement, HvInputProps>((props, ref) => {
+export const HvInput = forwardRef<
+  // no-indent
+  InputElement,
+  HvInputProps
+>(function HvInput(props, ref) {
   const {
     classes: classesProp,
     className,

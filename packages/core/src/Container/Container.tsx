@@ -43,7 +43,7 @@ export interface HvContainerProps extends Omit<MuiContainerProps, "classes"> {
 
 /** The container enables you to center your content horizontally and bound it to a specific breakpoint. */
 export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
-  (props, ref) => {
+  function HvContainer(props, ref) {
     const {
       maxWidth = false,
       classes: classesProp,

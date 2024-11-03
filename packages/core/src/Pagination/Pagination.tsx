@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { forwardRef, useCallback, useEffect, useState } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
 import {
   Backwards,
@@ -95,7 +95,10 @@ export interface HvPaginationProps extends HvBaseProps {
  * Pagination is the process of dividing a document into discrete pages. It relates to how users interact
  * with structured content on a website or application.
  */
-export const HvPagination = (props: HvPaginationProps) => {
+export const HvPagination = forwardRef<
+  React.ComponentRef<"div">,
+  HvPaginationProps
+>(function HvPagination(props, ref) {
   const {
     classes: classesProp,
     className,
@@ -171,7 +174,7 @@ export const HvPagination = (props: HvPaginationProps) => {
   );
 
   return (
-    <div id={id} className={cx(classes.root, className)} {...others}>
+    <div ref={ref} id={id} className={cx(classes.root, className)} {...others}>
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
@@ -269,4 +272,4 @@ export const HvPagination = (props: HvPaginationProps) => {
       </div>
     </div>
   );
-};
+});

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -24,9 +25,12 @@ export interface HvLoginProps extends HvBaseProps {
 /**
  * Container layout for the login form.
  */
-export const HvLogin = (props: HvLoginProps) => {
+export const HvLogin = forwardRef<
+  // no-indent
+  React.ComponentRef<"div">,
+  HvLoginProps
+>(function HvLogin(props, ref) {
   const {
-    id,
     className,
     classes: classesProp,
     children,
@@ -38,7 +42,7 @@ export const HvLogin = (props: HvLoginProps) => {
 
   return (
     <div
-      id={id}
+      ref={ref}
       className={cx(classes.root, className)}
       style={{
         backgroundImage: background && `url(${background})`,
@@ -48,4 +52,4 @@ export const HvLogin = (props: HvLoginProps) => {
       <div className={classes.formContainer}>{children}</div>
     </div>
   );
-};
+});

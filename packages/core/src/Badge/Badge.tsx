@@ -51,7 +51,7 @@ export const HvBadge = forwardRef<
   // no-indent
   HTMLDivElement,
   HvBadgeProps
->((props, ref) => {
+>(function HvBadge(props, ref) {
   const {
     classes: classesProp,
     className,

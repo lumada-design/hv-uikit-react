@@ -48,7 +48,7 @@ export interface PlaceholderProps extends HvBaseProps<HTMLDivElement> {
 }
 
 export const Placeholder = forwardRef<HTMLDivElement, PlaceholderProps>(
-  (props, ref) => {
+  function Placeholder(props, ref) {
     const { name, state, placeholders, onKeyDown, ...others } = props;
     const { value, segments } = state;
 

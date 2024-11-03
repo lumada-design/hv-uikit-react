@@ -90,7 +90,7 @@ export interface HvBaseSwitchProps
  * implementing a custom use case not covered by the Switch form element.
  */
 export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
-  (props, ref) => {
+  function HvBaseSwitch(props, ref) {
     const {
       classes: classesProp,
       className,

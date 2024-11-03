@@ -38,7 +38,7 @@ export interface HvHeaderNavigationProps
 export const HvHeaderNavigation = forwardRef<
   React.ElementRef<"nav">,
   HvHeaderNavigationProps
->((props, ref) => {
+>(function HvHeaderNavigation(props, ref) {
   const {
     data,
     selected,

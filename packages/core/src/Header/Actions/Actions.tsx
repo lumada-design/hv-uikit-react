@@ -18,7 +18,7 @@ export interface HvHeaderActionsProps extends HvBaseProps {
 export const HvHeaderActions = forwardRef<
   React.ElementRef<"div">,
   HvHeaderActionsProps
->((props, ref) => {
+>(function HvHeaderActions(props, ref) {
   const {
     classes: classesProp,
     className,

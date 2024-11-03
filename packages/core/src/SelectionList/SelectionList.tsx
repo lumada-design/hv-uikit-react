@@ -115,7 +115,7 @@ const getValueFromSelectedChildren = (
 export const HvSelectionList = forwardRef<
   HTMLUListElement,
   HvSelectionListProps
->((props, ref) => {
+>(function HvSelectionList(props, ref) {
   const {
     id,
     classes: classesProp,

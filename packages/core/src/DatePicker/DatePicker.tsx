@@ -141,7 +141,7 @@ export interface HvDatePickerProps
  * interface widget which allows the user to select a date from a calendar.
  */
 export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
-  (props, ref) => {
+  function HvDatePicker(props, ref) {
     const {
       classes: classesProp,
       className,

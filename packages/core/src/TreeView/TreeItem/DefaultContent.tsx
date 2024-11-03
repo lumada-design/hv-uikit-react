@@ -41,7 +41,7 @@ export interface HvTreeContentProps extends React.HTMLAttributes<HTMLElement> {
  * Use this as a basis to create a custom component.
  */
 export const DefaultContent = forwardRef<HTMLDivElement, HvTreeContentProps>(
-  (props, ref) => {
+  function DefaultContent(props, ref) {
     const {
       classes: classesProp,
       className,

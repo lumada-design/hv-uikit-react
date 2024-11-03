@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import {
@@ -71,7 +72,10 @@ export interface HvDrawerProps extends Omit<MuiDrawerProps, "classes"> {
  * It only provides the pane with a close button, the rest of the
  * content can be customized.
  */
-export const HvDrawer = (props: HvDrawerProps) => {
+export const HvDrawer = forwardRef<
+  React.ComponentRef<typeof MuiDrawer>,
+  HvDrawerProps
+>(function HvDrawer(props, ref) {
   const {
     className,
     classes: classesProp,
@@ -102,6 +106,7 @@ export const HvDrawer = (props: HvDrawerProps) => {
 
   return (
     <MuiDrawer
+      ref={ref}
       className={cx(classes.root, className)}
       id={id}
       anchor={anchor}
@@ -133,4 +138,4 @@ export const HvDrawer = (props: HvDrawerProps) => {
       {children}
     </MuiDrawer>
   );
-};
+});

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { forwardRef, useMemo } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -46,7 +46,10 @@ export interface HvAppSwitcherProps extends HvBaseProps {
   classes?: HvAppSwitcherClasses;
 }
 
-export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
+export const HvAppSwitcher = forwardRef<
+  React.ComponentRef<typeof HvPanel>,
+  HvAppSwitcherProps
+>(function HvAppSwitcher(props, ref) {
   const {
     className,
     classes: classesProp,
@@ -92,6 +95,7 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
 
   return (
     <HvPanel
+      ref={ref}
       className={cx(
         classes.root,
         classes[layout],
@@ -133,4 +137,4 @@ export const HvAppSwitcher = (props: HvAppSwitcherProps) => {
       )}
     </HvPanel>
   );
-};
+});

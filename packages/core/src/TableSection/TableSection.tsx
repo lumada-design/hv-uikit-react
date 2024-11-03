@@ -19,7 +19,7 @@ export interface HvTableSectionProps extends HvSectionProps {}
  * specific stylings for tables that follow the latest DS specifications.
  */
 export const HvTableSection = forwardRef<HTMLDivElement, HvTableSectionProps>(
-  (props, ref) => {
+  function HvTableSection(props, ref) {
     const {
       id,
       classes: classesProp,

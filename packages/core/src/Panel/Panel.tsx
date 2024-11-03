@@ -22,7 +22,7 @@ export interface HvPanelProps extends HvBaseProps {
  * Regardless of its content, a panel look and feel should be consistent.
  */
 export const HvPanel = forwardRef<HTMLDivElement, HvPanelProps>(
-  (props, ref) => {
+  function HvPanel(props, ref) {
     const {
       className,
       classes: classesProp,

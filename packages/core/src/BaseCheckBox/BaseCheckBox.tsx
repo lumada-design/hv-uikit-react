@@ -103,7 +103,7 @@ const getSelectorIcons = () => {
 export const HvBaseCheckBox = forwardRef<
   HTMLButtonElement,
   HvBaseCheckBoxProps
->((props, ref) => {
+>(function HvBaseCheckBox(props, ref) {
   const {
     id,
     classes: classesProp,

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import Tab, { TabProps as MuiTabProps } from "@mui/material/Tab";
 import {
   useDefaultProps,
@@ -24,7 +25,11 @@ export interface HvTabProps extends Omit<MuiTabProps, "children"> {
   classes?: HvTabClasses;
 }
 
-export const HvTab = (props: HvTabProps) => {
+export const HvTab = forwardRef<
+  // no-indent
+  React.ComponentRef<typeof Tab>,
+  HvTabProps
+>(function HvTab(props, ref) {
   const {
     classes: classesProp,
     iconPosition = "top",
@@ -35,6 +40,7 @@ export const HvTab = (props: HvTabProps) => {
 
   return (
     <Tab
+      ref={ref}
       classes={{
         root: classes.root,
         selected: classes.selected,
@@ -48,4 +54,4 @@ export const HvTab = (props: HvTabProps) => {
       {...others}
     />
   );
-};
+});

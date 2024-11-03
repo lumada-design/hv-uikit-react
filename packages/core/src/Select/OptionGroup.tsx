@@ -23,7 +23,7 @@ export interface HvOptionGroupProps extends OptionGroupProps {
 }
 
 export const HvOptionGroup = forwardRef<HTMLLIElement, HvOptionGroupProps>(
-  (props, ref) => {
+  function HvOptionGroup(props, ref) {
     const {
       className,
       classes: classesProp,

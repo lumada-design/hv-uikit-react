@@ -70,7 +70,11 @@ const getCategoricalColor = (customColor?: HvColorAny, colors?: any) => {
  *
  * It leverages the Chip component from Material UI
  */
-export const HvTag = forwardRef<HTMLDivElement, HvTagProps>((props, ref) => {
+export const HvTag = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvTagProps
+>(function HvTag(props, ref) {
   const {
     classes: classesProp,
     className,

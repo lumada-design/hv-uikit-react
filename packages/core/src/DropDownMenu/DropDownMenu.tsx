@@ -112,7 +112,10 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
 /**
  * A dropdown menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
-export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
+export const HvDropDownMenu = forwardRef<
+  React.ComponentRef<typeof HvBaseDropdown>,
+  HvDropDownMenuProps
+>(function HvDropDownMenu(props, ref) {
   const {
     id: idProp,
     classes: classesProp,
@@ -175,6 +178,7 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
 
   return (
     <HvBaseDropdown
+      ref={ref}
       id={id}
       className={cx(classes.container, className)}
       classes={{
@@ -227,4 +231,4 @@ export const HvDropDownMenu = (props: HvDropDownMenuProps) => {
       </HvPanel>
     </HvBaseDropdown>
   );
-};
+});

@@ -1,4 +1,11 @@
-import { Children, useCallback, useEffect, useRef, useState } from "react";
+import {
+  Children,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import useCarousel from "embla-carousel-react";
 import {
   Backwards,
@@ -83,7 +90,10 @@ export interface HvCarouselProps
  * A Carousel is commonly used to browse images, it can also be used to browse any kind of content like text, video, or charts.
  * It allows you to focus on a particular content while having a notion of how many you have to explore.
  */
-export const HvCarousel = (props: HvCarouselProps) => {
+export const HvCarousel = forwardRef<
+  React.ComponentRef<typeof HvContainer>,
+  HvCarouselProps
+>(function HvCarousel(props, ref) {
   const {
     className,
     classes: classesProp,
@@ -245,6 +255,7 @@ export const HvCarousel = (props: HvCarouselProps) => {
 
   return (
     <HvContainer
+      ref={ref}
       className={cx(classes.root, className, {
         [classes.xs]: xs,
         [classes.fullscreen]: isFullscreen,
@@ -309,4 +320,4 @@ export const HvCarousel = (props: HvCarouselProps) => {
       {thumbnailsPosition === "bottom" && thumbnails}
     </HvContainer>
   );
-};
+});
