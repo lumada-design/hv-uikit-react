@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const config = {
+  Citadel: [{ version: "1.6" }],
   "project-info": [
     {
       name: "uikit",
@@ -11,78 +12,37 @@ const config = {
       repotype: "github",
       org: "lumada-design",
       artifactURL: "n-a",
+      repoPathsIncludes: "n-a",
+      repoPathsExcludes: "n-a",
     },
   ],
-  "SAST-scan": [
-    {
-      enable: "true",
-    },
-  ],
-  "SCA-scan": [
-    {
-      enable: "false",
-    },
-  ],
+  "SAST-scan": [{ enable: "true" }],
   "OSS-scan": [
     {
-      enable: "false",
-      scantype: "layer",
-      OSS_serverURL: "",
-      project: "",
-      version: "",
-      imagespec: "",
-      docker_registry: "",
+      enable: "true",
+      scantype: "source",
+      OSS_serverURL: process.env.BLACK_DUCK_URL,
+      project: "uikit",
+      version: "latest",
+      imagespec: "n-a",
+      docker_registry: "n-a",
     },
   ],
-  "DAST-scan": [
-    {
-      enable: "false",
-      url: "",
-      "multiple-scans": "",
-      user: "",
-      encoded: "",
-      password: "",
-      network: "",
-    },
-  ],
-  "host-based-scan": [
-    {
-      enable: "false",
-      ip: "",
-      encoded: "",
-      user: "",
-      SSH: "",
-      password: "!",
-      "SSH-key": "",
-      SSH_PassphraseProtected: "",
-      SSH_Passphrase: "",
-      os: "",
-      network: "",
-      "agent-based": "",
-    },
-  ],
-  "container-scan": [
-    {
-      enable: "false",
-      ip: "",
-      "container-scan": "",
-      "image-scan": "",
-    },
-  ],
+  "SCA-scan": [{ enable: "false" }],
+  "DAST-scan": [{ enable: "false" }],
+  "host-based-scan": [{ enable: "false" }],
+  "container-scan": [{ enable: "false" }],
 };
 
 async function main() {
   console.log("Sending the JSON scan request", config);
 
   try {
-    const resp = await fetch(
-      "https://citadel.orl.eng.hitachivantara.com/citadel",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(config),
-      },
-    );
+    const resp = await fetch(process.env.CITADEL_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(config),
+    });
 
     if (resp.ok) {
       console.log("✅ SUCCESS");
