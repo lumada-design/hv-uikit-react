@@ -47,6 +47,6 @@
     "typescript": "^5.4.2",
     "unocss": "^0.58.5",
     "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.2"
+    "vite-tsconfig-paths": "^5.1.0"
   }
 }

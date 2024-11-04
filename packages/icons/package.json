@@ -27,7 +27,7 @@
   "scripts": {
     "optimize": "svgo -r -f assets assets",
     "convert": "tsx scripts/svgToReact.ts && tsx scripts/svgToSprite.ts",
-    "prebuild": "run-s clean convert",
+    "prebuild": "npm run clean && npm run convert",
     "build": "vite build",
     "postbuild": "npx cpy \"sprites\" \"dist\"",
     "clean": "npx rimraf dist sprites package",
@@ -49,9 +49,7 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/recursive-readdir": "^2.2.4",
-    "by-node-env": "^2.0.1",
     "cpy-cli": "^5.0.0",
-    "npm-run-all2": "^6.2.0",
     "recursive-readdir": "^2.2.3",
     "svgo": "^3.1.0",
     "tsx": "^4.6.2",
