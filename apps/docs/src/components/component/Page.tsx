@@ -12,13 +12,7 @@ import { Props } from "./Props";
 
 const classes = {
   root: css({
-    paddingTop: theme.space.lg,
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.space.md,
-  }),
-  container: css({
-    position: "relative",
+    paddingTop: theme.space.md,
   }),
 };
 
@@ -34,7 +28,12 @@ export const Page = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className={classes.root}>
-      <HvTabs variant="standard" value={tab} onChange={(_, val) => setTab(val)}>
+      <HvTabs
+        variant="standard"
+        value={tab}
+        onChange={(_, val) => setTab(val)}
+        className="mt-2 mb-4"
+      >
         <HvTab label="Usage" />
         <HvTab label="Props" />
         <HvTab label="Classes" />

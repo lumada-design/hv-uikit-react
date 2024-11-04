@@ -32,6 +32,7 @@ export const classes = {
     "& > textarea, & > pre": {
       outline: "none",
       whiteSpace: "pre !important",
+      padding: `${HvCore.theme.space.md} !important`,
     },
   }),
   editorContainer: css({
@@ -114,16 +115,16 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
         ...scope,
         ...imports,
       }}
-      theme={themes.dracula}
+      theme={themes.oceanicNext}
     >
-      <LivePreview className="flex flex-wrap gap-3 p-2 mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
+      <LivePreview className="flex flex-wrap gap-3 p-2 mt-4 border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
 
       <div className={classes.editorContainer}>
         <CodeEditor
           className={classes.editor}
           value={code}
           onChange={handleCodeChange}
-          theme={themes.dracula}
+          theme={themes.oceanicNext}
         />
       </div>
 

@@ -279,7 +279,7 @@ export const Playground = ({
 
   return (
     <>
-      <div className="flex justify-between mt-1 border border-[var(--uikit-colors-atmo4)] rounded-t-round">
+      <div className="flex justify-between border border-[var(--uikit-colors-atmo4)] rounded-t-round">
         <div className="w-[70%] flex justify-center items-center p-sm">
           <Component {...componentProps} {...propsState}>
             {children}
@@ -301,7 +301,7 @@ export const Playground = ({
           readOnly
           className={classes.editor}
           value={code}
-          theme={themes.dracula}
+          theme={themes.vsDark}
         />
       </div>
     </>
