@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.80.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.1...@hitachivantara/uikit-react-core@5.80.2) (2024-11-04)
+
+### Bug Fixes
+
+- add `forwardRef` & name to components ([#4407](https://github.com/lumada-design/hv-uikit-react/issues/4407)) ([ffb26ce](https://github.com/lumada-design/hv-uikit-react/commit/ffb26ce1e1487369b2876be6ebc116865d973754))
+- **Panel:** inherit borderRadius ([4b1ad55](https://github.com/lumada-design/hv-uikit-react/commit/4b1ad55141628b2fc528f5098b840f3641f710af))
+- **Section:** actions alignment ([67ac81f](https://github.com/lumada-design/hv-uikit-react/commit/67ac81f7653fddb53fc6cc214714d44fd1f4da05))
+
 ## [5.80.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.0...@hitachivantara/uikit-react-core@5.80.1) (2024-10-31)
 
 ### Bug Fixes
