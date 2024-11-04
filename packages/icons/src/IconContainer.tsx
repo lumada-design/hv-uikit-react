@@ -8,9 +8,9 @@ import { getSizeStyles } from "./utils";
 export const StyledIconBase = styled("div")({
   display: "flex",
   fontSize: 16,
-  // box has a minimum size of 32px (`xs` & `sm`)
-  width: "var(--size, 32px)",
-  height: "var(--size, 32px)",
+  // box has a default icon container size of 32px (`xs` & `sm`)
+  width: "var(--icsize, 32px)",
+  height: "var(--icsize, 32px)",
   transition: "rotate 0.2s ease",
   justifyContent: "center",
   alignItems: "center",
