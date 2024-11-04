@@ -44,6 +44,7 @@ export const HvVerticalNavigationAction = (
       id={setId(id, "button")}
       variant="secondaryGhost"
       icon={!isOpen}
+      startIcon={isOpen && icon}
       className={cx(
         classes.action,
         {
@@ -55,7 +56,7 @@ export const HvVerticalNavigationAction = (
       {...(!isOpen && { "aria-label": label })}
       {...others}
     >
-      {icon}
+      {!isOpen && icon}
       {isOpen && label}
     </HvButton>
   );
