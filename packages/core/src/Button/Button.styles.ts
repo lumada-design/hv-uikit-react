@@ -33,20 +33,22 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
 
+    // remove icon container spacing
+    "--icsize": "auto",
+
     "& $startIcon, & $endIcon": {
       flexShrink: 0,
       lineHeight: 0,
-      marginTop: -1,
-      marginBottom: -1,
+      minWidth: 16,
     },
   },
   /** applied to the _left_ icon container */
   startIcon: {
-    marginLeft: theme.spacing(-1),
+    marginRight: 8,
   },
   /** applied to the _right_ icon container */
   endIcon: {
-    marginRight: theme.spacing(-1),
+    marginLeft: 8,
   },
   focusVisible: {},
   /** applied to the root element when disabled */
