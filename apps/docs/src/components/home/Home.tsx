@@ -11,7 +11,7 @@ export const Home = () => (
     )}
   >
     {/* Background grid */}
-    <div className="absolute h-full w-full bg-[radial-gradient(var(--uikit-colors-secondary\\_80),transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+    <div className="absolute h-full w-full bg-[radial-gradient(var(--uikit-colors-secondary\\_80),transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
     {/* Blue gradient background blur */}
     <div className="absolute bottom-0 z-[-2] h-screen w-screen bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_120%,var(--uikit-colors-primary\\_20),transparent)]" />
@@ -25,7 +25,7 @@ export const Home = () => (
         </section>
 
         {/* Cards Section */}
-        <section className="flex flex-col justify-center overflow-x-auto md:overflow-x-visible">
+        <section className="flex flex-col md:justify-center overflow-x-auto md:overflow-x-visible">
           <CardsSection />
         </section>
       </div>

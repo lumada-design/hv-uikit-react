@@ -1,7 +1,7 @@
 import useIsMounted from "@docs/hooks/useIsMounted";
 import { useTheme } from "nextra-theme-docs";
 
-export const Logo = () => {
+export const UIKitLogo = () => {
   const { theme } = useTheme();
   const isMounted = useIsMounted();
 
@@ -13,7 +13,7 @@ export const Logo = () => {
   const inverseColor = theme === "dark" ? "#333" : "#fff";
 
   return (
-    <svg width="110" viewBox="0 0 439 160" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100" viewBox="0 0 439 160" xmlns="http://www.w3.org/2000/svg">
       <title>UI Kit Logo</title>
       <path
         d="M0 12C0 5.37258 5.37258 0 12 0H165C171.627 0 177 5.37258 177 12V148C177 154.627 171.627 160 165 160H12C5.37258 160 0 154.627 0 148V12Z"

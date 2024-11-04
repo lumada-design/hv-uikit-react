@@ -1,15 +1,13 @@
 import clsx from "clsx";
 
-import {
-  ApiUsage,
-  DataConfig,
-  DataInsights,
-  DataProcessing,
-  DataSecurity,
-  FinancialPerformance,
-  StorageOverview,
-  TeamOverview,
-} from "../cards";
+import { ApiUsage } from "./cards/ApiUsage";
+import { DataConfig } from "./cards/DataConfig";
+import { DataInsights } from "./cards/DataInsights";
+import { DataProcessing } from "./cards/DataProcessing";
+import { DataSecurity } from "./cards/DataSecurity";
+import { FinancialPerformance } from "./cards/FinancialPerformance";
+import { StorageOverview } from "./cards/StorageOverview";
+import { TeamOverview } from "./cards/TeamOverview";
 
 export const CardsSection = () => {
   return (

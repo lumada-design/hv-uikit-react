@@ -1,5 +1,6 @@
-import { Pre } from "@docs/components/code";
-import { Logo } from "@docs/components/Logo";
+import { Pre } from "@docs/components/code/Pre";
+import { Footer } from "@docs/components/Footer";
+import { UIKitLogo } from "@docs/components/logo/uikit";
 import { Main } from "@docs/components/Main";
 import { ThemeSwitch, type DocsThemeConfig } from "nextra-theme-docs";
 
@@ -10,7 +11,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase:
     "https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs",
   head: () => <title>UI Kit</title>,
-  logo: Logo,
+  logo: UIKitLogo,
   main: Main,
   components: {
     pre: Pre,
@@ -22,7 +23,7 @@ const config: DocsThemeConfig = {
     placeholder: "Search...",
   },
   footer: {
-    component: null,
+    component: Footer,
   },
   sidebar: {
     toggleButton: false,

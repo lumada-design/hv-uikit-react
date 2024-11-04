@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { ArrowRight } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
@@ -42,6 +43,9 @@ const SlideText = () => {
 
 export const HeroSection = () => (
   <div className="p-3 max-md:mt-5">
+    {/* <div className="text-sm font-mono mb-2 hidden sm:block">
+      <code className="!p-1">npx @hitachivantara/hv-uikit-cli create</code>
+    </div> */}
     <h1
       className={clsx([
         "text-[1.5rem] leading-[1.85rem] font-bold",
@@ -62,8 +66,16 @@ export const HeroSection = () => (
       <b>Hitachi Vantara</b> UI library that gives you the foundation to create
       consistent, top-tier digital experiences efficiently.
     </h3>
-    <HvButton variant="primary" size="lg" className="mt-3 max-sm:w-full">
+    <HvButton size="lg" className="mt-3 max-sm:w-full mr-2">
       Get Started
+    </HvButton>
+    <HvButton
+      variant="subtle"
+      size="lg"
+      className="mt-3 max-sm:w-full hidden sm:inline-flex"
+    >
+      Explore components <span className="ml-2" />
+      <ArrowRight />
     </HvButton>
   </div>
 );
