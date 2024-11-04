@@ -64,6 +64,7 @@ export const getSizeStyles = (
 
   return {
     fontSize,
-    "--size": `${containerSize}px`,
+    /** icon container size. @private */
+    "--icsize": `${containerSize}px`,
   };
 };

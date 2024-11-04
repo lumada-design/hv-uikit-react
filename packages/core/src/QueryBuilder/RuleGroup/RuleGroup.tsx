@@ -51,7 +51,7 @@ export const RuleGroup = ({
             dispatchAction({ type: "add-rule", id });
           }}
           disabled={readOnly}
-          startIcon={<HvIcon name="Add" />}
+          startIcon={<HvIcon compact name="Add" />}
         >
           {level === 0 && labels.query?.addRule?.label != null
             ? labels.query?.addRule?.label
@@ -66,7 +66,7 @@ export const RuleGroup = ({
               dispatchAction({ type: "add-group", id });
             }}
             disabled={readOnly}
-            startIcon={<HvIcon name="Add" />}
+            startIcon={<HvIcon compact name="Add" />}
           >
             {level === 0 && labels.query?.addGroup?.label != null
               ? labels.query?.addGroup?.label

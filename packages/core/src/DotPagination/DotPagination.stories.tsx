@@ -21,7 +21,6 @@ const meta: Meta<typeof HvDotPagination> = {
 export default meta;
 
 const styles = {
-  container: css({ width: "100%", justifyContent: "center" }),
   page: css({ textAlign: "center" }),
 };
 
@@ -42,10 +41,8 @@ export const Main: StoryObj<HvDotPaginationProps> = {
     ];
 
     return (
-      <div className={styles.container}>
-        <div className={styles.page}>
-          <HvTypography>{pages[page]}</HvTypography>
-        </div>
+      <div>
+        <HvTypography className={styles.page}>{pages[page]}</HvTypography>
         <br />
         <HvDotPagination
           page={page}
@@ -110,10 +107,8 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
     };
 
     return (
-      <div className={styles.container}>
-        <div className={styles.page}>
-          <HvTypography>{pages[page]}</HvTypography>
-        </div>
+      <div>
+        <HvTypography className={styles.page}>{pages[page]}</HvTypography>
         <br />
         <HvDotPagination
           classes={dotpaginationStyle}

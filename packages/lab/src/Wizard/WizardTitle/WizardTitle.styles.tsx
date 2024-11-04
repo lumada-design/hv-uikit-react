@@ -13,10 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
   messageContainer: {},
   /** @deprecated use `classes.root` */
   titleContainer: {},
-  summaryButton: {
-    width: 120,
-    paddingRight: 18,
-  },
+  summaryButton: {},
   /** @deprecated use `classes.summaryButton` */
   buttonWidth: {},
   /** @deprecated use `classes.summaryButton` */

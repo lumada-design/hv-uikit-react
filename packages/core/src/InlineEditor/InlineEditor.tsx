@@ -171,6 +171,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           variant="secondaryGhost"
           endIcon={
             <HvIcon
+              compact
               name="Edit"
               color="textDisabled"
               className={cx(classes.icon, {

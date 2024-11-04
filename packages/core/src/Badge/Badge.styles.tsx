@@ -2,7 +2,19 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvBadge", {
-  root: { position: "relative", "&>*": { float: "left" } },
+  root: {
+    position: "relative",
+    "&>*": { float: "left" },
+    ":has($badgeIcon)": {
+      width: "fit-content",
+      height: "fit-content",
+      "&>div:first-child": {
+        minWidth: 32,
+        minHeight: 32,
+        "--icsize": "100%",
+      },
+    },
+  },
   /** class applied to the badge container when it has content */
   badgeContainer: {},
   /** class applied to the badge */
