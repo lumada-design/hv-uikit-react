@@ -29,10 +29,10 @@
     "@hitachivantara/uikit-uno-preset": "*",
     "@types/node": "^20.11.6",
     "@types/react": "^18.2.43",
-    "@unocss/postcss": "latest",
+    "@unocss/postcss": "^0.58.5",
     "rehype-mdx-code-props": "^3.0.1",
     "string-replace-loader": "^3.1.0",
     "typescript": "^5.4.2",
-    "unocss": "^0.63.3"
+    "unocss": "^0.58.5"
   }
 }
