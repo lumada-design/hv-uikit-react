@@ -28,7 +28,7 @@ jobs:
       NPM_CONFIG_PROVENANCE: true
 
     outputs:
-      NEW_VERSION: ${{ steps.version.outputs.NEW_VERSION }}
+      SLACK_MESSAGE: ${{ steps.slackMessage.outputs.SLACK_MESSAGE }}
 
     permissions:
       contents: write
@@ -64,36 +64,43 @@ jobs:
       - name: Check if packages were updated
         run: |
           if grep -q "lerna success published" publish_logs.txt; then
-            echo "New packages were published"
+            echo "New packages were published successfully"
           elif grep -q "lerna Command failed" publish_logs.txt; then
             echo "lerna Command failed"
             exit 1
           else
-            echo "No packages were updated"
+            echo "No packages were updated - skipping release"
             exit 1
           fi
 
       - name: Set NEW_VERSION
         id: version
-        # Outputs the NEW_VERSION if there is one, or empty otherwise
+        # Outputs the NEW_VERSION if there is one, or exits otherwise
+        # We only tag+publish+notify if there a new core package version
         run: |
           VERSION=v$(npm pkg get version -ws | sed -n 's/.*uikit-react-core": "\(.*\)".*/\1/p')
-          echo "NEW_VERSION=$( [ "$CURRENT_VERSION" = "$VERSION" ] && echo "" || echo "$VERSION" )" >> "$GITHUB_OUTPUT"
+          if [ "$CURRENT_VERSION" = "$VERSION" ]; then
+            echo "No new uikit-react-core version to release. Exiting"
+            exit 1
+          fi
+          echo "NEW_VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Tag Release
-        if: steps.version.outputs.NEW_VERSION
-        env:
-          VERSION: ${{steps.version.outputs.NEW_VERSION}}
         run: |
-          git tag -a $VERSION -m "Version $VERSION"
-          git push origin $VERSION
+          git tag -a $NEW_VERSION -m "Version $NEW_VERSION"
+          git push origin $NEW_VERSION
 
       - name: Create GitHub Release
-        if: steps.version.outputs.NEW_VERSION
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{steps.version.outputs.NEW_VERSION}}
-        run: npx changelogithub@0.13 --from $CURRENT_VERSION --to $VERSION
+        run: |
+          npm i --no-save changelogithub@0.13
+          npx changelogithub --from $CURRENT_VERSION --to $NEW_VERSION
+
+      - name: Set SLACK_MESSAGE
+        id: slackMessage
+        run: |
+          echo "SLACK_MESSAGE=$(.github/scripts/changelog.js $CURRENT_VERSION $NEW_VERSION)" >> $GITHUB_OUTPUT
 
   publish-documentation:
     name: Publish Documentation
@@ -113,53 +120,16 @@ jobs:
     name: Notify release
     runs-on: ubuntu-latest
     needs: [publish]
-    if: needs.publish.outputs.NEW_VERSION
-
-    env:
-      DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/${{ github.ref_name }}/
-      VERSION: ${{ needs.publish.outputs.NEW_VERSION }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get Releases Commit Message
-        uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const branch = await github.repos.getBranch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              branch: "${{ github.ref_name }}"
-            })
-
-
-            const commitMessage = branch.data.commit.commit.message
-            const slackMessage = commitMessage.replace('chore(release): publish', '')
-              .replace(/\n/g, "\\n")
-              .replace(/\r/g, "\\r")
-              .replace(/\t/g, "\\t")
-              .replace(/\f/g, "\\f")
-              
-            core.exportVariable("SLACK_MESSAGE", slackMessage)
-
-      - name: Notify release
-        uses: hbfernandes/slack-action@1.0
-        if: success()
+      - name: Send Slack message
+        uses: slackapi/slack-github-action@v1.27.0
         env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
-          args: |
-            {
-              "channel": "ui-kit",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "author_name": "New UI-Kit Release is available",
-                  "title": "https://github.com/${{github.repository}}/releases/${{env.VERSION}}",
-                  "text": "${{env.SLACK_MESSAGE}}",
-                  "footer": "${{env.DOCUMENTATION_URL}}"
-                }
-              ]
-            }
+          channel-id: "ui-kit"
+          payload: |
+            { "blocks": ${{ needs.publish.outputs.SLACK_MESSAGE }} }
