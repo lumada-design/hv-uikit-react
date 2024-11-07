@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.81.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.2...@hitachivantara/uikit-react-core@5.81.0) (2024-11-07)
+
+### Bug Fixes
+
+- **Table:** sort/hover/resize styles ([f193393](https://github.com/lumada-design/hv-uikit-react/commit/f193393574f94f0f63148cc1de4909279ce98e4d))
+
+### Features
+
+- **BaseDropdown:** add headerComponent customisation ([8e68c1a](https://github.com/lumada-design/hv-uikit-react/commit/8e68c1a00e8ce2fc2f0889b8767642b07031fb9a))
+- **MultiButton:** add P+ 0.2 styles & simplify styles ([f4c54f0](https://github.com/lumada-design/hv-uikit-react/commit/f4c54f07af35391f1d9198c4e7ec9dde764390eb))
+
 ## [5.80.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.1...@hitachivantara/uikit-react-core@5.80.2) (2024-11-04)
 
 ### Bug Fixes

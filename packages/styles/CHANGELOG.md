@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.39.1...@hitachivantara/uikit-styles@5.40.0) (2024-11-07)
+
+### Features
+
+- **MultiButton:** add P+ 0.2 styles & simplify styles ([f4c54f0](https://github.com/lumada-design/hv-uikit-react/commit/f4c54f07af35391f1d9198c4e7ec9dde764390eb))
+
 ## [5.39.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.39.0...@hitachivantara/uikit-styles@5.39.1) (2024-11-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
