@@ -55,6 +55,7 @@
     "@hitachivantara/uikit-config": "*",
     "@hookform/resolvers": "^3.3.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@iconify-json/ph": "^1.2.1",
     "@mdx-js/react": "^2.3.0",
     "@mui/material": "^5.14.20",
     "@playwright/test": "^1.41.1",
