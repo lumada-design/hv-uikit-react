@@ -1,6 +1,3 @@
-import { defineConfig } from "unocss";
-import { presetHv } from "@hitachivantara/uikit-uno-preset";
+import unoConfig from "../../uno.config";
 
-export default defineConfig({
-  presets: [presetHv()],
-});
+export default unoConfig;
