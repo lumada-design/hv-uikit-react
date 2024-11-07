@@ -10,6 +10,7 @@ import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useEnhancedEffect } from "../hooks/useEnhancedEffect";
 import { HvInput, HvInputProps } from "../Input";
+import { HvTooltip } from "../Tooltip";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
@@ -97,9 +98,18 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   const [cachedValue, setCachedValue] = useState(value);
   const inputRef = useRef<HTMLInputElement>();
   const { activeTheme } = useTheme();
+  const [isOverflowing, setIsOverflowing] = useState(false);
 
   const typographyStyles = activeTheme?.typography[variant] || {};
   const { lineHeight } = typographyStyles;
+
+  const checkOverflow = () => {
+    if (inputRef.current) {
+      setIsOverflowing(
+        inputRef.current.scrollWidth > inputRef.current.clientWidth,
+      );
+    }
+  };
 
   useEnhancedEffect(() => {
     const input = inputRef.current;
@@ -128,12 +138,14 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
       newValue = cachedValue;
       setEditMode(false);
       setValue(newValue);
+      checkOverflow();
     }
     onKeyDown?.(event, newValue);
   };
 
   const handleChange: HvInputProps["onChange"] = (event, val) => {
     setValue(val);
+    checkOverflow();
     onChange?.(event, val);
   };
 
@@ -161,33 +173,35 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           {...others}
         />
       ) : (
-        <HvButton
-          variant="secondaryGhost"
-          overrideIconColors={false}
-          endIcon={
-            <Edit
-              color="secondary_60"
-              className={cx(classes.icon, {
-                [classes.iconVisible]: showIcon,
-              })}
-            />
-          }
-          className={cx(classes.button, {
-            [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
-          })}
-          onClick={handleClick}
-          disabled={disabled}
-          {...buttonProps}
-        >
-          <HvTypography
-            variant={variant}
-            noWrap
-            className={cx(classes.text, { [classes.textEmpty]: !value })}
-            {...typographyProps}
+        <HvTooltip title={isOverflowing && value}>
+          <HvButton
+            variant="secondaryGhost"
+            overrideIconColors={false}
+            endIcon={
+              <Edit
+                color="secondary_60"
+                className={cx(classes.icon, {
+                  [classes.iconVisible]: showIcon,
+                })}
+              />
+            }
+            className={cx(classes.button, {
+              [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
+            })}
+            onClick={handleClick}
+            disabled={disabled}
+            {...buttonProps}
           >
-            {value || placeholder}
-          </HvTypography>
-        </HvButton>
+            <HvTypography
+              variant={variant}
+              noWrap
+              className={cx(classes.text, { [classes.textEmpty]: !value })}
+              {...typographyProps}
+            >
+              {value || placeholder}
+            </HvTypography>
+          </HvButton>
+        </HvTooltip>
       )}
     </div>
   );
