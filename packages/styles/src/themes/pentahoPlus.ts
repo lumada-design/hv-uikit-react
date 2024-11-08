@@ -143,6 +143,7 @@ const pentahoPlus = makeTheme((theme) => ({
         type: "dark",
         ...colors.common,
         ...colors.dark,
+        brand: blue[600],
         containerBackgroundHover: `color-mix(in srgb, ${blue[500]} 10%, transparent)`,
         backgroundColor: slate[900],
         atmo1: slate[800],
