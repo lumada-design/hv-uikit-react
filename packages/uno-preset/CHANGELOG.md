@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.42](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.41...@hitachivantara/uikit-uno-preset@0.2.42) (2024-11-11)
+
+**Note:** Version bump only for package @hitachivantara/uikit-uno-preset
+
 ## [0.2.41](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.40...@hitachivantara/uikit-uno-preset@0.2.41) (2024-11-07)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset

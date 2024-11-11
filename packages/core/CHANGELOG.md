@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.81.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.0...@hitachivantara/uikit-react-core@5.81.1) (2024-11-11)
+
+### Bug Fixes
+
+- **InlineEditor:** add tooltip if the text overflows ([#4417](https://github.com/lumada-design/hv-uikit-react/issues/4417)) ([a7acb26](https://github.com/lumada-design/hv-uikit-react/commit/a7acb264eb4130fb379e3290270d9e6a411b34f3))
+
 # [5.81.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.80.2...@hitachivantara/uikit-react-core@5.81.0) (2024-11-07)
 
 ### Bug Fixes

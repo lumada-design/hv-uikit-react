@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.0...@hitachivantara/uikit-styles@5.40.1) (2024-11-11)
+
+### Bug Fixes
+
+- **theme:** add brand color to Pentaho+ dark mode ([#4420](https://github.com/lumada-design/hv-uikit-react/issues/4420)) ([f263eb1](https://github.com/lumada-design/hv-uikit-react/commit/f263eb1edb120bebef225895cea4381304eb299d))
+
 # [5.40.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.39.1...@hitachivantara/uikit-styles@5.40.0) (2024-11-07)
 
 ### Features
