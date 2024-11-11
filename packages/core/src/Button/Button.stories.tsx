@@ -51,9 +51,7 @@ export const Variants: StoryObj<HvButtonProps> = {
   ],
   render: () => (
     <>
-      <HvButton variant="primary" radius="none">
-        Primary
-      </HvButton>
+      <HvButton variant="primary">Primary</HvButton>
       <HvButton variant="primarySubtle">Primary Subtle</HvButton>
       <HvButton variant="primaryGhost">Primary Ghost</HvButton>
       <HvButton disabled variant="primary">
