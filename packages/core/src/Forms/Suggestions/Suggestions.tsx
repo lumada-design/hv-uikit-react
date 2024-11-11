@@ -3,7 +3,7 @@ import {
   ClickAwayListener,
   ClickAwayListenerProps,
 } from "@mui/base/ClickAwayListener";
-import { Popper } from "@mui/base/Popper";
+import { Popper, PopperProps } from "@mui/base/Popper";
 import { useForkRef } from "@mui/material/utils";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
@@ -50,6 +50,8 @@ export interface HvSuggestionsProps extends HvBaseProps {
    * @default false
    * */
   enablePortal?: boolean;
+  /** Props passed to the underlying MUI Popper component */
+  popperProps?: Partial<PopperProps>;
 }
 
 export const HvSuggestions = forwardRef<
@@ -68,6 +70,7 @@ export const HvSuggestions = forwardRef<
     suggestionValues = [],
     onClose,
     onSuggestionSelected,
+    popperProps,
     ...others
   } = props;
 
@@ -114,6 +117,7 @@ export const HvSuggestions = forwardRef<
           className={cx(classes.popper, {
             [classes.portal]: enablePortal,
           })}
+          {...popperProps}
         >
           <HvSelectionList
             className={classes.list}

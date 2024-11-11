@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { vi } from "vitest";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvInput, HvInputProps } from ".";
@@ -101,5 +102,19 @@ describe("Input", () => {
     });
     await user.click(input);
     expect(screen.getByRole("tooltip")).toBeInTheDocument();
+  });
+
+  it("triggers onBlur only when outside the input", async () => {
+    const blurMock = vi.fn();
+    const user = userEvent.setup();
+    render(<Suggestions enablePortal onBlur={blurMock} />);
+
+    const input = screen.getByRole("textbox", {
+      name: "Select a country",
+    });
+    await user.type(input, "value");
+    await user.click(screen.getByRole("option", { name: "value" }));
+
+    expect(blurMock).toHaveBeenCalledTimes(0);
   });
 });

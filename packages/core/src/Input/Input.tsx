@@ -281,7 +281,7 @@ export const HvInput = forwardRef<
 
   const inputRef = useRef<HTMLInputElement>(null);
   const forkedRef = useForkRef(ref, inputRef, inputRefProp);
-  const suggestionsRef = useRef<HTMLElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const [focused, setFocused] = useState(false);
 
@@ -865,7 +865,6 @@ export const HvInput = forwardRef<
             <div role="presentation" className={classes.inputExtension} />
           )}
           <HvSuggestions
-            ref={suggestionsRef}
             id={setId(elementId, "suggestions")}
             classes={{
               root: classes.suggestionsContainer,
@@ -878,6 +877,7 @@ export const HvInput = forwardRef<
             onSuggestionSelected={suggestionSelectedHandler}
             suggestionValues={suggestionValues}
             enablePortal={enablePortal}
+            popperProps={{ ref: suggestionsRef }}
           />
         </>
       )}
