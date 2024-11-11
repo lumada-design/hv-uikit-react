@@ -71,13 +71,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     cursor: "pointer",
     visibility: "hidden",
     alignSelf: "center",
-    height: "16px",
-    width: "32px",
-    minWidth: "32px",
-
-    "& svg": {
-      margin: theme.spacing(0, "xs"),
-    },
+    minWidth: 16,
   },
   iconVisible: {
     visibility: "visible",

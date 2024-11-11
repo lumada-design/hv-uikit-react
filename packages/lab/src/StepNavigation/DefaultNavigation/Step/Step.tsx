@@ -2,8 +2,8 @@ import {
   ExtractNames,
   HvAvatar,
   HvBaseProps,
-  HvButton,
-  HvButtonProps,
+  HvButtonBase,
+  HvButtonBaseProps,
   HvSize,
 } from "@hitachivantara/uikit-react-core";
 import {
@@ -20,7 +20,7 @@ import { useClasses } from "./Step.styles";
 type HvStepClasses = ExtractNames<typeof useClasses>;
 
 export interface HvStepProps
-  extends Pick<HvButtonProps, "onClick">,
+  extends Pick<HvButtonBaseProps, "onClick">,
     Omit<HvBaseProps, "onClick"> {
   /** A Jss Object used to override or extend the styles applied to the empty state StepNavigation. */
   classes?: HvStepClasses;
@@ -92,8 +92,7 @@ export const HvStep = ({
 
   const backgroundColor = getColor(state);
 
-  const color = state === "Pending" ? "atmo2" : undefined;
-  const semantic = state !== "Pending" ? getSemantic(state) : undefined;
+  const color = state === "Pending" ? "atmo2" : getSemantic(state);
   const status = state === "Current" ? "secondary_60" : undefined;
   const IconComponent = iconStateObject[state];
 
@@ -107,13 +106,11 @@ export const HvStep = ({
         className,
       )}
     >
-      <HvButton
+      <HvButtonBase
         className={cx(classes.ghost, {
           [classes.ghostDisabled]: state === "Current",
         })}
-        aria-label={`${title}`}
-        icon
-        overrideIconColors={false}
+        aria-label={title}
         disabled={disabled ?? ["Current", "Disabled"].includes(state)}
         onClick={onClick}
       >
@@ -126,16 +123,14 @@ export const HvStep = ({
           {IconComponent ? (
             <IconComponent
               color={color}
-              semantic={semantic}
-              width={svgSize}
-              height={svgSize}
-              iconSize={iconSize}
+              style={{ fontSize: svgSize }}
+              size={iconSize}
             />
           ) : (
             number
           )}
         </HvAvatar>
-      </HvButton>
+      </HvButtonBase>
     </div>
   );
 };

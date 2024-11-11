@@ -10,7 +10,7 @@ export const { staticClasses, useClasses } = createClasses(
       height: "32px",
       color: "inherit",
       fontWeight: "inherit",
-      padding: 0,
+      padding: theme.spacing(0, "xs"),
       border: "none",
 
       // cursor
@@ -18,12 +18,10 @@ export const { staticClasses, useClasses } = createClasses(
         cursor: "pointer",
       },
     },
-    noIcon: {
-      paddingLeft: theme.space.xs,
-    },
+    noIcon: {},
     minimized: {
       justifyContent: "center",
-      paddingRight: 0,
+      padding: 0,
     },
   },
 );

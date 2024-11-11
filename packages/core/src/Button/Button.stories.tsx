@@ -1,4 +1,7 @@
+import { Fragment } from "react";
 import { css } from "@emotion/css";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StoryObj } from "@storybook/react";
 import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 import {
@@ -310,19 +313,20 @@ export const Test: StoryObj = {
       <HvButton variant="negative">Negative</HvButton>
       <HvButton variant="negativeSubtle">Negative Subtle</HvButton>
       <HvButton variant="negativeGhost">Negative Ghost</HvButton>
-      <HvButton disabled variant="primary">
+
+      <HvButton disabled variant="primary" startIcon={<Play />}>
         Primary
       </HvButton>
-      <HvButton disabled variant="primarySubtle">
+      <HvButton disabled variant="primarySubtle" endIcon={<Play />}>
         Primary Subtle
       </HvButton>
       <HvButton disabled variant="primaryGhost">
         Primary Ghost
       </HvButton>
-      <HvButton variant="warning" disabled>
+      <HvButton variant="warning" disabled startIcon={<Play />}>
         Warning
       </HvButton>
-      <HvButton variant="warningSubtle" disabled>
+      <HvButton variant="warningSubtle" disabled endIcon={<Play />}>
         Warning Subtle
       </HvButton>
       <HvButton variant="warningGhost" disabled>
@@ -330,9 +334,14 @@ export const Test: StoryObj = {
       </HvButton>
 
       {(["sm", "md", "lg"] as const).map((size) => (
-        <HvButton size={size} key={size} variant="warning">
-          {size}
-        </HvButton>
+        <Fragment key={size}>
+          <HvButton size={size} variant="warning">
+            {size}
+          </HvButton>
+          <HvButton icon aria-label="Play" variant="warning" size={size}>
+            <Play />
+          </HvButton>
+        </Fragment>
       ))}
 
       {(["none", "base", "round", "circle", "full"] as const).map((radius) => (
@@ -366,20 +375,10 @@ export const Test: StoryObj = {
         <Play />
       </HvButton>
 
-      <HvButton icon aria-label="Play" variant="primarySubtle" size="sm">
-        <Play />
-      </HvButton>
-      <HvButton icon aria-label="Play" variant="primarySubtle" size="md">
-        <Play />
-      </HvButton>
-      <HvButton icon disabled aria-label="Play" variant="primary" size="lg">
-        <Play />
-      </HvButton>
-
-      <HvButton icon aria-label="Play">
+      <HvButton icon size="lg" aria-label="Play">
         <Play iconSize="M" />
       </HvButton>
-      <HvButton icon disabled aria-label="Stop">
+      <HvButton icon size="lg" disabled aria-label="Stop">
         <Play iconSize="M" />
       </HvButton>
 
@@ -419,6 +418,15 @@ export const Test: StoryObj = {
       <HvButton startIcon={<Play />} color="lightcyan" variant="ghost">
         lightcyan
       </HvButton>
+
+      <HvButton icon variant="primary" aria-label="Add">
+        <FontAwesomeIcon icon={faAdd} />
+      </HvButton>
+      <HvButton startIcon={<FontAwesomeIcon icon={faAdd} />}>Add</HvButton>
+      <HvButton icon variant="primary" aria-label="Add">
+        <div className="i-ph-plus-bold" />
+      </HvButton>
+      <HvButton startIcon={<div className="i-ph-plus-bold" />}>Add</HvButton>
     </div>
   ),
 };

@@ -34,16 +34,17 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     border: "1px solid transparent",
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
+
+    // remove icon container spacing
+    "--icsize": "auto",
   },
   startIcon: {
-    marginLeft: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
+    marginRight: 8,
+    minWidth: 16,
   },
   endIcon: {
-    marginRight: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
+    marginLeft: 8,
+    minWidth: 16,
   },
   focusVisible: {},
   disabled: {
@@ -59,10 +60,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   icon: {
     margin: 0,
     padding: 0,
-    height: "fit-content",
-    "& > *": {
-      margin: -1,
-    },
+    height: "var(--HvButton-height)",
+    width: "var(--HvButton-height)",
   },
   contained: {
     color: theme.colors.atmo1, // `color-contrast(var(--color) vs ${colors.atmo1}, ${colors.base_light}, ${colors.base_dark})`,
