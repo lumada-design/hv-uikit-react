@@ -1,6 +1,10 @@
 import { forwardRef, useContext } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
+import { HvButtonBase } from "../../ButtonBase";
 import { HvBaseProps } from "../../types/generic";
 import {
   HvFormElementContext,
@@ -46,77 +50,73 @@ export interface HvAdornmentProps
 export const HvAdornment = forwardRef<
   HTMLDivElement | HTMLButtonElement,
   HvAdornmentProps
->(
-  (
-    {
-      id,
-      classes: classesProp,
-      className,
-      icon,
-      showWhen = undefined,
-      onClick,
-      isVisible = undefined,
-      ...others
-    },
-    ref,
-  ) => {
-    const { classes, cx } = useClasses(classesProp);
+>((props, ref) => {
+  const {
+    id,
+    classes: classesProp,
+    className,
+    icon,
+    showWhen = undefined,
+    onClick,
+    isVisible = undefined,
+    ...others
+  } = useDefaultProps("HvAdornment", props);
+  const { classes, cx } = useClasses(classesProp);
 
-    const { elementStatus = "", elementDisabled } =
-      useContext(HvFormElementContext);
+  const { elementStatus = "", elementDisabled } =
+    useContext(HvFormElementContext);
 
-    const { input } = useContext(HvFormElementDescriptorsContext);
+  const { input } = useContext(HvFormElementDescriptorsContext);
 
-    const displayIcon =
-      isVisible ?? (showWhen === undefined || elementStatus === showWhen);
+  const displayIcon =
+    isVisible ?? (showWhen === undefined || elementStatus === showWhen);
 
-    const isClickable = !!onClick;
+  const isClickable = !!onClick;
 
-    return isClickable ? (
-      <button
-        id={id}
-        ref={ref as React.ForwardedRef<HTMLButtonElement>}
-        type="button"
-        tabIndex={-1}
-        aria-controls={input?.[0]?.id}
-        className={cx(
-          classes.root,
-          classes.adornment,
-          classes.adornmentButton,
-          {
-            [classes.hideIcon]: !displayIcon,
-            [classes.disabled]: elementDisabled,
-          },
-          className,
-        )}
-        onClick={onClick}
-        onMouseDown={(event) => event.preventDefault()}
-        onKeyDown={noop}
-        disabled={elementDisabled}
-        aria-disabled={elementDisabled}
-        {...others}
-      >
-        <div className={classes.icon}>{icon}</div>
-      </button>
-    ) : (
-      <div
-        id={id}
-        ref={ref as React.ForwardedRef<HTMLDivElement>}
-        className={cx(
-          classes.root,
-          classes.adornment,
-          classes.adornmentIcon,
-          {
-            [classes.hideIcon]: !displayIcon,
-            [classes.disabled]: elementDisabled,
-          },
-          className,
-        )}
-        role="presentation"
-        {...others}
-      >
-        <div className={classes.icon}>{icon}</div>
-      </div>
-    );
-  },
-);
+  return isClickable ? (
+    <HvButtonBase
+      id={id}
+      focusableWhenDisabled
+      ref={ref as React.ForwardedRef<HTMLButtonElement>}
+      type="button"
+      tabIndex={-1}
+      aria-controls={input?.[0]?.id}
+      className={cx(
+        classes.root,
+        classes.adornment,
+        classes.adornmentButton,
+        {
+          [classes.hideIcon]: !displayIcon,
+          [classes.disabled]: elementDisabled,
+        },
+        className,
+      )}
+      onClick={onClick}
+      onMouseDown={(event) => event.preventDefault()}
+      onKeyDown={noop}
+      disabled={elementDisabled}
+      {...others}
+    >
+      <div className={classes.icon}>{icon}</div>
+    </HvButtonBase>
+  ) : (
+    <div
+      id={id}
+      ref={ref as React.ForwardedRef<HTMLDivElement>}
+      className={cx(
+        classes.root,
+        classes.adornment,
+        classes.adornmentIcon,
+        {
+          [classes.hideIcon]: !displayIcon,
+          [classes.disabled]: elementDisabled,
+        },
+        className,
+      )}
+      role="presentation"
+      {...others}
+    >
+      <div className={classes.icon}>{icon}</div>
+    </div>
+  );
+});

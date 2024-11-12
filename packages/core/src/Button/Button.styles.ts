@@ -4,9 +4,7 @@ import { theme, type HvSize } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvButton", {
-  /**
-   * Classes applied to the root element
-   */
+  /** applied to the root element */
   root: {
     display: "inline-flex",
     alignItems: "center",
@@ -35,17 +33,20 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
   },
+  /** applied to the _left_ icon container */
   startIcon: {
     marginLeft: theme.spacing(-1),
     marginTop: -1,
     marginBottom: -1,
   },
+  /** applied to the _right_ icon container */
   endIcon: {
     marginRight: theme.spacing(-1),
     marginTop: -1,
     marginBottom: -1,
   },
   focusVisible: {},
+  /** applied to the root element when disabled */
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.secondary_60,
@@ -56,6 +57,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       borderColor: "transparent",
     },
   },
+  /** applied to the root element when is icon-only */
   icon: {
     margin: 0,
     padding: 0,
@@ -64,6 +66,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       margin: -1,
     },
   },
+  /** applied to the root element when using the `contained` variant */
   contained: {
     color: theme.colors.atmo1, // `color-contrast(var(--color) vs ${colors.atmo1}, ${colors.base_light}, ${colors.base_dark})`,
     backgroundColor: "var(--color)",
@@ -76,10 +79,13 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
       },
     },
   },
+  /** applied to the root element when using the `subtle` variant */
   subtle: {
     borderColor: "currentcolor",
   },
+  /** applied to the root element when using the `ghost` variant */
   ghost: {},
+  /** applied to the root element when using the `semantic` variant */
   semantic: {
     color: theme.colors.base_dark,
     backgroundColor: "transparent",

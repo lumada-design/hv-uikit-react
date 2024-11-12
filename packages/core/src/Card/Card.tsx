@@ -41,7 +41,7 @@ export const HvCard = forwardRef<
   // no-indent
   React.ComponentRef<"div">,
   HvCardProps
->((props) => {
+>((props, ref) => {
   const {
     classes: classesProp,
     style,
@@ -64,6 +64,7 @@ export const HvCard = forwardRef<
 
   return (
     <div
+      ref={ref}
       style={mergeStyles(style, {
         "--bg-color": getColor(bgcolor),
         "--bar-height": `${selected ? 4 : 2}px`,

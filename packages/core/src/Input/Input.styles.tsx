@@ -17,11 +17,9 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
   },
   icon: { width: "30px", height: "30px" },
   adornmentButton: {
-    backgroundColor: "transparent",
-    border: "none",
-    padding: 0,
-    margin: 0,
-    cursor: "pointer",
+    ":focus-visible,:hover": {
+      backgroundColor: "transparent",
+    },
   },
   iconClear: { display: "none" },
   hasSuggestions: {},

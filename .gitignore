@@ -23,6 +23,7 @@ lerna-debug.log*
 .env*
 
 # Build
+build
 dist
 bin
 packages/icons/sprites
