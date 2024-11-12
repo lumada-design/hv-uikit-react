@@ -10,6 +10,7 @@ import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Swatch = (args: any) => <div />;
 
 export type HvColorPickerSavedColorsClasses = ExtractNames<typeof useClasses>;

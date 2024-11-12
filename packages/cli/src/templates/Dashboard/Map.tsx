@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import {
   MapContainer,
   MapContainerProps,
@@ -33,7 +32,7 @@ const LevelIcons = [
 });
 
 interface MapProps extends MapContainerProps {
-  children?: ReactNode;
+  children?: React.ReactNode;
   markers?: {
     position: MarkerProps["position"];
     label: PopupProps["children"];

@@ -27,7 +27,7 @@ const classes = {
   }),
 };
 
-const Welcome = () => {
+export default function Welcome() {
   return (
     <div className={classes.root}>
       <HvGrid container>
@@ -94,6 +94,4 @@ const Welcome = () => {
       </HvGrid>
     </div>
   );
-};
-
-export default Welcome;
+}

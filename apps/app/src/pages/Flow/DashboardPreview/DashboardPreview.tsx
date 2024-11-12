@@ -1,5 +1,5 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import {
   HvContainer,
   HvGlobalActions,
@@ -8,12 +8,14 @@ import {
 import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
+import { useIsMounted } from "~/hooks/isMounted";
+
 import {
   DASHBOARDS_STORAGE_KEY,
   DashboardSpecs,
   DashboardsStorage,
 } from "../types";
-import { Renderer, RendererProps } from "./Renderers";
+import { Renderer, RendererProps } from "./Renderers/Renderer";
 
 interface DashboardConfig extends Pick<HvDashboardProps, "layout" | "cols"> {
   items?: RendererProps[] & Record<string, any>;
@@ -112,10 +114,15 @@ const DashboardPreview = () => {
   );
 };
 
-export const Component = () => (
-  <Suspense fallback={<HvLoading />}>
-    <HvContainer component="main" maxWidth="xl" className="w-full">
-      <DashboardPreview />
-    </HvContainer>
-  </Suspense>
-);
+export default function Component() {
+  const isMounted = useIsMounted();
+  if (!isMounted) return null;
+
+  return (
+    <Suspense fallback={<HvLoading />}>
+      <HvContainer component="main" maxWidth="xl" className="w-full">
+        <DashboardPreview />
+      </HvContainer>
+    </Suspense>
+  );
+}

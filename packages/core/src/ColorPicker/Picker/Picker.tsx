@@ -19,8 +19,8 @@ import { staticClasses, useClasses } from "./Picker.styles";
 
 export { staticClasses as colorPickerPickerClasses };
 
-const CustomPickerComponent = (args: any) => <div />;
-const CustomPicker = (args: any) => CustomPickerComponent;
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const CustomPicker = (args: any) => (args2: any) => <div />;
 const Hue = (args: any) => <div />;
 const Saturation = (args: any) => <div />;
 

@@ -1,43 +1,30 @@
-import { lazy } from "react";
-import { Navigate, RouteObject } from "react-router-dom";
+// @ts-ignore fix tsconfig
+import { index, layout, route } from "@react-router/dev/routes";
 
-/* eslint-disable import/no-relative-packages */
-const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
-const ListView = lazy(() => import("../../../templates/ListView"));
-const Form = lazy(() => import("../../../templates/Form"));
-const DetailsView = lazy(() => import("../../../templates/DetailsView"));
-const Dashboard = lazy(() => import("../../../templates/Dashboard"));
-const Welcome = lazy(() => import("../../../templates/Welcome"));
-const KanbanBoard = lazy(() => import("../../../templates/KanbanBoard"));
-const Canvas = lazy(() => import("../../../templates/Canvas"));
+const getTemplatePath = (templateName: string) => {
+  return `../../../packages/cli/src/templates/${templateName}/index.tsx`;
+};
 
-export const routes: RouteObject[] = [
-  {
-    lazy: () => import("~/pages/layout/navigation"),
-    children: [
-      { path: "/", lazy: () => import("~/pages/Instructions") },
-      { path: "/test", lazy: () => import("~/pages/Test") },
-      { path: "/components", lazy: () => import("~/pages/Components") },
-      { path: "/flow", lazy: () => import("~/pages/Flow") },
-      {
-        path: "/templates",
-        children: [
-          { index: true, element: <Navigate to="welcome" replace /> },
-          { path: "welcome", element: <Welcome /> },
-          { path: "dashboard", element: <Dashboard /> },
-          { path: "asset-inventory", element: <AssetInventory /> },
-          { path: "list-view", element: <ListView /> },
-          { path: "form", element: <Form /> },
-          { path: "details-view", element: <DetailsView /> },
-          { path: "kanban-board", element: <KanbanBoard /> },
-          { path: "canvas", element: <Canvas /> },
-        ],
-      },
-      { path: "/*", lazy: () => import("~/pages/NotFound") },
-    ],
-  },
-  {
-    path: "/dashboard-preview",
-    lazy: () => import("~/pages/Flow/DashboardPreview"),
-  },
+export const routes = [
+  layout("./pages/layout/navigation.tsx", [
+    index("./pages/Instructions.tsx"),
+    route("test", "./pages/Test.tsx"),
+    route("components", "./pages/Components.tsx"),
+    route("flow", "./pages/Flow/Flow.tsx"),
+    route("templates", "./pages/layout/templates.tsx", [
+      route("welcome", getTemplatePath("Welcome")),
+      // route("dashboard", getTemplatePath("Dashboard")),
+      route("asset-inventory", getTemplatePath("AssetInventory")),
+      route("list-view", getTemplatePath("ListView")),
+      route("form", getTemplatePath("Form")),
+      route("details-view", getTemplatePath("DetailsView")),
+      route("kanban-board", getTemplatePath("KanbanBoard")),
+      route("canvas", getTemplatePath("Canvas")),
+    ]),
+    route("*", "./pages/NotFound.tsx"),
+  ]),
+  route(
+    "/dashboard-preview",
+    "./pages/Flow/DashboardPreview/DashboardPreview.tsx",
+  ),
 ];

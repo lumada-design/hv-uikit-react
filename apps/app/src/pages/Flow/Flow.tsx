@@ -17,6 +17,8 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
+import { useIsMounted } from "~/hooks/isMounted";
+
 import { edges, nodes, nodeTypes, useNodeGroups } from "./config";
 import {
   DASHBOARDS_STORAGE_KEY,
@@ -190,8 +192,13 @@ const Content = () => {
   );
 };
 
-export const Component = () => (
-  <Suspense fallback={<HvLoading />}>
-    <Content />
-  </Suspense>
-);
+export default function Component() {
+  const isMounted = useIsMounted();
+  if (!isMounted) return null;
+
+  return (
+    <Suspense fallback={<HvLoading />}>
+      <Content />
+    </Suspense>
+  );
+}
