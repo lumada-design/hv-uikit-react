@@ -28,8 +28,8 @@ export const { staticClasses, useClasses } = createClasses(
       height: "100%",
     },
     handle: {
-      height: "172px",
-      width: "35px",
+      height: 44,
+      width: 44,
       display: "flex",
       justifyContent: "center",
       boxShadow,
