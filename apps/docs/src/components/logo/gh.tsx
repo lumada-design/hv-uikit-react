@@ -1,14 +1,5 @@
-import useIsMounted from "@docs/hooks/useIsMounted";
-import { useTheme } from "nextra-theme-docs";
-
 export const GitHubLogo = () => {
-  const { theme } = useTheme();
-  const isMounted = useIsMounted();
-
-  if (!isMounted) {
-    return null;
-  }
-  const color = theme === "dark" ? "#fff" : "#000";
+  const color = "light-dark(#000, #fff)";
 
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill={color}>

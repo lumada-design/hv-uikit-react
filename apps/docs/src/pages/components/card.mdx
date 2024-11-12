@@ -109,68 +109,90 @@ If you want to add actions to the card, you can use the `HvActionBar` component.
 
 You can mark a card as selectable by adding the `selectable` prop. The `selected` prop indicates whether or not the card is selected.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {
   const [checked, setChecked] = useState(null);
-  const storages = [
-    {
-      name: "Local Storage",
-      icon: <Storage size="S" />,
-      description: "Use local storage for quick access to user settings.",
-    },
-    {
-      name: "Cloud Storage",
-      icon: <Cloud size="S" />,
-      description: "Use cloud storage for secure, scalable data access.",
-    },
-  ];
 
   return (
     <div className="flex flex-row gap-2 w-full">
-      {storages.map((p, idx) => {
-        return (
-          <HvCard
-            bgcolor="atmo1"
-            className="flex-1"
-            selectable
-            selected={checked === idx}
-          >
-            <button
-              type="button"
-              onClick={() => setChecked(idx)}
-              aria-label={`Press enter or space to select the ${p.name}.`}
-              className="w-full text-left"
-            >
-              <HvCardHeader
-                title={
-                  <div className="flex justify-between items-center">
-                    <div className="flex gap-1 items-center">
-                      {p.icon}
-                      <HvTypography variant="title4">{p.name}</HvTypography>
-                    </div>
-                    <HvRadio
-                      onChange={() => setChecked(idx)}
-                      checked={checked === idx}
-                      value="value"
-                      inputProps={{
-                        "aria-label": `Tick to select the ${p.name} payment.`,
-                      }}
-                    />
-                  </div>
-                }
-              />
-              <HvCardContent>
-                <HvTypography>{p.description}</HvTypography>
-              </HvCardContent>
-            </button>
-          </HvCard>
-        );
-      })}
+      {storages.map((p, idx) => (
+        <StorageCard
+          selected={checked === idx}
+          title={p.name}
+          icon={p.icon}
+          description={p.description}
+          onSelect={() => setChecked(idx)}
+        />
+      ))}
     </div>
   );
 }
+
+function StorageCard({
+  selected,
+  title,
+  icon,
+  description,
+  onSelect,
+  ...others
+}: StorageCardProps) {
+  return (
+    <HvCard
+      bgcolor="atmo1"
+      className="flex-1"
+      selectable
+      selected={selected}
+      {...others}
+    >
+      <button
+        type="button"
+        onClick={onSelect}
+        aria-label={`Press enter or space to select the ${title}.`}
+        className="w-full text-left"
+      >
+        <HvCardHeader
+          title={
+            <div className="flex justify-between items-center">
+              <div className="flex gap-1 items-center">
+                {icon}
+                <HvTypography variant="title4">{title}</HvTypography>
+              </div>
+              <HvRadio
+                onChange={onSelect}
+                checked={selected}
+                value="value"
+                aria-label={`Tick to select the ${title} payment.`}
+              />
+            </div>
+          }
+        />
+        <HvCardContent>{description}</HvCardContent>
+      </button>
+    </HvCard>
+  );
+}
+
+interface StorageCardProps extends HvCardProps {
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  onSelect?: () => void;
+}
+
+const storages = [
+  {
+    name: "Local Storage",
+    icon: <Storage size="S" />,
+    description: "Use local storage for quick access to user settings.",
+  },
+  {
+    name: "Cloud Storage",
+    icon: <Cloud size="S" />,
+    description: "Use cloud storage for secure, scalable data access.",
+  },
+];
 ```
 
 </Page>

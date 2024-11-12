@@ -8,7 +8,7 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Tag", "core", tagClasses, undefined);
+  const meta = await getComponentData("Tag", "core", tagClasses);
   return { props: { ssg: { meta: meta } } };
 };
 
@@ -64,18 +64,17 @@ The tag component will automatically truncate the text if it is too long to fit 
 
 ### Actions
 
-Tags can have actions. Use the `onClick` prop to add an action to the tag.
+Tags can have click actions.
+
+- Use the `onClick` prop to add an action to the tag.
+- Use the `onDelete` prop to add a delete button to the tag.
 
 ```jsx live
-<HvTag label="Click me!" onClick={() => alert("Clicked!")} />
-```
-
-### Deletable tags
-
-You can add a delete button to the tag by using the `onDelete` prop.
-
-```jsx live
-<HvTag label="Deletable tag" onDelete={() => alert("Deleted!")} />
+<HvTag
+  label="Click me!"
+  onClick={() => alert("Clicked!")}
+  onDelete={() => alert("Deleted!")}
+/>
 ```
 
 ### Controlled selectable state
@@ -84,22 +83,15 @@ To use the selectable tags in a controlled way, set the `selected` prop to `true
 
 ```jsx live
 import { useState } from "react";
-import { css } from "@emotion/css";
+
+const tags = ["Asset 1", "Asset 2", "Asset 3", "Asset 4"];
 
 export default function Demo() {
   const [selectedTags, setSelectedTags] = useState(["Asset 1", "Asset 3"]);
 
-  const tags = ["Asset 1", "Asset 2", "Asset 3", "Asset 4"];
-
   return (
-    <div
-      className={css({
-        display: "flex",
-        flexDirection: "column",
-        gap: theme.space.sm,
-      })}
-    >
-      <div className={css({ display: "flex", gap: theme.space.sm })}>
+    <div className="grid gap-sm">
+      <div className="flex gap-sm">
         {tags.map((tag, i) => (
           <HvTag
             key={`${tag}-${i}`}
@@ -116,9 +108,10 @@ export default function Demo() {
           />
         ))}
       </div>
-      <div className={css({ display: "flex" })}>
-        <HvTypography variant="label">Selected tags:</HvTypography>&nbsp;
-        <HvTypography>{selectedTags.join(", ")}</HvTypography>
+      <br />
+      <div className="flex items-center gap-xs">
+        <HvTypography variant="label">Selected tags:</HvTypography>
+        <div>{selectedTags.join(", ")}</div>
       </div>
     </div>
   );

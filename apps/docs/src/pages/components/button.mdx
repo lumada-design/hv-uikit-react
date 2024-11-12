@@ -13,12 +13,7 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "Button",
-    "core",
-    buttonClasses,
-    undefined,
-  );
+  const meta = await getComponentData("Button", "core", buttonClasses);
   return { props: { ssg: { meta: meta } } };
 };
 
@@ -68,67 +63,57 @@ export const getStaticProps = async ({ params }) => {
 ### Icon
 
 Use the `startIcon` or `endIcon` props to insert an icon on the button.
-You can also use an icon directly as a child of the `HvButton` component if you only want a clickable icon. In this case it might be useful
-to check the `HvIconButton` component as it wraps the clickable icon with an `HvTooltip` component.
+You can also use the `icon` prop and pass icon directly to `children` of the `HvButton` component.
+
+When using icon-only buttons (`icon` prop), it's preferable to use the `HvIconButton` component instead,
+as it wraps the button in an `HvTooltip` component and requires a `title` label.
 
 ```jsx live
-<div
-  style={{
-    display: "flex",
-    flexFlow: "row",
-    gap: 10,
-  }}
->
+<>
   <HvButton startIcon={<Play />} variant="primary">
     Play
   </HvButton>
   <HvButton endIcon={<Pause />} variant="secondarySubtle">
     Pause
   </HvButton>
-  <HvButton icon aria-label="Play" variant="primaryGhost">
-    <Play iconSize="XS" />
+  <HvButton icon aria-label="Play">
+    <Play size="XS" />
   </HvButton>
-</div>
+  <HvIconButton title="Play">
+    <Play size="XS" />
+  </HvIconButton>
+</>
 ```
 
 ### Custom root component
 
 You can use the `component` prop to change the root component of the button to be other than `button` whether it's a native HTML element or your own custom React component.
 
-```jsx live
-
-interface CustomLinkProps extends HvButtonProps<"a"> {
-  to: string;
+```tsx live
+export default function Demo() {
+  return (
+    <>
+      <HvButton variant="subtle" component="a" href="#" startIcon={<Link />}>
+        Link
+      </HvButton>
+      <HvButton variant="subtle" component={MyLink} to="#" startIcon={<Link />}>
+        Custom link
+      </HvButton>
+    </>
+  );
 }
 
-const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
-  <a href={to} {...others}>
-    {children}
-  </a>
-);
+function MyLink({ to, children, ...others }: MyLinkProps) {
+  return (
+    <a href={to} {...others}>
+      {children}
+    </a>
+  );
+}
 
-export default function Demo() {
-
-return (
-  <div style={{ display: "flex", gap: 20, padding: 20 }}>
-    <HvButton
-      variant="secondarySubtle"
-      component="a"
-      href="https://lumada-design.github.io/uikit/master"
-      startIcon={<Link />}
-    >
-      Link
-    </HvButton>
-    <HvButton
-      variant="secondarySubtle"
-      component={CustomLink}
-      to="https://lumada-design.github.io/uikit/master"
-      startIcon={<Link />}
-    >
-      Custom link
-    </HvButton>
-  </div>
-)}
+interface MyLinkProps extends HvButtonProps<"a"> {
+  to: string;
+}
 ```
 
 ### Semantic buttons

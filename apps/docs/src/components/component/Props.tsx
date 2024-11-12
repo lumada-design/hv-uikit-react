@@ -58,7 +58,7 @@ const EmptyStateRow = () => (
 );
 
 const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
-  <HvTableContainer className="bg-transparent">
+  <HvTableContainer>
     <HvTable>
       <HvTableHead>
         <HvTableRow className={classes.row}>
