@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { Delete } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

@@ -1,6 +1,4 @@
-// @types/react-color seems to be broken
-// @ts-ignore
-import { Swatch } from "react-color/lib/components/common";
+// import { Swatch } from "react-color/lib/components/common";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -10,6 +8,8 @@ import { HvTypography } from "../../Typography";
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };
+
+const Swatch = (args: any) => <div />;
 
 export type HvColorPickerPresetColorsClasses = ExtractNames<typeof useClasses>;
 

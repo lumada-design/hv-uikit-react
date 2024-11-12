@@ -1,4 +1,4 @@
-import { chipClasses } from "@mui/material/Chip";
+import { chipClasses } from "@mui/material";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 

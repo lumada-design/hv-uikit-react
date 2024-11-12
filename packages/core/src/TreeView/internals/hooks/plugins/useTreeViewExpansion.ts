@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEventCallback } from "@mui/material/utils";
+import { useEventCallback } from "@mui/material";
 
 import {
   DefaultizedProps,

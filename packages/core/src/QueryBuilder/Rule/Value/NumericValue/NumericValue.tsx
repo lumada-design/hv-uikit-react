@@ -1,6 +1,5 @@
 import { memo, useCallback, useState } from "react";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 import { HvInput } from "../../../../Input";
 import { uniqueId } from "../../../../utils/helpers";

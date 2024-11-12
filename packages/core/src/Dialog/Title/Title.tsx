@@ -1,6 +1,7 @@
-import MuiDialogTitle, {
+import {
+  DialogTitle as MuiDialogTitle,
   DialogTitleProps as MuiDialogTitleProps,
-} from "@mui/material/DialogTitle";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { unstable_useEnhancedEffect as useEnhancedEffect } from "@mui/material/utils";
+import { unstable_useEnhancedEffect as useEnhancedEffect } from "@mui/material";
 
 /** Credit: https://github.com/reach/reach-ui/blob/86a046f54d53b6420e392b3fa56dd991d9d4e458/packages/descendants/README.md
  *  Modified slightly to suit our purposes.

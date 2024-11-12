@@ -2,9 +2,10 @@ import { forwardRef, useContext, useEffect, useRef, useState } from "react";
 import {
   ClickAwayListener,
   ClickAwayListenerProps,
-} from "@mui/base/ClickAwayListener";
-import { Popper, PopperProps } from "@mui/base/Popper";
-import { useForkRef } from "@mui/material/utils";
+  Popper,
+  PopperProps,
+} from "@mui/base";
+import { unstable_useForkRef as useForkRef } from "@mui/utils";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvListItem } from "../../ListContainer";

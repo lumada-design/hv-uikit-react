@@ -1,6 +1,7 @@
-import MuiCardContent, {
+import {
+  CardContent as MuiCardContent,
   CardContentProps as MuiCardContentProps,
-} from "@mui/material/CardContent";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

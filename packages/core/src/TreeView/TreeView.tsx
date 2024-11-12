@@ -1,4 +1,4 @@
-import { useSlotProps } from "@mui/base/utils";
+import { useSlotProps } from "@mui/base";
 import { DropDownXS, DropRightXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

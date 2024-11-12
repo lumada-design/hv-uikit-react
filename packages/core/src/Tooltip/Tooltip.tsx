@@ -1,8 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import Fade from "@mui/material/Fade";
-import Tooltip, {
-  TooltipProps as MuiTooltipProps,
-} from "@mui/material/Tooltip";
+import { Fade, TooltipProps as MuiTooltipProps, Tooltip } from "@mui/material";
 import {
   useDefaultProps,
   useTheme,

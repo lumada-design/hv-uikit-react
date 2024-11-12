@@ -1,10 +1,12 @@
 import { forwardRef, useCallback } from "react";
-import Slide, { SlideProps } from "@mui/material/Slide";
-import MuiSnackbar, {
+import {
+  Snackbar as MuiSnackbar,
   SnackbarProps as MuiSnackbarProps,
+  Slide,
+  SlideProps,
   SnackbarCloseReason,
   SnackbarOrigin,
-} from "@mui/material/Snackbar";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

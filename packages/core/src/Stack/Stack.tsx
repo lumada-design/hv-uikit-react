@@ -1,8 +1,9 @@
 import { Children, useCallback, useMemo, useRef } from "react";
-import MuiDivider, {
+import {
+  Divider as MuiDivider,
   DividerProps as MuiDividerProps,
-} from "@mui/material/Divider";
-import { useTheme } from "@mui/material/styles";
+  useTheme,
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

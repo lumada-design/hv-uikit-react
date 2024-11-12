@@ -1,7 +1,8 @@
 import { forwardRef, isValidElement } from "react";
-import SnackbarContent, {
+import {
   SnackbarContentProps as MuiSnackbarContentProps,
-} from "@mui/material/SnackbarContent";
+  SnackbarContent,
+} from "@mui/material";
 import {
   useDefaultProps,
   useTheme,

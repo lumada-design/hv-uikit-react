@@ -1,4 +1,4 @@
-import { snackbarClasses } from "@mui/material/Snackbar";
+import { snackbarClasses } from "@mui/material";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 

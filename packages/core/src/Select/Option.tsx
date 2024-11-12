@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import { OptionOwnProps } from "@mui/base/Option";
-import { useOption } from "@mui/base/useOption";
-import { useForkRef } from "@mui/material/utils";
+import { useOption, type OptionOwnProps } from "@mui/base";
+import { unstable_useForkRef as useForkRef } from "@mui/utils";
 import {
   createClasses,
   useDefaultProps,

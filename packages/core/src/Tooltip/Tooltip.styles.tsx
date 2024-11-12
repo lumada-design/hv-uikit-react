@@ -1,4 +1,4 @@
-import { tooltipClasses as MuitooltipClasses } from "@mui/material/Tooltip";
+import { tooltipClasses as MuitooltipClasses } from "@mui/material";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 

@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { useRef, useState } from "react";
-import { Popper } from "@mui/base/Popper";
-import { SelectOption } from "@mui/base/useOption";
 import {
+  Popper,
   SelectProvider,
   useSelect,
-  UseSelectParameters,
-} from "@mui/base/useSelect";
-import { useControlled, useForkRef } from "@mui/material/utils";
+  type SelectOption,
+  type UseSelectParameters,
+} from "@mui/base";
+import {
+  unstable_useControlled as useControlled,
+  unstable_useForkRef as useForkRef,
+} from "@mui/utils";
 import type { Placement } from "@popperjs/core";
 import clsx from "clsx";
 import {

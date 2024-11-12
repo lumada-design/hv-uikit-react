@@ -1,4 +1,4 @@
-import { unstable_useId as useId } from "@mui/material/utils";
+import { unstable_useId as useId } from "@mui/material";
 
 import type {
   TreeViewInstance,

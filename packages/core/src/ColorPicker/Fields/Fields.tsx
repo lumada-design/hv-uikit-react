@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { HSLColor, HSVColor, RGBColor } from "react-color";
-// @ts-ignore
+import type { HSLColor, HSVColor, RGBColor } from "react-color";
+// @ts-expect-error helpers/color not typed
 import * as color from "react-color/lib/helpers/color";
 import {
   useDefaultProps,

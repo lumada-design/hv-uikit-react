@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { useForkRef } from "@mui/material/utils";
+import { useForkRef } from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

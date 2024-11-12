@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
-import { useTheme as useMuiTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useMediaQuery, useTheme as useMuiTheme } from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

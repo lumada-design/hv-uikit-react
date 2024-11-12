@@ -47,6 +47,7 @@
     "@hitachivantara/uikit-styles": "^5.40.1",
     "@internationalized/date": "^3.2.0",
     "@mui/base": "^5.0.0-beta.40",
+    "@mui/utils": "^5.16.6",
     "@popperjs/core": "^2.11.8",
     "@react-aria/datepicker": "^3.9.0",
     "@react-stately/datepicker": "^3.9.0",

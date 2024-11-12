@@ -8,8 +8,10 @@ import {
   useRef,
   useState,
 } from "react";
-import { InputBaseComponentProps as MuiInputBaseComponentProps } from "@mui/material/InputBase";
-import { useForkRef } from "@mui/material/utils";
+import {
+  InputBaseComponentProps as MuiInputBaseComponentProps,
+  useForkRef,
+} from "@mui/material";
 import {
   CloseXS,
   Preview,

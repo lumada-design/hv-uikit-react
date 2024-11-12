@@ -1,6 +1,7 @@
-import MuiDialogContent, {
+import {
+  DialogContent as MuiDialogContent,
   DialogContentProps as MuiDialogContentProps,
-} from "@mui/material/DialogContent";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

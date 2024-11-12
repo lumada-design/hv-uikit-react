@@ -1,6 +1,4 @@
-// @types/react-color seems to be broken
-// @ts-ignore
-import { Swatch } from "react-color/lib/components/common";
+// import { Swatch } from "react-color/lib/components/common";
 import { Add, CloseXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
@@ -11,6 +9,8 @@ import { HvButton } from "../../Button";
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
+
+const Swatch = (args: any) => <div />;
 
 export type HvColorPickerSavedColorsClasses = ExtractNames<typeof useClasses>;
 

@@ -40,7 +40,8 @@
     "node-plop": "^0.31.1"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1"
+    "@types/fs-extra": "^11.0.1",
+    "react-router-dom": "^6.28.0"
   },
   "engineStrict": true,
   "engines": {

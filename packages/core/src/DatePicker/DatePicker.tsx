@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useRef } from "react";
-import { useForkRef } from "@mui/material/utils";
+import { useForkRef } from "@mui/material";
 import { Calendar } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

@@ -1,6 +1,7 @@
-import MuiCardHeader, {
+import {
+  CardHeader as MuiCardHeader,
   CardHeaderProps as MuiCardHeaderProps,
-} from "@mui/material/CardHeader";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

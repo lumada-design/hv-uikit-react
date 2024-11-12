@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { ColorState } from "react-color";
+import type { ColorState } from "react-color";
 import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

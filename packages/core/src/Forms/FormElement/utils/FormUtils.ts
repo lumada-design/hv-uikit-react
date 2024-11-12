@@ -1,5 +1,5 @@
-import React from "react";
-import { InputBaseComponentProps } from "@mui/material/InputBase";
+import { Children } from "react";
+import type { InputBaseComponentProps } from "@mui/material";
 
 import { HvFormElementContextValue } from "../context/FormElementContext";
 import { HvFormElementDescriptorsContextValue } from "../context/FormElementDescriptorsContext";
@@ -37,7 +37,7 @@ const findDescriptors = (
     HvCalendarHeader: [],
   },
 ) => {
-  React.Children.forEach(children, (child: any) => {
+  Children.forEach(children, (child: any) => {
     if (child?.type?.formElementType && child.props?.id) {
       descriptors[child.type.formElementType as keyof typeof descriptors]?.push(
         {

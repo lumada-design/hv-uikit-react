@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
+import { Chip, ChipProps as MuiChipProps } from "@mui/material";
 import {
   Checkbox,
   CheckboxCheck,

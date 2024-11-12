@@ -1,12 +1,12 @@
 import { useCallback } from "react";
-import {
-  CustomPicker,
+import type {
+  // CustomPicker,
   CustomPickerInjectedProps,
   HSLColor,
   HSVColor,
   RGBColor,
 } from "react-color";
-import { Hue, Saturation } from "react-color/lib/components/common";
+// import { Hue, Saturation } from "react-color/lib/components/common";
 import {
   useDefaultProps,
   useTheme,
@@ -18,6 +18,11 @@ import { Fields } from "../Fields";
 import { staticClasses, useClasses } from "./Picker.styles";
 
 export { staticClasses as colorPickerPickerClasses };
+
+const CustomPickerComponent = (args: any) => <div />;
+const CustomPicker = (args: any) => CustomPickerComponent;
+const Hue = (args: any) => <div />;
+const Saturation = (args: any) => <div />;
 
 export type HvColorPickerPickerClasses = ExtractNames<typeof useClasses>;
 

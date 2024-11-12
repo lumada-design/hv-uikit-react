@@ -1,6 +1,6 @@
 import * as React from "react";
-import { EventHandlers } from "@mui/base/utils";
-import { useForkRef } from "@mui/material/utils";
+import type { EventHandlers } from "@mui/base";
+import { useForkRef } from "@mui/material";
 
 import { TREE_VIEW_CORE_PLUGINS } from "../corePlugins";
 import {

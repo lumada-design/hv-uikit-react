@@ -1,4 +1,4 @@
-import { InputBaseComponentProps } from "@mui/material/InputBase";
+import { InputBaseComponentProps } from "@mui/material";
 
 import validationStates from "../Forms/FormElement/validationStates";
 

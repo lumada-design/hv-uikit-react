@@ -1,4 +1,4 @@
-import MuiLinearProgress from "@mui/material/LinearProgress";
+import { LinearProgress as MuiLinearProgress } from "@mui/material";
 
 import { useClasses } from "./ProgressColumnCell.styles";
 
