@@ -1,38 +1,28 @@
 import { useEffect, useState } from "react";
-import { css } from "@emotion/css";
-import {
-  HvContainer,
-  HvTab,
-  HvTabs,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { HvContainer, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 
 import { Classes } from "./Classes";
 import { Props } from "./Props";
-
-const classes = {
-  root: css({
-    paddingTop: theme.space.md,
-  }),
-};
 
 export const Page = ({ children }: { children: React.ReactNode }) => {
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
+    if (tab === 0) return;
+
     const tocElement = document.querySelector<HTMLElement>("nav.nextra-toc");
     if (tocElement) {
-      tocElement.style.display = tab !== 0 ? "none" : "block";
+      tocElement.style.display = "none";
     }
   }, [tab]);
 
   return (
-    <div className={classes.root}>
+    <div className="pt-md">
       <HvTabs
-        variant="standard"
+        variant="fullWidth"
         value={tab}
         onChange={(_, val) => setTab(val)}
-        className="mt-2 mb-4"
+        className="mt-2 mb-4 w-360px"
       >
         <HvTab label="Usage" />
         <HvTab label="Props" />

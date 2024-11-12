@@ -8,12 +8,7 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "Loading",
-    "core",
-    loadingClasses,
-    undefined,
-  );
+  const meta = await getComponentData("Loading", "core", loadingClasses);
   return { props: { ssg: { meta: meta } } };
 };
 
@@ -52,39 +47,45 @@ You can change the default color of the loader by passing a color name from the 
 </>
 ```
 
-### Button loaders
+### Loading button
 
-You can use the loading component to create a button loader. Here is an example of a button that shows a loader when clicked.
+You can easily create a custom `LoadingButton` component to handle async submission operations.
 
 ```jsx live
 import { useState } from "react";
 
-export default function Demo() {
-  const [isLoading, setIsLoading] = useState(false);
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  const handleClick = async () => {
-    await new Promise((resolve) => {
-      setTimeout(resolve, 2000);
-    });
-  };
+export default function Demo() {
+  return (
+    <LoadingButton onClick={() => delay(3000)}>
+      Submit
+    </LoadingButton>
+  );
+}
+
+function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <HvButton
       style={{ width: 120 }}
+      disabled={isLoading}
       onClick={async (event) => {
         setIsLoading(true);
-        await handleClick();
+        await onClick?.(event);
         setIsLoading(false);
       }}
+      {...others}
     >
       {!isLoading ? (
-        "Submit"
+        children
       ) : (
         <HvLoading small hidden={!isLoading} color="inherit" />
       )}
     </HvButton>
   );
-}
+};
 ```
 
 ### Related components

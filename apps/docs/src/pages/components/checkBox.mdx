@@ -12,12 +12,7 @@ import Playground from "./Playground";
 import { getComponentData } from "../../utils/utils";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "CheckBox",
-    "core",
-    checkBoxClasses,
-    undefined,
-  );
+  const meta = await getComponentData("CheckBox", "core", checkBoxClasses);
   return { props: { ssg: { meta: meta } } };
 };
 
@@ -134,15 +129,14 @@ export default function Demo() {
 
 A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The aria-errormessage property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.
 
-```jsx live
+```tsx live
 import { useState } from "react";
-import { css } from "@emotion/css";
 
 export default function Demo() {
   // prettier-ignore
   const [firstCheckboxErrorMessage, setFirstCheckboxErrorMessage] = useState<string | null>(null);
   // prettier-ignore
-  const [secondCheckboxErrorMessage, setSecondCheckboxErrorMessage] = useState<string | null>("No way for the second checkbox to be valid!");
+  const [secondCheckboxErrorMessage,   setSecondCheckboxErrorMessage] = useState<string | null>("No way for the second checkbox to be valid!");
 
   return (
     <HvGrid container>
@@ -179,28 +173,15 @@ export default function Demo() {
       </HvGrid>
 
       <HvGrid item xs={12} md={6}>
-        <div
-          className={css({
-            backgroundColor: theme.colors.negative_20,
-            color: theme.colors.base_dark,
-            padding: theme.space.md,
-          })}
-        >
+        <div className="bg-negative_20 text-base_dark p-md">
           <HvTypography
             component="h4"
             variant="title4"
-            style={{
-              color: theme.colors.base_dark,
-            }}
+            className="text-inherit"
           >
             Form errors:
           </HvTypography>
-          <ul
-            className={css({
-              margin: theme.spacing("sm", 0),
-              paddingLeft: theme.space.md,
-            })}
-          >
+          <ul className="my-sm pl-md">
             {firstCheckboxErrorMessage && (
               <li id="firstCheckbox-error" aria-live="polite">
                 {firstCheckboxErrorMessage}

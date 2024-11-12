@@ -263,7 +263,10 @@ export const Playground = ({
       if (propMeta?.type.name === "enum") return renderSelect();
       if (propMeta?.type.name === "boolean") return renderCheck();
 
-      return <div>nothing to show...</div>;
+      // eslint-disable-next-line no-console
+      console.error(`Control for ${prop} not supported: ${type}`);
+
+      return null;
     },
     [colors, data?.meta.docgen.props, propsState],
   );

@@ -32,7 +32,6 @@ export const classes = {
     "& > textarea, & > pre": {
       outline: "none",
       whiteSpace: "pre !important",
-      padding: `${HvCore.theme.space.md} !important`,
     },
   }),
   editorContainer: css({
