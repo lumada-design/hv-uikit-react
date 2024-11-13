@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { forwardRef } from "react";
 import {
   ExtractNames,
@@ -51,8 +50,6 @@ export interface HvCanvasSidePanelProps
   ) => void;
   /** An object containing all the labels. */
   labels?: Partial<typeof DEFAULT_LABELS>;
-  /** Whether the side panel is resizable horizontally. */
-  resizable?: boolean;
   /** The content that will be rendered within the canvas panel. */
   children?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied. */
@@ -75,7 +72,6 @@ export const HvCanvasSidePanel = forwardRef<
     onToggle,
     onTabChange,
     labels: labelsProp,
-    resizable = true,
     className,
     children,
     classes: classesProp,
@@ -96,7 +92,6 @@ export const HvCanvasSidePanel = forwardRef<
 
   const { width, isDragging, getContainerProps, getSeparatorProps } =
     useResizable({
-      resizable,
       ref,
       initialWidth: 320,
       minWidth: 100,
@@ -124,12 +119,7 @@ export const HvCanvasSidePanel = forwardRef<
           [classes.open]: open,
           [classes.close]: !open,
         })}
-        {...getContainerProps()}
-        style={{
-          ...getContainerProps().style,
-          width: open ? width : 0,
-          transition: isDragging ? "none" : undefined,
-        }}
+        {...getContainerProps({ style: { ...(!open && { width: 0 }) } })}
         {...others}
       >
         {tabs && (
@@ -157,7 +147,7 @@ export const HvCanvasSidePanel = forwardRef<
           {children}
         </HvPanel>
       </div>
-      {resizable && <div {...getSeparatorProps()} />}
+      <div {...getSeparatorProps()} />
       <HvIconButton
         variant="primaryGhost"
         title={open ? labels.close : labels.open}

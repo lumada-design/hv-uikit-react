@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { MouseEvent, useRef, useState } from "react";
 import { useForkRef } from "@hitachivantara/uikit-react-core";
 
 interface ContainerProps {
@@ -6,16 +6,15 @@ interface ContainerProps {
   style: React.CSSProperties;
 }
 
-interface HandleProps {
+interface SeparatorProps {
   style: React.CSSProperties;
-  onMouseMove?: (event: React.MouseEvent) => void;
+  onMouseMove?: (event: React.MouseEvent<HTMLDivElement>) => void;
   onMouseLeave?: () => void;
   onMouseDown?: () => void;
   role: string;
 }
 
 interface ResizableProps {
-  resizable: boolean;
   ref: any;
   initialWidth?: number;
   minWidth?: number;
@@ -27,11 +26,10 @@ export const useResizable = (
 ): {
   width: number;
   isDragging: boolean;
-  getContainerProps: () => ContainerProps;
-  getSeparatorProps: () => HandleProps;
+  getContainerProps: (overrides: any) => ContainerProps;
+  getSeparatorProps: () => SeparatorProps;
 } => {
   const {
-    resizable,
     ref,
     initialWidth = 320,
     minWidth = 100,
@@ -46,7 +44,7 @@ export const useResizable = (
 
   const forkedRef = useForkRef(ref, panelRef);
 
-  const mouseMove = (event: any) => {
+  const mouseMove = (event: MouseEvent) => {
     if (panelRef.current) {
       const rect = panelRef.current.getBoundingClientRect();
       const newWidth = event.clientX - rect.left;
@@ -56,7 +54,7 @@ export const useResizable = (
     }
   };
 
-  const handleMouseMove = (event: any) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (panelRef.current) {
       const rect = panelRef.current.getBoundingClientRect();
       const isHoverBorder =
@@ -66,40 +64,54 @@ export const useResizable = (
   };
 
   const handleMouseUp = () => {
-    document.removeEventListener("mousemove", mouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
+    panelRef.current?.parentElement?.removeEventListener(
+      "mousemove",
+      mouseMove as unknown as EventListener,
+    );
+    panelRef.current?.parentElement?.removeEventListener(
+      "mouseup",
+      handleMouseUp as EventListener,
+    );
     setIsDragging(false);
   };
 
   const startResizing = () => {
-    document.addEventListener("mousemove", mouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    panelRef.current?.parentElement?.addEventListener(
+      "mousemove",
+      mouseMove as unknown as EventListener,
+    );
+    panelRef.current?.parentElement?.addEventListener("mouseup", handleMouseUp);
     setIsDragging(true);
   };
 
-  const getContainerProps = (): ContainerProps => ({
+  const getContainerProps = (
+    overrides: Partial<ContainerProps> = {},
+  ): ContainerProps => ({
     ref: forkedRef,
     style: {
       width,
+      transition: isDragging ? "none" : undefined,
+      ...overrides.style,
     },
   });
 
-  const getSeparatorProps = (): HandleProps => ({
+  const getSeparatorProps = (
+    overrides: Partial<SeparatorProps> = {},
+  ): SeparatorProps => ({
     style: {
       left: width,
       position: "absolute",
       top: 0,
       bottom: 0,
       width: 5,
-      cursor: resizable ? "col-resize" : "default",
+      cursor: "col-resize",
+      ...overrides.style,
     },
-    onMouseMove: resizable ? handleMouseMove : undefined,
-    onMouseLeave: resizable ? () => setIsHover(false) : undefined,
-    onMouseDown: resizable
-      ? () => {
-          if (isHover) startResizing();
-        }
-      : undefined,
+    onMouseMove: handleMouseMove,
+    onMouseLeave: () => setIsHover(false),
+    onMouseDown: () => {
+      if (isHover) startResizing();
+    },
     role: "separator",
   });
 
