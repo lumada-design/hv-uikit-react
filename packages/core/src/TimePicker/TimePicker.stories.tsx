@@ -37,10 +37,10 @@ export const Main: StoryObj<HvTimePickerProps> = {
     label: "Time Picker",
     description: "",
     placeholder: "Select a date",
+    timeFormat: "24",
   },
   argTypes: {
     classes: { control: { disable: true } },
-    timeFormat: { control: { disable: true } },
     value: { control: { disable: true } },
     defaultValue: { control: { disable: true } },
     dropdownProps: { control: { disable: true } },

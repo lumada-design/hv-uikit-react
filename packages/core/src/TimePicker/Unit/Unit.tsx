@@ -1,4 +1,3 @@
-import { KeyboardEvent } from "react";
 import { DateFieldState, DateSegment } from "@react-stately/datepicker";
 import {
   DropUpXS as AddTimeIcon,
@@ -6,8 +5,8 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvInput, HvInputProps } from "../../Input";
-import { HvToggleButton } from "../../ToggleButton";
+import { HvBaseInput, HvBaseInputProps } from "../../BaseInput";
+import { HvButton } from "../../Button";
 import { useClasses } from "./Unit.styles";
 
 interface UnitProps {
@@ -16,7 +15,7 @@ interface UnitProps {
   segment: DateSegment;
   placeholder?: string;
   /** Called when the value changes */
-  onChange?: HvInputProps["onChange"];
+  onChange?: HvBaseInputProps["onChange"];
   /** Called when the up/add arrow is pressed */
   onAdd?: () => void;
   /** Called when the down/subtract arrow is pressed */
@@ -41,14 +40,13 @@ export const Unit = ({
       {type !== "literal" && <AddTimeIcon onClick={onAdd} />}
       {type === "literal" && <div className={classes.separator}>{text}</div>}
       {type === "dayPeriod" && (
-        <HvToggleButton className={classes.periodToggle} onClick={onAdd}>
+        <HvButton icon className={classes.periodToggle} onClick={onAdd}>
           {text}
-        </HvToggleButton>
+        </HvButton>
       )}
       {["hour", "minute", "second"].includes(type) && (
-        <HvInput
+        <HvBaseInput
           id={id}
-          disableClear
           style={{
             ...theme.typography.title3,
           }}
@@ -59,13 +57,13 @@ export const Unit = ({
             inputRoot: classes.inputRoot,
           }}
           onKeyDown={(event) => {
-            if ((event as KeyboardEvent).key === "Enter") {
+            if ("key" in event && event.key === "Enter") {
               event.preventDefault();
               event.stopPropagation();
             }
           }}
           required
-          status={state.validationState}
+          invalid={state.isInvalid}
           value={text.padStart(2, "0")}
           onChange={onChange}
           placeholder={placeholder}
