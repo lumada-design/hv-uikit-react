@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import {
   HvLoading,
   HvSection,
@@ -18,20 +17,9 @@ export const ChartContainer = ({
 }: ChartContainerProps) => (
   <HvSection
     title={!loading && <HvTypography variant="title4">{title}</HvTypography>}
-    className={
-      loading
-        ? css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-          })
-        : undefined
-    }
+    className={loading ? "flex items-center justify-center h-full" : undefined}
     classes={{
-      content: css({
-        height: "100%",
-      }),
+      content: "h-full",
     }}
   >
     {loading ? <HvLoading small /> : children}

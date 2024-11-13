@@ -1,39 +1,8 @@
-import { css } from "@emotion/css";
-import { theme } from "@hitachivantara/uikit-react-core";
-
 export const styles = {
-  root: css({
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-  }),
-  group: css({
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    marginBottom: theme.space.sm,
-  }),
-  groupName: css({
-    width: "27%",
-  }),
-  groupColors: css({
-    width: "73%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "flex-end",
-    gap: 2,
-  }),
-  color: css({
-    width: 20,
-    height: 25,
-    marginLeft: 5,
-    padding: 0,
-    backgroundColor: "transparent",
-  }),
-  tooltip: css({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  }),
+  root: "w-full flex flex-col",
+  group: "flex flex-wrap justify-between mb-sm",
+  groupName: "w-27%",
+  groupColors: "w-73% flex flex-wrap justify-end gap-2px",
+  color: "w-20px h-25px ml-5px p-0 bg-transparent",
+  tooltip: "flex flex-col justify-center",
 };
