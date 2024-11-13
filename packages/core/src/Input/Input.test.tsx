@@ -64,7 +64,8 @@ describe("Input", () => {
     );
 
     expect(screen.getByRole("searchbox")).toBeDisabled();
-    expect(screen.getByLabelText("Search")).toBeDisabled(); // role can't be used since the parent has aria-hidden
+    const adornment = screen.getByLabelText("Search"); // role can't be used since the parent has aria-hidden
+    expect(adornment).toHaveAttribute("aria-disabled", "true");
   });
 
   it("renders the adornment as disabled for the password when the input is disabled", () => {
@@ -79,7 +80,8 @@ describe("Input", () => {
     );
 
     expect(screen.getByLabelText("My input")).toBeDisabled(); // can't find by role searchbox since password inputs don't have a role...
-    expect(screen.getByLabelText("Reveal password")).toBeDisabled(); // role can't be used since the parent has aria-hidden
+    const adornment = screen.getByLabelText("Reveal password"); // roles can't be used since the parent has aria-hidden
+    expect(adornment).toHaveAttribute("aria-disabled", "true");
   });
 
   it("does not trigger the suggestions on focus by default", async () => {
