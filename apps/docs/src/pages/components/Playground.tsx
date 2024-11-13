@@ -18,7 +18,7 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-type ControlType = "radio" | "slider" | "color" | "text";
+type ControlType = "radio" | "check" | "slider" | "color" | "text";
 
 type Control = {
   type?: ControlType;
@@ -87,43 +87,36 @@ export const Playground = ({
   Component,
   componentName,
   componentProps,
-  controls,
+  controls = {},
   children,
 }: PlaygroundProps) => {
   const data = useData();
   const { colors } = useTheme();
 
-  const initialState = Object.keys(controls || {}).reduce(
-    (state, prop) => {
+  const [propsState, setPropsState] = useState(() =>
+    Object.keys(controls).reduce<Record<string, string>>((state, prop) => {
       if (controls[prop].defaultValue) {
         state[prop] = controls[prop].defaultValue || "";
       }
       return state;
-    },
-    {} as Record<string, string>,
+    }, {}),
   );
 
-  const [propsState, setPropsState] =
-    useState<Record<string, string>>(initialState);
-
-  const handleSelectChange = (event: any, prop: string, value: any) => {
-    setPropsState((prevState) => ({
-      ...prevState,
-      [prop]: value,
-    }));
+  const handleSelectChange = (prop: string, value: any) => {
+    setPropsState((prevState) => ({ ...prevState, [prop]: value }));
   };
 
   const getControlRenderer = useCallback(
     (prop: string, control: Control) => {
       const propMeta = data?.meta.docgen.props[prop];
 
-      const type = control?.type || propMeta?.type.name;
+      const type: ControlType = control?.type || propMeta?.type.name || "text";
 
       const renderSlider = () => {
         const min = 1;
         const max = propMeta.type.value.length;
 
-        const formattedLabel = (label: React.ReactNode) => {
+        const formatLabel = (label: React.ReactNode) => {
           if (!label) return "";
           return propMeta.type.value[
             parseInt(label as string, 10) - 1
@@ -152,11 +145,10 @@ export const Playground = ({
                     p.value.replace(/"/g, "") === control.defaultValue,
                 ) + 1,
             ]}
-            formatMark={(label) => formattedLabel(label)}
-            formatTooltip={(label) => formattedLabel(label)}
+            formatMark={formatLabel}
+            formatTooltip={formatLabel}
             onChange={(values) => {
               handleSelectChange(
-                null,
                 prop,
                 propMeta.type.value[values[0] - 1]?.value.replace(/"/g, ""),
               );
@@ -171,7 +163,7 @@ export const Playground = ({
             label={prop}
             orientation="horizontal"
             value={propsState[prop] || control.defaultValue}
-            onChange={(e, v) => handleSelectChange(e, prop, v)}
+            onChange={(e, v) => handleSelectChange(prop, v)}
             classes={{
               root: css({ width: "100%" }),
             }}
@@ -191,7 +183,7 @@ export const Playground = ({
             value={propsState[prop] || control.defaultValue}
             style={{ minWidth: 100, width: "100%" }}
             label={prop}
-            onChange={(e, value) => handleSelectChange(e, prop, value)}
+            onChange={(e, value) => handleSelectChange(prop, value)}
           >
             {propMeta.type.value.map((v: any) => {
               const value = v.value.replace('"', "").replace('"', "");
@@ -211,26 +203,19 @@ export const Playground = ({
             key={`${prop}`}
             label={prop}
             checked={!!propsState[prop]}
-            onChange={(e: React.ChangeEvent, value: any) =>
-              handleSelectChange(e, prop, value)
-            }
+            onChange={(e, value) => handleSelectChange(prop, value)}
           />
         );
       };
 
       const renderInput = () => {
-        const inputValue =
-          propsState[prop] === ""
-            ? ""
-            : (propsState[prop] ?? control.defaultValue);
+        const inputValue = propsState[prop] ?? control.defaultValue;
         return (
           <HvInput
             key={`${prop}`}
             label={prop}
             value={inputValue}
-            onChange={(e: React.ChangeEvent, value: any) =>
-              handleSelectChange(e, prop, value)
-            }
+            onChange={(e, value) => handleSelectChange(prop, value)}
             classes={{ root: css({ width: "100%" }) }}
           />
         );
@@ -245,28 +230,32 @@ export const Playground = ({
             key={`${prop}`}
             label={prop}
             value={colorValue}
-            onChange={(value: any) =>
-              handleSelectChange(undefined, prop, value)
-            }
+            onChange={(value) => handleSelectChange(prop, value)}
             classes={{ root: css({ width: "100%" }) }}
           />
         );
       };
 
-      if (type === "slider" && propMeta?.type.name === "enum")
-        return renderSlider();
-      if (type === "radio" && propMeta?.type.name === "enum")
-        return renderRadio();
-      if (type === "text") return renderInput();
-      if (type === "color") return renderColor();
-      if (type === "check") return renderCheck();
-      if (propMeta?.type.name === "enum") return renderSelect();
-      if (propMeta?.type.name === "boolean") return renderCheck();
-
-      // eslint-disable-next-line no-console
-      console.error(`Control for ${prop} not supported: ${type}`);
-
-      return null;
+      switch (true) {
+        case type === "slider" && propMeta?.type.name === "enum":
+          return renderSlider();
+        case type === "radio" && propMeta?.type.name === "enum":
+          return renderRadio();
+        case type === "text":
+          return renderInput();
+        case type === "color":
+          return renderColor();
+        case type === "check":
+        case propMeta?.type.name === "boolean":
+          return renderCheck();
+        case propMeta?.type.name === "enum":
+          return renderSelect();
+        default: {
+          // eslint-disable-next-line no-console
+          console.error(`Control for "${prop}" not supported: ${type}`);
+          return null;
+        }
+      }
     },
     [colors, data?.meta.docgen.props, propsState],
   );
@@ -282,13 +271,13 @@ export const Playground = ({
 
   return (
     <>
-      <div className="flex justify-between border border-[var(--uikit-colors-atmo4)] rounded-t-round">
-        <div className="w-[70%] flex justify-center items-center p-sm">
+      <div className="grid grid-cols-[2fr_1fr] border border-[var(--uikit-colors-atmo4)] rounded-t-round">
+        <div className="flex justify-center items-center p-sm">
           <Component {...componentProps} {...propsState}>
             {children}
           </Component>
         </div>
-        <div className="w-[30%] flex flex-col gap-xs justify-center items-start border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">
+        <div className="grid gap-xs border-l border-[var(--uikit-colors-atmo3)] p-sm pl-xs">
           {Object.keys(controls || {}).map((prop) => {
             const control = controls[prop];
             if (!control) return null;
