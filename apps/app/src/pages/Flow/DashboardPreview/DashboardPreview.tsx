@@ -1,6 +1,5 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { css } from "@emotion/css";
 import {
   HvContainer,
   HvGlobalActions,
@@ -102,7 +101,7 @@ const DashboardPreview = () => {
             useCSSTransforms={false}
           >
             {config.items.map((item) => (
-              <div key={item.id} className={css({ display: "flex" })}>
+              <div key={item.id} className="flex">
                 <Renderer key={item.id} {...item} />
               </div>
             ))}

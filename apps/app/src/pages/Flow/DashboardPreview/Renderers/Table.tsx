@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { css } from "@emotion/css";
 import { table } from "arquero";
 import type ColumnTable from "arquero/dist/types/table/column-table";
 import {
@@ -110,20 +109,10 @@ export const Table = ({
         )
       }
       className={
-        loading
-          ? css({
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100%",
-            })
-          : undefined
+        loading ? "flex items-center justify-center h-full" : undefined
       }
       classes={{
-        content: css({
-          height: "100%",
-          overflow: "auto",
-        }),
+        content: "h-full overflow-auto",
       }}
     >
       <HvTableContainer>
