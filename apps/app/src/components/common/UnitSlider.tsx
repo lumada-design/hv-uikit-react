@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import {
   HvDropdown,
   HvListValue,
@@ -91,10 +90,8 @@ export const UnitSlider = ({
               values={getUnits()}
               disabled={disabled}
               classes={{
-                dropdownHeader: css({ border: "none!important", width: 60 }),
-                rootList: css({
-                  "& > div": { padding: "0px!important" },
-                }),
+                dropdownHeader: "!border-none w-60px",
+                rootList: "[&>div]:!p-0",
               }}
               onChange={(item) => {
                 if (item) onUnitChange?.(item);
