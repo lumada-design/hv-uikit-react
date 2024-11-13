@@ -1,0 +1,105 @@
+import { Callout } from "nextra/components";
+import {
+  HvTextArea,
+  textAreaClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/component/Description";
+import { Page } from "@docs/components/component/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("TextArea", "core", textAreaClasses);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvTextArea}
+  componentName="HvTextArea"
+  controls={{
+    label: { type: "text", defaultValue: "Summary" },
+    description: { type: "text", defaultValue: "Project summary" },
+    required: { type: "check", defaultValue: true },
+    resizable: { type: "check", defaultValue: false },
+    readOnly: { type: "check", defaultValue: false },
+    disabled: { type: "check", defaultValue: false },
+  }}
+  componentProps={{
+    rows: 5,
+    maxCharQuantity: 50,
+  }}
+/>
+
+<Callout type="info">
+  The `HvTextArea` component is built on top of the [Input](/components/input)
+  component, therefore many properties are shared between the components. Please
+  refer to the [Input documentation](/components/input) for usage, like
+  [validation](/components/input#validation) or [controlled
+  state](/components/input#controlled) management.
+</Callout>
+
+### Maximum length
+
+The `maxCharQuantity` prop can be used to limit the number of allowed characters.
+
+- By default, the limited can be exceeded, but you can set the `blockMax` prop to prevent this.
+- The `middleCountLabel` allows customizing the count separator (`/`).
+
+```jsx live
+<>
+  <HvTextArea
+    label="You can write past the limit"
+    defaultValue="Some text"
+    middleCountLabel="of"
+    maxCharQuantity={10}
+    rows={5}
+  />
+  <HvTextArea
+    label="You can't write past the limit"
+    defaultValue="Some text"
+    maxCharQuantity={10}
+    rows={5}
+    blockMax
+  />
+</>
+```
+
+### Auto scroll
+
+Use the `autoScroll` prop to automatically scroll to bottom. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.
+
+```jsx live
+import { useEffect, useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(makeLogLine);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setValue((val) => `${val}\n${makeLogLine()}`);
+    }, 2000);
+
+    return () => clearInterval(id);
+  }, []);
+
+  return <HvTextArea label="Server logs" rows={6} value={value} autoScroll />;
+}
+
+function makeLogLine() {
+  return `${Date.now()}: ${Math.random().toString(36).slice(2)}`;
+}
+```
+
+### Related components
+
+- [`HvInput`](/components/input)
+
+</Page>

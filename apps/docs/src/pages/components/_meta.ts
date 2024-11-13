@@ -13,4 +13,5 @@ export default {
   loading: "Loading",
   loadingContainer: "LoadingContainer",
   tag: "Tag",
+  textarea: "TextArea",
 };

@@ -116,7 +116,7 @@ export const Live: React.FC<LiveProps> = ({ children }) => {
       }}
       theme={themes.oceanicNext}
     >
-      <LivePreview className="flex flex-wrap gap-3 p-2 mt-4 border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
+      <LivePreview className="flex gap-md p-sm mt-md border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
 
       <div className={classes.editorContainer}>
         <CodeEditor
