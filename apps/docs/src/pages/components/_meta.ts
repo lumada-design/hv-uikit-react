@@ -9,6 +9,7 @@ export default {
   button: "Button",
   card: "Card",
   checkBox: "CheckBox",
+  input: "Input",
   loading: "Loading",
   loadingContainer: "LoadingContainer",
   tag: "Tag",
