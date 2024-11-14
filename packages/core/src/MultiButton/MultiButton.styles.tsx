@@ -18,11 +18,10 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
 
     "& $button": {
       minWidth: 32,
-      minHeight: 32,
       width: "100%",
       maxWidth: 200,
       padding: 0,
-      flex: 1,
+      flex: "1 1 auto",
       borderColor: "inherit",
       borderRadius: 0,
       fontWeight: theme.typography.body.fontWeight,
