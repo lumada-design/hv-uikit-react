@@ -98,10 +98,7 @@ export const HvAccordion = forwardRef<
         onClick={handleClick}
         variant={labelVariant}
       >
-        <DropUpXS
-          color="inherit"
-          style={{ rotate: isOpen ? undefined : "180deg" }}
-        />
+        <DropUpXS color="inherit" rotate={!isOpen} />
         {label}
       </HvTypography>
     );

@@ -94,7 +94,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
                 {...buttonProps}
                 {...expandButtonProps}
               >
-                <Down style={{ rotate: isOpen ? "180deg" : undefined }} />
+                <Down rotate={isOpen} />
               </HvButton>
             )}
             {title}

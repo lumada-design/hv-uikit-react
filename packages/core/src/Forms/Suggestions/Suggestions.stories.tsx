@@ -241,10 +241,8 @@ export const CustomOpen: StoryObj<HvSuggestionsProps> = {
             }}
             endAdornment={
               <DropDownXS
-                style={{
-                  cursor: "pointer",
-                  rotate: open ? "180deg" : undefined,
-                }}
+                rotate={open}
+                style={{ cursor: "pointer" }}
                 onClick={(evt) => {
                   evt.stopPropagation();
                   setOpen((v) => !v);

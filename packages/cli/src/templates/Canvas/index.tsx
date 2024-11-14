@@ -182,12 +182,7 @@ const Page = () => {
     {
       id: "toggle",
       label: minimize ? "Maximize" : "Minimize",
-      icon: (
-        <DropUpXS
-          iconSize="XS"
-          style={{ rotate: !minimize ? "180deg" : undefined }}
-        />
-      ),
+      icon: <DropUpXS size="XS" rotate={!minimize} />,
     },
   ];
 

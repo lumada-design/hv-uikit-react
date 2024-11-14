@@ -48,24 +48,15 @@ export const Expandable = () => {
         <HvTypography>This is my hidden content</HvTypography>
       </HvCardContent>
 
-      <div
-        style={{ display: "flex", justifyContent: "center", paddingBottom: 0 }}
+      <HvIconButton
+        title={isOpen ? "Collapse" : "Expand"}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={cardContentId}
+        style={{ width: "100%", height: 16, display: "flex", paddingBottom: 0 }}
       >
-        <HvIconButton
-          title={isOpen ? "Collapse" : "Expand"}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-controls={cardContentId}
-        >
-          <DropDownXS
-            style={{
-              width: 16,
-              height: 16,
-              rotate: isOpen ? "180deg" : undefined,
-            }}
-          />
-        </HvIconButton>
-      </div>
+        <DropDownXS rotate={isOpen} size="xs" />
+      </HvIconButton>
     </HvCard>
   );
 };

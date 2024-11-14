@@ -1,12 +1,27 @@
-import { forwardRef, ReactNode } from "react";
+import { forwardRef } from "react";
 import styled from "@emotion/styled";
 import { getColor, HvColorAny, HvSize } from "@hitachivantara/uikit-styles";
 
-import { IconSize } from "./IconBase";
+import type { IconSize } from "./IconBase";
 import { getSizeStyles } from "./utils";
 
-export const StyledIconBase = styled("div")({
+function getRotation(rotation?: HvIconContainerProps["rotate"]) {
+  switch (rotation) {
+    case "up":
+      return "-90deg";
+    case "down":
+      return "90deg";
+    case true:
+      return "180deg";
+    case false:
+    default:
+      return undefined;
+  }
+}
+
+const StyledIconContainer = styled("div")({
   display: "flex",
+  flex: "0 0 auto", // ensure icon doesn't flex grow/shrink
   fontSize: 16,
   // box has a minimum size of 32px (`xs` & `sm`)
   width: "var(--size, 32px)",
@@ -17,7 +32,7 @@ export const StyledIconBase = styled("div")({
 });
 
 export interface HvIconContainerProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
+  extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * A color to override the default icon colors.
    * Accepts any valid CSS color or color from the UI Kit palette.
@@ -38,38 +53,39 @@ export interface HvIconContainerProps
    * @default "S"
    */
   size?: HvSize | IconSize | number;
-  /**
-   * Icon to render.
-   */
-  children?: ReactNode;
+  /** Whether to rotate the icon @private WIP */
+  rotate?: boolean | "up" | "down";
 }
 
 /**
  * A component used to contain icons in the established margins.
- * This allows for the use of external icons with our components that expect an icon container of a specific size.
- * It also makes the use of our colors easier through the `color` prop.
+ *
+ * This allows using external icons UI Kit components that expect padding around the icon.
+ * It also makes the use of theme colors easier through the `color` prop.
  *
  * @example
- * <HvIconContainer color="warning" size="lg" />
+ * <HvIconContainer color="warning" size="lg">
  *  <svg />
  * </HvIconContainer>
- *
  */
-export const HvIconContainer = forwardRef<HTMLDivElement, HvIconContainerProps>(
-  (props, ref) => {
-    const { size, style: styleProp, color, children, ...others } = props;
-    return (
-      <StyledIconBase
-        ref={ref}
-        style={{
-          ...getSizeStyles("", size),
-          color: getColor(color),
-          ...styleProp,
-        }}
-        {...others}
-      >
-        {children}
-      </StyledIconBase>
-    );
-  },
-);
+export const HvIconContainer = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvIconContainerProps
+>(function HvIconContainer(props, ref) {
+  const { size, style, color, rotate, children, ...others } = props;
+  return (
+    <StyledIconContainer
+      ref={ref}
+      style={{
+        ...getSizeStyles("", size),
+        color: getColor(color),
+        rotate: getRotation(rotate),
+        ...style,
+      }}
+      {...others}
+    >
+      {children}
+    </StyledIconContainer>
+  );
+});
