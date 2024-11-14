@@ -4,7 +4,6 @@ import {
   HvMultiButton,
   HvMultiButtonProps,
   HvSimpleGrid,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { LocationPin } from "@hitachivantara/uikit-react-icons";
 
@@ -45,7 +44,6 @@ export const Main: StoryObj<HvMultiButtonProps> = {
   },
   argTypes: {
     classes: { control: { disable: true } },
-    size: { control: { disable: true } },
     variant: { control: { disable: true } },
   },
   parameters: {
@@ -199,13 +197,7 @@ export const Test: StoryObj = {
         cols={3}
         style={{ alignItems: "start", justifyContent: "start" }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.space.xs,
-          }}
-        >
+        <div className="grid gap-xs">
           <HvMultiButton>
             <HvButton>Label 1</HvButton>
             <HvButton>Label 2</HvButton>
@@ -216,21 +208,18 @@ export const Test: StoryObj = {
             <HvButton selected>Label 2</HvButton>
             <HvButton>Label 3</HvButton>
           </HvMultiButton>
-          <HvMultiButton style={{ width: "fit-content" }}>
-            {["Label 1", "Label 2", "Label 3"].map((name, i) => (
-              <HvButton key={name} icon aria-label={name} selected={i === 1}>
-                <LocationPin />
-              </HvButton>
-            ))}
+          <HvMultiButton size="sm">
+            <HvButton selected>Label 1</HvButton>
+            <HvButton disabled>Label 2</HvButton>
+            <HvButton>Label 3</HvButton>
+          </HvMultiButton>
+          <HvMultiButton size="lg">
+            <HvButton selected>Label 1</HvButton>
+            <HvButton disabled>Label 2</HvButton>
+            <HvButton>Label 3</HvButton>
           </HvMultiButton>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: theme.space.xs,
-          }}
-        >
+        <div className="grid gap-xs">
           <HvMultiButton disabled>
             {["Label 1", "Label 2", "Label 3"].map((button) => (
               <HvButton key={button}>{button}</HvButton>
@@ -255,14 +244,21 @@ export const Test: StoryObj = {
               </HvButton>
             ))}
           </HvMultiButton>
+          <HvMultiButton style={{ width: "fit-content" }}>
+            {["Label 1", "Label 2", "Label 3", "Label 4"].map((name, i) => (
+              <HvButton
+                key={name}
+                icon
+                aria-label={name}
+                selected={i === 1}
+                disabled={i === 2}
+              >
+                <LocationPin />
+              </HvButton>
+            ))}
+          </HvMultiButton>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: theme.space.xs,
-            alignItems: "flex-start",
-          }}
-        >
+        <div className="flex gap-xs items-start">
           <HvMultiButton vertical style={{ width: "120px" }}>
             {["Label 1", "Label 2", "Label 3", "Label 4"].map((button) => (
               <HvButton key={button}>{button}</HvButton>

@@ -718,15 +718,16 @@ const pentahoPlus = makeTheme((theme) => ({
     HvMultiButton: {
       classes: {
         multiple: {
-          borderRadius: "16px",
+          borderRadius: theme.radii.full,
           borderColor: buttonColors.secondary.subtleBorder,
           "& .HvMultiButton-button": {
             borderColor: "inherit",
+            ...theme.typography.body,
             "&.HvMultiButton-firstButton": {
-              borderRadius: "16px 0 0 16px",
+              borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,
             },
             "&.HvMultiButton-lastButton": {
-              borderRadius: "0 16px 16px 0",
+              borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
             },
             "&.HvMultiButton-selected": {
               borderColor: theme.colors.primary,
