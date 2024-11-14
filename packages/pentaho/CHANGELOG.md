@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.5.12...@hitachivantara/uikit-react-pentaho@0.6.0) (2024-11-14)
+
+### Bug Fixes
+
+- **Canvas:** expand button dimensions ([817e45b](https://github.com/lumada-design/hv-uikit-react/commit/817e45b280adbb5d11d4d3788ba2f15642c85aef))
+
+### Features
+
+- **CanvasSidePanel:** add resizable feature ([9fc13b6](https://github.com/lumada-design/hv-uikit-react/commit/9fc13b6819b64ef11a8e3d9f3d8be4d466f83fab))
+
 ## [0.5.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.5.11...@hitachivantara/uikit-react-pentaho@0.5.12) (2024-11-11)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.81.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.1...@hitachivantara/uikit-react-core@5.81.2) (2024-11-14)
+
+### Bug Fixes
+
+- **Card:** add missing ref ([b99fccd](https://github.com/lumada-design/hv-uikit-react/commit/b99fccd91184a328cc3c61e7a84eccdeb7a9f124))
+- **Input:** adornment tooltip when disabled ([#4423](https://github.com/lumada-design/hv-uikit-react/issues/4423)) ([de9c471](https://github.com/lumada-design/hv-uikit-react/commit/de9c4715be589adb9c2b1a93cda8828243d541fd))
+- **Input:** suggestions selection doesn't call onBlur ([f2e841a](https://github.com/lumada-design/hv-uikit-react/commit/f2e841ad7efd9893467d4a3f3e5a7c006a01b4c1))
+
 ## [5.81.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.0...@hitachivantara/uikit-react-core@5.81.1) (2024-11-11)
 
 ### Bug Fixes
