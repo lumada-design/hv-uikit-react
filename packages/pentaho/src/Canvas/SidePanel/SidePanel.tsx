@@ -161,7 +161,7 @@ export const HvCanvasSidePanel = forwardRef<
           transition: isDragging ? "none" : undefined,
         }}
       >
-        <End style={{ rotate: open ? "180deg" : undefined }} />
+        <End rotate={open} />
       </HvIconButton>
     </>
   );

@@ -63,7 +63,7 @@ export const CellWithExpandButton = ({
         aria-expanded={row.isExpanded}
         onClick={rowProps?.onClick}
       >
-        <DropDownXS style={{ rotate: row.isExpanded ? "180deg" : undefined }} />
+        <DropDownXS rotate={row.isExpanded} />
       </HvButton>
       {cell?.value && (
         <HvTypography variant="label" component="span">

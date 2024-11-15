@@ -522,10 +522,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             )}
 
             {isOpen && expandable && (
-              <DropDownXS
-                color="currentcolor"
-                style={{ rotate: expanded ? "180deg" : undefined }}
-              />
+              <DropDownXS color="currentcolor" rotate={expanded} />
             )}
           </HvTypography>
         </HvTooltip>

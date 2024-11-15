@@ -8,7 +8,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
-import { HvIconContainer } from "./IconContainer";
+import { HvIconContainer, HvIconContainerProps } from "./IconContainer";
 import { getSizeStyles } from "./utils";
 
 const getColorVars = (colorArray: string[]) => {
@@ -52,8 +52,7 @@ const getIconColors = (
 
 export type IconSize = "XS" | "S" | "M" | "L";
 
-export interface IconBaseProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color"> {
+export interface IconBaseProps extends Omit<HvIconContainerProps, "color"> {
   /**
    * A color or array of colors to override the default icon colors.
    * Accepts any valid CSS color or color from the UI Kit palette.
