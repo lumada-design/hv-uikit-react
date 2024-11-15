@@ -13,6 +13,7 @@ export default {
   input: "Input",
   loading: "Loading",
   loadingContainer: "LoadingContainer",
+  section: "Section",
   tag: "Tag",
   textarea: "TextArea",
 };
