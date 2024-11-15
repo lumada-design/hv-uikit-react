@@ -1,0 +1,113 @@
+import { Callout } from "nextra/components";
+import {
+  accordionClasses,
+  HvAccordion,
+  HvPanel,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+
+import { Description } from "@docs/components/component/Description";
+import { Page } from "@docs/components/component/Page";
+
+import Playground from "./Playground";
+
+import { getComponentData } from "../../utils/utils";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Accordion", "core", accordionClasses);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvAccordion}
+  componentName="HvAccordion"
+  controls={{
+    label: {
+      type: "text",
+      defaultValue: "Accordion label",
+    },
+    labelVariant: {
+      defaultValue: "label",
+    },
+    disabled: {
+      defaultValue: false,
+    },
+  }}
+  componentProps={{ style: { width: "50%" } }}
+  children={<div>My accordion example content</div>}
+/>
+
+<Callout type="info">
+  You can use the `HvSection` component to create an accordion group that better
+  fits your needs. Please refer to the [Section
+  documentation](/components/section#multiple) for usage.
+</Callout>
+
+### Controlled
+
+You can control the state of `HvAccordion` by using the `expanded / onChange` props.
+
+```jsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="flex flex-col w-full">
+      <HvButton className="w-150px" onClick={() => setExpanded((p) => !p)}>
+        Open
+      </HvButton>
+      <HvAccordion
+        expanded={expanded}
+        onChange={(e, isExpanded) => setExpanded(isExpanded)}
+        label="Accordion label"
+        labelVariant="label"
+      >
+        <div>My accordion content</div>
+      </HvAccordion>
+    </div>
+  );
+}
+```
+
+### Multiple accordions
+
+If you need an accordion group, you can use multiple `HvAccordion` components.
+
+```jsx live
+<div className="w-full flex flex-col w-1/2">
+  <HvTypography className="pb-1" variant="title3">
+    UI Kit
+  </HvTypography>
+
+  <HvAccordion label="Components" labelVariant="title4">
+    <HvPanel>
+      UI Building blocks that can be used in various combinations to create a
+      larger user interface
+    </HvPanel>
+  </HvAccordion>
+  <HvAccordion label="Widgets" labelVariant="title4">
+    <HvPanel>
+      Specialized components that address specific use cases and can be used as
+      base to support other scenarios.
+    </HvPanel>
+  </HvAccordion>
+  <HvAccordion label="Templates" labelVariant="title4">
+    <HvPanel>
+      Pre-designed layouts that address common UI patterns and can be used to
+      quickly create a consistent design.
+    </HvPanel>
+  </HvAccordion>
+</div>
+```
+
+### Related components
+
+- [`HvSection`](/components/section)
+
+</Page>

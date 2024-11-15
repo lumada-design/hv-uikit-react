@@ -3,6 +3,7 @@ export default {
     type: "separator",
     title: "Components",
   },
+  accordion: "Accordion",
   avatar: "Avatar",
   badge: "Badge",
   banner: "Banner",
