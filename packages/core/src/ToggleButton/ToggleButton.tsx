@@ -43,17 +43,15 @@ export const HvToggleButton = forwardRef<
     Boolean(defaultSelected),
   );
 
-  const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setIsSelected(!isSelected);
-    onClick?.(event, !isSelected);
-  };
-
   return (
     <HvButton
       ref={ref}
       icon
-      aria-pressed={isSelected}
-      onClick={onClickHandler}
+      selected={isSelected}
+      onClick={(event) => {
+        setIsSelected(!isSelected);
+        onClick?.(event, !isSelected);
+      }}
       {...others}
     >
       {children || (!isSelected ? notSelectedIcon : selectedIcon)}

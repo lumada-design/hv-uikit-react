@@ -170,7 +170,7 @@ export const HvButton = fixedForwardRef(function HvButton<
         tabIndex: focusableWhenDisabled ? 0 : -1,
         "aria-disabled": true,
       })}
-      {...(selected && { "aria-pressed": selected })}
+      {...(selected != null && { "aria-pressed": selected })}
       {...others}
     >
       {startIcon && <span className={classes.startIcon}>{startIcon}</span>}
