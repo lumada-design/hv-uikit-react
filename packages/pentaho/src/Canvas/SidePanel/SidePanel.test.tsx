@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
+import { HvCanvasProvider } from "../CanvasContext";
 import { HvCanvasSidePanel, HvCanvasSidePanelProps } from "./SidePanel";
 
 const label = "Test";
@@ -21,9 +22,11 @@ const tabs = [
 
 const renderSimplePanel = (props?: HvCanvasSidePanelProps) =>
   render(
-    <HvCanvasSidePanel {...props} tabs={tabs}>
-      <HvButton>{label}</HvButton>
-    </HvCanvasSidePanel>,
+    <HvCanvasProvider>
+      <HvCanvasSidePanel {...props} tabs={tabs}>
+        <HvButton>{label}</HvButton>
+      </HvCanvasSidePanel>
+    </HvCanvasProvider>,
   );
 
 const ControlledPanel = ({

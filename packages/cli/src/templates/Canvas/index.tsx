@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { cx } from "@emotion/css";
 import { ReactFlowInstance } from "reactflow";
 import {
   HvButton,
@@ -28,6 +27,7 @@ import {
 import {
   HvCanvasBottomPanel,
   HvCanvasBottomPanelProps,
+  HvCanvasProvider,
   HvCanvasToolbar,
 } from "@hitachivantara/uikit-react-pentaho";
 
@@ -201,97 +201,93 @@ const Page = () => {
 
   return (
     <div className={classes.root}>
-      <HvFlow
-        className={classes.flow}
-        nodes={initialNodes}
-        edges={initialEdges}
-        nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
-        onInit={setFlowInstance}
-        /** Flow sidebar passed as prop to access the flow's Dnd context inside CanvasSidePanel */
-        sidebar={
-          <CanvasSidebar
-            tabs={sidePanelTabs}
-            open={sidePanelOpen}
-            tab={sidePanelTab}
-            onToggle={(event, value) => setSidePanelOpen(value)}
-            onTabChange={(event, value) => setSidePanelTab(value as number)}
-          >
-            {sidePanelContent[sidePanelTab]}
-          </CanvasSidebar>
-        }
-      >
-        <HvFlowEmpty
-          className={classes.flowEmpty}
-          title={
-            <HvTypography variant="title3" component="p">
-              Drag and Drop your Nodes
-            </HvTypography>
-          }
-          message={
-            <HvTypography
-              className={classes.flowEmptyMessage}
-              variant="label"
-              component="p"
+      <HvCanvasProvider>
+        <HvFlow
+          className={classes.flow}
+          nodes={initialNodes}
+          edges={initialEdges}
+          nodeTypes={nodeTypes}
+          edgeTypes={edgeTypes}
+          onInit={setFlowInstance}
+          /** Flow sidebar passed as prop to access the flow's Dnd context inside CanvasSidePanel */
+          sidebar={
+            <CanvasSidebar
+              tabs={sidePanelTabs}
+              open={sidePanelOpen}
+              tab={sidePanelTab}
+              onToggle={(event, value) => setSidePanelOpen(value)}
+              onTabChange={(event, value) => setSidePanelTab(value as number)}
             >
-              Then you can start configuring your flow.
-            </HvTypography>
+              {sidePanelContent[sidePanelTab]}
+            </CanvasSidebar>
           }
-          icon={null}
-        />
-        <HvFlowBackground />
-        <HvFlowControls />
-      </HvFlow>
-      <HvCanvasToolbar
-        className={cx(classes.toolbar, {
-          [classes.fullWidth]: !sidePanelOpen,
-          [classes.minWidth]: sidePanelOpen,
-        })}
-        title={<HvInlineEditor defaultValue="My Canvas" variant="title4" />}
-      >
-        <HvButton variant="primary" onClick={handleExecute}>
-          Execute
-        </HvButton>
-      </HvCanvasToolbar>
-      {bottomTabs.length > 0 && bottomPanelOpen && (
-        <HvCanvasBottomPanel
-          className={cx({
-            [classes.fullWidth]: !sidePanelOpen,
-            [classes.minWidth]: sidePanelOpen,
-          })}
-          classes={{
-            rightActions: classes.rightActions,
-          }}
-          open={bottomPanelOpen}
-          minimize={minimize}
-          tabs={bottomTabs}
-          selectedTabId={selectedTable}
-          leftActions={leftActions}
-          rightActions={rightActions}
-          overflowActions={[...leftActions, ...rightActions]}
-          onTabChange={handleChangeTab}
-          onAction={handleAction}
         >
-          <DataTable id={selectedTable} />
-        </HvCanvasBottomPanel>
-      )}
-      {bottomPanelOpen && (
-        <HvDialog
-          fullWidth
-          maxWidth="lg"
-          open={fullscreen}
-          onClose={() => setFullscreen((prev) => !prev)}
+          <HvFlowEmpty
+            className={classes.flowEmpty}
+            title={
+              <HvTypography variant="title3" component="p">
+                Drag and Drop your Nodes
+              </HvTypography>
+            }
+            message={
+              <HvTypography
+                className={classes.flowEmptyMessage}
+                variant="label"
+                component="p"
+              >
+                Then you can start configuring your flow.
+              </HvTypography>
+            }
+            icon={null}
+          />
+          <HvFlowBackground />
+          <HvFlowControls />
+        </HvFlow>
+        <HvCanvasToolbar
+          className={classes.toolbar}
+          title={<HvInlineEditor defaultValue="My Canvas" variant="title4" />}
         >
-          <HvDialogTitle className={classes.dialogTitle}>
-            {(
-              bottomTabs?.find((x) => x.id === selectedTable)?.title as Function
-            )(false)}
-          </HvDialogTitle>
-          <HvDialogContent>
+          <HvButton variant="primary" onClick={handleExecute}>
+            Execute
+          </HvButton>
+        </HvCanvasToolbar>
+        {bottomTabs.length > 0 && bottomPanelOpen && (
+          <HvCanvasBottomPanel
+            classes={{
+              rightActions: classes.rightActions,
+            }}
+            open={bottomPanelOpen}
+            minimize={minimize}
+            tabs={bottomTabs}
+            selectedTabId={selectedTable}
+            leftActions={leftActions}
+            rightActions={rightActions}
+            overflowActions={[...leftActions, ...rightActions]}
+            onTabChange={handleChangeTab}
+            onAction={handleAction}
+          >
             <DataTable id={selectedTable} />
-          </HvDialogContent>
-        </HvDialog>
-      )}
+          </HvCanvasBottomPanel>
+        )}
+        {bottomPanelOpen && (
+          <HvDialog
+            fullWidth
+            maxWidth="lg"
+            open={fullscreen}
+            onClose={() => setFullscreen((prev) => !prev)}
+          >
+            <HvDialogTitle className={classes.dialogTitle}>
+              {(
+                bottomTabs?.find((x) => x.id === selectedTable)
+                  ?.title as Function
+              )(false)}
+            </HvDialogTitle>
+            <HvDialogContent>
+              <DataTable id={selectedTable} />
+            </HvDialogContent>
+          </HvDialog>
+        )}
+      </HvCanvasProvider>
     </div>
   );
 };
