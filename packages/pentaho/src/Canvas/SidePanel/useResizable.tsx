@@ -1,4 +1,4 @@
-import { MouseEvent, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useForkRef } from "@hitachivantara/uikit-react-core";
 
 interface ContainerProps {
@@ -64,23 +64,26 @@ export const useResizable = (
   };
 
   const handleMouseUp = () => {
+    if (!panelRef.current) return;
+
+    panelRef.current.style.userSelect = "";
     panelRef.current?.parentElement?.removeEventListener(
       "mousemove",
-      mouseMove as unknown as EventListener,
+      mouseMove,
     );
     panelRef.current?.parentElement?.removeEventListener(
       "mouseup",
-      handleMouseUp as EventListener,
+      handleMouseUp,
     );
     setIsDragging(false);
   };
 
   const startResizing = () => {
-    panelRef.current?.parentElement?.addEventListener(
-      "mousemove",
-      mouseMove as unknown as EventListener,
-    );
-    panelRef.current?.parentElement?.addEventListener("mouseup", handleMouseUp);
+    if (!panelRef.current) return;
+
+    panelRef.current.style.userSelect = "none";
+    panelRef.current.parentElement?.addEventListener("mousemove", mouseMove);
+    panelRef.current.parentElement?.addEventListener("mouseup", handleMouseUp);
     setIsDragging(true);
   };
 
