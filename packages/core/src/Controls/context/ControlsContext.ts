@@ -1,6 +1,6 @@
-import React from "react";
+import { createContext } from "react";
 
-export const HvControlsContext = React.createContext<{
+export const HvControlsContext = createContext<{
   onSearch?: any;
   onSort?: any;
 }>({});

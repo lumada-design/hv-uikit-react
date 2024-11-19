@@ -86,19 +86,17 @@ const Page = () => {
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();
 
-  const bottomTabs: HvCanvasBottomPanelProps["tabs"] = useMemo(
-    () =>
-      openedTables?.map((table) => ({
-        id: table.id,
-        title: (overflowing) => (
-          <div className={classes.titleRoot}>
-            {!overflowing && <Table />}
-            <HvOverflowTooltip data={table.label} />
-          </div>
-        ),
-      })) ?? [],
-    [openedTables],
-  );
+  const bottomTabs = useMemo(() => {
+    return (openedTables || []).map((table) => ({
+      id: table.id,
+      title: (overflowing) => (
+        <div className={classes.titleRoot}>
+          {!overflowing && <Table />}
+          <HvOverflowTooltip data={table.label} />
+        </div>
+      ),
+    })) satisfies HvCanvasBottomPanelProps["tabs"];
+  }, [openedTables]);
 
   const handleCloseTab = (value: string | number) => {
     const newOpenedTables = openedTables?.filter((x) => x.id !== value) ?? [];
@@ -277,10 +275,7 @@ const Page = () => {
             onClose={() => setFullscreen((prev) => !prev)}
           >
             <HvDialogTitle className={classes.dialogTitle}>
-              {(
-                bottomTabs?.find((x) => x.id === selectedTable)
-                  ?.title as Function
-              )(false)}
+              {bottomTabs.find((x) => x.id === selectedTable)?.title(false)}
             </HvDialogTitle>
             <HvDialogContent>
               <DataTable id={selectedTable} />

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import { css } from "@emotion/css";
 import { Meta } from "@storybook/react";
 import {
@@ -12,10 +12,8 @@ import { themeColors } from "./themeColors";
 
 function groupColors(colorsJson?: HvThemeColorModeStructure) {
   const colorsMap = new Map<string, string>();
-  for (const key in colorsJson) {
-    if (Object.hasOwn(colorsJson, key)) {
-      colorsMap.set(key, colorsJson[key as keyof typeof colorsJson]);
-    }
+  for (const [key, value] of Object.entries(colorsJson || {})) {
+    colorsMap.set(key, value);
   }
   return colorsMap;
 }
@@ -70,12 +68,12 @@ const ColorsGroup = ({
               <div className={classes.colors}>
                 {Object.values(themeColors[selectedTheme][group]).map(
                   (color, idx) => (
-                    <React.Fragment key={color as string}>
+                    <Fragment key={color}>
                       <div
                         style={{
                           width: 0,
                           flexBasis:
-                            (color as string).includes("cat") &&
+                            color.includes("cat") &&
                             selectedTheme === "ds5" &&
                             idx !== 0 &&
                             idx % 9 === 0
@@ -87,19 +85,17 @@ const ColorsGroup = ({
                         <div
                           className={classes.colorSquare}
                           style={{
-                            backgroundColor: colors.get(color as string),
+                            backgroundColor: colors.get(color),
                           }}
                         />
                         <span className={classes.colorName}>
-                          <HvTypography variant="label">
-                            {color as string}
-                          </HvTypography>
+                          <HvTypography variant="label">{color}</HvTypography>
                           <HvTypography variant="caption1">
-                            {colors.get(color as string)}
+                            {colors.get(color)}
                           </HvTypography>
                         </span>
                       </div>
-                    </React.Fragment>
+                    </Fragment>
                   ),
                 )}
               </div>

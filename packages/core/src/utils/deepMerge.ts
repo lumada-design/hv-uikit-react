@@ -1,6 +1,6 @@
 import { DeepPartial } from "../types/generic";
 
-const isObject = (val: any): val is Object =>
+const isObject = (val: any): val is object =>
   val && typeof val === "object" && !Array.isArray(val);
 
 function merge<T>(target: T, source?: DeepPartial<T>) {

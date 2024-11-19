@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { DragEndEvent, useDndMonitor, useDroppable } from "@dnd-kit/core";
 import { Global } from "@emotion/react";
-import ReactFlow, {
+import {
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
@@ -11,6 +11,7 @@ import ReactFlow, {
   MarkerType,
   Node,
   NodeChange,
+  ReactFlow,
   ReactFlowProps,
 } from "reactflow";
 import { uid } from "uid";

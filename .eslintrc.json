@@ -1,20 +1,23 @@
 {
   "parser": "@typescript-eslint/parser",
+  "root": true,
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "airbnb",
-    "airbnb/hooks",
-    "airbnb-typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import", "ssr-friendly"],
+  "plugins": [],
   "env": {
     "es2021": true,
     "browser": true,
@@ -24,6 +27,7 @@
   "rules": {
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
+    "jsx-a11y/no-autofocus": "off",
     "react/jsx-key": "error",
     "react/prop-types": "off",
     "react/no-unused-prop-types": "off",
@@ -87,13 +91,29 @@
         ]
       }
     ],
-    "import/no-cycle": "error",
+    "import/no-cycle": "off",
+    "import/namespace": "off",
+    "import/no-unresolved": "off",
     "import/order": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
+        "message": "Default React import not allowed"
+      }
+    ],
     // TODO: review this
     "react/no-array-index-key": "off",
-    "no-restricted-syntax": "off", // loops are fine?
     "no-param-reassign": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "ignoreRestSiblings": true }
+    ],
+    "react/display-name": "off"
   },
   "overrides": [
     {
@@ -144,6 +164,9 @@
     }
   ],
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]
     },

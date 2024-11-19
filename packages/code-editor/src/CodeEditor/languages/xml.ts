@@ -280,7 +280,7 @@ export const hvXmlValidator = async (
     const errors = String(error?.message).split("parser error :");
     const lastError = errors[errors.length - 1].trim();
     const lineNumberParts = lastError.match(/(line) ([0-9]+)/);
-    const errorLine = Number(lineNumberParts?.[2]) ?? 1;
+    const errorLine = Number(lineNumberParts?.[2]) || 1;
     const cleanedError = lastError.replace(lineNumberParts?.[0] ?? "", "");
 
     return [

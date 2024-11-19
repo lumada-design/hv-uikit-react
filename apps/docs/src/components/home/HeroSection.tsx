@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { ArrowRight } from "@phosphor-icons/react";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
 const SlideText = () => {
