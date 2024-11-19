@@ -141,7 +141,6 @@ export const HvDropDownMenu = forwardRef<
 
   const [open, setOpen] = useControlled(expanded, Boolean(defaultExpanded));
   const id = useUniqueId(idProp);
-  const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
 
   const listId = setId(id, "list");
 
@@ -159,6 +158,7 @@ export const HvDropDownMenu = forwardRef<
   // If the ESCAPE key is pressed inside the list, the close handler must be called.
   const handleKeyDown: HvListProps["onKeyDown"] = (event) => {
     if (isKey(event, "Tab")) {
+      const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
       const node = event.shiftKey ? focusNodes.prevFocus : focusNodes.nextFocus;
       if (node) setTimeout(() => node.focus(), 0);
       handleClose(event);
