@@ -1,11 +1,9 @@
 import { cardClasses, HvCard } from "@hitachivantara/uikit-react-core";
 
-import { Description } from "@docs/components/component/Description";
-import { Page } from "@docs/components/component/Page";
-
-import Playground from "./Playground";
-
-import { getComponentData } from "../../utils/utils";
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Card", "core", cardClasses, [

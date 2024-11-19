@@ -1,7 +1,7 @@
 import {
-  ComponentDoc,
-  PropItem,
   withDefaultConfig,
+  type ComponentDoc,
+  type PropItem,
 } from "react-docgen-typescript";
 
 export interface Meta {
@@ -12,8 +12,8 @@ export interface Meta {
   classes: {
     [selector: string]: string;
   };
-  subComponents?: [];
-  subComponentsDocgen?: {};
+  subComponents?: string[];
+  subComponentsDocgen?: Record<string, unknown>;
 }
 
 export interface Docgen {
@@ -22,20 +22,20 @@ export interface Docgen {
   props: Record<string, PropItem>;
 }
 
-function cleanUndefinedValues(obj: any): any {
+function cleanUndefinedValues(obj: unknown): unknown {
   if (Array.isArray(obj)) {
     return obj.map(cleanUndefinedValues);
   }
   if (obj !== null && typeof obj === "object") {
     return Object.fromEntries(
-      Object.entries(obj)
-        .filter(([, v]) => v !== undefined) // Filter out undefined values
+      Object.entries(obj as Record<string, unknown>)
+        .filter(([, v]) => v !== undefined)
         .map(([k, v]) => {
           if (k === "parent" && v === undefined) {
-            return [k, null]; // Replace undefined `parent` with null
+            return [k, null];
           }
           return [k, cleanUndefinedValues(v)];
-        }), // Recursively clean nested objects
+        }),
     );
   }
   return obj;
@@ -76,22 +76,22 @@ export const getComponentData = async (
 
     const parsed: ComponentDoc[] = getParsedDocgen(path);
 
-    const cleanedDocgen = cleanUndefinedValues(parsed[0]);
+    const cleanedDocgen = cleanUndefinedValues(parsed[0]) as Docgen;
     cleanedDocgen.props = filterInheritedProps(
       cleanedDocgen.props,
       componentName,
     );
 
-    let parsedSubComponents: {} = {};
-    if (subComponents && subComponents.length) {
-      subComponents.forEach((subComponent) => {
+    let parsedSubComponents: Record<string, Docgen> = {};
+    if (subComponents?.length) {
+      for (const subComponent of subComponents) {
         const subComponentLocation = `/packages/${packageName}/src/${componentName}/${subComponent}/${subComponent}.tsx`;
         const subPath = `${process.cwd()}../../..${subComponentLocation}`;
 
         const parsedSubComponent: ComponentDoc[] = getParsedDocgen(subPath);
         const cleanedSubComponentDocgen = cleanUndefinedValues(
           parsedSubComponent[0],
-        );
+        ) as Docgen;
         cleanedSubComponentDocgen.props = filterInheritedProps(
           cleanedSubComponentDocgen.props,
           componentName,
@@ -101,7 +101,7 @@ export const getComponentData = async (
           ...parsedSubComponents,
           [subComponent]: cleanedSubComponentDocgen,
         };
-      });
+      }
     }
 
     return {
