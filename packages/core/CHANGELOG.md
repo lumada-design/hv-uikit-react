@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.82.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.2...@hitachivantara/uikit-react-core@5.82.0) (2024-11-19)
+
+### Bug Fixes
+
+- **Input:** update error color ([#4428](https://github.com/lumada-design/hv-uikit-react/issues/4428)) ([d80db47](https://github.com/lumada-design/hv-uikit-react/commit/d80db478e6a015be01548486f3aaa958af03ddd7))
+- **MultiButton:** borderRadius in sm/lg sizes ([7d90945](https://github.com/lumada-design/hv-uikit-react/commit/7d90945e4775718eced42f269bd161144ec58182))
+
+### Features
+
+- **icons:** add rotate property ([#4433](https://github.com/lumada-design/hv-uikit-react/issues/4433)) ([b5c69b2](https://github.com/lumada-design/hv-uikit-react/commit/b5c69b295a5281631e56e9982602704108b386d5))
+
 ## [5.81.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.1...@hitachivantara/uikit-react-core@5.81.2) (2024-11-14)
 
 ### Bug Fixes

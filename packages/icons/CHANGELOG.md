@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.13.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.12.10...@hitachivantara/uikit-react-icons@5.13.0) (2024-11-19)
+
+### Features
+
+- **icons:** add rotate property ([#4433](https://github.com/lumada-design/hv-uikit-react/issues/4433)) ([b5c69b2](https://github.com/lumada-design/hv-uikit-react/commit/b5c69b295a5281631e56e9982602704108b386d5))
+
 ## [5.12.10](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.12.9...@hitachivantara/uikit-react-icons@5.12.10) (2024-11-11)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-icons

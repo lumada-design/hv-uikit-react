@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.1...@hitachivantara/uikit-styles@5.40.2) (2024-11-19)
+
+### Bug Fixes
+
+- **Input:** update error color ([#4428](https://github.com/lumada-design/hv-uikit-react/issues/4428)) ([d80db47](https://github.com/lumada-design/hv-uikit-react/commit/d80db478e6a015be01548486f3aaa958af03ddd7))
+- **MultiButton:** borderRadius ([67c25d9](https://github.com/lumada-design/hv-uikit-react/commit/67c25d9abd69e8dc7cc1d99ce300848b1563b2b9))
+- **MultiButton:** borderRadius in sm/lg sizes ([7d90945](https://github.com/lumada-design/hv-uikit-react/commit/7d90945e4775718eced42f269bd161144ec58182))
+
 ## [5.40.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.0...@hitachivantara/uikit-styles@5.40.1) (2024-11-11)
 
 ### Bug Fixes

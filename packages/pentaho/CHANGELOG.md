@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.6.0...@hitachivantara/uikit-react-pentaho@0.7.0) (2024-11-19)
+
+### Bug Fixes
+
+- **SidePanel:** prevent side panel content from being selected during resize ([fb27a70](https://github.com/lumada-design/hv-uikit-react/commit/fb27a7058e9891970e2cd65488d685f896cfe2ac))
+
+### Features
+
+- **icons:** add rotate property ([#4433](https://github.com/lumada-design/hv-uikit-react/issues/4433)) ([b5c69b2](https://github.com/lumada-design/hv-uikit-react/commit/b5c69b295a5281631e56e9982602704108b386d5))
+
 # [0.6.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.5.12...@hitachivantara/uikit-react-pentaho@0.6.0) (2024-11-14)
 
 ### Bug Fixes
