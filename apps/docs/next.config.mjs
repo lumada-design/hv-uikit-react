@@ -3,7 +3,7 @@ import rehypeMdxCodeProps from "rehype-mdx-code-props";
 
 const withNextra = nextra({
   theme: "nextra-theme-docs",
-  themeConfig: "./src/theme.config.tsx",
+  themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
   mdxOptions: {
     rehypePlugins: [rehypeMdxCodeProps],

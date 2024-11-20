@@ -1,133 +1,102 @@
-import * as Reactdep from "react";
+import React, { useMemo, useState } from "react";
 import {
   CodeEditor,
   LiveError,
   LivePreview,
   LiveProvider,
 } from "react-live-runner";
-import * as emotionCss from "@emotion/css";
-import { css } from "@emotion/css";
-// import * as emotionReact from "@emotion/react";
-// import * as materialUi from "@mui/material";
-// @ts-ignore
-import { themes } from "prism-react-renderer";
+import useEditorTheme from "@docs/hooks/useEditorTheme";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
+
+import { Toolbar } from "./Toolbar";
 
 interface LiveProps {
   children: string;
 }
 
-export const classes = {
-  editor: css({
-    fontFamily:
-      "source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace",
-    fontSize: 12,
-    whiteSpace: "pre",
-    caretColor: "#fff",
-    minWidth: "100%",
-    minHeight: "100%",
-    float: "left",
-
-    "& > textarea, & > pre": {
-      outline: "none",
-      whiteSpace: "pre !important",
-    },
-  }),
-  editorContainer: css({
-    maxHeight: 300,
-    overflow: "auto",
-    borderRadius: `0 0 ${HvCore.theme.radii.round} ${HvCore.theme.radii.round}`,
-  }),
-};
-
 const imports = {
   import: {
-    react: Reactdep,
+    react: React,
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
-    "@emotion/css": emotionCss,
-    // "@emotion/react": emotionReact,
-    // "@mui/material": materialUi,
   },
 };
 
-const getHvComponents = (code: string) => {
-  const matches = code.match(/\bHv[A-Za-z0-9_]*\b/g) || [];
-  return Array.from(new Set(matches)) as string[];
+// Extract unique matches from code based on a given regex
+const extractMatches = (code: string, regex: RegExp): string[] => [
+  ...new Set((code.match(regex) || []).map((match) => match.replace(/</g, ""))),
+];
+
+// Generate the scope for LiveProvider
+const generateScope = (hvComponents: string[], hvIcons: string[]) => {
+  const components = hvComponents.reduce<Record<string, any>>((acc, name) => {
+    const component = HvCore[name as keyof typeof HvCore];
+    if (component) acc[name] = component;
+    return acc;
+  }, {});
+
+  const icons = hvIcons.reduce<Record<string, any>>((acc, name) => {
+    const icon = HvIcons[name as keyof typeof HvIcons];
+    if (icon) acc[name] = icon;
+    return acc;
+  }, {});
+
+  return { ...components, ...icons, theme: HvCore.theme };
 };
 
-const getHvIcons = (code: string) => {
-  const matches = code.match(/<(?!(Hv))[A-Z][a-zA-Z]*/g) || [];
-  const parsedIcons = matches.map((icon) => icon.replace(/</g, ""));
-  return Array.from(new Set(parsedIcons)) as string[];
-};
+export const Live = ({ children }: LiveProps) => {
+  const [initialCode] = useState(children.trimEnd());
+  const [code, setCode] = useState(initialCode);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const editorTheme = useEditorTheme();
 
-export const Live: React.FC<LiveProps> = ({ children }) => {
-  // Initialize code state with trimmed children
-  const initialCode = children.trimEnd();
-  const [code, setCode] = Reactdep.useState<string>(initialCode);
+  // Extract components and icons from the code
+  const hvComponents = useMemo(
+    () => extractMatches(code, /\bHv[A-Za-z0-9_]*\b/g),
+    [code],
+  );
+  const hvIcons = useMemo(
+    () => extractMatches(code, /<(?!(Hv))[A-Z][a-zA-Z]*/g),
+    [code],
+  );
 
-  const hvComponents = getHvComponents(code);
-  const hvIcons = getHvIcons(code);
-
-  // Memoize the creation of the scope object containing Hv components
-  const scope = Reactdep.useMemo(() => {
-    const comps = hvComponents.reduce<Record<string, any>>(
-      (acc, componentName) => {
-        const component = HvCore[componentName as keyof typeof HvCore];
-        if (component) {
-          acc[componentName] = component;
-        } else {
-          // eslint-disable-next-line no-console
-          console.warn(`Component "${componentName}" not found in HvCore.`);
-        }
-        return acc;
-      },
-      {},
-    );
-
-    const icons = hvIcons.reduce<Record<string, any>>((acc, iconName) => {
-      const icon = HvIcons[iconName as keyof typeof HvIcons];
-      if (icon) {
-        acc[iconName] = icon;
-      } else {
-        // eslint-disable-next-line no-console
-        console.warn(`Icon "${iconName}" not found in HvIcons.`);
-      }
-      return acc;
-    }, {});
-
-    const { theme } = HvCore;
-
-    return { ...comps, ...icons, theme };
-  }, [hvComponents, hvIcons]);
-
-  const handleCodeChange = (value: string) => {
-    setCode(value);
-  };
+  // Generate scope for LiveProvider
+  const scope = generateScope(hvComponents, hvIcons);
 
   return (
-    <LiveProvider
-      code={code}
-      scope={{
-        ...scope,
-        ...imports,
-      }}
-      theme={themes.oceanicNext}
-    >
-      <LivePreview className="flex gap-md p-sm mt-md border border-[var(--uikit-colors-atmo4)] rounded-t-round" />
+    <LiveProvider code={code} scope={{ ...scope, ...imports }}>
+      {/* Live Preview */}
+      <LivePreview className="flex gap-3 p-2 mt-3 border border-[var(--uikit-colors-atmo4)] border-b-0 rounded-t-round" />
 
-      <div className={classes.editorContainer}>
+      {/* Toolbar */}
+      <Toolbar
+        onToggle={() => setIsExpanded(!isExpanded)}
+        isExpanded={isExpanded}
+        code={code}
+        onReset={() => setCode(initialCode)}
+      />
+
+      {/* Code Editor */}
+      <div
+        className={`overflow-auto border-x-1 border-[var(--uikit-colors-atmo4)] rounded-b-round ${
+          isExpanded ? "border-b-transparent" : "border-b-1"
+        }`}
+        style={{
+          maxHeight: isExpanded ? "0px" : "250px",
+          transition: "max-height 0.2s ease-in-out",
+        }}
+      >
         <CodeEditor
-          className={classes.editor}
+          className="font-mono text-sm leading-2.2 border-[var(--uikit-colors-atmo4)] rounded-b-round"
           value={code}
-          onChange={handleCodeChange}
-          theme={themes.oceanicNext}
+          onChange={(value) => setCode(value)}
+          theme={editorTheme}
         />
       </div>
 
-      <LiveError className="text-xs p-3" />
+      {/* Error Display */}
+      <LiveError className="text-xs p-3 bg-red-100 text-red-700 mt-1" />
     </LiveProvider>
   );
 };

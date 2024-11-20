@@ -43,14 +43,14 @@ export const Classes = () => {
       <HvTypography className="mt-xs mb-md">
         Classes of each component are available in the Component.classes object.
       </HvTypography>
-      <HvTableContainer className="bg-transparent">
+      <HvTableContainer className="!bg-transparent">
         <HvTable>
           <HvTableHead>
-            <HvTableRow className="table-row border-atmo3 bg-transparent">
+            <HvTableRow className="table-row border-atmo3 !bg-transparent">
               {columns.map((el, i) => (
                 <HvTableHeader
                   key={el.Header}
-                  className={`bg-transparent ${i === 0 ? "pl-1" : ""}`}
+                  className={`!bg-transparent ${i === 0 ? "!pl-1" : ""}`}
                 >
                   {el.Header}
                 </HvTableHeader>
@@ -61,13 +61,13 @@ export const Classes = () => {
             {classesToShow.map((c: ClassItem) => (
               <HvTableRow
                 key={c.name}
-                className="table-row border-atmo3 bg-transparent"
+                className="table-row border-atmo3 !bg-transparent"
               >
-                <HvTableCell className="w-[25%] pl-1">
+                <HvTableCell className="w-[25%] !pl-1">
                   <HvTypography>{c.name}</HvTypography>
                 </HvTableCell>
                 <HvTableCell>
-                  <HvTypography className="text-primary_80 text-[12px]">
+                  <HvTypography className="!text-primary_80 !text-[12px]">
                     <pre>.{c.selector}</pre>
                   </HvTypography>
                 </HvTableCell>

@@ -8,11 +8,9 @@ export const Page = ({ children }: { children: React.ReactNode }) => {
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
-    if (tab === 0) return;
-
     const tocElement = document.querySelector<HTMLElement>("nav.nextra-toc");
     if (tocElement) {
-      tocElement.style.display = "none";
+      tocElement.style.display = tab === 0 ? "block" : "none";
     }
   }, [tab]);
 

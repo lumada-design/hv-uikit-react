@@ -22,8 +22,8 @@ type PropsTableProps = {
 
 const classes = {
   root: "flex flex-col",
-  row: "table-row border-b border-atmo3 bg-transparent",
-  emptyRow: "table-row border-b border-atmo3 bg-transparent justify-center",
+  row: "table-row border-b border-atmo3 !bg-transparent",
+  emptyRow: "table-row border-b border-atmo3 justify-center",
 };
 
 const reorderProps = (props: Record<string, PropItem>) =>
@@ -65,7 +65,7 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
           {columns.map((col, i) => (
             <HvTableHeader
               key={col.Header}
-              className={`bg-transparent ${i === 0 ? "pl-1" : ""}`}
+              className={`!bg-transparent ${i === 0 ? "!pl-1" : ""}`}
             >
               {col.Header}
             </HvTableHeader>
@@ -78,14 +78,14 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
         ) : (
           Object.entries(propsObj).map(([key, propItem]) => (
             <HvTableRow key={key} className={classes.row}>
-              <HvTableCell className="pl-1 w-[25%]">
+              <HvTableCell className="!pl-1 w-[25%]">
                 <HvTypography>
                   {key}
                   {propItem.required && "*"}
                 </HvTypography>
               </HvTableCell>
               <HvTableCell className="w-[30%]">
-                <HvTypography className="text-[12px] text-primary_80">
+                <HvTypography className="!text-[12px] !text-primary_80">
                   <pre className="whitespace-pre-wrap break-words">
                     {propItem.type?.name}
                   </pre>

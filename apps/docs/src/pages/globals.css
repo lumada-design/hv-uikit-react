@@ -4,20 +4,34 @@
   background-color: #151c26;
 }
 
-article > main p {
-  font-size: 1rem;
-  line-height: 1.75;
+article > main h2 {
+  @apply !border-none;
 }
 
-article > main p:not(:first-child) {
-  @apply !mt-1;
+article > main h3._mt-8 {
+  @apply mt-6;
+}
+
+article > main h3._mt-8 + p {
+  margin-top: 8px !important;
+}
+
+article > main p,
+article > main p._leading-7 {
+  font-size: 15px;
+  line-height: 24px;
 }
 
 body,
 .nextra-nav-container-blur,
 .nextra-sidebar-footer,
-.nextra-toc-footer {
+.nextra-toc-footer,
+.nextra-sidebar-container a {
   background-color: transparent;
+}
+
+.nextra-sidebar-container {
+  @apply w-[7rem];
 }
 
 .nextra-nav-container nav,
@@ -29,6 +43,10 @@ body,
   @apply px-3;
 }
 
+.nextra-nav-container + div {
+  @apply mt-4;
+}
+
 .nextra-nav-container a:last-of-type svg {
   @apply w-2.5;
 }
@@ -37,21 +55,25 @@ body,
   @apply w-2 h-2;
 }
 
-.nextra-sidebar-container li.active a {
-  @apply bg-atmo2 dark:bg-primary_20 text-slate-800 dark:text-slate-200;
-}
-
-.nextra-sidebar-container {
-  @apply w-[7rem];
+.nextra-content {
+  justify-content: unset;
 }
 
 .nextra-toc {
-  @apply pt-5;
+  @apply w-[7rem];
 }
 
-.nextra-toc .nextra-scrollbar a._text-primary-800,
-.nextra-toc .nextra-scrollbar a._text-primary-600 {
-  @apply font-semibold text-slate-600 dark:text-slate-200;
+.nextra-toc a {
+  @apply font-normal;
+}
+
+.nextra-toc p {
+  @apply shadow-none;
+}
+
+.nextra-scrollbar a._text-primary-800,
+.nextra-scrollbar a._text-primary-600 {
+  @apply font-medium text-slate-800 dark:text-slate-200;
 }
 
 .nextra-sidebar-footer,
