@@ -13,11 +13,9 @@
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
     "prettier"
   ],
-  "plugins": [],
+  "plugins": ["react"],
   "env": {
     "es2021": true,
     "browser": true,
@@ -25,18 +23,24 @@
   },
   "ignorePatterns": ["*.d.ts", "dist", "node_modules", "playwright.config.ts"],
   "rules": {
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
+    // #region React
+    "react-hooks/exhaustive-deps": "error",
     "jsx-a11y/no-autofocus": "off",
+
     "react/jsx-key": "error",
-    "react/prop-types": "off",
-    "react/no-unused-prop-types": "off",
-    "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-deprecated": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-render-return-value": "error",
+    "react/no-unescaped-entities": "error",
     "react/function-component-definition": [
       "error",
       {
-        "namedComponents": "arrow-function",
+        "namedComponents": ["arrow-function", "function-declaration"],
         "unnamedComponents": "arrow-function"
       }
     ],
@@ -53,7 +57,13 @@
         "allowNamespace": true
       }
     ],
-    "no-nested-ternary": "off",
+    // #endregion
+
+    // #region Imports
+    "import/namespace": "off",
+    "import/no-unresolved": "off",
+    // #endregion
+
     "no-restricted-imports": [
       "error",
       {
@@ -68,33 +78,7 @@
         }
       }
     ],
-    "no-plusplus": [
-      "error",
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "apps/**",
-          "docs/**",
-          "templates/**",
-          "packages/icons/**",
-          "**/*.config.ts",
-          "**/*.stories.ts?(x)",
-          "**/stories/*.ts?(x)",
-          "**/*.spec.ts?(x)",
-          "**/*.test.ts?(x)"
-        ]
-      }
-    ],
-    "import/no-cycle": "off",
-    "import/namespace": "off",
-    "import/no-unresolved": "off",
-    "import/order": "off",
+
     "no-restricted-syntax": [
       "error",
       {
@@ -103,7 +87,6 @@
       }
     ],
     // TODO: review this
-    "react/no-array-index-key": "off",
     "no-param-reassign": "off",
     "consistent-return": "off",
     "@typescript-eslint/ban-types": "off",
@@ -112,16 +95,24 @@
     "@typescript-eslint/no-unused-vars": [
       "error",
       { "ignoreRestSiblings": true }
-    ],
-    "react/display-name": "off"
+    ]
   },
   "overrides": [
     {
       // override for package source-code files
       "files": ["packages/*/src/**/*.ts?(x)"],
+      "excludedFiles": [
+        "packages/**/*.stories.ts?(x)",
+        "packages/**/*.spec.ts?(x)",
+        "packages/**/*.test.ts?(x)",
+        "packages/**/stories/**/*.ts?(x)"
+      ],
       "extends": ["plugin:ssr-friendly/recommended"],
       "rules": {
-        "no-restricted-imports": ["error", { "patterns": ["packages/**"] }]
+        "no-restricted-imports": ["error", { "patterns": ["packages/**"] }],
+        // "react/display-name": "error", // TODO: enable
+        "import/no-cycle": "error",
+        "import/no-extraneous-dependencies": "error"
       }
     },
     {
@@ -152,14 +143,7 @@
         "no-alert": "off",
         "no-console": "off",
         "no-multi-str": "off",
-        "import/no-duplicates": "off",
-        "import/no-extraneous-dependencies": "off"
-      }
-    },
-    {
-      "files": ["**/*.config.ts"],
-      "rules": {
-        "import/no-relative-packages": "off"
+        "import/no-duplicates": "off"
       }
     }
   ],
