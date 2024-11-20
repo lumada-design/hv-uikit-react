@@ -24,7 +24,7 @@ export interface HvBaseChartProps extends Pick<HvChartCommonProps, "onEvents"> {
  * Base chart.
  */
 export const HvBaseChart = forwardRef<ReactECharts, HvBaseChartProps>(
-  (props, ref) => {
+  function HvBaseChart(props, ref) {
     const { option, width, height, onEvents, ...others } = props;
 
     const { theme, activeTheme } = useVizTheme();

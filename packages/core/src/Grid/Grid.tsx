@@ -210,7 +210,11 @@ function getContainerProps(
   return containerProps;
 }
 
-const WidthGrid = forwardRef<HTMLDivElement, HvGridProps>((props, ref) => {
+const WidthGrid = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvGridProps
+>(function WidthGrid(props, ref) {
   const { container, spacing, rowSpacing, columnSpacing, columns, ...others } =
     props;
 

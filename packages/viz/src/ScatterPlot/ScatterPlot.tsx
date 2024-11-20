@@ -61,7 +61,7 @@ export interface HvScatterPlotProps
  * This type of chart is used to determine the relationship between two variables.
  */
 export const HvScatterPlot = forwardRef<ReactECharts, HvScatterPlotProps>(
-  (props, ref) => {
+  function HvScatterPlot(props, ref) {
     const {
       yAxis,
       xAxis,

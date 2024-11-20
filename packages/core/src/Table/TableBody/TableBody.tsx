@@ -5,7 +5,10 @@ import {
   useContext,
   useRef,
 } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvFocus } from "../../Focus";
 import { useForkRef } from "../../hooks/useForkRef";
@@ -50,17 +53,15 @@ const defaultComponent = "tbody";
  * `HvTableCell` and `HvTableRow` elements in it inherit body-specific styles
  */
 export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
-  (
-    {
+  function HvTableBody(props, externalRef) {
+    const {
       classes: classesProp,
       className,
       component,
       children,
       withNavigation = false,
       ...others
-    },
-    externalRef,
-  ) => {
+    } = useDefaultProps("HvTableBody", props);
     const { classes, cx } = useClasses(classesProp);
 
     const tableContext = useContext(TableContext);

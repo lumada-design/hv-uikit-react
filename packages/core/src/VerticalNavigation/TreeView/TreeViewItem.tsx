@@ -116,7 +116,10 @@ const preventSelection = (event: any, disabled: any) => {
 };
 
 export const HvVerticalNavigationTreeViewItem = forwardRef(
-  (props: HvVerticalNavigationTreeViewItemProps, ref) => {
+  function HvVerticalNavigationTreeViewItem(
+    props: HvVerticalNavigationTreeViewItemProps,
+    ref,
+  ) {
     const {
       id: idProp,
       className,

@@ -1,5 +1,8 @@
 import { forwardRef, useContext } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
 import TableContext from "../TableContext";
@@ -43,10 +46,14 @@ const defaultComponent = "thead";
  * `HvTableCell` and `HvTableRow` elements in it inherit header-specific styles
  */
 export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
-  (
-    { classes: classesProp, className, component, stickyHeader, ...others },
-    externalRef,
-  ) => {
+  function HvTableHead(props, ref) {
+    const {
+      classes: classesProp,
+      className,
+      component,
+      stickyHeader,
+      ...others
+    } = useDefaultProps("HvTableHead", props);
     const { classes, cx } = useClasses(classesProp);
 
     const tableContext = useContext(TableContext);
@@ -62,7 +69,7 @@ export const HvTableHead = forwardRef<HTMLElement, HvTableHeadProps>(
             { [classes.stickyHeader]: stickyHeader },
             className,
           )}
-          ref={externalRef}
+          ref={ref}
           role={Component === defaultComponent ? null : "rowgroup"}
           {...others}
         />

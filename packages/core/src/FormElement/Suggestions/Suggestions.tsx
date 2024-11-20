@@ -58,7 +58,7 @@ export const HvSuggestions = forwardRef<
   // no-indent
   unknown,
   HvSuggestionsProps
->((props, extRef) => {
+>(function HvSuggestions(props, extRef) {
   const {
     id: idProp,
     className,

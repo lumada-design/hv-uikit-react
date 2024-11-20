@@ -50,7 +50,7 @@ export interface HvSnackbarContentProps
 export const HvSnackbarContent = forwardRef<
   HTMLDivElement,
   HvSnackbarContentProps
->((props: HvSnackbarContentProps, ref) => {
+>(function HvSnackbarContent(props, ref) {
   const {
     className,
     id,

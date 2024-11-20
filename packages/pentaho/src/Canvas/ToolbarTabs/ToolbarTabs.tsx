@@ -86,7 +86,7 @@ export interface HvCanvasToolbarTabsProps
 export const HvCanvasToolbarTabs = forwardRef<
   HTMLDivElement,
   HvCanvasToolbarTabsProps
->((props, ref) => {
+>(function HvCanvasToolbarTabs(props, ref) {
   const {
     children,
     className,

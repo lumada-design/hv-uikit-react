@@ -23,7 +23,7 @@ interface CustomTreeItemProps extends HvTreeItemProps {
 }
 
 const LoadingItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
-  (props, ref) => {
+  function LoadingItem(props, ref) {
     const { children, nodeId, label, onOpen, onClick, ...others } = props;
     const { expanded, disabled } = useHvTreeItem(nodeId);
     const Icon = children ? Folders : Doc;

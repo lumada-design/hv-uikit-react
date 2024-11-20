@@ -37,7 +37,7 @@ const classes = {
 };
 
 const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
-  (props, ref) => {
+  function NavigationItem(props, ref) {
     const { children, nodeId, label, onOpen, onClick, ...others } = props;
     const { disabled, expanded, level } = useHvTreeItem(nodeId);
 

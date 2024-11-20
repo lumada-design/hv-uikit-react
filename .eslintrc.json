@@ -102,15 +102,16 @@
       // override for package source-code files
       "files": ["packages/*/src/**/*.ts?(x)"],
       "excludedFiles": [
-        "packages/**/*.stories.ts?(x)",
-        "packages/**/*.spec.ts?(x)",
-        "packages/**/*.test.ts?(x)",
-        "packages/**/stories/**/*.ts?(x)"
+        "*.stories.ts?(x)",
+        "*.spec.ts?(x)",
+        "*.test.ts?(x)",
+        "**/templates/**",
+        "**/stories/**"
       ],
       "extends": ["plugin:ssr-friendly/recommended"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["packages/**"] }],
-        // "react/display-name": "error", // TODO: enable
+        "react/display-name": "error",
         "import/no-cycle": "error",
         "import/no-extraneous-dependencies": "error"
       }

@@ -58,7 +58,7 @@ const defaultComponent = "td";
  * `HvTableCell` acts as a `td` element and inherits styles from its context
  */
 export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
-  (props, externalRef) => {
+  function HvTableCell(props, ref) {
     const {
       children,
       component,
@@ -91,7 +91,7 @@ export const HvTableCell = forwardRef<HTMLElement, HvTableCellProps>(
 
     return (
       <Component
-        ref={externalRef}
+        ref={ref}
         role={Component === defaultComponent ? null : "cell"}
         style={style}
         className={cx(

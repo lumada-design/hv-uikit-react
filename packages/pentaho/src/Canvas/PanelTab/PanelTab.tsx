@@ -22,7 +22,7 @@ export interface HvCanvasPanelTabProps extends TabProps {
 export const HvCanvasPanelTab = forwardRef<
   HTMLButtonElement,
   HvCanvasPanelTabProps
->((props, ref) => {
+>(function HvCanvasPanelTab(props, ref) {
   const {
     classes: classesProp,
     className,

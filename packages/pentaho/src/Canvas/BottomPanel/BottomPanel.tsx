@@ -72,7 +72,7 @@ export interface HvCanvasBottomPanelProps extends HvBaseProps {
 export const HvCanvasBottomPanel = forwardRef<
   HTMLDivElement,
   HvCanvasBottomPanelProps
->((props, ref) => {
+>(function HvCanvasBottomPanel(props, ref) {
   const {
     id: idProp,
     className,

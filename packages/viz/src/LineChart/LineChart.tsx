@@ -67,7 +67,7 @@ export interface HvLineChartProps
  * connected by straight line segments. It is a basic type of chart common in many fields.
  */
 export const HvLineChart = forwardRef<ReactECharts, HvLineChartProps>(
-  (props, ref) => {
+  function HvLineChart(props, ref) {
     const {
       area = false,
       emptyCellMode = "void",
