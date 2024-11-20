@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { CSSInterpolation } from "@emotion/serialize";
 
 import { useCss } from "../hooks/useCss";
@@ -76,9 +77,11 @@ export function createClasses<
     const { cx, css } = useCss();
 
     /** Object with the merged static+internal+external classes */
-    const classes = mapObject(styles, (key) =>
-      cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]),
-    );
+    const classes = useMemo(() => {
+      return mapObject(styles, (key) =>
+        cx(addStatic && `${name}-${key}`, css(styles[key]), classesProp?.[key]),
+      );
+    }, [addStatic, classesProp, css, cx]);
 
     return { classes, css, cx } as const;
   }
