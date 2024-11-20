@@ -37,7 +37,7 @@ export const { staticClasses, useClasses } = createClasses(
       borderRadius: "0px 16px 16px 0px",
       position: "absolute",
       transition: "left 0.3s ease",
-      top: "calc(50% - 86px)",
+      top: "calc(50% - 44px)", // subtract handle's full height
       "&$handleOpen": {
         left: 320,
       },
