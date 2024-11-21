@@ -14,6 +14,7 @@ export default {
   loading: "Loading",
   loadingContainer: "LoadingContainer",
   section: "Section",
+  select: "Select",
   tag: "Tag",
   textarea: "TextArea",
   tooltip: "Tooltip",
