@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.7.0...@hitachivantara/uikit-react-pentaho@0.7.1) (2024-11-21)
+
+### Bug Fixes
+
+- **Canvas:** panel button position ([4c17152](https://github.com/lumada-design/hv-uikit-react/commit/4c17152fc290b6fc00fbc8743cc342b693a97115))
+
 # [0.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.6.0...@hitachivantara/uikit-react-pentaho@0.7.0) (2024-11-19)
 
 ### Bug Fixes

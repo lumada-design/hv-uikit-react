@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.82.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.0...@hitachivantara/uikit-react-core@5.82.1) (2024-11-21)
+
+### Bug Fixes
+
+- **DropDownMenu:** move getPrevNextFocus for perf & ssr support ([#4441](https://github.com/lumada-design/hv-uikit-react/issues/4441)) ([101d28d](https://github.com/lumada-design/hv-uikit-react/commit/101d28d20f3779aa5043923885540d6e1e389c79))
+
 # [5.82.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.81.2...@hitachivantara/uikit-react-core@5.82.0) (2024-11-19)
 
 ### Bug Fixes
