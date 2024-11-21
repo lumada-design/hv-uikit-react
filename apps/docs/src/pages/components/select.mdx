@@ -1,0 +1,145 @@
+import {
+  HvOption,
+  HvSelect,
+  selectClasses,
+  theme,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Select", "core", selectClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvSelect}
+  componentName="HvSelect"
+  controls={{
+    label: { type: "text", defaultValue: "Country" },
+    description: { type: "text", defaultValue: "Please select a country" },
+    multiple: { type: "check", defaultValue: false },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+  componentProps={{
+    placeholder: "Select a value",
+  }}
+  children={
+    <>
+      <HvOption value="ar">Argentina</HvOption>
+      <HvOption value="bg">Belgium</HvOption>
+      <HvOption value="pt">Portugal</HvOption>
+      <HvOption value="pl">Poland</HvOption>
+      <HvOption value="sp">Spain</HvOption>
+      <HvOption value="us">United States</HvOption>
+    </>
+  }
+/>
+
+### Form
+
+To integrate `HvSelect` in a form, make sure you're giving it a `name`.
+The value result will be the selected option's `value`, or a JSON of the selected values when multi-select is enabled. The value can be customized via the `getSerializedValue` prop.
+
+```jsx live
+<form
+  onSubmit={(evt) => {
+    evt.preventDefault();
+    const formData = new FormData(evt.currentTarget);
+    alert(JSON.stringify(Object.fromEntries(formData)));
+  }}
+>
+  <HvSelect
+    multiple
+    required
+    name="countries"
+    label="Country"
+    description="Select your favorite countries"
+    placeholder="Select countries"
+    getSerializedValue={(values) => values.map((v) => v.value).join(",")}
+  >
+    <HvOption value="ar">Argentina</HvOption>
+    <HvOption value="bg">Belgium</HvOption>
+    <HvOption value="pt">Portugal</HvOption>
+    <HvOption value="pl">Poland</HvOption>
+    <HvOption value="sp">Spain</HvOption>
+    <HvOption value="us">United States</HvOption>
+  </HvSelect>
+  <br />
+  <HvButton type="submit" variant="secondarySubtle">
+    Submit
+  </HvButton>
+</form>
+```
+
+### Controlled
+
+The value and open states of `HvSelect` can be controlled by using the `value`/`onChange` and `open`/`onOpenChange` props respectively.
+
+```jsx live
+import { useState } from "react";
+import { HvButton, HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
+
+export default function Demo() {
+  const [selection, setSelection] = useState<string[]>([]);
+  const [open, setOpen] = useState(false);
+
+  const anySelected = selection.length > 0;
+
+  return (
+    <>
+      <HvSelect
+        multiple
+        required
+        open={open}
+        name="countries"
+        aria-label="Country"
+        placeholder="Select countries"
+        value={selection}
+        style={{ width: 300 }}
+        onChange={(evt, val) => setSelection(val)}
+        onOpenChange={setOpen}
+      >
+        {options.map(({ value, label, flag }) => (
+          <HvOption key={value} value={value} label={label}>
+            {`${flag} ${label}`}
+          </HvOption>
+        ))}
+      </HvSelect>
+      <HvButton
+        style={{ width: 120 }}
+        variant="secondarySubtle"
+        onClick={() => {
+          setSelection(anySelected ? [] : options.map((o) => o.value));
+        }}
+      >
+        {anySelected ? "Deselect all" : "Select all"}
+      </HvButton>
+    </>
+  );
+};
+
+const options = [
+  { value: "ar", label: "Argentina", flag: "🇦🇷" },
+  { value: "bg", label: "Belgium", flag: "🇧🇪" },
+  { value: "pt", label: "Portugal", flag: "🇵🇹" },
+  { value: "pl", label: "Poland", flag: "🇵🇱" },
+  { value: "sp", label: "Spain", flag: "🇪🇸" },
+  { value: "us", label: "United States", flag: "🇺🇸" },
+];
+```
+
+### Related components
+
+- [`HvDropdown`](/components/dropdown)
+
+</Page>
