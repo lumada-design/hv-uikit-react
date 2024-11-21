@@ -16,4 +16,5 @@ export default {
   section: "Section",
   tag: "Tag",
   textarea: "TextArea",
+  tooltip: "Tooltip",
 };
