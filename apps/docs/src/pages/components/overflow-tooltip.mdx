@@ -1,0 +1,47 @@
+import { Callout } from "nextra/components";
+import {
+  HvOverflowTooltip,
+  overflowTooltipClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "OverflowTooltip",
+    "core",
+    overflowTooltipClasses,
+  );
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Callout type="info">
+  Check out the [`HvTooltip`](/components/tooltip) component for our regular
+  tooltip component.
+</Callout>
+
+<br />
+
+<Playground
+  Component={HvOverflowTooltip}
+  componentName="HvOverflowTooltip"
+  controls={{
+    placement: { defaultValue: "top" },
+    paragraphOverflow: { defaultValue: false },
+    data: {
+      type: "text",
+      defaultValue:
+        "This is a very long text that should be cut because it so long that it doesn't fit",
+    },
+  }}
+  decorator={(component) => <div className="max-w-160px">{component}</div>}
+/>
+
+</Page>

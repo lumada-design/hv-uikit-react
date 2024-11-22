@@ -11,6 +11,7 @@ type PlaygroundProps = {
   componentProps?: Record<string, unknown>;
   controls: Record<string, Control>;
   children?: React.ReactNode;
+  decorator?: (component: JSX.Element) => JSX.Element;
 };
 
 const generateCode = (
@@ -53,6 +54,7 @@ const Playground = ({
   componentProps,
   controls = {},
   children,
+  decorator,
 }: PlaygroundProps) => {
   const editorTheme = useEditorTheme();
 
@@ -85,15 +87,19 @@ const Playground = ({
     children,
   );
 
+  const componentElement = (
+    <Component {...componentProps} {...dynamicProps}>
+      {children}
+    </Component>
+  );
+
   return (
     <>
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border border-[var(--uikit-colors-atmo4)] rounded-t-round">
         {/* Preview Area */}
         <div className="flex justify-center items-center p-sm">
-          <Component {...componentProps} {...dynamicProps}>
-            {children}
-          </Component>
+          {decorator ? decorator(componentElement) : componentElement}
         </div>
 
         {/* Controls Area */}
