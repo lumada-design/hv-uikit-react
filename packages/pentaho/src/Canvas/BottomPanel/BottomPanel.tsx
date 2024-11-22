@@ -13,6 +13,7 @@ import {
   useUniqueId,
 } from "@hitachivantara/uikit-react-core";
 
+import { useCanvasContext } from "../CanvasContext";
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
 import { staticClasses, useClasses } from "./BottomPanel.styles";
@@ -91,6 +92,9 @@ export const HvCanvasBottomPanel = forwardRef<
 
   const { classes, cx } = useClasses(classesProp);
 
+  const canvasContext = useCanvasContext();
+  const sidePanelWidth = canvasContext?.sidePanelWidth ?? 0;
+
   const id = useUniqueId(idProp);
 
   // Tab resize detector: to position tab actions and set the panel top right border radius
@@ -158,6 +162,10 @@ export const HvCanvasBottomPanel = forwardRef<
         },
         className,
       )}
+      style={{
+        width: `calc(100% - ${sidePanelWidth}px - 2 * ${theme.space.sm})`,
+        right: theme.space.sm,
+      }}
       {...others}
     >
       <div className={classes.tabsRoot}>

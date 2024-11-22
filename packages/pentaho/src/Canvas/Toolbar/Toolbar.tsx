@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { mergeStyles } from "packages/utils/src";
 import {
   ExtractNames,
   HvBaseProps,
@@ -10,6 +11,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Previous } from "@hitachivantara/uikit-react-icons";
 
+import { useCanvasContext } from "../CanvasContext";
 import { staticClasses, useClasses } from "./Toolbar.styles";
 
 export { staticClasses as canvasToolbarClasses };
@@ -46,6 +48,7 @@ export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
       backButton,
       labels: labelsProp,
       className,
+      style,
       children,
       backButtonProps,
       classes: classesProp,
@@ -55,6 +58,9 @@ export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
     const { classes, cx } = useClasses(classesProp);
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
+    const canvasContext = useCanvasContext();
+    const sidePanelWidth = canvasContext?.sidePanelWidth ?? 0;
+
     const title =
       typeof titleProp === "string" ? (
         <HvTypography variant="title4">{titleProp}</HvTypography>
@@ -63,7 +69,14 @@ export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
       );
 
     return (
-      <div ref={ref} className={cx(classes.root, className)} {...others}>
+      <div
+        ref={ref}
+        className={cx(classes.root, className)}
+        style={mergeStyles(style, {
+          "--sidepanel-width": `${sidePanelWidth}px`,
+        })}
+        {...others}
+      >
         <div className={classes.back}>
           {backButton ?? (
             <HvIconButton

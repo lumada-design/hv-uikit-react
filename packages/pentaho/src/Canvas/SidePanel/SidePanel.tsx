@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 import {
   ExtractNames,
   HvBaseProps,
@@ -11,6 +11,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { End } from "@hitachivantara/uikit-react-icons";
 
+import { useCanvasContext } from "../CanvasContext";
 import { HvCanvasPanelTab } from "../PanelTab";
 import { HvCanvasPanelTabs, HvCanvasPanelTabsProps } from "../PanelTabs";
 import { staticClasses, useClasses } from "./SidePanel.styles";
@@ -26,7 +27,7 @@ const DEFAULT_LABELS = {
 };
 
 export interface HvCanvasSidePanelProps
-  extends HvBaseProps<HTMLDivElement, "onToggle"> {
+  extends HvBaseProps<HTMLDivElement, "onToggle" | "onResize"> {
   /** When controlled, defines id the panel is open or not. */
   open?: boolean;
   /** When uncontrolled, defines the initial state of the panel. */
@@ -50,6 +51,14 @@ export interface HvCanvasSidePanelProps
   ) => void;
   /** An object containing all the labels. */
   labels?: Partial<typeof DEFAULT_LABELS>;
+  /** The minimum width of the side panel. */
+  minWidth?: number;
+  /** The maximum width of the side panel. */
+  maxWidth?: number;
+  /** The initial width of the side panel. */
+  initialWidth?: number;
+  /** Callback triggered when the panel width changes. */
+  onResize?: (width: number) => void;
   /** The content that will be rendered within the canvas panel. */
   children?: React.ReactNode;
   /** A Jss Object used to override or extend the styles applied. */
@@ -72,6 +81,10 @@ export const HvCanvasSidePanel = forwardRef<
     onToggle,
     onTabChange,
     labels: labelsProp,
+    minWidth = 100,
+    maxWidth = 500,
+    initialWidth = 320,
+    onResize,
     className,
     children,
     classes: classesProp,
@@ -79,6 +92,11 @@ export const HvCanvasSidePanel = forwardRef<
   } = useDefaultProps("HvCanvasSidePanel", props);
 
   const id = useUniqueId(idProp);
+
+  const canvasContext = useCanvasContext();
+  const handleSidePanelWidth = canvasContext?.handleSidePanelWidth;
+  const sidePanelOpen = canvasContext?.sidePanelOpen;
+  const handleSidePanelOpen = canvasContext?.handleSidePanelOpen;
 
   const { classes, cx } = useClasses(classesProp);
 
@@ -90,16 +108,28 @@ export const HvCanvasSidePanel = forwardRef<
     tabs?.[0]?.id ?? "none",
   );
 
+  useEffect(() => {
+    handleSidePanelWidth?.(initialWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialWidth]);
+
+  const updateWidth = (width: number) => {
+    handleSidePanelWidth?.(width);
+    onResize?.(width);
+  };
+
   const { width, isDragging, getContainerProps, getSeparatorProps } =
     useResizable({
       ref,
-      initialWidth: 320,
-      minWidth: 100,
-      maxWidth: 500,
+      initialWidth,
+      minWidth,
+      maxWidth,
+      onResize: updateWidth,
     });
 
   const handleTogglePanel = (event: React.MouseEvent | React.KeyboardEvent) => {
     setOpen((prev) => !prev);
+    handleSidePanelOpen?.(!sidePanelOpen);
     onToggle?.(event, !open);
   };
 

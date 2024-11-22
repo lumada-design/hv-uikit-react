@@ -16,9 +16,10 @@ interface SeparatorProps {
 
 interface ResizableProps {
   ref: any;
-  initialWidth?: number;
-  minWidth?: number;
-  maxWidth?: number;
+  initialWidth: number;
+  minWidth: number;
+  maxWidth: number;
+  onResize?: (width: number) => void;
 }
 
 export const useResizable = (
@@ -29,12 +30,7 @@ export const useResizable = (
   getContainerProps: (overrides: any) => ContainerProps;
   getSeparatorProps: () => SeparatorProps;
 } => {
-  const {
-    ref,
-    initialWidth = 320,
-    minWidth = 100,
-    maxWidth = 600,
-  } = resizableOptions;
+  const { ref, initialWidth, minWidth, maxWidth, onResize } = resizableOptions;
 
   const [width, setWidth] = useState(initialWidth);
   const [isHover, setIsHover] = useState(false);
@@ -50,6 +46,7 @@ export const useResizable = (
       const newWidth = event.clientX - rect.left;
       if (newWidth >= minWidth && newWidth <= maxWidth) {
         setWidth(newWidth);
+        onResize?.(newWidth);
       }
     }
   };

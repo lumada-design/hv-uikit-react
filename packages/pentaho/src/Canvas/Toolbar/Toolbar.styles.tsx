@@ -2,14 +2,14 @@ import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
   root: {
-    width: "100%",
+    width: `calc(100% - var(--sidepanel-width) - 2 * ${theme.space.sm})`,
     height: 54,
     display: "flex",
     alignItems: "center",
     borderRadius: theme.radii.full,
     backgroundColor: theme.colors.atmo1,
     position: "absolute",
-    right: 0,
+    right: theme.space.sm,
     top: 0,
     transition: "width 0.3s ease",
   },
