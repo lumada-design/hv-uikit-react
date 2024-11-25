@@ -92,11 +92,11 @@ export const buildFormElementPropsFromContext = (
   context?: HvFormElementContextValue,
 ) => {
   return {
-    name: name || context?.elementName,
-    disabled: disabled !== undefined ? disabled : context?.elementDisabled,
-    readOnly: readOnly !== undefined ? readOnly : context?.elementReadOnly,
-    required: required !== undefined ? required : context?.elementRequired,
-    status: context?.elementStatus,
+    name: name || context?.name,
+    disabled: disabled ?? context?.disabled,
+    readOnly: readOnly ?? context?.readOnly,
+    required: required ?? context?.required,
+    status: context?.status,
   };
 };
 

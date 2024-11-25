@@ -38,9 +38,9 @@ export const HvInfoMessage = (props: HvInfoMessageProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const disabled = disabledProp ?? elementDisabled;
-  const id = idProp ?? setId(elementId, "description");
+  const context = useContext(HvFormElementContext);
+  const disabled = disabledProp ?? context.disabled;
+  const id = idProp ?? setId(context.id, "description");
 
   return (
     <HvTypography

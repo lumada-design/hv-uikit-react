@@ -196,9 +196,9 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
     id,
     name,
 
-    required = false,
-    disabled = false,
-    readOnly = false,
+    required,
+    disabled,
+    readOnly,
 
     label,
     "aria-label": ariaLabel,

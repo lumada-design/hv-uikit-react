@@ -55,7 +55,6 @@ import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvTooltip } from "../Tooltip";
-import { HvInputSuggestion, HvValidationMessages } from "../types/forms";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Input.styles";
@@ -65,6 +64,25 @@ export { staticClasses as inputClasses };
 export type HvInputClasses = ExtractNames<typeof useClasses>;
 
 type InputElement = HTMLInputElement | HTMLTextAreaElement;
+
+export interface HvValidationMessages {
+  /** The value when a validation fails. */
+  error?: string;
+  /** The message that appears when there are too many characters. */
+  maxCharError?: string;
+  /** The message that appears when there are too few characters. */
+  minCharError?: string;
+  /** The message that appears when the input is empty and required. */
+  requiredError?: string;
+  /** The message that appears when the input is value is incompatible with the expected type. */
+  typeMismatchError?: string;
+}
+
+export interface HvInputSuggestion {
+  id: string;
+  label: string;
+  value?: string;
+}
 
 export interface HvInputProps
   extends Omit<HvBaseInputProps, "onBlur" | "onFocus" | "onKeyDown"> {
@@ -241,9 +259,9 @@ export const HvInput = forwardRef<
     name,
     value: valueProp,
     defaultValue = "",
-    required = false,
-    readOnly = false,
-    disabled = false,
+    required,
+    readOnly,
+    disabled,
     enablePortal = false,
     suggestOnFocus = false,
     label,

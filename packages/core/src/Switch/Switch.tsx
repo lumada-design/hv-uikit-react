@@ -135,9 +135,9 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       id,
       name,
       value = "on",
-      required = false,
-      readOnly = false,
-      disabled = false,
+      required,
+      readOnly,
+      disabled,
 
       label,
       "aria-label": ariaLabel,
@@ -165,10 +165,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
 
     const elementId = useUniqueId(id);
 
-    const [isChecked, setIsChecked] = useControlled(
-      checked,
-      Boolean(defaultChecked),
-    );
+    const [isChecked, setIsChecked] = useControlled(checked, defaultChecked);
 
     const [validationState, setValidationState] = useControlled<HvFormStatus>(
       status,

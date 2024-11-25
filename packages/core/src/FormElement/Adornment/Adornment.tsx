@@ -56,19 +56,17 @@ export const HvAdornment = forwardRef<
     classes: classesProp,
     className,
     icon,
-    showWhen = undefined,
+    showWhen,
     onClick,
-    isVisible = undefined,
+    isVisible,
     ...others
   } = useDefaultProps("HvAdornment", props);
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementStatus = "", elementDisabled } =
-    useContext(HvFormElementContext);
+  const { status, disabled } = useContext(HvFormElementContext);
   const { input } = useContext(HvFormElementDescriptorsContext);
 
-  const displayIcon =
-    isVisible ?? (showWhen === undefined || elementStatus === showWhen);
+  const displayIcon = isVisible ?? (showWhen == null || status === showWhen);
 
   const isClickable = !!onClick;
 
@@ -86,14 +84,14 @@ export const HvAdornment = forwardRef<
         classes.adornmentButton,
         {
           [classes.hideIcon]: !displayIcon,
-          [classes.disabled]: elementDisabled,
+          [classes.disabled]: disabled,
         },
         className,
       )}
       onClick={onClick}
       onMouseDown={(event) => event.preventDefault()}
       onKeyDown={noop}
-      disabled={elementDisabled}
+      disabled={disabled}
       {...others}
     >
       <div className={classes.icon}>{icon}</div>
@@ -108,7 +106,7 @@ export const HvAdornment = forwardRef<
         classes.adornmentIcon,
         {
           [classes.hideIcon]: !displayIcon,
-          [classes.disabled]: elementDisabled,
+          [classes.disabled]: disabled,
         },
         className,
       )}

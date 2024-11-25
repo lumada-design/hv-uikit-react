@@ -42,41 +42,41 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
     currentCharQuantity = 0,
     classes: classesProp,
     className,
-    id,
-    disabled,
+    id: idProp,
+    disabled: disabledProp,
     disableGutter = false,
     ...others
   } = useDefaultProps("HvCharCounter", props);
 
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const localDisabled = disabled || elementDisabled;
-  const localId = id ?? setId(elementId, "counter");
-  const currentId = setId(localId, "currentQuantity");
-  const maxQuantityId = setId(localId, "maxQuantity");
+  const context = useContext(HvFormElementContext);
+  const disabled = disabledProp ?? context.disabled;
+  const id = idProp ?? setId(context.id, "counter");
+  const currentId = setId(id, "currentQuantity");
+  const maxQuantityId = setId(id, "maxQuantity");
   const isOverloaded = currentCharQuantity > maxCharQuantity;
 
   return (
     <div
-      id={localId}
+      id={id}
       className={cx(
         classes.root,
         {
-          [classes.counterDisabled]: !!localDisabled,
+          [classes.counterDisabled]: disabled,
           [classes.gutter]: !disableGutter,
         },
         className,
       )}
       aria-live="polite"
-      aria-disabled={localDisabled}
+      aria-disabled={disabled}
       {...others}
     >
       <HvTypography
         id={currentId}
         className={cx({
-          [classes.overloaded]: isOverloaded && !localDisabled,
-          [classes.counterDisabled]: !!localDisabled,
+          [classes.overloaded]: isOverloaded && !disabled,
+          [classes.counterDisabled]: disabled,
         })}
         variant="label"
         component="label"
@@ -86,8 +86,8 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
       <HvTypography
         id={maxQuantityId}
         className={cx({
-          [classes.overloaded]: isOverloaded && !localDisabled,
-          [classes.counterDisabled]: !!localDisabled,
+          [classes.overloaded]: isOverloaded && !disabled,
+          [classes.counterDisabled]: disabled,
         })}
         variant="body"
         component="label"

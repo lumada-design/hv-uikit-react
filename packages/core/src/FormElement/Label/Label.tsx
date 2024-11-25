@@ -34,37 +34,35 @@ export interface HvLabelProps extends HvTypographyProps<"label"> {
  */
 export const HvLabel = (props: HvLabelProps) => {
   const {
-    id,
+    id: idProp,
     classes: classesProp,
     className,
     children,
     label,
-    disabled,
-    required,
+    disabled: disabledProp,
+    required: requiredProp,
     htmlFor: htmlForProp,
     ...others
   } = useDefaultProps("HvLabel", props);
 
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementId, elementDisabled, elementRequired } =
-    useContext(HvFormElementContext);
+  const context = useContext(HvFormElementContext);
 
-  const localDisabled = disabled || elementDisabled;
-  const localRequired = required || elementRequired;
-
-  const localId = id ?? setId(elementId, "label");
+  const disabled = disabledProp ?? context.disabled;
+  const required = requiredProp ?? context.required;
+  const id = idProp ?? setId(context.id, "label");
 
   const forId = htmlForProp || findDescriptors(children)?.input?.[0]?.id;
 
   return (
     <>
       <HvTypography
-        id={localId}
+        id={id}
         className={cx(
           classes.root,
           {
-            [classes.labelDisabled]: !!localDisabled,
+            [classes.labelDisabled]: !!disabled,
             [classes.childGutter]: !!(children && label),
           },
           className,
@@ -75,7 +73,7 @@ export const HvLabel = (props: HvLabelProps) => {
         {...others}
       >
         {label}
-        {localRequired && <span aria-hidden="true">*</span>}
+        {required && <span aria-hidden="true">*</span>}
       </HvTypography>
       {children}
     </>

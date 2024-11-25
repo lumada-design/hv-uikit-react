@@ -37,7 +37,7 @@ export const computeValidationType = (type: React.HTMLInputTypeAttribute) => {
  * Checks whether any integrated validation, native or not, is active.
  */
 export const hasBuiltInValidations = (
-  required: boolean,
+  required: boolean | undefined,
   validationType: React.HTMLInputTypeAttribute,
   minCharQuantity: number | null | undefined,
   maxCharQuantity: number | null | undefined,
@@ -119,7 +119,7 @@ export const computeValidationMessage = (
 export const validateInput = (
   input: HTMLInputElement | HTMLTextAreaElement | null,
   value: string,
-  required: boolean,
+  required: boolean | undefined,
   minCharQuantity: any,
   maxCharQuantity: any,
   validationType: string,
@@ -188,19 +188,9 @@ export const validateInput = (
   return inputValidity;
 };
 
-export type HvInputValidity = {
-  valid?: boolean;
-  badInput?: boolean;
-  customError?: boolean;
-  patternMismatch?: boolean;
-  rangeOverflow?: boolean;
-  rangeUnderflow?: boolean;
-  stepMismatch?: boolean;
-  tooLong?: boolean;
-  tooShort?: boolean;
-  typeMismatch?: boolean;
-  valueMissing?: boolean;
-};
+type Mutable<T> = { -readonly [P in keyof T]: T[P] };
+
+export interface HvInputValidity extends Partial<Mutable<ValidityState>> {}
 
 export const DEFAULT_ERROR_MESSAGES = {
   error: "Invalid value",

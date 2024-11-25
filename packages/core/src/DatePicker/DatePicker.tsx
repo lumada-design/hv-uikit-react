@@ -149,8 +149,8 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
       id,
       name,
 
-      required = false,
-      disabled = false,
+      required,
+      disabled,
       readOnly,
 
       label,
@@ -181,8 +181,8 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
       startAdornment,
       horizontalPlacement = "right",
       locale: localeProp,
-      showActions = false,
-      showClear = false,
+      showActions,
+      showClear,
       disablePortal = true,
       escapeWithReference = true,
       dropdownProps = {},

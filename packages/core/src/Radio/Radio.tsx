@@ -139,9 +139,9 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       id,
       name,
       value = "on",
-      required = false,
-      readOnly = false,
-      disabled = false,
+      required,
+      readOnly,
+      disabled,
       label,
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
@@ -153,7 +153,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       status = "standBy",
       statusMessage,
       "aria-errormessage": ariaErrorMessage,
-      semantic = false,
+      semantic,
       inputProps,
       onFocusVisible,
       onBlur,
@@ -182,10 +182,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       [onBlur],
     );
 
-    const [isChecked, setIsChecked] = useControlled(
-      checked,
-      Boolean(defaultChecked),
-    );
+    const [isChecked, setIsChecked] = useControlled(checked, defaultChecked);
 
     const onLocalChange = useCallback(
       (evt: React.ChangeEvent<HTMLInputElement>, newChecked: boolean) => {

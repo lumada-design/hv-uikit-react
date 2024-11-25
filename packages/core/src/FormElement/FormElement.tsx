@@ -10,6 +10,7 @@ import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   HvFormElementValueContext,
+  type HvFormElementContextValue,
 } from "./context";
 import { staticClasses, useClasses } from "./FormElement.styles";
 import { findDescriptors } from "./utils";
@@ -21,13 +22,8 @@ export type HvFormElementClasses = ExtractNames<typeof useClasses>;
 export type HvFormStatus = "standBy" | "valid" | "invalid" | "empty";
 
 export interface HvFormElementProps
-  extends HvBaseProps<HTMLDivElement, "onChange" | "onToggle"> {
-  /**
-   * Name of the form element.
-   *
-   * Part of a name/value pair, should be the name property of the underling native input.
-   */
-  name?: string;
+  extends HvFormElementContextValue,
+    HvBaseProps<HTMLDivElement, "onChange" | "onToggle"> {
   /**
    * Current value of the form element.
    *
@@ -43,21 +39,6 @@ export interface HvFormElementProps
   label?: React.ReactNode;
   /** Provide additional descriptive text for the form element. */
   description?: React.ReactNode;
-  /** Whether the form element is disabled. */
-  disabled?: boolean;
-  /** Indicates that the form element is not editable. */
-  readOnly?: boolean;
-  /** Indicates that user input is required on the form element. */
-  required?: boolean;
-  /**
-   * The status of the form element.
-   *
-   * Valid is correct, invalid is incorrect and standBy means no validations have run.
-   *
-   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
-   * or "invalid" after any change to the state.
-   */
-  status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
   /** The callback fired when the value changes. */
@@ -66,35 +47,34 @@ export interface HvFormElementProps
   classes?: HvFormElementClasses;
 }
 
+/**
+ * Provides form-related context (ie. required/disabled/readOnly) for building form components,
+ * analogous to MUI's [`FormControl`](https://mui.com/material-ui/api/form-control/) component.
+ *
+ * It is used internally to build UI Kit's form components (eg. `HvInput`, `HvDatePicker`), and can be used to build custom form components.
+ */
 export const HvFormElement = (props: HvFormElementProps) => {
   const {
     classes: classesProp,
     className,
     children,
-    id,
+    id: idProp,
     name,
     value,
-    disabled = false,
-    required = false,
-    readOnly = false,
+    disabled,
+    required,
+    readOnly,
     status = "standBy",
     ...others
   } = useDefaultProps("HvFormElement", props);
 
   const { classes, cx } = useClasses(classesProp);
 
-  const elementId = useUniqueId(id);
+  const id = useUniqueId(idProp);
 
-  const contextValue = useMemo(
-    () => ({
-      elementId,
-      elementName: name,
-      elementStatus: status,
-      elementDisabled: disabled,
-      elementRequired: required,
-      elementReadOnly: readOnly,
-    }),
-    [disabled, elementId, name, readOnly, required, status],
+  const contextValue = useMemo<HvFormElementContextValue>(
+    () => ({ id, name, status, disabled, required, readOnly }),
+    [id, name, status, disabled, required, readOnly],
   );
 
   const descriptors = useMemo(() => findDescriptors(children), [children]);

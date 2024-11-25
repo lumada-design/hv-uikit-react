@@ -36,7 +36,7 @@ import {
 } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvValidationMessages } from "../types/forms";
+import type { HvValidationMessages } from "../Input";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TextArea.styles";
 
@@ -184,14 +184,14 @@ export const HvTextArea = forwardRef<
     middleCountLabel = "/",
     countCharProps = {},
     inputProps = {},
-    required = false,
-    readOnly = false,
-    disabled = false,
-    autoFocus = false,
-    resizable = false,
-    autoScroll = false,
-    hideCounter = false,
-    blockMax = false,
+    required,
+    readOnly,
+    disabled,
+    autoFocus,
+    resizable,
+    autoScroll,
+    hideCounter,
+    blockMax,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     "aria-describedby": ariaDescribedBy,

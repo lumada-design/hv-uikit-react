@@ -120,9 +120,9 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
 
       id: idProp,
       name,
-      required = false,
-      disabled = false,
-      readOnly = false,
+      required,
+      disabled,
+      readOnly,
       label,
 
       "aria-label": ariaLabel,
