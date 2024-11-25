@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
 import useEditorTheme from "@docs/hooks/useEditorTheme";
@@ -16,43 +16,36 @@ type PlaygroundProps = {
 
 const generateCode = (
   componentName: string,
-  propsState: Record<string, string>,
-  componentProps: Record<string, string>,
-  children: React.ReactNode,
+  componentProps: Record<string, unknown> = {},
+  children?: React.ReactNode,
 ): string => {
-  // Helper function to format component attributes
-  const formatAttributes = (props: Record<string, string>) => {
-    return Object.entries(props)
-      .filter(
-        ([key, value]) =>
-          key !== "style" && (typeof value !== "boolean" || value),
-      )
-      .map(([key, value]) =>
-        typeof value === "boolean" ? key : `${key}="${value}"`,
-      )
-      .join(" ");
-  };
-
   // Format props and componentProps into strings
-  const propsString = formatAttributes(propsState);
-  const componentPropsString = formatAttributes(componentProps || {});
+  const parsedPropsString = Object.entries(componentProps)
+    .filter(([key]) => key !== "style")
+    .map(([key, value]) => {
+      if (typeof value === "string") return `${key}="${value}"`;
+      if (typeof value === "boolean") return value ? key : `${key}={false}`;
+      return `${key}={${JSON.stringify(value)}}`;
+    })
+    .filter(Boolean)
+    .map((str) => `  ${str}\n`)
+    .join("");
+  const componentPropsString = parsedPropsString && `\n${parsedPropsString}`;
 
   // Handle children content
-  let childrenString = "";
-  if (React.isValidElement(children)) {
-    childrenString = jsxToString(children);
-  } else if (typeof children === "string") {
-    childrenString = children;
-  }
+  const childrenString =
+    (isValidElement(children) && jsxToString(children)) ||
+    (children === "string" && children) ||
+    "";
 
   // Generate and return the final code
   if (childrenString) {
-    return `<${componentName} ${propsString} ${componentPropsString}>
-${childrenString}
+    return `<${componentName} ${componentPropsString}>
+  ${String(childrenString).replaceAll("\n", "\n  ")}
 </${componentName}>`;
   }
 
-  return `<${componentName} ${propsString} ${componentPropsString} />`.trim();
+  return `<${componentName} ${componentPropsString}/>`.trim();
 };
 
 const Playground = ({
@@ -90,11 +83,8 @@ const Playground = ({
   // Generate the code representation for the component
   const code = generateCode(
     componentName,
-    Object.fromEntries(
-      Object.entries(dynamicProps).map(([key, value]) => [key, String(value)]),
-    ),
-    (componentProps as Record<string, string>) || {},
-    children || "",
+    { ...dynamicProps, ...componentProps },
+    children,
   );
 
   return (

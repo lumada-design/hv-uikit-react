@@ -45,13 +45,14 @@ export const Controls = ({
   const cleanValue = (value: string) => value.replace(/"/g, "");
 
   // Utility to extract options from prop metadata
-  const getOptions = () => propMeta?.type?.value || [];
+  const getOptions = (): OptionType[] => propMeta?.type?.value || [];
 
   // Find the index of the current value in the options
   const findCurrentIndex = (value: string) =>
-    getOptions().findIndex(
-      (opt: OptionType) => cleanValue(opt.value) === value,
-    ) + 1;
+    getOptions().findIndex((opt) => cleanValue(opt.value) === value) + 1;
+
+  // TODO: consider adding `capitalize` or  `nextra-code`
+  const propLabel = <code>{prop}</code>;
 
   // Render slider control for enum types with multiple options
   const renderSliderControl = () => {
@@ -60,7 +61,7 @@ export const Controls = ({
 
     return (
       <HvSlider
-        label={prop}
+        label={propLabel}
         hideInput
         minPointValue={1}
         maxPointValue={max}
@@ -87,13 +88,13 @@ export const Controls = ({
   // Render radio button group for enum types
   const renderRadioControl = () => (
     <HvRadioGroup
-      label={prop}
+      label={propLabel}
       orientation="horizontal"
       value={state[prop] || control.defaultValue}
       onChange={(e, value) => onChange(prop, value)}
       className="w-full"
     >
-      {getOptions().map((v: OptionType) => {
+      {getOptions().map((v) => {
         const value = cleanValue(v.value);
         return <HvRadio key={value} label={value} value={value} />;
       })}
@@ -105,11 +106,11 @@ export const Controls = ({
     <HvSelect
       key={prop}
       value={state[prop] || control.defaultValue}
-      label={prop}
+      label={propLabel}
       className="w-full min-w-[100px]"
       onChange={(e, value) => onChange(prop, value ?? "")}
     >
-      {getOptions().map((v: OptionType) => {
+      {getOptions().map((v) => {
         const value = cleanValue(v.value);
         return (
           <HvOption value={value} key={value} label={value}>
@@ -124,7 +125,7 @@ export const Controls = ({
   const renderCheckboxControl = () => (
     <HvCheckBox
       key={prop}
-      label={prop}
+      label={propLabel}
       checked={!!state[prop]}
       onChange={(e, value) => onChange(prop, value)}
     />
@@ -134,7 +135,7 @@ export const Controls = ({
   const renderInputControl = () => (
     <HvInput
       key={prop}
-      label={prop}
+      label={propLabel}
       value={String(state[prop] || control.defaultValue)}
       onChange={(e, value) => onChange(prop, value)}
       className="w-full"
@@ -145,7 +146,7 @@ export const Controls = ({
   const renderColorControl = () => (
     <HvColorPicker
       key={prop}
-      label={prop}
+      label={propLabel}
       value={
         typeof state[prop] === "string" && state[prop].includes("#")
           ? state[prop]
