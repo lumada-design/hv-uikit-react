@@ -64,12 +64,12 @@ export const Classes = () => {
                 className="table-row border-atmo3 !bg-transparent"
               >
                 <HvTableCell className="w-[25%] !pl-1">
-                  <HvTypography>{c.name}</HvTypography>
+                  <code>{c.name}</code>
                 </HvTableCell>
                 <HvTableCell>
-                  <HvTypography className="!text-primary_80 !text-[12px]">
-                    <pre>.{c.selector}</pre>
-                  </HvTypography>
+                  <pre className="!text-primary_80 !text-[12px]">
+                    {`.${c.selector}`}
+                  </pre>
                 </HvTableCell>
               </HvTableRow>
             ))}

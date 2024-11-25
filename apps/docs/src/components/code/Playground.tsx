@@ -2,7 +2,6 @@ import { isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
 import useEditorTheme from "@docs/hooks/useEditorTheme";
-import { useData } from "nextra/hooks";
 
 import { Controls, type Control } from "./Controls";
 
@@ -55,7 +54,6 @@ const Playground = ({
   controls = {},
   children,
 }: PlaygroundProps) => {
-  const controlData = useData();
   const editorTheme = useEditorTheme();
 
   // Initialize dynamic props with default values from controls
@@ -109,7 +107,6 @@ const Playground = ({
                 prop={prop}
                 state={dynamicProps}
                 control={control}
-                data={controlData}
                 onChange={updatePropValue}
               />
             );

@@ -1,17 +1,11 @@
-import {
-  withDefaultConfig,
-  type ComponentDoc,
-  type PropItem,
-} from "react-docgen-typescript";
+import { withDefaultConfig, type Props } from "react-docgen-typescript";
 
 export interface Meta {
   component: string;
   source: string;
   package: string;
   docgen: Docgen;
-  classes: {
-    [selector: string]: string;
-  };
+  classes: Record<string, string>;
   subComponents?: string[];
   subComponentsDocgen?: Record<string, unknown>;
 }
@@ -19,7 +13,7 @@ export interface Meta {
 export interface Docgen {
   description: string;
   displayName: string;
-  props: Record<string, PropItem>;
+  props: Props;
 }
 
 function cleanUndefinedValues(obj: unknown): unknown {
@@ -41,10 +35,7 @@ function cleanUndefinedValues(obj: unknown): unknown {
   return obj;
 }
 
-function filterInheritedProps(
-  props: Record<string, PropItem>,
-  componentName: string,
-) {
+function filterInheritedProps(props: Props, componentName: string) {
   return Object.fromEntries(
     Object.entries(props).filter(([, prop]) => {
       const shouldInclude = prop.parent
@@ -55,26 +46,27 @@ function filterInheritedProps(
   );
 }
 
+const parser = withDefaultConfig({
+  shouldExtractLiteralValuesFromEnum: true,
+  savePropValueAsString: true,
+});
+
 const getParsedDocgen = (path: string) => {
-  const parser = withDefaultConfig({
-    shouldExtractLiteralValuesFromEnum: true,
-    savePropValueAsString: true,
-  });
   return parser.parse(path);
 };
 
 export const getComponentData = async (
   componentName: string,
   packageName: string,
-  classes: { [selector: string]: string },
+  classes: Record<string, string>,
   subComponents?: string[],
-) => {
+): Promise<Meta> => {
   try {
     const componentLocation = `/packages/${packageName}/src/${componentName}/${componentName}.tsx`;
     const path = `${process.cwd()}../../..${componentLocation}`;
     const source = `https://github.com/lumada-design/hv-uikit-react/blob/master${componentLocation}`;
 
-    const parsed: ComponentDoc[] = getParsedDocgen(path);
+    const parsed = getParsedDocgen(path);
 
     const cleanedDocgen = cleanUndefinedValues(parsed[0]) as Docgen;
     cleanedDocgen.props = filterInheritedProps(
@@ -88,7 +80,7 @@ export const getComponentData = async (
         const subComponentLocation = `/packages/${packageName}/src/${componentName}/${subComponent}/${subComponent}.tsx`;
         const subPath = `${process.cwd()}../../..${subComponentLocation}`;
 
-        const parsedSubComponent: ComponentDoc[] = getParsedDocgen(subPath);
+        const parsedSubComponent = getParsedDocgen(subPath);
         const cleanedSubComponentDocgen = cleanUndefinedValues(
           parsedSubComponent[0],
         ) as Docgen;
@@ -112,7 +104,7 @@ export const getComponentData = async (
       classes,
       subComponents: subComponents || [],
       subComponentsDocgen: parsedSubComponents,
-    } as Meta;
+    };
   } catch (error) {
     throw new Error(error as string);
   }

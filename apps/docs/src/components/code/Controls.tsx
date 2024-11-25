@@ -1,3 +1,4 @@
+import { useData } from "nextra/hooks";
 import {
   HvCheckBox,
   HvColorPicker,
@@ -14,7 +15,7 @@ type OptionType = {
   value: string;
 };
 
-type ControlType = "radio" | "check" | "slider" | "color" | "text";
+type ControlType = "check" | "color" | "radio" | "select" | "slider" | "text";
 
 export type Control = {
   type?: ControlType;
@@ -26,19 +27,13 @@ type ControlsProps = {
   prop: string;
   state: Record<string, any>;
   control: Control;
-  data: Record<string, any>;
   onChange: (prop: string, value: unknown) => void;
 };
 
-export const Controls = ({
-  prop,
-  state,
-  control,
-  data,
-  onChange,
-}: ControlsProps) => {
+export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   const { colors } = useTheme();
-  const propMeta = data?.meta.docgen.props[prop];
+  const { meta } = useData();
+  const propMeta = meta.docgen.props[prop];
   const type = control?.type || propMeta?.type?.name || "text";
 
   // Utility to clean up values (e.g., remove quotes)
@@ -176,7 +171,7 @@ export const Controls = ({
     return renderControl();
   }
 
-  // @eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console
   console.error(`Control for "${prop}" not supported: ${type}`);
   return null;
 };
