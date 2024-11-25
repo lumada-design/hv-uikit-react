@@ -16,5 +16,5 @@
     }
   },
   "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],
-  "exclude": ["node_modules", "packages/*/dist"]
+  "exclude": ["node_modules", "packages/*/dist", "packages/cli/src/baselines"]
 }

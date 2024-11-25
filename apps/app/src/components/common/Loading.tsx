@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { HvEmptyState, HvLoading } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
@@ -45,16 +44,15 @@ export interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Loading = (props: LoadingProps) => {
-  const { t } = useTranslation("common");
   const [isLoading, setIsLoading] = useState(false);
 
   const {
     delay = 0,
     hasError = false,
-    loadingLabel = t("loading.label") as string,
-    errorTitle = t("loading.errorTitle"),
-    errorMessage = t("loading.errorMessage"),
-    errorAction = t("loading.errorAction"),
+    loadingLabel = "Loading Page",
+    errorTitle = "Unable to load page",
+    errorMessage = "If this problem persists, please contact administrator.",
+    errorAction = "Here has link to reload page.",
   } = props;
 
   useEffect(() => {

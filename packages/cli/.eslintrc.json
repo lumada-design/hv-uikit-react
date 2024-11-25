@@ -5,6 +5,7 @@
     "import/extensions": "off",
     "ssr-friendly/no-dom-globals-in-module-scope": "off"
   },
+  "ignorePatterns": ["src/baselines/**/*"],
   "overrides": [
     {
       "files": ["src/baselines/**/*"],

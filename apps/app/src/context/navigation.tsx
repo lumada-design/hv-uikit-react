@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 
-import navigationData from "../navigation";
+import { navigationData } from "../navigation";
 
 export interface NavigationData {
   id: string;

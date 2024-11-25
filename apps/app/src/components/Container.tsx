@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { Loading, LoadingProps } from "~/components/common/Loading";
-import { useNavigationContext } from "~/lib/context/navigation";
+import { useNavigationContext } from "~/context/navigation";
 
 const useHeaderSpacing = () => {
   const { activePath, navigation } = useNavigationContext();
