@@ -4,13 +4,15 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { useUniqueId } from "../../hooks/useUniqueId";
-import { HvBaseProps } from "../../types/generic";
-import { HvFormElementContextProvider } from "./context/FormElementContext";
-import { HvFormElementDescriptorsContextProvider } from "./context/FormElementDescriptorsContext";
-import { HvFormElementValueContextProvider } from "./context/FormElementValueContext";
+import { useUniqueId } from "../hooks/useUniqueId";
+import { HvBaseProps } from "../types/generic";
+import {
+  HvFormElementContext,
+  HvFormElementDescriptorsContext,
+  HvFormElementValueContext,
+} from "./context";
 import { staticClasses, useClasses } from "./FormElement.styles";
-import { findDescriptors } from "./utils/FormUtils";
+import { findDescriptors } from "./utils";
 
 export { staticClasses as formElementClasses };
 
@@ -99,13 +101,13 @@ export const HvFormElement = (props: HvFormElementProps) => {
 
   return (
     <div id={id} className={cx(classes.root, className)} {...others}>
-      <HvFormElementContextProvider value={contextValue}>
-        <HvFormElementValueContextProvider value={value}>
-          <HvFormElementDescriptorsContextProvider value={descriptors}>
+      <HvFormElementContext.Provider value={contextValue}>
+        <HvFormElementValueContext.Provider value={value}>
+          <HvFormElementDescriptorsContext.Provider value={descriptors}>
             {children}
-          </HvFormElementDescriptorsContextProvider>
-        </HvFormElementValueContextProvider>
-      </HvFormElementContextProvider>
+          </HvFormElementDescriptorsContext.Provider>
+        </HvFormElementValueContext.Provider>
+      </HvFormElementContext.Provider>
     </div>
   );
 };

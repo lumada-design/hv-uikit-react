@@ -1,7 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvFormStatus } from "../Forms";
-import validationStates from "../Forms/FormElement/validationStates";
+import { HvFormStatus, validationStates } from "../FormElement";
 import { sliderStyles as styles } from "./Slider.styles";
 import { HvKnobProperty, HvMarkProperty } from "./types";
 

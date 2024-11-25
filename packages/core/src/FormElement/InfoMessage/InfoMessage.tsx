@@ -6,7 +6,7 @@ import {
 
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { setId } from "../../utils/setId";
-import { HvFormElementContext } from "../FormElement";
+import { HvFormElementContext } from "../context";
 import { staticClasses, useClasses } from "./InfoMessage.styles";
 
 export { staticClasses as infoMessageClasses };
@@ -27,11 +27,11 @@ export interface HvInfoMessageProps extends HvTypographyProps<"label"> {
  */
 export const HvInfoMessage = (props: HvInfoMessageProps) => {
   const {
-    id,
+    id: idProp,
     classes: classesProp,
     className,
     children,
-    disabled,
+    disabled: disabledProp,
     disableGutter = false,
     ...others
   } = useDefaultProps("HvInfoMessage", props);
@@ -39,16 +39,16 @@ export const HvInfoMessage = (props: HvInfoMessageProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const localDisabled = disabled || elementDisabled;
-  const localId = id ?? setId(elementId, "description");
+  const disabled = disabledProp ?? elementDisabled;
+  const id = idProp ?? setId(elementId, "description");
 
   return (
     <HvTypography
-      id={localId}
+      id={id}
       className={cx(
         classes.root,
         {
-          [classes.infoDisabled]: !!localDisabled,
+          [classes.infoDisabled]: !!disabled,
           [classes.gutter]: !disableGutter,
         },
         className,

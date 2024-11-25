@@ -13,8 +13,13 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvFormElement, HvFormStatus, HvLabel, HvWarningText } from "../Forms";
-import validationStates from "../Forms/FormElement/validationStates";
+import {
+  HvFormElement,
+  HvFormStatus,
+  HvLabel,
+  HvWarningText,
+  validationStates,
+} from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInputProps } from "../Input";

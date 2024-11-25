@@ -9,7 +9,7 @@ import {
 import { HvActionBar } from "../../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../../BaseDropdown";
 import { HvButton, HvButtonVariant } from "../../Button";
-import { HvFormStatus } from "../../Forms";
+import { HvFormStatus } from "../../FormElement";
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupCounter } from "../Counter";

@@ -12,7 +12,7 @@ import { HvSelectionList } from "../../SelectionList";
 import { HvBaseProps } from "../../types/generic";
 import { getContainerElement } from "../../utils/document";
 import { setId } from "../../utils/setId";
-import { HvFormElementContext } from "../FormElement";
+import { HvFormElementContext } from "../context";
 import { staticClasses, useClasses } from "./Suggestions.styles";
 
 export { staticClasses as suggestionsClasses };
@@ -60,7 +60,7 @@ export const HvSuggestions = forwardRef<
   HvSuggestionsProps
 >((props, extRef) => {
   const {
-    id,
+    id: idProp,
     className,
     classes: classesProp,
     expanded = false,
@@ -79,7 +79,7 @@ export const HvSuggestions = forwardRef<
   const { rootId } = useTheme();
 
   const { elementId } = useContext(HvFormElementContext);
-  const localId = id ?? setId(elementId, "suggestions");
+  const id = idProp ?? setId(elementId, "suggestions");
 
   const ref = useRef<HTMLDivElement>(null);
   const forkedRef = useForkRef(ref, extRef);
@@ -92,7 +92,7 @@ export const HvSuggestions = forwardRef<
 
   return (
     <div
-      id={localId}
+      id={id}
       ref={forkedRef}
       className={cx(classes.root, className)}
       {...others}
@@ -121,7 +121,7 @@ export const HvSuggestions = forwardRef<
         >
           <HvSelectionList
             className={classes.list}
-            id={setId(localId, "list")}
+            id={setId(id, "list")}
             onChange={onSuggestionSelected}
           >
             {suggestionValues?.map((item) => (

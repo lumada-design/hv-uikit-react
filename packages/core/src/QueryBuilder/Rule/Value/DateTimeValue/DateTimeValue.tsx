@@ -4,7 +4,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import dayjs from "dayjs";
 
 import { HvDatePicker } from "../../../../DatePicker";
-import { HvWarningText } from "../../../../Forms";
+import { HvWarningText } from "../../../../FormElement";
 import { HvTimePicker, HvTimePickerValue } from "../../../../TimePicker";
 import { uniqueId } from "../../../../utils/helpers";
 import { useQueryBuilderContext } from "../../../Context";

@@ -9,8 +9,8 @@ import { HvBaseProps } from "../../types/generic";
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
-  HvFormStatus,
-} from "../FormElement";
+} from "../context";
+import { HvFormStatus } from "../FormElement";
 import { staticClasses, useClasses } from "./Adornment.styles";
 
 const noop = () => {};
@@ -65,7 +65,6 @@ export const HvAdornment = forwardRef<
 
   const { elementStatus = "", elementDisabled } =
     useContext(HvFormElementContext);
-
   const { input } = useContext(HvFormElementDescriptorsContext);
 
   const displayIcon =
