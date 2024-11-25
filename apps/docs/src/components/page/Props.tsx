@@ -78,31 +78,25 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
         ) : (
           Object.entries(propsObj).map(([key, propItem]) => (
             <HvTableRow key={key} className={classes.row}>
-              <HvTableCell className="!pl-1 w-[25%]">
-                <HvTypography>
-                  {key}
-                  {propItem.required && "*"}
-                </HvTypography>
+              <HvTableCell className="!pl-xs w-[25%]">
+                <code>{key}</code>
+                {propItem.required && <code className="text-negative">*</code>}
               </HvTableCell>
               <HvTableCell className="w-[30%]">
-                <HvTypography className="!text-[12px] !text-primary_80">
-                  <pre className="whitespace-pre-wrap break-words">
-                    {propItem.type?.name}
-                  </pre>
-                </HvTypography>
+                <pre className="whitespace-pre-wrap break-words !text-[12px] text-primary_80">
+                  {propItem.type?.name}
+                </pre>
               </HvTableCell>
               <HvTableCell>
-                <HvTypography>
-                  {propItem.description
-                    ?.split(/(`[^`]+`)/g)
-                    .map((part) =>
-                      part.startsWith("`") && part.endsWith("`") ? (
-                        <code key={part}>{part.slice(1, -1)}</code>
-                      ) : (
-                        part
-                      ),
-                    )}
-                </HvTypography>
+                {propItem.description?.split(/(`[^`]+`)/g).map((part) =>
+                  part.startsWith("`") && part.endsWith("`") ? (
+                    <code key={part} className="nextra-code">
+                      {part.slice(1, -1)}
+                    </code>
+                  ) : (
+                    part
+                  ),
+                )}
               </HvTableCell>
             </HvTableRow>
           ))

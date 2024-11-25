@@ -29,6 +29,7 @@ export const Toolbar = ({
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000); // Reset icon after 2 seconds
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Failed to copy code:", error);
     }
   };
