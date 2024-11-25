@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.19.0...@hitachivantara/hv-uikit-cli@1.20.0) (2024-11-25)
+
+### Features
+
+- add CanvasContext ([#4439](https://github.com/lumada-design/hv-uikit-react/issues/4439)) ([5f85304](https://github.com/lumada-design/hv-uikit-react/commit/5f853048d54595588fc2030b58e01db365d9212e))
+
 # [1.19.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.18.1...@hitachivantara/hv-uikit-cli@1.19.0) (2024-11-19)
 
 ### Features
