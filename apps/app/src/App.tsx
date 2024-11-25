@@ -8,8 +8,6 @@ import {
 
 import { routes } from "./routes";
 
-import "~/lib/i18n";
-
 const router = createBrowserRouter(routes, {
   basename: import.meta.env.BASE_URL,
 });

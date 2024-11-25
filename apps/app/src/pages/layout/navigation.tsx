@@ -5,11 +5,11 @@ import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 import { Container } from "~/components/Container";
 import { Header } from "~/components/Header";
 import { Tutorial } from "~/components/Tutorial";
+import { NavigationProvider } from "~/context/navigation";
 import GeneratorProvider, {
   useGeneratorContext,
 } from "~/generator/GeneratorContext";
 import Sidebar from "~/generator/Sidebar";
-import { NavigationProvider } from "~/lib/context/navigation";
 
 const useRootRedirect = () => {
   const [searchParams] = useSearchParams();
