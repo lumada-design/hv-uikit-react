@@ -1,6 +1,4 @@
-// @types/react-color seems to be broken
-// @ts-ignore
-import { Swatch } from "react-color/lib/components/common";
+// import { Swatch } from "react-color/lib/components/common";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -10,6 +8,9 @@ import { HvTypography } from "../../Typography";
 import { staticClasses, useClasses } from "./PresetColors.styles";
 
 export { staticClasses as colorPickerPresetColorsClasses };
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Swatch = (args: any) => <div />;
 
 export type HvColorPickerPresetColorsClasses = ExtractNames<typeof useClasses>;
 

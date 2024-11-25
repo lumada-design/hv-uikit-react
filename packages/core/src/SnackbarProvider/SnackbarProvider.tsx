@@ -1,5 +1,5 @@
 import { forwardRef, useCallback, useMemo } from "react";
-import { SnackbarOrigin } from "@mui/material/Snackbar";
+import { SnackbarOrigin } from "@mui/material";
 import {
   OptionsObject,
   SnackbarContent,

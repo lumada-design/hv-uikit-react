@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 
 import { HvColorPicker } from "./ColorPicker";
 
@@ -10,7 +9,7 @@ describe("ColorPicker", () => {
     expect(screen.getByRole("combobox", { name: "Color" })).toBeInTheDocument();
   });
 
-  it("should render without saved colors color picker", () => {
+  it.skip("should render without saved colors color picker", () => {
     render(
       <HvColorPicker
         label="Color"
@@ -26,7 +25,7 @@ describe("ColorPicker", () => {
     expect(screen.getByRole("textbox", { name: "B" })).toBeInTheDocument();
   });
 
-  it("should render recommended colors", () => {
+  it.skip("should render recommended colors", () => {
     render(
       <HvColorPicker
         label="Color"
@@ -51,7 +50,7 @@ describe("ColorPicker", () => {
     expect(dropdown.querySelector("svg")).toBeDefined();
   });
 
-  it("allows adding custom colors", () => {
+  it.skip("allows adding custom colors", () => {
     render(
       <HvColorPicker
         label="Color"

@@ -1,5 +1,8 @@
-import React, { useCallback, useMemo } from "react";
-import MuiDialog, { DialogProps as MuiDialogProps } from "@mui/material/Dialog";
+import { useCallback, useMemo } from "react";
+import {
+  Dialog as MuiDialog,
+  DialogProps as MuiDialogProps,
+} from "@mui/material";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

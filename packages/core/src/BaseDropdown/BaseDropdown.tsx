@@ -8,8 +8,8 @@ import {
   useState,
 } from "react";
 import { PopperProps, usePopper } from "react-popper";
-import type { ClickAwayListenerProps } from "@mui/material/ClickAwayListener";
-import { useForkRef } from "@mui/material/utils";
+import type { ClickAwayListenerProps } from "@mui/base";
+import { unstable_useForkRef as useForkRef } from "@mui/utils";
 import { detectOverflow, Options, Placement } from "@popperjs/core";
 import { DropDownXS, DropUpXS } from "@hitachivantara/uikit-react-icons";
 import {

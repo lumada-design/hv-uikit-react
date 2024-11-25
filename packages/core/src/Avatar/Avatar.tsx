@@ -1,5 +1,8 @@
 import { forwardRef } from "react";
-import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
+import {
+  Avatar as MuiAvatar,
+  AvatarProps as MuiAvatarProps,
+} from "@mui/material";
 import { User } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

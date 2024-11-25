@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import styled from "@emotion/styled";
-import { Breakpoints as MuiBreakpoints, useTheme } from "@mui/material/styles";
+import { Breakpoints as MuiBreakpoints, useTheme } from "@mui/material";
 import {
   HvOverflowTooltip,
   HvTable,

@@ -74,6 +74,8 @@ import {
   Upload,
 } from "@hitachivantara/uikit-react-icons";
 
+import { useIsMounted } from "~/hooks/isMounted";
+
 const Tabs = () => {
   const [value, setValue] = useState(0);
 
@@ -409,8 +411,9 @@ const Table = () => {
 /**
  * Hero component containing a showcase of the UI Kit components
  */
-export const Component = () => {
-  console.count("render");
+export default function Component() {
+  const isMounted = useIsMounted();
+  if (!isMounted) return null;
 
   return (
     <HvGrid container>
@@ -450,4 +453,4 @@ export const Component = () => {
       </HvGrid>
     </HvGrid>
   );
-};
+}

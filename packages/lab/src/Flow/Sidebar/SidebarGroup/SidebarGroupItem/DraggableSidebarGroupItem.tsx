@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useDraggable } from "@dnd-kit/core";
-import { useForkRef } from "@mui/material/utils";
+import { useForkRef } from "@mui/material";
 import { useUniqueId } from "@hitachivantara/uikit-react-core";
 
 import { HvFlowGroupItem } from "../../../types";

@@ -1,5 +1,8 @@
 import { forwardRef } from "react";
-import MuiDrawer, { DrawerProps as MuiDrawerProps } from "@mui/material/Drawer";
+import {
+  Drawer as MuiDrawer,
+  DrawerProps as MuiDrawerProps,
+} from "@mui/material";
 import { Close } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

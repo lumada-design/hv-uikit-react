@@ -1,6 +1,12 @@
 import { useEffect } from "react";
-import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
-import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
+import { Outlet, useNavigate, useSearchParams } from "react-router";
+import {
+  ds3,
+  ds5,
+  HvProvider,
+  pentahoPlus,
+  useTheme,
+} from "@hitachivantara/uikit-react-core";
 
 import { Container } from "~/components/Container";
 import { Header } from "~/components/Header";
@@ -69,13 +75,22 @@ const Navigation = () => {
 };
 
 /** Navigation + Theme Generator layout & providers */
-export const Component = () => (
-  <div className="flex flex-row rounded-circle">
-    <GeneratorProvider>
-      <div className="flex-1 overflow-y-auto">
-        <Navigation />
+export default function Component() {
+  return (
+    <HvProvider
+      themes={[ds3, ds5, pentahoPlus]}
+      theme="pentahoPlus"
+      rootElementId="hv-root"
+      cssTheme="scoped"
+    >
+      <div className="flex flex-row rounded-circle">
+        <GeneratorProvider>
+          <div className="flex-1 overflow-y-auto">
+            <Navigation />
+          </div>
+          <Sidebar />
+        </GeneratorProvider>
       </div>
-      <Sidebar />
-    </GeneratorProvider>
-  </div>
-);
+    </HvProvider>
+  );
+}

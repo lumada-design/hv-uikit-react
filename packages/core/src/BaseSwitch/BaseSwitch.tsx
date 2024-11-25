@@ -1,5 +1,8 @@
 import { forwardRef, useCallback, useState } from "react";
-import MuiSwitch, { SwitchProps as MuiSwitchProps } from "@mui/material/Switch";
+import {
+  Switch as MuiSwitch,
+  SwitchProps as MuiSwitchProps,
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

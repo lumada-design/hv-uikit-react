@@ -1,11 +1,12 @@
 import { forwardRef, useContext } from "react";
 import { css as emotionCss, Global } from "@emotion/react";
-import MuiInput, { InputProps as MuiInputProps } from "@mui/material/Input";
 import {
   InputBaseProps,
+  Input as MuiInput,
   InputBaseComponentProps as MuiInputBaseComponentProps,
-} from "@mui/material/InputBase";
-import { useForkRef } from "@mui/material/utils";
+  InputProps as MuiInputProps,
+  useForkRef,
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

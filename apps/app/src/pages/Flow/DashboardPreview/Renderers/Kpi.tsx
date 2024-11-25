@@ -1,11 +1,9 @@
 import { useMemo } from "react";
-import { css } from "@emotion/css";
 import type ColumnTable from "arquero/dist/types/table/column-table";
 import {
   HvCard,
   HvLoading,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 interface KpiProps {
@@ -34,35 +32,14 @@ export const Kpi = ({
   }, [aggregation, data, measure]);
 
   return (
-    <HvCard className={css({ width: "100%" })} bgcolor="atmo1">
+    <HvCard className="w-full" bgcolor="atmo1">
       {loading ? (
-        <div
-          className={css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-            padding: theme.space.sm,
-          })}
-        >
+        <div className="flex items-center justify-center h-full p-sm">
           <HvLoading small />
         </div>
       ) : (
-        <div
-          className={css({
-            display: "flex",
-            flexDirection: "column",
-            padding: theme.space.sm,
-            wordBreak: "break-word",
-            flexWrap: "wrap",
-          })}
-        >
-          <HvTypography
-            className={css({
-              padding: theme.spacing(0, "sm", "xs", 0),
-            })}
-            variant="label"
-          >
+        <div className="flex flex-col flex-wrap p-sm break-words">
+          <HvTypography className="pr-sm pb-xs" variant="label">
             {title}
           </HvTypography>
           {count != null && (

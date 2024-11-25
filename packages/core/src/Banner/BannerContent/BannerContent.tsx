@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
-import SnackbarContent, {
+import {
   SnackbarContentProps as MuiSnackbarContentProps,
-} from "@mui/material/SnackbarContent";
+  SnackbarContent,
+} from "@mui/material";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionsGenericProps } from "../../ActionsGeneric";

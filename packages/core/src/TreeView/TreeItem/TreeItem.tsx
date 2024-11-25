@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
-import Collapse from "@mui/material/Collapse";
-import { TransitionProps } from "@mui/material/transitions";
+import { Collapse } from "@mui/material";
+import type { TransitionProps } from "@mui/material/transitions";
 import {
   useDefaultProps,
   type ExtractNames,

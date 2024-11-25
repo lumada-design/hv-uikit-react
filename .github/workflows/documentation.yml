@@ -13,7 +13,7 @@ on:
 env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
   PUBLISH_STORYBOOK: ${{ inputs.publish-storybook }}
-  PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
+  PUBLISH_APP: true
   PUBLISH_DOCS: true
 
 jobs:
@@ -44,14 +44,16 @@ jobs:
 
       - name: Build App
         if: ${{ env.PUBLISH_APP == 'true' }}
-        run: npm run build:app -- --base=/uikit-app/${{ env.PUBLISH_FOLDER }}/
+        env:
+          BASENAME: /uikit-app/${{ env.PUBLISH_FOLDER }}/
+        run: npm run build:app
 
       - name: Archive App
         if: ${{ env.PUBLISH_APP == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: ${{ github.workspace }}/apps/app/dist
+          path: ${{ github.workspace }}/apps/app/dist/client
           retention-days: 2
 
       # Bypassing Jekyll processing on GitHub Pages by adding .nojekyll to read folders that start with an underscore

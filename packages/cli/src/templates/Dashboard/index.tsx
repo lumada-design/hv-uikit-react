@@ -162,10 +162,12 @@ const Dashboard = () => {
   );
 };
 
-export default () => (
-  <HvVizProvider>
-    <Suspense fallback={<HvLoading style={{ minHeight: 400 }} />}>
-      <Dashboard />
-    </Suspense>
-  </HvVizProvider>
-);
+export default function Component() {
+  return (
+    <HvVizProvider>
+      <Suspense fallback={<HvLoading style={{ minHeight: 400 }} />}>
+        <Dashboard />
+      </Suspense>
+    </HvVizProvider>
+  );
+}

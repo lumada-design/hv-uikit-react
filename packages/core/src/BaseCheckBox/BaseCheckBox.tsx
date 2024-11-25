@@ -1,7 +1,8 @@
 import { forwardRef, useCallback, useState } from "react";
-import MuiCheckbox, {
+import {
+  Checkbox as MuiCheckbox,
   CheckboxProps as MuiCheckboxProps,
-} from "@mui/material/Checkbox";
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

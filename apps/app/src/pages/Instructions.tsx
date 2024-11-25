@@ -42,7 +42,7 @@ const Entry = ({
   </div>
 );
 
-export const Component = () => {
+export default function Component() {
   const { setTutorialOpen } = useGeneratorContext();
 
   return (
@@ -139,4 +139,4 @@ export const Component = () => {
       </HvSimpleGrid>
     </HvContainer>
   );
-};
+}

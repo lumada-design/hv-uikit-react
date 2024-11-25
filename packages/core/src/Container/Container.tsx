@@ -1,9 +1,10 @@
 import { forwardRef } from "react";
-import MuiContainer, {
+import {
+  Container as MuiContainer,
   ContainerProps as MuiContainerProps,
-} from "@mui/material/Container";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import {
   useDefaultProps,
   type ExtractNames,

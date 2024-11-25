@@ -1,6 +1,5 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { Link, useNavigate } from "react-router";
+import { useMediaQuery, useTheme } from "@mui/material";
 import {
   HvButton,
   HvHeader,
@@ -53,7 +52,7 @@ export const Header = () => {
 
       <HvHeaderActions>
         {import.meta.env.DEV && (
-          <HvIconButton title="Test page" component={NavLink} to="/test">
+          <HvIconButton title="Test page" component={Link} to="/test">
             <Debug />
           </HvIconButton>
         )}
