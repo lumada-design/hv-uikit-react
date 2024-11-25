@@ -1,12 +1,31 @@
 import { createContext } from "react";
 
+import type { HvFormStatus } from "./FormElement";
+
 export interface HvFormElementContextValue {
-  elementId?: string;
-  elementDisabled?: boolean;
-  elementRequired?: boolean;
-  elementStatus?: string;
-  elementReadOnly?: boolean;
-  elementName?: string;
+  /** id to be applied to the form element root node. */
+  id?: string;
+  /**
+   * Name of the form element.
+   *
+   * Part of a name/value pair, should be the name property of the underling native input.
+   */
+  name?: string;
+  /**
+   * The status of the form element.
+   *
+   * Valid is correct, invalid is incorrect and standBy means no validations have run.
+   *
+   * When uncontrolled and unspecified it will default to "standBy" and change to either "valid"
+   * or "invalid" after any change to the state.
+   */
+  status?: HvFormStatus;
+  /** Whether the form element is disabled. */
+  disabled?: boolean;
+  /** Indicates that user input is required on the form element. */
+  required?: boolean;
+  /** Indicates that the form element is not editable. */
+  readOnly?: boolean;
 }
 
 export const HvFormElementContext = createContext<HvFormElementContextValue>(

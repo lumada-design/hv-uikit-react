@@ -78,8 +78,8 @@ export const HvSuggestions = forwardRef<
 
   const { rootId } = useTheme();
 
-  const { elementId } = useContext(HvFormElementContext);
-  const id = idProp ?? setId(elementId, "suggestions");
+  const context = useContext(HvFormElementContext);
+  const id = idProp ?? setId(context.id, "suggestions");
 
   const ref = useRef<HTMLDivElement>(null);
   const forkedRef = useForkRef(ref, extRef);

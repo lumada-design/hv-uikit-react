@@ -54,11 +54,10 @@ export const HvWarningText = (props: HvWarningTextProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementId, elementStatus, elementDisabled } =
-    useContext(HvFormElementContext);
-  const disabled = disabledProp || elementDisabled;
-  const visible = isVisibleProp ?? elementStatus === "invalid";
-  const id = idProp ?? setId(elementId, "error");
+  const context = useContext(HvFormElementContext);
+  const disabled = disabledProp ?? context.disabled;
+  const visible = isVisibleProp ?? context.status === "invalid";
+  const id = idProp ?? setId(context.id, "error");
   const showWarning = visible && !disabled;
   const adornment = adornmentProp || (
     <Fail size="xs" className={classes.defaultIcon} />

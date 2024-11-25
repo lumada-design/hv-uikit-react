@@ -112,9 +112,9 @@ export const HvBaseInput = forwardRef<
     onChange,
     type = "text",
     placeholder,
-    multiline = false,
-    resizable = false,
-    invalid = false,
+    multiline,
+    resizable,
+    invalid,
     inputRef,
     inputProps = {},
     ...others

@@ -31,7 +31,7 @@ dayjs.extend(customParseFormat);
 
 export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const {
-    id,
+    id: idProp,
     value,
     locale = "en-US",
     classes: classesProp,
@@ -44,7 +44,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
 
   const { classes, cx } = useClasses(classesProp);
 
-  const { elementId } = useContext(HvFormElementContext);
+  const context = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
 
@@ -61,7 +61,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const [displayValue, setDisplayValue] = useState("");
   const [weekdayDisplay, setWeekdayDisplay] = useState("");
 
-  const localId = id ?? setId(elementId, "calendarHeader");
+  const id = idProp ?? setId(context.id, "calendarHeader");
 
   const inputValue = editedValue ?? displayValue;
   const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
@@ -151,7 +151,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   // In a new major there's no need for all these classes
   return (
     <div
-      id={localId}
+      id={id}
       className={cx(classes.root, {
         [classes.invalid]: isInvalid,
       })}
@@ -163,7 +163,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
       )}
       <HvInput
         type="text"
-        id={setId(localId, "header-input")}
+        id={setId(id, "header-input")}
         className={classes.headerDate}
         classes={{
           input: classes.input,

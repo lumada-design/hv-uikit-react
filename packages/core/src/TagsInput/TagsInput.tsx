@@ -33,15 +33,16 @@ import {
 import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvInput, HvInputProps } from "../Input";
+import { HvInput, HvInputProps, HvInputSuggestion } from "../Input";
 import { HvListContainer, HvListItem } from "../ListContainer";
 import { HvTag, HvTagProps } from "../Tag";
-import { HvTagSuggestion } from "../types/forms";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TagsInput.styles";
 
 export { staticClasses as tagsInputClasses };
+
+export interface HvTagSuggestion extends HvInputSuggestion {}
 
 export type HvTagsInputClasses = ExtractNames<typeof useClasses>;
 
@@ -124,9 +125,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       name,
       value: valueProp,
       defaultValue = [],
-      readOnly = false,
-      disabled = false,
-      required = false,
+      readOnly,
+      disabled,
+      required,
       label: textAreaLabel,
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
@@ -138,21 +139,21 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       onBlur,
       onFocus,
       placeholder,
-      hideCounter = false,
+      hideCounter,
       middleCountLabel = "/",
       maxTagsQuantity,
       resizable = true,
       inputProps,
       countCharProps,
-      multiline = false,
+      multiline,
       status,
       statusMessage,
       validationMessages,
       commitTagOn = ["Enter"],
-      commitOnBlur = false,
+      commitOnBlur,
       suggestionListCallback,
       suggestionValidation,
-      suggestionsLoose = false,
+      suggestionsLoose,
       ...others
     } = useDefaultProps("HvTagsInput", props);
 

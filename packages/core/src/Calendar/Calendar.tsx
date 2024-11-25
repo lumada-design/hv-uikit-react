@@ -112,9 +112,9 @@ export interface HvCalendarProps {
 export const HvCalendar = (props: HvCalendarProps) => {
   const {
     classes: classesProp,
-    id,
+    id: idProp,
     locale = "en-US",
-    value,
+    value: valueProp,
     visibleMonth,
     visibleYear,
     rightVisibleMonth,
@@ -130,20 +130,20 @@ export const HvCalendar = (props: HvCalendarProps) => {
   } = useDefaultProps("HvCalendar", props);
   const { classes } = useClasses(classesProp);
 
-  const { elementId } = useContext(HvFormElementContext);
+  const context = useContext(HvFormElementContext);
   const elementValue = useContext(HvFormElementValueContext);
-  const localValue = value ?? elementValue;
-  const localId = id ?? setId(elementId, "single-calendar");
-  const rangeMode = isRange(localValue);
-  const rightCalendarId = setId(localId, "single-calendar-right");
+  const value = valueProp ?? elementValue;
+  const id = idProp ?? setId(context.id, "single-calendar");
+  const rangeMode = isRange(value);
+  const rightCalendarId = setId(id, "single-calendar-right");
   const clampedMonth =
     visibleMonth && visibleMonth % 13 > 0 ? visibleMonth % 13 : 1;
 
   const singleCalendar = (
     <HvSingleCalendar
-      id={localId}
+      id={id}
       locale={locale}
-      value={localValue}
+      value={value}
       visibleMonth={clampedMonth}
       visibleYear={visibleYear}
       minimumDate={minimumDate}
@@ -162,9 +162,9 @@ export const HvCalendar = (props: HvCalendarProps) => {
     <div className={classes.rangeCalendarContainer}>
       <HvSingleCalendar
         className={classes.singleCalendar}
-        id={localId}
+        id={id}
         locale={locale}
-        value={localValue}
+        value={value}
         visibleMonth={clampedMonth}
         visibleYear={visibleYear}
         minimumDate={minimumDate}
@@ -184,7 +184,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
         className={classes.singleCalendar}
         id={rightCalendarId}
         locale={locale}
-        value={localValue}
+        value={value}
         visibleMonth={rightVisibleMonth}
         visibleYear={rightVisibleYear}
         minimumDate={minimumDate}

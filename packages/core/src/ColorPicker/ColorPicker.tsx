@@ -107,8 +107,8 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
     const {
       id,
       name,
-      required = false,
-      disabled = false,
+      required,
+      disabled,
       label,
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
@@ -156,10 +156,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
 
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-    const [isOpen, setIsOpen] = useControlled(
-      expanded,
-      Boolean(defaultExpanded),
-    );
+    const [isOpen, setIsOpen] = useControlled(expanded, defaultExpanded);
     const [color, setColor] = useControlled(value, defaultValue);
     const [savedColors, setSavedColors] = useControlled(
       savedColorsValue,
