@@ -12,7 +12,7 @@ import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
   HvFormElementValueContext,
-} from "../../Forms";
+} from "../../FormElement";
 import { HvInput, HvInputProps } from "../../Input";
 import { HvTypography } from "../../Typography";
 import { isKey } from "../../utils/keyboardUtils";

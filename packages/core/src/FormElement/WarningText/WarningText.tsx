@@ -7,7 +7,7 @@ import {
 
 import { HvBaseProps } from "../../types/generic";
 import { setId } from "../../utils/setId";
-import { HvFormElementContext } from "../FormElement";
+import { HvFormElementContext } from "../context";
 import { staticClasses, useClasses } from "./WarningText.styles";
 
 export { staticClasses as warningTextClasses };

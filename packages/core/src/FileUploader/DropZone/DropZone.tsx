@@ -5,7 +5,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvInfoMessage, HvLabel } from "../../Forms";
+import { HvInfoMessage, HvLabel } from "../../FormElement";
 import { useUniqueId } from "../../hooks/useUniqueId";
 import { HvTypography } from "../../Typography";
 import { uniqueId } from "../../utils/helpers";

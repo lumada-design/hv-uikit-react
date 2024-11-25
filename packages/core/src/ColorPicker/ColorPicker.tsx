@@ -8,7 +8,7 @@ import {
 
 import { HvBaseDropdown } from "../BaseDropdown";
 import { HvDropdownProps } from "../Dropdown";
-import { HvFormElement, HvInfoMessage, HvLabel } from "../Forms";
+import { HvFormElement, HvInfoMessage, HvLabel } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";

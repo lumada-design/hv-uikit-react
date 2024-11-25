@@ -6,8 +6,8 @@ import {
 
 import { HvTypography, HvTypographyProps } from "../../Typography";
 import { setId } from "../../utils/setId";
-import { HvFormElementContext } from "../FormElement";
-import { findDescriptors } from "../FormElement/utils/FormUtils";
+import { HvFormElementContext } from "../context";
+import { findDescriptors } from "../utils";
 import { staticClasses, useClasses } from "./Label.styles";
 
 export { staticClasses as labelClasses };

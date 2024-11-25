@@ -23,11 +23,13 @@ import {
   HvFormStatus,
   HvInfoMessage,
   HvLabel,
+  HvWarningText,
+  validationStates,
+} from "../FormElement";
+import {
   HvSuggestions,
   HvSuggestionsProps,
-  HvWarningText,
-} from "../Forms";
-import validationStates from "../Forms/FormElement/validationStates";
+} from "../FormElement/Suggestions/Suggestions";
 import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";

@@ -17,7 +17,7 @@ import {
   buildFormElementPropsFromContext,
   HvFormElementContext,
   HvFormElementDescriptorsContext,
-} from "../Forms";
+} from "../FormElement";
 import { staticClasses, useClasses } from "./BaseInput.styles";
 
 export { staticClasses as baseInputClasses };

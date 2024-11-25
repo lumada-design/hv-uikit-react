@@ -1,8 +1,11 @@
-import React from "react";
-import { InputBaseComponentProps } from "@mui/material/InputBase";
+import { Children } from "react";
+import type { InputBaseComponentProps } from "@mui/material/InputBase";
 
-import { HvFormElementContextValue } from "../context/FormElementContext";
-import { HvFormElementDescriptorsContextValue } from "../context/FormElementDescriptorsContext";
+import type {
+  HvFormElementContextValue,
+  HvFormElementDescriptorsContextValue,
+} from "./context";
+import type { HvFormStatus } from "./FormElement";
 
 interface Descriptor {
   id?: string;
@@ -17,7 +20,7 @@ interface Descriptor {
  * @param {Object} descriptors - Initial descriptors map (used for recursion).
  *
  */
-const findDescriptors = (
+export const findDescriptors = (
   children: React.ReactNode,
   descriptors: {
     input: Descriptor[];
@@ -37,7 +40,7 @@ const findDescriptors = (
     HvCalendarHeader: [],
   },
 ) => {
-  React.Children.forEach(children, (child: any) => {
+  Children.forEach(children, (child: any) => {
     if (child?.type?.formElementType && child.props?.id) {
       descriptors[child.type.formElementType as keyof typeof descriptors]?.push(
         {
@@ -55,7 +58,7 @@ const findDescriptors = (
   return descriptors;
 };
 
-const getIdReferenceListFor = (
+export const getIdReferenceListFor = (
   formElementType: string,
   descriptors: any,
   filterFor: string | null = null,
@@ -69,7 +72,7 @@ const getIdReferenceListFor = (
   return referenceList !== "" ? referenceList : undefined;
 };
 
-const getIdReferenceFor = (
+export const getIdReferenceFor = (
   formElementType: string,
   descriptors: any,
   filterFor = null,
@@ -81,7 +84,7 @@ const getIdReferenceFor = (
   return referenceList !== "" ? referenceList : undefined;
 };
 
-const buildFormElementPropsFromContext = (
+export const buildFormElementPropsFromContext = (
   name?: string,
   disabled?: boolean,
   readOnly?: boolean,
@@ -97,7 +100,7 @@ const buildFormElementPropsFromContext = (
   };
 };
 
-const buildAriaPropsFromContext = (
+export const buildAriaPropsFromContext = (
   props: InputBaseComponentProps,
   context: HvFormElementDescriptorsContextValue,
   isInvalid: boolean,
@@ -129,10 +132,13 @@ const buildAriaPropsFromContext = (
   return arias;
 };
 
-export {
-  findDescriptors,
-  getIdReferenceListFor,
-  getIdReferenceFor,
-  buildFormElementPropsFromContext,
-  buildAriaPropsFromContext,
-};
+export const validationStates = Object.freeze({
+  standBy: "standBy",
+  valid: "valid",
+  invalid: "invalid",
+});
+
+export const isValid = (state: HvFormStatus) =>
+  state === validationStates.valid;
+export const isInvalid = (state: HvFormStatus) =>
+  state === validationStates.invalid;

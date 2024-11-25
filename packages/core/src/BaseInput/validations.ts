@@ -1,6 +1,6 @@
 import { InputBaseComponentProps } from "@mui/material/InputBase";
 
-import validationStates from "../Forms/FormElement/validationStates";
+import { validationStates } from "../FormElement";
 
 /** Checks if the value is a number. */
 const isNumeric = (num: string) =>

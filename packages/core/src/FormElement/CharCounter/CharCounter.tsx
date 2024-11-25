@@ -7,7 +7,7 @@ import {
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
-import { HvFormElementContext } from "../FormElement";
+import { HvFormElementContext } from "../context";
 import { staticClasses, useClasses } from "./CharCounter.styles";
 
 export { staticClasses as charCounterClasses };
