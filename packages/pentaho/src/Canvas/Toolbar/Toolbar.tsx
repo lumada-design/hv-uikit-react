@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import { mergeStyles } from "packages/utils/src";
 import {
   ExtractNames,
   HvBaseProps,
@@ -10,6 +9,7 @@ import {
   useLabels,
 } from "@hitachivantara/uikit-react-core";
 import { Previous } from "@hitachivantara/uikit-react-icons";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 import { useCanvasContext } from "../CanvasContext";
 import { staticClasses, useClasses } from "./Toolbar.styles";

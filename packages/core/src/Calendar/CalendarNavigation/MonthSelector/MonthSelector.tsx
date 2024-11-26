@@ -1,6 +1,6 @@
-import { HvButtonBase } from "packages/core/src/ButtonBase";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
+import { HvButtonBase } from "../../../ButtonBase";
 import { ViewMode } from "../../enums";
 import { DateRangeProp, VisibilitySelectorActions } from "../../types";
 import { getMonthNamesList } from "../../utils";
