@@ -97,8 +97,12 @@
   },
   "overrides": [
     {
-      "files": ["packages/**/*.ts?(x)"],
-      "extends": ["plugin:ssr-friendly/recommended"]
+      // override for package source-code files
+      "files": ["packages/*/src/**/*.ts?(x)"],
+      "extends": ["plugin:ssr-friendly/recommended"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["packages/**"] }]
+      }
     },
     {
       "files": ["**/*.stories.ts?(x)"],
