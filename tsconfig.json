@@ -1,20 +1,11 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@hitachivantara/uikit-react-code-editor": ["packages/code-editor/src"],
-      "@hitachivantara/uikit-react-core": ["packages/core/src"],
-      "@hitachivantara/uikit-react-icons": ["packages/icons/src"],
-      "@hitachivantara/uikit-react-lab": ["packages/lab/src"],
-      "@hitachivantara/uikit-react-pentaho": ["packages/pentaho/src"],
-      "@hitachivantara/uikit-react-shared": ["packages/shared/src"],
-      "@hitachivantara/uikit-react-viz": ["packages/viz/src"],
-      "@hitachivantara/uikit-styles": ["packages/styles/src"],
-      "~/*": ["apps/app/src/*"],
-      "@docs/*": ["apps/docs/src/*"]
+      "~/*": ["./apps/app/src/*"],
+      "@docs/*": ["./apps/docs/src/*"]
     }
   },
   "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],
-  "exclude": ["node_modules", "packages/*/dist"]
+  "exclude": ["node_modules", "packages/*/dist", "packages/*/package"]
 }
