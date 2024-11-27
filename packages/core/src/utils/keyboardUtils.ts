@@ -29,3 +29,7 @@ export const isKey = (event: any, keyCode: Key) => {
 export const isOneOfKeys = (event: any, keys: Key[]) => {
   return keys.some((key) => isKey(event, key));
 };
+
+export function isDeleteKey(event: React.KeyboardEvent) {
+  return isOneOfKeys(event, ["Backspace", "Delete"]);
+}

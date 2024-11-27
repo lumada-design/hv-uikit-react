@@ -1,4 +1,3 @@
-import { chipClasses } from "@mui/material/Chip";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
@@ -27,9 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   root: { display: "inline-block", width: "100%" },
   chipRoot: {
-    [`&.${chipClasses.root}`]: {
-      maxWidth: "none",
-    },
+    maxWidth: "none",
   },
   disabled: {
     "& $tagsList": {

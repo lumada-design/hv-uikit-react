@@ -238,11 +238,10 @@ describe("TagsInput Component", () => {
     expect(input).toBeNull();
 
     const clickableButtons = screen.queryAllByRole("button");
-    expect(clickableButtons.length).toBe(1);
+    expect(clickableButtons.length).toBe(0);
 
     // in readonly mode the button shouldn't have the close icon
-    const button = clickableButtons[0];
-    expect(button.querySelector("[data-name=CloseXS]")).toBeNull();
+    expect(document.querySelector("[data-name=CloseXS]")).toBeNull();
   });
 
   it("should call the suggestions callback when the input is changed", () => {

@@ -1,5 +1,4 @@
-import { forwardRef } from "react";
-import Chip, { ChipProps as MuiChipProps } from "@mui/material/Chip";
+import { cloneElement, forwardRef, isValidElement } from "react";
 import {
   Checkbox,
   CheckboxCheck,
@@ -12,7 +11,10 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
+import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
+import { HvTypography } from "../Typography";
+import { isDeleteKey } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Tag.styles";
 
 export { staticClasses as tagClasses };
@@ -20,7 +22,10 @@ export { staticClasses as tagClasses };
 export type HvTagClasses = ExtractNames<typeof useClasses>;
 
 export interface HvTagProps
-  extends Omit<MuiChipProps, "color" | "classes" | "onSelect"> {
+  extends Omit<
+    HvButtonBaseProps,
+    "type" | "color" | "classes" | "onClick" | "onToggle"
+  > {
   /** The label of the tag element. */
   label?: React.ReactNode;
   /** Indicates that the form element is disabled. */
@@ -29,13 +34,13 @@ export interface HvTagProps
   type?: "semantic" | "categorical";
   /** The color variant of the tag */
   color?: HvColorAny;
-  /** Icon used to customize the delete icon in the Chip element */
+  /** Icon used to customize the delete icon */
   deleteIcon?: React.ReactElement;
   /**
    * The callback fired when the delete icon is pressed.
    * This function has to be provided to the component, in order to render the delete icon
    * */
-  onDelete?: (event: React.MouseEvent<HTMLElement>) => void;
+  onDelete?: React.EventHandler<any>;
   /** Callback triggered when any item is clicked. */
   onClick?: (event: React.MouseEvent<HTMLElement>, selected?: boolean) => void;
   /** Aria properties to apply to delete button in tag
@@ -46,10 +51,6 @@ export interface HvTagProps
   deleteButtonProps?: React.HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvTagClasses;
-  /** @ignore */
-  ref?: MuiChipProps["ref"];
-  /** @ignore */
-  component?: MuiChipProps["component"];
   /** Determines whether or not the tag is selectable. */
   selectable?: boolean;
   /** Defines if the tag is selected. When defined the tag state becomes controlled. */
@@ -68,12 +69,13 @@ export interface HvTagProps
  */
 export const HvTag = forwardRef<
   // no-indent
-  HTMLDivElement,
+  HTMLElement,
   HvTagProps
 >(function HvTag(props, ref) {
   const {
     classes: classesProp,
     className,
+    component,
     style,
     label,
     disabled,
@@ -82,9 +84,11 @@ export const HvTag = forwardRef<
     selected,
     defaultSelected = false,
     color,
-    deleteIcon,
+    deleteIcon: deleteIconProp,
     onDelete,
     onClick,
+    onKeyDown,
+    onKeyUp,
     // TODO: remove from API
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     deleteButtonArialLabel = "Delete tag",
@@ -98,67 +102,87 @@ export const HvTag = forwardRef<
     Boolean(defaultSelected),
   );
 
-  const defaultDeleteIcon = (
-    <CloseXS
-      className={cx(classes.button, classes.tagButton)}
-      size="XS"
-      {...deleteButtonProps}
-    />
-  );
+  const handleDeleteClick = (event: React.MouseEvent) => {
+    // Stop the event from bubbling up to the tag
+    event.stopPropagation();
+    onDelete?.(event);
+  };
 
   const backgroundColor =
     (type === "semantic" && getColor(color, "neutral_20")) ||
     (type === "categorical" && theme.alpha(getColor(color, "cat1")!, 0.2)) ||
     undefined;
 
-  const isClickable = !!(onClick || onDelete) && !disabled;
+  const isClickable = !!(onClick || onDelete || selectable);
 
   const CheckboxIcon = isSelected ? CheckboxCheck : Checkbox;
-  const avatarIcon = (
-    <CheckboxIcon
-      color={(disabled && ["atmo3", "secondary_60"]) || undefined}
-      size="XS"
-    />
-  );
+
+  const deleteIcon =
+    deleteIconProp && isValidElement(deleteIconProp) ? (
+      cloneElement<any>(deleteIconProp, {
+        className: cx(classes.deleteIcon, {
+          [classes.disabledDeleteIcon]: disabled,
+        }),
+        onClick: handleDeleteClick,
+      })
+    ) : (
+      <CloseXS
+        size="XS"
+        onClick={handleDeleteClick}
+        className={cx(classes.deleteIcon, classes.button, classes.tagButton)}
+        {...deleteButtonProps}
+      />
+    );
 
   return (
-    <Chip
-      ref={ref}
-      label={label}
+    <HvButtonBase
+      ref={ref as any}
+      component={isClickable ? HvButtonBase : "div"}
       disabled={disabled}
       data-color={color}
-      clickable={isClickable || selectable}
-      className={className}
       style={mergeStyles(style, {
         "--bgColor": backgroundColor,
       })}
-      classes={{
-        root: cx(classes.root, classes.chipRoot, {
-          [classes.disabled]: disabled,
-          [classes.selected]: isSelected,
-          [classes.clickable]: isClickable,
-          [classes.categorical]: type === "categorical",
-          [classes.categoricalFocus]: type === "categorical" && !disabled,
-          [classes.categoricalDisabled]: type === "categorical" && disabled,
-        }),
-        label: classes.label,
-        deleteIcon: cx(classes.deleteIcon, {
-          [classes.disabledDeleteIcon]: disabled,
-        }),
+      className={cx(classes.root, classes.chipRoot, className, {
+        [classes.disabled]: disabled,
+        [classes.selected]: isSelected,
+        [classes.clickable]: isClickable && !disabled,
+        [classes.categorical]: type === "categorical",
+        [classes.categoricalFocus]: type === "categorical" && !disabled,
+        [classes.categoricalDisabled]: type === "categorical" && disabled,
+      })}
+      onKeyUp={(event: React.KeyboardEvent<HTMLButtonElement>) => {
+        // Ignore events from children.
+        if (event.currentTarget === event.target && isDeleteKey(event)) {
+          onDelete?.(event);
+        }
+
+        onKeyUp?.(event);
       }}
-      deleteIcon={deleteIcon || defaultDeleteIcon}
-      onDelete={disabled ? undefined : onDelete}
-      onClick={(event) => {
+      onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
         if (disabled) return;
         if (selectable) setIsSelected(!isSelected);
         onClick?.(event, !isSelected);
       }}
-      aria-pressed={isSelected}
-      {...(selectable &&
-        type === "semantic" && {
-          avatar: avatarIcon,
-        })}
+      selected={isClickable && isSelected}
       {...others}
-    />
+    >
+      {selectable && type === "semantic" && (
+        <CheckboxIcon
+          className={classes.icon}
+          color={(disabled && ["atmo3", "secondary_60"]) || undefined}
+          size="XS"
+        />
+      )}
+      <HvTypography
+        noWrap
+        variant="caption2"
+        component="span"
+        className={classes.label}
+      >
+        {label}
+      </HvTypography>
+      {onDelete && deleteIcon}
+    </HvButtonBase>
   );
 });
