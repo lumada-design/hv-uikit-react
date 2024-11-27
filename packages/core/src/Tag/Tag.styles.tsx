@@ -7,6 +7,7 @@ import { outlineStyles } from "../utils/focusUtils";
 export const { staticClasses, useClasses } = createClasses("HvTag", {
   root: {
     color: theme.colors.base_dark,
+    backgroundColor: "var(--bgColor)",
 
     [`& .${chipClasses.avatar}`]: {
       width: 12,
@@ -14,16 +15,17 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       marginLeft: 2,
       marginRight: 0,
     },
-  },
 
-  chipRoot: {
     [`&.${chipClasses.root}`]: {
       height: 16,
       borderRadius: 0,
       maxWidth: 180,
       fontFamily: theme.fontFamily.body,
-      "&:focus-visible": {
-        backgroundColor: theme.alpha("base_light", 0.3),
+      ":hover, :focus": {
+        backgroundColor: "var(--bgColor)",
+      },
+      ":focus-visible": {
+        ...outlineStyles,
       },
 
       "&$categorical": {
@@ -45,7 +47,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     [`& .${chipClasses.label}`]: {
       paddingLeft: 4,
       paddingRight: 4,
-      ...(theme.typography.caption2 as React.CSSProperties),
+      ...theme.typography.caption2,
       color: "currentcolor",
     },
 
@@ -55,9 +57,6 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
       height: 16,
       padding: 0,
       color: "currentColor",
-      "& svg .color0": {
-        fill: "currentcolor",
-      },
       "&:hover": {
         backgroundColor: theme.colors.containerBackgroundHover,
         color: "unset",
@@ -74,7 +73,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   },
 
   disabled: {},
-
+  selected: {},
   clickable: {
     cursor: "pointer",
     "&:focus-visible": {
@@ -83,17 +82,24 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   },
 
   categorical: {},
-
   label: {},
-
   deleteIcon: {},
 
+  /** @deprecated use `root` instead */
+  chipRoot: {},
+  /** @deprecated unused */
   // TODO: redundant - use deleteIcon. remove in v6
+  /** @deprecated */
   button: {},
+  /** @deprecated */
   tagButton: {},
   // TODO: redundant - use $clickable or :not($disabled). remove in v6
+  /** @deprecated */
   focusVisible: {},
+  /** @deprecated */
   disabledDeleteIcon: {},
+  /** @deprecated */
   categoricalFocus: {},
+  /** @deprecated */
   categoricalDisabled: {},
 });

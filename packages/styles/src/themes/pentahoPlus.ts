@@ -578,7 +578,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvTag: {
       classes: {
         root: {
-          "&.MuiButtonBase-root.MuiChip-root": {
+          "&&.MuiChip-root": {
             borderRadius: theme.radii.full,
             padding: theme.spacing("2px", 0),
             "& .MuiChip-label": {
@@ -588,10 +588,10 @@ const pentahoPlus = makeTheme((theme) => ({
             "& .MuiChip-avatar": {
               marginLeft: theme.space.xs,
             },
-          },
-          "&& .MuiChip-deleteIcon": {
-            borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
-            paddingRight: 4,
+            "& .MuiChip-deleteIcon": {
+              borderRadius: "inherit",
+              paddingRight: 4,
+            },
           },
         },
       },

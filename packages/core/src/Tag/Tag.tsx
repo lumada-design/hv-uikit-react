@@ -6,11 +6,11 @@ import {
   CloseXS,
 } from "@hitachivantara/uikit-react-icons";
 import {
+  mergeStyles,
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { useControlled } from "../hooks/useControlled";
 import { staticClasses, useClasses } from "./Tag.styles";
@@ -27,7 +27,7 @@ export interface HvTagProps
   disabled?: boolean;
   /** The type of the tag element. A tag can be of semantic or categoric type. */
   type?: "semantic" | "categorical";
-  /** Background color to be applied to the tag */
+  /** The color variant of the tag */
   color?: HvColorAny;
   /** Icon used to customize the delete icon in the Chip element */
   deleteIcon?: React.ReactElement;
@@ -57,10 +57,6 @@ export interface HvTagProps
   /** When uncontrolled, defines the initial selected state. */
   defaultSelected?: boolean;
 }
-
-const getCategoricalColor = (customColor?: HvColorAny, colors?: any) => {
-  return (customColor && colors?.[customColor]) || customColor || colors?.cat1;
-};
 
 /**
  * A Tag is one word that describes a specific aspect of an asset. A single asset can have
@@ -95,8 +91,7 @@ export const HvTag = forwardRef<
     deleteButtonProps = {},
     ...others
   } = useDefaultProps("HvTag", props);
-  const { colors } = useTheme();
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const [isSelected, setIsSelected] = useControlled(
     selected,
@@ -106,33 +101,24 @@ export const HvTag = forwardRef<
   const defaultDeleteIcon = (
     <CloseXS
       className={cx(classes.button, classes.tagButton)}
-      iconSize="XS"
+      size="XS"
       {...deleteButtonProps}
     />
   );
 
-  const categoricalBackgroundColor =
-    type === "categorical" ? getCategoricalColor(color, colors) : undefined;
-
   const backgroundColor =
     (type === "semantic" && getColor(color, "neutral_20")) ||
-    (type === "categorical" && `${categoricalBackgroundColor}30`) ||
+    (type === "categorical" && theme.alpha(getColor(color, "cat1")!, 0.2)) ||
     undefined;
 
   const isClickable = !!(onClick || onDelete) && !disabled;
 
-  const clickableClass = css({
-    "&:hover": {
-      boxShadow: `0 0 0 1pt ${categoricalBackgroundColor}`,
-    },
-  });
-
-  const colorOverride = (disabled && ["atmo3", "secondary_60"]) || undefined;
-
-  const avatarIcon = isSelected ? (
-    <CheckboxCheck color={colorOverride} iconSize="XS" />
-  ) : (
-    <Checkbox color={colorOverride} iconSize="XS" />
+  const CheckboxIcon = isSelected ? CheckboxCheck : Checkbox;
+  const avatarIcon = (
+    <CheckboxIcon
+      color={(disabled && ["atmo3", "secondary_60"]) || undefined}
+      size="XS"
+    />
   );
 
   return (
@@ -140,14 +126,16 @@ export const HvTag = forwardRef<
       ref={ref}
       label={label}
       disabled={disabled}
-      className={cx({ [clickableClass]: isClickable }, className)}
-      style={{
-        ...(disabled ? null : { backgroundColor }),
-        ...style,
-      }}
+      data-color={color}
+      clickable={isClickable || selectable}
+      className={className}
+      style={mergeStyles(style, {
+        "--bgColor": backgroundColor,
+      })}
       classes={{
         root: cx(classes.root, classes.chipRoot, {
           [classes.disabled]: disabled,
+          [classes.selected]: isSelected,
           [classes.clickable]: isClickable,
           [classes.categorical]: type === "categorical",
           [classes.categoricalFocus]: type === "categorical" && !disabled,
