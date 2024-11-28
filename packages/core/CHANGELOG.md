@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.82.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.1...@hitachivantara/uikit-react-core@5.82.2) (2024-11-28)
+
+### Bug Fixes
+
+- relative package imports ([#4453](https://github.com/lumada-design/hv-uikit-react/issues/4453)) ([d4a16aa](https://github.com/lumada-design/hv-uikit-react/commit/d4a16aaabd216714cd3346517368e6ad5d6131d7))
+
 ## [5.82.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.0...@hitachivantara/uikit-react-core@5.82.1) (2024-11-21)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.20.0...@hitachivantara/hv-uikit-cli@1.20.1) (2024-11-28)
+
+### Bug Fixes
+
+- relative package imports ([#4453](https://github.com/lumada-design/hv-uikit-react/issues/4453)) ([d4a16aa](https://github.com/lumada-design/hv-uikit-react/commit/d4a16aaabd216714cd3346517368e6ad5d6131d7))
+
 # [1.20.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.19.0...@hitachivantara/hv-uikit-cli@1.20.0) (2024-11-25)
 
 ### Features

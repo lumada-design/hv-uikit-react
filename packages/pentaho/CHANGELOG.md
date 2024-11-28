@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.0...@hitachivantara/uikit-react-pentaho@0.8.1) (2024-11-28)
+
+### Bug Fixes
+
+- relative package imports ([#4453](https://github.com/lumada-design/hv-uikit-react/issues/4453)) ([d4a16aa](https://github.com/lumada-design/hv-uikit-react/commit/d4a16aaabd216714cd3346517368e6ad5d6131d7))
+
 # [0.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.7.1...@hitachivantara/uikit-react-pentaho@0.8.0) (2024-11-25)
 
 ### Features
