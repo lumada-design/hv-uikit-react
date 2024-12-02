@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.82.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.2...@hitachivantara/uikit-react-core@5.82.3) (2024-12-02)
+
+### Bug Fixes
+
+- **FormElement:** uniformize prop > context fallbacks ([44a0176](https://github.com/lumada-design/hv-uikit-react/commit/44a017609f27da9957086e04623fe5032c1aa93d))
+
 ## [5.82.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.1...@hitachivantara/uikit-react-core@5.82.2) (2024-11-28)
 
 ### Bug Fixes
