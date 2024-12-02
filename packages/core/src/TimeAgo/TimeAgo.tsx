@@ -3,6 +3,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { DEFAULT_LOCALE } from "../Calendar/utils";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
@@ -59,7 +60,7 @@ export const HvTimeAgo = fixedForwardRef(function HvTimeAgo<
     classes: classesProp,
     className,
     timestamp,
-    locale = "en",
+    locale = DEFAULT_LOCALE,
     component: Component = HvTypography,
     emptyElement = "—",
     disableRefresh = false,

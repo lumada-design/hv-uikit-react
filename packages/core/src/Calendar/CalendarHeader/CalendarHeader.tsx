@@ -17,8 +17,15 @@ import { HvInput, HvInputProps } from "../../Input";
 import { HvTypography } from "../../Typography";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
+import type { HvSingleCalendarProps } from "../SingleCalendar";
 import { DateRangeProp } from "../types";
-import { formatToLocale, isDate, isRange, isSameDay } from "../utils";
+import {
+  DEFAULT_LOCALE,
+  formatToLocale,
+  isDate,
+  isRange,
+  isSameDay,
+} from "../utils";
 import { staticClasses, useClasses } from "./CalendarHeader.styles";
 
 export { staticClasses as calendarHeaderClasses };
@@ -33,7 +40,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const {
     id: idProp,
     value,
-    locale = "en-US",
+    locale = DEFAULT_LOCALE,
     classes: classesProp,
     onChange,
     showEndDate,
@@ -187,32 +194,21 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
 // TODO: refactor this out
 HvCalendarHeader.formElementType = "HvCalendarHeader";
 
-export interface HvCalendarHeaderProps {
+export interface HvCalendarHeaderProps
+  extends Pick<
+    HvSingleCalendarProps,
+    | "id"
+    | "value"
+    | "locale"
+    | "onChange"
+    | "showEndDate"
+    | "showDayOfWeek"
+    | "invalidDateLabel"
+  > {
   /**
    * A Jss Object used to override or extend the component styles.
    */
   classes?: HvCalendarHeaderClasses;
-  /**
-   * Identifier.
-   */
-  id?: string;
-  /**
-   * The text to be shown on the main part of the header.
-   */
-  value?: string | Date | DateRangeProp;
-  /**
-   * Locale to be used by the calendar.
-   */
-  locale?: string;
-  /**
-   * Callback to define the input date.
-   */
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    value: Date | DateRangeProp,
-  ) => void;
   /**
    * Callback to handle input onFocus.
    */
@@ -220,16 +216,4 @@ export interface HvCalendarHeaderProps {
     event: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>,
     formattedDate: string | null,
   ) => void;
-  /**
-   * Indicates if header should display end date in a date range.
-   */
-  showEndDate?: boolean;
-  /**
-   * Indicates if header should display the day of week.
-   */
-  showDayOfWeek?: boolean;
-  /**
-   * Label shown when date is invalid.
-   */
-  invalidDateLabel?: string;
 }
