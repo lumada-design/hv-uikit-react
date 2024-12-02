@@ -3,16 +3,11 @@ import dayjs from "dayjs";
 import { capitalize } from "../utils/helpers";
 import { DateRangeProp } from "./types";
 
-/**
- * Constant with the number of weeks to be displayed on the calendar.
- */
+/** number of weeks to be displayed on the calendar. */
 export const CALENDAR_WEEKS = 6;
 
-/**
- * Constant with the default locale that should be used as the default.
- */
+/** default locale used in the date-aware components */
 export const DEFAULT_LOCALE = "en";
-
 /**
  * Pads a string value with leading zeroes(0) until length is reached.
  *

@@ -12,24 +12,20 @@ import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Calendar.styles";
 import { HvSingleCalendar } from "./SingleCalendar";
 import { DateRangeProp, VisibilitySelectorActions } from "./types";
-import { isRange } from "./utils";
+import { DEFAULT_LOCALE, isRange } from "./utils";
 
 export { staticClasses as calendarClasses };
 
 export type HvCalendarClasses = ExtractNames<typeof useClasses>;
 
-export interface HvCalendarProps {
+export interface HvCalendarProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {
   /**
    * Styles applied from the theme.
    */
   classes?: HvCalendarClasses;
   /**
-   * Identifier.
-   */
-  id?: string;
-  /**
-   * The calendar locale. If undefined, it defaults to en-US
-   *
+   * The calendar locale.
    */
   locale?: string;
   /**
@@ -113,7 +109,7 @@ export const HvCalendar = (props: HvCalendarProps) => {
   const {
     classes: classesProp,
     id: idProp,
-    locale = "en-US",
+    locale = DEFAULT_LOCALE,
     value: valueProp,
     visibleMonth,
     visibleYear,

@@ -62,7 +62,7 @@ describe("TimePicker", () => {
     expect(inputs).toHaveLength(7);
     assertTime(inputs, { ...defaultValue, hours: 7 });
 
-    const amPmButton = screen.getByRole("button", { name: "PM" });
+    const amPmButton = screen.getByRole("button", { name: /PM/i });
     expect(amPmButton).toBeInTheDocument();
   });
 

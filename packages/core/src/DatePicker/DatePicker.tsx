@@ -10,7 +10,7 @@ import { HvActionBar } from "../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
 import { HvButton } from "../Button";
 import { HvCalendar, HvCalendarProps } from "../Calendar";
-import { isDate } from "../Calendar/utils";
+import { DEFAULT_LOCALE, isDate } from "../Calendar/utils";
 import {
   HvFormElement,
   HvFormElementProps,
@@ -180,7 +180,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
       rangeMode = false,
       startAdornment,
       horizontalPlacement = "right",
-      locale: localeProp,
+      locale = DEFAULT_LOCALE,
       showActions,
       showClear,
       disablePortal = true,
@@ -201,8 +201,6 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     );
 
     const [validationMessage] = useControlled(statusMessage, "Required");
-
-    const locale = localeProp || "en-US";
 
     const [calendarOpen, setCalendarOpen] = useControlled(
       expanded,

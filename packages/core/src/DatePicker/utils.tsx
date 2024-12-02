@@ -1,4 +1,4 @@
-import { DateRangeProp } from "../Calendar";
+import type { DateRangeProp } from "../Calendar";
 import {
   getFormattedDate,
   getMonthName,
@@ -8,16 +8,12 @@ import {
 
 export const validateDate = (date: any) => (isDate(date) && date) || new Date();
 
-export const getFormattedDateRange = (
-  date: DateRangeProp,
-  locale: string,
-  rep: Intl.DateTimeFormatOptions["month"] = "short",
-) => {
+export const getFormattedDateRange = (date: DateRangeProp, locale: string) => {
   const { startDate, endDate } = date;
   const monthYear = `${getMonthName(
     startDate,
     locale,
-    rep,
+    "short",
   )} ${startDate.getFullYear()}`;
   return `${startDate.getDate()} - ${endDate?.getDate()} ${monthYear}`;
 };

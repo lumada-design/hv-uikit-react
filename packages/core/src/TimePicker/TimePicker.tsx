@@ -13,6 +13,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseDropdown, HvBaseDropdownProps } from "../BaseDropdown";
+import { DEFAULT_LOCALE } from "../Calendar/utils";
 import {
   HvFormElement,
   HvFormElementProps,
@@ -144,7 +145,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
       timeFormat,
       showSeconds,
       disableExpand,
-      locale = "en",
+      locale = DEFAULT_LOCALE,
 
       onToggle,
       onChange,

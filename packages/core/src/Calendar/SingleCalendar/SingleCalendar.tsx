@@ -5,12 +5,13 @@ import { HvPanel } from "../../Panel";
 import { HvTypography } from "../../Typography";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
+import type { HvCalendarProps } from "../Calendar";
 import { HvCalendarHeader } from "../CalendarHeader/CalendarHeader";
 import { HvComposedNavigation, HvMonthSelector } from "../CalendarNavigation";
 import { ViewMode } from "../enums";
 import { generateCalendarModel } from "../model";
-import { DateRangeProp, VisibilitySelectorActions } from "../types";
-import { getWeekdayNamesList, isDate, isRange } from "../utils";
+import type { DateRangeProp } from "../types";
+import { DEFAULT_LOCALE, getWeekdayNamesList, isDate, isRange } from "../utils";
 import { HvCalendarCell } from "./CalendarCell";
 import { staticClasses, useClasses } from "./SingleCalendar.styles";
 
@@ -22,7 +23,7 @@ export const HvSingleCalendar = ({
   classes: classesProp,
   className,
   id,
-  locale = "en-US",
+  locale = DEFAULT_LOCALE,
   value,
   visibleMonth,
   visibleYear,
@@ -136,6 +137,7 @@ export const HvSingleCalendar = ({
       <HvCalendarHeader
         id={setId(id, "header")}
         locale={locale}
+        value={value}
         onChange={handleInputChange}
         showEndDate={showEndDate && !isDateSelectionMode}
         showDayOfWeek={showDayOfWeek}
@@ -175,50 +177,12 @@ export const HvSingleCalendar = ({
   );
 };
 
-export interface HvSingleCalendarProps {
+export interface HvSingleCalendarProps
+  extends Omit<HvCalendarProps, "classes"> {
   /**
    * Styles applied from the theme.
    */
   classes?: HvSingleCalendarClasses;
-  /**
-   * Identifier.
-   */
-  id?: string;
-  /**
-   * The class name to add at the root of the single calendar
-   */
-  className?: string;
-  /**
-   * The calendar locale.
-   *
-   */
-  locale: string;
-  /**
-   * Date that the calendar would show.
-   */
-  value?: string | Date | DateRangeProp;
-  /**
-   * Date that will be used to know which month and year should be displayed on the calendar. The value of the day is
-   * irrelevant.
-   */
-  visibleDate?: Date;
-  /**
-   * Controls the visible month of the Calendar
-   */
-  visibleMonth?: number;
-  /**
-   * Controls the visible month of the Calendar
-   */
-  visibleYear?: number;
-  /**
-   * Callback function to be triggered when the selected date has changed.
-   */
-  onChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    value: Date | DateRangeProp,
-  ) => void;
   /**
    * Callback function to be triggered when the selected date input has changed.
    */
@@ -232,37 +196,11 @@ export interface HvSingleCalendarProps {
     position?: "left" | "right",
   ) => void;
   /**
-   * Callback function to be triggered when visible date has changed.
-   */
-  onVisibleDateChange?: (
-    event:
-      | React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-      | undefined,
-    action: VisibilitySelectorActions,
-    value?: Date | DateRangeProp | number,
-  ) => void;
-  /**
-   * The maximum selectable date after this all values are disabled.
-   */
-  maximumDate?: Date;
-  /**
-   * The minimum selectable date before this all values are disabled.
-   */
-  minimumDate?: Date;
-  /**
    * Indicates if header should display end date in a date range.
    */
   showEndDate?: boolean;
   /**
-   * Indicates if header should display the day of week.
-   */
-  showDayOfWeek?: boolean;
-  /**
    * Content on the upper part of the calendar.
    */
   children?: React.ReactNode;
-  /**
-   * Label shown when date is invalid.
-   */
-  invalidDateLabel?: string;
 }
