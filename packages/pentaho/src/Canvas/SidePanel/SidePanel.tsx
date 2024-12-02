@@ -109,9 +109,12 @@ export const HvCanvasSidePanel = forwardRef<
   );
 
   useEffect(() => {
+    handleSidePanelOpen?.(open);
+  }, [handleSidePanelOpen, open]);
+
+  useEffect(() => {
     handleSidePanelWidth?.(initialWidth);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialWidth]);
+  }, [handleSidePanelWidth, initialWidth]);
 
   const updateWidth = (width: number) => {
     handleSidePanelWidth?.(width);
