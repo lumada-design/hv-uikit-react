@@ -1,24 +1,11 @@
-import dayjs from "dayjs";
-
 import { capitalize } from "../utils/helpers";
-import { DateRangeProp } from "./types";
+import type { DateRangeProp } from "./types";
 
 /** number of weeks to be displayed on the calendar. */
 export const CALENDAR_WEEKS = 6;
 
 /** default locale used in the date-aware components */
 export const DEFAULT_LOCALE = "en";
-/**
- * Pads a string value with leading zeroes(0) until length is reached.
- *
- * @param value - Value to be padded.
- * @param length - Length of the value after the padding is added.
- * @returns The value as a string with the received amount of padding.
- *
- * @example zeroPad(5, 2) => "05"
- */
-export const zeroPad = (value: number, length: number) =>
-  `${value}`.padStart(length, "0");
 
 /**
  * Returns the number of days in the month given a month and year.
@@ -77,7 +64,7 @@ export const isDateRangeProp = (date: any): date is DateRangeProp =>
  * @param date2 - Second date.
  * @returns A flag stating if the dates are in the same month and year or not.
  */
-export const isSameMonth = (date1: any, date2: any) => {
+export const isSameMonth = (date1?: Date, date2?: Date) => {
   if (!(isDate(date1) && isDate(date2))) return false;
 
   return (
@@ -109,14 +96,8 @@ export const isSameDay = (date1: any, date2: any) => {
  * @param date - The date to be formatted.
  * @returns The formatted date in ISO format.
  */
-export const getDateISO = (date?: Date) => {
-  if (!isDate(date)) return null;
-
-  return [
-    date.getFullYear(),
-    zeroPad(date.getMonth() + 1, 2),
-    zeroPad(date.getDate(), 2),
-  ].join("-");
+export const getDateISO = (date: string | number | Date) => {
+  return new Date(date).toISOString().slice(0, 10);
 };
 
 /**
@@ -195,26 +176,22 @@ export const getWeekdayNamesList = (locale: string) => {
  */
 export const getMonthName = (
   date: Date,
-  locale: string,
+  locale: Intl.LocalesArgument,
   representationValue: Intl.DateTimeFormatOptions["month"] = "long",
 ) =>
   new Intl.DateTimeFormat(locale, { month: representationValue }).format(date);
 
 /**
- * Formats the received date according to Design System specifications.
- * Currently: day month, year => `14 Aug, 2019`.
+ * Formats the received date according to the user's locale & Design System specifications.
  *
  * @param date - UTC date to be formatted.
  * @param locale - The locale to be applied to the Intl format.
  * @returns The formatted date as a string.
  */
-export const getFormattedDate = (
-  // TODO: fix this
-  date: any,
-  locale: any,
-  rep: Intl.DateTimeFormatOptions["month"] = "short",
-) =>
-  `${date.getDate()} ${getMonthName(date, locale, rep)} ${date.getFullYear()}`;
+export const getFormattedDate = (date: Date, locale: Intl.LocalesArgument) => {
+  const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "medium" });
+  return formatter.format(date);
+};
 
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
@@ -258,40 +235,32 @@ export const isRange = (date: any): date is DateRangeProp =>
  * Checks if the date falls within a specified date range.
  *
  * @param date - The date to be evaluated.
- * @param providedValueRange - Provided selection range.
+ * @param dateRange - Provided selection range.
  * @returns - True if the date falls within the range, false otherwise.
  */
 export const dateInProvidedValueRange = (
-  date: any,
-  providedValueRange: any,
+  date: Date | undefined,
+  dateRange: string | Date | DateRangeProp,
 ) => {
-  const { startDate, endDate } = providedValueRange;
+  if (!isRange(dateRange) || !dateRange?.endDate) return false;
+  const { startDate, endDate } = dateRange;
 
-  if (!isRange(providedValueRange) || endDate == null) return false;
-  const localEndDate = endDate;
-
-  const modStartDate = dayjs(startDate).format("YYYY-MM-DD");
-  const modEndDate = dayjs(localEndDate).format("YYYY-MM-DD");
-
-  const convertedDate = dayjs(date).format("YYYY-MM-DD");
+  const modStartDate = getDateISO(startDate);
+  const modEndDate = getDateISO(endDate);
+  const convertedDate = getDateISO(date ?? new Date());
 
   return convertedDate >= modStartDate && convertedDate <= modEndDate;
 };
 
 export const checkIfDateIsDisabled = (
-  date?: string | number | Date | dayjs.Dayjs,
-  minimumDate?: string | number | Date | dayjs.Dayjs,
-  maximumDate?: string | number | Date | dayjs.Dayjs,
+  date?: string | number | Date,
+  minimumDate?: string | number | Date,
+  maximumDate?: string | number | Date,
 ) => {
   if (!minimumDate && !maximumDate) return false;
-  const modStartDate = minimumDate
-    ? dayjs(minimumDate).format("YYYY-MM-DD")
-    : undefined;
-  const modEndDate = maximumDate
-    ? dayjs(maximumDate).format("YYYY-MM-DD")
-    : undefined;
-
-  const convertedDate = dayjs(date).format("YYYY-MM-DD");
+  const modStartDate = minimumDate && getDateISO(minimumDate);
+  const modEndDate = maximumDate && getDateISO(maximumDate);
+  const convertedDate = getDateISO(date ?? new Date());
 
   return (
     (modStartDate !== undefined && convertedDate < modStartDate) ||
@@ -299,10 +268,63 @@ export const checkIfDateIsDisabled = (
   );
 };
 
-export const formatToLocale = (date: any, locale: any) => {
+/**
+ * gets the *localized* date formatter that's editable via input
+ * @example getEditableDateFormatter("pt") // "DD/MM/YYYY"
+ */
+function getEditableDateFormatter(locale: Intl.LocalesArgument) {
   return new Intl.DateTimeFormat(locale, {
-    day: "numeric",
-    month: "short",
     year: "numeric",
-  }).format(date);
-};
+    month: "2-digit",
+    day: "2-digit",
+  });
+}
+
+export function getStringFromDate(date: Date, locale: Intl.LocalesArgument) {
+  return getEditableDateFormatter(locale).format(date);
+}
+
+/**
+ * attempts to format a localized `dateString`
+ * @returns `Date` or `null` if parsing fails
+ * @example parseDateString("04/06/2020", "pt")
+ */
+export function parseDateString(
+  dateString: string,
+  locale: Intl.LocalesArgument,
+) {
+  // Split the input dateString by non-numeric separators (like / or -)
+  const dateParts = dateString.split(/\D+/).map(Number);
+  if (dateParts.length !== 3) return null;
+  if (!dateParts.every(Boolean)) return null;
+
+  const formatter = getEditableDateFormatter(locale);
+  const formatOrder = formatter
+    .formatToParts(new Date(2020, 4, 4))
+    .filter((part) => ["year", "month", "day"].includes(part.type))
+    .map((part) => part.type as "year" | "month" | "day");
+
+  // Map the parts into an object { year, month, day }
+  const dateObject = { year: 2020, month: 4, day: 4 };
+  formatOrder.forEach((type, index) => {
+    dateObject[type] = dateParts[index];
+  });
+
+  return new Date(dateObject.year, dateObject.month - 1, dateObject.day);
+}
+
+export function getLocaleDateFormat(locale: Intl.LocalesArgument) {
+  const formatter = getEditableDateFormatter(locale);
+
+  // Create the format string based on the order of parts
+  const getPartType = (part: Intl.DateTimeFormatPart) => {
+    if (part.type === "year") return "YYYY";
+    if (part.type === "month") return "MM";
+    if (part.type === "day") return "DD";
+    return part.value; // preserve separators like '/' or '-'
+  };
+
+  return formatter
+    .formatToParts(new Date(2020, 4, 4))
+    .reduce((acc, part) => acc + getPartType(part), "");
+}

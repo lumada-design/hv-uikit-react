@@ -52,7 +52,7 @@ describe("HvDatePicker", () => {
       const calendarButtons = screen.queryAllByRole("button");
       const firstDayOfTheMonth = screen.queryAllByText("1");
       const datePickerDropdown = screen.getByRole("combobox");
-      const datePickerDropdownValue = screen.getByText("1 Jan 2019");
+      const datePickerDropdownValue = screen.getByText("Jan 1, 2019");
       const dateInput = screen.queryByDisplayValue("Jan 1, 2019");
 
       expect(datePickerDropdown).toBeInTheDocument();
@@ -63,16 +63,14 @@ describe("HvDatePicker", () => {
     });
     it("should render a calendar component with a value", async () => {
       render(
-        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-US" />,
+        <HvDatePicker value={makeUTCDate(2019, 0, 1, 12)} locale="en-GB" />,
       );
       let calendarButtons = screen.queryAllByRole("button");
       let firstDayOfTheMonth = screen.queryAllByText("1");
       const datePickerDropdown = screen.getByRole("combobox");
-      let datePickerDropdownValue: HTMLElement | HTMLElement[] =
-        screen.getByText("1 Jan 2019");
 
       expect(datePickerDropdown).toBeInTheDocument();
-      expect(datePickerDropdownValue).toBeInTheDocument();
+      expect(screen.getByText("1 Jan 2019")).toBeInTheDocument();
       expect(screen.queryByDisplayValue("Jan 1, 2019")).not.toBeInTheDocument();
       expect(calendarButtons.length).toBe(0);
       expect(firstDayOfTheMonth.length).toBe(0);
@@ -81,8 +79,8 @@ describe("HvDatePicker", () => {
 
       calendarButtons = await screen.findAllByRole("button");
       firstDayOfTheMonth = await screen.findAllByText("1");
-      datePickerDropdownValue = await screen.findAllByText("1 Jan 2019");
-      const dateInput = screen.getByDisplayValue("Jan 1, 2019");
+      const datePickerDropdownValue = await screen.findAllByText("1 Jan 2019");
+      const dateInput = screen.getByDisplayValue("1 Jan 2019");
       expect(calendarButtons.length).toBe(42 + 5);
       expect(firstDayOfTheMonth.length).toBe(2);
       expect(datePickerDropdownValue.length).toBe(1);
