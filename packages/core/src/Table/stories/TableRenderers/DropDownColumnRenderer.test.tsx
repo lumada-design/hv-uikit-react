@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import {
-  HvCellProps,
   hvDropdownColumn,
   HvRowInstance,
   HvTable,
@@ -59,10 +58,6 @@ const DropdownColumnRenderer = () => {
       {
         columns,
         data,
-        defaultColumn: {
-          Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-            value ?? "—",
-        },
       },
       useHvPagination,
     );

@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import {
-  HvCellProps,
   HvPagination,
   HvRowInstance,
   hvSwitchColumn,
@@ -61,10 +60,6 @@ export const SwitchColumnRenderer = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
     },
     useHvPagination,
   );

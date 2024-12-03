@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import {
-  HvCellProps,
   hvDateColumn,
   HvPagination,
   HvRowInstance,
@@ -44,10 +43,6 @@ export const DateColumnRenderer = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
     },
     useHvPagination,
   );

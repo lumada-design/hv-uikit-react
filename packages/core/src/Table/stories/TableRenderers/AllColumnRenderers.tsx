@@ -1,6 +1,5 @@
 import { Fragment, useMemo, useState } from "react";
 import {
-  HvCellProps,
   hvDateColumn,
   hvDropdownColumn,
   hvExpandColumn,
@@ -128,10 +127,6 @@ export const AllColumnRenderers = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
       disableCreateExpandButton: true,
     },
     useHvRowExpand,

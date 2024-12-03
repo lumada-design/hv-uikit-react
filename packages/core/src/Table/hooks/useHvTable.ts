@@ -67,6 +67,7 @@ import {
   useTable,
 } from "react-table";
 
+import { DefaultCell } from "../renderers/DefaultCell";
 import type { HvTableProps } from "../Table";
 import type { HvTableCellProps } from "../TableCell";
 import type { HvTableHeaderProps } from "../TableHeader";
@@ -719,6 +720,7 @@ export function useHvTable<
     {
       data,
       columns,
+      defaultColumn: { Cell: DefaultCell },
       ...others,
     } as any,
     useHvTableSetup,
