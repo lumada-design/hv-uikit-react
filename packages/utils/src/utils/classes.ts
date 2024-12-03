@@ -8,7 +8,7 @@ export type ExtractNames<
 > = Partial<ReturnType<T>["classes"]>;
 
 /** Maps over an object, preserving the original keys */
-function mapObject<T extends Record<string, any>, Value extends any>(
+function mapObject<T extends Record<string, any>, Value>(
   /** Input object to convert */
   inputObject: T,
   /** Function to map over each entry */

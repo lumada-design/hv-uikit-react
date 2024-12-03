@@ -42,7 +42,7 @@ export interface HvCanvasToolbarProps
  * A toolbar component to use in a canvas context.
  */
 export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
-  (props, ref) => {
+  function HvCanvasToolbar(props, ref) {
     const {
       title: titleProp,
       backButton,

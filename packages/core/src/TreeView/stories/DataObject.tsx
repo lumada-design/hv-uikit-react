@@ -48,7 +48,7 @@ const treeDataObject = {
 } satisfies TreeData;
 
 const SimpleTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
-  (props, ref) => {
+  function SimpleTreeItem(props, ref) {
     const { children, nodeId, label, ...others } = props;
     const Icon = children ? Folders : Doc;
 

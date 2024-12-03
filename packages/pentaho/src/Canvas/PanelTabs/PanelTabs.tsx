@@ -23,7 +23,7 @@ export interface HvCanvasPanelTabsProps extends TabsProps {
 export const HvCanvasPanelTabs = forwardRef<
   HTMLDivElement,
   HvCanvasPanelTabsProps
->((props, ref) => {
+>(function HvCanvasPanelTabs(props, ref) {
   const {
     selectionFollowsFocus = true,
     children,

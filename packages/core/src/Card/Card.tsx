@@ -41,7 +41,7 @@ export const HvCard = forwardRef<
   // no-indent
   React.ComponentRef<"div">,
   HvCardProps
->((props, ref) => {
+>(function HvCard(props, ref) {
   const {
     classes: classesProp,
     style,

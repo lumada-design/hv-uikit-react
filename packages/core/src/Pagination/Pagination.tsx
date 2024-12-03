@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useEffect, useState } from "react";
+import { forwardRef, useCallback, useEffect, useState } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
 import {
   Backwards,

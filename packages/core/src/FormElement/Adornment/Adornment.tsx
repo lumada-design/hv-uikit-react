@@ -50,7 +50,7 @@ export interface HvAdornmentProps
 export const HvAdornment = forwardRef<
   HTMLDivElement | HTMLButtonElement,
   HvAdornmentProps
->((props, ref) => {
+>(function HvAdornment(props, ref) {
   const {
     id,
     classes: classesProp,

@@ -145,7 +145,11 @@ export interface HvSliderProps
 /**
  * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.
  */
-export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
+export const HvSlider = forwardRef<
+  // no-indent
+  SliderRef,
+  HvSliderProps
+>(function HvSlider(props, ref) {
   const {
     id,
     className,
@@ -336,7 +340,7 @@ export const HvSlider = forwardRef<SliderRef, HvSliderProps>((props, ref) => {
           minPointValue,
           stepValue,
         );
-      }, this);
+      });
 
       return {
         knobsPosition: newKnobsPosition,

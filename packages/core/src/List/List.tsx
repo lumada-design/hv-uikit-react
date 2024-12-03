@@ -326,6 +326,7 @@ export const HvList = (props: HvListProps) => {
   const ariaMultiSelectable = (role === "listbox" && multiSelect) || undefined;
 
   const ListContainer = useMemo(() => {
+    // eslint-disable-next-line react/display-name
     return forwardRef<HTMLUListElement, HvListContainerProps>(
       ({ ...rest }, ref) => (
         <HvListContainer

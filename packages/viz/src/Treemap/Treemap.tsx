@@ -46,7 +46,7 @@ export interface HvTreemapChartProps
  * A tree map chart visually represents hierarchical data using nested rectangles, with each rectangle's size proportional to the value it represents.
  */
 export const HvTreemapChart = forwardRef<ReactECharts, HvTreemapChartProps>(
-  (props, ref) => {
+  function HvTreemapChart(props, ref) {
     const {
       name,
       data,

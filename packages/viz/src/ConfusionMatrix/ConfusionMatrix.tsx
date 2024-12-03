@@ -89,7 +89,7 @@ export interface HvConfusionMatrixProps
 export const HvConfusionMatrix = forwardRef<
   ReactECharts,
   HvConfusionMatrixProps
->((props, ref) => {
+>(function HvConfusionMatrix(props, ref) {
   const {
     legend,
     groupBy,

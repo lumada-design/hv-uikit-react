@@ -71,7 +71,7 @@ const defaultComponent = "th";
  * `HvTableHeader` acts as a `th` element and inherits styles from its context
  */
 export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
-  (props, externalRef) => {
+  function HvTableHeader(props, ref) {
     const {
       children,
       component,
@@ -130,7 +130,7 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
 
     return (
       <Component
-        ref={externalRef}
+        ref={ref}
         role={role}
         scope={scope}
         style={style}

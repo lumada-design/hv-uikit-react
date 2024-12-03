@@ -50,7 +50,7 @@ export interface HvBoxplotProps
  * A Boxplot chart visually summarizes the distribution of a dataset by depicting key statistical measures such as the median, quartiles, and outliers.
  */
 export const HvBoxplot = forwardRef<ReactECharts, HvBoxplotProps>(
-  (props, ref) => {
+  function HvBoxplot(props, ref) {
     const {
       name,
       data,

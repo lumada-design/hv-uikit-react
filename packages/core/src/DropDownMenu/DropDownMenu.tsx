@@ -86,7 +86,7 @@ export interface HvDropDownMenuProps
 }
 
 const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
-  (props, ref) => {
+  function HeaderComponent(props, ref) {
     const { open, icon, disabled, ...others } = props;
     const { popperPlacement } = useBaseDropdownContext();
 

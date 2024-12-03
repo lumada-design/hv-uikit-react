@@ -71,7 +71,7 @@ export interface HvCanvasSidePanelProps
 export const HvCanvasSidePanel = forwardRef<
   HTMLDivElement,
   HvCanvasSidePanelProps
->((props, ref) => {
+>(function HvCanvasSidePanel(props, ref) {
   const {
     id: idProp,
     tab: tabProp,

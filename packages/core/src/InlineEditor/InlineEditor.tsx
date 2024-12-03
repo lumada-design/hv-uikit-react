@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Edit } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,

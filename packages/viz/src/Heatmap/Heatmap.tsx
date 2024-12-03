@@ -55,7 +55,7 @@ export interface HvHeatmapProps
  * A Heatmap uses color gradients to represent data intensity across a surface.
  */
 export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
-  (props, ref) => {
+  function HvHeatmap(props, ref) {
     const {
       name,
       data,

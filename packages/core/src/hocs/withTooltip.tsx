@@ -21,6 +21,7 @@ export const withTooltip =
     tooltipProps?: Partial<HvTooltipProps>,
     tooltipContainerProps?: HvBaseProps,
   ) =>
+  // eslint-disable-next-line react/display-name
   (props: any) => {
     const [isHoverDisabled, setIsHoverDisabled] = useState<boolean | undefined>(
       false,

@@ -55,7 +55,7 @@ export interface HvNotistackSnackMessageProps extends OptionsObject {
 const HvNotistackSnackMessage = forwardRef<
   HTMLDivElement,
   HvNotistackSnackMessageProps
->((props, ref) => {
+>(function HvNotistackSnackMessage(props, ref) {
   const { id, message, variant = "success", snackbarContentProps } = props;
 
   return (

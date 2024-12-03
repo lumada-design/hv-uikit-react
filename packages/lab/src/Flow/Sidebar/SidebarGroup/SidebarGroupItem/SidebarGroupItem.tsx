@@ -24,7 +24,7 @@ export interface HvFlowSidebarGroupItemProps extends HvBaseProps {
 export const HvFlowSidebarGroupItem = forwardRef<
   HTMLDivElement,
   HvFlowSidebarGroupItemProps
->((props, ref) => {
+>(function HvFlowSidebarGroupItem(props, ref) {
   const {
     label,
     isDragging,

@@ -1,5 +1,3 @@
-import React from "react";
-
 export type Column = {
   id: string;
   title?: string;

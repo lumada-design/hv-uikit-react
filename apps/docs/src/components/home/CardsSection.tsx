@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 
 import { ApiUsage } from "./cards/ApiUsage";
 import { DataConfig } from "./cards/DataConfig";

@@ -50,7 +50,7 @@ export interface HvDonutChartProps extends HvChartCommonProps {
  * the most recognizable chart types for representing proportions in business and data statistics.
  */
 export const HvDonutChart = forwardRef<ReactECharts, HvDonutChartProps>(
-  (props, ref) => {
+  function HvDonutChart(props, ref) {
     const {
       data,
       groupBy,

@@ -1,5 +1,8 @@
 import { forwardRef } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
 import { staticClasses, useClasses } from "./TableContainer.styles";
@@ -27,14 +30,20 @@ export interface HvTableContainerProps
  * HvTableContainer is a container for the HvTable
  */
 export const HvTableContainer = forwardRef<HTMLElement, HvTableContainerProps>(
-  ({ classes: classesProp, className, component, ...others }, externalRef) => {
+  function HvTableContainer(props, ref) {
+    const {
+      classes: classesProp,
+      className,
+      component,
+      ...others
+    } = useDefaultProps("HvTableContainer", props);
     const { classes, cx } = useClasses(classesProp);
 
     const Component = component || "div";
 
     return (
       <Component
-        ref={externalRef}
+        ref={ref}
         className={cx(classes.root, className)}
         {...others}
       />

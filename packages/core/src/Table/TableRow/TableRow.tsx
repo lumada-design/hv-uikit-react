@@ -37,7 +37,7 @@ const defaultComponent = "tr";
  * `HvTableRow` acts as a `tr` element and inherits styles from its context
  */
 export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
-  (props, externalRef) => {
+  function HvTableRow(props, ref) {
     const {
       classes: classesProp,
       className,
@@ -63,7 +63,7 @@ export const HvTableRow = forwardRef<HTMLElement, HvTableRowProps>(
 
     return (
       <Component
-        ref={externalRef}
+        ref={ref}
         className={cx(
           tableSectionContext.filterClassName,
           classes.root,

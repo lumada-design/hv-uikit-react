@@ -1,6 +1,6 @@
-import React from "react";
+import { createContext } from "react";
 
-const ListContext = React.createContext<{
+const ListContext = createContext<{
   interactive?: boolean;
   nesting?: number;
   condensed?: boolean;

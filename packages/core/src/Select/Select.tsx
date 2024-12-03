@@ -9,7 +9,7 @@ import {
 } from "@mui/base/useSelect";
 import { useControlled, useForkRef } from "@mui/material/utils";
 import type { Placement } from "@popperjs/core";
-import clsx from "clsx";
+import { clsx, type ClassValue } from "clsx";
 import {
   useDefaultProps,
   useTheme,
@@ -45,7 +45,7 @@ function defaultRenderValue<Value>(
   return options?.label ?? null;
 }
 
-const mergeIds = (...ids: clsx.ClassValue[]) => clsx(ids) || undefined;
+const mergeIds = (...ids: ClassValue[]) => clsx(ids) || undefined;
 
 export { staticClasses as selectClasses };
 

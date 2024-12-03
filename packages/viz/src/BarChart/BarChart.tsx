@@ -62,7 +62,7 @@ export interface HvBarChartProps
  * A bar chart is a chart or graph that presents categorical data with rectangular bars.
  */
 export const HvBarChart = forwardRef<ReactECharts, HvBarChartProps>(
-  (props, ref) => {
+  function HvBarChart(props, ref) {
     const {
       yAxis,
       xAxis,

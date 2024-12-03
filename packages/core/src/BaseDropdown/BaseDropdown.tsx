@@ -132,7 +132,7 @@ const BaseDropdown = forwardRef<
     HvBaseDropdownProps,
     "popperProps" | "variableWidth" | "placement" | "onContainerCreation"
   >
->((props, ref) => {
+>(function BaseDropdown(props, ref) {
   const {
     id: idProp,
     className,

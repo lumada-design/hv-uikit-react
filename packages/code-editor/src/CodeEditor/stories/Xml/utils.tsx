@@ -120,7 +120,7 @@ interface SimpleTreeItemProps extends HvTreeItemProps {
 }
 
 const SimpleTreeItem = forwardRef<HTMLLIElement, SimpleTreeItemProps>(
-  (props, ref) => {
+  function SimpleTreeItem(props, ref) {
     const { children, nodeId, label, attributes, ...others } = props;
     return (
       <HvTreeItem

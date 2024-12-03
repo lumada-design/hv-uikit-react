@@ -69,7 +69,7 @@ const data = [
 ] satisfies Data[];
 
 export const TreeItem = forwardRef<HTMLLIElement, TreeItemProps>(
-  (props, ref) => {
+  function TreeItem(props, ref) {
     const {
       className,
       isDragging,
