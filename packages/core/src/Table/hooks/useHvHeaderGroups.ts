@@ -156,7 +156,7 @@ const useInstanceHook = (instance: any) => {
   }
 };
 
-const useHeaderGroups: UseHvHeaderGroupsProps = (hooks) => {
+export const useHvHeaderGroups: UseHvHeaderGroupsProps = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
   hooks.useInstance.push(useInstanceHook);
 
@@ -166,6 +166,4 @@ const useHeaderGroups: UseHvHeaderGroupsProps = (hooks) => {
   hooks.getCellProps.push(getCellPropsHook);
 };
 
-useHeaderGroups.pluginName = "useHvHeaderGroups";
-
-export default useHeaderGroups;
+useHvHeaderGroups.pluginName = "useHvHeaderGroups";

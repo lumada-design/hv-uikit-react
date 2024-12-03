@@ -12,12 +12,12 @@ import {
 import { HvTag, HvTagProps } from "../../Tag";
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
-import {
+import type {
   HvCellProps,
   HvRowInstance,
   HvTableColumnConfig,
   HvTableHeaderRenderer,
-} from "../hooks/useTable";
+} from "../hooks/useHvTable";
 import { HvDateColumnCell } from "./DateColumnCell";
 import { HvDropdownColumnCell } from "./DropdownColumnCell";
 import { HvProgressColumnCell } from "./ProgressColumnCell";

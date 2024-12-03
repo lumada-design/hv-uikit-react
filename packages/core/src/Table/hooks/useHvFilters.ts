@@ -6,7 +6,5 @@ export type UseFiltersProps = (<D extends object = Record<string, unknown>>(
 
 // #endregion ##### TYPES #####
 
-const useHvFilters = useFilters.bind({});
+export const useHvFilters: UseFiltersProps = useFilters.bind({});
 (useHvFilters.pluginName as string) = "useHvFilters";
-
-export default useHvFilters as UseFiltersProps;

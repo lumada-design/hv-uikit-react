@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import dayjs from "dayjs";
 
-import { HvOverflowTooltip } from "../../../OverflowTooltip";
+import { HvOverflowTooltip } from "../../OverflowTooltip";
 
 export interface HvDateColumnCellProp {
   /** The date's text representation format. */

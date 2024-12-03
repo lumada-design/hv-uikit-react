@@ -93,12 +93,10 @@ export const defaultGetHvPaginationProps = (props: any, { instance }: any) => {
   return [props, nextProps];
 };
 
-const usePagination: UsePaginationProps = (hooks) => {
+export const useHvPagination: UsePaginationProps = (hooks) => {
   hooks.getHvPaginationProps = [defaultGetHvPaginationProps];
 
   hooks.useInstance.push(useInstanceHook);
 };
 
-usePagination.pluginName = "useHvPagination";
-
-export default usePagination;
+useHvPagination.pluginName = "useHvPagination";

@@ -8,7 +8,7 @@ import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
 import { HvTypography } from "../../Typography";
-import type { HvCellProps } from "./useTable";
+import type { HvCellProps } from "./useHvTable";
 
 // #region ##### TYPES #####
 
@@ -127,10 +127,8 @@ const getRowPropsHook = (props: any, { row }: any) => {
   return [props, nextProps];
 };
 
-const useRowExpand: UseRowExpandProps = (hooks) => {
+export const useHvRowExpand: UseRowExpandProps = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
   hooks.getRowProps.push(getRowPropsHook);
 };
-useRowExpand.pluginName = "useHvRowExpand";
-
-export default useRowExpand;
+useHvRowExpand.pluginName = "useHvRowExpand";

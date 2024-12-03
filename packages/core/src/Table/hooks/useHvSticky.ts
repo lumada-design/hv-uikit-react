@@ -255,7 +255,7 @@ const getTablePropsHook = (props: any, { instance }: any) => {
 };
 
 // props target: <table><thead>
-export const getTableHeadPropsHook = (props: any, { instance }: any) => {
+const getTableHeadPropsHook = (props: any, { instance }: any) => {
   const nextProps = {
     stickyHeader: instance.stickyHeader,
   };
@@ -264,7 +264,7 @@ export const getTableHeadPropsHook = (props: any, { instance }: any) => {
 };
 
 // props target: <table><thead><tr>
-export const getHeaderGroupPropsHook = (props: any, { instance }: any) => {
+const getHeaderGroupPropsHook = (props: any, { instance }: any) => {
   const nextProps = instance.hasStickyColumns ? getRowProps() : {};
 
   return [props, nextProps];
@@ -293,7 +293,7 @@ const getCellPropsHook = (props: any, { instance, cell }: any) => {
   return [props, nextProps];
 };
 
-const useSticky: UseHvTableSticky = (hooks) => {
+export const useHvTableSticky: UseHvTableSticky = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
   hooks.useInstance.push(useInstanceHook);
 
@@ -311,6 +311,4 @@ const useSticky: UseHvTableSticky = (hooks) => {
   hooks.getCellProps.push(getCellPropsHook);
 };
 
-useSticky.pluginName = "useHvTableSticky";
-
-export default useSticky;
+useHvTableSticky.pluginName = "useHvTableSticky";
