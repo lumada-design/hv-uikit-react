@@ -18,11 +18,25 @@ import {
   HvTableColumnConfig,
   HvTableHeaderRenderer,
 } from "../hooks/useTable";
-import { hvNumberFallback, hvStringFallback } from "../utils";
 import { HvDateColumnCell } from "./DateColumnCell";
 import { HvDropdownColumnCell } from "./DropdownColumnCell";
 import { HvProgressColumnCell } from "./ProgressColumnCell";
 import { HvSwitchColumnCell } from "./SwitchColumnCell";
+
+const EM_DASH = "—";
+
+export const hvStringFallback = (value: any) => {
+  return typeof value === "string" && value !== "" ? value : EM_DASH;
+};
+
+export const hvNumberFallback = (value: any) => {
+  return typeof value === "number" ? value : EM_DASH;
+};
+
+export const hvNodeFallback = (value: any) => {
+  if (!value) return EM_DASH;
+  return hvStringFallback(value?.toString()) === EM_DASH ? EM_DASH : value;
+};
 
 export function hvTextColumn<
   D extends object = Record<string, unknown>,
