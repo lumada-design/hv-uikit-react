@@ -1,6 +1,18 @@
-import { HvBaseSwitch, HvBaseSwitchProps } from "../../../BaseSwitch";
-import { HvTypography } from "../../../Typography";
-import { useClasses } from "./SwitchColumnCell.styles";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+
+import { HvBaseSwitch, HvBaseSwitchProps } from "../../BaseSwitch";
+import { HvTypography } from "../../Typography";
+
+const switchStyle = {
+  cursor: "pointer",
+  display: "inline-flex",
+  marginLeft: "10px",
+};
+
+const { useClasses } = createClasses("HvSwitchColumnCell", {
+  switchNo: switchStyle,
+  switchYes: switchStyle,
+});
 
 export interface HvSwitchColumnCellProp {
   /** Whether the switch is checked or not. */

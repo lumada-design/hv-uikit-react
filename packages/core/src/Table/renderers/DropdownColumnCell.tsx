@@ -1,4 +1,4 @@
-import { HvDropdown, HvDropdownProps } from "../../../Dropdown";
+import { HvDropdown, HvDropdownProps } from "../../Dropdown";
 
 export interface HvDropdownColumnCellProp extends HvDropdownProps<false> {
   /** Extra props to be passed onto the dropdown. @deprecated pass props directly */

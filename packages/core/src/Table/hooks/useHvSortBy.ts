@@ -59,7 +59,7 @@ const useInstanceHook = (instance: any) => {
   ensurePluginOrder(instance.plugins, ["useSortBy"], "useHvSortBy");
 };
 
-const useSortBy: UseHvSortByProps = (hooks) => {
+export const useHvSortBy: UseHvSortByProps = (hooks) => {
   // props target: <table><thead><tr><th>
   hooks.getHeaderProps.push(getHeaderPropsHook);
   // props target: <table><tbody><tr><td>
@@ -68,6 +68,4 @@ const useSortBy: UseHvSortByProps = (hooks) => {
   hooks.useInstance.push(useInstanceHook);
 };
 
-useSortBy.pluginName = "useHvSortBy";
-
-export default useSortBy;
+useHvSortBy.pluginName = "useHvSortBy";

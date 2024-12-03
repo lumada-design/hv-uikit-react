@@ -60,7 +60,7 @@ const useInstanceHook = (instance: any) => {
   );
 };
 
-const useResizeColumns: UseHvResizeColumnsProps = (hooks) => {
+export const useHvResizeColumns: UseHvResizeColumnsProps = (hooks) => {
   // props target: <table><thead><tr><th>
   hooks.getHeaderProps.push(getHeaderPropsHook);
   // props target: <table><tbody><tr><td>
@@ -69,6 +69,4 @@ const useResizeColumns: UseHvResizeColumnsProps = (hooks) => {
   hooks.useInstance.push(useInstanceHook);
 };
 
-useResizeColumns.pluginName = "useHvResizeColumns";
-
-export default useResizeColumns;
+useHvResizeColumns.pluginName = "useHvResizeColumns";

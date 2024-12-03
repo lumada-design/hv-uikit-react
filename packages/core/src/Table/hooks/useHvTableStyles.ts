@@ -69,7 +69,7 @@ const getTablePropsHook = (props: any, { instance }: any) => {
 };
 
 // props target: <table><thead><tr><th>
-export const getHeaderFooterPropsHook = (props: any, { column }: any) => {
+const getHeaderFooterPropsHook = (props: any, { column }: any) => {
   const nextProps: UseHvTableStylesColumnOptions = {
     variant: column.variant,
     align: column.align,
@@ -145,7 +145,7 @@ const getCellPropsHook = (props: any, { cell }: any) => {
   return [props, nextProps];
 };
 
-const useTableStyles: UseTableStylesProps = (hooks) => {
+export const useHvTableStyles: UseTableStylesProps = (hooks) => {
   // props target: <table>
   hooks.getTableProps.push(getTablePropsHook);
   // props target: <table><thead><tr><th>
@@ -158,6 +158,4 @@ const useTableStyles: UseTableStylesProps = (hooks) => {
   hooks.getCellProps.push(getCellPropsHook);
 };
 
-useTableStyles.pluginName = "useHvTableStyles";
-
-export default useTableStyles;
+useHvTableStyles.pluginName = "useHvTableStyles";

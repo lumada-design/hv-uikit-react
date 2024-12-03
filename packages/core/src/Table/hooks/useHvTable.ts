@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import {
+import type {
   ActionType,
   Cell,
   ColumnInstance,
@@ -19,7 +19,6 @@ import {
   TableState,
   UseColumnOrderInstanceProps,
   UseColumnOrderState,
-  useExpanded,
   UseExpandedHooks,
   UseExpandedInstanceProps,
   UseExpandedOptions,
@@ -41,11 +40,9 @@ import {
   UseGroupByOptions,
   UseGroupByRowProps,
   UseGroupByState,
-  usePagination,
   UsePaginationInstanceProps,
   UsePaginationOptions,
   UsePaginationState,
-  useResizeColumns,
   UseResizeColumnsColumnOptions,
   UseResizeColumnsColumnProps,
   UseResizeColumnsOptions,
@@ -54,67 +51,76 @@ import {
   UseRowStateOptions,
   UseRowStateRowProps,
   UseRowStateState,
-  useSortBy,
   UseSortByColumnOptions,
   UseSortByColumnProps,
   UseSortByHooks,
   UseSortByInstanceProps,
   UseSortByOptions,
   UseSortByState,
-  useTable,
   UseTableHeaderGroupProps,
 } from "react-table";
-
-import { HvTableProps } from "../Table";
-import { HvTableCellProps } from "../TableCell";
-import { HvTableHeaderProps } from "../TableHeader";
-import { HvTableRowProps } from "../TableRow";
 import {
+  useExpanded,
+  usePagination,
+  useResizeColumns,
+  useSortBy,
+  useTable,
+} from "react-table";
+
+import type { HvTableProps } from "../Table";
+import type { HvTableCellProps } from "../TableCell";
+import type { HvTableHeaderProps } from "../TableHeader";
+import type { HvTableRowProps } from "../TableRow";
+import type {
   UseHvBulkActionsHooks,
   UseHvBulkActionsTableInstanceProps,
   UseHvBulkActionsTableOptions,
-} from "./useBulkActions";
-import {
+} from "./useHvBulkActions";
+import type {
   UseHvHeaderGroupsCellProps,
   UseHvHeaderGroupsColumnProps,
   UseHvHeaderGroupsInstance,
-} from "./useHeaderGroups";
-import {
+} from "./useHvHeaderGroups";
+import type {
   UseHvPaginationHooks,
   UseHvPaginationTableInstance,
-} from "./usePagination";
-import {
+} from "./useHvPagination";
+import type {
   UseHvResizeColumnProps,
   UseHvResizeTableCellProps,
-} from "./useResizeColumns";
-import {
+} from "./useHvResizeColumns";
+import type {
   UseHvRowExpandRowInstance,
   UseHvRowExpandTableOptions,
   UseHvRowExpandTableRowProps,
-} from "./useRowExpand";
-import {
+} from "./useHvRowExpand";
+import type {
   UseHvRowSelectionHooks,
   UseHvRowSelectionRowInstance,
   UseHvRowSelectionState,
   UseHvRowSelectionTableInstance,
   UseHvRowSelectionTableOptions,
   UseHvRowSelectionTableRowProps,
-} from "./useRowSelection";
-import { UseHvSortByColumnProps, UseHvSortByTableCellProps } from "./useSortBy";
-import {
+} from "./useHvRowSelection";
+import type {
+  UseHvSortByColumnProps,
+  UseHvSortByTableCellProps,
+} from "./useHvSortBy";
+import type {
   UseHvTableStickyCellProps,
   UseHvTableStickyColumnProps,
   UseHvTableStickyHooks,
   UseHvTableStickyTableInstance,
   UseHvTableStickyTableOptions,
   UseHvTableStickyTableProps,
-} from "./useSticky";
-import useHvTableStyles, {
+} from "./useHvSticky";
+import type {
   UseHvTableStylesColumnOptions,
   UseHvTableStylesTableCellProps,
   UseHvTableStylesTableOptions,
   UseHvTableStylesTableRowProps,
-} from "./useTableStyles";
+} from "./useHvTableStyles";
+import { useHvTableStyles } from "./useHvTableStyles";
 
 // #region ##### TYPES #####
 
@@ -680,7 +686,7 @@ function useHvTableSetup<D extends object = Record<string, unknown>>(
 }
 useHvTableSetup.pluginName = "useHvTableSetup";
 
-function useHvTable<
+export function useHvTable<
   D extends object = Record<string, unknown>,
   H extends HvTableHeaderRenderer | undefined = HvTableHeaderRenderer,
 >(
@@ -719,5 +725,3 @@ function useHvTable<
     ...plugins,
   ) as any;
 }
-
-export default useHvTable;

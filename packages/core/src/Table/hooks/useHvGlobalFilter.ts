@@ -8,7 +8,5 @@ export type UseGlobalFilterProps = (<
 
 // #endregion ##### TYPES #####
 
-const useHvGlobalFilter = useGlobalFilter.bind({});
+export const useHvGlobalFilter: UseGlobalFilterProps = useGlobalFilter.bind({});
 (useHvGlobalFilter.pluginName as string) = "useHvGlobalFilter";
-
-export default useHvGlobalFilter as UseGlobalFilterProps;

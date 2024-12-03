@@ -130,8 +130,7 @@ const useInstanceHook = (instance: any) => {
   });
 };
 
-// TODO: fix typo in v6
-export const defaultgetHvBulkActionsProps = (props: any, { instance }: any) => {
+const defaultGetHvBulkActionsProps = (props: any, { instance }: any) => {
   const {
     rows,
     initialRows,
@@ -161,12 +160,10 @@ export const defaultgetHvBulkActionsProps = (props: any, { instance }: any) => {
   return [props, nextProps];
 };
 
-const useBulkActions: UseBulkActionsProps = (hooks) => {
-  hooks.getHvBulkActionsProps = [defaultgetHvBulkActionsProps];
+export const useHvBulkActions: UseBulkActionsProps = (hooks) => {
+  hooks.getHvBulkActionsProps = [defaultGetHvBulkActionsProps];
 
   hooks.useInstance.push(useInstanceHook);
 };
 
-useBulkActions.pluginName = "useHvBulkActions";
-
-export default useBulkActions;
+useHvBulkActions.pluginName = "useHvBulkActions";

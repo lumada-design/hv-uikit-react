@@ -1,6 +1,24 @@
 import MuiLinearProgress from "@mui/material/LinearProgress";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
-import { useClasses } from "./ProgressColumnCell.styles";
+const { useClasses } = createClasses("HvProgressColumnCell", {
+  root: { display: "flex", width: "100%" },
+  linearProgressContainer: { width: "100%", margin: "auto" },
+  linearProgress: {
+    height: 8,
+  },
+  linearProgressRoot: { backgroundColor: theme.colors.atmo4 },
+  linearProgressColorPrimary: {
+    backgroundColor: theme.colors.atmo4,
+  },
+  linearProgressBarColorPrimary: {
+    backgroundColor: theme.colors.positive,
+  },
+  linearProgressBarColorSecondary: {
+    backgroundColor: theme.colors.secondary,
+  },
+});
 
 export interface HvProgressColumnCellProp {
   /** Current value of the bar. */

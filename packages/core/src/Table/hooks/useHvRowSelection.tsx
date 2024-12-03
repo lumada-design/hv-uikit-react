@@ -121,7 +121,7 @@ const DEFAULT_LABELS = {
 
 const hideHeaderVariants = ["checkbox", "actions"];
 
-export const CellWithCheckBox = ({ row, labels: labelsProp }: any) => {
+const CellWithCheckBox = ({ row, labels: labelsProp }: any) => {
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   const { onChange, checked, disabled, indeterminate } =
@@ -230,12 +230,7 @@ export const defaultGetToggleAllPageRowsSelectedProps = (
   },
 ];
 
-export function reducer(
-  state: any,
-  action: any,
-  previousState: any,
-  instance: any,
-) {
+function reducer(state: any, action: any, previousState: any, instance: any) {
   if (action.type === actions.init) {
     return {
       selectedRowIds: {},
@@ -466,7 +461,7 @@ function getRowIsSelected(row: any, selectedRowIds: any, getSubRows: any) {
   return false;
 }
 
-export function useInstance(instance: any) {
+function useInstance(instance: any) {
   const {
     data,
     rows,
@@ -682,7 +677,7 @@ export function useInstance(instance: any) {
   });
 }
 
-export function prepareRow(row: any, { instance }: any) {
+function prepareRow(row: any, { instance }: any) {
   row.toggleRowSelected = (set: any) => instance.toggleRowSelected(row.id, set);
   row.getToggleRowSelectedProps = makePropGetter(
     instance.getHooks().getToggleRowSelectedProps,
@@ -698,7 +693,7 @@ export function prepareRow(row: any, { instance }: any) {
     instance.state?.lockedSelectionRowIds?.[row.id] || false;
 }
 
-const useRowSelection: UseRowSelectionProps = (hooks) => {
+export const useHvRowSelection: UseRowSelectionProps = (hooks) => {
   hooks.visibleColumns.push(visibleColumnsHook);
 
   hooks.getRowProps.push(getRowPropsHook);
@@ -717,6 +712,4 @@ const useRowSelection: UseRowSelectionProps = (hooks) => {
   hooks.prepareRow.push(prepareRow);
 };
 
-useRowSelection.pluginName = "useHvRowSelection";
-
-export default useRowSelection;
+useHvRowSelection.pluginName = "useHvRowSelection";
