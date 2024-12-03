@@ -7,7 +7,6 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  HvTypography,
   theme,
   useHvData,
   useHvRowExpand,
@@ -69,26 +68,16 @@ export const UseHvRowExpand = () => {
                     </HvTableCell>
                   ))}
                 </HvTableRow>
-                <HvTableRow
-                  style={{
-                    display: row.isExpanded ? undefined : "none",
-                    background: theme.table.rowExpandBackgroundColor,
-                  }}
-                >
-                  <HvTableCell
-                    style={{
-                      paddingBottom: 0,
-                      paddingTop: 0,
-                      textAlign: "center",
-                      height: 100,
-                    }}
-                    colSpan={100}
-                  >
-                    <HvTypography>
-                      Expanded content for: {row.values.name}
-                    </HvTypography>
-                  </HvTableCell>
-                </HvTableRow>
+                {row.isExpanded && (
+                  <HvTableRow style={{ backgroundColor: theme.colors.atmo2 }}>
+                    <HvTableCell
+                      style={{ textAlign: "center", height: 100 }}
+                      colSpan={100}
+                    >
+                      {`Expanded content for: ${row.values.name}`}
+                    </HvTableCell>
+                  </HvTableRow>
+                )}
               </Fragment>
             );
           })}

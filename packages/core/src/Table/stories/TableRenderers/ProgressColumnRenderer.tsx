@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import {
-  HvCellProps,
   HvPagination,
   hvProgressColumn,
   HvRowInstance,
@@ -50,10 +49,6 @@ export const ProgressColumnRenderer = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
     },
     useHvPagination,
   );

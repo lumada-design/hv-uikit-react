@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import {
-  HvCellProps,
   HvPagination,
   HvRowInstance,
   HvTable,
@@ -49,10 +48,6 @@ export const TagColumnRenderer = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
     },
     useHvPagination,
   );

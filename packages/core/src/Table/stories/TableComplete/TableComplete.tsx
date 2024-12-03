@@ -45,8 +45,6 @@ const classes = {
   }),
 };
 
-const EM_DASH = "—";
-
 const DEFAULT_PAGE_SIZE = 10;
 
 const getPageCount = (totalRecords = 0, pageSize = DEFAULT_PAGE_SIZE) =>
@@ -217,7 +215,6 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
 
         return newState;
       },
-      defaultColumn: { Cell: ({ value }: HvCellProps<T>) => value ?? EM_DASH },
       initialState: {
         ...(hideSelectors && { hiddenColumns: ["_hv_selection"] }),
         ...initialState,

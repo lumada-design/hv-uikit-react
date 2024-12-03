@@ -1,6 +1,5 @@
 import { Fragment, useMemo, useState } from "react";
 import {
-  HvCellProps,
   hvExpandColumn,
   HvPagination,
   HvRowInstance,
@@ -55,10 +54,6 @@ export const ExpandColumnRenderer = () => {
     {
       columns,
       data,
-      defaultColumn: {
-        Cell: ({ value }: HvCellProps<NewRendererEntry, string>) =>
-          value ?? "—",
-      },
       disableCreateExpandButton: true,
     },
     useHvRowExpand,

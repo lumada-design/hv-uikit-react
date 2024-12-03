@@ -8,6 +8,7 @@ import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
 import { HvTypography } from "../../Typography";
+import { DefaultCell } from "../renderers/DefaultCell";
 import type { HvCellProps } from "./useHvTable";
 
 // #region ##### TYPES #####
@@ -88,7 +89,7 @@ const visibleColumnsHook = (columns: any, { instance }: any) => {
   if (firstDataColumnIndex !== -1) {
     const firstDataColumn = columns[firstDataColumnIndex];
 
-    if (firstDataColumn.Cell == null) {
+    if (firstDataColumn.Cell == null || firstDataColumn.Cell !== DefaultCell) {
       firstDataColumn.Cell = CellWithExpandButton;
       firstDataColumn.variant = "expand";
 
