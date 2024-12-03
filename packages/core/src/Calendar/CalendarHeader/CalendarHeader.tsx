@@ -1,8 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import localeData from "dayjs/plugin/localeData";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -11,20 +7,21 @@ import {
 import {
   HvFormElementContext,
   HvFormElementDescriptorsContext,
-  HvFormElementValueContext,
 } from "../../FormElement";
 import { HvInput, HvInputProps } from "../../Input";
 import { HvTypography } from "../../Typography";
 import { isKey } from "../../utils/keyboardUtils";
 import { setId } from "../../utils/setId";
 import type { HvSingleCalendarProps } from "../SingleCalendar";
-import { DateRangeProp } from "../types";
 import {
   DEFAULT_LOCALE,
-  formatToLocale,
+  getFormattedDate,
+  getLocaleDateFormat,
+  getStringFromDate,
   isDate,
   isRange,
   isSameDay,
+  parseDateString,
 } from "../utils";
 import { staticClasses, useClasses } from "./CalendarHeader.styles";
 
@@ -32,14 +29,10 @@ export { staticClasses as calendarHeaderClasses };
 
 export type HvCalendarHeaderClasses = ExtractNames<typeof useClasses>;
 
-dayjs.extend(localeData);
-dayjs.extend(localizedFormat);
-dayjs.extend(customParseFormat);
-
 export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const {
     id: idProp,
-    value,
+    value: valueProp,
     locale = DEFAULT_LOCALE,
     classes: classesProp,
     onChange,
@@ -52,18 +45,15 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(HvFormElementContext);
-  const elementValue = useContext(HvFormElementValueContext);
   const { label } = useContext(HvFormElementDescriptorsContext);
 
-  let localValue: string | Date | DateRangeProp | undefined =
-    value ?? elementValue ?? "";
-  if (isRange(localValue)) {
-    localValue = showEndDate ? localValue.endDate : localValue.startDate;
-  }
+  const localValue = isRange(valueProp)
+    ? showEndDate
+      ? valueProp.endDate!
+      : valueProp.startDate
+    : valueProp;
 
-  const [dateValue, setDateValue] = useState<
-    string | Date | DateRangeProp | undefined
-  >(localValue);
+  const [dateValue, setDateValue] = useState(localValue);
   const [editedValue, setEditedValue] = useState<string | null>(null);
   const [displayValue, setDisplayValue] = useState("");
   const [weekdayDisplay, setWeekdayDisplay] = useState("");
@@ -71,14 +61,14 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
   const id = idProp ?? setId(context.id, "calendarHeader");
 
   const inputValue = editedValue ?? displayValue;
-  const localeFormat = dayjs().locale(locale).localeData().longDateFormat("L");
+  const localeFormat = getLocaleDateFormat(locale);
 
   const [isValidValue, setIsValidValue] = useState(
-    inputValue.length === 0 || (!!inputValue && dayjs(localValue).isValid()),
+    inputValue.length === 0 || (inputValue && isDate(new Date(inputValue))),
   );
 
   const validateInput = (incomingValid: any) =>
-    incomingValid === undefined || dayjs(incomingValid).isValid();
+    incomingValid === undefined || isDate(new Date(incomingValid));
 
   useEffect(() => {
     const valid = validateInput(localValue);
@@ -93,7 +83,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
       const weekday = new Intl.DateTimeFormat(locale, {
         weekday: "short",
       }).format(isDate(localValue) ? localValue : 0);
-      setDisplayValue(formatToLocale(localValue, locale));
+      setDisplayValue(getFormattedDate(localValue, locale));
       setEditedValue(null);
       setWeekdayDisplay(weekday);
     }
@@ -101,12 +91,10 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
 
   const handleNewDate = (event: any, date: string) => {
     // attempt to format in locale data, or fallback to default
-    const localeParsedDate = dayjs(date, localeFormat);
+    const localeParsedDate = parseDateString(date, locale);
 
-    const isValidInput = localeParsedDate.isValid();
-    const dateParsed = isValidInput
-      ? localeParsedDate.toDate()
-      : dayjs(date).toDate();
+    const isValidInput = isDate(localeParsedDate);
+    const dateParsed = isValidInput ? localeParsedDate : new Date(date);
     // prevent extra updates
     if (!isSameDay(dateParsed, dateValue)) {
       setDateValue(dateParsed);
@@ -141,7 +129,7 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     if (!localValue) return;
     const formattedDate =
       isValidValue && isDate(localValue)
-        ? dayjs(localValue).locale(locale).format("L")
+        ? getStringFromDate(localValue, locale)
         : editedValue;
     setEditedValue(formattedDate);
     onFocus?.(event, formattedDate);

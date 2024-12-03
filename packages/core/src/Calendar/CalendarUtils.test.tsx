@@ -13,22 +13,7 @@ import {
   isSameDay,
   isSameMonth,
   makeUTCDate,
-  zeroPad,
 } from "./utils";
-
-describe("Calendar utils - zeroPad", () => {
-  it("should return 01 when the input is 1 and the length is 2", () => {
-    expect(zeroPad(1, 2)).toBe("01");
-  });
-
-  it("should return 3 when the input is 3 and the length is 0", () => {
-    expect(zeroPad(3, 0)).toBe("3");
-  });
-
-  it("should return 005 when the input is 5 and the length is 3", () => {
-    expect(zeroPad(5, 3)).toBe("005");
-  });
-});
 
 describe("Calendar utils - getMonthDays", () => {
   it("should return 31 days for January", () => {
@@ -113,9 +98,6 @@ describe("Calendar utils - getDateISO", () => {
   it("should return the received date in ISO format (YYYY-MM-DD)", () => {
     expect(getDateISO(new Date(2019, 0, 1))).toBe("2019-01-01");
   });
-  it("should return `null` if the received date is invalid", () => {
-    expect(getDateISO(undefined)).toBe(null);
-  });
 });
 
 describe("Calendar utils - getPreviousMonth", () => {
@@ -172,7 +154,7 @@ describe("Calendar utils - getMonthName", () => {
 
 describe("Calendar utils - getFormattedDate", () => {
   it("should return a date as a string with the format `14 Aug, 2019`", () => {
-    expect(getFormattedDate(new Date(2019, 7, 14), "en-US")).toBe(
+    expect(getFormattedDate(new Date("2019-08-14"), "en-GB")).toBe(
       "14 Aug 2019",
     );
   });

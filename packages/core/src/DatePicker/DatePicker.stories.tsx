@@ -141,10 +141,7 @@ export const Localized: StoryObj<HvDatePickerProps> = {
     },
   },
   render: () => {
-    // Locales must be imported beforehand:
-    // import "dayjs/locale/pt";
-    const initialLocale = "pt";
-    const [locale, setLocale] = useState(initialLocale);
+    const [locale, setLocale] = useState("pt");
 
     return (
       <>
@@ -152,17 +149,18 @@ export const Localized: StoryObj<HvDatePickerProps> = {
           <HvRadioGroup
             orientation="horizontal"
             value={locale}
-            onChange={(event, value) => {
-              setLocale(value);
-            }}
+            onChange={(event, value) => setLocale(value)}
           >
-            <HvRadio label="English" value="en" />
-            <HvRadio label="French" value="fr" />
-            <HvRadio label="Portuguese" value="pt" />
+            <HvRadio label="🇺🇸" value="en-US" />
+            <HvRadio label="🇬🇧" value="en-GB" />
+            <HvRadio label="🇫🇷" value="fr" />
+            <HvRadio label="🇵🇹" value="pt" />
+            <HvRadio label="🇯🇵" value="ja" />
           </HvRadioGroup>
         </div>
         <HvDatePicker
           placeholder={`Select a date in ${locale}`}
+          value={new Date("2020-02-10")}
           locale={locale}
           aria-label="Date"
         />
