@@ -147,6 +147,7 @@ export const Fields = (props: FieldsProps) => {
         value={internalRed}
         onChange={(event, value) => onChangeRbg(event, value, "r")}
         onBlur={() => setInternalRed(rgb?.r)}
+        inputProps={{ type: "number", min: 0, max: 255 }}
         disableClear
       />
       <HvInput
@@ -156,6 +157,7 @@ export const Fields = (props: FieldsProps) => {
         value={internalGreen}
         onChange={(event, value) => onChangeRbg(event, value, "g")}
         onBlur={() => setInternalGreen(rgb?.g)}
+        inputProps={{ type: "number", min: 0, max: 255 }}
         disableClear
       />
       <HvInput
@@ -165,6 +167,7 @@ export const Fields = (props: FieldsProps) => {
         value={internalBlue}
         onChange={(event, value) => onChangeRbg(event, value, "b")}
         onBlur={() => setInternalBlue(rgb?.b)}
+        inputProps={{ type: "number", min: 0, max: 255 }}
         disableClear
       />
     </div>

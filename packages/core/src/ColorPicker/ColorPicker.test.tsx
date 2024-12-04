@@ -21,9 +21,9 @@ describe("ColorPicker", () => {
     );
 
     expect(screen.getByText("#de2beb")).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: "R" })).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: "G" })).toBeInTheDocument();
-    expect(screen.getByRole("textbox", { name: "B" })).toBeInTheDocument();
+    expect(screen.getByRole("spinbutton", { name: "R" })).toBeInTheDocument();
+    expect(screen.getByRole("spinbutton", { name: "G" })).toBeInTheDocument();
+    expect(screen.getByRole("spinbutton", { name: "B" })).toBeInTheDocument();
   });
 
   it("should render recommended colors", () => {
