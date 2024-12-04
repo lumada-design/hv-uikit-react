@@ -54,7 +54,12 @@ export const { staticClasses, useClasses } = createClasses(name, {
     marginLeft: "0px",
     border: "2px solid #fff",
     borderRadius: theme.radii.circle,
-    transform: "translate(0, -2px)",
+    "&.vertical": {
+      transform: "translate(0px, -2px)",
+    },
+    "&.horizontal": {
+      transform: "translate(-6px, -2px)",
+    },
   },
   title: {
     fontWeight: theme.fontWeights.semibold,

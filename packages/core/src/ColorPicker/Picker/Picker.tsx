@@ -46,7 +46,7 @@ const Component = (props: PickerProps) => {
     classes: classesProp,
   } = useDefaultProps("HvColorPickerPicker", props);
   const { activeTheme } = useTheme();
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const SaturationPointer = useCallback(
     () => <div className={classes?.saturationPointer} />,
@@ -54,8 +54,15 @@ const Component = (props: PickerProps) => {
   );
 
   const HueSlider = useCallback(
-    () => <div className={classes?.hueSlider} />,
-    [classes?.hueSlider],
+    () => (
+      <div
+        className={cx(
+          classes?.hueSlider,
+          activeTheme?.colorPicker.hueDirection,
+        )}
+      />
+    ),
+    [activeTheme?.colorPicker.hueDirection, classes?.hueSlider, cx],
   );
 
   return (
