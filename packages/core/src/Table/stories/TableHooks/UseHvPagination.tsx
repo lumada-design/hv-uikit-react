@@ -1,16 +1,25 @@
 import { useMemo } from "react";
 import {
+  ColumnDef,
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  Table,
+  useReactTable,
+} from "@tanstack/react-table";
+import {
   HvPagination,
+  HvPaginationProps,
   HvTable,
   HvTableBody,
   HvTableCell,
-  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  useHvPagination,
-  useHvTable,
 } from "@hitachivantara/uikit-react-core";
 
 export function Demo() {
@@ -22,7 +31,7 @@ export function Demo() {
 
 const EmptyRow = () => (
   <HvTableRow>
-    <HvTableCell colSpan={100} />
+    <HvTableCell colSpan={100} style={{ height: 33 }} />
   </HvTableRow>
 );
 
@@ -31,31 +40,27 @@ export function MyTable<T extends Record<string, any>>({
   columns,
 }: {
   data: T[];
-  columns: HvTableColumnConfig<T, any>[];
+  columns: ColumnDef<T, any>[];
 }) {
-  const {
-    getTableProps,
-    getTableHeadProps,
-    getTableBodyProps,
-    prepareRow,
-    headerGroups,
-    page,
-    state: { pageSize },
-    getHvPaginationProps,
-  } = useHvTable<T, string>({ columns, data }, useHvPagination);
+  const table = useReactTable({
+    columns,
+    data,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+  });
 
   const renderTableRow = (i: number) => {
-    const row = page[i];
+    const row = table.getRowModel().rows[i];
 
     if (!row) return <EmptyRow key={i} />;
 
-    prepareRow(row);
-
     return (
-      <HvTableRow {...row.getRowProps()}>
-        {row.cells.map((cell) => (
-          <HvTableCell {...cell.getCellProps()} key={cell.getCellProps().key}>
-            {cell.render("Cell")}
+      <HvTableRow key={row.id}>
+        {row.getVisibleCells().map((cell) => (
+          <HvTableCell key={cell.id}>
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </HvTableCell>
         ))}
       </HvTableRow>
@@ -65,30 +70,30 @@ export function MyTable<T extends Record<string, any>>({
   return (
     <>
       <HvTableContainer tabIndex={0}>
-        <HvTable {...getTableProps()}>
-          <HvTableHead {...getTableHeadProps?.()}>
-            {headerGroups.map((headerGroup) => (
-              <HvTableRow
-                {...headerGroup.getHeaderGroupProps()}
-                key={headerGroup.getHeaderGroupProps().key}
-              >
+        <HvTable>
+          <HvTableHead>
+            {...table.getHeaderGroups().map((headerGroup) => (
+              <HvTableRow key={headerGroup.id}>
                 {headerGroup.headers.map((col) => (
                   <HvTableHeader
-                    {...col.getHeaderProps()}
-                    key={col.getHeaderProps().key}
+                    key={col.id}
+                    colSpan={col.colSpan}
+                    onClick={col.column.getToggleSortingHandler()}
                   >
-                    {col.render("Header")}
+                    {flexRender(col.column.columnDef.header, col.getContext())}
                   </HvTableHeader>
                 ))}
               </HvTableRow>
             ))}
           </HvTableHead>
-          <HvTableBody {...getTableBodyProps()}>
-            {pageSize && [...Array(pageSize).keys()].map(renderTableRow)}
+          <HvTableBody>
+            {[...Array(table.getState().pagination.pageSize).keys()].map(
+              renderTableRow,
+            )}
           </HvTableBody>
         </HvTable>
       </HvTableContainer>
-      {page?.length > 0 && <HvPagination {...getHvPaginationProps?.()} />}
+      <HvPagination {...getHvPaginationProps(table)} />
     </>
   );
 }
@@ -106,19 +111,20 @@ interface AssetEvent {
   selected?: boolean;
 }
 
-const getColumns = (): HvTableColumnConfig<AssetEvent>[] => [
-  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
-  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
-  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { minWidth: 100 } },
-  {
-    Header: "Probability",
-    accessor: "riskScore",
-    align: "right", // numeric values should be right-aligned
-    Cell: ({ value }) => `${value}%`,
-  },
-  { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
+const columnHelper = createColumnHelper<AssetEvent>();
+
+const getColumns = (): ColumnDef<AssetEvent, any>[] => [
+  { header: "Title", accessorKey: "name", minSize: 120 },
+  { header: "Time", accessorKey: "createdDate", minSize: 100 },
+  { header: "Event Type", accessorKey: "eventType", minSize: 100 },
+  { header: "Status", accessorKey: "status", minSize: 100 },
+  columnHelper.accessor("riskScore", {
+    header: "Probability",
+    cell: ({ getValue }) => `${getValue()}%`,
+  }),
+
+  { header: "Severity", accessorKey: "severity" },
+  { header: "Priority", accessorKey: "priority" },
 ];
 
 const getOption = (opts: string[], i: number) => opts[i % opts.length];
@@ -135,3 +141,16 @@ const makeEvent = (i: number): AssetEvent => ({
 });
 
 const makeData = (len = 10) => [...Array(len).keys()].map(makeEvent);
+
+function getHvPaginationProps(table: Table<any>): HvPaginationProps {
+  const { pageIndex, pageSize } = table.getState().pagination;
+  return {
+    canPrevious: table.getCanPreviousPage(),
+    canNext: table.getCanNextPage(),
+    pageSize: pageSize,
+    page: pageIndex,
+    pages: table.getPageCount(),
+    onPageChange: (newPage) => table.setPageIndex(newPage),
+    onPageSizeChange: (newPageSize) => table.setPageSize(newPageSize),
+  };
+}

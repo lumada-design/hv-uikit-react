@@ -70,6 +70,7 @@
     "@storybook/test": "^8.4.1",
     "@storybook/test-runner": "^0.19.1",
     "@storybook/types": "^8.4.1",
+    "@tanstack/react-table": "^8.20.5",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^16.0.0",
