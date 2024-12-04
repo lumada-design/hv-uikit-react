@@ -10,7 +10,7 @@ import type {
   HvConfusionMatrixMeasure,
   HvDonutChartMeasure,
   HvLineChartMeasures,
-} from "..";
+} from "../types";
 import { HvChartCommonProps } from "../types/common";
 import { HvChartLegendIcon } from "../types/legend";
 import { HvScatterPlotMeasure } from "../types/measures";

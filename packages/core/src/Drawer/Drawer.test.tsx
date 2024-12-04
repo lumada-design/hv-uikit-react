@@ -3,7 +3,8 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
-import { HvButton, HvDialogActions, HvDialogContent, HvDialogTitle } from "..";
+import { HvButton } from "../Button";
+import { HvDialogActions, HvDialogContent, HvDialogTitle } from "../Dialog";
 import { HvDrawer } from "./Drawer";
 
 const Sample = ({
@@ -17,13 +18,13 @@ const Sample = ({
 
   return (
     <div>
-      <HvButton
+      <button
         id="openDialog"
         aria-label="openDialog"
         onClick={() => setOpen(true)}
       >
         Open dialog
-      </HvButton>
+      </button>
       <HvDrawer
         id="drawer-test"
         open={open}
