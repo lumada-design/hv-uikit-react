@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvButton } from "..";
+import { HvButton } from "../Button";
 import { HvTimeAgo } from "./TimeAgo";
 
 const EM_DASH = "—";

@@ -67,7 +67,8 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@hitachivantara/*/*"]
+        "patterns": ["@hitachivantara/*/*"],
+        "paths": ["..", "../.."]
       }
     ],
     "no-restricted-exports": [
