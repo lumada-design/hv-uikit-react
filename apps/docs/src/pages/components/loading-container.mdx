@@ -34,22 +34,13 @@ export const getStaticProps = async ({ params }) => {
       defaultValue: 0.8,
     },
   }}
-  children={
-    <div
-      style={{
-        height: 200,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "lightgray",
-      }}
-    >
-      My content
-    </div>
-  }
   componentProps={{
     style: { width: "100%" },
   }}
-/>
+>
+  <div className="flex items-center justify-center bg-gray h-200px">
+    My content
+  </div>
+</Playground>
 
 </Page>

@@ -24,7 +24,7 @@ export const getStaticProps = async ({ params }) => {
   controls={{
     title: {
       type: "text",
-      defaultValue: "Section title - ",
+      defaultValue: "Section title",
     },
     expandable: {
       defaultValue: false,
@@ -33,12 +33,9 @@ export const getStaticProps = async ({ params }) => {
       defaultValue: false,
     },
   }}
-  children={
-    <div>
-      <p>My section example content</p>
-    </div>
-  }
-/>
+>
+  <div>My section example content</div>
+</Playground>
 
 ### Actions
 

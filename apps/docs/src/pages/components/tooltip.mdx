@@ -24,16 +24,15 @@ export const getStaticProps = async ({ params }) => {
   Component={HvTooltip}
   componentName="HvTooltip"
   controls={{
-
     enterDelay: { type: "text", defaultValue: 300 },
     placement: { defaultValue: "top" },
-
-}}
-componentProps={{
+  }}
+  componentProps={{
     title: "Tooltip text",
   }}
-children={<HvButton variant="primarySubtle">Hover or focus here</HvButton>}
-/>
+>
+  <HvButton variant="primarySubtle">Hover or focus here</HvButton>
+</Playground>
 
 <Callout type="info">
   `HvTooltip` uses Material UI's tooltip under the hood. You can find more
