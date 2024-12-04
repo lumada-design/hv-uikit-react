@@ -9,6 +9,7 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
+  HvTableSection,
   useHvData,
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
@@ -59,42 +60,45 @@ export const Table = ({ modelId }: TableProps) => {
   }, [instance.state]);
 
   return (
-    <HvLoadingContainer hidden={!loading}>
-      <HvTableContainer style={{ padding: "2px" }}>
-        <HvTable {...instance.getTableProps()}>
-          <HvTableHead>
-            <HvTableRow>
-              {columns.map((col) => (
-                <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
-              ))}
-            </HvTableRow>
-          </HvTableHead>
-          <HvTableBody {...instance.getTableBodyProps()}>
-            {instance.page.map((row) => {
-              instance.prepareRow(row);
-              const { key, ...rowProps } = row.getRowProps();
-              return (
-                <HvTableRow key={key} {...rowProps}>
-                  {row.cells.map((cell) => {
-                    const { key: cellKey, ...cellProps } = cell.getCellProps();
-                    return (
-                      <HvTableCell key={cellKey} {...cellProps}>
-                        {cell.render("Cell")}
-                      </HvTableCell>
-                    );
-                  })}
-                </HvTableRow>
-              );
-            })}
-          </HvTableBody>
-        </HvTable>
-      </HvTableContainer>
-      {instance.page?.length ? (
-        <HvPagination
-          {...instance.getHvPaginationProps?.()}
-          pageSizeOptions={PAGE_OPTIONS}
-        />
-      ) : undefined}
-    </HvLoadingContainer>
+    <HvTableSection>
+      <HvLoadingContainer hidden={!loading}>
+        <HvTableContainer>
+          <HvTable {...instance.getTableProps()}>
+            <HvTableHead>
+              <HvTableRow>
+                {columns.map((col) => (
+                  <HvTableHeader key={col.Header}>{col.Header}</HvTableHeader>
+                ))}
+              </HvTableRow>
+            </HvTableHead>
+            <HvTableBody {...instance.getTableBodyProps()}>
+              {instance.page.map((row) => {
+                instance.prepareRow(row);
+                const { key, ...rowProps } = row.getRowProps();
+                return (
+                  <HvTableRow key={key} {...rowProps}>
+                    {row.cells.map((cell) => {
+                      const { key: cellKey, ...cellProps } =
+                        cell.getCellProps();
+                      return (
+                        <HvTableCell key={cellKey} {...cellProps}>
+                          {cell.render("Cell")}
+                        </HvTableCell>
+                      );
+                    })}
+                  </HvTableRow>
+                );
+              })}
+            </HvTableBody>
+          </HvTable>
+        </HvTableContainer>
+        {instance.page?.length > 0 && (
+          <HvPagination
+            {...instance.getHvPaginationProps?.()}
+            pageSizeOptions={PAGE_OPTIONS}
+          />
+        )}
+      </HvLoadingContainer>
+    </HvTableSection>
   );
 };

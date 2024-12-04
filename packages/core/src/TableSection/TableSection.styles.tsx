@@ -38,6 +38,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
 
     [`& .${tableContainerClasses.root}`]: {
       paddingBottom: 0,
+      borderTopLeftRadius: "inherit",
+      borderTopRightRadius: "inherit",
     },
 
     [`& .${tableHeaderClasses.head}`]: {
@@ -82,6 +84,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
       backgroundColor: theme.colors.atmo2,
       padding: theme.space.xs,
       borderTop: `1px solid ${theme.colors.atmo3}`,
+      borderBottomLeftRadius: "inherit",
+      borderBottomRightRadius: "inherit",
     },
 
     [`& .${paginationClasses.pageSizeOptions}`]: {

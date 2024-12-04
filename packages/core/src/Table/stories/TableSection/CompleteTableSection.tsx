@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import {
   HvActionGeneric,
   HvBulkActions,
+  HvLoadingContainer,
   HvPagination,
   HvTable,
   HvTableBody,
@@ -113,36 +114,41 @@ export const CompleteTableSection = () => {
           { id: "preview", label: "Preview", icon: <Preview /> },
         ]}
       />
-      <HvTableContainer tabIndex={0}>
-        <HvTable {...getTableProps()}>
-          <HvTableHead>
-            {headerGroups.map((headerGroup) => (
-              <HvTableRow
-                {...headerGroup.getHeaderGroupProps()}
-                key={headerGroup.getHeaderGroupProps().key}
-              >
-                {headerGroup.headers.map((col) => (
-                  <HvTableHeader
-                    {...col.getHeaderProps()}
-                    key={col.getHeaderProps().key}
-                  >
-                    {col.render("Header")}
-                  </HvTableHeader>
-                ))}
-              </HvTableRow>
-            ))}
-          </HvTableHead>
-          <HvTableBody {...getTableBodyProps()}>
-            {pageSize && [...Array(pageSize).keys()].map(renderTableRow)}
-          </HvTableBody>
-        </HvTable>
-      </HvTableContainer>
-      {page?.length ? (
-        <HvPagination
-          {...getHvPaginationProps?.()}
-          labels={{ pageSizePrev: "", pageSizeEntryName: `of ${data.length}` }}
-        />
-      ) : undefined}
+      <HvLoadingContainer hidden>
+        <HvTableContainer tabIndex={0}>
+          <HvTable {...getTableProps()}>
+            <HvTableHead>
+              {headerGroups.map((headerGroup) => (
+                <HvTableRow
+                  {...headerGroup.getHeaderGroupProps()}
+                  key={headerGroup.getHeaderGroupProps().key}
+                >
+                  {headerGroup.headers.map((col) => (
+                    <HvTableHeader
+                      {...col.getHeaderProps()}
+                      key={col.getHeaderProps().key}
+                    >
+                      {col.render("Header")}
+                    </HvTableHeader>
+                  ))}
+                </HvTableRow>
+              ))}
+            </HvTableHead>
+            <HvTableBody {...getTableBodyProps()}>
+              {pageSize && [...Array(pageSize).keys()].map(renderTableRow)}
+            </HvTableBody>
+          </HvTable>
+        </HvTableContainer>
+        {page?.length > 0 && (
+          <HvPagination
+            {...getHvPaginationProps?.()}
+            labels={{
+              pageSizePrev: "",
+              pageSizeEntryName: `of ${data.length}`,
+            }}
+          />
+        )}
+      </HvLoadingContainer>
     </HvTableSection>
   );
 };
