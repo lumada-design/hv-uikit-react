@@ -1,0 +1,94 @@
+import {
+  HvAvatar,
+  HvCardMedia,
+  HvSkeleton,
+  HvTypography,
+  skeletonClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Skeleton", "core", skeletonClasses);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvSkeleton}
+  componentName="HvSkeleton"
+  controls={{
+    variant: {
+      defaultValue: "text",
+    },
+    animation: {
+      defaultValue: "wave",
+    },
+    hidden: {
+      defaultValue: false,
+    },
+  }}
+  decorator={(comp) => <div className="w-190px">{comp}</div>}
+  children={<div>My skeleton example content</div>}
+/>
+
+### Content size
+
+If you pass no `width` or `height` props, the skeleton will adapt to the content size.
+
+```tsx live
+<div className="flex flex-col gap-1">
+  <HvSkeleton variant="circle">
+    <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" size="md" />
+  </HvSkeleton>
+  <HvSkeleton variant="text">
+    <HvTypography>Some text being hidden by the skeleton</HvTypography>
+  </HvSkeleton>
+  <HvSkeleton variant="square">
+    <HvTypography variant="title3">
+      Some text being hidden by the skeleton
+    </HvTypography>
+  </HvSkeleton>
+</div>
+```
+
+### Background image
+
+You can use a background image for the skeleton component by using the `backgroundImage` prop.
+This is useful when you want to show a placeholder image while the real image is being loaded.
+
+```tsx live
+<HvSkeleton
+  width="auto"
+  variant="square"
+  width={300}
+  height={200}
+  backgroundImage="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png"
+/>
+```
+
+### Custom animation
+
+You can use custom CSS animations with the skeleton component by defining your own in your styles.
+
+```tsx live
+<HvSkeleton
+  width={300}
+  height={100}
+  variant="square"
+  className="!animate-flash !animate-count-infinite"
+/>
+```
+
+### Related components
+
+- [`HvLoading`](/components/loading)
+- [`HvLoadingContainer`](/components/loadingContainer)
+
+</Page>
