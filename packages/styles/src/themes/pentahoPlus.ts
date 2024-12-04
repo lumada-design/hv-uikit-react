@@ -925,36 +925,29 @@ const pentahoPlus = makeTheme((theme) => ({
     HvCard: {
       classes: {
         root: {
-          // TODO: replace with a color from `theme.colors`
-          outline: `1px solid ${theme.palette.slate[200]}`,
+          outline: `1px solid ${theme.colors.pp.dividerSubtle}`,
           overflow: "hidden",
           height: "fit-content",
           borderRadius: theme.space.sm,
-          "&.HvCard-selectable:hover": {
-            // TODO: replace with a color from `theme.colors`
-            backgroundColor: theme.palette.blue[100],
-            borderColor: theme.colors.primary_20,
-          },
           "& > :last-child:not(.HvCardMedia-root)": {
             paddingBottom: theme.space.sm,
           },
-          "& .HvCard-semanticContainer": {
-            display: "none",
-          },
-          "&.HvCard-selected": {
-            // TODO: replace with a color from `theme.colors`
-            outline: `1px solid ${theme.palette.blue[600]}`,
-            "&:focus": {},
-          },
-          "&.HvCard-selectable": {
-            "&:hover": {
-              outline: `1px solid ${theme.colors.primary_20}`,
-            },
-          },
           "& .HvActionBar-root": {
-            padding: `${theme.space.xs} ${theme.space.sm}`,
+            padding: theme.spacing("xs", "sm"),
             borderTop: "none",
           },
+        },
+        selectable: {
+          ":hover": {
+            outline: `1px solid ${theme.colors.primary_20}`,
+            backgroundColor: theme.colors.pp.primaryDimmed,
+          },
+        },
+        semanticContainer: {
+          display: "none",
+        },
+        selected: {
+          outline: `1px solid ${theme.colors.pp.primaryAction}`,
         },
       },
     },
