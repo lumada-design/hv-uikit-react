@@ -88,12 +88,16 @@ export const Fields = (props: FieldsProps) => {
         },
         event,
       );
-    } else if (data.r || data.g || data.b) {
+    } else if (
+      data.r !== undefined ||
+      data.g !== undefined ||
+      data.b !== undefined
+    ) {
       onChange(
         {
-          r: data.r || rgb?.r,
-          g: data.g || rgb?.g,
-          b: data.b || rgb?.b,
+          r: data.r ?? rgb?.r,
+          g: data.g ?? rgb?.g,
+          b: data.b ?? rgb?.b,
           source: "rgb",
         },
         event,
