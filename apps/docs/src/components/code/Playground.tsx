@@ -1,4 +1,4 @@
-import { isValidElement, useCallback, useState } from "react";
+import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
 import useEditorTheme from "@docs/hooks/useEditorTheme";
@@ -14,10 +14,15 @@ type PlaygroundProps = {
   decorator?: (component: JSX.Element) => JSX.Element;
 };
 
+const parseChildren = (child: React.ReactNode) =>
+  (isValidElement(child) && jsxToString(child)) ||
+  (typeof child === "string" && child) ||
+  "";
+
 const generateCode = (
   componentName: string,
   componentProps: Record<string, unknown> = {},
-  children?: React.ReactNode,
+  children?: React.ReactNode | React.ReactNode[],
 ): string => {
   // Format props and componentProps into strings
   const parsedPropsString = Object.entries(componentProps)
@@ -33,10 +38,10 @@ const generateCode = (
   const componentPropsString = parsedPropsString && `\n${parsedPropsString}`;
 
   // Handle children content
-  const childrenString =
-    (isValidElement(children) && jsxToString(children)) ||
-    (children === "string" && children) ||
-    "";
+  const childrenString = Children.toArray(children)
+    .map(parseChildren)
+    .filter(Boolean)
+    .join("\n");
 
   // Generate and return the final code
   if (childrenString) {
