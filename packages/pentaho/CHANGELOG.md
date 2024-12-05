@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.2...@hitachivantara/uikit-react-pentaho@0.8.3) (2024-12-05)
+
+### Bug Fixes
+
+- **CanvasSidebar:** open state out of sync ([#4456](https://github.com/lumada-design/hv-uikit-react/issues/4456)) ([823533b](https://github.com/lumada-design/hv-uikit-react/commit/823533b38e4a1bde103fa181130e578caaccbc58))
+
 ## [0.8.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.1...@hitachivantara/uikit-react-pentaho@0.8.2) (2024-12-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho

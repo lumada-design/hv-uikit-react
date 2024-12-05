@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.41.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.41.13...@hitachivantara/uikit-react-lab@5.41.14) (2024-12-05)
+
+**Note:** Version bump only for package @hitachivantara/uikit-react-lab
+
 ## [5.41.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.41.12...@hitachivantara/uikit-react-lab@5.41.13) (2024-12-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

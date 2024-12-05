@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.2...@hitachivantara/uikit-styles@5.40.3) (2024-12-05)
+
+### Bug Fixes
+
+- **Card:** P+ colors in dark theme ([#4467](https://github.com/lumada-design/hv-uikit-react/issues/4467)) ([c6c3d72](https://github.com/lumada-design/hv-uikit-react/commit/c6c3d725cff157f551b1d505772e1b7ff80b856e))
+
 ## [5.40.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.1...@hitachivantara/uikit-styles@5.40.2) (2024-11-19)
 
 ### Bug Fixes

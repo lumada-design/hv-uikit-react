@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.82.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.3...@hitachivantara/uikit-react-core@5.82.4) (2024-12-05)
+
+### Bug Fixes
+
+- **ColorPicker:** hue slider goes out of bounds ([#4465](https://github.com/lumada-design/hv-uikit-react/issues/4465)) ([75ad7f6](https://github.com/lumada-design/hv-uikit-react/commit/75ad7f62a3fcc7c71d211c840097a58b0e221410))
+- **ColorPicker:** unable to set R/G/B components as 0 ([#4466](https://github.com/lumada-design/hv-uikit-react/issues/4466)) ([4d40f7f](https://github.com/lumada-design/hv-uikit-react/commit/4d40f7fbeb85c715058a29275ec17324af2651cb))
+- **TableSection:** border-radius ([#4462](https://github.com/lumada-design/hv-uikit-react/issues/4462)) ([c9adeda](https://github.com/lumada-design/hv-uikit-react/commit/c9adeda6d9182913c3701c3eb8e1b2afd4fe92b7))
+
 ## [5.82.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.2...@hitachivantara/uikit-react-core@5.82.3) (2024-12-02)
 
 ### Bug Fixes
