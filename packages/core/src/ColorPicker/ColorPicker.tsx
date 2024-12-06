@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { ColorState } from "react-color";
-import { Checkbox, ColorPicker } from "@hitachivantara/uikit-react-icons";
+import { ColorPicker } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -152,7 +152,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
       addSavedColorButtonAriaLabel = "Add current color to saved colors",
     } = useDefaultProps("HvColorPicker", props);
 
-    const { classes, css, cx } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
@@ -254,13 +254,15 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
           onContainerCreation={setFocusToContent}
           classes={{
             root: cx({ [classes.dropdownRootIconOnly]: iconOnly }),
-            selection: cx(iconOnly && css({ padding: 0 })),
           }}
           adornment={
             iconOnly && color ? (
-              <Checkbox
-                className={classes.headerColorIconOnly}
-                color={[color, "transparent"]}
+              <div
+                style={{ backgroundColor: color }}
+                className={cx(
+                  classes.headerColorIcon,
+                  classes.headerColorIconOnly,
+                )}
               />
             ) : dropdownIcon === "colorPicker" ? (
               <ColorPicker className={classes.colorPickerIcon} />
@@ -269,9 +271,9 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
           placeholder={
             iconOnly ? undefined : color ? (
               <>
-                <Checkbox
+                <div
+                  style={{ backgroundColor: color }}
                   className={classes.headerColorIcon}
-                  color={[color, "transparent"]}
                 />
                 <HvTypography
                   className={classes.headerColorValue}
