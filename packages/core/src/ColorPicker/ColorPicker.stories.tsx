@@ -29,17 +29,13 @@ export const Main: StoryObj<HvColorPickerProps> = {
     "aria-describedby": { table: { disable: true } },
     "aria-labelledby": { table: { disable: true } },
   },
-  decorators: [makeDecorator({ height: 550 })],
+  decorators: [makeDecorator({ display: "flex", height: 550 })],
   render: (args) => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          onChange={(value) => {
-            console.log(value);
-          }}
-          {...args}
-        />
-      </div>
+      <HvColorPicker
+        onChangeComplete={(value) => console.log(value)}
+        {...args}
+      />
     );
   },
 };
@@ -52,17 +48,15 @@ export const WithoutSavedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 480 })],
+  decorators: [makeDecorator({ display: "flex", height: 480 })],
   render: () => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          showSavedColors={false}
-          onChange={(color) => console.log(color)}
-          defaultValue="#C62828"
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        showSavedColors={false}
+        onChange={(color) => console.log(color)}
+        defaultValue="#C62828"
+      />
     );
   },
 };
@@ -75,18 +69,16 @@ export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 180 })],
+  decorators: [makeDecorator({ display: "flex", height: 180 })],
   render: () => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          showSavedColors={false}
-          showCustomColors={false}
-          onChange={(color) => console.log(color)}
-          defaultValue="#F6941E"
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        showSavedColors={false}
+        showCustomColors={false}
+        onChange={(color) => console.log(color)}
+        defaultValue="#F6941E"
+      />
     );
   },
 };
@@ -99,16 +91,14 @@ export const IconOnly: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 550 })],
+  decorators: [makeDecorator({ display: "flex", height: 550 })],
   render: () => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          iconOnly
-          onChange={(color) => console.log(color)}
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        iconOnly
+        onChange={(color) => console.log(color)}
+      />
     );
   },
 };
@@ -122,18 +112,16 @@ export const IconOnlyWithoutSavedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 480 })],
+  decorators: [makeDecorator({ display: "flex", height: 480 })],
   render: () => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          iconOnly
-          showSavedColors={false}
-          defaultValue="#477DBD"
-          onChange={(color) => console.log(color)}
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        iconOnly
+        showSavedColors={false}
+        defaultValue="#477DBD"
+        onChange={(color) => console.log(color)}
+      />
     );
   },
 };
@@ -147,19 +135,17 @@ export const IconOnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 180 })],
+  decorators: [makeDecorator({ display: "flex", height: 180 })],
   render: () => {
     return (
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          iconOnly
-          showSavedColors={false}
-          showCustomColors={false}
-          defaultValue="#59941B"
-          onChange={(color) => console.log(color)}
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        iconOnly
+        showSavedColors={false}
+        showCustomColors={false}
+        defaultValue="#59941B"
+        onChange={(color) => console.log(color)}
+      />
     );
   },
 };
@@ -173,38 +159,36 @@ export const CustomizedColorPicker: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 450 })],
+  decorators: [makeDecorator({ display: "flex", height: 450 })],
   render: () => {
     return (
-      <div style={{ width: "240px" }}>
-        <HvColorPicker
-          aria-label="Color"
-          showLabels={false}
-          showSavedColors={false}
-          dropdownIcon="arrow"
-          defaultValue="#EC018B"
-          onChange={(color) => console.log(color)}
-          recommendedColorsPosition="bottom"
-          recommendedColors={[
-            "#C62828",
-            "#DB6B22",
-            "#F6941E",
-            "#8DC63D",
-            "#59941B",
-            "#00838F",
-            "#05A99C",
-            "#01ADEF",
-            "#477DBD",
-            "#0155A5",
-            "#2E3192",
-            "#652C90",
-            "#AA00FF",
-            "#EC018B",
-            "#999999",
-            "#414141",
-          ]}
-        />
-      </div>
+      <HvColorPicker
+        aria-label="Color"
+        showLabels={false}
+        showSavedColors={false}
+        dropdownIcon="arrow"
+        defaultValue="#EC018B"
+        onChange={(color) => console.log(color)}
+        recommendedColorsPosition="bottom"
+        recommendedColors={[
+          "#C62828",
+          "#DB6B22",
+          "#F6941E",
+          "#8DC63D",
+          "#59941B",
+          "#00838F",
+          "#05A99C",
+          "#01ADEF",
+          "#477DBD",
+          "#0155A5",
+          "#2E3192",
+          "#652C90",
+          "#AA00FF",
+          "#EC018B",
+          "#999999",
+          "#414141",
+        ]}
+      />
     );
   },
 };
@@ -218,7 +202,7 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ height: 480 })],
+  decorators: [makeDecorator({ display: "flex", height: 480 })],
   render: () => {
     const [color, setColor] = useState<string | undefined>("#95AFE8");
 
@@ -240,17 +224,15 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
         >
           <HvTypography variant="label">{squareColor}</HvTypography>
         </div>
-        <div style={{ width: "134px" }}>
-          <HvColorPicker
-            aria-label="Color"
-            showSavedColors={false}
-            onChange={(value) => {
-              setColor(value);
-            }}
-            onChangeComplete={setSquareColor}
-            value={color}
-          />
-        </div>
+        <HvColorPicker
+          aria-label="Color"
+          showSavedColors={false}
+          onChange={(value) => {
+            setColor(value);
+          }}
+          onChangeComplete={setSquareColor}
+          value={color}
+        />
       </HvStack>
     );
   },
@@ -262,26 +244,22 @@ export const Test: StoryObj = {
   },
   render: () => (
     <div style={{ display: "flex", gap: 5 }}>
-      <div style={{ width: 268 }}>
-        <HvColorPicker label="Color" defaultExpanded />
-      </div>
-      <div style={{ width: 268 }}>
-        <HvColorPicker
-          label="Color"
-          showSavedColors={false}
-          defaultValue="#C62828"
-          defaultExpanded
-        />
-      </div>
-      <div style={{ width: "134px" }}>
-        <HvColorPicker
-          label="Color"
-          showSavedColors={false}
-          showCustomColors={false}
-          defaultValue="#F6941E"
-          defaultExpanded
-        />
-      </div>
+      <HvColorPicker className="w-268px" label="Color" defaultExpanded />
+      <HvColorPicker
+        className="w-268px"
+        label="Color"
+        showSavedColors={false}
+        defaultValue="#C62828"
+        defaultExpanded
+      />
+      <HvColorPicker
+        className="w-134px"
+        label="Color"
+        showSavedColors={false}
+        showCustomColors={false}
+        defaultValue="#F6941E"
+        defaultExpanded
+      />
       <div style={{ marginLeft: 130 }}>
         <HvColorPicker label="Color" iconOnly />
       </div>

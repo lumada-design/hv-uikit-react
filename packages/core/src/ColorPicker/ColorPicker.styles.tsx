@@ -14,12 +14,14 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
   description: {},
   headerColorValue: {
     textTransform: "uppercase",
+    minWidth: "8ch",
+    fontVariant: "tabular-nums",
   },
   headerColorIcon: {
-    width: 24,
-    "& svg": {
-      marginLeft: 0,
-    },
+    width: 16,
+    height: 16,
+    marginRight: 8,
+    flexShrink: 0,
   },
   panel: {
     width: "100%",
@@ -41,7 +43,12 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
   dropdownRootIconOnly: {
     width: 32,
     height: 32,
+    "& .HvBaseDropdown-selection": {
+      padding: 0,
+    },
   },
-  headerColorIconOnly: {},
+  headerColorIconOnly: {
+    margin: 8,
+  },
   pickerFields: { paddingBottom: 20 },
 });
