@@ -1,99 +1,75 @@
-import { chipClasses } from "@mui/material/Chip";
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
-
 export const { staticClasses, useClasses } = createClasses("HvTag", {
   root: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "default",
     color: theme.colors.base_dark,
+    backgroundColor: "var(--bgColor)",
+    height: 16,
+    borderRadius: 0,
+    maxWidth: 180,
+    whiteSpace: "nowrap",
 
-    [`& .${chipClasses.avatar}`]: {
-      width: 12,
-      height: 12,
-      marginLeft: 2,
-      marginRight: 0,
+    ":hover, :focus": {
+      backgroundColor: "var(--bgColor)",
+    },
+  },
+  categorical: {
+    borderRadius: 8,
+    "& $label": {
+      color: theme.colors.secondary,
     },
   },
 
-  chipRoot: {
-    [`&.${chipClasses.root}`]: {
-      height: 16,
-      borderRadius: 0,
-      maxWidth: 180,
-      fontFamily: theme.fontFamily.body,
-      "&:focus-visible": {
-        backgroundColor: theme.alpha("base_light", 0.3),
-      },
-
-      "&$categorical": {
-        borderRadius: 8,
-        "& $label": {
-          color: theme.colors.secondary,
-        },
-      },
-    },
-
-    "&$disabled": {
-      opacity: 1,
+  disabled: {
+    backgroundColor: theme.colors.atmo3,
+    ":hover, :focus": {
       backgroundColor: theme.colors.atmo3,
-      "& $label": {
-        color: theme.colors.secondary_60,
-      },
     },
-
-    [`& .${chipClasses.label}`]: {
-      paddingLeft: 4,
-      paddingRight: 4,
-      ...(theme.typography.caption2 as React.CSSProperties),
-      color: "currentcolor",
-    },
-
-    [`& .${chipClasses.deleteIcon}`]: {
-      margin: 0,
-      width: 16,
-      height: 16,
-      padding: 0,
-      color: "currentColor",
-      "& svg .color0": {
-        fill: "currentcolor",
-      },
-      "&:hover": {
-        backgroundColor: theme.colors.containerBackgroundHover,
-        color: "unset",
-      },
-      "&:focus": {
-        ...outlineStyles,
-        borderRadius: 0,
-      },
-      "&:focus:not(:focus-visible)": {
-        outline: "0 !important",
-        boxShadow: "none !important",
-      },
+    "& $label": {
+      color: theme.colors.secondary_60,
     },
   },
-
-  disabled: {},
-
+  label: {
+    padding: theme.spacing(0, "4px"),
+    color: "inherit",
+  },
+  deleteIcon: {
+    width: 16,
+    height: 16,
+    "&:hover": {
+      backgroundColor: theme.colors.containerBackgroundHover,
+    },
+  },
+  selected: {},
   clickable: {
     cursor: "pointer",
-    "&:focus-visible": {
-      ...outlineStyles,
-    },
+  },
+  icon: {
+    width: 12,
+    height: 12,
+    marginLeft: 2,
   },
 
-  categorical: {},
-
-  label: {},
-
-  deleteIcon: {},
-
+  /** @deprecated use `root` instead */
+  chipRoot: {},
+  /** @deprecated unused */
   // TODO: redundant - use deleteIcon. remove in v6
+  /** @deprecated */
   button: {},
+  /** @deprecated */
   tagButton: {},
   // TODO: redundant - use $clickable or :not($disabled). remove in v6
+  /** @deprecated */
   focusVisible: {},
+  /** @deprecated */
   disabledDeleteIcon: {},
+  /** @deprecated */
   categoricalFocus: {},
+  /** @deprecated */
   categoricalDisabled: {},
 });

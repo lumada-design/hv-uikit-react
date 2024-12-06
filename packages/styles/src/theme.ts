@@ -165,7 +165,8 @@ const mix = (
  * @example
  * theme.alpha("warning", 0.5) // rgb( R G B / 0.5)
  */
-const alpha = (color: HvColor, factor: number | string) => mix(color, factor);
+const alpha = (color: HvColorAny, factor: number | string) =>
+  mix(color, factor);
 
 /**
  * UI Kit static theme object, containing values and utility functions that leverage the injected CSS variables.

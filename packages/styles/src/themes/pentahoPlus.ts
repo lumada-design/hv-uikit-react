@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { CSSObject } from "@emotion/serialize";
 
 import { makeTheme } from "../makeTheme";
 import { radii } from "../tokens";
@@ -578,22 +578,21 @@ const pentahoPlus = makeTheme((theme) => ({
     HvTag: {
       classes: {
         root: {
-          "&.MuiButtonBase-root.MuiChip-root": {
-            borderRadius: theme.radii.full,
-            padding: theme.spacing("2px", 0),
-            "& .MuiChip-label": {
-              paddingLeft: 8,
-              paddingRight: 8,
-            },
-            "& .MuiChip-avatar": {
-              marginLeft: theme.space.xs,
-            },
-          },
-          "&& .MuiChip-deleteIcon": {
-            borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
-            paddingRight: 4,
-          },
+          borderRadius: theme.radii.full,
+          padding: theme.spacing("2px", 0),
         },
+        label: {
+          paddingLeft: 8,
+          paddingRight: 8,
+        },
+        icon: {
+          marginLeft: theme.space.xs,
+        },
+        deleteIcon: {
+          borderRadius: "inherit",
+          paddingRight: 4,
+        },
+        selected: {},
       },
     },
     HvInlineEditor: {
@@ -1047,7 +1046,10 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
-  } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
+  } satisfies Record<
+    string,
+    Record<string, any> & { classes?: Record<string, CSSObject> }
+  >,
   header: {
     height: "64px",
     secondLevelHeight: "56px",

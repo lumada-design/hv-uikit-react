@@ -623,12 +623,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
               >
                 <HvTag
                   label={label}
-                  className={cx({
+                  className={cx(classes.chipRoot, {
                     [classes.tagSelected]: i === tagCursorPos,
                   })}
-                  classes={{
-                    chipRoot: classes.chipRoot,
-                  }}
                   type={type as HvTagProps["type"]}
                   {...(!(readOnly || disabled || type === "categorical") && {
                     onDelete: (event) => onDeleteTagHandler(event, i),

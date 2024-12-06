@@ -11,12 +11,13 @@ export const { staticClasses, useClasses } = createClasses("HvButtonBase", {
     padding: 0,
 
     // Background color common for almost all variants
-    "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+    ":where(:not($disabled))": {
+      ":hover, :focus-visible": {
+        backgroundColor: theme.colors.containerBackgroundHover,
+      },
     },
-    "&:focus-visible": {
+    ":focus-visible": {
       ...outlineStyles,
-      backgroundColor: theme.colors.containerBackgroundHover,
     },
 
     // Default button - no size specified
