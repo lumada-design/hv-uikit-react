@@ -47,7 +47,7 @@ const generateScope = (hvComponents: string[], hvIcons: string[]) => {
 };
 
 export const Live = ({ children }: LiveProps) => {
-  const [initialCode] = useState(children.trimEnd());
+  const [initialCode] = useState(children?.trimEnd());
   const [code, setCode] = useState(initialCode);
   const [isExpanded, setIsExpanded] = useState(false);
   const editorTheme = useEditorTheme();

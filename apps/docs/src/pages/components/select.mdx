@@ -2,7 +2,6 @@ import {
   HvOption,
   HvSelect,
   selectClasses,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -26,9 +25,9 @@ export const getStaticProps = async ({ params }) => {
     label: { type: "text", defaultValue: "Country" },
     description: { type: "text", defaultValue: "Please select a country" },
     multiple: { type: "check", defaultValue: false },
-    required: { defaultValue: false },
-    readOnly: { defaultValue: false },
-    disabled: { defaultValue: false },
+    required: { type: "check", defaultValue: false },
+    readOnly: { type: "check", defaultValue: false },
+    disabled: { type: "check", defaultValue: false },
   }}
   componentProps={{
     placeholder: "Select a value",
