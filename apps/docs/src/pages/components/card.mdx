@@ -11,14 +11,14 @@ export const getStaticProps = async ({ params }) => {
     "Content",
     "Media",
   ]);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
 
 <Page>
 
-```jsx live
+```tsx live
 <HvCard
   className="w-380px"
   bgcolor="atmo1"
@@ -57,7 +57,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can place an image on your card using the `HvCardMedia` component. It will adapt to the location of the card it is placed on.
 
-```jsx live
+```tsx live
 <HvCard className="w-240px" bgcolor="atmo1">
   <HvCardMedia
     component="img"
@@ -78,7 +78,7 @@ You can place an image on your card using the `HvCardMedia` component. It will a
 
 If you want to add actions to the card, you can use the `HvActionBar` component.
 
-```jsx live
+```tsx live
 <>
   <HvCard className="w-380px" bgcolor="atmo1">
     <HvCardHeader

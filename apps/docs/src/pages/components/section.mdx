@@ -11,7 +11,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Section", "core", sectionClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -41,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can add actions to the section header by using the `actions` prop which can accept any component.
 
-```jsx live
+```tsx live
 <HvSection
   actions={<HvButton variant="primarySubtle">Explore Insights</HvButton>}
   title={

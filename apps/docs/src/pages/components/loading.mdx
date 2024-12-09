@@ -7,7 +7,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Loading", "core", loadingClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -36,7 +36,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can change the default color of the loader by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
 
-```jsx live
+```tsx live
 <>
   <HvLoading color="positive" />
   <HvLoading color="cat2" />
@@ -49,17 +49,13 @@ You can change the default color of the loader by passing a color name from the 
 
 You can easily create a custom `LoadingButton` component to handle async submission operations.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function Demo() {
-  return (
-    <LoadingButton onClick={() => delay(3000)}>
-      Submit
-    </LoadingButton>
-  );
+  return <LoadingButton onClick={() => delay(3000)}>Submit</LoadingButton>;
 }
 
 function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
@@ -83,7 +79,7 @@ function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
       )}
     </HvButton>
   );
-};
+}
 ```
 
 ### Related components

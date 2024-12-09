@@ -29,8 +29,10 @@ const generateCode = (
     .filter(([key]) => key !== "style")
     .map(([key, value]) => {
       if (typeof value === "string") return `${key}="${value}"`;
+      if (isValidElement(value)) return `${key}={${jsxToString(value)}}`;
+      if (typeof value === "object") return `${key}={${JSON.stringify(value)}}`;
       if (typeof value === "boolean") return value ? key : `${key}={false}`;
-      return `${key}={${JSON.stringify(value)}}`;
+      return `${key}={${value}}`;
     })
     .filter(Boolean)
     .map((str) => `  ${str}\n`)

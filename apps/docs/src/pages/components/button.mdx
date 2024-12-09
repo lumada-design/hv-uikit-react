@@ -2,7 +2,6 @@ import {
   buttonClasses,
   buttonVariant,
   HvButton,
-  HvSize,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -12,7 +11,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Button", "core", buttonClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -44,7 +43,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### Sizes
 
-```jsx live
+```tsx live
 <>
   <HvButton size="sm">Small</HvButton>
   <HvButton size="md">Medium</HvButton>
@@ -66,7 +65,7 @@ You can also use the `icon` prop and pass icon directly to `children` of the `Hv
 When using icon-only buttons (`icon` prop), it's preferable to use the `HvIconButton` component instead,
 as it wraps the button in an `HvTooltip` component and requires a `title` label.
 
-```jsx live
+```tsx live
 <>
   <HvButton startIcon={<Play />} variant="primary">
     Play
@@ -118,7 +117,7 @@ interface MyLinkProps extends HvButtonProps<"a"> {
 
 If you need a button that exists on a semantic container you can set the `variant` prop to `semantic`.
 
-```jsx live
+```tsx live
 <div className="flex flex-wrap gap-sm p-sm text-base_dark bg-neutral_20">
   <HvButton variant="semantic" startIcon={<Favorite />}>
     Favorite
@@ -140,7 +139,7 @@ If you need a button that exists on a semantic container you can set the `varian
 If you still need the button to be focusable when disabled for accessibility purposes, you can set the `focusableWhenDisabled` property to `true`.
 When using this property, the buttons will continue to be read by screen readers when disabled.
 
-```jsx live
+```tsx live
 <HvButton disabled focusableWhenDisabled>
   Primary
 </HvButton>

@@ -1,7 +1,6 @@
 import {
   datePickerClasses,
   HvDatePicker,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -49,7 +48,7 @@ Use the `showActions` property to display Apply/Cancel buttons at the bottom.
 
 Use the `labels` object to customize the internal labels of the date picker.
 
-```jsx live
+```tsx live
 <HvDatePicker
   showActions
   label="This is the title for the date picker"
@@ -105,7 +104,7 @@ export default function Demo() {
 
 Use `rangeMode` to enable the selection of a range of dates. When doing so, use `startValue` and `endValue` to set the initial values, instead of the `value` prop.
 
-```jsx live
+```tsx live
 <HvDatePicker
   label="Date"
   placeholder="Select a range"
@@ -119,7 +118,7 @@ Use `rangeMode` to enable the selection of a range of dates. When doing so, use 
 
 You can restrict the selection of dates by setting the `minimumDate` and `maximumDate` properties.
 
-```jsx live
+```tsx live
 <HvDatePicker
   label="Date"
   placeholder="Select date"

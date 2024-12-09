@@ -47,7 +47,7 @@ export const getStaticProps = async ({ params }) => {
 To integrate `HvSelect` in a form, make sure you're giving it a `name`.
 The value result will be the selected option's `value`, or a JSON of the selected values when multi-select is enabled. The value can be customized via the `getSerializedValue` prop.
 
-```jsx live
+```tsx live
 <form
   onSubmit={(evt) => {
     evt.preventDefault();
@@ -82,7 +82,7 @@ The value result will be the selected option's `value`, or a JSON of the selecte
 
 The value and open states of `HvSelect` can be controlled by using the `value`/`onChange` and `open`/`onOpenChange` props respectively.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 import { HvButton, HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
 
@@ -123,7 +123,7 @@ export default function Demo() {
       </HvButton>
     </>
   );
-};
+}
 
 const options = [
   { value: "ar", label: "Argentina", flag: "🇦🇷" },

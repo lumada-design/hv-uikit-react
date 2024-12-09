@@ -7,7 +7,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Tag", "core", tagClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -39,7 +39,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can change the default color of the tag by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
 
-```jsx live
+```tsx live
 <>
   <HvTag label="Tag Label" color="positive" />
   <HvTag label="Tag Label" color="cat2" />
@@ -52,7 +52,7 @@ You can change the default color of the tag by passing a color name from the UI 
 
 The tag component will automatically truncate the text if it is too long to fit in the container. You can add a tooltip to show the full text when the user hovers over the tag.
 
-```jsx live
+```tsx live
 <HvTag
   label={
     <HvOverflowTooltip data="This is an example of a extremely long tag" />
@@ -67,7 +67,7 @@ Tags can have click actions.
 - Use the `onClick` prop to add an action to the tag.
 - Use the `onDelete` prop to add a delete button to the tag.
 
-```jsx live
+```tsx live
 <HvTag
   label="Click me!"
   onClick={() => alert("Clicked!")}
@@ -79,7 +79,7 @@ Tags can have click actions.
 
 To use the selectable tags in a controlled way, set the `selected` prop to `true` of `false`.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 const tags = ["Asset 1", "Asset 2", "Asset 3", "Asset 4"];
