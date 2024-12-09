@@ -1,8 +1,8 @@
 import {
   HvOption,
+  HvOptionGroup,
   HvSelect,
   selectClasses,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -34,13 +34,39 @@ export const getStaticProps = async ({ params }) => {
     placeholder: "Select a value",
   }}
 >
-  <HvOption value="ar">Argentina</HvOption>
-  <HvOption value="bg">Belgium</HvOption>
-  <HvOption value="pt">Portugal</HvOption>
-  <HvOption value="pl">Poland</HvOption>
-  <HvOption value="sp">Spain</HvOption>
-  <HvOption value="us">United States</HvOption>
+  <HvOptionGroup label="America">
+    <HvOption value="ar">Argentina</HvOption>
+    <HvOption value="us">United States</HvOption>
+  </HvOptionGroup>
+  <HvOptionGroup label="Europe">
+    <HvOption value="bg">Belgium</HvOption>
+    <HvOption value="pt">Portugal</HvOption>
+    <HvOption value="pl">Poland</HvOption>
+    <HvOption value="sp">Spain</HvOption>
+  </HvOptionGroup>
 </Playground>
+
+### Options
+
+As an alternative to the `HvOption` `children`, `HvSelect` supports passing an `options` array of options (with `value` and `label`).
+
+Keep in mind that the `children` is more flexible, as it allows using `HvOptionGroup` and distinct `label` and rendering (`children`) values.
+
+```jsx live
+<HvSelect
+  label="Country"
+  description="Please select a country"
+  placeholder="Select a value"
+  options={[
+    { value: "ar", label: "Argentina" },
+    { value: "bg", label: "Belgium" },
+    { value: "pt", label: "Portugal" },
+    { value: "pl", label: "Poland" },
+    { value: "sp", label: "Spain", disabled: true },
+    { value: "us", label: "United States" },
+  ]}
+/>
+```
 
 ### Form
 
@@ -63,14 +89,15 @@ The value result will be the selected option's `value`, or a JSON of the selecte
     description="Select your favorite countries"
     placeholder="Select countries"
     getSerializedValue={(values) => values.map((v) => v.value).join(",")}
-  >
-    <HvOption value="ar">Argentina</HvOption>
-    <HvOption value="bg">Belgium</HvOption>
-    <HvOption value="pt">Portugal</HvOption>
-    <HvOption value="pl">Poland</HvOption>
-    <HvOption value="sp">Spain</HvOption>
-    <HvOption value="us">United States</HvOption>
-  </HvSelect>
+    options={[
+      { value: "ar", label: "Argentina" },
+      { value: "bg", label: "Belgium" },
+      { value: "pt", label: "Portugal" },
+      { value: "pl", label: "Poland" },
+      { value: "sp", label: "Spain" },
+      { value: "us", label: "United States" },
+    ]}
+  />
   <br />
   <HvButton type="submit" variant="secondarySubtle">
     Submit
