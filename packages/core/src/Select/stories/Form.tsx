@@ -1,12 +1,12 @@
-import { HvButton, HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
+import { HvButton, HvSelect } from "@hitachivantara/uikit-react-core";
 
 const options = [
-  { value: "ar", label: "Argentina", flag: "🇦🇷" },
-  { value: "bg", label: "Belgium", flag: "🇧🇪" },
-  { value: "pt", label: "Portugal", flag: "🇵🇹" },
-  { value: "pl", label: "Poland", flag: "🇵🇱" },
-  { value: "sp", label: "Spain", flag: "🇪🇸" },
-  { value: "us", label: "United States", flag: "🇺🇸" },
+  { value: "ar", label: "Argentina" },
+  { value: "bg", label: "Belgium" },
+  { value: "pt", label: "Portugal" },
+  { value: "pl", label: "Poland" },
+  { value: "sp", label: "Spain" },
+  { value: "us", label: "United States" },
 ];
 
 export default () => (
@@ -25,13 +25,8 @@ export default () => (
       description="Select your favorite countries"
       placeholder="Select countries"
       getSerializedValue={(values) => values.map((v) => v.value).join(",")}
-    >
-      {options.map(({ value, label, flag }) => (
-        <HvOption key={value} value={value} label={label}>
-          {`${flag} ${label}`}
-        </HvOption>
-      ))}
-    </HvSelect>
+      options={options}
+    />
     <br />
     <HvButton type="submit" variant="secondarySubtle">
       Submit

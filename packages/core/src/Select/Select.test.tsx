@@ -87,4 +87,21 @@ describe("Select", () => {
 
     expect(getSelect()).toHaveTextContent("Option2, Option4");
   });
+
+  it("renders correctly when passing the options prop", async () => {
+    render(
+      <HvSelect
+        label={name}
+        options={["opt1", "opt2", "opt3"].map((label) => ({
+          label,
+          value: label,
+        }))}
+        defaultValue="opt2"
+      />,
+    );
+
+    expect(getSelect()).toHaveTextContent("opt2");
+    await userEvent.click(getSelect());
+    expect(screen.getAllByRole("option").length).toBe(3);
+  });
 });

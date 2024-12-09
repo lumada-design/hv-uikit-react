@@ -32,6 +32,7 @@ import { HvPanel } from "../Panel";
 import { fixedForwardRef } from "../types/generic";
 import { getContainerElement } from "../utils/document";
 import { setId } from "../utils/setId";
+import { HvOption } from "./Option";
 import { staticClasses, useClasses } from "./Select.styles";
 
 function defaultRenderValue<Value>(
@@ -46,6 +47,14 @@ function defaultRenderValue<Value>(
 }
 
 const mergeIds = (...ids: ClassValue[]) => clsx(ids) || undefined;
+
+function renderOptions(options?: HvSelectProps<any>["options"]) {
+  return options?.map((option) => (
+    <HvOption key={option.value} {...option}>
+      {option.label}
+    </HvOption>
+  ));
+}
 
 export { staticClasses as selectClasses };
 
@@ -104,7 +113,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
   ref: React.Ref<HTMLButtonElement>,
 ) {
   const {
-    children,
+    children: childrenProp,
     classes: classesProp,
     className,
     id: idProp,
@@ -215,6 +224,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         .filter((v): v is SelectOption<OptionValue> => v !== undefined)
     : (getOptionMetadata(value as OptionValue) ?? null);
 
+  const children = childrenProp ?? renderOptions(optionsProp);
   const isOpen = open && !!children;
 
   return (
