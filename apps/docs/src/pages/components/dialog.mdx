@@ -1,0 +1,368 @@
+import {
+  dialogClasses,
+  HvButton,
+  HvDialog,
+  HvDialogActions,
+  HvDialogContent,
+  HvDialogTitle,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Dialog", "core", dialogClasses);
+  return { props: { ssg: { meta: meta } } };
+};
+
+<Description />
+
+<Page>
+
+### Maximum width
+
+Use the `maxWidth` prop to set the maximum width of the dialog. The width of the dialog will adjust automatically to the width of the content, unless the prop `fullWidth` is set to `true` in which case the dialog will grow to occupy the width specified on `maxWidth`.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+  const [maxWidth, setMaxWidth] = useState("md");
+  const [fullWidth, setFullWidth] = useState(true);
+
+  return (
+    <>
+      <HvButton onClick={() => setOpen(true)}>Open dialog</HvButton>
+      <HvDialog
+        maxWidth={maxWidth}
+        fullWidth={fullWidth}
+        open={open}
+        onClose={() => setOpen(false)}
+        style={{ overflow: "visible" }}
+      >
+        <HvDialogTitle variant="warning">Set Maximum Width</HvDialogTitle>
+        <HvDialogContent
+          indentContent
+          className="flex items-end gap-2 w-full justify-center"
+        >
+          <SizeSelector
+            maxWidth={maxWidth}
+            fullWidth={fullWidth}
+            setMaxWidth={setMaxWidth}
+            setFullWidth={setFullWidth}
+          />
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+            Close
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </>
+  );
+}
+
+const SizeSelector = ({ maxWidth, setMaxWidth, fullWidth, setFullWidth }) => (
+  <>
+    <HvSelect
+      label="Maximum width"
+      value={maxWidth}
+      onChange={(evt, val) => setMaxWidth(val)}
+      enablePortal
+    >
+      {["xs", "sm", "md", "lg", "xl"].map((size) => (
+        <HvOption key={size} value={size}>
+          {size}
+        </HvOption>
+      ))}
+    </HvSelect>
+    <HvCheckBox
+      checked={fullWidth}
+      label="Fullwidth"
+      onChange={(_, checked) => setFullWidth(checked)}
+    />
+  </>
+);
+```
+
+### Semantic
+
+The `HvDialog` component can receive a `variant` prop to set the status of the dialog.
+`HvDialogTitle` also accepts a `variant` prop that changes the icon.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+  const [variant, setVariant] = useState(undefined);
+
+  const handleOpen = (variant: string) => {
+    setVariant(variant)
+    setOpen(true);
+  };
+
+  return (
+    <>
+      <SemanticDialog open={open} variant={variant} onClose={() => setOpen(false)} />
+      <HvButton variant="warning" onClick={() => handleOpen("warning")}>
+        Warning
+      </HvButton>
+      <HvButton variant="positive" onClick={() => handleOpen("success")}>
+        Success
+      </HvButton>
+      <HvButton variant="negative" onClick={() => handleOpen("error")}>
+        Error
+      </HvButton>
+      <HvButton variant="secondarySubtle" onClick={() => handleOpen("info")}>
+        Info
+      </HvButton>
+    </>
+  );
+}
+
+const SemanticDialog = ({ open, variant, onClose}: HvDialogProps) => (
+  <HvDialog open={open} variant={variant}  onClose={onClose}>
+    <HvDialogTitle variant={variant}>Switch model view?</HvDialogTitle>
+    <HvDialogContent indentContent>
+      Switching to model view will clear all the fields in your
+      visualization. You will need to re-select your fields.
+    </HvDialogContent>
+    <HvDialogActions>
+      <HvButton variant={buttonVariantMap[variant]} onClick={onClose}>
+        Apply
+      </HvButton>
+      <HvButton
+        autoFocus
+        variant="secondaryGhost"
+        onClick={onClose}
+      >
+        Cancel
+      </HvButton>
+    </HvDialogActions>
+  </Dialog>
+)
+
+const buttonVariantMap: Record<
+  NonNullable<HvDialogProps["variant"]>,
+  HvButtonVariant
+> = {
+  error: "negative",
+  success: "positive",
+  warning: "warning",
+};
+```
+
+### Long content
+
+With very long content the dialog grows in height, up to a maximum where a margin of `100px` is left on top and bottom.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <HvButton onClick={() => setOpen(true)}>Open dialog</HvButton>
+      <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
+        <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sem
+          mattis, finibus tellus et, fringilla erat. Nulla justo lacus, pharetra
+          at fringilla eget, interdum sit amet mauris. Pellentesque metus ex,
+          gravida quis sem ac, placerat gravida libero. Praesent eu eros nec
+          risus auctor blandit ac non sapien. Aliquam consequat pellentesque
+          vulputate. Sed auctor, justo vel sagittis gravida, diam eros pharetra
+          eros, interdum vestibulum tortor magna in dolor.
+          <br />
+          <br />
+          Fusce eget ligula placerat, condimentum dolor non, placerat nunc. In
+          mollis massa elit, id vestibulum turpis lobortis vel. Praesent eget
+          consequat lorem. Nunc aliquam justo dapibus nisl ultrices, at varius
+          lacus laoreet. Aliquam libero velit, pretium ut odio ultrices, viverra
+          laoreet erat. Vivamus neque justo, venenatis non diam placerat,
+          pellentesque ultricies mi. Nunc ullamcorper lorem id libero laoreet,
+          vulputate dignissim felis malesuada. Curabitur blandit odio a nibh
+          faucibus porttitor. Maecenas placerat vulputate purus, sed tempor nunc
+          scelerisque in. Praesent rhoncus tempor turpis, nec vehicula nulla
+          laoreet vel.
+          <br />
+          <br />
+          Q uisque nec eros lacus. Aenean pharetra interdum justo, in commodo
+          sem porta non. Nam non lorem ultricies, suscipit ante ut, dictum
+          lacus. Duis pharetra orci sem, sit amet porta orci pulvinar vel.
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Nunc tortor ligula, sollicitudin id augue ac,
+          maximus porttitor ante. Etiam ultricies dolor in pretium scelerisque.
+          Integer sed lectus eget lectus mollis elementum. Ut feugiat magna ac
+          venenatis aliquet. Nulla ut justo nulla. Class aptent taciti sociosqu
+          ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean
+          sollicitudin sodales dictum. Aenean vehicula magna venenatis mollis
+          suscipit. Aliquam gravida orci a lacinia convallis. Nunc dignissim
+          eros vel mi hendrerit, ac euismod quam vehicula. Proin sodales eget
+          est finibus aliquam. Maecenas in felis purus. Vestibulum dictum ex
+          elit, at mollis nibh tempor quis. Curabitur velit elit, scelerisque at
+          varius eget, porta nec dui. Sed efficitur augue laoreet, feugiat orci
+          a, pellentesque quam. Proin enim turpis, scelerisque eget enim non,
+          euismod semper magna.
+          <br />
+          <br />
+          Nam aliquam, turpis vitae pulvinar feugiat, enim turpis tincidunt
+          enim, quis pharetra nibh massa vitae enim. Etiam in tincidunt nisl,
+          nec semper metus. Donec dignissim dolor non nulla fermentum, laoreet
+          mollis nulla tempor. Suspendisse et leo aliquam, aliquet lacus at,
+          viverra ante. Fusce vehicula sit amet est id pulvinar. Donec eu ornare
+          erat. Nulla urna libero, cursus ornare ullamcorper eget, pellentesque
+          malesuada lectus. Aliquam sed ipsum nec tortor auctor pharetra
+          scelerisque id nulla. Duis tempus scelerisque erat, non finibus lacus
+          fermentum quis. Proin sodales ultricies nisl eget tristique. Donec at
+          urna vel lectus pellentesque tristique quis bibendum eros.
+          <br />
+          <br />
+          Aliquam erat volutpat. Suspendisse semper fringilla accumsan.
+          Suspendisse vel fringilla nisi, a interdum tortor. Praesent ac tellus
+          non nunc viverra vulputate. Donec semper urna nibh, nec sagittis
+          turpis semper vitae. Praesent varius lacinia dui id tincidunt. Donec
+          lobortis non diam in varius. Aliquam dictum felis odio, dictum
+          porttitor est cursus vel. In mi elit, mattis et tincidunt quis,
+          volutpat cursus ipsum. Suspendisse mollis massa ipsum. Curabitur diam
+          sapien, pellentesque eget arcu vitae, accumsan consequat justo.
+          Vestibulum vel orci non risus auctor volutpat. Mauris imperdiet
+          fermentum venenatis. Integer purus est, placerat vel fermentum a,
+          semper vel urna. Nulla risus nisl, condimentum eleifend porttitor at,
+          imperdiet vel turpis. Suspendisse potenti. Praesent vitae lacus non
+          lectus aliquet semper a id nunc. Aliquam ut commodo felis. Sed
+          dignissim mauris ligula, eu volutpat sem commodo ut. Proin lacus diam,
+          dapibus at eros nec, luctus dictum libero. Vivamus congue odio ex,
+          facilisis tincidunt tortor tincidunt vitae. Nullam nec ornare sem. Ut
+          cursus gravida dictum. Phasellus dapibus venenatis mi et dapibus.
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton
+            autoFocus
+            variant="secondaryGhost"
+            onClick={() => setOpen(false)}
+          >
+            I Accept
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </>
+  );
+}
+```
+
+### Fullscreen
+
+The `HvDialog` component can receive a `fullscreen` prop to make it fullscreen.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <HvButton onClick={() => setOpen(true)}>Open dialog</HvButton>
+      <HvDialog fullscreen open={open} onClose={() => setOpen(false)}>
+        <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sem
+          mattis, finibus tellus et, fringilla erat. Nulla justo lacus, pharetra
+          at fringilla eget, interdum sit amet mauris. Pellentesque metus ex,
+          gravida quis sem ac, placerat gravida libero. Praesent eu eros nec
+          risus auctor blandit ac non sapien. Aliquam consequat pellentesque
+          vulputate. Sed auctor, justo vel sagittis gravida, diam eros pharetra
+          eros, interdum vestibulum tortor magna in dolor.
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton
+            autoFocus
+            variant="secondaryGhost"
+            onClick={() => setOpen(false)}
+          >
+            I Accept
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </>
+  );
+}
+```
+
+### Form
+
+An example of using a `form` in `HvDialog`. The sample uses the `autoFocus` attribute to focus the Title input by default.
+Accessibility-wise, `HvDialogTitle` automatically labels the dialog. A `aria-describedby` can be used to describe the content.
+
+```tsx live
+import { useId, useState } from "react";
+
+export default function Demo() {
+  const descId = useId();
+  const [open, setOpen] = useState(false);
+  const [postData, setPostData] = useState({});
+
+  return (
+    <div className="flex flex-col gap-2">
+      <HvButton onClick={() => setOpen(true)}>Create a post</HvButton>
+      <HvTypography variant="title4">Form data:</HvTypography>
+      <pre>{JSON.stringify(postData, null, 2)}</pre>
+      <HvDialog
+        disableBackdropClick
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-describedby={descId}
+      >
+        <HvDialogTitle>Create a new post</HvDialogTitle>
+        <HvDialogContent>
+          <div id={descId} style={{ marginBottom: 10 }}>
+            Fill the following form to create a post.
+          </div>
+          <form
+            id="create-post"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              setPostData(Object.fromEntries(formData.entries()));
+              setOpen(false);
+            }}
+          >
+            <DialogForm />
+          </form>
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton type="submit" form="create-post">
+            Create
+          </HvButton>
+          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
+    </div>
+  );
+}
+
+const DialogForm = () => (
+  <HvGrid container rowSpacing="xs">
+    <HvGrid item xs={12}>
+      <HvInput required name="author" label="Author" defaultValue="John Doe" />
+    </HvGrid>
+    <HvGrid item xs={12}>
+      <HvInput required name="title" label="Title" autoFocus />
+    </HvGrid>
+    <HvGrid item xs={12}>
+      <HvTextArea name="content" label="Description" rows={4} />
+    </HvGrid>
+  </HvGrid>
+);
+```
+
+</Page>
