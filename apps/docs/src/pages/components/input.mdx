@@ -1,4 +1,4 @@
-import { HvInput, inputClasses, theme } from "@hitachivantara/uikit-react-core";
+import { HvInput, inputClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
 import { Description } from "@docs/components/page/Description";
@@ -7,7 +7,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Input", "core", inputClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -30,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can control the value of the `HvInput` by using the `value`/`onChange` props, similarly to the `<input>` element.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {
@@ -61,7 +61,7 @@ export default function Demo() {
 
 ### Validation
 
-```jsx live
+```tsx live
 <HvInput
   label="Greeting"
   description="You must input `hello`"
@@ -87,7 +87,7 @@ export default function Demo() {
 
 Use `inputProps` to inject custom props to the underlying `<input>` element.
 
-```jsx live
+```tsx live
 <HvInput
   label="Description"
   placeholder="Insert a short description"
@@ -149,7 +149,7 @@ export default function Demo() {
 
 Inputs are form elements and oftentimes used within a form. You can use the `form` prop to associate the input with a form.
 
-```jsx live
+```tsx live
 export default function Demo() {
   return (
     <form
@@ -175,7 +175,7 @@ export default function Demo() {
 
 If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label (`HvLabel`) and description (`HvInfoMessage`).
 
-```jsx live
+```tsx live
 <div className="w-400px">
   <div className="flex items-start">
     <HvLabel label="Subdomain" htmlFor="subdomain-input" />
@@ -203,7 +203,7 @@ If you need to apply a custom layout, e.g. for providing a prefix or suffix, you
 
 Inputs can have a autocomplete suggestons using the `suggestionListCallback`.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {
@@ -251,7 +251,7 @@ const animalsStartingWithA = [
 
 Inputs not using the visual `label` prop should instead provide an `aria-label` property.
 
-```jsx live
+```tsx live
 <HvInput aria-label="First name" placeholder="Insert first name" />
 ```
 

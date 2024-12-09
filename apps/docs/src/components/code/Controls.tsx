@@ -15,7 +15,14 @@ type OptionType = {
   value: string;
 };
 
-type ControlType = "check" | "color" | "radio" | "select" | "slider" | "text";
+type ControlType =
+  | "check"
+  | "color"
+  | "number"
+  | "radio"
+  | "select"
+  | "slider"
+  | "text";
 
 export type Control = {
   type?: ControlType;
@@ -137,6 +144,18 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     />
   );
 
+  // Render number input for default text types
+  const renderNumberInputControl = () => (
+    <HvInput
+      key={prop}
+      label={propLabel}
+      inputProps={{ type: "number" }}
+      value={state[prop] ?? control.defaultValue}
+      onChange={(e, value) => onChange(prop, Number(value))}
+      className="w-full"
+    />
+  );
+
   // Render color picker for color types
   const renderColorControl = () => (
     <HvColorPicker
@@ -161,6 +180,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     check: renderCheckboxControl,
     boolean: renderCheckboxControl,
     color: renderColorControl,
+    number: renderNumberInputControl,
     text: renderInputControl,
     enum: renderSelectControl,
   };

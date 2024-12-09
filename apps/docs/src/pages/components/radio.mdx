@@ -1,4 +1,4 @@
-import { HvRadio, radioClasses, theme } from "@hitachivantara/uikit-react-core";
+import { HvRadio, radioClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
 import { Description } from "@docs/components/page/Description";
@@ -7,7 +7,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Radio", "core", radioClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -41,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### States
 
-```jsx live
+```tsx live
 <div className="flex gap-xs items-start">
   <HvRadio label="Radio" />
   <HvRadio required label="Required" />
@@ -56,7 +56,7 @@ export const getStaticProps = async ({ params }) => {
 
 Controlled radio button. Clicking the Radio button 1 does nothing, while clicking Radio button 2 changes both inputs.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {

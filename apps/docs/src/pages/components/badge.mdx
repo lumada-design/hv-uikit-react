@@ -1,23 +1,38 @@
-import { badgeClasses } from "@hitachivantara/uikit-react-core";
+import { badgeClasses, HvBadge } from "@hitachivantara/uikit-react-core";
+import { Alert } from "@hitachivantara/uikit-react-icons";
 
+import Playground from "@docs/components/code/Playground";
 import { Description } from "@docs/components/page/Description";
 import { Page } from "@docs/components/page/Page";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Badge", "core", badgeClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
 
 <Page>
 
+<Playground
+  Component={HvBadge}
+  componentName="HvBadge"
+  controls={{
+    showCount: { defaultValue: true },
+    count: { type: "number", defaultValue: 2 },
+    maxCount: { type: "number", defaultValue: 99 },
+  }}
+  componentProps={{
+    icon: <Alert />,
+  }}
+/>
+
 ### Icon
 
 Use the `icon` prop to specify a icon to use with the badge.
 
-```jsx live
+```tsx live
 <>
   <HvBadge count={0} icon={<Alert />} />
   <HvBadge count={1} icon={<Alert />} />
@@ -32,7 +47,7 @@ Use the `icon` prop to specify a icon to use with the badge.
 
 Use the `maxCount` prop to specify the maximum value to be displayed. Above that value a '+' sign is displayed.
 
-```jsx live
+```tsx live
 <>
   <HvBadge showCount count={10} maxCount={9} />
   <HvBadge showCount count={100} maxCount={99} />
@@ -44,7 +59,7 @@ Use the `maxCount` prop to specify the maximum value to be displayed. Above that
 
 To display text with the badge you can use the `text` prop along with the `textVariant` prop to specify the typography variant to use.
 
-```jsx live
+```tsx live
 <>
   <HvBadge count={0} text="Events" textVariant="label" />
   <HvBadge count={1} text="Events" textVariant="label" />
@@ -59,7 +74,7 @@ To display text with the badge you can use the `text` prop along with the `textV
 
 A badge sample using react hooks to set the number of events.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {
@@ -79,7 +94,7 @@ export default function Demo() {
 
 If you want to specify a custom aria-label, use the `role` prop.
 
-```jsx live
+```tsx live
 <HvBadge
   showCount
   count={25}

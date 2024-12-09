@@ -1,8 +1,4 @@
-import {
-  checkBoxClasses,
-  HvCheckBox,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { checkBoxClasses, HvCheckBox } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
 import { Description } from "@docs/components/page/Description";
@@ -11,7 +7,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("CheckBox", "core", checkBoxClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -45,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### States
 
-```jsx live
+```tsx live
 <div className="flex gap-xs items-start">
   <HvCheckBox label="Checkbox" />
   <HvCheckBox required label="Required" />
@@ -60,7 +56,7 @@ export const getStaticProps = async ({ params }) => {
 
 Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.
 
-```jsx live
+```tsx live
 import { useState } from "react";
 
 export default function Demo() {

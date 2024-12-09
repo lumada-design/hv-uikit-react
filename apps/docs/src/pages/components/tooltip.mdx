@@ -2,7 +2,6 @@ import { Callout } from "nextra/components";
 import {
   HvButton,
   HvTooltip,
-  theme,
   tooltipClasses,
 } from "@hitachivantara/uikit-react-core";
 
@@ -13,7 +12,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Tooltip", "core", tooltipClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />

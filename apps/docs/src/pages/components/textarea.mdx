@@ -1,9 +1,5 @@
 import { Callout } from "nextra/components";
-import {
-  HvTextArea,
-  textAreaClasses,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { HvTextArea, textAreaClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
 import { Description } from "@docs/components/page/Description";
@@ -12,7 +8,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("TextArea", "core", textAreaClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -51,7 +47,7 @@ The `maxCharQuantity` prop can be used to limit the number of allowed characters
 - By default, the limited can be exceeded, but you can set the `blockMax` prop to prevent this.
 - The `middleCountLabel` allows customizing the count separator (`/`).
 
-```jsx live
+```tsx live
 <>
   <HvTextArea
     label="You can write past the limit"
@@ -74,7 +70,7 @@ The `maxCharQuantity` prop can be used to limit the number of allowed characters
 
 Use the `autoScroll` prop to automatically scroll to bottom. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.
 
-```jsx live
+```tsx live
 import { useEffect, useState } from "react";
 
 export default function Demo() {

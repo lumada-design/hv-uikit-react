@@ -1,6 +1,5 @@
 import {
   HvTimePicker,
-  theme,
   timePickerClasses,
 } from "@hitachivantara/uikit-react-core";
 
@@ -39,7 +38,7 @@ export const getStaticProps = async ({ params }) => {
 A Time Picker usage inside a `form` element. Give `HvTimePicker` a `name`, and it will be included in the form data,
 following the time [`input` format](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time) specification.
 
-```jsx live
+```tsx live
 <form
   onSubmit={(event) => {
     event.preventDefault();

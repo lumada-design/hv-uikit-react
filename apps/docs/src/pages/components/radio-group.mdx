@@ -2,7 +2,6 @@ import {
   HvRadio,
   HvRadioGroup,
   radioGroupClasses,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -12,7 +11,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("RadioGroup", "core", radioGroupClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -49,7 +48,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### States
 
-```jsx live
+```tsx live
 <div className="flex gap-xs items-start">
   <HvRadioGroup required label="Required">
     <HvRadio label="Radio 1" value="1" />
@@ -83,11 +82,11 @@ export const getStaticProps = async ({ params }) => {
 
 Controlled radio button group. Choosing the first option will result in an invalid state of the Radio group.
 
-```jsx live
-import { useState } from "react";
+```tsx live
+import { useState } from "react";
 
 export default function Demo() {
- const [value, setValue] = useState<string>("2");
+  const [value, setValue] = useState<string>("2");
   const [status, setStatus] = useState<HvFormStatus>("standBy");
 
   const handleOnChange = (

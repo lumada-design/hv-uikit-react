@@ -8,7 +8,7 @@ import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Banner", "core", bannerClasses);
-  return { props: { ssg: { meta: meta } } };
+  return { props: { ssg: { meta } } };
 };
 
 <Description />
@@ -39,7 +39,7 @@ export const getStaticProps = async ({ params }) => {
 
 You can add a set of actions to the banner by specifying the `actions` prop. The `onAction` prop is a callback function that is called when an action is clicked.
 
-```jsx live
+```tsx live
 <HvBanner
   open
   offset={0}
@@ -58,7 +58,7 @@ You can add a set of actions to the banner by specifying the `actions` prop. The
 
 You can pass a custom icon to the banner by using the `customIcon` prop.
 
-```jsx live
+```tsx live
 <HvBanner
   open
   offset={0}
