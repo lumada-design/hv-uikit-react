@@ -153,6 +153,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
       value={state[prop] ?? control.defaultValue}
       onChange={(e, value) => onChange(prop, Number(value))}
       className="w-full"
+      disableClear
     />
   );
 
