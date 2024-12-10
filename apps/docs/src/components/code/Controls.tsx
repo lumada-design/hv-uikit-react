@@ -138,9 +138,10 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     <HvInput
       key={prop}
       label={propLabel}
-      value={String(state[prop] || control.defaultValue)}
+      value={String(state[prop] ?? control.defaultValue)}
       onChange={(e, value) => onChange(prop, value)}
       className="w-full"
+      disableClear
     />
   );
 
@@ -153,6 +154,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
       value={state[prop] ?? control.defaultValue}
       onChange={(e, value) => onChange(prop, Number(value))}
       className="w-full"
+      disableClear
     />
   );
 
