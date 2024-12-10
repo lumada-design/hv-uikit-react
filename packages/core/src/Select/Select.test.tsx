@@ -69,8 +69,12 @@ describe("Select", () => {
           <HvOption value="opt3">Option3</HvOption>
         </HvOptionGroup>
         <HvOptionGroup label="Group2">
-          <HvOption value="opt4">Option4</HvOption>
-          <HvOption value="opt5">Option5</HvOption>
+          <HvOption value="opt4" onClick={() => {}}>
+            Option4
+          </HvOption>
+          <HvOption value="opt5" onClick={() => {}}>
+            Option5
+          </HvOption>
         </HvOptionGroup>
       </HvSelect>,
     );

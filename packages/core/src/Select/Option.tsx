@@ -66,8 +66,7 @@ export const HvOption = fixedForwardRef(function HvOption<
       className={cx(classes.root, className, {
         [classes.highlighted]: highlighted,
       })}
-      {...getRootProps()}
-      {...others}
+      {...getRootProps(others)}
     >
       {children}
     </HvListItem>
