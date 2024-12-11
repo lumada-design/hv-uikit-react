@@ -1,13 +1,18 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Doc } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvInfoMessage, HvLabel } from "../../FormElement";
+import {
+  HvFormElementContext,
+  HvFormElementProps,
+  HvInfoMessage,
+  HvLabel,
+} from "../../FormElement";
+import { useLabels } from "../../hooks/useLabels";
 import { useUniqueId } from "../../hooks/useUniqueId";
-import { HvTypography } from "../../Typography";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { HvFileData, HvFilesAddedEvent } from "../File";
@@ -18,46 +23,31 @@ export { staticClasses as dropZoneClasses };
 
 export type HvDropZoneClasses = ExtractNames<typeof useClasses>;
 
-export interface HvDropZoneLabels {
-  /**
-   * Extensions of the accepted file types
-   */
-  acceptedFiles?: string;
-  /**
-   * Dropzone area label.
-   */
-  dropzone?: string;
-  /**
-   * Size file warning label.
-   */
-  sizeWarning?: string;
-  /**
-   * Size file warning label.
-   */
-  drag?: string;
-  /**
-   * Size file warning label.
-   */
-  selectFiles?: string;
-  /**
-   * Theming sheet used to style components
-   * */
-  dropFiles?: string;
-  /**
-   * Message to display when file size is greater than allowed
-   * */
-  fileSizeError?: string;
-  /**
-   * Message to display when file type is greater than allowed
-   * */
-  fileTypeError?: string;
-}
+const DEFAULT_LABELS = {
+  /** Extensions of the accepted file types */
+  acceptedFiles: "",
+  /** Dropzone area label. @deprecated use `label` prop instead */
+  dropzone: "Label",
+  /** Size file warning label. */
+  sizeWarning: "Max. file size:",
+  /** Size file warning label. */
+  drag: "Drop files here or",
+  /** Size file warning label. */
+  selectFiles: "click to upload",
+  /** Theming sheet used to style components */
+  dropFiles: "Drop files here",
+  /** Message to display when file size is greater than allowed */
+  fileSizeError: "The file exceeds the maximum upload size",
+  /** Message to display when file type is greater than allowed */
+  fileTypeError: "File type not allowed for upload",
 
-export interface HvDropZoneProps {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
+  removeFileButtonLabel: "Remove File",
+};
+
+export type HvDropZoneLabels = Partial<typeof DEFAULT_LABELS>;
+
+export interface HvDropZoneProps
+  extends Pick<HvFormElementProps, "id" | "disabled" | "label"> {
   /**
    * Labels to present in FileUploader.
    */
@@ -66,10 +56,6 @@ export interface HvDropZoneProps {
    * Whether the Dropzone should accept multiple files at once.
    */
   multiple?: boolean;
-  /**
-   * If the input is disabled or not
-   */
-  disabled?: boolean;
   /**
    * Files extensions accepted for upload.
    */
@@ -122,22 +108,23 @@ export const HvDropZone = (props: HvDropZoneProps) => {
   const {
     id: idProp,
     classes: classesProp,
-    labels,
+    label,
+    labels: labelsProp,
     accept,
     maxFileSize,
     inputProps,
     hideLabels,
     multiple = true,
-    disabled = false,
     onFilesAdded,
   } = useDefaultProps("HvDropZone", props);
   const id = useUniqueId(idProp);
-
+  const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const { classes, cx } = useClasses(classesProp);
+  const { disabled } = useContext(HvFormElementContext);
 
   const [dragState, setDragState] = useState(false);
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleDragLeave = () => {
     setDragState(false);
@@ -188,7 +175,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
             showGutter
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
-            label={labels?.dropzone}
+            label={label ?? labels?.dropzone}
             className={classes.dropZoneLabel}
           />
           <HvInfoMessage id={setId(id, "description")}>
@@ -245,24 +232,18 @@ export const HvDropZone = (props: HvDropZoneProps) => {
         <div className={classes?.dropArea}>
           {dragState ? (
             <div className={classes.dropZoneAreaLabels}>
-              <HvTypography className={classes.dragText}>
-                {labels?.dropFiles}
-              </HvTypography>
+              <div className={classes.dragText}>{labels?.dropFiles}</div>
             </div>
           ) : (
             <>
-              <Doc
-                iconSize="M"
-                className={classes.dropZoneAreaIcon}
-                color={disabled ? "secondary_60" : "secondary"}
-              />
+              <Doc size="M" className={classes.dropZoneAreaIcon} />
               <div className={classes.dropZoneAreaLabels}>
-                <HvTypography className={classes.dragText}>
+                <div className={classes.dragText}>
                   {labels?.drag}
                   <span
                     className={classes.selectFilesText}
                   >{`\xa0${labels?.selectFiles}`}</span>
-                </HvTypography>
+                </div>
               </div>
             </>
           )}

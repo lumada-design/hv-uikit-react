@@ -1,6 +1,6 @@
 const units = ["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
-export const findBestUnit = (bytes: number, base = 1000) => {
+const findBestUnit = (bytes: number, base = 1000) => {
   const i = bytes > 0 ? Math.floor(Math.log(bytes) / Math.log(base)) : 0;
   const si = Math.min(i, units.length - 1); // safe index
 
