@@ -5,7 +5,11 @@ import {
 } from "@mui/base/ClickAwayListener";
 import { Popper, PopperProps } from "@mui/base/Popper";
 import { useForkRef } from "@mui/material/utils";
-import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  useTheme,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
@@ -72,7 +76,7 @@ export const HvSuggestions = forwardRef<
     onSuggestionSelected,
     popperProps,
     ...others
-  } = props;
+  } = useDefaultProps("HvSuggestions", props);
 
   const { classes, cx } = useClasses(classesProp);
 

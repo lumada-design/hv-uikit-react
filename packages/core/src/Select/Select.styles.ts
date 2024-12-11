@@ -28,6 +28,13 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
     border: `1px solid ${theme.colors.secondary}`,
     marginTop: -1,
     marginBottom: -1,
+
+    // panel styles
+    position: "relative",
+    padding: theme.space.xs,
+    backgroundColor: theme.colors.atmo1,
+    overflowY: "auto",
+    borderRadius: "inherit",
   },
   panelOpenedUp: {
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,

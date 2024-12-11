@@ -53,6 +53,8 @@ const inputColors = {
   borderActive: ld(slate[700], slate[300]),
 };
 
+const inputBorder = `1px solid ${inputColors.border}`;
+
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
   colors: {
@@ -557,7 +559,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           "&& .HvButton-secondarySubtle": {
-            border: `1px solid ${inputColors.border}`,
+            border: inputBorder,
             backgroundColor: inputColors.bg,
           },
           "&& .HvDropdownButton-openUp": {
@@ -571,7 +573,14 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: theme.radii.base,
         },
         panel: {
-          border: `1px solid ${inputColors.border}`,
+          border: inputBorder,
+        },
+      },
+    },
+    HvSuggestions: {
+      classes: {
+        list: {
+          border: inputBorder,
         },
       },
     },
@@ -1009,12 +1018,12 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseInput: {
       classes: {
         inputRoot: {
-          border: `1px solid ${inputColors.border}`,
+          border: inputBorder,
           backgroundColor: inputColors.bg,
         },
         inputRootMultiline: {
           "&& textarea": {
-            border: `1px solid ${inputColors.border}`,
+            border: inputBorder,
             backgroundColor: inputColors.bg,
           },
         },
@@ -1023,17 +1032,17 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseDropdown: {
       classes: {
         header: {
-          border: `1px solid ${inputColors.border}`,
+          border: inputBorder,
           backgroundColor: inputColors.bg,
         },
         headerOpen: {
-          border: `1px solid ${inputColors.border}`,
+          border: inputBorder,
           "&:hover": {
-            border: `1px solid ${inputColors.border}`,
+            border: inputBorder,
           },
         },
         panel: {
-          border: `1px solid ${inputColors.border}`,
+          border: inputBorder,
         },
       },
     },
@@ -1041,7 +1050,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         iconSelected: {
           "&[data-color=secondary]": {
-            border: `1px solid ${inputColors.border}`,
+            border: inputBorder,
           },
         },
       },
