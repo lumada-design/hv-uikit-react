@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useRef, useState } from "react";
 import { Popper } from "@mui/base/Popper";
 import { SelectOption } from "@mui/base/useOption";
@@ -28,7 +27,6 @@ import {
 } from "../FormElement";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
-import { HvPanel } from "../Panel";
 import { fixedForwardRef } from "../types/generic";
 import { getContainerElement } from "../utils/document";
 import { setId } from "../utils/setId";
@@ -297,7 +295,9 @@ export const HvSelect = fixedForwardRef(function HvSelect<
           },
         ]}
       >
-        <HvPanel
+        <HvListContainer
+          condensed
+          selectable
           style={{
             width: variableWidth
               ? "auto"
@@ -307,13 +307,10 @@ export const HvSelect = fixedForwardRef(function HvSelect<
             [classes.panelOpenedUp]: placement.includes("top"),
             [classes.panelOpenedDown]: placement.includes("bottom"),
           })}
+          {...getListboxProps()}
         >
-          <SelectProvider value={contextValue}>
-            <HvListContainer condensed selectable {...getListboxProps()}>
-              {children}
-            </HvListContainer>
-          </SelectProvider>
-        </HvPanel>
+          <SelectProvider value={contextValue}>{children}</SelectProvider>
+        </HvListContainer>
       </Popper>
       <input
         {...getHiddenInputProps()}

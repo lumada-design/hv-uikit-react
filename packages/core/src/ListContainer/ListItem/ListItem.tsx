@@ -95,7 +95,8 @@ const applyClassNameToElement = (
 };
 
 /**
- * ListItem description/documentation paragraph
+ * Implements the listitem pattern, akin to the `<li>` element.
+ * Should be composed within a `<HvListContainer>` component.
  */
 export const HvListItem = forwardRef<
   // no-indent
