@@ -10,17 +10,15 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     display: "flex",
     border: `1px dashed ${theme.colors.secondary_60}`,
     cursor: "pointer",
-    background: theme.colors.atmo1,
+    backgroundColor: theme.colors.atmo1,
     borderRadius: theme.radii.round,
 
     "&:hover": {
-      background: `${theme.colors.atmo1}`,
-      border: `1px dashed ${theme.colors.secondary}`,
+      borderColor: theme.colors.secondary,
     },
 
     "&:focus-within": {
-      background: `${theme.colors.atmo1}`,
-      border: `1px dashed ${theme.colors.secondary}`,
+      borderColor: theme.colors.secondary,
       ...outlineStyles,
     },
   },
@@ -35,23 +33,16 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     },
   },
   dragAction: {
-    background: `${theme.colors.atmo1}`,
-    border: `1px dashed ${theme.colors.primary}`,
+    backgroundColor: theme.colors.atmo1,
+    borderColor: theme.colors.primary,
   },
   dropZoneContainerDisabled: {
-    background: `${theme.colors.atmo3}`,
-    border: `1px dashed ${theme.colors.secondary_60}`,
+    color: theme.colors.secondary_60,
+    backgroundColor: theme.colors.atmo3,
+    borderColor: "currentcolor",
     cursor: "not-allowed",
     "&:hover": {
-      background: `${theme.colors.atmo3}`,
-      border: `1px dashed ${theme.colors.secondary_60}`,
-    },
-
-    "& $dragText": {
-      color: theme.colors.secondary_60,
-    },
-    "& $selectFilesText": {
-      color: theme.colors.secondary_60,
+      borderColor: "currentcolor",
     },
   },
   inputArea: {
@@ -67,7 +58,8 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
   },
   dropArea: {
     display: "flex",
-    margin: `${theme.space.md} auto`,
+    margin: theme.spacing("md", "auto"),
+    gap: theme.space.xs,
     minHeight: 48,
   },
   dropZoneAreaLabels: {
@@ -75,15 +67,10 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     maxWidth: 120,
     margin: "auto",
   },
-  dropZoneAreaIcon: {
-    margin: "auto",
-    marginRight: theme.space.xs,
-  },
+  dropZoneAreaIcon: {},
   dropZoneLabel: {},
-  dragText: {
-    ...(theme.typography.body as React.CSSProperties),
-  },
+  dragText: {},
   selectFilesText: {
-    ...(theme.typography.label as React.CSSProperties),
+    fontWeight: theme.typography.label.fontWeight,
   },
 });

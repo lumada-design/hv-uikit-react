@@ -11,7 +11,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 
-import { cancelUpload, simulateUpload } from "./simulators";
+import { cancelUpload, simulateUpload } from "./stories/simulators";
 
 const meta: Meta<typeof HvFileUploader> = {
   title: "Widgets/File Uploader",
@@ -140,7 +140,7 @@ export const Basic: StoryObj<HvFileUploaderProps> = {
 
     return (
       <HvFileUploader
-        acceptedFiles={[".jpg", ".jpeg", ".png"]}
+        accept=".jpg,.jpeg,.png"
         labels={{ sizeWarning: "Maximum file size:" }}
         maxFileSize={1 * 1000 ** 2}
         fileList={list}
@@ -292,7 +292,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
     return (
       <>
         <HvFileUploader
-          acceptedFiles={["image/*"]}
+          accept="image/*"
           labels={{
             sizeWarning: "Maximum file size:",
             acceptedFiles: "Pick an image",
@@ -378,7 +378,7 @@ export const SingleUpload: StoryObj<HvFileUploaderProps> = {
         onFileRemoved={(removedFile) => {
           removeFile(removedFile);
         }}
-        acceptedFiles={[".jpg", ".jpeg", ".png"]}
+        accept=".jpg,.jpeg,.png"
         maxFileSize={1 * 1000 ** 2}
         multiple={false}
         disabled={list.length === 1}
@@ -444,10 +444,7 @@ export const CustomizedFileTypes: StoryObj<HvFileUploaderProps> = {
         onFileRemoved={(removedFile) => {
           removeFile(removedFile);
         }}
-        acceptedFiles={[
-          "application/vnd.ms-excel",
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        ]}
+        accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         labels={{
           dropzone: "Upload your spreadsheets",
           acceptedFiles: "(excel files)",

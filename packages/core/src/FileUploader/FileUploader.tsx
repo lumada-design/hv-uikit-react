@@ -1,24 +1,34 @@
-import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
+import {
+  ExtractNames,
+  useDefaultProps,
+} from "@hitachivantara/uikit-react-utils";
 
+import { HvFormElement, HvFormElementProps } from "../FormElement";
 import { useLabels } from "../hooks/useLabels";
-import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";
-import { HvDropZone, HvDropZoneLabels } from "./DropZone";
+import { HvDropZone, HvDropZoneLabels, HvDropZoneProps } from "./DropZone";
 import { HvFileData, HvFileRemovedEvent, HvFilesAddedEvent } from "./File";
 import { HvFileList } from "./FileList";
+import { staticClasses, useClasses } from "./FileUploader.styles";
+
+export { staticClasses as fileUploaderClasses };
+
+export type HvFileUploaderClasses = ExtractNames<typeof useClasses>;
 
 export interface HvFileUploaderLabels extends HvDropZoneLabels {
-  /**
-   * Value of aria-label to apply to remove file button in FileList
-   * */
+  /** Value of aria-label to apply to remove file button in FileList */
   removeFileButtonLabel?: string;
 }
 
-export interface HvFileUploaderProps extends HvBaseProps {
+export interface HvFileUploaderProps extends HvFormElementProps {
   /**
    * An object containing all the labels.
    */
   labels?: HvFileUploaderLabels;
+  /**
+   * An object used to override or extend the styles applied to the component.
+   */
+  classes?: HvFileUploaderClasses;
   /**
    * The files to upload.
    */
@@ -35,9 +45,9 @@ export interface HvFileUploaderProps extends HvBaseProps {
    * Max upload size
    * */
   maxFileSize?: number;
-  /**
-   * Files extensions accepted for upload.
-   */
+  /** File types accepted for uploading. @see [HTML input file accept](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) */
+  accept?: HvDropZoneProps["accept"];
+  /** Files extensions accepted for upload. @deprecated use `accept` instead */
   acceptedFiles?: string[];
   /**
    * Callback fired when files are added.
@@ -59,14 +69,7 @@ export interface HvFileUploaderProps extends HvBaseProps {
 
 // TODO: This component needs to adopt the Form element shape and deprecate its way of composing labels
 
-const DEFAULT_LABELS: HvFileUploaderLabels = {
-  dropzone: "Label",
-  sizeWarning: "Max. file size:",
-  drag: "Drop files here or",
-  selectFiles: "click to upload",
-  dropFiles: "Drop files here",
-  fileSizeError: "The file exceeds the maximum upload size",
-  fileTypeError: "File type not allowed for upload",
+const DEFAULT_LABELS = {
   removeFileButtonLabel: "Remove File",
 };
 
@@ -74,34 +77,38 @@ const DEFAULT_LABELS: HvFileUploaderLabels = {
  * Lets the user choose one or more files from their device storage. Once chosen,
  * the files can be uploaded to a server or manipulated on the client side.
  *
- * Accepted file types follow the format of the html input accept attribute. Please check https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file for more details.
+ * Accepted file types follow the format of the html [input accept attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file).
  */
 export const HvFileUploader = (props: HvFileUploaderProps) => {
   const {
     id,
     className,
+    classes: classesProp,
     labels: labelsProp,
     fileList,
     multiple = true,
-    disabled = false,
-    hideLabels = false,
+    label,
+    hideLabels,
     maxFileSize = Infinity,
     inputProps = {},
+    accept,
     acceptedFiles = [],
+    // TODO: consider adding/replacing with onFilesChange
     onFilesAdded,
     onFileRemoved,
     ...others
   } = useDefaultProps("HvFileUploader", props);
+  const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
   return (
-    <div id={id} className={className} {...others}>
+    <HvFormElement id={id} className={cx(classes.root, className)} {...others}>
       <HvDropZone
         id={setId(id, "dropzone")}
+        label={label}
         labels={labels}
         multiple={multiple}
-        disabled={disabled}
-        accept={acceptedFiles.join(",")}
+        accept={accept ?? acceptedFiles.join(",")}
         maxFileSize={maxFileSize}
         onFilesAdded={onFilesAdded}
         inputProps={inputProps}
@@ -113,6 +120,6 @@ export const HvFileUploader = (props: HvFileUploaderProps) => {
         onFileRemoved={onFileRemoved}
         removeFileButtonLabel={labels?.removeFileButtonLabel}
       />
-    </div>
+    </HvFormElement>
   );
 };

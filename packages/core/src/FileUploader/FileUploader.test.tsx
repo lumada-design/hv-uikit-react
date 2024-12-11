@@ -113,7 +113,7 @@ describe("FileUploader", () => {
             },
           ] as HvFileData[]
         }
-        acceptedFiles={["png"]}
+        accept=".png"
         maxFileSize={1}
       />,
     );
@@ -141,7 +141,7 @@ describe("FileUploader", () => {
             },
           ] as HvFileData[]
         }
-        acceptedFiles={["png"]}
+        accept=".png"
         maxFileSize={5 * 1000}
       />,
     );
