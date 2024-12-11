@@ -17,10 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
     display: "flex",
     alignItems: "flex-start",
   },
-  label: {
-    display: "block",
-    paddingBottom: 6,
-  },
+  label: {},
   description: {},
   select: {},
   popper: {

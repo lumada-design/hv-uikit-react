@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelectionList", {
     width: "100%",
     paddingBottom: theme.space.xs,
   },
-  label: { marginBottom: theme.space.xs, float: "left" },
+  label: {},
   description: { float: "left" },
   horizontal: {
     flexDirection: "row",

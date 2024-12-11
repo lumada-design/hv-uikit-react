@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTextArea", {
   input: {},
   inputResizable: { width: "100%", resize: "both" },
   labelContainer: { float: "left", display: "flex", alignItems: "flex-start" },
-  label: { display: "block", float: "left", paddingBottom: "6px" },
+  label: {},
   description: { display: "block", float: "left" },
   characterCounter: {
     display: "block",

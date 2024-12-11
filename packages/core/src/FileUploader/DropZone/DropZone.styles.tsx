@@ -79,9 +79,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     margin: "auto",
     marginRight: theme.space.xs,
   },
-  dropZoneLabel: {
-    paddingBottom: 6,
-  },
+  dropZoneLabel: {},
   dragText: {
     ...(theme.typography.body as React.CSSProperties),
   },

@@ -250,6 +250,7 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
       >
         {label && (
           <HvLabel
+            showGutter
             id={setId(elementId, "label")}
             label={label}
             className={classes.label}

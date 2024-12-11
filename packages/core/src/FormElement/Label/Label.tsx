@@ -19,6 +19,8 @@ export interface HvLabelProps extends HvTypographyProps<"label"> {
   id?: string;
   /** The text to be shown by the label. */
   label?: React.ReactNode;
+  /** Whether to give label gutter spacing */
+  showGutter?: boolean;
   /** The id of the form element the label is bound to. */
   htmlFor?: string;
   /** If `true` the label is displayed with a disabled style. */
@@ -39,6 +41,7 @@ export const HvLabel = (props: HvLabelProps) => {
     className,
     children,
     label,
+    showGutter,
     disabled: disabledProp,
     required: requiredProp,
     htmlFor: htmlForProp,
@@ -62,8 +65,8 @@ export const HvLabel = (props: HvLabelProps) => {
         className={cx(
           classes.root,
           {
-            [classes.labelDisabled]: !!disabled,
-            [classes.childGutter]: !!(children && label),
+            [classes.labelDisabled]: disabled,
+            [classes.childGutter]: showGutter || (children && label),
           },
           className,
         )}

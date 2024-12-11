@@ -314,6 +314,7 @@ export const HvSelectionList = forwardRef<
     >
       {label && (
         <HvLabel
+          showGutter
           id={setId(elementId, "label")}
           label={label}
           className={classes.label}

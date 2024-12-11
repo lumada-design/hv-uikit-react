@@ -462,6 +462,7 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
+              showGutter
               id={setId(elementId, "label")}
               label={label}
               className={classes.label}

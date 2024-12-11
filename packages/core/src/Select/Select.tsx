@@ -244,6 +244,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         <div className={classes.labelContainer}>
           {label && (
             <HvLabel
+              showGutter
               id={labelId}
               htmlFor={id}
               label={label}
