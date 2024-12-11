@@ -109,7 +109,7 @@ export const calculateStepValue = (
  *
  * @param {Object} markProperties - The object provided by the user with
  * the desired configuration for the marks.
- * @param {Integer} markstep - The separation between marks.
+ * @param {Integer} markStep - The separation between marks.
  * @param {Integer} divisionQuantity - How many subdivisions there are in the slider.
  * @param {Integer} minPointValue - The value of the first point in the slider from
  * left to right.
@@ -123,7 +123,7 @@ export const calculateStepValue = (
  */
 export const createMark = (
   markProperties: HvMarkProperty[],
-  markstep: number,
+  markStep: number,
   divisionQuantity: number,
   minPointValue: number,
   maxPointValue: number,
@@ -156,14 +156,14 @@ export const createMark = (
       }
     });
   } else {
-    const roundedMarkStep = Math.floor(markstep);
+    const roundedMarkStep = Math.max(1, Math.floor(markStep));
 
     for (let index = 0; index <= divisionQuantity; index += roundedMarkStep) {
       let labelValue: React.ReactNode = knobsPositionToScaledValue(
         index,
         minPointValue,
         stepValue,
-      ).toFixed(markDigits);
+      ).toFixed(Math.max(0, Math.min(8, markDigits)));
 
       values.push(labelValue as string);
       labelValue = formatMark?.(labelValue) || labelValue;
