@@ -561,6 +561,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           <div className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
+                showGutter
                 className={classes.label}
                 id={setId(id, "label")}
                 htmlFor={setId(elementId, "input")}

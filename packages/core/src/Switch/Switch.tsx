@@ -222,6 +222,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       >
         {label && (
           <HvLabel
+            showGutter
             id={setId(elementId, "label")}
             htmlFor={setId(elementId, "input")}
             label={label}

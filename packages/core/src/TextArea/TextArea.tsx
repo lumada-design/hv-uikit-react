@@ -433,6 +433,7 @@ export const HvTextArea = forwardRef<
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
+              showGutter
               className={classes.label}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}

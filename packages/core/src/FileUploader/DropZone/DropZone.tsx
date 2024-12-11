@@ -185,6 +185,7 @@ export const HvDropZone = (props: HvDropZoneProps) => {
       {!hideLabels && (
         <div id={id} className={classes.dropZoneLabelsGroup}>
           <HvLabel
+            showGutter
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
             label={labels?.dropzone}

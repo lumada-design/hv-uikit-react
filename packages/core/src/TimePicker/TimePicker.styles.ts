@@ -10,10 +10,7 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
     display: "flex",
     alignItems: "flex-start",
   },
-  label: {
-    marginBottom: 6,
-    display: "block",
-  },
+  label: {},
   description: {},
 
   placeholder: {

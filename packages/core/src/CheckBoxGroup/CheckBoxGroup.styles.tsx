@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBoxGroup", {
     overflowClipMargin: 4,
     verticalAlign: "top",
   },
-  label: { marginBottom: theme.space.xs },
+  label: {},
   group: { display: "flex" },
   vertical: {
     flexDirection: "column",

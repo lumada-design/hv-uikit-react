@@ -181,6 +181,7 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
           <div className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
+                showGutter
                 id={setId(elementId, "label")}
                 htmlFor={setId(elementId, "input")}
                 label={label}

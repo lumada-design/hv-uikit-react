@@ -229,6 +229,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
           <div className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
+                showGutter
                 id={setId(elementId, "label")}
                 label={label}
                 className={classes.label}

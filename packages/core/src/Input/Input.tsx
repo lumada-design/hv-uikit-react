@@ -787,6 +787,7 @@ export const HvInput = fixedForwardRef(function HvInput<
         <div className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
+              showGutter
               id={setId(elementId, "label")}
               className={classes.label}
               htmlFor={setId(elementId, "input")}

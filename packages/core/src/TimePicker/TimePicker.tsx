@@ -237,6 +237,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
           <div className={classes.labelContainer}>
             {label && (
               <HvLabel
+                showGutter
                 label={label}
                 className={classes.label}
                 {...labelProps}

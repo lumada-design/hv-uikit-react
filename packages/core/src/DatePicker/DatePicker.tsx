@@ -449,6 +449,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
           <div className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
+                showGutter
                 id={setId(elementId, "label")}
                 label={label}
                 className={classes.label}

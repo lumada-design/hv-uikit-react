@@ -996,6 +996,7 @@ const ds3 = makeTheme((theme) => ({
     HvLabel: {
       classes: {
         root: { fontWeight: theme.fontWeights.semibold },
+        childGutter: { paddingBottom: 6 },
       },
     },
     HvList: {

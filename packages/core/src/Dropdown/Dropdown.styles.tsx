@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
     display: "inline-block",
   },
   labelContainer: { display: "flex", alignItems: "flex-start" },
-  label: { paddingBottom: "6px", display: "block" },
+  label: {},
   description: {},
   error: {},
   placeholder: {

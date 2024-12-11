@@ -362,6 +362,7 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
       >
         {label && (
           <HvLabel
+            showGutter
             id={setId(elementId, "label")}
             label={label}
             className={classes.label}

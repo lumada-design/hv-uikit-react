@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
     flexDirection: "column",
     alignItems: "flex-start",
   },
-  label: { marginBottom: theme.space.xs },
+  label: {},
   error: {},
   switchContainer: {
     height: "32px",

@@ -6,7 +6,7 @@ import { suggestionsClasses } from "../FormElement/Suggestions";
 export const { staticClasses, useClasses } = createClasses("HvInput", {
   root: { display: "block" },
   labelContainer: { display: "flex", alignItems: "flex-start" },
-  label: { paddingBottom: "6px", display: "block" },
+  label: {},
   description: {},
   adornmentsBox: {
     display: "flex",

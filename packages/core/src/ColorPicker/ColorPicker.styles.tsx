@@ -6,11 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
     display: "flex",
     alignItems: "flex-start",
   },
-  label: {
-    paddingBottom: "6px",
-    display: "block",
-    cursor: "pointer",
-  },
+  label: {},
   description: {},
   headerColorValue: {
     textTransform: "uppercase",
