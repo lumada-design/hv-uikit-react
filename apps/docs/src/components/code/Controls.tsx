@@ -26,7 +26,7 @@ type ControlType =
 
 export type Control = {
   type?: ControlType;
-  defaultValue?: string;
+  defaultValue?: any;
   values?: string[];
 };
 
@@ -37,11 +37,21 @@ type ControlsProps = {
   onChange: (prop: string, value: unknown) => void;
 };
 
+const defaultMap: Record<string, ControlType> = {
+  string: "text",
+  number: "number",
+  boolean: "check",
+};
+
 export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   const { colors } = useTheme();
   const { meta } = useData();
   const propMeta = meta.docgen.props[prop];
-  const type = control?.type || propMeta?.type?.name || "text";
+  const type: ControlType =
+    control?.type ||
+    defaultMap[typeof control.defaultValue] ||
+    defaultMap[propMeta?.type?.name] ||
+    "text";
 
   // Utility to clean up values (e.g., remove quotes)
   const cleanValue = (value: string) => value.replace(/"/g, "");
