@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.3...@hitachivantara/uikit-styles@5.40.4) (2024-12-12)
+
+### Bug Fixes
+
+- **Tag:** selectable styles & overridable colors ([#4455](https://github.com/lumada-design/hv-uikit-react/issues/4455)) ([70501ef](https://github.com/lumada-design/hv-uikit-react/commit/70501efcc324f1aa5b9c74b42c8b2a95b201751d))
+
 ## [5.40.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.2...@hitachivantara/uikit-styles@5.40.3) (2024-12-05)
 
 ### Bug Fixes

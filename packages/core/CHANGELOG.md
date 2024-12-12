@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.83.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.4...@hitachivantara/uikit-react-core@5.83.0) (2024-12-12)
+
+### Bug Fixes
+
+- **ColorPicker:** color value width in flex containers ([63f4b39](https://github.com/lumada-design/hv-uikit-react/commit/63f4b3977e6326fd233caaa0122c06b0e170023f))
+- **DatePicker:** input locale & align input/label values ([d336b1d](https://github.com/lumada-design/hv-uikit-react/commit/d336b1da233c1d26ff47f2a00c98f79e2f5d6954))
+- **Input:** extend HvBaseInput types ([941db54](https://github.com/lumada-design/hv-uikit-react/commit/941db54cb0b6bc9d532e7b3f8330244429ef009d))
+- **Select:** merge HvOption events ([#4483](https://github.com/lumada-design/hv-uikit-react/issues/4483)) ([4fb3d16](https://github.com/lumada-design/hv-uikit-react/commit/4fb3d168e78ae318d40a3e5cd867a48b937dbf47))
+- **Tag:** selectable styles & overridable colors ([#4455](https://github.com/lumada-design/hv-uikit-react/issues/4455)) ([70501ef](https://github.com/lumada-design/hv-uikit-react/commit/70501efcc324f1aa5b9c74b42c8b2a95b201751d))
+- uniformize date formats/default locale ([26aad42](https://github.com/lumada-design/hv-uikit-react/commit/26aad423a4e8fa0f02d3e16a2961ad2794224903))
+
+### Features
+
+- **ColorPicker:** numeric field inputs ([71408cb](https://github.com/lumada-design/hv-uikit-react/commit/71408cb96abc2eadbe63058c61dbf2795d4339c7))
+- **Select:** allow passing the options array ([1a611da](https://github.com/lumada-design/hv-uikit-react/commit/1a611da4b878b3fea7be144d7d83460f97d33b14))
+- **Table:** add defaultColumn cell renderer ([c900bc9](https://github.com/lumada-design/hv-uikit-react/commit/c900bc90f27b4dc2abb067101e31b48c540dfbd0))
+
 ## [5.82.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.3...@hitachivantara/uikit-react-core@5.82.4) (2024-12-05)
 
 ### Bug Fixes
