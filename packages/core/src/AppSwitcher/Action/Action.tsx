@@ -4,7 +4,7 @@ import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvAvatar } from "../../Avatar";
 import { useUniqueId } from "../../hooks/useUniqueId";
-import { Info } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvListItem } from "../../ListContainer";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
@@ -159,7 +159,8 @@ export const HvAppSwitcherAction = ({
 
         {description && (
           <HvTooltip title={description}>
-            <Info
+            <HvIcon
+              name="Info"
               compact
               className={classes.iconInfo}
               id={descriptionElementId}

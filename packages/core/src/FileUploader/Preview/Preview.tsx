@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
-import { Preview } from "../../icons";
+import { HvIcon } from "../../icons";
 import { staticClasses, useClasses } from "./Preview.styles";
 
 export { staticClasses as fileUploaderPreviewClasses };
@@ -69,7 +69,8 @@ export const HvFileUploaderPreview = (props: HvFileUploaderPreviewProps) => {
         {children}
         {!disableOverlay && (
           <div className={classes.overlay} aria-hidden="true">
-            <Preview
+            <HvIcon
+              name="Preview"
               className={css({
                 position: "absolute",
                 left: "50%",

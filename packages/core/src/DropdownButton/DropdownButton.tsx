@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { staticClasses, useClasses } from "./DropdownButton.styles";
 
 export { staticClasses as dropdownButtonClasses };
@@ -49,7 +49,9 @@ export const HvDropdownButton = forwardRef<
 
   const { classes, cx } = useClasses(classesProp);
 
-  const endIcon = icon ? undefined : <DropXS size="xs" rotation={!open} />;
+  const endIcon = icon ? undefined : (
+    <HvIcon name="Chevron" rotation={open ? "down" : "up"} />
+  );
 
   const children =
     childrenProp && typeof childrenProp === "string" ? (

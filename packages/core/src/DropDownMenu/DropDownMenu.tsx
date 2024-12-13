@@ -12,7 +12,7 @@ import { HvDropdownButton, HvDropdownButtonProps } from "../DropdownButton";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { MoreOptionsVertical } from "../icons";
+import { HvIcon } from "../icons";
 import { HvList, HvListProps, HvListValue } from "../List";
 import { HvBaseProps } from "../types/generic";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
@@ -101,7 +101,7 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
         placement={popperPlacement}
         {...others}
       >
-        {icon || <MoreOptionsVertical role="presentation" />}
+        {icon || <HvIcon name="MoreOptionsVertical" role="presentation" />}
       </HvDropdownButton>
     );
   },

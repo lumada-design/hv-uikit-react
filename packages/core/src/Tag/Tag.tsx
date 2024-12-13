@@ -8,7 +8,7 @@ import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
-import { Box, Check, Close } from "../icons";
+import { HvIcon } from "../icons";
 import { HvTypography } from "../Typography";
 import { isDeleteKey } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Tag.styles";
@@ -111,8 +111,6 @@ export const HvTag = forwardRef<
 
   const isClickable = !!(onClick || onDelete || selectable);
 
-  const CheckboxIcon = isSelected ? Check : Box;
-
   const deleteIcon =
     deleteIconProp && isValidElement(deleteIconProp) ? (
       cloneElement<any>(deleteIconProp, {
@@ -122,7 +120,8 @@ export const HvTag = forwardRef<
         onClick: handleDeleteClick,
       })
     ) : (
-      <Close
+      <HvIcon
+        name="Close"
         size="xs"
         onClick={handleDeleteClick as any}
         className={cx(classes.deleteIcon, classes.button, classes.tagButton)}
@@ -164,7 +163,11 @@ export const HvTag = forwardRef<
       {...others}
     >
       {selectable && type === "semantic" && (
-        <CheckboxIcon className={classes.icon} size="xs" />
+        <HvIcon
+          name={isSelected ? "Check" : "Box"}
+          className={classes.icon}
+          size="xs"
+        />
       )}
       <HvTypography
         noWrap

@@ -18,7 +18,7 @@ import {
 
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
@@ -269,7 +269,12 @@ const BaseDropdown = forwardRef<
       </div>
       <div className={classes.arrowContainer}>
         {adornment || (
-          <DropXS size="xs" rotation={!isOpen} className={classes.arrow} />
+          <HvIcon
+            name="Chevron"
+            size="xs"
+            rotation={isOpen ? "up" : "down"}
+            className={classes.arrow}
+          />
         )}
       </div>
     </div>

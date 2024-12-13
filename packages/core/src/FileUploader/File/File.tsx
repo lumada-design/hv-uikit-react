@@ -4,7 +4,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../../IconButton";
-import { Close, Fail, Success } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvProgressBar } from "../../ProgressBar";
 import { HvTypography } from "../../Typography";
 import { convertUnits } from "../utils";
@@ -78,9 +78,11 @@ const getStatusIcon = (
 ) => {
   switch (status) {
     case "success":
-      return <Success className={classes?.icon} color="positive" />;
+      return (
+        <HvIcon name="Success" className={classes?.icon} color="positive" />
+      );
     case "fail":
-      return <Fail className={classes?.icon} color="negative" />;
+      return <HvIcon name="Fail" className={classes?.icon} color="negative" />;
     default:
       return <div className={classes?.icon} />;
   }
@@ -174,7 +176,7 @@ export const HvFile = (props: HvFileProps) => {
         className={classes.removeButton}
         onClick={() => onFileRemoved?.(data)}
       >
-        <Close size="xs" />
+        <HvIcon name="Close" size="xs" />
       </HvIconButton>
     </li>
   );

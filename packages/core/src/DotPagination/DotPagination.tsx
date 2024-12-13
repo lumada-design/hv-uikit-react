@@ -4,7 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { CurrentStep, OtherStep } from "../icons";
+import { HvIcon } from "../icons";
 import { HvRadio } from "../Radio";
 import { HvRadioGroup, HvRadioGroupProps } from "../RadioGroup";
 import { range } from "../utils/helpers";
@@ -59,11 +59,11 @@ const getSelectorIcons = (
   classes?: HvDotPaginationClasses,
 ) => {
   return {
-    radio: cloneElement(radioIcon || <OtherStep style={{ fontSize: 8 }} />, {
+    radio: cloneElement(radioIcon || <HvIcon name="OtherStep" size={8} />, {
       className: classes?.icon,
     }),
     radioChecked: cloneElement(
-      radioCheckedIcon || <CurrentStep style={{ fontSize: 8 }} />,
+      radioCheckedIcon || <HvIcon name="CurrentStep" size={8} />,
       {
         className: classes?.icon,
       },

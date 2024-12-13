@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../../IconButton";
-import { Add, Close } from "../../icons";
+import { HvIcon } from "../../icons";
 import { staticClasses, useClasses } from "./SavedColors.styles";
 
 export { staticClasses as colorPickerSavedColorsClasses };
@@ -50,7 +50,7 @@ export const SavedColors = (props: SavedColorsProps) => {
         onClick={onAddColor}
         title={addButtonAriaLabel}
       >
-        <Add compact />
+        <HvIcon name="Add" compact />
       </HvIconButton>
       {colors.map((color, index) => (
         <div
@@ -73,7 +73,7 @@ export const SavedColors = (props: SavedColorsProps) => {
               onClick={() => onRemoveColor(color, index)}
               title={deleteButtonAriaLabel}
             >
-              <Close compact size="xs" />
+              <HvIcon name="Close" compact size="xs" />
             </HvIconButton>
           </div>
         </div>

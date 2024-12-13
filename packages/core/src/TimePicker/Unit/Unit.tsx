@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvBaseInput, HvBaseInputProps } from "../../BaseInput";
 import { HvButton } from "../../Button";
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import { useClasses } from "./Unit.styles";
 
 interface UnitProps {
@@ -34,7 +34,9 @@ export const Unit = ({
 
   return (
     <div className={classes.root}>
-      {type !== "literal" && <DropXS onClick={onAdd} />}
+      {type !== "literal" && (
+        <HvIcon name="Chevron" rotation="up" onClick={onAdd} />
+      )}
       {type === "literal" && <div className={classes.separator}>{text}</div>}
       {type === "dayPeriod" && (
         <HvButton icon className={classes.periodToggle} onClick={onAdd}>
@@ -67,7 +69,9 @@ export const Unit = ({
           inputProps={{ autoComplete: "off", type: "number" }}
         />
       )}
-      {type !== "literal" && <DropXS rotation onClick={onSub} />}
+      {type !== "literal" && (
+        <HvIcon name="Chevron" rotation="down" onClick={onSub} />
+      )}
     </div>
   );
 };

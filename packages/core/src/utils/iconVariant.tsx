@@ -1,6 +1,6 @@
 import { HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { Caution, Fail, Info, Success } from "../icons";
+import { HvIcon } from "../icons";
 
 export const iconVariant = (
   variant: "success" | "warning" | "error" | "info" | "default",
@@ -8,13 +8,13 @@ export const iconVariant = (
 ) => {
   switch (variant) {
     case "success":
-      return <Success color={color} />;
+      return <HvIcon name="Success" color={color} />;
     case "warning":
-      return <Caution color={color} />;
+      return <HvIcon name="Caution" color={color} />;
     case "error":
-      return <Fail color={color} />;
+      return <HvIcon name="Fail" color={color} />;
     case "info":
-      return <Info color={color} />;
+      return <HvIcon name="Info" color={color} />;
     default:
       return null;
   }

@@ -6,7 +6,7 @@ import {
 
 import { HvButton, HvButtonProps } from "../Button";
 import { useExpandable } from "../hooks/useExpandable";
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { staticClasses, useClasses } from "./Section.styles";
 
@@ -94,7 +94,11 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
                 {...buttonProps}
                 {...expandButtonProps}
               >
-                <DropXS size="xs" rotation={!isOpen} />
+                <HvIcon
+                  name="Chevron"
+                  size="xs"
+                  rotation={isOpen ? "up" : "down"}
+                />
               </HvButton>
             )}
             {title}

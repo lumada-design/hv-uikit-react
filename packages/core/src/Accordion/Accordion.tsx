@@ -6,7 +6,7 @@ import {
 
 import { HvButtonBase } from "../ButtonBase";
 import { useExpandable } from "../hooks/useExpandable";
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyVariants } from "../Typography";
 import { staticClasses, useClasses } from "./Accordion.styles";
@@ -98,7 +98,7 @@ export const HvAccordion = forwardRef<
         onClick={handleClick}
         variant={labelVariant}
       >
-        <DropXS rotation={!isOpen} size="xs" />
+        <HvIcon name="Chevron" rotation={isOpen ? "up" : "down"} size="xs" />
         {label}
       </HvTypography>
     );

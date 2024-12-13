@@ -12,7 +12,7 @@ import {
 } from "../../FormElement";
 import { useLabels } from "../../hooks/useLabels";
 import { useUniqueId } from "../../hooks/useUniqueId";
-import { Doc } from "../../icons";
+import { HvIcon } from "../../icons";
 import { uniqueId } from "../../utils/helpers";
 import { setId } from "../../utils/setId";
 import { HvFileData, HvFilesAddedEvent } from "../File";
@@ -236,7 +236,11 @@ export const HvDropZone = (props: HvDropZoneProps) => {
             </div>
           ) : (
             <>
-              <Doc size="md" className={classes.dropZoneAreaIcon} />
+              <HvIcon
+                name="Doc"
+                size="md"
+                className={classes.dropZoneAreaIcon}
+              />
               <div className={classes.dropZoneAreaLabels}>
                 <div className={classes.dragText}>
                   {labels?.drag}

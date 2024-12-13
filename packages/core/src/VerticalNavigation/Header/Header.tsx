@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
-import { Backwards, Forwards, Menu } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvBaseProps } from "../../types/generic";
 import { HvTypography } from "../../Typography";
 import { VerticalNavigationContext } from "../VerticalNavigationContext";
@@ -67,8 +67,10 @@ export const HvVerticalNavigationHeader = (
 
   if (!shouldShowTitle) return null;
 
-  const openIcon = openIconProp ?? (!useIcons ? <Menu /> : <Forwards />);
-  const closeIcon = closeIconProp ?? <Backwards />;
+  const openIcon = openIconProp ?? (
+    <HvIcon name={useIcons ? "Chevron" : "Menu"} />
+  );
+  const closeIcon = closeIconProp ?? <HvIcon name="Chevron" rotation />;
 
   const handleClickBack = () => navigateToParentHandler?.();
 
@@ -94,7 +96,7 @@ export const HvVerticalNavigationHeader = (
           aria-label="Back"
           {...otherBackButtonProps}
         >
-          <Backwards size="xs" />
+          <HvIcon name="Chevron" rotation size="xs" />
         </HvButton>
       )}
       {isOpen && (

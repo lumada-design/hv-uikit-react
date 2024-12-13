@@ -9,7 +9,7 @@ import { HvActionBar } from "../../ActionBar";
 import { HvBaseDropdown, HvBaseDropdownProps } from "../../BaseDropdown";
 import { HvButton, HvButtonVariant } from "../../Button";
 import { HvFormStatus } from "../../FormElement";
-import { Filters } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupCounter } from "../Counter";
@@ -124,7 +124,7 @@ export const HvFilterGroupContent = forwardRef<
   const Header = useMemo(
     () => (
       <>
-        <Filters />
+        <HvIcon name="Filters" />
         <HvTypography variant="label">{labels?.placeholder}</HvTypography>
       </>
     ),

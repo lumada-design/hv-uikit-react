@@ -4,7 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { fixedForwardRef, HvBaseProps } from "../types/generic";
 import {
   DEFAULT_TREE_VIEW_PLUGINS,
@@ -59,8 +59,8 @@ export const HvTreeView = fixedForwardRef(function HvTreeView<
     selected,
     defaultSelected,
     disableSelection,
-    defaultCollapseIcon = <DropXS rotation="down" />,
-    defaultExpandIcon = <DropXS rotation="right" />,
+    defaultCollapseIcon = <HvIcon name="Chevron" rotation="down" />,
+    defaultExpandIcon = <HvIcon name="Chevron" />,
     defaultEndIcon,
     defaultParentIcon,
     onNodeSelect,

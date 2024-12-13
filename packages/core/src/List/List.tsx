@@ -13,7 +13,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvCheckBox } from "../CheckBox";
-import { DropXS } from "../icons";
+import { HvIcon } from "../icons";
 import { HvLink } from "../Link";
 import {
   HvListContainer,
@@ -272,7 +272,7 @@ export const HvList = (props: HvListProps) => {
         startAdornment={startAdornment}
         endAdornment={
           item.showNavIcon && (
-            <DropXS rotation="right" className={classes.box} size="xs" />
+            <HvIcon name="Chevron" className={classes.box} size="xs" />
           )
         }
         {...otherProps}

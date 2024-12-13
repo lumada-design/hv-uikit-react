@@ -6,7 +6,7 @@ import {
 
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvTypography } from "../../Typography";
 import { DefaultCell } from "../renderers/DefaultCell";
 import type { HvCellProps } from "./useHvTable";
@@ -64,7 +64,7 @@ export const CellWithExpandButton = ({
         aria-expanded={row.isExpanded}
         onClick={rowProps?.onClick}
       >
-        <DropXS rotation={!row.isExpanded} />
+        <HvIcon name="Chevron" rotation={row.isExpanded ? "up" : "down"} />
       </HvButton>
       {cell?.value && (
         <HvTypography variant="label" component="span">

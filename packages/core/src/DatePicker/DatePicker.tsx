@@ -22,7 +22,7 @@ import {
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { Calendar } from "../icons";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 import { useSavedState } from "../utils/useSavedState";
 import { staticClasses, useClasses } from "./DatePicker.styles";
@@ -489,7 +489,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
           onClickOutside={handleCalendarClose}
           onContainerCreation={focusOnContainer}
           placeholder={dateString || placeholder || ""}
-          adornment={<Calendar className={classes.icon} color="currentcolor" />}
+          adornment={<HvIcon name="Calendar" className={classes.icon} />}
           popperProps={{
             modifiers: [
               { name: "preventOverflow", enabled: escapeWithReference },

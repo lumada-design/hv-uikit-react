@@ -1,6 +1,6 @@
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import { staticClasses, useClasses } from "./PathElement.styles";
 
 export { staticClasses as pathElementClasses };
@@ -24,9 +24,9 @@ export const HvPathElement = ({
     <li className={classes.centerContainer}>
       {children}
       {!last && (
-        <DropXS
+        <HvIcon
+          name="Chevron"
           size="xs"
-          rotation="right"
           className={classes.separatorContainer}
           color="secondary_60"
         />

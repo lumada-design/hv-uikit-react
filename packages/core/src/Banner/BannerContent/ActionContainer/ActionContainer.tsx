@@ -5,7 +5,7 @@ import {
   HvActionsGenericProps,
 } from "../../../ActionsGeneric";
 import { HvIconButton } from "../../../IconButton";
-import { Close } from "../../../icons";
+import { HvIcon } from "../../../icons";
 import { HvBaseProps } from "../../../types/generic";
 import { staticClasses, useClasses } from "./ActionContainer.styles";
 
@@ -50,7 +50,7 @@ export const HvActionContainer = (props: HvActionContainerProps) => {
         onClick={onClose}
         {...others}
       >
-        <Close size="xs" className={classes.iconContainer} />
+        <HvIcon name="Close" size="xs" className={classes.iconContainer} />
       </HvIconButton>
       {action && (
         <div className={classes.actionsInnerContainer}>

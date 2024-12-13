@@ -3,7 +3,7 @@ import { ClassNames } from "@emotion/react";
 import { HvBaseSwitchProps } from "../../BaseSwitch";
 import { HvButton } from "../../Button";
 import { HvDropdownProps } from "../../Dropdown";
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvListValue } from "../../List";
 import {
   HvOverflowTooltip,
@@ -94,8 +94,8 @@ export function hvExpandColumn<
   expandRowButtonAriaLabel: string,
   collapseRowButtonAriaLabel: string,
   getCanRowExpand?: (row: HvRowInstance<D, H>) => boolean,
-  ExpandedIcon: React.ReactNode = <DropXS />,
-  CollapsedIcon: React.ReactNode = <DropXS rotation />,
+  ExpandedIcon: React.ReactNode = <HvIcon name="Chevron" rotation="up" />,
+  CollapsedIcon: React.ReactNode = <HvIcon name="Chevron" rotation="down" />,
 ): HvTableColumnConfig<D, H> {
   return {
     Cell: (cellProps: HvCellProps<D, H>) => {

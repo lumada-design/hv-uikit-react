@@ -4,7 +4,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../Button";
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import {
   HvListContainer,
   HvListContainerProps,
@@ -99,7 +99,7 @@ export const HvVerticalNavigationSlider = (
                 className={classes.forwardButton}
                 aria-label={forwardButtonAriaLabel}
               >
-                <DropXS rotation="right" />
+                <HvIcon name="Chevron" />
               </HvButton>
             ) : undefined
           }

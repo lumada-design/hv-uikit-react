@@ -7,7 +7,7 @@ import {
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
 import { HvIconButton } from "../IconButton";
-import { MoreOptionsVertical } from "../icons";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./ActionsGeneric.styles";
@@ -166,7 +166,7 @@ export const HvActionsGeneric = forwardRef<
             icon: classes.dropDownMenuButton,
             iconSelected: classes.dropDownMenuButtonSelected,
           }}
-          icon={<MoreOptionsVertical color={iconColor} />}
+          icon={<HvIcon name="MoreOptionsVertical" color={iconColor} />}
           placement="left"
           onClick={(event, action) => {
             handleCallback(event, idProp || "", action as HvActionGeneric);

@@ -1,7 +1,7 @@
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton } from "../../../Button";
-import { DropXS } from "../../../icons";
+import { HvIcon } from "../../../icons";
 import { HvBaseProps } from "../../../types/generic";
 import { setId } from "../../../utils/setId";
 import { staticClasses, useClasses } from "./Navigation.styles";
@@ -34,7 +34,7 @@ export const Navigation = ({
         })}
         onClick={onNavigatePrevious}
       >
-        <DropXS size="xs" rotation="left" />
+        <HvIcon name="Chevron" size="xs" rotation />
       </HvButton>
 
       <HvButton
@@ -59,7 +59,7 @@ export const Navigation = ({
         })}
         onClick={onNavigateNext}
       >
-        <DropXS size="xs" rotation="right" />
+        <HvIcon name="Chevron" size="xs" />
       </HvButton>
     </div>
   );

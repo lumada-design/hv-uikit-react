@@ -8,7 +8,7 @@ import {
 
 import { HvGrid } from "../../Grid";
 import { HvIconButton } from "../../IconButton";
-import { Delete } from "../../icons";
+import { HvIcon } from "../../icons";
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
@@ -123,7 +123,7 @@ export const Rule = (props: RuleProps) => {
           }
           disabled={readOnly}
         >
-          <Delete />
+          <HvIcon name="Delete" />
         </HvIconButton>
       </HvGrid>
     </HvGrid>

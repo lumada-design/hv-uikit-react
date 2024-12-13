@@ -8,7 +8,7 @@ import {
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useEnhancedEffect } from "../hooks/useEnhancedEffect";
-import { Edit } from "../icons";
+import { HvIcon } from "../icons";
 import { HvInput, HvInputProps } from "../Input";
 import { HvTooltip } from "../Tooltip";
 import {
@@ -179,7 +179,8 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
             overrideIconColors={false}
             classes={{ endIcon: css({ display: "flex" }) }}
             endIcon={
-              <Edit
+              <HvIcon
+                name="Edit"
                 color="secondary_60"
                 className={cx(classes.icon, {
                   [classes.iconVisible]: showIcon,

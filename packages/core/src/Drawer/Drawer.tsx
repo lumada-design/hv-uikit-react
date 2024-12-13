@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvIconButton } from "../IconButton";
-import { Close } from "../icons";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Drawer.styles";
 
@@ -133,7 +133,7 @@ export const HvDrawer = forwardRef<
         onClick={onClose}
         title={buttonTitle}
       >
-        <Close />
+        <HvIcon name="Close" />
       </HvIconButton>
       {children}
     </MuiDrawer>

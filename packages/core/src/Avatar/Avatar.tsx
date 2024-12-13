@@ -13,7 +13,7 @@ import {
 
 import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
 import { useImageLoaded } from "../hooks/useImageLoaded";
-import { User } from "../icons";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
 import { staticClasses, useClasses } from "./Avatar.styles";
 
@@ -127,7 +127,8 @@ export const HvAvatar = forwardRef<
     [children] = alt;
   } else {
     children = (
-      <User
+      <HvIcon
+        name="User"
         color={color}
         size={decreaseSizeMap[size]}
         className={classes.fallback}

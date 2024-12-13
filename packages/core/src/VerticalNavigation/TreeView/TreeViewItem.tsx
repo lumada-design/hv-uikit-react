@@ -15,7 +15,7 @@ import {
 
 import { HvAvatar } from "../../Avatar";
 import { useForkRef } from "../../hooks/useForkRef";
-import { DropXS } from "../../icons";
+import { HvIcon } from "../../icons";
 import { HvOverflowTooltip } from "../../OverflowTooltip";
 import { HvTooltip } from "../../Tooltip";
 import {
@@ -507,7 +507,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 useIcons && icon
               )}
               {hasChildren && !isOpen ? (
-                <DropXS size="xs" rotation="right" />
+                <HvIcon name="Chevron" size="xs" />
               ) : (
                 hasAnyChildWithData && !isOpen && <div />
               )}
@@ -524,7 +524,13 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               </div>
             )}
 
-            {isOpen && expandable && <DropXS rotation={!expanded} />}
+            {isOpen && expandable && (
+              <HvIcon
+                name="Chevron"
+                size="xs"
+                rotation={expanded ? "up" : "down"}
+              />
+            )}
           </HvTypography>
         </HvTooltip>
       );

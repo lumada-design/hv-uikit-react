@@ -1,5 +1,5 @@
 import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
-import { MoreOptionsHorizontal } from "../icons";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 
 export const removeExtension = (label: string) =>
@@ -26,7 +26,7 @@ export const pathWithSubMenu = (
     nbrElemToSubMenu,
     <HvDropDownMenu
       id={setId(id, "submenu")}
-      icon={<MoreOptionsHorizontal />}
+      icon={<HvIcon name="MoreOptionsHorizontal" />}
       dataList={subMenuList}
       {...dropDownMenuProps}
       onClick={onClick != null ? handleClick : undefined}
