@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.83.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.83.0...@hitachivantara/uikit-react-core@5.83.1) (2024-12-16)
+
+### Bug Fixes
+
+- **Label:** consistent gutter spacing ([1623164](https://github.com/lumada-design/hv-uikit-react/commit/16231640b9018f77ef8e1c6ba4296749b055c42c))
+- **Slider:** markStep & markDigits min/max values ([2cc9317](https://github.com/lumada-design/hv-uikit-react/commit/2cc93173a9d2a9dd13399dff62ccd51ecbc7cce4))
+
 # [5.83.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.82.4...@hitachivantara/uikit-react-core@5.83.0) (2024-12-12)
 
 ### Bug Fixes

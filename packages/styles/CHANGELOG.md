@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.4...@hitachivantara/uikit-styles@5.40.5) (2024-12-16)
+
+### Bug Fixes
+
+- **Label:** consistent gutter spacing ([1623164](https://github.com/lumada-design/hv-uikit-react/commit/16231640b9018f77ef8e1c6ba4296749b055c42c))
+
 ## [5.40.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.3...@hitachivantara/uikit-styles@5.40.4) (2024-12-12)
 
 ### Bug Fixes
