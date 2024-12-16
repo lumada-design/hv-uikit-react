@@ -1,0 +1,60 @@
+import {
+  emptyStateClasses,
+  HvEmptyState,
+} from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("EmptyState", "core", emptyStateClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvEmptyState}
+  componentName="HvEmptyState"
+  controls={{
+    title: {
+      defaultValue: "No data routes",
+    },
+    message: {
+      defaultValue:
+        "After you start adding Data Routes, they will appear here.",
+    },
+    action: {
+      defaultValue: "Check the documentation for help.",
+    },
+  }}
+  componentProps={{
+    icon: <Info />,
+  }}
+/>
+
+### Action links
+
+You can specify any content as the `message` or `action`. This can be a button, a link, or any other component that you want to use to guide the user to the next step.
+
+```tsx live
+<HvEmptyState
+  title="No visualization data available"
+  icon={<BarChart />}
+  action={
+    <div className="flex flex-col gap-1 items-center">
+      <HvButton variant="secondarySubtle">Upload data</HvButton>
+      <HvTypography link component="a" href="#">
+        Back to homepage
+      </HvTypography>
+    </div>
+  }
+/>
+```
+
+</Page>
