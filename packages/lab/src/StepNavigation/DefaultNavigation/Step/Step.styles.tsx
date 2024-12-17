@@ -1,8 +1,9 @@
-import { createClasses } from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvStep", {
   root: {},
   ghost: {
+    fontWeight: theme.fontWeights.semibold,
     "&:hover": {
       backgroundColor: "transparent",
     },

@@ -109,7 +109,7 @@ export const Test: StoryObj = {
           style={{ alignItems: "start", justifyContent: "start" }}
         >
           <div>
-            <div style={{ display: "flex", height: 180 }}>
+            <div className="flex justify-between h-180px">
               {renderStory(AccordionDisabledStory, context)}
               {renderStory(DotPaginationMainStory, context)}
               {renderStory(DropDownMenuMainStory, context)}
