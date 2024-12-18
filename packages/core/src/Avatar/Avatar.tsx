@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
-import { User } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -14,9 +13,17 @@ import {
 
 import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
 import { useImageLoaded } from "../hooks/useImageLoaded";
+import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
-import { decreaseSize } from "../utils/sizes";
 import { staticClasses, useClasses } from "./Avatar.styles";
+
+const decreaseSizeMap = {
+  xl: "lg",
+  lg: "md",
+  md: "sm",
+  sm: "xs",
+  xs: "xs",
+} satisfies Record<HvSize, HvSize>;
 
 export { staticClasses as avatarClasses };
 
@@ -120,9 +127,10 @@ export const HvAvatar = forwardRef<
     [children] = alt;
   } else {
     children = (
-      <User
+      <HvIcon
+        name="User"
         color={color}
-        iconSize={decreaseSize(size)}
+        size={decreaseSizeMap[size]}
         className={classes.fallback}
       />
     );

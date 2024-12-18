@@ -43,16 +43,5 @@ export const { staticClasses, useClasses } = createClasses(name, {
   removeButton: {
     height: 16,
     width: 16,
-    minWidth: 16,
-    minHeight: 16,
-    padding: 0,
-    margin: 0,
-
-    "& div > span": {
-      height: 16,
-      width: 16,
-
-      "& > div": { height: 16, width: 16 },
-    },
   },
 });

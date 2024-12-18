@@ -6,7 +6,6 @@ import {
   useTimeFieldState,
   type TimeFieldStateOptions,
 } from "@react-stately/datepicker";
-import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -24,6 +23,7 @@ import {
 } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 import { Placeholder, PlaceholderProps } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";
@@ -285,7 +285,8 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
           }}
           placement="right"
           adornment={
-            <TimeIcon
+            <HvIcon
+              name="Time"
               color={disabled ? "secondary_60" : undefined}
               className={classes.icon}
             />

@@ -55,6 +55,5 @@ export const { useClasses, staticClasses } = createClasses(
         },
       },
     },
-    iconVariant: {},
   },
 );

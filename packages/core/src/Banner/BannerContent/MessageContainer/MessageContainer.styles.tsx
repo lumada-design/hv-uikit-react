@@ -9,11 +9,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     wordBreak: "break-word",
     maxWidth: "700px",
     overflow: "hidden",
-    marginRight: 10,
-  },
-  iconContainer: {
-    marginRight: theme.space.xs,
-    marginLeft: -theme.space.xs,
+    textWrap: "balance",
   },
   actionMessageContainer: {
     flex: "0 0 auto",

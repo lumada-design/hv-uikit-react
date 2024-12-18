@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Delete } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -9,6 +8,7 @@ import {
 
 import { HvGrid } from "../../Grid";
 import { HvIconButton } from "../../IconButton";
+import { HvIcon } from "../../icons";
 import { useQueryBuilderContext } from "../Context";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
@@ -123,7 +123,7 @@ export const Rule = (props: RuleProps) => {
           }
           disabled={readOnly}
         >
-          <Delete />
+          <HvIcon name="Delete" />
         </HvIconButton>
       </HvGrid>
     </HvGrid>

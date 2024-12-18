@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import { ColorState } from "react-color";
-import { ColorPicker } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -12,6 +11,7 @@ import { HvFormElement, HvInfoMessage, HvLabel } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { HvPanel } from "../Panel";
 import { HvTypography } from "../Typography";
 import { setId } from "../utils/setId";
@@ -266,7 +266,7 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
                 )}
               />
             ) : dropdownIcon === "colorPicker" ? (
-              <ColorPicker className={classes.colorPickerIcon} />
+              <HvIcon name="ColorPicker" className={classes.colorPickerIcon} />
             ) : undefined
           }
           placeholder={

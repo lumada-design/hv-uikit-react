@@ -1,7 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 
-import { outlineStyles } from "../../../utils/focusUtils";
-
 const name = "HvBannerActionContainer";
 
 export const { staticClasses, useClasses } = createClasses(name, {
@@ -17,13 +15,8 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   closeAction: {
     alignSelf: "flex-end",
-    cursor: "pointer",
-    "&:focus": {
-      ...outlineStyles,
-    },
-  },
-  iconContainer: {
     width: "32px",
     height: "32px",
   },
+  iconContainer: {},
 });

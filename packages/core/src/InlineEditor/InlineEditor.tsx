@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { Edit } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   useTheme,
@@ -9,6 +8,7 @@ import {
 import { HvButton, HvButtonProps } from "../Button";
 import { useControlled } from "../hooks/useControlled";
 import { useEnhancedEffect } from "../hooks/useEnhancedEffect";
+import { HvIcon } from "../icons";
 import { HvInput, HvInputProps } from "../Input";
 import { HvTooltip } from "../Tooltip";
 import {
@@ -92,7 +92,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
     ...others
   } = useDefaultProps("HvInlineEditor", props);
 
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
   const [value, setValue] = useControlled(valueProp, defaultValue);
   const [editMode, setEditMode] = useState(false);
   const [cachedValue, setCachedValue] = useState(value);
@@ -177,8 +177,10 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           <HvButton
             variant="secondaryGhost"
             overrideIconColors={false}
+            classes={{ endIcon: css({ display: "flex" }) }}
             endIcon={
-              <Edit
+              <HvIcon
+                name="Edit"
                 color="secondary_60"
                 className={cx(classes.icon, {
                   [classes.iconVisible]: showIcon,

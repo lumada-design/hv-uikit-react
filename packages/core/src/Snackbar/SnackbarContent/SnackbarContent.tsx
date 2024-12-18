@@ -82,7 +82,7 @@ export const HvSnackbarContent = forwardRef<
       className={cx(classes?.[variant], className)}
       message={
         <div id={setId(id, "message")} className={classes.messageSpan}>
-          {icon && <div className={classes.iconVariant}>{icon}</div>}
+          {icon}
           <div className={classes.messageText}>{label}</div>
           {action && (
             <div id={setId(id, "action")} className={classes.action}>

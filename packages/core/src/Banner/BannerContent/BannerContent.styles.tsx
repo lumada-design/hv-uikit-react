@@ -15,6 +15,7 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     alignItems: "center",
     padding: theme.spacing("xs", 0),
     paddingLeft: theme.space.sm,
+    gap: theme.space.xs,
   },
   action: {
     padding: theme.spacing("xs"),

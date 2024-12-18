@@ -39,8 +39,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     color: "inherit",
   },
   deleteIcon: {
-    width: 16,
-    height: 16,
+    margin: 2,
     "&:hover": {
       backgroundColor: theme.colors.containerBackgroundHover,
     },
