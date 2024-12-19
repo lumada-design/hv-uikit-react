@@ -33,6 +33,9 @@ export interface HvMultiButtonProps extends HvBaseProps {
   split?: boolean;
 }
 
+/**
+ * Multi-buttons are grouped sets of buttons displayed horizontally or vertically in the same container.
+ */
 export const HvMultiButton = (props: HvMultiButtonProps) => {
   const {
     className,
