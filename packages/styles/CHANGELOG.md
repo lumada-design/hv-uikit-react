@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.40.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.5...@hitachivantara/uikit-styles@5.40.6) (2024-12-19)
+
+### Bug Fixes
+
+- **Suggestions:** align border with dropdown components ([e52fea8](https://github.com/lumada-design/hv-uikit-react/commit/e52fea8aa92ca302c27ca11dc89a47f31b182295))
+
 ## [5.40.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.4...@hitachivantara/uikit-styles@5.40.5) (2024-12-16)
 
 ### Bug Fixes

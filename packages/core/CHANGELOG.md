@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.84.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.83.1...@hitachivantara/uikit-react-core@5.84.0) (2024-12-19)
+
+### Bug Fixes
+
+- **Suggestions:** align border with dropdown components ([e52fea8](https://github.com/lumada-design/hv-uikit-react/commit/e52fea8aa92ca302c27ca11dc89a47f31b182295))
+
+### Features
+
+- **FileUploader:** add classes, label, accept props ([41d2063](https://github.com/lumada-design/hv-uikit-react/commit/41d2063d6cc6cbfe041769cdc2275b208b0b292f))
+
 ## [5.83.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.83.0...@hitachivantara/uikit-react-core@5.83.1) (2024-12-16)
 
 ### Bug Fixes
