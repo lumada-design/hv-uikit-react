@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { SortingRule } from "react-table";
+import type { SortingRule } from "react-table";
 import {
   HvEmptyState,
   HvTableCell,
-  HvTableColumnConfig,
   HvTableRow,
-  HvTableState,
+  type HvTableColumnConfig,
+  type HvTableState,
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
@@ -53,9 +53,6 @@ export type AssetEvent = {
   link?: string;
   selected?: boolean;
 };
-
-// If a Cell gets a value, it has to return a react element
-const getCell = (value: string) => value as unknown as React.ReactElement;
 
 const formatDate = (date: Date) => date.toISOString().split("T")[0];
 
@@ -151,111 +148,17 @@ export const makeSelectedData = (len = 10) =>
 // https://react-table-v7-docs.netlify.app/docs/api/useTable#column-options
 // width is only used if explicitly passed in column.getHeaderProps
 export const getColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
-  {
-    Header: "Title",
-    accessor: "name",
-    style: { minWidth: 120 },
-  },
-  {
-    Header: "Time",
-    accessor: "createdDate",
-    style: { minWidth: 100 },
-  },
-  {
-    Header: "Event Type",
-    accessor: "eventType",
-    style: { minWidth: 100 },
-  },
-  {
-    Header: "Status",
-    accessor: "status",
-    style: { minWidth: 100 },
-  },
-  {
-    Header: "Probability",
-    accessor: "riskScore",
-    align: "right", // numeric values should be right-aligned
-    Cell: ({ value }) => getCell(`${value}%`),
-  },
-  { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
-];
-
-export const getEditableColumns = (): HvTableColumnConfig<
-  AssetEvent,
-  string
->[] => [
-  { Header: "Title", accessor: "name", style: { width: "100%" } },
-  { Header: "Status", accessor: "status", style: { width: "100%" } },
-  { Header: "Severity", accessor: "severity", style: { width: "100%" } },
-  { Header: "Priority", accessor: "priority", style: { width: "100%" } },
-];
-
-export const getGroupedRowsColumns = (): HvTableColumnConfig<
-  AssetEvent,
-  string
->[] => [
-  {
-    Header: "Title",
-    accessor: "name",
-    style: { minWidth: 120 },
-  },
-  {
-    Header: "Time",
-    accessor: "createdDate",
-    style: { minWidth: 100 },
-  },
+  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
   { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
-  { Header: "Status", accessor: "status", style: { width: 140 } },
+  { Header: "Status", accessor: "status", style: { minWidth: 100 } },
   {
     Header: "Probability",
     accessor: "riskScore",
     align: "right", // numeric values should be right-aligned
-    Cell: ({ value }) => getCell(`${value}%`),
-    aggregate: "average",
-    Aggregated: ({ value }) => getCell(`Avg. ${value}%`),
+    Cell: ({ value }) => `${value}%`,
   },
   { Header: "Severity", accessor: "severity" },
-  { Header: "Priority", accessor: "priority" },
-];
-
-export const getGroupedColumns = (): HvTableColumnConfig<
-  AssetEvent,
-  string
->[] => [
-  {
-    Header: "Title",
-    accessor: "name",
-    style: { minWidth: 120 },
-  },
-  {
-    Header: "Time",
-    accessor: "createdDate",
-    style: { minWidth: 100 },
-  },
-  {
-    Header: "Event Type",
-    accessor: "eventType",
-    style: { minWidth: 100 },
-  },
-  {
-    id: "eventInfo",
-    Header: "Event Info",
-    columns: [
-      {
-        Header: "Status",
-        accessor: "status",
-        style: { width: 140 },
-      },
-      {
-        Header: "Probability",
-        accessor: "riskScore",
-        align: "right", // numeric values should be right-aligned
-        Cell: ({ value }) => getCell(`${value}%`),
-      },
-      { Header: "Severity", accessor: "severity" },
-    ],
-  },
   { Header: "Priority", accessor: "priority" },
 ];
 
