@@ -1,9 +1,7 @@
-import { Suspense } from "react";
 import { css } from "@emotion/css";
 import {
   HvGrid,
   HvGridProps,
-  HvLoading,
   HvLoadingContainer,
   HvPanel,
   theme,
@@ -28,13 +26,7 @@ export const GridPanel = ({
           borderRadius: `0 0 ${theme.radii.round} ${theme.radii.round}`,
         })}
       >
-        <Suspense
-          fallback={
-            <HvLoading className={css({ position: "absolute", inset: 0 })} />
-          }
-        >
-          {children}
-        </Suspense>
+        {children}
       </HvPanel>
     </HvLoadingContainer>
   </HvGrid>

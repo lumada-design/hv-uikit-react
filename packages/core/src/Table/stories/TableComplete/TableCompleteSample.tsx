@@ -12,13 +12,24 @@ import {
   Unlock,
 } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, getColumns, useServerData } from "../storiesUtils";
+import { AssetEvent, useServerData } from "../storiesUtils";
 import { TableComplete as Table, TableProps } from "./TableComplete";
 
 const useColumns = () => {
   return useMemo<TableProps<AssetEvent>["columns"]>(
     () => [
-      ...getColumns(),
+      { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+      { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
+      { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+      { Header: "Status", accessor: "status", style: { minWidth: 100 } },
+      {
+        Header: "Probability",
+        accessor: "riskScore",
+        align: "right", // numeric values should be right-aligned
+        Cell: ({ value }) => `${value}%`,
+      },
+      { Header: "Severity", accessor: "severity" },
+      { Header: "Priority", accessor: "priority" },
       {
         id: "lock",
         variant: "actions",

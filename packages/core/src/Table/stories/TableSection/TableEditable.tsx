@@ -34,7 +34,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, getEditableColumns, useServerData } from "../storiesUtils";
+import { AssetEvent, useServerData } from "../storiesUtils";
 
 const slide = keyframes`
   0% { 
@@ -795,6 +795,13 @@ const Table = <T extends Data>({
     </>
   );
 };
+
+const getEditableColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [
+  { Header: "Title", accessor: "name", style: { width: "100%" } },
+  { Header: "Status", accessor: "status", style: { width: "100%" } },
+  { Header: "Severity", accessor: "severity", style: { width: "100%" } },
+  { Header: "Priority", accessor: "priority", style: { width: "100%" } },
+];
 
 export const TableEditable = () => {
   const { data, loading, fetchData, pageCount, mutateData, totalRecords } =
