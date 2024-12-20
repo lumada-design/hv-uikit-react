@@ -1,0 +1,180 @@
+import {
+  HvButton,
+  HvMultiButton,
+  multiButtonClasses,
+} from "@hitachivantara/uikit-react-core";
+import {
+  Abacus,
+  Info,
+  LocationPin,
+  Map,
+} from "@hitachivantara/uikit-react-icons";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "MultiButton",
+    "core",
+    multiButtonClasses,
+  );
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvMultiButton}
+  componentName="HvMultiButton"
+  controls={{
+    vertical: {
+      defaultValue: false,
+    },
+    disabled: {
+      defaultValue: false,
+    },
+    size: {
+      type: "slider",
+      defaultValue: "md",
+    },
+  }}
+  componentProps={{
+    icon: <Info />,
+    style: { width: "400px", backgroundColor: "transparent" },
+  }}
+>
+  <HvButton startIcon={<Map />}>Map</HvButton>
+  <HvButton startIcon={<LocationPin />}>Satellite</HvButton>
+  <HvButton startIcon={<Abacus />}>Abacus</HvButton>
+</Playground>
+
+### Content
+
+The `HvMultiButton` component uses the [`HvButton`](/components/button) component to create a group of buttons.
+You can use the buttons underneath to display the multibutton content in different ways.
+For example, you can use icons, display labels only or set some items as disabled.
+
+```tsx live
+<div className="flex flex-col gap-2">
+  <HvMultiButton style={{ width: "fit-content" }}>
+    <HvButton icon aria-label="Map">
+      <Map />
+    </HvButton>
+    <HvButton icon aria-label="Location">
+      <LocationPin />
+    </HvButton>
+    <HvButton icon aria-label="Transport">
+      <Bus />
+    </HvButton>
+  </HvMultiButton>
+  <HvMultiButton style={{ width: "320px" }}>
+    <HvButton>Map</HvButton>
+    <HvButton>Location</HvButton>
+    <HvButton>Transport</HvButton>
+  </HvMultiButton>
+  <HvMultiButton style={{ width: "320px" }}>
+    <HvButton startIcon={<Map />}>Map</HvButton>
+    <HvButton disabled>Location</HvButton>
+    <HvButton endIcon={<Bus />}>Transport</HvButton>
+  </HvMultiButton>
+</div>
+```
+
+### Controlled
+
+```tsx live
+import { useState } from "react";
+
+export default function MultiButtonControlled() {
+  const [selection, setSelection] = useState([]);
+
+  return (
+    <>
+      <HvButton
+        variant="primarySubtle"
+        onClick={() => setSelection([1, 2, 3, 4, 5])}
+      >
+        Select weekdays
+      </HvButton>
+
+      <HvMultiButton style={{ width: "224px" }}>
+        {buttons.map((button, i) => (
+          <HvButton
+            key={`${buttons[i]}`}
+            aria-label={button}
+            selected={selection.includes(i)}
+            onClick={() => {
+              if (selection.includes(i)) {
+                setSelection(selection.filter((item) => item !== i));
+              } else {
+                setSelection([...selection, i]);
+              }
+            }}
+          >
+            {button[0]}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+    </>
+  );
+}
+
+const buttons = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+```
+
+### Split button
+
+You can create a split button by using the `HvMultiButton` in conjunction with the `HvButton` and the `HvDropDownMenu` components.
+
+```tsx live
+import { useMemo, useState } from "react";
+
+export default function Demo() {
+  const options = useMemo(
+    () => [
+      { label: "Merge commit" },
+      { label: "Squash and merge" },
+      { label: "Rebase and merge" },
+    ],
+    [],
+  );
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  return (
+    <HvSimpleGrid cols={3} spacing="sm">
+      <HvMultiButton split>
+        <HvButton>{selectedOption.label}</HvButton>
+        <HvDropDownMenu
+          dataList={options}
+          icon={<DropDownXS />}
+          onClick={(e, item) =>
+            setSelectedOption(
+              options.filter((option) => option.label === item.label)[0],
+            )
+          }
+        />
+      </HvMultiButton>
+    </HvSimpleGrid>
+  );
+}
+```
+
+### Related components
+
+- [`HvButton`](/components/button)
+- [`HvDropDownMenu`](/components/drop-down-menu)
+
+</Page>
