@@ -81,11 +81,18 @@ const parseErrorMessage = (errorString: string) => {
 /**
  * Get the last keyword entered in the query.
  */
-function getLastKeyword(model: any) {
-  const content = model.getValue();
+function getLastKeyword(model: any, position: any) {
+  const textUntilCursor = String(
+    model.getValueInRange({
+      startLineNumber: 1,
+      startColumn: 1,
+      endLineNumber: position.lineNumber,
+      endColumn: position.column,
+    }),
+  );
 
   // This regex ignores punctuation and special characters
-  const words = content.split(/[\s,.!?;:()]+/);
+  const words = textUntilCursor.split(/[\s,.!?;:()]+/);
 
   for (let i = words.length - 1; i >= 0; i--) {
     let word = words[i];
@@ -123,7 +130,7 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
   ];
 
   return {
-    provideCompletionItems: (model: any) => {
+    provideCompletionItems: (model: any, position: any) => {
       // If no text is typed, show a suggestion to select all columns from a table
       if (model.getValue() === "") {
         const emptySuggestions = {
@@ -144,7 +151,7 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
         sortText: "1",
       }));
 
-      const lastKeyword = getLastKeyword(model);
+      const lastKeyword = getLastKeyword(model, position);
 
       if (lastKeyword === "FROM" || lastKeyword.includes("JOIN")) {
         const tableSuggestions = tablesNames.map((tableName) => ({
