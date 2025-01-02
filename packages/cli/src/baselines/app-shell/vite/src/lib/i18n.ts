@@ -1,11 +1,11 @@
 import { useMemo } from "react";
-import i18next from "i18next";
-import Backend, { HttpBackendOptions } from "i18next-http-backend";
+import { createInstance } from "i18next";
+import Backend, { type HttpBackendOptions } from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
 const initAppI18n = (baseUrl: string) => {
-  const i18n = i18next.createInstance();
+  const i18n = createInstance();
 
   const loadPath = `${baseUrl}locales/{{lng}}/{{ns}}.json`;
 
@@ -22,15 +22,12 @@ const initAppI18n = (baseUrl: string) => {
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init<HttpBackendOptions>({
       fallbackLng: "en",
-      ns: [],
+      supportedLngs: ["en"],
       backend: {
         loadPath,
       },
       interpolation: {
         escapeValue: false, // not needed for react as it escapes by default
-      },
-      react: {
-        useSuspense: false, // it was constantly loading the translation files
       },
       load: "languageOnly",
     });
@@ -38,18 +35,12 @@ const initAppI18n = (baseUrl: string) => {
   return i18n;
 };
 
-const useI18nInstance = () => {
+export const useI18nInstance = () => {
   const moduleId = "@hv-apps/uikit-app";
   const i18n = useMemo(
-    () =>
-      // TS picks up the Node's version of `import.meta.resolve` definition instead of the browser's
-      // The browser's version of `import.meta.resolve` is defined in `src/types/import.meta.d.ts`
-      // and it returns a string, not a Promise
-      initAppI18n(import.meta.resolve?.(`${moduleId}/`) || ""),
+    () => initAppI18n(import.meta.resolve?.(`${moduleId}/`) || ""),
     [moduleId],
   );
 
   return i18n;
 };
-
-export default useI18nInstance;

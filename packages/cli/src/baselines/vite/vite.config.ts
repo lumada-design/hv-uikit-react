@@ -8,16 +8,7 @@ import react from "@vitejs/plugin-react";
 import unoCSS from "unocss/vite";
 
 export default defineConfig({
-  plugins: [
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-    }),
-    tsconfigPaths({ root: ".." }),
-    unoCSS(),
-  ],
+  plugins: [react(), tsconfigPaths(), unoCSS()],
   test: {
     globals: true,
     environment: "happy-dom",

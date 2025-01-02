@@ -1,6 +1,6 @@
+import type { TransProps } from "react-i18next";
+import type { ThirdPartyModule, TOptionsBase } from "i18next";
 import { vi } from "vitest";
-import { TOptionsBase, ThirdPartyModule } from "i18next";
-import { TransProps } from "react-i18next";
 
 import "@testing-library/jest-dom";
 

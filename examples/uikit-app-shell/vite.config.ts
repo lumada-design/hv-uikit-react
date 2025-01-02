@@ -11,12 +11,7 @@ import { presetHv } from "@hitachivantara/uikit-uno-preset";
 
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-    }),
+    react(),
     tsconfigPaths(),
     unoCSS({
       mode: "per-module",
