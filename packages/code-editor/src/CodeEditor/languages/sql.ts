@@ -33,6 +33,8 @@ const getColumnNames = (schema: string) => {
 
   for (; tableMatch !== null; tableMatch = tableBlockRegex.exec(schema)) {
     const tableDefinition = tableMatch[1];
+
+    const tableName = getTablesNames(tableMatch[0])[0];
     let columnMatch = columnRegex.exec(tableDefinition);
 
     for (
@@ -48,7 +50,7 @@ const getColumnNames = (schema: string) => {
           keyword.startsWith(columnName.toUpperCase()),
         )
       ) {
-        columnNames.add(columnName);
+        columnNames.add(`${tableName}.${columnName}`);
       }
     }
   }
