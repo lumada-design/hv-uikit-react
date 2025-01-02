@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 
-import useI18nInstance from "../lib/i18n";
+import { useI18nInstance } from "../lib/i18n";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   const i18n = useI18nInstance();
