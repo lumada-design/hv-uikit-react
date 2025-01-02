@@ -8,25 +8,31 @@ import { sqlKeywords } from "./sqlKeywords";
 // model - editor content
 // position - position of the pointer
 
-const getTablesNames = (schema: string) => {
+export const getTablesNames = (schema: string) => {
   // Regular expression to match CREATE TABLE statements and extract table names
-  const regex = /CREATE TABLE\s+(\w+)/gi;
+  // Note: takes into account that table names can be delimited by backticks, double quotes, or square brackets
+  const regex =
+    /CREATE TABLE\s+(?:`([^`]+)`|\[([^\]]+)\]|"([^"]+)"|([^\s(`[]+))/gi;
+
   const tableNames = [];
   let match;
 
   // Use a for loop to execute the regex and push the table names to the array
   for (match = regex.exec(schema); match !== null; match = regex.exec(schema)) {
-    tableNames.push(match[1]);
+    const tableName = (match[1] || match[2] || match[3] || match[4]).trim();
+    tableNames.push(tableName);
   }
 
   return tableNames;
 };
 
-const getColumnNames = (schema: string) => {
-  const tableBlockRegex = /CREATE TABLE\s+\w+\s*\(([\s\S]+?)\);/gi;
+export const getColumnNames = (schema: string) => {
+  // Regular expression to match CREATE TABLE statements and extract column names
+  const tableBlockRegex = /CREATE TABLE\s+[^()]+?\s*\(([\s\S]+?)\)\s*;/gi;
 
   // Exclude lines that start with SQL keywords like PRIMARY, FOREIGN, CHECK
-  const columnRegex = /^\s*(\w+)\s+(\w+)/gm;
+  // Note: takes into account that column names can be delimited by backticks, double quotes, or square brackets
+  const columnRegex = /^\s*(?:`([^`]+)`|"([^"]+)"|\[([^\]]+)\]|(\w+))\s/gm;
   const columnNames = new Set();
 
   let tableMatch = tableBlockRegex.exec(schema);
@@ -42,7 +48,12 @@ const getColumnNames = (schema: string) => {
       columnMatch !== null;
       columnMatch = columnRegex.exec(tableDefinition)
     ) {
-      const columnName = columnMatch[1];
+      const columnName = (
+        columnMatch[1] ||
+        columnMatch[2] ||
+        columnMatch[3] ||
+        columnMatch[4]
+      ).trim();
 
       // Ignore lines starting with SQL keywords like PRIMARY, FOREIGN, etc.
       if (
@@ -217,9 +228,9 @@ export const hvSqlOptions = {};
 
 /**
  * SQL code formatter.
- * When the code has errors, it is not formatted and the orginal code is returned.
+ * When the code has errors, it is not formatted and the original code is returned.
  * @param content Current code editor content
- * @returns `string with the formatted code or `undefined`
+ * @returns `string` with the formatted code or `undefined`
  *
  * SQL Formatter options and demo:
  * https://www.npmjs.com/package/sql-formatter
