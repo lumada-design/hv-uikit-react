@@ -1,0 +1,91 @@
+import { Callout } from "nextra/components";
+import {
+  HvPagination,
+  paginationClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Pagination", "core", paginationClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvPagination}
+  componentName="HvPagination"
+  controls={{
+    showPageJump: {
+      defaultValue: true,
+    },
+    showPageSizeOptions: {
+      defaultValue: true,
+    },
+    canPrevious: {
+      defaultValue: true,
+    },
+    canNext: {
+      defaultValue: true,
+    },
+  }}
+  componentProps={{ style: { width: "100%" } }}
+/>
+
+<Callout type="info">
+  You can use the `HvDotPagination` component to create a pagination based on
+  dots. Please refer to the [DotPagination
+  documentation](/components/dot-pagination) for usage.
+</Callout>
+
+###
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
+  const data = [...Array(64).keys()];
+
+  const [page, setPage] = useState(0);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
+
+  const numPages = Math.ceil(data.length / pageSize);
+
+  return (
+    <div className="w-full">
+      <div className="flex flex-wrap gap-sm rounded">
+        {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
+          <HvPanel
+            className="w-[100px] text-center"
+            key={i}
+          >{`Item ${i + 1}`}</HvPanel>
+        ))}
+      </div>
+      <HvPagination
+        pages={numPages}
+        page={page}
+        canPrevious={page > 0}
+        canNext={page < numPages - 1}
+        pageSize={pageSize}
+        pageSizeOptions={pageSizeOptions}
+        onPageChange={setPage}
+        onPageSizeChange={setPageSize}
+        labels={{ pageSizeEntryName: "items" }}
+      />
+    </div>
+  );
+}
+```
+
+### Related components
+
+- [`HvDotPagination`](/components/dot-pagination)
+
+</Page>
