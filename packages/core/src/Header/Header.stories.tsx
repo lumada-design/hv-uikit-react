@@ -84,7 +84,6 @@ const navigationDataMain = [
 export default {
   title: "Widgets/Header",
   component: HvHeader,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
 } satisfies Meta<typeof HvHeader>;
 

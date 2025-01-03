@@ -11,7 +11,6 @@ import { Deploy, Info } from "@hitachivantara/uikit-react-icons";
 const meta: Meta<typeof HvSnackbar> = {
   title: "Components/Snackbar",
   component: HvSnackbar,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvSnackbarContent },
   decorators: [(Story) => <div style={{ minHeight: 60 }}>{Story()}</div>],
   args: {

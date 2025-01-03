@@ -21,7 +21,6 @@ import {
 const meta: Meta<typeof HvListContainer> = {
   title: "Components/List/List",
   component: HvListContainer,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvListItem },
 };
 export default meta;

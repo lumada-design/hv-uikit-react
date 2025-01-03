@@ -35,19 +35,12 @@ const meta: Meta<typeof HvVerticalNavigation> = {
   title: "Widgets/Vertical Navigation",
   component: HvVerticalNavigation,
   subcomponents: {
-    // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
     HvVerticalNavigationHeader,
-    // @ts-expect-error
     HvVerticalNavigationTree,
-    // @ts-expect-error
     HvVerticalNavigationActions,
-    // @ts-expect-error
     HvVerticalNavigationAction,
-    // @ts-expect-error
     HvVerticalNavigationTreeView,
-    // @ts-expect-error
     HvVerticalNavigationTreeViewItem,
-    // @ts-expect-error
     HvVerticalNavigationSlider,
   },
   decorators: [

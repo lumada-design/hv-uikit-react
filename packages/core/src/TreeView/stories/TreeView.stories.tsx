@@ -28,7 +28,6 @@ export default {
   title: "Components/Tree View",
   component: HvTreeView,
   argTypes: {},
-  // @ts-expect-error
   subcomponents: { HvTreeItem },
 } satisfies Meta<typeof HvTreeView>;
 
