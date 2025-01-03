@@ -1,25 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 import {
-  HvActionGeneric,
   HvActionsGeneric,
   HvBulkActions,
-  HvCellProps,
   HvEmptyState,
   HvLoadingContainer,
   HvPagination,
-  HvRowInstance,
   HvTable,
   HvTableBody,
   HvTableCell,
-  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
-  HvTableInstance,
-  HvTableOptions,
   HvTableRow,
-  HvTableState,
+  HvTableSection,
   theme,
   useHvBulkActions,
   useHvPagination,
@@ -27,6 +21,13 @@ import {
   useHvSortBy,
   useHvTable,
   useHvTableSticky,
+  type HvActionGeneric,
+  type HvCellProps,
+  type HvRowInstance,
+  type HvTableColumnConfig,
+  type HvTableInstance,
+  type HvTableOptions,
+  type HvTableState,
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
@@ -41,7 +42,7 @@ const classes = {
   }),
   selectAllPages: css({
     color: theme.colors.primary,
-    marginLeft: theme.spacing(["xs"]),
+    marginLeft: theme.space.xs,
   }),
 };
 
@@ -81,7 +82,7 @@ export interface TableAction<T extends object = Record<string, unknown>>
 }
 
 export interface TableProps<T extends object = Record<string, unknown>> {
-  columns: HvTableColumnConfig<T, any>[];
+  columns: HvTableColumnConfig<T>[];
   data: T[] | undefined;
   recordCount?: number;
   loading?: boolean;
@@ -108,7 +109,6 @@ export interface TableProps<T extends object = Record<string, unknown>> {
     selectedRows: HvTableInstance<T>["selectedFlatRows"],
   ) => void;
   onUpdate?: (tableParams: HvTableState<T>) => void;
-  onData?: (data: TableProps<T>["data"]) => void;
   options?: HvTableOptions<T>;
 }
 
@@ -137,11 +137,10 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     onBulkAction,
     onSelection,
     onUpdate,
-    onData,
     options,
   } = props;
   const [pageCount, setPageCount] = useState(getPageCount(recordCount));
-  const [data, setData] = useState(dataProp);
+  const data = useDeferredValue(dataProp);
 
   const columns = useMemo(() => {
     if (!actions?.length) return columnsProp;
@@ -179,7 +178,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     getHvBulkActionsProps,
     getHvPaginationProps,
     state: { pageSize },
-  } = useHvTable<T, any>(
+  } = useHvTable<T>(
     {
       columns,
       data,
@@ -228,13 +227,6 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     useHvBulkActions,
   );
 
-  useEffect(() => {
-    if (loading) return; // keep old data while page is loading
-
-    setData(dataProp);
-    onData?.(dataProp);
-  }, [onData, dataProp, loading]);
-
   // Handle pageCount local calculation
   useEffect(() => {
     if (!recordCount) return;
@@ -265,7 +257,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
   };
 
   return (
-    <div>
+    <HvTableSection>
       {showBulkActions && page.length > 0 && (
         <HvBulkActions
           maxVisibleActions={maxVisibleActions}
@@ -314,6 +306,6 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           {...getHvPaginationProps?.()}
         />
       )}
-    </div>
+    </HvTableSection>
   );
 };

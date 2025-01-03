@@ -4,6 +4,7 @@ import {
   HvTable,
   HvTableBody,
   HvTableCell,
+  HvTableColumnConfig,
   HvTableContainer,
   HvTableHead,
   HvTableHeader,
@@ -13,14 +14,31 @@ import {
   useHvRowExpand,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetEvent, getGroupedRowsColumns, makeData } from "../storiesUtils";
+import { AssetEvent, makeData } from "../storiesUtils";
+
+const getGroupedRowsColumns = (): HvTableColumnConfig<AssetEvent>[] => [
+  { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+  { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
+  { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+  { Header: "Status", accessor: "status", style: { width: 140 } },
+  {
+    Header: "Probability",
+    accessor: "riskScore",
+    align: "right", // numeric values should be right-aligned
+    Cell: ({ value }) => `${value}%`,
+    aggregate: "average",
+    Aggregated: ({ value }) => `Avg. ${value}%`,
+  },
+  { Header: "Severity", accessor: "severity" },
+  { Header: "Priority", accessor: "priority" },
+];
 
 export const UseHvGroupBy = () => {
   const columns = useMemo(() => getGroupedRowsColumns(), []);
   const data = useMemo(() => makeData(6), []);
 
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
-    useHvData<AssetEvent, string>(
+    useHvData<AssetEvent>(
       {
         columns,
         data,
