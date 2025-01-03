@@ -28,7 +28,6 @@ const widthDecorator: Decorator = (Story) => (
 export default {
   title: "Components/Dropdown",
   component: HvDropdown,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseDropdown },
 } satisfies Meta<typeof HvDropdown>;
 

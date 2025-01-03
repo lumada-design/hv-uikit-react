@@ -31,25 +31,28 @@ beforeAll(() => {
     unobserve() {}
   }
 
-  window.ResizeObserver = ResizeObserver;
+  // Tests running in Node environment don't have access to the window global object
+  if (typeof window !== "undefined") {
+    window.ResizeObserver = ResizeObserver;
 
-  Object.defineProperty(window, "IntersectionObserver", {
-    writable: true,
-    configurable: true,
-    value: IntersectionObserver,
-  });
+    Object.defineProperty(window, "IntersectionObserver", {
+      writable: true,
+      configurable: true,
+      value: IntersectionObserver,
+    });
 
-  Object.defineProperty(window, "matchMedia", {
-    writable: true,
-    value: vi.fn().mockImplementation((query) => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: vi.fn(), // Deprecated
-      removeListener: vi.fn(), // Deprecated
-      addEventListener: vi.fn(),
-      removeEventListener: vi.fn(),
-      dispatchEvent: vi.fn(),
-    })),
-  });
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: vi.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(), // Deprecated
+        removeListener: vi.fn(), // Deprecated
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+  }
 });

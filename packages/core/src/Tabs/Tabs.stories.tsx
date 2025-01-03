@@ -23,7 +23,6 @@ import {
 const meta: Meta<typeof HvTabs> = {
   title: "Components/Tabs",
   component: HvTabs,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvTab },
 };
 export default meta;

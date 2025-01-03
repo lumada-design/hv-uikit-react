@@ -14,7 +14,6 @@ import {
 const meta: Meta<typeof HvRadio> = {
   title: "Components/Radio/Radio",
   component: HvRadio,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBaseRadio },
 };
 export default meta;

@@ -26,6 +26,8 @@
   },
   "scripts": {
     "build": "npm run clean && vite build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
@@ -45,9 +47,12 @@
     "xmllint-wasm": "^4.0.2"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.1",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "vite": "^5.1.0"
+    "vite": "^5.1.0",
+    "vitest": "^2.0.4"
   },
   "files": [
     "dist"

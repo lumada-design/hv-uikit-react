@@ -14,7 +14,6 @@ import { Info } from "@hitachivantara/uikit-react-icons";
 export default {
   title: "Components/Banner",
   component: HvBanner,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
   subcomponents: { HvBannerContent },
 } satisfies Meta<typeof HvBanner>;
 
