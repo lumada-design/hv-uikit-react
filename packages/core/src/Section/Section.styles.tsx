@@ -21,6 +21,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
   content: {
     padding: theme.space.sm,
     borderRadius: "inherit",
+    borderColor: "inherit",
   },
   hasHeader: {
     paddingTop: 0,

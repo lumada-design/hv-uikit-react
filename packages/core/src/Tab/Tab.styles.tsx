@@ -11,9 +11,9 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
     minHeight: 32,
     textTransform: "none",
     ...theme.typography.body,
+    borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
     "&:hover": {
       backgroundColor: theme.colors.containerBackgroundHover,
-      borderRadius: theme.radii.base,
       "&::after": {
         height: "1px",
         backgroundColor: theme.colors.atmo4,
