@@ -30,7 +30,7 @@ import { UseHvHeaderGroups } from "./UseHvHeaderGroups";
 import UseHvHeaderGroupsRaw from "./UseHvHeaderGroups?raw";
 import { UseHvHooks } from "./UseHvHooks";
 import UseHvHooksRaw from "./UseHvHooks?raw";
-import { UseHvPagination } from "./UseHvPagination";
+import { Demo as UseHvPagination } from "./UseHvPagination";
 import UseHvPaginationRaw from "./UseHvPagination?raw";
 import { UseHvRowExpand } from "./UseHvRowExpand";
 import UseHvRowExpandRaw from "./UseHvRowExpand?raw";
