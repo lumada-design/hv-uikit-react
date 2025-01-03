@@ -12,12 +12,7 @@ import { HvAppShellVitePlugin } from "@hitachivantara/app-shell-vite-plugin";
 
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-    }),
+    react(),
     tsconfigPaths(),
     unoCSS({ mode: "per-module" }),
     cssInjectedByJsPlugin({

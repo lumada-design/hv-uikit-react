@@ -25,7 +25,7 @@ const createRoute = {
       type: "append",
       path: "{{path}}/src/lib/routes.tsx",
       pattern: "/* INJECT_IMPORTS */",
-      template: `const {{name}} = lazy(() => import("pages/{{name}}"));`,
+      template: `const {{name}} = lazy(() => import("../pages/{{name}}"));`,
     },
     {
       type: "append",

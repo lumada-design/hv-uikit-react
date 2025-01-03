@@ -1,7 +1,9 @@
-import i18n from "i18next";
-import Backend from "i18next-http-backend";
+import { createInstance } from "i18next";
+import Backend, { type HttpBackendOptions } from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+
+const i18n = createInstance();
 
 i18n
   // load translation using xhr -> see /public/locales
@@ -14,9 +16,9 @@ i18n
   .use(initReactI18next)
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
-  .init({
+  .init<HttpBackendOptions>({
     fallbackLng: "en",
-    ns: [],
+    supportedLngs: ["en"],
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },

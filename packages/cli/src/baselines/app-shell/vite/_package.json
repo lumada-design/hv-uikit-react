@@ -6,14 +6,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "npm-run-all --parallel check:*",
+    "check": "npm run check:format && check:types && npm run check:lint",
     "check:types": "tsc --noEmit",
     "check:lint": "eslint --color --cache src",
     "check:format": "prettier --check .",
     "lint": "eslint --color --cache src --fix",
     "format": "prettier --write .",
-    "test": "vitest run --coverage --passWithNoTests",
-    "test:watch": "vitest watch"
+    "test": "vitest"
   },
   "dependencies": {
     "@emotion/css": "^11.10.6",
@@ -32,7 +31,6 @@
     "swr": "^2.2.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.10.6",
     "@hitachivantara/app-shell-vite-plugin": "^1.0.0",
     "@hitachivantara/uikit-uno-preset": "^0.2.5",
     "@testing-library/jest-dom": "^6.1.5",
@@ -40,13 +38,12 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^2.0.4",
     "eslint": "^8.39.0",
-    "happy-dom": "^14.3.9",
-    "npm-run-all": "^4.1.5",
+    "happy-dom": "^15.11.7",
     "prettier": "^3.1.1",
     "typescript": "^5.5.4",
     "unocss": "^0.58.3",
