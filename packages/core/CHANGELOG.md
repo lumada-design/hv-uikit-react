@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.84.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.1...@hitachivantara/uikit-react-core@5.84.2) (2025-01-03)
+
+### Bug Fixes
+
+- **CodeEditor:** account for special characters inside tables and columns names ([#4493](https://github.com/lumada-design/hv-uikit-react/issues/4493)) ([6c79b50](https://github.com/lumada-design/hv-uikit-react/commit/6c79b5084c831a68c83dd667adb2e6a3fb9f4f80))
+
 ## [5.84.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.0...@hitachivantara/uikit-react-core@5.84.1) (2024-12-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

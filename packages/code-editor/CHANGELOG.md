@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.7.15...@hitachivantara/uikit-react-code-editor@5.8.0) (2025-01-03)
+
+### Bug Fixes
+
+- **CodeEditor:** account for special characters inside tables and columns names ([#4493](https://github.com/lumada-design/hv-uikit-react/issues/4493)) ([6c79b50](https://github.com/lumada-design/hv-uikit-react/commit/6c79b5084c831a68c83dd667adb2e6a3fb9f4f80))
+- **CodeEditor:** get text until cursor and not all text in SQL autocomplete ([#4490](https://github.com/lumada-design/hv-uikit-react/issues/4490)) ([a6dd752](https://github.com/lumada-design/hv-uikit-react/commit/a6dd752f48f6d86922b7ac4593b35b0c1e4c787c))
+
+### Features
+
+- **CodeEditor:** add table to column in SQL autocomplete ([#4491](https://github.com/lumada-design/hv-uikit-react/issues/4491)) ([323f127](https://github.com/lumada-design/hv-uikit-react/commit/323f1278ecdad891a01c5ce483a8776551254311))
+
 ## [5.7.15](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.7.14...@hitachivantara/uikit-react-code-editor@5.7.15) (2024-12-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-code-editor
