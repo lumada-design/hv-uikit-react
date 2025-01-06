@@ -42,6 +42,7 @@ const getStatusIcon = (statusLevel?: number) => {
     case 5:
       return <Level0Good color="positive" />;
     default:
+      return null;
   }
 };
 

@@ -126,6 +126,7 @@ const getLastOpenedTag = (content: string, closed = false) => {
       content = content.substring(0, tagPosition);
     }
   }
+  return undefined;
 };
 
 /**

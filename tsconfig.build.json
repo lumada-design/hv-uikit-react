@@ -1,22 +1,32 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    /* Base Options */
     "target": "ES2022",
-    "lib": ["DOM", "ES2022", "dom.iterable"],
-    "moduleResolution": "Node",
-    "noEmit": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "allowJs": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    // "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // "noUncheckedIndexedAccess": true,
+
+    /* Bundling options (vite monorepo) */
+    "module": "preserve",
+    "noEmit": true,
+    "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
+
+    /* Others */
+    "lib": ["es2022", "dom", "dom.iterable"],
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "noImplicitAny": true,
     "types": [
       "node",
       "jest",
