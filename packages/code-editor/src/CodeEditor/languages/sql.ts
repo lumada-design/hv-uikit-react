@@ -106,16 +106,16 @@ function getLastKeyword(model: any, position: any) {
   const words = textUntilCursor.split(/[\s,.!?;:()]+/);
 
   for (let i = words.length - 1; i >= 0; i--) {
-    let word = words[i];
+    let word = words[i].toUpperCase();
 
-    if (word === "BY" || word === "KEY" || word === "JOIN") {
+    if (["BY", "KEY", "JOIN"].includes(word)) {
       const j = i - 1;
       if (j !== -1) {
         word = `${words[j]} ${word}`;
       }
     }
 
-    if (sqlKeywords.includes(word.toUpperCase())) {
+    if (sqlKeywords.includes(word)) {
       return word;
     }
   }
@@ -138,12 +138,13 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
     "DISTINCT",
     "AND",
     "OR",
+    "WHEN",
   ];
 
   return {
     provideCompletionItems: (model: any, position: any) => {
       // If no text is typed, show a suggestion to select all columns from a table
-      if (model.getValue() === "") {
+      if (!model.getValue().trim()) {
         const emptySuggestions = {
           label: "SELECT * FROM",
           kind: monaco.languages.CompletionItemKind.Snippet,
@@ -162,7 +163,7 @@ export const hvSqlCompletionProvider = (monaco: Monaco, schema?: string) => {
         sortText: "1",
       }));
 
-      const lastKeyword = getLastKeyword(model, position);
+      const lastKeyword = getLastKeyword(model, position).toUpperCase();
 
       if (lastKeyword === "FROM" || lastKeyword.includes("JOIN")) {
         const tableSuggestions = tablesNames.map((tableName) => ({
