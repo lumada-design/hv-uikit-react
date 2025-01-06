@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react/ArrowUpRight";
 import { useData } from "nextra/hooks";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
