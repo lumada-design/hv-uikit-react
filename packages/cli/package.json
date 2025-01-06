@@ -26,6 +26,7 @@
   },
   "scripts": {
     "clean": "npx rimraf package",
+    "prepare": "npx cpy ../../templates src",
     "pretest": "node src/index.js create uikit-app -t Form,ListView",
     "test": "cd uikit-app",
     "posttest": "npx rimraf uikit-app",
