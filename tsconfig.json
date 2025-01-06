@@ -6,6 +6,13 @@
       "@docs/*": ["./apps/docs/src/*"]
     }
   },
-  "include": [".config", ".storybook/**/*", "apps", "docs", "packages"],
+  "include": [
+    ".config",
+    ".storybook/**/*",
+    "apps",
+    "docs",
+    "packages",
+    "templates"
+  ],
   "exclude": ["node_modules", "packages/*/dist", "packages/*/package"]
 }
