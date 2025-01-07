@@ -1,63 +1,63 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/test";
-import { HvSimpleGrid } from "packages/core";
-import { Disabled as AccordionDisabledStory } from "packages/core/src/Accordion/Accordion.stories";
-import { Test as AvatarTestStory } from "packages/core/src/Avatar/Avatar.stories";
-import { Test as AvatarGroupTestStory } from "packages/core/src/AvatarGroup/stories/AvatarGroup.stories";
-import { Test as BadgeTestStory } from "packages/core/src/Badge/Badge.stories";
-import { Variants as BannerVariantsStory } from "packages/core/src/Banner/Banner.stories";
-import { Test as ButtonTestStory } from "packages/core/src/Button/Button.stories";
-import { Variants as CardVariantsStory } from "packages/core/src/Card/Card.stories";
-import { Test as CheckBoxTestStory } from "packages/core/src/CheckBox/CheckBox.stories";
-import { Variants as CheckBoxGroupVariantsStory } from "packages/core/src/CheckBoxGroup/CheckBoxGroup.stories";
-import { Main as ContainerMainStory } from "packages/core/src/Container/Container.stories";
-import { Test as DatePickerTestStory } from "packages/core/src/DatePicker/DatePicker.stories";
-import { Main as DotPaginationMainStory } from "packages/core/src/DotPagination/DotPagination.stories";
-import { Test as DropdownTestStory } from "packages/core/src/Dropdown/stories/Dropdown.stories";
-import { Main as DropDownMenuMainStory } from "packages/core/src/DropDownMenu/DropDownMenu.stories";
+
+import { Disabled as AccordionDisabledStory } from "../Accordion/Accordion.stories";
+import { Test as AvatarTestStory } from "../Avatar/Avatar.stories";
+import { Test as AvatarGroupTestStory } from "../AvatarGroup/stories/AvatarGroup.stories";
+import { Test as BadgeTestStory } from "../Badge/Badge.stories";
+import { Variants as BannerVariantsStory } from "../Banner/Banner.stories";
+import { Test as ButtonTestStory } from "../Button/Button.stories";
+import { Variants as CardVariantsStory } from "../Card/Card.stories";
+import { Test as CheckBoxTestStory } from "../CheckBox/CheckBox.stories";
+import { Variants as CheckBoxGroupVariantsStory } from "../CheckBoxGroup/CheckBoxGroup.stories";
+import { Main as ContainerMainStory } from "../Container/Container.stories";
+import { Test as DatePickerTestStory } from "../DatePicker/DatePicker.stories";
+import { Main as DotPaginationMainStory } from "../DotPagination/DotPagination.stories";
+import { Test as DropdownTestStory } from "../Dropdown/stories/Dropdown.stories";
+import { Main as DropDownMenuMainStory } from "../DropDownMenu/DropDownMenu.stories";
 import {
   Minimal as EmptyStateMinimalStory,
   WithAction as EmptyStateWithActionStory,
-} from "packages/core/src/EmptyState/EmptyState.stories";
-import { TheDesignSystemColumns as GridTheDesignSystemColumnsStory } from "packages/core/src/Grid/Grid.stories";
-import { Variants as IconButtonVariantsStory } from "packages/core/src/IconButton/IconButton.stories";
-import { Test as InlineEditorTestStory } from "packages/core/src/InlineEditor/InlineEditor.stories";
-import { Test as InputTestStory } from "packages/core/src/Input/Input.stories";
-import { Main as KpiMainStory } from "packages/core/src/Kpi/Kpi.stories";
-import { WithIcons as ListContainerWithIconsStory } from "packages/core/src/ListContainer/ListContainer.stories";
-import { Variants as LoadingVariantsStory } from "packages/core/src/Loading/Loading.stories";
-import { Test as MultiButtonTestStory } from "packages/core/src/MultiButton/stories/MultiButton.stories";
-import { Main as OverflowTooltipMainStory } from "packages/core/src/OverflowTooltip/OverflowTooltip.stories";
-import { Main as PaginationMainStory } from "packages/core/src/Pagination/Pagination.stories";
-import { Main as PanelMainStory } from "packages/core/src/Panel/Panel.stories";
-import { Variants as ProgressBarVariantsStory } from "packages/core/src/ProgressBar/ProgressBar.stories";
-import { Test as RadioTestStory } from "packages/core/src/Radio/Radio.stories";
+} from "../EmptyState/EmptyState.stories";
+import { TheDesignSystemColumns as GridTheDesignSystemColumnsStory } from "../Grid/Grid.stories";
+import { Variants as IconButtonVariantsStory } from "../IconButton/IconButton.stories";
+import { Test as InlineEditorTestStory } from "../InlineEditor/InlineEditor.stories";
+import { Test as InputTestStory } from "../Input/Input.stories";
+import { Main as KpiMainStory } from "../Kpi/Kpi.stories";
+import { WithIcons as ListContainerWithIconsStory } from "../ListContainer/ListContainer.stories";
+import { Variants as LoadingVariantsStory } from "../Loading/Loading.stories";
+import { Test as MultiButtonTestStory } from "../MultiButton/stories/MultiButton.stories";
+import { Main as OverflowTooltipMainStory } from "../OverflowTooltip/OverflowTooltip.stories";
+import { Main as PaginationMainStory } from "../Pagination/Pagination.stories";
+import { Main as PanelMainStory } from "../Panel/Panel.stories";
+import { Variants as ProgressBarVariantsStory } from "../ProgressBar/ProgressBar.stories";
+import { Test as RadioTestStory } from "../Radio/Radio.stories";
 import {
   Horizontal as RadioGroupHorizontalStory,
   Variants as RadioGroupVariantsStory,
-} from "packages/core/src/RadioGroup/RadioGroup.stories";
-import { Main as ScrollToHorizontalMainStory } from "packages/core/src/ScrollToHorizontal/ScrollToHorizontal.stories";
-import { Main as ScrollToVerticalMainStory } from "packages/core/src/ScrollToVertical/ScrollToVertical.stories";
-import { Test as SelectTestStory } from "packages/core/src/Select/Select.stories";
-import { Variants as SelectionListVariantsStory } from "packages/core/src/SelectionList/SelectionList.stories";
-import { Main as SimpleGridMainStory } from "packages/core/src/SimpleGrid/SimpleGrid.stories";
-import { Variants as SkeletonVariantsStory } from "packages/core/src/Skeleton/Skeleton.stories";
+} from "../RadioGroup/RadioGroup.stories";
+import { Main as ScrollToHorizontalMainStory } from "../ScrollToHorizontal/ScrollToHorizontal.stories";
+import { Main as ScrollToVerticalMainStory } from "../ScrollToVertical/ScrollToVertical.stories";
+import { Test as SelectTestStory } from "../Select/Select.stories";
+import { Variants as SelectionListVariantsStory } from "../SelectionList/SelectionList.stories";
+import { HvSimpleGrid } from "../SimpleGrid";
+import { Main as SimpleGridMainStory } from "../SimpleGrid/SimpleGrid.stories";
+import { Variants as SkeletonVariantsStory } from "../Skeleton/Skeleton.stories";
 import {
   RangeVariants as SliderRangeVariantsStory,
   Variants as SliderVariantsStory,
-} from "packages/core/src/Slider/Slider.stories";
-import { Variants as SnackbarVariantsStory } from "packages/core/src/Snackbar/Snackbar.stories";
-import { Test as StackTestStory } from "packages/core/src/Stack/Stack.stories";
-import { Variants as SwitchVariantsStory } from "packages/core/src/Switch/Switch.stories";
-import { Test as TabsTestStory } from "packages/core/src/Tabs/Tabs.stories";
-import { Test as TagTestStory } from "packages/core/src/Tag/stories/Tag.stories";
-import { Variants as TagsInputVariantsStory } from "packages/core/src/TagsInput/TagsInput.stories";
-import { Variants as TextAreaVariantsStory } from "packages/core/src/TextArea/TextArea.stories";
-import { Multiple as ToggleButtonMultipleStory } from "packages/core/src/ToggleButton/ToggleButton.stories";
-import { Test as TypographyTestStory } from "packages/core/src/Typography/Typography.stories";
-
-import { renderStory } from "./utils";
+} from "../Slider/Slider.stories";
+import { Variants as SnackbarVariantsStory } from "../Snackbar/Snackbar.stories";
+import { Test as StackTestStory } from "../Stack/Stack.stories";
+import { Variants as SwitchVariantsStory } from "../Switch/Switch.stories";
+import { Test as TabsTestStory } from "../Tabs/Tabs.stories";
+import { Test as TagTestStory } from "../Tag/stories/Tag.stories";
+import { Variants as TagsInputVariantsStory } from "../TagsInput/TagsInput.stories";
+import { Variants as TextAreaVariantsStory } from "../TextArea/TextArea.stories";
+import { Multiple as ToggleButtonMultipleStory } from "../ToggleButton/ToggleButton.stories";
+import { Test as TypographyTestStory } from "../Typography/Typography.stories";
 import { setupChromatic } from ".storybook/setupChromatic";
+import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Core package */
 const meta: Meta = {

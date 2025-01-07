@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Test as BottomPanelTestStory } from "packages/pentaho/src/Canvas/BottomPanel/BottomPanel.stories";
-import { Test as ToolbarTabsTestStory } from "packages/pentaho/src/Canvas/ToolbarTabs/ToolbarTabs.stories";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
-import { renderStory } from "./utils";
+import { Test as BottomPanelTestStory } from "../Canvas/BottomPanel/BottomPanel.stories";
+import { Test as ToolbarTabsTestStory } from "../Canvas/ToolbarTabs/ToolbarTabs.stories";
 import { setupChromatic } from ".storybook/setupChromatic";
+import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Pentaho package */
 const meta: Meta = {
