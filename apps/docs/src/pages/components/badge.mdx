@@ -57,16 +57,28 @@ Use the `maxCount` prop to specify the maximum value to be displayed. Above that
 
 ### Text
 
-To display text with the badge you can use the `text` prop along with the `textVariant` prop to specify the typography variant to use.
+To display a badge on any content, wrap the `children` content with the badge component.
 
 ```tsx live
 <>
-  <HvBadge count={0} text="Events" textVariant="label" />
-  <HvBadge count={1} text="Events" textVariant="label" />
-  <HvBadge showCount count={8} text="Events" textVariant="title4" />
-  <HvBadge showCount count={88} text="Events" textVariant="title4" />
-  <HvBadge showCount count={888} text="Events" textVariant="title3" />
-  <HvBadge label="100%" text="Events" textVariant="title2" />
+  <HvBadge label={0}>
+    <HvTypography variant="label">Events</HvTypography>
+  </HvBadge>
+  <HvBadge label={1}>
+    <HvTypography variant="label">Events</HvTypography>
+  </HvBadge>
+  <HvBadge showCount label={8}>
+    <HvTypography variant="title4">Events</HvTypography>
+  </HvBadge>
+  <HvBadge showCount label={88}>
+    <HvTypography variant="title4">Events</HvTypography>
+  </HvBadge>
+  <HvBadge showCount label={888}>
+    <HvTypography variant="title3">Events</HvTypography>
+  </HvBadge>
+  <HvBadge label="100%">
+    <HvTypography variant="title2">Events</HvTypography>
+  </HvBadge>
 </>
 ```
 
@@ -84,7 +96,7 @@ export default function Demo() {
   return (
     <>
       <HvButton onClick={addCount}>Double Value</HvButton>
-      <HvBadge showCount count={count} text="Events" textVariant="title4" />
+      <HvBadge showCount count={count} icon={<Alert />} />
     </>
   );
 }
@@ -92,14 +104,13 @@ export default function Demo() {
 
 ### Accessibility
 
-If you want to specify a custom aria-label, use the `role` prop.
+If you want to specify a custom aria-label, ensure the badge has a `role`.
 
 ```tsx live
 <HvBadge
   showCount
   count={25}
-  text="Events"
-  textVariant="title4"
+  icon={<Alert />}
   role="status"
   aria-label="25 unread notifications"
 />
