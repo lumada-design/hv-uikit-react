@@ -29,53 +29,6 @@ To know more about the practices that are followed for release and versioning, p
 
 NEXT UI Kit supports the latest, stable releases of all major browsers and platforms.
 
-| Edge | Firefox | Chrome | Safari (macOS) |     IE 11     |
-| :--: | :-----: | :----: | :------------: | :-----------: |
-|  ✅  |   ✅    |   ✅   |       ✅       | Not supported |
-
-## DS alignment <a id="ds-alignment" />
-
-While we strive to follow the [NEXT Design System](https://designsystem.hitachivantara.com/), we do not expect to support every component, nor every feature of every component, but rather to provide the building blocks to allow developers to create compelling user interfaces and experiences.
-
-The following table shows the components alignment with **NEXT DS 5.6.0** and the identified **missing features** status.
-
-### Status description
-
-<ul>
-  <li>
-    <b>✅:</b> all major features have been implemented.
-  </li>
-  <li>
-    <b>Not Planned:</b> there's no planning at the moment to implement the
-    feature. Check the <b>Notes</b> column for more details.
-  </li>
-</ul>
-
-If you need a component or feature that is not supported, please reach out to us or check our [contribution guide](./?path=/docs/overview-community-contributing--docs).
-
-<div>
-  {Object.entries(data).map(([key, value]) => (
-    <table>
-      <thead>
-        <tr>
-          <th style={{ textAlign: "left", width: 150 }}>{key}</th>
-          <th style={{ width: 120 }}>Status</th>
-          <th style={{ width: 200 }}>Missing Features / Variants</th>
-          <th style={{ width: 200 }}>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        {value.map((item) => (
-          <tr key={item.name}>
-            <td>{item.name}</td>
-            <td style={{ textAlign: "center" }}>{item.status}</td>
-            <td style={{ whiteSpace: "pre-line" }}>
-              {item.features.split("<br/>").join("\n")}
-            </td>
-            <td>{item.notes}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  ))}
-</div>
+| Edge | Firefox | Chrome | Safari (macOS) |
+| :--: | :-----: | :----: | :------------: |
+|  ✅  |   ✅    |   ✅   |       ✅       |
