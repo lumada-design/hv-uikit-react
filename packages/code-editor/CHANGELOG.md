@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.8.0...@hitachivantara/uikit-react-code-editor@5.8.1) (2025-01-07)
+
+### Bug Fixes
+
+- **CodeEditor:** make sql suggestions case insensitive and show columns with when keyword ([#4498](https://github.com/lumada-design/hv-uikit-react/issues/4498)) ([d13996c](https://github.com/lumada-design/hv-uikit-react/commit/d13996cbcd8f97119889b741858ff2adda9eae28))
+
 # [5.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.7.15...@hitachivantara/uikit-react-code-editor@5.8.0) (2025-01-03)
 
 ### Bug Fixes
