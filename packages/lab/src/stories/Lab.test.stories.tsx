@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Variants as BladeVariantsStory } from "packages/lab/src/Blade/Blade.stories";
-import { Main as BladesMainStory } from "packages/lab/src/Blades/Blades.stories";
-import { Main as DashboardMainStory } from "packages/lab/src/Dashboard/Dashboard.stories";
-import { Variants as StepNavigationVariantsStory } from "packages/lab/src/StepNavigation/StepNavigation.stories";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
-import { renderStory } from "./utils";
+import { Variants as BladeVariantsStory } from "../Blade/Blade.stories";
+import { Main as BladesMainStory } from "../Blades/Blades.stories";
+import { Main as DashboardMainStory } from "../Dashboard/Dashboard.stories";
+import { Variants as StepNavigationVariantsStory } from "../StepNavigation/StepNavigation.stories";
 import { setupChromatic } from ".storybook/setupChromatic";
+import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Lab package */
 const meta: Meta = {
