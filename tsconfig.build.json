@@ -26,7 +26,6 @@
     /* Others */
     "lib": ["es2022", "dom", "dom.iterable"],
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "types": [
       "node",
       "jest",
