@@ -1,25 +1,25 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { HvSimpleGrid } from "packages/core";
-import { Main as ActionBarMainStory } from "packages/core/src/ActionBar/ActionBar.stories";
+
+import { Main as ActionBarMainStory } from "../ActionBar/ActionBar.stories";
 import {
   Main as AppSwitcherMainStory,
   ManyEntries as AppSwitcherManyEntriesStory,
-} from "packages/core/src/AppSwitcher/AppSwitcher.stories";
-import { Test as BreadCrumbTestStory } from "packages/core/src/BreadCrumb/BreadCrumb.stories";
-import { Test as BulkActionsTestStory } from "packages/core/src/BulkActions/BulkActions.stories";
+} from "../AppSwitcher/AppSwitcher.stories";
+import { Test as BreadCrumbTestStory } from "../BreadCrumb/BreadCrumb.stories";
+import { Test as BulkActionsTestStory } from "../BulkActions/BulkActions.stories";
 import {
   Actions as CarouselActionsStory,
   Embedded as CarouselEmbeddedStory,
-} from "packages/core/src/Carousel/Carousel.stories";
-import { Test as ColorPickerTestStory } from "packages/core/src/ColorPicker/ColorPicker.stories";
-import { WithPreviewThumbnails as FileUploaderWithPreviewThumbnailsStory } from "packages/core/src/FileUploader/FileUploader.stories";
-import { CustomLabels as FooterCustomLabelsStory } from "packages/core/src/Footer/Footer.stories";
-import { Test as GlobalActionsTestStory } from "packages/core/src/GlobalActions/GlobalActions.stories";
-import { Test as HeaderTestStory } from "packages/core/src/Header/Header.stories";
-import { Test as SectionTestStory } from "packages/core/src/Section/Section.stories";
-
-import { renderStory } from "./utils";
+} from "../Carousel/Carousel.stories";
+import { Test as ColorPickerTestStory } from "../ColorPicker/ColorPicker.stories";
+import { WithPreviewThumbnails as FileUploaderWithPreviewThumbnailsStory } from "../FileUploader/FileUploader.stories";
+import { CustomLabels as FooterCustomLabelsStory } from "../Footer/Footer.stories";
+import { Test as GlobalActionsTestStory } from "../GlobalActions/GlobalActions.stories";
+import { Test as HeaderTestStory } from "../Header/Header.stories";
+import { Test as SectionTestStory } from "../Section/Section.stories";
+import { HvSimpleGrid } from "../SimpleGrid";
 import { setupChromatic } from ".storybook/setupChromatic";
+import { renderStory } from ".storybook/utils";
 
 /** Visual tests for widgets from the Core package */
 const meta: Meta = {

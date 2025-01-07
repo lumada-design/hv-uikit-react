@@ -2,6 +2,7 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "paths": {
+      ".storybook/*": ["./.storybook/*"],
       "~/*": ["./apps/app/src/*"],
       "@docs/*": ["./apps/docs/src/*"]
     }
