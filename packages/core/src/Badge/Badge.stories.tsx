@@ -5,6 +5,7 @@ import {
   HvBadge,
   HvBadgeProps,
   HvButton,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
@@ -77,12 +78,24 @@ export const WithText: StoryObj<HvBadgeProps> = {
   render: () => {
     return (
       <>
-        <HvBadge label={0} text="Events" textVariant="label" />
-        <HvBadge label={1} text="Events" textVariant="label" />
-        <HvBadge showCount label={8} text="Events" textVariant="title4" />
-        <HvBadge showCount label={88} text="Events" textVariant="title4" />
-        <HvBadge showCount label={888} text="Events" textVariant="title3" />
-        <HvBadge label="100%" text="Events" textVariant="title2" />
+        <HvBadge label={0}>
+          <HvTypography variant="label">Events</HvTypography>
+        </HvBadge>
+        <HvBadge label={1}>
+          <HvTypography variant="label">Events</HvTypography>
+        </HvBadge>
+        <HvBadge showCount label={8}>
+          <HvTypography variant="title4">Events</HvTypography>
+        </HvBadge>
+        <HvBadge showCount label={88}>
+          <HvTypography variant="title4">Events</HvTypography>
+        </HvBadge>
+        <HvBadge showCount label={888}>
+          <HvTypography variant="title3">Events</HvTypography>
+        </HvBadge>
+        <HvBadge label="100%">
+          <HvTypography variant="title2">Events</HvTypography>
+        </HvBadge>
       </>
     );
   },
@@ -103,7 +116,7 @@ export const WithState: StoryObj<HvBadgeProps> = {
     return (
       <>
         <HvButton onClick={addCount}>Double Value</HvButton>
-        <HvBadge showCount label={count} text="Events" textVariant="title4" />
+        <HvBadge showCount label={count} icon={<Alert />} />
       </>
     );
   },
@@ -121,8 +134,7 @@ export const Accessibility: StoryObj<HvBadgeProps> = {
     <HvBadge
       showCount
       label={25}
-      text="Events"
-      textVariant="title4"
+      icon={<Alert />}
       role="status"
       aria-label="25 unread notifications"
     />
@@ -142,7 +154,9 @@ export const Test: StoryObj = {
       <HvBadge count={0} text="Events" textVariant="label" />
       <HvBadge label={10} text="Events" />
       <HvBadge showCount label={10} maxCount={5} text="Events" />
-      <HvBadge showCount label={8} text="Events" textVariant="title4" />
+      <HvBadge showCount label={8}>
+        <HvTypography variant="title4">Events</HvTypography>
+      </HvBadge>
     </div>
   ),
 };

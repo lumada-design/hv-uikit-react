@@ -36,9 +36,9 @@ export interface HvBadgeProps extends HvBaseProps {
   label?: React.ReactNode;
   /** Icon which the notification will be attached. */
   icon?: React.ReactNode;
-  /** Text which the notification will be attached. */
+  /** Text which the notification will be attached. @deprecated use `children` instead. */
   text?: string;
-  /** Text variant. */
+  /** Text variant. @deprecated use a `HvTypography` on `children` instead. */
   textVariant?: HvTypographyVariants;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBadgeClasses;
@@ -62,6 +62,7 @@ export const HvBadge = forwardRef<
     icon,
     text,
     textVariant,
+    children: childrenProp,
     ...others
   } = useDefaultProps("HvBadge", props);
 
@@ -77,7 +78,9 @@ export const HvBadge = forwardRef<
   const renderedCountOrLabel =
     label && typeof label !== "number" ? label : renderedCount;
   const children =
-    icon || (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
+    childrenProp ||
+    icon ||
+    (text && <HvTypography variant={textVariant}>{text}</HvTypography>);
 
   return (
     <div ref={ref} className={cx(classes.root, className)} {...others}>
