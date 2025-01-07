@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvTab } from "../Tab";
+import { HvTab } from "./Tab";
 import { HvTabs } from "./Tabs";
 
 describe("Tabs", () => {
