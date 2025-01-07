@@ -1,0 +1,183 @@
+import { Callout } from "nextra/components";
+import { HvTab, HvTabs, tabsClasses } from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Tabs", "core", tabsClasses, ["Tab"]);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+### Usage
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(0);
+
+  return (
+    <div className="flex flex-col w-full">
+      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
+        <HvTab label="Page 1" />
+        <HvTab label="Page 2" />
+        <HvTab label="Page 3" />
+      </HvTabs>
+      <HvTypography
+        style={{ padding: 16 }}
+      >{`Page ${value + 1} content`}</HvTypography>
+    </div>
+  );
+}
+```
+
+### Icons
+
+You can use icons in the tabs by passing the `icon` and `iconPosition` props to the `HvTab` component.
+If you only want to show icons with no text, you can hide the labels by setting the `label` prop to `undefined`.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(0);
+  const [showLabels, setShowLabels] = useState(true);
+  const [iconPosition, setIconPosition] = useState("start");
+
+  const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className="flex flex-col w-full gap-4">
+      <div className="flex gap-2">
+        <HvCheckBox
+          checked={showLabels}
+          onChange={() => setShowLabels((p) => !p)}
+          label="Show labels"
+        />
+        <div className="flex gap-2 items-center">
+          <HvLabel>Icon position:</HvLabel>
+          <HvSelect
+            value={iconPosition}
+            onChange={(_, value) => setIconPosition(value)}
+            className="w-120px"
+          >
+            {["bottom", "end", "start", "top"].map((position) => (
+              <HvOption key={position} value={position} label={position}>
+                {position}
+              </HvOption>
+            ))}
+          </HvSelect>
+        </div>
+      </div>
+      <HvTabs value={value} onChange={handleChange}>
+        {tabs.map((tab, index) => (
+          <HvTab
+            key={index}
+            label={showLabels ? tab.label : undefined}
+            icon={tab.icon}
+            iconPosition={iconPosition}
+          />
+        ))}
+      </HvTabs>
+    </div>
+  );
+}
+
+const tabs = [
+  {
+    label: "Clickable tab 1",
+    icon: <Alert />,
+    iconPosition: "start",
+  },
+  {
+    label: "Clickable tab 2",
+    icon: <Reload />,
+    iconPosition: "start",
+  },
+  {
+    label: "Clickable tab 3",
+    icon: <Calendar />,
+    iconPosition: "start",
+  },
+];
+```
+
+### Custom labels
+
+The `label` prop on the `HvTab` component is a `ReactNode` and can be used to render any content, for example badges.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(0);
+
+  return (
+    <HvTabs value={value} onChange={(_, val) => setValue(val)}>
+      {tabs.map((tab, index) => (
+        <HvTab
+          key={index}
+          className="w-120px"
+          label={
+            <HvBadge showCount label={tab.count}>
+              <span>{tab.label}</span>
+            </HvBadge>
+          }
+        />
+      ))}
+    </HvTabs>
+  );
+}
+
+const tabs = [
+  {
+    label: "Inbox",
+    count: 23,
+  },
+  {
+    label: "Sent",
+    count: undefined,
+  },
+  {
+    label: "Trash",
+    count: 145,
+  },
+];
+```
+
+### Floating
+
+To use the tabs in floating mode set the `floating` prop to `true`.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(0);
+
+  const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className="flex flex-col w-full gap-4">
+      <HvTabs value={value} onChange={handleChange} floating>
+        <HvTab label="Videos" icon={<PlayVideo />} iconPosition="start" />
+        <HvTab label="Photos" icon={<Picture />} iconPosition="start" />
+        <HvTab label="Text files" icon={<DocWord />} iconPosition="start" />
+      </HvTabs>
+    </div>
+  );
+}
+```
+
+</Page>

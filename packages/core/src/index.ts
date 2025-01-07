@@ -110,7 +110,6 @@ export * from "./Snackbar";
 export * from "./SnackbarProvider";
 export * from "./Stack";
 export * from "./Switch";
-export * from "./Tab";
 export * from "./Table";
 export * from "./Tabs";
 export * from "./Tag";
