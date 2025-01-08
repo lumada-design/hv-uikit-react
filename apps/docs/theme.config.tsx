@@ -1,8 +1,9 @@
-import { Pre } from "@docs/components/code/Pre";
-import { Footer } from "@docs/components/Footer";
-import { UIKitLogo } from "@docs/components/logo/uikit";
-import { Main } from "@docs/components/Main";
 import { ThemeSwitch, type DocsThemeConfig } from "nextra-theme-docs";
+
+import { Pre } from "./src/components/code/Pre";
+import { Footer } from "./src/components/Footer";
+import { UIKitLogo } from "./src/components/logo/uikit";
+import { Main } from "./src/components/Main";
 
 const config: DocsThemeConfig = {
   project: {
