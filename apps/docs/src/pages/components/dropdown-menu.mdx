@@ -4,10 +4,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Open, Preview, Save } from "@hitachivantara/uikit-react-icons";
 
-import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
-import { getComponentData } from "@docs/utils/component";
+import { Playground } from "../../components/code/Playground";
+import { Description } from "../../components/page/Description";
+import { Page } from "../../components/page/Page";
+import { getComponentData } from "../../utils/component";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData(

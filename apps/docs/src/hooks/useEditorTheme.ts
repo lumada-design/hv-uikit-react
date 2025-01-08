@@ -1,7 +1,8 @@
-import useIsMounted from "@docs/hooks/useIsMounted";
 import { useTheme } from "nextra-theme-docs";
 // @ts-ignore
 import { themes } from "prism-react-renderer";
+
+import useIsMounted from "./useIsMounted";
 
 const useEditorTheme = () => {
   const isMounted = useIsMounted();
