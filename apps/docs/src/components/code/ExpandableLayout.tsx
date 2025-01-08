@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
-import useEditorTheme from "@docs/hooks/useEditorTheme";
 import { clsx } from "clsx";
 
+import useEditorTheme from "../../hooks/useEditorTheme";
 import { ExpandableControls } from "./ExpandableControls";
 
 type ExpandableLayoutProps = {

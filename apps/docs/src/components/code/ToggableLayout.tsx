@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
-import useEditorTheme from "@docs/hooks/useEditorTheme";
 import { clsx } from "clsx";
 import { HvTab, HvTabs, HvTypography } from "@hitachivantara/uikit-react-core";
 
+import useEditorTheme from "../../hooks/useEditorTheme";
 import { ToggableControls } from "./ToggableControls";
 
 type ToggableLayoutProps = {

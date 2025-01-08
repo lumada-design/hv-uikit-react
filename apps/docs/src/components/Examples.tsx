@@ -1,7 +1,8 @@
-import tables from "@docs/pages/examples/tables.mdx?raw";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
+
+import tables from "../pages/examples/tables.mdx?raw";
 
 /**
  * Extracts the number of CodeBlock components in the given file content.

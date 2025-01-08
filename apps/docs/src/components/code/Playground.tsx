@@ -1,8 +1,8 @@
 import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
-import useEditorTheme from "@docs/hooks/useEditorTheme";
 
+import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
 
 type PlaygroundProps = {
@@ -55,7 +55,7 @@ const generateCode = (
   return `<${componentName} ${componentPropsString}/>`.trim();
 };
 
-const Playground = ({
+export const Playground = ({
   Component,
   componentName,
   componentProps,
@@ -142,5 +142,3 @@ const Playground = ({
     </section>
   );
 };
-
-export default Playground;
