@@ -1,4 +1,4 @@
-import { UIKitLogo } from "@docs/components/logo/uikit";
+import { UIKitLogo } from "./logo/uikit";
 
 const footerLinks = [
   {

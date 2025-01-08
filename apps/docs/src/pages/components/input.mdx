@@ -1,8 +1,9 @@
 import { HvInput, inputClasses } from "@hitachivantara/uikit-react-core";
 
-import Playground from "@docs/components/code/Playground";
-import { Header } from "@docs/components/Header";
-import { getComponentData } from "@docs/utils/component";
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Input", "core", inputClasses);
