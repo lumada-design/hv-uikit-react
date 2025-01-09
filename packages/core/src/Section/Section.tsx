@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Down } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -94,7 +94,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
                 {...buttonProps}
                 {...expandButtonProps}
               >
-                <Down rotate={isOpen} />
+                <DropDownXS rotate={isOpen} />
               </HvButton>
             )}
             {title}

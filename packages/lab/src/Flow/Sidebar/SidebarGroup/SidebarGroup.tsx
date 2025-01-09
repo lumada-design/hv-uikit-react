@@ -5,7 +5,7 @@ import {
   HvButtonProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Down, Up } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { getColor } from "@hitachivantara/uikit-styles";
 
 import { useFlowContext } from "../../hooks";
@@ -76,7 +76,7 @@ export const HvFlowSidebarGroup = ({
           aria-expanded={opened}
           {...expandButtonProps}
         >
-          {opened ? <Up /> : <Down />}
+          <DropDownXS rotate={opened} />
         </HvButton>
       </div>
       {description && (

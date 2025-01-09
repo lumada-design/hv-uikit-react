@@ -11,7 +11,7 @@ import {
   theme,
   useLabels,
 } from "@hitachivantara/uikit-react-core";
-import { Down, Info, Up } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS, Info } from "@hitachivantara/uikit-react-icons";
 
 import { useFlowContext, useFlowNode, useFlowNodeUtils } from "../hooks";
 import { HvFlowNodeParam } from "../types";
@@ -137,11 +137,7 @@ export const HvFlowNode = ({
               }
               {...expandParamsButtonProps}
             >
-              {showParams ? (
-                <Up color="base_dark" />
-              ) : (
-                <Down color="base_dark" />
-              )}
+              <DropDownXS rotate={showParams} color="base_dark" />
             </HvButton>
           )}
         </>
