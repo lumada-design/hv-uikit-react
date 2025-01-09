@@ -17,6 +17,9 @@ export const getStaticProps = async ({ params }) => {
 
 ### Usage
 
+The `HvTabs` is controlled via the `value` and `onChange` props.
+The `value` prop contains the `value` of the `HvTab`, which is its index by default.
+
 ```tsx live
 import { useState } from "react";
 
@@ -30,9 +33,42 @@ export default function Demo() {
         <HvTab label="Page 2" />
         <HvTab label="Page 3" />
       </HvTabs>
-      <HvTypography
-        style={{ padding: 16 }}
-      >{`Page ${value + 1} content`}</HvTypography>
+      <HvTypography className="p-sm">
+        {`Page ${value + 1} content`}
+      </HvTypography>
+    </div>
+  );
+}
+```
+
+### Variants
+
+The tabs supports `fullWidth` and `scrollable` variants, based on the [MUI Tabs](https://mui.com/material-ui/api/tabs/#tabs-prop-variant) component.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(0);
+
+  const handleChange: HvTabsProps["onChange"] = (evt, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className="grid gap-xs w-full">
+      <HvTabs variant="fullWidth" value={value}>
+        <HvTab label="Clickable tab 1" />
+        <HvTab label="Clickable tab 2" />
+        <HvTab label="Clickable tab 3" />
+      </HvTabs>
+      <div className="max-w-400px">
+        <HvTabs variant="scrollable" scrollButtons="auto" value={value}>
+          {[...Array(12).keys()].map((i) => (
+            <HvTab key={i} label={`Clickable tab ${i + 1}`} />
+          ))}
+        </HvTabs>
+      </div>
     </div>
   );
 }
@@ -51,19 +87,15 @@ export default function Demo() {
   const [showLabels, setShowLabels] = useState(true);
   const [iconPosition, setIconPosition] = useState("start");
 
-  const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-    setValue(newValue);
-  };
-
   return (
-    <div className="flex flex-col w-full gap-4">
-      <div className="flex gap-2">
+    <div className="flex flex-col w-full gap-md">
+      <div className="flex gap-sm">
         <HvCheckBox
           checked={showLabels}
           onChange={() => setShowLabels((p) => !p)}
           label="Show labels"
         />
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-sm items-center">
           <HvLabel>Icon position:</HvLabel>
           <HvSelect
             value={iconPosition}
@@ -78,7 +110,7 @@ export default function Demo() {
           </HvSelect>
         </div>
       </div>
-      <HvTabs value={value} onChange={handleChange}>
+      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
         {tabs.map((tab, index) => (
           <HvTab
             key={index}
@@ -96,17 +128,14 @@ const tabs = [
   {
     label: "Clickable tab 1",
     icon: <Alert />,
-    iconPosition: "start",
   },
   {
     label: "Clickable tab 2",
     icon: <Reload />,
-    iconPosition: "start",
   },
   {
     label: "Clickable tab 3",
     icon: <Calendar />,
-    iconPosition: "start",
   },
 ];
 ```
@@ -164,13 +193,9 @@ import { useState } from "react";
 export default function Demo() {
   const [value, setValue] = useState(0);
 
-  const handleChange: HvTabsProps["onChange"] = (_, newValue) => {
-    setValue(newValue);
-  };
-
   return (
-    <div className="flex flex-col w-full gap-4">
-      <HvTabs value={value} onChange={handleChange} floating>
+    <div className="flex flex-col w-full gap-md">
+      <HvTabs floating value={value} onChange={(_, val) => setValue(val)}>
         <HvTab label="Videos" icon={<PlayVideo />} iconPosition="start" />
         <HvTab label="Photos" icon={<Picture />} iconPosition="start" />
         <HvTab label="Text files" icon={<DocWord />} iconPosition="start" />
