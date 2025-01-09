@@ -41,16 +41,18 @@ const defaultMap: Record<string, ControlType> = {
   string: "text",
   number: "number",
   boolean: "check",
+  enum: "select",
 };
 
 export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   const { colors } = useTheme();
   const { meta } = useData();
   const propMeta = meta.docgen.props[prop];
+
   const type: ControlType =
     control?.type ||
-    defaultMap[typeof control.defaultValue] ||
     defaultMap[propMeta?.type?.name] ||
+    defaultMap[typeof control.defaultValue] ||
     "text";
 
   // Utility to clean up values (e.g., remove quotes)
@@ -190,11 +192,10 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     radio: () =>
       propMeta?.type?.name === "enum" ? renderRadioControl() : null,
     check: renderCheckboxControl,
-    boolean: renderCheckboxControl,
     color: renderColorControl,
     number: renderNumberInputControl,
     text: renderInputControl,
-    enum: renderSelectControl,
+    select: renderSelectControl,
   };
 
   // Render the appropriate control or log an error if unsupported

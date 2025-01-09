@@ -1,0 +1,102 @@
+import {
+  dropDownMenuClasses,
+  HvDropDownMenu,
+} from "@hitachivantara/uikit-react-core";
+import { Open, Preview, Save } from "@hitachivantara/uikit-react-icons";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "DropDownMenu",
+    "core",
+    dropDownMenuClasses,
+  );
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvDropDownMenu}
+  componentName="HvDropDownMenu"
+  controls={{
+    placement: {
+      defaultValue: "right",
+    },
+    variant: {
+      defaultValue: "secondaryGhost",
+    },
+    size: {
+      defaultValue: "md",
+    },
+    disabled: {
+      defaultValue: false,
+    },
+    keepOpened: {
+      defaultValue: false,
+    },
+  }}
+  componentProps={{
+    dataList: [{ label: "Save" }, { label: "Export" }, { label: "Preview" }],
+  }}
+/>
+
+### Customized items
+
+The items in the `dataList` prop can be can be customized with icons, namely with an icon or custom content on the `label` prop.
+
+```tsx live
+<HvDropDownMenu
+  dataList={[
+    { id: "save", label: "Save", icon: <Save /> },
+    { id: "export", label: "Export", icon: <Open />, disabled: true },
+    {
+      id: "preview",
+      label: <HvTypography variant="label">Preview</HvTypography>,
+      icon: <Preview />,
+    },
+  ]}
+/>
+```
+
+### Controlled
+
+You can control the open state of the dropdown through the `expanded` prop.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div style={{ display: "flex", gap: 5 }}>
+      <HvButton variant="secondaryGhost" onClick={() => setOpen(!open)}>
+        {`Click to ${!open ? "Open" : "Close"}`}
+      </HvButton>
+      <HvDropDownMenu
+        expanded={open}
+        onClick={(e, item) => console.log(item.label)}
+        disablePortal={false}
+        keepOpened={false}
+        dataList={[
+          { label: "Label 1" },
+          { label: "Label 2" },
+          { label: "Label 3" },
+        ]}
+        onToggle={(e, s) => {
+          setOpen(s);
+        }}
+      />
+    </div>
+  );
+}
+```
+
+</Page>
