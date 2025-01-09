@@ -56,7 +56,7 @@ export const HvWizardTitle = ({
 }: HvWizardTitleProps) => {
   const { context, setSummary, tab, setTab } = useContext(HvWizardContext);
 
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const [steps, setSteps] = useState<HvStepProps[]>([]);
 
@@ -88,47 +88,48 @@ export const HvWizardTitle = ({
 
   return (
     <HvDialogTitle
-      className={classes.headerContainer}
-      classes={{
-        messageContainer: classes.messageContainer,
-      }}
+      className={cx(
+        classes.root,
+        classes.headerContainer,
+        classes.messageContainer,
+        classes.titleContainer,
+      )}
     >
-      <div className={classes.titleContainer}>
-        {title && (
-          <HvTypography variant="title3" component="h3">
-            {title}
-          </HvTypography>
-        )}
-        {!!steps.length && (
-          <HvStepNavigation
-            className={classes.stepContainer}
-            steps={steps}
-            type="Default"
-            stepSize="xs"
-            width={{
-              xs: 200,
-              sm: 350,
-              md: 600,
-              lg: 800,
-              xl: 1000,
-            }}
-            {...customStep}
-          />
-        )}
-        {hasSummary && (
-          <HvButton
-            variant="secondarySubtle"
-            className={classes.buttonWidth}
-            classes={{
-              root: classes.rootSummaryButton,
-            }}
-            onClick={toggleSummary}
-            startIcon={<Report />}
-          >
-            {`${labels.summary ?? "Summary"}`}
-          </HvButton>
-        )}
-      </div>
+      {title && (
+        <HvTypography variant="title3" component="div">
+          {title}
+        </HvTypography>
+      )}
+      {!!steps.length && (
+        <HvStepNavigation
+          className={classes.stepContainer}
+          steps={steps}
+          type="Default"
+          stepSize="xs"
+          width={{
+            xs: 200,
+            sm: 350,
+            md: 600,
+            lg: 800,
+            xl: 1000,
+          }}
+          {...customStep}
+        />
+      )}
+      {hasSummary && (
+        <HvButton
+          variant="secondarySubtle"
+          className={cx(
+            classes.summaryButton,
+            classes.buttonWidth,
+            classes.rootSummaryButton,
+          )}
+          onClick={toggleSummary}
+          startIcon={<Report />}
+        >
+          {`${labels.summary ?? "Summary"}`}
+        </HvButton>
+      )}
     </HvDialogTitle>
   );
 };

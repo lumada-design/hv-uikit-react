@@ -30,7 +30,7 @@ export const HvDialogActions = (props: HvDialogActionsProps) => {
     ...others
   } = useDefaultProps("HvDialogActions", props);
   const context = useDialogContext();
-  const fullscreen = fullScreenProp ?? context.fullscreen;
+  const fullScreen = fullScreenProp ?? context.fullScreen;
 
   const { classes, cx } = useClasses(classesProp);
 
@@ -38,7 +38,7 @@ export const HvDialogActions = (props: HvDialogActionsProps) => {
     <MuiDialogActions
       className={className}
       classes={{
-        root: cx(classes.root, { [classes.fullscreen]: fullscreen }),
+        root: cx(classes.root, { [classes.fullscreen]: fullScreen }),
         spacing: classes.spacing,
       }}
       {...others}

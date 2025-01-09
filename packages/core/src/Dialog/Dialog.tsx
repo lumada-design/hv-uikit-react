@@ -30,6 +30,8 @@ export interface HvDialogProps
   maxWidth?: MuiDialogProps["maxWidth"];
   /** @inheritdoc */
   fullWidth?: MuiDialogProps["fullWidth"];
+  /** If true, the dialog stretches vertically, limited by the margins. @default false */
+  fullHeight?: boolean;
   /**
    * Element id that should be focus when the Dialog opens.
    * Auto-focusing elements can cause usability issues, so this should be avoided.
@@ -63,12 +65,13 @@ export const HvDialog = (props: HvDialogProps) => {
     onClose,
     firstFocusable,
     buttonTitle = "Close",
-    fullscreen = false,
+    fullHeight,
+    fullscreen: fullScreen = false, // TODO: rename to `fullScreen` in v6
     disableBackdropClick = false,
     ...others
   } = useDefaultProps("HvDialog", props);
 
-  const { classes, css, cx } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
   const { rootId } = useTheme();
 
   const measuredRef = useCallback(() => {
@@ -78,17 +81,24 @@ export const HvDialog = (props: HvDialogProps) => {
     element?.focus();
   }, [firstFocusable]);
 
-  const contextValue = useMemo(() => ({ fullscreen }), [fullscreen]);
+  const contextValue = useMemo(() => ({ fullScreen }), [fullScreen]);
 
   return (
     <MuiDialog
       container={getElementById(rootId)}
-      className={cx(classes.root, className)}
-      classes={{ container: css({ position: "relative" }) }}
+      className={className}
+      classes={{
+        root: classes.root,
+        paper: cx(classes.paper, classes[variant!], {
+          [classes.fullHeight]: fullHeight,
+          [classes.statusBar]: !!variant,
+          [classes.fullscreen]: fullScreen,
+        }),
+      }}
       id={id}
       ref={measuredRef}
       open={open}
-      fullScreen={fullscreen}
+      fullScreen={fullScreen}
       onClose={(event, reason) => {
         // `disableBackdropClick` property was removed in MUI5
         // and we want to maintain that functionality
@@ -103,27 +113,13 @@ export const HvDialog = (props: HvDialogProps) => {
           },
         },
       }}
-      PaperProps={{
-        classes: {
-          root: cx(
-            css({ position: "absolute" }),
-            classes.paper,
-            variant && cx(classes.statusBar, classes[variant]),
-            {
-              [classes.fullscreen]: fullscreen,
-            },
-          ),
-        },
-      }}
       {...others}
     >
-      <HvIconButton
+      <HvIconButton<"button">
         title={buttonTitle}
         id={setId(id, "close")}
         className={classes.closeButton}
-        onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
-          onClose?.(event, undefined)
-        }
+        onClick={(event) => onClose?.(event, undefined)}
       >
         <Close />
       </HvIconButton>

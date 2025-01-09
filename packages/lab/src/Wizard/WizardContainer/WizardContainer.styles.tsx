@@ -4,11 +4,7 @@ export const { staticClasses, useClasses } = createClasses(
   "HvWizardContainer",
   {
     root: {},
-    paper: {
-      width: "80%",
-      maxWidth: "80%",
-      maxHeight: "calc(100% - (2 * 80px))",
-    },
+    paper: {},
     closeButton: {
       display: "none",
     },

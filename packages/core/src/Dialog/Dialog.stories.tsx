@@ -48,14 +48,6 @@ export const Main: StoryObj<HvDialogProps> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
-  },
-  // For visual testing and a11y
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: /open dialog/i });
-    await userEvent.click(button);
-    await expect(canvas.getByRole("dialog")).toBeInTheDocument();
   },
   render: (args) => <MainStory {...args} />,
 };
@@ -105,6 +97,18 @@ export const Form: StoryObj<HvDialogProps> = {
           Accessibility-wise, `HvDialogTitle` automatically labels the dialog. A `aria-describedby` can be used to describe the content.",
       },
     },
+    chromatic: {
+      modes: {
+        md: { viewport: 1200 },
+      },
+    },
+  },
+  // For visual testing and a11y
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /create a post/i });
+    await userEvent.click(button);
+    await expect(canvas.getByRole("dialog")).toBeInTheDocument();
   },
   decorators: [(Story) => <div style={{ minHeight: 440 }}>{Story()}</div>],
   render: () => <FormStory />,

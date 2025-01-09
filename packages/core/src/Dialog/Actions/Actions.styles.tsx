@@ -3,12 +3,12 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvDialog-Action", {
   root: {
-    margin: "0",
+    margin: 0,
     padding: theme.space.sm,
+    backgroundColor: "inherit",
     borderTop: `3px solid ${theme.colors.atmo2}`,
     height: 65,
     maxHeight: 65,
-    flex: 1,
   },
   fullscreen: { position: "fixed", width: "100%", bottom: 0, left: 0 },
   spacing: {

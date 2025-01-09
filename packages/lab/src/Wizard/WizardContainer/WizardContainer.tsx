@@ -40,6 +40,7 @@ export const HvWizardContainer = (props: HvWizardContainerProps) => {
         paper: classes.paper,
       }}
       onClose={handleClose}
+      fullWidth
       maxWidth="lg"
       {...others}
     >

@@ -316,6 +316,7 @@ export default function Demo() {
       <pre>{JSON.stringify(postData, null, 2)}</pre>
       <HvDialog
         disableBackdropClick
+        fullHeight
         open={open}
         onClose={() => setOpen(false)}
         aria-describedby={descId}

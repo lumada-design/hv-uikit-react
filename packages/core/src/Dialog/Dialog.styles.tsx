@@ -7,10 +7,14 @@ export const { staticClasses, useClasses } = createClasses("HvDialog", {
   paper: {
     color: theme.colors.secondary,
     backgroundColor: theme.colors.atmo1,
-    boxShadow: ["none", theme.colors.shadow],
+    boxShadow: theme.colors.shadow,
+    borderColor: theme.colors.atmo4,
     borderRadius: theme.radii.round,
   },
   fullscreen: {},
+  fullHeight: {
+    height: "100%",
+  },
   closeButton: {
     padding: 0,
     minWidth: "auto",
@@ -24,15 +28,14 @@ export const { staticClasses, useClasses } = createClasses("HvDialog", {
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
     borderTopWidth: 4,
-    borderTopStyle: "solid",
   },
   success: {
-    borderTopColor: theme.colors.positive,
+    borderColor: theme.colors.positive,
   },
   error: {
-    borderTopColor: theme.colors.negative,
+    borderColor: theme.colors.negative,
   },
   warning: {
-    borderTopColor: theme.colors.warning,
+    borderColor: theme.colors.warning,
   },
 });
