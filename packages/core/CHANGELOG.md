@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.84.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.3...@hitachivantara/uikit-react-core@5.84.4) (2025-01-09)
+
+### Bug Fixes
+
+- **Badge:** support children prop ([8aaa2f0](https://github.com/lumada-design/hv-uikit-react/commit/8aaa2f099c1e2181a6f15d89e636fb972ecd89f7))
+
 ## [5.84.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.2...@hitachivantara/uikit-react-core@5.84.3) (2025-01-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
