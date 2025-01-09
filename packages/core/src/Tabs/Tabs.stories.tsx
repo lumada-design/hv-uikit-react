@@ -72,6 +72,34 @@ export const FullWidth: StoryObj<HvTabsProps> = {
   },
 };
 
+export const Scrollable: StoryObj<HvTabsProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story: "Tabs with scroll buttons.",
+      },
+    },
+  },
+  render: () => {
+    const [value, setValue] = useState(0);
+
+    return (
+      <div className="max-w-400px">
+        <HvTabs
+          variant="scrollable"
+          scrollButtons="auto"
+          value={value}
+          onChange={(_, newValue) => setValue(newValue)}
+        >
+          {[...Array(12).keys()].map((i) => (
+            <HvTab key={i} label={`Clickable tab ${i + 1}`} />
+          ))}
+        </HvTabs>
+      </div>
+    );
+  },
+};
+
 export const ContentChanging: StoryObj<HvTabsProps> = {
   parameters: {
     docs: {
@@ -281,15 +309,24 @@ export const Test: StoryObj = {
           iconPosition="top"
         />
       </HvTabs>
-      <HvTabs value={0}>
-        <HvTab icon={<Alert />} aria-label="Alert" />
-        <HvTab icon={<Reload />} aria-label="Reload" />
-        <HvTab disabled icon={<Calendar />} aria-label="Calendar" />
-      </HvTabs>
-      <HvTabs value={0}>
-        <HvTab label={<HvBadge showCount count={2} text="Track events" />} />
-        <HvTab label={<HvBadge count={1} text="Vehicle events" />} />
-      </HvTabs>
+      <div className="max-w-500px">
+        <HvTabs variant="scrollable" scrollButtons="auto" value={0}>
+          {[...Array(12).keys()].map((i) => (
+            <HvTab key={i} label={`Clickable tab ${i + 1}`} />
+          ))}
+        </HvTabs>
+      </div>
+      <div className="flex flex-wrap gap-xs">
+        <HvTabs value={0}>
+          <HvTab icon={<Alert />} aria-label="Alert" />
+          <HvTab icon={<Reload />} aria-label="Reload" />
+          <HvTab disabled icon={<Calendar />} aria-label="Calendar" />
+        </HvTabs>
+        <HvTabs value={0}>
+          <HvTab label={<HvBadge showCount count={2} text="Track events" />} />
+          <HvTab label={<HvBadge count={1} text="Vehicle events" />} />
+        </HvTabs>
+      </div>
     </HvSimpleGrid>
   ),
 };
