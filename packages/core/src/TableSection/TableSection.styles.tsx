@@ -13,7 +13,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   header: {
     // Only apply the border to divide the header and content when both are displayed
     "+ div": {
-      borderTop: `1px solid ${theme.colors.atmo3}`,
       borderTopLeftRadius: 0,
       borderTopRightRadius: 0,
     },
