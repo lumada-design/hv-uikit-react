@@ -22,6 +22,7 @@ export default meta;
 export const Main: StoryObj<HvSectionProps> = {
   args: {
     title: "Section Title",
+    raisedHeader: false,
     expandable: false,
     defaultExpanded: true,
   },

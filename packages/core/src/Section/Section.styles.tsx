@@ -14,6 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
   header: {
     display: "flex",
     alignItems: "center",
+    borderColor: "inherit",
     position: "relative",
     minHeight: theme.sizes.sm,
     padding: theme.space.sm,
@@ -36,6 +37,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
   raisedHeader: {
     "& $header": {
       zIndex: 1,
+      borderBottomWidth: 1,
       boxShadow: theme.colors.shadow,
     },
     "& $content": {
