@@ -6,6 +6,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvTypography } from "../../Typography";
 import { iconVariant } from "../../utils/iconVariant";
 import { useDialogContext } from "../context";
 import { staticClasses, useClasses } from "./Title.styles";
@@ -40,40 +41,33 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
     children,
     variant = "default",
     showIcon = true,
-    customIcon = null,
+    customIcon,
     ...others
   } = useDefaultProps("HvDialogTitle", props);
 
-  const { classes, css, cx } = useClasses(classesProp);
-  const { fullscreen } = useDialogContext();
-
-  const isString = typeof children === "string";
+  const { classes, cx } = useClasses(classesProp);
+  const { fullScreen } = useDialogContext();
 
   const icon = customIcon || (showIcon && iconVariant(variant));
 
   return (
-    <MuiDialogTitle
+    <HvTypography
+      component={MuiDialogTitle}
+      variant="title4"
       className={cx(
-        !fullscreen && css({ flex: 1 }),
         classes.root,
+        classes.messageContainer,
         {
-          [classes.fullscreen]: fullscreen,
+          [classes.fullscreen]: fullScreen,
+          [classes.textWithIcon]: icon,
+          [classes.titleText]: typeof children === "string",
         },
         className,
       )}
       {...others}
     >
-      <div className={classes.messageContainer}>
-        {icon}
-        <div
-          className={cx({
-            [classes.textWithIcon]: !!icon,
-            [classes.titleText]: isString,
-          })}
-        >
-          {children}
-        </div>
-      </div>
-    </MuiDialogTitle>
+      {icon}
+      {children}
+    </HvTypography>
   );
 };

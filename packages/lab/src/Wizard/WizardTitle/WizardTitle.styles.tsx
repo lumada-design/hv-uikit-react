@@ -2,32 +2,25 @@ import { createClasses } from "@hitachivantara/uikit-react-core";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
-  messageContainer: {
-    "& > div": {
-      width: "100%",
-    },
-  },
-  titleContainer: {
-    display: "flex",
-    alignItems: "center",
+  root: {
+    backgroundColor: theme.colors.atmo2,
     justifyContent: "space-between",
-    gap: theme.spacing(1),
-    width: "100%",
+    paddingRight: theme.space.sm,
   },
-  buttonWidth: {
+  /** @deprecated use `classes.root` */
+  headerContainer: {},
+  /** @deprecated use `classes.root` */
+  messageContainer: {},
+  /** @deprecated use `classes.root` */
+  titleContainer: {},
+  summaryButton: {
     width: 120,
-  },
-  rootSummaryButton: {
     paddingRight: 18,
   },
-  headerContainer: {
-    backgroundColor: theme.colors.atmo2,
-    "& h6": {
-      fontSize: "16px",
-      fontWeight: "bold",
-      letterSpacing: 0,
-    },
-  },
+  /** @deprecated use `classes.summaryButton` */
+  buttonWidth: {},
+  /** @deprecated use `classes.summaryButton` */
+  rootSummaryButton: {},
   stepContainer: {
     margin: "auto",
   },

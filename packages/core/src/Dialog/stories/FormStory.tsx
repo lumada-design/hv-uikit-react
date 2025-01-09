@@ -39,11 +39,14 @@ export const FormStory = () => {
       <pre>{JSON.stringify(postData, null, 2)}</pre>
       <HvDialog
         disableBackdropClick
+        fullHeight
         open={open}
         onClose={() => setOpen(false)}
         aria-describedby={descId}
       >
-        <HvDialogTitle>Create a new post</HvDialogTitle>
+        <HvDialogTitle>
+          <span>Create a new post</span>
+        </HvDialogTitle>
         <HvDialogContent>
           <div id={descId} style={{ marginBottom: 10 }}>
             Fill the following form to create a post.
