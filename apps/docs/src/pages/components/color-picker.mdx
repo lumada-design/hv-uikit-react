@@ -26,9 +26,9 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvColorPicker"
   controls={{
     label: { type: "text", defaultValue: "Color" },
-    iconOnly: { type: "check", defaultValue: false },
-    showCustomColors: { type: "check", defaultValue: true },
-    showSavedColors: { type: "check", defaultValue: true },
+    iconOnly: { defaultValue: false },
+    showCustomColors: { defaultValue: true },
+    showSavedColors: { defaultValue: true },
   }}
   componentProps={{
     placeholder: "Select color",

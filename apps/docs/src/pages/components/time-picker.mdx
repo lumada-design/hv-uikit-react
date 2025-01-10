@@ -22,10 +22,10 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvTimePicker"
   controls={{
     label: { type: "text", defaultValue: "Time" },
-    required: { type: "check", defaultValue: false },
-    readOnly: { type: "check", defaultValue: false },
-    disabled: { type: "check", defaultValue: false },
-    showSeconds: { type: "check", defaultValue: true },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+    showSeconds: { defaultValue: true },
     timeFormat: { type: "radio", defaultValue: "24" },
   }}
   componentProps={{
