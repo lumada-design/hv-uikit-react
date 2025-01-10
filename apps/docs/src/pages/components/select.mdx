@@ -1,3 +1,5 @@
+import { Callout } from "nextra/components";
+
 import {
   HvOption,
   HvOptionGroup,
@@ -25,10 +27,10 @@ export const getStaticProps = async ({ params }) => {
   controls={{
     label: { type: "text", defaultValue: "Country" },
     description: { type: "text", defaultValue: "Please select a country" },
-    multiple: { type: "check", defaultValue: false },
-    required: { type: "check", defaultValue: false },
-    readOnly: { type: "check", defaultValue: false },
-    disabled: { type: "check", defaultValue: false },
+    multiple: { defaultValue: false },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
   }}
   componentProps={{
     placeholder: "Select a value",
@@ -45,6 +47,11 @@ export const getStaticProps = async ({ params }) => {
     <HvOption value="sp">Spain</HvOption>
   </HvOptionGroup>
 </Playground>
+
+<Callout type="info">
+  If you need a features like search or multi-select you should use the
+  [`HvDropdown`](/components/dropdown) component.
+</Callout>
 
 ### Options
 

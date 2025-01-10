@@ -21,10 +21,10 @@ export const getStaticProps = async ({ params }) => {
   controls={{
     label: { type: "text", defaultValue: "Summary" },
     description: { type: "text", defaultValue: "Project summary" },
-    required: { type: "check", defaultValue: true },
-    resizable: { type: "check", defaultValue: false },
-    readOnly: { type: "check", defaultValue: false },
-    disabled: { type: "check", defaultValue: false },
+    required: { defaultValue: true },
+    resizable: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
   }}
   componentProps={{
     rows: 5,

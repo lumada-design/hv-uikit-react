@@ -22,9 +22,9 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvDatePicker"
   controls={{
     label: { type: "text", defaultValue: "Date" },
-    required: { type: "check", defaultValue: false },
-    readOnly: { type: "check", defaultValue: false },
-    disabled: { type: "check", defaultValue: false },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
   }}
   componentProps={{
     placeholder: "Select a date",
