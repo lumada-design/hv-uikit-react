@@ -36,34 +36,6 @@ export const getStaticProps = async ({ params }) => {
   }}
 />
 
-### States
-
-```tsx live
-<div className="flex gap-xs items-start">
-  <HvDropdown
-    required
-    label="Required"
-    values={[{ label: "value 1" }, { label: "value 2" }, { label: "value 3" }]}
-  />
-  <HvDropdown
-    disabled
-    label="Disabled"
-    values={[{ label: "value 1" }, { label: "value 2" }, { label: "value 3" }]}
-  />
-  <HvDropdown
-    readOnly
-    label="Read-only"
-    values={[{ label: "value 1" }, { label: "value 2" }, { label: "value 3" }]}
-  />
-  <HvDropdown
-    status="invalid"
-    label="Invalid"
-    values={[{ label: "value 1" }, { label: "value 2" }, { label: "value 3" }]}
-  />
-  <HvDropdown label="Empty" />
-</div>
-```
-
 ### Customized items
 
 The items in the `values` prop can be can be customized, namely with an icon or custom content on the `label` prop. Each item can be individually disabled also.
@@ -84,6 +56,7 @@ The items in the `values` prop can be can be customized, namely with an icon or 
 
 ### Related components
 
+- [`HvFormElement`](/components/form-element)
 - [`HvSelect`](/components/select)
 
 </Page>
