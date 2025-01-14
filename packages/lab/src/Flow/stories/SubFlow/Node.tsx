@@ -23,7 +23,7 @@ const classes = {
     borderWidth: 0,
   }),
   levelHeader: css({
-    padding: theme.spacing("4px", "xs", "4px", "xs"),
+    padding: theme.spacing("xxs", "xs"),
     boxShadow: theme.colors.shadow,
     borderWidth: 0,
   }),

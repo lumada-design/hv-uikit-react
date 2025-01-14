@@ -35,7 +35,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     },
   },
   label: {
-    padding: theme.spacing(0, "4px"),
+    padding: theme.spacing(0, "xxs"),
     color: "inherit",
   },
   deleteIcon: {

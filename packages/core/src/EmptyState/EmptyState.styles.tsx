@@ -17,7 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvEmptyState", {
   },
   iconContainer: {},
   titleContainer: {
-    marginTop: "4px",
+    marginTop: theme.space.xxs,
     marginBottom: theme.space.sm,
   },
   textContainer: {
