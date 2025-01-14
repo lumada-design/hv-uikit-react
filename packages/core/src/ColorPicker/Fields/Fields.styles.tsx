@@ -1,4 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
 const name = "HvColorPicker-Fields";
 
@@ -11,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   single: {
     maxWidth: "50px",
-    paddingLeft: "4px",
+    paddingLeft: theme.space.xxs,
     "& input": {
       marginLeft: 5,
       marginRight: 5,
@@ -22,7 +23,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
   },
   double: {
     maxWidth: "82px",
-    paddingRight: "4px",
+    paddingRight: theme.space.xxs,
     "& input": {
       textTransform: "uppercase",
       marginLeft: 5,

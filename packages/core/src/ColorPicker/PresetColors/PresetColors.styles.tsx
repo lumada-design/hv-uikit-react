@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
   swatchWrap: {
     width: "32px",
     height: "32px",
-    margin: "4px",
+    margin: theme.space.xxs,
 
     "& > span > div": {
       borderRadius: theme.radii.base,

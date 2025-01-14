@@ -56,6 +56,7 @@ const ds3 = makeTheme((theme) => ({
   },
   space: {
     base: 10,
+    xxs: "4px",
     xs: "10px",
     sm: "20px",
     md: "30px",
