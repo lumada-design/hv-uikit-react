@@ -39,19 +39,6 @@ export const getStaticProps = async ({ params }) => {
   }}
 />
 
-### States
-
-```tsx live
-<div className="flex gap-xs items-start">
-  <HvCheckBox label="Checkbox" />
-  <HvCheckBox required label="Required" />
-  <HvCheckBox defaultChecked label="Checked" />
-  <HvCheckBox checked indeterminate label="Partial" />
-  <HvCheckBox status="invalid" statusMessage="This is invalid!" label="Error" />
-  <HvCheckBox aria-label="No visible label" />
-</div>
-```
-
 ### Controlled
 
 Controlled checkbox. Clicking the Checkbox 1 does nothing, while clicking Checkbox 2 changes both inputs.
