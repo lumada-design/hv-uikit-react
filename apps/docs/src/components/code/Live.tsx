@@ -6,10 +6,10 @@ import {
   LivePreview,
   LiveProvider,
 } from "react-live-runner";
-import useEditorTheme from "@docs/hooks/useEditorTheme";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 
+import useEditorTheme from "../../hooks/useEditorTheme";
 import { Toolbar } from "./Toolbar";
 
 interface LiveProps {

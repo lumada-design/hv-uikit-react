@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
 import { clsx } from "clsx";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 

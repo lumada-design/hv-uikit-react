@@ -248,18 +248,17 @@ export const HvBlade = (props: HvBladeProps) => {
   const bladeRef = useRef<HTMLDivElement>(null);
   const [maxWidth, setMaxWidth] = useState<number | undefined>(undefined);
   useEffect(() => {
-    if (bladeRef.current) {
-      const resizeObserver = new ResizeObserver((entries) => {
-        setMaxWidth(entries[0].target.clientWidth);
-      });
-      resizeObserver.observe(
-        // using the blade's container as reference max-width is more stable
-        bladeRef.current.parentElement ?? bladeRef.current,
-      );
-      return () => {
-        resizeObserver.disconnect();
-      };
-    }
+    if (!bladeRef.current) return;
+    const resizeObserver = new ResizeObserver((entries) => {
+      setMaxWidth(entries[0].target.clientWidth);
+    });
+    resizeObserver.observe(
+      // using the blade's container as reference max-width is more stable
+      bladeRef.current.parentElement ?? bladeRef.current,
+    );
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [isExpanded]);
 
   const { style: containerStyle, ...otherContainerProps } =
