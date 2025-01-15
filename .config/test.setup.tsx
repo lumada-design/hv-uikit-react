@@ -5,7 +5,7 @@ import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import "@testing-library/jest-dom";
 
-const customRender = (ui: React.ReactElement, options = {}) =>
+const customRender = (ui: React.ReactElement<any>, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
     wrapper: ({ children }) => <HvProvider>{children}</HvProvider>,

@@ -13,7 +13,7 @@ export type HvFocusClasses = ExtractNames<typeof useClasses>;
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
 export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   /** Extra configuration for the child element. */
   configuration?: {
     tabIndex?: number;
@@ -25,7 +25,7 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
   /** Whether the focus is disabled. */
   disabled?: boolean;
   /** The reference to the root element to hold all Focus' context. */
-  rootRef?: React.RefObject<HTMLElement>;
+  rootRef?: React.RefObject<HTMLElement | null>;
   /** Show focus when click element. v */
   focusOnClick?: boolean;
   /** Show focus when click element. v */
