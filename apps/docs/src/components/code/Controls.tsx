@@ -81,7 +81,11 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
         maxPointValue={max}
         markStep={1}
         divisionQuantity={max - 1}
-        className="w-full px-2 pt-0"
+        className="w-full pt-0"
+        classes={{
+          sliderContainer: "px-sm",
+          labelContainer: "mx-0",
+        }}
         values={[
           findCurrentIndex(String(state[prop])) ||
             findCurrentIndex(String(control.defaultValue)),

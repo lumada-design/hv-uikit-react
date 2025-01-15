@@ -244,7 +244,12 @@ export const Actions: StoryObj<HvAvatarProps> = {
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton icon overrideIconColors={false} aria-label="Business Manager">
+        <HvButton
+          icon
+          overrideIconColors={false}
+          aria-label="Business Manager"
+          radius="none"
+        >
           <HvAvatar
             backgroundColor="sema19"
             size="md"
@@ -270,6 +275,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
           icon
           overrideIconColors={false}
           aria-label="Clara Soul profile"
+          radius="none"
         >
           <HvAvatar
             alt="Clara Soul"
