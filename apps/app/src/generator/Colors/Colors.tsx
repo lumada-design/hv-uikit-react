@@ -13,7 +13,7 @@ import { useGeneratorContext } from "~/generator/GeneratorContext";
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors, groupsToShow } from "./utils";
 
-const Colors = (): JSX.Element => {
+const Colors = () => {
   const { colors, selectedMode } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
 

@@ -39,7 +39,7 @@ export const HvProgressColumnCell = ({
   total,
   color = "primary",
   "aria-labelledby": ariaLabelledBy,
-}: HvProgressColumnCellProp): JSX.Element => {
+}: HvProgressColumnCellProp) => {
   const { classes } = useClasses();
 
   const percentage = normalizeProgressBar(partial, total);

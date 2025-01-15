@@ -31,7 +31,7 @@ const DEFAULT_LABELS = {
 export interface HvDropDownMenuProps
   extends HvBaseProps<HTMLDivElement, "onClick" | "onToggle"> {
   /** Icon. */
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<any>;
   /**
    * A list containing the elements to be rendered.
    *

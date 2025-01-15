@@ -36,7 +36,7 @@ export const HvSwitchColumnCell = ({
   falseLabel,
   trueLabel,
   switchProps,
-}: HvSwitchColumnCellProp): JSX.Element => {
+}: HvSwitchColumnCellProp) => {
   const { classes } = useClasses();
 
   return (
