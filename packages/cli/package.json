@@ -41,7 +41,8 @@
     "node-plop": "^0.31.1"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1"
+    "@types/fs-extra": "^11.0.1",
+    "cpy-cli": "^5.0.0"
   },
   "engineStrict": true,
   "engines": {
