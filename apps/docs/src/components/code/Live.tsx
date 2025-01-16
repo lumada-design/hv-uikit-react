@@ -52,13 +52,13 @@ export const Live = ({ children }: LiveProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const editorTheme = useEditorTheme();
 
-  // Extract components and icons from the code
+  // Extract components, hooks and icons from the code
   const hvComponents = useMemo(
-    () => extractMatches(code, /\bHv[A-Za-z0-9_]*\b/g),
+    () => extractMatches(code, /\b(?:Hv|use)[A-Za-z0-9_]*\b/g),
     [code],
   );
   const hvIcons = useMemo(
-    () => extractMatches(code, /<(?!(Hv))[A-Z][a-zA-Z]*/g),
+    () => extractMatches(code, /<(?!(Hv))[A-Z][a-zA-Z0-9]*/g),
     [code],
   );
 

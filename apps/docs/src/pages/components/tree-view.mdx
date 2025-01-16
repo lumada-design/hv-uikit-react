@@ -1,0 +1,431 @@
+import { Callout } from "nextra/components";
+import {
+  HvPanel,
+  HvTreeItem,
+  HvTreeView,
+  treeView2Classes,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("TreeView", "core", treeView2Classes, [
+    "TreeItem",
+  ]);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvTreeView}
+  componentName="HvTreeView"
+  controls={{
+    multiSelect: { defaultValue: false },
+    disableSelection: { defaultValue: false },
+  }}
+  decorator={(component) => (
+    <HvPanel style={{ width: 300 }}>{component}</HvPanel>
+  )}
+>
+  <HvTreeItem nodeId="1" label="Applications">
+    <HvTreeItem nodeId="10" label="Calendar.app" />
+    <HvTreeItem nodeId="11" label="Code.app" />
+    <HvTreeItem nodeId="12" label="Firefox.app" />
+  </HvTreeItem>
+  <HvTreeItem nodeId="2" label="Documents">
+    <HvTreeItem nodeId="20" label="private">
+      <HvTreeItem nodeId="200" disabled label="secret.txt" />
+    </HvTreeItem>
+    <HvTreeItem nodeId="21" label="index.js" />
+  </HvTreeItem>
+</Playground>
+
+### Data object
+
+Sometimes the tree data is in an object shape. These can be easily converted to `HvTreeItem` nodes using a recursive `renderItem` function.
+
+```tsx live
+import { forwardRef } from "react";
+
+type TreeData = { id: string; label: string; children?: TreeData[] };
+
+const treeDataObject = {
+  id: "user",
+  label: "User",
+  children: [
+    {
+      id: "Applications",
+      label: "Applications",
+      children: [
+        { id: "Code", label: "Code.app" },
+        { id: "Chrome", label: "Chrome.app" },
+        { id: "Firefox", label: "Firefox.app" },
+      ],
+    },
+    {
+      id: "Documents",
+      label: "Documents",
+      children: [{ id: "secret", label: "secret.txt" }],
+    },
+    {
+      id: "git",
+      label: "git",
+      children: [
+        {
+          id: "uikit-react",
+          label: "uikit-react",
+          children: [{ id: "uikit-pkg", label: "package.json" }],
+        },
+        {
+          id: "app-shell",
+          label: "app-shell",
+          children: [{ id: "as-pkg", label: "package.json" }],
+        },
+      ],
+    },
+  ],
+} satisfies TreeData;
+
+const SimpleTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
+  function SimpleTreeItem(props, ref) {
+    const { children, nodeId, label, ...others } = props;
+    const Icon = children ? () => <Folders /> : () => <Doc />;
+
+    return (
+      <HvTreeItem
+        ref={ref}
+        nodeId={nodeId}
+        label={
+          <div className="flex items-center">
+            <Icon />
+            <span style={{ flex: 1 }}>{label}</span>
+          </div>
+        }
+        {...others}
+      >
+        {children}
+      </HvTreeItem>
+    );
+  },
+);
+
+/** Render tree view items */
+const renderItem = ({ id, label, children }: TreeData) => (
+  <SimpleTreeItem key={id} nodeId={id} label={label}>
+    {children?.map(renderItem)}
+  </SimpleTreeItem>
+);
+
+export default function Demo() {
+  return (
+    <HvPanel style={{ width: 400 }}>
+      <HvTreeView aria-label="file system navigator">
+        {renderItem(treeDataObject)}
+      </HvTreeView>
+    </HvPanel>
+  );
+}
+```
+
+### Controlled
+
+The tree view can be controlled by passing in `expanded`/`onNodeToggle` and `selected`/`onNodeSelect` props to control expansion and selection state respectively.
+When using `multiSelect`, the values and callbacks are of type `string[]`, and `string` otherwise.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [expanded, setExpanded] = useState<string[]>([]);
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const allIds = "12345".split("");
+
+  return (
+    <div>
+      <HvButton
+        variant="secondaryGhost"
+        disabled={expanded.length === 0}
+        onClick={() => setExpanded([])}
+      >
+        Collapse All
+      </HvButton>
+      <HvButton
+        variant="secondaryGhost"
+        disabled={expanded.length >= allIds.length}
+        onClick={() => setExpanded(allIds)}
+      >
+        Expand All
+      </HvButton>
+      <HvButton
+        variant="secondaryGhost"
+        disabled={selected.length === 0}
+        onClick={() => setSelected([])}
+      >
+        Unselect All
+      </HvButton>
+      <HvButton
+        variant="secondaryGhost"
+        disabled={selected.length >= allIds.length}
+        onClick={() => setSelected(allIds)}
+      >
+        Select All
+      </HvButton>
+      <HvPanel style={{ width: 400, marginTop: 8 }}>
+        <HvTreeView
+          multiSelect
+          aria-label="file system navigator"
+          expanded={expanded}
+          selected={selected}
+          onNodeSelect={(evt, nodeIds) => setSelected(nodeIds)}
+          onNodeToggle={(evt, nodeIds) => setExpanded(nodeIds)}
+        >
+          <HvTreeItem nodeId="1" label="Applications">
+            <HvTreeItem nodeId="2" label="Calendar.app" />
+          </HvTreeItem>
+          <HvTreeItem nodeId="3" label="Documents">
+            <HvTreeItem nodeId="4" label="secret.txt" />
+            <HvTreeItem nodeId="5" label="index.js" />
+          </HvTreeItem>
+        </HvTreeView>
+      </HvPanel>
+    </div>
+  );
+}
+```
+
+### Loading data
+
+Sometimes the full tree data is unknown or paginated. This sample showcases how a custom `LoadingItem` can be used to handle server-side tree data.
+
+```tsx live
+import { forwardRef, useState } from "react";
+
+const delay = (ms: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+
+type MyTreeData = { id: string; label: string; children?: MyTreeData[] };
+
+interface CustomTreeItemProps extends HvTreeItemProps {
+  /** Triggered when the tree item is expanded */
+  onOpen?: HvTreeItemProps["onClick"];
+}
+
+const LoadingItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
+  function LoadingItem(props, ref) {
+    const { children, nodeId, label, onOpen, onClick, ...others } = props;
+    const { expanded, disabled } = useHvTreeItem(nodeId);
+    const Icon = children ? () => <Folders /> : () => <Doc />;
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleLoadData = async () => {
+      setIsLoading(true);
+      // Simulate fetching data
+      await delay(2000);
+      setIsLoading(false);
+    };
+
+    return (
+      <HvTreeItem
+        ref={ref}
+        nodeId={nodeId}
+        style={{ pointerEvents: disabled ? "none" : undefined }}
+        onClick={(evt) => {
+          if (children && !expanded) {
+            handleLoadData();
+          }
+          onClick?.(evt);
+        }}
+        label={
+          <div className="flex items-center">
+            <Icon />
+            <span style={{ flex: 1 }}>{label}</span>
+          </div>
+        }
+        {...others}
+      >
+        {isLoading ? <HvLoading small style={{ padding: 8 }} /> : children}
+      </HvTreeItem>
+    );
+  },
+);
+
+const dataObject = {
+  id: "user",
+  label: "User",
+  children: [
+    {
+      id: "Applications",
+      label: "Applications",
+      children: [
+        { id: "Code", label: "Code.app" },
+        { id: "Chrome", label: "Chrome.app" },
+        { id: "Firefox", label: "Firefox.app" },
+      ],
+    },
+    {
+      id: "Documents",
+      label: "Documents",
+      children: [{ id: "secret", label: "secret.txt" }],
+    },
+    {
+      id: "git",
+      label: "git",
+      children: [
+        {
+          id: "uikit-react",
+          label: "uikit-react",
+          children: [{ id: "uikit-pkg", label: "package.json" }],
+        },
+        {
+          id: "app-shell",
+          label: "app-shell",
+          children: [{ id: "as-pkg", label: "package.json" }],
+        },
+      ],
+    },
+  ],
+} satisfies MyTreeData;
+
+/** Render tree view items */
+const renderItem = ({ id, label, children }: MyTreeData) => (
+  <LoadingItem key={id} nodeId={id} label={label}>
+    {children?.map(renderItem)}
+  </LoadingItem>
+);
+
+export default function Demo() {
+  return (
+    <HvPanel style={{ width: 400 }}>
+      <HvTreeView aria-label="file system navigator">
+        {renderItem(dataObject)}
+      </HvTreeView>
+    </HvPanel>
+  );
+}
+```
+
+### Custom tree view
+
+The following example demonstrates a custom tree view that implements a common vertical navigation pattern.
+
+```tsx live
+import { forwardRef, useMemo, useState } from "react";
+
+interface CustomTreeItemProps extends HvTreeItemProps {
+  /** Triggered when the tree item is expanded */
+  onOpen?: HvTreeItemProps["onClick"];
+}
+
+const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
+  function NavigationItem(props, ref) {
+    const { children, nodeId, label, onOpen, onClick, ...others } = props;
+    const { disabled, expanded, level } = useHvTreeItem(nodeId);
+
+    return (
+      <HvTreeItem
+        ref={ref}
+        nodeId={nodeId}
+        style={{
+          "--level": level,
+          pointerEvents: disabled ? "none" : undefined,
+        }}
+        classes={{
+          group: "ml-0",
+          content:
+            "pl-[calc(var(--uikit-space-sm)*var(--level))] border-l-4px border-transparent",
+          selected: "border-l-primary bg-primary_20",
+        }}
+        icon="" // remove left nav icon
+        label={
+          <div className="flex gap-xs items-center">
+            <HvTypography
+              variant={children ? "label" : "body"}
+              style={{ flex: 1 }}
+            >
+              {label}
+            </HvTypography>
+            {children && (
+              <DropDownXS
+                style={{ transform: `rotate(${expanded ? 180 : 0}deg)` }}
+              />
+            )}
+          </div>
+        }
+        {...others}
+      >
+        {children}
+      </HvTreeItem>
+    );
+  },
+);
+
+/** Render tree view items */
+const renderItem = ({ id, label, data }: NavigationData) => (
+  <NavigationItem key={id} nodeId={id} label={label}>
+    {data?.map(renderItem)}
+  </NavigationItem>
+);
+
+export default function Demo() {
+  const [selected, setSelected] = useState("-1");
+
+  const navData = useMemo<NavigationData[]>(
+    () => [
+      { id: "00", label: "Overview" },
+      { id: "01", label: "Analytics" },
+      {
+        id: "02",
+        label: "Storage",
+        data: [
+          {
+            id: "02-01",
+            label: "Cloud",
+            data: [
+              { id: "02-01-01", label: "Servers" },
+              { id: "02-01-02", label: "HCP Anywhere" },
+              { id: "02-01-03", label: "This Computer", disabled: true },
+            ],
+          },
+        ],
+      },
+      {
+        id: "03",
+        label: "Administration",
+        data: [
+          {
+            id: "03-01",
+            label: "Rest API",
+            data: [{ id: "03-01-01", label: "Log Bundle" }],
+          },
+        ],
+      },
+    ],
+    [],
+  );
+
+  return (
+    <HvPanel style={{ width: 300 }}>
+      <HvTreeView
+        multiSelect={false}
+        aria-label="site navigation"
+        selected={selected}
+        onNodeSelect={(evt, nodeId) => setSelected(nodeId)}
+      >
+        {navData.map(renderItem)}
+      </HvTreeView>
+    </HvPanel>
+  );
+}
+```
+
+</Page>
