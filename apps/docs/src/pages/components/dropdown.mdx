@@ -64,7 +64,7 @@ The items in the `values` prop can be can be customized, namely with an icon or 
 
 You might need to customize the dropdown content entirely. To do this use the `HvBaseDropdown` component.
 
-```tsx live
+```tsx live collapsed
 <HvBaseDropdown placeholder="Click to open">
   <HvPanel>
     <HvTypography>Your dropdown content</HvTypography>
@@ -74,7 +74,7 @@ You might need to customize the dropdown content entirely. To do this use the `H
 
 You might want to control yourself the dropdown and its state. In that case you should use the props `expanded` and `onToggle`.
 
-```tsx live
+```tsx live collapsed
 import { forwardRef, useState } from "react";
 
 export default function Demo() {
@@ -103,7 +103,7 @@ export default function Demo() {
 If you want to customize the header of the dropdown, you can use the `headerComponent` prop.
 Don't forget to forward the ref to the component. The `onToggle` callback will be called on the `onClick` event of the header component.
 
-```tsx live
+```tsx live collapsed
 import { forwardRef, useState } from "react";
 
 const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(

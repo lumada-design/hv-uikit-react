@@ -13,6 +13,7 @@ import * as HvIcons from "@hitachivantara/uikit-react-icons";
 import { Toolbar } from "./Toolbar";
 
 interface LiveProps {
+  collapsed?: boolean;
   children: string;
 }
 
@@ -46,10 +47,10 @@ const generateScope = (hvComponents: string[], hvIcons: string[]) => {
   return { ...components, ...icons, theme: HvCore.theme };
 };
 
-export const Live = ({ children }: LiveProps) => {
+export const Live = ({ collapsed = false, children }: LiveProps) => {
   const [initialCode] = useState(children?.trimEnd());
   const [code, setCode] = useState(initialCode);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(collapsed);
   const editorTheme = useEditorTheme();
 
   // Extract components and icons from the code
@@ -72,8 +73,8 @@ export const Live = ({ children }: LiveProps) => {
 
       {/* Toolbar */}
       <Toolbar
-        onToggle={() => setIsExpanded(!isExpanded)}
-        isExpanded={isExpanded}
+        onToggle={() => setIsCollapsed(!isCollapsed)}
+        isCollapsed={isCollapsed}
         code={code}
         onReset={() => setCode(initialCode)}
       />
@@ -81,10 +82,10 @@ export const Live = ({ children }: LiveProps) => {
       {/* Code Editor */}
       <div
         className={`overflow-auto border-x-1 border-[var(--uikit-colors-atmo4)] rounded-b-round ${
-          isExpanded ? "border-b-transparent" : "border-b-1"
+          isCollapsed ? "border-b-transparent" : "border-b-1"
         }`}
         style={{
-          maxHeight: isExpanded ? "0px" : "250px",
+          maxHeight: isCollapsed ? "0px" : "250px",
           transition: "max-height 0.2s ease-in-out",
         }}
       >

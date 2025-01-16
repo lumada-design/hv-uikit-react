@@ -5,12 +5,13 @@ import { Live } from "./Live";
 
 interface PreProps extends React.HTMLAttributes<HTMLElement> {
   live?: boolean;
+  collapsed?: boolean;
   children?: React.ReactNode;
 }
 
-export const Pre = ({ live, children, ...props }: PreProps) => {
+export const Pre = ({ live, collapsed, children, ...props }: PreProps) => {
   if (live && isValidElement(children)) {
-    return <Live {...children.props} />;
+    return <Live collapsed={collapsed} {...children.props} />;
   }
 
   return <NextraPre {...props}>{children}</NextraPre>;

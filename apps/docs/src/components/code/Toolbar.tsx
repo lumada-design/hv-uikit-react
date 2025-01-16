@@ -10,14 +10,14 @@ import { HvButton, HvTooltip } from "@hitachivantara/uikit-react-core";
 
 type ToolbarProps = {
   onToggle: () => void;
-  isExpanded: boolean;
+  isCollapsed: boolean;
   code: string;
   onReset: () => void;
 };
 
 export const Toolbar = ({
   onToggle,
-  isExpanded,
+  isCollapsed,
   code,
   onReset,
 }: ToolbarProps) => {
@@ -39,7 +39,7 @@ export const Toolbar = ({
       {/* Code Toggle Button */}
       <div className="flex flex-1 justify-center items-center">
         <HvButton size="xs" variant="secondaryGhost" onClick={onToggle}>
-          {isExpanded ? (
+          {isCollapsed ? (
             <>
               Show Code <ArrowDown />
             </>
