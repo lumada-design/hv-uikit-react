@@ -85,7 +85,7 @@ export interface HvBaseDropdownProps
   placement?: "left" | "right";
   /**
    * Replacement for the header component.
-   * @deprecated use `Component` instead
+   * @deprecated use `headerComponent` instead
    */
   component?: React.ReactNode;
   /** Replacement for the header component */
