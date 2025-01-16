@@ -1,11 +1,14 @@
 import { ComponentType, useMemo, useState } from "react";
 import { css } from "@emotion/css";
+import { Meta } from "@storybook/react";
 import {
+  HvBannerContent,
   HvInput,
   HvOption,
   HvSelect,
   HvSimpleGrid,
   HvTypography,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   IconBaseProps,
@@ -80,9 +83,29 @@ const Group = ({
   );
 };
 
-const Library = () => {
+const Callout = () => {
+  return (
+    <HvBannerContent
+      showIcon
+      variant="warning"
+      classes={{ root: "mb-md", closeAction: "hidden" }}
+    >
+      Pentaho projects are transitioning to{" "}
+      <HvTypography link component="a" href="https://phosphoricons.com">
+        Phosphor Icons
+      </HvTypography>
+      .
+      <br />
+      Please ensure you use the correct icon set according to your project
+      guidelines.
+    </HvBannerContent>
+  );
+};
+
+export const Library = () => {
   const [search, setSearch] = useState("");
   const [iconSize, setIconSize] = useState<IconSize>("S");
+  const { selectedTheme } = useTheme();
 
   const filteredIcons = useMemo(() => {
     if (!search) return iconList;
@@ -97,6 +120,7 @@ const Library = () => {
 
   return (
     <>
+      {selectedTheme === "pentahoPlus" && <Callout />}
       <HvSimpleGrid spacing="sm" cols={2} className={classes.grid}>
         <HvSelect
           label="Select icon size"
@@ -124,4 +148,6 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default {
+  title: "Foundation/Icons/Library",
+} satisfies Meta;
