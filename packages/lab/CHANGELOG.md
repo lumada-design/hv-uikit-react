@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.42.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.41.21...@hitachivantara/uikit-react-lab@5.42.0) (2025-01-16)
+
+### Bug Fixes
+
+- align chevron icons ([935adda](https://github.com/lumada-design/hv-uikit-react/commit/935addaa1d63a72f6c2e76b44094181e99ed0067))
+
+### Features
+
+- **Dialog:** add fullHeight & fix styles on large heights ([2c3f642](https://github.com/lumada-design/hv-uikit-react/commit/2c3f6420b5cddfe190aec32275ee3077af05ddb4))
+
 ## [5.41.21](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.41.20...@hitachivantara/uikit-react-lab@5.41.21) (2025-01-09)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

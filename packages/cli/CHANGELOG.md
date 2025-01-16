@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.20.3...@hitachivantara/hv-uikit-cli@1.21.0) (2025-01-16)
+
+### Features
+
+- **cli:** improve baselines ([bbaadc1](https://github.com/lumada-design/hv-uikit-react/commit/bbaadc1f34c087334c8b24a0852d5f5afb67f660))
+- **Panel:** simplify border customisation ([95724e5](https://github.com/lumada-design/hv-uikit-react/commit/95724e580582b04c6d60b6e0c1c09bcc1769eb35))
+
 ## [1.20.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.20.2...@hitachivantara/hv-uikit-cli@1.20.3) (2025-01-09)
 
 **Note:** Version bump only for package @hitachivantara/hv-uikit-cli

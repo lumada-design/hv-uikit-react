@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.85.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.4...@hitachivantara/uikit-react-core@5.85.0) (2025-01-16)
+
+### Bug Fixes
+
+- align chevron icons ([935adda](https://github.com/lumada-design/hv-uikit-react/commit/935addaa1d63a72f6c2e76b44094181e99ed0067))
+- **Section:** raisedHeader border styles ([b4513d7](https://github.com/lumada-design/hv-uikit-react/commit/b4513d72e982a490a24dfea30f9005db56fa8d6a))
+- **Tabs:** support for scrollable tabs ([fa2704a](https://github.com/lumada-design/hv-uikit-react/commit/fa2704a9d3f49657463812ed8657d97be87e2a61))
+
+### Features
+
+- **Dialog:** add fullHeight & fix styles on large heights ([2c3f642](https://github.com/lumada-design/hv-uikit-react/commit/2c3f6420b5cddfe190aec32275ee3077af05ddb4))
+- **Panel:** simplify border customisation ([95724e5](https://github.com/lumada-design/hv-uikit-react/commit/95724e580582b04c6d60b6e0c1c09bcc1769eb35))
+
 ## [5.84.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.84.3...@hitachivantara/uikit-react-core@5.84.4) (2025-01-09)
 
 ### Bug Fixes
