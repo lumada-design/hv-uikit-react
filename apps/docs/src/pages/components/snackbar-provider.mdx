@@ -1,0 +1,190 @@
+import { snackbarProviderClasses } from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "SnackbarProvider",
+    "core",
+    snackbarProviderClasses,
+  );
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+The UI Kit library provides a snackbar provider to control the stacking of multiple snackbars in the app.
+
+The provider is not meant to be 100% feature complete, but instead, ease the majority of use-cases we have been encountering. If you need any customization or extension to the behavior, please feel free to copy and customize it.
+
+This feature needs both the HvSnackbarProvider provider and the hook useHvSnackbar. The provider and the hook are wrappers of the [Notistack](https://github.com/iamhosseindhv/notistack) API.
+
+Ideally the `HvSnackbarProvider` should be at the top of the component tree of your application. This will allow the snackbar to be triggered in any page. For more information of the provider API check the [notistack documentation](https://iamhosseindhv.com/notistack/api).
+
+```tsx
+import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";
+```
+
+After adding the provider at the root of your app, you can call the `useHvSnackbar` at any component inside your app. This hook will allow you to request the rendering of a snackbar through the use of the `enqueueSnackbar` function or close one with `closeSnackbar`.
+
+```tsx live
+import {
+  HvButton,
+  HvOverflowTooltip,
+  HvSnackbarProvider,
+  useHvSnackbar,
+} from "@hitachivantara/uikit-react-core";
+
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <SnackbarButtons />
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButtons = () => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <div className="flex gap-sm">
+      <HvButton
+        variant="secondarySubtle"
+        onClick={() => {
+          enqueueSnackbar("This is a success snackbar", { variant: "success" });
+        }}
+      >
+        Success
+      </HvButton>
+      <HvButton
+        variant="secondarySubtle"
+        onClick={() => {
+          enqueueSnackbar("This is a warning snackbar", { variant: "warning" });
+        }}
+      >
+        Warning
+      </HvButton>
+      <HvButton
+        variant="secondarySubtle"
+        onClick={() => {
+          enqueueSnackbar("This is an error snackbar", { variant: "error" });
+        }}
+      >
+        Error
+      </HvButton>
+      <HvButton
+        variant="secondarySubtle"
+        onClick={() => {
+          enqueueSnackbar("This is a default snackbar", { variant: "default" });
+        }}
+      >
+        Default
+      </HvButton>
+    </div>
+  );
+};
+```
+
+### Content
+
+Internally, the `HvSnackbarProvider` uses the `HvSnackbarContent` to render the snackbar. You can use the `snackbarContentProps` to customize the content of the snackbar.
+Check the [`HvSnackbar`](/components/snackbar) documentation for more information.
+
+```tsx live
+import {
+  HvButton,
+  HvOverflowTooltip,
+  HvSnackbarProvider,
+  useHvSnackbar,
+} from "@hitachivantara/uikit-react-core";
+
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <SnackbarButtons />
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButtons = () => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <HvButton
+      variant="secondarySubtle"
+      onClick={() => {
+        const snackbarId = enqueueSnackbar("This is an action snackbar", {
+          snackbarContentProps: {
+            action: { id: "action", label: "Dismiss" },
+            onAction: (evt, action) => {
+              console.log("Clicked action", action);
+              closeSnackbar(snackbarId);
+            },
+            showIcon: true,
+            variant: "success",
+          },
+        });
+      }}
+    >
+      Action
+    </HvButton>
+  );
+};
+```
+
+### Label
+
+The snackbar label acceps a `React.ReactNode` which means you can pass any component as the label.
+This allows you to use the `HvOverflowTooltip` component to display a long message with ellipsis and a tooltip.
+Note, though, that you shouldn't have long messages displayed in a snackbar as it is meant to be a ephemerous message that will
+be dismissed automically after a some time.
+
+```tsx live
+import {
+  HvButton,
+  HvOverflowTooltip,
+  HvSnackbarProvider,
+  useHvSnackbar,
+} from "@hitachivantara/uikit-react-core";
+
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <SnackbarButtons />
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButtons = () => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <HvButton
+      variant="secondarySubtle"
+      onClick={() => {
+        const snackbarLabel = (
+          <HvOverflowTooltip
+            paragraphOverflow
+            data={`This is a very ${"very ".repeat(26)}long snackbar.`}
+          />
+        );
+        enqueueSnackbar(snackbarLabel, { variant: "default" });
+      }}
+    >
+      Overflow
+    </HvButton>
+  );
+};
+```
+
+### Related components
+
+- [`HvSnackbar`](/components/snackbar)
+- [`HvBanner`](/components/banner)
+
+</Page>
