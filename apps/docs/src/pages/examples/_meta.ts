@@ -3,5 +3,4 @@ export default {
     type: "separator",
     title: "Examples",
   },
-  example: "Example",
 };

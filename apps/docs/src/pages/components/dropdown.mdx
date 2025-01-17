@@ -110,14 +110,9 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
   function HeaderComponent(props, ref) {
     const { open, ...others } = props;
     return (
-      <HvIconButton
-        ref={ref}
-        variant="primarySubtle"
-        title="Settings"
-        {...others}
-      >
-        <Settings />
-      </HvIconButton>
+      <HvButton ref={ref} variant="primarySubtle" title="Settings" {...others}>
+        {open ? "Close" : "Open"}
+      </HvButton>
     );
   },
 );
