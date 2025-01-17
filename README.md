@@ -13,7 +13,7 @@
 
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![React](https://img.shields.io/badge/react-17|18-blue.svg)
-![Node](https://img.shields.io/badge/node-16|18-brightgreen.svg)
+![Node](https://img.shields.io/badge/node-16+-brightgreen.svg)
 [![Nightly](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml/badge.svg)](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml)
 
 </div>
