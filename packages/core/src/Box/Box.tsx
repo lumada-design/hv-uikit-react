@@ -25,6 +25,7 @@ const sxFn = (sx: HvBoxProps["sx"]) => {
  * Customizable layout component that can be used to wrap other components.
  * It can be used to add styles to the wrapped components.
  * It can also be used to create a layout using the flexbox properties.
+ * @deprecated use native elements instead (e.g. `div`)
  */
 export const HvBox = fixedForwardRef(function HvBox<
   C extends React.ElementType = "div",

@@ -52,6 +52,7 @@ interface Focuses {
   jump: Element;
 }
 
+/** @deprecated internal use only. this component has navigation issues. */
 export const HvFocus = ({
   classes: classesProp,
   children,

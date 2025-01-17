@@ -92,6 +92,7 @@ const DEFAULT_LABELS = {
 
 /**
  * Component used to show a set of related data to the user.
+ * @deprecated use `HvListContainer` + `HvListItem` instead
  */
 export const HvList = (props: HvListProps) => {
   const {
