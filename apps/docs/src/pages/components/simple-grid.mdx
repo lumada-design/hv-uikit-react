@@ -1,0 +1,82 @@
+import { Callout } from "nextra/components";
+import {
+  HvCard,
+  HvCardContent,
+  HvSimpleGrid,
+  simpleGridClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("SimpleGrid", "core", simpleGridClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Callout type="info">
+  Please check the [`HvGrid`](/components/grid) component documentation for more
+  advanced grid configurations.
+</Callout>
+
+<br />
+
+<Playground
+  Component={HvSimpleGrid}
+  componentName="HvSimpleGrid"
+  controls={{
+    cols: {
+      defaultValue: 2,
+    },
+    spacing: {
+      defaultValue: "sm",
+    },
+  }}
+  decorator={(component) => <div className="w-full">{component}</div>}
+>
+  {Array.from({ length: 6 }, (_, i) => (
+    <HvCard bgcolor="atmo2">
+      <HvCardContent className="flex items-center justify-center">
+        Item {i + 1}
+      </HvCardContent>
+    </HvCard>
+  ))}
+</Playground>
+
+### Breakpoints
+
+Use the `breakpoints` prop to define the number of columns and spacing for different widths.
+
+```tsx live
+<div className="w-full">
+  <HvSimpleGrid
+    cols={2}
+    breakpoints={[
+      { minWidth: 1600, cols: 4, spacing: "md" },
+      { minWidth: 1300, cols: 3, spacing: "md" },
+      { minWidth: 1100, cols: 2, spacing: "sm" },
+      { minWidth: 800, cols: 1, spacing: "sm" },
+    ]}
+  >
+    {[...Array(6).keys()].map((i) => (
+      <HvCard bgcolor="atmo2">
+        <HvCardContent className="flex items-center justify-center">
+          Item {i + 1}
+        </HvCardContent>
+      </HvCard>
+    ))}
+  </HvSimpleGrid>
+</div>
+```
+
+### Related components
+
+- [`HvGrid`](/components/grid)
+
+</Page>
