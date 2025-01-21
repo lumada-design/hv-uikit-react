@@ -1,29 +1,26 @@
+import { useTheme as useMuiTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvBaseProps } from "../../types/generic";
-import { isKey } from "../../utils/keyboardUtils";
-import { setId } from "../../utils/setId";
-import {
-  HvScrollToOption,
-  HvScrollToTooltipPositions,
-  HvScrollToVerticalPositions,
-} from "../types";
-import { useScrollTo } from "../useScrollTo";
-import {
-  calculateOffset,
-  staticClasses,
-  useClasses,
-} from "./ScrollToVertical.styles";
-import { HvVerticalScrollListItem } from "./VerticalScrollListItem";
+import { useScrollTo } from "../hooks/useScrollTo";
+import { HvBaseProps } from "../types/generic";
+import { HvScrollToOption, HvScrollToTooltipPositions } from "../types/scroll";
+import { isKey } from "../utils/keyboardUtils";
+import { setId } from "../utils/setId";
+import { HvHorizontalScrollListItem } from "./HorizontalScrollListItem";
+import { staticClasses, useClasses } from "./ScrollToHorizontal.styles";
 
-export { staticClasses as scrollToVerticalClasses };
+export { staticClasses as scrollToHorizontalClasses };
 
-export type HvScrollToVerticalClasses = ExtractNames<typeof useClasses>;
+export type HvScrollToHorizontalClasses = ExtractNames<typeof useClasses>;
 
-export interface HvScrollToVerticalProps
+export type HvScrollToHorizontalPositions = "sticky" | "fixed" | "relative";
+
+export interface HvScrollToHorizontalProps
   extends HvBaseProps<HTMLOListElement, "onChange" | "onClick"> {
   /** An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied */
   options: HvScrollToOption[];
@@ -74,8 +71,8 @@ export interface HvScrollToVerticalProps
    * Each element can also have a specific offset via the options property.
    */
   offset?: number;
-  /** Position of the Vertical scroll to. */
-  position?: HvScrollToVerticalPositions;
+  /** Position of the Horizontal scroll to. */
+  position?: HvScrollToHorizontalPositions;
   /** Position of tooltip identifying the current item. */
   tooltipPosition?: HvScrollToTooltipPositions;
   /** A function called each time the selected index changes. */
@@ -97,13 +94,13 @@ export interface HvScrollToVerticalProps
     index: number,
   ) => void;
   /** A Jss Object used to override or extend the styles applied. */
-  classes?: HvScrollToVerticalClasses;
+  classes?: HvScrollToHorizontalClasses;
 }
 
 /**
- * The vertical scroll to element can be used to quickly navigate in a page.
+ * The horizontal scroll to element can be used to quickly navigate in a page.
  */
-export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
+export const HvScrollToHorizontal = (props: HvScrollToHorizontalProps) => {
   const {
     id,
     defaultSelectedIndex = 0,
@@ -120,12 +117,15 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
     options,
     offset = 0,
     position = "relative",
-    tooltipPosition = "left",
-    style,
+    tooltipPosition = "top",
     ...others
-  } = useDefaultProps("HvScrollToVertical", props);
+  } = useDefaultProps("HvScrollToHorizontal", props);
 
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, css, cx } = useClasses(classesProp);
+  const muiTheme = useMuiTheme();
+
+  const downSm = useMediaQuery(muiTheme.breakpoints.down("sm"));
+  const upMd = useMediaQuery(muiTheme.breakpoints.up("md"));
 
   const [selectedIndex, setScrollTo, elements] = useScrollTo(
     defaultSelectedIndex,
@@ -138,7 +138,7 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
   );
 
   const tabs = elements.map((option, index) => (
-    <HvVerticalScrollListItem
+    <HvHorizontalScrollListItem
       id={setId(id, `item-${index}`)}
       onClick={(event) => {
         event.preventDefault();
@@ -158,22 +158,40 @@ export const HvScrollToVertical = (props: HvScrollToVerticalProps) => {
       selected={selectedIndex === index}
       key={option.key || option.label}
       label={option.label}
+      iconClasses={cx({
+        [classes.selected]: selectedIndex === index,
+        [classes.notSelected]: selectedIndex !== index,
+        [classes.notSelectedRoot]: selectedIndex !== index,
+      })}
     />
   ));
-
-  const positionOffset = calculateOffset(options.length);
 
   return (
     <ol
       className={cx(
+        css({
+          width:
+            position === "fixed" && (upMd || downSm)
+              ? `calc(100% - 2*${theme.spacing(upMd ? 4 : 2)})`
+              : "100%",
+          marginTop: 0,
+          marginBottom: 0,
+          marginRight:
+            position === "fixed" && (upMd || downSm)
+              ? theme.spacing(upMd ? 4 : 2)
+              : 0,
+          marginLeft:
+            position === "fixed" && (upMd || downSm)
+              ? theme.spacing(upMd ? 4 : 2)
+              : 0,
+        }),
         classes.root,
         {
+          [classes.positionSticky]: position === "sticky",
           [classes.positionFixed]: position === "fixed",
-          [classes.positionAbsolute]: position === "absolute",
         },
         className,
       )}
-      style={{ top: `calc(50% - ${positionOffset}px)`, ...style }}
       id={id}
       {...others}
     >
