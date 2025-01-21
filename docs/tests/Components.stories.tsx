@@ -36,8 +36,8 @@ import {
   Horizontal as RadioGroupHorizontalStory,
   Variants as RadioGroupVariantsStory,
 } from "packages/core/src/RadioGroup/RadioGroup.stories";
-import { Main as ScrollToHorizontalMainStory } from "packages/core/src/ScrollTo/Horizontal/ScrollToHorizontal.stories";
-import { Main as ScrollToVerticalMainStory } from "packages/core/src/ScrollTo/Vertical/ScrollToVertical.stories";
+import { Main as ScrollToHorizontalMainStory } from "packages/core/src/ScrollToHorizontal/ScrollToHorizontal.stories";
+import { Main as ScrollToVerticalMainStory } from "packages/core/src/ScrollToVertical/ScrollToVertical.stories";
 import { Test as SelectTestStory } from "packages/core/src/Select/Select.stories";
 import { Variants as SelectionListVariantsStory } from "packages/core/src/SelectionList/SelectionList.stories";
 import { Main as SimpleGridMainStory } from "packages/core/src/SimpleGrid/SimpleGrid.stories";
