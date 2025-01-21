@@ -47,9 +47,9 @@ export const HvVizProvider = ({ children }: HvVizProviderProps) => {
   const { activeTheme, selectedMode, selectedTheme } = useTheme();
 
   const value = useMemo(() => {
-    registerTheme(selectedTheme, selectedMode, activeTheme);
-
-    return { theme: `${selectedTheme}-${selectedMode}`, activeTheme };
+    const themeName = `${selectedTheme}-${selectedMode}`;
+    registerTheme(themeName, selectedMode, activeTheme);
+    return { theme: themeName, activeTheme };
   }, [selectedTheme, selectedMode, activeTheme]);
 
   return (

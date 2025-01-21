@@ -35,14 +35,10 @@ const EmptyRow = () => (
   </HvTableRow>
 );
 
-const slide = keyframes`
-  0% { 
-    max-height: 0;
-  }
-  100% { 
-    max-height: 300px;
-  }
-`;
+const slide = keyframes({
+  "0%": { maxHeight: 0 },
+  "100%": { maxHeight: 300 },
+});
 
 const classes = {
   filtersContainer: css({

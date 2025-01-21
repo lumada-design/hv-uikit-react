@@ -2,12 +2,16 @@ import * as echarts from "echarts/core";
 import { type HvTheme } from "@hitachivantara/uikit-react-utils";
 
 export const registerTheme = (
-  name: string,
+  themeName: string,
   mode: string,
   themeStructure?: HvTheme,
 ) => {
+  const colors = themeStructure?.colors.modes[mode];
+  // if theme & mode is invalid, exit (to use the default theme)
+  if (!colors) return;
+
   const baseText = {
-    color: themeStructure?.colors.modes[mode].secondary,
+    color: colors?.secondary,
     fontWeight: themeStructure?.fontWeights.normal,
     fontSize: themeStructure?.fontSizes.sm,
     fontFamily: themeStructure?.fontFamily.body,
@@ -16,22 +20,22 @@ export const registerTheme = (
   const customAxis = {
     nameTextStyle: {
       ...baseText,
-      color: themeStructure?.colors.modes[mode].secondary_80,
+      color: colors?.secondary_80,
     },
     axisLine: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: colors?.atmo3,
       },
     },
     axisTick: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: colors?.atmo3,
       },
     },
     axisLabel: {
-      color: themeStructure?.colors.modes[mode].secondary_80,
+      color: colors?.secondary_80,
       fontWeight: themeStructure?.fontWeights.normal,
       fontSize: themeStructure?.fontSizes.sm,
       fontFamily: themeStructure?.fontFamily.body,
@@ -39,25 +43,25 @@ export const registerTheme = (
     splitLine: {
       show: true,
       lineStyle: {
-        color: themeStructure?.colors.modes[mode].atmo3,
+        color: colors?.atmo3,
       },
     },
   };
 
-  echarts.registerTheme(`${name}-${mode}`, {
+  echarts.registerTheme(themeName, {
     color: [
-      themeStructure?.colors.modes[mode].cat1,
-      themeStructure?.colors.modes[mode].cat2,
-      themeStructure?.colors.modes[mode].cat3,
-      themeStructure?.colors.modes[mode].cat4,
-      themeStructure?.colors.modes[mode].cat5,
-      themeStructure?.colors.modes[mode].cat6,
-      themeStructure?.colors.modes[mode].cat7,
-      themeStructure?.colors.modes[mode].cat8,
-      themeStructure?.colors.modes[mode].cat9,
-      themeStructure?.colors.modes[mode].cat10,
-      themeStructure?.colors.modes[mode].cat11,
-      themeStructure?.colors.modes[mode].cat12,
+      colors?.cat1,
+      colors?.cat2,
+      colors?.cat3,
+      colors?.cat4,
+      colors?.cat5,
+      colors?.cat6,
+      colors?.cat7,
+      colors?.cat8,
+      colors?.cat9,
+      colors?.cat10,
+      colors?.cat11,
+      colors?.cat12,
     ],
     legend: {
       textStyle: {
@@ -72,7 +76,7 @@ export const registerTheme = (
       },
       axisPointer: {
         lineStyle: {
-          color: themeStructure?.colors.modes[mode].secondary,
+          color: colors?.secondary,
           width: 1,
         },
       },
@@ -109,16 +113,16 @@ export const registerTheme = (
         fontFamily: baseText.fontFamily,
       },
       itemStyle: {
-        borderColor: themeStructure?.colors.modes[mode].atmo3,
+        borderColor: colors?.atmo3,
         borderWidth: 1,
       },
     },
     treemap: {
       breadcrumb: {
         itemStyle: {
-          color: themeStructure?.colors.modes[mode].secondary,
+          color: colors?.secondary,
           textStyle: {
-            color: themeStructure?.colors.modes[mode].atmo1,
+            color: colors?.atmo1,
           },
         },
       },
