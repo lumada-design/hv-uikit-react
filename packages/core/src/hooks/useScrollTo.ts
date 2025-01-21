@@ -45,7 +45,9 @@ export const useScrollTo = (
   const RETRY_MAX: number = 5;
   const [selectedIndex, setSelectedIndex] = useState<number>(selectedIndexProp);
 
-  const scrollEle = useRef<HTMLElement | (Window & typeof globalThis)>(window);
+  const scrollEle = useRef<HTMLElement | (Window & typeof globalThis) | null>(
+    typeof window !== "undefined" ? window : null,
+  );
   const requestedAnimationFrame = useRef(0);
   const lastContainerScrollTop = useRef<number>(0);
 
@@ -58,10 +60,12 @@ export const useScrollTo = (
   }, [selectedIndex]);
 
   useEffect(() => {
-    scrollEle.current =
-      (scrollElementId && document.getElementById(scrollElementId)) || window;
+    if (typeof window !== "undefined") {
+      scrollEle.current =
+        (scrollElementId && document.getElementById(scrollElementId)) || window;
 
-    lastContainerScrollTop.current = verticalScrollOffset(scrollEle.current);
+      lastContainerScrollTop.current = verticalScrollOffset(scrollEle.current);
+    }
   }, [scrollElementId]);
 
   const checkScroll = useCallback(
@@ -178,7 +182,9 @@ export const useScrollTo = (
   }, []);
 
   const baseUrl =
-    relativeLinks || window == null ? "" : window.location.href.split("#")[0];
+    relativeLinks || typeof window === "undefined" || window == null
+      ? ""
+      : window.location.href.split("#")[0];
 
   const elements = useMemo(
     () =>
