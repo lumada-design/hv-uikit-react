@@ -11,6 +11,7 @@ const styles: { truncate: React.CSSProperties } = {
   },
 };
 
+/** @deprecated wrap your component with `HvTooltip` */
 export const withTooltip =
   (
     Component: React.FunctionComponent,

@@ -19,6 +19,7 @@ export interface HvLinkProps extends HvBaseProps<HTMLAnchorElement, "onClick"> {
   classes?: HvLinkClasses;
 }
 
+/** @deprecated use `<HvTypography link component="a" />` instead */
 export const HvLink = (props: HvLinkProps) => {
   const {
     onClick,

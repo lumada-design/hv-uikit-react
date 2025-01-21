@@ -60,6 +60,7 @@ export interface HvKpiProps extends HvBaseProps<HTMLDivElement, "children"> {
  * Key Performance Indicator is a type of performance measurement. It monitors a business indicator
  * and its success/failure against a given target. KPIs are the first item read on a dashboard.
  * Communicates simple, immediate and vital information for operational decision making.
+ * @deprecated build KPIs with `HvCard`, or with your custom layouts
  */
 export const HvKpi = (props: HvKpiProps) => {
   const {
