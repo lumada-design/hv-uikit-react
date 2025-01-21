@@ -4,23 +4,23 @@ import {
   HvContainer,
   HvInput,
   HvPanel,
-  HvScrollToHorizontal,
-  HvScrollToHorizontalProps,
+  HvScrollToVertical,
+  HvScrollToVerticalProps,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-const meta: Meta<typeof HvScrollToHorizontal> = {
-  title: "Components/Scroll To/Horizontal",
-  component: HvScrollToHorizontal,
+const meta: Meta<typeof HvScrollToVertical> = {
+  title: "Components/ScrollToVertical",
+  component: HvScrollToVertical,
 };
 export default meta;
 
-export const Main: StoryObj<HvScrollToHorizontalProps> = {
+export const Main: StoryObj<HvScrollToVerticalProps> = {
   args: {
     navigationMode: "push",
-    position: "sticky",
-    tooltipPosition: "top",
+    position: "absolute",
+    tooltipPosition: "left",
     offset: 20,
   },
   argTypes: {
@@ -31,7 +31,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
     const options = [
       { label: "Server status summary", value: "mainId1" },
       { label: "Optimization", value: "mainId2" },
-      { label: "Performance analysis review", value: "mainId3" },
+      { label: "Performance analysis", value: "mainId3" },
       { label: "Insights", value: "mainId4" },
     ];
 
@@ -43,6 +43,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
         maxHeight: 400,
         overflow: "auto",
         padding: "0 20px",
+        width: "calc(100% - 60px)",
         "& > div": {
           minHeight: 400,
           backgroundColor: theme.colors.atmo3,
@@ -59,7 +60,7 @@ export const Main: StoryObj<HvScrollToHorizontalProps> = {
 
     return (
       <div>
-        <HvScrollToHorizontal
+        <HvScrollToVertical
           {...args}
           scrollElementId="pageContentId"
           options={options}
