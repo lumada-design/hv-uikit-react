@@ -36,14 +36,10 @@ import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
 import { AssetEvent, useServerData } from "../storiesUtils";
 
-const slide = keyframes`
-  0% { 
-    max-height: 0;
-  }
-  100% { 
-    max-height: 300px;
-  } 
-`;
+const slide = keyframes({
+  "0%": { maxHeight: 0 },
+  "100%": { maxHeight: 300 },
+});
 
 const classes = {
   sectionContent: css({
