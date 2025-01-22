@@ -15,6 +15,8 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     alignItems: "center",
     padding: theme.spacing("xs", 0),
     paddingLeft: theme.space.sm,
+    ...theme.typography.body,
+    color: theme.colors.base_dark,
   },
   action: {
     padding: theme.spacing("xs"),
@@ -40,5 +42,31 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   outContainer: {
     width: "100%",
     position: "relative",
+  },
+  messageContainer: {
+    wordBreak: "break-word",
+    maxWidth: 700,
+    overflow: "hidden",
+    marginRight: 10,
+  },
+  iconContainer: {
+    marginRight: theme.space.xs,
+    marginLeft: -theme.space.xs,
+  },
+  messageActions: {
+    flex: "0 0 auto",
+  },
+  actionContainer: {
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
+    justifyContent: "space-between",
+  },
+  actionsInnerContainer: {
+    flexDirection: "row",
+    marginTop: "8px", // avoid overlap with close button outline focus ring
+  },
+  closeAction: {
+    alignSelf: "flex-end",
   },
 });
