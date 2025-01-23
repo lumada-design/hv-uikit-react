@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.15.14](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.15.13...@hitachivantara/uikit-react-viz@5.15.14) (2025-01-23)
+
+### Bug Fixes
+
+- **VizProvider:** fallback to default theme ([6bb06b0](https://github.com/lumada-design/hv-uikit-react/commit/6bb06b0bedb90e41142f0e096bf0323177f61cff))
+
 ## [5.15.13](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-viz@5.15.12...@hitachivantara/uikit-react-viz@5.15.13) (2024-12-19)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-viz

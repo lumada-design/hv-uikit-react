@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.86.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.85.1...@hitachivantara/uikit-react-core@5.86.0) (2025-01-23)
+
+### Bug Fixes
+
+- **VizProvider:** fallback to default theme ([6bb06b0](https://github.com/lumada-design/hv-uikit-react/commit/6bb06b0bedb90e41142f0e096bf0323177f61cff))
+
+### Features
+
+- **BannerContent:** expose message & actions classes ([40dce6a](https://github.com/lumada-design/hv-uikit-react/commit/40dce6a2ccd4d320ed36a1f96725a58102e8a370))
+
 ## [5.85.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.85.0...@hitachivantara/uikit-react-core@5.85.1) (2025-01-20)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
