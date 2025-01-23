@@ -200,6 +200,8 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     number: renderNumberInputControl,
     text: renderInputControl,
     select: renderSelectControl,
+    // Some props are objects, for now lets return null and hide them but we should be able to edit objects on the playground controls too
+    object: () => null,
   };
 
   // Render the appropriate control or log an error if unsupported
