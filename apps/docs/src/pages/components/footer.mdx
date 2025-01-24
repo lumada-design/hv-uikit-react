@@ -1,0 +1,53 @@
+import { footerClasses, HvFooter } from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Footer", "core", footerClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvFooter}
+  componentName="HvFooter"
+  controls={{
+    name: {
+      defaultValue: "Pentaho+",
+    },
+    copyright: {
+      defaultValue: "© Hitachi Vantara LLC 2025. All Rights Reserved.",
+    },
+    links: {
+      defaultValue: "Privay Policy",
+    },
+  }}
+  decorator={(component) => <div className="w-full">{component}</div>}
+/>
+
+### Custom labels
+
+You can pass custom content to the `name`, `copyright`, and `links` props.
+
+```tsx live
+<HvFooter
+  className="w-full"
+  name={<HvTypography variant="title4">Pentaho+</HvTypography>}
+  copyright={
+    <HvTypography variant="caption1">Get a Grip On Your Data</HvTypography>
+  }
+  links={
+    <HvTypography link component="a" href="https://pentaho.com/">
+      Visit us
+    </HvTypography>
+  }
+/>
+```
+
+</Page>
