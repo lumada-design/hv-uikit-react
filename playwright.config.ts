@@ -37,20 +37,9 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
-      use: {
-        ...devices["Desktop Chrome"],
-        viewport: {
-          width: 1920,
-          height: 1080,
-        },
-      },
-    },
-    {
       name: "chrome",
       use: {
         ...devices["Desktop Chrome"],
-        channel: "chrome",
         viewport: {
           width: 1920,
           height: 1080,
