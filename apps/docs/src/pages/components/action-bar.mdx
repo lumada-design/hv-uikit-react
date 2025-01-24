@@ -1,0 +1,44 @@
+import { Callout } from "nextra/components";
+import {
+  actionBarClasses,
+  HvActionBar,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("ActionBar", "core", actionBarClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+### Usage
+
+```tsx live
+<HvActionBar className="gapxds">
+  <HvButton variant="secondaryGhost">Cancel</HvButton>
+  <div className="flex-1" aria-hidden="true">
+    &nbsp;
+  </div>
+  <HvButton variant="secondaryGhost">Save</HvButton>
+  <HvDropDownMenu
+    dataList={[
+      { id: "export", label: "Export" },
+      { id: "preview", label: "Preview" },
+    ]}
+  />
+</HvActionBar>
+```
+
+<Callout type="info">
+  Check the [Card](/components/card) component to see an example of the
+  `HvActionBar` in use.
+</Callout>
+
+</Page>

@@ -16,6 +16,9 @@ export interface HvActionBarProps extends HvBaseProps {
   classes?: HvActionBarClasses;
 }
 
+/**
+ * The Action Bar accommodates all the actions related to a specific task on a screen or pattern.
+ */
 export const HvActionBar = forwardRef<
   React.ComponentRef<"div">,
   HvActionBarProps
