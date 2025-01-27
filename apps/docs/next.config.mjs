@@ -20,14 +20,13 @@ export default withNextra({
   basePath: process.env.NEXTRA_BASE_PATH || "",
   transpilePackages: ["@hitachivantara/uikit-react-viz"],
   webpack: (config) => {
-    config.cache = false; // https://github.com/unocss/unocss/pull/1198
+    config.cache = false; // Disable cache for debugging
 
+    // String replacement for Vite's import.meta.env.DEV
     config.module.rules.push({
       test: /\.(tsx|ts)$/,
       use: [
         {
-          // Replace vite's import.meta.env.DEV for something compatible with NextJS
-          // https://nextjs.org/docs/app/building-your-application/upgrading/from-vite#step-7-migrate-the-environment-variables
           loader: "string-replace-loader",
           options: {
             search: "import.meta.env.DEV",
@@ -38,9 +37,15 @@ export default withNextra({
       ],
     });
 
-    // fix for error "Module not found: Can't resolve 'fs'" during build.
-    if (!config.resolve.fallback) config.resolve.fallback = {};
+    // Add raw file loader
+    config.module.rules.push({
+      test: /\.(tsx|ts|mdx)$/,
+      resourceQuery: /raw/,
+      use: "raw-loader",
+    });
 
+    // Fix for fs module not found
+    if (!config.resolve.fallback) config.resolve.fallback = {};
     config.resolve.fallback.fs = false;
 
     return config;
