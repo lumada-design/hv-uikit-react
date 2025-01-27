@@ -13,6 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
   hidden: { height: 0, display: "none" },
   header: {
     display: "flex",
+    gap: theme.space.xs,
     alignItems: "center",
     borderColor: "inherit",
     position: "relative",
