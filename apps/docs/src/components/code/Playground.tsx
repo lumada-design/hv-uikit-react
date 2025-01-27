@@ -105,7 +105,7 @@ const Playground = ({
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border border-[var(--uikit-colors-atmo4)] rounded-t-round">
         {/* Preview Area */}
-        <div className="flex justify-center items-center p-sm">
+        <div className="flex justify-center items-center p-sm overflow-auto">
           {decorator ? decorator(componentElement) : componentElement}
         </div>
 
@@ -128,7 +128,7 @@ const Playground = ({
       </div>
 
       {/* Code editor */}
-      <div className="max-h-72 overflow-auto rounded-b-round border border-[var(--uikit-colors-atmo4)] border-t-0">
+      <div className="max-h-72 overflow-auto rounded-b-round border border-[var(--uikit-colors-atmo4)] border-t-0 max-h-250px">
         <CodeEditor
           readOnly
           className="font-mono text-sm leading-2.2"
