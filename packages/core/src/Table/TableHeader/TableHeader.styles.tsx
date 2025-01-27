@@ -11,6 +11,9 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     textAlign: "left",
     padding: theme.spacing(0, 1, 0, 4),
     borderBottom: `1px solid ${theme.colors.atmo4}`,
+    ":has($resizable)": {
+      position: "relative",
+    },
   },
   head: {
     paddingTop: 8,
