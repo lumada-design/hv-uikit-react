@@ -6,7 +6,9 @@ import { Page } from "@docs/components/page/Page";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Snackbar", "core", snackbarClasses);
+  const meta = await getComponentData("Snackbar", "core", snackbarClasses, [
+    "SnackbarContent",
+  ]);
   return { props: { ssg: { meta } } };
 };
 
@@ -225,5 +227,10 @@ export default function Demo() {
   );
 }
 ```
+
+### Related components
+
+- [`HvSnackbarProvider`](/components/snackbar-provider)
+- [`HvBanner`](/components/banner)
 
 </Page>
