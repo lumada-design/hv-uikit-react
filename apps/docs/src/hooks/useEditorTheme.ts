@@ -9,9 +9,9 @@ const useEditorTheme = () => {
 
   return isMounted
     ? resolvedTheme === "dark"
-      ? themes.oceanicNext
-      : themes.github
-    : themes.github;
+      ? themes.oneDark
+      : themes.oneDark
+    : themes.oneDark;
 };
 
 export default useEditorTheme;

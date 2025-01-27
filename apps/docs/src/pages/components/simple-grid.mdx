@@ -7,8 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -16,9 +15,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Callout type="info">
   Please check the [`HvGrid`](/components/grid) component documentation for more
@@ -78,5 +75,3 @@ Use the `breakpoints` prop to define the number of columns and spacing for diffe
 ### Related components
 
 - [`HvGrid`](/components/grid)
-
-</Page>
