@@ -1,7 +1,14 @@
 export default {
-  "-- Examples": {
-    type: "separator",
-    title: "Examples",
+  index: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
   },
-  example: "Example",
+  tables: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };
