@@ -1,8 +1,7 @@
 import { dropdownClasses, HvDropdown } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -10,9 +9,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Playground
   Component={HvDropdown}
@@ -58,5 +55,3 @@ The items in the `values` prop can be can be customized, namely with an icon or 
 
 - [`HvFormElement`](/components/form-element)
 - [`HvSelect`](/components/select)
-
-</Page>

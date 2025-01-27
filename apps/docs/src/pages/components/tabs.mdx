@@ -2,8 +2,7 @@ import { Callout } from "nextra/components";
 import { HvTab, HvTabs, tabsClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -11,9 +10,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 ### Usage
 
@@ -204,5 +201,3 @@ export default function Demo() {
   );
 }
 ```
-
-</Page>

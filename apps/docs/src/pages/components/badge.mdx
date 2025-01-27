@@ -2,8 +2,7 @@ import { badgeClasses, HvBadge } from "@hitachivantara/uikit-react-core";
 import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -11,9 +10,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Playground
   Component={HvBadge}
@@ -115,5 +112,3 @@ If you want to specify a custom aria-label, ensure the badge has a `role`.
   aria-label="25 unread notifications"
 />
 ```
-
-</Page>

@@ -7,8 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -18,9 +17,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Playground
   Component={HvTreeView}
@@ -206,6 +203,7 @@ Sometimes the full tree data is unknown or paginated. This sample showcases how 
 
 ```tsx live
 import { forwardRef, useState } from "react";
+import { useHvTreeItem } from "@hitachivantara/uikit-react-core";
 
 const delay = (ms: number) =>
   new Promise((resolve) => {
@@ -320,6 +318,7 @@ The following example demonstrates a custom tree view that implements a common v
 
 ```tsx live
 import { forwardRef, useMemo, useState } from "react";
+import { useHvTreeItem } from "@hitachivantara/uikit-react-core";
 
 interface CustomTreeItemProps extends HvTreeItemProps {
   /** Triggered when the tree item is expanded */
@@ -427,5 +426,3 @@ export default function Demo() {
   );
 }
 ```
-
-</Page>
