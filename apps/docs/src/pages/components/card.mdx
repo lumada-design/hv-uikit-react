@@ -1,8 +1,7 @@
 import { cardClasses, HvCard } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -14,9 +13,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 ```tsx live
 <HvCard
@@ -109,6 +106,7 @@ You can mark a card as selectable by adding the `selectable` prop. The `selected
 
 ```tsx live
 import { useState } from "react";
+import { Cloud, Storage } from "@hitachivantara/uikit-react-icons";
 
 export default function Demo() {
   const [checked, setChecked] = useState(null);
@@ -192,5 +190,3 @@ const storages = [
   },
 ];
 ```
-
-</Page>
