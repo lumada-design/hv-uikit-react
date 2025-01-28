@@ -1,0 +1,99 @@
+import {
+  breadCrumbClasses,
+  HvBreadCrumb,
+} from "@hitachivantara/uikit-react-core";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("BreadCrumb", "core", breadCrumbClasses, [
+    "PathElement",
+  ]);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvBreadCrumb}
+  componentName="HvBreadCrumb"
+  controls={{
+    maxVisible: {
+      defaultValue: 4,
+    },
+  }}
+  componentProps={{
+    listRoute: [
+      { label: "Label 1", path: "#route1" },
+      { label: "Label 2", path: "#route2" },
+      { label: "Label 3", path: "#route3" },
+      { label: "Label 4", path: "#route4" },
+      { label: "Label 5", path: "#route5" },
+      { label: "Label 6", path: "#route6" },
+      { label: "Label 7", path: "#route7" },
+      { label: "Label 8", path: "#route8" },
+    ],
+  }}
+/>
+
+### From URL
+
+If you pass a URL in the `url` prop instead of using the `listRoute` prop, a breadcrumb will be generated from the various parts of the URL.
+Each part of the breadcrumb will link to the corresponding part of the URL.
+
+```tsx live
+<HvBreadCrumb
+  url="https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx"
+  aria-label="Breadcrumb"
+/>
+```
+
+### Custom path component
+
+You can use the `component` prop to pass a custom component to be renderer in each part of the breadcrumb.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvBreadCrumb
+      maxVisible={5}
+      listRoute={[
+        { label: "Label 1", path: "route1" },
+        { label: "Label 2", path: "route2" },
+        { label: "Label 3", path: "route3" },
+        { label: "Label 4", path: "route4" },
+        { label: "Label 5", path: "route5" },
+        { label: "Label 6", path: "route6" },
+        { label: "Label 7", path: "route7" },
+        { label: "Label 8", path: "route8" },
+      ].map(({ label, path }) => ({
+        label,
+        path: `#${path}`,
+        to: `#${path}`,
+        ariaLabel: label,
+      }))}
+      aria-label="Breadcrumb"
+      component={CustomNavLink}
+    />
+  );
+}
+
+const CustomNavLink = ({ children, to, ariaLabel, ...others }: any) => (
+  <a
+    href={to}
+    aria-label={ariaLabel}
+    onClick={() => console.log("clicked", to)}
+    // make sure to forward other props
+    {...others}
+  >
+    {children}
+  </a>
+);
+```
+
+</Page>
