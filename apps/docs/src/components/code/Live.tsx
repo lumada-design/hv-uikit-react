@@ -68,7 +68,7 @@ export const Live = ({ children }: LiveProps) => {
   return (
     <LiveProvider code={code} scope={{ ...scope, ...imports }}>
       {/* Live Preview */}
-      <LivePreview className="flex gap-3 p-2 mt-3 border border-[var(--uikit-colors-atmo4)] border-b-0 rounded-t-round" />
+      <LivePreview className="flex gap-3 p-2 mt-3 border border-[var(--uikit-colors-atmo4)] border-b-0 rounded-t-round overflow-auto" />
 
       {/* Toolbar */}
       <Toolbar
