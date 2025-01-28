@@ -238,16 +238,6 @@ const WidthGrid = forwardRef<
  *
  * It's based on the [Material UI Grid](https://mui.com/material-ui/react-grid/).
  *
- * The definitions were set following the Design System directives:
- *
- * | Breakpoint | Width (in px) | Gutters (in px) | Number of columns |
- * | ---------- | ------------- | --------------- | ----------------- |
- * | xs         | [0-600[       | 16              | 4                 |
- * | sm         | [600-960[     | 16              | 8                 |
- * | md         | [960-1270[     | 32              | 12                |
- * | lg         | [1270-1920[    | 32              | 12                |
- * | xl         | [1920-...[    | 32              | 12                |
- *
  * However, the number of columns is set to 12 for all breakpoints, as it serves most
  * of the use cases and simplifies the implementation.
  * To opt-in to the Design System directives, you can set the `columns` prop to `auto`.
