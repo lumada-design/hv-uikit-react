@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 import { useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
+import { CaretDown, Trash } from "@phosphor-icons/react";
 import {
   HvButton,
   HvTable,
@@ -13,7 +14,6 @@ import {
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
-import { Close } from "@hitachivantara/uikit-react-icons";
 
 // ID     Name                        Age Location    Occupation       Salary   Department    Email                     Phone
 const baseData = `
@@ -48,8 +48,6 @@ export function Component() {
   );
 }
 
-const boxShadow = `1px 0 1px 1px currentColor, -1px 0 1px currentColor`;
-
 const classes = {
   crosshairContainer: css({
     position: "absolute",
@@ -62,25 +60,32 @@ const classes = {
     },
   }),
   crosshairHover: css({
-    width: 1,
-    backgroundColor: theme.colors.neutral,
-    color: theme.alpha(theme.colors.neutral, 0.2),
-    boxShadow,
+    width: 2,
+    color: theme.colors.primary,
   }),
   crosshairColumn: css({
     pointerEvents: "auto",
+    paddingRight: "0.5ch",
+
+    color: theme.colors.pp.divider,
 
     ":hover": {
-      cursor: "pointer",
+      cursor: "ew-resize",
+      color: theme.colors.primary,
+    },
+
+    ":not(:hover)": {
+      "& > button": {
+        display: "none",
+      },
       "& > div": {
-        backgroundColor: theme.colors.negative,
-        color: theme.alpha("negative", 0.2),
-        boxShadow,
+        borderStyle: "solid",
       },
     },
-    "& > div": {
-      backgroundColor: theme.colors.pp.dividerDimmed, // `divider`is barely visible
-    },
+  }),
+  line: css({
+    height: "100%",
+    borderLeft: `2px dashed currentcolor`,
   }),
   headerCell: css({
     position: "relative",
@@ -91,17 +96,6 @@ const classes = {
     minHeight: 48,
 
     backgroundColor: theme.colors.atmo2,
-    paddingLeft: 1,
-
-    "& button": {
-      position: "absolute",
-      top: 0,
-      right: 0,
-      cursor: "pointer",
-    },
-    ":not(:hover) button": {
-      display: "none",
-    },
   }),
 };
 
@@ -128,7 +122,7 @@ function MagicTable({
   const columns = useMemo(() => {
     return Object.keys(columnsProp).length > 0
       ? columnsProp
-      : { 0: getColumnName(0) };
+      : { 0: getColumnName(1) };
   }, [columnsProp, getColumnName]);
 
   /** adds the column on `index`, or removes when existing  */
@@ -149,7 +143,7 @@ function MagicTable({
   }
 
   return (
-    <HvTableContainer className="relative max-h-420px font-mono">
+    <HvTableContainer className="relative font-mono w-fit max-h-420px">
       <div
         className="invisible h-0 absolute font-mono"
         ref={(el) => {
@@ -162,7 +156,7 @@ function MagicTable({
       </div>
       <HvTable
         ref={tableRef}
-        className="cursor-ns-resize"
+        // className="cursor-ew-resize"
         onClick={(evt) => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -201,7 +195,7 @@ function MagicTable({
         </HvTableHead>
         <HvTableBody>
           <HvTableRow>
-            <HvTableCell className="p-0">
+            <HvTableCell className="p-0 select-none">
               <pre>{data}</pre>
             </HvTableCell>
           </HvTableRow>
@@ -228,23 +222,11 @@ function MagicCell({
   return (
     <HvTableCell className={classes.headerCell} {...others}>
       <HvTypography
-        variant="label"
-        className="text-wrap break-all line-clamp-2"
+        variant="captionLabel"
+        className="pl-2px pr-1px text-wrap break-all line-clamp-2"
       >
         {column.name}
       </HvTypography>
-      {column.index > 0 && (
-        <HvButton
-          icon
-          onClick={(evt) => {
-            evt.preventDefault();
-            evt.stopPropagation();
-            onColumnRemove?.(column.index);
-          }}
-        >
-          <Close size="xs" className="size-20px" />
-        </HvButton>
-      )}
     </HvTableCell>
   );
 }
@@ -264,19 +246,72 @@ function MagicOverlay({
   return (
     <div className={classes.crosshairContainer} style={{ height }}>
       {Object.keys(columns).map((index) => (
-        <div
+        <MagicLine
           key={index}
-          className={classes.crosshairColumn}
-          style={{ left: `calc(${index}ch - 4px)` }}
-          onClick={() => onColumnRemove(Number(index))}
-        >
-          <div className="w-1px h-full mx-3px bg-current" />
-        </div>
+          index={Number(index)}
+          onColumnMove={() => {}}
+          onColumnRemove={onColumnRemove}
+        />
       ))}
       <div
         className={classes.crosshairHover}
         style={{ left: `${hoverColumn}ch` }}
-      />
+      >
+        <div className="relative size-16px -left-7px -top-4px">
+          <CaretDown
+            weight="fill"
+            fontSize={16}
+            style={{ color: theme.colors.negative }}
+          />
+        </div>
+        <div className={classes.line} />
+      </div>
+    </div>
+  );
+}
+
+function MagicLine({
+  index,
+  onColumnMove,
+  onColumnRemove,
+}: {
+  index: number;
+  onColumnMove: (index: number, newIndex: number) => void;
+  onColumnRemove: (index: number) => void;
+}) {
+  const [state, setState] = useState<"idle" | "delete" | "drag">("idle");
+
+  if (index === 0) return null; // never render first column's line
+
+  return (
+    <div
+      key={index}
+      className={classes.crosshairColumn}
+      style={{ left: `calc(${index}ch - 1px)` }}
+      onClick={() => onColumnRemove(Number(index))}
+      onMouseDown={() => {
+        setState("drag");
+      }}
+      onMouseUp={() => {
+        if (state === "idle") return;
+        if (state === "delete") {
+          onColumnRemove(Number(index));
+        } else if (state === "drag") {
+          onColumnMove(index, 0 /* newIndex */);
+        }
+      }}
+    >
+      <HvButton
+        icon
+        variant="subtle"
+        aria-label="Delete"
+        className="relative float-right top-xs left-xxs"
+      >
+        <div className="p-4px">
+          <Trash fontSize={16} />
+        </div>
+      </HvButton>
+      <div className={classes.line} />
     </div>
   );
 }
