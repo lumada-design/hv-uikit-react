@@ -1,0 +1,102 @@
+import { Callout } from "nextra/components";
+import {
+  globalActionsClasses,
+  HvButton,
+  HvDropDownMenu,
+  HvGlobalActions,
+  HvIconButton,
+} from "@hitachivantara/uikit-react-core";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "GlobalActions",
+    "core",
+    globalActionsClasses,
+  );
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+GlobalActions is of variant `global` by default, meaning that an `h1` element will be rendered and it will be `sticky` by default.<br />
+The `section` variant of Global Actions should be used to group related blocks of information. Use with parsimony, you might not need such a clear separator.
+
+<Playground
+  Component={HvGlobalActions}
+  componentName="HvGlobalActions"
+  controls={{
+    variant: { defaultValue: "global" },
+    title: { defaultValue: "Title" },
+    position: { defaultValue: "sticky" },
+  }}
+  componentProps={{
+    backButton: (
+      <HvIconButton title="Back">
+        <Backwards />
+      </HvIconButton>
+    ),
+  }}
+  decorator={(component) => <div className="w-full">{component}</div>}
+>
+  <HvButton variant="primary">Save</HvButton>
+  <HvButton variant="secondarySubtle">Reset</HvButton>
+  <HvDropDownMenu
+    placement="left"
+    dataList={[
+      { label: "Action 1" },
+      { label: "Action 2" },
+      { label: "Action 3" },
+    ]}
+  />
+</Playground>
+
+### Custom content
+
+The content of the Global Actions can be customized. This is useful when you want to add different elements other than the title and actions.
+
+```tsx live
+<div className="w-full">
+  <HvGlobalActions
+    backButton={
+      <HvIconButton title="Go back">
+        <Backwards />
+      </HvIconButton>
+    }
+    title={
+      <>
+        <Home title="Home" />
+        <HvBreadCrumb
+          listRoute={[
+            { label: "Label 1", path: "#route1" },
+            { label: "Label 2", path: "#route2" },
+            { label: "Label 3", path: "#route3" },
+            { label: "Label 4", path: "#route4" },
+            { label: "Label 5", path: "#route5" },
+          ]}
+          maxVisible={2}
+        />
+      </>
+    }
+  >
+    <HvButton variant="secondaryGhost">Primary</HvButton>
+    <HvDropDownMenu
+      placement="left"
+      dataList={[
+        { label: "Action 2" },
+        { label: "Action 3" },
+        { label: "Action 4" },
+      ]}
+    />
+  </HvGlobalActions>
+</div>
+```
+
+</Page>
