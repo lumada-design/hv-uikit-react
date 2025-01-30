@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { css } from "@emotion/css";
 import { CaretDown, Trash } from "@phosphor-icons/react";
 import {
@@ -39,9 +39,7 @@ const initialColumn = -1;
 
 export function Component() {
   const data = baseData.trimStart().repeat(4);
-  const [columns, setColumns] = useState<Columns>({});
-
-  console.log(columns);
+  const [columns, setColumns] = useState<Columns>({ 0: getName() }); // initial column required
 
   return (
     <MagicTable data={data} columns={columns} onColumnsChange={setColumns} />
@@ -65,27 +63,22 @@ const classes = {
   }),
   crosshairColumn: css({
     pointerEvents: "auto",
-    paddingRight: "0.5ch",
+    padding: "0 0.5ch",
 
     color: theme.colors.pp.divider,
 
-    ":hover": {
+    ":hover, &[data-state='drag']": {
       cursor: "ew-resize",
       color: theme.colors.primary,
     },
-
-    ":not(:hover)": {
-      "& > button": {
-        display: "none",
-      },
-      "& > div": {
-        borderStyle: "solid",
-      },
+    // show delete button on hover when not dragging
+    ":hover:not([data-state='drag']) > button": {
+      display: "inline-flex",
     },
   }),
   line: css({
     height: "100%",
-    borderLeft: `2px dashed currentcolor`,
+    borderLeft: `2px solid currentcolor`,
   }),
   headerCell: css({
     position: "relative",
@@ -101,7 +94,7 @@ const classes = {
 
 function MagicTable({
   data,
-  columns: columnsProp,
+  columns,
   onColumnsChange,
 }: {
   data: string;
@@ -112,23 +105,10 @@ function MagicTable({
   const [charWidth, setCharWidth] = useState(8);
   const tableRef = useRef<HTMLTableElement>(null);
 
-  const getColumnName = useMemo(() => {
-    let i = 1;
-    return function getColumnName(index?: number) {
-      return `Field ${index ?? i++}`;
-    };
-  }, []);
-
-  const columns = useMemo(() => {
-    return Object.keys(columnsProp).length > 0
-      ? columnsProp
-      : { 0: getColumnName(1) };
-  }, [columnsProp, getColumnName]);
-
   /** adds the column on `index`, or removes when existing  */
   function handleColumnToggle(index: number) {
     if (index === 0) return;
-    const newCols = { ...columns, [index]: getColumnName() };
+    const newCols = { ...columns, [index]: getName(columns) };
     if (columns[index]) {
       delete newCols[index];
     }
@@ -141,6 +121,21 @@ function MagicTable({
     delete newCols[index];
     onColumnsChange(newCols);
   }
+
+  function handleColumnMove(index: number, newIndex: number) {
+    if (index === 0 || newIndex === 0) return;
+    const newCols = { ...columns };
+    const colName = newCols[index];
+    delete newCols[index];
+    newCols[newIndex] = colName;
+    onColumnsChange(newCols);
+  }
+
+  const shouldHideHover =
+    hoverColumn === -1 ||
+    Object.keys(columns).some(
+      (idx) => Math.abs(hoverColumn - Number(idx)) <= 2,
+    );
 
   return (
     <HvTableContainer className="relative font-mono w-fit max-h-420px">
@@ -180,7 +175,7 @@ function MagicTable({
           <HvTableRow className="flex">
             {Object.entries(columns).map(([index, name], i, cols) => (
               <MagicCell
-                key={index}
+                key={name}
                 column={{ index: Number(index), name }}
                 onColumnRemove={handleColumnRemove}
                 style={{
@@ -201,12 +196,36 @@ function MagicTable({
           </HvTableRow>
         </HvTableBody>
       </HvTable>
-      <MagicOverlay
-        hoverColumn={hoverColumn}
-        height={tableRef.current?.clientHeight}
-        columns={columns}
-        onColumnRemove={handleColumnRemove}
-      />
+      <div
+        className={classes.crosshairContainer}
+        style={{ height: tableRef.current?.clientHeight }}
+      >
+        {Object.entries(columns).map(([index, name]) => (
+          <ColumnSeparatorLine
+            key={name}
+            charWidth={charWidth}
+            index={Number(index)}
+            onColumnMove={handleColumnMove}
+            onColumnRemove={handleColumnRemove}
+          />
+        ))}
+        <div
+          className={classes.crosshairHover}
+          style={{
+            left: `${hoverColumn}ch`,
+            display: shouldHideHover ? "none" : undefined,
+          }}
+        >
+          <div className="relative size-16px -left-7px -top-4px">
+            <CaretDown
+              weight="fill"
+              fontSize={16}
+              style={{ color: theme.colors.negative }}
+            />
+          </div>
+          <div className={classes.line} style={{ borderStyle: "dashed" }} />
+        </div>
+      </div>
     </HvTableContainer>
   );
 }
@@ -231,81 +250,65 @@ function MagicCell({
   );
 }
 
-/** table overlay line separators */
-function MagicOverlay({
-  height,
-  hoverColumn,
-  columns,
-  onColumnRemove,
-}: {
-  height?: number;
-  hoverColumn: number;
-  columns: Columns;
-  onColumnRemove: (index: number) => void;
-}) {
-  return (
-    <div className={classes.crosshairContainer} style={{ height }}>
-      {Object.keys(columns).map((index) => (
-        <MagicLine
-          key={index}
-          index={Number(index)}
-          onColumnMove={() => {}}
-          onColumnRemove={onColumnRemove}
-        />
-      ))}
-      <div
-        className={classes.crosshairHover}
-        style={{ left: `${hoverColumn}ch` }}
-      >
-        <div className="relative size-16px -left-7px -top-4px">
-          <CaretDown
-            weight="fill"
-            fontSize={16}
-            style={{ color: theme.colors.negative }}
-          />
-        </div>
-        <div className={classes.line} />
-      </div>
-    </div>
-  );
-}
-
-function MagicLine({
+function ColumnSeparatorLine({
   index,
+  charWidth,
   onColumnMove,
   onColumnRemove,
 }: {
   index: number;
+  charWidth: number;
   onColumnMove: (index: number, newIndex: number) => void;
   onColumnRemove: (index: number) => void;
 }) {
-  const [state, setState] = useState<"idle" | "delete" | "drag">("idle");
+  const stateRef = useRef<"idle" | "delete" | "drag">("idle");
 
   if (index === 0) return null; // never render first column's line
 
   return (
     <div
-      key={index}
+      data-state={stateRef.current}
       className={classes.crosshairColumn}
-      style={{ left: `calc(${index}ch - 1px)` }}
-      onClick={() => onColumnRemove(Number(index))}
-      onMouseDown={() => {
-        setState("drag");
-      }}
-      onMouseUp={() => {
-        if (state === "idle") return;
-        if (state === "delete") {
-          onColumnRemove(Number(index));
-        } else if (state === "drag") {
-          onColumnMove(index, 0 /* newIndex */);
-        }
+      style={{ left: `calc(${index}ch - 0.5ch - 1px)` }}
+      onMouseDown={(evt) => {
+        const el = evt.currentTarget.parentElement?.parentElement;
+        if (!el) return;
+
+        el.style.userSelect = "none";
+        stateRef.current = "delete";
+
+        const abortController = new AbortController();
+
+        el.addEventListener(
+          "mousemove",
+          (evt) => {
+            stateRef.current = "drag";
+            const { left } = el.getBoundingClientRect();
+            const offsetX = evt.clientX - left;
+            const col = getColumn(offsetX, charWidth);
+            onColumnMove(index, col);
+          },
+          { signal: abortController.signal },
+        );
+        el.addEventListener(
+          "mouseup",
+          () => {
+            el.style.userSelect = "";
+            if (stateRef.current === "delete") {
+              onColumnRemove(index);
+            }
+            stateRef.current = "idle";
+            abortController.abort();
+          },
+          { signal: abortController.signal },
+        );
       }}
     >
       <HvButton
         icon
         variant="subtle"
         aria-label="Delete"
-        className="relative float-right top-xs left-xxs"
+        className="hidden relative float-right top-xs left-xxs"
       >
         <div className="p-4px">
           <Trash fontSize={16} />
@@ -314,6 +317,14 @@ function MagicLine({
       <div className={classes.line} />
     </div>
   );
+}
+
+function getName(columns?: Columns) {
+  const index = Object.values(columns || {})
+    .map((v) => Number(v.split(" ")[1]))
+    .toSorted((a, b) => a - b)
+    .at(-1);
+  return `Field ${(index ?? 0) + 1}`;
 }
 
 function getColumn(offsetX: number, charWidth: number) {
