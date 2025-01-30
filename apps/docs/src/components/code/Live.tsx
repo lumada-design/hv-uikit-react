@@ -54,7 +54,7 @@ export const Live = ({ children }: LiveProps) => {
 
   // Extract components, hooks and icons from the code
   const hvComponents = useMemo(
-    () => extractMatches(code, /\b(?:Hv|use)[A-Za-z0-9_]*\b/g),
+    () => extractMatches(code, /\b(?:Hv|use|hv)[A-Za-z0-9_]*\b/g),
     [code],
   );
   const hvIcons = useMemo(
