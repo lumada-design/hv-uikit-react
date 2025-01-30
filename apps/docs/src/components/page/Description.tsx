@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { useData } from "nextra/hooks";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
@@ -11,7 +12,9 @@ export const Description = () => {
   return (
     <>
       <HvTypography variant="title1">{meta.component}</HvTypography>
-      <p>{meta.docgen?.description}</p>
+      <ReactMarkdown className="markdown">
+        {meta.docgen?.description}
+      </ReactMarkdown>
       <div className="flex flex-row gap-4 mt-3">
         <div className="flex flex-row gap-1 items-center">
           <GitHubLogo />
