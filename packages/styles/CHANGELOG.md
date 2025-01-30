@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.41.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.6...@hitachivantara/uikit-styles@5.41.0) (2025-01-30)
+
+### Features
+
+- **theme:** add xxs spacing ([951e3fa](https://github.com/lumada-design/hv-uikit-react/commit/951e3faac8698a9c4057c94f596fda96329b5917))
+
 ## [5.40.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.5...@hitachivantara/uikit-styles@5.40.6) (2024-12-19)
 
 ### Bug Fixes

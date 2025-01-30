@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.42.2...@hitachivantara/uikit-react-lab@5.43.0) (2025-01-30)
+
+### Features
+
+- **theme:** add xxs spacing ([951e3fa](https://github.com/lumada-design/hv-uikit-react/commit/951e3faac8698a9c4057c94f596fda96329b5917))
+
 ## [5.42.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.42.1...@hitachivantara/uikit-react-lab@5.42.2) (2025-01-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
