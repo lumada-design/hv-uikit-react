@@ -49,9 +49,9 @@ const defaultCodeEditorOptions: EditorProps["options"] = {
 };
 
 /**
- * A wrapper to the [**React Monaco editor**](https://github.com/suren-atoyan/monaco-react) with our styles.
+ * A wrapper to the [React Monaco editor](https://github.com/suren-atoyan/monaco-react) with our styles.
  * Please make sure you follow the instructions (found in the repository) to include the component.
- * Additional information regarding Tab trapping in Monaco, can be found [**here**](https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping).
+ * Additional information regarding Tab trapping in Monaco, can be found [here](https://github.com/microsoft/monaco-editor/wiki/Monaco-Editor-Accessibility-Guide#tab-trapping).
  */
 export const HvCodeEditor = ({
   classes: classesProp,
@@ -68,7 +68,7 @@ export const HvCodeEditor = ({
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
 
-  const language = languageProp ?? defaultLanguage;
+  const language = languageProp ?? editorProps?.language ?? defaultLanguage;
 
   const editorRef = useRef<any>(null);
   const completionProviderRef = useRef<any>(null);

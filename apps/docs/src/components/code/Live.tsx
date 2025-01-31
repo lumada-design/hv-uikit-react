@@ -7,6 +7,7 @@ import {
   LiveProvider,
 } from "react-live-runner";
 import useEditorTheme from "@docs/hooks/useEditorTheme";
+import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 
@@ -21,6 +22,7 @@ const imports = {
     react: React,
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
+    "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
   },
 };
 
@@ -32,7 +34,9 @@ const extractMatches = (code: string, regex: RegExp): string[] => [
 // Generate the scope for LiveProvider
 const generateScope = (hvComponents: string[], hvIcons: string[]) => {
   const components = hvComponents.reduce<Record<string, any>>((acc, name) => {
-    const component = HvCore[name as keyof typeof HvCore];
+    const component =
+      HvCore[name as keyof typeof HvCore] ||
+      HvCodeEditor[name as keyof typeof HvCodeEditor];
     if (component) acc[name] = component;
     return acc;
   }, {});
@@ -54,7 +58,7 @@ export const Live = ({ children }: LiveProps) => {
 
   // Extract components, hooks and icons from the code
   const hvComponents = useMemo(
-    () => extractMatches(code, /\b(?:Hv|use)[A-Za-z0-9_]*\b/g),
+    () => extractMatches(code, /\b(?:Hv|use|hv)[A-Za-z0-9_]*\b/g),
     [code],
   );
   const hvIcons = useMemo(
@@ -68,7 +72,7 @@ export const Live = ({ children }: LiveProps) => {
   return (
     <LiveProvider code={code} scope={{ ...scope, ...imports }}>
       {/* Live Preview */}
-      <LivePreview className="flex gap-3 p-2 mt-3 border border-[var(--uikit-colors-atmo4)] border-b-0 rounded-t-round overflow-auto" />
+      <LivePreview className="flex gap-3 p-2 mt-3 border border-[var(--uikit-colors-atmo4)] border-b-0 rounded-t-round overflow-auto [&>*:first-child]:w-full" />
 
       {/* Toolbar */}
       <Toolbar

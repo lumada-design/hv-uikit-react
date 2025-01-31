@@ -96,3 +96,7 @@ body,
     display: none !important;
   }
 }
+
+.markdown a {
+  color: var(--uikit-colors-primary);
+}
