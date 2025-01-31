@@ -10,6 +10,7 @@ import useEditorTheme from "@docs/hooks/useEditorTheme";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
+import * as HvLab from "@hitachivantara/uikit-react-lab";
 
 import { Toolbar } from "./Toolbar";
 
@@ -23,6 +24,7 @@ const imports = {
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
+    "@hitachivantara/uikit-react-lab": HvLab,
   },
 };
 
@@ -36,7 +38,8 @@ const generateScope = (hvComponents: string[], hvIcons: string[]) => {
   const components = hvComponents.reduce<Record<string, any>>((acc, name) => {
     const component =
       HvCore[name as keyof typeof HvCore] ||
-      HvCodeEditor[name as keyof typeof HvCodeEditor];
+      HvCodeEditor[name as keyof typeof HvCodeEditor] ||
+      HvLab[name as keyof typeof HvLab];
     if (component) acc[name] = component;
     return acc;
   }, {});
