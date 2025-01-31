@@ -9,6 +9,7 @@ import {
 import useEditorTheme from "@docs/hooks/useEditorTheme";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
+import * as HvLab from "@hitachivantara/uikit-react-lab";
 
 import { Toolbar } from "./Toolbar";
 
@@ -21,6 +22,7 @@ const imports = {
     react: React,
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
+    "@hitachivantara/uikit-react-lab": HvLab,
   },
 };
 
@@ -32,7 +34,8 @@ const extractMatches = (code: string, regex: RegExp): string[] => [
 // Generate the scope for LiveProvider
 const generateScope = (hvComponents: string[], hvIcons: string[]) => {
   const components = hvComponents.reduce<Record<string, any>>((acc, name) => {
-    const component = HvCore[name as keyof typeof HvCore];
+    const component =
+      HvCore[name as keyof typeof HvCore] || HvLab[name as keyof typeof HvLab];
     if (component) acc[name] = component;
     return acc;
   }, {});

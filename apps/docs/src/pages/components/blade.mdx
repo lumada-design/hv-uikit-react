@@ -1,0 +1,108 @@
+import { bladeClasses, HvBlade } from "@hitachivantara/uikit-react-lab";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Blade", "lab", bladeClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Playground
+  Component={HvBlade}
+  componentName="HvBlade"
+  controls={{
+    label: {
+      defaultValue: "Show answer",
+    },
+    fullWidth: {
+      defaultValue: false,
+    },
+    disabled: {
+      defaultValue: false,
+    },
+  }}
+  componentProps={{
+    containerProps: {
+      style: {
+        whiteSpace: "nowrap",
+      },
+    },
+  }}
+  decorator={(component) => <div className="flex w-full">{component}</div>}
+>
+  <div className="p-xs">The answer to all things is 42.</div>
+</Playground>
+
+### Content
+
+The blade can have any content as it's label or children.
+
+```tsx live
+<HvBlade
+  label={
+    <div className="px-xs flex items-center">
+      <HvTypography>Show Tags</HvTypography>
+      <DropRight />
+    </div>
+  }
+  classes={{
+    root: "min-w-min",
+    button: "flex justify-center items-center",
+    container: "flex items-center",
+  }}
+>
+  <div className="p-xs flex items-center gap-xs">
+    <HvTag label="Tag 1" color="positive_20" />
+    <HvTag label="Tag 2" color="neutral_20" />
+    <HvTag label="Tag 3" color="warning_20" />
+  </div>
+</HvBlade>
+```
+
+### Controlled
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [expandedState, setExpandedState] = useState(false);
+
+  const handleToggle = (newState?: boolean) => {
+    setExpandedState(newState ?? ((oldState) => !oldState));
+  };
+
+  return (
+    <>
+      <div className="flex gap-xs mb-xs">
+        <HvButton variant="secondarySubtle" onClick={() => handleToggle()}>
+          Toggle
+        </HvButton>
+        <HvButton variant="secondarySubtle" onClick={() => handleToggle(true)}>
+          Open
+        </HvButton>
+        <HvButton variant="secondarySubtle" onClick={() => handleToggle(false)}>
+          Close
+        </HvButton>
+      </div>
+      <div className="flex w-full">
+        <HvBlade
+          label="Show answer"
+          onChange={(e, state) => handleToggle(state)}
+          expanded={expandedState}
+        >
+          <div className="p-xs">The answer to all things is 42.</div>
+        </HvBlade>
+      </div>
+    </>
+  );
+}
+```
+
+</Page>
