@@ -52,11 +52,11 @@ export const HvFilterGroupRightPanel = ({
       );
 
       return {
-        all: filteredOptions.map((option) => option.id) || [],
+        all: filteredOptions?.map((option) => option.id) || [],
         enabled:
           filteredOptions
-            .filter((option) => !option.disabled)
-            .map((option) => option.id) || [],
+            ?.filter((option) => !option.disabled)
+            ?.map((option) => option.id) || [],
       };
     }, [filterOptions, activeGroup, searchStr]);
 
