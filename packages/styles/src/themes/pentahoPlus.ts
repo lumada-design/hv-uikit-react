@@ -600,6 +600,33 @@ const pentahoPlus = makeTheme((theme) => ({
         selected: {},
       },
     },
+    HvIconContainer: {
+      classes: {
+        root: {
+          padding: 0,
+        },
+        xs: {
+          fontSize: 16,
+          padding: 0,
+        },
+        sm: {
+          fontSize: 20,
+          padding: 2,
+        },
+        md: {
+          fontSize: 26,
+          padding: 3,
+        },
+        lg: {
+          fontSize: 36,
+          padding: 6,
+        },
+        xl: {
+          fontSize: 48,
+          padding: 8,
+        },
+      },
+    },
     HvInlineEditor: {
       classes: {
         button: {

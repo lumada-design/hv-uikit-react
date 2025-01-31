@@ -123,6 +123,7 @@ export * from "./Tooltip";
 export * from "./TreeView";
 export * from "./VerticalNavigation";
 export * from "./IconButton";
+export * from "./IconContainer";
 export * from "./Skeleton";
 
 export * from "./hooks/useClickOutside";
