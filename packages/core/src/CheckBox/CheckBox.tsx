@@ -59,7 +59,7 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
  * A Checkbox is a mechanism that allows the user to select one or more options.
  *
  * Usually used in a Checkbox Group to present the user with a range of options from
- * which the user <b>may select any number of options</b> to complete their task.
+ * which the user **may select any number of options** to complete their task.
  *
  * It can also be used individually to represent the toggle of a single option, when
  * the Toggle Switch and Toggle Button aren't more appropriate.

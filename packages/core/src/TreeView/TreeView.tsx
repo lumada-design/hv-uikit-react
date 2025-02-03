@@ -34,7 +34,7 @@ export interface HvTreeViewProps<Multiple extends boolean | undefined>
  * Tree structures are built through composing the `HvTreeItem` component,
  * or a custom variation of it.
  *
- * It is based on MUI's [TreeView](https://mui.com/x/react-tree-view) component.
+ * It is based on the [MUI X TreeView](https://mui.com/x/react-tree-view) component.
  *
  * @example
  * ```tsx

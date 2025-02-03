@@ -114,6 +114,12 @@ export const useHvSnackbar = () => {
   );
 };
 
+/**
+ * A snackbar provider to control the stacking of multiple snackbars in the app.
+ *
+ * This component uses of the [Notistack](https://github.com/iamhosseindhv/notistack) library.
+ * Please refer to its [API Reference](https://notistack.com/v2.x/api-reference) for more complex usage scenarios.
+ */
 export const HvSnackbarProvider = ({
   children,
   notistackClassesOverride,

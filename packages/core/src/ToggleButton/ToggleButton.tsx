@@ -24,6 +24,9 @@ export interface HvToggleButtonProps
   ) => void;
 }
 
+/**
+ * Use when two instances are opposite and the on/off analogy doesn’t apply. Only well-known icons should be used, otherwise, use a single checkbox for the same situation.
+ */
 export const HvToggleButton = forwardRef<
   HTMLButtonElement,
   HvToggleButtonProps

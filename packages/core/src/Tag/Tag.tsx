@@ -65,7 +65,7 @@ export interface HvTagProps
  * Use tags to highlight an item's status for quick recognition and navigation
  * Use color to indicate meanings that users can learn and recognize across products
  *
- * It leverages the Chip component from Material UI
+ * It leverages the [MUI Chip](https://mui.com/material-ui/react-chip/) component
  */
 export const HvTag = forwardRef<
   // no-indent

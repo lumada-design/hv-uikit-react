@@ -1,3 +1,4 @@
+import { Callout } from "nextra/components";
 import { snackbarProviderClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -18,28 +19,22 @@ export const getStaticProps = async ({ params }) => {
 
 <Page>
 
-The UI Kit library provides a snackbar provider to control the stacking of multiple snackbars in the app.
-
-The provider is not meant to be 100% feature complete, but instead, ease the majority of use-cases we have been encountering. If you need any customization or extension to the behavior, please feel free to copy and customize it.
-
-This feature needs both the HvSnackbarProvider provider and the hook useHvSnackbar. The provider and the hook are wrappers of the [Notistack](https://github.com/iamhosseindhv/notistack) API.
-
-Ideally the `HvSnackbarProvider` should be at the top of the component tree of your application. This will allow the snackbar to be triggered in any page. For more information of the provider API check the [notistack documentation](https://iamhosseindhv.com/notistack/api).
+<Callout type="info">
+  The provider is not meant to be 100% feature complete, but instead, ease the
+  majority of use-cases we have been encountering. If you need any customization
+  or extension to the behavior, please feel free to copy and customize it.
+</Callout>
 
 ```tsx
-import { HvSnackbarProvider } from "@hitachivantara/uikit-react-core";
+import {
+  HvSnackbarProvider,
+  useHvSnackbar,
+} from "@hitachivantara/uikit-react-core";
 ```
 
 After adding the provider at the root of your app, you can call the `useHvSnackbar` at any component inside your app. This hook will allow you to request the rendering of a snackbar through the use of the `enqueueSnackbar` function or close one with `closeSnackbar`.
 
 ```tsx live
-import {
-  HvButton,
-  HvOverflowTooltip,
-  HvSnackbarProvider,
-  useHvSnackbar,
-} from "@hitachivantara/uikit-react-core";
-
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>
@@ -96,13 +91,6 @@ Internally, the `HvSnackbarProvider` uses the `HvSnackbarContent` to render the 
 Check the [`HvSnackbar`](/components/snackbar) documentation for more information.
 
 ```tsx live
-import {
-  HvButton,
-  HvOverflowTooltip,
-  HvSnackbarProvider,
-  useHvSnackbar,
-} from "@hitachivantara/uikit-react-core";
-
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>
@@ -145,13 +133,6 @@ Note, though, that you shouldn't have long messages displayed in a snackbar as i
 be dismissed automically after a some time.
 
 ```tsx live
-import {
-  HvButton,
-  HvOverflowTooltip,
-  HvSnackbarProvider,
-  useHvSnackbar,
-} from "@hitachivantara/uikit-react-core";
-
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>

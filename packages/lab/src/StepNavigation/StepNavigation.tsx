@@ -27,7 +27,7 @@ export { staticClasses as stepNavigationClasses };
 export type HvStepNavigationClasses = ExtractNames<typeof useClasses>;
 
 export interface HvStepNavigationProps extends HvBaseProps {
-  /** Type of step navigation. Values = {"Simple", "Default"} */
+  /** Type of step navigation. */
   type?: "Simple" | "Default";
   /** Steps to show on the component. */
   steps: Array<
@@ -41,9 +41,12 @@ export interface HvStepNavigationProps extends HvBaseProps {
       titleClassName?: string;
     }
   >;
-  /** Sets one of the standard sizes of the steps. */
+  /** Sets one of the standard sizes of the steps. @default useWidth()  */
   stepSize?: "xs" | "sm" | "md" | "lg" | "xl";
-  /** Width of the component element on each breakpoint screen resolution. */
+  /**
+   * Width of the component element on each breakpoint screen resolution.
+   * If undefined and the step component has no title, the width of the separator element will be 100px.
+   * */
   width?: { [breakpoint in HvBreakpoints]?: number };
   /** Defines either show a title or only a tooltip on each step component. */
   showTitles?: boolean;
@@ -54,22 +57,10 @@ export interface HvStepNavigationProps extends HvBaseProps {
 /**
  * Navigation page with steps.
  *
- * You need to define the <b>steps<b/> displayed on the component so that itself can be drawn on the UI.
- * On each step, you need to define a <b>state</b> - 'Pending', 'Failed', 'Completed', 'Current', 'Disabled' -
- * and a <b>title</b> to be shown as a tooltip or a text above of the step. You can also:
- * * Define a <b>className</b> on each step element;
- * * Define a <b>separatorClassName</b> to specify a className for the separator element. The default height
- * values of the separator element are 2px/3px on 'Simple'/'Default' layouts respectively;
- * * Define a <b>titleClassName</b> to specify a className for the title above each step element.
+ * You need to define the `steps` displayed on the component so that itself can be drawn on the UI.
+ * On each step, you need to define a `state` - 'Pending', 'Failed', 'Completed', 'Current', 'Disabled' -
+ * and a `title` to be shown as a tooltip or a text above of the step. You can also defined `className`, `separatorClassName`, and `titleClassName` to override the default styles.
  *
- * For the root element, you can:
- * * Define a <b>className</b>;
- * * Choose a <b>type</b> of layout: 'Simple' or 'Default';
- * * Choose the <b>stepSize</b> of the step component: "xs", "sm", "md", "lg", "xl". The default size will be
- * correspondent to the current media breakpoint;
- * * Choose either you want to <b>showTitles</b> near to each step component or a tooltip on hover;
- * * Define a <b>width</b> of the component. If you don't define any value and the step component has no title
- * displayed above, the width of the separator element will be 100px.
  * If the step component has titles, each one will have 215px of width by default.
  */
 export const HvStepNavigation = ({

@@ -121,10 +121,9 @@ const isSemantical = (color: HvColorAny) =>
   ["positive", "negative", "warning"].includes(color);
 
 /**
- * A Switch is <b>binary</b> and work as a digital on/off button.
+ * A Switch is **binary** and works as a digital on/off button.
  *
- * Use when two states are <b>opposite</b> and to trigger immediate
- * changes in the system.
+ * Use when two states are **opposite** and to trigger immediate changes in the system.
  */
 export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
   function HvSwitch(props, ref) {
