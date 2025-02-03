@@ -153,8 +153,8 @@ export function SplitterTable({
                   variant="captionLabel"
                   disableClear
                   classes={{
-                    root: "px-2px text-wrap break-all line-clamp-2 [&>*]:max-w-50px",
-                    button: "bg-transparent hover:bg-transparent p-0 [&>*]:m-0",
+                    root: "px-2px max-w-60px",
+                    button: "p-0 bg-transparent hover:bg-transparent [&>*]:m-0",
                     input: "ml-2px mr-0",
                     icon: "hidden",
                   }}
