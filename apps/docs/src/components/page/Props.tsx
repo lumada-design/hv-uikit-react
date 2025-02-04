@@ -28,13 +28,22 @@ const classes = {
 
 const reorderProps = (props: Record<string, PropItem>) =>
   Object.fromEntries(
-    Object.entries(props).sort(([keyA, a], [keyB, b]) =>
-      a.required === b.required
-        ? keyA.localeCompare(keyB)
-        : a.required
-          ? -1
-          : 1,
-    ),
+    Object.entries(props).sort(([keyA, a], [keyB, b]) => {
+      const aDeprecated =
+        a.description?.toLowerCase().includes("deprecated") ?? false;
+      const bDeprecated =
+        b.description?.toLowerCase().includes("deprecated") ?? false;
+
+      if (aDeprecated !== bDeprecated) {
+        return aDeprecated ? 1 : -1;
+      }
+
+      if (a.required !== b.required) {
+        return a.required ? -1 : 1;
+      }
+
+      return keyA.localeCompare(keyB);
+    }),
   );
 
 const columns: HvTableColumnConfig<PropItem, string>[] = [
@@ -79,7 +88,13 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
           Object.entries(propsObj).map(([key, propItem]) => (
             <HvTableRow key={key} className={classes.row}>
               <HvTableCell className="!pl-xs w-[25%]">
-                <code>{key}</code>
+                <code>
+                  {propItem.description.includes("deprecated") ? (
+                    <s>{key}</s>
+                  ) : (
+                    key
+                  )}
+                </code>
                 {propItem.required && <code className="text-negative">*</code>}
               </HvTableCell>
               <HvTableCell className="w-[30%]">
@@ -94,7 +109,17 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
                       {part.slice(1, -1)}
                     </code>
                   ) : (
-                    part
+                    part.split("@deprecated").map((part, index) => (
+                      <>
+                        {index > 0 && (
+                          <>
+                            <br />
+                            <br />
+                          </>
+                        )}
+                        {index === 0 ? part : `@deprecated${part}`}
+                      </>
+                    ))
                   ),
                 )}
               </HvTableCell>
