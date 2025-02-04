@@ -35,7 +35,6 @@ export const getStaticProps = async ({ params }) => {
       defaultValue: "sm",
     },
   }}
-  decorator={(component) => <div className="w-full">{component}</div>}
 >
   {Array.from({ length: 6 }, (_, i) => (
     <HvCard bgcolor="atmo2">

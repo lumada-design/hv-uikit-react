@@ -38,7 +38,9 @@ export const getStaticProps = async ({ params }) => {
     maxVisibleActions: { defaultValue: 2 },
     semantic: { defaultValue: false },
   }}
-  decorator={(component) => <div className="w-full">{component}</div>}
+  componentProps={{
+    className: "w-full",
+  }}
 />
 
 ### With content

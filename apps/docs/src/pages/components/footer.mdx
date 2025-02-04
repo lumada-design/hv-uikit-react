@@ -22,10 +22,12 @@ export const getStaticProps = async ({ params }) => {
       defaultValue: "© Hitachi Vantara LLC 2025. All Rights Reserved.",
     },
     links: {
-      defaultValue: "Privay Policy",
+      defaultValue: "Privacy Policy",
     },
   }}
-  decorator={(component) => <div className="w-full">{component}</div>}
+  componentProps={{
+    className: "w-full",
+  }}
 />
 
 ### Custom labels
