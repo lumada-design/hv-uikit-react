@@ -1,0 +1,154 @@
+import { Callout } from "nextra/components";
+import { dashboardClasses, HvDashboard } from "@hitachivantara/uikit-react-lab";
+
+import Playground from "@docs/components/code/Playground";
+import { Description } from "@docs/components/page/Description";
+import { Page } from "@docs/components/page/Page";
+import { getComponentData } from "@docs/utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Dashboard", "lab", dashboardClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Description />
+
+<Page>
+
+<Callout type="info">
+  This is a `lab` component and as such is not considered stable and may be
+  subject to breaking changes in future releases. You need to import it from
+  `@hitachivantara/uikit-react-lab`.
+</Callout>
+<br />
+
+### Usage
+
+The following example shows how to use the `HvDashboard` component. The `layout` prop allows you to define the layout of the dashboard.
+Please check the [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout?tab=readme-ov-file#grid-item-props) library documentation
+for information on the properties that can be used in the layout items. Each item in the layout should have a unique `key` that maps to the `i` property in the layout.
+
+```tsx live
+<HvDashboard
+  layout={[
+    { i: "1", x: 0, y: 0, w: 6, h: 2, isDraggable: false },
+    { i: "2", x: 6, y: 0, w: 4, h: 1, isResizable: false },
+    { i: "3", x: 6, y: 1, w: 6, h: 1, resizeHandles: ["e", "w"] },
+    { i: "4", x: 10, y: 0, w: 2, h: 1, static: true },
+  ]}
+>
+  {["1", "2", "3", "4"]
+    .map((id) => ({
+      id,
+      type: "txt",
+      label: `Item ${id}`,
+    }))
+    .map((item) => (
+      <HvSection
+        key={item.id}
+        title={<HvTypography variant="title3">{item.label}</HvTypography>}
+      />
+    ))}
+</HvDashboard>
+```
+
+### Items content
+
+You can use anything as a Dashboard item. The following example showcases a dashboard with different types of charts that you can resize and drag.
+Use the buttons to toggle dragging and resizing.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [canDrag, setCanDrag] = useState(false);
+  const [canResize, setCanResize] = useState(true);
+
+  return (
+    <HvVizProvider>
+      <div className="flex flex-col gap-xs">
+        <div className="flex gap-sm">
+          <HvButton
+            variant="secondaryGhost"
+            startIcon={<Tool />}
+            onClick={() => setCanDrag((prev) => !prev)}
+          >
+            {`Drag is ${canDrag ? "enabled" : "disabled"}`}
+          </HvButton>
+          <HvButton
+            variant="secondaryGhost"
+            startIcon={<Tool />}
+            onClick={() => setCanResize((prev) => !prev)}
+          >
+            {`Resize is ${canResize ? "enabled" : "disabled"}`}
+          </HvButton>
+        </div>
+        <HvDashboard
+          margin={[16, 16]}
+          isDraggable={canDrag}
+          isResizable={canResize}
+          layout={dataDrivenItems.map(({ id }, i) => ({
+            i: id,
+            x: (i % 2) * (12 / 2),
+            y: i * 4,
+            w: 12 / 2,
+            h: 2,
+          }))}
+        >
+          {dataDrivenItems.map((item) => {
+            const { id, type, ...props } = item;
+            const Component = componentMap[type];
+
+            if (!Component) {
+              return (
+                <div key={item.id}>❌ Cannot render {type} dashboard item</div>
+              );
+            }
+
+            return (
+              <div key={item.id} className="flex">
+                <HvSection
+                  classes={{ content: "h-full" }}
+                  title={
+                    <HvTypography
+                      variant="title3"
+                      className="capitalize"
+                    >{`${item.type} chart`}</HvTypography>
+                  }
+                >
+                  <Component {...props} />
+                </HvSection>
+              </div>
+            );
+          })}
+        </HvDashboard>
+      </div>
+    </HvVizProvider>
+  );
+}
+
+const itemIds = ["bar", "line", "donut", "bar"] as const;
+
+const dataDrivenItems = itemIds.map((type, i) => ({
+  id: `${type}-${i}`,
+  type,
+  data: new Map<string, (string | number)[]>()
+    .set("Group", ["Group 1", "Group 2", "Group 3"])
+    .set("Sales Target", [2300, 1000, 7800])
+    .set("Sales Per Rep", [6000, 3900, 1000])
+    .set("Monthly Sales", [3700, 6700, 1100])
+    .set("Target", [2100, 7700, 3000])
+    .set("Cash", [500, 7600, 7800]),
+  groupBy: "Group",
+  measures: ["Sales Target", "Sales Per Rep", "Monthly Sales", "Target"],
+  measure: "Sales Target",
+}));
+
+const componentMap: Record<(typeof itemIds)[number], any> = {
+  bar: HvBarChart,
+  line: HvLineChart,
+  donut: HvDonutChart,
+};
+```
+
+</Page>

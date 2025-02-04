@@ -11,6 +11,7 @@ import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 import * as HvLab from "@hitachivantara/uikit-react-lab";
+import * as HvViz from "@hitachivantara/uikit-react-viz";
 
 import { Toolbar } from "./Toolbar";
 
@@ -25,6 +26,7 @@ const imports = {
     "@hitachivantara/uikit-react-icons": HvIcons,
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
     "@hitachivantara/uikit-react-lab": HvLab,
+    "@hitachivantara/uikit-react-code-viz": HvViz,
   },
 };
 
@@ -39,7 +41,8 @@ const generateScope = (hvComponents: string[], hvIcons: string[]) => {
     const component =
       HvCore[name as keyof typeof HvCore] ||
       HvCodeEditor[name as keyof typeof HvCodeEditor] ||
-      HvLab[name as keyof typeof HvLab];
+      HvLab[name as keyof typeof HvLab] ||
+      HvViz[name as keyof typeof HvViz];
     if (component) acc[name] = component;
     return acc;
   }, {});
