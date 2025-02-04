@@ -31,7 +31,7 @@ export const getStaticProps = async ({ params }) => {
       defaultValue: false,
     },
   }}
-  decorator={(comp) => <div className="w-190px">{comp}</div>}
+  decorator={(children) => <div className="w-190px">{children}</div>}
   children={<div>My skeleton example content</div>}
 />
 

@@ -26,9 +26,7 @@ export const getStaticProps = async ({ params }) => {
     multiSelect: { defaultValue: false },
     disableSelection: { defaultValue: false },
   }}
-  decorator={(component) => (
-    <HvPanel style={{ width: 300 }}>{component}</HvPanel>
-  )}
+  decorator={(children) => <HvPanel className="w-300px">{children}</HvPanel>}
 >
   <HvTreeItem nodeId="1" label="Applications">
     <HvTreeItem nodeId="10" label="Calendar.app" />

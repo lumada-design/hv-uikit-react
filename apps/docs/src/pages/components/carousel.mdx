@@ -28,12 +28,13 @@ export const getStaticProps = async ({ params }) => {
     showFullscreen: { defaultValue: true },
     controlsPosition: { defaultValue: "top" },
   }}
+  decorator={(children) => <div className="overflow">{children}</div>}
 >
   {[...Array(7).keys()].map((i) => (
     <HvCarouselSlide
-      key={`https://lumada-design.github.io/assets/landscape${i + 1}.jpg`}
+      key={i}
       src={`https://lumada-design.github.io/assets/landscape${i + 1}.jpg`}
-      alt={`image-${i}`}
+      alt={`landscape ${i + 1}`}
     />
   ))}
 </Playground>
