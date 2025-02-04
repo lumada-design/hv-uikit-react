@@ -120,8 +120,6 @@ const getValueFromSelectedChildren = (children: React.ReactNode) => {
 };
 
 /**
- * A group of radio buttons.
- *
  * A radio group is a type of selection list that can only have a single entry checked at any one time.
  */
 export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(

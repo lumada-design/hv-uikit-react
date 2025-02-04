@@ -54,6 +54,9 @@ export interface HvDialogProps
   component?: MuiDialogProps["component"];
 }
 
+/**
+ * A Dialog is a graphical control element in the form of a small panel that communicates information and prompts for a response.
+ */
 export const HvDialog = (props: HvDialogProps) => {
   const {
     variant,
