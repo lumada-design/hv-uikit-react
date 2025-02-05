@@ -9,8 +9,7 @@ import {
 import { Backwards } from "@hitachivantara/uikit-react-icons";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -22,9 +21,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 GlobalActions is of variant `global` by default, meaning that an `h1` element will be rendered and it will be `sticky` by default.<br />
 The `section` variant of Global Actions should be used to group related blocks of information. Use with parsimony, you might not need such a clear separator.
@@ -98,5 +95,3 @@ The content of the Global Actions can be customized. This is useful when you wan
   </HvGlobalActions>
 </div>
 ```
-
-</Page>

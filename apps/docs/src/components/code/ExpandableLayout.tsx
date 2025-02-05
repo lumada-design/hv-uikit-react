@@ -42,7 +42,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       {/* Preview Section */}
       <div
         className={[
-          "p-4 pt-5 [&_tr]:table-row gap-2 bg-[var(--uikit-colors-atmo1)] overflow-hidden",
+          "p-4 pt-5 [&_tr]:table-row gap-2 bg-[var(--uikit-colors-atmo2)] overflow-hidden",
           "border rounded-round border-[var(--uikit-colors-atmo4)]",
           isExpanded ? "rounded-b-0" : "",
         ].join(" ")}

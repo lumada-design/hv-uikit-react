@@ -2,8 +2,7 @@ import { Callout } from "nextra/components";
 import { headerClasses, HvHeader } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -15,9 +14,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 ### Usage
 
@@ -152,6 +149,7 @@ const navigationDataMain = [
 
 ```tsx live
 import { useState } from "react";
+import { theme } from "@hitachivantara/uikit-react-core";
 
 export default function Demo() {
   const width = useWidth();
@@ -302,5 +300,3 @@ You don't need to use the provided components to build your header. You can use 
   <HvButton variant="primarySubtle">Open</HvButton>
 </HvHeader>
 ```
-
-</Page>
