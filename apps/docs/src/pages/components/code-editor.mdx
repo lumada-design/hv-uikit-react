@@ -27,13 +27,7 @@ To use the Code Editor component you'll have to install the `@hitachivantara/uik
 npm install @hitachivantara/uikit-react-code-editor
 ```
 
-Then it's ready to use:
-
-```tsx live
-<HvCodeEditor />
-```
-
-You can specify a language throught the `language` prop to get proper syntax highlighting and define a default value:
+You can specify a language through the `language` prop to get proper syntax highlighting and define a default value:
 
 ```tsx live
 <HvCodeEditor
@@ -91,7 +85,7 @@ export default function Demo() {
 }
 
 const Header = ({ title, onOpen }: { title: string; onOpen: () => void }) => (
-  <HvPanel className="flex items-center">
+  <HvPanel className="flex items-center border border-b-none">
     <HvTypography component="div" variant="label">
       {title}
     </HvTypography>
@@ -147,7 +141,7 @@ You can also create your own language plugins. The following example shows how t
 import { useRef, useState } from "react";
 
 const Header = ({ onFormat }: { onFormat: HvButtonProps["onClick"] }) => (
-  <div className="flex justify-between items-center p-xs bg-atmo1 border-atmo4 border-b-none">
+  <HvPanel className="flex justify-between items-center border border-b-none">
     <HvTypography variant="label">Custom Language Plugin</HvTypography>
     <Code />
     <div style={{ flex: 1 }} />
@@ -155,7 +149,7 @@ const Header = ({ onFormat }: { onFormat: HvButtonProps["onClick"] }) => (
     <HvButton variant="primaryGhost" onClick={onFormat}>
       Format
     </HvButton>
-  </div>
+  </HvPanel>
 );
 
 const completionProvider = (monaco: Monaco) => {

@@ -39,21 +39,17 @@ export const getStaticProps = async ({ params }) => {
 
 ### Content
 
-The blade can have any content as it's label or children.
+The blade can have any content as its `label` or `children`.
 
 ```tsx live
 <HvBlade
+  className="w-fit"
   label={
     <div className="px-xs flex items-center">
       <HvTypography>Show Tags</HvTypography>
-      <DropRight />
+      <DropRightXS />
     </div>
   }
-  classes={{
-    root: "min-w-min",
-    button: "flex justify-center items-center",
-    container: "flex items-center",
-  }}
 >
   <div className="p-xs flex items-center gap-xs">
     <HvTag label="Tag 1" color="positive_20" />
@@ -69,30 +65,26 @@ The blade can have any content as it's label or children.
 import { useState } from "react";
 
 export default function Demo() {
-  const [expandedState, setExpandedState] = useState(false);
-
-  const handleToggle = (newState?: boolean) => {
-    setExpandedState(newState ?? ((oldState) => !oldState));
-  };
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <>
       <div className="flex gap-xs mb-xs">
-        <HvButton variant="secondarySubtle" onClick={() => handleToggle()}>
+        <HvButton variant="subtle" onClick={() => setExpanded((s) => !s)}>
           Toggle
         </HvButton>
-        <HvButton variant="secondarySubtle" onClick={() => handleToggle(true)}>
+        <HvButton variant="subtle" onClick={() => setExpanded(true)}>
           Open
         </HvButton>
-        <HvButton variant="secondarySubtle" onClick={() => handleToggle(false)}>
+        <HvButton variant="subtle" onClick={() => setExpanded(false)}>
           Close
         </HvButton>
       </div>
       <div className="flex w-full">
         <HvBlade
           label="Show answer"
-          onChange={(e, state) => handleToggle(state)}
-          expanded={expandedState}
+          onChange={(e, state) => setExpanded(state)}
+          expanded={expanded}
         >
           <div className="p-xs">The answer to all things is 42.</div>
         </HvBlade>

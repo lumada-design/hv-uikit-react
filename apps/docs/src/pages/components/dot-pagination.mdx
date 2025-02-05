@@ -34,22 +34,11 @@ The `page` prop is used to control the current page, and the `onPageChange` prop
 import { useState } from "react";
 
 export default function Demo() {
-  const [page, setPage] = useState<number>(0);
-
-  const pages = [
-    "This is page 1",
-    "And this is page 2",
-    "This is page 3",
-    "This is page 4",
-    "And finally, this is page 5",
-  ];
+  const [page, setPage] = useState(0);
 
   return (
-    <div className="w-100% flex justify-center flex-col items-center">
-      <div className="text-center">
-        <HvTypography>{pages[page]}</HvTypography>
-      </div>
-      <br />
+    <div className="w-full grid place-items-center gap-sm">
+      <HvTypography>{pages[page]}</HvTypography>
       <HvDotPagination
         page={page}
         pages={pages.length}
@@ -70,6 +59,14 @@ export default function Demo() {
     </div>
   );
 }
+
+const pages = [
+  "This is page 1",
+  "And this is page 2",
+  "This is page 3",
+  "This is page 4",
+  "And finally, this is page 5",
+];
 ```
 
 ### Custom dots
@@ -80,22 +77,14 @@ You can use custom icons for the selected and unselected dots in the `HvDotPagin
 import { useState } from "react";
 
 export default function Demo() {
-  const [page, setPage] = useState<number>(0);
-  const pages = [
-    "This is page 1",
-    "And this is page 2",
-    "Now you can see page 3",
-    "Look, it's page 4",
-    "And finally, this is page 5",
-  ];
+  const [page, setPage] = useState(0);
 
   return (
-    <div className="w-100% flex flex-col items-center justify-center">
+    <div className="w-full grid place-items-center gap-sm">
       <HvTypography>{pages[page]}</HvTypography>
-      <br />
       <HvDotPagination
-        unselectedIcon={<RadioButtonUnselected iconSize="XS" />}
-        selectedIcon={<CurrentStep iconSize="XS" />}
+        unselectedIcon={<RadioButtonUnselected size="XS" />}
+        selectedIcon={<CurrentStep size="XS" />}
         page={page}
         pages={pages.length}
         onPageChange={(_, value) => setPage(value)}
@@ -115,6 +104,14 @@ export default function Demo() {
     </div>
   );
 }
+
+const pages = [
+  "This is page 1",
+  "And this is page 2",
+  "Now you can see page 3",
+  "Look, it's page 4",
+  "And finally, this is page 5",
+];
 ```
 
 ### Related components

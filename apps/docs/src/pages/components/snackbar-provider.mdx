@@ -35,49 +35,29 @@ After adding the provider at the root of your app, you can call the `useHvSnackb
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>
-      <SnackbarButtons />
+      <div className="flex gap-sm">
+        <SnackbarButton variant="success" />
+        <SnackbarButton variant="warning" />
+        <SnackbarButton variant="error" />
+        <SnackbarButton variant="default" />
+      </div>
     </HvSnackbarProvider>
   );
 }
 
-const SnackbarButtons = () => {
+const SnackbarButton = ({ variant }: { variant: HvSnackbarVariant }) => {
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   return (
-    <div className="flex gap-sm">
-      <HvButton
-        variant="secondarySubtle"
-        onClick={() => {
-          enqueueSnackbar("This is a success snackbar", { variant: "success" });
-        }}
-      >
-        Success
-      </HvButton>
-      <HvButton
-        variant="secondarySubtle"
-        onClick={() => {
-          enqueueSnackbar("This is a warning snackbar", { variant: "warning" });
-        }}
-      >
-        Warning
-      </HvButton>
-      <HvButton
-        variant="secondarySubtle"
-        onClick={() => {
-          enqueueSnackbar("This is an error snackbar", { variant: "error" });
-        }}
-      >
-        Error
-      </HvButton>
-      <HvButton
-        variant="secondarySubtle"
-        onClick={() => {
-          enqueueSnackbar("This is a default snackbar", { variant: "default" });
-        }}
-      >
-        Default
-      </HvButton>
-    </div>
+    <HvButton
+      variant="subtle"
+      className="capitalize"
+      onClick={() => {
+        enqueueSnackbar(`This is a ${variant} snackbar.`, { variant });
+      }}
+    >
+      {variant}
+    </HvButton>
   );
 };
 ```
@@ -91,12 +71,12 @@ Check the [`HvSnackbar`](/components/snackbar) documentation for more informatio
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>
-      <SnackbarButtons />
+      <SnackbarButton />
     </HvSnackbarProvider>
   );
 }
 
-const SnackbarButtons = () => {
+const SnackbarButton = () => {
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   return (
@@ -133,25 +113,25 @@ be dismissed automically after a some time.
 export default function Demo() {
   return (
     <HvSnackbarProvider autoHideDuration={3000}>
-      <SnackbarButtons />
+      <SnackbarButton />
     </HvSnackbarProvider>
   );
 }
 
-const SnackbarButtons = () => {
+const SnackbarButton = () => {
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   return (
     <HvButton
-      variant="secondarySubtle"
+      variant="subtle"
       onClick={() => {
-        const snackbarLabel = (
+        enqueueSnackbar(
           <HvOverflowTooltip
             paragraphOverflow
             data={`This is a very ${"very ".repeat(26)}long snackbar.`}
-          />
+          />,
+          { variant: "default" },
         );
-        enqueueSnackbar(snackbarLabel, { variant: "default" });
       }}
     >
       Overflow

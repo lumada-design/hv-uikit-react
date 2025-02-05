@@ -27,30 +27,46 @@ import { useState } from "react";
 
 export default function Demo() {
   const [open, setOpen] = useState(false);
-  const [maxWidth, setMaxWidth] = useState("md");
+  const [maxWidth, setMaxWidth] = useState("sm");
   const [fullWidth, setFullWidth] = useState(true);
+  const [fullHeight, setFullHeight] = useState(false);
 
   return (
     <>
       <HvButton onClick={() => setOpen(true)}>Open dialog</HvButton>
       <HvDialog
+        open={open}
         maxWidth={maxWidth}
         fullWidth={fullWidth}
-        open={open}
+        fullHeight={fullHeight}
         onClose={() => setOpen(false)}
-        style={{ overflow: "visible" }}
       >
         <HvDialogTitle variant="warning">Set Maximum Width</HvDialogTitle>
-        <HvDialogContent
-          indentContent
-          className="flex items-end gap-2 w-full justify-center"
-        >
-          <SizeSelector
-            maxWidth={maxWidth}
-            fullWidth={fullWidth}
-            setMaxWidth={setMaxWidth}
-            setFullWidth={setFullWidth}
-          />
+        <HvDialogContent indentContent className="flex items-start">
+          <div className="flex gap-sm items-end">
+            <HvSelect
+              label="Maximum width"
+              value={maxWidth}
+              onChange={(evt, val) => setMaxWidth(val)}
+              enablePortal
+            >
+              {["xs", "sm", "md", "lg", "xl"].map((size) => (
+                <HvOption key={size} value={size}>
+                  {size}
+                </HvOption>
+              ))}
+            </HvSelect>
+            <HvCheckBox
+              checked={fullWidth}
+              label="fullWidth"
+              onChange={(_, checked) => setFullWidth(checked)}
+            />
+            <HvCheckBox
+              checked={fullHeight}
+              label="fullHeight"
+              onChange={(_, checked) => setFullHeight(checked)}
+            />
+          </div>
         </HvDialogContent>
         <HvDialogActions>
           <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
@@ -61,28 +77,6 @@ export default function Demo() {
     </>
   );
 }
-
-const SizeSelector = ({ maxWidth, setMaxWidth, fullWidth, setFullWidth }) => (
-  <>
-    <HvSelect
-      label="Maximum width"
-      value={maxWidth}
-      onChange={(evt, val) => setMaxWidth(val)}
-      enablePortal
-    >
-      {["xs", "sm", "md", "lg", "xl"].map((size) => (
-        <HvOption key={size} value={size}>
-          {size}
-        </HvOption>
-      ))}
-    </HvSelect>
-    <HvCheckBox
-      checked={fullWidth}
-      label="Fullwidth"
-      onChange={(_, checked) => setFullWidth(checked)}
-    />
-  </>
-);
 ```
 
 ### Semantic
@@ -94,62 +88,56 @@ The `HvDialog` component can receive a `variant` prop to set the status of the d
 import { useState } from "react";
 
 export default function Demo() {
-  const [open, setOpen] = useState(false);
-  const [variant, setVariant] = useState(undefined);
-
-  const handleOpen = (variant: string) => {
-    setVariant(variant)
-    setOpen(true);
-  };
-
   return (
-    <>
-      <SemanticDialog open={open} variant={variant} onClose={() => setOpen(false)} />
-      <HvButton variant="warning" onClick={() => handleOpen("warning")}>
-        Warning
-      </HvButton>
-      <HvButton variant="positive" onClick={() => handleOpen("success")}>
-        Success
-      </HvButton>
-      <HvButton variant="negative" onClick={() => handleOpen("error")}>
-        Error
-      </HvButton>
-      <HvButton variant="secondarySubtle" onClick={() => handleOpen("info")}>
-        Info
-      </HvButton>
-    </>
+    <div className="flex gap-xs">
+      <SemanticDialog variant="success" />
+      <SemanticDialog variant="warning" />
+      <SemanticDialog variant="error" />
+      <SemanticDialog variant="info" />
+    </div>
   );
 }
 
-const SemanticDialog = ({ open, variant, onClose}: HvDialogProps) => (
-  <HvDialog open={open} variant={variant}  onClose={onClose}>
-    <HvDialogTitle variant={variant}>Switch model view?</HvDialogTitle>
-    <HvDialogContent indentContent>
-      Switching to model view will clear all the fields in your
-      visualization. You will need to re-select your fields.
-    </HvDialogContent>
-    <HvDialogActions>
-      <HvButton variant={buttonVariantMap[variant]} onClick={onClose}>
-        Apply
-      </HvButton>
+const SemanticDialog = ({ variant }: HvDialogProps) => {
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <HvDialog open={open} variant={variant} onClose={handleClose}>
+        <HvDialogTitle variant={variant}>Switch model view?</HvDialogTitle>
+        <HvDialogContent indentContent>
+          Switching to model view will clear all the fields in your
+          visualization. You will need to re-select your fields.
+        </HvDialogContent>
+        <HvDialogActions>
+          <HvButton variant={buttonVariantMap[variant]} onClick={handleClose}>
+            Apply
+          </HvButton>
+          <HvButton autoFocus variant="secondaryGhost" onClick={handleClose}>
+            Cancel
+          </HvButton>
+        </HvDialogActions>
+      </HvDialog>
       <HvButton
-        autoFocus
-        variant="secondaryGhost"
-        onClick={onClose}
+        className="capitalize"
+        variant={buttonVariantMap[variant]}
+        onClick={() => setOpen(true)}
       >
-        Cancel
+        {variant}
       </HvButton>
-    </HvDialogActions>
-  </Dialog>
-)
+    </>
+  );
+};
 
 const buttonVariantMap: Record<
   NonNullable<HvDialogProps["variant"]>,
   HvButtonVariant
 > = {
-  error: "negative",
   success: "positive",
   warning: "warning",
+  error: "negative",
+  info: "subtle",
 };
 ```
 
@@ -307,7 +295,7 @@ export default function Demo() {
   const [postData, setPostData] = useState({});
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col items-start gap-sm">
       <HvButton onClick={() => setOpen(true)}>Create a post</HvButton>
       <HvTypography variant="title4">Form data:</HvTypography>
       <pre>{JSON.stringify(postData, null, 2)}</pre>
