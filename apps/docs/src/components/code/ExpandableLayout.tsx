@@ -5,8 +5,8 @@ import useEditorTheme from "@docs/hooks/useEditorTheme";
 import { ExpandableControls } from "./ExpandableControls";
 
 type ExpandableLayoutProps = {
-  scope: Scope | null; // Execution scope for the live runner
-  code: Record<string, string>; // Source code as a record of file names to content
+  scope: Scope | null;
+  code: Record<string, string>;
 };
 
 /**
@@ -14,28 +14,26 @@ type ExpandableLayoutProps = {
  * with interactive controls for toggling and resetting the code.
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
-  const editorTheme = useEditorTheme(); // Get the theme for the code editor
-  const [isExpanded, setIsExpanded] = useState(false); // State for toggling the editor view
+  const editorTheme = useEditorTheme();
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  // LiveRunner setup for rendering the live preview and managing code state
   const {
     element,
     code: editorCode,
     error: liveError,
     onChange,
   } = useLiveRunner({
-    initialCode: Object.values(code)[0], // Use the first file's content as the default
-    scope: scope || {}, // Use provided scope or an empty object
+    initialCode: Object.values(code)[0],
+    scope: scope || {},
   });
 
-  // Resets the code editor to its initial state
   const resetCode = () => onChange(Object.values(code)[0]);
 
   return (
     <div className="relative mt-3">
       {/* Compact Controls */}
       <ExpandableControls
-        onToggle={() => setIsExpanded((prev) => !prev)} // Toggle the expanded state
+        onToggle={() => setIsExpanded((prev) => !prev)}
         isExpanded={isExpanded}
         code={editorCode}
         onReset={resetCode}
@@ -44,31 +42,27 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       {/* Preview Section */}
       <div
         className={[
-          "flex px-3 py-4 [&_tr]:table-row gap-2 bg-[var(--uikit-colors-atmo1)]",
-          "border rounded-round border-[var(--uikit-colors-atmo3)]",
-          isExpanded ? "border-b-0 rounded-b-0" : "border-b-1",
+          "p-4 pt-5 [&_tr]:table-row gap-2 bg-[var(--uikit-colors-atmo1)] overflow-hidden",
+          "border rounded-round border-[var(--uikit-colors-atmo4)]",
+          isExpanded ? "rounded-b-0" : "",
         ].join(" ")}
       >
-        {liveError ? (
-          <div className="text-red-500">{liveError}</div> // Display error if present
-        ) : (
-          element // Render the live preview element
-        )}
+        {liveError ? <div className="text-red-500">{liveError}</div> : element}
       </div>
 
       {/* Code Editor Section */}
       <div
-        className="max-h-[300px] overflow-auto rounded-b-round"
+        className="max-h-[300px] overflow-auto rounded-b-round mt-[-4px]"
         style={{
-          maxHeight: isExpanded ? "300px" : "0px", // Dynamically adjust height
-          transition: "max-height 0.2s ease-in-out", // Smooth expand/collapse transition
+          maxHeight: isExpanded ? "300px" : "0px",
+          transition: "max-height 0.2s ease-in-out",
         }}
       >
         <CodeEditor
           value={editorCode}
           onChange={onChange}
           theme={editorTheme}
-          className="font-mono text-[.85em] rounded-b-round"
+          className="font-mono text-[.85em] rounded-b-round border border-[var(--uikit-colors-atmo4)]"
         />
       </div>
     </div>

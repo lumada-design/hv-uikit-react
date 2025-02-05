@@ -9,10 +9,10 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 type ToggableControlsProps = {
-  code: Record<string, string>; // Code object for managing multiple files
-  showPreview: boolean; // Whether to show the preview or the code editor
-  toggleView: () => void; // Function to toggle between views
-  onReset: () => void; // Function to reset the code to its initial state
+  code: Record<string, string>;
+  showPreview: boolean;
+  toggleView: () => void;
+  onReset: () => void;
 };
 
 /**
@@ -24,7 +24,7 @@ export const ToggableControls = ({
   toggleView,
   onReset,
 }: ToggableControlsProps) => {
-  const [copySuccess, setCopySuccess] = useState(false); // Tracks copy success state
+  const [copySuccess, setCopySuccess] = useState(false);
 
   // Handles copying the code to the clipboard
   const handleCopyToClipboard = async () => {

@@ -19,21 +19,17 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   const [activeTab, setActiveTab] = useState(0);
   const [showPreview, setShowPreview] = useState(true);
 
-  // Setup live code runner
   const { element, error, onChange } = useLiveRunner({
-    initialCode: Object.values(code)[0], // Default to the first file
+    initialCode: Object.values(code)[0],
     scope: scope || {},
   });
 
-  // Determine if there are multiple files
   const hasMultipleFiles = Object.keys(code).length > 1;
 
-  // Extract filenames for tabs
   const fileNames = Object.keys(code).map(
     (file) => file.split("/").pop() || file,
   );
 
-  // Updates the temporary code and triggers live updates in the runner.
   const handleEditorChange = (value: string) => {
     setTmpCode((prev) => ({
       ...prev,
@@ -54,7 +50,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
           showPreview={showPreview}
           toggleView={() => setShowPreview((prev) => !prev)}
           onReset={() => {
-            setTmpCode({ ...code }); // Reset to initial code
+            setTmpCode({ ...code });
           }}
         />
       </div>
