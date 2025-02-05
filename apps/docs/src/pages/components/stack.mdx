@@ -2,7 +2,6 @@ import {
   HvPanel,
   HvStack,
   stackClasses,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
@@ -20,24 +19,14 @@ export const getStaticProps = async ({ params }) => {
   Component={HvStack}
   componentName="HvStack"
   controls={{
-    direction: {
-      defaultValue: "row",
-    },
-    spacing: {
-      defaultValue: "sm",
-    },
-    divider: {
-      defaultValue: false,
-    },
+    direction: { defaultValue: "row" },
+    spacing: { defaultValue: "sm" },
+    divider: { defaultValue: false },
   }}
 >
-
-    {[...Array(4).keys()].map((index) => (
-      <HvPanel className="bg-atmo2">
-        {index + 1}
-      </HvPanel>
-    ))}
-
+  {[...Array(4).keys()].map((index) => (
+    <HvPanel key={index}>{index + 1}</HvPanel>
+  ))}
 </Playground>
 
 ### Custom direction
@@ -48,7 +37,7 @@ below shows a stack in a column format for breakpoints `xs` and `sm`, and in a r
 ```tsx live
 <HvStack direction={{ xs: "column", md: "row" }} spacing="xs" divider={false}>
   {[...Array(4).keys()].map((index) => (
-    <HvPanel className="bg-atmo2">{index + 1}</HvPanel>
+    <HvPanel key={index}>{index + 1}</HvPanel>
   ))}
 </HvStack>
 ```
@@ -60,7 +49,7 @@ The `divider` property can be a boolean (rendering the default divider), or a `R
 ```tsx live
 <HvStack direction="row" className="flex items-center" divider={<DropRight />}>
   {[...Array(4).keys()].map((index) => (
-    <HvPanel className="rounded-full size-48px grid place-content-center bg-atmo2">
+    <HvPanel className="rounded-full size-48px grid place-content-center">
       {index + 1}
     </HvPanel>
   ))}

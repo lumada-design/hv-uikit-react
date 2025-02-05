@@ -16,14 +16,10 @@ export const getStaticProps = async ({ params }) => {
   Component={HvToggleButton}
   componentName="HvToggleButton"
   controls={{
-    selected: {
-      defaultValue: false,
-    },
-    disabled: {
-      defaultValue: false,
-    },
+    disabled: { defaultValue: false },
   }}
   componentProps={{
+    defaultSelected: false,
     notSelectedIcon: <Favorite />,
     selectedIcon: <FavoriteSelected />,
   }}

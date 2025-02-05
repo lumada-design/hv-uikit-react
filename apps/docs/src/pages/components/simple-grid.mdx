@@ -1,7 +1,6 @@
 import { Callout } from "nextra/components";
 import {
-  HvCard,
-  HvCardContent,
+  HvPanel,
   HvSimpleGrid,
   simpleGridClasses,
 } from "@hitachivantara/uikit-react-core";
@@ -36,12 +35,8 @@ export const getStaticProps = async ({ params }) => {
     },
   }}
 >
-  {Array.from({ length: 6 }, (_, i) => (
-    <HvCard bgcolor="atmo2">
-      <HvCardContent className="flex items-center justify-center">
-        Item {i + 1}
-      </HvCardContent>
-    </HvCard>
+  {[...Array(6).keys()].map((i) => (
+    <HvPanel>Item {i + 1}</HvPanel>
   ))}
 </Playground>
 
@@ -61,11 +56,7 @@ Use the `breakpoints` prop to define the number of columns and spacing for diffe
     ]}
   >
     {[...Array(6).keys()].map((i) => (
-      <HvCard bgcolor="atmo2">
-        <HvCardContent className="flex items-center justify-center">
-          Item {i + 1}
-        </HvCardContent>
-      </HvCard>
+      <HvPanel>Item {i + 1}</HvPanel>
     ))}
   </HvSimpleGrid>
 </div>

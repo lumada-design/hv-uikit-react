@@ -34,18 +34,12 @@ for information on the properties that can be used in the layout items. Each ite
     { i: "4", x: 10, y: 0, w: 2, h: 1, static: true },
   ]}
 >
-  {["1", "2", "3", "4"]
-    .map((id) => ({
-      id,
-      type: "txt",
-      label: `Item ${id}`,
-    }))
-    .map((item) => (
-      <HvSection
-        key={item.id}
-        title={<HvTypography variant="title3">{item.label}</HvTypography>}
-      />
-    ))}
+  {["1", "2", "3", "4"].map((i) => (
+    <HvSection
+      key={i}
+      title={<HvTypography variant="title3">Item {i}</HvTypography>}
+    />
+  ))}
 </HvDashboard>
 ```
 
@@ -103,19 +97,18 @@ export default function Demo() {
             }
 
             return (
-              <div key={item.id} className="flex">
-                <HvSection
-                  classes={{ content: "h-full" }}
-                  title={
-                    <HvTypography
-                      variant="title3"
-                      className="capitalize"
-                    >{`${item.type} chart`}</HvTypography>
-                  }
-                >
-                  <Component {...props} />
-                </HvSection>
-              </div>
+              <HvSection
+                key={item.id}
+                className="flex"
+                classes={{ content: "h-full" }}
+                title={
+                  <HvTypography variant="title3" className="capitalize">
+                    {`${item.type} chart`}
+                  </HvTypography>
+                }
+              >
+                <Component {...props} />
+              </HvSection>
             );
           })}
         </HvDashboard>

@@ -17,7 +17,7 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvBadge"
   controls={{
     showCount: { defaultValue: true },
-    count: { type: "number", defaultValue: 2 },
+    label: { type: "number", defaultValue: 2 },
     maxCount: { type: "number", defaultValue: 99 },
   }}
   componentProps={{
@@ -30,14 +30,14 @@ export const getStaticProps = async ({ params }) => {
 Use the `icon` prop to specify a icon to use with the badge.
 
 ```tsx live
-<>
-  <HvBadge count={0} icon={<Alert />} />
-  <HvBadge count={1} icon={<Alert />} />
-  <HvBadge showCount count={8} icon={<Alert />} />
-  <HvBadge showCount count={88} icon={<Alert />} />
-  <HvBadge showCount count={888} icon={<Alert />} />
+<div className="flex gap-sm">
+  <HvBadge label={0} icon={<Alert />} />
+  <HvBadge label={1} icon={<Alert />} />
+  <HvBadge showCount label={8} icon={<Alert />} />
+  <HvBadge showCount label={88} icon={<Alert />} />
+  <HvBadge showCount label={888} icon={<Alert />} />
   <HvBadge label="100%" icon={<Alert />} />
-</>
+</div>
 ```
 
 ### Maximum value
@@ -45,11 +45,11 @@ Use the `icon` prop to specify a icon to use with the badge.
 Use the `maxCount` prop to specify the maximum value to be displayed. Above that value a '+' sign is displayed.
 
 ```tsx live
-<>
-  <HvBadge showCount count={10} maxCount={9} />
-  <HvBadge showCount count={100} maxCount={99} />
-  <HvBadge showCount count={1000} maxCount={999} />
-</>
+<div className="flex gap-sm">
+  <HvBadge showCount label={10} maxCount={9} />
+  <HvBadge showCount label={100} maxCount={99} />
+  <HvBadge showCount label={1000} maxCount={999} />
+</div>
 ```
 
 ### Text
@@ -57,7 +57,7 @@ Use the `maxCount` prop to specify the maximum value to be displayed. Above that
 To display a badge on any content, wrap the `children` content with the badge component.
 
 ```tsx live
-<>
+<div className="flex gap-lg">
   <HvBadge label={0}>
     <HvTypography variant="label">Events</HvTypography>
   </HvBadge>
@@ -76,7 +76,7 @@ To display a badge on any content, wrap the `children` content with the badge co
   <HvBadge label="100%">
     <HvTypography variant="title2">Events</HvTypography>
   </HvBadge>
-</>
+</div>
 ```
 
 ### Controlled count
@@ -88,13 +88,12 @@ import { useState } from "react";
 
 export default function Demo() {
   const [count, setCount] = useState(1);
-  const addCount = () => setCount(count * 2);
 
   return (
-    <>
-      <HvButton onClick={addCount}>Double Value</HvButton>
-      <HvBadge showCount count={count} icon={<Alert />} />
-    </>
+    <div className="flex gap-md">
+      <HvButton onClick={() => setCount(count * 2)}>Double Value</HvButton>
+      <HvBadge showCount label={count} icon={<Alert />} />
+    </div>
   );
 }
 ```
@@ -105,8 +104,9 @@ If you want to specify a custom aria-label, ensure the badge has a `role`.
 
 ```tsx live
 <HvBadge
+  className="flex"
   showCount
-  count={25}
+  label={25}
   icon={<Alert />}
   role="status"
   aria-label="25 unread notifications"

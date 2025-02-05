@@ -25,18 +25,9 @@ export const getStaticProps = async ({ params }) => {
   Component={HvAppSwitcher}
   componentName="HvAppSwitcher"
   controls={{
-    layout: {
-      defaultValue: "single",
-    },
-    title: {
-      defaultValue: "My Apps",
-    },
-    header: {
-      defaultValue: "",
-    },
-    footer: {
-      defaultValue: "Footer",
-    },
+    layout: { defaultValue: "single" },
+    title: { defaultValue: "My Apps" },
+    footer: { defaultValue: "Footer" },
   }}
   componentProps={{
     applications: [
@@ -81,18 +72,19 @@ When there are many entries, the AppSwitcher will scroll vertically. Use the `is
 ```tsx live
 export default function Demo() {
   return (
-    <div className="flex h-360px">
-      <HvAppSwitcher
-        layout="dual"
-        title="Big list of applications"
-        applications={getDummyApplicationsList()}
-      />
-    </div>
+    <HvAppSwitcher
+      className="max-h-360px"
+      layout="dual"
+      title="Big list of applications"
+      applications={applicationList}
+      isActionSelectedCallback={(app) => app.id === "app_5"}
+    />
   );
 }
 
-const getDummyApplicationsList = () => {
-  return [...Array(100).keys()].map<HvAppSwitcherActionApplication>((i) => ({
+const applicationList = Array(100)
+  .keys()
+  .map<HvAppSwitcherActionApplication>((i) => ({
     id: `app_${i}`,
     name:
       i % 3 === 0
@@ -104,6 +96,6 @@ const getDummyApplicationsList = () => {
         : undefined,
     url: "https://github.com/lumada-design/hv-uikit-react",
     target: i % 2 === 0 ? "_top" : "_blank",
-  }));
-};
+  }))
+  .toArray();
 ```

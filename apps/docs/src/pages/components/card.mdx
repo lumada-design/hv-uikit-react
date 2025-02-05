@@ -112,7 +112,7 @@ export default function Demo() {
   const [checked, setChecked] = useState(null);
 
   return (
-    <div className="flex flex-row gap-2 w-full">
+    <div className="flex flex-row gap-sm w-full">
       {storages.map((p, idx) => (
         <StorageCard
           selected={checked === idx}
@@ -151,7 +151,7 @@ function StorageCard({
         <HvCardHeader
           title={
             <div className="flex justify-between items-center">
-              <div className="flex gap-1 items-center">
+              <div className="flex gap-xs items-center">
                 {icon}
                 <HvTypography variant="title4">{title}</HvTypography>
               </div>

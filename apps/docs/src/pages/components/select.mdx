@@ -46,8 +46,8 @@ export const getStaticProps = async ({ params }) => {
 </Playground>
 
 <Callout type="info">
-  If you need features like search or multi-select you should use the
-  [`HvDropdown`](/components/dropdown) component.
+  If you need a search filter or multi-select checkboxes, consider using
+  [`HvDropdown`](/components/dropdown) instead.
 </Callout>
 
 ### Options
@@ -56,7 +56,7 @@ As an alternative to the `HvOption` `children`, `HvSelect` supports passing an `
 
 Keep in mind that the `children` is more flexible, as it allows using `HvOptionGroup` and distinct `label` and rendering (`children`) values.
 
-```jsx live
+```tsx live
 <HvSelect
   label="Country"
   description="Please select a country"

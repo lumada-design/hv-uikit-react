@@ -51,9 +51,9 @@ export const getStaticProps = async ({ params }) => {
 ### With content
 
 ```tsx live
-<>
+<div className="flex gap-xs">
   <HvScrollToVertical
-    scrollElementId="pageContentId-2"
+    scrollElementId="content2"
     options={[
       { label: "Server", value: "mainId2-1" },
       { label: "Optimization", value: "mainId2-2" },
@@ -62,16 +62,7 @@ export const getStaticProps = async ({ params }) => {
     ]}
     tooltipPosition="right"
   />
-  <HvContainer
-    id="pageContentId-2"
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: 20,
-      height: 400,
-      overflow: "auto",
-    }}
-  >
+  <HvContainer id="content2" className="grid gap-sm h-400px overflow-auto">
     {[
       { label: "Server", value: "mainId2-1" },
       { label: "Optimization", value: "mainId2-2" },
@@ -88,7 +79,7 @@ export const getStaticProps = async ({ params }) => {
       </HvPanel>
     ))}
   </HvContainer>
-</>
+</div>
 ```
 
 - [`HvScrollToHorizontal`](/components/scroll-to-horizontal)

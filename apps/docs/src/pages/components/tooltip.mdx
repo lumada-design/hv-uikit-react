@@ -45,7 +45,7 @@ export const getStaticProps = async ({ params }) => {
 To "hide" a Tooltip, remove its `title`; `disableFocusListener` and `disableHoverListener` disable focus or hover, respectively.
 
 ```tsx live
-<div className="w-full flex justify-around pt-10">
+<div className="w-full flex justify-around pt-xl">
   <HvTooltip placement="right" title="">
     <HvButton variant="secondaryGhost">No tooltip</HvButton>
   </HvTooltip>
@@ -64,7 +64,7 @@ A Tooltip can be attached to any side (see `placement`) of any element or compon
  If the component doesn't do so, a workaround is to wrap it in a `div`.
 
 ```tsx live
-<div className="w-full flex justify-around pt-10">
+<div className="w-full flex justify-around pt-xl">
   <HvTooltip
     placement="right"
     title="Tooltips can showcase truncated text. The text should be concise and not
@@ -102,7 +102,7 @@ A Tooltip will grow to the size of its content. Keep in mind that the Tooltip `t
  and is not keyboard-navigable, therefore it shouldn't be too complex or contain interactable elements.
 
 ```tsx live
-<div className="w-full flex justify-around pt-10">
+<div className="w-full flex justify-around pt-xl">
   <HvTooltip
     title={
       <span className="max-w-250px">

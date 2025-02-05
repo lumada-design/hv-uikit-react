@@ -15,23 +15,14 @@ export const getStaticProps = async ({ params }) => {
   Component={HvRadio}
   componentName="HvRadio"
   controls={{
-    checked: {
-      defaultValue: false,
-    },
-    required: {
-      defaultValue: true,
-    },
-    disabled: {
-      defaultValue: false,
-    },
-    semantic: {
-      defaultValue: false,
-    },
+    required: { defaultValue: true },
+    disabled: { defaultValue: false },
+    semantic: { defaultValue: false },
   }}
   componentProps={{
     label: "I have read and agree to the terms and conditions",
     statusMessage: "Please accept the terms and conditions",
-    checked: false,
+    defaultChecked: false,
     indeterminate: false,
   }}
 />
@@ -47,14 +38,14 @@ export default function Demo() {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <>
+    <div className="flex gap-xs">
       <HvRadio checked={isChecked} label="Radio 1" />
       <HvRadio
         checked={isChecked}
         onChange={(_, checked) => setIsChecked(checked)}
         label="Radio 2"
       />
-    </>
+    </div>
   );
 }
 ```

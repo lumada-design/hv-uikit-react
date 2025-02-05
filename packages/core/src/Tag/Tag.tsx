@@ -63,9 +63,7 @@ export interface HvTagProps
  * A Tag is one word that describes a specific aspect of an asset. A single asset can have
  * multiple tags.
  * Use tags to highlight an item's status for quick recognition and navigation
- * Use color to indicate meanings that users can learn and recognize across products
- *
- * It leverages the [MUI Chip](https://mui.com/material-ui/react-chip/) component
+ * Use color to indicate meanings that users can learn and recognize across products.
  */
 export const HvTag = forwardRef<
   // no-indent

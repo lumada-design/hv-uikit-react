@@ -51,48 +51,39 @@ Sample of the `HvBulkActions` component with content.
 import { useState } from "react";
 
 export default function Demo() {
-  const addEntry = (i: number) => ({
-    id: `val${i + 1}`,
-    value: `Value ${i + 1}`,
-    checked: false,
-  });
+  const [data, setData] = useState(() =>
+    [...Array(12).keys()].map((id) => ({ id, checked: false })),
+  );
 
-  const [data, setData] = useState(() => [...Array(8).keys()].map(addEntry));
-
-  const handleSelectAll = (_: any, checked = false) => {
+  const handleSelectAll = (checked = false) => {
     setData(data.map((el) => ({ ...el, checked })));
   };
 
-  const handleSelectAllPages: HvBulkActionsProps["onSelectAllPages"] = (e) =>
-    handleSelectAll(e, true);
-
-  const handleChange: SampleComponentProps["onChange"] = (_, i, checked) => {
-    const newData = [...data];
-    newData[i].checked = checked;
-    setData(newData);
-  };
-
   return (
-    <div className="w-full">
+    <>
       <HvBulkActions
         numTotal={data.length}
         numSelected={data.filter((el) => el.checked).length}
-        onSelectAll={handleSelectAll}
-        onSelectAllPages={handleSelectAllPages}
+        onSelectAll={(evt, checked) => handleSelectAll(checked)}
+        onSelectAllPages={(evt) => handleSelectAll(true)}
         maxVisibleActions={3}
       />
-      <div className="w-full flex flex-wrap items-center justify-center">
+      <div className="w-full flex flex-wrap gap-xs items-center justify-center">
         {data.map((el, i) => (
           <HvCheckBox
             key={el.id}
-            className="w-160px p-xs m-xs bg-atmo2"
-            label={el.value}
+            classes={{ container: "items-center w-120px h-40px" }}
+            label={`Value ${el.id + 1}`}
             checked={el.checked}
-            onChange={(e, checked) => handleChange(e, i, checked)}
+            onChange={(e, checked) => (evt, i, checked) => {
+              const newData = [...data];
+              newData[i].checked = checked;
+              setData(newData);
+            }}
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 ```
@@ -115,7 +106,7 @@ const addEntry = (i: number) => ({
 export default function Demo() {
   const [data, setData] = useState(() => [...Array(18).keys()].map(addEntry));
   const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(pageSizeOptions[1]);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
 
   const handleSelectAllPages = (checked = true) => {
     setData(data.map((el) => ({ ...el, checked })));
@@ -141,19 +132,13 @@ export default function Demo() {
     setData(newData);
   };
 
-  const handleChange: SampleComponentProps["onChange"] = (_, i, checked) => {
-    const newData = [...data];
-    newData[i + pageSize * page].checked = checked;
-    setData(newData);
-  };
-
   const handleAction: HvBulkActionsProps["onAction"] = (event, action) => {
     const selected = data.filter((el) => el.checked);
 
     switch (action.id) {
       case "add": {
         const newEls = selected.map((el) =>
-          addEntry(`${el.id}-copy-${uniqueId()}`),
+          addEntry(`${el.id}-copy-${Math.random().toString(36).slice(2, 5)}`),
         );
         setData([...data, ...newEls]);
         break;
@@ -188,14 +173,18 @@ export default function Demo() {
         maxVisibleActions={2}
         showSelectAllPages
       />
-      <div className="w-full flex flex-wrap items-center justify-center">
+      <div className="w-full flex flex-wrap gap-xs items-center justify-center">
         {data.slice(pageSize * page, pageSize * (page + 1)).map((el, i) => (
           <HvCheckBox
             key={el.id}
-            className="w-160px p-xs m-xs bg-atmo2"
+            classes={{ container: "items-center w-120px h-40px" }}
             label={el.value}
             checked={el.checked}
-            onChange={(e, checked) => handleChange(e, i, checked)}
+            onChange={(evt, checked) => {
+              const newData = [...data];
+              newData[i + pageSize * page].checked = checked;
+              setData(newData);
+            }}
           />
         ))}
       </div>
