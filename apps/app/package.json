@@ -30,7 +30,7 @@
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.1",
     "react-grid-layout": "^1.4.4",
-    "react-router-dom": "^6.20.1",
+    "react-router": "^7.1.5",
     "reactflow": "^11.10.1",
     "swr": "^2.2.4",
     "usehooks-ts": "^2.16.0",
