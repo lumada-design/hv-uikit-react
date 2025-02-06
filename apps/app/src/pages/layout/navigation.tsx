@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import { Outlet, useNavigate, useSearchParams } from "react-router";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { Container } from "~/components/Container";
