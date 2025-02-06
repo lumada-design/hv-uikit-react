@@ -16,7 +16,7 @@ export const getStaticProps = async ({ params }) => {
 ### Usage
 
 The `HvTabs` is controlled via the `value` and `onChange` props.
-The `value` prop contains the `value` of the `HvTab`, which is its index by default.
+The `value` prop uses the tab's index by default, or `HvTab`'s `value` if provided.
 
 ```tsx live
 import { useState } from "react";
@@ -57,7 +57,7 @@ export default function Demo() {
         <HvTab label="Clickable tab 3" />
       </HvTabs>
       <div className="max-w-400px">
-        <HvTabs variant="scrollable" scrollButtons="auto" value={value}>
+        <HvTabs variant="scrollable" scrollButtons value={value}>
           {[...Array(12).keys()].map((i) => (
             <HvTab key={i} label={`Clickable tab ${i + 1}`} />
           ))}
