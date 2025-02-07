@@ -220,6 +220,9 @@ export const Test3: StoryObj = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: /october/i }));
+    const inlineEditors = canvas.getAllByRole("button", { name: /very very/i });
+    await userEvent.click(inlineEditors[10]);
+    await userEvent.hover(inlineEditors[11]);
   },
   render: (args, context: any) => (
     <>

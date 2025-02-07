@@ -93,15 +93,7 @@ export const Test: StoryObj = {
   },
   render: () => {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 5,
-          justifyContent: "start",
-          alignItems: "start",
-        }}
-      >
+      <div className="flex flex-wrap gap-5px justify-start items-start">
         <HvInlineEditor />
         <HvInlineEditor showIcon />
         <HvInlineEditor disabled />
