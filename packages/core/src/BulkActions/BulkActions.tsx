@@ -9,7 +9,7 @@ import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
 import { HvCheckBox, HvCheckBoxProps } from "../CheckBox";
 import { HvBaseProps } from "../types/generic";
-import { HvTypography } from "../Typography";
+import { CounterLabel } from "../utils/CounterLabel";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./BulkActions.styles";
 
@@ -18,7 +18,7 @@ export { staticClasses as bulkActionsClasses };
 export type HvBulkActionsClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBulkActionsProps extends HvBaseProps {
-  /** Custom label for select all checkbox */
+  /** Custom label for select all checkbox. @deprecated no longer used */
   selectAllLabel?: React.ReactNode;
   /** Custom label for select all checkbox conjunction */
   selectAllConjunctionLabel?: string;
@@ -75,7 +75,6 @@ export const HvBulkActions = forwardRef<
     actions,
     numTotal = 0,
     numSelected = 0,
-    selectAllLabel = "All",
     selectAllConjunctionLabel = "/",
     showSelectAllPages = false,
     semantic = true,
@@ -92,26 +91,6 @@ export const HvBulkActions = forwardRef<
 
   const anySelected = numSelected > 0;
   const isSemantic = semantic && anySelected;
-
-  const selectAllLabelComponent = (
-    <HvTypography
-      component="span"
-      disabled={checkboxProps?.disabled}
-      variant="body"
-    >
-      {!anySelected ? (
-        <>
-          <HvTypography variant="label">{selectAllLabel}</HvTypography>
-          {` (${numTotal})`}
-        </>
-      ) : (
-        <>
-          <HvTypography variant="label">{numSelected}</HvTypography>
-          {` ${selectAllConjunctionLabel} ${numTotal}`}
-        </>
-      )}
-    </HvTypography>
-  );
 
   return (
     <div
@@ -132,7 +111,13 @@ export const HvBulkActions = forwardRef<
           semantic={isSemantic}
           onChange={onSelectAll}
           indeterminate={numSelected > 0 && numSelected < numTotal}
-          label={selectAllLabelComponent}
+          label={
+            <CounterLabel
+              selected={numSelected}
+              total={numTotal}
+              conjunctionLabel={selectAllConjunctionLabel}
+            />
+          }
           {...checkboxProps}
         />
         {showSelectAllPages && anySelected && numSelected < numTotal && (

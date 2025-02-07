@@ -22,6 +22,7 @@ import {
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
+import { CounterLabel } from "../utils/CounterLabel";
 import { multiSelectionEventHandler } from "../utils/multiSelectionEventHandler";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./CheckBoxGroup.styles";
@@ -130,7 +131,7 @@ export interface HvCheckBoxGroupProps
    */
   showSelectAll?: boolean;
   /**
-   * The label of the select all checkbox. Defaults to "All".
+   * The label of the select all checkbox. Defaults to "All". @deprecated no longer used
    */
   selectAllLabel?: string;
   /**
@@ -165,7 +166,6 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
       disabled,
       showSelectAll,
       orientation = "vertical",
-      selectAllLabel = "All",
       selectAllConjunctionLabel = "/",
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
@@ -324,19 +324,6 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
       });
     };
 
-    const selectAllLabelComponent =
-      selectedCount === 0 ? (
-        <>
-          <b>{selectAllLabel}</b>
-          {` (${Children.toArray(children).length})`}
-        </>
-      ) : (
-        <>
-          <b>{selectedCount}</b>
-          {` ${selectAllConjunctionLabel} ${Children.toArray(children).length}`}
-        </>
-      );
-
     // The error message area will only be created if:
     //   - an external element that provides an error message isn't identified via aria-errormessage AND
     //   - both status and statusMessage properties are being controlled OR
@@ -403,7 +390,13 @@ export const HvCheckBoxGroup = forwardRef<HTMLDivElement, HvCheckBoxGroupProps>(
             <HvCheckBox
               checked={selectAllState === "all"}
               indeterminate={selectAllState === "some"}
-              label={selectAllLabelComponent}
+              label={
+                <CounterLabel
+                  selected={selectedCount}
+                  total={Children.count(children)}
+                  conjunctionLabel={selectAllConjunctionLabel}
+                />
+              }
               disabled={disabled}
               readOnly={readOnly}
               className={classes.selectAll}
