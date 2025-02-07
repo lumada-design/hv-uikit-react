@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import {
   HvButton,
   HvInput,
@@ -51,7 +50,7 @@ const Zindices = () => {
                       r as keyof HvThemeTokens["zIndices"]
                     ].toString()
                   }
-                  classes={{ root: css({ width: "100%" }) }}
+                  classes={{ root: "w-full" }}
                   onChange={(event, value) => valueChangedHandler(r, value)}
                 />
               </div>

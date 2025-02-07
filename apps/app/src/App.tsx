@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import {
   ds3,
   ds5,
@@ -7,8 +7,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { routes } from "./routes";
-
-import "~/lib/i18n";
 
 const router = createBrowserRouter(routes, {
   basename: import.meta.env.BASE_URL,

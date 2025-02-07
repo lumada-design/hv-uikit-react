@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { css } from "@emotion/css";
 import {
   HvButton,
   HvDialog,
@@ -9,7 +8,6 @@ import {
   HvEmptyState,
   HvSection,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 import {
@@ -52,14 +50,8 @@ const nodeInputs: HvFlowNodeInput[] = [
 ];
 
 const classes = {
-  empty: css({
-    padding: theme.spacing("sm", 0, 0, 0),
-  }),
-  footer: css({
-    display: "flex",
-    gap: theme.space.sm,
-    justifyContent: "center",
-  }),
+  empty: "p-0 pt-sm",
+  footer: "flex gap-sm justify-center",
 };
 
 export const Dashboard: HvFlowNodeFC<NodeData> = (props) => {

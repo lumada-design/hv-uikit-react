@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -12,8 +12,8 @@ import {
 import { Debug, Menu } from "@hitachivantara/uikit-react-icons";
 
 import logo from "~/assets/logo.png";
+import { useNavigationContext } from "~/context/navigation";
 import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { useNavigationContext } from "~/lib/context/navigation";
 
 export const Header = () => {
   const navigate = useNavigate();

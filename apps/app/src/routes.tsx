@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Navigate, RouteObject } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router";
 
 /* eslint-disable import/no-relative-packages */
 const AssetInventory = lazy(() => import("../../../templates/AssetInventory"));
@@ -33,7 +33,7 @@ export const routes: RouteObject[] = [
           { path: "canvas", element: <Canvas /> },
         ],
       },
-      { path: "/*", lazy: () => import("~/pages/NotFound") },
+      { path: "*", lazy: () => import("~/pages/NotFound") },
     ],
   },
   {
