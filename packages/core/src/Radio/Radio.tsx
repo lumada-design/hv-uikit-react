@@ -262,6 +262,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
           >
             {radio}
             <HvLabel
+              noWrap
               id={setId(elementId, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -273,7 +274,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
           radio
         )}
         {canShowError && (
-          <HvWarningText id={setId(elementId, "error")} disableBorder>
+          <HvWarningText id={setId(elementId, "error")}>
             {statusMessage}
           </HvWarningText>
         )}

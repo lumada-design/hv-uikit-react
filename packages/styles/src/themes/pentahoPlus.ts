@@ -473,10 +473,8 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           "& svg": {
-            width: 16,
-            height: 16,
             backgroundColor: theme.colors.pp.bgSurface,
-            border: `1px solid ${theme.colors.pp.textSubtle}`,
+            borderColor: theme.colors.pp.textSubtle,
           },
           "&:hover": {
             backgroundColor: theme.colors.pp.bgHover,

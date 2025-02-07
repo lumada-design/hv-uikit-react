@@ -10,7 +10,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     alignContent: "inherit",
     textAlign: "left",
     padding: theme.spacing(0, 1, 0, 4),
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderColor: theme.colors.atmo4,
+    borderBottomWidth: 1,
   },
   head: {
     paddingTop: 8,
@@ -18,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     alignContent: "start",
     ...theme.typography.label,
     backgroundColor: theme.colors.atmo1,
-    borderBottom: `1px solid ${theme.colors.atmo4}`,
+    borderBottomWidth: 1,
 
     "*:first-of-type > &": {
       height: "var(--first-row-cell-height)",
@@ -27,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
 
     "&$variantList": {
       backgroundColor: "inherit",
-      borderBottom: 0,
+      borderBottomWidth: 0,
       "*:first-of-type > &": {
         borderTop: 0,
       },
@@ -64,23 +65,23 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     zIndex: 2,
 
     "&$groupColumnMostRight+$stickyColumn": {
-      borderLeft: 0,
+      borderLeftWidth: 0,
     },
   },
-  stickyColumnMostLeft: { borderRight: `solid 1px ${theme.colors.atmo4}` },
-  stickyColumnLeastRight: { borderLeft: `solid 1px ${theme.colors.atmo4}` },
-  groupColumnMostLeft: { borderLeft: `solid 1px ${theme.colors.atmo4}` },
+  stickyColumnMostLeft: { borderRightWidth: 1 },
+  stickyColumnLeastRight: { borderLeftWidth: 1 },
+  groupColumnMostLeft: { borderLeftWidth: 1 },
   groupColumnMostRight: {
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
+    borderRightWidth: 1,
     // due to the ":has()" selector not being supported in browsers,
     // this need to be managed with inline styles
     // To be uncommented when not needed (see comment in src/Table/hooks/useSticky.js)
     // "&:last-child,&:has(+ $stickyColumnLeastRight)": {
     "&:last-child": {
-      borderRight: 0,
+      borderRightWidth: 0,
     },
     "&+:not($stickyColumn)": {
-      borderLeft: 0,
+      borderLeftWidth: 0,
     },
   },
   headerContent: { display: "flex", alignItems: "flex-start", width: "100%" },
@@ -112,27 +113,27 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderRight: `solid 1px ${theme.colors.atmo4}`,
+    borderRightWidth: 1,
   },
   variantExpand: {},
   variantActions: {
     padding: 0,
     width: 32,
     maxWidth: 32,
-    borderLeft: `solid 1px ${theme.colors.atmo4}`,
+    borderLeftWidth: 1,
   },
   variantNone: { padding: 0 },
   variantList: {
     backgroundColor: "inherit",
-    borderBottom: 0,
+    borderBottomWidth: 0,
     height: 16,
     ":first-of-type > &": {
-      borderTop: 0,
+      borderTopWidth: 0,
       height: 16,
     },
   },
   resizable: {
-    borderRight: `1px solid ${theme.colors.atmo4}`,
+    borderRightWidth: 1,
     ":has($resizer:hover)": {
       borderRight: `2px solid ${theme.colors.primary_80}`,
     },

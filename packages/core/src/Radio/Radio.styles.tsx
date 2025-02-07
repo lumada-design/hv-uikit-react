@@ -8,55 +8,32 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
   container: {
     cursor: "pointer",
     display: "flex",
-    height: "32px",
-    transitionProperty: "background-color",
-    transitionDuration: "150ms",
-    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-    transitionDelay: "0ms",
+    alignItems: "center",
+    transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    borderRadius: theme.radii.base,
 
-    "&:hover": {
+    ":hover:not($disabled)": {
       backgroundColor: theme.colors.containerBackgroundHover,
-      borderRadius: theme.radii.base,
     },
   },
-  invalidContainer: {
-    borderBottom: `1px solid ${theme.colors.negative_120}`,
-
-    "&:hover": {
-      borderBottomLeftRadius: "0px",
-      borderBottomRightRadius: "0px",
-    },
-  },
+  invalidContainer: {},
   disabled: {
     cursor: "not-allowed",
 
     "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
   },
   radio: {
-    height: "32px",
-
     "& svg": {
       outline: "none",
       boxShadow: "none",
     },
   },
-  invalidRadio: {
-    borderBottom: `1px solid ${theme.colors.negative_120}`,
-
-    "&:hover": {
-      borderBottomLeftRadius: "0px",
-      borderBottomRightRadius: "0px",
-    },
-  },
+  invalidRadio: {},
   label: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
     verticalAlign: "middle",
     paddingRight: theme.space.xs,
-    whiteSpace: "nowrap",
     ...theme.typography.body,
     cursor: "pointer",
-    height: "32px",
     lineHeight: "32px",
     width: "100%",
   },
