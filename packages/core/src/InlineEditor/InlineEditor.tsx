@@ -103,12 +103,9 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   const typographyStyles = activeTheme?.typography[variant] || {};
   const { lineHeight } = typographyStyles;
 
-  const checkOverflow = () => {
-    if (inputRef.current) {
-      setIsOverflowing(
-        inputRef.current.scrollWidth > inputRef.current.clientWidth,
-      );
-    }
+  const checkOverflow = (el: HTMLElement | null) => {
+    if (!el) return;
+    setIsOverflowing(el.scrollWidth > el.clientWidth);
   };
 
   useEnhancedEffect(() => {
@@ -138,14 +135,12 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
       newValue = cachedValue;
       setEditMode(false);
       setValue(newValue);
-      checkOverflow();
     }
     onKeyDown?.(event, newValue);
   };
 
   const handleChange: HvInputProps["onChange"] = (event, val) => {
     setValue(val);
-    checkOverflow();
     onChange?.(event, val);
   };
 
@@ -173,26 +168,28 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           {...others}
         />
       ) : (
-        <HvTooltip title={isOverflowing && value}>
-          <HvButton
-            variant="secondaryGhost"
-            overrideIconColors={false}
-            endIcon={
-              <Edit
-                color="secondary_60"
-                className={cx(classes.icon, {
-                  [classes.iconVisible]: showIcon,
-                })}
-              />
-            }
-            className={cx(classes.button, {
-              [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
-            })}
-            onClick={handleClick}
-            disabled={disabled}
-            {...buttonProps}
-          >
+        <HvButton
+          variant="secondaryGhost"
+          overrideIconColors={false}
+          endIcon={
+            <Edit
+              color="secondary_60"
+              className={cx(classes.icon, {
+                [classes.iconVisible]: showIcon,
+              })}
+            />
+          }
+          className={cx(classes.button, {
+            [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
+          })}
+          onClick={handleClick}
+          disabled={disabled}
+          {...buttonProps}
+        >
+          <HvTooltip title={isOverflowing && value}>
             <HvTypography
+              component="div"
+              ref={checkOverflow}
               variant={variant}
               noWrap
               className={cx(classes.text, { [classes.textEmpty]: !value })}
@@ -200,8 +197,8 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
             >
               {value || placeholder}
             </HvTypography>
-          </HvButton>
-        </HvTooltip>
+          </HvTooltip>
+        </HvButton>
       )}
     </div>
   );

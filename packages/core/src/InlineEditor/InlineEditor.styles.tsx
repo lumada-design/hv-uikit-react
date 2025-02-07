@@ -17,12 +17,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
   },
   input: {},
   inputRoot: {},
-  text: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
-    alignSelf: "center",
-  },
+  text: {},
   largeText: {},
   textEmpty: {
     color: theme.colors.secondary_60,
@@ -36,14 +31,15 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     height: "100%",
     width: "100%",
     maxWidth: "100%",
-    justifyContent: "flex-start",
+    justifyContent: "start",
+    textAlign: "start",
     alignItems: "center",
 
     backgroundColor: theme.colors.atmo1,
-    border: `1px solid transparent`,
+    borderColor: "transparent",
 
     "&:hover, &:focus": {
-      border: `1px solid ${theme.colors.primary}`,
+      borderColor: theme.colors.primary,
       backgroundColor: theme.colors.atmo1,
 
       "& $icon": {
@@ -52,32 +48,19 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     },
 
     "&:active": {
-      border: `1px solid ${theme.colors.secondary}`,
+      borderColor: theme.colors.secondary,
       backgroundColor: "transparent",
 
       "& $icon": {
         visibility: "visible",
       },
     },
-
-    "& > div": {
-      width: "100%",
-    },
-    "& > div > span": {
-      width: "100%",
-    },
   },
   icon: {
     cursor: "pointer",
     visibility: "hidden",
     alignSelf: "center",
-    height: "16px",
-    width: "32px",
-    minWidth: "32px",
-
-    "& svg": {
-      margin: theme.spacing(0, "xs"),
-    },
+    height: 16,
   },
   iconVisible: {
     visibility: "visible",
