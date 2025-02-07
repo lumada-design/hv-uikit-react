@@ -5,7 +5,7 @@ import { HvCheckBox } from "../../CheckBox";
 import { HvInput } from "../../Input";
 import { HvList, HvListProps } from "../../List";
 import { HvPanel } from "../../Panel";
-import { HvTypography } from "../../Typography";
+import { CounterLabel } from "../../utils/CounterLabel";
 import { setId } from "../../utils/setId";
 import { HvFilterGroupContext } from "../FilterGroupContext";
 import { staticClasses, useClasses } from "./RightPanel.styles";
@@ -134,29 +134,17 @@ export const HvFilterGroupRightPanel = ({
   ]);
 
   const SelectAll = useCallback(() => {
-    const nbrSelected = activeFilterValues?.length;
-
-    const defaultLabel = (
-      <HvTypography component="span">
-        {nbrSelected > 0 ? (
-          <>
-            <b>{nbrSelected}</b>
-            {` ${labels?.multiSelectionConjunction} ${allActiveGroupOptions.length}`}
-          </>
-        ) : (
-          <>
-            <b>{labels?.selectAll}</b>
-            {` (${allActiveGroupOptions.length})`}
-          </>
-        )}
-      </HvTypography>
-    );
-
     return (
       <div className={classes.selectAllContainer}>
         <HvCheckBox
           id={setId(id, "select-all")}
-          label={defaultLabel}
+          label={
+            <CounterLabel
+              selected={activeFilterValues?.length}
+              total={allActiveGroupOptions.length}
+              conjunctionLabel={labels?.multiSelectionConjunction}
+            />
+          }
           onChange={() => handleSelectAll()}
           className={classes.selectAll}
           indeterminate={anySelected && !allSelected}

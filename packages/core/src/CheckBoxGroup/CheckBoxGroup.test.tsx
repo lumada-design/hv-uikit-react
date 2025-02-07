@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
@@ -542,7 +542,7 @@ describe("CheckBoxGroup", () => {
     it("should trigger the onChange by checking select all", async () => {
       const onChangeMock = vi.fn();
 
-      const { getByLabelText } = render(
+      render(
         <HvCheckBoxGroup
           showSelectAll
           label="Favorite Pet"
@@ -554,10 +554,8 @@ describe("CheckBoxGroup", () => {
         </HvCheckBoxGroup>,
       );
 
-      const selectAll = getByLabelText("All (3)");
-
       // Check all
-      await userEvent.click(selectAll);
+      await userEvent.click(screen.getByLabelText("0 / 3"));
 
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       expect(onChangeMock).toHaveBeenCalledWith(expect.anything(), [
@@ -728,7 +726,7 @@ describe("CheckBoxGroup", () => {
         </HvCheckBoxGroup>,
       );
 
-      const selectAll = getByRole("checkbox", { name: "All (3)" });
+      const selectAll = getByRole("checkbox", { name: "0 / 3" });
 
       expect(selectAll).not.toBeChecked();
       expect(selectAll).not.toHaveAttribute("data-indeterminate", "true");

@@ -283,7 +283,7 @@ describe("FilterGroup", () => {
     expect(within(leftList).getAllByRole("listitem")[1]).toHaveFocus();
 
     // Click on "All" checkbox
-    await user.click(screen.getByRole("checkbox", { name: /All \(4\)/i }));
+    await user.click(screen.getByRole("checkbox", { name: "0 / 4" }));
 
     const applyButton = screen.getByRole("button", { name: /Apply/i });
 
@@ -317,9 +317,7 @@ describe("FilterGroup", () => {
     await user.click(dropdown);
     expect(screen.getAllByText("4")).toHaveLength(1);
 
-    const selectAll = screen.getByRole("checkbox", { name: /2 \/ 4/i });
-
-    await user.click(selectAll);
+    await user.click(screen.getByRole("checkbox", { name: /2 \/ 4/i }));
     expect(screen.getAllByText("2")).toHaveLength(2);
   });
 
@@ -335,7 +333,7 @@ describe("FilterGroup", () => {
     const [leftList] = screen.getAllByRole("list");
 
     await user.click(within(leftList).getAllByRole("listitem")[1]);
-    await user.click(screen.getByRole("checkbox", { name: /All \(4\)/i }));
+    await user.click(screen.getByRole("checkbox", { name: "0 / 4" }));
 
     expect(screen.getAllByText("8")).toHaveLength(1);
   });
@@ -353,9 +351,7 @@ describe("FilterGroup", () => {
 
     await user.click(selectAllBefore);
 
-    const selectAllAfter = screen.getByRole("checkbox", { name: /All \(4\)/i });
-
-    await user.click(selectAllAfter);
+    await user.click(screen.getByRole("checkbox", { name: "0 / 4" }));
     expect(screen.getAllByText("5")).toHaveLength(1);
   });
 
@@ -396,9 +392,7 @@ describe("FilterGroup", () => {
     const searchInput = screen.getByRole("searchbox");
     await user.type(searchInput, "2");
 
-    const selectAll = screen.getByRole("checkbox", { name: /1 \/ 1/i });
-
-    await user.click(selectAll);
+    await user.click(screen.getByRole("checkbox", { name: "1 / 1" }));
     expect(screen.getAllByText("3")).toHaveLength(1);
   });
 
@@ -414,9 +408,7 @@ describe("FilterGroup", () => {
     const searchInput = screen.getByRole("searchbox");
     await user.type(searchInput, "3");
 
-    const selectAll = screen.getByRole("checkbox", { name: /All \(1\)/i });
-
-    await user.click(selectAll);
+    await user.click(screen.getByRole("checkbox", { name: "0 / 1" }));
     expect(screen.getAllByText("5")).toHaveLength(1);
   });
 });

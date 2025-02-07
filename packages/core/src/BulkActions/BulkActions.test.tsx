@@ -38,7 +38,7 @@ describe("BulkActions", () => {
     const checkbox = screen.getByRole("checkbox");
 
     expect(checkbox).toBeInTheDocument();
-    expect(checkbox).toHaveAccessibleName("All (8)");
+    expect(checkbox).toHaveAccessibleName("0 / 8");
 
     // Select all
     await user.click(checkbox);
@@ -59,14 +59,6 @@ describe("BulkActions", () => {
     await user.click(checkbox);
 
     expect(callbackSpy).toHaveBeenCalledOnce();
-  });
-
-  it("should render the custom label for the select all checkbox", () => {
-    render(<Sample selectAllLabel="MockLabel" />);
-
-    const checkbox = screen.getByRole("checkbox", { name: "MockLabel (8)" });
-
-    expect(checkbox).toBeInTheDocument();
   });
 
   // TODO - only test onAction in v6
