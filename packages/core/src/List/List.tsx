@@ -23,10 +23,10 @@ import {
 import { HvOverflowTooltip } from "../OverflowTooltip";
 import { HvRadio } from "../Radio";
 import { HvBaseProps } from "../types/generic";
-import { HvTypography } from "../Typography";
+import { CounterLabel } from "../utils/CounterLabel";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./List.styles";
-import { HvListLabels, HvListValue } from "./types";
+import { HvListValue } from "./types";
 import { useSelectableList } from "./useSelectableList";
 import { parseList } from "./utils";
 
@@ -86,9 +86,13 @@ export interface HvListProps
 }
 
 const DEFAULT_LABELS = {
+  /** The label used for the All checkbox action. @deprecated no longer used */
   selectAll: "Select All",
+  /** The label used in the middle of the multi-selection count. */
   selectionConjunction: "/",
 };
+
+export type HvListLabels = Partial<typeof DEFAULT_LABELS>;
 
 /**
  * Component used to show a set of related data to the user.
@@ -184,32 +188,19 @@ export const HvList = (props: HvListProps) => {
   };
 
   const renderSelectAll = () => {
-    const { selectAll, selectionConjunction } = labels;
-
     const anySelected = !!selection?.length;
     const allSelected = selection.length === list.length;
-
-    const selectionLabel = (
-      <HvTypography component="span">
-        {!anySelected ? (
-          <>
-            <b>{selectAll}</b>
-            {` (${list.length})`}
-          </>
-        ) : (
-          <>
-            <b>{selection.length}</b>
-            {`\xa0${selectionConjunction}\xa0`}
-            {list.length}
-          </>
-        )}
-      </HvTypography>
-    );
 
     return (
       <HvCheckBox
         id={setId(id, "select-all")}
-        label={selectionLabel}
+        label={
+          <CounterLabel
+            selected={selection.length}
+            total={list.length}
+            conjunctionLabel={labels.selectionConjunction}
+          />
+        }
         onChange={handleSelectAll}
         className={classes.selectAllSelector}
         indeterminate={anySelected && !allSelected}

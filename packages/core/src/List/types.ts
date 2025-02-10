@@ -16,10 +16,3 @@ export interface HvListValue extends Record<string, any> {
   params?: object;
   tabIndex?: number;
 }
-
-export interface HvListLabels {
-  /** The label used for the All checkbox action. */
-  selectAll?: string;
-  /** The label used in the middle of the multi-selection count. */
-  selectionConjunction?: string;
-}

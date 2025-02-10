@@ -19,6 +19,7 @@ export interface HvFilterGroupRightPanelProps {
   className?: string;
   labels?: {
     searchBoxPlaceholder?: string;
+    /** @deprecated unused */
     selectAll?: string;
     multiSelectionConjunction?: string;
   };
