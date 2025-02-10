@@ -1,15 +1,18 @@
-/** A utility counter component (eg. X / Y) */
+interface CounterLabelProps extends React.HTMLAttributes<HTMLSpanElement> {
+  selected: React.ReactNode;
+  total: React.ReactNode;
+  conjunctionLabel?: React.ReactNode;
+}
+
+/** A utility counter component (eg. X / Y) @private */
 export const CounterLabel = ({
   selected,
   total,
   conjunctionLabel = "/",
-}: {
-  selected: number;
-  total: number;
-  conjunctionLabel?: React.ReactNode;
-}) => {
+  ...others
+}: CounterLabelProps) => {
   return (
-    <span>
+    <span {...others}>
       <b>{selected}</b> {` ${conjunctionLabel} ${total}`}
     </span>
   );

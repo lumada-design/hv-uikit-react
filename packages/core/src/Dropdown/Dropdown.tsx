@@ -21,6 +21,7 @@ import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListValue } from "../List";
 import { fixedForwardRef } from "../types/generic";
 import { HvTypography } from "../Typography";
+import { CounterLabel } from "../utils/CounterLabel";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Dropdown.styles";
 import { HvDropdownList, HvDropdownListProps } from "./List";
@@ -163,7 +164,7 @@ export interface HvDropdownProps<
 const DEFAULT_LABELS = {
   /** Label for overwrite the default header behavior. */
   select: undefined as string | undefined,
-  /** Label used for the All checkbox action. */
+  /** Label used for the All checkbox action. @deprecated unused */
   selectAll: "All",
   /** Cancel button label. */
   cancelLabel: "Cancel",
@@ -407,16 +408,14 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
         {selectionLabel.selected}
       </HvTypography>
     ) : (
-      <HvTypography
-        component="div"
+      <CounterLabel
+        selected={selectionLabel.selected}
+        total={selectionLabel.total}
+        conjunctionLabel={labels.multiSelectionConjunction}
         className={cx(classes.placeholder, {
           [classes.selectionDisabled]: disabled,
         })}
-        variant="body"
-      >
-        <b>{selectionLabel.selected}</b>
-        {` ${labels?.multiSelectionConjunction} ${selectionLabel.total}`}
-      </HvTypography>
+      />
     );
   };
 
