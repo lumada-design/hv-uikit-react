@@ -129,9 +129,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     [`& .${baseInputClasses.root}`]: {
       width: "100%",
       border: "none",
-      "&:hover $tagInputBorderContainer": {
-        background: "none",
-      },
     },
     [`&& .${baseInputClasses.inputRoot}`]: {
       marginLeft: 0,
@@ -141,10 +138,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
       lineHeight: "24px",
       padding: 0,
       border: "none",
-    },
-    [`& .${baseInputClasses.inputBorderContainer}`]: {
-      border: "none",
-      background: "none",
     },
     [`& .${baseInputClasses.inputRootFocused}`]: {
       outline: "none",
@@ -168,6 +161,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     outlineOffset: "-1px",
     boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
   },
+  /** @deprecated unused. use `::after` instead */
   tagInputBorderContainer: {},
   tagInputRootFocused: {},
   tagInputRootEmpty: {},

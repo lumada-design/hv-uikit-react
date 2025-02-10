@@ -53,7 +53,4 @@ export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
     minWidth: 40,
     maxWidth: 40,
   },
-  inputBorderContainer: {
-    top: 40,
-  },
 });

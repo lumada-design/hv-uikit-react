@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvTextArea", {
   invalid: {},
   baseInput: { clear: "both", float: "left" },
   input: {},
-  inputResizable: { width: "100%", resize: "both" },
+  inputResizable: {},
   labelContainer: { float: "left", display: "flex", alignItems: "flex-start" },
   label: {},
   description: { display: "block", float: "left" },

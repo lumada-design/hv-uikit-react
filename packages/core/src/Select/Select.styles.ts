@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   disabled: {},
   readOnly: {},
   invalid: {
-    border: `1px solid ${theme.colors.negative_120}`,
+    borderColor: theme.colors.negative_120,
   },
   labelContainer: {
     display: "flex",

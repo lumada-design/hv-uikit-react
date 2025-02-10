@@ -34,18 +34,9 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     backgroundColor: theme.colors.atmo1,
     boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
   },
-  input: {
-    "&::-ms-clear": {
-      display: "none",
-    },
-  },
+  input: {},
   inputRoot: {
-    ":hover": {
-      "& $iconClear": {
-        display: "block",
-      },
-    },
-    ":focus-within $iconClear": {
+    ":is(:hover,:focus-within) $iconClear": {
       display: "block",
     },
   },
@@ -54,14 +45,9 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
       display: "block",
     },
   },
-  inputRootDisabled: {
-    cursor: "not-allowed",
-  },
+  inputRootDisabled: {},
   inputRootMultiline: { padding: 0 },
-  inputBorderContainer: {
-    "$hasSuggestions &": {
-      display: "none",
-    },
-  },
+  /** @deprecated unused. use `::after` instead */
+  inputBorderContainer: {},
   error: {},
 });

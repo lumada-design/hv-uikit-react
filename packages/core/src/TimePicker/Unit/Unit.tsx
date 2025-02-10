@@ -53,7 +53,6 @@ export const Unit = ({
           classes={{
             input: classes.input,
             root: classes.inputContainer,
-            inputBorderContainer: classes.inputBorderContainer,
             inputRoot: classes.inputRoot,
           }}
           onKeyDown={(event) => {
