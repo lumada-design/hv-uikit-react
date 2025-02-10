@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.87.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.1...@hitachivantara/uikit-react-core@5.87.2) (2025-02-10)
+
+### Bug Fixes
+
+- Radio & TableCell style customizability ([#4556](https://github.com/lumada-design/hv-uikit-react/issues/4556)) ([f5d4627](https://github.com/lumada-design/hv-uikit-react/commit/f5d46274ff89777874317aff0588330fdbcd8294))
+- update align select all checkbox labels ([#4558](https://github.com/lumada-design/hv-uikit-react/issues/4558)) ([61d3708](https://github.com/lumada-design/hv-uikit-react/commit/61d37082981ee42c2f698d2e70c98e9d6a623791))
+
 ## [5.87.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.0...@hitachivantara/uikit-react-core@5.87.1) (2025-02-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

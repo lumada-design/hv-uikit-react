@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.41.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.41.0...@hitachivantara/uikit-styles@5.41.1) (2025-02-10)
+
+### Bug Fixes
+
+- Radio & TableCell style customizability ([#4556](https://github.com/lumada-design/hv-uikit-react/issues/4556)) ([f5d4627](https://github.com/lumada-design/hv-uikit-react/commit/f5d46274ff89777874317aff0588330fdbcd8294))
+
 # [5.41.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.40.6...@hitachivantara/uikit-styles@5.41.0) (2025-01-30)
 
 ### Features
