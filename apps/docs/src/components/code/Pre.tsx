@@ -1,7 +1,7 @@
 import { isValidElement } from "react";
 import { Pre as NextraPre } from "nextra/components";
 
-import { Live } from "./Live";
+import { CodeBlock } from "./CodeBlock";
 
 interface PreProps extends React.HTMLAttributes<HTMLElement> {
   live?: boolean;
@@ -10,7 +10,8 @@ interface PreProps extends React.HTMLAttributes<HTMLElement> {
 
 export const Pre = ({ live, children, ...props }: PreProps) => {
   if (live && isValidElement(children)) {
-    return <Live {...children.props} />;
+    const code = children.props.children || "";
+    return <CodeBlock code={code} layout="expandable" />;
   }
 
   return <NextraPre {...props}>{children}</NextraPre>;

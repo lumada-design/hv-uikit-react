@@ -2,8 +2,7 @@ import { Callout } from "nextra/components";
 import { HvWizard, wizardClasses } from "@hitachivantara/uikit-react-lab";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -11,9 +10,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Callout type="info">
   This is a `lab` component and as such is not considered stable and may be
@@ -162,5 +159,3 @@ const RandomFormComponent = (props: Record<string, any>) => {
   );
 };
 ```
-
-</Page>

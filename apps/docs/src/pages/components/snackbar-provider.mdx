@@ -2,8 +2,7 @@ import { Callout } from "nextra/components";
 import { snackbarProviderClasses } from "@hitachivantara/uikit-react-core";
 
 import Playground from "@docs/components/code/Playground";
-import { Description } from "@docs/components/page/Description";
-import { Page } from "@docs/components/page/Page";
+import { Header } from "@docs/components/Header";
 import { getComponentData } from "@docs/utils/component";
 
 export const getStaticProps = async ({ params }) => {
@@ -15,9 +14,7 @@ export const getStaticProps = async ({ params }) => {
   return { props: { ssg: { meta } } };
 };
 
-<Description />
-
-<Page>
+<Header />
 
 <Callout type="info">
   The provider is not meant to be 100% feature complete, but instead, ease the
@@ -167,5 +164,3 @@ const SnackbarButtons = () => {
 
 - [`HvSnackbar`](/components/snackbar)
 - [`HvBanner`](/components/banner)
-
-</Page>

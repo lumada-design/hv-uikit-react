@@ -23,9 +23,9 @@ type PropsTableProps = {
 const classes = {
   root: "flex flex-col",
   row: "table-row border-b border-atmo3 !bg-transparent",
-  emptyRow: "table-row border-b border-atmo3 justify-center",
 };
 
+// Utility function to reorder props by required status and alphabetical order
 const reorderProps = (props: Record<string, PropItem>) =>
   Object.fromEntries(
     Object.entries(props).sort(([keyA, a], [keyB, b]) => {
@@ -131,12 +131,16 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
   </HvTableContainer>
 );
 
+// Main Props Component
 export const Props = () => {
   const { meta } = useData();
   const { docgen, subComponentsDocgen } = meta;
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Process main component props
   const orderedMainProps = reorderProps(docgen?.props || {});
+
+  // Process sub-component props
   const orderedSubComponents = Object.fromEntries(
     Object.entries(subComponentsDocgen).map(
       ([subComponent, subComponentDocgen]) => [
@@ -148,6 +152,7 @@ export const Props = () => {
     ),
   );
 
+  // Filter props by search term
   const filterProps = (props: Record<string, PropItem>, search: string) =>
     Object.fromEntries(
       Object.entries(props).filter(([key]) =>

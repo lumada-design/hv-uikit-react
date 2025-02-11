@@ -6,6 +6,11 @@ import { HvTypography } from "@hitachivantara/uikit-react-core";
 import { GitHubLogo } from "../logo/gh";
 import { NpmLogo } from "../logo/npm";
 
+/**
+ * The `Description` component displays metadata information
+ * about the current component, including its name, description,
+ * GitHub source link, and NPM package link.
+ */
 export const Description = () => {
   const { meta } = useData();
 
