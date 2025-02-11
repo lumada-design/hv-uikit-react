@@ -129,11 +129,7 @@ export interface HvInputProps<
    * it receives the value. If a new value should be presented it must returned it.
    */
   onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
-  // onEnter?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
-  onEnter?: (
-    event: React.KeyboardEvent<InputElement> | React.MouseEvent,
-    value: string,
-  ) => void;
+  onEnter?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   /**
    * The function that will be executed onBlur, allows checking the validation state,
    * it receives the value and the validation state.
@@ -304,9 +300,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   const isDirty = useRef(false);
 
   // Value related state
-  const [value, setValue] = useControlled(valueProp, defaultValue);
-
-  const isEmptyValue = value == null || value === "";
+  const isEmptyValue = !inputRef.current?.value;
 
   // Validation related state
   const [validationState, setValidationState] = useControlled(
@@ -340,7 +334,6 @@ export const HvInput = fixedForwardRef(function HvInput<
   const performValidation = useCallback(() => {
     const inputValidity = validateInput(
       inputRef.current,
-      String(value),
       required,
       minCharQuantity,
       maxCharQuantity,
@@ -367,7 +360,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     setValidationState,
     validation,
     validationType,
-    value,
   ]);
 
   // The error message area will only be created if:
@@ -460,15 +452,12 @@ export const HvInput = fixedForwardRef(function HvInput<
 
       if (type === "search") {
         // trigger the onEnter callback when the user selects an option in a search box
-        onEnter?.(event, newValue);
+        onEnter?.(event as any, newValue);
       }
     };
 
   const onChangeHandler: HvBaseInputProps["onChange"] = (event, newValue) => {
     isDirty.current = true;
-
-    // set the input value (only when value is uncontrolled)
-    setValue(newValue);
 
     onChange?.(event as any, newValue);
 
@@ -495,7 +484,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
     const inputValidity = performValidation();
 
-    onBlur?.(event as any, String(value), inputValidity);
+    onBlur?.(event as any, event.target.value, inputValidity);
   };
 
   /**
@@ -508,7 +497,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     // reset validation status to standBy (only when status is uncontrolled)
     setValidationState(validationStates.standBy);
 
-    onFocus?.(event as any, String(value));
+    onFocus?.(event as any, event.target.value);
   };
 
   const getSuggestions = (li: number | null) => {
@@ -530,14 +519,16 @@ export const HvInput = fixedForwardRef(function HvInput<
 
   /** Focus the suggestion list when the arrow down is pressed. */
   const onKeyDownHandler: HvBaseInputProps["onKeyDown"] = (event) => {
+    const { value } = event.currentTarget;
+
     if (isKey(event, "ArrowDown") && hasSuggestions) {
       const li = getSuggestions(0);
       li?.focus();
     } else if (isKey(event, "Enter")) {
-      onEnter?.(event as any, String(value));
+      onEnter?.(event as any, value);
     }
 
-    onKeyDown?.(event as any, String(value));
+    onKeyDown?.(event as any, value);
   };
 
   /** Clears the suggestion list on blur. */
@@ -622,9 +613,9 @@ export const HvInput = fixedForwardRef(function HvInput<
    */
   const handleSearch = useCallback<NonNullable<HvAdornmentProps["onClick"]>>(
     (event) => {
-      onEnter?.(event, String(value));
+      onEnter?.(event as any, inputRef.current?.value ?? "");
     },
-    [onEnter, value],
+    [onEnter],
   );
 
   const searchButton = useMemo(() => {
@@ -634,9 +625,7 @@ export const HvInput = fixedForwardRef(function HvInput<
       (isEmptyValue ||
         (hasOnEnter && validationState === validationStates.standBy));
 
-    if (!reallyShowIt) {
-      return null;
-    }
+    if (!reallyShowIt) return null;
 
     return (
       <HvAdornment
@@ -664,9 +653,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   }, [revealPassword]);
 
   const revealPasswordButton = useMemo(() => {
-    if (!showRevealPasswordButton) {
-      return null;
-    }
+    if (!showRevealPasswordButton) return null;
 
     return (
       <HvTooltip
@@ -699,13 +686,8 @@ export const HvInput = fixedForwardRef(function HvInput<
   ]);
 
   const validationIcon = useMemo(() => {
-    if (!showValidationIcon) {
-      return null;
-    }
-
-    if (!isValid(validationState)) {
-      return null;
-    }
+    if (!showValidationIcon) return null;
+    if (!isValid(validationState)) return null;
 
     return <Success color="positive" className={classes.icon} />;
   }, [showValidationIcon, validationState, classes.icon]);
@@ -713,10 +695,11 @@ export const HvInput = fixedForwardRef(function HvInput<
   // useMemo to avoid repetitive cloning of the custom icon
   const customIconEl = useMemo(
     () =>
-      isValidElement(endAdornment) &&
-      cloneElement(endAdornment as React.ReactElement, {
-        className: cx(endAdornment.props.className, classes.icon),
-      }),
+      isValidElement(endAdornment)
+        ? cloneElement(endAdornment as React.ReactElement, {
+            className: cx(endAdornment.props.className, classes.icon),
+          })
+        : endAdornment,
     [classes.icon, endAdornment, cx],
   );
 
@@ -813,7 +796,8 @@ export const HvInput = fixedForwardRef(function HvInput<
             : setId(id, "input")
         }
         name={name}
-        value={value}
+        value={valueProp}
+        defaultValue={defaultValue}
         required={required}
         readOnly={readOnly}
         disabled={disabled}
@@ -847,8 +831,6 @@ export const HvInput = fixedForwardRef(function HvInput<
             ? setId(elementId, "suggestions")
             : undefined,
 
-          ref: inputRef,
-
           // prevent browsers auto-fill/suggestions when we have our own
           autoComplete: canShowSuggestions ? "off" : undefined,
 
@@ -857,7 +839,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
             // trigger suggestions when focusing the input
             if (canShowSuggestions && suggestOnFocus) {
-              suggestionHandler(String(value));
+              suggestionHandler(event.currentTarget.value);
             }
           },
 
@@ -870,7 +852,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
           ...inputProps,
         }}
-        inputRef={forkedRef}
+        ref={forkedRef}
         endAdornment={adornments}
         {...others}
       />
