@@ -118,7 +118,6 @@ export const computeValidationMessage = (
  */
 export const validateInput = (
   input: HTMLInputElement | HTMLTextAreaElement | null,
-  value: string,
   required: boolean | undefined,
   minCharQuantity: any,
   maxCharQuantity: any,
@@ -139,6 +138,8 @@ export const validateInput = (
     typeMismatch: input?.validity?.typeMismatch,
     valueMissing: input?.validity?.valueMissing,
   };
+
+  const value = input?.value;
 
   if (!value) {
     if (required) {
