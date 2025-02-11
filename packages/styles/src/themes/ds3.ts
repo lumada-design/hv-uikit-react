@@ -302,86 +302,59 @@ const ds3 = makeTheme((theme) => ({
     HvBaseInput: {
       classes: {
         root: {
-          "&:hover .HvBaseInput-inputBorderContainer": {
-            backgroundColor: theme.colors.secondary,
-          },
+          border: "none",
 
-          "&:focus-within .HvBaseInput-inputBorderContainer": {
-            backgroundColor: theme.colors.secondary,
+          ":not(.HvBaseInput-disabled):not(.HvBaseInput-invalid):not(.HvBaseInput-readOnly)":
+            {
+              ":hover,:focus-within": {
+                borderColor: theme.colors.secondary,
+                "::after": {
+                  borderBottomColor: theme.colors.secondary,
+                },
+              },
+            },
+
+          "::after": {
+            content: '" "',
+            position: "absolute",
+            inset: "auto 0 0",
+            margin: "0 2px",
+            borderBottom: `1px solid ${theme.colors.atmo4}`,
+          },
+        },
+        invalid: {
+          "::after": {
+            borderBottomColor: theme.colors.negative_120,
           },
         },
         disabled: {
-          "& .HvBaseInput-inputRoot": {
-            backgroundColor: theme.colors.atmo3,
-            borderColor: "transparent",
-          },
+          backgroundColor: theme.colors.atmo3,
 
           "&& .HvBaseInput-input": {
             color: theme.colors.secondary_60,
             WebkitTextFillColor: theme.colors.secondary_60,
           },
-
-          "& .HvBaseInput-inputRootMultiline": {
-            "& .HvBaseInput-input": {
-              backgroundColor: theme.colors.atmo3,
-              border: `1px solid ${theme.colors.atmo4}`,
-            },
+        },
+        multiline: {
+          border: `1px solid ${theme.colors.atmo4}`,
+          "&::after": {
+            display: "none",
           },
-
-          "&:hover .HvBaseInput-inputRootMultiline": {
-            "& .HvBaseInput-input": {
-              backgroundColor: theme.colors.atmo3,
-              border: `1px solid ${theme.colors.atmo4}`,
-            },
+          "&.HvBaseInput-disabled": {
+            borderColor: theme.colors.atmo4,
           },
         },
         readOnly: {
-          "& .HvBaseInput-inputRootMultiline": {
-            "& .HvBaseInput-input": {
-              border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo1,
-            },
-          },
-
-          "&:hover .HvBaseInput-inputRootMultiline": {
-            "& .HvBaseInput-input": {
-              border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo1,
-            },
-          },
-
-          "&:focus-within .HvBaseInput-inputRootMultiline": {
-            "& .HvBaseInput-input": {
-              border: `1px solid transparent`,
-              backgroundColor: theme.colors.atmo1,
-            },
-          },
-        },
-        inputBorderContainer: {
-          height: "1px",
-        },
-        inputRootReadOnly: {
           borderColor: "transparent",
           backgroundColor: theme.colors.atmo1,
-        },
-        inputRoot: {
-          border: "none",
-          "&:hover:not(.HvBaseInput-inputRootDisabled):not(.HvBaseInput-inputRootInvalid):not(.HvBaseInput-inputRootReadOnly)":
-            {
-              borderColor: theme.colors.secondary,
-            },
-        },
-        inputRootFocused: {
-          "&.HvBaseInput-inputRootReadOnly": {
-            backgroundColor: theme.colors.atmo1,
+
+          "::after": {
+            borderColor: "transparent",
           },
         },
-        inputRootMultiline: {
-          "& .HvBaseInput-input": {
-            border: `1px solid ${theme.colors.atmo4}`,
-            "&:hover": {
-              border: `1px solid ${theme.colors.secondary}`,
-            },
+        focused: {
+          "&.HvBaseInput-readOnly": {
+            backgroundColor: theme.colors.atmo1,
           },
         },
         input: {
@@ -492,27 +465,21 @@ const ds3 = makeTheme((theme) => ({
     HvCalendarHeader: {
       classes: {
         root: {
-          marginTop: theme.spacing("xs"),
-          paddingBottom: "32px",
-
-          "&.HvCalendarHeader-invalid": {
-            paddingBottom: 0,
+          marginTop: theme.space.xs,
+          paddingBottom: 32,
+          "& input": {
+            height: "27px",
+            fontSize: "18px",
+            letterSpacing: "0.02em",
+            lineHeight: "28px",
+            fontWeight: theme.fontWeights.semibold,
           },
         },
-        headerDate: {
-          "& .HvBaseInput-inputBorderContainer": {
-            top: 33,
-          },
+        invalid: {
+          paddingBottom: 0,
         },
         headerDayOfWeek: {
           color: theme.colors.secondary,
-        },
-        input: {
-          height: "27px",
-          fontSize: "18px",
-          letterSpacing: "0.02em",
-          lineHeight: "28px",
-          fontWeight: theme.fontWeights.semibold,
         },
       },
     },
@@ -1224,6 +1191,11 @@ const ds3 = makeTheme((theme) => ({
             "&:hover": {
               border: `1px solid transparent`,
             },
+          },
+        },
+        tagInputRoot: {
+          "& .HvBaseInput-root::after": {
+            display: "none",
           },
         },
         tagsList: {

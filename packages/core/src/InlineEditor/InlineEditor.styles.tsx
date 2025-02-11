@@ -1,22 +1,15 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { baseInputClasses } from "../BaseInput";
-import { inputClasses } from "../Input";
-
 export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
-  root: {
-    [`& .${baseInputClasses.inputRoot}.${inputClasses.inputRoot}`]: {
-      height: "100%",
-      minHeight: "32px",
-    },
-  },
-  inputBorderContainer: {
-    top: "unset",
-    bottom: 0,
-  },
+  root: {},
+  /** @deprecated unused. use `classes.root::after` instead */
+  inputBorderContainer: {},
   input: {},
-  inputRoot: {},
+  inputRoot: {
+    height: "100%",
+    minHeight: "32px",
+  },
   text: {},
   largeText: {},
   textEmpty: {

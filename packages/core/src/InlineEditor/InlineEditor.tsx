@@ -153,7 +153,6 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
           classes={{
             root: classes.inputRoot,
             input: classes.input,
-            inputBorderContainer: classes.inputBorderContainer,
           }}
           inputProps={{
             style: {

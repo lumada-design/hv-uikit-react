@@ -129,6 +129,7 @@ export interface HvInputProps<
    * it receives the value. If a new value should be presented it must returned it.
    */
   onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
+  // onEnter?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   onEnter?: (
     event: React.KeyboardEvent<InputElement> | React.MouseEvent,
     value: string,
@@ -825,11 +826,10 @@ export const HvInput = fixedForwardRef(function HvInput<
         type={realType}
         classes={{
           input: classes.input,
-          inputRoot: classes.inputRoot,
-          inputRootFocused: classes.inputRootFocused,
-          inputRootDisabled: classes.inputRootDisabled,
-          inputRootMultiline: classes.inputRootMultiline,
-          inputBorderContainer: classes.inputBorderContainer,
+          root: classes.inputRoot,
+          focused: classes.inputRootFocused,
+          disabled: classes.inputRootDisabled,
+          multiline: classes.inputRootMultiline,
         }}
         invalid={isStateInvalid}
         inputProps={{

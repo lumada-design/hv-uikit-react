@@ -53,8 +53,6 @@ const inputColors = {
   borderActive: ld(slate[700], slate[300]),
 };
 
-const inputBorder = `1px solid ${inputColors.border}`;
-
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
   colors: {
@@ -557,7 +555,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           "&& .HvButton-secondarySubtle": {
-            border: inputBorder,
+            borderColor: inputColors.border,
             backgroundColor: inputColors.bg,
           },
           "&& .HvDropdownButton-openUp": {
@@ -571,14 +569,14 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: theme.radii.base,
         },
         panel: {
-          border: inputBorder,
+          borderColor: inputColors.border,
         },
       },
     },
     HvSuggestions: {
       classes: {
         list: {
-          border: inputBorder,
+          borderColor: inputColors.border,
         },
       },
     },
@@ -604,17 +602,14 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvInlineEditor: {
       classes: {
-        root: {
-          "& .HvButton-root": {
-            borderRadius: "2px",
-
-            "&:focus": {
-              borderColor: theme.colors.secondary,
-            },
+        button: {
+          borderRadius: 2,
+          "&:focus": {
+            borderColor: theme.colors.secondary,
           },
-          "& .HvBaseInput-inputRoot": {
-            borderRadius: "2px",
-          },
+        },
+        inputRoot: {
+          borderRadius: 2,
         },
       },
     },
@@ -1015,32 +1010,26 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvBaseInput: {
       classes: {
-        inputRoot: {
-          border: inputBorder,
+        root: {
+          borderColor: inputColors.border,
           backgroundColor: inputColors.bg,
-        },
-        inputRootMultiline: {
-          "&& textarea": {
-            border: inputBorder,
-            backgroundColor: inputColors.bg,
-          },
         },
       },
     },
     HvBaseDropdown: {
       classes: {
         header: {
-          border: inputBorder,
+          borderColor: inputColors.border,
           backgroundColor: inputColors.bg,
         },
         headerOpen: {
-          border: inputBorder,
+          borderColor: inputColors.border,
           "&:hover": {
-            border: inputBorder,
+            borderColor: inputColors.border,
           },
         },
         panel: {
-          border: inputBorder,
+          borderColor: inputColors.border,
         },
       },
     },
@@ -1048,7 +1037,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         iconSelected: {
           "&[data-color=secondary]": {
-            border: inputBorder,
+            borderColor: inputColors.border,
           },
         },
       },

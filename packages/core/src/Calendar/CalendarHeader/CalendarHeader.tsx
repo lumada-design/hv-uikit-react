@@ -159,12 +159,6 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
       <HvInput
         type="text"
         id={setId(id, "header-input")}
-        className={classes.headerDate}
-        classes={{
-          input: classes.input,
-          inputBorderContainer: classes.inputBorderContainer,
-          error: classes.invalidMessageStyling,
-        }}
         placeholder={localeFormat}
         value={inputValue}
         aria-labelledby={label?.[0]?.id}

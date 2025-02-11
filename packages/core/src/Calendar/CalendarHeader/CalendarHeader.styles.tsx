@@ -13,8 +13,4 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarHeader", {
   headerDayOfWeek: {
     color: theme.colors.secondary_80,
   },
-  headerDate: {},
-  input: {},
-  inputBorderContainer: {},
-  invalidMessageStyling: {},
 });

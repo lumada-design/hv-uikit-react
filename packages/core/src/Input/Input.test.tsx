@@ -47,9 +47,9 @@ describe("Input", () => {
   });
 
   it("renders the custom icon", () => {
-    render(<HvInput endAdornment={<Map role="presentation" />} />);
+    render(<HvInput endAdornment={<Map data-testid="icon" />} />);
 
-    expect(screen.getByRole("presentation")).toBeVisible();
+    expect(screen.getByTestId("icon")).toBeVisible();
   });
 
   it("renders the adornment as disabled for the search when the input is disabled", () => {
