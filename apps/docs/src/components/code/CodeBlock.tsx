@@ -22,7 +22,7 @@ export const CodeBlock = ({
   // Normalize code input to be an object with a single file if it's a string
   // This ensures consistent handling of single-file and multi-file inputs.
   const normalizedCode = useMemo(
-    () => (typeof code === "string" ? { main: code } : code),
+    () => (typeof code === "string" ? { main: code.trim() } : code),
     [code],
   );
 

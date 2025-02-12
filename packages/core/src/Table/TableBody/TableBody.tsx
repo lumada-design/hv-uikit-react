@@ -43,7 +43,7 @@ export interface HvTableBodyProps
 
 const tableSectionContext = {
   type: "body",
-  filterClassName: "_grid",
+  filterClassName: "_trgrid",
 } satisfies TableSectionContextValue;
 
 const defaultComponent = "tbody";

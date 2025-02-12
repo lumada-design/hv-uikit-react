@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import type { PropItem } from "react-docgen-typescript";
+import Link from "next/link";
 import { useData } from "nextra/hooks";
 import {
   HvEmptyState,
@@ -22,7 +23,7 @@ type PropsTableProps = {
 
 const classes = {
   root: "flex flex-col",
-  row: "table-row border-b border-atmo3 !bg-transparent",
+  row: "border-b !bg-transparent",
 };
 
 // Utility function to reorder props by required status and alphabetical order
@@ -86,39 +87,52 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
           <EmptyStateRow />
         ) : (
           Object.entries(propsObj).map(([key, propItem]) => (
-            <HvTableRow key={key} className={classes.row}>
+            <HvTableRow
+              key={key}
+              id={`prop-${propItem.name}`}
+              className={classes.row}
+            >
               <HvTableCell className="!pl-xs w-[25%]">
-                <code>
-                  {propItem.description.includes("deprecated") ? (
-                    <s>{key}</s>
-                  ) : (
-                    key
+                <a
+                  href={`#prop-${propItem.name}`}
+                  className="[&>span]:hover:visible"
+                >
+                  <code>
+                    {propItem.description.includes("deprecated") ? (
+                      <s>{key}</s>
+                    ) : (
+                      key
+                    )}
+                  </code>
+                  {propItem.required && (
+                    <code className="text-negative">*</code>
                   )}
-                </code>
-                {propItem.required && <code className="text-negative">*</code>}
+                  <span className="opacity-40 invisible">{` #`}</span>
+                </a>
               </HvTableCell>
               <HvTableCell className="w-[30%]">
-                <pre className="whitespace-pre-wrap break-words !text-[12px] text-primary_80">
-                  {propItem.type?.name}
-                </pre>
+                {propItem.name === "classes" ? (
+                  <HvTypography link component={Link} href="?tab=classes">
+                    see classes docs
+                  </HvTypography>
+                ) : (
+                  <pre className="whitespace-pre-wrap break-words !text-[12px] text-primary_80">
+                    {propItem.type?.name}
+                  </pre>
+                )}
               </HvTableCell>
               <HvTableCell>
-                {propItem.description?.split(/(`[^`]+`)/g).map((part) =>
+                {propItem.description?.split(/(`[^`]+`)/g).map((part, i) =>
                   part.startsWith("`") && part.endsWith("`") ? (
-                    <code key={part} className="nextra-code">
+                    <code key={i} className="nextra-code">
                       {part.slice(1, -1)}
                     </code>
                   ) : (
                     part.split("@deprecated").map((part, index) => (
-                      <>
-                        {index > 0 && (
-                          <>
-                            <br />
-                            <br />
-                          </>
-                        )}
+                      <Fragment key={index}>
+                        {index > 0 && <br />}
                         {index === 0 ? part : `@deprecated${part}`}
-                      </>
+                      </Fragment>
                     ))
                   ),
                 )}
