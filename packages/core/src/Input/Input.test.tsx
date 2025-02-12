@@ -5,6 +5,7 @@ import { vi } from "vitest";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvInput, HvInputProps } from ".";
+import { HvAdornment } from "../FormElement";
 
 const Suggestions = ({ ...others }: Partial<HvInputProps>) => {
   const [value, setValue] = useState("");
@@ -57,6 +58,25 @@ describe("Input", () => {
     expect(screen.getByText("kg")).toBeVisible();
   });
 
+  it("can press custom endAdornment with keyboard", async () => {
+    const clickMock = vi.fn();
+    render(
+      <HvInput
+        endAdornment={
+          <HvAdornment onClick={clickMock} tabIndex={0} icon={<div />} />
+        }
+      />,
+    );
+
+    const user = userEvent.setup();
+    await user.tab();
+    expect(screen.getByRole("textbox")).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("button")).toHaveFocus();
+    await user.keyboard("{enter}");
+    expect(clickMock).toHaveBeenCalledTimes(1);
+  });
+
   it("renders the startAdornment", () => {
     render(<HvInput startAdornment={<Map data-testid="icon" />} />);
 
@@ -75,7 +95,7 @@ describe("Input", () => {
     );
 
     expect(screen.getByRole("searchbox")).toBeDisabled();
-    const adornment = screen.getByLabelText("Search"); // role can't be used since the parent has aria-hidden
+    const adornment = document.querySelector("button"); // role can't be used since it has aria-hidden
     expect(adornment).toHaveAttribute("aria-disabled", "true");
   });
 
