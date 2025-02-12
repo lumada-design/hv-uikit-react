@@ -83,22 +83,21 @@ export const HvTableBody = forwardRef<HTMLElement, HvTableBodyProps>(
         >
           {withNavigation
             ? Children.map(children, (element) => {
-                if (isValidElement(element)) {
-                  return (
-                    <HvFocus
-                      id={`my-id-${element.key}`}
-                      rootRef={bodyRef}
-                      key={`row-${element.key}`}
-                      strategy="grid"
-                      filterClass={tableSectionContext.filterClassName}
-                      navigationJump={1}
-                      focusDisabled={false}
-                      selected={element.props.selected}
-                    >
-                      {element}
-                    </HvFocus>
-                  );
-                }
+                if (!isValidElement(element)) return undefined;
+                return (
+                  <HvFocus
+                    id={`my-id-${element.key}`}
+                    rootRef={bodyRef}
+                    key={`row-${element.key}`}
+                    strategy="grid"
+                    filterClass={tableSectionContext.filterClassName}
+                    navigationJump={1}
+                    focusDisabled={false}
+                    selected={element.props.selected}
+                  >
+                    {element}
+                  </HvFocus>
+                );
               })
             : children}
         </Component>

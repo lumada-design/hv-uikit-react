@@ -1,8 +1,9 @@
 import { Callout } from "nextra/components";
 import { gridClasses, HvGrid } from "@hitachivantara/uikit-react-core";
 
-import { Header } from "@docs/components/Header";
-import { getComponentData } from "@docs/utils/component";
+import { getComponentData } from "../../utils/component";
+
+import { Header } from "../../components/Header";
 
 export const getStaticProps = async ({ params }) => {
   const meta = await getComponentData("Grid", "core", gridClasses);
