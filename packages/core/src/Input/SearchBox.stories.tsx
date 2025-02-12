@@ -17,29 +17,34 @@ import { Fail } from "@hitachivantara/uikit-react-icons";
 
 import countryNamesArray, { continents, countries } from "./stories/countries";
 
-/**
- * A search box is a text input box with the dedicated function of accepting user input to be searched for in a database.
- * Search boxes are commonly accompanied by a search button/icon to submit the query.
- * However, the search button should be omitted in the filter as you type mode, where the trigger is automatic and related to the text string.
- */
-const SearchBox = () => null;
+const description = `
+ A search box is a text input box with the dedicated function of accepting user input to be searched for in a database.
+ Search boxes are commonly accompanied by a search button/icon to submit the query.
+ However, the search button should be omitted in the filter as you type mode, where the trigger is automatic and related to the text string.`;
 
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input/Search Box",
-  component: SearchBox,
+  component: HvInput,
+  parameters: {
+    // @ts-expect-error outdated types
+    docs: { description: { component: description } },
+  },
   decorators: [(Story) => <div style={{ height: "300px" }}>{Story()}</div>],
 };
 
 export default meta;
 
-export const Main: StoryObj = {
-  render: () => {
+export const Main: StoryObj<HvInputProps> = {
+  args: {
+    placeholder: "Search",
+  },
+  render: (args) => {
     return (
       <HvInput
         type="search"
         aria-label="Select country"
-        placeholder="Search"
         onEnter={(_, value) => console.log(value)}
+        {...args}
       />
     );
   },

@@ -1,19 +1,29 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { CloseXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvAdornment } from ".";
 
 describe("Adornment", () => {
-  it("should render the passed icon", () => {
-    render(<HvAdornment icon={<CloseXS title="close icon" />} />);
-    expect(screen.getByRole("img", { name: "close icon" })).toBeInTheDocument();
+  it("renders the passed icon", () => {
+    render(<HvAdornment icon={<div data-testid="mock-icon" />} />);
+    expect(screen.getByTestId("mock-icon")).toBeInTheDocument();
   });
 
-  it("should render a button if a 'onClick' is passed", async () => {
+  it("renders a clickable a11y-hidden button", async () => {
     const mockFn = vi.fn();
-    render(<HvAdornment icon={<CloseXS />} onClick={mockFn} />);
+    render(<HvAdornment icon={<div />} onClick={mockFn} />);
+    expect(screen.queryByRole("button")).toBeNull();
+    const button = document.querySelector("button");
+    expect(button).toBeInTheDocument();
+
+    await userEvent.click(button!);
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
+
+  it("renders a button when 'onClick' & 'tabIndex' is passed", async () => {
+    const mockFn = vi.fn();
+    render(<HvAdornment icon={<div />} onClick={mockFn} tabIndex={0} />);
 
     const button = screen.getByRole("button");
     expect(button).toBeInTheDocument();

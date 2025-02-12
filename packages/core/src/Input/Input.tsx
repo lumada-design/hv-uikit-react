@@ -32,7 +32,6 @@ import {
 } from "../BaseInput/validations";
 import {
   HvAdornment,
-  HvAdornmentProps,
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
@@ -299,7 +298,6 @@ export const HvInput = fixedForwardRef(function HvInput<
   // Signals that the user has manually edited the input value
   const isDirty = useRef(false);
 
-  // Value related state
   const isEmptyValue = !inputRef.current?.value;
 
   // Validation related state
@@ -541,8 +539,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     }
   };
 
-  const hasOnEnter = onEnter != null;
-
   // show the clear button only if the input is enabled, not read-only, disableClear is false and the input is not empty
   // also, don't show it when the input type is "search" and the input is active (standBy)
   const showClear =
@@ -550,7 +546,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     !readOnly &&
     !disableClear &&
     !isEmptyValue &&
-    (!hasOnEnter ||
+    (!onEnter ||
       type !== "search" ||
       disableSearchButton ||
       validationState !== validationStates.standBy);
@@ -608,49 +604,33 @@ export const HvInput = fixedForwardRef(function HvInput<
     cx,
   ]);
 
-  /**
-   * Calls the onEnter callback and refocus the input.
-   */
-  const handleSearch = useCallback<NonNullable<HvAdornmentProps["onClick"]>>(
-    (event) => {
-      onEnter?.(event as any, inputRef.current?.value ?? "");
-    },
-    [onEnter],
-  );
-
   const searchButton = useMemo(() => {
     // If the search icon is not actionable, only show it when the input is empty or active
     const reallyShowIt =
       showSearchIcon &&
       (isEmptyValue ||
-        (hasOnEnter && validationState === validationStates.standBy));
+        (onEnter && validationState === validationStates.standBy));
 
     if (!reallyShowIt) return null;
 
     return (
       <HvAdornment
         className={classes.adornmentButton}
-        onClick={hasOnEnter ? handleSearch : undefined}
-        aria-label={labels?.searchButtonLabel}
-        icon={<Search />}
+        onClick={
+          onEnter &&
+          ((evt) => onEnter?.(evt as any, inputRef.current?.value ?? ""))
+        }
+        icon={<Search title={labels.searchButtonLabel} />}
       />
     );
   }, [
     showSearchIcon,
     isEmptyValue,
-    hasOnEnter,
+    onEnter,
     validationState,
     classes.adornmentButton,
-    handleSearch,
-    labels?.searchButtonLabel,
+    labels.searchButtonLabel,
   ]);
-
-  /**
-   * Changes input type and refocus the input.
-   */
-  const handleRevealPassword = useCallback(() => {
-    setRevealPassword(!revealPassword);
-  }, [revealPassword]);
 
   const revealPasswordButton = useMemo(() => {
     if (!showRevealPasswordButton) return null;
@@ -667,10 +647,11 @@ export const HvInput = fixedForwardRef(function HvInput<
       >
         <HvAdornment
           className={classes.adornmentButton}
-          onClick={handleRevealPassword}
+          onClick={() => setRevealPassword((s) => !s)}
           aria-label={labels?.revealPasswordButtonLabel}
           aria-controls={setId(elementId, "input")}
           icon={revealPassword ? <PreviewOff /> : <Preview />}
+          tabIndex={0}
         />
       </HvTooltip>
     );
@@ -681,7 +662,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     labels?.revealPasswordButtonClickToShowTooltip,
     labels?.revealPasswordButtonLabel,
     classes.adornmentButton,
-    handleRevealPassword,
     elementId,
   ]);
 
@@ -713,10 +693,8 @@ export const HvInput = fixedForwardRef(function HvInput<
     )
       return null;
 
-    // note: specification implies that the custom icon should be hidden when
-    // a validation feedback icon is being shown.
     return (
-      <div className={classes.adornmentsBox} aria-hidden="true">
+      <div className={classes.adornmentsBox}>
         {clearButton}
         {revealPasswordButton}
         {searchButton}
