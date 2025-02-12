@@ -1,28 +1,21 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../../utils/focusUtils";
-
 export const { staticClasses, useClasses } = createClasses("HvAdornment", {
-  root: {},
-  icon: { width: 32, height: 32 },
-  adornment: {
-    backgroundColor: "transparent",
-    border: "none",
-    padding: 0,
-    margin: 0,
+  root: {
+    width: 32,
+    height: 30,
   },
-  adornmentIcon: { cursor: "default", pointerEvents: "none" },
+  /** @deprecated use `classes.root` */
+  icon: {},
+  /** @deprecated use `classes.root` */
+  adornment: {},
+  /** @deprecated use `classes.root` */
+  adornmentIcon: {},
   hideIcon: { display: "none" },
-  adornmentButton: {
-    cursor: "pointer",
-    "&:focus": {
-      ...outlineStyles,
-    },
-  },
+  /** @deprecated use `classes.root` */
+  adornmentButton: {},
   disabled: {
-    "&$adornmentButton": { cursor: "not-allowed" },
-    "&$adornmentIcon": { cursor: "not-allowed" },
     "& svg *.color0": { fill: theme.colors.secondary_60 },
   },
 });

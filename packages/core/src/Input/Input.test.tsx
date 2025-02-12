@@ -5,6 +5,7 @@ import { vi } from "vitest";
 import { Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvInput, HvInputProps } from ".";
+import { HvAdornment } from "../FormElement";
 
 const Suggestions = ({ ...others }: Partial<HvInputProps>) => {
   const [value, setValue] = useState("");
@@ -46,8 +47,38 @@ describe("Input", () => {
     expect(input).toBeDisabled();
   });
 
-  it("renders the custom icon", () => {
+  it("renders the endAdornment", () => {
     render(<HvInput endAdornment={<Map data-testid="icon" />} />);
+
+    expect(screen.getByTestId("icon")).toBeVisible();
+  });
+
+  it("renders a text endAdornment", () => {
+    render(<HvInput endAdornment="kg" />);
+    expect(screen.getByText("kg")).toBeVisible();
+  });
+
+  it("can press custom endAdornment with keyboard", async () => {
+    const clickMock = vi.fn();
+    render(
+      <HvInput
+        endAdornment={
+          <HvAdornment onClick={clickMock} tabIndex={0} icon={<div />} />
+        }
+      />,
+    );
+
+    const user = userEvent.setup();
+    await user.tab();
+    expect(screen.getByRole("textbox")).toHaveFocus();
+    await user.tab();
+    expect(screen.getByRole("button")).toHaveFocus();
+    await user.keyboard("{enter}");
+    expect(clickMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("renders the startAdornment", () => {
+    render(<HvInput startAdornment={<Map data-testid="icon" />} />);
 
     expect(screen.getByTestId("icon")).toBeVisible();
   });
@@ -64,7 +95,7 @@ describe("Input", () => {
     );
 
     expect(screen.getByRole("searchbox")).toBeDisabled();
-    const adornment = screen.getByLabelText("Search"); // role can't be used since the parent has aria-hidden
+    const adornment = document.querySelector("button"); // role can't be used since it has aria-hidden
     expect(adornment).toHaveAttribute("aria-disabled", "true");
   });
 
@@ -82,6 +113,44 @@ describe("Input", () => {
     expect(screen.getByLabelText("My input")).toBeDisabled(); // can't find by role searchbox since password inputs don't have a role...
     const adornment = screen.getByLabelText("Reveal password"); // roles can't be used since the parent has aria-hidden
     expect(adornment).toHaveAttribute("aria-disabled", "true");
+  });
+
+  it("captures the value in a form submission", async () => {
+    const defaultValue = "John Doe";
+    let capturedValue = "";
+    render(
+      <form
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          const formData = new FormData(evt.currentTarget);
+          capturedValue = formData.get("username") as string;
+        }}
+      >
+        <HvInput name="username" defaultValue={defaultValue} />
+        <button type="submit">Submit</button>
+      </form>,
+    );
+
+    const user = userEvent.setup();
+    await user.click(screen.getByRole("button", { name: "Submit" }));
+    expect(capturedValue).toBe(defaultValue);
+  });
+
+  it("resets the value when reset button is pressed", async () => {
+    const initialValue = "John Doe";
+    render(
+      <form onSubmit={(evt) => evt.preventDefault()}>
+        <HvInput name="username" defaultValue={initialValue} />
+        <button type="reset">Reset</button>
+      </form>,
+    );
+
+    const user = userEvent.setup();
+    await user.type(screen.getByRole("textbox"), "suffix");
+    expect(screen.getByRole("textbox")).toHaveValue(`${initialValue}suffix`);
+
+    await user.click(screen.getByRole("button", { name: "Reset" }));
+    expect(screen.getByRole("textbox")).toHaveValue(initialValue);
   });
 
   it("does not trigger the suggestions on focus by default", async () => {

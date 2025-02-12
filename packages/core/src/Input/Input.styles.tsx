@@ -12,6 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     display: "flex",
     flexDirection: "row",
     height: "30px",
+    alignItems: "center",
     justifyContent: "center",
     marginRight: 1,
   },

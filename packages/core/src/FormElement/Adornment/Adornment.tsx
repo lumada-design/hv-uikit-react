@@ -13,8 +13,6 @@ import {
 import { HvFormStatus } from "../FormElement";
 import { staticClasses, useClasses } from "./Adornment.styles";
 
-const noop = () => {};
-
 export { staticClasses as adornmentClasses };
 
 export type HvAdornmentClasses = ExtractNames<typeof useClasses>;
@@ -26,7 +24,7 @@ export interface HvAdornmentProps
   > {
   /** The icon to be added into the input. */
   icon: React.ReactNode;
-  /** When the adornment should be displayed. */
+  /** Controls the visibility of the adornment based on the form element's status. `isVisible` overrides this behavior. */
   showWhen?: HvFormStatus;
   /** Function to be executed when this element is clicked. */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -40,25 +38,22 @@ export interface HvAdornmentProps
  * Allows to add a decorative icon or an action to a form element, usually on the right side of an input.
  * E.g., the reveal password button.
  *
- * In addition to the showWhen feature, which uses the form element's context validation state to determine
- * its visibility, this component also ensures that it does not steal focus from the input and that it is
- * not accessible using the keyboard.
- *
- * As such, its functionality, if any, for accessibility purposes must be provided through an alternative mean,
- * or by using a regular icon button or toggle button instead.
+ * This component disables keyboard navigation by default, ensuring that it doesn't steal focus from the input.
+ * As such, its functionality, if any, for accessibility purposes must be provided through an alternative mean.
+ * This behavior can be overridden by providing an a `tabIndex={0}`.
  */
 export const HvAdornment = forwardRef<
   HTMLDivElement | HTMLButtonElement,
   HvAdornmentProps
 >(function HvAdornment(props, ref) {
   const {
-    id,
     classes: classesProp,
     className,
     icon,
     showWhen,
     onClick,
     isVisible,
+    tabIndex,
     ...others
   } = useDefaultProps("HvAdornment", props);
   const { classes, cx } = useClasses(classesProp);
@@ -68,52 +63,33 @@ export const HvAdornment = forwardRef<
 
   const displayIcon = isVisible ?? (showWhen == null || status === showWhen);
 
-  const isClickable = !!onClick;
+  const Component = onClick ? HvButtonBase : "div";
 
-  return isClickable ? (
-    <HvButtonBase
-      id={id}
-      focusableWhenDisabled
-      ref={ref as React.ForwardedRef<HTMLButtonElement>}
-      type="button"
-      tabIndex={-1}
-      aria-controls={input?.[0]?.id}
+  return (
+    <Component
+      ref={ref as React.ForwardedRef<any>}
+      aria-hidden={tabIndex == null || tabIndex < 0 ? true : undefined}
       className={cx(
         classes.root,
         classes.adornment,
-        classes.adornmentButton,
+        classes.icon,
+        onClick ? classes.adornmentButton : classes.adornmentIcon,
         {
           [classes.hideIcon]: !displayIcon,
           [classes.disabled]: disabled,
         },
         className,
       )}
-      onClick={onClick}
-      onMouseDown={(event) => event.preventDefault()}
-      onKeyDown={noop}
-      disabled={disabled}
+      {...(onClick && {
+        disabled,
+        tabIndex: tabIndex ?? -1,
+        "aria-controls": input?.[0]?.id,
+        onClick: onClick as React.MouseEventHandler<any>,
+        onMouseDown: (event) => event.preventDefault(),
+      })}
       {...others}
     >
-      <div className={classes.icon}>{icon}</div>
-    </HvButtonBase>
-  ) : (
-    <div
-      id={id}
-      ref={ref as React.ForwardedRef<HTMLDivElement>}
-      className={cx(
-        classes.root,
-        classes.adornment,
-        classes.adornmentIcon,
-        {
-          [classes.hideIcon]: !displayIcon,
-          [classes.disabled]: disabled,
-        },
-        className,
-      )}
-      role="presentation"
-      {...others}
-    >
-      <div className={classes.icon}>{icon}</div>
-    </div>
+      {icon}
+    </Component>
   );
 });

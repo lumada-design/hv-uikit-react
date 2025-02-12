@@ -251,7 +251,6 @@ export const HvTextArea = forwardRef<
   const performValidation = useCallback(() => {
     const inputValidity = validateInput(
       inputRef.current,
-      String(value),
       required,
       minCharQuantity,
       maxCharQuantity,
@@ -278,7 +277,6 @@ export const HvTextArea = forwardRef<
     setValidationMessage,
     setValidationState,
     validation,
-    value,
   ]);
 
   /**
