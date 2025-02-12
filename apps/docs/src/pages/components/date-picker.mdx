@@ -38,6 +38,7 @@ Use the `showActions` property to display Apply/Cancel buttons at the bottom.
   value={new Date("1970-02-03")}
   placeholder="Select date"
   label="Date"
+  className="w-fit"
 />
 ```
 
@@ -50,6 +51,7 @@ Use the `labels` object to customize the internal labels of the date picker.
   showActions
   label="This is the title for the date picker"
   placeholder="Custom placeholder"
+  className="w-fit"
   labels={{
     applyLabel: "Custom apply",
     cancelLabel: "Custom cancel",
@@ -76,9 +78,9 @@ export default function Demo() {
   const toggleOpen = () => setOpen((o) => !o);
 
   return (
-    <>
+    <div className="flex gap-sm">
       <HvDatePicker
-        style={{ flex: 1 }}
+        className="flex-1"
         expanded={open}
         aria-label="Date"
         placeholder="Select date"
@@ -92,7 +94,7 @@ export default function Demo() {
       <HvButton variant="secondarySubtle" onClick={toggleOpen}>
         {open ? "Close" : "Open"}
       </HvButton>
-    </>
+    </div>
   );
 }
 ```
@@ -138,7 +140,7 @@ export default function Demo() {
   const [date, setDate] = useState(new Date("2020-09-05"));
 
   const options = (
-    <HvListContainer role="menu" style={{ minWidth: 100 }} interactive>
+    <HvListContainer interactive role="menu" className="min-w-100px">
       <HvListItem role="menuitem" disabled>
         Today
       </HvListItem>

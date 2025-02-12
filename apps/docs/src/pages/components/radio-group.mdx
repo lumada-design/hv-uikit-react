@@ -19,61 +19,21 @@ export const getStaticProps = async ({ params }) => {
   Component={HvRadioGroup}
   componentName="HvRadioGroup"
   controls={{
-    label: {
-      type: "text",
-      defaultValue: "Visualization type",
-    },
-    description: {
-      type: "text",
-      defaultValue: "Select how you want to visualize your dataset",
-    },
-    orientation: {
-      defaultValue: "vertical",
-    },
-    required: {
-      defaultValue: true,
-    },
-    disabled: {
-      defaultValue: false,
-    },
+    label: { defaultValue: "Type" },
+    description: { defaultValue: "Visualization type" },
+    orientation: { defaultValue: "vertical" },
+    required: { defaultValue: true },
+    disabled: { defaultValue: false },
+    readOnly: { defaultValue: false },
+  }}
+  componentProps={{
+    defaultChecked: false,
   }}
 >
   <HvRadio label="Bar Chart" value="1" />
   <HvRadio label="Line Chart" value="2" />
   <HvRadio label="Pie Chart" value="3" />
 </Playground>
-
-### States
-
-```tsx live
-<div className="flex gap-xs items-start">
-  <HvRadioGroup required label="Required">
-    <HvRadio label="Radio 1" value="1" />
-    <HvRadio label="Radio 2" value="2" checked />
-    <HvRadio label="Radio 3" value="3" />
-  </HvRadioGroup>
-  <HvRadioGroup disabled label="Disabled">
-    <HvRadio label="Radio 1" value="1" />
-    <HvRadio label="Radio 2" value="2" checked />
-    <HvRadio label="Radio 3" value="3" />
-  </HvRadioGroup>
-  <HvRadioGroup readOnly label="Readonly">
-    <HvRadio label="Radio 1" value="1" />
-    <HvRadio label="Radio 2" value="2" checked />
-    <HvRadio label="Radio 3" value="3" />
-  </HvRadioGroup>
-  <HvRadioGroup status="invalid" statusMessage="Oh no!" label="Invalid">
-    <HvRadio label="Radio 1" value="1" />
-    <HvRadio label="Radio 2" value="2" checked />
-    <HvRadio label="Radio 3" value="3" />
-  </HvRadioGroup>
-  <HvRadioGroup label="Mixed">
-    <HvRadio label="Radio 1" value="1" />
-    <HvRadio label="Radio 2" value="2" disabled />
-    <HvRadio label="Radio 3" value="3" semantic checked />
-  </HvRadioGroup>
-</div>
-```
 
 ### Controlled
 
@@ -83,29 +43,19 @@ Controlled radio button group. Choosing the first option will result in an inval
 import { useState } from "react";
 
 export default function Demo() {
-  const [value, setValue] = useState<string>("2");
+  const [value, setValue] = useState("2");
   const [status, setStatus] = useState<HvFormStatus>("standBy");
-
-  const handleOnChange = (
-    _: React.ChangeEvent<HTMLInputElement>,
-    newValue: string,
-  ) => {
-    setValue(newValue);
-
-    if (newValue === "none") {
-      setStatus("invalid");
-    } else {
-      setStatus("valid");
-    }
-  };
 
   return (
     <HvRadioGroup
       label="Choose the best radio button"
       value={value}
-      onChange={handleOnChange}
       status={status}
       statusMessage={'Don\'t select "None"!'}
+      onChange={(evt, newValue) => {
+        setValue(newValue);
+        setStatus(newValue === "none" ? "invalid" : "valid");
+      }}
     >
       <HvRadio label="None" value="none" />
       <HvRadio label="Radio 1" value="1" />

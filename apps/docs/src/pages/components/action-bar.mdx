@@ -18,18 +18,11 @@ export const getStaticProps = async ({ params }) => {
 ### Usage
 
 ```tsx live
-<HvActionBar className="gapxds">
-  <HvButton variant="secondaryGhost">Cancel</HvButton>
-  <div className="flex-1" aria-hidden="true">
-    &nbsp;
-  </div>
-  <HvButton variant="secondaryGhost">Save</HvButton>
-  <HvDropDownMenu
-    dataList={[
-      { id: "export", label: "Export" },
-      { id: "preview", label: "Preview" },
-    ]}
-  />
+<HvActionBar className="gap-xs">
+  <HvButton variant="secondaryGhost">Reset</HvButton>
+  <div className="flex-1" aria-hidden="true" />
+  <HvButton variant="primary">Save</HvButton>
+  <HvButton variant="subtle">Cancel</HvButton>
 </HvActionBar>
 ```
 

@@ -109,7 +109,7 @@ export default function Demo() {
   const dateTimeRef = useRef<HTMLInputElement>(null);
 
   return (
-    <>
+    <div className="flex gap-sm">
       <HvInput
         label="Number"
         className="min-w-80px"
@@ -137,7 +137,7 @@ export default function Demo() {
         inputProps={{ type: "time", step: 1 }}
         endAdornment={<Time onClick={() => timeRef.current?.showPicker()} />}
       />
-    </>
+    </div>
   );
 }
 ```
@@ -198,7 +198,7 @@ If you need to apply a custom layout, e.g. for providing a prefix or suffix, you
 
 ### Autocomplete
 
-Inputs can have a autocomplete suggestons using the `suggestionListCallback`.
+Inputs can have a autocomplete suggestions using the `suggestionListCallback`.
 
 ```tsx live
 import { useState } from "react";

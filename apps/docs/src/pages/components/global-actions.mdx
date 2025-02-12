@@ -60,38 +60,36 @@ The `section` variant of Global Actions should be used to group related blocks o
 The content of the Global Actions can be customized. This is useful when you want to add different elements other than the title and actions.
 
 ```tsx live
-<div className="w-full">
-  <HvGlobalActions
-    backButton={
-      <HvIconButton title="Go back">
-        <Backwards />
-      </HvIconButton>
-    }
-    title={
-      <>
-        <Home title="Home" />
-        <HvBreadCrumb
-          listRoute={[
-            { label: "Label 1", path: "#route1" },
-            { label: "Label 2", path: "#route2" },
-            { label: "Label 3", path: "#route3" },
-            { label: "Label 4", path: "#route4" },
-            { label: "Label 5", path: "#route5" },
-          ]}
-          maxVisible={2}
-        />
-      </>
-    }
-  >
-    <HvButton variant="secondaryGhost">Primary</HvButton>
-    <HvDropDownMenu
-      placement="left"
-      dataList={[
-        { label: "Action 2" },
-        { label: "Action 3" },
-        { label: "Action 4" },
-      ]}
-    />
-  </HvGlobalActions>
-</div>
+<HvGlobalActions
+  backButton={
+    <HvIconButton title="Go back">
+      <Backwards />
+    </HvIconButton>
+  }
+  title={
+    <>
+      <Home title="Home" />
+      <HvBreadCrumb
+        listRoute={[
+          { label: "Label 1", path: "#route1" },
+          { label: "Label 2", path: "#route2" },
+          { label: "Label 3", path: "#route3" },
+          { label: "Label 4", path: "#route4" },
+          { label: "Label 5", path: "#route5" },
+        ]}
+        maxVisible={2}
+      />
+    </>
+  }
+>
+  <HvButton variant="secondaryGhost">Action</HvButton>
+  <HvDropDownMenu
+    placement="left"
+    dataList={[
+      { label: "Action 2" },
+      { label: "Action 3" },
+      { label: "Action 4" },
+    ]}
+  />
+</HvGlobalActions>
 ```

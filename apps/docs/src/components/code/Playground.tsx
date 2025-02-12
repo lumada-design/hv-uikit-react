@@ -11,7 +11,7 @@ type PlaygroundProps = {
   componentProps?: Record<string, unknown>;
   controls: Record<string, Control>;
   children?: React.ReactNode;
-  decorator?: (component: JSX.Element) => JSX.Element;
+  decorator?: (children: React.ReactNode) => React.ReactNode;
 };
 
 const parseChildren = (child: React.ReactNode) =>
@@ -101,16 +101,19 @@ const Playground = ({
   );
 
   return (
-    <>
+    <section
+      className="[&>*]:border-[var(--uikit-colors-atmo4)]"
+      aria-label="Playground"
+    >
       {/* Component preview and controls */}
-      <div className="grid grid-cols-[2fr_1fr] border border-[var(--uikit-colors-atmo4)] rounded-t-round">
+      <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
-        <div className="flex justify-center items-center p-sm overflow-auto">
+        <div className={"grid place-items-center p-sm"}>
           {decorator ? decorator(componentElement) : componentElement}
         </div>
 
         {/* Controls Area */}
-        <div className="grid gap-xs border-l border-[var(--uikit-colors-atmo4)] p-sm pl-xs">
+        <div className="flex flex-col gap-xs border-l border-color-inherit py-sm px-xs">
           {Object.entries(controls).map(([prop, control]) => {
             if (!control) return null;
 
@@ -128,7 +131,7 @@ const Playground = ({
       </div>
 
       {/* Code editor */}
-      <div className="max-h-72 overflow-auto rounded-b-round border border-[var(--uikit-colors-atmo4)] border-t-0 max-h-250px">
+      <div className="max-h-72 overflow-auto rounded-b-round border border-t-0 max-h-250px">
         <CodeEditor
           readOnly
           className="font-mono text-sm leading-2.2"
@@ -136,7 +139,7 @@ const Playground = ({
           theme={editorTheme}
         />
       </div>
-    </>
+    </section>
   );
 };
 

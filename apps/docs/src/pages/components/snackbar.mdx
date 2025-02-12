@@ -17,18 +17,12 @@ export const getStaticProps = async ({ params }) => {
   Component={HvSnackbar}
   componentName="HvSnackbar"
   controls={{
-    label: {
-      defaultValue: "This is an informational message.",
-    },
-    variant: {
-      defaultValue: "default",
-    },
-    showIcon: {
-      defaultValue: true,
-    },
+    label: { defaultValue: "This is a success message." },
+    variant: { defaultValue: "success" },
+    showIcon: { defaultValue: true },
+    open: { defaultValue: true },
   }}
   componentProps={{
-    open: true,
     style: { position: "relative", top: 0 },
   }}
 />
@@ -70,7 +64,7 @@ Use the `action` prop to add an action to the snackbar. The `onAction` prop is a
 Although not desirable, sometimes you may need to display a long message in the snackbar. You can combine the snackbar with the [`HvOverflowTooltip`](/components/overflow-tooltip) component to display the full message.
 
 ```tsx live
-<div className="flex flex-col gap-2">
+<div className="flex flex-col gap-sm">
   <HvSnackbar
     open
     label={
@@ -122,21 +116,6 @@ export default function Demo() {
     }, 100);
   };
 
-  const handleTransition = (val) => {
-    setOpen(false);
-    setTransitionDirection(val);
-  };
-
-  const handleClose = (_, reason) => {
-    if (reason === "timeout") {
-      setOpen(false);
-    }
-  };
-
-  const handleDurationChange = (_, val) => {
-    setAutoHideDuration(val);
-  };
-
   return (
     <div className="flex justify-center w-full">
       <HvSnackbar
@@ -147,14 +126,21 @@ export default function Demo() {
         anchorOrigin={anchorOrigin}
         transitionDirection={transitionDirection}
         autoHideDuration={autoHideDuration}
-        onClose={handleClose}
+        onClose={(evt, reason) => {
+          if (reason === "timeout") {
+            setOpen(false);
+          }
+        }}
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-md">
         <div className="w-full flex justify-between">
           <HvSelect
             label="Transition direction"
             value={transitionDirection}
-            onChange={(_, val) => handleTransition(val)}
+            onChange={(_, val) => {
+              setOpen(false);
+              setTransitionDirection(val);
+            }}
             style={{ width: "120px" }}
           >
             {["up", "down", "left", "right"].map((direction) => (
@@ -167,10 +153,10 @@ export default function Demo() {
             type="number"
             label="Autohide duration"
             value={autoHideDuration}
-            onChange={handleDurationChange}
+            onChange={(_, val) => setAutoHideDuration(val)}
           />
         </div>
-        <div className="flex gap-4 w-full justify-between">
+        <div className="flex gap-md w-full justify-between">
           <HvButton
             variant="primarySubtle"
             onClick={() => handleOpen({ vertical: "top", horizontal: "left" })}
@@ -193,7 +179,7 @@ export default function Demo() {
           </HvButton>
         </div>
 
-        <div className="flex gap-4 w-full">
+        <div className="flex gap-md w-full">
           <HvButton
             variant="primarySubtle"
             onClick={() =>

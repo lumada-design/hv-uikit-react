@@ -57,8 +57,8 @@ You can use the buttons underneath to display the multibutton content in differe
 For example, you can use icons, display labels only or set some items as disabled.
 
 ```tsx live
-<div className="flex flex-col gap-2">
-  <HvMultiButton style={{ width: "fit-content" }}>
+<div className="flex flex-col gap-sm">
+  <HvMultiButton className="w-fit">
     <HvButton icon aria-label="Map">
       <Map />
     </HvButton>
@@ -69,12 +69,12 @@ For example, you can use icons, display labels only or set some items as disable
       <Bus />
     </HvButton>
   </HvMultiButton>
-  <HvMultiButton style={{ width: "320px" }}>
+  <HvMultiButton className="w-320px">
     <HvButton>Map</HvButton>
     <HvButton>Location</HvButton>
     <HvButton>Transport</HvButton>
   </HvMultiButton>
-  <HvMultiButton style={{ width: "320px" }}>
+  <HvMultiButton className="w-320px">
     <HvButton startIcon={<Map />}>Map</HvButton>
     <HvButton disabled>Location</HvButton>
     <HvButton endIcon={<Bus />}>Transport</HvButton>
@@ -91,7 +91,7 @@ export default function MultiButtonControlled() {
   const [selection, setSelection] = useState([]);
 
   return (
-    <>
+    <div className="flex gap-sm">
       <HvButton
         variant="primarySubtle"
         onClick={() => setSelection([1, 2, 3, 4, 5])}
@@ -99,7 +99,7 @@ export default function MultiButtonControlled() {
         Select weekdays
       </HvButton>
 
-      <HvMultiButton style={{ width: "224px" }}>
+      <HvMultiButton className="w-fit">
         {buttons.map((button, i) => (
           <HvButton
             key={`${buttons[i]}`}
@@ -117,7 +117,7 @@ export default function MultiButtonControlled() {
           </HvButton>
         ))}
       </HvMultiButton>
-    </>
+    </div>
   );
 }
 
@@ -137,36 +137,32 @@ const buttons = [
 You can create a split button by using the `HvMultiButton` in conjunction with the `HvButton` and the `HvDropDownMenu` components.
 
 ```tsx live
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 export default function Demo() {
-  const options = useMemo(
-    () => [
-      { label: "Merge commit" },
-      { label: "Squash and merge" },
-      { label: "Rebase and merge" },
-    ],
-    [],
-  );
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   return (
-    <HvSimpleGrid cols={3} spacing="sm">
-      <HvMultiButton split>
-        <HvButton>{selectedOption.label}</HvButton>
-        <HvDropDownMenu
-          dataList={options}
-          icon={<DropDownXS />}
-          onClick={(e, item) =>
-            setSelectedOption(
-              options.filter((option) => option.label === item.label)[0],
-            )
-          }
-        />
-      </HvMultiButton>
-    </HvSimpleGrid>
+    <HvMultiButton split>
+      <HvButton>{selectedOption.label}</HvButton>
+      <HvDropDownMenu
+        dataList={options}
+        icon={<DropDownXS />}
+        onClick={(e, item) =>
+          setSelectedOption(
+            options.filter((option) => option.label === item.label)[0],
+          )
+        }
+      />
+    </HvMultiButton>
   );
 }
+
+const options = [
+  { label: "Merge commit" },
+  { label: "Squash and merge" },
+  { label: "Rebase and merge" },
+];
 ```
 
 ### Related components

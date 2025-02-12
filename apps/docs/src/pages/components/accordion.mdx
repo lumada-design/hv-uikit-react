@@ -54,19 +54,14 @@ export default function Demo() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="flex flex-col w-full">
-      <HvButton className="w-150px" onClick={() => setExpanded((p) => !p)}>
-        Open
-      </HvButton>
-      <HvAccordion
-        expanded={expanded}
-        onChange={(e, isExpanded) => setExpanded(isExpanded)}
-        label="Accordion label"
-        labelVariant="label"
-      >
-        <div>My accordion content</div>
-      </HvAccordion>
-    </div>
+    <HvAccordion
+      expanded={expanded}
+      onChange={(evt, isExpanded) => setExpanded(!isExpanded)}
+      label="Accordion label"
+      labelVariant="label"
+    >
+      <div>My accordion content</div>
+    </HvAccordion>
   );
 }
 ```
@@ -76,30 +71,24 @@ export default function Demo() {
 If you need an accordion group, you can use multiple `HvAccordion` components.
 
 ```tsx live
-<div className="w-full flex flex-col w-1/2">
-  <HvTypography className="pb-1" variant="title3">
+<>
+  <HvTypography className="pb-xs" variant="title3">
     UI Kit
   </HvTypography>
 
   <HvAccordion label="Components" labelVariant="title4">
-    <HvPanel>
-      UI Building blocks that can be used in various combinations to create a
-      larger user interface
-    </HvPanel>
+    UI Building blocks that can be used in various combinations to create a
+    larger user interface
   </HvAccordion>
   <HvAccordion label="Widgets" labelVariant="title4">
-    <HvPanel>
-      Specialized components that address specific use cases and can be used as
-      base to support other scenarios.
-    </HvPanel>
+    Specialized components that address specific use cases and can be used as
+    base to support other scenarios.
   </HvAccordion>
   <HvAccordion label="Templates" labelVariant="title4">
-    <HvPanel>
-      Pre-designed layouts that address common UI patterns and can be used to
-      quickly create a consistent design.
-    </HvPanel>
+    Pre-designed layouts that address common UI patterns and can be used to
+    quickly create a consistent design.
   </HvAccordion>
-</div>
+</>
 ```
 
 ### Related components

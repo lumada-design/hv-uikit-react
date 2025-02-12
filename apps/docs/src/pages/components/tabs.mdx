@@ -48,10 +48,6 @@ import { useState } from "react";
 export default function Demo() {
   const [value, setValue] = useState(0);
 
-  const handleChange: HvTabsProps["onChange"] = (evt, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <div className="grid gap-xs w-full">
       <HvTabs variant="fullWidth" value={value}>

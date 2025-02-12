@@ -1,5 +1,6 @@
 import {
   HvLoadingContainer,
+  HvPanel,
   loadingContainerClasses,
 } from "@hitachivantara/uikit-react-core";
 
@@ -34,7 +35,5 @@ export const getStaticProps = async ({ params }) => {
     style: { width: "100%" },
   }}
 >
-  <div className="flex items-center justify-center bg-gray h-200px">
-    My content
-  </div>
+  <HvPanel className="grid place-items-center h-200px">My content</HvPanel>
 </Playground>

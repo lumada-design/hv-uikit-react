@@ -37,6 +37,7 @@ following the time [`input` format](https://developer.mozilla.org/en-US/docs/Web
 
 ```tsx live
 <form
+  className="flex gap-xs items-end"
   onSubmit={(event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -68,7 +69,7 @@ export default function Demo() {
     : "—";
 
   return (
-    <div className="grid gap-sm">
+    <div className="grid gap-sm justify-start">
       <HvTypography variant="title4">Date: {prettyValue}</HvTypography>
       <HvTimePicker
         label="Time Picker"

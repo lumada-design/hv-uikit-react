@@ -60,7 +60,7 @@ function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
 
   return (
     <HvButton
-      style={{ width: 120 }}
+      className="w-140px"
       disabled={isLoading}
       onClick={async (event) => {
         setIsLoading(true);
@@ -69,11 +69,7 @@ function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
       }}
       {...others}
     >
-      {!isLoading ? (
-        children
-      ) : (
-        <HvLoading small hidden={!isLoading} color="inherit" />
-      )}
+      {isLoading ? <HvLoading small color="inherit" /> : children}
     </HvButton>
   );
 }

@@ -38,5 +38,5 @@ export const getStaticProps = async ({ params }) => {
         "This is a very long text that should be cut because it so long that it doesn't fit",
     },
   }}
-  decorator={(component) => <div className="max-w-160px">{component}</div>}
+  decorator={(children) => <div className="max-w-160px">{children}</div>}
 />

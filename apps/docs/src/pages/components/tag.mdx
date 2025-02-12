@@ -15,20 +15,10 @@ export const getStaticProps = async ({ params }) => {
   Component={HvTag}
   componentName="HvTag"
   controls={{
-    label: {
-      type: "text",
-      defaultValue: "Tag label",
-    },
-    color: {
-      type: "color",
-      defaultValue: "neutral_20",
-    },
-    disabled: {
-      defaultValue: false,
-    },
-    selectable: {
-      defaultValue: false,
-    },
+    label: { defaultValue: "Tag label" },
+    color: { type: "color", defaultValue: "neutral_20" },
+    disabled: { defaultValue: false },
+    selectable: { defaultValue: false },
   }}
 />
 
@@ -37,12 +27,12 @@ export const getStaticProps = async ({ params }) => {
 You can change the default color of the tag by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
 
 ```tsx live
-<>
+<div className="flex gap-xs">
   <HvTag label="Tag Label" color="positive" />
   <HvTag label="Tag Label" color="cat2" />
   <HvTag label="Tag Label" color="aquamarine" />
   <HvTag label="Tag Label" color="#c73aa8" />
-</>
+</div>
 ```
 
 ### Long text

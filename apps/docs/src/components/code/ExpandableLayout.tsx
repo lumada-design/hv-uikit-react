@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import useEditorTheme from "@docs/hooks/useEditorTheme";
+import { clsx } from "clsx";
 
 import { ExpandableControls } from "./ExpandableControls";
 
@@ -17,54 +18,56 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   const editorTheme = useEditorTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const initialCode = Object.values(code)[0];
+
   const {
     element,
     code: editorCode,
     error: liveError,
     onChange,
   } = useLiveRunner({
-    initialCode: Object.values(code)[0],
+    initialCode,
     scope: scope || {},
   });
 
-  const resetCode = () => onChange(Object.values(code)[0]);
-
   return (
-    <div className="relative mt-3">
+    <section className="relative mt-md rounded-round [&>*]:border-[var(--uikit-colors-atmo4)]">
       {/* Compact Controls */}
       <ExpandableControls
         onToggle={() => setIsExpanded((prev) => !prev)}
         isExpanded={isExpanded}
         code={editorCode}
-        onReset={resetCode}
+        onReset={() => onChange(initialCode)}
       />
 
       {/* Preview Section */}
       <div
-        className={[
-          "p-4 pt-5 [&_tr]:table-row gap-2 bg-[var(--uikit-colors-atmo2)] overflow-hidden",
-          "border rounded-round border-[var(--uikit-colors-atmo4)]",
-          isExpanded ? "rounded-b-0" : "",
-        ].join(" ")}
+        className={clsx(
+          "p-md pt-lg bg-[var(--uikit-colors-atmo2)] border rounded-inherit",
+          isExpanded && "rounded-b-0",
+        )}
       >
-        {liveError ? <div className="text-red-500">{liveError}</div> : element}
+        {liveError ? (
+          <div className="text-red-500">{liveError}</div>
+        ) : (
+          <div>{element}</div>
+        )}
       </div>
 
       {/* Code Editor Section */}
       <div
-        className="max-h-[300px] overflow-auto rounded-b-round mt-[-4px]"
+        className="max-h-300px overflow-auto rounded-b-inherit -mt-xxs transition-max-height"
         style={{
-          maxHeight: isExpanded ? "300px" : "0px",
-          transition: "max-height 0.2s ease-in-out",
+          maxHeight: isExpanded ? 300 : 0,
         }}
       >
         <CodeEditor
           value={editorCode}
           onChange={onChange}
           theme={editorTheme}
-          className="font-mono text-[.85em] rounded-b-round border border-[var(--uikit-colors-atmo4)]"
+          className="font-mono text-[.85em] rounded-b-inherit border border-color-inherit"
         />
       </div>
-    </div>
+    </section>
   );
 };

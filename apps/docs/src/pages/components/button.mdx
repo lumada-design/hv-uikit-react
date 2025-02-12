@@ -41,7 +41,7 @@ export const getStaticProps = async ({ params }) => {
 ### Sizes
 
 ```tsx live
-<>
+<div className="flex gap-xs items-center">
   <HvButton size="sm">Small</HvButton>
   <HvButton size="md">Medium</HvButton>
   <HvButton size="lg">Large</HvButton>
@@ -51,7 +51,7 @@ export const getStaticProps = async ({ params }) => {
   <HvButton icon size="lg" aria-label="Play">
     <Play />
   </HvButton>
-</>
+</div>
 ```
 
 ### Icon
@@ -60,10 +60,10 @@ Use the `startIcon` or `endIcon` props to insert an icon on the button.
 You can also use the `icon` prop and pass icon directly to `children` of the `HvButton` component.
 
 When using icon-only buttons (`icon` prop), it's preferable to use the `HvIconButton` component instead,
-as it wraps the button in an `HvTooltip` component and requires a `title` label.
+as it wraps the button in an `HvTooltip` component and enforces an accessible `title` label.
 
 ```tsx live
-<>
+<div className="flex gap-xs items-center">
   <HvButton startIcon={<Play />} variant="primary">
     Play
   </HvButton>
@@ -76,7 +76,7 @@ as it wraps the button in an `HvTooltip` component and requires a `title` label.
   <HvIconButton title="Play">
     <Play size="XS" />
   </HvIconButton>
-</>
+</div>
 ```
 
 ### Custom root component
@@ -86,14 +86,14 @@ You can use the `component` prop to change the root component of the button to b
 ```tsx live
 export default function Demo() {
   return (
-    <>
+    <div className="flex gap-xs">
       <HvButton variant="subtle" component="a" href="#" startIcon={<Link />}>
         Link
       </HvButton>
       <HvButton variant="subtle" component={MyLink} to="#" startIcon={<Link />}>
         Custom link
       </HvButton>
-    </>
+    </div>
   );
 }
 

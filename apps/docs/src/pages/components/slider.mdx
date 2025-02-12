@@ -44,9 +44,8 @@ export default function Demo() {
   const [values, setValues] = useState([40, 80]);
 
   return (
-    <div className="w-full">
+    <>
       <HvSlider
-        className="w-full"
         label="Failure Rate"
         values={values}
         onChange={setValues}
@@ -68,7 +67,7 @@ export default function Demo() {
           Increment
         </HvButton>
       </div>
-    </div>
+    </>
   );
 }
 ```
@@ -84,7 +83,6 @@ export default function Demo() {
       label="Severity"
       hideInput
       defaultValues={[3]}
-      className="w-full"
       // step customization
       minPointValue={1}
       maxPointValue={5}

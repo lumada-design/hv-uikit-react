@@ -69,13 +69,11 @@ export default function Demo() {
   };
 
   return (
-    <>
-      <div className="flex gap-sm">
-        <HvButton onClick={() => handleAnchorChange("left")}>Left</HvButton>
-        <HvButton onClick={() => handleAnchorChange("top")}>Top</HvButton>
-        <HvButton onClick={() => handleAnchorChange("bottom")}>Bottom</HvButton>
-        <HvButton onClick={() => handleAnchorChange("right")}>Right</HvButton>
-      </div>
+    <div className="flex gap-sm">
+      <HvButton onClick={() => handleAnchorChange("left")}>Left</HvButton>
+      <HvButton onClick={() => handleAnchorChange("top")}>Top</HvButton>
+      <HvButton onClick={() => handleAnchorChange("bottom")}>Bottom</HvButton>
+      <HvButton onClick={() => handleAnchorChange("right")}>Right</HvButton>
       <HvDrawer
         anchor={anchor}
         onClose={() => setOpen(false)}
@@ -91,7 +89,7 @@ export default function Demo() {
           <HvTypography tabIndex={0}>Your drawer content</HvTypography>
         </HvDialogContent>
       </HvDrawer>
-    </>
+    </div>
   );
 }
 ```
@@ -106,15 +104,11 @@ import { useRef, useState } from "react";
 
 export default function Demo() {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef(null);
 
   return (
-    <div
-      className="w-full h-[300px] flex relative justify-end"
-      ref={containerRef}
-    >
+    <div className="w-full h-300px flex relative justify-end">
       <div
-        className="flex flex-col gap-xs  bg-atmo2"
+        className="flex flex-col gap-xs"
         style={{ width: open ? "70%" : "100%" }}
       >
         <HvHeader
@@ -143,7 +137,6 @@ export default function Demo() {
         </div>
       </div>
       <HvDrawer
-        ref={containerRef.current}
         variant="persistent"
         anchor="left"
         onClose={() => setOpen(false)}

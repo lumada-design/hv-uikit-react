@@ -56,13 +56,12 @@ export default function Demo() {
   const numPages = Math.ceil(data.length / pageSize);
 
   return (
-    <div className="w-full">
+    <>
       <div className="flex flex-wrap gap-sm rounded">
         {data.slice(pageSize * page, pageSize * (page + 1)).map((i) => (
-          <HvPanel
-            className="w-[100px] text-center"
-            key={i}
-          >{`Item ${i + 1}`}</HvPanel>
+          <HvPanel key={i} className="w-[100px] text-center">
+            {`Item ${i + 1}`}
+          </HvPanel>
         ))}
       </div>
       <HvPagination
@@ -76,7 +75,7 @@ export default function Demo() {
         onPageSizeChange={setPageSize}
         labels={{ pageSizeEntryName: "items" }}
       />
-    </div>
+    </>
   );
 }
 ```
