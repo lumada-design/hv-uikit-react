@@ -180,7 +180,7 @@ export const HvTag = forwardRef<
       >
         {label}
       </HvTypography>
-      {onDelete && deleteIcon}
+      {onDelete && !disabled && deleteIcon}
     </HvButtonBase>
   );
 });

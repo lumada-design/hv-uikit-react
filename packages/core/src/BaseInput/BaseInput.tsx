@@ -35,8 +35,12 @@ export interface HvBaseInputProps
   readOnly?: boolean;
   /** If true, the input element will be required. */
   required?: boolean;
-  /** The function that will be executed onChange, allows modification of the input,
-   * it receives the value. If a new value should be presented it must returned it. */
+  /**
+   * Callback fired when the value is changed.
+   *
+   * You can pull out the new value by accessing `event.target.value` (string),
+   * or using the second callback argument.
+   */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     value: string,

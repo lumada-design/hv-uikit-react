@@ -30,6 +30,7 @@ import {
   HvInputValidity,
   validateInput,
 } from "../BaseInput/validations";
+import type { HvButtonBaseProps } from "../ButtonBase";
 import {
   HvAdornment,
   HvFormElement,
@@ -86,11 +87,11 @@ export interface HvInputProps<
     HvBaseInputProps,
     "onChange" | "onBlur" | "onFocus" | "onKeyDown"
   > {
-  /** The form element name. */
+  /** @inheritdoc */
   name?: string;
-  /** The value of the form element. */
+  /** @inheritdoc */
   value?: React.InputHTMLAttributes<InputElement>["value"];
-  /** When uncontrolled, defines the initial input value. */
+  /** @inheritdoc */
   defaultValue?: React.InputHTMLAttributes<InputElement>["value"];
   /**
    * The label of the form element.
@@ -101,11 +102,11 @@ export interface HvInputProps<
   label?: React.ReactNode;
   /** Provide additional descriptive text for the form element. */
   description?: React.ReactNode;
-  /** Indicates that the form element is disabled. */
+  /** @inheritdoc */
   disabled?: boolean;
-  /** Indicates that the form element is not editable. */
+  /** @inheritdoc */
   readOnly?: boolean;
-  /** Indicates that user input is required on the form element. */
+  /** @inheritdoc */
   required?: boolean;
   /**
    * The status of the form element.
@@ -118,16 +119,13 @@ export interface HvInputProps<
   status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
+  /** @inheritdoc */
+  onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
   /**
    * Callback called when the user submits the value by pressing Enter/Return.
    *
-   * Also called when the search button is clicked (when type is "search").
+   * Also called when the search button is clicked (when `type="search"`).
    */
-  /**
-   * The function that will be executed onChange, allows modification of the input,
-   * it receives the value. If a new value should be presented it must returned it.
-   */
-  onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
   onEnter?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   /**
    * The function that will be executed onBlur, allows checking the validation state,
@@ -652,6 +650,7 @@ export const HvInput = fixedForwardRef(function HvInput<
           aria-controls={setId(elementId, "input")}
           icon={revealPassword ? <PreviewOff /> : <Preview />}
           tabIndex={0}
+          {...({ selected: revealPassword } satisfies HvButtonBaseProps)}
         />
       </HvTooltip>
     );

@@ -11,9 +11,8 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
-import { baseInputClasses } from "../BaseInput";
+import { HvBaseInput } from "../BaseInput";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import {
   HvCharCounter,
@@ -33,8 +32,7 @@ import {
 import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvInput, HvInputProps, HvInputSuggestion } from "../Input";
-import { HvListContainer, HvListItem } from "../ListContainer";
+import type { HvInputProps, HvInputSuggestion } from "../Input";
 import { HvTag, HvTagProps } from "../Tag";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
@@ -57,33 +55,20 @@ export interface HvTagsInputProps
   defaultValue?: string[] | HvTagProps[];
 
   /** The function that will be executed onChange. */
-  onChange?: (
-    event:
-      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-      | React.MouseEvent
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.FocusEvent<HTMLDivElement>,
-    value: HvTagProps[],
-  ) => void;
+  onChange?: (event: React.SyntheticEvent, value: HvTagProps[]) => void;
   /** The function that will be executed when the element is focused. */
   onFocus?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when the element is blurred. */
   onBlur?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when a tag is deleted. */
   onDelete?: (
-    event:
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.MouseEvent<HTMLElement>,
+    event: React.SyntheticEvent,
     value: HvTagProps,
     index: number,
   ) => void;
   /** The function that will be executed when a tag is added. */
   onAdd?: (
-    event:
-      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-      | React.MouseEvent
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.FocusEvent<HTMLDivElement>,
+    event: React.SyntheticEvent,
     value: HvTagProps,
     index: number,
   ) => void;
@@ -142,7 +127,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       hideCounter,
       middleCountLabel = "/",
       maxTagsQuantity,
-      resizable = true,
+      resizable,
       inputProps,
       countCharProps,
       multiline,
@@ -157,7 +142,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       ...others
     } = useDefaultProps("HvTagsInput", props);
 
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
 
@@ -240,13 +225,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * @param {boolean} end    - whether or not to set the cursor at the end of the array
      */
     const deleteTag = useCallback(
-      (
-        tagPos: number,
-        event:
-          | React.KeyboardEvent<HTMLUListElement>
-          | React.MouseEvent<HTMLElement>,
-        end: boolean,
-      ) => {
+      (tagPos: number, event: React.SyntheticEvent, end: boolean) => {
         const newTagsArr = [
           ...value.slice(0, tagPos),
           ...value.slice(tagPos + 1),
@@ -272,14 +251,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * @param {string}  tag    - the string for the tag
      */
     const addTag = useCallback(
-      (
-        event:
-          | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-          | React.MouseEvent
-          | React.KeyboardEvent<HTMLUListElement>
-          | React.FocusEvent<HTMLDivElement>,
-        tag: React.ReactNode,
-      ) => {
+      (event: React.SyntheticEvent, tag: React.ReactNode) => {
         event.preventDefault();
         if (tag !== "") {
           const newTag: HvTagProps = { label: tag, type: "semantic" };
@@ -441,7 +413,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onKeyDown` event on the list container.
      */
     const onKeyDownHandler = useCallback(
-      (event: React.KeyboardEvent<HTMLUListElement>) => {
+      (event: React.KeyboardEvent) => {
         if (tagInput === "") {
           switch (event.code) {
             case "ArrowLeft":
@@ -553,7 +525,10 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         onFocus={onFocusHandler}
         className={cx(
           classes.root,
-          { [classes.disabled]: disabled, [classes.readOnly]: readOnly },
+          {
+            [classes.disabled]: disabled,
+            [classes.readOnly]: readOnly,
+          },
           className,
         )}
       >
@@ -591,7 +566,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           />
         )}
 
-        <HvListContainer
+        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
+        <div
+          ref={forkedContainerRef}
           className={cx(classes.tagsList, {
             [classes.error]: canShowError,
             [classes.resizable]: resizable && multiline,
@@ -600,100 +577,60 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           })}
           onKeyDown={onKeyDownHandler}
           onClick={onContainerClickHandler}
-          ref={forkedContainerRef}
         >
           {value?.map((t, i) => {
-            const tag =
-              typeof t === "string"
-                ? {
-                    label: t,
-                    type: "semantic",
-                  }
-                : t;
+            const tag: HvTagProps =
+              typeof t === "string" ? { label: t, type: "semantic" } : t;
             const { label, type, ...otherProps } = tag;
             return (
-              <HvListItem
-                key={`${tag.label}-${i}`}
+              <HvTag
+                key={`${label}-${i}`}
+                type={type}
+                label={label}
+                disabled={disabled}
                 tabIndex={-1}
-                className={cx({ [classes.singleLine]: !multiline })}
-                classes={{
-                  gutters: classes.listItemGutters,
-                  root: classes.listItemRoot,
-                }}
-                id={setId(elementId, `tag-${i}`)}
-              >
-                <HvTag
-                  label={label}
-                  className={cx(classes.chipRoot, {
-                    [classes.tagSelected]: i === tagCursorPos,
-                  })}
-                  type={type as HvTagProps["type"]}
-                  {...(!(readOnly || disabled || type === "categorical") && {
-                    onDelete: (event) => onDeleteTagHandler(event, i),
-                  })}
-                  deleteButtonProps={{
-                    tabIndex: -1,
-                  }}
-                  {...otherProps}
-                />
-              </HvListItem>
+                className={cx(classes.chipRoot, classes.listItemRoot)}
+                {...(!(readOnly || disabled || type === "categorical") && {
+                  onDelete: (event) => onDeleteTagHandler(event, i),
+                })}
+                {...otherProps}
+              />
             );
           })}
           {!(disabled || readOnly) && (
-            <HvListItem
+            <HvBaseInput
+              id={setId(elementId, "input")}
+              value={tagInput}
+              onChange={onChangeHandler}
+              autoComplete="off"
+              onKeyDown={onInputKeyDownHandler}
+              placeholder={value.length === 0 ? placeholder : ""}
               className={cx(
-                {
-                  [classes.singleLine]: !multiline,
-                  [classes.tagInputRootEmpty]: value.length === 0,
-                },
-                !!isTagSelected &&
-                  css({
-                    [`& .${baseInputClasses.inputRoot}`]: {
-                      backgroundColor: theme.colors.atmo1,
-                    },
-                  }),
+                classes.tagInputContainerRoot,
+                classes.tagInputRoot,
               )}
               classes={{
-                root: classes.tagInputContainerRoot,
-                gutters: classes.listItemGutters,
+                input: classes.input,
               }}
-              id={setId(elementId, `tag-${value.length}`)}
-            >
-              <HvInput
-                value={tagInput}
-                disableClear
-                onChange={onChangeHandler}
-                onKeyDown={onInputKeyDownHandler}
-                placeholder={value.length === 0 ? placeholder : ""}
-                className={cx({
-                  [classes.singleLine]: !multiline,
-                })}
-                classes={{
-                  root: classes.tagInputRoot,
-                  input: classes.input,
-                  inputBorderContainer: classes.tagInputBorderContainer,
-                  inputRootFocused: classes.tagInputRootFocused,
-                }}
-                disabled={disabled}
-                readOnly={readOnly || isTagSelected}
-                inputProps={{
-                  ref: materialInputRef,
-                  "aria-label": ariaLabel,
-                  "aria-labelledby": ariaLabelledBy,
-                  "aria-describedby":
-                    ariaDescribedBy != null
-                      ? ariaDescribedBy
-                      : (description && setId(elementId, "description")) ||
-                        undefined,
+              disabled={disabled}
+              readOnly={readOnly || isTagSelected}
+              inputProps={{
+                ref: materialInputRef,
+                "aria-label": ariaLabel,
+                "aria-labelledby": ariaLabelledBy,
+                "aria-describedby":
+                  ariaDescribedBy != null
+                    ? ariaDescribedBy
+                    : (description && setId(elementId, "description")) ||
+                      undefined,
 
-                  ...inputProps,
-                }}
-                ref={inputRef}
-                {...others}
-              />
-            </HvListItem>
+                ...inputProps,
+              }}
+              ref={inputRef}
+              {...others}
+            />
           )}
-        </HvListContainer>
+        </div>
         {canShowSuggestions && (
           <>
             {hasSuggestions && (
@@ -705,7 +642,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                 root: classes.suggestionsContainer,
                 list: classes.suggestionList,
               }}
-              expanded={hasSuggestions}
+              open={hasSuggestions}
               anchorEl={containerRef?.current?.parentElement}
               onClose={suggestionClearHandler}
               onKeyDown={onSuggestionKeyDown}
