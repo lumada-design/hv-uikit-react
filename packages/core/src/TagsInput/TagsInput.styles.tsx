@@ -1,50 +1,37 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { baseInputClasses } from "../BaseInput";
-import { suggestionsClasses } from "../FormElement/Suggestions";
+import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   input: {
     width: "100%",
+    margin: 0,
+    padding: 0,
     ...theme.typography.caption1,
   },
-  listItemGutters: { padding: "0 5px" },
-  listItemRoot: {
-    marginBottom: 2,
-    height: 24,
-    lineHeight: "24px",
-
-    "&:not(:last-child)": {
-      marginBottom: 2,
-    },
-
-    "&$singleLine": {
-      display: "table-cell",
-      paddingTop: "2px",
-    },
-  },
+  /** @deprecated unused */
+  listItemGutters: {},
+  /** @deprecated use `chipRoot` */
+  listItemRoot: {},
   root: { display: "inline-block", width: "100%" },
+  // TODO: consider renaming this
   chipRoot: {
     maxWidth: "none",
   },
   disabled: {
     "& $tagsList": {
       backgroundColor: theme.colors.atmo2,
-      border: `1px solid ${theme.colors.atmo4}`,
-
-      "&:focus-within, &:hover": {
-        border: `1px solid ${theme.colors.atmo4}`,
+      "&,:hover": {
+        borderColor: theme.colors.atmo4,
       },
     },
   },
   readOnly: {
     "& $tagsList": {
       backgroundColor: theme.colors.atmo2,
-      border: `1px solid ${theme.colors.secondary_60}`,
-
-      "&:hover": {
-        border: `1px solid ${theme.colors.secondary_60}`,
+      "&,:hover": {
+        borderColor: theme.colors.secondary_60,
       },
     },
   },
@@ -61,13 +48,12 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   tagsList: {
     display: "flex",
+    alignItems: "center",
     alignContent: "flex-start",
-    float: "left",
-    clear: "both",
+    gap: theme.space.xs,
+    cursor: "text",
     width: "100%",
-    maxWidth: "100%",
-    height: "32px",
-    padding: 5,
+    padding: theme.spacing("xxs", "xs"),
     overflow: "auto",
     position: "relative",
 
@@ -75,95 +61,62 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     flexWrap: "wrap",
 
     backgroundColor: theme.colors.atmo1,
-    border: `1px solid ${theme.colors.secondary_80}`,
+    borderWidth: 1,
+    borderColor: theme.colors.secondary_80,
     borderRadius: theme.radii.base,
 
     "&:hover": {
-      cursor: "text",
-      border: `1px solid ${theme.colors.primary}`,
+      borderColor: theme.colors.primary,
     },
 
-    [`& .${baseInputClasses.inputRoot}`]: {
-      border: "none",
-    },
-
-    "&:focus, &:focus-within, &:focus-visible": {
-      outlineColor: "#52A8EC",
-      outlineStyle: "solid",
-      outlineWidth: "0px",
-      outlineOffset: "-1px",
-      boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+    "&:focus-within, &:focus-visible": {
+      ...outlineStyles,
     },
 
     "&$singleLine": {
-      overflowX: "hidden",
-      overflowY: "hidden",
-      height: 32,
-      display: "table-row",
-      paddingTop: 0,
+      height: 32, // TODO: review fixed height
+      flexWrap: "nowrap",
     },
 
     "&$error": {
-      border: `1px solid ${theme.colors.negative_120}`,
+      borderColor: theme.colors.negative_120,
     },
 
     "&$invalid": {
-      border: `1px solid ${theme.colors.negative_120}`,
+      borderColor: theme.colors.negative_120,
     },
   },
-  tagInputContainerRoot: {
+  /** @deprecated use `tagInputRoot` instead */
+  tagInputContainerRoot: {},
+  tagInputRoot: {
     display: "flex",
-    flexGrow: 1,
+    flex: "1 0 auto",
     height: 24,
     lineHeight: "24px",
 
-    "&$singleLine": {
-      display: "table-cell",
-      minWidth: 60,
-      width: "100%",
-      paddingTop: "3px",
-      verticalAlign: "middle",
+    width: 0,
+    minWidth: 60,
+    border: "none",
+    marginLeft: 0,
+    marginRight: 0,
+    padding: 0,
+
+    "&": {
+      backgroundColor: "transparent",
     },
-  },
-  tagInputRoot: {
-    [`& .${baseInputClasses.root}`]: {
-      width: "100%",
-      border: "none",
-    },
-    [`&& .${baseInputClasses.inputRoot}`]: {
-      marginLeft: 0,
-      marginRight: 0,
-      flex: "1 1 auto",
-      height: 24,
-      lineHeight: "24px",
-      padding: 0,
-      border: "none",
-    },
-    [`& .${baseInputClasses.inputRootFocused}`]: {
+
+    "&&:focus-within": {
       outline: "none",
       boxShadow: "none",
     },
-    [`& .${baseInputClasses.root} .${baseInputClasses.inputRootReadOnly}`]: {
-      backgroundColor: "transparent",
-      border: "none",
-      "&:hover": {
-        border: "none",
-      },
-    },
-    [`&& .${baseInputClasses.input}`]: {
-      marginLeft: 0,
-    },
   },
-  tagSelected: {
-    outlineColor: "#52A8EC",
-    outlineStyle: "solid",
-    outlineWidth: "0px",
-    outlineOffset: "-1px",
-    boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
-  },
+  /** @deprecated unused.  use `:focus` or `:focus-visible` instead */
+  tagSelected: {},
   /** @deprecated unused. use `::after` instead */
   tagInputBorderContainer: {},
+  /** @deprecated unused. use `:focus` or `:focus-visible` instead */
   tagInputRootFocused: {},
+  /** @deprecated unused */
   tagInputRootEmpty: {},
   singleLine: {},
   error: { float: "left" },
@@ -172,9 +125,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     width: "100%",
     position: "relative",
     top: 59,
-    [`& .${suggestionsClasses.root} .${suggestionsClasses.list} &`]: {
-      width: "100%",
-    },
   },
   suggestionList: {},
 });

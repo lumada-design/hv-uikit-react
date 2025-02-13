@@ -1187,21 +1187,21 @@ const ds3 = makeTheme((theme) => ({
         readOnly: {
           "& .HvTagsInput-tagsList": {
             backgroundColor: theme.colors.atmo1,
-            border: `1px solid transparent`,
+            borderColor: "transparent",
             "&:hover": {
-              border: `1px solid transparent`,
+              borderColor: "transparent",
             },
           },
         },
         tagInputRoot: {
-          "& .HvBaseInput-root::after": {
+          "&::after": {
             display: "none",
           },
         },
         tagsList: {
-          border: `1px solid ${theme.colors.atmo4}`,
+          borderColor: theme.colors.atmo4,
           "&:hover": {
-            border: `1px solid ${theme.colors.secondary}`,
+            borderColor: theme.colors.secondary,
           },
         },
       },
