@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.41.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.41.1...@hitachivantara/uikit-styles@5.41.2) (2025-02-13)
+
+### Bug Fixes
+
+- **BaseInput:** simplify structure ([#4560](https://github.com/lumada-design/hv-uikit-react/issues/4560)) ([3d54109](https://github.com/lumada-design/hv-uikit-react/commit/3d54109e6b89dba254378d65e82eaa9e51c839ba))
+
 ## [5.41.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.41.0...@hitachivantara/uikit-styles@5.41.1) (2025-02-10)
 
 ### Bug Fixes
