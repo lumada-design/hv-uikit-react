@@ -11,9 +11,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
-import { baseInputClasses } from "../BaseInput";
 import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
 import {
   HvCharCounter,
@@ -31,10 +29,10 @@ import {
   HvSuggestionsProps,
 } from "../FormElement/Suggestions/Suggestions";
 import { useControlled } from "../hooks/useControlled";
+import { useFocus } from "../hooks/useFocus";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvInput, HvInputProps, HvInputSuggestion } from "../Input";
-import { HvListContainer, HvListItem } from "../ListContainer";
+import type { HvInputProps, HvInputSuggestion } from "../Input";
 import { HvTag, HvTagProps } from "../Tag";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
@@ -57,33 +55,20 @@ export interface HvTagsInputProps
   defaultValue?: string[] | HvTagProps[];
 
   /** The function that will be executed onChange. */
-  onChange?: (
-    event:
-      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-      | React.MouseEvent
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.FocusEvent<HTMLDivElement>,
-    value: HvTagProps[],
-  ) => void;
+  onChange?: (event: React.SyntheticEvent, value: HvTagProps[]) => void;
   /** The function that will be executed when the element is focused. */
   onFocus?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when the element is blurred. */
   onBlur?: (event: React.FocusEvent<HTMLDivElement>, value: string) => void;
   /** The function that will be executed when a tag is deleted. */
   onDelete?: (
-    event:
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.MouseEvent<HTMLElement>,
+    event: React.SyntheticEvent,
     value: HvTagProps,
     index: number,
   ) => void;
   /** The function that will be executed when a tag is added. */
   onAdd?: (
-    event:
-      | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-      | React.MouseEvent
-      | React.KeyboardEvent<HTMLUListElement>
-      | React.FocusEvent<HTMLDivElement>,
+    event: React.SyntheticEvent,
     value: HvTagProps,
     index: number,
   ) => void;
@@ -116,7 +101,7 @@ export interface HvTagsInputProps
 /**
  * A tags input is a single or multiline control that allows the input of tags.
  */
-export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
+export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
   function HvTagsInput(props, ref) {
     const {
       classes: classesProp,
@@ -139,10 +124,11 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       onBlur,
       onFocus,
       placeholder,
+      endAdornment,
       hideCounter,
       middleCountLabel = "/",
       maxTagsQuantity,
-      resizable = true,
+      resizable,
       inputProps,
       countCharProps,
       multiline,
@@ -157,7 +143,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       ...others
     } = useDefaultProps("HvTagsInput", props);
 
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
 
@@ -175,19 +161,16 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       "",
     );
 
-    const [tagInput, setTagInput] = useState("");
-    const [tagCursorPos, setTagCursorPos] = useState(value.length);
     const [stateValid, setStateValid] = useState(true);
 
-    const inputRef = useRef<any>();
-    const containerRef = useRef<any>();
+    const inputRef = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const skipReset = useRef(false);
     const blurTimeout = useRef<any>();
-    const materialInputRef = useRef<any>(null);
+    const focusUtils = useFocus({ containerRef });
 
     const forkedContainerRef = useForkRef(ref, containerRef);
 
-    const isTagSelected = tagCursorPos >= 0 && tagCursorPos < value.length;
     const hasCounter = maxTagsQuantity != null && !hideCounter;
 
     // suggestions related state
@@ -237,58 +220,43 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      *
      * @param {number}  tagPos - the position at which to remove the tag
      * @param {Event}   event  - the event associated with the delete
-     * @param {boolean} end    - whether or not to set the cursor at the end of the array
+     * @param {boolean} refocus    - whether or not to set the cursor at the end of the array
      */
     const deleteTag = useCallback(
-      (
-        tagPos: number,
-        event:
-          | React.KeyboardEvent<HTMLUListElement>
-          | React.MouseEvent<HTMLElement>,
-        end: boolean,
-      ) => {
+      (tagPos: number, event: React.SyntheticEvent, refocus = false) => {
         const newTagsArr = [
           ...value.slice(0, tagPos),
           ...value.slice(tagPos + 1),
         ] as HvTagProps[];
         setValue(newTagsArr);
-        setTagCursorPos(
-          end ? newTagsArr.length : tagCursorPos > 0 ? tagCursorPos - 1 : 0,
-        );
-        inputRef.current?.focus();
+        if (refocus) {
+          setTimeout(() => focusUtils.focusChild(tagPos), 10);
+        }
         performValidation(newTagsArr);
         onDelete?.(event, value[tagPos] as HvTagProps, tagPos);
         onChange?.(event, newTagsArr);
         skipReset.current = true;
       },
-      [onChange, onDelete, performValidation, setValue, tagCursorPos, value],
+      [focusUtils, onChange, onDelete, performValidation, setValue, value],
     );
 
     /**
      * Adds a Tag to the array of tags.
      * Also executes the user provided onAdd and onDelete events.
-     *
-     * @param {Event}   event  - whatever event triggered adding a tag
-     * @param {string}  tag    - the string for the tag
      */
     const addTag = useCallback(
-      (
-        event:
-          | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-          | React.MouseEvent
-          | React.KeyboardEvent<HTMLUListElement>
-          | React.FocusEvent<HTMLDivElement>,
-        tag: React.ReactNode,
-      ) => {
+      (event: React.SyntheticEvent, tagInput?: string) => {
         event.preventDefault();
-        if (tag !== "") {
-          const newTag: HvTagProps = { label: tag, type: "semantic" };
-          const newTagsArr = [...value, newTag] as HvTagProps[];
-          setValue(newTagsArr);
-          performValidation(newTagsArr);
-          onAdd?.(event, newTag, newTagsArr.length - 1);
-          onChange?.(event, newTagsArr);
-        }
+        const tag = tagInput ?? inputRef.current?.value ?? "";
+        if (tag === "") return;
+
+        const newTag: HvTagProps = { label: tag, type: "semantic" };
+        const newTagsArr = [...value, newTag] as HvTagProps[];
+        setValue(newTagsArr);
+        performValidation(newTagsArr);
+        onAdd?.(event, newTag, newTagsArr.length - 1);
+        onChange?.(event, newTagsArr);
+        inputRef.current!.value = "";
       },
       [onAdd, onChange, performValidation, setValue, value],
     );
@@ -300,39 +268,15 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
       !stateValid;
 
     useEffect(() => {
-      if (!multiline) {
-        const element = containerRef?.current?.children[tagCursorPos];
-        // this setTimeout is a workaround for Firefox not properly dealing
-        // with setting the scrollLeft value.
-        setTimeout(() => {
-          const container = containerRef.current;
-          if (container == null) return;
-          container.scrollLeft = element
-            ? element.offsetLeft -
-              container.getBoundingClientRect().width / 2 +
-              element.getBoundingClientRect().width / 2
-            : 0;
-        }, 10);
-
-        element?.focus();
-      }
-    }, [multiline, tagCursorPos]);
-
-    useEffect(() => {
-      if (!skipReset.current) {
-        setTagInput("");
-        setTagCursorPos(value.length);
-      }
+      if (skipReset.current || !inputRef.current) return;
+      inputRef.current.value = "";
       skipReset.current = false;
     }, [value]);
 
     const isMounted = useIsMounted();
 
-    /**
-     * Looks for the node that represent the input inside the material tree and focus it.
-     */
     const focusInput = () => {
-      materialInputRef.current.focus();
+      inputRef.current?.focus();
     };
 
     const getSuggestions = useCallback(
@@ -375,10 +319,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      */
     const suggestionSelectedHandler: HvSuggestionsProps["onSuggestionSelected"] =
       (event, item) => {
-        addTag(event, item.value || item.label);
-
-        // set the input value (only when value is uncontrolled)
-        setTagInput((item.value || item.label) as string); // TODO - in v6 review all types: this is not a string but a React.ReactNode
+        addTag(event, item.value || String(item.label));
 
         focusInput();
         suggestionClearHandler();
@@ -402,12 +343,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onChange` event on the tag input
      */
     const onChangeHandler = useCallback(
-      (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-        input: string,
-      ) => {
-        setTagInput(input);
-
+      (event: React.ChangeEvent<HTMLInputElement>) => {
         if (canShowSuggestions) {
           // an edge case might be a controlled input whose onChange callback
           // doesn't change the value (or sets another): the suggestionListCallback
@@ -415,7 +351,7 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           // a refactor is needed so the suggestionListCallback might be called only
           // when the input is uncontrolled, providing a way to externally control
           // the suggestion values.
-          suggestionHandler(input);
+          suggestionHandler(event.target.value);
         }
       },
       [canShowSuggestions, suggestionHandler],
@@ -425,84 +361,75 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
      * Handler for the `onKeyDown` event on the form element
      */
     const onInputKeyDownHandler = useCallback(
-      (
-        event:
-          | React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>
-          | React.MouseEvent,
-      ) => {
-        if (!canShowSuggestions && commitTagOn.includes((event as any).code)) {
-          addTag(event, tagInput);
+      (event: React.KeyboardEvent) => {
+        if (!canShowSuggestions && commitTagOn.includes(event.code)) {
+          addTag(event);
         }
       },
-      [addTag, canShowSuggestions, commitTagOn, tagInput],
+      [addTag, canShowSuggestions, commitTagOn],
     );
 
     /**
      * Handler for the `onKeyDown` event on the list container.
      */
     const onKeyDownHandler = useCallback(
-      (event: React.KeyboardEvent<HTMLUListElement>) => {
+      (event: React.KeyboardEvent) => {
+        const tagInput = inputRef.current?.value || "";
         if (tagInput === "") {
           switch (event.code) {
             case "ArrowLeft":
-              setTagCursorPos(tagCursorPos > 0 ? tagCursorPos - 1 : 0);
-              break;
+              focusUtils.focusPrevious();
+              return;
             case "ArrowRight":
-              setTagCursorPos(
-                tagCursorPos < value.length ? tagCursorPos + 1 : value.length,
-              );
-              break;
+              focusUtils.focusNext();
+              return;
+            case "End":
+              focusUtils.focusLast();
+              return;
+            case "Home":
+              focusUtils.focusFirst();
+              return;
             case "Backspace":
-              if (isTagSelected) {
-                deleteTag(tagCursorPos, event, false);
-              } else {
-                setTagCursorPos(value.length - 1);
+            case "Delete": {
+              // if a tag is focused, its onDelete will be called instead
+              if (document.activeElement === inputRef.current) {
+                deleteTag(value.length - 1, event);
               }
-              break;
-            case "Delete":
-              if (isTagSelected) {
-                deleteTag(tagCursorPos, event, false);
-              }
-              break;
+              return;
+            }
             default:
-              break;
+              return;
           }
-        } else {
-          switch (event.code) {
-            case "ArrowDown":
-              getSuggestions(0)?.focus();
-              break;
-            case "Enter":
-              if (
-                canShowSuggestions &&
-                suggestionsLoose &&
-                (suggestionValidation?.(tagInput) || !suggestionValidation)
-              ) {
-                addTag(event, tagInput);
+        }
 
-                // set the input value (only when value is uncontrolled)
-                setTagInput(tagInput);
-
-                focusInput();
-                suggestionClearHandler();
-              }
-              break;
-            default:
-              break;
-          }
+        switch (event.code) {
+          case "ArrowDown":
+            getSuggestions(0)?.focus();
+            return;
+          case "Enter":
+            if (
+              canShowSuggestions &&
+              suggestionsLoose &&
+              (suggestionValidation?.(tagInput) || !suggestionValidation)
+            ) {
+              addTag(event);
+              focusInput();
+              suggestionClearHandler();
+            }
+            return;
+          default:
+            return;
         }
       },
       [
         addTag,
         canShowSuggestions,
         deleteTag,
+        focusUtils,
         getSuggestions,
-        isTagSelected,
         suggestionClearHandler,
         suggestionValidation,
         suggestionsLoose,
-        tagCursorPos,
-        tagInput,
         value.length,
       ],
     );
@@ -524,21 +451,20 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
     const onContainerClickHandler = useCallback(() => {
       inputRef.current?.focus();
       clearTimeout(blurTimeout.current);
-      setTagCursorPos(value.length);
-    }, [value.length]);
+    }, []);
 
     const onBlurHandler: HvFormElementProps["onBlur"] = (evt) => {
       blurTimeout.current = setTimeout(() => {
         if (commitOnBlur) {
-          addTag(evt, tagInput);
+          addTag(evt);
         }
-        onBlur?.(evt, tagInput);
+        onBlur?.(evt, inputRef.current?.value || "");
       }, 10);
     };
 
     const onFocusHandler: HvFormElementProps["onFocus"] = (evt) => {
       clearTimeout(blurTimeout.current);
-      onFocus?.(evt, tagInput);
+      onFocus?.(evt, inputRef.current?.value || "");
     };
 
     return (
@@ -553,7 +479,10 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
         onFocus={onFocusHandler}
         className={cx(
           classes.root,
-          { [classes.disabled]: disabled, [classes.readOnly]: readOnly },
+          {
+            [classes.disabled]: disabled,
+            [classes.readOnly]: readOnly,
+          },
           className,
         )}
       >
@@ -591,7 +520,9 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           />
         )}
 
-        <HvListContainer
+        {/* eslint-disable jsx-a11y/no-static-element-interactions */}
+        <div
+          ref={forkedContainerRef}
           className={cx(classes.tagsList, {
             [classes.error]: canShowError,
             [classes.resizable]: resizable && multiline,
@@ -600,100 +531,51 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
           })}
           onKeyDown={onKeyDownHandler}
           onClick={onContainerClickHandler}
-          ref={forkedContainerRef}
         >
           {value?.map((t, i) => {
-            const tag =
-              typeof t === "string"
-                ? {
-                    label: t,
-                    type: "semantic",
-                  }
-                : t;
+            const tag: HvTagProps =
+              typeof t === "string" ? { label: t, type: "semantic" } : t;
             const { label, type, ...otherProps } = tag;
             return (
-              <HvListItem
-                key={`${tag.label}-${i}`}
+              <HvTag
+                key={`${label}-${i}`}
+                type={type}
+                label={label}
+                disabled={disabled}
                 tabIndex={-1}
-                className={cx({ [classes.singleLine]: !multiline })}
-                classes={{
-                  gutters: classes.listItemGutters,
-                  root: classes.listItemRoot,
-                }}
-                id={setId(elementId, `tag-${i}`)}
-              >
-                <HvTag
-                  label={label}
-                  className={cx(classes.chipRoot, {
-                    [classes.tagSelected]: i === tagCursorPos,
-                  })}
-                  type={type as HvTagProps["type"]}
-                  {...(!(readOnly || disabled || type === "categorical") && {
-                    onDelete: (event) => onDeleteTagHandler(event, i),
-                  })}
-                  deleteButtonProps={{
-                    tabIndex: -1,
-                  }}
-                  {...otherProps}
-                />
-              </HvListItem>
+                className={cx(classes.chipRoot, classes.listItemRoot)}
+                {...(!(readOnly || disabled || type === "categorical") && {
+                  onDelete: (event) => onDeleteTagHandler(event, i),
+                })}
+                {...otherProps}
+              />
             );
           })}
-          {!(disabled || readOnly) && (
-            <HvListItem
+          {!disabled && !readOnly && (
+            <input
+              id={setId(elementId, "input")}
+              onChange={onChangeHandler}
+              autoComplete="off"
+              onKeyDown={onInputKeyDownHandler}
+              placeholder={value.length === 0 ? placeholder : ""}
               className={cx(
-                {
-                  [classes.singleLine]: !multiline,
-                  [classes.tagInputRootEmpty]: value.length === 0,
-                },
-                !!isTagSelected &&
-                  css({
-                    [`& .${baseInputClasses.inputRoot}`]: {
-                      backgroundColor: theme.colors.atmo1,
-                    },
-                  }),
+                classes.tagInputContainerRoot,
+                classes.tagInputRoot,
+                classes.input,
               )}
-              classes={{
-                root: classes.tagInputContainerRoot,
-                gutters: classes.listItemGutters,
-              }}
-              id={setId(elementId, `tag-${value.length}`)}
-            >
-              <HvInput
-                value={tagInput}
-                disableClear
-                onChange={onChangeHandler}
-                onKeyDown={onInputKeyDownHandler}
-                placeholder={value.length === 0 ? placeholder : ""}
-                className={cx({
-                  [classes.singleLine]: !multiline,
-                })}
-                classes={{
-                  root: classes.tagInputRoot,
-                  input: classes.input,
-                  inputBorderContainer: classes.tagInputBorderContainer,
-                  inputRootFocused: classes.tagInputRootFocused,
-                }}
-                disabled={disabled}
-                readOnly={readOnly || isTagSelected}
-                inputProps={{
-                  ref: materialInputRef,
-                  "aria-label": ariaLabel,
-                  "aria-labelledby": ariaLabelledBy,
-                  "aria-describedby":
-                    ariaDescribedBy != null
-                      ? ariaDescribedBy
-                      : (description && setId(elementId, "description")) ||
-                        undefined,
-
-                  ...inputProps,
-                }}
-                ref={inputRef}
-                {...others}
-              />
-            </HvListItem>
+              ref={inputRef}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+              aria-describedby={
+                ariaDescribedBy ??
+                (description ? setId(elementId, "description") : undefined)
+              }
+              {...inputProps}
+              {...others}
+            />
           )}
-        </HvListContainer>
+          {!disabled && !readOnly && endAdornment}
+        </div>
         {canShowSuggestions && (
           <>
             {hasSuggestions && (
@@ -705,8 +587,8 @@ export const HvTagsInput = forwardRef<HTMLUListElement, HvTagsInputProps>(
                 root: classes.suggestionsContainer,
                 list: classes.suggestionList,
               }}
-              expanded={hasSuggestions}
-              anchorEl={containerRef?.current?.parentElement}
+              open={hasSuggestions}
+              anchorEl={containerRef?.current}
               onClose={suggestionClearHandler}
               onKeyDown={onSuggestionKeyDown}
               onSuggestionSelected={suggestionSelectedHandler}
