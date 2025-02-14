@@ -1,5 +1,6 @@
 export * from "./Table";
 export * from "./TableContainer";
+export * from "./TableSection";
 export * from "./TableBody";
 export * from "./TableHead";
 export * from "./TableHeader";

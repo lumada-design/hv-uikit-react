@@ -74,12 +74,12 @@ const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
 /**
  * A table gathers relational data. It displays values arranged to allow quick numerical analysis like comparison and sorting.
  *
- * The **HvTable** component offers a set of HTML-equivalent elements, **styled to Design System's specification**,
+ * The `HvTable` component offers a set of HTML-equivalent elements, **styled to Design System's specification**,
  * for building tables.
  * You can rely on these **elements** when your table doesn’t have many interactions or you need it to be very lightweight.
  *
  * For better data handling and **advanced features** we recommend the use of the utility hooks collection.
- * See the <a href="?id=guides-table-table-hooks--use-hv-hooks&viewMode=docs" target="_self">Table Hooks documentation</a> for more details.
+ * See the [Table Hooks documentation](https://lumada-design.github.io/uikit/master/?path=/docs/visualizations-table-table-hooks--docs) for more details.
  */
 export const HvTable = forwardRef<
   // no-indent
