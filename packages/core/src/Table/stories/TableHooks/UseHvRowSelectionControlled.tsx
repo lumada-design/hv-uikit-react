@@ -1,4 +1,3 @@
-import { useMemo, useState } from "react";
 import {
   HvTable,
   HvTableBody,
@@ -11,13 +10,12 @@ import {
   useHvRowSelection,
 } from "@hitachivantara/uikit-react-core";
 
-import { AssetEvent, getColumns, makeSelectedData } from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
+
+const columns = getColumns();
+const data = makeData(6).map((d, i) => ({ ...d, selected: i < 3 }));
 
 export const UseHvSelectionControlled = () => {
-  const columns = useMemo(() => getColumns(), []);
-  const initialData = useMemo(() => makeSelectedData(6), []);
-  const [data, setData] = useState(initialData);
-
   const { getTableProps, getTableBodyProps, prepareRow, headerGroups, rows } =
     useHvData<AssetEvent, string>(
       { columns, data, manualRowSelectedKey: "selected" },
@@ -45,19 +43,15 @@ export const UseHvSelectionControlled = () => {
           ))}
         </HvTableHead>
         <HvTableBody {...getTableBodyProps()}>
-          {rows.map((row, index) => {
+          {rows.map((row) => {
             prepareRow(row);
             const { key, ...rowProps } = row.getRowProps();
 
             return (
               <HvTableRow
                 key={key}
-                onChange={(event) => {
-                  const newData = [...data];
-                  newData[index].selected = (
-                    event.target as HTMLInputElement
-                  ).checked;
-                  setData(newData);
+                onChange={() => {
+                  row.toggleRowSelected?.(!row.isSelected);
                 }}
                 {...rowProps}
               >

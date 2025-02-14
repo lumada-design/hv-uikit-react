@@ -34,7 +34,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add, Delete, Edit } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, useServerData } from "../storiesUtils";
+import { AssetEvent, useServerData } from "../serverUtils";
 
 const slide = keyframes({
   "0%": { maxHeight: 0 },

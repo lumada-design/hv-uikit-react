@@ -12,7 +12,7 @@ import {
   Unlock,
 } from "@hitachivantara/uikit-react-icons";
 
-import { AssetEvent, useServerData } from "../storiesUtils";
+import { AssetEvent, useServerData } from "../serverUtils";
 import { TableComplete as Table, TableProps } from "./TableComplete";
 
 const useColumns = () => {
