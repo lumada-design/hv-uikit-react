@@ -4,8 +4,8 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { useUniqueId } from "../hooks/useUniqueId";
-import { HvSection, HvSectionProps } from "../Section";
+import { useUniqueId } from "../../hooks/useUniqueId";
+import { HvSection, HvSectionProps } from "../../Section";
 import { staticClasses, useClasses } from "./TableSection.styles";
 
 export { staticClasses as tableSectionClasses };

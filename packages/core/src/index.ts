@@ -122,7 +122,6 @@ export * from "./ToggleButton";
 export * from "./Tooltip";
 export * from "./TreeView";
 export * from "./VerticalNavigation";
-export * from "./TableSection";
 export * from "./IconButton";
 export * from "./Skeleton";
 
