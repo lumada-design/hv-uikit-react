@@ -4,12 +4,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
-  input: {
-    width: "100%",
-    margin: 0,
-    padding: 0,
-    ...theme.typography.caption1,
-  },
   /** @deprecated unused */
   listItemGutters: {},
   /** @deprecated use `chipRoot` */
@@ -50,9 +44,10 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     display: "flex",
     alignItems: "center",
     alignContent: "flex-start",
-    gap: theme.space.xs,
+    gap: theme.spacing("xxs", "xs"),
     cursor: "text",
     width: "100%",
+    minHeight: 32,
     padding: theme.spacing("xxs", "xs"),
     overflow: "auto",
     position: "relative",
@@ -74,7 +69,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     },
 
     "&$singleLine": {
-      height: 32, // TODO: review fixed height
       flexWrap: "nowrap",
     },
 
@@ -86,29 +80,23 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
       borderColor: theme.colors.negative_120,
     },
   },
-  /** @deprecated use `tagInputRoot` instead */
+  /** @deprecated use `classes.input` instead */
   tagInputContainerRoot: {},
-  tagInputRoot: {
+  /** @deprecated use `classes.input` instead */
+  tagInputRoot: {},
+  input: {
     display: "flex",
     flex: "1 0 auto",
-    height: 24,
-    lineHeight: "24px",
-
+    height: "auto",
     width: 0,
     minWidth: 60,
     border: "none",
-    marginLeft: 0,
-    marginRight: 0,
+    margin: 0,
     padding: 0,
-
-    "&": {
-      backgroundColor: "transparent",
-    },
-
-    "&&:focus-within": {
-      outline: "none",
-      boxShadow: "none",
-    },
+    ...theme.typography.caption1,
+    backgroundColor: "transparent",
+    outline: "none",
+    boxShadow: "none",
   },
   /** @deprecated unused.  use `:focus` or `:focus-visible` instead */
   tagSelected: {},
@@ -121,10 +109,6 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   singleLine: {},
   error: { float: "left" },
   inputExtension: {},
-  suggestionsContainer: {
-    width: "100%",
-    position: "relative",
-    top: 59,
-  },
+  suggestionsContainer: {},
   suggestionList: {},
 });
