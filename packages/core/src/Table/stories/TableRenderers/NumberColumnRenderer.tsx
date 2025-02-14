@@ -14,24 +14,21 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
 
 export const NumberColumnRenderer = () => {
-  const getColumns = () => [
-    hvNumberColumn<NewRendererEntry, string>({
-      Header: "Quantity",
-      accessor: "eventQuantity",
-      style: { maxWidth: 100 },
-    }),
-  ];
+  const columns = useMemo(
+    () => [
+      hvNumberColumn<NewRendererEntry, string>({
+        Header: "Quantity",
+        accessor: "eventQuantity",
+        style: { maxWidth: 100 },
+      }),
+    ],
+    [],
+  );
 
-  const columns = useMemo(() => {
-    return getColumns();
-  }, []);
-
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data] = useState(initialData);
+  const [data] = useState(() => makeRenderersData(64));
 
   const {
     getTableProps,

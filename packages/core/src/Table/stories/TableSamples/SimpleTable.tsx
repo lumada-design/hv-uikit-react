@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   HvCheckBox,
   HvDropDownMenu,
@@ -13,28 +13,16 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import {
-  AssetEvent,
-  getColumns,
-  makeData,
-  useToggleIndex,
-} from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const SimpleTable = () => {
-  const [checkedIdx, toggleChecked] = useToggleIndex(0);
+  const [checkedIdx, setCheckedIdx] = useState(0);
 
   const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
-    return [...getColumns(), { Header: "Details", accessor: "link" }];
+    return [...getColumns(), { Header: "Details", id: "link" }];
   }, []);
 
-  const data = useMemo(
-    () =>
-      makeData(6).map((row) => ({
-        ...row,
-        link: "/details",
-      })),
-    [],
-  );
+  const data = useMemo(() => makeData(6), []);
 
   return (
     <HvTableContainer>
@@ -55,7 +43,7 @@ export const SimpleTable = () => {
                 <HvCheckBox
                   aria-label="Tick to select the row"
                   checked={checkedIdx === idx}
-                  onClick={toggleChecked(idx)}
+                  onClick={() => setCheckedIdx(idx === checkedIdx ? -1 : idx)}
                 />
               </HvTableCell>
               <HvTableCell>{el.name}</HvTableCell>
@@ -66,7 +54,7 @@ export const SimpleTable = () => {
               <HvTableCell>{el.severity}</HvTableCell>
               <HvTableCell>{el.priority}</HvTableCell>
               <HvTableCell>
-                <HvTypography link component="a" onClick={() => alert(el.link)}>
+                <HvTypography link component="a" href="#details">
                   Details Page
                 </HvTypography>
               </HvTableCell>
