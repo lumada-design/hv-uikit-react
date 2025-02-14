@@ -255,7 +255,7 @@ const ds5 = makeTheme((theme) => ({
   table: {
     rowStripedBackgroundColorEven: theme.colors.atmo1, // TODO - remove in v6
     rowStripedBackgroundColorOdd: "transparent", // TODO - remove in v6
-    rowExpandBackgroundColor: theme.colors.atmo2,
+    rowExpandBackgroundColor: theme.colors.atmo2, // TODO - remove in v6
     rowSortedColor: theme.colors.primary, // TODO - remove in v6
     rowSortedColorAlpha: "0.1", // TODO - remove in v6
   },

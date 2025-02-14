@@ -1,6 +1,6 @@
-// eslint-disable-next-line
-import React from "react";
+import * as React from "react";
 import { importCode, type Scope } from "react-live-runner";
+import * as reactTable from "react-table";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
@@ -24,6 +24,7 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
+    "react-table": reactTable,
   },
 };
 
