@@ -248,7 +248,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     id,
     name,
     value: valueProp,
-    defaultValue = "",
+    defaultValue,
     required,
     readOnly,
     disabled,
