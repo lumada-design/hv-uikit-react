@@ -95,7 +95,7 @@ export const TableComplete = () => {
     <Table<AssetEvent>
       data={data}
       columns={columns}
-      loading={loading}
+      isLoading={loading}
       recordCount={totalRecords}
       showBulkActions
       showPagination
@@ -116,9 +116,7 @@ export const TableComplete = () => {
       ]}
       onAction={handleAction}
       onBulkAction={handleBulkAction}
-      onUpdate={({ pageIndex, pageSize, sortBy }) => {
-        fetchData({ pageIndex, pageSize, sortBy });
-      }}
+      onUpdate={fetchData}
       options={{
         showSelectAllPages: false,
         autoResetSelectedRows: false,

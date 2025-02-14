@@ -1,5 +1,6 @@
-import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useTransition } from "react";
 import { css } from "@emotion/css";
+import { useDebounce } from "usehooks-ts";
 import {
   HvActionsGeneric,
   HvBulkActions,
@@ -14,7 +15,6 @@ import {
   HvTableHeader,
   HvTableRow,
   HvTableSection,
-  theme,
   useHvBulkActions,
   useHvPagination,
   useHvRowSelection,
@@ -32,23 +32,13 @@ import {
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
 const classes = {
-  root: css({}),
   container: css({
     paddingBottom: 0,
     maxHeight: 600,
   }),
-  pagination: css({
-    zIndex: "unset",
-  }),
-  selectAllPages: css({
-    color: theme.colors.primary,
-    marginLeft: theme.space.xs,
-  }),
 };
 
-const DEFAULT_PAGE_SIZE = 10;
-
-const getPageCount = (totalRecords = 0, pageSize = DEFAULT_PAGE_SIZE) =>
+const getPageCount = (totalRecords = 0, pageSize = 10) =>
   Math.max(Math.ceil(totalRecords / pageSize), 1);
 
 const NoDataRow = ({
@@ -67,9 +57,7 @@ const NoDataRow = ({
 
 const EmptyRow = () => (
   <HvTableRow>
-    <HvTableCell style={{ borderBottom: 0 }} colSpan={100}>
-      &nbsp;
-    </HvTableCell>
+    <HvTableCell style={{ borderBottom: 0 }} colSpan={100} />
   </HvTableRow>
 );
 
@@ -85,7 +73,7 @@ export interface TableProps<T extends object = Record<string, unknown>> {
   columns: HvTableColumnConfig<T>[];
   data: T[] | undefined;
   recordCount?: number;
-  loading?: boolean;
+  isLoading?: boolean;
   initialState?: Partial<HvTableState<T>>;
   actions?: TableAction<T>[];
   maxVisibleActions?: number;
@@ -102,13 +90,12 @@ export interface TableProps<T extends object = Record<string, unknown>> {
     action: TableAction<T>,
     row: HvRowInstance<T>,
   ) => void;
-  onSelection?: (selectedRowIds: HvTableState<T>["selectedRowIds"]) => void;
   onBulkAction?: (
     event: React.SyntheticEvent,
     action: HvActionGeneric,
     selectedRows: HvTableInstance<T>["selectedFlatRows"],
   ) => void;
-  onUpdate?: (tableParams: HvTableState<T>) => void;
+  onUpdate?: (tableParams: Partial<HvTableState<T>>) => void;
   options?: HvTableOptions<T>;
 }
 
@@ -119,9 +106,9 @@ export interface TableProps<T extends object = Record<string, unknown>> {
 export const TableComplete = <T extends object>(props: TableProps<T>) => {
   const {
     columns: columnsProp,
-    data: dataProp,
+    data,
     recordCount,
-    loading = false,
+    isLoading = false,
     initialState,
     actions,
     maxVisibleActions = 1,
@@ -135,12 +122,12 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     },
     onAction,
     onBulkAction,
-    onSelection,
     onUpdate,
     options,
   } = props;
   const [pageCount, setPageCount] = useState(getPageCount(recordCount));
-  const data = useDeferredValue(dataProp);
+  const [pending, startTransition] = useTransition();
+  const isPending = useDebounce(pending, 50);
 
   const columns = useMemo(() => {
     if (!actions?.length) return columnsProp;
@@ -167,18 +154,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     [actions],
   );
 
-  const {
-    getTableProps,
-    getTableHeadProps,
-    getTableBodyProps,
-    prepareRow,
-    headerGroups,
-    page,
-    selectedFlatRows,
-    getHvBulkActionsProps,
-    getHvPaginationProps,
-    state: { pageSize },
-  } = useHvTable<T>(
+  const table = useHvTable<T>(
     {
       columns,
       data,
@@ -189,27 +165,10 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
       autoResetSortBy: false,
       disableMultiSort: true,
       stickyHeader: true,
-      stateReducer: (newState, action, prevState, instance) => {
+      stateReducer: (newState, action) => {
         if (action.type === "toggleSortBy") {
           // Go back to first page when sorting columns
-          instance?.gotoPage?.(0);
-        }
-
-        switch (action.type) {
-          // events that trigger a data fetch
-          case "init":
-          case "toggleSortBy":
-          case "gotoPage":
-          case "setPageSize":
-            onUpdate?.(newState);
-            break;
-          case "toggleRowSelected":
-          case "toggleAllRowsSelected":
-          case "toggleAllPageRowsSelected":
-            onSelection?.(newState.selectedRowIds);
-            break;
-          default:
-            break;
+          return { ...newState, pageIndex: 0 };
         }
 
         return newState;
@@ -227,14 +186,22 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
     useHvBulkActions,
   );
 
+  const { pageIndex, pageSize, sortBy } = table.state;
+
   // Handle pageCount local calculation
   useEffect(() => {
     if (!recordCount) return;
     setPageCount(getPageCount(recordCount, pageSize));
   }, [pageSize, recordCount]);
 
+  useEffect(() => {
+    startTransition(() => {
+      onUpdate?.({ pageIndex, pageSize, sortBy });
+    });
+  }, [onUpdate, pageIndex, pageSize, sortBy]);
+
   const renderTableRow = (i: number) => {
-    const row = page[i];
+    const row = table.page[i];
 
     if (!row) {
       // render EmptyRow only when there are multiple pages
@@ -242,7 +209,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
       return showEmptyRows ? <EmptyRow key={`empty-${i}`} /> : null;
     }
 
-    prepareRow(row);
+    table.prepareRow(row);
     const { key, ...rowProps } = row.getRowProps({ "aria-rowindex": i + 1 });
 
     return (
@@ -258,23 +225,25 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
 
   return (
     <HvTableSection>
-      {showBulkActions && page.length > 0 && (
+      {showBulkActions && table.page.length > 0 && (
         <HvBulkActions
           maxVisibleActions={maxVisibleActions}
           actions={bulkActions}
-          classes={{ selectAllPages: classes.selectAllPages }}
           selectAllPagesLabel={labels.selectAllPages}
-          onAction={(evt, action) =>
-            onBulkAction?.(evt, action, selectedFlatRows)
-          }
-          {...getHvBulkActionsProps?.()}
+          onAction={(evt, action) => {
+            onBulkAction?.(evt, action, table.selectedFlatRows);
+          }}
+          {...table.getHvBulkActionsProps?.()}
         />
       )}
-      <HvLoadingContainer hidden={!loading} label={labels.loading}>
+      <HvLoadingContainer
+        hidden={!(isPending || isLoading)}
+        label={labels.loading}
+      >
         <HvTableContainer className={classes.container}>
-          <HvTable {...getTableProps()}>
-            <HvTableHead {...getTableHeadProps?.()}>
-              {headerGroups.map((headerGroup) => (
+          <HvTable {...table.getTableProps()}>
+            <HvTableHead {...table.getTableHeadProps?.()}>
+              {table.headerGroups.map((headerGroup) => (
                 <HvTableRow
                   {...headerGroup.getHeaderGroupProps()}
                   key={headerGroup.getHeaderGroupProps().key}
@@ -290,7 +259,7 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
                 </HvTableRow>
               ))}
             </HvTableHead>
-            <HvTableBody {...getTableBodyProps()}>
+            <HvTableBody {...table.getTableBodyProps()}>
               {!data || data.length === 0 ? (
                 <NoDataRow message={labels.empty} />
               ) : (
@@ -300,11 +269,8 @@ export const TableComplete = <T extends object>(props: TableProps<T>) => {
           </HvTable>
         </HvTableContainer>
       </HvLoadingContainer>
-      {showPagination && page.length > 0 && (
-        <HvPagination
-          classes={{ root: classes.pagination }}
-          {...getHvPaginationProps?.()}
-        />
+      {showPagination && table.page.length > 0 && (
+        <HvPagination {...table.getHvPaginationProps?.()} />
       )}
     </HvTableSection>
   );

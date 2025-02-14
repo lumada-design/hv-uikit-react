@@ -59,13 +59,17 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
       {showPreview ? (
         <div
           className={clsx(
-            "flex items-center justify-center p-4 gap-2 min-h-[400px] mb-10",
+            "p-md pt-lg min-h-400px mb-lg",
             "border border-[var(--uikit-colors-atmo3)] rounded-round",
             "bg-[var(--uikit-colors-atmo1)] [&_tr]:table-row",
           )}
         >
           {/* Render errors or the live preview */}
-          {error ? <div className="text-red-500">{error}</div> : element}
+          {error ? (
+            <div className="text-red-500">{error}</div>
+          ) : (
+            <div>{element}</div>
+          )}
         </div>
       ) : (
         <>

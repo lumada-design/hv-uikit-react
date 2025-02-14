@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import type { PropItem } from "react-docgen-typescript";
+import { clsx } from "clsx";
 import Link from "next/link";
 import { useData } from "nextra/hooks";
 import {
@@ -18,12 +19,13 @@ import {
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
 type PropsTableProps = {
+  title: string;
   propsObj: Record<string, PropItem>;
 };
 
 const classes = {
-  root: "flex flex-col",
   row: "border-b !bg-transparent",
+  linkHash: "after:content-['_#'] after:opacity-0 hover:after:opacity-40",
 };
 
 // Utility function to reorder props by required status and alphabetical order
@@ -53,12 +55,6 @@ const columns: HvTableColumnConfig<PropItem, string>[] = [
   { Header: "Description", accessor: "description" },
 ];
 
-const PropsTitle = ({ title }: { title: string }) => (
-  <HvTypography variant="title3" className="mt-md mb-md">
-    {`${title.slice(2)} props`}
-  </HvTypography>
-);
-
 const EmptyStateRow = () => (
   <HvTableRow className={classes.row}>
     <HvTableCell colSpan={3} style={{ height: 64 }}>
@@ -67,8 +63,11 @@ const EmptyStateRow = () => (
   </HvTableRow>
 );
 
-const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
-  <HvTableContainer>
+const makeLink = (...args: string[]) =>
+  args.map((s) => s.toLowerCase().replace(/\s/g, "-")).join("-");
+
+const PropsTable = ({ title, propsObj }: PropsTableProps) => {
+  return (
     <HvTable>
       <HvTableHead>
         <HvTableRow className={classes.row}>
@@ -89,13 +88,13 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
           Object.entries(propsObj).map(([key, propItem]) => (
             <HvTableRow
               key={key}
-              id={`prop-${propItem.name}`}
+              id={makeLink(title, propItem.name)}
               className={classes.row}
             >
               <HvTableCell className="!pl-xs w-[25%]">
                 <a
-                  href={`#prop-${propItem.name}`}
-                  className="[&>span]:hover:visible"
+                  href={`#${makeLink(title, propItem.name)}`}
+                  className={classes.linkHash}
                 >
                   <code>
                     {propItem.description.includes("deprecated") ? (
@@ -107,7 +106,6 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
                   {propItem.required && (
                     <code className="text-negative">*</code>
                   )}
-                  <span className="opacity-40 invisible">{` #`}</span>
                 </a>
               </HvTableCell>
               <HvTableCell className="w-[30%]">
@@ -142,8 +140,27 @@ const PropsTable = ({ propsObj }: PropsTableProps): JSX.Element => (
         )}
       </HvTableBody>
     </HvTable>
-  </HvTableContainer>
-);
+  );
+};
+
+const PropsTableContainer = ({ title, propsObj }: PropsTableProps) => {
+  const id = makeLink(title);
+  return (
+    <div className="grid" id={id}>
+      <HvTypography
+        variant="title3"
+        className={clsx("mt-md mb-md", classes.linkHash)}
+        component="a"
+        href={`#${id}`}
+      >
+        <code className="nextra-code">{title}</code> props
+      </HvTypography>
+      <HvTableContainer>
+        <PropsTable title={title} propsObj={propsObj} />
+      </HvTableContainer>
+    </div>
+  );
+};
 
 // Main Props Component
 export const Props = () => {
@@ -183,23 +200,22 @@ export const Props = () => {
   );
 
   return (
-    <div className={classes.root}>
+    <div className="grid">
       <HvInput
         type="search"
         placeholder="Search prop"
         onChange={(_, value) => setSearchTerm(value)}
       />
-      <PropsTitle title={meta.docgen.displayName || meta.component} />
-      <PropsTable propsObj={filteredMainProps} />
+      <PropsTableContainer
+        title={meta.docgen.displayName || meta.component}
+        propsObj={filteredMainProps}
+      />
       {Object.entries(filteredSubComponents).map(([subComponent, props]) => (
-        <div key={subComponent} className={classes.root}>
-          <PropsTitle
-            title={
-              subComponentsDocgen[subComponent]?.displayName || subComponent
-            }
-          />
-          <PropsTable propsObj={props} />
-        </div>
+        <PropsTableContainer
+          key={subComponent}
+          title={subComponentsDocgen[subComponent]?.displayName || subComponent}
+          propsObj={props}
+        />
       ))}
     </div>
   );

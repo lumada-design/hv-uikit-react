@@ -48,8 +48,8 @@ export const Variants: StoryObj<HvTagProps> = {
       <>
         <HvTag label="Informational" />
         <HvTag label="Success" color="positive_20" />
-        <HvTag label="Warning" color="negative_20" />
-        <HvTag label="Error" color="warning_20" />
+        <HvTag label="Warning" color="warning_20" />
+        <HvTag label="Error" color="negative_20" />
         <HvTag label="Custom" color="#22FF45" />
         <HvTag label="Disabled" disabled />
         <HvTag label="Categorical" type="categorical" />

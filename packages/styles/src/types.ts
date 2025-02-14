@@ -32,6 +32,7 @@ export type HvThemeComponents = {
   bulkActions: {
     actionButtonVariant: string;
   };
+  /** @deprecated unused */
   table: {
     rowStripedBackgroundColorEven: string;
     rowStripedBackgroundColorOdd: string;
