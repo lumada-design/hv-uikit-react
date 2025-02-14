@@ -89,9 +89,7 @@ export const MainStory = () => {
   const renderCodeEditor = (height: number) => (
     <HvCodeEditor
       height={height}
-      editorProps={{
-        language: "json",
-      }}
+      language="json"
       onChange={(input) => {
         setEditorContent(input || "");
       }}

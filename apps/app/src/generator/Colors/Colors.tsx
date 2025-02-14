@@ -56,14 +56,8 @@ const Colors = (): JSX.Element => {
                   colorChangedHandler("backgroundColor", color)
                 }
                 classes={{
-                  root: css({
-                    width: 24,
-                    height: 24,
-                  }),
-                  headerColorIconOnly: css({
-                    width: 24,
-                    height: 24,
-                  }),
+                  root: "size-24px",
+                  headerColorIconOnly: "size-24px",
                   dropdownRootIconOnly: css({
                     width: 24,
                     height: 24,
@@ -124,11 +118,8 @@ const Colors = (): JSX.Element => {
                           colorChangedHandler(c, color)
                         }
                         classes={{
-                          root: css({
-                            width: 24,
-                            height: 24,
-                          }),
-                          headerColorIconOnly: css({ width: 24, height: 24 }),
+                          root: "size-24px",
+                          headerColorIconOnly: "size-24px",
                           dropdownRootIconOnly: css({
                             width: 24,
                             height: 24,

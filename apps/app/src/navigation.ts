@@ -1,4 +1,4 @@
-export const navigation = [
+export const navigationData = [
   { id: "home", label: "Home", path: "/" },
   { id: "components", label: "Components", path: "/components" },
   {
@@ -38,5 +38,3 @@ export const navigation = [
   },
   { id: "flow", label: "Flow", path: "/flow" },
 ];
-
-export default navigation;
