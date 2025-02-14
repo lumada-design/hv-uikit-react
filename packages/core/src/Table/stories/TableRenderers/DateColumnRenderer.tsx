@@ -14,23 +14,20 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
 
 export const DateColumnRenderer = () => {
-  const getColumns = () => [
-    hvDateColumn<NewRendererEntry, string>(
-      { Header: "Time", accessor: "createdDate", style: { minWidth: 80 } },
-      "DD/MM/YYYY",
-    ),
-  ];
+  const columns = useMemo(
+    () => [
+      hvDateColumn<NewRendererEntry, string>(
+        { Header: "Time", accessor: "createdDate", style: { minWidth: 80 } },
+        "DD/MM/YYYY",
+      ),
+    ],
+    [],
+  );
 
-  const columns = useMemo(() => {
-    return getColumns();
-  }, []);
-
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data] = useState(initialData);
+  const [data] = useState(() => makeRenderersData(64));
 
   const {
     getTableProps,

@@ -18,30 +18,27 @@ import {
   useHvRowExpand,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
 
 export const ExpandColumnRenderer = () => {
-  const getColumns = () => [
-    hvTextColumn<NewRendererEntry, string>({
-      Header: "Event Type",
-      accessor: "eventType",
-      style: { maxWidth: 160 },
-    }),
-    hvExpandColumn<NewRendererEntry, string>(
-      { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
-      "expand",
-      "collapse",
-      (row) => row.original.eventType !== undefined,
-    ),
-  ];
+  const columns = useMemo(
+    () => [
+      hvTextColumn<NewRendererEntry, string>({
+        Header: "Event Type",
+        accessor: "eventType",
+        style: { maxWidth: 160 },
+      }),
+      hvExpandColumn<NewRendererEntry, string>(
+        { Header: "Title", accessor: "name", style: { maxWidth: 100 } },
+        "expand",
+        "collapse",
+        (row) => row.original.eventType !== undefined,
+      ),
+    ],
+    [],
+  );
 
-  const columns = useMemo(() => {
-    return getColumns();
-  }, []);
-
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data] = useState(initialData);
+  const [data] = useState(() => makeRenderersData(64));
 
   const {
     getTableProps,

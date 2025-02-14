@@ -15,7 +15,7 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { makeRenderersData, NewRendererEntry } from "./utils";
 
 const DropdownColumnRenderer = () => {
   const initialData = useMemo(() => makeRenderersData(3), []);
