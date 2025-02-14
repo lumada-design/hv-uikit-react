@@ -14,7 +14,7 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
 
 export const ProgressColumnRenderer = () => {
   const columns = useMemo(() => {
@@ -34,9 +34,7 @@ export const ProgressColumnRenderer = () => {
     ];
   }, []);
 
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data] = useState(initialData);
+  const [data] = useState(() => makeRenderersData(64));
 
   const {
     getTableProps,

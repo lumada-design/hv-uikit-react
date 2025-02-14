@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   HvCheckBox,
   HvDropDownMenu,
@@ -13,15 +13,10 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import {
-  AssetEvent,
-  getColumns,
-  makeData,
-  useToggleIndex,
-} from "../storiesUtils";
+import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
 export const SimpleTable = () => {
-  const [checkedIdx, toggleChecked] = useToggleIndex(0);
+  const [checkedIdx, setCheckedIdx] = useState(0);
 
   const columns = useMemo<HvTableColumnConfig<AssetEvent, string>[]>(() => {
     return [...getColumns(), { Header: "Details", accessor: "link" }];
@@ -55,7 +50,7 @@ export const SimpleTable = () => {
                 <HvCheckBox
                   aria-label="Tick to select the row"
                   checked={checkedIdx === idx}
-                  onClick={toggleChecked(idx)}
+                  onClick={() => setCheckedIdx(idx === checkedIdx ? -1 : idx)}
                 />
               </HvTableCell>
               <HvTableCell>{el.name}</HvTableCell>

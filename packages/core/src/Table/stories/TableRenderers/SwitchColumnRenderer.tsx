@@ -14,12 +14,10 @@ import {
   useHvPagination,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
 
 export const SwitchColumnRenderer = () => {
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data, setData] = useState(initialData);
+  const [data, setData] = useState(() => makeRenderersData(64));
 
   const columns = useMemo(() => {
     return [

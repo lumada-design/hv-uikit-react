@@ -1,0 +1,419 @@
+import { HvTable, tableClasses } from "@hitachivantara/uikit-react-core";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+import { getComponentData } from "../../utils/component";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("Table", "core", tableClasses, [
+    "TableBody",
+    "TableCell",
+    "TableContainer",
+    "TableHead",
+    "TableHeader",
+    "TableRow",
+    "TableSection",
+  ]);
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+### Components
+
+UI Kit provides a list table components that map to HTML table elements. Check out [table props](?tab=props) for the component list and details.
+
+In a nutshell, the components provide visual alignment with the Design System, and support features for sticky rows and header, sorting, resizing, etc.
+Although it is possible to use the components directly, it is recommended to them with `useHvTable` hook, which provides a powerful API for managing tables.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvTable>
+      <HvTableHead>
+        <HvTableRow>
+          <HvTableHeader>Name</HvTableHeader>
+          <HvTableHeader>Created Date</HvTableHeader>
+          <HvTableHeader>Event type</HvTableHeader>
+          <HvTableHeader>Status</HvTableHeader>
+          <HvTableHeader>Risk score</HvTableHeader>
+          <HvTableHeader>Severity</HvTableHeader>
+          <HvTableHeader>Priority</HvTableHeader>
+        </HvTableRow>
+      </HvTableHead>
+      <HvTableBody>
+        {data.map((el) => (
+          <HvTableRow key={el.id} hover striped>
+            <HvTableCell>{el.name}</HvTableCell>
+            <HvTableCell>{el.createdDate}</HvTableCell>
+            <HvTableCell>{el.eventType}</HvTableCell>
+            <HvTableCell>{el.status}</HvTableCell>
+            <HvTableCell>{el.riskScore}</HvTableCell>
+            <HvTableCell>{el.severity}</HvTableCell>
+            <HvTableCell>{el.priority}</HvTableCell>
+          </HvTableRow>
+        ))}
+      </HvTableBody>
+    </HvTable>
+  );
+}
+
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
+const data = [...Array(6).keys()].map((i) => ({
+  id: `${i + 1}`,
+  name: `Event ${i + 1}`,
+  createdDate: new Date("2020-03-20").toISOString().slice(0, 10),
+  eventType: "Anomaly detection",
+  status: getOption(["Closed", "Open"], i),
+  riskScore: (i % 100) + 1,
+  severity: getOption(["Critical", "Major", "Average", "Minor"], i),
+  priority: getOption(["High", "Medium", "Low"], i),
+}));
+```
+
+### Containers
+
+Besides the primary table components, UI Kit provides a set of containers that help to organize the table layout:
+
+- `HvTableSection`, which wraps the content in an [`HvSection`](/components/section) and adds additional styles.
+- `HvTableContainer`, which provides a scrollable area for the table content.
+- [`HvLoadingContainer`](/components/loading-container), a loading container overlay to use while data is being fetched.
+
+See also: [HvBulkActions](/components/bulk-actions), [HvPagination](/components/pagination).
+
+```tsx live
+<HvTableSection title="Title" actions={<div />}>
+  <HvBulkActions />
+
+  {/* main table area */}
+  <HvLoadingContainer hidden label="Loading...">
+    <HvTableContainer>
+      <HvTable>{/* table content */}</HvTable>
+    </HvTableContainer>
+  </HvLoadingContainer>
+
+  <HvPagination />
+</HvTableSection>
+```
+
+### useHvTable
+
+The UI Kit library provides a collection of custom hooks that ease the integration with the HvTable elements and allows more advanced use cases and better data handling.
+Our custom hooks are built on top of [`react-table@7`](https://react-table-v7-docs.netlify.app), an "headless" UI utility library to build data tables while retaining control over markup and styles.
+It consists of a collection of lightweight, composable, and extensible custom React hooks.
+
+The `useHvTable` hook that wraps the react-table [`useTable` hook](https://react-table-v7-docs.netlify.app/docs/api/useTable) and provides the additional functionality:
+
+- Ensures the use of the needed core and layout plugins when using any of the UI Kit custom hooks (e.g. adding `useHvPagination` implies the installation of
+  React Table's `usePagination` hook).
+- Automatically installs the `useHvTableStyles` hook.
+- Generates default column metadata from the data fields, if the `columns` option is missing.
+- Defaults to an empty array if no `data` is provided.
+
+#### `useHv*` hooks
+
+The following plugin hooks are available:
+
+- `useHvTableStyles`: Ensures the correct styling of the table by injecting the column's `variant` and `align` options into the `HvTableHeader` and `HvTableCell` components (via `getHeaderProps` and `getCellProps`, respectively). Also adds support for injecting the `styles`, `className` and `classes` into the `HvTable`, `HvTableHeader`, and `HvTableCell` components.
+- `useHvPagination`: Eases the wiring of the `HvPagination` component when using pagination.
+- `useHvRowSelection`: Creates and manages the UI for selecting rows.
+- `useHvBulkActions`: Eases the wiring of the `HvBulkActions` component.
+- `useHvSortBy`: Manages the table's header sorting functionality.
+- `useHvRowExpand`: Manages the row expanding functionality.
+- `useHvGroupBy`: Allows defining header groups.
+- `useHvTableSticky`: Allows defining sticky headers and columns.
+- `useHvHeaderGroups`: Allows defining grouped headers.
+- `useHvSticky`: Manages sticky headers and columns.
+- `useHvResizeColumns`: Manages column resizing.
+
+Furthermore, we also provide the additional hooks, which are just re-exports of the original `react-table` hooks:
+
+- `useHvRowState`: Implements basic state management for prepared rows and their cells.
+- `useHvGlobalFilter`: Manages global filtering.
+- `useHvFilters`: Manages column filtering.
+
+There are also some hooks that we do not re-export, but you can use them directly from `react-table`:
+
+- [`useColumnOrder`](https://react-table-v7-docs.netlify.app/docs/api/useColumnOrder)
+- [`useBlockLayout`](https://react-table-v7-docs.netlify.app/docs/api/useBlockLayout)
+- [`useAbsoluteLayout`](https://react-table-v7-docs.netlify.app/docs/api/useAbsoluteLayout)
+- [`useFlexLayout`](https://react-table-v7-docs.netlify.app/docs/api/useFlexLayout)
+
+### Generic Table
+
+As there are countless use cases and configurations for tables, it's impossible to provide a generic data-driven table component that would fit all use-cases.
+Nonetheless, you can (and should) create your own abstractions on top of the `HvTable*` components and `useHvTable` hook, to fit your application scenarios.
+
+For example, we can create a `GenericTable` that addresses most simple client-side scenarios (pagination, sorting, selection + bulk actions, and sticky header) like so:
+
+The Goal is to have a simple API that allows you to pass the data and columns, and optionally the actions:
+
+```tsx
+<GenericTable
+  data={data}
+  columns={columns}
+  actions={[
+    { id: "delete", label: "Delete" },
+    { id: "clone", label: "Clone" },
+  ]}
+  initialState={{
+    pageSize: 20,
+  }}
+/>
+```
+
+```tsx live
+import { useCallback, useMemo, useState } from "react";
+
+export default function Demo() {
+  const [data, setData] = useState(() => makeData(128));
+
+  const deleteRow = useCallback((row: HvRowInstance<AssetEvent>) => {
+    setData((prev) => prev.filter((r) => r.id !== row.original.id));
+  }, []);
+
+  const columns = useMemo<HvTableColumnConfig<AssetEvent>[]>(
+    () => [
+      { Header: "Title", accessor: "name", style: { minWidth: 120 } },
+      { Header: "Time", accessor: "createdDate", style: { minWidth: 100 } },
+      { Header: "Event Type", accessor: "eventType", style: { minWidth: 100 } },
+      { Header: "Status", accessor: "status", style: { minWidth: 100 } },
+      {
+        Header: "Probability",
+        accessor: "riskScore",
+        align: "right",
+        Cell: ({ value }) => `${value}%`,
+      },
+      { Header: "Severity", accessor: "severity" },
+      { Header: "Priority", accessor: "priority" },
+      {
+        id: "delete",
+        variant: "actions",
+        Cell: ({ row }) => (
+          <HvIconButton title="Delete" onClick={() => deleteRow(row)}>
+            <Delete />
+          </HvIconButton>
+        ),
+      },
+    ],
+    [deleteRow],
+  );
+
+  return (
+    <GenericTable<AssetEvent>
+      data={data}
+      columns={columns}
+      showBulkActions
+      showPagination
+      bulkActions={[
+        { id: "clone", label: "Clone", icon: <Duplicate /> },
+        { id: "remove", label: "Remove", icon: <Delete /> },
+        { id: "preview", label: "Preview", icon: <Preview />, disabled: true },
+      ]}
+      onBulkAction={(evt, action, selectedRows) => {
+        if (action.id === "remove") {
+          selectedRows.forEach(deleteRow);
+        } else if (action.id === "clone") {
+          const newRows = selectedRows.map(({ original }) => ({
+            ...original,
+            id: `${original.id}-copy`,
+            name: `${original.name}-copy`,
+          }));
+          setData((prev) => prev.concat(newRows));
+        }
+      }}
+      initialState={{
+        pageSize: 20,
+      }}
+      options={{
+        getRowId: (row) => row.id,
+      }}
+    />
+  );
+}
+
+interface AssetEvent {
+  id: string;
+  name: string;
+  createdDate: string;
+  eventType: string;
+  riskScore: number;
+  status: string | null;
+  severity: string;
+  priority: string;
+  link?: string;
+  selected?: boolean;
+}
+
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
+const makeEvent = (i: number): AssetEvent => ({
+  id: `${i + 1}`,
+  name: `Event ${i + 1}`,
+  createdDate: new Date("2020-03-20").toISOString().slice(0, 10),
+  eventType: "Anomaly detection",
+  status: getOption(["Closed", "Open"], i),
+  riskScore: (i % 100) + 1,
+  severity: getOption(["Critical", "Major", "Average", "Minor"], i),
+  priority: getOption(["High", "Medium", "Low"], i),
+});
+
+const makeData = (len = 10) => [...Array(len).keys()].map(makeEvent);
+
+const NoDataRow = ({
+  message,
+  height = 96,
+}: {
+  message: React.ReactNode;
+  height?: number;
+}) => (
+  <HvTableRow>
+    <HvTableCell colSpan={100} style={{ height }}>
+      <HvEmptyState message={message} icon={<Ban />} />
+    </HvTableCell>
+  </HvTableRow>
+);
+
+const EmptyRow = () => (
+  <HvTableRow>
+    <HvTableCell style={{ borderBottom: 0 }} colSpan={100}>
+      &nbsp;
+    </HvTableCell>
+  </HvTableRow>
+);
+
+interface GenericTableProps<T extends object = Record<string, unknown>> {
+  columns: HvTableColumnConfig<T>[];
+  data: T[] | undefined;
+  loading?: boolean;
+  initialState?: Partial<HvTableState<T>>;
+  bulkActions?: HvActionGeneric[];
+  showBulkActions?: boolean;
+  showPagination?: boolean;
+  loadingLabel?: string;
+  noDataLabel?: string;
+  onAction?: (
+    event: React.SyntheticEvent,
+    action: HvActionGeneric,
+    row: HvRowInstance<T>,
+  ) => void;
+  onBulkAction?: (
+    event: React.SyntheticEvent,
+    action: HvActionGeneric,
+    selectedRows: HvTableInstance<T>["selectedFlatRows"],
+  ) => void;
+  options?: HvTableOptions<T>;
+}
+
+/**
+ * A simple generic client-side table.
+ * Includes row selection & sorting, pagination, sticky header.
+ */
+export const GenericTable = <T extends object>(props: GenericTableProps<T>) => {
+  const {
+    columns,
+    data,
+    initialState,
+    bulkActions,
+    showBulkActions,
+    showPagination,
+    noDataLabel = "No data",
+    onBulkAction,
+    options,
+  } = props;
+
+  const {
+    getTableProps,
+    getTableHeadProps,
+    getTableBodyProps,
+    getHvBulkActionsProps,
+    getHvPaginationProps,
+    prepareRow,
+    headerGroups,
+    page,
+    pageCount,
+    selectedFlatRows,
+    state: { pageSize },
+  } = useHvTable<T>(
+    {
+      columns,
+      data,
+      stickyHeader: true,
+      initialState,
+      ...options,
+    },
+    useHvTableSticky,
+    useHvSortBy,
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions,
+  );
+
+  const renderTableRow = (i: number) => {
+    const row = page[i];
+
+    if (!row) {
+      // render EmptyRow only when there are multiple pages
+      const showEmptyRows = pageCount && pageCount > 1;
+      return showEmptyRows ? <EmptyRow key={`empty-${i}`} /> : null;
+    }
+
+    prepareRow(row);
+
+    return (
+      <HvTableRow {...row.getRowProps()} key={row.getRowProps().key}>
+        {row.cells.map((cell) => (
+          <HvTableCell {...cell.getCellProps()} key={cell.getCellProps().key}>
+            {cell.render("Cell")}
+          </HvTableCell>
+        ))}
+      </HvTableRow>
+    );
+  };
+
+  return (
+    <HvTableSection>
+      {showBulkActions && page.length > 0 && (
+        <HvBulkActions
+          actions={bulkActions}
+          maxVisibleActions={1}
+          onAction={(evt, action) =>
+            onBulkAction?.(evt, action, selectedFlatRows)
+          }
+          {...getHvBulkActionsProps?.()}
+        />
+      )}
+      <HvTableContainer className="max-h-500px">
+        <HvTable {...getTableProps()}>
+          <HvTableHead {...getTableHeadProps?.()}>
+            {headerGroups.map((headerGroup) => (
+              <HvTableRow
+                {...headerGroup.getHeaderGroupProps()}
+                key={headerGroup.getHeaderGroupProps().key}
+              >
+                {headerGroup.headers.map((col) => (
+                  <HvTableHeader
+                    {...col.getHeaderProps()}
+                    key={col.getHeaderProps().key}
+                  >
+                    {col.render("Header")}
+                  </HvTableHeader>
+                ))}
+              </HvTableRow>
+            ))}
+          </HvTableHead>
+          <HvTableBody {...getTableBodyProps()}>
+            {data && data.length > 0 ? (
+              [...Array(pageSize).keys()].map(renderTableRow)
+            ) : (
+              <NoDataRow message={noDataLabel} />
+            )}
+          </HvTableBody>
+        </HvTable>
+      </HvTableContainer>
+      {showPagination && page.length > 0 && (
+        <HvPagination {...getHvPaginationProps?.()} />
+      )}
+    </HvTableSection>
+  );
+};
+```

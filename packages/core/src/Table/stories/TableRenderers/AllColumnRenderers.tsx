@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import {
   hvDateColumn,
   hvDropdownColumn,
@@ -24,97 +24,91 @@ import {
   useHvRowExpand,
 } from "@hitachivantara/uikit-react-core";
 
-import { EmptyRow, makeRenderersData, NewRendererEntry } from "../storiesUtils";
+import { EmptyRow, makeRenderersData, NewRendererEntry } from "./utils";
+
+const columns = [
+  hvSwitchColumn<NewRendererEntry, string>(
+    {
+      Header: "isDisabled",
+      accessor: "isDisabled",
+      style: { minWidth: 130 },
+      id: "disabled-header",
+    },
+    "default",
+    "yes",
+    "no",
+    {
+      disabled: true,
+    },
+  ),
+  hvExpandColumn<NewRendererEntry, string>(
+    {
+      Header: "Title",
+      accessor: "name",
+      style: { maxWidth: 100 },
+      id: "title-header",
+    },
+    "expand",
+    "collapse",
+    () => true,
+  ),
+  hvDateColumn<NewRendererEntry, string>(
+    {
+      Header: "Time",
+      accessor: "createdDate",
+      style: { minWidth: 50 },
+      id: "time-header",
+    },
+    "YYYY/MM/DD HH:mm",
+  ),
+  hvNumberColumn<NewRendererEntry, string>({
+    Header: "Quantity",
+    accessor: "eventQuantity",
+    style: { minWidth: 20 },
+    id: "quantity-header",
+  }),
+  hvTextColumn<NewRendererEntry, string>({
+    Header: "Event Type",
+    accessor: "eventType",
+    style: { maxWidth: 160 },
+    id: "event-type-header",
+  }),
+  hvTagColumn<NewRendererEntry, string, NewRendererEntry["status"]>(
+    {
+      Header: "Status",
+      accessor: "status",
+      style: { width: 20 },
+      id: "status-header",
+    },
+    "status_name",
+    "status_color",
+    "status_text_color",
+    undefined,
+    undefined,
+  ),
+  hvProgressColumn<NewRendererEntry, string>(
+    {
+      Header: "Probability",
+      accessor: "riskScore",
+      style: { width: 125 },
+      disableSortBy: true,
+      id: "probability-header",
+    },
+    (row) => row.original.riskScore,
+    () => 100,
+    "secondary",
+  ),
+  hvDropdownColumn<NewRendererEntry, string>(
+    { Header: "Severity", accessor: "severity", id: "severity-header" },
+    undefined,
+    "Select severity...",
+    "Select severity...",
+    () => console.log("select me"),
+  ),
+];
 
 export const AllColumnRenderers = () => {
-  const getColumns = () => [
-    hvSwitchColumn<NewRendererEntry, string>(
-      {
-        Header: "isDisabled",
-        accessor: "isDisabled",
-        style: { minWidth: 130 },
-        id: "disabled-header",
-      },
-      "default",
-      "yes",
-      "no",
-      {
-        disabled: true,
-      },
-    ),
-    hvExpandColumn<NewRendererEntry, string>(
-      {
-        Header: "Title",
-        accessor: "name",
-        style: { maxWidth: 100 },
-        id: "title-header",
-      },
-      "expand",
-      "collapse",
-      () => true,
-    ),
-    hvDateColumn<NewRendererEntry, string>(
-      {
-        Header: "Time",
-        accessor: "createdDate",
-        style: { minWidth: 50 },
-        id: "time-header",
-      },
-      "YYYY/MM/DD HH:mm",
-    ),
-    hvNumberColumn<NewRendererEntry, string>({
-      Header: "Quantity",
-      accessor: "eventQuantity",
-      style: { minWidth: 20 },
-      id: "quantity-header",
-    }),
-    hvTextColumn<NewRendererEntry, string>({
-      Header: "Event Type",
-      accessor: "eventType",
-      style: { maxWidth: 160 },
-      id: "event-type-header",
-    }),
-    hvTagColumn<NewRendererEntry, string, NewRendererEntry["status"]>(
-      {
-        Header: "Status",
-        accessor: "status",
-        style: { width: 20 },
-        id: "status-header",
-      },
-      "status_name",
-      "status_color",
-      "status_text_color",
-      undefined,
-      undefined,
-    ),
-    hvProgressColumn<NewRendererEntry, string>(
-      {
-        Header: "Probability",
-        accessor: "riskScore",
-        style: { width: 125 },
-        disableSortBy: true,
-        id: "probability-header",
-      },
-      (row) => row.original.riskScore,
-      () => 100,
-      "secondary",
-    ),
-    hvDropdownColumn<NewRendererEntry, string>(
-      { Header: "Severity", accessor: "severity", id: "severity-header" },
-      undefined,
-      "Select severity...",
-      "Select severity...",
-      () => console.log("select me"),
-    ),
-  ];
-
-  const columns = useMemo(() => {
-    return getColumns();
-  }, []);
-
-  const initialData = useMemo(() => makeRenderersData(64), []);
-
-  const [data] = useState(initialData);
+  const [data] = useState(() => makeRenderersData(64));
 
   const {
     getTableProps,
