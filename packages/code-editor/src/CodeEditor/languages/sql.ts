@@ -249,7 +249,7 @@ export const hvSqlFormatter = async (
     });
     // Format only if there are no errors
     return formattedContent;
-  } catch (error) {
+  } catch {
     return content;
   }
 };

@@ -297,7 +297,7 @@ const Table = <T extends Data>({
     async (row: HvRowInstance<T>) => {
       try {
         await onRowRestore?.(row.original.id);
-      } catch (err) {
+      } catch {
         enqueueSnackbar("Could not undo delete", {
           variant: "error",
         });
@@ -334,7 +334,7 @@ const Table = <T extends Data>({
             ),
           },
         });
-      } catch (err) {
+      } catch {
         enqueueSnackbar("Could not delete row.", {
           variant: "error",
         });
@@ -523,7 +523,7 @@ const Table = <T extends Data>({
           ),
         },
       });
-    } catch (err) {
+    } catch {
       enqueueSnackbar("Could not add row.", {
         variant: "error",
       });
@@ -596,7 +596,7 @@ const Table = <T extends Data>({
           ),
         },
       });
-    } catch (err) {
+    } catch {
       enqueueSnackbar("Could not update row.", {
         variant: "error",
       });

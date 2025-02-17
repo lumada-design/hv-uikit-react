@@ -177,6 +177,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
       granularity: showSeconds === false ? "minute" : "second",
       hourCycle: timeFormat === "12" ? 12 : 24,
       onChange: (value) => {
+        if (!value) return;
         const { hour: hours, minute: minutes, second: seconds } = value;
         onChange?.({ hours, minutes, seconds });
       },

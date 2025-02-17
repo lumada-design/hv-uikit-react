@@ -12,14 +12,14 @@ export type Formatter = (
  * The structure of a Language Plugin.
  */
 export interface LanguagePlugin {
-  completionProvider?: (monaco: Monaco, schema?: string) => object;
+  completionProvider?: (monaco: Monaco, schema?: string) => any;
   validator?: (
     content: string,
     editor: any,
     monaco: Monaco,
     schema?: string,
-  ) => Promise<object[]>;
+  ) => Promise<any[]>;
   formatter?: Formatter;
   keyDownListener?: (event: any, editor: any, monaco: Monaco) => void;
-  editorOptions?: object;
+  editorOptions?: any;
 }

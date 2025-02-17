@@ -368,8 +368,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
   },
 };
 
-const alarmTypes = ["fail", "warning", "good", "neutral", "train"] as const;
-type AlarmType = (typeof alarmTypes)[number];
+type AlarmType = "fail" | "warning" | "good" | "neutral" | "train";
 
 export const StatusTrain: StoryObj<HvKpiProps> = {
   parameters: {
@@ -619,8 +618,7 @@ export const Small: StoryObj<HvKpiProps> = {
   },
 };
 
-const severityTypes = ["1", "2", "3", "4", "5"] as const;
-type SeverityType = (typeof severityTypes)[number];
+type SeverityType = "1" | "2" | "3" | "4" | "5";
 
 export const Column: StoryObj<HvKpiProps> = {
   parameters: {
