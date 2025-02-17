@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.88.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.3...@hitachivantara/uikit-react-core@5.88.0) (2025-02-17)
+
+### Bug Fixes
+
+- **Input:** support native uncontrolled behaviours & text adornment ([5ac7943](https://github.com/lumada-design/hv-uikit-react/commit/5ac7943403c4c18e86e81017a55f462bc2be9980))
+
+### Features
+
+- **Adornment:** clickable adornments & clickable showPassword ([c516920](https://github.com/lumada-design/hv-uikit-react/commit/c5169202e2b1f8b3760cb209b8112a07daa02f7e))
+
 ## [5.87.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.2...@hitachivantara/uikit-react-core@5.87.3) (2025-02-13)
 
 ### Bug Fixes
