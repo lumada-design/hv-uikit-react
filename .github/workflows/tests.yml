@@ -16,12 +16,6 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
-      - name: License Check
-        run: npx license-compliance
-
-      - name: Security Audit
-        run: npm audit --workspaces --omit dev
-
       - name: Run Format
         run: npm run prettier
 
@@ -30,6 +24,23 @@ jobs:
 
       - name: Run Typecheck
         run: npm run typecheck
+
+  security:
+    name: Security Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: License Check
+        run: npx license-compliance
+
+      - name: Security Audit
+        run: npm audit --workspaces --omit dev
 
   test:
     name: Unit Tests

@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { HvButton } from "../Button";
 import { HvTimeAgo } from "./TimeAgo";
 
 const EM_DASH = "—";
@@ -58,9 +57,7 @@ describe("TimeAgo with custom locale", () => {
 
 describe("TimeAgo with custom Button element", () => {
   it("should render the Button", () => {
-    const timestamp = Date.now();
-    render(<HvTimeAgo timestamp={timestamp} component={HvButton} />);
-
+    render(<HvTimeAgo timestamp={Date.now()} component="button" />);
     expect(screen.getByRole("button")).toBeVisible();
   });
 });

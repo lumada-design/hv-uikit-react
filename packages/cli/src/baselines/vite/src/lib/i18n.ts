@@ -1,11 +1,11 @@
-import { createInstance } from "i18next";
+import { type i18n, createInstance } from "i18next";
 import Backend, { type HttpBackendOptions } from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-const i18n = createInstance();
+export const i18nInstance: i18n = createInstance();
 
-i18n
+i18nInstance
   // load translation using xhr -> see /public/locales
   // learn more: https://github.com/i18next/i18next-xhr-backend
   .use(Backend)
@@ -27,5 +27,3 @@ i18n
     },
     load: "languageOnly",
   });
-
-export default i18n;

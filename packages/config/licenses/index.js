@@ -26,6 +26,7 @@ export default {
     "EPL-2.0",
     "ISC",
     "MIT",
+    "MIT-0",
     "MPL-2.0",
     "MS-PL",
     "Python-2.0",

@@ -1,7 +1,5 @@
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  dropdownClasses,
   HvButton,
   HvCheckBox,
   HvDropdown,
@@ -9,46 +7,9 @@ import {
   HvLogin,
   HvLoginProps,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { setupChromatic } from ".storybook/setupChromatic";
-
-// #region Styled components
-
-const StyledRoot = styled("div")({
-  width: 300,
-  margin: "auto",
-  paddingTop: 150,
-  "& h3": {
-    textAlign: "center",
-  },
-});
-
-const StyledInput = styled(HvInput)({
-  marginTop: 20,
-  height: 90,
-});
-
-const StyledButton = styled(HvButton)({
-  width: 120,
-  float: "right",
-  marginTop: theme.spacing(8),
-  textTransform: `full-size-kana`,
-});
-
-const StyledCheckBox = styled(HvCheckBox)({ marginTop: 60 });
-
-const StyledDropDown = styled(HvDropdown)({
-  [`&.${dropdownClasses.root}`]: {
-    marginTop: 38,
-    width: "100%",
-  },
-  [`& .${dropdownClasses.dropdown}`]: { width: "100%" },
-  [`& .${dropdownClasses.rootList}`]: { width: "100%" },
-});
-
-// #endregion
 
 const meta: Meta<typeof HvLogin> = {
   title: "Widgets/Login",
@@ -72,39 +33,41 @@ export const Main: StoryObj<HvLoginProps> = {
   render: () => {
     return (
       <HvLogin background="https://lumada-design.github.io/assets/login-bg1.png">
-        <StyledRoot>
+        <form
+          className="grid gap-sm w-300px m-auto pt-150px"
+          onSubmit={(event) => {
+            event.preventDefault();
+            const formData = new FormData(event.currentTarget);
+            alert(JSON.stringify(Object.fromEntries(formData), null, 2));
+          }}
+        >
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
+          <HvInput
+            required
+            className="h-90px"
+            name="username"
+            label="Username"
+            placeholder="Enter text"
+          />
 
-              const formData = new FormData(event.currentTarget);
-              const data = Object.fromEntries(formData.entries());
+          <HvInput
+            required
+            className="h-90px"
+            name="password"
+            label="Password"
+            placeholder="Enter text"
+            type="password"
+          />
 
-              alert(JSON.stringify(data, null, 2));
-            }}
+          <HvButton
+            type="submit"
+            variant="primary"
+            className="w-120px justify-self-end mt-sm"
           >
-            <StyledInput
-              required
-              name="username"
-              label="Username"
-              placeholder="Enter text"
-            />
-
-            <StyledInput
-              required
-              name="password"
-              label="Password"
-              placeholder="Enter text"
-              type="password"
-            />
-
-            <StyledButton type="submit" variant="primary">
-              Login
-            </StyledButton>
-          </form>
-        </StyledRoot>
+            Login
+          </HvButton>
+        </form>
       </HvLogin>
     );
   },
@@ -118,47 +81,43 @@ export const CustomBackground: StoryObj<HvLoginProps> = {
   render: () => {
     return (
       <HvLogin background="https://lumada-design.github.io/assets/login-bg2.png">
-        <StyledRoot>
+        <form
+          className="grid gap-sm w-300px m-auto pt-150px"
+          onSubmit={(event) => {
+            event.preventDefault();
+            const formData = new FormData(event.currentTarget);
+            alert(JSON.stringify(Object.fromEntries(formData), null, 2));
+          }}
+        >
           <HvTypography variant="title2">Welcome</HvTypography>
 
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              const formData = new FormData(event.currentTarget);
-              const data = Object.fromEntries(formData.entries());
+          <HvInput
+            required
+            className="h-90px"
+            name="username"
+            label="Username"
+            placeholder="Enter text"
+          />
 
-              alert(JSON.stringify(data, null, 2));
-            }}
-          >
-            <StyledInput
-              required
-              name="username"
-              label="Username"
-              placeholder="Enter text"
-            />
+          <HvDropdown
+            name="domain"
+            label="Domain"
+            values={[
+              { id: "id-1", label: "Domain 1" },
+              { id: "id-2", label: "Domain 2" },
+              { id: "id-3", label: "Domain 3" },
+              { id: "id-4", label: "Domain 4" },
+            ]}
+          />
 
-            <StyledDropDown
-              name="domain"
-              label="Domain"
-              values={[
-                { id: "id-1", label: "Domain 1" },
-                { id: "id-2", label: "Domain 2" },
-                { id: "id-3", label: "Domain 3" },
-                { id: "id-4", label: "Domain 4" },
-              ]}
-            />
+          <div className="flex items-end justify-between mt-md">
+            <HvCheckBox name="remember" value="remember" label="Remember me" />
 
-            <StyledCheckBox
-              name="remember"
-              value="remember"
-              label="Remember me"
-            />
-
-            <StyledButton type="submit" variant="primary">
+            <HvButton type="submit" variant="primary" className="w-120px">
               Login
-            </StyledButton>
-          </form>
-        </StyledRoot>
+            </HvButton>
+          </div>
+        </form>
       </HvLogin>
     );
   },

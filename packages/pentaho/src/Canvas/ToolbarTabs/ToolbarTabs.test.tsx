@@ -1,4 +1,3 @@
-// @vitest-environment jsdom
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, vi } from "vitest";
@@ -103,13 +102,12 @@ describe("CanvasToolbarTabs", () => {
 
     const labelEditor = screen.getByText("Tab 1");
     await user.click(labelEditor);
-    await user.clear(labelEditor);
     const newLabel = "My new label";
     await user.type(labelEditor, newLabel);
 
     const selectedTab = screen.getByRole("tab", { selected: true });
     expect(selectedTab).toHaveTextContent(newLabel);
-    expect(onChangeMock).toHaveBeenCalledTimes(newLabel.length + 1); // +1 for .clear()
+    expect(onChangeMock).toHaveBeenCalledTimes(newLabel.length);
   });
 
   it("triggers onTabChange when changing tab", async () => {

@@ -9,32 +9,13 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const variantsDecorator: Decorator = (Story) => (
-  <div
-    className={css({
-      display: "flex",
-      flexDirection: "column",
-      gap: theme.spacing("md"),
-    })}
-  >
-    {Story()}
-  </div>
+  <div className="grid gap-md">{Story()}</div>
 );
 
 const meta: Meta<typeof HvSlider> = {
   title: "Components/Slider",
   component: HvSlider,
-  decorators: [
-    (Story) => (
-      <div
-        className={css({
-          paddingTop: theme.spacing("md"),
-          paddingBottom: theme.spacing("md"),
-        })}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
+  decorators: [(Story) => <div className="pt-md pb-md">{Story()}</div>],
 };
 
 export default meta;

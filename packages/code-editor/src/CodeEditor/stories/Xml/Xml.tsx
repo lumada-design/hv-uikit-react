@@ -74,6 +74,7 @@ export const XmlStory = () => {
     // Listen for errors for validation state
     monaco.editor.onDidChangeMarkers(() => {
       const model = editor.getModel();
+      if (!model) return;
       const markers = monaco.editor.getModelMarkers({ resource: model.uri });
       const errors = markers.some(
         (marker: any) => marker.severity === monaco.MarkerSeverity.Error,

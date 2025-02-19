@@ -139,7 +139,7 @@ export const HvCodeEditor = ({
       languagePluginProp ??
       (language ? hvLanguagePlugins[language] : undefined);
 
-    if (!languagePlugin) return;
+    if (!language || !languagePlugin) return;
 
     // Register language
     monaco.languages.register({ id: language });
@@ -176,6 +176,7 @@ export const HvCodeEditor = ({
     if (validator)
       editor.onDidChangeModelContent(async () => {
         const model = editor.getModel();
+        if (!model) return;
         const content = model.getValue();
         const validate = await validator(content, editor, monaco, schema);
         monaco.editor.setModelMarkers(model, language, validate);

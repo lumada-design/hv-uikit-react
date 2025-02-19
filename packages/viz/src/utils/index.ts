@@ -72,7 +72,7 @@ export const getFilterFunction = (
   operation: HvChartFilterOperation,
   field: HvChartFilter["field"],
   value: HvChartFilter["value"],
-): Function => {
+) => {
   const valueArray = Array.isArray(value) ? value : [value];
   if (valueArray.length === 0) return () => true;
 
