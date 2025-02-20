@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.88.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.88.0...@hitachivantara/uikit-react-core@5.88.1) (2025-02-20)
+
+### Bug Fixes
+
+- **TagsInput:** flexible input & tags size ([1374036](https://github.com/lumada-design/hv-uikit-react/commit/1374036156f7e120c0330b77f36abdfabc301269))
+- **TagsInput:** review focus management ([fcc25e3](https://github.com/lumada-design/hv-uikit-react/commit/fcc25e314f378bc38a5981862ec6b9f829aea62e))
+
 # [5.88.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.3...@hitachivantara/uikit-react-core@5.88.0) (2025-02-17)
 
 ### Bug Fixes
