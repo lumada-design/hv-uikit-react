@@ -17,7 +17,8 @@
     // "noUncheckedIndexedAccess": true,
 
     /* Bundling options (vite monorepo) */
-    "module": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "composite": true,
     "declaration": true,
