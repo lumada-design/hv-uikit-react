@@ -12,6 +12,7 @@ export const { useClasses, staticClasses } = createClasses(
       maxHeight: "92px",
       padding: theme.space.xs,
       boxShadow: "none",
+      flexWrap: "nowrap",
     },
     success: {
       backgroundColor: theme.colors.positive_20,
@@ -28,16 +29,16 @@ export const { useClasses, staticClasses } = createClasses(
     message: {
       padding: 0,
       width: "100%",
-    },
-    messageSpan: {
       display: "flex",
       alignItems: "center",
       minHeight: "32px",
-    },
-    messageText: {
-      paddingLeft: theme.space.xs,
       color: theme.colors.base_dark,
       fontFamily: theme.fontFamily.body,
+    },
+    /** @deprecated use `classes.message` instead */
+    messageSpan: {},
+    messageText: {
+      paddingLeft: theme.space.xs,
       maxHeight: "72px",
       wordBreak: "break-word",
       textWrap: "balance",
@@ -47,6 +48,7 @@ export const { useClasses, staticClasses } = createClasses(
       textAlign: "right",
       paddingLeft: theme.space.xs,
       marginLeft: "auto",
+      marginRight: 0,
       [`& .${actionsGenericClasses.button}`]: {
         borderColor: theme.colors.base_dark,
         color: theme.colors.base_dark,

@@ -92,13 +92,13 @@ export const HvSnackbar = forwardRef<
     id,
     open = false,
     onClose,
-    label = "",
+    label,
     anchorOrigin = { vertical: "top", horizontal: "right" },
     autoHideDuration = 5000,
-    variant = "default",
-    showIcon = false,
-    customIcon = null,
-    action = null,
+    variant,
+    showIcon,
+    customIcon,
+    action,
     actionCallback, // TODO - remove in v6
     onAction,
     transitionDuration = 300,
@@ -158,6 +158,7 @@ export const HvSnackbar = forwardRef<
         action={action}
         actionCallback={actionCallback}
         onAction={onAction}
+        onClose={onClose}
         {...snackbarContentProps}
       />
     </MuiSnackbar>

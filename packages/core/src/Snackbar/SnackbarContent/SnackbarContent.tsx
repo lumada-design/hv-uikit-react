@@ -1,6 +1,7 @@
 import { forwardRef, isValidElement } from "react";
+import { type SnackbarProps as MuiSnackbarProps } from "@mui/material/Snackbar";
 import SnackbarContent, {
-  SnackbarContentProps as MuiSnackbarContentProps,
+  type SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 import {
   useDefaultProps,
@@ -43,6 +44,8 @@ export interface HvSnackbarContentProps
   actionCallback?: HvActionsGenericProps["actionsCallback"];
   /** The callback function called when an action is triggered, receiving `action` as parameter. */
   onAction?: HvActionsGenericProps["onAction"];
+  /** @inheritdoc */
+  onClose?: MuiSnackbarProps["onClose"];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvSnackbarContentClasses;
 }
@@ -62,10 +65,11 @@ export const HvSnackbarContent = forwardRef<
     action,
     actionCallback, // TODO - remove in v6
     onAction,
+    onClose,
     ...others
   } = useDefaultProps("HvSnackbarContent", props);
 
-  const icon = customIcon || (showIcon && iconVariant(variant, "base_dark"));
+  const icon = customIcon || (showIcon && iconVariant(variant, "inherit"));
   const innerAction: any = isValidElement(action) ? action : [action];
 
   const { classes, cx } = useClasses(classesProp);
@@ -76,28 +80,30 @@ export const HvSnackbarContent = forwardRef<
       ref={ref}
       id={id}
       classes={{
-        root: classes.root,
-        message: classes.message,
+        root: cx(classes.root, classes[variant], className),
+        message: cx(classes.message, classes.messageSpan),
+        action: classes.action,
       }}
-      className={cx(classes?.[variant], className)}
       message={
-        <div id={setId(id, "message")} className={classes.messageSpan}>
+        <>
           {icon && <div className={classes.iconVariant}>{icon}</div>}
-          <div className={classes.messageText}>{label}</div>
-          {action && (
-            <div id={setId(id, "action")} className={classes.action}>
-              <HvActionsGeneric
-                id={id}
-                variant={
-                  activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
-                }
-                actions={innerAction}
-                actionsCallback={actionCallback}
-                onAction={onAction}
-              />
-            </div>
-          )}
-        </div>
+          <div id={setId(id, "message")} className={classes.messageText}>
+            {label}
+          </div>
+        </>
+      }
+      action={
+        action && (
+          <HvActionsGeneric
+            id={id}
+            variant={
+              activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
+            }
+            actions={innerAction}
+            actionsCallback={actionCallback}
+            onAction={onAction}
+          />
+        )
       }
       {...others}
     />

@@ -3,7 +3,10 @@ import SnackbarContent, {
   SnackbarContentProps as MuiSnackbarContentProps,
 } from "@mui/material/SnackbarContent";
 import { Close } from "@hitachivantara/uikit-react-icons";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import { HvActionsGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../../Button";
@@ -48,102 +51,98 @@ export interface HvBannerContentProps
   classes?: HvBannerContentClasses;
 }
 
-export const HvBannerContent = forwardRef<HTMLDivElement, HvBannerContentProps>(
-  function HvBannerContent(props, ref) {
-    const {
-      id,
-      classes: classesProp,
-      className,
-      showIcon = false,
-      customIcon,
-      variant = "default",
-      onClose,
-      actions,
-      actionsCallback, // TODO - remove in v6
-      onAction,
-      actionsPosition = "auto",
-      content,
-      children,
-      actionProps,
-      ...others
-    } = props;
-    const { classes, cx } = useClasses(classesProp);
-    const icon = customIcon || (showIcon && iconVariant(variant, "base_dark"));
+export const HvBannerContent = forwardRef<
+  // no-indent
+  HTMLDivElement,
+  HvBannerContentProps
+>(function HvBannerContent(props, ref) {
+  const {
+    id,
+    classes: classesProp,
+    className,
+    showIcon,
+    customIcon,
+    variant = "default",
+    onClose,
+    actions,
+    actionsCallback, // TODO - remove in v6
+    onAction,
+    actionsPosition: actionsPositionProp = "auto",
+    content,
+    children,
+    actionProps,
+    ...others
+  } = useDefaultProps("HvBannerContent", props);
+  const { classes, cx } = useClasses(classesProp);
+  const icon = customIcon || (showIcon && iconVariant(variant, "inherit"));
 
-    // default to inline
-    // this might try to be more intelligent in the future,
-    // taking into account the content length, available space,
-    // number of actions, etc..
-    const effectiveActionsPosition =
-      actionsPosition === "auto" ? "inline" : actionsPosition;
+  // default to inline
+  // this might try to be more intelligent in the future,
+  // taking into account the content length, available space,
+  // number of actions, etc..
+  const actionsPosition =
+    actionsPositionProp === "auto" ? "inline" : actionsPositionProp;
 
-    const handleAction: HvBannerContentProps["onAction"] = (evt, action) => {
-      onAction?.(evt, action);
-      actionsCallback?.(evt, id!, action);
-    };
+  const handleAction: HvBannerContentProps["onAction"] = (evt, action) => {
+    onAction?.(evt, action);
+    actionsCallback?.(evt, id!, action);
+  };
 
-    return (
-      <div className={classes.outContainer}>
-        <SnackbarContent
-          ref={ref}
-          id={id}
-          classes={{
-            root: classes.root,
-            message: classes.message,
-            action: classes.action,
-          }}
-          className={cx(classes.baseVariant, classes[variant], className)}
-          message={
-            <>
-              {icon && <div className={classes.iconContainer}>{icon}</div>}
-              <div
-                id={setId(id, "message-text")}
-                className={classes.messageContainer}
-              >
-                {children ?? content}
-              </div>
-              {actions && effectiveActionsPosition === "inline" && (
-                <div
-                  id={setId(id, "message-actions")}
-                  className={classes.messageActions}
-                >
-                  <HvActionsGeneric
-                    id={id}
-                    variant="semantic"
-                    actions={actions}
-                    onAction={handleAction}
-                  />
-                </div>
-              )}
-            </>
-          }
-          action={
-            <div className={classes.actionContainer}>
-              <HvButton
-                icon
-                className={classes.closeAction}
-                variant="semantic"
-                aria-label="Close"
-                onClick={onClose}
-                {...actionProps}
-              >
-                <Close size="XS" />
-              </HvButton>
-              {actions && effectiveActionsPosition === "bottom-right" && (
-                <div className={classes.actionsInnerContainer}>
-                  <HvActionsGeneric
-                    id={id}
-                    variant="semantic"
-                    actions={actions}
-                    onAction={handleAction}
-                  />
-                </div>
-              )}
-            </div>
-          }
-          {...others}
-        />
-      </div>
-    );
-  },
-);
+  const actionsContent = (
+    <HvActionsGeneric
+      id={id}
+      className={classes.messageActions}
+      variant="semantic"
+      actions={actions}
+      onAction={handleAction}
+    />
+  );
+
+  return (
+    <SnackbarContent
+      ref={ref}
+      id={id}
+      classes={{
+        root: cx(
+          classes.root,
+          classes.outContainer,
+          classes.baseVariant,
+          classes[variant],
+          className,
+        ),
+        message: classes.message,
+        action: classes.action,
+      }}
+      message={
+        <>
+          {icon && <div className={classes.iconContainer}>{icon}</div>}
+          <div
+            id={setId(id, "message-text")}
+            className={classes.messageContainer}
+          >
+            {children ?? content}
+          </div>
+          {actions && actionsPosition === "inline" && actionsContent}
+        </>
+      }
+      action={
+        <div
+          className={cx(classes.actionContainer, classes.actionsInnerContainer)}
+        >
+          <HvButton
+            icon
+            className={classes.closeAction}
+            variant="semantic"
+            aria-label="Close"
+            onClick={onClose}
+            {...actionProps}
+          >
+            <Close size="XS" />
+          </HvButton>
+          {actions && actionsPosition === "bottom-right" && actionsContent}
+        </div>
+      }
+      {...others}
+    />
+  );
+});

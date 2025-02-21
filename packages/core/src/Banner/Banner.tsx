@@ -85,16 +85,16 @@ export const HvBanner = forwardRef<
     open,
     onClose,
     anchorOrigin = "top",
-    variant = "default",
+    variant,
     transitionDuration = 300,
     transitionDirection = "down",
     container,
-    showIcon = false,
+    showIcon,
     customIcon,
     actions,
     actionsCallback, // TODO - remove in v6
     onAction,
-    actionsPosition = "auto",
+    actionsPosition,
     label,
     offset = 60,
     bannerContentProps,
@@ -139,7 +139,6 @@ export const HvBanner = forwardRef<
     >
       <HvBannerContent
         id={setId(id, "content")}
-        content={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
@@ -149,7 +148,9 @@ export const HvBanner = forwardRef<
         actionsPosition={actionsPosition}
         onClose={onClose}
         {...bannerContentProps}
-      />
+      >
+        {label}
+      </HvBannerContent>
     </Snackbar>
   );
 });
