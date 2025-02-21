@@ -4,15 +4,19 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   root: {
     minWidth: "100%",
+    width: "100%",
     position: "relative",
     display: "flex",
     flexWrap: "nowrap",
     boxShadow: "none",
     borderRadius: theme.radii.none,
+    gap: theme.space.xs,
+    padding: 0,
   },
   message: {
     display: "flex",
     alignItems: "center",
+    gap: theme.space.xs,
     padding: theme.spacing("xs", 0),
     paddingLeft: theme.space.sm,
     ...theme.typography.body,
@@ -24,9 +28,8 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     flex: "0 0 auto",
     placeSelf: "stretch",
   },
-  baseVariant: {
-    padding: 0,
-  },
+  /** @deprecated use ´classes.root` instead */
+  baseVariant: {},
   success: {
     backgroundColor: theme.colors.positive_20,
   },
@@ -39,19 +42,16 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   default: {
     backgroundColor: theme.colors.neutral_20,
   },
-  outContainer: {
-    width: "100%",
-    position: "relative",
-  },
+  /** @deprecated use `classes.root` instead */
+  outContainer: {},
   messageContainer: {
     wordBreak: "break-word",
     maxWidth: 700,
+    textWrap: "balance",
     overflow: "hidden",
-    marginRight: 10,
   },
   iconContainer: {
-    marginRight: theme.space.xs,
-    marginLeft: -theme.space.xs,
+    marginLeft: theme.spacing(-1),
   },
   messageActions: {
     flex: "0 0 auto",
@@ -61,11 +61,10 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     flexDirection: "column",
     height: "100%",
     justifyContent: "space-between",
+    gap: theme.space.xs,
   },
-  actionsInnerContainer: {
-    flexDirection: "row",
-    marginTop: "8px", // avoid overlap with close button outline focus ring
-  },
+  /** @deprecated use `classes.actionContainer` instead */
+  actionsInnerContainer: {},
   closeAction: {
     alignSelf: "flex-end",
   },
