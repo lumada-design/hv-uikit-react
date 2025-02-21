@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.41.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.41.2...@hitachivantara/uikit-styles@5.41.3) (2025-02-21)
+
+### Bug Fixes
+
+- **TagsInput:** flexible input & tags size ([1374036](https://github.com/lumada-design/hv-uikit-react/commit/1374036156f7e120c0330b77f36abdfabc301269))
+
+### Reverts
+
+- Revert "chore(release): publish" ([0261483](https://github.com/lumada-design/hv-uikit-react/commit/0261483ff517270d18a47caf4c0982910f594fda))
+
 ## [5.41.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.41.1...@hitachivantara/uikit-styles@5.41.2) (2025-02-13)
 
 ### Bug Fixes

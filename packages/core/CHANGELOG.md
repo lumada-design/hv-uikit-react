@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.88.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.3...@hitachivantara/uikit-react-core@5.88.0) (2025-02-21)
+
+### Bug Fixes
+
+- **input:** internal padding when autofilling ([6d866a5](https://github.com/lumada-design/hv-uikit-react/commit/6d866a569900fbfb4e2d86d424bf755c06fd0383))
+- **Input:** support native uncontrolled behaviours & text adornment ([5ac7943](https://github.com/lumada-design/hv-uikit-react/commit/5ac7943403c4c18e86e81017a55f462bc2be9980))
+- **TagsInput:** flexible input & tags size ([1374036](https://github.com/lumada-design/hv-uikit-react/commit/1374036156f7e120c0330b77f36abdfabc301269))
+- **TagsInput:** review focus management ([fcc25e3](https://github.com/lumada-design/hv-uikit-react/commit/fcc25e314f378bc38a5981862ec6b9f829aea62e))
+
+### Features
+
+- **Adornment:** clickable adornments & clickable showPassword ([c516920](https://github.com/lumada-design/hv-uikit-react/commit/c5169202e2b1f8b3760cb209b8112a07daa02f7e))
+
+### Reverts
+
+- Revert "chore(release): publish" ([7b00a9d](https://github.com/lumada-design/hv-uikit-react/commit/7b00a9d7a76c35c3f1bf25433ac1c07a98d12e0c))
+- Revert "chore(release): publish" ([0261483](https://github.com/lumada-design/hv-uikit-react/commit/0261483ff517270d18a47caf4c0982910f594fda))
+- Revert "chore(release): publish" ([c3954cd](https://github.com/lumada-design/hv-uikit-react/commit/c3954cdb2e7f6992902f757419ea1d89dfcca7a8))
+
 ## [5.87.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.2...@hitachivantara/uikit-react-core@5.87.3) (2025-02-13)
 
 ### Bug Fixes
