@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.88.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.88.1...@hitachivantara/uikit-react-core@5.88.2) (2025-02-21)
+
+### Bug Fixes
+
+- **input:** internal padding when autofilling ([6d866a5](https://github.com/lumada-design/hv-uikit-react/commit/6d866a569900fbfb4e2d86d424bf755c06fd0383))
+
 ## [5.88.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.88.0...@hitachivantara/uikit-react-core@5.88.1) (2025-02-20)
 
 ### Bug Fixes
