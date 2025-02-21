@@ -1,6 +1,5 @@
 import { css } from "@emotion/css";
 import { StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/test";
 import {
   canvasSidePanelClasses,
   canvasToolbarClasses,
@@ -34,12 +33,6 @@ export const Main: StoryObj = {
       },
     },
     ...setupChromatic(["Pentaho+ dawn", "Pentaho+ wicked"], 5000),
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: /Click to Add Nodes/i });
-    await userEvent.click(button);
   },
   decorators: [(Story) => <div className={classes.root}>{Story()}</div>],
   render: () => <Canvas />,

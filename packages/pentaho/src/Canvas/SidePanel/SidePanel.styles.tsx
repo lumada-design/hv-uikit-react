@@ -33,10 +33,13 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       justifyContent: "center",
       boxShadow,
-      backgroundColor: theme.colors.atmo1,
       borderRadius: "0px 16px 16px 0px",
       position: "absolute",
       transition: "left 0.3s ease",
+      "&&": {
+        // override action state styles
+        backgroundColor: theme.colors.atmo1,
+      },
       top: "calc(50% - 44px)", // subtract handle's full height
       "&$handleOpen": {
         left: 320,

@@ -76,7 +76,7 @@ const sidePanelContent = {
 };
 
 const Page = () => {
-  const [sidePanelOpen, setSidePanelOpen] = useState(false);
+  const [sidePanelOpen, setSidePanelOpen] = useState(true);
   const [sidePanelTab, setSidePanelTab] = useState(sidePanelTabs[0].id);
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
