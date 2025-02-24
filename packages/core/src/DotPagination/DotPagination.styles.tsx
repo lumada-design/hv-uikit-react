@@ -27,11 +27,21 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
   icon: {
     minWidth: 0,
     width: 16,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     height: 16,
     "&& svg": {
       border: "none",
       width: "unset",
       height: "unset",
+    },
+    "& > div": {
+      color: theme.colors.secondary,
+      backgroundColor: "currentcolor",
+      width: "1em",
+      height: "1em",
+      borderRadius: "50%",
     },
   },
 });

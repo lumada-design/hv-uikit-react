@@ -21,7 +21,11 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
     display: "inline-block",
     width: "auto",
   },
-  icon: {},
+  icon: {
+    "& > div": {
+      height: "inherit",
+    },
+  },
   iconSelected: {
     boxShadow: theme.colors.shadow,
   },

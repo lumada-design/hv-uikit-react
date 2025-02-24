@@ -1400,13 +1400,8 @@ const ds3 = makeTheme((theme) => ({
         },
         topGutter: { paddingTop: "8px" },
         defaultIcon: {
-          minWidth: "32px",
-          width: "32px",
-          height: "32px",
-          "& svg": {
-            height: "16px",
-            width: "16px",
-          },
+          fontSize: 16,
+          margin: 8,
         },
       },
     },

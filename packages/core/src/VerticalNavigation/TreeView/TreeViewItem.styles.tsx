@@ -139,6 +139,7 @@ export const { staticClasses, useClasses } = createClasses(
     },
     icon: {
       display: "flex",
+      alignItems: "center",
       "& .color0": {
         fill: "currentColor",
       },
