@@ -11,7 +11,6 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
     position: "absolute",
     right: theme.space.sm,
     top: 0,
-    transition: "width 0.3s ease",
   },
   back: {
     borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,

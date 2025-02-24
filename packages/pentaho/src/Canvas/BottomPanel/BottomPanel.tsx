@@ -165,6 +165,9 @@ export const HvCanvasBottomPanel = forwardRef<
       style={{
         width: `calc(100% - ${sidePanelWidth}px - 2 * ${theme.space.sm})`,
         right: theme.space.sm,
+        transition: canvasContext?.sidePanelDragging
+          ? "height 0.3s ease, opacity 0.3s ease"
+          : "width 0.3s ease",
       }}
       {...others}
     >

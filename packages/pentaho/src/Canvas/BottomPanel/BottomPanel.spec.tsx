@@ -199,13 +199,9 @@ test("render overflow actions when the tab content is overflowing", async ({
   page,
 }) => {
   // Change viewport
-  page.setViewportSize({ width: 200, height: 500 });
+  page.setViewportSize({ width: 300, height: 500 });
 
   await goToControlledSample(page);
-
-  // Open panel
-  const toggleBtn = page.getByRole("button", { name: "Toggle Open" });
-  await toggleBtn.click();
 
   const selectedTab = page.getByRole("tab", { selected: true });
   await expect(selectedTab).toContainText("Tab 1 Overflowing");

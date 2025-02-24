@@ -11,6 +11,8 @@ type HvCanvasContextValue = {
   handleSidePanelOpen: (open: boolean) => void;
   sidePanelWidth: number;
   handleSidePanelWidth: (width: number) => void;
+  sidePanelDragging: boolean;
+  handleSidePanelDragging: (dragging: boolean) => void;
 };
 
 export const HvCanvasContext = createContext<HvCanvasContextValue | null>(null);
@@ -23,6 +25,7 @@ export const HvCanvasProvider = ({
 }) => {
   const [sidePanelOpen, setSidePanelOpen] = useState(false);
   const [width, setWidth] = useState(0);
+  const [sidePanelDragging, setSidePanelDragging] = useState(false);
 
   const handleSidePanelWidth = useCallback((newWidth: number) => {
     setWidth(newWidth);
@@ -32,14 +35,27 @@ export const HvCanvasProvider = ({
     setSidePanelOpen(open);
   }, []);
 
+  const handleSidePanelDragging = useCallback((dragging: boolean) => {
+    setSidePanelDragging(dragging);
+  }, []);
+
   const value = useMemo(
     () => ({
       sidePanelOpen,
       handleSidePanelOpen,
       sidePanelWidth: sidePanelOpen ? width : 0,
       handleSidePanelWidth,
+      sidePanelDragging,
+      handleSidePanelDragging,
     }),
-    [sidePanelOpen, handleSidePanelOpen, width, handleSidePanelWidth],
+    [
+      sidePanelOpen,
+      handleSidePanelOpen,
+      width,
+      handleSidePanelWidth,
+      sidePanelDragging,
+      handleSidePanelDragging,
+    ],
   );
 
   return (

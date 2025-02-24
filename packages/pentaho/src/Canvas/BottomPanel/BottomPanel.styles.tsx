@@ -16,7 +16,6 @@ export const { staticClasses, useClasses } = createClasses(
       width: "100%",
       maxHeight: "500px",
       visibility: "visible",
-      transition: "visibility 0.3s ease, max-height 0.3s ease, width 0.3s ease",
     },
     closed: {
       maxHeight: 0,

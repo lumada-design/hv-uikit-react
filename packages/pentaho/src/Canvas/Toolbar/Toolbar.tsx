@@ -74,6 +74,9 @@ export const HvCanvasToolbar = forwardRef<HTMLDivElement, HvCanvasToolbarProps>(
         className={cx(classes.root, className)}
         style={mergeStyles(style, {
           "--sidepanel-width": `${sidePanelWidth}px`,
+          transition: canvasContext?.sidePanelDragging
+            ? undefined
+            : "width 0.3s ease",
         })}
         {...others}
       >
