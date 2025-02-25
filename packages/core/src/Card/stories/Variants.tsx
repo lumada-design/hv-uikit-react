@@ -43,7 +43,7 @@ const classes = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
     borderRadius: theme.radii.round,
   }),
   actions: css({
@@ -62,7 +62,7 @@ export const Variants = () => {
     <div className={classes.root}>
       <HvCard
         className={classes.card}
-        bgcolor="atmo1"
+        bgcolor="bgContainer"
         statusColor="positive"
         icon={<Level0Good iconSize="S" color="positive" />}
       >
@@ -83,7 +83,7 @@ export const Variants = () => {
 
       <HvCard
         className={classes.card}
-        bgcolor="atmo1"
+        bgcolor="bgContainer"
         statusColor="negative"
         icon={<Level3Bad color="negative" />}
       >
@@ -106,7 +106,11 @@ export const Variants = () => {
         />
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1" statusColor="warning">
+      <HvCard
+        className={classes.card}
+        bgcolor="bgContainer"
+        statusColor="warning"
+      >
         <HvCardHeader
           title="The island of Madeira"
           subheader={
@@ -119,7 +123,7 @@ export const Variants = () => {
         />
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1" statusColor="neutral">
+      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="info">
         <HvCardHeader
           title="The island of Madeira"
           subheader={
@@ -139,7 +143,7 @@ export const Variants = () => {
         </HvCardContent>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1" statusColor="cat1">
+      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="cat1">
         <HvCardHeader
           title={
             <div className={classes.header}>
@@ -165,7 +169,7 @@ export const Variants = () => {
         </HvActionBar>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="atmo1" statusColor="cat2">
+      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="cat2">
         <HvCardContent>
           <HvTypography>
             Madeira is a stunning Portuguese archipelago known for its lush

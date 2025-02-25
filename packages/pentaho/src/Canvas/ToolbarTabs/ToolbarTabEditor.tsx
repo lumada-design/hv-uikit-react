@@ -22,14 +22,14 @@ const { staticClasses, useClasses } = createClasses(
       width: "100%",
       overflow: "hidden",
       "&:has($label:hover:not($edit))": {
-        color: theme.colors.secondary_80,
+        color: theme.colors.textSubtle,
         "& $editIcon": { visibility: "visible" },
       },
     },
     edit: {
-      color: theme.colors.secondary_80,
+      color: theme.colors.textSubtle,
       borderColor: "currentColor",
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgContainer,
       cursor: "text",
     },
     label: {
@@ -46,14 +46,14 @@ const { staticClasses, useClasses } = createClasses(
         textOverflow: "ellipsis",
       },
       "&:hover:not($edit)": {
-        color: theme.colors.secondary_80,
-        borderColor: theme.colors.containerBackgroundHover,
-        backgroundColor: theme.colors.containerBackgroundHover,
+        color: theme.colors.textSubtle,
+        borderColor: theme.colors.bgHover,
+        backgroundColor: theme.colors.bgHover,
       },
     },
     editIcon: {
       position: "absolute",
-      right: theme.spacing(0.5),
+      right: theme.space.xxs,
       top: 4,
       width: 16,
       height: 16,

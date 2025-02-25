@@ -2,7 +2,7 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 const hover = {
-  backgroundColor: theme.colors.containerBackgroundHover,
+  backgroundColor: theme.colors.bgHover,
   cursor: "pointer",
 };
 
@@ -17,28 +17,28 @@ export const { staticClasses, useClasses } = createClasses("HvCalendarCell", {
     width: "40px",
   },
   calendarDateSelected: {
-    backgroundColor: theme.colors.atmo3,
-    color: theme.colors.secondary,
+    backgroundColor: theme.colors.bgPageSecondary,
+    color: theme.colors.text,
     "&:hover": {
       ...hover,
     },
   },
   calendarDateNotInMonth: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     cursor: "not-allowed",
   },
   calendarDateInSelectionRange: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgPageSecondary,
   },
   calendarDateDisabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     cursor: "no-drop",
   },
   startBookend: {
-    borderLeft: `1px solid ${theme.colors.secondary}`,
+    borderLeft: `1px solid ${theme.colors.text}`,
   },
   endBookend: {
-    borderRight: `1px solid ${theme.colors.secondary}`,
+    borderRight: `1px solid ${theme.colors.text}`,
   },
   dateWrapper: {
     width: "40px",

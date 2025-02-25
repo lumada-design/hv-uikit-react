@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses(
       justifyContent: "space-between",
       alignItems: "center",
       width: "100%",
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgContainer,
       boxShadow: theme.colors.shadow,
       borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
       transition: "width 0.3s ease",
@@ -31,21 +31,21 @@ export const { staticClasses, useClasses } = createClasses(
     },
     tabsList: {
       height: TAB_HEIGHT,
-      background: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgContainer,
       borderEndStartRadius: theme.radii.base,
     },
     tab: {
       boxSizing: "border-box",
-      border: `1px solid ${theme.colors.atmo1}`,
+      border: `1px solid transparent`,
       borderBottom: "none",
       borderRadius: "10px 10px 0 0",
       boxShadow: "none",
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: "inherit",
       "&:first-of-type": { borderEndStartRadius: theme.radii.base },
       [`&.${tabClasses.selected}`]: {
         color: theme.colors.primary,
         backgroundColor: TAB_COLOR,
-        borderColor: theme.colors.atmo4,
+        borderColor: theme.colors.border,
       },
       [`&:hover:not(.${tabClasses.selected}), &:focus:not(.${tabClasses.selected})`]:
         {
@@ -96,7 +96,7 @@ export const { staticClasses, useClasses } = createClasses(
       marginRight: theme.spacing(-1),
       width: CLOSE_ICON_SIZE,
       "&:hover": {
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: theme.colors.bgHover,
         borderRadius: theme.radii.circle,
       },
     },
@@ -104,7 +104,7 @@ export const { staticClasses, useClasses } = createClasses(
       position: "absolute",
       height: 18,
       width: 1,
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPageSecondary,
       right: 0,
     },
     actionsContainer: {

@@ -217,8 +217,8 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
-              backgroundColor: theme.colors.negative_20,
-              color: theme.colors.base_dark,
+              backgroundColor: theme.colors.negativeDimmed,
+              color: theme.colors.textDark,
               padding: theme.space.md,
             })}
           >
@@ -226,7 +226,7 @@ export const ExternalErrorMessage: StoryObj<HvSwitchProps> = {
               component="h4"
               variant="title4"
               style={{
-                color: theme.colors.base_dark,
+                color: theme.colors.textDark,
               }}
             >
               Form errors:

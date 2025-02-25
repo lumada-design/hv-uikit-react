@@ -59,7 +59,7 @@ const newRendererEntry = (i: number): NewRendererEntry => {
     eventType: generateLongString(i === 3 ? undefined : "Anomaly detection", i),
     status: {
       status_name: getOption(["Closed", "Open"], i),
-      status_color: getOption(["negative_20", "positive_20"], i),
+      status_color: getOption(["negativeDimmed", "positiveDimmed"], i),
       status_text_color: "black",
     },
     riskScore: (i % 100) + 1,

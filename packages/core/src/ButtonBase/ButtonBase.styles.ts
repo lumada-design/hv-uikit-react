@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvButtonBase", {
     // Background color common for almost all variants
     ":where(:not($disabled))": {
       ":hover, :focus-visible": {
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: theme.colors.bgHover,
       },
     },
     ":focus-visible": {
@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvButtonBase", {
   },
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     "&:hover, &:focus-visible": {
       backgroundColor: "transparent",
     },

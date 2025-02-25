@@ -67,8 +67,8 @@ export const HvAppSwitcherAction = ({
     application;
 
   const color = getColor(
-    disabled ? "secondary_60" : application?.color,
-    "secondary",
+    disabled ? "textDisabled" : application?.color,
+    "text",
   );
 
   const [validIconUrl, setValidIconUrl] = useState<boolean>(true);

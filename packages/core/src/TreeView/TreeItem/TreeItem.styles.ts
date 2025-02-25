@@ -28,24 +28,24 @@ export const { staticClasses, useClasses } = createClasses("HvTreeItem", {
     cursor: "pointer",
     WebkitTapHighlightColor: "transparent",
     "&:hover:not($disabled)": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
   },
   expanded: {},
   selected: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgPageSecondary,
   },
   focused: {
-    backgroundColor: theme.colors.containerBackgroundHover,
+    backgroundColor: theme.colors.bgHover,
     "&:focus-visible": {
       ...outlineStyles,
     },
   },
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     "& $label": {
-      color: theme.colors.secondary_60,
+      color: theme.colors.textDisabled,
     },
   },
   label: {

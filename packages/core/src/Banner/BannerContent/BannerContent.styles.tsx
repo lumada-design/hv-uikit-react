@@ -18,7 +18,7 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     padding: theme.spacing("xs", 0),
     paddingLeft: theme.space.sm,
     ...theme.typography.body,
-    color: theme.colors.base_dark,
+    color: theme.colors.textDark,
   },
   action: {
     padding: theme.space.xs,

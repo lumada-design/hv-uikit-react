@@ -26,7 +26,7 @@ export const HvPathElement = ({
       {!last && (
         <DropRightXS
           className={classes.separatorContainer}
-          color="secondary_60"
+          color="textDisabled"
         />
       )}
     </li>

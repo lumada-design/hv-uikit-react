@@ -21,9 +21,9 @@ import {
 
 const Box = styled("div")({
   display: "flex",
-  color: theme.colors.base_dark,
+  color: theme.colors.textDark,
   border: `1px solid ${theme.colors.sema15}`,
-  backgroundColor: theme.colors.neutral_20,
+  backgroundColor: theme.colors.infoDimmed,
   width: 150,
   height: 50,
   alignItems: "center",
@@ -126,9 +126,9 @@ export const CustomDivider = {
     const StyledDivider = styled("div")({
       width: 150,
       height: 5,
-      border: `1px solid ${theme.colors.secondary_60}`,
+      border: `1px solid ${theme.colors.textDisabled}`,
       borderRadius: 5,
-      backgroundColor: theme.colors.atmo4,
+      backgroundColor: theme.colors.border,
       alignSelf: "center",
     });
 
@@ -165,7 +165,11 @@ export const WithNavigation: StoryObj<HvStackProps> = {
         divider={false}
         dividerProps={{ variant: "middle", light: true }}
       >
-        <HvCard bgcolor="atmo1" statusColor="negative" style={{ width: 275 }}>
+        <HvCard
+          bgcolor="bgContainer"
+          statusColor="negative"
+          style={{ width: 275 }}
+        >
           <HvCardHeader title="Card 1" icon={<Tool />} />
           <HvCardContent>
             <div style={{ marginTop: "20px" }}>
@@ -194,7 +198,11 @@ export const WithNavigation: StoryObj<HvStackProps> = {
             <div style={{ flex: 1 }} />
           </HvActionBar>
         </HvCard>
-        <HvCard bgcolor="atmo1" statusColor="positive" style={{ width: 275 }}>
+        <HvCard
+          bgcolor="bgContainer"
+          statusColor="positive"
+          style={{ width: 275 }}
+        >
           <HvCardHeader title="Card 2" icon={<Tool />} />
           <HvCardContent>
             <div style={{ marginTop: "20px" }}>
@@ -216,7 +224,11 @@ export const WithNavigation: StoryObj<HvStackProps> = {
             <div style={{ flex: 1 }} />
           </HvActionBar>
         </HvCard>
-        <HvCard bgcolor="atmo1" statusColor="sema15" style={{ width: 275 }}>
+        <HvCard
+          bgcolor="bgContainer"
+          statusColor="sema15"
+          style={{ width: 275 }}
+        >
           <HvCardHeader title="Card 3" icon={<Tool />} />
           <HvCardContent>
             <div style={{ marginTop: "20px" }}>
@@ -238,7 +250,11 @@ export const WithNavigation: StoryObj<HvStackProps> = {
             <div style={{ flex: 1 }} />
           </HvActionBar>
         </HvCard>
-        <HvCard bgcolor="atmo1" statusColor="neutral_20" style={{ width: 275 }}>
+        <HvCard
+          bgcolor="bgContainer"
+          statusColor="infoDimmed"
+          style={{ width: 275 }}
+        >
           <HvCardHeader title="Card 4" icon={<Tool />} />
           <HvCardContent>
             <div style={{ marginTop: "20px" }}>
