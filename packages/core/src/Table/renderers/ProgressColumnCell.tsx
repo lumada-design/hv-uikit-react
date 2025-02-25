@@ -8,15 +8,15 @@ const { useClasses } = createClasses("HvProgressColumnCell", {
   linearProgress: {
     height: 8,
   },
-  linearProgressRoot: { backgroundColor: theme.colors.atmo4 },
+  linearProgressRoot: { backgroundColor: theme.colors.border },
   linearProgressColorPrimary: {
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.border,
   },
   linearProgressBarColorPrimary: {
     backgroundColor: theme.colors.positive,
   },
   linearProgressBarColorSecondary: {
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
   },
 });
 

@@ -16,11 +16,11 @@ export const { staticClasses, useClasses } = createClasses(
       },
     },
     listItemSelected: {
-      background: theme.colors.atmo3,
-      borderLeft: `4px solid ${theme.colors.secondary}`,
+      backgroundColor: theme.colors.bgPageSecondary,
+      borderLeft: `4px solid ${theme.colors.text}`,
     },
     listItemFocus: {
-      background: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPageSecondary,
     },
     forwardButton: {
       color: "inherit",

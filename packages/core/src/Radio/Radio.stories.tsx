@@ -153,8 +153,8 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
         <HvGrid item xs={12} md={6}>
           <div
             className={css({
-              backgroundColor: theme.colors.negative_20,
-              color: theme.colors.base_dark,
+              backgroundColor: theme.colors.negativeDimmed,
+              color: theme.colors.textDark,
               padding: theme.space.md,
             })}
           >
@@ -162,7 +162,7 @@ export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
               component="h4"
               variant="title4"
               style={{
-                color: theme.colors.base_dark,
+                color: theme.colors.textDark,
               }}
             >
               Form errors:
@@ -208,7 +208,7 @@ export const Custom: StoryObj<HvRadioProps> = {
       checked: css({
         "& svg": {
           border: `1px solid ${theme.colors.warning}`,
-          backgroundColor: theme.colors.atmo1,
+          backgroundColor: theme.colors.bgContainer,
           color: theme.colors.warning,
         },
       }),

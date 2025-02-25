@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvHeader", {
   root: {
     height: theme.header.height,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     display: "flex",
     flexDirection: "column",
     width: "100%",

@@ -52,14 +52,14 @@ export const { staticClasses, useClasses } = createClasses(
       borderBottom: "4px solid transparent",
 
       ":hover, :focus-within": {
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: theme.colors.bgHover,
       },
     },
     menu: {},
     menubar: {},
     selected: {
-      borderColor: theme.colors.secondary,
-      color: theme.colors.secondary,
+      color: theme.colors.text,
+      borderColor: "currentcolor",
     },
     item,
     link: {

@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     alignItems: "center",
     justifyContent: "center",
     cursor: "default",
-    color: theme.colors.base_dark,
+    color: theme.colors.textDark,
     backgroundColor: "var(--bgColor)",
     height: 16,
     borderRadius: 0,
@@ -21,17 +21,17 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   categorical: {
     borderRadius: 8,
     "& $label": {
-      color: theme.colors.secondary,
+      color: theme.colors.text,
     },
   },
 
   disabled: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgDisabled,
     ":hover, :focus": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgDisabled,
     },
     "& $label": {
-      color: theme.colors.secondary_60,
+      color: theme.colors.textDisabled,
     },
   },
   label: {
@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     width: 16,
     height: 16,
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
   },
   selected: {},

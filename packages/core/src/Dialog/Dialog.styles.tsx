@@ -3,12 +3,14 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvDialog", {
   root: {},
-  background: { background: theme.alpha("atmo4", 0.8) },
+  background: {
+    backgroundColor: theme.colors.bgOverlay,
+  },
   paper: {
-    color: theme.colors.secondary,
-    backgroundColor: theme.colors.atmo1,
+    color: theme.colors.text,
+    backgroundColor: theme.colors.bgContainer,
     boxShadow: theme.colors.shadow,
-    borderColor: theme.colors.atmo4,
+    borderColor: theme.colors.border,
     borderRadius: theme.radii.round,
   },
   fullscreen: {},

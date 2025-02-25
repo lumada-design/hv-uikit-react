@@ -10,8 +10,8 @@ const style = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  color: theme.colors.base_dark,
-  backgroundColor: theme.colors.neutral_20,
+  color: theme.colors.textDark,
+  backgroundColor: theme.colors.infoDimmed,
   minHeight: 80,
 };
 

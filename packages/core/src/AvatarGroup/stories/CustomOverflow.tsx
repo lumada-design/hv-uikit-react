@@ -7,7 +7,7 @@ import {
 export const CustomOverflow = () => {
   const overflowComponent = (overflowCount: number) => (
     <HvTooltip title={`+${overflowCount}`}>
-      <HvAvatar backgroundColor="brand" color="atmo1" role="img" />
+      <HvAvatar backgroundColor="brand" color="textDimmed" role="img" />
     </HvTooltip>
   );
 

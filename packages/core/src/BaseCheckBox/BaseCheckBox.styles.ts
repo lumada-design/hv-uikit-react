@@ -12,15 +12,15 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     borderRadius: theme.radii.base,
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
 
     "& svg": {
       width: 16,
       height: 16,
-      color: theme.colors.atmo1,
+      color: theme.colors.bgContainer,
       borderRadius: theme.radii.none,
-      border: `1px solid ${theme.colors.secondary}`,
+      border: `1px solid ${theme.colors.text}`,
     },
   },
   disabled: {
@@ -28,9 +28,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
       cursor: "not-allowed",
       pointerEvents: "initial",
       "& svg": {
-        color: theme.colors.atmo3,
-        borderColor: theme.colors.secondary_60,
-        backgroundColor: theme.colors.atmo3,
+        color: theme.colors.bgDisabled,
+        borderColor: theme.colors.textDisabled,
+        backgroundColor: theme.colors.bgDisabled,
       },
     },
   },
@@ -42,36 +42,36 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
   icon: {},
   checked: {
     "& svg": {
-      border: `1px solid ${theme.colors.secondary}`,
-      backgroundColor: theme.colors.secondary,
-      color: theme.colors.atmo1,
+      border: `1px solid ${theme.colors.text}`,
+      backgroundColor: theme.colors.text,
+      color: theme.colors.bgContainer,
     },
     "&$disabled": {
       "& svg": {
-        color: theme.colors.secondary_60,
+        color: theme.colors.textDisabled,
       },
     },
   },
   indeterminate: {
     "& svg": {
-      color: theme.colors.secondary,
+      color: theme.colors.text,
     },
     "&$disabled": {
       "& svg": {
-        color: theme.colors.secondary_60,
+        color: theme.colors.textDisabled,
       },
     },
   },
   semantic: {
     "& svg": {
-      border: `1px solid ${theme.colors.base_dark}`,
-      color: theme.colors.base_light,
-      backgroundColor: theme.colors.base_dark,
+      border: `1px solid ${theme.colors.textDark}`,
+      color: theme.colors.textLight,
+      backgroundColor: theme.colors.textDark,
     },
     "&$indeterminate": {
       "& svg": {
-        color: theme.colors.base_dark,
-        backgroundColor: theme.colors.base_light,
+        color: theme.colors.textDark,
+        backgroundColor: theme.colors.textLight,
       },
     },
   },

@@ -17,9 +17,9 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     cursor: "pointer",
     userSelect: "none",
     position: "relative",
-    background: theme.colors.atmo1,
+    background: theme.colors.bgContainer,
     boxSizing: "border-box",
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
     borderRadius: theme.radii.base,
     "&:hover": {
       border: `1px solid ${theme.colors.primary}`,
@@ -33,10 +33,10 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     },
   },
   headerOpen: {
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
 
     "&:hover": {
-      border: `1px solid ${theme.colors.secondary}`,
+      border: `1px solid ${theme.colors.text}`,
     },
   },
   headerOpenUp: {
@@ -48,23 +48,23 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   headerDisabled: {
     cursor: "not-allowed",
     pointerEvents: "none",
-    color: theme.colors.secondary_60,
-    border: `1px solid ${theme.colors.secondary_60}`,
-    background: theme.colors.atmo2,
+    color: theme.colors.textDisabled,
+    border: `1px solid currentcolor`,
+    background: theme.colors.bgPage,
     "&:hover": {
-      border: `1px solid ${theme.colors.secondary_60}`,
+      border: `1px solid currentcolor`,
     },
   },
   headerReadOnly: {
     cursor: "not-allowed",
     pointerEvents: "none",
-    color: theme.colors.secondary_80,
-    border: `1px solid ${theme.colors.secondary_60}`,
-    background: theme.colors.atmo2,
+    color: theme.colors.textSubtle,
+    border: `1px solid currentcolor`,
+    background: theme.colors.bgPage,
     userSelect: "text",
     "&:focus-visible": {
       outline: "none",
-      border: `1px solid ${theme.colors.secondary_60}`,
+      border: `1px solid currentcolor`,
     },
   },
   arrowContainer: {
@@ -85,12 +85,12 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   selectionDisabled: {},
   placeholder: {
     display: "block",
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
   },
   panel: {
     // TODO: remove padding override in v6 (most elements need it)
     padding: 0,
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
   },
   panelOpenedUp: {
     top: 1,
@@ -102,15 +102,15 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   },
   inputExtensionOpen: {
     height: "0px",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderTop: "none",
     borderBottom: "none",
-    borderRight: `1px solid ${theme.colors.secondary}`,
-    borderLeft: `1px solid ${theme.colors.secondary}`,
+    borderRight: `1px solid ${theme.colors.text}`,
+    borderLeft: `1px solid ${theme.colors.text}`,
   },
   inputExtensionLeftPosition: { marginLeft: "auto" },
   inputExtensionOpenShadow: {
-    boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+    boxShadow: `0px 8px 0px ${theme.colors.textDimmed}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
   },
   inputExtensionFloatRight: { float: "right" },
   inputExtensionFloatLeft: { float: "left" },

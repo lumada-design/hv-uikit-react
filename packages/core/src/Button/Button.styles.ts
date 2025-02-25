@@ -16,7 +16,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     // Background color common for almost all variants
     ":where(:not($disabled))": {
       ":hover, :focus-visible": {
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: theme.colors.bgHover,
       },
     },
     ":focus-visible": {
@@ -49,7 +49,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   /** applied to the root element when disabled */
   disabled: {
     cursor: "not-allowed",
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
     backgroundColor: "transparent",
     borderColor: "transparent",
     ":hover, :focus-visible": {
@@ -68,7 +68,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   },
   /** applied to the root element when using the `contained` variant */
   contained: {
-    color: theme.colors.atmo1, // `color-contrast(var(--color) vs ${colors.atmo1}, ${colors.base_light}, ${colors.base_dark})`,
+    color: theme.colors.textDimmed, // `color-contrast(var(--color) vs ${colors.textDimmed}, ${colors.textLight}, ${colors.textDark})`,
     backgroundColor: "var(--color)",
     ":where(:not($disabled))": {
       ":hover, :focus-visible": {
@@ -87,17 +87,17 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   ghost: {},
   /** applied to the root element when using the `semantic` variant */
   semantic: {
-    color: theme.colors.base_dark,
+    color: theme.colors.textDark,
     backgroundColor: "transparent",
     borderColor: "transparent",
     "&:hover, &:focus-visible": {
-      backgroundColor: theme.alpha("base_light", 0.3),
+      backgroundColor: theme.alpha("textLight", 0.3),
     },
     "&:active": {
-      backgroundColor: theme.alpha("base_light", 0.5),
+      backgroundColor: theme.alpha("textLight", 0.5),
     },
     "&$disabled": {
-      backgroundColor: theme.alpha("base_light", 0.1),
+      backgroundColor: theme.alpha("textLight", 0.1),
     },
   },
 

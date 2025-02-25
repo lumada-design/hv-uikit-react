@@ -18,7 +18,7 @@ const classes = {
   panel: css({
     position: "relative",
     height: 250,
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgPageSecondary,
     padding: theme.space.sm,
   }),
   content: css({

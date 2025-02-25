@@ -107,7 +107,7 @@ export const HvTag = forwardRef<
   };
 
   const backgroundColor =
-    (type === "semantic" && getColor(color, "neutral_20")) ||
+    (type === "semantic" && getColor(color, "infoDimmed")) ||
     (type === "categorical" && theme.alpha(getColor(color, "cat1")!, 0.2)) ||
     undefined;
 
@@ -168,7 +168,7 @@ export const HvTag = forwardRef<
       {selectable && type === "semantic" && (
         <CheckboxIcon
           className={classes.icon}
-          color={(disabled && ["atmo3", "secondary_60"]) || undefined}
+          color={(disabled && ["bgPageSecondary", "textDisabled"]) || undefined}
           size="XS"
         />
       )}

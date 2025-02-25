@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     verticalAlign: "inherit",
     alignContent: "inherit",
     textAlign: "left",
-    borderColor: theme.colors.atmo4,
+    borderColor: theme.colors.border,
     padding: `calc(${theme.space.xs} - 2px ) ${theme.space.xs} calc(${
       theme.space.xs
     } - 3px ) ${theme.spacing(4)}`,
@@ -19,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
     verticalAlign: "top",
     alignContent: "start",
 
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderTop: "1px solid transparent",
     ...theme.typography.label,
   },
@@ -121,7 +121,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   stickyColumn: {
     position: "sticky",
     zIndex: 2,
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
 
     "&$groupColumnMostRight+$stickyColumn": {
       borderLeft: 0,
@@ -167,6 +167,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableCell", {
   },
   /** Styles applied to the cell when it's part of a resizing column. */
   resizing: {
-    borderRight: `2px solid ${theme.colors.primary_80}`,
+    borderRight: `2px solid ${theme.colors.primaryStrong}`,
   },
 });

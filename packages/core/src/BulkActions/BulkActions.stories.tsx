@@ -38,7 +38,7 @@ const StyledRoot = styled("div")({
     margin: theme.space.xs,
     textAlign: "center",
     borderRadius: 4,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
   },
 });
 

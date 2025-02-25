@@ -4,8 +4,8 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
   root: { position: "relative" },
   list: {
-    backgroundColor: theme.colors.atmo1,
-    border: `1px solid ${theme.colors.secondary}`,
+    backgroundColor: theme.colors.bgContainer,
+    border: `1px solid ${theme.colors.text}`,
     boxShadow: theme.colors.shadow,
     padding: theme.space.xs,
     width: "100%",

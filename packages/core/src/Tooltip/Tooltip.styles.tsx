@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
       display: "flex",
       width: "fit-content",
       maxWidth: 532,
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgContainer,
       boxShadow: theme.colors.shadow,
       padding: 0,
 
@@ -26,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
     },
     "& $title": {
       padding: "15px 20px",
-      borderBottom: `3px solid ${theme.colors.atmo2}`,
+      borderBottom: `3px solid ${theme.colors.borderStrong}`,
     },
     "& $valuesContainer": {
       padding: theme.space.sm,

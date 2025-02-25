@@ -21,7 +21,7 @@ const classes = {
   separator: css({
     height: 30,
     width: 1,
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.border,
     margin: `0 ${theme.space.xs}`,
   }),
   toolbar: css({

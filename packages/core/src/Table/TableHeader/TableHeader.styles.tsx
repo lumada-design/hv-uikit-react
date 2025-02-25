@@ -10,7 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     alignContent: "inherit",
     textAlign: "left",
     padding: theme.spacing(0, 1, 0, 4),
-    borderColor: theme.colors.atmo4,
+    borderColor: theme.colors.border,
     borderBottomWidth: 1,
   },
   head: {
@@ -18,7 +18,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     verticalAlign: "top",
     alignContent: "start",
     ...theme.typography.label,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderBottomWidth: 1,
 
     "*:first-of-type > &": {
@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
       cursor: "pointer",
 
       ":hover, :focus-within": {
-        backgroundColor: theme.colors.containerBackgroundHover,
+        backgroundColor: theme.colors.bgHover,
         "& $sortIcon": {
           opacity: 1,
         },
@@ -53,7 +53,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
     backgroundColor: "inherit",
     ...theme.typography.body,
     ":where($sorted)": {
-      backgroundColor: theme.alpha("atmo1", 0.4),
+      backgroundColor: theme.alpha("bgContainer", 0.4),
     },
     "&$sortable:not($variantNone)": {
       paddingLeft: 32,
@@ -135,10 +135,10 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   resizable: {
     borderRightWidth: 1,
     ":has($resizer:hover)": {
-      borderRight: `2px solid ${theme.colors.primary_80}`,
+      borderRight: `2px solid ${theme.colors.primaryStrong}`,
     },
   },
-  resizing: { borderRight: `2px solid ${theme.colors.primary_80}` },
+  resizing: { borderRight: `2px solid ${theme.colors.primaryStrong}` },
   resizer: {
     display: "inline-block",
     width: 16,

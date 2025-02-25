@@ -102,7 +102,7 @@ export const AverageService: StoryObj<HvKpiProps> = {
       <HvCard
         className={classes.root}
         statusColor="positive"
-        bgcolor="atmo2"
+        bgcolor="bgPage"
         icon={<Level0Good title="Good" color="positive" />}
       >
         <div className={classes.contentContainer}>
@@ -139,7 +139,7 @@ export const IOPS: StoryObj<HvKpiProps> = {
       }),
       root: css({ width: 280, cursor: "pointer" }),
       title: css({ padding: "0px 24px 16px 0px" }),
-      time: css({ color: theme.colors.secondary_80 }),
+      time: css({ color: theme.colors.textSubtle }),
       trendTextContainer: css({
         display: "flex",
         flexDirection: "column",
@@ -288,7 +288,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
         width: "110px",
         height: "55px",
         borderRadius: "55px 55px 0px 0px",
-        backgroundColor: theme.colors.atmo2,
+        backgroundColor: theme.colors.bgPage,
         bottom: 0,
         left: 0,
         right: 0,
@@ -303,7 +303,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
         left: 0,
         right: 0,
         margin: "auto",
-        backgroundColor: theme.colors.atmo4,
+        backgroundColor: theme.colors.border,
         transformOrigin: "bottom center",
       }),
       gaugeIndicatorContainer: css({
@@ -354,7 +354,7 @@ export const Gauge: StoryObj<HvKpiProps> = {
       <HvCard
         className={classes.root}
         statusColor="positive"
-        bgcolor="atmo2"
+        bgcolor="bgPage"
         icon={<Level0Good title="Good" color="positive" />}
       >
         <div className={classes.contentContainer}>
@@ -470,7 +470,7 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
         <HvCard
           className={classes.root}
           statusColor="positive"
-          bgcolor="atmo2"
+          bgcolor="bgPage"
           icon={<Level0Good color="positive" />}
         >
           <div className={classes.contentContainer}>
@@ -483,7 +483,7 @@ export const StatusTrain: StoryObj<HvKpiProps> = {
         <HvCard
           className={classes.root}
           statusColor="negative"
-          bgcolor="atmo2"
+          bgcolor="bgPage"
           icon={<Level3Bad color="negative" />}
         >
           <div className={classes.contentContainer}>
@@ -519,13 +519,13 @@ export const Small: StoryObj<HvKpiProps> = {
       root: css({
         width: 280,
         cursor: "pointer",
-        backgroundColor: theme.colors.atmo1,
+        backgroundColor: theme.colors.bgContainer,
 
         ":hover": {
-          backgroundColor: theme.colors.primary_20,
+          backgroundColor: theme.colors.bgHover,
 
           [`& .${cardClasses.semanticBar}`]: {
-            backgroundColor: theme.colors.primary_20,
+            backgroundColor: theme.colors.bgHover,
           },
         },
       }),
@@ -534,7 +534,7 @@ export const Small: StoryObj<HvKpiProps> = {
       }),
       selectable: css({
         "&:hover": {
-          outline: `1px solid ${theme.colors.primary_20}`,
+          outline: `1px solid ${theme.colors.bgHover}`,
         },
       }),
       contentContainer: css({
@@ -547,7 +547,7 @@ export const Small: StoryObj<HvKpiProps> = {
         marginLeft: theme.space.xs,
       }),
       valueContainer: css({ display: "flex", alignItems: "flex-end" }),
-      caption: css({ color: theme.colors.secondary_80 }),
+      caption: css({ color: theme.colors.textSubtle }),
       unit: css({
         padding: "0px 2px 5px 2px",
       }),
@@ -603,7 +603,7 @@ export const Small: StoryObj<HvKpiProps> = {
         </HvCard>
         <HvCard
           className={classes.rootLoading}
-          bgcolor="atmo2"
+          bgcolor="bgPage"
           classes={{
             semanticBar: classes.semanticBar,
           }}
@@ -661,7 +661,7 @@ export const Column: StoryObj<HvKpiProps> = {
         alignItems: "flex-end",
       }),
       unit: css({
-        color: theme.colors.secondary_80,
+        color: theme.colors.textSubtle,
         padding: "0px 2px 5px 2px",
       }),
     };
@@ -673,7 +673,7 @@ export const Column: StoryObj<HvKpiProps> = {
           icon = <Severity1 color="sema2h" />;
           break;
         case "2":
-          icon = <Severity2 color="negative_80" />;
+          icon = <Severity2 color="negativeStrong" />;
           break;
         case "3":
           icon = <Severity3 color="negative" />;
@@ -704,7 +704,7 @@ export const Column: StoryObj<HvKpiProps> = {
     return (
       <HvCard
         className={classes.root}
-        bgcolor="atmo1"
+        bgcolor="bgContainer"
         classes={{
           semanticBar: classes.semanticBar,
         }}

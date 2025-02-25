@@ -19,8 +19,8 @@ const StyledItem = styled("div", { label: "StyledItem" })({
   alignItems: "center",
   justifyContent: "center",
   height: 100,
-  color: theme.colors.base_dark,
-  backgroundColor: theme.colors.neutral_20,
+  color: theme.colors.textDark,
+  backgroundColor: theme.colors.infoDimmed,
 });
 
 export const Main: StoryObj<HvGridProps> = {

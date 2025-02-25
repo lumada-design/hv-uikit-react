@@ -7,8 +7,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   root: {
     // #region `input` style reset
     "input:-webkit-autofill": {
-      WebkitBoxShadow: `0 0 0px 1000px ${theme.colors.atmo1} inset`,
-      WebkitTextFillColor: theme.colors.secondary,
+      WebkitBoxShadow: `0 0 0px 1000px ${theme.colors.textDimmed} inset`,
+      WebkitTextFillColor: theme.colors.text,
     },
 
     // Clears number input up/down arrows in Chrome and Firefox
@@ -39,9 +39,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     borderRadius: theme.radii.base,
     height: "32px",
     borderWidth: 1,
-    borderColor: theme.colors.secondary,
+    borderColor: theme.colors.text,
     boxSizing: "border-box",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     fontFamily: theme.fontFamily.body,
 
     ":hover:not($disabled,$invalid,$readOnly)": {
@@ -52,8 +52,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     },
   },
   disabled: {
-    backgroundColor: theme.colors.atmo2,
-    borderColor: theme.colors.secondary_60,
+    backgroundColor: theme.colors.bgPage,
+    borderColor: theme.colors.textDisabled,
 
     cursor: "not-allowed",
 
@@ -62,7 +62,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     },
   },
   invalid: {
-    borderColor: theme.colors.negative_120,
+    borderColor: theme.colors.negativeDeep,
   },
   multiline: {
     padding: 0,
@@ -80,18 +80,18 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   },
   resizable: { width: "auto" },
   readOnly: {
-    borderColor: theme.colors.secondary_60,
-    backgroundColor: theme.colors.atmo2,
+    borderColor: theme.colors.textDisabled,
+    backgroundColor: theme.colors.bgPage,
   },
   focused: {},
   /** @deprecated unused. use `::after` instead */
   inputBorderContainer: {},
   /** @deprecated use `classes.invalid` instead */
-  inputRootInvalid: { borderColor: theme.colors.negative_120 },
+  inputRootInvalid: { borderColor: theme.colors.negativeDeep },
   /** @deprecated use `classes.readOnly` instead */
   inputRootReadOnly: {
-    borderColor: theme.colors.secondary_60,
-    backgroundColor: theme.colors.atmo2,
+    borderColor: theme.colors.textDisabled,
+    backgroundColor: theme.colors.bgPage,
   },
   /** @deprecated use `classes.root` instead */
   inputRoot: {},
@@ -116,15 +116,15 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
 
     "&::placeholder": {
       opacity: 1,
-      color: theme.colors.secondary_80,
+      color: theme.colors.textSubtle,
     },
   },
   inputDisabled: {
-    color: theme.colors.secondary_60,
-    WebkitTextFillColor: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
+    WebkitTextFillColor: theme.colors.textDisabled,
   },
   inputReadOnly: {
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
   },
   inputResizable: {
     resize: "both",
