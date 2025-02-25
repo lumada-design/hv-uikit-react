@@ -117,11 +117,11 @@ export const Variants: StoryObj<HvBannerProps> = {
           <HvTypography variant="title3">Custom icon</HvTypography>
           <BannerContent
             content="This is a banner with a custom icon."
-            customIcon={<Info color="base_dark" />}
+            customIcon={<Info color="inherit" />}
           />
           <BannerContent
             content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-            customIcon={<Info color="base_dark" />}
+            customIcon={<Info color="inherit" />}
           />
         </div>
       </>

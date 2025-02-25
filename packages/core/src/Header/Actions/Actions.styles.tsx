@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvHeader-Actions", {
     alignItems: "center",
     marginLeft: "auto",
     [`& .${buttonClasses?.root}`]: {
-      "&:hover": { backgroundColor: theme.colors.containerBackgroundHover },
+      "&:hover": { backgroundColor: theme.colors.bgHover },
     },
   },
 });

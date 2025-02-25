@@ -18,15 +18,15 @@ export const { useClasses, staticClasses } = createClasses("HvTimePicker", {
     gap: 1,
   },
   placeholderDisabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
 
   dropdownHeader: {},
   dropdownHeaderOpen: {},
   dropdownHeaderInvalid: {
-    border: `1px solid ${theme.colors.negative_120}`,
+    border: `1px solid ${theme.colors.negativeDeep}`,
     "&:hover": {
-      border: `1px solid ${theme.colors.negative_120}`,
+      border: `1px solid ${theme.colors.negativeDeep}`,
     },
   },
   dropdownPanel: {},

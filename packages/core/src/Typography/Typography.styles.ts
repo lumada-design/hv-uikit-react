@@ -6,7 +6,7 @@ export const { useClasses, staticClasses } = createClasses("HvTypography", {
     fontFamily: theme.fontFamily.body,
   },
   disabled: {
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
   isLink: {
     cursor: "pointer",

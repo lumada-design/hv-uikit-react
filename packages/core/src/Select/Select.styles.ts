@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   disabled: {},
   readOnly: {},
   invalid: {
-    borderColor: theme.colors.negative_120,
+    borderColor: theme.colors.negativeDeep,
   },
   labelContainer: {
     display: "flex",
@@ -25,14 +25,14 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   },
   panel: {
     maxHeight: 400,
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
     marginTop: -1,
     marginBottom: -1,
 
     // panel styles
     position: "relative",
     padding: theme.space.xs,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     overflowY: "auto",
     borderRadius: "inherit",
   },

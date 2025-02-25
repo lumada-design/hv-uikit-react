@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     cursor: "pointer",
 
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
       borderRadius: theme.radii.base,
     },
     "& svg": {
@@ -20,8 +20,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
       height: 16,
       borderRadius: theme.radii.circle,
       borderWidth: 1,
-      borderColor: theme.colors.secondary,
-      backgroundColor: theme.colors.atmo1,
+      borderColor: theme.colors.text,
+      backgroundColor: theme.colors.bgContainer,
     },
     borderRadius: 0,
   },
@@ -29,8 +29,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     cursor: "not-allowed",
     pointerEvents: "initial",
     "& svg": {
-      borderColor: theme.colors.secondary_60,
-      backgroundColor: theme.colors.atmo3,
+      borderColor: theme.colors.textDisabled,
+      backgroundColor: theme.colors.bgDisabled,
     },
   },
   focusVisible: {
@@ -42,29 +42,29 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
   icon: {},
   checked: {
     "& svg": {
-      borderColor: theme.colors.secondary,
-      backgroundColor: theme.colors.secondary,
-      color: theme.colors.atmo2,
+      borderColor: theme.colors.text,
+      backgroundColor: theme.colors.text,
+      color: theme.colors.bgPage,
     },
     "&$semantic": {
       "& svg": {
-        borderColor: theme.colors.base_dark,
-        backgroundColor: theme.colors.base_light,
-        color: theme.colors.base_dark,
+        borderColor: theme.colors.textDark,
+        backgroundColor: theme.colors.textLight,
+        color: theme.colors.textDark,
       },
     },
     "&$disabled": {
       "& svg": {
-        borderColor: theme.colors.secondary_60,
-        backgroundColor: theme.colors.secondary_60,
-        color: theme.colors.atmo3,
+        borderColor: theme.colors.textDisabled,
+        backgroundColor: theme.colors.textDisabled,
+        color: theme.colors.bgDisabled,
       },
     },
   },
   semantic: {
     "& svg": {
-      borderColor: theme.colors.base_dark,
-      backgroundColor: theme.colors.base_light,
+      borderColor: theme.colors.textDark,
+      backgroundColor: theme.colors.textLight,
     },
   },
 });

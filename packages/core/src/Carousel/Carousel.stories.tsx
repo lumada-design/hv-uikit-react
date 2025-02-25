@@ -136,7 +136,7 @@ export const Embedded: StoryObj<HvCarouselProps> = {
     ];
 
     return (
-      <HvCard bgcolor="atmo1" style={{ width: 300 }}>
+      <HvCard bgcolor="bgContainer" style={{ width: 300 }}>
         <HvCardHeader title="Image Carousel" />
         <HvCardMedia role="none">
           <HvCarousel xs height={300}>
@@ -243,11 +243,11 @@ export const CustomContent: StoryObj<HvCarouselProps> = {
               >
                 <HvTypography
                   variant="title3"
-                  style={{ color: theme.colors.base_light }}
+                  style={{ color: theme.colors.textLight }}
                 >
                   Travel destination {i + 1}
                 </HvTypography>
-                <HvTypography style={{ color: theme.colors.base_light }}>
+                <HvTypography style={{ color: theme.colors.textLight }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </HvTypography>

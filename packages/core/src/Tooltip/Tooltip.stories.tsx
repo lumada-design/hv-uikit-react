@@ -172,7 +172,7 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
       }),
       separator: css({
         margin: theme.spacing(1, -2),
-        borderBottom: `3px solid ${theme.colors.atmo2}`,
+        borderBottom: `3px solid ${theme.colors.bgPage}`,
       }),
       tabularContent: css({
         display: "flex",

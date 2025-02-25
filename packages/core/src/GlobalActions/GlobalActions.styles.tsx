@@ -26,14 +26,14 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
       display: "flex",
       position: "absolute",
       inset: 0,
-      background: theme.colors.atmo2,
+      background: theme.colors.bgPage,
       opacity: "75%",
     },
 
     "& $wrapper": {
       top: 0,
       left: 0,
-      backgroundColor: theme.colors.atmo1,
+      backgroundColor: theme.colors.bgContainer,
       width: "100%",
       borderWidth: 1,
       borderRadius: theme.radii.round,
@@ -52,7 +52,7 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
     justifyContent: "flex-start",
     alignItems: "center",
     gap: theme.space.xs,
-    borderColor: theme.colors.atmo4,
+    borderColor: theme.colors.border,
     paddingLeft: theme.space.sm,
   },
 

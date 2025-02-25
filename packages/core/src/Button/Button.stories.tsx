@@ -215,7 +215,7 @@ export const Icons: StoryObj<HvButtonProps> = {
 export const Semantic: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <div className="flex gap-sm p-sm text-base_dark bg-neutral_20">
+      <div className="flex gap-sm p-sm text-textDark bg-infoDimmed">
         {Story()}
       </div>
     ),

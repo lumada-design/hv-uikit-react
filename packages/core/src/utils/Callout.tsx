@@ -24,22 +24,22 @@ export const { useClasses, staticClasses } = createClasses("HvCallout", {
     padding: 0,
   },
   success: {
-    backgroundColor: theme.colors.positive_20,
+    backgroundColor: theme.colors.positiveDimmed,
   },
   warning: {
-    backgroundColor: theme.colors.warning_20,
+    backgroundColor: theme.colors.warningDimmed,
   },
   error: {
-    backgroundColor: theme.colors.negative_20,
+    backgroundColor: theme.colors.negativeDimmed,
   },
   default: {
-    backgroundColor: theme.colors.neutral_20,
+    backgroundColor: theme.colors.infoDimmed,
   },
   message: {
     display: "flex",
     alignItems: "center",
     padding: 0,
-    color: theme.colors.base_dark,
+    color: theme.colors.textDark,
   },
   messageContent: {
     textWrap: "balance",

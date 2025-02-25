@@ -36,7 +36,7 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     "@keyframes loading": {
       "50%": {
         height: "var(--height, 60%)",
-        backgroundColor: `var(--customColor, ${theme.colors.secondary})`,
+        backgroundColor: `var(--customColor, ${theme.colors.text})`,
       },
     },
 

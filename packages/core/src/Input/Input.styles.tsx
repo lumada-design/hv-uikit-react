@@ -32,8 +32,8 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
   },
   inputExtension: {
     height: theme.space.xs,
-    backgroundColor: theme.colors.atmo1,
-    boxShadow: `0px 8px 0px ${theme.colors.atmo1}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
+    backgroundColor: theme.colors.bgContainer,
+    boxShadow: `0px 8px 0px ${theme.colors.bgContainer}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
   },
   input: {},
   inputRoot: {

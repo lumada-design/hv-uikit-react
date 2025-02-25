@@ -33,7 +33,10 @@ const classes = {
     paddingBottom: theme.space.sm,
     paddingLeft: 0,
   }),
-  card: css({ margin: theme.space.sm, backgroundColor: theme.colors.atmo1 }),
+  card: css({
+    margin: theme.space.sm,
+    backgroundColor: theme.colors.bgContainer,
+  }),
 };
 
 const getKpiLabels = (score: string) => ({
@@ -90,14 +93,14 @@ export const KPICards = () => {
         <Grid item xs={12} md={4}>
           <HvCard
             className={classes.card}
-            statusColor="neutral"
+            statusColor="info"
             selectable
             selected={checked === 1}
             role="gridcell"
             aria-selected={checked === 1}
           >
             <HvCardHeader title="Replace contaminated oil" icon={<Tool />} />
-            <CardContent value="85" icon={<Level1 color="neutral" />} />
+            <CardContent value="85" icon={<Level1 color="info" />} />
             {renderFooter({ n: 1, value: "85" })}
           </HvCard>
         </Grid>
