@@ -1,17 +1,13 @@
 import { forwardRef } from "react";
-import SnackbarContent, {
-  SnackbarContentProps as MuiSnackbarContentProps,
-} from "@mui/material/SnackbarContent";
-import { Close } from "@hitachivantara/uikit-react-icons";
+import { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvActionsGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
-import { HvButton, HvButtonProps } from "../../Button";
-import { iconVariant } from "../../utils/iconVariant";
-import { setId } from "../../utils/setId";
+import { HvActionsGenericProps } from "../../ActionsGeneric";
+import { HvButtonProps } from "../../Button";
+import { HvCallout } from "../../utils/Callout";
 import { HvBannerActionPosition, HvBannerVariant } from "../types";
 import { staticClasses, useClasses } from "./BannerContent.styles";
 
@@ -67,41 +63,22 @@ export const HvBannerContent = forwardRef<
     actions,
     actionsCallback, // TODO - remove in v6
     onAction,
-    actionsPosition: actionsPositionProp = "auto",
+    actionsPosition = "auto",
     content,
     children,
     actionProps,
     ...others
   } = useDefaultProps("HvBannerContent", props);
   const { classes, cx } = useClasses(classesProp);
-  const icon = customIcon || (showIcon && iconVariant(variant, "inherit"));
-
-  // default to inline
-  // this might try to be more intelligent in the future,
-  // taking into account the content length, available space,
-  // number of actions, etc..
-  const actionsPosition =
-    actionsPositionProp === "auto" ? "inline" : actionsPositionProp;
-
-  const handleAction: HvBannerContentProps["onAction"] = (evt, action) => {
-    onAction?.(evt, action);
-    actionsCallback?.(evt, id!, action);
-  };
-
-  const actionsContent = (
-    <HvActionsGeneric
-      id={id}
-      className={classes.messageActions}
-      variant="semantic"
-      actions={actions}
-      onAction={handleAction}
-    />
-  );
 
   return (
-    <SnackbarContent
+    <HvCallout
       ref={ref}
       id={id}
+      variant={variant}
+      showClose
+      showIcon={showIcon}
+      customIcon={customIcon}
       classes={{
         root: cx(
           classes.root,
@@ -112,37 +89,26 @@ export const HvBannerContent = forwardRef<
         ),
         message: classes.message,
         action: classes.action,
+        messageIcon: classes.iconContainer,
+        messageContent: classes.messageContainer,
+        actionCustom: classes.messageActions,
+        actionContent: cx(
+          classes.actionContainer,
+          classes.actionsInnerContainer,
+        ),
+        actionClose: classes.closeAction,
       }}
-      message={
-        <>
-          {icon && <div className={classes.iconContainer}>{icon}</div>}
-          <div
-            id={setId(id, "message-text")}
-            className={classes.messageContainer}
-          >
-            {children ?? content}
-          </div>
-          {actions && actionsPosition === "inline" && actionsContent}
-        </>
-      }
-      action={
-        <div
-          className={cx(classes.actionContainer, classes.actionsInnerContainer)}
-        >
-          <HvButton
-            icon
-            className={classes.closeAction}
-            variant="semantic"
-            aria-label="Close"
-            onClick={onClose}
-            {...actionProps}
-          >
-            <Close size="XS" />
-          </HvButton>
-          {actions && actionsPosition === "bottom-right" && actionsContent}
-        </div>
-      }
+      actions={actions}
+      actionsPosition={actionsPosition}
+      actionProps={actionProps}
+      onClose={(evt) => onClose?.(evt as React.MouseEvent<any>)}
+      onAction={(evt, action) => {
+        onAction?.(evt, action);
+        actionsCallback?.(evt, id!, action);
+      }}
       {...others}
-    />
+    >
+      {children ?? content}
+    </HvCallout>
   );
 });

@@ -96,9 +96,7 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           label="This is a snackbar with a custom action."
           customIcon={<Info color="base_dark" />}
           action={{ id: "post", label: "Action", disabled: false }}
-          onAction={(evt, action) => {
-            alert(`Clicked ${action}`);
-          }}
+          onAction={(evt, action) => console.log(action)}
         />
         <HvSnackbar
           {...props}

@@ -1,28 +1,22 @@
-import { forwardRef, isValidElement } from "react";
+import { forwardRef } from "react";
 import { type SnackbarProps as MuiSnackbarProps } from "@mui/material/Snackbar";
-import SnackbarContent, {
-  type SnackbarContentProps as MuiSnackbarContentProps,
-} from "@mui/material/SnackbarContent";
+import { type SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
 import {
   useDefaultProps,
-  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import {
-  HvActionGeneric,
-  HvActionsGeneric,
-  HvActionsGenericProps,
-} from "../../ActionsGeneric";
-import { HvButtonVariant } from "../../Button";
-import { iconVariant } from "../../utils/iconVariant";
-import { setId } from "../../utils/setId";
+import { HvActionGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
+import { HvCallout } from "../../utils/Callout";
 import { HvSnackbarVariant } from "../types";
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 
 export { staticClasses as snackbarContentClasses };
 
 export type HvSnackbarContentClasses = ExtractNames<typeof useClasses>;
+
+const isActionGeneric = (action: any): action is HvActionGeneric =>
+  action && typeof action === "object" && "id" in action && "label" in action;
 
 export interface HvSnackbarContentProps
   extends Omit<MuiSnackbarContentProps, "variant" | "action" | "classes"> {
@@ -68,44 +62,31 @@ export const HvSnackbarContent = forwardRef<
     onClose,
     ...others
   } = useDefaultProps("HvSnackbarContent", props);
-
-  const icon = customIcon || (showIcon && iconVariant(variant, "inherit"));
-  const innerAction: any = isValidElement(action) ? action : [action];
-
   const { classes, cx } = useClasses(classesProp);
-  const { activeTheme } = useTheme();
 
   return (
-    <SnackbarContent
+    <HvCallout
       ref={ref}
       id={id}
+      variant={variant}
       classes={{
         root: cx(classes.root, classes[variant], className),
         message: cx(classes.message, classes.messageSpan),
+        messageIcon: classes.iconVariant,
+        messageContent: classes.messageText,
         action: classes.action,
       }}
-      message={
-        <>
-          {icon && <div className={classes.iconVariant}>{icon}</div>}
-          <div id={setId(id, "message")} className={classes.messageText}>
-            {label}
-          </div>
-        </>
-      }
-      action={
-        action && (
-          <HvActionsGeneric
-            id={id}
-            variant={
-              activeTheme?.snackbar.actionButtonVariant as HvButtonVariant
-            }
-            actions={innerAction}
-            actionsCallback={actionCallback}
-            onAction={onAction}
-          />
-        )
-      }
+      showIcon={showIcon}
+      customIcon={customIcon}
+      actions={isActionGeneric(action) ? [action] : action}
+      onClose={onClose}
+      onAction={(evt, action) => {
+        onAction?.(evt, action);
+        actionCallback?.(evt, id!, action);
+      }}
       {...others}
-    />
+    >
+      {label}
+    </HvCallout>
   );
 });
