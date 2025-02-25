@@ -10,10 +10,10 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
     position: "relative",
   },
   multiple: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
 
     borderWidth: 0,
-    borderColor: `${theme.colors.atmo4} transparent`,
+    borderColor: `${theme.colors.border} transparent`,
     borderRadius: theme.radii.base,
 
     "& $button": {
@@ -26,43 +26,43 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       borderRadius: 0,
       fontWeight: theme.typography.body.fontWeight,
       "&:disabled": {
-        color: theme.colors.secondary_60,
+        color: theme.colors.textDisabled,
         borderColor: "inherit",
       },
       "&:hover": {
         borderColor: "inherit",
       },
       "&$firstButton": {
-        borderLeftColor: theme.colors.atmo4,
+        borderLeftColor: theme.colors.border,
         borderTopLeftRadius: "inherit",
         borderBottomLeftRadius: "inherit",
         "&:disabled": {
-          borderLeftColor: theme.colors.atmo4,
+          borderLeftColor: theme.colors.border,
         },
       },
       "&$lastButton": {
-        borderRightColor: theme.colors.atmo4,
+        borderRightColor: theme.colors.border,
         borderTopRightRadius: "inherit",
         borderBottomRightRadius: "inherit",
         "&:disabled": {
-          borderRightColor: theme.colors.atmo4,
+          borderRightColor: theme.colors.border,
         },
       },
       "&:not($firstButton)": {
         marginLeft: "-1px",
       },
       "&$selected": {
-        backgroundColor: theme.colors.atmo1,
+        backgroundColor: theme.colors.bgContainer,
         fontWeight: theme.typography.label.fontWeight,
         borderRadius: "inherit",
-        borderColor: theme.colors.secondary,
+        borderColor: theme.colors.text,
         zIndex: 2,
         "&:hover:not(:disabled),&:focus-visible": {
-          backgroundColor: theme.colors.containerBackgroundHover,
+          backgroundColor: theme.colors.bgHover,
         },
         "&:disabled": {
           zIndex: 1,
-          borderColor: theme.colors.atmo4,
+          borderColor: theme.colors.border,
         },
       },
     },
@@ -107,17 +107,17 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   vertical: {
     flexDirection: "column",
     height: "auto",
-    borderColor: `transparent ${theme.colors.atmo4}`,
+    borderColor: `transparent ${theme.colors.border}`,
     "& $button": {
       minWidth: 32,
       width: "100%",
       "&$firstButton": {
-        borderTopColor: theme.colors.atmo4,
+        borderTopColor: theme.colors.border,
         borderTopLeftRadius: "inherit",
         borderTopRightRadius: "inherit",
       },
       "&$lastButton": {
-        borderBottomColor: theme.colors.atmo4,
+        borderBottomColor: theme.colors.border,
         borderBottomLeftRadius: "inherit",
         borderBottomRightRadius: "inherit",
       },
@@ -128,7 +128,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       "&$selected": {
         height: 32,
         width: "calc(100% + 2px)",
-        borderColor: theme.colors.secondary,
+        borderColor: theme.colors.text,
       },
     },
   },

@@ -13,7 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvNavigation", {
   text: {
     minWidth: "unset",
     flex: 1,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
     fontWeight: theme.typography.body.fontWeight,
     padding: 0,
   },

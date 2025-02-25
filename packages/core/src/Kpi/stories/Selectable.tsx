@@ -17,7 +17,7 @@ const classes = {
     padding: "0px 24px 8px 24px",
   }),
   time: css({
-    color: theme.colors.secondary_80,
+    color: theme.colors.textSubtle,
   }),
   trendTextContainer: css({
     display: "flex",

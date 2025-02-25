@@ -86,7 +86,7 @@ const StyledResponsiveTableRow = styled(HvTableRow)(
         "&:first-of-type": {
           width: "100%",
           justifyContent: "center",
-          backgroundColor: theme.colors.atmo1,
+          backgroundColor: theme.colors.bgContainer,
         },
       },
     },

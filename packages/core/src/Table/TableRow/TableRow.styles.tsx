@@ -22,12 +22,12 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   /** Styles applied to the component root class. */
   root: {
     color: "inherit",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     verticalAlign: "middle",
     alignContent: "center",
     outline: 0,
     ":is($hover,$striped):hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
   },
   /** Styles applied to the component root when inside a `HvTableHead`. */
@@ -38,11 +38,11 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   footer: {},
   /** Styles applied to the component root when selected. */
   selected: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
   },
   /** Styles applied to the component root when expanded. */
   expanded: {
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     "& > *[role=cell]": {
       borderBottom: "none",
     },
@@ -50,7 +50,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
   /** Styles applied to the component root when striped. */
   striped: {
     "&:nth-of-type(even)": {
-      backgroundColor: theme.alpha("atmo1", 0.6),
+      backgroundColor: theme.alpha("bgContainer", 0.6),
     },
     "&:nth-of-type(odd)": {
       backgroundColor: "transparent",
@@ -64,18 +64,18 @@ export const { staticClasses, useClasses } = createClasses("HvTableRow", {
     marginBottom: theme.space.xs,
     borderRadius: theme.radii.round,
 
-    ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
-    backgroundColor: theme.colors.atmo1,
+    ...getBorderStyles(theme.colors.border, theme.radii.round),
+    backgroundColor: theme.colors.bgContainer,
     "&$selected": {
-      ...getBorderStyles(theme.colors.secondary, theme.radii.round),
+      ...getBorderStyles(theme.colors.text, theme.radii.round),
 
       "&:hover": {
-        ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
+        ...getBorderStyles(theme.colors.border, theme.radii.round),
       },
     },
 
     "&:hover": {
-      ...getBorderStyles(theme.colors.atmo4, theme.radii.round),
+      ...getBorderStyles(theme.colors.border, theme.radii.round),
     },
     "&.HvIsFocused": {
       borderRadius: theme.radii.round,

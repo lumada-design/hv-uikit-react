@@ -69,7 +69,7 @@ export const UseHvRowExpand = () => {
                   ))}
                 </HvTableRow>
                 {row.isExpanded && (
-                  <HvTableRow style={{ backgroundColor: theme.colors.atmo2 }}>
+                  <HvTableRow style={{ backgroundColor: theme.colors.bgPage }}>
                     <HvTableCell
                       style={{ textAlign: "center", height: 100 }}
                       colSpan={100}

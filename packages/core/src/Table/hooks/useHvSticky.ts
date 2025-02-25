@@ -193,7 +193,7 @@ const getCellProps = (header: any, isHeaderCell: boolean) => {
 
       width: `${header.totalWidth}px`,
       minWidth: `${header.totalMinWidth}px`,
-      ...(isHeaderCell && { backgroundColor: theme.colors.atmo2 }),
+      ...(isHeaderCell && { backgroundColor: theme.colors.bgPage }),
     },
   };
 

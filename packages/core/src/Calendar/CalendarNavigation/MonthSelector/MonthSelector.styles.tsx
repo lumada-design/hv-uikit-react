@@ -18,6 +18,6 @@ export const { staticClasses, useClasses } = createClasses("HvMonthSelector", {
     width: "92px",
   },
   calendarMonthlyCellSelected: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgPageSecondary,
   },
 });

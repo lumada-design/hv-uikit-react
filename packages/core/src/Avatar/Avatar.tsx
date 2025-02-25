@@ -77,8 +77,8 @@ export const HvAvatar = forwardRef<
     children: childrenProp,
     component = "div",
     size: sizeProp,
-    backgroundColor = "secondary",
-    color = "atmo1",
+    backgroundColor = "text",
+    color = "textDimmed",
     src,
     srcSet,
     sizes,
@@ -138,11 +138,8 @@ export const HvAvatar = forwardRef<
   }
 
   if (!hasImgNotFailing) {
-    inlineStyle.backgroundColor = getColor(
-      backgroundColor,
-      theme.colors.secondary,
-    );
-    inlineStyle.color = getColor(color, theme.colors.atmo1);
+    inlineStyle.backgroundColor = getColor(backgroundColor, "text");
+    inlineStyle.color = getColor(color, "textDimmed");
   }
 
   const statusInlineStyle: React.CSSProperties = {};

@@ -13,14 +13,14 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     borderRadius: theme.radii.base,
 
     ":hover:not($disabled)": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
   },
   invalidContainer: {},
   disabled: {
     cursor: "not-allowed",
 
-    "& $label": { color: theme.colors.secondary_60, cursor: "not-allowed" },
+    "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
   },
   radio: {
     "& svg": {
@@ -37,7 +37,10 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     lineHeight: "32px",
     width: "100%",
   },
-  focusVisible: { backgroundColor: theme.colors.atmo3, ...outlineStyles },
+  focusVisible: {
+    backgroundColor: theme.colors.bgPageSecondary,
+    ...outlineStyles,
+  },
   checked: {},
   semantic: {},
 });

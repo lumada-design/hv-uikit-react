@@ -59,8 +59,8 @@ export const HvCard = forwardRef<
 
   const barColor =
     (statusColor !== "sema0" && statusColor) ||
-    (selected && "secondary") ||
-    "atmo4";
+    (selected && "text") ||
+    "border";
 
   return (
     <div
