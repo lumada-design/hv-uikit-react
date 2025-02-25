@@ -1,0 +1,497 @@
+import { Callout } from "nextra/components";
+import {
+  HvBarChart,
+  HvPanel,
+  HvVizProvider,
+} from "@hitachivantara/uikit-react-viz";
+
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("BarChart", "viz", {}, [], true);
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+<Callout type="info">
+  Please check the [Visualizations Guide](/documentation/visualizations) for
+  details on how to build your visualizations.
+</Callout>
+
+### Usage
+
+This example demonstrates a simple bar chart with a single data series. Each bar represents a data point, and a tooltip appears on hover to display additional information.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+/>
+```
+
+### Multiple bars
+
+Use the `measures` property to define what columns you want to represent on the chart.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={new Map<string, (string | number)[]>()
+    .set("Group", ["Group 1", "Group 2", "Group 3"])
+    .set("Sales Target", [2300, 1000, 7800])
+    .set("Sales Per Rep", [6000, 3900, 1000])
+    .set("Monthly Sales", [3700, 6700, 1100])
+    .set("Target", [2100, 7700, 3000])
+    .set("Cash", [500, 7600, 7800])}
+  groupBy="Group"
+  measures={[
+    "Sales Target",
+    "Sales Per Rep",
+    "Monthly Sales",
+    "Target",
+    "Cash",
+  ]}
+/>
+```
+
+### Stacked bars
+
+Use the `stack` property to stack the bars. The value of the stack has no special meaning, it's just a string that represents the grouping of the bars.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Group: ["Group 1", "Group 2", "Group 3"],
+    "Sales Target": [2300, 1000, 7800],
+    "Sales Per Rep": [6000, 3900, 1000],
+    "Monthly Sales": [3700, 6700, 1100],
+    Target: [2100, 7700, 3000],
+    Cash: [500, 7600, 7800],
+  }}
+  groupBy="Group"
+  measures={[
+    "Sales Target",
+    "Sales Per Rep",
+    "Monthly Sales",
+    "Target",
+    "Cash",
+  ]}
+  stack="total"
+/>
+```
+
+### Mixed Stacked bars
+
+The columns with the same value for the `stack` property will be stacked together.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Quarter: ["Q1", "Q2", "Q3", "Q4"],
+    "Sales Dep 1": [2300, 9000, 8500, 1000],
+    "Sales Dep 2": [6000, 2000, 1000, 2000],
+    "Sales Target": [10000, 10000, 10000, 10000],
+  }}
+  groupBy="Quarter"
+  measures={[
+    { field: "Sales Dep 1", stack: "total" },
+    { field: "Sales Dep 2", stack: "total" },
+    { field: "Sales Target" },
+  ]}
+/>
+```
+
+### Horizontal
+
+Set the `horizontal` property to `true` to display the bars horizontally. You can also use the `horizontalRangeSlider` property to display a range slider to filter the data.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+  horizontal
+  horizontalRangeSlider={{ show: true }}
+/>
+```
+
+### Split data
+
+Use the `splitBy` property to split the data into different groups.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Country: [
+      "Portugal",
+      "Portugal",
+      "Spain",
+      "Spain",
+      "Portugal",
+      "Portugal",
+      "Spain",
+      "Spain",
+    ],
+    Year: [2020, 2020, 2020, 2020, 2021, 2021, 2021, 2021],
+    Semester: ["S1", "S2", "S1", "S2", "S1", "S2", "S1", "S2"],
+    Precipitation: [591.6, 362.8, 491.6, 272.8, 534.4, 349.1, 451.6, 312.9],
+  }}
+  groupBy={["Year", "Semester"]}
+  measures="Precipitation"
+  splitBy={"Country"}
+  yAxis={{
+    name: "Precipitation (mm)",
+  }}
+/>
+```
+
+### Formatting axis
+
+The X and Y axis can be customized using the `xAxis` and `yAxis` properties.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+  xAxis={{
+    position: "top",
+    labelRotation: 45,
+  }}
+  yAxis={{
+    labelFormatter: (value) => `${value}º C`,
+  }}
+/>
+```
+
+### Custom tooltip
+
+The tooltip can be customized using the `tooltip` property. By default the tooltip will display the data point value in multiline format.
+You can change this to a single line format by setting the `tooltip.type` to `single`. You can define a title and a value formatters
+to customize the way these props are displayed. Alternatively, you can define a custom component to render the tooltip.
+
+```tsx live
+<HvBarChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+  tooltip={{
+    valueFormatter: (value) => `${value}º C`,
+    titleFormatter: (title) => `Month: ${title}`,
+    component: (params) => `
+      <div style="padding: 10px; border: 1px solid #ccc; border-radius: 6px">
+        ${JSON.stringify(params)}
+      </div>
+    `,
+  }}
+/>
+```
+
+### Filtering data
+
+You can filter the data using the `filters` property. The filters are an array of objects that contain a field, operation, and value.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [sales, setSales] = useState([0, 7000]);
+  const [country, setCountry] = useState(data.map((d) => d.label));
+
+  const handleSliderChange: HvSliderProps["onChange"] = (values) => {
+    setSales(values);
+  };
+
+  const handleCountryChange: HvSelectProps<string, true>["onChange"] = (
+    event,
+    value,
+  ) => {
+    setCountry(value.length > 0 ? value : data.map((d) => d.label));
+  };
+
+  const filters: HvChartFilter[] = [
+    {
+      field: "Country",
+      operation: "is",
+      value: country,
+    },
+    {
+      field: "Sales",
+      operation: "between",
+      value: [sales[0], sales[1]],
+    },
+  ];
+
+  return (
+    <>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          gap: 40,
+        }}
+      >
+        <HvSlider
+          minPointValue={0}
+          maxPointValue={7000}
+          values={sales}
+          onChange={handleSliderChange}
+          hideInput
+          label="Sales"
+          style={{ width: 400 }}
+        />
+        <HvSelect
+          multiple
+          name="countries"
+          label="Country"
+          placeholder="Select countries"
+          onChange={handleCountryChange}
+          style={{ width: 300 }}
+        >
+          {data.map(({ value, label }) => (
+            <HvOption key={value} value={label} label={label}>
+              {`${label}`}
+            </HvOption>
+          ))}
+        </HvSelect>
+      </div>
+      <HvBarChart
+        height={320}
+        data={{
+          Country: data.map((item) => item.label),
+          Sales: data.map((item) => item.value),
+        }}
+        groupBy="Country"
+        measures="Sales"
+        xAxis={{
+          labelRotation: 45,
+        }}
+        filters={filters}
+      />
+    </>
+  );
+}
+
+const data = [
+  {
+    label: "Portugal",
+    value: 3600,
+  },
+  {
+    label: "USA",
+    value: 1500,
+  },
+  {
+    label: "India",
+    value: 6700,
+  },
+  {
+    label: "China",
+    value: 4500,
+  },
+  {
+    label: "France",
+    value: 3200,
+  },
+  {
+    label: "UK",
+    value: 2700,
+  },
+  {
+    label: "Japan",
+    value: 5800,
+  },
+  {
+    label: "Germany",
+    value: 3900,
+  },
+  {
+    label: "Italy",
+    value: 3400,
+  },
+  {
+    label: "Brazil",
+    value: 5000,
+  },
+  {
+    label: "Canada",
+    value: 2000,
+  },
+  {
+    label: "Australia",
+    value: 6000,
+  },
+];
+```
+
+### Custom ECharts options
+
+If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts. In this sample, the Y axis labels are truncated when they are too long and a tooltip is shown when hovered.
+
+```tsx live
+<HvBarChart
+  height={240}
+  data={{
+    Group: [
+      "Group 1 with a very very long label",
+      "Group 2",
+      "Group 3 with a very very long label",
+    ],
+    Sales: [2300, 1000, 7800],
+    Target: [2100, 7700, 3000],
+  }}
+  groupBy="Group"
+  measures={["Sales", "Target"]}
+  xAxis={{
+    labelFormatter: (value?: string | number) => `${Number(value) / 1000}k`,
+  }}
+  tooltip={{
+    valueFormatter: (value?: string | number) => `${Number(value) / 1000}k`,
+  }}
+  horizontal
+  stack="total"
+  onOptionChange={(option) => {
+    // Truncate axis label
+    option.yAxis[0] = {
+      ...option.yAxis[0],
+      triggerEvent: true,
+      axisLabel: {
+        ...option.yAxis[0].axisLabel,
+        overflow: "truncate",
+        width: 80,
+      },
+    };
+    return option;
+  }}
+  onEvents={{
+    mouseover: (params, instance) => {
+      if (params.componentType !== "yAxis") return;
+      if (params.targetType !== "axisLabel") return;
+
+      const fullValue = params.value;
+      const targetValue = params.event?.target;
+      const displayValue = targetValue?.style?.text;
+
+      if (fullValue === displayValue) return;
+
+      // Create tooltip
+      const tooltip = document.createElement("div");
+      tooltip.setAttribute("id", "viz-truncated-tooltip");
+      tooltip.style.left = `${targetValue?.transform[4]}px`;
+      tooltip.style.top = `${targetValue?.transform[5]}px`;
+      tooltip.style.backgroundColor = "#FFF";
+      tooltip.style.padding = "8px";
+      tooltip.style.borderRadius = "4px";
+      tooltip.style.position = "absolute";
+      tooltip.style.display = "flex";
+
+      tooltip.innerText = fullValue;
+
+      // Add tooltip
+      instance?.getDom().appendChild(tooltip);
+    },
+    mouseout: (params) => {
+      if (params.componentType !== "yAxis") return;
+      if (params.targetType !== "axisLabel") return;
+
+      // Remove tooltip
+      document.getElementById("viz-truncated-tooltip")?.remove();
+    },
+  }}
+/>
+```
+
+### Related components
+
+- [Line Chart](/documentation/components/line-chart)
+- [Donut Chart](/documentation/components/donut-chart)
+- [Scatter Plot](/documentation/components/scatter-plot)
+- [Box Plot](/documentation/components/box-plot)
+- [Confusion Matrix](/documentation/components/confusion-matrix)
+- [Tree Map](/documentation/components/tree-map)
+- [Heat Map](/documentation/components/heat-map)

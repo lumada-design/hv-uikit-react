@@ -3,5 +3,4 @@ export default {
     type: "separator",
     title: "Charts",
   },
-  chart: "Chart",
 };
