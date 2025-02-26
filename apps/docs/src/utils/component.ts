@@ -35,15 +35,23 @@ function cleanUndefinedValues(obj: unknown): unknown {
   return obj;
 }
 
-function filterInheritedProps(props: Props, componentName: string) {
-  return Object.fromEntries(
-    Object.entries(props).filter(([, prop]) => {
-      const shouldInclude = prop.parent
-        ? prop.parent?.fileName?.includes(componentName)
-        : prop.declarations?.some((d) => d.fileName?.includes(componentName));
-      return shouldInclude;
-    }),
-  );
+function filterInheritedProps(
+  props: Props,
+  componentName: string,
+  includeInheritedProps = false,
+): Props {
+  return includeInheritedProps
+    ? props
+    : Object.fromEntries(
+        Object.entries(props).filter(([, prop]) => {
+          const shouldInclude = prop.parent
+            ? prop.parent?.fileName?.includes(componentName)
+            : prop.declarations?.some((d) =>
+                d.fileName?.includes(componentName),
+              );
+          return shouldInclude;
+        }),
+      );
 }
 
 const parser = withDefaultConfig({
@@ -60,6 +68,7 @@ export const getComponentData = async (
   packageName: string,
   classes: Record<string, string>,
   subComponents?: string[],
+  includeInheritedProps = false,
 ): Promise<Meta> => {
   try {
     const componentLocation = `/packages/${packageName}/src/${componentName}/${componentName}.tsx`;
@@ -72,6 +81,7 @@ export const getComponentData = async (
     cleanedDocgen.props = filterInheritedProps(
       cleanedDocgen.props,
       componentName,
+      includeInheritedProps,
     );
 
     let parsedSubComponents: Record<string, Docgen> = {};

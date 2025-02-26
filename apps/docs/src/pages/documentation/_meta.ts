@@ -21,5 +21,6 @@ export default {
   styling: "Styling",
   layout: "Layout",
   forms: "Forms",
+  visualizations: "Visualizations",
   accessibility: "Accessibility",
 };

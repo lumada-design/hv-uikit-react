@@ -70,7 +70,7 @@ export const Variants = () => {
           component="img"
           alt="Nature"
           height={140}
-          image="https://www.ocean-retreat.com/wp-content/uploads/2018/03/original.jpg"
+          image="https://lumada-design.github.io/assets/madeira.webp"
         />
         <HvCardContent>
           <HvTypography>
