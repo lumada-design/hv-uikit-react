@@ -37,7 +37,7 @@ You can pass a custom icon to the snackbar by using the `customIcon` prop.
   open
   variant="success"
   label="This is a snackbar with a custom icon."
-  customIcon={<Deploy color="base_dark" />}
+  customIcon={<Deploy />}
   style={{ position: "relative", top: 0 }}
 />
 ```
@@ -51,7 +51,7 @@ Use the `action` prop to add an action to the snackbar. The `onAction` prop is a
   open
   label="This is a snackbar with a custom action."
   variant="warning"
-  customIcon={<Info color="base_dark" />}
+  customIcon={<Deploy />}
   action={{ id: "post", label: "Action", disabled: false }}
   onAction={(evt, action) => {
     alert(`Clicked ${action}`);

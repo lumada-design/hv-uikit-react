@@ -47,9 +47,9 @@ export const Variants: StoryObj<HvTagProps> = {
     return (
       <>
         <HvTag label="Informational" />
-        <HvTag label="Success" color="positiveDimmed" />
-        <HvTag label="Warning" color="warningDimmed" />
-        <HvTag label="Error" color="negativeDimmed" />
+        <HvTag label="Success" color="positive_20" />
+        <HvTag label="Warning" color="warning_20" />
+        <HvTag label="Error" color="negative_20" />
         <HvTag label="Custom" color="#22FF45" />
         <HvTag label="Disabled" disabled />
         <HvTag label="Categorical" type="categorical" />
@@ -125,10 +125,10 @@ export const Test: StoryObj = {
       <HvTag label="Informational" />
       <HvTag label="Informational" disabled />
       <HvTag label="This is a very very very very very very very very long text for a tag" />
-      <HvTag color="positiveDimmed" label="Success" />
-      <HvTag color="warningDimmed" label="Warning" />
-      <HvTag color="negativeDimmed" label="Error" />
-      <HvTag label="Success" color="positiveDimmed" onDelete={() => {}} />
+      <HvTag color="positive_20" label="Success" />
+      <HvTag color="warning_20" label="Warning" />
+      <HvTag color="negative_20" label="Error" />
+      <HvTag label="Success" color="positive_20" onDelete={() => {}} />
       <HvTag label="Feat" type="categorical" />
       <HvTag label="Feat" type="categorical" disabled />
       <HvTag label="Docs" type="categorical" color="cat2" />

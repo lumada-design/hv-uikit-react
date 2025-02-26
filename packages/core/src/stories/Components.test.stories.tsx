@@ -124,12 +124,7 @@ export const Test: StoryObj = {
             {renderStory(InputTestStory, context)}
           </div>
         </HvSimpleGrid>
-        <HvSimpleGrid
-          cols={3}
-          style={{ alignItems: "start", justifyContent: "start" }}
-        >
-          {renderStory(BannerVariantsStory, context)}
-        </HvSimpleGrid>
+        <div>{renderStory(BannerVariantsStory, context)}</div>
       </div>
       {renderStory(DropdownTestStory, context)}
     </div>

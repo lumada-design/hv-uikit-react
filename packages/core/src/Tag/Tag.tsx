@@ -107,7 +107,7 @@ export const HvTag = forwardRef<
   };
 
   const backgroundColor =
-    (type === "semantic" && getColor(color, "infoDimmed")) ||
+    (type === "semantic" && getColor(color, "neutral_20")) ||
     (type === "categorical" && theme.alpha(getColor(color, "cat1")!, 0.2)) ||
     undefined;
 

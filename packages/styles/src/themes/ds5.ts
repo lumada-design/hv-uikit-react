@@ -276,7 +276,7 @@ const ds5 = makeTheme((theme) => ({
     hueDirection: "horizontal",
   },
   snackbar: {
-    actionButtonVariant: "secondarySubtle",
+    actionButtonVariant: "semantic",
   },
 }));
 

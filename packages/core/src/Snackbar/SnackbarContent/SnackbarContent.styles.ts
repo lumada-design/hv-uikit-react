@@ -13,6 +13,8 @@ export const { useClasses, staticClasses } = createClasses(name, {
   error: {},
   default: {},
   warning: {},
+  info: {},
+  accent: {},
   message: {
     padding: 0,
     width: "100%",

@@ -14,8 +14,11 @@ import { HvActionGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { capitalize } from "../utils/helpers";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Snackbar.styles";
-import { HvSnackbarContent, HvSnackbarContentProps } from "./SnackbarContent";
-import { HvSnackbarVariant } from "./types";
+import {
+  HvSnackbarContent,
+  HvSnackbarContentProps,
+  HvSnackbarVariant,
+} from "./SnackbarContent";
 
 export { staticClasses as snackbarClasses };
 
@@ -90,6 +93,7 @@ export const HvSnackbar = forwardRef<
     classes: classesProp,
     className,
     id,
+    title,
     open = false,
     onClose,
     label,
@@ -151,6 +155,7 @@ export const HvSnackbar = forwardRef<
     >
       <HvSnackbarContent
         id={setId(id, "content")}
+        title={title}
         label={label}
         variant={variant}
         customIcon={customIcon}

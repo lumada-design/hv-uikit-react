@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvOverflowTooltip,
@@ -53,11 +52,7 @@ export const Variants: StoryObj<HvSnackbarProps> = {
   args: {
     open: true,
     offset: 0,
-    className: css({
-      position: "relative",
-      top: 0,
-      marginBottom: 10,
-    }),
+    className: "relative mb-10px",
   },
   render: (props) => {
     return (
@@ -89,12 +84,19 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           {...props}
           variant="success"
           label="This is a snackbar with a custom icon."
-          customIcon={<Deploy color="inherit" />}
+          customIcon={<Deploy />}
+        />
+        <HvSnackbar
+          {...props}
+          variant="success"
+          title="Title"
+          label="This is a snackbar with a title."
+          customIcon={<Deploy />}
         />
         <HvSnackbar
           {...props}
           label="This is a snackbar with a custom action."
-          customIcon={<Info color="inherit" />}
+          customIcon={<Info />}
           action={{ id: "post", label: "Action", disabled: false }}
           onAction={(evt, action) => console.log(action)}
         />

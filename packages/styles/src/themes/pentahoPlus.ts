@@ -34,6 +34,15 @@ const buttonColors = {
   },
 };
 
+const notificationMap = {
+  success: "positive",
+  warning: "warning",
+  error: "negative",
+  default: "info",
+  info: "info",
+  accent: "accent",
+} as const;
+
 const inputColors = {
   bg: ld("white", "black"),
   border: ld(slate[400], slate[600]),
@@ -172,25 +181,25 @@ const pentahoPlus = makeTheme((theme) => ({
         positive: green[600],
         positiveStrong: green[500],
         positiveDeep: green[300],
-        positiveDimmed: green[100], // green[950],
+        positiveDimmed: green[950],
         positiveSubtle: green[900],
         positiveBorder: green[800],
         warning: yellow[500],
         warningStrong: yellow[400],
         warningDeep: yellow[300],
-        warningDimmed: yellow[100], // yellow[950],
+        warningDimmed: yellow[950],
         warningSubtle: yellow[900],
         warningBorder: yellow[800],
         negative: red[600],
         negativeStrong: red[500],
         negativeDeep: red[300],
-        negativeDimmed: red[100], // red[950],
+        negativeDimmed: red[950],
         negativeSubtle: red[900],
         negativeBorder: red[800],
         info: cyan[500],
         infoStrong: cyan[400],
         infoDeep: cyan[300],
-        infoDimmed: cyan[100], // cyan[950],
+        infoDimmed: cyan[950],
         infoSubtle: cyan[900],
         infoBorder: cyan[800],
 
@@ -412,6 +421,48 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: "#334155",
         },
       },
+    },
+    HvCallout: {
+      classes: {
+        root: { outline: "1px solid var(--icolor, currentcolor)" },
+        ...Object.fromEntries(
+          Object.entries(notificationMap).map(([variant, color]) => [
+            variant,
+            {
+              backgroundColor: theme.colors[`${color}Dimmed`],
+              "--icolor": theme.colors[color],
+              "--outline": theme.colors[`${color}Border`],
+              "--bg": theme.colors[`${color}Subtle`],
+              "--title": theme.colors[`${color}Deep`],
+            },
+          ]),
+        ),
+        message: {
+          "&&": {
+            color: theme.colors.secondary,
+          },
+        },
+        messageIcon: {
+          borderRadius: 8,
+          color: "var(--icolor)",
+          outline: `1px solid var(--outline)`,
+          backgroundColor: "var(--bg)",
+        },
+        messageTitle: {
+          color: "var(--title)",
+        },
+        actionClose: {
+          color: theme.colors.secondary,
+        },
+      },
+    },
+    HvBannerContent: {
+      classes: {
+        root: { borderRadius: theme.radii.round },
+      },
+    },
+    HvSnackbar: {
+      anchorOrigin: { vertical: "bottom", horizontal: "center" },
     },
     HvBaseCheckBox: {
       classes: {
@@ -1101,7 +1152,7 @@ const pentahoPlus = makeTheme((theme) => ({
     hueDirection: "horizontal",
   },
   snackbar: {
-    actionButtonVariant: "secondarySubtle",
+    actionButtonVariant: "secondaryGhost",
   },
 }));
 

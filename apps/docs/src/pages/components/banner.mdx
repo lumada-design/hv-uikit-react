@@ -57,7 +57,7 @@ You can pass a custom icon to the banner by using the `customIcon` prop.
   offset={0}
   label="This is a banner with a custom icon."
   className="relative"
-  customIcon={<LightOn color="base_dark" />}
+  customIcon={<LightOn />}
 />
 ```
 
@@ -98,7 +98,7 @@ const BannerButton = ({ variant, ...others }: Omit<HvBannerProps, "open">) => {
         variant={variant}
         showIcon
         actions={
-          <HvButton variant="secondaryGhost" style={{ color: "inherit" }}>
+          <HvButton variant="ghost" color="inherit">
             Action
           </HvButton>
         }

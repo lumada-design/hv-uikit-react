@@ -16,7 +16,7 @@ import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../Button";
 import { iconVariant } from "./iconVariant";
 
-export const { useClasses, staticClasses } = createClasses("HvCallout", {
+const { useClasses } = createClasses("HvCallout", {
   root: {
     position: "relative",
     boxShadow: "none",
@@ -32,6 +32,12 @@ export const { useClasses, staticClasses } = createClasses("HvCallout", {
   error: {
     backgroundColor: theme.colors.negativeDimmed,
   },
+  info: {
+    backgroundColor: theme.colors.infoDimmed,
+  },
+  accent: {
+    backgroundColor: theme.colors.accentDimmed,
+  },
   default: {
     backgroundColor: theme.colors.infoDimmed,
   },
@@ -46,10 +52,10 @@ export const { useClasses, staticClasses } = createClasses("HvCallout", {
     overflow: "hidden",
     wordBreak: "break-word",
   },
-  messageIcon: {
-    "& svg .color0": {
-      fill: "inherit",
-    },
+  messageIcon: {},
+  messageTitle: {
+    display: "block",
+    fontWeight: theme.fontWeights.semibold,
   },
   action: {
     marginRight: 0,
@@ -69,14 +75,25 @@ export const { useClasses, staticClasses } = createClasses("HvCallout", {
   },
 });
 
-export type HvCalloutVariant = "success" | "warning" | "error" | "default";
+export type HvCalloutVariant =
+  | "success"
+  | "warning"
+  | "error"
+  | "default"
+  | "info"
+  | "accent";
 
 export type HvCalloutActionPosition = "auto" | "inline" | "bottom-right";
 
 export type HvCalloutClasses = ExtractNames<typeof useClasses>;
 
 export interface HvCalloutProps
-  extends Omit<MuiSnackbarContentProps, "variant" | "classes" | "onClose"> {
+  extends Omit<
+    MuiSnackbarContentProps,
+    "title" | "variant" | "classes" | "onClose"
+  > {
+  /** The title to display. */
+  title?: React.ReactNode;
   /** The message to display. */
   children?: React.ReactNode;
   /** Variant of the snackbar. */
@@ -91,12 +108,6 @@ export interface HvCalloutProps
   onClose?: MuiSnackbarProps["onClose"];
   /** Actions to display on the right side. */
   actions?: HvActionsGenericProps["actions"];
-  /**
-   * The callback function called when an action is triggered, receiving `action` as parameter.
-   *
-   * @deprecated Use `onAction` instead.
-   * */
-  actionsCallback?: HvActionsGenericProps["actionsCallback"];
   /** The callback function called when an action is triggered, receiving `action` as parameter. */
   onAction?: HvActionsGenericProps["onAction"];
   /** The position property of the header. */
@@ -120,6 +131,7 @@ export const HvCallout = forwardRef<
     id,
     classes: classesProp,
     className,
+    title,
     showClose,
     showIcon,
     customIcon,
@@ -145,11 +157,7 @@ export const HvCallout = forwardRef<
     <HvActionsGeneric
       id={id}
       className={classes.actionCustom}
-      variant={
-        showClose
-          ? "semantic"
-          : (activeTheme?.snackbar.actionButtonVariant as any)
-      }
+      variant={activeTheme?.snackbar.actionButtonVariant as any}
       actions={actions}
       onAction={onAction}
     />
@@ -169,7 +177,10 @@ export const HvCallout = forwardRef<
       message={
         <>
           {icon && <div className={classes.messageIcon}>{icon}</div>}
-          <div className={classes.messageContent}>{children}</div>
+          <div className={classes.messageContent}>
+            {title && <b className={classes.messageTitle}>{title}</b>}
+            {children}
+          </div>
           {actions && actionsPosition === "inline" && actionsContent}
         </>
       }
