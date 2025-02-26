@@ -97,6 +97,7 @@ export const HvCanvasSidePanel = forwardRef<
   const handleSidePanelWidth = canvasContext?.handleSidePanelWidth;
   const sidePanelOpen = canvasContext?.sidePanelOpen;
   const handleSidePanelOpen = canvasContext?.handleSidePanelOpen;
+  const handleSidePanelDragging = canvasContext?.handleSidePanelDragging;
 
   const { classes, cx } = useClasses(classesProp);
 
@@ -129,6 +130,10 @@ export const HvCanvasSidePanel = forwardRef<
       maxWidth,
       onResize: updateWidth,
     });
+
+  useEffect(() => {
+    handleSidePanelDragging?.(isDragging);
+  }, [handleSidePanelDragging, isDragging]);
 
   const handleTogglePanel = (event: React.MouseEvent | React.KeyboardEvent) => {
     setOpen((prev) => !prev);
