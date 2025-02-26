@@ -16,7 +16,7 @@ import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../Button";
 import { iconVariant } from "./iconVariant";
 
-export const { useClasses, staticClasses } = createClasses("HvCallout", {
+const { useClasses } = createClasses("HvCallout", {
   root: {
     position: "relative",
     boxShadow: "none",

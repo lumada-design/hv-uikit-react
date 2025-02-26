@@ -44,6 +44,10 @@ const buttonColors = {
     subtleBorder: ld(red[200], red[800]),
     subtleBg: ld(red[100], red[900]),
   },
+  info: {
+    subtleBorder: ld(sky[200], cyan[800]),
+    subtleBg: ld(sky[100], cyan[900]),
+  },
 };
 
 const inputColors = {
@@ -419,6 +423,56 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: "#334155",
         },
       },
+    },
+    HvCallout: {
+      classes: {
+        root: { outline: "1px solid var(--ic, currentcolor)" },
+        success: {
+          backgroundColor: theme.colors.pp.successDimmed,
+          "--ic": theme.colors.positive,
+          "--ibc": buttonColors.success.subtleBorder,
+          "--ibgc": buttonColors.success.subtleBg,
+        },
+        warning: {
+          backgroundColor: theme.colors.pp.warningDimmed,
+          "--ic": theme.colors.warning,
+          "--ibc": buttonColors.warning.subtleBorder,
+          "--ibgc": buttonColors.warning.subtleBg,
+        },
+        error: {
+          backgroundColor: theme.colors.pp.errorDimmed,
+          "--ic": theme.colors.negative,
+          "--ibc": buttonColors.error.subtleBorder,
+          "--ibgc": buttonColors.error.subtleBg,
+        },
+        default: {
+          backgroundColor: theme.colors.pp.neutralDimmed,
+          "--ic": theme.colors.neutral,
+          "--ibc": buttonColors.info.subtleBorder,
+          "--ibgc": buttonColors.info.subtleBg,
+        },
+        message: {},
+        messageIcon: {
+          borderRadius: 8,
+          color: "var(--ic)",
+          outline: `1px solid var(--ibc)`,
+          backgroundColor: "var(--ibgc)",
+        },
+        messageContent: {
+          color: theme.colors.secondary,
+        },
+        actionClose: {
+          color: theme.colors.secondary,
+        },
+      },
+    },
+    HvBannerContent: {
+      classes: {
+        root: { borderRadius: theme.radii.round },
+      },
+    },
+    HvSnackbar: {
+      anchorOrigin: { vertical: "bottom", horizontal: "center" },
     },
     HvBaseCheckBox: {
       classes: {
@@ -1104,7 +1158,7 @@ const pentahoPlus = makeTheme((theme) => ({
     hueDirection: "horizontal",
   },
   snackbar: {
-    actionButtonVariant: "secondarySubtle",
+    actionButtonVariant: "secondaryGhost",
   },
 }));
 
