@@ -4,6 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { useClasses, staticClasses } = createClasses("HvTypography", {
   root: {
     fontFamily: theme.fontFamily.body,
+    color: "inherit",
   },
   disabled: {
     color: theme.colors.secondary_60,

@@ -1,4 +1,4 @@
-import * as CSS from "csstype";
+import type { StandardProperties } from "csstype";
 
 import * as tokens from "./tokens";
 import { colors } from "./tokens/colors";
@@ -13,7 +13,7 @@ const flattenTokens = {
   },
 };
 
-interface CSSProperties extends CSS.Properties<string | number> {}
+interface CSSProperties extends StandardProperties<string | number> {}
 
 export type HvThemeTokens = typeof flattenTokens;
 
