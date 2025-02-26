@@ -18,7 +18,11 @@ export const replaceFill = (fileData: string, colorArray: string[]) => {
   colorArray.forEach((element, index) => {
     result = result
       .split(`fill="${element}"`)
-      .join(`fill="var(--color-${index})" className="color${index}" `);
+      .join(
+        index === 0
+          ? `className="color${index}" `
+          : `className="color${index}" fill="var(--color-${index})" `,
+      );
   });
 
   return result;
