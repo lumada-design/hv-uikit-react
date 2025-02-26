@@ -43,7 +43,9 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     ":nth-of-type(2)": { animationDelay: "0.22s" },
     ":nth-of-type(3)": { animationDelay: "0.44s" },
   },
-  label: {},
+  label: {
+    ...theme.typography.caption1,
+  },
   overlay: {},
   blur: {},
   hidden: { display: "none" },

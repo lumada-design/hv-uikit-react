@@ -7,7 +7,6 @@ import {
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseProps } from "../types/generic";
-import { HvTypography } from "../Typography";
 import { range } from "../utils/helpers";
 import { staticClasses, useClasses } from "./Loading.styles";
 
@@ -82,11 +81,7 @@ export const HvLoading = forwardRef<
           />
         ))}
       </div>
-      {label && (
-        <HvTypography variant="caption1" className={classes.label}>
-          {label}
-        </HvTypography>
-      )}
+      {label && <div className={classes.label}>{label}</div>}
     </div>
   );
 });
