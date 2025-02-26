@@ -139,9 +139,6 @@ export const { staticClasses, useClasses } = createClasses(
     },
     icon: {
       display: "flex",
-      "& .color0": {
-        fill: "currentColor",
-      },
       "> div:first-of-type": {
         marginLeft: "var(--icon-margin-left)",
       },

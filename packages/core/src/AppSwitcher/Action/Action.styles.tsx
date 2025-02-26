@@ -44,6 +44,7 @@ export const { staticClasses, useClasses } = createClasses(
       margin: `0 ${theme.space.xs}`,
       textWrap: "balance",
       ...theme.typography.label,
+      color: "inherit",
     },
     titleAnchor: {
       WebkitLineClamp: 2,

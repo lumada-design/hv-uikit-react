@@ -45,9 +45,6 @@ export const { staticClasses, useClasses } = createClasses("HvTab", {
     "& .MuiTab-iconWrapper": {
       margin: 0,
     },
-    "& svg .color0": {
-      fill: "currentcolor",
-    },
   },
   focusVisible: {
     ...outlineStyles,

@@ -140,9 +140,3 @@ export const getIconSizeStyles = (size: HvSize) => {
     width: height,
   };
 };
-
-export const getOverrideColors = () => ({
-  "& svg .color0": {
-    fill: "currentcolor",
-  },
-});

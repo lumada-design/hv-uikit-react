@@ -27,7 +27,6 @@ const classes = {
     flexDirection: "column",
     gap: theme.space.md,
     "& span": { color: "inherit" },
-    "& svg *.color0": { fill: "inherit" },
   }),
   appName: css({
     display: "flex",
