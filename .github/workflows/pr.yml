@@ -28,3 +28,4 @@ jobs:
     secrets: inherit
     with:
       publish-folder: pr-${{ github.event.number }}
+      publish-storybook: false
