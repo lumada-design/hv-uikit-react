@@ -263,8 +263,8 @@ to customize the way these props are displayed. Alternatively, you can define a 
     valueFormatter: (value) => `${value}º C`,
     titleFormatter: (title) => `Month: ${title}`,
     component: (params) => `
-      <div style="padding: 10px; border: 1px solid #ccc; border-radius: 6px">
-        ${JSON.stringify(params)}
+      <div style="padding: 10px; border-radius: 6px;">
+        <span style="color: #000;">${JSON.stringify(params)}</span>
       </div>
     `,
   }}
