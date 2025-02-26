@@ -12,8 +12,8 @@ import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 import {
   HvSnackbarContent,
   HvSnackbarContentProps,
+  HvSnackbarVariant,
 } from "../Snackbar/SnackbarContent";
-import { HvSnackbarVariant } from "../Snackbar/types";
 import { staticClasses, useClasses } from "./SnackbarProvider.styles";
 
 export { staticClasses as snackbarProviderClasses };
@@ -39,7 +39,8 @@ export interface HvSnackbarProviderProps {
   container?: SnackbarProviderProps["domRoot"];
 }
 
-export interface HvNotistackSnackMessageProps extends OptionsObject {
+export interface HvNotistackSnackMessageProps
+  extends Omit<OptionsObject, "variant"> {
   /** Id to be applied to the root node. */
   id?: string;
   /** class name to apply on the root node */

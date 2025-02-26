@@ -6,8 +6,10 @@ import {
   Success,
 } from "@hitachivantara/uikit-react-icons";
 
+import type { HvCalloutVariant } from "./Callout";
+
 export const iconVariant = (
-  variant: "success" | "warning" | "error" | "info" | "default",
+  variant: HvCalloutVariant,
   color?: IconBaseProps["color"],
 ) => {
   switch (variant) {

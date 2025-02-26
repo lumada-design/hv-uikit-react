@@ -13,10 +13,11 @@ import { HvActionsGenericProps } from "../ActionsGeneric";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Banner.styles";
 import {
+  HvBannerActionPosition,
   HvBannerContent,
   HvBannerContentProps,
+  HvBannerVariant,
 } from "./BannerContent/BannerContent";
-import { HvBannerActionPosition, HvBannerVariant } from "./types";
 
 export { staticClasses as bannerClasses };
 
@@ -82,6 +83,7 @@ export const HvBanner = forwardRef<
     id,
     classes: classesProp,
     className,
+    title,
     open,
     onClose,
     anchorOrigin = "top",
@@ -139,6 +141,7 @@ export const HvBanner = forwardRef<
     >
       <HvBannerContent
         id={setId(id, "content")}
+        title={title}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}

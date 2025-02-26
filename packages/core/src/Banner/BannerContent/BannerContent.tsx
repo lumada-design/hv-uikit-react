@@ -7,11 +7,14 @@ import {
 
 import { HvActionsGenericProps } from "../../ActionsGeneric";
 import { HvButtonProps } from "../../Button";
-import { HvCallout } from "../../utils/Callout";
-import { HvBannerActionPosition, HvBannerVariant } from "../types";
+import { HvCallout, HvCalloutVariant } from "../../utils/Callout";
 import { staticClasses, useClasses } from "./BannerContent.styles";
 
 export { staticClasses as bannerContentClasses };
+
+export type HvBannerVariant = HvCalloutVariant;
+
+export type HvBannerActionPosition = "auto" | "inline" | "bottom-right";
 
 export type HvBannerContentClasses = ExtractNames<typeof useClasses>;
 

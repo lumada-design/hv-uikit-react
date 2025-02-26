@@ -1451,7 +1451,7 @@ const ds3 = makeTheme((theme) => ({
     hueDirection: "vertical",
   },
   snackbar: {
-    actionButtonVariant: "secondaryGhost",
+    actionButtonVariant: "semantic",
   },
 }));
 

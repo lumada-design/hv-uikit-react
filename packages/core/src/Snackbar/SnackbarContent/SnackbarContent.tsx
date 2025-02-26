@@ -7,13 +7,14 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
-import { HvCallout } from "../../utils/Callout";
-import { HvSnackbarVariant } from "../types";
+import { HvCallout, HvCalloutVariant } from "../../utils/Callout";
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 
 export { staticClasses as snackbarContentClasses };
 
 export type HvSnackbarContentClasses = ExtractNames<typeof useClasses>;
+
+export type HvSnackbarVariant = HvCalloutVariant;
 
 const isActionGeneric = (action: any): action is HvActionGeneric =>
   action && typeof action === "object" && "id" in action && "label" in action;

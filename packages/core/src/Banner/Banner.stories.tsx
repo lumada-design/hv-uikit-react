@@ -4,12 +4,10 @@ import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBanner,
   HvBannerContent,
-  HvBannerContentProps,
   HvBannerProps,
   HvButton,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Info } from "@hitachivantara/uikit-react-icons";
+import { Deploy } from "@hitachivantara/uikit-react-icons";
 
 export default {
   title: "Components/Banner",
@@ -52,79 +50,52 @@ export const Variants: StoryObj<HvBannerProps> = {
       { id: `action${id}_2`, label: "Action 2", disabled: false },
     ];
 
-    const BannerContent = (props: HvBannerContentProps) => (
-      <>
-        <br />
-        <HvBannerContent {...props} />
-      </>
-    );
-
     return (
-      <>
-        <div>
-          <HvTypography variant="title3">Semantics</HvTypography>
-          <BannerContent
-            content="This is a default banner."
-            variant="default"
-          />
-          <BannerContent
-            content="This is a success banner."
-            variant="success"
-            showIcon
-          />
-          <BannerContent
-            content="This is a warning banner."
-            variant="warning"
-            showIcon
-          />
-          <BannerContent
-            content="This is an error banner."
-            variant="error"
-            showIcon
-          />
-        </div>
-        <div>
-          <br />
-          <HvTypography variant="title3">Actions</HvTypography>
-          <br />
-          <HvBanner
-            open
-            offset={0}
-            label="This is a banner."
-            showIcon
-            actions={[{ id: "post", label: "Action", disabled: false }]}
-            onAction={(event, action) => console.log("Clicked", action)}
-            className={css({ position: "relative", top: 0 })}
-          />
-          <BannerContent
-            content="This is a banner with two actions."
-            actions={actionArray("banner3")}
-            actionsPosition="inline"
-          />
-          <BannerContent
-            content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
-            actions={actionArray("banner1")}
-            actionsPosition="bottom-right"
-          />
-          <BannerContent
-            content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
-            actions={actionArray("banner2")}
-            actionsPosition="bottom-right"
-          />
-        </div>
-        <div>
-          <br />
-          <HvTypography variant="title3">Custom icon</HvTypography>
-          <BannerContent
-            content="This is a banner with a custom icon."
-            customIcon={<Info color="inherit" />}
-          />
-          <BannerContent
-            content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-            customIcon={<Info color="inherit" />}
-          />
-        </div>
-      </>
+      <div className="grid gap-sm">
+        <HvBannerContent
+          content="This is a default banner."
+          variant="default"
+        />
+        <HvBannerContent
+          content="This is a success banner."
+          variant="success"
+          showIcon
+        />
+        <HvBannerContent
+          content="This is a warning banner."
+          variant="warning"
+          showIcon
+        />
+        <HvBannerContent
+          content="This is an error banner."
+          variant="error"
+          showIcon
+        />
+        <HvBannerContent
+          content="This is a banner with a custom icon."
+          customIcon={<Deploy />}
+        />
+        <HvBanner
+          open
+          offset={0}
+          label="This is a banner with action."
+          showIcon
+          actions={[{ id: "post", label: "Action", disabled: false }]}
+          onAction={(event, action) => console.log("Clicked", action)}
+          className={css({ position: "relative", top: 0 })}
+        />
+        <HvBannerContent
+          content="This is a banner with two actions."
+          actions={actionArray("banner3")}
+          actionsPosition="inline"
+        />
+        <HvBannerContent
+          customIcon={<Deploy />}
+          content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
+          actions={actionArray("banner2")}
+          actionsPosition="bottom-right"
+        />
+      </div>
     );
   },
 };
@@ -165,7 +136,7 @@ export const BannerController: StoryObj<HvBannerProps> = {
             variant={variant}
             showIcon
             actions={
-              <HvButton variant="secondaryGhost" style={{ color: "inherit" }}>
+              <HvButton variant="ghost" color="inherit">
                 Action
               </HvButton>
             }

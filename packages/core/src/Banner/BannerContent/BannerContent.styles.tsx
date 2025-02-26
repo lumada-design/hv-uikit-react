@@ -13,6 +13,8 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   warning: {},
   error: {},
   default: {},
+  info: {},
+  accent: {},
   message: {
     gap: theme.space.xs,
     padding: theme.spacing("xs", 0),
