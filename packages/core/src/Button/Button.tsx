@@ -19,7 +19,6 @@ import {
 } from "../types/generic";
 import {
   getIconSizeStyles,
-  getOverrideColors,
   getSizeStyles,
   staticClasses,
   useClasses,
@@ -54,7 +53,7 @@ export type HvButtonProps<C extends React.ElementType = "button"> =
       size?: HvSize;
       /** Button border radius. */
       radius?: HvRadius;
-      /** Defines the default colors of the button are forced into the icon. */
+      /** Defines the default colors of the button are forced into the icon. @deprecated unused */
       overrideIconColors?: boolean;
       /** A Jss Object used to override or extend the styles applied. */
       classes?: HvButtonClasses;
@@ -113,7 +112,7 @@ export const HvButton = fixedForwardRef(function HvButton<
     endIcon,
     size,
     radius,
-    overrideIconColors = true,
+    overrideIconColors,
     component: Component = "button",
     focusableWhenDisabled,
     onClick: onClickProp,
@@ -153,7 +152,6 @@ export const HvButton = fixedForwardRef(function HvButton<
         classes.root,
         classes[variant],
         classes[variantProp as keyof HvButtonClasses], // Placed after type and color CSS for DS3 override
-        overrideIconColors && css(getOverrideColors()),
         {
           [classes.icon]: icon,
           [classes.disabled]: disabled,

@@ -14,10 +14,6 @@ export const { staticClasses, useClasses } = createClasses(
       "& > button": {
         marginLeft: "auto",
       },
-
-      "& .HvListItem-startAdornment .color0": {
-        fill: "currentColor",
-      },
     },
     listItemSelected: {
       background: theme.colors.atmo3,

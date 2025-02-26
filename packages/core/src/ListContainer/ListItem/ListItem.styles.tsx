@@ -68,9 +68,6 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
       boxShadow: "none !important",
       outline: "none !important",
     },
-    "$disabled > svg *.color0": {
-      fill: theme.colors.secondary_60,
-    },
   },
   withEndAdornment: {
     "& > div": { float: "right" },
@@ -78,9 +75,6 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
     "& svg": {
       boxShadow: "none !important",
       outline: "none !important",
-    },
-    "$disabled > svg *.color0": {
-      fill: theme.colors.secondary_60,
     },
   },
 });

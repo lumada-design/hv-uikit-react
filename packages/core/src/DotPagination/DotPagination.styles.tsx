@@ -17,6 +17,7 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
     height: 16,
     width: 16,
     minWidth: 16,
+    color: "inherit",
 
     "&:hover": {
       backgroundColor: theme.colors.neutral_20,
@@ -28,7 +29,9 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
     minWidth: 0,
     width: 16,
     height: 16,
+    color: "inherit",
     "&& svg": {
+      color: "inherit",
       border: "none",
       width: "unset",
       height: "unset",

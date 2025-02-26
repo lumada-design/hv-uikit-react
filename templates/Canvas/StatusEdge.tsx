@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import {
   BaseEdge,
   EdgeLabelRenderer,
@@ -12,14 +11,6 @@ import {
 import { useFlowInstance } from "@hitachivantara/uikit-react-lab";
 
 import { FlowStatus, flowStatusesSpecs } from "./utils";
-
-const classes = {
-  dropdownMenu: css({
-    "& svg .color0": {
-      fill: "var(--color-0)",
-    },
-  }),
-};
 
 export type StatusEdgeData =
   | undefined
@@ -72,7 +63,6 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
             className="nodrag nopan nowheel" // ReactFlow specific classes to prevent drag on icon
           >
             <HvDropDownMenu
-              className={classes.dropdownMenu}
               icon={status.icon}
               dataList={[{ id: "remove", label: "Remove connection" }]}
               onClick={handleClick}

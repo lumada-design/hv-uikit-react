@@ -150,9 +150,7 @@ export const HvActionsGeneric = forwardRef<
     const actsVisible = actions.slice(0, maxVisibleActions);
     const actsDropdown = actions.slice(maxVisibleActions);
 
-    const semantic = variant === "semantic";
-    const iconColor =
-      (disabled && "secondary_60") || (semantic && "base_dark") || undefined;
+    const iconColor = (variant === "semantic" && "base_dark") || undefined;
 
     return (
       <>
