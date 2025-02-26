@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import Link from "next/link";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
+import charts from "../pages/examples/charts.mdx?raw";
 import tables from "../pages/examples/tables.mdx?raw";
 
 /**
@@ -26,11 +27,11 @@ export const Examples = () => {
       total: countCodeBlocks(tables),
       path: "/examples/tables",
     },
-    { title: "Feature Sections", total: 0, path: "/examples" },
-    { title: "CTA Sections", total: 0, path: "/examples" },
-    { title: "Bento Grids", total: 0, path: "/examples" },
-    { title: "Pricing Sections", total: 0, path: "/examples" },
-    { title: "Header Sections", total: 0, path: "/examples" },
+    {
+      title: "Charts",
+      total: countCodeBlocks(charts),
+      path: "/examples/charts",
+    },
   ];
 
   return (
