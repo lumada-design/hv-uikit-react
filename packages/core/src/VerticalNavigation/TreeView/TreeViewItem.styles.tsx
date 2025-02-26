@@ -43,7 +43,6 @@ export const { staticClasses, useClasses } = createClasses(
       width: "100%",
       display: "flex",
       justifyContent: "flex-start",
-      color: "inherit",
       alignItems: "center",
       height: "32px",
       borderLeft: `4px solid transparent`,

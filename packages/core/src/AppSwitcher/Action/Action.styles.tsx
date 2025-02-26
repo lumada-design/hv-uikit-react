@@ -30,7 +30,6 @@ export const { staticClasses, useClasses } = createClasses(
       cursor: "pointer",
 
       textDecoration: "inherit",
-      color: "inherit",
       backgroundColor: "inherit",
 
       "$disabled &": {
