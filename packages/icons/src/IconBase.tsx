@@ -13,7 +13,7 @@ import { getSizeStyles } from "./utils";
 
 const getColorVars = (colorArray: string[]) => {
   return colorArray.reduce<Record<string, string>>((acc, value, index) => {
-    acc[`--color-${index}`] = value;
+    acc[`--color-${index + 1}`] = value;
     return acc;
   }, {});
 };
@@ -47,7 +47,7 @@ const getIconColors = (
     colorArray[0] = "none";
   }
 
-  return colorArray.map((c) => getColor(c)!);
+  return colorArray;
 };
 
 export type IconSize = "XS" | "S" | "M" | "L";
@@ -152,21 +152,19 @@ const IconBaseInternal = (
     ...others
   } = props;
   const colorArray = getIconColors(palette, color, semantic, inverted);
+  const [color0, ...otherColors] = colorArray.map((c) => getColor(c)!);
   const title = titleProp ?? ariaLabel;
 
-  /** Whether the icon colors should be inherited. Used for icons:
-   * - using the new `size` prop (backwards compatibility) - TODO: make default in v6
-   * - without a custom user-provided `color`
-   * - with a single `palette` color
-   */
-  const inheritColor = !!size && !color && palette?.length === 1;
+  const inheritColor =
+    !color && palette?.length === 1 && palette?.[0] === "secondary";
 
   return (
     <HvIconContainer
       ref={ref}
       data-name={iconName}
       style={{
-        ...(!inheritColor && getColorVars(colorArray)),
+        ...(!inheritColor && { color: color0 }),
+        ...getColorVars(otherColors),
         ...getSizeStyles(iconName ?? "", size),
         ...styleProp,
       }}
