@@ -11,4 +11,10 @@ export default {
       layout: "full",
     },
   },
+  charts: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };
