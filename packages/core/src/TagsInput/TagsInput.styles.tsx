@@ -15,17 +15,17 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   },
   disabled: {
     "& $tagsList": {
-      backgroundColor: theme.colors.atmo2,
+      backgroundColor: theme.colors.bgPage,
       "&,:hover": {
-        borderColor: theme.colors.atmo4,
+        borderColor: theme.colors.border,
       },
     },
   },
   readOnly: {
     "& $tagsList": {
-      backgroundColor: theme.colors.atmo2,
+      backgroundColor: theme.colors.bgPage,
       "&,:hover": {
-        borderColor: theme.colors.secondary_60,
+        borderColor: theme.colors.textDisabled,
       },
     },
   },
@@ -55,9 +55,9 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     flexDirection: "row",
     flexWrap: "wrap",
 
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderWidth: 1,
-    borderColor: theme.colors.secondary_80,
+    borderColor: theme.colors.textSubtle,
     borderRadius: theme.radii.base,
 
     "&:hover": {
@@ -73,11 +73,11 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     },
 
     "&$error": {
-      borderColor: theme.colors.negative_120,
+      borderColor: theme.colors.negativeDeep,
     },
 
     "&$invalid": {
-      borderColor: theme.colors.negative_120,
+      borderColor: theme.colors.negativeDeep,
     },
   },
   /** @deprecated use `classes.input` instead */

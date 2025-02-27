@@ -17,7 +17,7 @@ const classes = {
       margin: "12px",
       textAlign: "center",
       borderRadius: "4px",
-      background: theme.colors.atmo1,
+      background: theme.colors.bgContainer,
     },
   }),
 };

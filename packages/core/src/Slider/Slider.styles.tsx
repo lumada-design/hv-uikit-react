@@ -12,7 +12,7 @@ const dot: React.CSSProperties = {
   height: "4px",
   border: "none",
   borderRadius: "0%",
-  backgroundColor: theme.colors.atmo4,
+  backgroundColor: theme.colors.border,
   cursor: "pointer",
   verticalAlign: "middle",
   zIndex: "-3",
@@ -27,8 +27,8 @@ const dragSquare: React.CSSProperties = {
   top: "-12px",
   content: "''",
   background: "transparent",
-  borderTop: `12px solid ${theme.colors.primary_20}`,
-  borderBottom: `12px solid ${theme.colors.primary_20}`,
+  borderTop: `12px solid ${theme.colors.primaryDimmed}`,
+  borderBottom: `12px solid ${theme.colors.primaryDimmed}`,
   zIndex: "-2",
 };
 
@@ -36,7 +36,7 @@ const ring: React.CSSProperties = {
   width: "32px",
   height: "32px",
   borderRadius: "50%",
-  border: `9px solid ${theme.colors.primary_20}`,
+  border: `9px solid ${theme.colors.primaryDimmed}`,
   opacity: "100%",
   content: "''",
   position: "absolute",
@@ -48,7 +48,7 @@ const border: React.CSSProperties = {
   width: "20px",
   height: "20px",
   borderRadius: "50%",
-  border: `2px solid ${theme.colors.atmo1}`,
+  border: `2px solid ${theme.colors.textDimmed}`,
   content: "''",
   position: "absolute",
   top: "-4px",
@@ -65,7 +65,7 @@ export const sliderStyles = {
   disabledMark: {
     ...theme.typography.caption1,
     fontFamily: theme.fontFamily.body,
-    color: `${theme.colors.secondary_60}`,
+    color: theme.colors.textDisabled,
     cursor: "not-allowed",
     top: "-2px",
   },
@@ -92,7 +92,7 @@ export const sliderStyles = {
   knobInner: {
     borderColor: "transparent",
     boxShadow: "none",
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
     width: "16px",
     height: "16px",
   },
@@ -101,7 +101,7 @@ export const sliderStyles = {
     borderColor: "transparent",
     borderRadius: "50%",
     boxShadow: "none",
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.border,
     width: "32px",
     height: "32px",
     top: "-80%",
@@ -109,12 +109,12 @@ export const sliderStyles = {
     zIndex: "-1",
   },
   track: {
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
     height: "3px",
     zIndex: "-1",
     marginTop: "-1px",
   },
-  rail: { backgroundColor: theme.colors.atmo4, height: "1px", zIndex: "-3" },
+  rail: { backgroundColor: theme.colors.border, height: "1px", zIndex: "-3" },
 } satisfies Record<string, React.CSSProperties>;
 
 export const { staticClasses, useClasses } = createClasses("HvSlider", {
@@ -213,7 +213,7 @@ export const { staticClasses, useClasses } = createClasses("HvSlider", {
   root: {},
   sliderTooltip: {
     "&& .rc-slider-tooltip-inner": {
-      background: theme.colors.atmo1,
+      background: theme.colors.bgContainer,
       borderRadius: 0,
       maxWidth: "532px",
       height: "100%",

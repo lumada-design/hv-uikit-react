@@ -21,10 +21,10 @@ const styles = {
     },
   }),
   table: css({
-    border: `1px solid ${theme.colors.secondary}`,
+    border: `1px solid ${theme.colors.text}`,
     borderCollapse: "collapse",
     "& th, td": {
-      border: `1px solid ${theme.colors.secondary}`,
+      border: `1px solid ${theme.colors.text}`,
       padding: theme.spacing("5px", "sm"),
     },
   }),

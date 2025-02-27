@@ -5,12 +5,12 @@ import { avatarClasses } from "../../Avatar";
 import { outlineStyles } from "../../utils/focusUtils";
 
 const selected = {
-  background: theme.colors.atmo3,
-  borderLeft: `4px solid ${theme.colors.secondary}`,
+  background: theme.colors.bgPageSecondary,
+  borderLeft: `4px solid ${theme.colors.text}`,
 };
 
 const hover = {
-  background: theme.colors.containerBackgroundHover,
+  background: theme.colors.bgHover,
 };
 
 export const { staticClasses, useClasses } = createClasses(

@@ -88,7 +88,7 @@ export const HvSliderInput = ({
       {inputValues.map((value, index) => (
         <div key={setId(id, index)} className={classes.inputContainer}>
           {index !== 0 && (
-            <Remove color={disabled ? "secondary_60" : undefined} />
+            <Remove color={disabled ? "textDisabled" : undefined} />
           )}
           <HvInput
             id={setId(id, index)}

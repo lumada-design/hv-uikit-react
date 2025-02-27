@@ -9,33 +9,33 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
     display: "grid",
     gridTemplateColumns: "repeat(7, 1fr)",
     "& $cellsInRange": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPageSecondary,
       "& $startBookend": {
-        borderLeft: `1px solid ${theme.colors.secondary}`,
-        backgroundColor: theme.colors.atmo3,
+        borderLeft: `1px solid ${theme.colors.text}`,
+        backgroundColor: theme.colors.bgPageSecondary,
         "&:hover": {
-          borderRight: `1px solid ${theme.colors.secondary}`,
+          borderRight: `1px solid ${theme.colors.text}`,
         },
       },
     },
     "&:hover $cellsInRange": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPageSecondary,
       "& $startBookend": {
-        borderLeft: `1px solid ${theme.colors.secondary}`,
+        borderLeft: `1px solid ${theme.colors.text}`,
         borderRight: "inherit",
       },
     },
     "& $cellsInRange:hover": {
-      backgroundColor: theme.colors.atmo3,
+      backgroundColor: theme.colors.bgPageSecondary,
       "& $calendarDate": {
-        borderRight: `1px solid ${theme.colors.secondary}`,
+        borderRight: `1px solid ${theme.colors.text}`,
       },
     },
     "& $cellsInRange:hover ~ $cellsInRange": {
-      backgroundColor: theme.colors.atmo1, // controls the right side of the hovered range
+      backgroundColor: theme.colors.bgContainer, // controls the right side of the hovered range
     },
     "& $cellsOutsideRange:hover ~ $cellsInRange": {
-      backgroundColor: theme.colors.atmo1, // control the right side when hovering outside of the range
+      backgroundColor: theme.colors.bgContainer, // control the right side when hovering outside of the range
     },
   },
   calendarDay: {
@@ -57,7 +57,7 @@ export const { staticClasses, useClasses } = createClasses("HvSingleCalendar", {
   startBookend: {},
   endBookend: {},
   cellsInRange: {
-    backgroundColor: theme.colors.atmo3,
+    backgroundColor: theme.colors.bgPageSecondary,
   },
   cellsOutsideRange: {},
   cellContainer: {},
