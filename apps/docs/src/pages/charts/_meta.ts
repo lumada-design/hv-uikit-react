@@ -3,4 +3,5 @@ export default {
     type: "separator",
     title: "Charts",
   },
+  "get-started": "Get Started",
 };
