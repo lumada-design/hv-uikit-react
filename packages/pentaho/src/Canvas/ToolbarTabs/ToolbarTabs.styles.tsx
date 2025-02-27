@@ -36,11 +36,11 @@ export const { staticClasses, useClasses } = createClasses(
     },
     tab: {
       boxSizing: "border-box",
-      border: `1px solid ${theme.colors.textDimmed}`,
+      border: `1px solid transparent`,
       borderBottom: "none",
       borderRadius: "10px 10px 0 0",
       boxShadow: "none",
-      backgroundColor: theme.colors.textDimmed,
+      backgroundColor: "inherit",
       "&:first-of-type": { borderEndStartRadius: theme.radii.base },
       [`&.${tabClasses.selected}`]: {
         color: theme.colors.primary,
