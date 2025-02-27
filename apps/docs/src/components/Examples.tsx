@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import Link from "next/link";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { BarChart, Table } from "@hitachivantara/uikit-react-icons";
 
 import charts from "../pages/examples/charts.mdx?raw";
 import tables from "../pages/examples/tables.mdx?raw";
@@ -13,6 +14,17 @@ const countCodeBlocks = (fileContent: string): number => {
     /<CodeBlock[\s\S]*?>[\s\S]*?<\/CodeBlock>|<CodeBlock[\s\S]*?\/>/g;
   const matches = fileContent.match(codeBlockRegex);
   return matches ? matches.length : 0;
+};
+
+const getSectionIcon = (title: string) => {
+  switch (title) {
+    case "Tables":
+      return <Table size="md" />;
+    case "Charts":
+      return <BarChart size="md" />;
+    default:
+      return null;
+  }
 };
 
 /**
@@ -40,13 +52,21 @@ export const Examples = () => {
       <div className="px-1 py-3">
         <HvTypography variant="title2">Examples</HvTypography>
         <HvTypography variant="body">
-          Heroes, feature sections, newsletter sign-up forms — everything you
-          need to build beautiful pages.
+          Explore practical examples demonstrating how to use our components in
+          different scenarios and real-world scenarios. You can find an extended
+          list of UI Kit examples on our{" "}
+          <HvTypography
+            className="color-primary hover:underline"
+            component="a"
+            href="https://stackblitz.com/orgs/github/lumada-design/collections"
+          >
+            StackBlitz collection
+          </HvTypography>
         </HvTypography>
       </div>
 
       {/* Section Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-6">
         {sections.map((section) => (
           <Link
             key={section.title}
@@ -66,7 +86,7 @@ export const Examples = () => {
                 variant="body"
                 className="text-[var(--uikit-colors-secondary_80)]"
               >
-                Image Placeholder
+                {getSectionIcon(section.title)}
               </HvTypography>
             </div>
             {/* Section Title */}
