@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvDialog", {
   root: {},
   background: {
-    backgroundColor: theme.alpha("border", 0.8), // 🥕
+    backgroundColor: theme.colors.bgOverlay,
   },
   paper: {
     color: theme.colors.text,

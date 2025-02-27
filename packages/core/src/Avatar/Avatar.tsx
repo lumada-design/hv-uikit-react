@@ -5,12 +5,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import {
-  getColor,
-  HvColorAny,
-  HvSize,
-  theme,
-} from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, HvSize } from "@hitachivantara/uikit-styles";
 
 import { useAvatarGroupContext } from "../AvatarGroup/AvatarGroupContext";
 import { useImageLoaded } from "../hooks/useImageLoaded";
@@ -146,11 +141,11 @@ export const HvAvatar = forwardRef<
   if (status) {
     // set the status border. we're using the boxShadow property to set the border
     // to be inside the container and not on its edge.
-    const statusColor = getColor(status, theme.colors.positive);
+    const statusColor = getColor(status, "positive");
     statusInlineStyle.boxShadow = `inset 0px 0px 0px 2px ${statusColor}`;
   }
 
-  const badgeColor = getColor(badge || "", theme.colors.positive);
+  const badgeColor = getColor(badge || "", "positive");
 
   return (
     <div ref={ref} className={classes.container} {...others}>

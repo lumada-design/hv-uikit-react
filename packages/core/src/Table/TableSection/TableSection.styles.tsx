@@ -45,7 +45,6 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
       backgroundColor: theme.colors.bgPage,
       borderBottomColor: theme.colors.bgPageSecondary,
       [`&.${tableHeaderClasses.variantCheckbox}`]: {
-        // 🥕
         borderRight: "none",
       },
       [`&.${tableHeaderClasses.variantActions}`]: {
@@ -61,8 +60,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     },
 
     [`& .${tableCellClasses.root}`]: {
-      borderBottomColor: theme.colors.bgPageSecondary,
-    }, // 🥕
+      borderBottomColor: theme.colors.borderSubtle,
+    },
 
     [`& .${tableCellClasses.variantCheckbox}`]: {
       borderRight: "none",
@@ -75,7 +74,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
     [`& .${bulkActionsClasses.root}`]: {
       marginBottom: 0,
       border: "none",
-      borderBottom: `1px solid ${theme.colors.bgPageSecondary}`, // 🥕
+      borderBottom: `1px solid ${theme.colors.borderSubtle}`,
       padding: theme.spacing("xs", "sm"),
     },
 
@@ -83,7 +82,7 @@ export const { staticClasses, useClasses } = createClasses("HvTableSection", {
       margin: 0,
       backgroundColor: theme.colors.bgPage,
       padding: theme.space.xs,
-      borderTop: `1px solid ${theme.colors.bgPageSecondary}`, // 🥕
+      borderTop: `1px solid ${theme.colors.borderSubtle}`,
       borderBottomLeftRadius: "inherit",
       borderBottomRightRadius: "inherit",
     },
