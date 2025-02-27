@@ -1,0 +1,132 @@
+import { Callout } from "nextra/components";
+
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("DonutChart", "viz", {}, [], true);
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+<Callout type="info">
+  Please check the [Visualizations Guide](/documentation/visualizations) for
+  details on how to build your visualizations.
+</Callout>
+
+### Usage
+
+This example demonstrates a simple donut chart with two data points.
+
+```tsx live
+<HvDonutChart
+  height={200}
+  data={{
+    Type: ["Solar", "Wind", "Hydro", "Other"],
+    Total: [1641.58, 2325.31, 4240.01, 781.5],
+  }}
+  groupBy="Type"
+  measure="Total"
+/>
+```
+
+### Thin
+
+If you need to have a thin donut chart, you can set the `type` prop to `thin`.
+
+```tsx live
+<HvDonutChart
+  height={200}
+  data={{
+    Type: ["Solar", "Wind", "Hydro", "Other"],
+    Total: [1641.58, 2325.31, 4240.01, 781.5],
+  }}
+  groupBy="Type"
+  measure="Total"
+  type="thin"
+/>
+```
+
+### Split data
+
+Use the `splitBy` property to split the data into different groups.
+
+```tsx live
+<HvDonutChart
+  height={300}
+  data={{
+    Year: ["2021", "2022", "2020", "2020", "2021", "2022"],
+    Semester: ["S1", "S1", "S1", "S2", "S2", "S2"],
+    Precipitation: [212.6, 115.9, 219.0, 226.0, 128.2, 170.7],
+  }}
+  groupBy={["Year", "Semester"]}
+  measure="Precipitation"
+  sortBy={{ field: "Year", order: "asc" }}
+  tooltip={{
+    valueFormatter: (value?: string | number) => `${value} mm`,
+  }}
+  slicesNameFormatter={(value?: string) => `${value?.split("_").join(" ")}`}
+/>
+```
+
+### Custom ECharts options
+
+If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.
+In this sample we are customizing the legend to display round icons, the labels to show next to each piece of the chart,
+and radius of the chart so that it has a pie look instead of a donut look. We also change the styles so that margins between the slices are visible.
+
+```tsx live
+<HvDonutChart
+  height={400}
+  data={{
+    Type: ["Solar", "Wind", "Hydro", "Other"],
+    Total: [1641.58, 2325.31, 4240.01, 781.5],
+  }}
+  groupBy="Type"
+  measure="Total"
+  tooltip={{ show: false }}
+  onOptionChange={(option) => {
+    if (
+      option.legend &&
+      typeof option.legend === "object" &&
+      !Array.isArray(option.legend)
+    ) {
+      option.legend.icon = "circle";
+    }
+    option.series[0].label = {
+      show: true,
+      position: "outside",
+      formatter: "{c} ({d}%)",
+      fontSize: 12,
+    };
+    option.series[0].labelLine = {
+      show: true,
+      length: 10,
+      length2: 15,
+      smooth: true,
+      lineStyle: {
+        width: 1.5,
+        type: "solid",
+      },
+    };
+    option.series[0].radius = "75%";
+    option.series[0].center = ["50%", "60%"];
+    option.series[0].emphasis = {
+      label: {
+        show: true,
+        fontSize: 16,
+        fontWeight: "bold",
+      },
+    };
+    option.series[0].itemStyle = {
+      borderRadius: 4,
+      borderColor: "#fff",
+      borderWidth: 1,
+    };
+    return option;
+  }}
+/>
+```
