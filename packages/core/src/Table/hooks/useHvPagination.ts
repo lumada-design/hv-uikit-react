@@ -68,7 +68,7 @@ const useInstanceHook = (instance: any) => {
   });
 };
 
-export const defaultGetHvPaginationProps = (props: any, { instance }: any) => {
+const defaultGetHvPaginationProps = (props: any, { instance }: any) => {
   const {
     canPreviousPage,
     canNextPage,

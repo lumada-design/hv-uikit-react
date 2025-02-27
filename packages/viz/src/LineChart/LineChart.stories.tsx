@@ -9,7 +9,6 @@ import {
   HvDropdown,
   HvDropDownMenu,
   HvTypography,
-  Random,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 import { HvLineChart, HvLineChartProps } from "@hitachivantara/uikit-react-viz";
@@ -525,8 +524,7 @@ export const HorizontalRangeSlider: StoryObj<HvLineChartProps> = {
     },
   },
   render: () => {
-    const r = new Random();
-    const rand = (diff: number) => r.next() * diff - diff / 2;
+    const rand = (diff: number) => Math.random() * diff - diff / 2;
 
     const generateDates = (num = 100, startDate = new Date(2020, 0)) =>
       Array.from(Array(num).keys()).map((i) =>
@@ -570,8 +568,7 @@ export const WithIntervalUpdates: StoryObj<HvLineChartProps> = {
     },
   },
   render: () => {
-    const r = new Random();
-    const rand = (diff: number) => r.next() * diff - diff / 2;
+    const rand = (diff: number) => Math.random() * diff - diff / 2;
 
     const generateDates = (initialDate: Date, num = 200) =>
       Array.from(Array(num).keys()).map((i) =>

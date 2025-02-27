@@ -44,7 +44,7 @@ const DEFAULT_LABELS = {
   collapseRowButtonAriaLabel: "Collapse this row",
 };
 
-export const CellWithExpandButton = ({
+const CellWithExpandButton = ({
   row,
   cell,
   labels: labelsProp,
