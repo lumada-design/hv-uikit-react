@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvFormStatus,
@@ -8,25 +7,11 @@ import {
   HvTagsInput,
   HvTagsInputProps,
   HvTypography,
-  tagsInputClasses,
 } from "@hitachivantara/uikit-react-core";
 
 import countryNamesArray from "./countries";
 import { ControlledTagArray as ControlledTagArrayStory } from "./stories/ControlledTagArray";
 import ControlledTagArrayRaw from "./stories/ControlledTagArray?raw";
-
-const StyledMultilineTagsInput = styled(HvTagsInput)({
-  [`& .${tagsInputClasses.tagsList}`]: {
-    width: 600,
-    height: 100,
-  },
-});
-
-const StyledSuggestionsTagsInput = styled(HvTagsInput)({
-  [`& > .${tagsInputClasses.root}`]: {
-    height: 400,
-  },
-});
 
 const meta: Meta<typeof HvTagsInput> = {
   title: "Components/Tag/Tags Input",
@@ -42,7 +27,6 @@ export const Main: StoryObj<HvTagsInputProps> = {
     label: "Enter your tags",
     description: "This is where you enter your tags",
     placeholder: "Enter value",
-    "aria-label": "The label",
     disabled: false,
     readOnly: false,
     required: false,
@@ -75,14 +59,12 @@ export const Variants: StoryObj<HvTagsInputProps> = {
       <div className={classes.root}>
         <HvTagsInput
           label="Required"
-          aria-label="Required"
           placeholder="Enter value"
           required
           value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
         />
         <HvTagsInput
           label="Disabled"
-          aria-label="Disabled"
           placeholder="Enter value"
           disabled
           value={[
@@ -93,14 +75,12 @@ export const Variants: StoryObj<HvTagsInputProps> = {
         />
         <HvTagsInput
           label="Readonly"
-          aria-label="Readonly"
           placeholder="Enter value"
           readOnly
           value={[{ label: "tag 7" }, { label: "tag 8" }, { label: "tag 9" }]}
         />
         <HvTagsInput
           label="Invalid"
-          aria-label="Invalid"
           placeholder="Enter value"
           status="invalid"
           statusMessage="Oh no!"
@@ -133,7 +113,6 @@ export const ControlledStringArray: StoryObj<HvTagsInputProps> = {
       <>
         <HvTagsInput
           label="Controlled with array of strings"
-          aria-label="Controlled with array of string"
           description="A list of strings will result in semantic tags"
           placeholder="Enter value"
           value={currValueStr}
@@ -182,7 +161,6 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
       <>
         <HvTagsInput
           label="Controlled with validation"
-          aria-label="Controlled with validation"
           description="A tag with a dash (-) will be invalid"
           placeholder="Enter value"
           value={currValueStr}
@@ -233,7 +211,6 @@ export const AddTagOnBlur: StoryObj<HvTagsInputProps> = {
     return (
       <HvTagsInput
         label="Adding tags on blur"
-        aria-label="Adding tags on blur"
         placeholder="Enter value"
         value={currValueArr}
         onChange={(event, value) => {
@@ -258,9 +235,9 @@ export const Multiline: StoryObj<HvTagsInputProps> = {
   },
   render: () => {
     return (
-      <StyledMultilineTagsInput
+      <HvTagsInput
+        classes={{ tagsList: "h-100px" }}
         label="MultiLine"
-        aria-label="The label"
         placeholder="Enter value"
         multiline
       />
@@ -268,22 +245,22 @@ export const Multiline: StoryObj<HvTagsInputProps> = {
   },
 };
 
-export const NotResizable: StoryObj<HvTagsInputProps> = {
+export const Resizable: StoryObj<HvTagsInputProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Not resizable.",
+        story: "Tags Input multiline and resizable",
       },
     },
   },
   render: () => {
     return (
       <HvTagsInput
-        label="Fixed size not resizable"
-        aria-label="The label"
+        classes={{ tagsList: "h-100px" }}
+        label="Multiline resizable"
         placeholder="Enter value"
         multiline
-        resizable={false}
+        resizable
       />
     );
   },
@@ -304,7 +281,6 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
       <HvTagsInput
         label="Tags"
         description="Maximum 3 tags"
-        aria-label="The label"
         placeholder="Enter value"
         onChange={(event, value) => {
           console.log("in onChange callback. data: ", value);
@@ -337,7 +313,6 @@ export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
       <HvTagsInput
         label="Custom commit character"
         description="Will only add a tag when a space or comma is entered or when the user clicks outside the input box and there's text that's not been commited"
-        aria-label="Custom commit character"
         placeholder="Enter value"
         commitTagOn={["Space", "Comma"]}
         commitOnBlur
@@ -373,10 +348,9 @@ export const Suggestions: StoryObj<HvTagsInputProps> = {
     };
 
     return (
-      <StyledSuggestionsTagsInput
+      <HvTagsInput
         label="Suggestions"
         description="A list of suggestions is presented when text is entered."
-        aria-label="Suggestions"
         placeholder="Enter value"
         onChange={(event, value) => {
           setCurrValueStr(value);
@@ -445,10 +419,9 @@ export const UnrestrictedSuggestions: StoryObj<HvTagsInputProps> = {
     };
 
     return (
-      <StyledSuggestionsTagsInput
+      <HvTagsInput
         label="Suggestions"
         description="Enter a tag starting with 'Option'."
-        aria-label="Suggestions"
         placeholder="Enter value"
         onChange={(event, value) => {
           setCurrValueStr(value);

@@ -29,7 +29,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
       },
     },
   },
-  resizable: { width: "auto", resize: "both", overflow: "auto" },
+  resizable: { width: "auto", resize: "both", clear: "both", overflow: "auto" },
   invalid: {},
   labelContainer: { float: "left", display: "flex", alignItems: "flex-start" },
   label: {},
