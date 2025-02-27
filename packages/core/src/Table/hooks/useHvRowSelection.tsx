@@ -172,7 +172,7 @@ const getRowPropsHook = (props: any, { row }: any) => {
   return [props, nextProps];
 };
 
-export const defaultGetToggleRowSelectedProps = (props: any, meta: any) => {
+const defaultGetToggleRowSelectedProps = (props: any, meta: any) => {
   const { instance, row } = meta;
   const { manualRowSelectedKey = "isSelected" } = instance;
   let checked = false;
@@ -196,7 +196,7 @@ export const defaultGetToggleRowSelectedProps = (props: any, meta: any) => {
   ];
 };
 
-export const defaultGetToggleAllRowsSelectedProps = (
+const defaultGetToggleAllRowsSelectedProps = (
   props: any,
   { instance }: any,
 ) => [
@@ -213,7 +213,7 @@ export const defaultGetToggleAllRowsSelectedProps = (
   },
 ];
 
-export const defaultGetToggleAllPageRowsSelectedProps = (
+const defaultGetToggleAllPageRowsSelectedProps = (
   props: any,
   { instance }: any,
 ) => [

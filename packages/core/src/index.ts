@@ -144,10 +144,7 @@ export * from "./types/generic";
 export * from "./types/theme";
 export * from "./types/tokens";
 
-export * from "./hocs/withTooltip";
-
 export * from "./utils/browser";
-export * from "./utils/checkValidHexColorValue";
 export * from "./utils/focusableElementFinder";
 export * from "./utils/focusUtils";
 export * from "./utils/getComponentName";
@@ -155,10 +152,8 @@ export * from "./utils/hexToRgbA";
 export * from "./utils/iconVariant";
 export * from "./utils/keyboardUtils";
 export * from "./utils/multiSelectionEventHandler";
-export * from "./utils/Random";
 export * from "./utils/setId";
 export * from "./utils/sizes";
 export * from "./utils/theme";
 export * from "./utils/useSavedState";
-export * from "./utils/wrapperTooltip";
 export { uniqueId } from "./utils/helpers";

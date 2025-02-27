@@ -30,7 +30,7 @@ export interface HvProgressColumnCellProp {
   "aria-labelledby"?: string;
 }
 
-export const normalizeProgressBar = (value: number, max: number) => {
+const normalizeProgressBar = (value: number, max: number) => {
   return max > 0 ? Math.floor((value * 100) / max) : 0;
 };
 

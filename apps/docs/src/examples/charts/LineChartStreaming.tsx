@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Random } from "@hitachivantara/uikit-react-core";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 
 export default function Demo() {
-  const r = new Random();
-  const rand = (diff: number) => r.next() * diff - diff / 2;
+  const rand = (diff: number) => Math.random() * diff - diff / 2;
 
   const generateDates = (initialDate: Date, num = 200) =>
     Array.from(Array(num).keys()).map((i) =>
