@@ -1040,6 +1040,13 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvWarningText: {
+      classes: {
+        root: {
+          color: theme.colors.negative,
+        },
+      },
+    },
     HvBaseInput: {
       classes: {
         root: {
