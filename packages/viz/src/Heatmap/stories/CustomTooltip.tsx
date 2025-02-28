@@ -104,7 +104,8 @@ export const CustomTooltip = () => {
         show: true,
         component: renderTooltip,
       }}
-      colorScale={["#a65852", "#fbe45b"]}
+      // colorScale={["#a65852", "#fbe45b"]}
+      colorScale={["negative", "positive"]}
     />
   );
 };

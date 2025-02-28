@@ -4,6 +4,7 @@ import { HeatmapChart } from "echarts/charts";
 import { TooltipComponent, VisualMapComponent } from "echarts/components";
 import * as echarts from "echarts/core";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseChart } from "../BaseChart";
 import {
@@ -46,7 +47,7 @@ export interface HvHeatmapProps
   /** The tooltip options. */
   tooltip?: Omit<HvChartTooltip, "type">;
   /** Color scale of the confusion matrix. Accepts an array of strings spanning from the lower to the upper ends of the scale. */
-  colorScale?: string[];
+  colorScale?: HvColorAny[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvHeatmapClasses;
 }
@@ -103,6 +104,10 @@ export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
       axes: yAxis ? [yAxis] : [],
     });
 
+    const convertedColors = colorScale?.map(
+      (color) => colors?.[color] || color,
+    );
+
     const chartVisualMap = useVisualMap({
       min,
       max,
@@ -112,7 +117,10 @@ export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
       position: {
         y: "bottom",
       },
-      colorScale: colorScale || [colors?.cat1_180 || "", colors?.cat1_20 || ""],
+      colorScale: convertedColors || [
+        colors?.cat1_180 || "",
+        colors?.cat1_20 || "",
+      ],
     });
 
     const option = useOption({
