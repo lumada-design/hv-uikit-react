@@ -51,8 +51,15 @@ export const useColorScale = ({
     const max = Math.max(...flatData);
     const min = Math.min(...flatData);
 
+    const parsedColors = custom?.map((c) =>
+      typeof c === "string" ? colors?.[c] || c : c.color,
+    );
+
     return {
-      colorScale: custom || [colors?.base_light || "", colors?.cat3 || ""],
+      colorScale: parsedColors || [
+        colors?.base_light || "",
+        colors?.cat3 || "",
+      ],
       max,
       min,
     };

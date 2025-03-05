@@ -1,0 +1,349 @@
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("ConfusionMatrix", "viz", {}, [], true);
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+### Usage
+
+This example demonstrates a simple confusion matrix.
+
+```tsx live
+<HvConfusionMatrix
+  height={350}
+  width={400}
+  data={{
+    prediction: [
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Dog",
+      "Dog",
+      "Dog",
+      "Dog",
+    ],
+    expected: [
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+    ],
+    matches: [95, 15, 1, 20, 10, 97, 8, 40, 6, 12, 100, 16, 2, 9, 12, 90],
+  }}
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+/>
+```
+
+### Delta confusion matrix
+
+If you want to show the delta between the expected and predicted values, set the `delta` prop to the column you want to use
+or set it to `true` in case the `measure` already has the calculations for the delta confusion matrix.
+
+```tsx live
+<HvConfusionMatrix
+  height={350}
+  width={400}
+  data={{
+    prediction: [
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Dog",
+      "Dog",
+      "Dog",
+      "Dog",
+    ],
+    expected: [
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+    ],
+    matches: [95, 15, 1, 20, 10, 97, 8, 40, 6, 12, 100, 16, 2, 9, 12, 90],
+    baseline: [90, 15, 1, 20, 10, 100, 8, 40, 4, 12, 90, 16, 2, 21, 12, 90],
+  }}
+  delta="baseline"
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+/>
+```
+
+### Custom colors
+
+You can use the `colorScale` prop to define custom colors for the confusion matrix. There are two ways to define the colors:
+the first way is to pass an array of two strings where each string represents the lower and upper bounds of the color scale.
+The colors used can be any of the UI Kit palette (for example, `positive`) or any valid CSS color (for example, `#FF0000` or `red`).
+
+```tsx live
+<HvConfusionMatrix
+  height={350}
+  width={400}
+  data={{
+    prediction: [
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Dog",
+      "Dog",
+      "Dog",
+      "Dog",
+    ],
+    expected: [
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+    ],
+    matches: [95, 15, 1, 20, 10, 97, 8, 40, 6, 12, 100, 16, 2, 9, 12, 90],
+  }}
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+  colorScale={["negative", "positive"]}
+/>
+```
+
+The other way to use the `colorScale` is to pass an array of objects where each object has a `color` property
+and a `min` and `max` property. The `min` and `max` properties define the range of values that will be colored. Also
+the `label` prop will allow you to add a label to the color.
+
+```tsx live
+<HvConfusionMatrix
+  height={350}
+  width={400}
+  data={{
+    prediction: [
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Dog",
+      "Dog",
+      "Dog",
+      "Dog",
+    ],
+    expected: [
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+    ],
+    matches: [95, 15, 1, 20, 10, 97, 59, 40, 6, 12, 100, 16, 22, 39, 32, 90],
+  }}
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+  colorScale={[
+    {
+      label: "Good",
+      color: "positive",
+      max: 100,
+      min: 75,
+    },
+    {
+      label: "Caution",
+      color: "warning",
+      max: 75,
+      min: 30,
+    },
+    {
+      label: "Bad",
+      color: "negative",
+      max: 30,
+      min: 0,
+    },
+    {
+      label: "Neutral",
+      color: "atmo2",
+      value: 0,
+    },
+  ]}
+/>
+```
+
+### Customizing values
+
+The `valuesProp` can be used to customize the font used to display the values inside each of the cells of the confusion matrix.
+You can set its `color`, `fontSize`, `fontStyle` and `fontWeight` properties. If you want to hide the values just set
+the `valuesProp.show` prop to `false`.
+
+```tsx live
+<HvConfusionMatrix
+  height={350}
+  width={400}
+  data={{
+    prediction: [
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Beaver",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Lion",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Seal",
+      "Dog",
+      "Dog",
+      "Dog",
+      "Dog",
+    ],
+    expected: [
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+      "Beaver",
+      "Lion",
+      "Seal",
+      "Dog",
+    ],
+    matches: [95, 15, 1, 20, 10, 97, 8, 40, 6, 12, 100, 16, 2, 9, 12, 90],
+  }}
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+  colorScale={["cat10_80", "cat10_180"]}
+  valuesProps={{
+    color: "white",
+    fontSize: 20,
+    fontStyle: "italic",
+  }}
+/>
+```
+
+### Landscape
+
+By default the confusion matrix will have a square format but you can set the `format` prop to `landscape` to have a landscape format.
+
+```tsx live
+<HvConfusionMatrix
+  data={{
+    prediction: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"].reduce<
+      string[]
+    >((acc, curr) => {
+      acc.push(...Array.from(Array(10), () => curr));
+      return acc;
+    }, []),
+    expected: Array.from(Array(100), () => [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+    ]).flat(),
+    matches: Array.from(Array(100), () => Math.random().toFixed(2)).flat(),
+  }}
+  measure="matches"
+  groupBy="prediction"
+  splitBy="expected"
+  format="landscape"
+/>
+```

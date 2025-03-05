@@ -8,6 +8,7 @@ import {
 } from "echarts/components";
 import * as echarts from "echarts/core";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseChart } from "../BaseChart";
 import {
@@ -78,7 +79,7 @@ export interface HvConfusionMatrixProps
    * An array of objects can also be used to create a custom scale.
    * If `delta` is not provided, a default color scale is used when `colorScale` is not defined: `[base-light, cat3]`.
    */
-  colorScale?: [string, string] | HvConfusionMatrixColorScale[];
+  colorScale?: [HvColorAny, HvColorAny] | HvConfusionMatrixColorScale[];
 }
 
 /**
