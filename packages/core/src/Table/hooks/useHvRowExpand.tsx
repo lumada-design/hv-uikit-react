@@ -1,4 +1,4 @@
-import {
+import type {
   Hooks,
   TableExpandedToggleProps,
   UseExpandedRowProps,
@@ -8,8 +8,7 @@ import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
 import { HvTypography } from "../../Typography";
-import { DefaultCell } from "../renderers/DefaultCell";
-import type { HvCellProps } from "./useHvTable";
+import type { HvCellProps, HvColumnInstance } from "./useHvTable";
 
 // #region ##### TYPES #####
 
@@ -80,16 +79,18 @@ const visibleColumnsHook = (columns: any, { instance }: any) => {
     return columns;
   }
 
-  // add a button to first data column, unless it has a custom renderer
-  // if so, add an extra column instead
-  const firstDataColumnIndex = columns.findIndex(
-    (c: any) => c.id?.indexOf("_hv_") !== 0,
+  // add a button to first data column, or an extra column for non-default renderers
+  const firstDataColumnIndex = (columns as HvColumnInstance<any>[]).findIndex(
+    (c) => !c.id?.startsWith("_hv_"),
   );
 
   if (firstDataColumnIndex !== -1) {
     const firstDataColumn = columns[firstDataColumnIndex];
 
-    if (firstDataColumn.Cell == null || firstDataColumn.Cell !== DefaultCell) {
+    // keep columns if CellWithExpandButton has already been added
+    if (firstDataColumn.Cell === CellWithExpandButton) return columns;
+
+    if (firstDataColumn.Cell == null) {
       firstDataColumn.Cell = CellWithExpandButton;
       firstDataColumn.variant = "expand";
 
