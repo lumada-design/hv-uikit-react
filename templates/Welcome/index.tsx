@@ -96,4 +96,6 @@ const Welcome = () => {
   );
 };
 
+export { Welcome as Component };
+
 export default Welcome;

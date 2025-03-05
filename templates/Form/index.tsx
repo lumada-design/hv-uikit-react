@@ -21,7 +21,7 @@ const countries = [
   { id: "us", label: "United States" },
 ];
 
-export default () => (
+const Form = () => (
   <form
     autoComplete="on"
     onSubmit={(event) => {
@@ -101,3 +101,7 @@ export default () => (
     </HvGrid>
   </form>
 );
+
+export { Form as Component };
+
+export default Form;

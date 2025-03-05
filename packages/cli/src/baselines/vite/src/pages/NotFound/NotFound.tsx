@@ -5,9 +5,7 @@ import { Info } from "@hitachivantara/uikit-react-icons";
 
 import classes from "./styles";
 
-const NotFound = () => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+export const Component = () => {
   const { t } = useTranslation("common");
   const navigate = useNavigate();
 
@@ -27,5 +25,3 @@ const NotFound = () => {
     </div>
   );
 };
-
-export default NotFound;

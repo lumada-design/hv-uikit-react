@@ -292,4 +292,6 @@ const Canvas = () => (
   </CanvasProvider>
 );
 
+export { Canvas as Component };
+
 export default Canvas;

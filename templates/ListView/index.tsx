@@ -240,4 +240,6 @@ const ListView = () => {
   );
 };
 
+export { ListView as Component };
+
 export default ListView;

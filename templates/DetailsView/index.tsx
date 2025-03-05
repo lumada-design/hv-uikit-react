@@ -97,4 +97,6 @@ const DetailsView = () => {
   );
 };
 
+export { DetailsView as Component };
+
 export default DetailsView;

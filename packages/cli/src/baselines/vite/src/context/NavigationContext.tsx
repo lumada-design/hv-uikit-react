@@ -14,7 +14,7 @@ export interface NavigationProviderProps {
 }
 
 export interface NavigationContextValue {
-  navigation?: NavigationData[];
+  navigation: NavigationData[];
   activePath: NavigationData | undefined;
 }
 
@@ -25,7 +25,7 @@ export const NavigationContext = createContext<NavigationContextValue>({
 
 const getActivePath = (pathname: string, navigation: NavigationData[]) => {
   return navigation.reduce((acc, item) => {
-    if (item.path === pathname) return item;
+    if (item.path && pathname.includes(item.path)) return item;
     if (item.data) {
       const found = item.data.find((child) => child.path === pathname);
       if (found) return found;
