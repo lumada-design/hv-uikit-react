@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.19](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.18...@hitachivantara/uikit-react-pentaho@0.8.19) (2025-03-06)
+
+### Bug Fixes
+
+- remove transition on the Canvas Toolbar and BottomPanel when the SidePanel is dragging ([#4571](https://github.com/lumada-design/hv-uikit-react/issues/4571)) ([10bc5b4](https://github.com/lumada-design/hv-uikit-react/commit/10bc5b4ecefc88fa86232b3c1b7baa147579e033))
+
 ## [0.8.18](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.17...@hitachivantara/uikit-react-pentaho@0.8.18) (2025-02-21)
 
 ### Reverts

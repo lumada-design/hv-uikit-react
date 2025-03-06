@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.89.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.88.0...@hitachivantara/uikit-react-core@5.89.0) (2025-03-06)
+
+### Bug Fixes
+
+- **table:** expander column when custom Cell ([4758374](https://github.com/lumada-design/hv-uikit-react/commit/4758374710b77248d996882ae67f3e75a001ddaf))
+- **TagsInput:** ensure input isn't inlined along with label ([#4579](https://github.com/lumada-design/hv-uikit-react/issues/4579)) ([5674002](https://github.com/lumada-design/hv-uikit-react/commit/56740027f33036fcc58df379385eb423727e897f))
+
+### Features
+
+- **IconContainer:** add component to core ([7fe061a](https://github.com/lumada-design/hv-uikit-react/commit/7fe061acaac308816ad1ff844938b9d3befda0a2))
+- **Typography:** inherit text color ([9286756](https://github.com/lumada-design/hv-uikit-react/commit/92867561ba4a51fa68c124e0ce9191b31a9acd66))
+
 # [5.88.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.87.3...@hitachivantara/uikit-react-core@5.88.0) (2025-02-21)
 
 ### Bug Fixes

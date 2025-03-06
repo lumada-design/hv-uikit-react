@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.14.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.13.8...@hitachivantara/uikit-react-icons@5.14.0) (2025-03-06)
+
+### Features
+
+- **icons:** inherit icon color ([f7121aa](https://github.com/lumada-design/hv-uikit-react/commit/f7121aab73ef00683368b0edf4eced2c5373e632))
+
 ## [5.13.8](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-icons@5.13.7...@hitachivantara/uikit-react-icons@5.13.8) (2025-02-21)
 
 ### Reverts
