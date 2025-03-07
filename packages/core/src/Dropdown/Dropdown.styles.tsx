@@ -28,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
     borderRadius: theme.radii.base,
 
     "& $dropdownHeaderInvalid": {
-      border: `1px solid ${theme.colors.negativeDeep}`,
+      border: `1px solid ${theme.form.errorColor}`,
     },
   },
   arrow: {},

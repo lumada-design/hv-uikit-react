@@ -25,9 +25,8 @@ export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
   panel: {},
 
   dropdownHeaderInvalid: {
-    border: `1px solid ${theme.colors.negativeDeep}`,
-    "&:hover": {
-      border: `1px solid ${theme.colors.negativeDeep}`,
+    "&,:hover": {
+      border: `1px solid ${theme.form.errorColor}`,
     },
   },
   dropdownHeaderOpen: {},

@@ -18,6 +18,6 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
   },
   invalidSwitch: {
     paddingBottom: "1px",
-    borderBottom: `1px solid ${theme.colors.negativeDeep}`,
+    borderBottom: `1px solid ${theme.form.errorColor}`,
   },
 });

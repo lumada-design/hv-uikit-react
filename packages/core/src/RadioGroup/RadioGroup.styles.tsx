@@ -28,7 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadioGroup", {
   },
   invalid: {
     paddingBottom: theme.space.xs,
-    borderBottom: `1px solid ${theme.colors.negativeDeep}`,
+    borderBottom: `1px solid ${theme.form.errorColor}`,
   },
   error: {},
 });

@@ -249,6 +249,9 @@ const ds5 = makeTheme((theme) => ({
     height: "64px",
     secondLevelHeight: "56px",
   },
+  form: {
+    errorColor: theme.colors.negative_120,
+  },
   bulkActions: {
     actionButtonVariant: "primaryGhost",
   },

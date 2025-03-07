@@ -326,7 +326,7 @@ const ds3 = makeTheme((theme) => ({
         },
         invalid: {
           "::after": {
-            borderBottomColor: theme.colors.negative_120,
+            borderBottomColor: theme.form.errorColor,
           },
         },
         disabled: {
@@ -1423,6 +1423,9 @@ const ds3 = makeTheme((theme) => ({
   header: {
     height: "44px",
     secondLevelHeight: "40px",
+  },
+  form: {
+    errorColor: theme.colors.negative_120,
   },
   bulkActions: {
     actionButtonVariant: "semantic",

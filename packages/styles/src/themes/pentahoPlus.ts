@@ -1125,6 +1125,9 @@ const pentahoPlus = makeTheme((theme) => ({
     height: "64px",
     secondLevelHeight: "56px",
   },
+  form: {
+    errorColor: theme.colors.negative,
+  },
   bulkActions: {
     actionButtonVariant: "primaryGhost",
   },

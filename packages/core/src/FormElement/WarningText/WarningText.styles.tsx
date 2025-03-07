@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvWarningText", {
   root: {
     display: "none",
-    color: theme.colors.negativeDeep,
+    color: theme.form.errorColor,
   },
   defaultIcon: { minWidth: "24px", width: "24px", height: "24px" },
   warningText: {
