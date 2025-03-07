@@ -13,7 +13,7 @@ import {
 import { AssetEvent, makeData } from "../storiesUtils";
 
 const style = {
-  borderRight: `1px solid ${theme.colors.atmo4}`,
+  borderRight: `1px solid ${theme.colors.border}`,
 };
 
 const getGroupedRowsColumns = (): HvTableColumnConfig<AssetEvent, string>[] => [

@@ -7,7 +7,7 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
     display: "flex",
     alignItems: "center",
     borderRadius: theme.radii.full,
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     position: "absolute",
     right: theme.space.sm,
     top: 0,
@@ -15,7 +15,7 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasToolbar", {
   back: {
     borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,
     minWidth: 68,
-    backgroundColor: theme.colors.containerBackgroundHover,
+    backgroundColor: theme.colors.bgHover,
     height: "100%",
     display: "flex",
     alignItems: "center",

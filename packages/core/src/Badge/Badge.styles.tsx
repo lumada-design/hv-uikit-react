@@ -8,9 +8,9 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
   /** class applied to the badge */
   badgePosition: {
     ...theme.typography.caption2,
-    color: theme.colors.atmo1,
+    color: theme.colors.textDimmed,
     borderRadius: theme.radii.full,
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.text,
     lineHeight: "16px",
     minWidth: 8,
     padding: "0 5px",

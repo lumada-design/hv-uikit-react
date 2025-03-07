@@ -19,13 +19,13 @@ export const { staticClasses, useClasses } = createClasses(name, {
     height: "1em",
     borderRadius: "50%",
     fontSize: 6,
-    color: theme.colors.secondary,
+    color: theme.colors.text,
     display: "inline-block",
     backgroundColor: "currentcolor",
   },
   notSelected: {
     fontSize: 4,
-    color: theme.colors.secondary_60,
+    color: theme.colors.textDisabled,
   },
   // TODO: remove in v6 (use classes.button)
   text: {},
@@ -38,11 +38,11 @@ export const { staticClasses, useClasses } = createClasses(name, {
     borderRadius: "50%",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
 
       "& $notSelected": {
         fontSize: 6,
-        color: theme.colors.secondary,
+        color: theme.colors.text,
       },
     },
     "&:focus": {

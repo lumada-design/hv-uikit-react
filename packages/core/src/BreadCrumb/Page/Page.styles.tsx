@@ -11,10 +11,10 @@ export const { staticClasses, useClasses } = createClasses("HvBreadCrumbPage", {
     textTransform: "capitalize",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
     "&:focus": {
-      backgroundColor: theme.colors.containerBackgroundHover,
+      backgroundColor: theme.colors.bgHover,
     },
     "&:focus-visible": {
       ...outlineStyles,

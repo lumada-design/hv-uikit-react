@@ -499,7 +499,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                 <HvAvatar
                   variant="square"
                   size="xs"
-                  backgroundColor="secondary_80"
+                  backgroundColor="textSubtle"
                 >
                   {payload?.label?.substring(0, 1)}
                 </HvAvatar>

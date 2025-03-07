@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvLogin", {
     margin: "-1px 0 0 0",
   },
   formContainer: {
-    background: theme.colors.atmo2,
+    background: theme.colors.bgPage,
     marginLeft: "auto",
     maxWidth: 500,
     height: "100%",

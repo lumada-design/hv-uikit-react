@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvDialog-Action", {
     margin: 0,
     padding: theme.space.sm,
     backgroundColor: "inherit",
-    borderTop: `3px solid ${theme.colors.atmo2}`,
+    borderTop: `1px solid ${theme.colors.border}`,
     height: 65,
     maxHeight: 65,
   },

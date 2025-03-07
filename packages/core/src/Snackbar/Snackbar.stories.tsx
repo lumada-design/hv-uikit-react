@@ -89,12 +89,12 @@ export const Variants: StoryObj<HvSnackbarProps> = {
           {...props}
           variant="success"
           label="This is a snackbar with a custom icon."
-          customIcon={<Deploy color="base_dark" />}
+          customIcon={<Deploy color="inherit" />}
         />
         <HvSnackbar
           {...props}
           label="This is a snackbar with a custom action."
-          customIcon={<Info color="base_dark" />}
+          customIcon={<Info color="inherit" />}
           action={{ id: "post", label: "Action", disabled: false }}
           onAction={(evt, action) => console.log(action)}
         />
