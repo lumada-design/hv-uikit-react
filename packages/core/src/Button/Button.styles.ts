@@ -32,18 +32,19 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     border: "1px solid transparent",
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
+
+    // remove icon container spacing
+    "--icsize": "auto",
   },
   /** applied to the _left_ icon container */
   startIcon: {
-    marginLeft: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
+    marginRight: 8,
+    minWidth: 16,
   },
   /** applied to the _right_ icon container */
   endIcon: {
-    marginRight: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
+    marginLeft: 8,
+    minWidth: 16,
   },
   focusVisible: {},
   /** applied to the root element when disabled */
@@ -61,10 +62,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   icon: {
     margin: 0,
     padding: 0,
-    height: "fit-content",
-    "& > *": {
-      margin: -1,
-    },
+    height: "var(--HvButton-height)",
+    width: "var(--HvButton-height)",
   },
   /** applied to the root element when using the `contained` variant */
   contained: {
