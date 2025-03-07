@@ -44,7 +44,13 @@ const buttonColors = {
     subtleBorder: ld(red[200], red[800]),
     subtleBg: ld(red[100], red[900]),
   },
+  neutral: {
+    subtleBorder: ld(sky[200], cyan[800]),
+    subtleBg: ld(sky[100], cyan[900]),
+  },
 };
+
+const semanticValues = ["success", "warning", "error", "neutral"] as const;
 
 const inputColors = {
   bg: ld("white", "black"),
@@ -419,6 +425,43 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: "#334155",
         },
       },
+    },
+    HvCallout: {
+      classes: {
+        root: { outline: "1px solid var(--ic, currentcolor)" },
+        ...Object.fromEntries(
+          semanticValues.map((type) => [
+            type === "neutral" ? "default" : type,
+            {
+              backgroundColor: theme.colors.pp[`${type}Dimmed`],
+              "--ic": theme.colors.pp[type],
+              "--ioc": buttonColors[type].subtleBorder,
+              "--ibg": buttonColors[type].subtleBg,
+            },
+          ]),
+        ),
+        message: {},
+        messageIcon: {
+          borderRadius: 8,
+          color: "var(--ic)",
+          outline: `1px solid var(--ioc)`,
+          backgroundColor: "var(--ibg)",
+        },
+        messageContent: {
+          color: theme.colors.secondary,
+        },
+        actionClose: {
+          color: theme.colors.secondary,
+        },
+      },
+    },
+    HvBannerContent: {
+      classes: {
+        root: { borderRadius: theme.radii.round },
+      },
+    },
+    HvSnackbar: {
+      anchorOrigin: { vertical: "bottom", horizontal: "center" },
     },
     HvBaseCheckBox: {
       classes: {
@@ -1104,7 +1147,7 @@ const pentahoPlus = makeTheme((theme) => ({
     hueDirection: "horizontal",
   },
   snackbar: {
-    actionButtonVariant: "secondarySubtle",
+    actionButtonVariant: "secondaryGhost",
   },
 }));
 
