@@ -35,7 +35,7 @@ const dragSquare: React.CSSProperties = {
 const ring: React.CSSProperties = {
   width: "32px",
   height: "32px",
-  borderRadius: "50%",
+  borderRadius: theme.radii.circle,
   border: `9px solid ${theme.colors.primaryDimmed}`,
   opacity: "100%",
   content: "''",
@@ -47,7 +47,7 @@ const ring: React.CSSProperties = {
 const border: React.CSSProperties = {
   width: "20px",
   height: "20px",
-  borderRadius: "50%",
+  borderRadius: theme.radii.circle,
   border: `2px solid ${theme.colors.textDimmed}`,
   content: "''",
   position: "absolute",
@@ -99,7 +99,7 @@ export const sliderStyles = {
   knobOuter: {
     position: "relative",
     borderColor: "transparent",
-    borderRadius: "50%",
+    borderRadius: theme.radii.circle,
     boxShadow: "none",
     backgroundColor: theme.colors.border,
     width: "32px",

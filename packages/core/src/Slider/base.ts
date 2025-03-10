@@ -1,4 +1,5 @@
 import type { CSSInterpolation } from "@emotion/serialize";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export default {
   "& .rc-slider": {
@@ -35,7 +36,7 @@ export default {
     marginTop: "-5px",
     backgroundColor: "#fff",
     border: "solid 2px #96dbfa",
-    borderRadius: "50%",
+    borderRadius: theme.radii.circle,
     cursor: "grab",
     opacity: 0.8,
     touchAction: "pan-x",
@@ -98,7 +99,7 @@ export default {
     verticalAlign: "middle",
     backgroundColor: "#fff",
     border: "2px solid #e9e9e9",
-    borderRadius: "50%",
+    borderRadius: theme.radii.circle,
     cursor: "pointer",
   },
   "& .rc-slider-dot-active": {

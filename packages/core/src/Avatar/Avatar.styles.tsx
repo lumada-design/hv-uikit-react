@@ -1,4 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
 
@@ -63,7 +64,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     position: "absolute",
     top: 0,
     right: 0,
-    borderRadius: "50%",
+    borderRadius: theme.radii.circle,
     zIndex: 1,
   },
   xs: {},
@@ -71,6 +72,6 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
   md: {},
   lg: {},
   xl: {},
-  circular: { borderRadius: "50%" },
+  circular: { borderRadius: theme.radii.circle },
   square: {},
 });

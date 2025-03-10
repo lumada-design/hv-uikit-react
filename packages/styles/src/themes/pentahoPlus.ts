@@ -953,7 +953,7 @@ const pentahoPlus = makeTheme((theme) => ({
           outline: `1px solid ${theme.colors.borderSubtle}`,
           overflow: "hidden",
           height: "fit-content",
-          borderRadius: theme.space.sm,
+          borderRadius: 16,
           "& > :last-child:not(.HvCardMedia-root)": {
             paddingBottom: theme.space.sm,
           },

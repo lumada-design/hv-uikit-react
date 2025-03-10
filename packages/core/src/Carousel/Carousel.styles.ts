@@ -133,7 +133,7 @@ export const { staticClasses, useClasses } = createClasses("HvCarousel", {
     width: 5,
     height: 5,
     margin: theme.space.xs,
-    borderRadius: "50%",
+    borderRadius: theme.radii.circle,
     backgroundColor: theme.colors.border,
   },
   dotSelected: {
