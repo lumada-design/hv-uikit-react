@@ -7,7 +7,6 @@ export default {
     width: "100%",
     height: "14px",
     padding: " 5px 0",
-    borderRadius: "6px",
     touchAction: "none",
     boxSizing: "border-box",
     WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
@@ -21,13 +20,11 @@ export default {
     width: "100%",
     height: "4px",
     backgroundColor: "#e9e9e9",
-    borderRadius: "6px",
   },
   "& .rc-slider-track": {
     position: "absolute",
     height: "4px",
     backgroundColor: "#abe2fb",
-    borderRadius: "6px",
   },
   "& .rc-slider-handle": {
     position: "absolute",
@@ -231,7 +228,7 @@ export default {
     textAlign: "center",
     textDecoration: "none",
     backgroundColor: "#6c6c6c",
-    borderRadius: "6px",
+    borderRadius: theme.radii.round,
     boxShadow: "0 0 4px #d9d9d9",
   },
   "& .rc-slider-tooltip-arrow": {
