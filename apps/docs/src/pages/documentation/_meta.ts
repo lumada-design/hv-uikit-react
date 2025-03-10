@@ -13,7 +13,6 @@ export default {
   theme: "Theme",
   colors: "Colors",
   tokens: "Tokens",
-  typography: "Typography",
   "-- Guides": {
     type: "separator",
     title: "Guides",
