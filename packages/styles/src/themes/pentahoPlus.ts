@@ -649,9 +649,9 @@ const pentahoPlus = makeTheme((theme) => ({
           ":where(:not(.HvButton-disabled))": {
             color: "#FFFFFF",
             "&[data-color=primary]": {
-              backgroundColor: blue[600],
-              ":hover": { backgroundColor: blue[700] },
-              ":active": { backgroundColor: blue[800] },
+              backgroundColor: theme.colors.primary,
+              ":hover": { backgroundColor: theme.colors.primaryStrong },
+              ":active": { backgroundColor: theme.colors.primaryDeep },
             },
             "&[data-color=positive]": {
               ":hover": { backgroundColor: theme.colors.positiveDeep },
