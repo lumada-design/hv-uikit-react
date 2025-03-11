@@ -80,7 +80,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     height: "30px",
     boxSizing: "border-box",
     paddingLeft: theme.space.xs,
-    paddingRight: theme.sizes.sm,
+    paddingRight: 32,
   },
   selectionDisabled: {},
   placeholder: {

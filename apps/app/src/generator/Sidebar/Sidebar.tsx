@@ -28,7 +28,6 @@ const Radii = lazy(() => import("~/generator/Radii"));
 const Spacing = lazy(() => import("~/generator/Spacing"));
 const Typography = lazy(() => import("~/generator/Typography"));
 const Zindices = lazy(() => import("~/generator/Zindices"));
-const Sizes = lazy(() => import("~/generator/Sizes"));
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
@@ -141,7 +140,6 @@ const Sidebar = () => {
               )}
               {tab === 3 && (
                 <>
-                  <Sizes />
                   <Radii />
                   <Spacing />
                   <Zindices />
