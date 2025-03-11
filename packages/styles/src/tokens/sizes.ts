@@ -1,4 +1,5 @@
 // TODO - review these sizes in v6. Are they needed?
+/** @deprecated no longer used. use `theme.space` or the direct value instead. */
 export const sizes = {
   xs: "28px",
   sm: "32px",

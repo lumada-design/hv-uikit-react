@@ -16,7 +16,6 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     alignItems: "center",
     borderColor: "inherit",
     position: "relative",
-    minHeight: theme.sizes.sm,
     padding: theme.space.sm,
   },
   content: {
