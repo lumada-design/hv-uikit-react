@@ -9,7 +9,12 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
+import {
+  getColor,
+  theme,
+  type HvColorAny,
+  type HvSize,
+} from "@hitachivantara/uikit-styles";
 
 import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
@@ -32,6 +37,12 @@ export interface HvTagProps
   disabled?: boolean;
   /** The type of the tag element. A tag can be of semantic or categoric type. */
   type?: "semantic" | "categorical";
+  /** @deprecated */
+  variant?: "filled" | "outlined";
+  size?: Extract<HvSize, "xs" | "sm" | "md">;
+  icon?: React.ReactNode;
+  /** Whether to show the select icon checkbox. */
+  showSelectIcon?: boolean;
   /** The color variant of the tag */
   color?: HvColorAny;
   /** Icon used to customize the delete icon */
@@ -43,9 +54,7 @@ export interface HvTagProps
   onDelete?: React.EventHandler<any>;
   /** Callback triggered when any item is clicked. */
   onClick?: (event: React.MouseEvent<HTMLElement>, selected?: boolean) => void;
-  /** Aria properties to apply to delete button in tag
-   * @deprecated no longer used
-   */
+  /** Aria properties to apply to delete button in tag. @deprecated no longer used */
   deleteButtonArialLabel?: string;
   /** Props to apply to delete icon */
   deleteButtonProps?: React.HTMLAttributes<HTMLDivElement>;
@@ -77,20 +86,22 @@ export const HvTag = forwardRef<
     style,
     label,
     disabled,
+    size = "xs",
+    variant,
     type = "semantic",
     selectable,
     selected,
     defaultSelected = false,
+    showSelectIcon = selectable,
     color,
+    icon: iconProp,
     deleteIcon: deleteIconProp,
     onDelete,
     onClick,
     onKeyDown,
     onKeyUp,
-    // TODO: remove from API
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    deleteButtonArialLabel = "Delete tag",
-    deleteButtonProps = {},
+    deleteButtonArialLabel,
+    deleteButtonProps,
     ...others
   } = useDefaultProps("HvTag", props);
   const { classes, cx } = useClasses(classesProp);
@@ -106,10 +117,12 @@ export const HvTag = forwardRef<
     onDelete?.(event);
   };
 
-  const backgroundColor =
-    (type === "semantic" && getColor(color, "neutral_20")) ||
-    (type === "categorical" && theme.alpha(getColor(color, "cat1")!, 0.2)) ||
-    undefined;
+  const tagColor =
+    // backwards-compatibility for `type` prop
+    (type === "categorical" && theme.alpha(color || "cat1", 0.2)) ||
+    // use the palette color if it matches
+    theme.palette[color as keyof typeof theme.palette]?.[600] ||
+    getColor(color);
 
   const isClickable = !!(onClick || onDelete || selectable);
 
@@ -139,12 +152,14 @@ export const HvTag = forwardRef<
       disabled={disabled}
       data-color={color}
       style={mergeStyles(style, {
-        "--bgColor": backgroundColor,
+        "--tagColor": tagColor,
       })}
-      className={cx(classes.root, classes.chipRoot, className, {
-        [classes.disabled]: disabled,
-        [classes.selected]: isSelected,
+      className={cx(classes.root, classes.chipRoot, classes[size], className, {
+        [classes.hasIcon]: iconProp || (selectable && showSelectIcon),
         [classes.clickable]: isClickable && !disabled,
+        [classes.selected]: isSelected,
+        [classes.disabled]: disabled,
+        [classes.outlined]: variant === "outlined",
         [classes.categorical]: type === "categorical",
         [classes.categoricalFocus]: type === "categorical" && !disabled,
         [classes.categoricalDisabled]: type === "categorical" && disabled,
@@ -165,7 +180,8 @@ export const HvTag = forwardRef<
       selected={isClickable && isSelected}
       {...others}
     >
-      {selectable && type === "semantic" && (
+      {iconProp}
+      {selectable && showSelectIcon && (
         <CheckboxIcon
           className={classes.icon}
           color={(disabled && ["bgPageSecondary", "textDisabled"]) || undefined}

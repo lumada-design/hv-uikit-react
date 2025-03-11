@@ -183,6 +183,7 @@ export const theme = {
   palette,
   spacing,
   alpha,
+  mix,
 };
 
 export type HvTheme = typeof theme;

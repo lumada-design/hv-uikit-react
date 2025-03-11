@@ -17,22 +17,53 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvTag"
   controls={{
     label: { defaultValue: "Tag label" },
-    color: { type: "color", defaultValue: "neutral_20" },
+    color: { defaultValue: "positive" },
     disabled: { defaultValue: false },
     selectable: { defaultValue: false },
   }}
 />
 
-### Different colors
+### Colors
 
-You can change the default color of the tag by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
+The color of the tag can be changed using the `color` prop. It accepts any UI Kit or CSS color.
 
 ```tsx live
 <div className="flex gap-xs">
-  <HvTag label="Tag Label" color="positive" />
-  <HvTag label="Tag Label" color="cat2" />
-  <HvTag label="Tag Label" color="aquamarine" />
-  <HvTag label="Tag Label" color="#c73aa8" />
+  <HvTag selectable label="Tag" />
+  <HvTag selectable label="Semantic tag" color="positive" />
+  <HvTag selectable label="Semantic tag" color="warning" />
+  <HvTag selectable label="Semantic tag" color="negative" />
+  <HvTag selectable label="Custom tag" color="pink" />
+  <HvTag selectable label="Custom tag" color="#c73aa8" />
+</div>
+```
+
+### Sizes
+
+The size of the tag can be changed using the `size` prop.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvTag selectable label="Tag label" size="xs" />
+  <HvTag selectable label="Tag label" size="sm" />
+  <HvTag selectable label="Tag label" size="md" />
+</div>
+```
+
+### Icons
+
+An icon can be added using `icon` prop.
+A built-in checkbox icon can be shown by using the `showSelectIcon` prop.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvTag
+    selectable
+    icon={<Abacus size="xs" className="size-12px" />}
+    label="Tag with icon"
+    size="sm"
+  />
+  <HvTag selectable showSelectIcon label="Tag with checkbox" size="sm" />
 </div>
 ```
 
@@ -63,9 +94,9 @@ Tags can have click actions.
 />
 ```
 
-### Controlled selectable state
+### Controlled selection
 
-To use the selectable tags in a controlled way, set the `selected` prop to `true` of `false`.
+The tag selection state can be controlled using the `selected` prop.
 
 ```tsx live
 import { useState } from "react";
@@ -73,11 +104,11 @@ import { useState } from "react";
 const tags = ["Asset 1", "Asset 2", "Asset 3", "Asset 4"];
 
 export default function Demo() {
-  const [selectedTags, setSelectedTags] = useState(["Asset 1", "Asset 3"]);
+  const [selectedTags, setSelectedTags] = useState(tags.slice(0, 2));
 
   return (
     <div className="grid gap-sm">
-      <div className="flex gap-sm">
+      <div className="flex gap-xs">
         {tags.map((tag, i) => (
           <HvTag
             key={`${tag}-${i}`}
@@ -94,7 +125,6 @@ export default function Demo() {
           />
         ))}
       </div>
-      <br />
       <div className="flex items-center gap-xs">
         <HvTypography variant="label">Selected tags:</HvTypography>
         <div>{selectedTags.join(", ")}</div>

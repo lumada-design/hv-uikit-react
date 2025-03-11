@@ -244,6 +244,16 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvTag: {
+      classes: {
+        root: {
+          "--tagColor": theme.colors.neutral_20,
+        },
+        categorical: {
+          "--tagColor": theme.alpha("cat1", 0.2),
+        },
+      },
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
