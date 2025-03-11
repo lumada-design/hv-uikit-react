@@ -33,7 +33,7 @@ export default {
     marginTop: "-5px",
     backgroundColor: "#fff",
     border: "solid 2px #96dbfa",
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     cursor: "grab",
     opacity: 0.8,
     touchAction: "pan-x",
@@ -96,7 +96,7 @@ export default {
     verticalAlign: "middle",
     backgroundColor: "#fff",
     border: "2px solid #e9e9e9",
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     cursor: "pointer",
   },
   "& .rc-slider-dot-active": {

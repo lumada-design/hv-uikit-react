@@ -21,7 +21,7 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
 
     "&:hover": {
       backgroundColor: theme.colors.infoDimmed,
-      borderRadius: theme.radii.circle,
+      borderRadius: theme.radii.full,
     },
   },
 

@@ -201,7 +201,7 @@ export const Custom: StoryObj<HvRadioProps> = {
       }),
       box: css({
         "& svg": {
-          borderRadius: "6px",
+          borderRadius: theme.radii.full,
           border: `1px solid ${theme.colors.warning}`,
         },
       }),

@@ -64,7 +64,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     position: "absolute",
     top: 0,
     right: 0,
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     zIndex: 1,
   },
   xs: {},
@@ -72,6 +72,6 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
   md: {},
   lg: {},
   xl: {},
-  circular: { borderRadius: theme.radii.circle },
+  circular: { borderRadius: theme.radii.full },
   square: {},
 });

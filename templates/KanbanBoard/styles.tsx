@@ -40,7 +40,7 @@ const styles = {
   }),
   columnCards: css({}),
   count: css({
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     width: 20,
     height: 20,
     backgroundColor: theme.colors.atmo4,
