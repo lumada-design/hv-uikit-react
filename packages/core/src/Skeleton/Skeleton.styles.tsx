@@ -20,7 +20,7 @@ export const { staticClasses, useClasses } = createClasses("HvSkeleton", {
     },
   },
   circle: {
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
   },
   square: {
     borderRadius: theme.radii.base,

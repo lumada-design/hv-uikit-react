@@ -43,7 +43,7 @@ const iconWrapper = (icon: React.ReactNode) => (
       justifyContent: "center",
       alignItems: "center",
       border: `1px solid ${theme.colors.atmo1}`,
-      borderRadius: theme.radii.circle,
+      borderRadius: theme.radii.full,
     }}
   >
     {icon}

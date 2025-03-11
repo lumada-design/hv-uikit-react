@@ -32,7 +32,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     height: "8px",
     boxShadow: `0 0 0 2px #fff, inset 0 0 1px 1px rgba(0,0,0,.3),
             0 0 1px 2px rgba(0,0,0,.4)`,
-    borderRadius: "50%",
+    borderRadius: theme.radii.full,
     transform: "translate(-3px, -3px)",
   },
   hue: {
@@ -53,7 +53,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     boxShadow: "0 0 2px rgb(0 0 0 / 60%)",
     marginLeft: "0px",
     border: "2px solid #fff",
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     "&.vertical": {
       transform: "translate(0px, -2px)",
     },

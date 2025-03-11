@@ -1,4 +1,5 @@
 import type { CSSInterpolation } from "@emotion/serialize";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export default {
   "& .rc-slider": {
@@ -6,7 +7,6 @@ export default {
     width: "100%",
     height: "14px",
     padding: " 5px 0",
-    borderRadius: "6px",
     touchAction: "none",
     boxSizing: "border-box",
     WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
@@ -20,13 +20,11 @@ export default {
     width: "100%",
     height: "4px",
     backgroundColor: "#e9e9e9",
-    borderRadius: "6px",
   },
   "& .rc-slider-track": {
     position: "absolute",
     height: "4px",
     backgroundColor: "#abe2fb",
-    borderRadius: "6px",
   },
   "& .rc-slider-handle": {
     position: "absolute",
@@ -35,7 +33,7 @@ export default {
     marginTop: "-5px",
     backgroundColor: "#fff",
     border: "solid 2px #96dbfa",
-    borderRadius: "50%",
+    borderRadius: theme.radii.full,
     cursor: "grab",
     opacity: 0.8,
     touchAction: "pan-x",
@@ -98,7 +96,7 @@ export default {
     verticalAlign: "middle",
     backgroundColor: "#fff",
     border: "2px solid #e9e9e9",
-    borderRadius: "50%",
+    borderRadius: theme.radii.full,
     cursor: "pointer",
   },
   "& .rc-slider-dot-active": {
@@ -230,7 +228,7 @@ export default {
     textAlign: "center",
     textDecoration: "none",
     backgroundColor: "#6c6c6c",
-    borderRadius: "6px",
+    borderRadius: theme.radii.round,
     boxShadow: "0 0 4px #d9d9d9",
   },
   "& .rc-slider-tooltip-arrow": {

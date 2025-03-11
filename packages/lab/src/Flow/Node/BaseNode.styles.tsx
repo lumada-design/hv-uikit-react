@@ -123,7 +123,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     width: 10,
     height: 10,
     margin: theme.spacing(0, theme.space.xs),
-    borderRadius: theme.radii.circle,
+    borderRadius: theme.radii.full,
     backgroundColor: theme.colors.negative_20,
   },
   footerContainer: {

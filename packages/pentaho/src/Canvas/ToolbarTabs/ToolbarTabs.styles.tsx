@@ -97,7 +97,7 @@ export const { staticClasses, useClasses } = createClasses(
       width: CLOSE_ICON_SIZE,
       "&:hover": {
         backgroundColor: theme.colors.bgHover,
-        borderRadius: theme.radii.circle,
+        borderRadius: theme.radii.full,
       },
     },
     tabDivider: {

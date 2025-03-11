@@ -40,7 +40,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
       width: "1em",
       height: "1em",
       backgroundColor: "currentcolor",
-      borderRadius: "50%",
+      borderRadius: theme.radii.full,
     },
   },
   bulletSelected: {

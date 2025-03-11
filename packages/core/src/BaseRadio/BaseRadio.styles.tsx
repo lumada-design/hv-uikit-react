@@ -18,7 +18,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     "& svg": {
       width: 16,
       height: 16,
-      borderRadius: theme.radii.circle,
+      borderRadius: theme.radii.full,
       borderWidth: 1,
       borderColor: theme.colors.text,
       backgroundColor: theme.colors.bgContainer,
