@@ -22,18 +22,6 @@ import {
 /** light-dark alias */
 const ld = (c1: string, c2: string) => `light-dark(${c1}, ${c2})`;
 
-/** custom button using `light-dark` theming scheme */
-const buttonColors = {
-  primary: {
-    subtleBg: ld(blue[50], blue[950]),
-    subtleBorder: ld(blue[200], blue[800]),
-  },
-  secondary: {
-    subtleBg: ld(slate[100], slate[800]),
-    subtleBorder: ld(slate[300], slate[700]),
-  },
-};
-
 const semaColors = ["positive", "warning", "negative", "info"] as const;
 
 const notificationMap = {
@@ -46,10 +34,7 @@ const notificationMap = {
 } as const;
 
 const inputColors = {
-  bg: ld("white", "black"),
-  border: ld(slate[400], slate[600]),
-  borderHover: ld(blue[600], blue[600]),
-  borderActive: ld(slate[700], slate[300]),
+  bg: ld("#FFFFFF", "#020617"),
 };
 
 const pentahoPlus = makeTheme((theme) => ({
@@ -399,10 +384,10 @@ const pentahoPlus = makeTheme((theme) => ({
   },
   sizes: {
     xs: "32px",
+    sm: "40px",
     md: "48px",
     lg: "56px",
     xl: "64px",
-    sm: "40px",
   },
   radii: {
     ...radii,
@@ -601,7 +586,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           "&& .HvButton-secondarySubtle": {
-            borderColor: inputColors.border,
+            borderColor: theme.colors.textDimmed,
             backgroundColor: inputColors.bg,
           },
           "&& .HvDropdownButton-openUp": {
@@ -615,14 +600,14 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: theme.radii.base,
         },
         panel: {
-          borderColor: inputColors.border,
+          borderColor: theme.colors.textDimmed,
         },
       },
     },
     HvSuggestions: {
       classes: {
         list: {
-          borderColor: inputColors.border,
+          borderColor: theme.colors.textDimmed,
         },
       },
     },
@@ -773,12 +758,12 @@ const pentahoPlus = makeTheme((theme) => ({
           borderColor: "color-mix(in srgb, currentcolor, transparent 60%)",
           ":where(:not(.HvButton-disabled))": {
             "&[data-color=primary]": {
-              borderColor: buttonColors.primary.subtleBorder,
-              backgroundColor: buttonColors.primary.subtleBg,
+              borderColor: theme.colors.primarySubtle,
+              backgroundColor: theme.colors.primaryDimmed,
             },
             "&[data-color=secondary]": {
-              borderColor: buttonColors.secondary.subtleBorder,
-              backgroundColor: buttonColors.secondary.subtleBg,
+              borderColor: theme.colors.border,
+              backgroundColor: theme.colors.bgContainerSecondary,
             },
             ":hover": {
               backgroundColor: theme.colors.primaryDimmed,
@@ -846,7 +831,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         multiple: {
           borderRadius: theme.radii.full,
-          borderColor: buttonColors.secondary.subtleBorder,
+          borderColor: theme.colors.border,
           "& .HvMultiButton-button": {
             borderColor: "inherit",
             ...theme.typography.body,
@@ -867,7 +852,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         vertical: {
-          borderColor: buttonColors.secondary.subtleBorder,
+          borderColor: theme.colors.border,
           "& .HvMultiButton-button": {
             borderColor: "inherit",
             "&.HvMultiButton-firstButton": {
@@ -1137,7 +1122,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseInput: {
       classes: {
         root: {
-          borderColor: inputColors.border,
+          borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
         },
       },
@@ -1145,17 +1130,16 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseDropdown: {
       classes: {
         header: {
-          borderColor: inputColors.border,
+          borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
         },
         headerOpen: {
-          borderColor: inputColors.border,
-          "&:hover": {
-            borderColor: inputColors.border,
+          "&,:hover": {
+            borderColor: theme.colors.textDimmed,
           },
         },
         panel: {
-          borderColor: inputColors.border,
+          borderColor: theme.colors.textDimmed,
         },
       },
     },
@@ -1163,7 +1147,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         iconSelected: {
           "&[data-color=secondary]": {
-            borderColor: inputColors.border,
+            borderColor: theme.colors.textDimmed,
           },
         },
       },
