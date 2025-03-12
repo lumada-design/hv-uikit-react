@@ -39,6 +39,7 @@ const showcaseDecorator: Decorator = (Story) => (
 const meta: Meta<typeof HvInput> = {
   title: "Components/Input",
   component: HvInput,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvBaseInput },
 };
 export default meta;

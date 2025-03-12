@@ -10,6 +10,7 @@ import { Deploy, Info } from "@hitachivantara/uikit-react-icons";
 const meta: Meta<typeof HvSnackbar> = {
   title: "Components/Snackbar",
   component: HvSnackbar,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvSnackbarContent },
   decorators: [(Story) => <div style={{ minHeight: 60 }}>{Story()}</div>],
   args: {

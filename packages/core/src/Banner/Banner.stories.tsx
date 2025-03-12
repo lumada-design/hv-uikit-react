@@ -12,6 +12,7 @@ import { Deploy } from "@hitachivantara/uikit-react-icons";
 export default {
   title: "Components/Banner",
   component: HvBanner,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvBannerContent },
 } satisfies Meta<typeof HvBanner>;
 

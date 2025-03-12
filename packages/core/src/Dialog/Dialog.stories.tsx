@@ -23,6 +23,7 @@ import { setupChromatic } from ".storybook/setupChromatic";
 const meta: Meta<typeof HvDialog> = {
   title: "Components/Dialog",
   component: HvDialog,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvDialogTitle, HvDialogContent, HvDialogActions },
   decorators: [
     (Story) => (

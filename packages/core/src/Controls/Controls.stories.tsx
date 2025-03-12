@@ -18,6 +18,7 @@ import { setupChromatic } from ".storybook/setupChromatic";
 const meta: Meta<typeof HvControls> = {
   title: "Widgets/Controls",
   component: HvControls,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvLeftControl, HvRightControl },
 };
 

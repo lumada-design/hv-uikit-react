@@ -35,7 +35,7 @@ import { setupChromatic } from ".storybook/setupChromatic";
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",
   component: HvFlow,
-  // @ts-expect-error https://github.com/storybookjs/storybook/issues/20782
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: {
     HvFlowBackground,
     HvFlowControls,

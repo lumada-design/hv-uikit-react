@@ -28,6 +28,7 @@ export default {
   title: "Components/Tree View",
   component: HvTreeView,
   argTypes: {},
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvTreeItem },
 } satisfies Meta<typeof HvTreeView>;
 

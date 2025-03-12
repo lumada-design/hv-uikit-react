@@ -21,6 +21,7 @@ import VariantsRaw from "./stories/Variants?raw";
 const meta: Meta<typeof HvCard> = {
   title: "Components/Card",
   component: HvCard,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCardHeader, HvCardContent, HvCardMedia },
   decorators: [(Story) => <div style={{ margin: 20 }}>{Story()}</div>],
 };

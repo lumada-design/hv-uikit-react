@@ -16,6 +16,7 @@ import { cancelUpload, simulateUpload } from "./stories/simulators";
 const meta: Meta<typeof HvFileUploader> = {
   title: "Widgets/File Uploader",
   component: HvFileUploader,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvFileUploaderPreview },
 };
 
