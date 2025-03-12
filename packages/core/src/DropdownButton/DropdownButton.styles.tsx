@@ -5,11 +5,9 @@ import { buttonClasses } from "../Button";
 
 // TODO: review override
 const disabledStyle = {
-  backgroundColor: theme.colors.bgDisabled,
-  borderColor: theme.colors.bgDisabled,
-  [`&.${buttonClasses.subtle},&.${buttonClasses.ghost}`]: {
+  [`&,&.${buttonClasses.subtle},&.${buttonClasses.ghost}`]: {
     backgroundColor: theme.colors.bgDisabled,
-    borderColor: theme.colors.bgDisabled,
+    outlineColor: theme.colors.bgDisabled,
     "&:hover": { backgroundColor: theme.colors.bgDisabled },
   },
 };

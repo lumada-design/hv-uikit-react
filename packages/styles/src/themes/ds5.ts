@@ -197,26 +197,26 @@ const ds5 = makeTheme((theme) => ({
           ":where([data-color=primary]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
               backgroundColor: theme.colors.primary_80,
-              borderColor: theme.colors.primary_80,
+              outlineColor: theme.colors.primary_80,
             },
           },
           ":where([data-color=positive]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
               backgroundColor: theme.colors.positive_80,
-              borderColor: theme.colors.positive_80,
+              outlineColor: theme.colors.positive_80,
             },
           },
           ":where([data-color=warning]:not(.HvButton-disabled))": {
             backgroundColor: theme.colors.warning_120,
             ":hover, &:focus-visible": {
               backgroundColor: theme.colors.warning_140,
-              borderColor: theme.colors.warning_140,
+              outlineColor: theme.colors.warning_140,
             },
           },
           ":where([data-color=negative]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
               backgroundColor: theme.colors.negative_80,
-              borderColor: theme.colors.negative_80,
+              outlineColor: theme.colors.negative_80,
             },
           },
         },

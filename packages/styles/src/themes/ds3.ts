@@ -447,11 +447,11 @@ const ds3 = makeTheme((theme) => ({
         },
         secondarySubtle: {
           backgroundColor: theme.colors.atmo1,
-          borderColor: theme.colors.atmo4,
+          outlineColor: theme.colors.atmo4,
         },
         secondary: {
           backgroundColor: theme.colors.atmo1,
-          borderColor: theme.colors.atmo4,
+          outlineColor: theme.colors.atmo4,
         },
         ghost: {},
         disabled: {
@@ -459,7 +459,7 @@ const ds3 = makeTheme((theme) => ({
             backgroundColor: theme.colors.atmo3,
           },
           "&.HvButton-subtle": {
-            borderColor: theme.colors.atmo4,
+            outlineColor: theme.colors.atmo4,
           },
         },
       },

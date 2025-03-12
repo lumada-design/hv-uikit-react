@@ -29,32 +29,28 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     color: "var(--color, currentcolor)",
     backgroundColor: "transparent",
     height: "var(--HvButton-height)",
-    border: "1px solid transparent",
+    border: "none",
+    outline: "1px solid transparent",
+    outlineOffset: -1,
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
   },
   /** applied to the _left_ icon container */
   startIcon: {
     marginLeft: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
   },
   /** applied to the _right_ icon container */
   endIcon: {
     marginRight: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
   },
   focusVisible: {},
   /** applied to the root element when disabled */
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.textDisabled,
-    backgroundColor: "transparent",
-    borderColor: "transparent",
-    ":hover, :focus-visible": {
+    "&,:hover,:focus-visible": {
       backgroundColor: "transparent",
-      borderColor: "transparent",
+      outlineColor: "transparent",
     },
   },
   /** applied to the root element when is icon-only */
@@ -62,9 +58,6 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     margin: 0,
     padding: 0,
     height: "fit-content",
-    "& > *": {
-      margin: -1,
-    },
   },
   /** applied to the root element when using the `contained` variant */
   contained: {
@@ -81,7 +74,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   },
   /** applied to the root element when using the `subtle` variant */
   subtle: {
-    borderColor: "currentcolor",
+    outlineColor: "currentcolor",
   },
   /** applied to the root element when using the `ghost` variant */
   ghost: {},
@@ -89,7 +82,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   semantic: {
     color: theme.colors.textDark,
     backgroundColor: "transparent",
-    borderColor: "transparent",
+    outlineColor: "transparent",
     "&:hover, &:focus-visible": {
       backgroundColor: theme.alpha("textLight", 0.3),
     },

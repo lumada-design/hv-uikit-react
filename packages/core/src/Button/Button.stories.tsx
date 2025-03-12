@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { StoryObj } from "@storybook/react";
 import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 import {
@@ -158,17 +157,7 @@ export const FocusableWhenDisabled: StoryObj<HvButtonProps> = {
 export const Icons: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <div
-        className={css({
-          display: "flex",
-          flexFlow: "column",
-          gap: 10,
-          "& > div": {
-            display: "flex",
-            gap: 20,
-          },
-        })}
-      >
+      <div className="grid gap-10px [&>div]:flex [&>div]:gap-20px">
         {Story()}
       </div>
     ),
@@ -176,18 +165,18 @@ export const Icons: StoryObj<HvButtonProps> = {
   render: () => (
     <>
       <div>
-        <HvButton icon aria-label="Play" variant="primaryGhost">
-          <Play iconSize="M" />
+        <HvButton icon aria-label="Play" variant="primarySubtle">
+          <Play size="M" />
         </HvButton>
         <HvButton icon aria-label="Pause">
-          <Pause iconSize="M" />
+          <Pause size="M" />
         </HvButton>
         <HvButton icon disabled aria-label="Stop">
-          <Stop iconSize="M" />
+          <Stop size="M" />
         </HvButton>
       </div>
       <div>
-        <HvButton startIcon={<Play />} variant="primaryGhost">
+        <HvButton startIcon={<Play />} variant="primarySubtle">
           Play
         </HvButton>
         <HvButton startIcon={<Pause />} variant="secondaryGhost">
@@ -198,7 +187,7 @@ export const Icons: StoryObj<HvButtonProps> = {
         </HvButton>
       </div>
       <div>
-        <HvButton endIcon={<Play />} variant="primaryGhost">
+        <HvButton endIcon={<Play />} variant="primarySubtle">
           Play
         </HvButton>
         <HvButton endIcon={<Pause />} variant="secondaryGhost">

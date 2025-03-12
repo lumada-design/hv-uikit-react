@@ -67,11 +67,9 @@ export const { staticClasses, useClasses } = createClasses(
       pointerEvents: "none",
       [`&& .${buttonClasses.disabled}`]: {
         pointerEvents: "none",
-        backgroundColor: "transparent",
-        borderColor: "transparent",
-        ":hover": {
+        "&,:hover": {
           backgroundColor: "transparent",
-          borderColor: "transparent",
+          outlineColor: "transparent",
         },
       },
     },

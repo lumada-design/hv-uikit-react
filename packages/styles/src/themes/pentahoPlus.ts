@@ -599,7 +599,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           "&& .HvButton-secondarySubtle": {
-            borderColor: inputColors.border,
+            outlineColor: inputColors.border,
             backgroundColor: inputColors.bg,
           },
           "&& .HvDropdownButton-openUp": {
@@ -676,7 +676,7 @@ const pentahoPlus = makeTheme((theme) => ({
         button: {
           borderRadius: 2,
           "&:focus": {
-            borderColor: theme.colors.secondary,
+            outlineColor: theme.colors.secondary,
           },
         },
         inputRoot: {
@@ -719,25 +719,25 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         subtle: {
-          borderColor: "color-mix(in srgb, currentcolor, transparent 60%)",
+          outlineColor: "color-mix(in srgb, currentcolor, transparent 60%)",
           ":where(:not(.HvButton-disabled))": {
             "&[data-color=primary]": {
-              borderColor: buttonColors.primary.subtleBorder,
+              outlineColor: buttonColors.primary.subtleBorder,
               backgroundColor: buttonColors.primary.subtleBg,
             },
             "&[data-color=secondary]": {
-              borderColor: buttonColors.secondary.subtleBorder,
+              outlineColor: buttonColors.secondary.subtleBorder,
               backgroundColor: buttonColors.secondary.subtleBg,
             },
             ":hover": {
               backgroundColor: theme.colors.primaryDimmed,
             },
             ":active": {
-              borderColor: "transparent",
+              outlineColor: "transparent",
               backgroundColor: theme.colors.primarySubtle,
             },
             "&[data-color=positive]": {
-              borderColor: theme.colors.positiveBorder,
+              outlineColor: theme.colors.positiveBorder,
               backgroundColor: theme.colors.positiveDimmed,
               ":hover": { backgroundColor: theme.colors.positiveSubtle },
               ":active": {
@@ -745,13 +745,13 @@ const pentahoPlus = makeTheme((theme) => ({
               },
             },
             "&[data-color=warning]": {
-              borderColor: theme.colors.warningBorder,
+              outlineColor: theme.colors.warningBorder,
               backgroundColor: theme.colors.warningDimmed,
               ":hover": { backgroundColor: theme.colors.warningSubtle },
               ":active": { backgroundColor: theme.colors.warningBorder },
             },
             "&[data-color=negative]": {
-              borderColor: theme.colors.negativeBorder,
+              outlineColor: theme.colors.negativeBorder,
               backgroundColor: theme.colors.negativeDimmed,
               ":hover": { backgroundColor: theme.colors.negativeSubtle },
               ":active": {
@@ -782,7 +782,7 @@ const pentahoPlus = makeTheme((theme) => ({
         disabled: {
           color: theme.colors.textDisabled,
           ":not(.HvButton-ghost)": {
-            borderColor: "transparent",
+            outlineColor: "transparent",
             backgroundColor: theme.colors.bgDisabled,
             "&:hover, &:active": {
               backgroundColor: theme.colors.bgDisabled,
@@ -848,17 +848,17 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         disabled: {
           backgroundColor: theme.colors.bgDisabled,
-          borderColor: theme.colors.bgDisabled,
+          outlineColor: theme.colors.bgDisabled,
           "&.HvButton-subtle": {
             backgroundColor: theme.colors.bgDisabled,
-            borderColor: theme.colors.bgDisabled,
+            outlineColor: theme.colors.bgDisabled,
             "&:hover": {
               backgroundColor: theme.colors.bgDisabled,
             },
           },
           "&.HvButton-ghost": {
             backgroundColor: theme.colors.bgDisabled,
-            borderColor: theme.colors.bgDisabled,
+            outlineColor: theme.colors.bgDisabled,
             "&:hover": {
               backgroundColor: theme.colors.bgDisabled,
             },
@@ -1098,8 +1098,7 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: inputColors.bg,
         },
         headerOpen: {
-          borderColor: inputColors.border,
-          "&:hover": {
+          "&,:hover": {
             borderColor: inputColors.border,
           },
         },
@@ -1112,7 +1111,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         iconSelected: {
           "&[data-color=secondary]": {
-            borderColor: inputColors.border,
+            outlineColor: inputColors.border,
           },
         },
       },
