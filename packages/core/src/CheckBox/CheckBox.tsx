@@ -182,7 +182,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         id={hasLabel ? setId(elementId, "input") : setId(id, "input")}
         name={name}
         className={cx(classes.checkbox, {
-          [classes.invalidCheckbox]: isStateInvalid,
+          [classes.invalidCheckbox]: !label && isStateInvalid,
           [classes.checked]: isChecked,
           [classes.indeterminate]: isIndeterminate,
           [classes.semantic]: semantic,

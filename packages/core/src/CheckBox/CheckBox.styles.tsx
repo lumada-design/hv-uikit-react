@@ -45,9 +45,15 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   },
   checkbox: { height: "32px" },
   invalidCheckbox: {
-    borderBottom: `1px solid ${theme.form.errorColor}`,
-    borderBottomLeftRadius: "0px",
-    borderBottomRightRadius: "0px",
+    "::after": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      height: 1,
+      background: theme.colors.negativeDeep,
+    },
   },
   label: {
     overflow: "hidden",
