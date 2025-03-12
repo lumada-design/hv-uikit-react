@@ -46,7 +46,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
   icon: {},
   checked: {
     "& svg": {
-      border: `1px solid ${theme.colors.primaryStrong}`,
+      border: "transparent",
       backgroundColor: theme.colors.primaryStrong,
       color: theme.colors.bgContainer,
     },

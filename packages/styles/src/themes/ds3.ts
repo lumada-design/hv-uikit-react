@@ -252,6 +252,13 @@ const ds3 = makeTheme((theme) => ({
         root: {
           borderRadius: "0px",
         },
+        checked: {
+          "& svg": {
+            border: `1px solid ${theme.colors.text}`,
+            backgroundColor: theme.colors.text,
+            color: theme.colors.atmo1,
+          },
+        },
       },
     },
     HvBaseDropdown: {
