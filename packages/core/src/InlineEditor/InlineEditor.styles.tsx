@@ -53,7 +53,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     cursor: "pointer",
     visibility: "hidden",
     alignSelf: "center",
-    height: 16,
+    minWidth: 16,
   },
   iconVisible: {
     visibility: "visible",
