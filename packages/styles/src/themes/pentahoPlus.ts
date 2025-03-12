@@ -470,11 +470,7 @@ const pentahoPlus = makeTheme((theme) => ({
           "& svg": {
             width: 16,
             height: 16,
-            borderRadius: "3px",
-            border: `1px solid ${theme.colors.textSubtle}`,
-          },
-          "&:hover": {
-            backgroundColor: theme.colors.bgHover,
+            borderRadius: "4px",
           },
         },
         checked: {
@@ -482,31 +478,6 @@ const pentahoPlus = makeTheme((theme) => ({
             border: `1px solid ${theme.colors.primary}`,
             backgroundColor: theme.colors.primary,
             color: theme.colors.atmo1,
-          },
-          "&.HvBaseCheckBox-disabled": {
-            "& svg": {
-              color: theme.colors.textDisabled,
-            },
-          },
-        },
-        disabled: {
-          "&.HvBaseCheckBox-root": {
-            "& svg": {
-              border: `1px solid ${theme.colors.textDisabled}`,
-              backgroundColor: theme.colors.bgDisabled,
-            },
-          },
-        },
-        indeterminate: {
-          "& svg": {
-            backgroundColor: theme.colors.bgContainer,
-            border: `1px solid ${theme.colors.textSubtle}`,
-            color: theme.colors.textSubtle,
-          },
-          "&.HvBaseCheckBox-disabled": {
-            "& svg": {
-              color: theme.colors.textDisabled,
-            },
           },
         },
       },

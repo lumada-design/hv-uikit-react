@@ -320,8 +320,8 @@ const newLight = {
 
   border: atmosphereLight.atmo4,
   borderSubtle: atmosphereLight.atmo3,
-  borderStrong: atmosphereLight.atmo2,
-  borderDisabled: atmosphereLight.atmo3,
+  borderStrong: accentLight.secondary_80,
+  borderDisabled: accentLight.secondary_60,
 
   bgPage: atmosphereLight.atmo2,
   bgContainer: atmosphereLight.atmo1,

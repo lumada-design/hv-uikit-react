@@ -19,6 +19,9 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   disabled: {
     cursor: "not-allowed",
     "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
   },
   focusVisible: {
     ...outlineStyles,
