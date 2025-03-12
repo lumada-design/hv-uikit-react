@@ -2,7 +2,6 @@ import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { Add, Delete, Lock, Preview } from "@hitachivantara/uikit-react-icons";
 
 import { HvBulkActions, HvBulkActionsProps } from "./BulkActions";
 
@@ -20,10 +19,10 @@ const Sample = (props: Partial<HvBulkActionsProps>) => {
       onSelectAll={handleSelectAll}
       maxVisibleActions={2}
       actions={[
-        { id: "add", label: "Add", icon: <Add /> },
-        { id: "delete", label: "Delete", icon: <Delete /> },
-        { id: "lock", label: "Lock", icon: <Lock /> },
-        { id: "put", label: "Preview", icon: <Preview /> },
+        { id: "add", label: "Add", icon: <div /> },
+        { id: "delete", label: "Delete", icon: <div /> },
+        { id: "lock", label: "Lock", icon: <div /> },
+        { id: "put", label: "Preview", icon: <div /> },
       ]}
       {...props}
     />

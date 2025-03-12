@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { Lock, Unlock } from "@hitachivantara/uikit-react-icons";
 
 import { HvToggleButton } from "./ToggleButton";
 
@@ -10,8 +9,8 @@ describe("ToggleButton", () => {
     render(
       <HvToggleButton
         aria-label="Lock"
-        notSelectedIcon={<Unlock data-testid="logo-unlock" />}
-        selectedIcon={<Lock data-testid="logo-lock" />}
+        notSelectedIcon={<div data-testid="logo-unlock" />}
+        selectedIcon={<div data-testid="logo-lock" />}
       />,
     );
     expect(screen.queryByTestId("logo-unlock")).toBeInTheDocument();
@@ -24,8 +23,8 @@ describe("ToggleButton", () => {
     render(
       <HvToggleButton
         aria-label="Lock"
-        notSelectedIcon={<Unlock data-testid="logo-unlock" />}
-        selectedIcon={<Lock data-testid="logo-lock" />}
+        notSelectedIcon={<div data-testid="logo-unlock" />}
+        selectedIcon={<div data-testid="logo-lock" />}
         onClick={onClickMock}
       />,
     );

@@ -1,26 +1,14 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import {
-  Add,
-  Delete,
-  Preview,
-  Upload,
-} from "@hitachivantara/uikit-react-icons";
 
 import { HvActionsGeneric, HvActionsGenericProps } from "./ActionsGeneric";
 
 const actions: HvActionsGenericProps["actions"] = [
-  { id: "post", label: "Add", icon: <Add />, disabled: true },
-  { id: "get", label: "Preview", icon: <Preview />, iconOnly: true },
-  {
-    id: "put",
-    label: "Upload",
-    icon: <Upload />,
-    disabled: true,
-    iconOnly: false,
-  },
-  { id: "delete", label: "Delete", icon: <Delete /> },
+  { id: "post", label: "Add", icon: <div />, disabled: true },
+  { id: "get", label: "Preview", icon: <div />, iconOnly: true },
+  { id: "put", label: "Upload", disabled: true, iconOnly: false },
+  { id: "delete", label: "Delete" },
 ];
 
 describe("ActionsGeneric", () => {

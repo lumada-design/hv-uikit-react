@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { TopXS } from "@hitachivantara/uikit-react-icons";
 
-import { HvKpi } from ".";
+import { HvKpi } from "./Kpi";
 
 describe("Kpi", () => {
   it("should render all components", () => {
@@ -17,8 +16,8 @@ describe("Kpi", () => {
           comparisonIndicatorInfo: "Comparison indicator info",
         }}
         visualComparison="Visual comparison"
-        trendIndicator={<TopXS role="img" title="Trend indicator" />}
-        visualIndicator={<TopXS role="img" title="Visual indicator" />}
+        trendIndicator={<div data-testid="trendIndicator" />}
+        visualIndicator={<div data-testid="visualIndicator" />}
       />,
     );
 
@@ -27,11 +26,7 @@ describe("Kpi", () => {
     expect(screen.getByText("Unit")).toBeInTheDocument();
     expect(screen.getByText("Comparison indicator info")).toBeInTheDocument();
     expect(screen.getByText("Visual comparison")).toBeInTheDocument();
-    expect(
-      screen.getByRole("img", { name: "Trend indicator" }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("img", { name: "Visual indicator" }),
-    ).toBeInTheDocument();
+    expect(screen.getByTestId("trendIndicator")).toBeInTheDocument();
+    expect(screen.getByTestId("visualIndicator")).toBeInTheDocument();
   });
 });

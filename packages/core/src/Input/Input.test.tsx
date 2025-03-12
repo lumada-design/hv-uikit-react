@@ -2,7 +2,6 @@ import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-import { Map } from "@hitachivantara/uikit-react-icons";
 
 import { HvInput, HvInputProps } from ".";
 import { HvAdornment } from "../FormElement";
@@ -48,7 +47,7 @@ describe("Input", () => {
   });
 
   it("renders the endAdornment", () => {
-    render(<HvInput endAdornment={<Map data-testid="icon" />} />);
+    render(<HvInput endAdornment={<div data-testid="icon" />} />);
 
     expect(screen.getByTestId("icon")).toBeVisible();
   });
@@ -78,7 +77,7 @@ describe("Input", () => {
   });
 
   it("renders the startAdornment", () => {
-    render(<HvInput startAdornment={<Map data-testid="icon" />} />);
+    render(<HvInput startAdornment={<div data-testid="icon" />} />);
 
     expect(screen.getByTestId("icon")).toBeVisible();
   });

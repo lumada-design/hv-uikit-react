@@ -1,14 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 import { HvVerticalNavigationAction, HvVerticalNavigationActions } from ".";
 
 const Sample = () => (
   <HvVerticalNavigationActions>
-    <HvVerticalNavigationAction label="Action 1" icon={<Play />} />
+    <HvVerticalNavigationAction label="Action 1" icon={<div />} />
     <HvVerticalNavigationAction label="Action 2" />
-    <HvVerticalNavigationAction label="Action 3" icon={<Stop />} />
+    <HvVerticalNavigationAction label="Action 3" icon={<div />} />
   </HvVerticalNavigationActions>
 );
 

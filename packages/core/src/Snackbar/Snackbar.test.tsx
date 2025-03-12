@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvSnackbar, HvSnackbarProps } from "./Snackbar";
 
@@ -40,7 +39,7 @@ describe("Snackbar", () => {
   });
 
   it("renders the custom icon icon", () => {
-    setup({ customIcon: <Alert data-testid="iconId" /> });
+    setup({ customIcon: <div data-testid="iconId" /> });
     const icon = screen.getByTestId("iconId");
     expect(icon).toBeInTheDocument();
   });

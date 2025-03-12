@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import { LogIn } from "@hitachivantara/uikit-react-icons";
 
 import { HvAvatar } from "../Avatar/Avatar";
 import { HvAvatarGroup } from "./AvatarGroup";
@@ -13,13 +12,13 @@ describe("HvAvatarGroup", () => {
     render(
       <HvAvatarGroup>
         <HvAvatar>
-          <LogIn title="login" />
+          <div role="img" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn title="login" />
+          <div role="img" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn title="login" />
+          <div role="img" />
         </HvAvatar>
       </HvAvatarGroup>,
     );
@@ -32,33 +31,27 @@ describe("HvAvatarGroup", () => {
     render(
       <HvAvatarGroup maxVisible={1}>
         <HvAvatar>
-          <LogIn title="login" />
+          <div data-testid="img" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn title="login" />
+          <div data-testid="img" />
         </HvAvatar>
         <HvAvatar>
-          <LogIn title="login" />
+          <div data-testid="img" />
         </HvAvatar>
       </HvAvatarGroup>,
     );
 
-    const renderedAvatars = screen.getAllByRole("img");
+    const renderedAvatars = screen.getAllByTestId("img");
     expect(renderedAvatars).toHaveLength(1);
   });
 
   it("renders overflow avatar when number of avatars exceeds maxVisible", () => {
     render(
       <HvAvatarGroup maxVisible={2}>
-        <HvAvatar>
-          <LogIn title="login" />
-        </HvAvatar>
-        <HvAvatar>
-          <LogIn title="login" />
-        </HvAvatar>
-        <HvAvatar>
-          <LogIn title="login" />
-        </HvAvatar>
+        <HvAvatar />
+        <HvAvatar />
+        <HvAvatar />
       </HvAvatarGroup>,
     );
 

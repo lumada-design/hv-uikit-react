@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvLoading } from "../Loading";
 import { HvButton } from "./Button";
@@ -36,8 +35,8 @@ describe("Button", () => {
   it("renders the custom content", () => {
     render(
       <HvButton
-        startIcon={<Alert data-testid="startId" />}
-        endIcon={<Alert data-testid="endId" />}
+        startIcon={<div data-testid="startId" />}
+        endIcon={<div data-testid="endId" />}
       >
         <HvLoading data-testid="loadingId" />
         content

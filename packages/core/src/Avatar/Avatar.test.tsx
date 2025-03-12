@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { LogIn } from "@hitachivantara/uikit-react-icons";
 
 import { HvAvatar } from "./Avatar";
 
@@ -14,10 +13,10 @@ describe("Avatar", () => {
   it("renders the icon", () => {
     render(
       <HvAvatar>
-        <LogIn title="login" />
+        <div data-testid="login" />
       </HvAvatar>,
     );
 
-    expect(screen.getByRole("img", { name: "login" })).toBeInTheDocument();
+    expect(screen.getByTestId("login")).toBeInTheDocument();
   });
 });
