@@ -23,6 +23,7 @@ const StyledDecorator = styled("div")({
 const meta: Meta<typeof HvCheckBox> = {
   title: "Components/Checkbox/Checkbox",
   component: HvCheckBox,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvBaseCheckBox },
   decorators: [(Story) => <StyledDecorator>{Story()}</StyledDecorator>],
 };

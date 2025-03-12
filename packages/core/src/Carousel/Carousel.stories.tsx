@@ -16,6 +16,7 @@ import {
 export default {
   title: "Widgets/Carousel",
   component: HvCarousel,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCarouselSlide },
 } satisfies Meta<typeof HvCarousel>;
 

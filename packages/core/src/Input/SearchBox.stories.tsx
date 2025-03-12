@@ -26,7 +26,6 @@ const meta: Meta<typeof HvInput> = {
   title: "Components/Input/Search Box",
   component: HvInput,
   parameters: {
-    // @ts-expect-error outdated types
     docs: { description: { component: description } },
   },
   decorators: [(Story) => <div style={{ height: "300px" }}>{Story()}</div>],

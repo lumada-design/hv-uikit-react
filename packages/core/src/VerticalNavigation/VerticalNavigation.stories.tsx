@@ -35,12 +35,19 @@ const meta: Meta<typeof HvVerticalNavigation> = {
   title: "Widgets/Vertical Navigation",
   component: HvVerticalNavigation,
   subcomponents: {
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationHeader,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationTree,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationActions,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationAction,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationTreeView,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationTreeViewItem,
+    // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
     HvVerticalNavigationSlider,
   },
   decorators: [

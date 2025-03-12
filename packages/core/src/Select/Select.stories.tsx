@@ -20,6 +20,7 @@ const decorator: Decorator = (Story) => (
 export default {
   title: "Components/Select",
   component: HvSelect,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvOption, HvOptionGroup },
 } satisfies Meta<typeof HvSelect>;
 

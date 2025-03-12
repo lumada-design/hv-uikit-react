@@ -29,6 +29,7 @@ const decorator: Decorator = (Story) => (
 const meta: Meta<typeof HvSwitch> = {
   title: "Components/Switch",
   component: HvSwitch,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvBaseSwitch },
 };
 

@@ -18,14 +18,12 @@ interface DocsParameters extends Record<string, any> {
   inlineStories?: boolean;
 }
 
-interface A11yParams extends A11yParameters {
-  disable?: boolean;
-}
-
 // https://github.com/storybookjs/storybook/issues/22860
 declare module "@storybook/csf" {
-  interface Parameters extends StorybookParameters, Record<string, any> {
-    a11y?: A11yParams;
+  interface Parameters
+    extends StorybookParameters,
+      A11yParameters,
+      Record<string, any> {
     docs?: DocsParameters;
     chromatic?: ChromaticParameters;
   }

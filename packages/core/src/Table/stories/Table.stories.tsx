@@ -40,6 +40,7 @@ import { setupChromatic } from ".storybook/setupChromatic";
 export default {
   title: "Visualizations/Table",
   component: HvTable,
+  // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: {
     HvTableContainer,
     HvTableRow,
