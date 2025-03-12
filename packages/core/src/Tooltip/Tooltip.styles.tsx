@@ -26,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
     },
     "& $title": {
       padding: "15px 20px",
-      borderBottom: `3px solid ${theme.colors.borderStrong}`,
+      borderBottom: `3px solid ${theme.colors.borderSubtle}`,
     },
     "& $valuesContainer": {
       padding: theme.space.sm,
