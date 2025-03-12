@@ -62,7 +62,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     },
   },
   invalid: {
-    borderColor: theme.colors.negativeDeep,
+    borderColor: theme.form.errorColor,
   },
   multiline: {
     padding: 0,
@@ -87,12 +87,9 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   /** @deprecated unused. use `::after` instead */
   inputBorderContainer: {},
   /** @deprecated use `classes.invalid` instead */
-  inputRootInvalid: { borderColor: theme.colors.negativeDeep },
+  inputRootInvalid: {},
   /** @deprecated use `classes.readOnly` instead */
-  inputRootReadOnly: {
-    borderColor: theme.colors.textDisabled,
-    backgroundColor: theme.colors.bgPage,
-  },
+  inputRootReadOnly: {},
   /** @deprecated use `classes.root` instead */
   inputRoot: {},
   /** @deprecated unused */

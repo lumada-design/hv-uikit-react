@@ -21,6 +21,9 @@ const componentsSpec: DeepString<HvThemeComponents> = {
     height: "string",
     secondLevelHeight: "string",
   },
+  form: {
+    errorColor: "string",
+  },
   bulkActions: {
     actionButtonVariant: "string",
   },

@@ -72,12 +72,8 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
       flexWrap: "nowrap",
     },
 
-    "&$error": {
-      borderColor: theme.colors.negativeDeep,
-    },
-
-    "&$invalid": {
-      borderColor: theme.colors.negativeDeep,
+    "&$error, $invalid": {
+      borderColor: theme.form.errorColor,
     },
   },
   /** @deprecated use `classes.input` instead */
