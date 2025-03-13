@@ -56,7 +56,6 @@ export const HvDot = ({
       )}
       aria-label={`${title}`}
       icon
-      overrideIconColors={false}
       disabled={disabled ?? ["Current", "Disabled"].includes(state)}
       onClick={onClick}
     >

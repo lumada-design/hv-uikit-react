@@ -103,16 +103,16 @@ export const IconAvatars: StoryObj<HvAvatarProps> = {
     return (
       <>
         <HvAvatar>
-          <LogIn color="textDimmed" iconSize="XS" />
+          <LogIn color="textDimmed" size="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="positive">
-          <Archives color="textDimmed" iconSize="XS" />
+          <Archives color="textDimmed" size="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="info">
-          <Search color="textDimmed" iconSize="XS" />
+          <Search color="textDimmed" size="XS" />
         </HvAvatar>
         <HvAvatar backgroundColor="warning">
-          <Bookmark color="textDimmed" iconSize="XS" />
+          <Bookmark color="textDimmed" size="XS" />
         </HvAvatar>
       </>
     );
@@ -146,7 +146,7 @@ export const Variants: StoryObj<HvAvatarProps> = {
     docs: {
       description: {
         story:
-          "You can configure the `size` and `variant` of an avatar. When using an icon, set its `iconSize` to the size immediately below the avatar size.",
+          "You can configure the `size` and `variant` of an avatar. When using an icon, set its `size` to the size immediately below the avatar size.",
       },
     },
   },
@@ -159,7 +159,7 @@ export const Variants: StoryObj<HvAvatarProps> = {
           NA
         </HvAvatar>
         <HvAvatar size="lg" backgroundColor="warning">
-          <Bookmark iconSize="M" color={["textLight", "textDark"]} />
+          <Bookmark size="M" color={["textLight", "textDark"]} />
         </HvAvatar>
         <HvAvatar
           size="xl"
@@ -223,7 +223,6 @@ export const Actions: StoryObj<HvAvatarProps> = {
       <>
         <HvButton
           icon
-          overrideIconColors={false}
           component="a"
           href="#profile-url"
           aria-label="External link"
@@ -232,24 +231,15 @@ export const Actions: StoryObj<HvAvatarProps> = {
             <LinkIcon color="textDimmed" />
           </HvAvatar>
         </HvButton>
-        <HvButton
-          icon
-          overrideIconColors={false}
-          aria-label="Open the user profile"
-        >
+        <HvButton icon aria-label="Open the user profile">
           <HvAvatar size="md" />
         </HvButton>
-        <HvButton icon overrideIconColors={false} aria-label="Business Manager">
+        <HvButton icon aria-label="Business Manager">
           <HvAvatar backgroundColor="sema19" size="md" badge="negative">
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton
-          icon
-          overrideIconColors={false}
-          aria-label="Business Manager"
-          radius="none"
-        >
+        <HvButton icon aria-label="Business Manager" radius="none">
           <HvAvatar
             backgroundColor="sema19"
             size="md"
@@ -259,11 +249,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
             BM
           </HvAvatar>
         </HvButton>
-        <HvButton
-          icon
-          overrideIconColors={false}
-          aria-label="Clara Soul profile"
-        >
+        <HvButton icon aria-label="Clara Soul profile">
           <HvAvatar
             alt="Clara Soul"
             src="https://i.imgur.com/6sYhSb6.png"
@@ -271,12 +257,7 @@ export const Actions: StoryObj<HvAvatarProps> = {
             status="positive"
           />
         </HvButton>
-        <HvButton
-          icon
-          overrideIconColors={false}
-          aria-label="Clara Soul profile"
-          radius="none"
-        >
+        <HvButton icon aria-label="Clara Soul profile" radius="none">
           <HvAvatar
             alt="Clara Soul"
             src="https://i.imgur.com/6sYhSb6.png"
@@ -309,7 +290,7 @@ export const Test: StoryObj = {
         NA
       </HvAvatar>
       <HvAvatar size="lg" backgroundColor="warning">
-        <Bookmark iconSize="M" color={["textLight", "textDark"]} />
+        <Bookmark size="M" color={["textLight", "textDark"]} />
       </HvAvatar>
       <HvAvatar size="xs" variant="square" status="positive">
         AB

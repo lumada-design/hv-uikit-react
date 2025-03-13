@@ -489,7 +489,7 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
           onClickOutside={handleCalendarClose}
           onContainerCreation={focusOnContainer}
           placeholder={dateString || placeholder || ""}
-          adornment={<Calendar className={classes.icon} color="currentcolor" />}
+          adornment={<Calendar className={classes.icon} />}
           popperProps={{
             modifiers: [
               { name: "preventOverflow", enabled: escapeWithReference },

@@ -96,9 +96,7 @@ export const Custom = () => {
       <HvVerticalNavigationTree data={data} />
       <HvVerticalNavigationActions>
         <div className={classes.collapseBtn}>
-          {!collapsed && (
-            <Backwards color="currentcolor" className={classes.collapseIcon} />
-          )}
+          {!collapsed && <Backwards className={classes.collapseIcon} />}
           <HvVerticalNavigationAction
             label={collapsed ? "Expand menu" : "Collapse menu"}
             icon={collapsed ? <Forwards /> : undefined}

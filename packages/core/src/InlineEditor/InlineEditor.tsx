@@ -169,7 +169,6 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
       ) : (
         <HvButton
           variant="secondaryGhost"
-          overrideIconColors={false}
           endIcon={
             <Edit
               color="textDisabled"

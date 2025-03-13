@@ -89,12 +89,9 @@ export const Node = ({ id, groupId = "teapot", input, output }: NodeProps) => {
 
   return (
     <div
-      style={mergeStyles(
-        {},
-        {
-          "--color": color,
-        },
-      )}
+      style={mergeStyles(undefined, {
+        "--color": color,
+      })}
       className={cx("nowheel", classes.root)}
       onMouseEnter={toggleShowActions}
       onMouseLeave={toggleShowActions}

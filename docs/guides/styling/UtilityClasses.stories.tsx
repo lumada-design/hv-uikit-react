@@ -102,7 +102,7 @@ export const Test: StoryObj = {
       <HvTypography variant="title4">Text & icons</HvTypography>
       <section>
         <div className="flex items-center text-warning">
-          <Abacus color="currentColor" />
+          <Abacus />
           <span>Text goes here</span>
         </div>
       </section>
