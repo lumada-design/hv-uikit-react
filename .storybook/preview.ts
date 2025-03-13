@@ -13,12 +13,7 @@ export const parameters: Preview["parameters"] = {
     container: DocsContainer,
     page: DocsPage,
   },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
+  controls: {},
   options: {
     storySort: {
       order: [

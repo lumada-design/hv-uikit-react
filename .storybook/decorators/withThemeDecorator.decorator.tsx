@@ -1,6 +1,7 @@
+import createCache from "@emotion/cache";
 import { Global } from "@emotion/react";
 import { DecoratorHelpers } from "@storybook/addon-themes";
-import { useEffect, useGlobals } from "@storybook/preview-api";
+import { useEffect } from "@storybook/preview-api";
 import { Decorator } from "@storybook/react";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { themes } from "@hitachivantara/uikit-styles";
@@ -13,21 +14,26 @@ import {
   useDarkClass,
 } from "./utils";
 
-const { initializeThemeState, pluckThemeFromContext, useThemeParameters } =
-  DecoratorHelpers;
+const { initializeThemeState, pluckThemeFromContext } = DecoratorHelpers;
 
 /** Returns the themes defined in modes.ts */
 const themesList = getThemesList(themes);
 const themesLabels = themesList.map((theme) => theme.label);
+
+export const emotionCache = createCache({
+  key: "hv-story",
+  prepend: true,
+  // removes the vendor prefixes for smoother debugging
+  stylisPlugins: [],
+});
 
 export const withThemeDecorator = (): Decorator => {
   const defaultTheme = getInitialTheme(themesList).label;
   initializeThemeState(themesLabels, defaultTheme);
 
   return (Story, context) => {
-    const [, updateGlobals] = useGlobals();
     const selectedTheme = pluckThemeFromContext(context);
-    const { themeOverride } = useThemeParameters();
+    const { themeOverride } = context.parameters.themes ?? {};
 
     const selected = themeOverride || selectedTheme || defaultTheme;
     const [theme, mode] = selected.split(" ");
@@ -48,7 +54,7 @@ export const withThemeDecorator = (): Decorator => {
       <>
         <Global styles={storyStyles} />
         <HvProvider
-          classNameKey="hv-story"
+          emotionCache={emotionCache}
           cssTheme="scoped"
           themes={Object.values(themes)}
           theme={theme}
