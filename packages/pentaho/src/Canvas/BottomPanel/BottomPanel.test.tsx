@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, vi } from "vitest";
-import { Close } from "@hitachivantara/uikit-react-icons";
 
 import { HvCanvasBottomPanel, HvCanvasBottomPanelProps } from "./BottomPanel";
 
@@ -21,7 +20,7 @@ const renderSimplePanel = (props?: Partial<HvCanvasBottomPanelProps>) =>
     <HvCanvasBottomPanel
       open
       tabs={panelTabs}
-      overflowActions={[{ id: "action", label: "Action", icon: <Close /> }]}
+      overflowActions={[{ id: "action", label: "Action", icon: <div /> }]}
       {...props}
     >
       Content

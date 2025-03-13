@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 import { HvVerticalNavigationHeader } from ".";
 
@@ -8,8 +7,8 @@ const Sample = () => {
   return (
     <HvVerticalNavigationHeader
       title="Menu"
-      openIcon={<Play />}
-      closeIcon={<Stop />}
+      openIcon={<div />}
+      closeIcon={<div />}
       collapseButtonProps={{
         "aria-label": "collapseButton",
         "aria-expanded": true,

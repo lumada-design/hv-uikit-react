@@ -2,7 +2,6 @@ import { useState } from "react";
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HvButton } from "@hitachivantara/uikit-react-core";
-import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import { theme } from "@hitachivantara/uikit-styles";
 
 import {
@@ -22,7 +21,7 @@ const nodeGroups: HvFlowNodeGroups = {
     label: "Assets",
     color: "cat3_80",
     description: "This is my description 1.",
-    icon: <Heart />,
+    icon: <div />,
     items: [
       { nodeType: "boomArm", label: "Boom Arm" },
       { nodeType: "spaceMountain", label: "Space Mountain" },
@@ -32,7 +31,7 @@ const nodeGroups: HvFlowNodeGroups = {
     label: "Digital Twin",
     color: "cat2_80",
     description: "This is my description 2.",
-    icon: <Favorite />,
+    icon: <div />,
     items: [{ nodeType: "toyStory", label: "Toy Story" }],
   },
 };

@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
-import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvVerticalNavigation,
@@ -105,8 +104,8 @@ const Sample = ({
           data={navigationData}
         />
         <HvVerticalNavigationActions>
-          <HvVerticalNavigationAction label="Profile" icon={<User />} />
-          <HvVerticalNavigationAction label="Logout" icon={<LogOut />} />
+          <HvVerticalNavigationAction label="Profile" icon={<div />} />
+          <HvVerticalNavigationAction label="Logout" icon={<div />} />
         </HvVerticalNavigationActions>
       </HvVerticalNavigation>
     </div>

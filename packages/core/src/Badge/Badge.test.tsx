@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Alert } from "@hitachivantara/uikit-react-icons";
 
 import { HvBadge } from "./Badge";
 
@@ -37,9 +36,9 @@ describe("Badge", () => {
   });
 
   it("should render correctly with svg", () => {
-    render(<HvBadge label={100} showCount icon={<Alert title="Alert" />} />);
+    render(<HvBadge label={100} showCount icon={<div data-testid="icon" />} />);
     expect(screen.queryByText("99+")).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "Alert" })).toBeInTheDocument();
+    expect(screen.getByTestId("icon")).toBeInTheDocument();
   });
 
   it("should render correctly with custom label", () => {

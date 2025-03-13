@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Play, Stop } from "@hitachivantara/uikit-react-icons";
 
 import {
   HvVerticalNavigationTreeView,
@@ -10,7 +9,7 @@ import {
 
 const Sample = (props: HvVerticalNavigationTreeViewProps) => (
   <HvVerticalNavigationTreeView {...props}>
-    <HvVerticalNavigationTreeViewItem icon={<Play />} nodeId="1" label="System">
+    <HvVerticalNavigationTreeViewItem icon={<div />} nodeId="1" label="System">
       <HvVerticalNavigationTreeViewItem nodeId="2" label="SCPodF">
         <HvVerticalNavigationTreeViewItem nodeId="3" label="Compute" disabled />
         <HvVerticalNavigationTreeViewItem nodeId="4" label="Storage" />
@@ -24,7 +23,7 @@ const Sample = (props: HvVerticalNavigationTreeViewProps) => (
     </HvVerticalNavigationTreeViewItem>
 
     <HvVerticalNavigationTreeViewItem
-      icon={<Stop />}
+      icon={<div />}
       nodeId="7"
       label="Administration"
     >
