@@ -65,7 +65,8 @@ export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
   parameters: {
     docs: {
       description: {
-        story: "ColorPicker component with only the recommend colors area.",
+        story:
+          "ColorPicker component with only the recommend colors area. The recommended colors are an array of colors of type `HvColorAny` which means that you can pass any color from the UI Kit theme or any CSS valid color.",
       },
     },
   },
@@ -76,8 +77,18 @@ export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
         aria-label="Color"
         showSavedColors={false}
         showCustomColors={false}
-        onChange={(color) => console.log(color)}
-        defaultValue="#F6941E"
+        onChange={(color) => {
+          console.log(color);
+        }}
+        defaultValue="#059669"
+        recommendedColors={[
+          "positive",
+          "negative",
+          "primary",
+          "cat1",
+          "gold",
+          "#3399AA",
+        ]}
       />
     );
   },
