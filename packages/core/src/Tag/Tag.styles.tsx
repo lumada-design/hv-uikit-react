@@ -8,26 +8,53 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     justifyContent: "center",
     cursor: "default",
     color: theme.colors.textDark,
-    backgroundColor: "var(--bgColor)",
-    height: 16,
+    borderColor: theme.colors.border,
     borderRadius: 0,
     maxWidth: 180,
     whiteSpace: "nowrap",
+    transition: "background-color 0.3s ease",
 
-    ":hover, :focus": {
-      backgroundColor: "var(--bgColor)",
+    "&,:hover,:focus-visible": {
+      backgroundColor: "var(--tagColor)",
     },
   },
+  hasIcon: {
+    paddingLeft: 2,
+  },
+  /** @deprecated */
+  outlined: {
+    outlineStyle: "solid",
+  },
+  /** @deprecated */
   categorical: {
     borderRadius: 8,
     "& $label": {
       color: theme.colors.text,
     },
+    "& $icon": {
+      display: "none",
+    },
+  },
+  xs: {
+    height: 16,
+  },
+  sm: {
+    height: 24,
+    "& $label": {
+      ...theme.typography.caption1,
+      color: "inherit",
+    },
+  },
+  md: {
+    height: 32,
+    "& $label": {
+      ...theme.typography.body,
+      color: "inherit",
+    },
   },
 
   disabled: {
-    backgroundColor: theme.colors.bgDisabled,
-    ":hover, :focus": {
+    "&,:hover,:focus-visible": {
       backgroundColor: theme.colors.bgDisabled,
     },
     "& $label": {
@@ -49,10 +76,10 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   clickable: {
     cursor: "pointer",
   },
+  // TODO: remove in favour of `hasIcon` once it's no longer needed
   icon: {
     width: 12,
     height: 12,
-    marginLeft: 2,
   },
 
   /** @deprecated use `root` instead */

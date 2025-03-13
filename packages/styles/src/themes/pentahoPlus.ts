@@ -34,6 +34,8 @@ const buttonColors = {
   },
 };
 
+const semaColors = ["positive", "warning", "negative", "info"] as const;
+
 const notificationMap = {
   success: "positive",
   warning: "warning",
@@ -625,23 +627,72 @@ const pentahoPlus = makeTheme((theme) => ({
       },
     },
     HvTag: {
+      showSelectIcon: false,
       classes: {
         root: {
-          borderRadius: theme.radii.full,
-          padding: theme.spacing("2px", 0),
+          outline: `1px solid ${theme.colors.border}`,
+          borderRadius: theme.radii.round,
+          ":where(:not([data-color],.HvTag-disabled))": {
+            color: theme.colors.text,
+            "--tagColor": theme.colors.bgContainer,
+          },
+
+          ":where([data-color]:not(.HvTag-disabled))": {
+            ":where(:not([data-color$=_20],[data-color^=cat]))": {
+              color: "var(--tagColor)",
+              backgroundColor: theme.mix("var(--tagColor)", "8%", "white"),
+              outlineColor: theme.mix("var(--tagColor)", "30%", "white"),
+              "&&.HvTag-clickable:has(:hover,:focus-visible)": {
+                backgroundColor: theme.mix("var(--tagColor)", "20%", "white"),
+              },
+            },
+
+            ...Object.fromEntries(
+              semaColors.map((color) => [
+                [`&[data-color=${color}]`],
+                {
+                  color: theme.colors[`${color}Strong`],
+                  backgroundColor: theme.colors[`${color}Dimmed`],
+                  outlineColor: theme.colors[`${color}Border`],
+                  "&.HvTag-clickable:has(:hover,:focus-visible)": {
+                    backgroundColor: theme.colors[`${color}Subtle`],
+                  },
+                },
+              ]),
+            ),
+          },
         },
+        hasIcon: {
+          paddingLeft: theme.space.xs,
+        },
+        xs: { borderRadius: 4 },
+        sm: { borderRadius: 6 },
+        md: { borderRadius: 8 },
         label: {
           paddingLeft: 8,
           paddingRight: 8,
         },
-        icon: {
-          marginLeft: theme.space.xs,
-        },
         deleteIcon: {
           borderRadius: "inherit",
-          paddingRight: 4,
+          marginRight: 4,
         },
-        selected: {},
+        clickable: {
+          ":hover": {
+            backgroundColor: theme.colors.bgHover,
+          },
+        },
+        selected: {
+          "&&": {
+            outlineColor: "currentcolor",
+          },
+        },
+        disabled: {
+          color: theme.colors.textDisabled,
+          outlineColor: "transparent",
+          "&,:hover": {
+            backgroundColor: theme.colors.bgDisabled,
+          },
+        },
       },
     },
     HvIconContainer: {

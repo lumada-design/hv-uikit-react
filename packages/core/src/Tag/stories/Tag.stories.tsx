@@ -6,6 +6,7 @@ import {
   HvTagProps,
   theme,
 } from "@hitachivantara/uikit-react-core";
+import { Abacus } from "@hitachivantara/uikit-react-icons";
 
 import { Selectable as SelectableStory } from "./Selectable";
 import SelectableRaw from "./Selectable?raw";
@@ -140,6 +141,46 @@ export const Test: StoryObj = {
         color="negative"
         classes={{ root: css({ color: theme.colors.negativeDimmed }) }}
       />
+      <HvTag label="default" />
+      <HvTag selectable label="selectable" />
+      <HvTag selectable size="sm" label="positive" color="positive" />
+      <HvTag selectable size="sm" label="warning" color="warning" />
+      <HvTag selectable size="sm" label="negative" color="negative" />
+      <HvTag selectable size="sm" label="info" color="info" />
+      <HvTag selectable size="sm" label="info" color="info" disabled />
+      <HvTag selectable showSelectIcon size="sm" label="Select" />
+      <HvTag selectable showSelectIcon size="sm" label="Select" disabled />
+      <HvTag
+        selectable
+        size="sm"
+        label="Tag"
+        showSelectIcon={false}
+        icon={<Abacus size="xs" className="size-12px" />}
+        onDelete={() => {}}
+      />
+      <HvTag
+        disabled
+        selectable
+        size="sm"
+        label="Tag"
+        showSelectIcon={false}
+        icon={<Abacus size="xs" className="size-12px" />}
+        onDelete={() => {}}
+      />
+      <HvTag selectable size="md" label="orange" color="orange" />
+      <HvTag selectable size="md" label="lime" color="lime" />
+      <HvTag selectable size="md" label="yellow" color="yellow" />
+      <HvTag selectable size="md" label="green" color="green" />
+      <HvTag selectable size="md" label="teal" color="teal" />
+      <HvTag selectable size="md" label="cyan" color="cyan" />
+      <HvTag selectable size="md" label="blue" color="blue" />
+      <HvTag selectable size="md" label="indigo" color="indigo" />
+      <HvTag selectable size="md" label="violet" color="violet" />
+      <HvTag selectable size="md" label="purple" color="purple" />
+      <HvTag selectable size="md" label="fuchsia" color="fuchsia" />
+      <HvTag selectable size="md" label="pink" color="pink" />
+      <HvTag selectable size="md" label="rose" color="rose" />
+      <HvTag selectable size="md" label="rebeccapurple" color="rebeccapurple" />
     </div>
   ),
 };

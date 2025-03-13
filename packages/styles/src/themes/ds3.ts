@@ -1179,6 +1179,16 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvTag: {
+      classes: {
+        root: {
+          "--tagColor": theme.colors.neutral_20,
+        },
+        categorical: {
+          "--tagColor": theme.alpha("cat1", 0.2),
+        },
+      },
+    },
     HvTagsInput: {
       classes: {
         disabled: {
