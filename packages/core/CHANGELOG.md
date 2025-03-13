@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.90.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.89.0...@hitachivantara/uikit-react-core@5.90.0) (2025-03-13)
+
+### Features
+
+- **Notifications:** align Banner & Snackbar P+ styles ([ae13c3a](https://github.com/lumada-design/hv-uikit-react/commit/ae13c3aac0edff110cb2e6df42729d4ef3892143))
+- **theme:** add form.errorColor token ([#4597](https://github.com/lumada-design/hv-uikit-react/issues/4597)) ([3090281](https://github.com/lumada-design/hv-uikit-react/commit/3090281efc6eeeb8c4b947ea9110c1c95988a821))
+
 # [5.89.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.88.0...@hitachivantara/uikit-react-core@5.89.0) (2025-03-06)
 
 ### Bug Fixes

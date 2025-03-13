@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.19...@hitachivantara/uikit-react-pentaho@0.9.0) (2025-03-13)
+
+### Features
+
+- **colors:** add new pentaho colors ([ddabfba](https://github.com/lumada-design/hv-uikit-react/commit/ddabfba4dfd42a428740dace84dda637234292e5))
+
 ## [0.8.19](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.8.18...@hitachivantara/uikit-react-pentaho@0.8.19) (2025-03-06)
 
 ### Bug Fixes

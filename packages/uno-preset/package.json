@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-uno-preset",
-  "version": "0.2.52",
+  "version": "0.2.53",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -35,7 +35,7 @@
     "@unocss/preset-uno": "^0.58.5"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.42.0",
+    "@hitachivantara/uikit-styles": "^5.43.0",
     "@unocss/preset-rem-to-px": "^0.58.5",
     "unocss-preset-theme": "^0.12.0"
   },
