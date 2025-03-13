@@ -1,6 +1,4 @@
 import { forwardRef } from "react";
-import { useTheme as useMuiTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -8,11 +6,7 @@ import {
 
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
-import {
-  getBreakpointStyles,
-  staticClasses,
-  useClasses,
-} from "./GlobalActions.styles";
+import { staticClasses, useClasses } from "./GlobalActions.styles";
 
 export { staticClasses as globalActionsClasses };
 export type HvGlobalActionsClasses = ExtractNames<typeof useClasses>;
@@ -59,10 +53,7 @@ export const HvGlobalActions = forwardRef<
     position: positionProp,
     ...others
   } = useDefaultProps("HvGlobalActions", props);
-  const muiTheme = useMuiTheme();
-  const { classes, cx, css } = useClasses(classesProp);
-  const isSmDown = useMediaQuery(muiTheme.breakpoints.down("sm"));
-  const isUpMd = useMediaQuery(muiTheme.breakpoints.up("md"));
+  const { classes, cx } = useClasses(classesProp);
 
   const headingLevelToApply = headingLevel || (variant === "global" ? 1 : 2);
 
@@ -80,7 +71,6 @@ export const HvGlobalActions = forwardRef<
           [classes.global]: variant === "global",
           [classes.section]: variant === "section",
         },
-        position === "fixed" && css(getBreakpointStyles(isUpMd, isSmDown)),
         className,
       )}
       {...others}
