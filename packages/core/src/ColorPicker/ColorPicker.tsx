@@ -5,6 +5,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseDropdown } from "../BaseDropdown";
 import { HvDropdownProps } from "../Dropdown";
@@ -64,7 +65,7 @@ export interface HvColorPickerProps {
   /** The placeholder value when nothing is selected. */
   placeholder?: string;
   /** Recommended colors. The colors are HEX values. */
-  recommendedColors?: string[];
+  recommendedColors?: HvColorAny[];
   /** Recommended colors position. */
   recommendedColorsPosition?: "top" | "bottom";
   /** If `true`, the labels are shown. If `false`, they are not shown. */

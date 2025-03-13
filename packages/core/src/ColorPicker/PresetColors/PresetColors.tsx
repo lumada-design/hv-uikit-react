@@ -5,6 +5,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvTypography } from "../../Typography";
 import { staticClasses, useClasses } from "./PresetColors.styles";
@@ -14,7 +15,7 @@ export { staticClasses as colorPickerPresetColorsClasses };
 export type HvColorPickerPresetColorsClasses = ExtractNames<typeof useClasses>;
 
 interface PresetColorsProps {
-  colors: string[];
+  colors: HvColorAny[];
   onClick: (color: { hex: string; source: string }) => void;
   title?: string;
   className?: string;
@@ -53,6 +54,7 @@ export const PresetColors = (props: PresetColorsProps) => {
           >
             <Swatch
               color={color}
+              style={{ backgroundColor: getColor(color) }}
               onClick={handleClick}
               focusStyle={{
                 boxShadow: `inset 0 0 0 1px rgba(0,0,0,.15), 0 0 4px ${color}`,
