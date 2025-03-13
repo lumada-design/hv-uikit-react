@@ -511,13 +511,13 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseSwitch: {
       classes: {
         root: {
+          borderRadius: 4,
           "&:hover": {
             backgroundColor: theme.colors.bgHover,
           },
           "& .HvBaseSwitch-switchBase": {
             "& .HvBaseSwitch-thumb": {
-              backgroundColor: theme.colors.bgContainer,
-              borderColor: theme.colors.bgContainer,
+              borderColor: "transparent",
               boxShadow: `0px 1px 1px 0px color-mix(in srgb, ${slate[700]} 16%, transparent)`,
             },
             "+.HvBaseSwitch-track": {
@@ -530,7 +530,6 @@ const pentahoPlus = makeTheme((theme) => ({
                 border: `1px solid ${theme.colors.bgContainer}`,
               },
               "+.HvBaseSwitch-track": {
-                backgroundColor: theme.colors.primary,
                 borderColor: theme.colors.primaryStrong,
               },
             },

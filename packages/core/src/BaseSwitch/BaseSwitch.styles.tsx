@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     height: "32px",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: theme.radii.base,
+    borderRadius: theme.radii.round,
 
     "&:hover": {
       backgroundColor: theme.colors.bgHover,
@@ -27,7 +27,11 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
         transform: "translateX(16px)",
         "& + $track": {
           opacity: 1,
-          backgroundColor: theme.colors.text,
+          backgroundColor: theme.colors.primary,
+          borderColor: "transparent",
+        },
+        "& $thumb": {
+          borderColor: "transparent",
         },
         "&:hover": {
           backgroundColor: "transparent",
@@ -41,7 +45,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
         "& + $track": {
           opacity: 1,
           backgroundColor: theme.colors.bgDisabled,
-          border: `solid 1px ${theme.colors.textDisabled}`,
+          border: `solid 1px ${theme.colors.borderDisabled}`,
         },
       },
     },
@@ -62,18 +66,18 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
   },
   track: {
     opacity: 1,
-    borderRadius: "15px",
+    borderRadius: theme.radii.full,
     height: "16px",
     width: "32px",
-    border: `solid 1px ${theme.colors.text}`,
+    border: `solid 1px ${theme.colors.borderStrong}`,
     backgroundColor: theme.colors.bgContainer,
   },
   thumb: {
     position: "relative",
     left: "-9px",
-    width: "12px",
-    height: "12px",
-    border: `solid 1px ${theme.colors.text}`,
+    width: "10px",
+    height: "10px",
+    border: `solid 1px ${theme.colors.borderStrong}`,
     backgroundColor: theme.colors.bgContainer,
     marginLeft: "2px",
     marginTop: 0,
