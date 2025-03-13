@@ -13,6 +13,9 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
   positionFixed: {
     width: "100%",
     position: "fixed",
+
+    [theme.bp.up("md")]: getBreakpointStyles(true, false),
+    [theme.bp.down("sm")]: getBreakpointStyles(false, true),
   },
   global: {
     zIndex: `calc(${theme.zIndices.banner} - 2)`,
@@ -75,10 +78,7 @@ export const { staticClasses, useClasses } = createClasses("HvGlobalActions", {
   },
 });
 
-export const getBreakpointStyles = (
-  isUpMd: boolean,
-  isSmDown: boolean,
-): CSSInterpolation => {
+function getBreakpointStyles(isUpMd: boolean, isSmDown: boolean) {
   const unit = isUpMd ? 4 : isSmDown ? 2 : 0;
   if (!unit) return {};
 
@@ -86,5 +86,5 @@ export const getBreakpointStyles = (
     width: `calc(100% - 2 * ${theme.spacing(unit)})`,
     marginLeft: theme.spacing(unit),
     marginRight: theme.spacing(unit),
-  };
-};
+  } satisfies CSSInterpolation;
+}

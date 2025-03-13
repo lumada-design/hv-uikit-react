@@ -1,5 +1,6 @@
 import * as tokens from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens";
+import { breakpoints, type HvBreakpoints } from "./tokens/breakpoints";
 import { palette } from "./tokens/colorsPalette";
 import {
   DeepString,
@@ -171,6 +172,35 @@ const mix = (
 const alpha = (color: HvColorAny, factor: number | string) =>
   mix(color, factor);
 
+function makeBreakpointUtils() {
+  const nextBreakpoint = {
+    xs: "sm",
+    sm: "md",
+    md: "lg",
+    lg: "xl",
+    xl: undefined,
+  } as const;
+
+  const { values, unit, step } = breakpoints;
+  const step0 = step / 100;
+
+  return {
+    up(breakpoint: HvBreakpoints) {
+      return `@media (min-width:${values[breakpoint]}${unit})`;
+    },
+    down(breakpoint: HvBreakpoints) {
+      return `@media (max-width:${values[breakpoint] - step0}${unit})`;
+    },
+    between(start: HvBreakpoints, end?: HvBreakpoints) {
+      const endValue = end ? values[end] - step0 : 9999;
+      return `@media (min-width:${values[start]}${unit}) and (max-width:${endValue}${unit})`;
+    },
+    only(breakpoint: HvBreakpoints) {
+      return this.between(breakpoint, nextBreakpoint[breakpoint]);
+    },
+  };
+}
+
 /**
  * UI Kit static theme object, containing values and utility functions that leverage the injected CSS variables.
  * @returns string values that can be used as CSS values.
@@ -184,6 +214,7 @@ export const theme = {
   spacing,
   alpha,
   mix,
+  bp: makeBreakpointUtils(),
 };
 
 export type HvTheme = typeof theme;

@@ -7,8 +7,16 @@ export const { staticClasses, useClasses } = createClasses("HvEmptyState", {
     height: "100%",
     display: "flex",
     justifyContent: "center",
+    [theme.bp.only("xs")]: {
+      alignItems: "center",
+      textAlign: "center",
+      ":not($containerMessageOnly)": {
+        flexDirection: "column",
+      },
+    },
   },
-  container: { display: "flex", flexDirection: "row" },
+  /** @deprecated use `classes.root` instead */
+  container: {},
   containerMessageOnly: {
     alignItems: "center",
     "& $textContainer": {
@@ -24,6 +32,9 @@ export const { staticClasses, useClasses } = createClasses("HvEmptyState", {
     background: "transparent",
     maxWidth: "510px",
     overflow: "hidden",
+    [theme.bp.up("sm")]: {
+      marginLeft: theme.space.xs,
+    },
   },
   messageContainer: {},
   actionContainer: { marginTop: theme.space.sm },

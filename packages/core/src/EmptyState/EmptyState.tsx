@@ -1,11 +1,8 @@
 import { forwardRef } from "react";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyProps } from "../Typography";
@@ -45,15 +42,7 @@ export const HvEmptyState = forwardRef<
     className,
     ...others
   } = useDefaultProps("HvEmptyState", props);
-
-  const { classes, cx, css } = useClasses(classesProp);
-
-  const muiTheme = useTheme();
-
-  const onlyXs = useMediaQuery(muiTheme.breakpoints.only("xs"));
-  const upSm = useMediaQuery(muiTheme.breakpoints.up("sm"));
-
-  const messageOnly = !!(message && !(title || action));
+  const { classes, cx } = useClasses(classesProp);
 
   const renderNode = (
     variant?: HvTypographyProps["variant"],
@@ -67,33 +56,18 @@ export const HvEmptyState = forwardRef<
     );
 
   return (
-    <div ref={ref} className={cx(classes.root, className)} {...others}>
-      <div
-        className={cx(
-          classes.container,
-          onlyXs &&
-            css({
-              flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
-            }),
-          {
-            [classes.containerMessageOnly]: messageOnly,
-          },
-          onlyXs && messageOnly && css({ flexDirection: "row" }),
-        )}
-      >
-        <div className={classes.iconContainer}>{icon}</div>
-        <div
-          className={cx(
-            classes.textContainer,
-            upSm && css({ marginLeft: theme.space.xs }),
-          )}
-        >
-          {renderNode("title4", title, classes.titleContainer)}
-          {renderNode("body", message, classes.messageContainer)}
-          {renderNode("body", action, classes.actionContainer)}
-        </div>
+    <div
+      ref={ref}
+      className={cx(classes.root, classes.container, className, {
+        [classes.containerMessageOnly]: message && !(title || action),
+      })}
+      {...others}
+    >
+      <div className={classes.iconContainer}>{icon}</div>
+      <div className={classes.textContainer}>
+        {renderNode("title4", title, classes.titleContainer)}
+        {renderNode("body", message, classes.messageContainer)}
+        {renderNode("body", action, classes.actionContainer)}
       </div>
     </div>
   );

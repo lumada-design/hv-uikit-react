@@ -2,13 +2,10 @@ import { forwardRef } from "react";
 import MuiContainer, {
   ContainerProps as MuiContainerProps,
 } from "@mui/material/Container";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { staticClasses, useClasses } from "./Container.styles";
 
@@ -53,31 +50,11 @@ export const HvContainer = forwardRef<HTMLDivElement, HvContainerProps>(
       ...others
     } = useDefaultProps("HvContainer", props);
 
-    const { classes, cx, css } = useClasses(classesProp);
-
-    const muiTheme = useTheme();
-
-    const upMd = useMediaQuery(muiTheme.breakpoints.up("md"));
-
-    const gutters = upMd
-      ? {
-          // Increases specificity
-          [`&.${staticClasses.root}`]: {
-            paddingLeft: theme.spacing(4),
-            paddingRight: theme.spacing(4),
-          },
-        }
-      : {
-          // Increases specificity
-          [`&.${staticClasses.root}`]: {
-            paddingLeft: theme.space.sm,
-            paddingRight: theme.space.sm,
-          },
-        };
+    const { classes } = useClasses(classesProp);
 
     return (
       <MuiContainer
-        className={cx({ [css(gutters)]: !disableGutters }, className)}
+        className={className}
         classes={{
           root: classes.root,
           disableGutters: classes.disableGutters,
