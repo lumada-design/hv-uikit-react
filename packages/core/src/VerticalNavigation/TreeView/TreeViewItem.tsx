@@ -524,9 +524,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
               </div>
             )}
 
-            {isOpen && expandable && (
-              <DropDownXS color="currentcolor" rotate={expanded} />
-            )}
+            {isOpen && expandable && <DropDownXS rotate={expanded} />}
           </HvTypography>
         </HvTooltip>
       );

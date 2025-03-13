@@ -143,7 +143,7 @@ export const Main: StoryObj<HvHeaderProps> = {
               onClick={() => console.log("alerts")}
               aria-label="Open Notifications panel"
             >
-              <HvBadge count={1} icon={<Alert />} />
+              <HvBadge label={1} icon={<Alert />} />
             </HvButton>
             {isLgUp && (
               <HvButton onClick={() => {}} aria-label="Open User panel" icon>
@@ -332,7 +332,7 @@ export const Test: StoryObj = {
         <HvHeaderNavigation data={navigationDataMain} />
         <HvHeaderActions>
           <HvButton icon aria-label="Open Notifications panel">
-            <HvBadge count={1} icon={<Alert />} />
+            <HvBadge label={1} icon={<Alert />} />
           </HvButton>
           <HvButton onClick={() => {}} aria-label="Open User panel" icon>
             <User />

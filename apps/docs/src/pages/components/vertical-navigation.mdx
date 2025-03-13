@@ -400,10 +400,8 @@ export default function Demo() {
           <Favorite />
         ) : (
           <div className="flex items-center">
-            <Favorite style={{ "--color-0": "inherit" }} />
-            <HvTypography variant="label" style={{ color: "inherit" }}>
-              Custom App
-            </HvTypography>
+            <Favorite />
+            <HvTypography variant="label">Custom App</HvTypography>
           </div>
         )}
         <CollapsibleButton
@@ -417,10 +415,7 @@ export default function Demo() {
       <HvVerticalNavigationActions>
         <div className="relative">
           {!collapsed && (
-            <Backwards
-              color="currentcolor"
-              className="absolute pointer-events-none top-0px right-0px"
-            />
+            <Backwards className="absolute pointer-events-none top-0 right-0" />
           )}
           <HvVerticalNavigationAction
             label={collapsed ? "Expand menu" : "Collapse menu"}

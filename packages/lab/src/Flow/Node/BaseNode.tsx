@@ -140,12 +140,9 @@ export const HvFlowBaseNode = ({
 
   return (
     <div
-      style={mergeStyles(
-        {},
-        {
-          "--node-color": color,
-        },
-      )}
+      style={mergeStyles(undefined, {
+        "--node-color": color,
+      })}
       className={cx(
         "nowheel", // Disables the default canvas pan behaviour when scrolling inside the node
         classes.root,
@@ -167,12 +164,9 @@ export const HvFlowBaseNode = ({
       </NodeToolbar>
       <div className={classes.headerContainer}>
         <div
-          style={mergeStyles(
-            {},
-            {
-              "--icon-color": iconColor,
-            },
-          )}
+          style={mergeStyles(undefined, {
+            "--icon-color": iconColor,
+          })}
           className={classes.titleContainer}
         >
           {icon}

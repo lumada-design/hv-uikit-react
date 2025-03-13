@@ -166,7 +166,6 @@ export const HvTableHeader = forwardRef<HTMLElement, HvTableHeaderProps>(
             <HvButton
               className={classes.sortButton}
               icon
-              overrideIconColors={false}
               aria-label="Sort"
               {...sortButtonProps}
             >

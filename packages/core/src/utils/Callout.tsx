@@ -146,7 +146,7 @@ export const HvCallout = forwardRef<
   } = useDefaultProps("HvCallout", props);
   const { classes, cx } = useClasses(classesProp, false);
   const { activeTheme } = useTheme();
-  const icon = customIcon || (showIcon && iconVariant(variant, "inherit"));
+  const icon = customIcon || (showIcon && iconVariant(variant));
 
   // TODO: consider making this flex-flow only, so it adapts according to the
   // content length, available space, number of actions, etc.

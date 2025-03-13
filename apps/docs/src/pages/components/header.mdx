@@ -28,7 +28,7 @@ can also use your own components.
   <HvHeaderBrand name="Pentaho+" />
   <HvHeaderActions>
     <HvIconButton title="Open Notifications panel">
-      <HvBadge count={1} icon={<Alert />} />
+      <HvBadge label={1} icon={<Alert />} />
     </HvIconButton>
     <HvIconButton title="Open User panel">
       <User />
@@ -72,7 +72,7 @@ export default function Demo() {
 
       <HvHeaderActions>
         <HvIconButton title="Open Notifications panel">
-          <HvBadge count={1} icon={<Alert />} />
+          <HvBadge label={1} icon={<Alert />} />
         </HvIconButton>
         {isLgUp && (
           <HvIconButton title="Open User panel">

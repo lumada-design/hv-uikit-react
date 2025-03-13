@@ -130,7 +130,6 @@ export const HvFlowNode = ({
           {hasParams && (
             <HvButton
               icon
-              overrideIconColors={false}
               onClick={() => setShowParams((p) => !p)}
               aria-label={
                 showParams ? labels?.collapseLabel : labels?.expandLabel

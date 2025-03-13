@@ -45,13 +45,10 @@ const NavigationItem = forwardRef<HTMLLIElement, CustomTreeItemProps>(
       <HvTreeItem
         ref={ref}
         nodeId={nodeId}
-        style={mergeStyles(
-          {},
-          {
-            "--level": level,
-            pointerEvents: disabled ? "none" : undefined,
-          },
-        )}
+        style={mergeStyles(undefined, {
+          "--level": level,
+          pointerEvents: disabled ? "none" : undefined,
+        })}
         classes={{
           group: classes.group,
           content: classes.content,

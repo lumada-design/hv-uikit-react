@@ -22,7 +22,6 @@ export const Main: StoryObj<HvButtonProps> = {
     disabled: false,
     size: undefined,
     radius: undefined,
-    overrideIconColors: false,
     selected: false,
     onClick: () => console.log("clicked"),
   },
