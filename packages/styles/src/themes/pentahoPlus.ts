@@ -467,10 +467,12 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          "& svg": {
-            width: 16,
-            height: 16,
+          borderRadius: "4px",
+          "&:hover": {
             borderRadius: "4px",
+          },
+          "& svg": {
+            borderRadius: "inherit",
           },
         },
         checked: {
@@ -485,31 +487,15 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseRadio: {
       classes: {
         root: {
-          "& svg": {
-            backgroundColor: theme.colors.bgContainer,
-            borderColor: theme.colors.textSubtle,
-          },
+          borderRadius: "4px",
           "&:hover": {
-            backgroundColor: theme.colors.bgHover,
+            borderRadius: "4px",
           },
         },
         checked: {
           "& svg": {
             borderColor: theme.colors.primary,
             backgroundColor: theme.colors.primary,
-          },
-          "&.HvBaseRadio-disabled": {
-            "& svg": {
-              borderColor: theme.colors.textDisabled,
-              backgroundColor: theme.colors.textDisabled,
-              color: theme.colors.bgDisabled,
-            },
-          },
-        },
-        disabled: {
-          "& svg": {
-            border: `1px solid ${theme.colors.textDisabled}`,
-            backgroundColor: theme.colors.bgDisabled,
           },
         },
       },

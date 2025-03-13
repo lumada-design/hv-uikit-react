@@ -445,8 +445,8 @@ const newDark = {
 
   border: atmosphereDark.atmo4,
   borderSubtle: atmosphereDark.atmo3,
-  borderStrong: atmosphereDark.atmo2,
-  borderDisabled: atmosphereDark.atmo3,
+  borderStrong: accentLight.secondary_80,
+  borderDisabled: accentLight.secondary_60,
 
   bgPage: atmosphereDark.atmo2,
   bgContainer: atmosphereDark.atmo1,
