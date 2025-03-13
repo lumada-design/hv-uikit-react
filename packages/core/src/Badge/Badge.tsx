@@ -85,20 +85,19 @@ export const HvBadge = forwardRef<
   return (
     <div ref={ref} className={cx(classes.root, className)} {...others}>
       {children}
-      <div className={cx({ [classes.badgeContainer]: children })}>
-        <div
-          className={cx(classes.badgePosition, {
-            [classes.badgeHidden]: !(count > 0 || renderedCountOrLabel),
-            // TODO: remove unnecessary classes in v6 (hoist+rename `badge` to `badgePosition`)
-            [classes.badge]: !!(count > 0 || renderedCountOrLabel),
-            [classes.showCount]: !!(!label && renderedCountOrLabel),
-            [classes.showLabel]: !!label,
-            [classes.badgeIcon]: !!icon,
-            [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1,
-          })}
-        >
-          {renderedCountOrLabel}
-        </div>
+      <div
+        className={cx(classes.badgePosition, {
+          [classes.badgeContainer]: children,
+          [classes.badgeHidden]: !(count > 0 || renderedCountOrLabel),
+          // TODO: remove unnecessary classes in v6 (hoist+rename `badge` to `badgePosition`)
+          [classes.badge]: !!(count > 0 || renderedCountOrLabel),
+          [classes.showCount]: !!(!label && renderedCountOrLabel),
+          [classes.showLabel]: !!label,
+          [classes.badgeIcon]: !!icon,
+          [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1,
+        })}
+      >
+        {renderedCountOrLabel}
       </div>
     </div>
   );

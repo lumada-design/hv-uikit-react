@@ -27,9 +27,10 @@ export const { staticClasses, useClasses } = createClasses("HvBulkActions", {
     display: "inline-flex",
     marginLeft: "auto",
     [`& .${actionsGenericClasses.dropDownMenuButton}:disabled`]: {
-      backgroundColor: "transparent",
-      borderColor: "transparent",
-      "&:hover": { backgroundColor: "transparent", borderColor: "transparent" },
+      "&,:hover": {
+        backgroundColor: "transparent",
+        borderColor: "transparent",
+      },
     },
   },
   selectAllContainer: { display: "flex", alignItems: "center" },

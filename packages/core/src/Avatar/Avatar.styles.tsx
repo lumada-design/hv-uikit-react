@@ -3,21 +3,9 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 import { outlineStyles } from "../utils/focusUtils";
 
-const EXTRA_SMALL = { container: "32px", avatar: "24px" };
-const SMALL = { container: "40px", avatar: "32px" };
-const MEDIUM = { container: "48px", avatar: "40px" };
-const LARGE = { container: "60px", avatar: "52px" };
-const EXTRA_LARGE = { container: "96px", avatar: "88px" };
-
 export const { staticClasses, useClasses } = createClasses("HvAvatar", {
   root: {
     fontSize: "1rem",
-  },
-  container: {
-    "&:focus-visible": {
-      ...outlineStyles,
-      borderRadius: 0,
-    },
   },
   img: {
     width: "100%",
@@ -31,33 +19,25 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     textIndent: 10000,
   },
   fallback: {},
-  status: {
+  /** @deprecated use `classes.container` instead */
+  status: {},
+  container: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
     position: "relative",
+    padding: theme.space.xxs,
 
-    "&$xs": { width: EXTRA_SMALL.container, height: EXTRA_SMALL.container },
-    "&$sm": { width: SMALL.container, height: SMALL.container },
-    "&$md": { width: MEDIUM.container, height: MEDIUM.container },
-    "&$lg": { width: LARGE.container, height: LARGE.container },
-    "&$xl": { width: EXTRA_LARGE.container, height: EXTRA_LARGE.container },
-  },
-  avatar: {
-    "&$xs": {
-      width: EXTRA_SMALL.avatar,
-      height: EXTRA_SMALL.avatar,
-      fontSize: "0.5rem",
-    },
-    "&$sm": { width: SMALL.avatar, height: SMALL.avatar, fontSize: "0.625rem" },
-    "&$md": { width: MEDIUM.avatar, height: MEDIUM.avatar, fontSize: "1rem" },
-    "&$lg": { width: LARGE.avatar, height: LARGE.avatar, fontSize: "1.5rem" },
-    "&$xl": {
-      width: EXTRA_LARGE.avatar,
-      height: EXTRA_LARGE.avatar,
-      fontSize: "2rem",
+    ":focus-visible": {
+      ...outlineStyles,
+      borderRadius: 0,
     },
   },
+  xs: { width: 24, height: 24, fontSize: "0.5rem" },
+  sm: { width: 32, height: 32, fontSize: "0.625rem" },
+  md: { width: 40, height: 40, fontSize: "1rem" },
+  lg: { width: 52, height: 52, fontSize: "1.5rem" },
+  xl: { width: 88, height: 88, fontSize: "2rem" },
+  avatar: {},
   badge: {
     width: 8,
     height: 8,
@@ -67,11 +47,6 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     borderRadius: theme.radii.full,
     zIndex: 1,
   },
-  xs: {},
-  sm: {},
-  md: {},
-  lg: {},
-  xl: {},
   circular: { borderRadius: theme.radii.full },
   square: {},
 });

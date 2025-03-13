@@ -22,6 +22,14 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   select: {},
   popper: {
     zIndex: theme.zIndices.popover,
+
+    "--r": theme.radii.base,
+    "&[data-popper-placement*='top'] $panel": {
+      borderRadius: `var(--r) var(--r) 0 0`,
+    },
+    "&[data-popper-placement*='bottom'] $panel": {
+      borderRadius: `0 0 var(--r) var(--r)`,
+    },
   },
   panel: {
     maxHeight: 400,
@@ -36,11 +44,9 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
     overflowY: "auto",
     borderRadius: "inherit",
   },
-  panelOpenedUp: {
-    borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
-  },
-  panelOpenedDown: {
-    borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
-  },
+  /** @deprecated leverage `[data-popper-placement]` instead */
+  panelOpenedUp: {},
+  /** @deprecated leverage `[data-popper-placement]` instead */
+  panelOpenedDown: {},
   error: {},
 });

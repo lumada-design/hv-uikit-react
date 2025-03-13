@@ -172,11 +172,10 @@ export const HvDropDownMenu = forwardRef<
     <HvBaseDropdown
       ref={ref}
       id={id}
-      className={cx(classes.container, classes.icon, className, {
-        [classes.iconSelected]: open,
+      className={cx(classes.root, classes.container, classes.icon, className, {
+        [classes.iconSelected]: open, // TODO: rename to open
       })}
       classes={{
-        root: classes.root,
         container: classes.baseContainer,
         panel: classes.menuListRoot,
       }}

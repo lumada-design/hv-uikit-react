@@ -26,14 +26,12 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
   dropdown: {
     width: "100%",
     borderRadius: theme.radii.base,
-
-    "& $dropdownHeaderInvalid": {
-      border: `1px solid ${theme.form.errorColor}`,
-    },
   },
   arrow: {},
   dropdownHeader: {},
-  dropdownHeaderInvalid: {},
+  dropdownHeaderInvalid: {
+    borderColor: theme.form.errorColor,
+  },
   dropdownHeaderOpen: {},
   dropdownListContainer: {},
   rootList: {},
@@ -42,7 +40,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdown", {
   },
   readOnly: {
     "& $dropdownHeader": {
-      border: `1px solid ${theme.colors.textSubtle}`,
+      borderColor: theme.colors.textSubtle,
       backgroundColor: theme.colors.bgContainer,
     },
   },

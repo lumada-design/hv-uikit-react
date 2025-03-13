@@ -47,7 +47,7 @@ export const HvDropdownButton = forwardRef<
     ...others
   } = useDefaultProps("HvDropdownButton", props);
 
-  const { classes, cx } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp, false);
 
   const endIcon = icon ? undefined : <DropDownXS size="XS" rotate={open} />;
 
@@ -56,12 +56,11 @@ export const HvDropdownButton = forwardRef<
       ref={ref}
       icon={icon}
       disabled={disabled || readOnly}
+      data-popper-placement={placement}
       className={cx(
         classes.root,
         {
           [classes.open]: open,
-          [classes.openUp]: open && placement.includes("top"),
-          [classes.openDown]: open && placement.includes("bottom"),
           [classes.disabled]: disabled,
           [classes.readOnly]: readOnly,
         },

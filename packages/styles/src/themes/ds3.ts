@@ -258,32 +258,25 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         header: {
           border: `1px solid ${theme.colors.atmo4}`,
-          "&:hover": {
-            border: `1px solid ${theme.colors.secondary}`,
-          },
-          "&:focus-visible": {
-            border: `1px solid ${theme.colors.secondary}`,
+          ":hover,:focus-visible": {
+            borderColor: theme.colors.secondary,
           },
         },
         headerOpen: {
-          border: "1px solid transparent",
-          boxShadow: theme.colors.shadow,
-          "&:hover": {
-            border: "1px solid transparent",
+          "&,:hover": {
+            borderColor: "transparent",
             boxShadow: theme.colors.shadow,
           },
         },
         headerDisabled: {
-          border: `1px solid ${theme.colors.atmo4}`,
           background: theme.colors.atmo3,
-          "&:hover": {
-            border: `1px solid ${theme.colors.atmo4}`,
+          "&,:hover": {
+            borderColor: theme.colors.atmo4,
           },
         },
         headerReadOnly: {
-          border: "none",
           background: theme.colors.atmo1,
-          "&:focus-visible": {
+          "&,:focus-visible": {
             border: "none",
           },
         },
@@ -404,10 +397,7 @@ const ds3 = makeTheme((theme) => ({
     HvBreadCrumbPage: {
       classes: {
         link: {
-          "&:hover": {
-            backgroundColor: theme.colors.atmo3,
-          },
-          "&:focus": {
+          ":hover,:focus": {
             backgroundColor: theme.colors.atmo3,
           },
         },
@@ -769,20 +759,16 @@ const ds3 = makeTheme((theme) => ({
           border: `1px dotted ${theme.colors.atmo4}`,
           background: theme.colors.atmo2,
           borderRadius: "0px",
-          "&:hover": {
-            border: `1px dotted ${theme.colors.secondary}`,
-          },
-          "&:focus-within": {
-            border: `1px dotted ${theme.colors.secondary}`,
+          ":hover,:focus-within": {
+            borderColor: theme.colors.secondary,
           },
         },
         dragAction: {
           border: `1px dotted ${theme.colors.secondary}`,
         },
         dropZoneContainerDisabled: {
-          border: `1px dotted ${theme.colors.atmo4}`,
-          "&:hover": {
-            border: `1px dotted ${theme.colors.atmo4}`,
+          "&,:hover": {
+            borderColor: theme.colors.atmo4,
           },
         },
       },
@@ -941,16 +927,11 @@ const ds3 = makeTheme((theme) => ({
     HvInlineEditor: {
       classes: {
         button: {
-          border: "none",
-          backgroundColor: "transparent",
-          "&:hover": {
+          "&,:hover": {
             border: "none",
             backgroundColor: "transparent",
           },
-          "&:focus": {
-            border: "none",
-          },
-          "&:active": {
+          ":focus,:active": {
             border: "none",
           },
         },

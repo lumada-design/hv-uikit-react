@@ -145,32 +145,30 @@ export const HvAvatar = forwardRef<
     statusInlineStyle.boxShadow = `inset 0px 0px 0px 2px ${statusColor}`;
   }
 
-  const badgeColor = getColor(badge || "", "positive");
-
   return (
-    <div ref={ref} className={classes.container} {...others}>
-      <div
-        className={cx(classes.status, classes[variant], classes[size])}
-        style={statusInlineStyle}
+    <div
+      ref={ref}
+      className={cx(classes.container, classes.status, classes[variant])}
+      style={statusInlineStyle}
+      {...others}
+    >
+      {badge && (
+        <div
+          className={classes.badge}
+          style={{ backgroundColor: getColor(badge, "positive") }}
+        />
+      )}
+      <MuiAvatar
+        component={component}
+        // Consider not using the root and className classes in this component
+        className={cx(classes.root, classes.avatar, classes[size], className)}
+        style={inlineStyle}
+        variant={variant}
+        size={size}
+        {...avatarProps}
       >
-        {badge && (
-          <div
-            className={classes.badge}
-            style={{ backgroundColor: badgeColor }}
-          />
-        )}
-        <MuiAvatar
-          component={component}
-          // Consider not using the root and className classes in this component
-          className={cx(classes.root, classes.avatar, classes[size], className)}
-          style={inlineStyle}
-          variant={variant}
-          size={size}
-          {...avatarProps}
-        >
-          {children}
-        </MuiAvatar>
-      </div>
+        {children}
+      </MuiAvatar>
     </div>
   );
 });

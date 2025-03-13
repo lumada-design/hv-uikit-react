@@ -4,9 +4,12 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvBadge", {
   root: { position: "relative", "&>*": { float: "left" } },
   /** class applied to the badge container when it has content */
-  badgeContainer: { width: 0 },
+  badgeContainer: {},
   /** class applied to the badge */
   badgePosition: {
+    // TODO: change to relative so that badges don't overflow into the siblings
+    position: "absolute",
+    left: "100%",
     ...theme.typography.caption2,
     color: theme.colors.textDimmed,
     borderRadius: theme.radii.full,
@@ -32,6 +35,6 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
   },
   showCount: {},
   showLabel: {},
-  badgeIcon: { position: "relative", top: "1px", left: "-7px" },
+  badgeIcon: { top: "1px", left: "calc(100% - 7px)" },
   badgeOneDigit: { padding: 0, width: "16px" },
 });

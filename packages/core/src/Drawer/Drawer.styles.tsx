@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvDrawer", {
   },
   closeButton: {
     position: "absolute",
-    top: theme.spacing("sm"),
-    right: theme.spacing("sm"),
+    top: theme.space.sm,
+    right: theme.space.sm,
   },
 });
