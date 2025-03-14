@@ -40,18 +40,6 @@ export const Main: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: MainStoryRaw },
     },
-    ...setupChromatic(),
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const item = canvas.getByText("Documents"); // Not able to get it by role treeitem
-    await userEvent.click(item);
-    // Wait before clicking the other item to avoid errors in visual tests
-    await sleep(500);
-    const subItem = canvas.getByText("private");
-    await userEvent.click(subItem);
-    await expect(canvas.getAllByRole("treeitem")).toHaveLength(5);
   },
   render: () => <MainStory />,
 };
@@ -116,18 +104,6 @@ export const VerticalNavigation: StoryObj<HvTreeViewProps<false>> = {
     docs: {
       source: { code: VerticalNavigationStoryRaw },
     },
-    ...setupChromatic(),
-  },
-  // For visual testing
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const item = canvas.getByText("Storage"); // Not able to get it by role treeitem
-    await userEvent.click(item);
-    // Wait before clicking the other item to avoid errors in visual tests
-    await sleep(500);
-    const subItem1 = canvas.getByText("Cloud");
-    await userEvent.click(subItem1);
-    await expect(canvas.getAllByRole("treeitem")).toHaveLength(8);
   },
   render: () => <VerticalNavigationStory />,
 };

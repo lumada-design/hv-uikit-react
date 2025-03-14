@@ -5,7 +5,6 @@ import {
   HvOptionGroup,
   HvSelect,
   HvSelectProps,
-  HvSimpleGrid,
 } from "@hitachivantara/uikit-react-core";
 
 import ControlledStory from "./stories/Controlled";
@@ -172,45 +171,40 @@ export const Test: StoryObj<HvSelectProps<{}, false>> = {
     },
   },
   render: () => (
-    <HvSimpleGrid cols={2}>
-      <div>
-        <HvSelect disabled label="Disabled" placeholder="Select an option">
-          <HvOption value="op">Option</HvOption>
-        </HvSelect>
-        <HvSelect readOnly label="Read-only" placeholder="Select an option">
-          <HvOption value="op">Option</HvOption>
-        </HvSelect>
-        <HvSelect
-          status="invalid"
-          label="Invalid"
-          statusMessage="This is always invalid"
-          placeholder="Select an option"
-        >
-          <HvOption value="op">Option</HvOption>
-        </HvSelect>
-        <HvSelect required label="Required" placeholder="Select an option" open>
-          {[...Array(100).keys()].map((i) => (
-            <HvOption key={i} value={i}>{`Option ${i}`}</HvOption>
-          ))}
-        </HvSelect>
-      </div>
+    <>
+      <HvSelect disabled label="Disabled" placeholder="Select an option">
+        <HvOption value="op">Option</HvOption>
+      </HvSelect>
+      <HvSelect readOnly label="Read-only" placeholder="Select an option">
+        <HvOption value="op">Option</HvOption>
+      </HvSelect>
       <HvSelect
-        required
-        name="country"
-        label="Country"
-        description="Select your favorite country"
-        placeholder="Select country"
-        open
+        status="invalid"
+        label="Invalid"
+        statusMessage="This is always invalid"
+        placeholder="Select an option"
       >
-        <HvOptionGroup label="America">
+        <HvOption value="op">Option</HvOption>
+      </HvSelect>
+      <HvSelect
+        open
+        required
+        label="Options"
+        placeholder="Select one"
+        description="Many options"
+      >
+        <HvOptionGroup label="Countries">
           <HvOption value="ar">Argentina</HvOption>
-          <HvOption value="us">United States</HvOption>
-        </HvOptionGroup>
-        <HvOptionGroup label="Europe">
           <HvOption value="bg">Belgium</HvOption>
           <HvOption value="pt">Portugal</HvOption>
+          <HvOption value="us">United States</HvOption>
+        </HvOptionGroup>
+        <HvOptionGroup label="More options">
+          {[...Array(40).keys()].map((i) => (
+            <HvOption key={i} value={i}>{`Option ${i}`}</HvOption>
+          ))}
         </HvOptionGroup>
       </HvSelect>
-    </HvSimpleGrid>
+    </>
   ),
 };

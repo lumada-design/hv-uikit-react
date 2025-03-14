@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 
@@ -36,21 +35,14 @@ export const Main: StoryObj<HvTextAreaProps> = {
 };
 
 export const Variants: StoryObj<HvTextAreaProps> = {
+  decorators: [
+    (Story) => (
+      <div className="flex flex-wrap gap-xs [&>*]:w-130px">{Story()}</div>
+    ),
+  ],
   render: () => {
-    const classes = {
-      root: css({
-        display: "flex",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        gap: 10,
-        "& > div": {
-          width: 130,
-        },
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvTextArea
           rows={5}
           label="Required"
@@ -80,7 +72,7 @@ export const Variants: StoryObj<HvTextAreaProps> = {
           status="invalid"
           statusMessage="Oh no!"
         />
-      </div>
+      </>
     );
   },
 };

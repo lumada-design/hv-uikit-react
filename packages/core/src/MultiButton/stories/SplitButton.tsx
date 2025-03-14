@@ -4,39 +4,16 @@ import {
   HvDropDownMenu,
   HvMultiButton,
   HvMultiButtonProps,
-  HvSimpleGrid,
 } from "@hitachivantara/uikit-react-core";
 import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
-interface Button
-  extends Pick<HvMultiButtonProps, "variant" | "size" | "disabled"> {
-  side: "left" | "right";
-}
-
-const buttons: Button[] = [
-  { variant: "primary", side: "left" },
-  { variant: "primarySubtle", side: "left" },
-  { variant: "secondarySubtle", side: "left" },
-  { variant: "primary", size: "sm", side: "right" },
-  { variant: "primarySubtle", size: "sm", side: "right" },
-  { variant: "secondarySubtle", size: "sm", side: "right" },
-  { variant: "primary", size: "lg", side: "left" },
-  { variant: "primarySubtle", size: "lg", side: "left" },
-  { variant: "secondarySubtle", size: "lg", side: "left" },
-  { variant: "primary", size: "sm", disabled: true, side: "left" },
-  {
-    variant: "primarySubtle",
-    size: "md",
-    disabled: true,
-    side: "left",
-  },
-  {
-    variant: "secondarySubtle",
-    size: "lg",
-    disabled: true,
-    side: "left",
-  },
-];
+const buttons = [
+  { variant: "primary" },
+  { variant: "primarySubtle", size: "sm" },
+  { variant: "secondarySubtle", size: "sm" },
+  { variant: "secondarySubtle", size: "lg" },
+  { variant: "primary", size: "lg", disabled: true },
+] satisfies Pick<HvMultiButtonProps, "variant" | "size" | "disabled">[];
 
 export const SplitButton = () => {
   const options = useMemo(
@@ -50,29 +27,28 @@ export const SplitButton = () => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   return (
-    <HvSimpleGrid cols={3} spacing="sm">
-      {buttons.map(({ variant, size, disabled, side }, i) => (
-        <div key={i}>
-          <HvMultiButton
-            variant={variant}
-            size={size}
-            disabled={disabled}
-            split
-          >
-            {side === "left" && <HvButton>{selectedOption.label}</HvButton>}
-            <HvDropDownMenu
-              dataList={options}
-              icon={<DropDownXS />}
-              onClick={(e, item) =>
-                setSelectedOption(
-                  options.filter((option) => option.label === item.label)[0],
-                )
-              }
-            />
-            {side === "right" && <HvButton>{selectedOption.label}</HvButton>}
-          </HvMultiButton>
-        </div>
+    <div className="flex gap-xs">
+      {buttons.map(({ variant, size, disabled }, i) => (
+        <HvMultiButton
+          key={i}
+          variant={variant}
+          size={size}
+          disabled={disabled}
+          split
+        >
+          {i % 2 === 0 && <HvButton>{selectedOption.label}</HvButton>}
+          <HvDropDownMenu
+            dataList={options}
+            icon={<DropDownXS />}
+            onClick={(e, item) =>
+              setSelectedOption(
+                options.filter((option) => option.label === item.label)[0],
+              )
+            }
+          />
+          {i % 2 !== 0 && <HvButton>{selectedOption.label}</HvButton>}
+        </HvMultiButton>
       ))}
-    </HvSimpleGrid>
+    </div>
   );
 };

@@ -120,12 +120,14 @@ export const Test: StoryObj<HvBreadCrumbProps> = {
     await userEvent.click(canvas.getByRole("button", { name: /dropdown/i }));
     await expect(await canvas.findByRole("menu")).toBeInTheDocument();
   },
+  decorators: [(Story) => <div className="grid gap-sm">{Story()}</div>],
   render: () => (
-    <div className="grid gap-md">
+    <>
       <HvBreadCrumb
         aria-label="Test link"
         url="https://example.com/sites/subpath/anotherPath/leaf.aspx"
       />
+      <HvBreadCrumb aria-label="Test" maxVisible={4} listRoute={data} />
       <HvBreadCrumb
         aria-label="Test long"
         listRoute={[...Array(5).keys()].map((i) => ({
@@ -133,7 +135,6 @@ export const Test: StoryObj<HvBreadCrumbProps> = {
           path: `route${i}`,
         }))}
       />
-      <HvBreadCrumb aria-label="Test" maxVisible={4} listRoute={data} />
-    </div>
+    </>
   ),
 };

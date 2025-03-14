@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
@@ -40,17 +39,10 @@ export const Main: StoryObj<HvCheckBoxGroupProps> = {
 };
 
 export const Variants: StoryObj<HvCheckBoxGroupProps> = {
+  decorators: [(Story) => <div className="flex gap-sm">{Story()}</div>],
   render: () => {
-    const classes = {
-      root: css({
-        display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvCheckBoxGroup showSelectAll required label="Required">
           <HvCheckBox label="Checkbox 1" value="1" />
           <HvCheckBox label="Checkbox 2" value="2" checked />
@@ -76,7 +68,7 @@ export const Variants: StoryObj<HvCheckBoxGroupProps> = {
           <HvCheckBox label="Checkbox 2" value="2" checked />
           <HvCheckBox label="Checkbox 3" value="3" />
         </HvCheckBoxGroup>
-      </div>
+      </>
     );
   },
 };

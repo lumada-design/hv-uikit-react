@@ -59,7 +59,7 @@ export const Main: StoryObj<HvScrollToVerticalProps> = {
     };
 
     return (
-      <div>
+      <div className="relative">
         <HvScrollToVertical
           {...args}
           scrollElementId="pageContentId"

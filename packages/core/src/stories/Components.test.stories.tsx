@@ -1,25 +1,43 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/test";
 
 import { Disabled as AccordionDisabledStory } from "../Accordion/Accordion.stories";
+import { Main as ActionBarMainStory } from "../ActionBar/ActionBar.stories";
+import {
+  Main as AppSwitcherMainStory,
+  ManyEntries as AppSwitcherManyEntriesStory,
+} from "../AppSwitcher/AppSwitcher.stories";
 import { Test as AvatarTestStory } from "../Avatar/Avatar.stories";
 import { Test as AvatarGroupTestStory } from "../AvatarGroup/stories/AvatarGroup.stories";
 import { Test as BadgeTestStory } from "../Badge/Badge.stories";
 import { Variants as BannerVariantsStory } from "../Banner/Banner.stories";
+import { Test as BreadCrumbTestStory } from "../BreadCrumb/BreadCrumb.stories";
+import { Test as BulkActionsTestStory } from "../BulkActions/BulkActions.stories";
 import { Test as ButtonTestStory } from "../Button/Button.stories";
 import { Variants as CardVariantsStory } from "../Card/Card.stories";
+import {
+  Actions as CarouselActionsStory,
+  Embedded as CarouselEmbeddedStory,
+} from "../Carousel/Carousel.stories";
 import { Test as CheckBoxTestStory } from "../CheckBox/CheckBox.stories";
 import { Variants as CheckBoxGroupVariantsStory } from "../CheckBoxGroup/CheckBoxGroup.stories";
+import { Test as ColorPickerTestStory } from "../ColorPicker/ColorPicker.stories";
 import { Main as ContainerMainStory } from "../Container/Container.stories";
-import { Test as DatePickerTestStory } from "../DatePicker/DatePicker.stories";
 import { Main as DotPaginationMainStory } from "../DotPagination/DotPagination.stories";
-import { Test as DropdownTestStory } from "../Dropdown/stories/Dropdown.stories";
+import {
+  MultiSelection as DropdownMultiSelectionStory,
+  Variants as DropdownVariantsStory,
+} from "../Dropdown/stories/Dropdown.stories";
 import { Main as DropDownMenuMainStory } from "../DropDownMenu/DropDownMenu.stories";
 import {
   Minimal as EmptyStateMinimalStory,
   WithAction as EmptyStateWithActionStory,
 } from "../EmptyState/EmptyState.stories";
+import { WithPreviewThumbnails as FileUploaderWithPreviewThumbnailsStory } from "../FileUploader/FileUploader.stories";
+import { CustomLabels as FooterCustomLabelsStory } from "../Footer/Footer.stories";
+import { Test as GlobalActionsTestStory } from "../GlobalActions/GlobalActions.stories";
 import { TheDesignSystemColumns as GridTheDesignSystemColumnsStory } from "../Grid/Grid.stories";
+import { Test as HeaderTestStory } from "../Header/Header.stories";
 import { Variants as IconButtonVariantsStory } from "../IconButton/IconButton.stories";
 import { Test as InlineEditorTestStory } from "../InlineEditor/InlineEditor.stories";
 import { Test as InputTestStory } from "../Input/Input.stories";
@@ -38,15 +56,12 @@ import {
 } from "../RadioGroup/RadioGroup.stories";
 import { Main as ScrollToHorizontalMainStory } from "../ScrollToHorizontal/ScrollToHorizontal.stories";
 import { Main as ScrollToVerticalMainStory } from "../ScrollToVertical/ScrollToVertical.stories";
+import { Test as SectionTestStory } from "../Section/Section.stories";
 import { Test as SelectTestStory } from "../Select/Select.stories";
 import { Variants as SelectionListVariantsStory } from "../SelectionList/SelectionList.stories";
-import { HvSimpleGrid } from "../SimpleGrid";
 import { Main as SimpleGridMainStory } from "../SimpleGrid/SimpleGrid.stories";
 import { Variants as SkeletonVariantsStory } from "../Skeleton/Skeleton.stories";
-import {
-  RangeVariants as SliderRangeVariantsStory,
-  Variants as SliderVariantsStory,
-} from "../Slider/Slider.stories";
+import { RangeVariants as SliderRangeVariantsStory } from "../Slider/Slider.stories";
 import { Variants as SnackbarVariantsStory } from "../Snackbar/Snackbar.stories";
 import { Test as StackTestStory } from "../Stack/Stack.stories";
 import { Variants as SwitchVariantsStory } from "../Switch/Switch.stories";
@@ -60,23 +75,208 @@ import { setupChromatic } from ".storybook/setupChromatic";
 import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Core package */
-const meta: Meta = {
+export default {
   title: "Tests/Components",
-};
-export default meta;
+} satisfies Meta;
 
-/**
- * Visual tests for:
- * - Accordion
- * - Dot pagination
- * - Dropdown menu
- * - Empty state
- * - Input
- * - Checkbox group
- * - Banner
- * - Dropdown
- */
-export const Test: StoryObj = {
+/** Basic inputs */
+export const TestInputs: StoryObj = {
+  parameters: {
+    ...setupChromatic(
+      [
+        "DS3 dawn",
+        "DS3 wicked",
+        "DS5 dawn",
+        "DS5 wicked",
+        "Pentaho+ dawn",
+        "Pentaho+ wicked",
+      ],
+      5000,
+    ),
+    docs: { disable: true },
+    a11y: {
+      disable: true,
+    },
+  },
+  tags: ["skipTestRunner"],
+  render: (args, context: any) => (
+    <div className="grid gap-xs">
+      <div className="flex gap-xs">
+        <div className="grid grid-cols-2 gap-xs w-440px">
+          {renderStory(InputTestStory, context)}
+        </div>
+        <div className="grid gap-xs w-160px [&>*]:w-160px">
+          {renderStory(TextAreaVariantsStory, context)}
+        </div>
+        <div className="grid gap-xs w-120px">
+          {renderStory(CheckBoxGroupVariantsStory, context)}
+        </div>
+        <div className="grid gap-xs w-120px">
+          {renderStory(RadioGroupVariantsStory, context)}
+        </div>
+        <div className="grid w-160px">
+          {renderStory(CheckBoxTestStory, context)}
+        </div>
+        <div className="grid gap-sm w-120px">
+          <div className="flex w-full flex-wrap">
+            {renderStory(RadioTestStory, context)}
+          </div>
+          {renderStory(SwitchVariantsStory, context)}
+        </div>
+        <div className="flex flex-col gap-xs flex-1">
+          {renderStory(SliderRangeVariantsStory, context)}
+          <div className="flex gap-xs">
+            {renderStory(SelectionListVariantsStory, context)}
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-sm w-full flex-wrap [&>*]:w-220px">
+        {renderStory(TagsInputVariantsStory, context)}
+      </div>
+      <div>{renderStory(RadioGroupHorizontalStory, context)}</div>
+      <div>{renderStory(InlineEditorTestStory, context)}</div>
+    </div>
+  ),
+};
+
+/** Inputs that have popups */
+export const TestPopups: StoryObj = {
+  parameters: {
+    ...setupChromatic(
+      [
+        "DS3 dawn",
+        "DS3 wicked",
+        "DS5 dawn",
+        "DS5 wicked",
+        "Pentaho+ dawn",
+        "Pentaho+ wicked",
+      ],
+      5000,
+    ),
+    docs: { disable: true },
+    a11y: {
+      disable: true,
+    },
+  },
+  tags: ["skipTestRunner"],
+  render: (args, context: any) => (
+    <div className="flex gap-md">
+      <div className="flex flex-col gap-xs w-240px">
+        {renderStory(SelectTestStory, context)}
+      </div>
+      <div className="flex flex-col gap-xs w-240px">
+        {renderStory(DropdownVariantsStory, context)}
+        {DropdownMultiSelectionStory.render?.({ expanded: true }, context)}
+      </div>
+      <div>
+        {renderStory(OverflowTooltipMainStory, context)}
+        <div className="flex gap-xs mt-80px">
+          {renderStory(ColorPickerTestStory, context)}
+        </div>
+      </div>
+      <div className="ml-auto">
+        {renderStory(DropDownMenuMainStory, context)}
+      </div>
+      <div className="grid w-340px">
+        {renderStory(SnackbarVariantsStory, context)}
+      </div>
+    </div>
+  ),
+};
+
+/** Components that are mostly buttons/actions or containers for actions */
+export const TestButtons: StoryObj = {
+  parameters: {
+    ...setupChromatic(
+      [
+        "DS3 dawn",
+        "DS3 wicked",
+        "DS5 dawn",
+        "DS5 wicked",
+        "Pentaho+ dawn",
+        "Pentaho+ wicked",
+      ],
+      5000,
+    ),
+    docs: { disable: true },
+    a11y: {
+      disable: true,
+    },
+  },
+  tags: ["skipTestRunner"],
+  render: (args, context: any) => (
+    <div className="grid gap-sm">
+      <div>{renderStory(ButtonTestStory, context)}</div>
+      <div className="flex gap-sm">
+        <div>{renderStory(ToggleButtonMultipleStory, context)}</div>
+        <div>{renderStory(IconButtonVariantsStory, context)}</div>
+      </div>
+      <div>{renderStory(MultiButtonTestStory, context)}</div>
+      <div className="flex flex-wrap gap-x-xs">
+        {renderStory(BreadCrumbTestStory, context)}
+      </div>
+      <div>{renderStory(TagTestStory, context)}</div>
+      <div className="grid grid-cols-3 gap-sm">
+        {renderStory(GlobalActionsTestStory, context)}
+        {renderStory(BulkActionsTestStory, context)}
+      </div>
+      <div className="grid grid-cols-2 gap-xs">
+        <div>
+          {renderStory(ActionBarMainStory, context)}
+          {renderStory(DotPaginationMainStory, context)}
+        </div>
+        <div>{renderStory(PaginationMainStory, context)}</div>
+      </div>
+      {renderStory(TabsTestStory, context)}
+    </div>
+  ),
+};
+
+/** Surfaces and other containers */
+export const TestSurfaces: StoryObj = {
+  parameters: {
+    ...setupChromatic(
+      [
+        "DS3 dawn",
+        "DS3 wicked",
+        "DS5 dawn",
+        "DS5 wicked",
+        "Pentaho+ dawn",
+        "Pentaho+ wicked",
+      ],
+      5000,
+    ),
+    docs: { disable: true },
+    a11y: {
+      disable: true,
+    },
+  },
+  tags: ["skipTestRunner"],
+  render: (args, context: any) => (
+    <div className="flex gap-sm">
+      <div className="flex flex-col gap-xs w-340px">
+        {renderStory(CardVariantsStory, context)}
+        {renderStory(AppSwitcherMainStory, context)}
+      </div>
+      <div className="flex flex-col gap-xs w-340px">
+        {renderStory(SectionTestStory, context)}
+        {renderStory(ListContainerWithIconsStory, context)}
+      </div>
+      <div className="flex flex-col gap-xs flex-1">
+        {renderStory(BannerVariantsStory, context)}
+        {renderStory(FooterCustomLabelsStory, context)}
+        <div className="mb-60px">{renderStory(HeaderTestStory, context)}</div>
+        {renderStory(AppSwitcherManyEntriesStory, context)}
+        <div className="grid grid-cols-2 gap-xs">
+          {renderStory(FileUploaderWithPreviewThumbnailsStory, context)}
+        </div>
+      </div>
+    </div>
+  ),
+};
+
+/** Misc components */
+export const TestOthers: StoryObj = {
   parameters: {
     ...setupChromatic(
       [
@@ -102,266 +302,43 @@ export const Test: StoryObj = {
     await userEvent.click(button);
   },
   render: (args, context: any) => (
-    <div style={{ display: "flex", gap: 5 }}>
-      <div>
-        <HvSimpleGrid
-          cols={3}
-          style={{ alignItems: "start", justifyContent: "start" }}
-        >
-          <div>
-            <div style={{ display: "flex", height: 180 }}>
-              {renderStory(AccordionDisabledStory, context)}
-              {renderStory(DotPaginationMainStory, context)}
-              {renderStory(DropDownMenuMainStory, context)}
+    <div className="grid gap-xs">
+      <div className="flex gap-md">
+        {renderStory(AvatarGroupTestStory, context)}
+        <div className="flex flex-col gap-xs">
+          {renderStory(AvatarTestStory, context)}
+          {renderStory(EmptyStateWithActionStory, context)}
+          {renderStory(EmptyStateMinimalStory, context)}
+        </div>
+        <div className="flex flex-col gap-sm flex-1">
+          <div>{renderStory(ProgressBarVariantsStory, context)}</div>
+          <div className="flex gap-sm">
+            <div className="flex flex-col gap-xs">
+              {renderStory(LoadingVariantsStory, context)}
             </div>
-            <div>
-              {renderStory(EmptyStateMinimalStory, context)}
-              {renderStory(EmptyStateWithActionStory, context)}
-            </div>
+            {renderStory(SkeletonVariantsStory, context)}
+            {renderStory(AccordionDisabledStory, context)}
           </div>
-          {renderStory(CheckBoxGroupVariantsStory, context)}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-            {renderStory(InputTestStory, context)}
-          </div>
-        </HvSimpleGrid>
-        <div>{renderStory(BannerVariantsStory, context)}</div>
+        </div>
       </div>
-      {renderStory(DropdownTestStory, context)}
+      {renderStory(BadgeTestStory, context)}
+      <div className="flex gap-sm">
+        {renderStory(CarouselEmbeddedStory, context)}
+        <div className="w-650px">
+          {renderStory(CarouselActionsStory, context)}
+        </div>
+        <div>{renderStory(TypographyTestStory, context)}</div>
+      </div>
+      <div className="grid grid-cols-2 gap-sm">
+        {renderStory(ScrollToHorizontalMainStory, context)}
+        {renderStory(ScrollToVerticalMainStory, context)}
+      </div>
     </div>
   ),
 };
 
-/**
- * Visual tests for:
- * - Button
- * - Card
- * - Badge
- * - Avatar
- * - Avatar group
- * - Snackbar
- */
-export const Test2: StoryObj = {
-  parameters: {
-    ...setupChromatic(
-      [
-        "DS3 dawn",
-        "DS3 wicked",
-        "DS5 dawn",
-        "DS5 wicked",
-        "Pentaho+ dawn",
-        "Pentaho+ wicked",
-      ],
-      5000,
-    ),
-    docs: { disable: true },
-    a11y: {
-      disable: true,
-    },
-  },
-  tags: ["skipTestRunner"],
-  render: (args, context: any) => (
-    <>
-      {renderStory(ButtonTestStory, context)}
-      <br />
-      <HvSimpleGrid
-        cols={2}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        {renderStory(CardVariantsStory, context)}
-        <div style={{ display: "flex" }}>
-          {renderStory(AvatarGroupTestStory, context)}
-          {renderStory(BadgeTestStory, context)}
-          {renderStory(AvatarTestStory, context)}
-        </div>
-      </HvSimpleGrid>
-      <br />
-      <HvSimpleGrid cols={5}>
-        {renderStory(SnackbarVariantsStory, context)}
-      </HvSimpleGrid>
-    </>
-  ),
-};
-
-/**
- * Visual tests for:
- * - Inline editor
- * - Date picker
- * - List container
- * - Loading
- * - Skeleton
- * - Switch
- * - Selection list
- * - Progress bar
- */
-export const Test3: StoryObj = {
-  parameters: {
-    ...setupChromatic(
-      [
-        "DS3 dawn",
-        "DS3 wicked",
-        "DS5 dawn",
-        "DS5 wicked",
-        "Pentaho+ dawn",
-        "Pentaho+ wicked",
-      ],
-      5000,
-    ),
-    docs: { disable: true },
-    a11y: {
-      disable: true,
-    },
-  },
-  tags: ["skipTestRunner"],
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("button", { name: /october/i }));
-    const inlineEditors = canvas.getAllByRole("button", { name: /very very/i });
-    await userEvent.click(inlineEditors[10]);
-    await userEvent.hover(inlineEditors[11]);
-  },
-  render: (args, context: any) => (
-    <>
-      {renderStory(InlineEditorTestStory, context)}
-      <br />
-      <div style={{ display: "flex" }}>
-        <div style={{ width: 1200 }}>
-          {renderStory(DatePickerTestStory, context)}
-        </div>
-        <HvSimpleGrid
-          cols={1}
-          style={{ alignItems: "start", justifyContent: "start" }}
-        >
-          <div style={{ display: "flex", gap: 12 }}>
-            {renderStory(ListContainerWithIconsStory, context)}
-            <div>
-              {renderStory(LoadingVariantsStory, context)}
-              <br />
-              {renderStory(SkeletonVariantsStory, context)}
-            </div>
-            <div>{renderStory(SwitchVariantsStory, context)}</div>
-          </div>
-          {renderStory(SelectionListVariantsStory, context)}
-          {renderStory(ProgressBarVariantsStory, context)}
-        </HvSimpleGrid>
-      </div>
-    </>
-  ),
-};
-
-/**
- * Visual tests for:
- * - Radio group
- * - Radio
- * - Select
- * - Slider
- * - Tabs
- * - Multibutton
- */
-export const Test4: StoryObj = {
-  parameters: {
-    ...setupChromatic(
-      [
-        "DS3 dawn",
-        "DS3 wicked",
-        "DS5 dawn",
-        "DS5 wicked",
-        "Pentaho+ dawn",
-        "Pentaho+ wicked",
-      ],
-      5000,
-    ),
-    docs: { disable: true },
-    a11y: {
-      disable: true,
-    },
-  },
-  tags: ["skipTestRunner"],
-  render: (args, context: any) => (
-    <>
-      <HvSimpleGrid
-        cols={4}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-          {renderStory(RadioGroupVariantsStory, context)}
-          {renderStory(RadioGroupHorizontalStory, context)}
-          {renderStory(RadioTestStory, context)}
-        </div>
-        <div style={{ height: 360 }}>
-          {renderStory(SelectTestStory, context)}
-        </div>
-        <div>{renderStory(SliderRangeVariantsStory, context)}</div>
-        <div>{renderStory(SliderVariantsStory, context)}</div>
-      </HvSimpleGrid>
-      <br />
-      {renderStory(MultiButtonTestStory, context)}
-      <br />
-      {renderStory(TabsTestStory, context)}
-    </>
-  ),
-};
-
-/**
- * Visual tests for:
- * - Checkbox
- * - Tag
- * - Tags input
- * - Text area
- * - Icon button
- * - Toggle button
- * - Pagination
- */
-export const Test5: StoryObj = {
-  parameters: {
-    ...setupChromatic(
-      [
-        "DS3 dawn",
-        "DS3 wicked",
-        "DS5 dawn",
-        "DS5 wicked",
-        "Pentaho+ dawn",
-        "Pentaho+ wicked",
-      ],
-      5000,
-    ),
-    docs: { disable: true },
-    a11y: {
-      disable: true,
-    },
-  },
-  tags: ["skipTestRunner"],
-  render: (args, context: any) => (
-    <>
-      {renderStory(CheckBoxTestStory, context)}
-      {renderStory(TagTestStory, context)}
-      <HvSimpleGrid
-        cols={3}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        {renderStory(TagsInputVariantsStory, context)}
-        <div>
-          {renderStory(TextAreaVariantsStory, context)}
-          {renderStory(IconButtonVariantsStory, context)}
-          {renderStory(ToggleButtonMultipleStory, context)}
-        </div>
-        {renderStory(PaginationMainStory, context)}
-      </HvSimpleGrid>
-    </>
-  ),
-};
-
-/**
- * Visual tests for:
- * - Overflow tooltip
- * - Grid
- * - Stack
- * - Container
- * - Kpi
- * - Panel
- * - Simple grid
- * Note: only tested in DS5 as they are structural components or basic components reused throughout other components
- */
-export const Test6: StoryObj = {
+/** Structural components */
+export const TestStructure: StoryObj = {
   parameters: {
     ...setupChromatic(["DS5 dawn"], 5000),
     docs: { disable: true },
@@ -371,63 +348,21 @@ export const Test6: StoryObj = {
   },
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
-    <>
-      <HvSimpleGrid
-        cols={2}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        <div
-          style={{
-            height: 150,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-end",
-          }}
-        >
-          {renderStory(OverflowTooltipMainStory, context)}
+    <div className="grid gap-sm">
+      {renderStory(GridTheDesignSystemColumnsStory, context)}
+      <div className="flex gap-xs">
+        <div className="grid gap-sm">
+          {renderStory(StackTestStory, context)}
         </div>
-        {renderStory(GridTheDesignSystemColumnsStory, context)}
-        {renderStory(StackTestStory, context)}
-      </HvSimpleGrid>
-      <br />
-      <HvSimpleGrid
-        cols={4}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        {renderStory(ContainerMainStory, context)}
-        {renderStory(KpiMainStory, context)}
-        {renderStory(PanelMainStory, context)}
-        {renderStory(SimpleGridMainStory, context)}
-      </HvSimpleGrid>
-    </>
-  ),
-};
-
-/**
- * Visual tests for:
- * - Typography
- * - Scroll to
- * Note: only tested in DS5 as they are structural components or basic components reused throughout other components
- */
-export const Test7: StoryObj = {
-  parameters: {
-    ...setupChromatic(),
-    docs: { disable: true },
-    a11y: {
-      disable: true,
-    },
-  },
-  tags: ["skipTestRunner"],
-  render: (args, context: any) => (
-    <>
-      {renderStory(TypographyTestStory, context)}
-      <HvSimpleGrid
-        cols={2}
-        style={{ alignItems: "start", justifyContent: "start" }}
-      >
-        {renderStory(ScrollToHorizontalMainStory, context)}
-        {renderStory(ScrollToVerticalMainStory, context)}
-      </HvSimpleGrid>
-    </>
+        <div className="grid grid-cols-3 gap-sm flex-1">
+          {renderStory(PanelMainStory, context)}
+          {renderStory(SimpleGridMainStory, context)}
+          <div>
+            {renderStory(ContainerMainStory, context)}
+            <div>{renderStory(KpiMainStory, context)}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   ),
 };

@@ -112,13 +112,7 @@ export const Variants: StoryObj<HvStepNavigationProps> = {
     },
   },
   render: () => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: theme.space.lg,
-      }}
-    >
+    <div className="flex flex-col gap-md">
       <HvStepNavigation
         type="Default"
         steps={steps}

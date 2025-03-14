@@ -89,42 +89,32 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
 
 export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
   render: () => {
-    const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =
-      (application) => {
-        return window.location.href.startsWith(application.url || "");
-      };
-
-    const getDummyApplicationsList = () => {
-      const dummyApplicationsList: HvAppSwitcherActionApplication[] = [];
-
-      for (let index = 1; index <= 100; index += 1) {
-        dummyApplicationsList.push({
-          id: `app_${index}`,
-          name:
-            index % 3 === 0
-              ? `Application ${index} is an application with a big name`
-              : `Application ${index}`,
-          description:
-            index % 5 === 0
-              ? `This is the auto-generated application number ${index}`
-              : undefined,
-          url: "https://github.com/lumada-design/hv-uikit-react",
-          target: index % 2 === 0 ? "_top" : "_blank",
-        });
-      }
-
-      return dummyApplicationsList;
-    };
+    const dummyApplicationsList = [
+      ...Array(100).keys(),
+    ].map<HvAppSwitcherActionApplication>((index) => ({
+      id: `app_${index}`,
+      name:
+        index % 3 === 0
+          ? `Application ${index} is an application with a big name`
+          : `Application ${index}`,
+      description:
+        index % 5 === 0
+          ? `This is the auto-generated application number ${index}`
+          : undefined,
+      url: "https://github.com/lumada-design/hv-uikit-react",
+      target: index % 2 === 0 ? "_top" : "_blank",
+    }));
 
     return (
-      <div style={{ display: "flex", height: 370 }}>
-        <HvAppSwitcher
-          layout="dual"
-          title="Big list of applications"
-          applications={getDummyApplicationsList()}
-          isActionSelectedCallback={handlesActionSelectedCallback}
-        />
-      </div>
+      <HvAppSwitcher
+        className="max-h-370px"
+        layout="dual"
+        title="Big list of applications"
+        applications={dummyApplicationsList}
+        isActionSelectedCallback={(application) =>
+          window.location.href.startsWith(application.url || "")
+        }
+      />
     );
   },
 };

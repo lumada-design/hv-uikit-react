@@ -105,42 +105,27 @@ export const Test: StoryObj = {
   parameters: {
     docs: { disable: true },
   },
+  decorators: [
+    (Story) => <div className="flex flex-wrap gap-sm">{Story()}</div>,
+  ],
   render: () => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        gap: theme.space.sm,
-        flexWrap: "wrap",
-      }}
-    >
+    <>
+      <HvTypography disabled variant="display">
+        Welcome to UI-Kit!
+      </HvTypography>
+      <HvTypography
+        link
+        variant="display"
+        component="a"
+        href="https://lumada-design.github.io/uikit/master"
+      >
+        Welcome to UI-Kit!
+      </HvTypography>
       {typographyVariants.map((variant) => (
-        <div key={variant}>
-          <HvTypography variant="label">{variant}</HvTypography>
-          <br />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <HvTypography variant={variant}>
-              Welcome to NEXT Design System!
-            </HvTypography>
-            <HvTypography variant={variant} disabled>
-              Welcome to NEXT Design System!
-            </HvTypography>
-            <HvTypography
-              variant={variant}
-              link
-              component="a"
-              href="https://lumada-design.github.io/uikit/master"
-            >
-              Welcome to NEXT Design System!
-            </HvTypography>
-          </div>
-        </div>
+        <HvTypography key={variant} variant={variant}>
+          Welcome to UI-Kit!
+        </HvTypography>
       ))}
-    </div>
+    </>
   ),
 };
