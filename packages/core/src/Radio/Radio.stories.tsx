@@ -231,7 +231,7 @@ export const Test: StoryObj<HvRadioProps> = {
     docs: { disable: true },
   },
   render: () => (
-    <div>
+    <>
       <HvRadio disabled name="disabled" label="Disabled" value="1" />
       <HvRadio
         disabled
@@ -279,6 +279,6 @@ export const Test: StoryObj<HvRadioProps> = {
         label="Semantic"
         value="1"
       />
-    </div>
+    </>
   ),
 };

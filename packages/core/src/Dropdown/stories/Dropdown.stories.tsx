@@ -187,32 +187,3 @@ export const CustomDropdown: StoryObj<HvBaseDropdownProps> = {
   decorators: [widthDecorator],
   render: () => <CustomDropdownStory />,
 };
-
-export const Test: StoryObj<HvBaseDropdownProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
-  render: (args, context: any) => {
-    const values = [
-      { label: "value 1" },
-      { label: "value 2" },
-      { label: "value 3" },
-      { label: "value 4" },
-    ];
-
-    return (
-      <div style={{ display: "flex", gap: 5 }}>
-        <div style={{ display: "flex", flexDirection: "column", width: 150 }}>
-          <HvDropdown disabled label="Disabled" values={values} />
-          <HvDropdown readOnly label="Read-only" values={values} />
-          <HvDropdown status="invalid" label="Invalid" values={values} />
-          <HvDropdown label="Empty" />
-          <HvDropdown required label="Required" values={values} expanded />
-        </div>
-        <div style={{ display: "flex", width: 300 }}>
-          {MultiSelection.render?.({ expanded: true }, context)}
-        </div>
-      </div>
-    );
-  },
-};

@@ -270,7 +270,7 @@ export const Test: StoryObj<HvGlobalActionsProps> = {
     );
 
     return (
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <>
         <HvGlobalActions title="Title">
           <HvButton variant="primary">Click</HvButton>
         </HvGlobalActions>
@@ -280,7 +280,7 @@ export const Test: StoryObj<HvGlobalActionsProps> = {
         <HvGlobalActions title="Title" backButton={backButton}>
           <HvButton variant="primary">Click</HvButton>
         </HvGlobalActions>
-      </div>
+      </>
     );
   },
 };
