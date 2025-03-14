@@ -35,7 +35,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
   },
   focusVisible: {
     "& svg": {
-      borderRadius: "8px",
+      borderRadius: theme.radii.full,
       ...outlineStyles,
     },
   },
