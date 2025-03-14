@@ -186,6 +186,20 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
       }
       onChange={(value) => onChange(prop, value)}
       className="w-full"
+      recommendedColors={[
+        "positive",
+        "negative",
+        "warning",
+        "info",
+        "accent",
+        "catastrophic",
+        "primary",
+        "secondary",
+        "cat1",
+        "cat2",
+        "gold",
+        "coral",
+      ]}
     />
   );
 
