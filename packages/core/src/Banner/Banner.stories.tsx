@@ -45,6 +45,7 @@ export const Variants: StoryObj<HvBannerProps> = {
       },
     },
   },
+  decorators: [(Story) => <div className="grid gap-sm">{Story()}</div>],
   render: () => {
     const actionArray = (id: string) => [
       { id: `action${id}_1`, label: "Action 1", disabled: false },
@@ -52,7 +53,7 @@ export const Variants: StoryObj<HvBannerProps> = {
     ];
 
     return (
-      <div className="grid gap-sm">
+      <>
         <HvBannerContent
           content="This is a default banner."
           variant="default"
@@ -96,7 +97,7 @@ export const Variants: StoryObj<HvBannerProps> = {
           actions={actionArray("banner2")}
           actionsPosition="bottom-right"
         />
-      </div>
+      </>
     );
   },
 };

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvFormStatus,
@@ -44,19 +43,10 @@ export const Main: StoryObj<HvTagsInputProps> = {
 };
 
 export const Variants: StoryObj<HvTagsInputProps> = {
+  decorators: [(Story) => <div className="grid gap-sm">{Story()}</div>],
   render: () => {
-    const classes = {
-      root: css({
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        gap: 20,
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvTagsInput
           label="Required"
           placeholder="Enter value"
@@ -90,7 +80,7 @@ export const Variants: StoryObj<HvTagsInputProps> = {
             { label: "tag 12" },
           ]}
         />
-      </div>
+      </>
     );
   },
 };

@@ -19,6 +19,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
+import { setupChromatic } from ".storybook/setupChromatic";
+
 const containerDecorator: Decorator = (Story) => (
   <div className={cx("decorator", css({ width: 340, minHeight: 440 }))}>
     {Story()}
@@ -497,12 +499,17 @@ export const Test: StoryObj<HvDatePickerProps> = {
   parameters: {
     docs: { disable: true },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole("button", { name: /october/i }));
+  },
+  ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"], 5000),
   decorators: [unsetDecorator],
   render: (args, context: any) => {
     const value = new Date("2023-01-01");
     return (
-      <div style={{ display: "flex", gap: 5 }}>
-        <div style={{ display: "flex", flexDirection: "column", width: 340 }}>
+      <div className="flex gap-xs">
+        <div className="grid w-340px">
           <HvDatePicker disabled label="Disabled" value={value} />
           <HvDatePicker readOnly label="Read-only" value={value} />
           <HvDatePicker

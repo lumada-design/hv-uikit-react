@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvFormStatus,
@@ -40,17 +39,12 @@ export const Main: StoryObj<HvRadioGroupProps> = {
 };
 
 export const Variants: StoryObj<HvRadioGroupProps> = {
+  decorators: [
+    (Story) => <div className="flex flex-wrap justify-around">{Story()}</div>,
+  ],
   render: () => {
-    const classes = {
-      root: css({
-        display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvRadioGroup required label="Required">
           <HvRadio label="Radio 1" value="1" />
           <HvRadio label="Radio 2" value="2" checked />
@@ -71,7 +65,7 @@ export const Variants: StoryObj<HvRadioGroupProps> = {
           <HvRadio label="Radio 2" value="2" checked />
           <HvRadio label="Radio 3" value="3" />
         </HvRadioGroup>
-      </div>
+      </>
     );
   },
 };

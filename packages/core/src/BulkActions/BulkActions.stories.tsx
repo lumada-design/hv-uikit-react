@@ -286,7 +286,7 @@ export const Test: StoryObj<HvBulkActionsProps> = {
     docs: { disable: true },
   },
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <>
       <HvBulkActions
         numTotal={10}
         numSelected={0}
@@ -307,6 +307,6 @@ export const Test: StoryObj<HvBulkActionsProps> = {
         actions={actions}
         maxVisibleActions={2}
       />
-    </div>
+    </>
   ),
 };

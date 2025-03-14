@@ -101,22 +101,16 @@ export const Variants: StoryObj<HvTimePickerProps> = {
     const picker = canvas.getByRole("combobox", { name: /required/i });
     await userEvent.click(picker);
   },
+  decorators: [
+    (Story) => (
+      <div className="flex flex-wrap gap-sm [&>*]:w-200px">{Story()}</div>
+    ),
+  ],
   render: () => {
     const value: HvTimePickerValue = { hours: 5, minutes: 30, seconds: 14 };
 
-    const classes = {
-      root: css({
-        display: "flex",
-        gap: 20,
-        flexWrap: "wrap",
-        "& > div": {
-          width: 200,
-        },
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvTimePicker required label="Required" defaultValue={value} />
         <HvTimePicker disabled label="Disabled" defaultValue={value} />
         <HvTimePicker readOnly label="Read-only" defaultValue={value} />
@@ -131,7 +125,7 @@ export const Variants: StoryObj<HvTimePickerProps> = {
           label="Hide Seconds"
           defaultValue={value}
         />
-      </div>
+      </>
     );
   },
 };
