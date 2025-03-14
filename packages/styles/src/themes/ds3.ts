@@ -251,6 +251,9 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           borderRadius: "0px",
+          "& svg": {
+            borderRadius: "0px",
+          },
         },
         checked: {
           "& svg": {
