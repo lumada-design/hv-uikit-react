@@ -251,6 +251,30 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           borderRadius: "0px",
+          "& svg": {
+            borderRadius: "0px",
+            border: `1px solid ${theme.colors.text}`,
+          },
+        },
+        checked: {
+          "& svg": {
+            border: `1px solid ${theme.colors.text}`,
+            backgroundColor: theme.colors.text,
+            color: theme.colors.atmo1,
+          },
+        },
+        semantic: {
+          "&.HvBaseCheckBox-indeterminate": {
+            "& svg": {
+              backgroundColor: theme.colors.textLight,
+              color: theme.colors.textDark,
+            },
+          },
+        },
+        indeterminate: {
+          "& svg": {
+            color: theme.colors.text,
+          },
         },
       },
     },
@@ -369,6 +393,13 @@ const ds3 = makeTheme((theme) => ({
             borderRadius: "0px",
           },
         },
+        checked: {
+          "& svg": {
+            borderColor: theme.colors.text,
+            backgroundColor: theme.colors.text,
+            color: theme.colors.bgPage,
+          },
+        },
       },
     },
     HvBaseSwitch: {
@@ -380,6 +411,10 @@ const ds3 = makeTheme((theme) => ({
           "&:hover": {
             backgroundColor: "transparent",
           },
+          " .HvBaseSwitch-switchBase.HvBaseSwitch-checked:not(.HvBaseSwitch-disabled) + .HvBaseSwitch-track":
+            {
+              backgroundColor: theme.colors.text,
+            },
         },
         switch: {
           width: "32px",
@@ -391,6 +426,10 @@ const ds3 = makeTheme((theme) => ({
         },
         track: {
           backgroundColor: theme.colors.atmo2,
+        },
+        thumb: {
+          width: 12,
+          height: 12,
         },
       },
     },

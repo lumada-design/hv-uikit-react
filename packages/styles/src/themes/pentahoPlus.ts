@@ -454,14 +454,12 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          "& svg": {
-            width: 16,
-            height: 16,
-            borderRadius: "3px",
-            border: `1px solid ${theme.colors.textSubtle}`,
-          },
+          borderRadius: "4px",
           "&:hover": {
-            backgroundColor: theme.colors.bgHover,
+            borderRadius: "4px",
+          },
+          "& svg": {
+            borderRadius: "inherit",
           },
         },
         checked: {
@@ -470,43 +468,15 @@ const pentahoPlus = makeTheme((theme) => ({
             backgroundColor: theme.colors.primary,
             color: theme.colors.atmo1,
           },
-          "&.HvBaseCheckBox-disabled": {
-            "& svg": {
-              color: theme.colors.textDisabled,
-            },
-          },
-        },
-        disabled: {
-          "&.HvBaseCheckBox-root": {
-            "& svg": {
-              border: `1px solid ${theme.colors.textDisabled}`,
-              backgroundColor: theme.colors.bgDisabled,
-            },
-          },
-        },
-        indeterminate: {
-          "& svg": {
-            backgroundColor: theme.colors.bgContainer,
-            border: `1px solid ${theme.colors.textSubtle}`,
-            color: theme.colors.textSubtle,
-          },
-          "&.HvBaseCheckBox-disabled": {
-            "& svg": {
-              color: theme.colors.textDisabled,
-            },
-          },
         },
       },
     },
     HvBaseRadio: {
       classes: {
         root: {
-          "& svg": {
-            backgroundColor: theme.colors.bgContainer,
-            borderColor: theme.colors.textSubtle,
-          },
+          borderRadius: "4px",
           "&:hover": {
-            backgroundColor: theme.colors.bgHover,
+            borderRadius: "4px",
           },
         },
         checked: {
@@ -514,32 +484,19 @@ const pentahoPlus = makeTheme((theme) => ({
             borderColor: theme.colors.primary,
             backgroundColor: theme.colors.primary,
           },
-          "&.HvBaseRadio-disabled": {
-            "& svg": {
-              borderColor: theme.colors.textDisabled,
-              backgroundColor: theme.colors.textDisabled,
-              color: theme.colors.bgDisabled,
-            },
-          },
-        },
-        disabled: {
-          "& svg": {
-            border: `1px solid ${theme.colors.textDisabled}`,
-            backgroundColor: theme.colors.bgDisabled,
-          },
         },
       },
     },
     HvBaseSwitch: {
       classes: {
         root: {
+          borderRadius: 4,
           "&:hover": {
             backgroundColor: theme.colors.bgHover,
           },
           "& .HvBaseSwitch-switchBase": {
             "& .HvBaseSwitch-thumb": {
-              backgroundColor: theme.colors.bgContainer,
-              borderColor: theme.colors.bgContainer,
+              borderColor: "transparent",
               boxShadow: `0px 1px 1px 0px color-mix(in srgb, ${slate[700]} 16%, transparent)`,
             },
             "+.HvBaseSwitch-track": {
@@ -552,7 +509,6 @@ const pentahoPlus = makeTheme((theme) => ({
                 border: `1px solid ${theme.colors.bgContainer}`,
               },
               "+.HvBaseSwitch-track": {
-                backgroundColor: theme.colors.primary,
                 borderColor: theme.colors.primaryStrong,
               },
             },
@@ -567,10 +523,6 @@ const pentahoPlus = makeTheme((theme) => ({
               },
             },
           },
-        },
-        thumb: {
-          height: 10,
-          width: 10,
         },
       },
     },
