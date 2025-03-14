@@ -253,6 +253,7 @@ const ds3 = makeTheme((theme) => ({
           borderRadius: "0px",
           "& svg": {
             borderRadius: "0px",
+            border: `1px solid ${theme.colors.text}`,
           },
         },
         checked: {
@@ -268,6 +269,11 @@ const ds3 = makeTheme((theme) => ({
               backgroundColor: theme.colors.textLight,
               color: theme.colors.textDark,
             },
+          },
+        },
+        indeterminate: {
+          "& svg": {
+            color: theme.colors.text,
           },
         },
       },
@@ -427,6 +433,10 @@ const ds3 = makeTheme((theme) => ({
         },
         track: {
           backgroundColor: theme.colors.atmo2,
+        },
+        thumb: {
+          width: 12,
+          height: 12,
         },
       },
     },

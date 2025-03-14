@@ -545,10 +545,6 @@ const pentahoPlus = makeTheme((theme) => ({
             },
           },
         },
-        thumb: {
-          height: 10,
-          width: 10,
-        },
       },
     },
     HvSelect: {
