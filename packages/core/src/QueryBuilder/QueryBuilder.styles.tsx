@@ -83,10 +83,8 @@ export const { useClasses, staticClasses } = createClasses("HvQueryBuilder", {
   /** Styles applied to the action button container. */
   actionButtonContainer: {
     marginLeft: "auto",
-
-    "&>*": {
-      marginLeft: theme.space.sm,
-    },
+    display: "flex",
+    gap: theme.space.sm,
   },
   /** Styles applied to the top action button container. */
   topActionButtonContainer: {

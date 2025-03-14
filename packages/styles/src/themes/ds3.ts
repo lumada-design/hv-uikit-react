@@ -719,6 +719,10 @@ const ds3 = makeTheme((theme) => ({
     },
     HvFile: {
       classes: {
+        root: {
+          border: "none",
+          borderRadius: "0px",
+        },
         progressbarContainer: {
           height: "2px",
         },
@@ -729,14 +733,6 @@ const ds3 = makeTheme((theme) => ({
             width: "100%",
             height: "100%",
           },
-        },
-      },
-    },
-    HvFileList: {
-      classes: {
-        listItem: {
-          border: "none",
-          borderRadius: "0px",
         },
       },
     },

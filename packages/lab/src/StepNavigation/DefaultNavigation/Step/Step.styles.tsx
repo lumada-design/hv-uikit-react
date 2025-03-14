@@ -1,19 +1,10 @@
 import { createClasses } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvStep", {
-  root: {},
-  ghost: {
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-    "&$ghostDisabled": {
-      cursor: "default",
-    },
-    "&$ghostDisabled&:hover": {
-      cursor: "default",
-    },
+  root: {
+    width: "fit-content",
+    height: "fit-content",
   },
-  ghostDisabled: {},
   notCurrent: { margin: "-8px" },
   xs: {},
   sm: {},

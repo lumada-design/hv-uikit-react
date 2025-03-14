@@ -2,7 +2,16 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvFile", {
-  root: {},
+  root: {
+    position: "relative",
+    display: "flex",
+    gap: theme.space.xs,
+    alignItems: "center",
+    backgroundColor: theme.colors.bgContainer,
+    padding: theme.space.xs,
+    border: `1px solid ${theme.colors.border}`,
+    borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
+  },
   progressbar: {
     position: "absolute",
     top: "-1px",
@@ -12,23 +21,18 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
   },
   progressbarBack: {},
   nameText: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
+    display: "flex",
+    alignItems: "center",
+    flex: 1,
   },
   progressTextContainer: {
     display: "flex",
     flexGrow: 1,
     alignItems: "center",
   },
-  removeButton: {
-    width: 32,
-    height: 32,
-    margin: `0px ${theme.space.xs}`,
-  },
+  removeButton: {},
   previewContainer: {
     display: "flex",
-    margin: `0px ${theme.space.xs}`,
     width: "48px",
     height: "48px",
     justifyContent: "center",
@@ -51,9 +55,7 @@ export const { staticClasses, useClasses } = createClasses("HvFile", {
     },
   },
   icon: {
-    width: 32,
-    height: 32,
-    margin: `0px ${theme.space.xs}`,
+    margin: theme.space.xs,
   },
   fail: {},
 });

@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Remove } from "@hitachivantara/uikit-react-icons";
+import { Fragment, useEffect, useState } from "react";
 import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvFormStatus } from "../../FormElement";
@@ -84,12 +83,10 @@ export const HvSliderInput = ({
   }, [markDigits, valuesProp]);
 
   return (
-    <div className={cx(classes.inputRoot, className)} {...others}>
+    <div className={cx(classes.root, className)} {...others}>
       {inputValues.map((value, index) => (
-        <div key={setId(id, index)} className={classes.inputContainer}>
-          {index !== 0 && (
-            <Remove color={disabled ? "textDisabled" : undefined} />
-          )}
+        <Fragment key={setId(id, index)}>
+          {index !== 0 && <span>—</span>}
           <HvInput
             id={setId(id, index)}
             aria-label={`${label}-${index}`}
@@ -109,7 +106,7 @@ export const HvSliderInput = ({
             disableClear
             {...inputProps[index]}
           />
-        </div>
+        </Fragment>
       ))}
     </div>
   );

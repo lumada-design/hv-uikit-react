@@ -48,7 +48,7 @@ export const HvFileList = (props: HvFileListProps) => {
   if (!hasFiles) return null;
 
   return (
-    <ul id={setId(id, "list")} className={classes.list}>
+    <ul id={setId(id, "list")} className={classes.root}>
       {list.map((data) => (
         <HvFile
           key={data.id}

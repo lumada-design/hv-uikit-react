@@ -157,11 +157,13 @@ export const HvFile = (props: HvFileProps) => {
 
       {statusIcon}
 
-      <HvTypography className={classes.nameText} variant="label">
-        {data.name}
-      </HvTypography>
+      <div className={classes.nameText}>
+        <HvTypography noWrap variant="label">
+          {data.name}
+        </HvTypography>
 
-      <span className={classes.progressTextContainer}>{progressText}</span>
+        <span className={classes.progressTextContainer}>{progressText}</span>
+      </div>
 
       {data.preview && (
         <div className={classes.previewContainer}>{data.preview}</div>

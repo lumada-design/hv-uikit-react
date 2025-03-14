@@ -138,6 +138,7 @@ export const { staticClasses, useClasses } = createClasses(
     },
     icon: {
       display: "flex",
+      alignItems: "center",
       "> div:first-of-type": {
         marginLeft: "var(--icon-margin-left)",
       },

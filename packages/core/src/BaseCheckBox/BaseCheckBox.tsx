@@ -86,12 +86,10 @@ export interface HvBaseCheckBoxProps
   classes?: HvBaseCheckBoxClasses;
 }
 
-const getSelectorIcons = () => {
-  return {
-    checkbox: <Box />,
-    checkboxPartial: <Partial />,
-    checkboxChecked: <Check />,
-  };
+const icons = {
+  checkbox: <Box />,
+  checkboxPartial: <Partial />,
+  checkboxChecked: <Check />,
 };
 
 /**
@@ -127,8 +125,6 @@ export const HvBaseCheckBox = forwardRef<
   const { classes, cx } = useClasses(classesProp);
 
   const [focusVisible, setFocusVisible] = useState<boolean>(false);
-
-  const icons = getSelectorIcons();
 
   const onChangeCallback = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
