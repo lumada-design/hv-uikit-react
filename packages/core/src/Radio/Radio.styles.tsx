@@ -22,12 +22,7 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
 
     "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
   },
-  radio: {
-    "& svg": {
-      outline: "none",
-      boxShadow: "none",
-    },
-  },
+  radio: {},
   invalidRadio: {},
   label: {
     verticalAlign: "middle",
