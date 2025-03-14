@@ -17,7 +17,7 @@ export const getStaticProps = async ({ params }) => {
   componentName="HvTag"
   controls={{
     label: { defaultValue: "Tag label" },
-    color: { defaultValue: "positive" },
+    color: { defaultValue: "positive", type: "color" },
     disabled: { defaultValue: false },
     selectable: { defaultValue: false },
   }}
