@@ -1,14 +1,25 @@
 import { cloneElement } from "react";
-import { CurrentStep, OtherStep } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvRadio } from "../Radio";
+import { HvBaseRadio } from "../BaseRadio";
 import { HvRadioGroup, HvRadioGroupProps } from "../RadioGroup";
 import { range } from "../utils/helpers";
 import { staticClasses, useClasses } from "./DotPagination.styles";
+
+const currentStep = (
+  <div style={{ fontSize: 8 }}>
+    <div />
+  </div>
+);
+
+const otherStep = (
+  <div style={{ fontSize: 4 }}>
+    <div />
+  </div>
+);
 
 export { staticClasses as dotPaginationClasses };
 
@@ -59,15 +70,12 @@ const getSelectorIcons = (
   classes?: HvDotPaginationClasses,
 ) => {
   return {
-    radio: cloneElement(radioIcon || <OtherStep width={8} height={8} />, {
+    radio: cloneElement(radioIcon || otherStep, {
       className: classes?.icon,
     }),
-    radioChecked: cloneElement(
-      radioCheckedIcon || <CurrentStep width={8} height={8} />,
-      {
-        className: classes?.icon,
-      },
-    ),
+    radioChecked: cloneElement(radioCheckedIcon || currentStep, {
+      className: classes?.icon,
+    }),
   };
 };
 
@@ -102,18 +110,15 @@ export const HvDotPagination = (props: HvDotPaginationProps) => {
       {...others}
     >
       {range(pages).map((i) => (
-        <HvRadio
-          classes={{
-            radio: classes.radio,
-            root: classes.radioRoot,
-          }}
+        <HvBaseRadio
+          className={cx(classes.radioRoot, classes.radio)}
           key={i}
           value={i}
           checked={page === i}
           onChange={(event) => onPageChange?.(event, i)}
           icon={icons.radio}
           checkedIcon={icons.radioChecked}
-          aria-label={getItemAriaLabel?.(i)}
+          inputProps={{ "aria-label": getItemAriaLabel?.(i) }}
         />
       ))}
     </HvRadioGroup>

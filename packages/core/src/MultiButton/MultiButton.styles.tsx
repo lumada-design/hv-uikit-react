@@ -18,10 +18,9 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
 
     "& $button": {
       minWidth: 32,
-      width: "100%",
       maxWidth: 200,
       padding: 0,
-      flex: "1 1 auto",
+      flex: "1 1 0%",
       borderColor: "inherit",
       borderRadius: 0,
       fontWeight: theme.typography.body.fontWeight,
@@ -106,11 +105,12 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   selected: {},
   vertical: {
     flexDirection: "column",
+    alignItems: "stretch",
     height: "auto",
     borderColor: `transparent ${theme.colors.border}`,
     "& $button": {
       minWidth: 32,
-      width: "100%",
+      flex: "1 1 32px",
       "&$firstButton": {
         borderTopColor: theme.colors.border,
         borderTopLeftRadius: "inherit",
@@ -127,7 +127,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
       "&$selected": {
         height: 32,
-        width: "calc(100% + 2px)",
         borderColor: theme.colors.text,
       },
     },

@@ -16,7 +16,7 @@ export const { staticClasses, useClasses } = createClasses("HvInlineEditor", {
     color: theme.colors.textDisabled,
   },
   button: {
-    padding: theme.spacing("6px", "8px", "5px", "8px"),
+    padding: theme.spacing(0, "xs"),
     minHeight: "32px",
 
     boxSizing: "border-box",

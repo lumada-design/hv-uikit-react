@@ -85,11 +85,9 @@ export interface HvBaseRadioProps
   onBlur?: (event: React.FocusEvent<any>) => void;
 }
 
-export const getSelectorIcons = () => {
-  return {
-    radio: <Unselected />,
-    radioChecked: <Selected />,
-  };
+const icons = {
+  radio: <Unselected />,
+  radioChecked: <Selected />,
 };
 
 /**
@@ -140,8 +138,6 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       },
       [onBlur],
     );
-
-    const icons = getSelectorIcons();
 
     const onLocalChange = useCallback(
       (evt: React.ChangeEvent<HTMLInputElement>) => {

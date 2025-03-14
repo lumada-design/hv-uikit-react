@@ -28,22 +28,25 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     ...theme.typography.label,
     color: "var(--color, currentcolor)",
     backgroundColor: "transparent",
-    height: "var(--HvButton-height)",
+    height: "var(--HvButton-height, fit-content)",
     border: "1px solid transparent",
     borderRadius: `var(--radius, ${theme.radii.base})`,
     padding: theme.spacing(0, "sm"),
+
+    "& $startIcon, & $endIcon": {
+      flexShrink: 0,
+      lineHeight: 0,
+      marginTop: -1,
+      marginBottom: -1,
+    },
   },
   /** applied to the _left_ icon container */
   startIcon: {
     marginLeft: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
   },
   /** applied to the _right_ icon container */
   endIcon: {
     marginRight: theme.spacing(-1),
-    marginTop: -1,
-    marginBottom: -1,
   },
   focusVisible: {},
   /** applied to the root element when disabled */
@@ -61,10 +64,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   icon: {
     margin: 0,
     padding: 0,
-    height: "fit-content",
-    "& > *": {
-      margin: -1,
-    },
+    width: "var(--HvButton-height, fit-content)",
   },
   /** applied to the root element when using the `contained` variant */
   contained: {

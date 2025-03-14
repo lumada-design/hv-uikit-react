@@ -98,43 +98,33 @@ export const HvStep = ({
   const IconComponent = iconStateObject[state];
 
   return (
-    <div
-      className={cx(
-        classes.root,
-        {
-          [classes.notCurrent]: state !== "Current",
-        },
-        className,
-      )}
+    <HvButton
+      className={cx(classes.root, className, {
+        [classes.notCurrent]: state !== "Current",
+      })}
+      aria-label={title}
+      icon
+      disabled={disabled ?? ["Current", "Disabled"].includes(state)}
+      onClick={onClick}
     >
-      <HvButton
-        className={cx(classes.ghost, {
-          [classes.ghostDisabled]: state === "Current",
-        })}
-        aria-label={`${title}`}
-        icon
-        disabled={disabled ?? ["Current", "Disabled"].includes(state)}
-        onClick={onClick}
+      <HvAvatar
+        className={cx(classes.avatar, classes[size])}
+        backgroundColor={backgroundColor}
+        status={status}
+        size={size}
       >
-        <HvAvatar
-          className={cx(classes.avatar, classes[size])}
-          backgroundColor={backgroundColor}
-          status={status}
-          size={size}
-        >
-          {IconComponent ? (
-            <IconComponent
-              color={color}
-              semantic={semantic}
-              width={svgSize}
-              height={svgSize}
-              iconSize={iconSize}
-            />
-          ) : (
-            number
-          )}
-        </HvAvatar>
-      </HvButton>
-    </div>
+        {IconComponent ? (
+          <IconComponent
+            color={color}
+            semantic={semantic}
+            width={svgSize}
+            height={svgSize}
+            iconSize={iconSize}
+          />
+        ) : (
+          number
+        )}
+      </HvAvatar>
+    </HvButton>
   );
 };

@@ -2,7 +2,7 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvFileList", {
-  list: {
+  root: {
     display: "flex",
     flexDirection: "column",
     gap: theme.space.xs,
@@ -11,13 +11,5 @@ export const { staticClasses, useClasses } = createClasses("HvFileList", {
     marginTop: theme.space.sm,
     listStyle: "none",
   },
-  listItem: {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    background: theme.colors.bgContainer,
-    padding: `${theme.space.xs} 0px`,
-    border: `1px solid ${theme.colors.border}`,
-    borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
-  },
+  listItem: {},
 });
