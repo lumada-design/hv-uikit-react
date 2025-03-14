@@ -1,10 +1,5 @@
 import { cloneElement, forwardRef, isValidElement } from "react";
 import {
-  Checkbox,
-  CheckboxCheck,
-  CloseXS,
-} from "@hitachivantara/uikit-react-icons";
-import {
   mergeStyles,
   useDefaultProps,
   type ExtractNames,
@@ -18,6 +13,7 @@ import {
 
 import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
+import { HvIcon } from "../icons";
 import { HvTypography } from "../Typography";
 import { isDeleteKey } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Tag.styles";
@@ -126,8 +122,6 @@ export const HvTag = forwardRef<
 
   const isClickable = !!(onClick || onDelete || selectable);
 
-  const CheckboxIcon = isSelected ? CheckboxCheck : Checkbox;
-
   const deleteIcon =
     deleteIconProp && isValidElement(deleteIconProp) ? (
       cloneElement<any>(deleteIconProp, {
@@ -137,11 +131,12 @@ export const HvTag = forwardRef<
         onClick: handleDeleteClick,
       })
     ) : (
-      <CloseXS
-        size="XS"
-        onClick={handleDeleteClick}
+      <HvIcon
+        name="Close"
+        size="xs"
+        onClick={handleDeleteClick as any}
         className={cx(classes.deleteIcon, classes.button, classes.tagButton)}
-        {...deleteButtonProps}
+        {...(deleteButtonProps as any)}
       />
     );
 
@@ -182,10 +177,16 @@ export const HvTag = forwardRef<
     >
       {iconProp}
       {selectable && showSelectIcon && (
-        <CheckboxIcon
+        <HvIcon
+          name={isSelected ? "Check" : "Box"}
+          // TODO: review coloring or use HvBaseCheckbox
+          color={isSelected ? "textLight" : "bgPage"}
+          style={{
+            borderColor: isSelected ? theme.colors.textDark : undefined,
+            backgroundColor: isSelected ? theme.colors.textDark : undefined,
+          }}
           className={classes.icon}
-          color={(disabled && ["bgPageSecondary", "textDisabled"]) || undefined}
-          size="XS"
+          size="xs"
         />
       )}
       <HvTypography

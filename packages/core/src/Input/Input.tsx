@@ -9,13 +9,6 @@ import {
 } from "react";
 import { useForkRef } from "@mui/material/utils";
 import {
-  CloseXS,
-  Preview,
-  PreviewOff,
-  Search,
-  Success,
-} from "@hitachivantara/uikit-react-icons";
-import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -52,6 +45,7 @@ import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { HvTooltip } from "../Tooltip";
 import { fixedForwardRef } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
@@ -588,7 +582,7 @@ export const HvInput = fixedForwardRef(function HvInput<
         onClick={handleClear}
         aria-label={labels?.clearButtonLabel}
         aria-controls={setId(elementId, "input")}
-        icon={<CloseXS />}
+        icon={<HvIcon name="Close" size="xs" />}
       />
     );
   }, [
@@ -618,7 +612,7 @@ export const HvInput = fixedForwardRef(function HvInput<
           onEnter &&
           ((evt) => onEnter?.(evt as any, inputRef.current?.value ?? ""))
         }
-        icon={<Search title={labels.searchButtonLabel} />}
+        icon={<HvIcon name="Search" title={labels.searchButtonLabel} />}
       />
     );
   }, [
@@ -648,7 +642,7 @@ export const HvInput = fixedForwardRef(function HvInput<
           onClick={() => setRevealPassword((s) => !s)}
           aria-label={labels?.revealPasswordButtonLabel}
           aria-controls={setId(elementId, "input")}
-          icon={revealPassword ? <PreviewOff /> : <Preview />}
+          icon={<HvIcon name={revealPassword ? "PreviewOff" : "Preview"} />}
           tabIndex={0}
           {...({ selected: revealPassword } satisfies HvButtonBaseProps)}
         />
@@ -668,7 +662,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     if (!showValidationIcon) return null;
     if (!isValid(validationState)) return null;
 
-    return <Success color="positive" className={classes.icon} />;
+    return <HvIcon name="Success" color="positive" className={classes.icon} />;
   }, [showValidationIcon, validationState, classes.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
