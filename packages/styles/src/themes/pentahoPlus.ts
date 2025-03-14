@@ -623,11 +623,11 @@ const pentahoPlus = makeTheme((theme) => ({
           },
 
           ":where([data-color]:not(.HvTag-disabled))": {
-            ":where(:not([data-color$=_20],[data-color^=cat]))": {
+            ":not([data-color$=_20],[data-color^=cat])": {
               color: "var(--tagColor)",
               backgroundColor: theme.mix("var(--tagColor)", "8%", "white"),
               outlineColor: theme.mix("var(--tagColor)", "30%", "white"),
-              "&&.HvTag-clickable:has(:hover,:focus-visible)": {
+              "&.HvTag-clickable:is(:hover,:focus-visible)": {
                 backgroundColor: theme.mix("var(--tagColor)", "20%", "white"),
               },
             },
