@@ -52,7 +52,7 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
       left: 0,
       width: "100%",
       height: 1,
-      background: theme.colors.negativeDeep,
+      backgroundColor: theme.form.errorColor,
     },
   },
   label: {

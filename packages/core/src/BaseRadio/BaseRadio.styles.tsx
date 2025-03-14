@@ -43,13 +43,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
       backgroundColor: theme.colors.primaryStrong,
       color: theme.colors.bgContainer,
     },
-    // "&$semantic": {
-    //   "& svg": {
-    //     borderColor: theme.colors.textDark,
-    //     backgroundColor: theme.colors.textLight,
-    //     color: theme.colors.textDark,
-    //   },
-    // },
     "&$disabled": {
       "& svg": {
         borderColor: "transparent",
@@ -58,10 +51,5 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
       },
     },
   },
-  semantic: {
-    // "& svg": {
-    //   borderColor: theme.colors.borderStrong,
-    //   backgroundColor: theme.colors.bgContainer,
-    // },
-  },
+  semantic: {},
 });

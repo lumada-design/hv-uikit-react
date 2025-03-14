@@ -391,6 +391,13 @@ const ds3 = makeTheme((theme) => ({
             borderRadius: "0px",
           },
         },
+        checked: {
+          "& svg": {
+            borderColor: theme.colors.text,
+            backgroundColor: theme.colors.text,
+            color: theme.colors.bgPage,
+          },
+        },
       },
     },
     HvBaseSwitch: {
@@ -402,6 +409,10 @@ const ds3 = makeTheme((theme) => ({
           "&:hover": {
             backgroundColor: "transparent",
           },
+          " .HvBaseSwitch-switchBase.HvBaseSwitch-checked + .HvBaseSwitch-track":
+            {
+              backgroundColor: theme.colors.text,
+            },
         },
         switch: {
           width: "32px",
