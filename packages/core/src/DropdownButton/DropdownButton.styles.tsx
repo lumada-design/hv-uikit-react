@@ -5,9 +5,7 @@ import { buttonClasses } from "../Button";
 
 // TODO: review override
 const disabledStyle = {
-  backgroundColor: theme.colors.bgDisabled,
-  borderColor: theme.colors.bgDisabled,
-  [`&.${buttonClasses.subtle},&.${buttonClasses.ghost}`]: {
+  [`&,&.${buttonClasses.subtle},&.${buttonClasses.ghost}`]: {
     backgroundColor: theme.colors.bgDisabled,
     borderColor: theme.colors.bgDisabled,
     "&:hover": { backgroundColor: theme.colors.bgDisabled },
@@ -34,13 +32,14 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     ...disabledStyle,
   },
   open: {
+    "--r": theme.radii.base,
     backgroundColor: theme.colors.bgContainer,
-  },
-  openUp: {
-    borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-  },
-  openDown: {
-    borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
+    "&[data-popper-placement*='top']": {
+      borderRadius: "0px 0px var(--r) var(--r)",
+    },
+    "&[data-popper-placement*='bottom']": {
+      borderRadius: "var(--r) var(--r) 0px 0px",
+    },
   },
   selection: {
     color: "inherit",

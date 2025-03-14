@@ -17,54 +17,55 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     cursor: "pointer",
     userSelect: "none",
     position: "relative",
-    background: theme.colors.bgContainer,
+    backgroundColor: theme.colors.bgContainer,
     boxSizing: "border-box",
     border: `1px solid ${theme.colors.text}`,
     borderRadius: theme.radii.base,
-    "&:hover": {
-      border: `1px solid ${theme.colors.primary}`,
+    ":hover,:focus-visible": {
+      borderColor: theme.colors.primary,
     },
-    "&:focus": {
+    ":focus": {
       outline: "none",
     },
-    "&:focus-visible": {
+    ":focus-visible": {
       ...outlineStyles,
-      border: `1px solid ${theme.colors.primary}`,
     },
   },
   headerOpen: {
-    border: `1px solid ${theme.colors.text}`,
+    "&,:hover": {
+      borderColor: theme.colors.text,
+    },
 
-    "&:hover": {
-      border: `1px solid ${theme.colors.text}`,
+    "&[data-popper-placement*='top']": {
+      borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
+    },
+    "&[data-popper-placement*='bottom']": {
+      borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     },
   },
-  headerOpenUp: {
-    borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-  },
-  headerOpenDown: {
-    borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
-  },
+  /** @deprecated use `[data-popper-placement*='top']` selector instead */
+  headerOpenUp: {},
+  /** @deprecated use `[data-popper-placement*='bottom']` selector instead */
+  headerOpenDown: {},
   headerDisabled: {
     cursor: "not-allowed",
     pointerEvents: "none",
     color: theme.colors.textDisabled,
-    border: `1px solid currentcolor`,
-    background: theme.colors.bgPage,
-    "&:hover": {
-      border: `1px solid currentcolor`,
+    backgroundColor: theme.colors.bgPage,
+    "&,:hover": {
+      borderColor: "currentcolor",
     },
   },
   headerReadOnly: {
     cursor: "not-allowed",
     pointerEvents: "none",
     color: theme.colors.textSubtle,
-    border: `1px solid currentcolor`,
-    background: theme.colors.bgPage,
+    borderColor: "currentcolor",
+    backgroundColor: theme.colors.bgPage,
     userSelect: "text",
-    "&:focus-visible": {
+    ":focus-visible": {
       outline: "none",
-      border: `1px solid currentcolor`,
+      borderColor: "currentcolor",
     },
   },
   arrowContainer: {
@@ -92,6 +93,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     padding: 0,
     border: `1px solid ${theme.colors.text}`,
   },
+  // TODO: change from classes to [data-popper-placement] selectors
   panelOpenedUp: {
     top: 1,
     borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,

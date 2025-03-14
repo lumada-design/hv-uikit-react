@@ -53,17 +53,14 @@ export const HvSkeleton = (props: HvSkeletonProps) => {
       className={cx(
         classes.root,
         classes[variant],
-        animation && classes[animation],
+        classes[animation],
         className,
       )}
       style={{
         width,
         height,
         ...(backgroundImage && {
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          background: `center / contain no-repeat url(${backgroundImage})`,
         }),
         ...style,
       }}

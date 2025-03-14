@@ -4,8 +4,6 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { baseDropdownClasses } from "../BaseDropdown";
 import { inputClasses } from "../Input";
 
-const hoverColor = theme.colors.bgHover;
-
 export const { staticClasses, useClasses } = createClasses("HvPagination", {
   /** Styles applied to the component root class. */
   root: {
@@ -31,7 +29,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
       backgroundColor: "transparent",
       height: "24px",
       "&:focus, &:focus-within, &:hover": {
-        backgroundColor: hoverColor,
+        backgroundColor: theme.colors.bgHover,
       },
     },
   },
@@ -63,17 +61,17 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     justifyContent: "center",
     height: "24px",
     padding: "8px 0",
-    ...(theme.typography.caption2 as React.CSSProperties),
+    ...theme.typography.caption2,
   },
   totalPagesTextContainer: {
-    ...(theme.typography.caption2 as React.CSSProperties),
+    ...theme.typography.caption2,
   },
   /** Styles applied to the page size selector dropdown element. */
   pageSizeOptionsSelect: {
     display: "inline-block",
     width: "auto",
 
-    ...(theme.typography.caption2 as React.CSSProperties),
+    ...theme.typography.caption2,
   },
   /** Styles applied to the page navigation container. */
   pageNavigator: {
@@ -108,7 +106,7 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
         borderRadius: theme.radii.base,
         MozAppearance: "textfield",
         "&:focus": {
-          backgroundColor: hoverColor,
+          backgroundColor: theme.colors.bgHover,
         },
         "&:hover": {
           cursor: "pointer",

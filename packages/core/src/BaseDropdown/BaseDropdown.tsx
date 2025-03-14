@@ -240,12 +240,13 @@ const BaseDropdown = forwardRef<
   const defaultHeaderElement = (
     <div
       id={setId(id, "header")}
+      data-popper-placement={popperPlacement}
       className={cx(classes.header, {
-        [classes.headerDisabled]: disabled,
-        [classes.headerReadOnly]: readOnly,
         [classes.headerOpen]: isOpen,
         [classes.headerOpenUp]: isOpen && popperPlacement?.includes("top"),
         [classes.headerOpenDown]: isOpen && popperPlacement?.includes("bottom"),
+        [classes.headerReadOnly]: readOnly,
+        [classes.headerDisabled]: disabled,
       })}
       // TODO: review "textbox" role
       role={ariaRole === "combobox" ? "textbox" : undefined}

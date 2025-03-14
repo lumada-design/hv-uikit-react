@@ -6,7 +6,8 @@ export const { staticClasses, useClasses } = createClasses("HvFooter", {
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
-    padding: `${theme.space.xs} ${theme.space.sm}`,
+    gap: theme.space.xs,
+    padding: theme.spacing("xs", "sm"),
     height: 40,
     bottom: 0,
     zIndex: theme.zIndices.base,
@@ -25,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvFooter", {
     width: 1,
     height: 16,
     backgroundColor: theme.colors.text,
-    margin: `${theme.space.xs} ${theme.space.sm}`,
+    margin: theme.spacing("xs", "sm"),
   },
   small: {
     "&$root": {
@@ -33,17 +34,8 @@ export const { staticClasses, useClasses } = createClasses("HvFooter", {
       flexDirection: "column",
       padding: theme.space.xs,
     },
-    "& $name": {
-      marginBottom: theme.space.xs,
-    },
     "& $rightContainer": {
-      flexDirection: "column",
-      textAlign: "center",
-      marginLeft: "unset",
-    },
-    "& $copyright": {
-      flexDirection: "column",
-      marginBottom: theme.space.xs,
+      display: "contents",
     },
     "& $separator": { display: "none" },
   },

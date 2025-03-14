@@ -1,11 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 export const { staticClasses, useClasses } = createClasses("HvAccordion", {
-  root: {
-    "& + root": {
-      paddingTop: 8,
-    },
-  },
+  root: {},
   hidden: { height: 0, display: "none" },
   container: { paddingTop: 8, height: "auto" },
   label: {

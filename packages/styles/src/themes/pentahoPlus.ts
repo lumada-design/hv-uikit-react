@@ -589,12 +589,6 @@ const pentahoPlus = makeTheme((theme) => ({
             borderColor: theme.colors.textDimmed,
             backgroundColor: inputColors.bg,
           },
-          "&& .HvDropdownButton-openUp": {
-            borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
-          },
-          "&& .HvDropdownButton-openDown": {
-            borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
-          },
         },
         select: {
           borderRadius: theme.radii.base,
@@ -874,14 +868,6 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvDropdownButton: {
       classes: {
-        openUp: {
-          borderRadius:
-            "0px 0px calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2)",
-        },
-        openDown: {
-          borderRadius:
-            "calc(var(--HvButton-height) / 2) calc(var(--HvButton-height) / 2) 0px 0px",
-        },
         disabled: {
           backgroundColor: theme.colors.bgDisabled,
           borderColor: theme.colors.bgDisabled,
@@ -1145,6 +1131,9 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvDropDownMenu: {
       classes: {
+        root: {
+          "--r": theme.radii.full,
+        },
         iconSelected: {
           "&[data-color=secondary]": {
             borderColor: theme.colors.textDimmed,

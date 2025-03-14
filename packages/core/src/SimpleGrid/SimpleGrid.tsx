@@ -13,7 +13,7 @@ import {
 
 export { staticClasses as simpleGridClasses };
 
-// TODO: remove in v6
+/** @deprecated use `HvBreakpoints` instead */
 export type Spacing = HvBreakpoints;
 
 // TODO: rename in v6 (or inline)

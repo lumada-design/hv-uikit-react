@@ -3,7 +3,6 @@ import { describe, expect, it } from "vitest";
 
 import { HvButton } from "../Button";
 import { HvHeaderActions } from "./Actions";
-import { HitachiLogo } from "./assets/HitachiLogo";
 import { HvHeaderBrand } from "./Brand";
 import { HvHeader } from "./Header";
 import { HvHeaderNavigation } from "./Navigation";
@@ -17,10 +16,7 @@ describe("Header", () => {
   it("should render correctly the brand data", () => {
     const { getByText, getByTestId } = render(
       <HvHeader>
-        <HvHeaderBrand
-          logo={<HitachiLogo data-testid="logo" />}
-          name="Lumada App"
-        />
+        <HvHeaderBrand logo={<div data-testid="logo" />} name="Lumada App" />
       </HvHeader>,
     );
     expect(getByText("Lumada App")).toBeInTheDocument();

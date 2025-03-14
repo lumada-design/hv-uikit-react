@@ -18,7 +18,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Alert, Menu, User } from "@hitachivantara/uikit-react-icons";
 
-import { HitachiLogo } from "./assets/HitachiLogo";
+import { HitachiLogo } from "./stories/HitachiLogo";
 
 const navigationDataMain = [
   {
