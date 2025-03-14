@@ -259,6 +259,14 @@ const ds3 = makeTheme((theme) => ({
             color: theme.colors.atmo1,
           },
         },
+        semantic: {
+          "&.HvBaseCheckBox-indeterminate": {
+            "& svg": {
+              backgroundColor: theme.colors.textLight,
+              color: theme.colors.textDark,
+            },
+          },
+        },
       },
     },
     HvBaseDropdown: {

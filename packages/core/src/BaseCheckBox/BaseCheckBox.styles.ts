@@ -72,7 +72,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     "&$indeterminate": {
       "& svg": {
         backgroundColor: theme.colors.bgContainer,
-        borderColor: theme.colors.borderStrong,
+        border: `1px solid ${theme.colors.borderStrong}`,
       },
     },
   },
