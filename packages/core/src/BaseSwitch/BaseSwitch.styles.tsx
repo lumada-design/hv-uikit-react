@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
           backgroundColor: theme.colors.primary,
           borderColor: "transparent",
         },
-        "& $thumb": {
+        "& $thumb:not:has($disabled)": {
           borderColor: "transparent",
         },
         "&:hover": {

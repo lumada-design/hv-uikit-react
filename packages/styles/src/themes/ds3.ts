@@ -418,7 +418,7 @@ const ds3 = makeTheme((theme) => ({
           "&:hover": {
             backgroundColor: "transparent",
           },
-          " .HvBaseSwitch-switchBase.HvBaseSwitch-checked + .HvBaseSwitch-track":
+          " .HvBaseSwitch-switchBase.HvBaseSwitch-checked:not(.HvBaseSwitch-disabled) + .HvBaseSwitch-track":
             {
               backgroundColor: theme.colors.text,
             },
