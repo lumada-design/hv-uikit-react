@@ -122,7 +122,7 @@ export const Test: StoryObj = {
     docs: { disable: true },
   },
   render: () => (
-    <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+    <div className="flex flex-wrap gap-xs">
       <HvTag label="Informational" />
       <HvTag label="Informational" disabled />
       <HvTag label="This is a very very very very very very very very long text for a tag" />

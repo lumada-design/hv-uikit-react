@@ -253,16 +253,10 @@ export const Test: StoryObj = {
   parameters: {
     docs: { disable: true },
   },
+  decorators: [(Story) => <div className="flex gap-xs">{Story()}</div>],
   render: () => (
-    <div style={{ display: "flex", gap: 5 }}>
+    <>
       <HvColorPicker className="w-268px" label="Color" defaultExpanded />
-      <HvColorPicker
-        className="w-268px"
-        label="Color"
-        showSavedColors={false}
-        defaultValue="#C62828"
-        defaultExpanded
-      />
       <HvColorPicker
         className="w-134px"
         label="Color"
@@ -271,10 +265,8 @@ export const Test: StoryObj = {
         defaultValue="#F6941E"
         defaultExpanded
       />
-      <div style={{ marginLeft: 130 }}>
-        <HvColorPicker label="Color" iconOnly />
-      </div>
+      <HvColorPicker label="Color" iconOnly />
       <HvColorPicker label="Color" iconOnly defaultValue="#59941B" />
-    </div>
+    </>
   ),
 };

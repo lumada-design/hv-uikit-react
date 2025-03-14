@@ -321,12 +321,14 @@ export const Test: StoryObj<HvCheckBoxProps> = {
         indeterminate
         label="Checkbox 3"
       />
-      <HvCheckBox aria-label="Checkbox 1" />
-      <HvCheckBox defaultChecked aria-label="Checkbox 2" />
-      <HvCheckBox indeterminate aria-label="Checkbox 3" />
-      <HvCheckBox semantic aria-label="Checkbox 1" />
-      <HvCheckBox semantic defaultChecked aria-label="Checkbox 2" />
-      <HvCheckBox semantic indeterminate aria-label="Checkbox 3" />
+      <div>
+        <HvCheckBox aria-label="Checkbox 1" />
+        <HvCheckBox defaultChecked aria-label="Checkbox 2" />
+        <HvCheckBox indeterminate aria-label="Checkbox 3" />
+        <HvCheckBox semantic aria-label="Checkbox 1" />
+        <HvCheckBox semantic defaultChecked aria-label="Checkbox 2" />
+        <HvCheckBox semantic indeterminate aria-label="Checkbox 3" />
+      </div>
     </>
   ),
 };

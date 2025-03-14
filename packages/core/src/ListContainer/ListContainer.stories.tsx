@@ -169,9 +169,10 @@ export const MultiSelection: StoryObj<HvListContainerProps> = {
 };
 
 export const WithIcons: StoryObj<HvListContainerProps> = {
+  decorators: [(Story) => <div className="flex gap-sm">{Story()}</div>],
   render: () => {
     return (
-      <div style={{ display: "flex", gap: theme.space.sm }}>
+      <>
         <HvPanel style={{ maxWidth: 220 }}>
           <HvListContainer
             interactive
@@ -217,7 +218,7 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
             <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
           </HvListContainer>
         </HvPanel>
-      </div>
+      </>
     );
   },
 };

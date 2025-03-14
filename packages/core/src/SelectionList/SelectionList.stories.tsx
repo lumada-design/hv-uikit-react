@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvFormStatus,
   HvListItem,
   HvSelectionList,
   HvSelectionListProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvSelectionList> = {
@@ -45,21 +43,14 @@ export const Main: StoryObj<HvSelectionListProps> = {
 };
 
 export const Variants: StoryObj<HvSelectionListProps> = {
+  decorators: [
+    (Story) => (
+      <div className="flex gap-xs flex-wrap [&>*]:w-175px">{Story()}</div>
+    ),
+  ],
   render: () => {
-    const classes = {
-      root: css({
-        display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-        gap: theme.space.xs,
-        "& > div": {
-          width: 175,
-        },
-      }),
-    };
-
     return (
-      <div className={classes.root}>
+      <>
         <HvSelectionList required label="Required">
           <HvListItem value="1">ListItem 1</HvListItem>
           <HvListItem value="2" selected>
@@ -92,7 +83,7 @@ export const Variants: StoryObj<HvSelectionListProps> = {
           </HvListItem>
           <HvListItem value="3">ListItem 3</HvListItem>
         </HvSelectionList>
-      </div>
+      </>
     );
   },
 };

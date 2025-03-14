@@ -55,13 +55,7 @@ export const Variants: StoryObj<HvSkeletonProps> = {
   },
   render: () => {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: theme.space.sm,
-        }}
-      >
+      <div className="flex flex-col gap-sm">
         <HvSkeleton variant="square" width={100} animation="wave">
           <HvTypography>Test</HvTypography>
         </HvSkeleton>
