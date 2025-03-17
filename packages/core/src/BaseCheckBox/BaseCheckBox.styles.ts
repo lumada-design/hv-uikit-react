@@ -13,14 +13,15 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     cursor: "pointer",
     "&:hover": {
       backgroundColor: theme.colors.bgHover,
+      borderRadius: theme.radii.round,
     },
 
     "& svg": {
       width: 16,
       height: 16,
       color: theme.colors.bgContainer,
-      borderRadius: theme.radii.none,
-      border: `1px solid ${theme.colors.text}`,
+      borderRadius: theme.radii.base,
+      border: `1px solid ${theme.colors.borderStrong}`,
     },
   },
   disabled: {
@@ -29,8 +30,11 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
       pointerEvents: "initial",
       "& svg": {
         color: theme.colors.bgDisabled,
-        borderColor: theme.colors.textDisabled,
+        borderColor: theme.colors.borderDisabled,
         backgroundColor: theme.colors.bgDisabled,
+      },
+      "&:hover": {
+        backgroundColor: "transparent",
       },
     },
   },
@@ -42,36 +46,33 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
   icon: {},
   checked: {
     "& svg": {
-      border: `1px solid ${theme.colors.text}`,
-      backgroundColor: theme.colors.text,
+      borderColor: "transparent",
+      backgroundColor: theme.colors.primaryStrong,
       color: theme.colors.bgContainer,
     },
     "&$disabled": {
       "& svg": {
         color: theme.colors.textDisabled,
+        borderColor: "currentcolor",
       },
     },
   },
   indeterminate: {
     "& svg": {
-      color: theme.colors.text,
+      color: theme.colors.textSubtle,
     },
     "&$disabled": {
       "& svg": {
         color: theme.colors.textDisabled,
+        borderColor: "currentcolor",
       },
     },
   },
   semantic: {
-    "& svg": {
-      border: `1px solid ${theme.colors.textDark}`,
-      color: theme.colors.textLight,
-      backgroundColor: theme.colors.textDark,
-    },
     "&$indeterminate": {
       "& svg": {
-        color: theme.colors.textDark,
-        backgroundColor: theme.colors.textLight,
+        backgroundColor: theme.colors.bgContainer,
+        border: `1px solid ${theme.colors.borderStrong}`,
       },
     },
   },

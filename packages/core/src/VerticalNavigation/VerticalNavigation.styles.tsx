@@ -19,7 +19,7 @@ export const { staticClasses, useClasses } = createClasses(
         padding: theme.space.sm,
       },
       "& > :not(nav:first-of-type)": {
-        borderTop: `3px solid ${theme.colors.borderStrong}`,
+        borderTop: `3px solid ${theme.colors.borderSubtle}`,
         padding: theme.spacing("xs", "sm", "sm", "sm"),
       },
 
@@ -44,7 +44,7 @@ export const { staticClasses, useClasses } = createClasses(
 
     slider: {
       "& > div:first-of-type": {
-        borderBottom: `3px solid ${theme.colors.borderStrong}`,
+        borderBottom: `3px solid ${theme.colors.borderSubtle}`,
       },
     },
 

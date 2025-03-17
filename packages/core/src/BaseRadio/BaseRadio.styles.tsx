@@ -10,20 +10,17 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     minWidth: 32,
     height: 32,
     cursor: "pointer",
-
-    "&:hover": {
-      backgroundColor: theme.colors.bgHover,
-      borderRadius: theme.radii.base,
-    },
     "& svg": {
       width: 16,
       height: 16,
       borderRadius: theme.radii.full,
-      borderWidth: 1,
-      borderColor: theme.colors.text,
+      border: `1px solid ${theme.colors.borderStrong}`,
       backgroundColor: theme.colors.bgContainer,
     },
-    borderRadius: 0,
+    "&:hover": {
+      backgroundColor: theme.colors.bgHover,
+      borderRadius: theme.radii.round,
+    },
   },
   disabled: {
     cursor: "not-allowed",
@@ -42,29 +39,17 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
   icon: {},
   checked: {
     "& svg": {
-      borderColor: theme.colors.text,
-      backgroundColor: theme.colors.text,
-      color: theme.colors.bgPage,
-    },
-    "&$semantic": {
-      "& svg": {
-        borderColor: theme.colors.textDark,
-        backgroundColor: theme.colors.textLight,
-        color: theme.colors.textDark,
-      },
+      borderColor: "transparent",
+      backgroundColor: theme.colors.primaryStrong,
+      color: theme.colors.bgContainer,
     },
     "&$disabled": {
       "& svg": {
-        borderColor: theme.colors.textDisabled,
-        backgroundColor: theme.colors.textDisabled,
+        borderColor: "transparent",
+        backgroundColor: theme.colors.borderDisabled,
         color: theme.colors.bgDisabled,
       },
     },
   },
-  semantic: {
-    "& svg": {
-      borderColor: theme.colors.textDark,
-      backgroundColor: theme.colors.textLight,
-    },
-  },
+  semantic: {},
 });
