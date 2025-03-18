@@ -46,7 +46,7 @@ const pentahoPlus = makeTheme((theme) => ({
         ...colors.common,
         ...colors.light,
         brand: blue[600],
-        containerBackgroundHover: `color-mix(in srgb, ${blue[600]} 10%, transparent)`,
+        containerBackgroundHover: theme.alpha(blue[600], 0.1),
         backgroundColor: slate[100],
         atmo1: slate[50],
         atmo2: slate[100],
@@ -55,11 +55,11 @@ const pentahoPlus = makeTheme((theme) => ({
         base_light: slate[50],
         base_dark: slate[700],
         primary_80: blue[500],
-        primary_20: `color-mix(in srgb, ${blue[600]} 10%, transparent)`,
+        primary_20: theme.alpha(blue[600], 0.1),
         secondary: slate[700],
         secondary_80: slate[500],
         secondary_60: slate[400],
-        secondary_20: `color-mix(in srgb, ${slate[700]} 10%, transparent)`, // 🆕
+        secondary_20: theme.alpha(slate[700], 0.1),
         positive_120: green[700],
         positive_80: green[400],
         neutral: sky[500],
@@ -72,8 +72,8 @@ const pentahoPlus = makeTheme((theme) => ({
         warning_20: amber[100],
         positive_20: green[100],
         neutral_20: sky[100],
-        shadow: `0px 2px 4px -1px color-mix(in srgb, ${slate[700]} 8%, transparent)`,
-        shad1: `color-mix(in srgb, ${slate[700]} 8%, transparent)`,
+        shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
+        shad1: theme.alpha(slate[700], 0.08),
 
         primary: blue[600],
         primaryStrong: blue[700],
@@ -121,9 +121,9 @@ const pentahoPlus = makeTheme((theme) => ({
         bgContainer: slate[50],
         bgPageSecondary: slate[200],
         bgContainerSecondary: slate[100],
-        bgHover: `color-mix(in srgb, ${blue[600]} 20%, transparent)`,
+        bgHover: theme.alpha(blue[600], 0.2),
         bgDisabled: neutral[200],
-        bgOverlay: `color-mix(in srgb, ${slate[950]} 60%, transparent)`,
+        bgOverlay: theme.alpha(slate[950], 0.6),
         dimmer: "#FFFFFF",
       },
       wicked: {
@@ -131,7 +131,7 @@ const pentahoPlus = makeTheme((theme) => ({
         ...colors.common,
         ...colors.dark,
         brand: blue[600],
-        containerBackgroundHover: `color-mix(in srgb, ${blue[500]} 10%, transparent)`,
+        containerBackgroundHover: theme.alpha(blue[500], 0.1),
         backgroundColor: slate[900],
         atmo1: slate[800],
         atmo2: slate[900],
@@ -140,11 +140,11 @@ const pentahoPlus = makeTheme((theme) => ({
         base_light: slate[50],
         base_dark: slate[700],
         primary_80: blue[400],
-        primary_20: `color-mix(in srgb, ${blue[500]} 10%, transparent)`,
+        primary_20: theme.alpha(blue[500], 0.1),
         secondary: slate[50],
         secondary_80: slate[200],
         secondary_60: slate[300],
-        secondary_20: `color-mix(in srgb, ${slate[50]} 10%, transparent)`, // 🆕
+        secondary_20: theme.alpha(slate[50], 0.1),
         positive_120: green[600],
         positive_80: green[400],
         neutral: sky[500],
@@ -157,8 +157,8 @@ const pentahoPlus = makeTheme((theme) => ({
         warning_20: amber[100],
         positive_20: green[100],
         neutral_20: sky[100],
-        shadow: `0px 2px 4px -1px color-mix(in srgb, ${slate[700]} 8%, transparent)`,
-        shad1: `color-mix(in srgb, ${slate[700]} 8%, transparent)`,
+        shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
+        shad1: theme.alpha(slate[700], 0.08),
 
         primary: blue[500],
         primaryStrong: blue[600],
@@ -206,9 +206,9 @@ const pentahoPlus = makeTheme((theme) => ({
         bgContainer: slate[800], // slate[950]
         bgPageSecondary: slate[950],
         bgContainerSecondary: slate[900],
-        bgHover: `color-mix(in srgb, ${blue[600]} 20%, transparent)`,
+        bgHover: theme.alpha(blue[600], 0.2),
         bgDisabled: neutral[900],
-        bgOverlay: `color-mix(in srgb, ${slate[900]} 40%, transparent)`,
+        bgOverlay: theme.alpha(slate[900], 0.4),
         dimmer: "#000000",
       },
     },
@@ -494,7 +494,7 @@ const pentahoPlus = makeTheme((theme) => ({
           "& .HvBaseSwitch-switchBase": {
             "& .HvBaseSwitch-thumb": {
               borderColor: "transparent",
-              boxShadow: `0px 1px 1px 0px color-mix(in srgb, ${slate[700]} 16%, transparent)`,
+              boxShadow: `0px 1px 1px 0px ${theme.alpha(slate[700], 0.16)}`,
             },
             "+.HvBaseSwitch-track": {
               height: 14,
@@ -690,7 +690,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         subtle: {
-          borderColor: "color-mix(in srgb, currentcolor, transparent 60%)",
+          borderColor: theme.alpha("currentcolor", 0.4),
           ":where(:not(.HvButton-disabled))": {
             "&[data-color=primary]": {
               borderColor: theme.colors.primarySubtle,
@@ -754,8 +754,7 @@ const pentahoPlus = makeTheme((theme) => ({
           color: theme.colors.textDisabled,
           ":not(.HvButton-ghost)": {
             borderColor: "transparent",
-            backgroundColor: theme.colors.bgDisabled,
-            "&:hover, &:active": {
+            "&,:hover,:active": {
               backgroundColor: theme.colors.bgDisabled,
             },
           },
@@ -791,16 +790,14 @@ const pentahoPlus = makeTheme((theme) => ({
           backgroundColor: theme.colors.bgDisabled,
           borderColor: theme.colors.bgDisabled,
           "&.HvButton-subtle": {
-            backgroundColor: theme.colors.bgDisabled,
             borderColor: theme.colors.bgDisabled,
-            "&:hover": {
+            "&,:hover": {
               backgroundColor: theme.colors.bgDisabled,
             },
           },
           "&.HvButton-ghost": {
-            backgroundColor: theme.colors.bgDisabled,
             borderColor: theme.colors.bgDisabled,
-            "&:hover": {
+            "&,:hover": {
               backgroundColor: theme.colors.bgDisabled,
             },
           },

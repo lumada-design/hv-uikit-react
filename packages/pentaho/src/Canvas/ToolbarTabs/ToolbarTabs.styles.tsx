@@ -9,8 +9,7 @@ export const DROPDOWN_MENU_WIDTH = 64;
 const TAB_HEIGHT = 32;
 const CLOSE_ICON_SIZE = 32;
 const TAB_ICON_SIZE = 16;
-const TAB_PADDING = theme.space.xs;
-const TAB_COLOR = `color-mix(in srgb, ${theme.colors.primaryDimmed} 50%, ${theme.colors.dimmer})`;
+const TAB_COLOR = theme.mix("primaryDimmed", 0.5, "dimmer");
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasToolbarTabs",
@@ -80,7 +79,7 @@ export const { staticClasses, useClasses } = createClasses(
       justifyContent: "flex-start",
       alignItems: "center",
       width: "100%",
-      padding: TAB_PADDING,
+      padding: theme.space.xs,
     },
     tabIconContainer: {
       display: "flex",
