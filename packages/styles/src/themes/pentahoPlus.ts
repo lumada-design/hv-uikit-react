@@ -475,9 +475,6 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           borderRadius: "4px",
-          "&:hover": {
-            borderRadius: "4px",
-          },
         },
         checked: {
           "& svg": {
