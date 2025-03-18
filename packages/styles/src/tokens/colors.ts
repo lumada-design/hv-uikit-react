@@ -490,9 +490,7 @@ export type HvSupportColor = keyof typeof supportLight;
 export type HvCategoricalColor = keyof typeof categorical;
 
 /** A type with all the accepted colors from the color palette */
-export type HvColor =
-  | keyof typeof colors.common
-  | Exclude<keyof typeof colors.light, "pp">;
+export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
 
 /**
  * A type representing an `HvColor` from the palette or any other color string
