@@ -72,10 +72,10 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     backgroundColor: "var(--color)",
     ":where(:not($disabled))": {
       ":hover, :focus-visible": {
-        backgroundColor: "color-mix(in srgb, var(--color), black 20%)",
+        backgroundColor: theme.mix("var(--color)", 0.8, "black"),
       },
       ":active": {
-        backgroundColor: "color-mix(in srgb, var(--color), black 30%)",
+        backgroundColor: theme.mix("var(--color)", 0.7, "black"),
       },
     },
   },
