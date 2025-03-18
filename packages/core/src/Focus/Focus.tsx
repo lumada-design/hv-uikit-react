@@ -3,7 +3,6 @@ import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../types/generic";
 import { isBrowser } from "../utils/browser";
-import { ConditionalWrapper } from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys } from "../utils/keyboardUtils";
 import { staticClasses, useClasses } from "./Focus.styles";
 import { getFocusableChildren, setFocusTo } from "./utils";
@@ -64,11 +63,9 @@ export const HvFocus = ({
   focusOnClick = false,
   focusDisabled = true,
   strategy = "listbox",
-  useFalseFocus = false,
   filterClass,
   navigationJump = 4,
 }: HvFocusProps) => {
-  const [showFocus, setShowFocus] = useState<boolean>(false);
   const [childFocus, setChildFocus] = useState<any>();
   const [hasRunConfig, setHasRunConfig] = useState(false);
   const { classes, cx } = useClasses(classesProp);
@@ -153,35 +150,30 @@ export const HvFocus = ({
   };
 
   const addFocusClass = (evt: any) => {
-    if (!useFalseFocus) {
-      // evt.currentTarget.classList.add(classes.focused);
-      classes.focused
-        .split(" ")
-        .forEach((c) => evt.currentTarget.classList.add(c));
-      // add global class HvIsFocused as a marker
-      // not to be styled directly, only as helper in specific css queries
-      evt.currentTarget.classList.add("HvIsFocused");
-      classes?.focus
-        ?.split(" ")
-        .forEach((c) => evt.currentTarget.classList.add(c));
-    }
+    // evt.currentTarget.classList.add(classes.focused);
+    classes.focused
+      .split(" ")
+      .forEach((c) => evt.currentTarget.classList.add(c));
+    // add global class HvIsFocused as a marker
+    // not to be styled directly, only as helper in specific css queries
+    evt.currentTarget.classList.add("HvIsFocused");
+    classes?.focus
+      ?.split(" ")
+      .forEach((c) => evt.currentTarget.classList.add(c));
   };
 
   const removeFocusClass = () => {
-    if (!useFalseFocus) {
-      getFocuses().forEach((element) => {
-        // element.classList.remove(classes.focused);
-        classes.focused.split(" ").forEach((c) => element.classList.remove(c));
-        // remove the global class HvIsFocused
-        element.classList.remove("HvIsFocused");
-        classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
-      });
-    }
+    getFocuses().forEach((element) => {
+      // element.classList.remove(classes.focused);
+      classes.focused.split(" ").forEach((c) => element.classList.remove(c));
+      // remove the global class HvIsFocused
+      element.classList.remove("HvIsFocused");
+      classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
+    });
   };
 
   const onFocus = (evt: any) => {
     addFocusClass(evt);
-    setShowFocus(true);
     // give focus to child element if any focusable
 
     childFocus?.focus?.();
@@ -189,7 +181,6 @@ export const HvFocus = ({
   };
 
   const onBlur = () => {
-    setShowFocus(false);
     removeFocusClass();
     onBlurStrategy();
   };
@@ -205,7 +196,6 @@ export const HvFocus = ({
       // TODO this piece of code works only because onMouseDown is happening after the focus event
       // There is nothing in here that guarantees the order of these events, so it may present a problem in the future
       removeFocusClass();
-      setShowFocus(false);
     }
   };
 
@@ -452,33 +442,22 @@ export const HvFocus = ({
 
   if (disabled) return children;
 
-  const focusWrapper = (childrenToWrap: React.ReactNode) => (
-    <div className={classes.externalReference}>
-      {childrenToWrap}
-      {showFocus && <div className={classes.falseFocus} />}
-    </div>
-  );
-
-  return (
-    <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
-      {cloneElement(children, {
-        className: cx(
-          [classes.root, filterClass],
-          {
-            [classes.selected]: selected,
-            [classes.disabled]: disabledClass,
-            [classes.focusDisabled]: focusDisabled,
-          },
-          children.props.className,
-        ),
-        ref: config,
-        onFocus,
-        onBlur,
-        onMouseDown,
-        onKeyDown,
-        onKeyUp,
-        selected,
-      })}
-    </ConditionalWrapper>
-  );
+  return cloneElement(children, {
+    className: cx(
+      [classes.root, filterClass],
+      {
+        [classes.selected]: selected,
+        [classes.disabled]: disabledClass,
+        [classes.focusDisabled]: focusDisabled,
+      },
+      children.props.className,
+    ),
+    ref: config,
+    onFocus,
+    onBlur,
+    onMouseDown,
+    onKeyDown,
+    onKeyUp,
+    selected,
+  });
 };
