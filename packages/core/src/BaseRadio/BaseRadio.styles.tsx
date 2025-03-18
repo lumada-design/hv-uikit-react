@@ -10,6 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     minWidth: 32,
     height: 32,
     cursor: "pointer",
+    borderRadius: "inherit",
     "& svg": {
       width: 16,
       height: 16,
@@ -17,9 +18,8 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
       border: `1px solid ${theme.colors.borderStrong}`,
       backgroundColor: theme.colors.bgContainer,
     },
-    "&:hover": {
+    ":hover": {
       backgroundColor: theme.colors.bgHover,
-      borderRadius: theme.radii.round,
     },
   },
   disabled: {
