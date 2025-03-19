@@ -773,17 +773,7 @@ const pentahoPlus = makeTheme((theme) => ({
           "& .HvMultiButton-button": {
             borderColor: "inherit",
             ...theme.typography.body,
-            "&.HvMultiButton-firstButton": {
-              borderRadius: `${theme.radii.full} 0 0 ${theme.radii.full}`,
-            },
-            "&.HvMultiButton-lastButton": {
-              borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
-            },
-            "&.HvMultiButton-firstButton.HvMultiButton-lastButton": {
-              borderRadius: theme.radii.full,
-            },
             "&.HvMultiButton-selected": {
-              borderColor: theme.colors.primary,
               color: theme.colors.primary,
               backgroundColor: theme.colors.primaryDimmed,
             },
@@ -793,24 +783,9 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         vertical: {
+          borderRadius: 16,
           borderColor: theme.colors.border,
-          "& .HvMultiButton-button": {
-            borderColor: "inherit",
-            "&.HvMultiButton-firstButton": {
-              borderRadius: "16px 16px 0 0",
-            },
-            "&.HvMultiButton-lastButton": {
-              borderRadius: "0 0 16px 16px",
-            },
-            "&.HvMultiButton-selected": {
-              borderColor: theme.colors.primary,
-              color: theme.colors.primary,
-              backgroundColor: theme.colors.primaryDimmed,
-            },
-          },
         },
-        splitGroup: {},
-        splitGroupDisabled: {},
       },
     },
     HvDropdownButton: {
