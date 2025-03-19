@@ -11,7 +11,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   },
   multiple: {
     backgroundColor: theme.colors.bgPage,
-
     borderWidth: 0,
     borderColor: `${theme.colors.border} transparent`,
     borderRadius: theme.radii.base,
@@ -46,9 +45,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         "&:disabled": {
           borderRightColor: theme.colors.border,
         },
-      },
-      "&$firstButton$lastButton": {
-        borderRadius: theme.radii.base,
       },
       "&:not($firstButton)": {
         marginLeft: "-1px",
