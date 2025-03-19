@@ -47,6 +47,9 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
           borderRightColor: theme.colors.border,
         },
       },
+      "&$firstButton$lastButton": {
+        borderRadius: theme.radii.base,
+      },
       "&:not($firstButton)": {
         marginLeft: "-1px",
       },

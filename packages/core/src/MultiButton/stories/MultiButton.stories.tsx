@@ -288,6 +288,17 @@ export const Test: StoryObj = {
             ))}
           </HvMultiButton>
         </div>
+        <div className="grid gap-xs">
+          <HvMultiButton>
+            <HvButton>Label 1</HvButton>
+          </HvMultiButton>
+          <HvMultiButton>
+            <HvButton selected>Label 1</HvButton>
+          </HvMultiButton>
+          <HvMultiButton>
+            <HvButton disabled>Label 1</HvButton>
+          </HvMultiButton>
+        </div>
       </HvSimpleGrid>
     </>
   ),

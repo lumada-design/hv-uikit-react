@@ -779,6 +779,9 @@ const pentahoPlus = makeTheme((theme) => ({
             "&.HvMultiButton-lastButton": {
               borderRadius: `0 ${theme.radii.full} ${theme.radii.full} 0`,
             },
+            "&.HvMultiButton-firstButton.HvMultiButton-lastButton": {
+              borderRadius: theme.radii.full,
+            },
             "&.HvMultiButton-selected": {
               borderColor: theme.colors.primary,
               color: theme.colors.primary,
