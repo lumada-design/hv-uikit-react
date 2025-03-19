@@ -11,7 +11,6 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   },
   multiple: {
     backgroundColor: theme.colors.bgPage,
-
     borderWidth: 0,
     borderColor: `${theme.colors.border} transparent`,
     borderRadius: theme.radii.base,
@@ -53,8 +52,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       "&$selected": {
         backgroundColor: theme.colors.bgContainer,
         fontWeight: theme.typography.label.fontWeight,
-        borderRadius: "inherit",
-        borderColor: theme.colors.text,
+        borderColor: "currentcolor",
         zIndex: 2,
         "&:hover:not(:disabled),&:focus-visible": {
           backgroundColor: theme.colors.bgHover,
@@ -115,11 +113,15 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
         borderTopColor: theme.colors.border,
         borderTopLeftRadius: "inherit",
         borderTopRightRadius: "inherit",
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
       },
       "&$lastButton": {
         borderBottomColor: theme.colors.border,
         borderBottomLeftRadius: "inherit",
         borderBottomRightRadius: "inherit",
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
       },
       "&:not($firstButton)": {
         marginLeft: 0,
@@ -127,7 +129,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       },
       "&$selected": {
         height: 32,
-        borderColor: theme.colors.text,
+        borderColor: "currentcolor",
       },
     },
   },

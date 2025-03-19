@@ -244,19 +244,30 @@ export const Test: StoryObj = {
               </HvButton>
             ))}
           </HvMultiButton>
-          <HvMultiButton style={{ width: "fit-content" }}>
-            {["Label 1", "Label 2", "Label 3", "Label 4"].map((name, i) => (
-              <HvButton
-                key={name}
-                icon
-                aria-label={name}
-                selected={i === 1}
-                disabled={i === 2}
-              >
-                <LocationPin />
-              </HvButton>
-            ))}
-          </HvMultiButton>
+          <div className="flex flex-1 [&>*]:flex-1 gap-xs">
+            <HvMultiButton style={{ width: "fit-content" }}>
+              {["Label 1", "Label 2", "Label 3", "Label 4"].map((name, i) => (
+                <HvButton
+                  key={name}
+                  icon
+                  aria-label={name}
+                  selected={i === 1}
+                  disabled={i === 2}
+                >
+                  <LocationPin />
+                </HvButton>
+              ))}
+            </HvMultiButton>
+            <HvMultiButton>
+              <HvButton>Label 1</HvButton>
+            </HvMultiButton>
+            <HvMultiButton>
+              <HvButton selected>Label 1</HvButton>
+            </HvMultiButton>
+            <HvMultiButton>
+              <HvButton disabled>Label 1</HvButton>
+            </HvMultiButton>
+          </div>
         </div>
         <div className="flex gap-xs items-start">
           <HvMultiButton vertical style={{ width: "120px" }}>
