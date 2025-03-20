@@ -286,4 +286,6 @@ export const palette = {
   fuchsia,
   pink,
   rose,
+  purple,
+  emerald,
 };
