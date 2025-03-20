@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.43.0...@hitachivantara/uikit-styles@5.44.0) (2025-03-20)
+
+### Bug Fixes
+
+- **MultiButton:** border styles when only one button ([#4614](https://github.com/lumada-design/hv-uikit-react/issues/4614)) ([36e506e](https://github.com/lumada-design/hv-uikit-react/commit/36e506ea8413ca1d2eae9abd93ad96417e523457))
+- **theme:** add missing color groups to palette ([#4615](https://github.com/lumada-design/hv-uikit-react/issues/4615)) ([cd86882](https://github.com/lumada-design/hv-uikit-react/commit/cd86882ede4c8a4fd0848b40681ac2efa161be45))
+
+### Features
+
+- **Selection:** improve styling code and update P+ and DS5 styles ([#4600](https://github.com/lumada-design/hv-uikit-react/issues/4600)) ([12c7ff6](https://github.com/lumada-design/hv-uikit-react/commit/12c7ff6ea092ab8c39c6fd42996cbd0262b93cb2))
+- **Tag:** add size & icon props & align P+ styles ([#4596](https://github.com/lumada-design/hv-uikit-react/issues/4596)) ([844063e](https://github.com/lumada-design/hv-uikit-react/commit/844063e49035fe29abab70cc39f07e045921f960))
+- **theme:** update pentahoPlus theme ([ec3b3dc](https://github.com/lumada-design/hv-uikit-react/commit/ec3b3dc37633ac9d33dcac0662235c794e893e1b))
+
 # [5.43.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.42.0...@hitachivantara/uikit-styles@5.43.0) (2025-03-13)
 
 ### Features

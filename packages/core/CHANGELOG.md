@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.91.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.90.0...@hitachivantara/uikit-react-core@5.91.0) (2025-03-20)
+
+### Bug Fixes
+
+- **MultiButton:** border styles when only one button ([#4614](https://github.com/lumada-design/hv-uikit-react/issues/4614)) ([36e506e](https://github.com/lumada-design/hv-uikit-react/commit/36e506ea8413ca1d2eae9abd93ad96417e523457))
+- **Radio:** focus ring not showing ([c608d4f](https://github.com/lumada-design/hv-uikit-react/commit/c608d4f72617566e3b8cd62d8db07e2beb8ad259))
+
+### Features
+
+- **ColorPicker:** allow `HvColorAny` on `recommendedColors` prop ([#4604](https://github.com/lumada-design/hv-uikit-react/issues/4604)) ([89d1f89](https://github.com/lumada-design/hv-uikit-react/commit/89d1f89e3c1a8e2c26adc3d0e08846cad32cf802))
+- **Selection:** improve styling code and update P+ and DS5 styles ([#4600](https://github.com/lumada-design/hv-uikit-react/issues/4600)) ([12c7ff6](https://github.com/lumada-design/hv-uikit-react/commit/12c7ff6ea092ab8c39c6fd42996cbd0262b93cb2))
+- **Tag:** add size & icon props & align P+ styles ([#4596](https://github.com/lumada-design/hv-uikit-react/issues/4596)) ([844063e](https://github.com/lumada-design/hv-uikit-react/commit/844063e49035fe29abab70cc39f07e045921f960))
+
 # [5.90.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.89.0...@hitachivantara/uikit-react-core@5.90.0) (2025-03-13)
 
 ### Features
