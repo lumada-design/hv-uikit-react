@@ -15,7 +15,7 @@ export interface TreeViewPluginOptions<
   state: TreeViewUsedState<TSignature>;
   models: TreeViewUsedModels<TSignature>;
   setState: React.Dispatch<React.SetStateAction<TreeViewUsedState<TSignature>>>;
-  rootRef: React.RefObject<HTMLUListElement>;
+  rootRef: React.RefObject<HTMLUListElement | null>;
 }
 
 type TreeViewModelsInitializer<TSignature extends TreeViewAnyPluginSignature> =

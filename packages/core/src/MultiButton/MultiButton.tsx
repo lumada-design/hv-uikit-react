@@ -1,10 +1,4 @@
-import {
-  Children,
-  cloneElement,
-  isValidElement,
-  ReactElement,
-  useMemo,
-} from "react";
+import { Children, cloneElement, isValidElement, useMemo } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -52,7 +46,7 @@ export const HvMultiButton = (props: HvMultiButtonProps) => {
 
   // Filter children: remove invalid and undefined/null
   const buttons = useMemo(() => {
-    const btns: ReactElement[] = [];
+    const btns: React.ReactElement[] = [];
     Children.forEach(children, (child) => {
       if (child && isValidElement(child)) {
         btns.push(child);

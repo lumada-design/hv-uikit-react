@@ -30,7 +30,7 @@ const CodeEditor = ({
 }: {
   themeName: string;
   setCopied: Dispatch<SetStateAction<boolean>>;
-}): JSX.Element => {
+}) => {
   const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const { customTheme, updateCustomTheme, themeChanges } =

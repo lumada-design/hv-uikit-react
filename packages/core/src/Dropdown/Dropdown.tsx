@@ -284,7 +284,7 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
     );
   }
 
-  const dropdownHeaderRef = useRef<HTMLDivElement>();
+  const dropdownHeaderRef = useRef<HTMLDivElement | undefined>(undefined);
 
   const {
     ref: refProp,

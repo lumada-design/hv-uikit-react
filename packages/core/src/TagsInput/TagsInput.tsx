@@ -166,7 +166,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const skipReset = useRef(false);
-    const blurTimeout = useRef<any>();
+    const blurTimeout = useRef<any>(null);
     const focusUtils = useFocus({ containerRef });
 
     const forkedContainerRef = useForkRef(ref, containerRef);

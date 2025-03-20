@@ -48,7 +48,7 @@ export function createUseInstanceEventHandler(
     const subscription = React.useRef<(() => void) | null>(null);
     const handlerRef = React.useRef<
       TreeViewEventListener<TreeViewUsedEvents<Signature>[E]> | undefined
-    >();
+    >(undefined);
     handlerRef.current = handler;
     const cleanupTokenRef = React.useRef<UnregisterToken | null>(null);
 

@@ -96,7 +96,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
   const [value, setValue] = useControlled(valueProp, defaultValue);
   const [editMode, setEditMode] = useState(false);
   const [cachedValue, setCachedValue] = useState(value);
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement | undefined>(undefined);
   const { activeTheme } = useTheme();
   const [isOverflowing, setIsOverflowing] = useState(false);
 

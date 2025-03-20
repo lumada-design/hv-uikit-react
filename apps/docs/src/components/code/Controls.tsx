@@ -204,7 +204,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   );
 
   // Map of renderers for specific control types
-  const rendererMap: Record<string, () => JSX.Element | null> = {
+  const rendererMap: Record<string, () => React.ReactNode> = {
     slider: () =>
       propMeta?.type?.name === "enum" ? renderSliderControl() : null,
     radio: () =>
