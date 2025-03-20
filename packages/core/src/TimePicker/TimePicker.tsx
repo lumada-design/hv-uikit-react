@@ -6,7 +6,6 @@ import {
   useTimeFieldState,
   type TimeFieldStateOptions,
 } from "@react-stately/datepicker";
-import { Time as TimeIcon } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -24,6 +23,7 @@ import {
 } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 import { Placeholder, PlaceholderProps } from "./Placeholder";
 import { staticClasses, useClasses } from "./TimePicker.styles";
@@ -285,12 +285,7 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
             headerOpen: classes.dropdownHeaderOpen,
           }}
           placement="right"
-          adornment={
-            <TimeIcon
-              color={disabled ? "textDisabled" : undefined}
-              className={classes.icon}
-            />
-          }
+          adornment={<HvIcon name="Time" className={classes.icon} />}
           expanded={open}
           onToggle={(evt, newOpen) => {
             if (disableExpand) return;

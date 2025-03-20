@@ -1,12 +1,6 @@
 import { forwardRef, useCallback, useEffect, useState } from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
 import {
-  Backwards,
-  End,
-  Forwards,
-  Start,
-} from "@hitachivantara/uikit-react-icons";
-import {
   clamp,
   useDefaultProps,
   type ExtractNames,
@@ -14,6 +8,7 @@ import {
 
 import { useLabels } from "../hooks/useLabels";
 import { HvIconButton } from "../IconButton";
+import { HvIcon } from "../icons";
 import { HvInput, HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
@@ -223,7 +218,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(0)}
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
         >
-          <Start className={classes.icon} iconSize="XS" />
+          <HvIcon name="Start" className={classes.icon} size="xs" />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "previousPage-button")}
@@ -232,7 +227,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(page - 1)}
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
         >
-          <Backwards className={classes.icon} iconSize="XS" />
+          <HvIcon name="Backwards" className={classes.icon} size="xs" />
         </HvIconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -258,7 +253,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(page + 1)}
           title={labels?.nextPage || labels?.paginationNextPageTitle}
         >
-          <Forwards className={classes.icon} iconSize="XS" />
+          <HvIcon name="Forwards" className={classes.icon} size="xs" />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "lastPage-button")}
@@ -267,7 +262,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(pages - 1)}
           title={labels?.lastPage || labels?.paginationLastPageTitle}
         >
-          <End className={classes.icon} iconSize="XS" />
+          <HvIcon name="End" className={classes.icon} size="xs" />
         </HvIconButton>
       </div>
     </div>

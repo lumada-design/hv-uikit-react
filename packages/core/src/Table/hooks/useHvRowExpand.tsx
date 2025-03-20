@@ -3,10 +3,10 @@ import type {
   TableExpandedToggleProps,
   UseExpandedRowProps,
 } from "react-table";
-import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
 import { HvButton } from "../../Button";
 import { useLabels } from "../../hooks/useLabels";
+import { HvIcon } from "../../icons";
 import { HvTypography } from "../../Typography";
 import type { HvCellProps, HvColumnInstance } from "./useHvTable";
 
@@ -63,7 +63,7 @@ const CellWithExpandButton = ({
         aria-expanded={row.isExpanded}
         onClick={rowProps?.onClick}
       >
-        <DropDownXS rotate={row.isExpanded} />
+        <HvIcon name="CaretDown" size="xs" rotate={row.isExpanded} />
       </HvButton>
       {cell?.value && (
         <HvTypography variant="label" component="span">
