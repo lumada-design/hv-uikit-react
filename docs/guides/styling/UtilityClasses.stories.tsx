@@ -70,18 +70,18 @@ export const Animations: StoryObj = {
 
 export const Test: StoryObj = {
   parameters: {
-    ...setupChromatic(),
+    ...setupChromatic(["DS5 dawn", "DS5 wicked", "Pentaho+ wicked"]),
     docs: { disable: true },
   },
   render: () => (
     <>
       <HvTypography variant="title4">Z-Index & Colors</HvTypography>
       <section className="flex bg-default [&>div]:-mr-2">
-        <div className="w-12 h-12 bg-positive z-modal" />
-        <div className="w-11 h-11 bg-warning z-docked" />
-        <div className="w-10 h-10 bg-warning_120 z-8" />
-        <div className="w-9 h-9 bg-base_dark" />
-        <div className="w-8 h-8 bg-negative -z-1" />
+        <div className="size-12 bg-positive z-modal" />
+        <div className="size-11 bg-warning z-docked" />
+        <div className="size-10 bg-warningDeep z-8" />
+        <div className="size-9 bg-base_dark" />
+        <div className="size-8 bg-negative -z-1" />
       </section>
       <br />
       <HvTypography variant="title4">Radius & Spacing</HvTypography>
@@ -91,10 +91,10 @@ export const Test: StoryObj = {
           "rounded-base my-sm",
           "rounded mr-md",
           "rounded-2",
-          "rounded-circle",
+          "rounded-full",
         ].map((classes) => (
           <div key={classes} className="bg-secondary p-xs">
-            <div className={`w-8 h-8 bg-primary ${classes}`} />
+            <div className={`size-64px bg-primary ${classes}`} />
           </div>
         ))}
       </section>

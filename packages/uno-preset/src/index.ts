@@ -1,16 +1,19 @@
 import { definePreset, mergeConfigs, UserConfig } from "@unocss/core";
 import { presetRemToPx } from "@unocss/preset-rem-to-px";
-import { presetUno, PresetUnoOptions, Theme } from "@unocss/preset-uno";
-import { presetTheme } from "unocss-preset-theme";
+import { presetWind3, PresetWind3Options, Theme } from "@unocss/preset-wind3";
 
 import { rules } from "./rules";
 import { extendTheme, themeModes } from "./theme";
 
 export { rules, extendTheme, themeModes };
 
-export interface HvUnoOptions extends PresetUnoOptions {}
+export interface HvUnoOptions extends PresetWind3Options {
+  /** Base fontSize size. 1rem = ${baseFontSize}px. @default 16 */
+  baseFontSize?: number;
+}
 
 export const presetHv = definePreset<HvUnoOptions, Theme>((options) => {
+  const { baseFontSize = 16, ...otherOptions } = options || {};
   /** HV base theme configuration */
   const hvConfig: UserConfig<Theme> = {
     extendTheme,
@@ -21,12 +24,9 @@ export const presetHv = definePreset<HvUnoOptions, Theme>((options) => {
     name: "@hitachivantara/uikit-uno-preset",
     ...mergeConfigs([
       // base uno config
-      presetUno(options),
-      // allows theme variants (light/dark) via CSS vars - aligned with UI Kit's
-      presetTheme<Theme>({ prefix: "--hv", theme: themeModes }),
+      presetWind3(otherOptions),
       // convert rem to px & make 1 unit 8px (32px = 1rem => 1/4rem = 8px)
-      presetRemToPx({ baseFontSize: 32 }),
-
+      presetRemToPx({ baseFontSize }),
       hvConfig,
     ]),
   };
