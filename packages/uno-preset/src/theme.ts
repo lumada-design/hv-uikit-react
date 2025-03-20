@@ -1,6 +1,6 @@
 import { ThemeExtender } from "@unocss/core";
-import type { Theme } from "@unocss/preset-uno";
-import { ds5 as hvTheme } from "@hitachivantara/uikit-styles";
+import type { Theme } from "@unocss/preset-wind3";
+import { ds5 as hvTheme, theme } from "@hitachivantara/uikit-styles";
 
 // #region theme conversion utils
 const { dawn: defaultColors } = hvTheme.colors.modes;
@@ -37,17 +37,12 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   // colors
   colors: {
     ...baseTheme.colors,
-    inherit: "inherit",
-    current: "currentColor",
-    transparent: "transparent",
-    black: "#000000",
-    white: "#ffffff",
-    // using `theme` CSS vars for automatic theme switching, losing alpha + no HvProvider support
     ...defaultColors,
+    ...theme.colors,
   },
   accentColor: { DEFAULT: defaultColors.primary },
-  textColor: { DEFAULT: defaultColors.secondary },
-  backgroundColor: { DEFAULT: defaultColors.backgroundColor },
+  textColor: { DEFAULT: defaultColors.text },
+  backgroundColor: { DEFAULT: defaultColors.bgPage },
 
   // typography
   fontFamily: {
