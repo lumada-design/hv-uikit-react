@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@hitachivantara/uikit-react-core": "latest",
     "@hitachivantara/uikit-react-icons": "latest",
-    "@mui/material": "^5.11.10",
+    "@mui/material": "^5.16.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -22,9 +22,9 @@
     "@hitachivantara/uikit-uno-preset": "latest",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^4.0.4",
-    "typescript": "^5.5.4",
-    "unocss": "^0.58.5",
-    "vite": "^5.1.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "unocss": "^66.0.0",
+    "vite": "^6.2.2"
   }
 }
