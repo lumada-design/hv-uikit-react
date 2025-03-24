@@ -6,11 +6,6 @@ import { outlineStyles } from "../utils/focusUtils";
 export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
   root: {
     // #region `input` style reset
-    "input:-webkit-autofill": {
-      WebkitBoxShadow: `0 0 0px 1000px ${theme.colors.textDimmed} inset`,
-      WebkitTextFillColor: theme.colors.text,
-    },
-
     // Clears number input up/down arrows in Chrome and Firefox
     "input[type=number]": {
       MozAppearance: "textfield",
