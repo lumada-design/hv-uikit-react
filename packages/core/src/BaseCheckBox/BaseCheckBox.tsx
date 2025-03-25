@@ -8,7 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
-import { Box, Check, Partial } from "./icons";
+import { HvCheckBoxIcon } from "./CheckBoxIcon";
 
 export { staticClasses as baseCheckBoxClasses };
 
@@ -86,12 +86,6 @@ export interface HvBaseCheckBoxProps
   classes?: HvBaseCheckBoxClasses;
 }
 
-const icons = {
-  checkbox: <Box />,
-  checkboxPartial: <Partial />,
-  checkboxChecked: <Check />,
-};
-
 /**
  * A Checkbox is a mechanism that allows user to select one or more options.
  *
@@ -103,10 +97,8 @@ export const HvBaseCheckBox = forwardRef<
   HvBaseCheckBoxProps
 >(function HvBaseCheckBox(props, ref) {
   const {
-    id,
     classes: classesProp,
     className,
-    name,
     inputProps,
     onChange,
     onFocusVisible,
@@ -153,26 +145,26 @@ export const HvBaseCheckBox = forwardRef<
     [onFocusVisible],
   );
 
+  const params = { indeterminate, disabled, semantic };
+
   return (
     <MuiCheckbox
       ref={ref}
-      id={id}
-      name={name}
       value={value}
       className={cx(
         classes.root,
         {
-          [classes.disabled]: disabled,
           [classes.focusVisible]: focusVisible,
           [classes.checked]: checked,
           [classes.indeterminate]: indeterminate,
           [classes.semantic]: semantic,
+          [classes.disabled]: disabled,
         },
         className,
       )}
-      icon={icons.checkbox}
-      indeterminateIcon={icons.checkboxPartial}
-      checkedIcon={icons.checkboxChecked}
+      icon={<HvCheckBoxIcon {...params} />}
+      indeterminateIcon={<HvCheckBoxIcon variant="indeterminate" {...params} />}
+      checkedIcon={<HvCheckBoxIcon variant="checked" {...params} />}
       disabled={disabled}
       required={required}
       readOnly={readOnly}

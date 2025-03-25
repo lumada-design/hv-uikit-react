@@ -11,13 +11,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     height: 32,
     cursor: "pointer",
     borderRadius: "inherit",
-    "& svg": {
-      width: 16,
-      height: 16,
-      borderRadius: theme.radii.full,
-      border: `1px solid ${theme.colors.borderStrong}`,
-      backgroundColor: theme.colors.bgContainer,
-    },
     ":hover": {
       backgroundColor: theme.colors.bgHover,
     },
@@ -25,10 +18,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
   disabled: {
     cursor: "not-allowed",
     pointerEvents: "initial",
-    "& svg": {
-      borderColor: theme.colors.textDisabled,
-      backgroundColor: theme.colors.bgDisabled,
-    },
   },
   focusVisible: {
     "& svg": {
@@ -37,19 +26,6 @@ export const { staticClasses, useClasses } = createClasses("HvBaseRadio", {
     },
   },
   icon: {},
-  checked: {
-    "& svg": {
-      borderColor: "transparent",
-      backgroundColor: theme.colors.primaryStrong,
-      color: theme.colors.bgContainer,
-    },
-    "&$disabled": {
-      "& svg": {
-        borderColor: "transparent",
-        backgroundColor: theme.colors.borderDisabled,
-        color: theme.colors.bgDisabled,
-      },
-    },
-  },
+  checked: {},
   semantic: {},
 });

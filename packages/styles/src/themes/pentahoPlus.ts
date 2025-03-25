@@ -454,20 +454,20 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          borderRadius: "4px",
-          "&:hover": {
+          "&,:hover": {
             borderRadius: "4px",
           },
-          "& svg": {
-            borderRadius: "inherit",
-          },
+        },
+      },
+    },
+    HvCheckBoxIcon: {
+      classes: {
+        root: {
+          borderRadius: "4px",
         },
         checked: {
-          "& svg": {
-            border: `1px solid ${theme.colors.primary}`,
-            backgroundColor: theme.colors.primary,
-            color: theme.colors.atmo1,
-          },
+          backgroundColor: theme.colors.primary,
+          color: theme.colors.atmo1,
         },
       },
     },
@@ -476,11 +476,12 @@ const pentahoPlus = makeTheme((theme) => ({
         root: {
           borderRadius: "4px",
         },
+      },
+    },
+    HvRadioIcon: {
+      classes: {
         checked: {
-          "& svg": {
-            borderColor: theme.colors.primary,
-            backgroundColor: theme.colors.primary,
-          },
+          backgroundColor: theme.colors.primary,
         },
       },
     },
