@@ -51,7 +51,7 @@ export const HvWizardContent = ({
 
   const arrayChildren = Children.toArray(children) as ChildElement[];
 
-  const summaryRef = useRef<HTMLElement>();
+  const summaryRef = useRef<HTMLElement | undefined>(undefined);
   const resizedRef = useRef({ height: 0, width: 0 });
   const [containerRef, sizes] = useElementSize();
 

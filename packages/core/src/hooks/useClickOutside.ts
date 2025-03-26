@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export type HvClickOutsideEvent = MouseEvent | KeyboardEvent | TouchEvent;
 
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: React.RefObject<T>,
+  ref: React.RefObject<T | null>,
   handler: (event: HvClickOutsideEvent) => void,
 ) => {
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useState } from "react";
+import { useState } from "react";
 import { css } from "@emotion/css";
 import { clsx } from "clsx";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
@@ -99,7 +99,7 @@ const ThemeValue = ({
   level,
   label,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   level: number;
   label: string;
 }) => (
@@ -126,7 +126,7 @@ export const ThemeStructure = () => {
     value: object | string | number,
     label: string,
     level: number,
-  ): ReactElement => {
+  ) => {
     return (
       <HvAccordion
         key={`${label}-${level}`}
@@ -155,7 +155,7 @@ export const ThemeStructure = () => {
     value: object | string | number | undefined,
     label: string,
     level: number,
-  ): ReactElement => {
+  ): React.ReactNode => {
     if (value && typeof value === "object" && !Array.isArray(value)) {
       // Level
       return (

@@ -43,7 +43,7 @@ export interface HvTagProps
   /** The color variant of the tag */
   color?: HvColorAny;
   /** Icon used to customize the delete icon */
-  deleteIcon?: React.ReactElement;
+  deleteIcon?: React.ReactElement<any>;
   /**
    * The callback fired when the delete icon is pressed.
    * This function has to be provided to the component, in order to render the delete icon

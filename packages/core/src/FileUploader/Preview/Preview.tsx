@@ -17,7 +17,7 @@ export interface HvFileUploaderPreviewProps
   /**
    * Content that represents the preview of an uploaded file.
    */
-  children: React.ReactElement;
+  children: React.ReactNode;
   /**
    * Callback executed when the preview is unmounted.
    *

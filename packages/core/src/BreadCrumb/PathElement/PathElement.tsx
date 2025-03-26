@@ -10,7 +10,7 @@ export type HvPathElementClasses = ExtractNames<typeof useClasses>;
 export interface HvPathElementProps {
   last?: boolean;
   classes?: HvPathElementClasses;
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
 }
 
 export const HvPathElement = ({

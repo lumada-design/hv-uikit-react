@@ -32,13 +32,13 @@ export interface HvDotPaginationProps
    *
    * The default icon is `OtherStep`.
    */
-  unselectedIcon?: React.ReactElement;
+  unselectedIcon?: React.ReactElement<any>;
   /**
    * Icon to override the default one used for the selected state.
    *
    * The default icon is `CurrentStep`.
    */
-  selectedIcon?: React.ReactElement;
+  selectedIcon?: React.ReactElement<any>;
   /**
    *  The number of pages the component has.
    */
@@ -65,8 +65,8 @@ export interface HvDotPaginationProps
 }
 
 const getSelectorIcons = (
-  radioIcon?: React.ReactElement,
-  radioCheckedIcon?: React.ReactElement,
+  radioIcon?: React.ReactElement<any>,
+  radioCheckedIcon?: React.ReactElement<any>,
   classes?: HvDotPaginationClasses,
 ) => {
   return {
