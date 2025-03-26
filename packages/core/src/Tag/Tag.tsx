@@ -1,9 +1,5 @@
 import { cloneElement, forwardRef, isValidElement } from "react";
-import {
-  Checkbox,
-  CheckboxCheck,
-  CloseXS,
-} from "@hitachivantara/uikit-react-icons";
+import { CloseXS } from "@hitachivantara/uikit-react-icons";
 import {
   mergeStyles,
   useDefaultProps,
@@ -16,6 +12,7 @@ import {
   type HvSize,
 } from "@hitachivantara/uikit-styles";
 
+import { HvCheckBoxIcon } from "../BaseCheckBox/CheckBoxIcon";
 import { HvButtonBase, HvButtonBaseProps } from "../ButtonBase";
 import { useControlled } from "../hooks/useControlled";
 import { HvTypography } from "../Typography";
@@ -126,8 +123,6 @@ export const HvTag = forwardRef<
 
   const isClickable = !!(onClick || onDelete || selectable);
 
-  const CheckboxIcon = isSelected ? CheckboxCheck : Checkbox;
-
   const deleteIcon =
     deleteIconProp && isValidElement(deleteIconProp) ? (
       cloneElement<any>(deleteIconProp, {
@@ -182,10 +177,10 @@ export const HvTag = forwardRef<
     >
       {iconProp}
       {selectable && showSelectIcon && (
-        <CheckboxIcon
+        <HvCheckBoxIcon
           className={classes.icon}
-          color={(disabled && ["bgPageSecondary", "textDisabled"]) || undefined}
-          size="XS"
+          variant={isSelected ? "checked" : "default"}
+          disabled={disabled}
         />
       )}
       <HvTypography

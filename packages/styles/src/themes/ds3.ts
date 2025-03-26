@@ -251,30 +251,27 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           borderRadius: "0px",
-          "& svg": {
-            borderRadius: "0px",
-            border: `1px solid ${theme.colors.text}`,
-          },
+        },
+      },
+    },
+    HvCheckBoxIcon: {
+      classes: {
+        root: {
+          borderRadius: "0px",
+          borderColor: theme.colors.text,
         },
         checked: {
-          "& svg": {
-            border: `1px solid ${theme.colors.text}`,
-            backgroundColor: theme.colors.text,
-            color: theme.colors.atmo1,
-          },
+          backgroundColor: theme.colors.text,
+          color: theme.colors.atmo1,
         },
         semantic: {
-          "&.HvBaseCheckBox-indeterminate": {
-            "& svg": {
-              backgroundColor: theme.colors.textLight,
-              color: theme.colors.textDark,
-            },
+          "&[data-variant=indeterminate]": {
+            backgroundColor: theme.colors.textLight,
+            color: theme.colors.textDark,
           },
         },
         indeterminate: {
-          "& svg": {
-            color: theme.colors.text,
-          },
+          color: theme.colors.text,
         },
       },
     },
@@ -393,12 +390,13 @@ const ds3 = makeTheme((theme) => ({
             borderRadius: "0px",
           },
         },
+      },
+    },
+    HvRadioIcon: {
+      classes: {
         checked: {
-          "& svg": {
-            borderColor: theme.colors.text,
-            backgroundColor: theme.colors.text,
-            color: theme.colors.bgPage,
-          },
+          backgroundColor: theme.colors.text,
+          color: theme.colors.bgPage,
         },
       },
     },

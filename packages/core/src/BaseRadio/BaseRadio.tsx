@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./BaseRadio.styles";
-import { Selected, Unselected } from "./icons";
+import { HvRadioIcon } from "./RadioIcon";
 
 export { staticClasses as baseRadioClasses };
 
@@ -85,11 +85,6 @@ export interface HvBaseRadioProps
   onBlur?: (event: React.FocusEvent<any>) => void;
 }
 
-const icons = {
-  radio: <Unselected />,
-  radioChecked: <Selected />,
-};
-
 /**
  * A Radio Button is a mechanism that allows user to select one or more options.
  *
@@ -101,21 +96,17 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
     const {
       classes: classesProp,
       className,
-      id,
-      name,
       value = "on",
-      required = false,
-      readOnly = false,
-      disabled = false,
+      required,
+      readOnly,
+      disabled,
       checked,
       defaultChecked,
       onChange,
-      semantic = false,
+      semantic,
       inputProps,
       onFocusVisible,
       onBlur,
-      icon,
-      checkedIcon,
       ...others
     } = useDefaultProps("HvBaseRadio", props);
 
@@ -153,8 +144,6 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
     return (
       <MuiRadio
         ref={ref}
-        id={id}
-        name={name}
         className={cx(
           classes.root,
           {
@@ -165,8 +154,8 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
           },
           className,
         )}
-        icon={icon || icons.radio}
-        checkedIcon={checkedIcon || icons.radioChecked}
+        icon={<HvRadioIcon disabled={disabled} />}
+        checkedIcon={<HvRadioIcon checked disabled={disabled} />}
         color="default"
         disabled={disabled}
         required={required}

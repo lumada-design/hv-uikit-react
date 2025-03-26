@@ -78,8 +78,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
   },
   // TODO: remove in favour of `hasIcon` once it's no longer needed
   icon: {
-    width: 12,
-    height: 12,
+    fontSize: 12,
   },
 
   /** @deprecated use `root` instead */
