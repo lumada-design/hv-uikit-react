@@ -93,7 +93,7 @@ const CodeEditor = ({
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between px-xs py-1 border border-b-0 border-atmo4">
+      <div className="flex items-center justify-between px-xs py-xs border border-b-0 border-border">
         <HvIconButton
           title="Download"
           component="a"

@@ -41,33 +41,33 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="py-6 border-t border-[var(--uikit-colors-atmo2)]">
-      <div className="max-w-[44rem] mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:justify-between space-y-4 md:space-y-0">
+    <footer className="py-lg border-t border-bgPage">
+      <div className="max-w-1400px mx-auto px-md">
+        <div className="flex flex-col md:flex-row md:justify-between space-y-md md:space-y-0">
           {/* Logo Section with More Space */}
-          <div className="flex flex-col md:mb-0 flex-grow">
+          <div className="flex flex-col">
             <a
               aria-label="UIKit"
               href="/"
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-sm"
             >
               <UIKitLogo />
             </a>
-            <p className="text-sm mt-2">by Hitachi Vantara © 2024</p>
+            <p className="text-sm mt-sm">by Hitachi Vantara © 2024</p>
           </div>
 
           {/* Link Groups Right-Aligned */}
-          <div className="grid grid-cols-3 text-md gap-5 md:gap-20">
+          <div className="grid grid-cols-3 text-md gap-lg md:gap-xl">
             {footerLinks.map((group) => (
               <div key={group.title} className="flex flex-col">
-                <p className="font-semibold text-[var(--uikit-colors-primary)] mb-1">
+                <p className="font-semibold text-primary mb-xs">
                   {group.title}
                 </p>
                 {group.links.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="hover:text-[var(--uikit-colors-primary)] pb-1"
+                    className="hover:text-primary pb-xs"
                   >
                     {link.label}
                   </a>

@@ -38,7 +38,7 @@ export const ToggableControls = ({
   };
 
   return (
-    <div className="flex ml-auto items-center py-1 gap-1">
+    <div className="flex ml-auto items-center py-xs gap-xs">
       {/* Toggle between Code and Preview */}
       <HvTooltip title={showPreview ? "Show Code" : "Show Preview"}>
         <HvButton

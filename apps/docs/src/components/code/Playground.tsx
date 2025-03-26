@@ -101,10 +101,7 @@ export const Playground = ({
   );
 
   return (
-    <section
-      className="[&>*]:border-[var(--uikit-colors-atmo4)]"
-      aria-label="Playground"
-    >
+    <section className="[&>*]:border-border" aria-label="Playground">
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
@@ -134,7 +131,7 @@ export const Playground = ({
       <div className="max-h-72 overflow-auto rounded-b-round border border-t-0 max-h-250px">
         <CodeEditor
           readOnly
-          className="font-mono text-sm leading-2.2"
+          className="font-mono text-sm leading-sm"
           value={code}
           theme={editorTheme}
         />

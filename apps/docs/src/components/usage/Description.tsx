@@ -20,15 +20,15 @@ export const Description = () => {
       <ReactMarkdown className="markdown">
         {meta.docgen?.description}
       </ReactMarkdown>
-      <div className="flex flex-row gap-4 mt-3">
-        <div className="flex flex-row gap-1 items-center">
+      <div className="flex flex-row gap-md mt-md">
+        <div className="flex flex-row gap-xs items-center">
           <GitHubLogo />
           <HvTypography link component="a" href={meta.source} target="_blank">
             Source Code
           </HvTypography>
           <ArrowUpRight />
         </div>
-        <div className="flex flex-row gap-1 items-center">
+        <div className="flex flex-row gap-xs items-center">
           <NpmLogo />
           <HvTypography
             link

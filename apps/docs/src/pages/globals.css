@@ -9,7 +9,7 @@ article > main h2 {
 }
 
 article > main h3._mt-8 {
-  @apply mt-6;
+  @apply mt-lg;
 }
 
 article > main h3._mt-8 + p {
@@ -31,28 +31,28 @@ body,
 }
 
 .nextra-sidebar-container {
-  @apply w-[7rem];
+  @apply w-224px;
 }
 
 .nextra-nav-container nav,
 .nextra-nav-container + div {
-  @apply max-w-[44rem];
+  @apply max-w-1408px;
 }
 
 .nextra-nav-container nav {
-  @apply px-3;
+  @apply px-md;
 }
 
 .nextra-nav-container + div {
-  @apply mt-4;
+  @apply mt-md;
 }
 
 .nextra-nav-container a:last-of-type svg {
-  @apply w-2.5;
+  @apply w-20px;
 }
 
 .nextra-nav-container button div svg {
-  @apply w-2 h-2;
+  @apply size-16px;
 }
 
 .nextra-content {
@@ -60,7 +60,7 @@ body,
 }
 
 .nextra-toc {
-  @apply w-[7rem];
+  @apply w-224px;
 }
 
 .nextra-toc a {
@@ -82,7 +82,7 @@ body,
 }
 
 .nextra-breadcrumb {
-  @apply mb-2;
+  @apply mb-sm;
 }
 
 @media only screen and (max-width: 768px) {
