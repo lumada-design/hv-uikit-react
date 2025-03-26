@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvCodeEditor", {
       borderRight: `solid 1px ${theme.colors.atmo4}`,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider": {
-      borderRadius: "5px",
+      borderRadius: theme.radii.base,
       background: theme.colors.secondary_60,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider:hover": {

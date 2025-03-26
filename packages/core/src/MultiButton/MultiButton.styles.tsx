@@ -21,7 +21,7 @@ export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
       padding: 0,
       flex: "1 1 0%",
       borderColor: "inherit",
-      borderRadius: 0,
+      borderRadius: theme.radii.none,
       fontWeight: theme.typography.body.fontWeight,
       "&:disabled": {
         color: theme.colors.textDisabled,

@@ -391,7 +391,9 @@ const pentahoPlus = makeTheme((theme) => ({
   },
   radii: {
     ...radii,
-    base: "6px",
+    base: "4px",
+    round: "8px",
+    large: "16px",
   },
   components: {
     HvLoading: {
@@ -430,8 +432,8 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         messageIcon: {
-          borderRadius: 8,
           alignSelf: "start",
+          borderRadius: theme.radii.round,
           color: "var(--icolor)",
           outline: `1px solid var(--outline)`,
           backgroundColor: "var(--bg)",
@@ -455,14 +457,14 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          borderRadius: "4px",
+          borderRadius: theme.radii.base,
         },
       },
     },
     HvCheckBoxIcon: {
       classes: {
         root: {
-          borderRadius: "4px",
+          borderRadius: theme.radii.base,
         },
         checked: {
           backgroundColor: theme.colors.primary,
@@ -473,7 +475,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseRadio: {
       classes: {
         root: {
-          borderRadius: "4px",
+          borderRadius: theme.radii.base,
         },
       },
     },
@@ -487,7 +489,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseSwitch: {
       classes: {
         root: {
-          borderRadius: 4,
+          borderRadius: theme.radii.base,
           "&:hover": {
             backgroundColor: theme.colors.bgHover,
           },
@@ -585,9 +587,9 @@ const pentahoPlus = makeTheme((theme) => ({
         hasIcon: {
           paddingLeft: theme.space.xs,
         },
-        xs: { borderRadius: 4 },
-        sm: { borderRadius: 6 },
-        md: { borderRadius: 8 },
+        xs: { borderRadius: theme.radii.base },
+        sm: { borderRadius: theme.radii.base },
+        md: { borderRadius: theme.radii.round },
         label: {
           paddingLeft: 8,
           paddingRight: 8,
@@ -781,12 +783,12 @@ const pentahoPlus = makeTheme((theme) => ({
               backgroundColor: theme.colors.primaryDimmed,
             },
             "&:not(.HvMultiButton-firstButton, .HvMultiButton-lastButton)": {
-              borderRadius: 0,
+              borderRadius: theme.radii.none,
             },
           },
         },
         vertical: {
-          borderRadius: 16,
+          borderRadius: theme.radii.large,
           borderColor: theme.colors.border,
         },
       },
@@ -871,7 +873,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvVerticalNavigationAction: {
       classes: {
         action: {
-          borderRadius: "8px",
+          borderRadius: theme.radii.round,
           "&:hover, &:focus": {
             backgroundColor: slate[700],
           },
@@ -883,7 +885,7 @@ const pentahoPlus = makeTheme((theme) => ({
         root: {
           minHeight: "32px",
           borderLeft: "unset",
-          borderRadius: "8px",
+          borderRadius: theme.radii.round,
           "&.HvIsFocused": {
             backgroundColor: slate[700],
           },
@@ -914,7 +916,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         content: {
           borderLeft: "unset",
-          borderRadius: "8px",
+          borderRadius: theme.radii.round,
           ".HvVerticalNavigationTreeViewItem-selected>&": {
             background: blue[950],
             borderLeft: "unset",
@@ -939,7 +941,7 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         icon: {
           "& .HvAvatar-root": {
-            borderRadius: "8px",
+            borderRadius: theme.radii.round,
           },
         },
       },
@@ -950,7 +952,7 @@ const pentahoPlus = makeTheme((theme) => ({
           outline: `1px solid ${theme.colors.borderSubtle}`,
           overflow: "hidden",
           height: "fit-content",
-          borderRadius: 16,
+          borderRadius: theme.radii.large,
           "& > :last-child:not(.HvCardMedia-root)": {
             paddingBottom: theme.space.sm,
           },

@@ -12,7 +12,7 @@ export const { staticClasses, useClasses } = createClasses("HvCanvasPanelTab", {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    borderRadius: "16px 16px 0 0",
+    borderRadius: `${theme.radii.large} ${theme.radii.large} 0 0`,
     backgroundColor: theme.colors.bgPage,
     color: theme.colors.textSubtle,
     overflow: "hidden",
