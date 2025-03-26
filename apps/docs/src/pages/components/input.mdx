@@ -169,32 +169,26 @@ export default function Demo() {
 }
 ```
 
-### Prefix and Suffix
+### Adornments
 
-If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label (`HvLabel`) and description (`HvInfoMessage`).
+You can use `startAdornment` and `endAdornment` to create custom input layouts, such as prefixes and suffixes.
 
 ```tsx live
-<div className="w-400px">
-  <div className="flex items-start">
-    <HvLabel label="Subdomain" htmlFor="subdomain-input" />
-    <HvInfoMessage id="subdomain-description">
-      Choose your application subdomain
-    </HvInfoMessage>
-  </div>
-  <div className="flex gap-xs w-full items-baseline">
-    <div>https://</div>
-    <HvInput
-      id="subdomain"
-      name="subdomain"
-      aria-describedby="subdomain-description"
-      placeholder="Enter sub-domain"
-      className="grow-1"
-      validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
-      validationMessages={{ error: "Invalid subdomain" }}
-    />
-    <div>.lumada.org</div>
-  </div>
-</div>
+<HvInput
+  name="subdomain"
+  label="Subdomain"
+  description="Choose your application subdomain"
+  placeholder="Enter sub-domain"
+  className="w-400px"
+  startAdornment={
+    <span className="h-full content-center px-xxs">https://</span>
+  }
+  endAdornment={
+    <span className="h-full content-center px-xxs">.hitachivantara.com</span>
+  }
+  validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
+  validationMessages={{ error: "Invalid subdomain" }}
+/>
 ```
 
 ### Autocomplete

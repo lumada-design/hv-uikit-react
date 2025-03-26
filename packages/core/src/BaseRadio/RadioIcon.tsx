@@ -5,17 +5,11 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { SvgBase } from "../icons";
 import type { HvBaseRadioProps } from "./BaseRadio";
 
 const { useClasses } = createClasses("HvRadioIcon", {
   root: {
-    display: "inline-flex",
-    fill: "currentcolor",
-    width: "1em",
-    height: "1em",
-    flexShrink: 0,
-
-    fontSize: 16,
     borderRadius: theme.radii.full,
     border: `1px solid ${theme.colors.borderStrong}`,
     backgroundColor: theme.colors.bgContainer,
@@ -53,7 +47,7 @@ export const HvRadioIcon = (props: HvRadioIconProps) => {
   const { classes, cx } = useClasses(classesProp, false);
 
   return (
-    <svg
+    <SvgBase
       viewBox="0 0 16 16"
       className={cx(classes.root, className, {
         [classes.checked]: checked,
@@ -62,6 +56,6 @@ export const HvRadioIcon = (props: HvRadioIconProps) => {
       })}
     >
       {checked && <circle cx="8" cy="8" r="4.5" />}
-    </svg>
+    </SvgBase>
   );
 };
