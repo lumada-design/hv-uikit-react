@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router";
-import { useTheme } from "@mui/material/styles";
+import { useTheme as useMuiTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   HvButton,
@@ -8,8 +8,9 @@ import {
   HvHeaderBrand,
   HvHeaderNavigation,
   HvIconButton,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
-import { Debug, Menu } from "@hitachivantara/uikit-react-icons";
+import { Debug, Menu, ThemeSwitcher } from "@hitachivantara/uikit-react-icons";
 
 import logo from "~/assets/logo.png";
 import { useNavigationContext } from "~/context/navigation";
@@ -17,7 +18,8 @@ import { useGeneratorContext } from "~/generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
+  const theme = useMuiTheme();
+  const { selectedMode, colorModes, changeTheme } = useTheme();
   const { activePath, navigation } = useNavigationContext();
   const { setOpen, open, setTutorialOpen } = useGeneratorContext();
 
@@ -53,10 +55,19 @@ export const Header = () => {
 
       <HvHeaderActions>
         {import.meta.env.DEV && (
-          <HvIconButton title="Test page" component={NavLink} to="/test">
+          <HvIconButton title="Test page" component={NavLink} to="/debug">
             <Debug />
           </HvIconButton>
         )}
+        <HvIconButton
+          title="Change color mode"
+          onClick={() => {
+            const nextIdx = colorModes.findIndex((m) => m === selectedMode) + 1;
+            changeTheme(undefined, colorModes[nextIdx % colorModes.length]);
+          }}
+        >
+          <ThemeSwitcher />
+        </HvIconButton>
         <HvButton
           variant="secondaryGhost"
           onClick={handleOpenTutorial}

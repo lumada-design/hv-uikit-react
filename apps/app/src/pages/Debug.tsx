@@ -1,5 +1,9 @@
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
 export const Component = () => {
-  return <HvButton>Test page</HvButton>;
+  return (
+    <div className="flex gap-sm">
+      <HvButton>Test page</HvButton>
+    </div>
+  );
 };
