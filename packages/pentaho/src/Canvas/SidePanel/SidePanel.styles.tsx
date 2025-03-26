@@ -33,7 +33,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       justifyContent: "center",
       boxShadow,
-      borderRadius: "0px 16px 16px 0px",
+      borderRadius: `0px ${theme.radii.large} ${theme.radii.large} 0px`,
       position: "absolute",
       transition: "left 0.3s ease",
       "&&": {

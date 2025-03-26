@@ -250,14 +250,14 @@ const ds3 = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
         },
       },
     },
     HvCheckBoxIcon: {
       classes: {
         root: {
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
           borderColor: theme.colors.text,
         },
         checked: {
@@ -387,7 +387,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           "&:hover": {
-            borderRadius: "0px",
+            borderRadius: theme.radii.none,
           },
         },
       },
@@ -405,7 +405,7 @@ const ds3 = makeTheme((theme) => ({
         root: {
           width: "32px",
           height: "16px",
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
           "&:hover": {
             backgroundColor: "transparent",
           },
@@ -516,7 +516,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           outline: "none",
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
         },
         selectable: {
           "&:hover": {
@@ -576,7 +576,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         container: {
           "&:hover": {
-            borderRadius: "0px",
+            borderRadius: theme.radii.none,
           },
         },
       },
@@ -712,7 +712,7 @@ const ds3 = makeTheme((theme) => ({
     HvDialog: {
       classes: {
         paper: {
-          borderRadius: "0",
+          borderRadius: theme.radii.none,
         },
       },
     },
@@ -758,7 +758,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           border: "none",
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
         },
         progressbarContainer: {
           height: "2px",
@@ -782,7 +782,7 @@ const ds3 = makeTheme((theme) => ({
         overlay: {
           backgroundColor: theme.colors.atmo3,
           opacity: "0.75",
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
         },
       },
     },
@@ -791,7 +791,7 @@ const ds3 = makeTheme((theme) => ({
         dropZoneContainer: {
           border: `1px dotted ${theme.colors.atmo4}`,
           background: theme.colors.atmo2,
-          borderRadius: "0px",
+          borderRadius: theme.radii.none,
           ":hover,:focus-within": {
             borderColor: theme.colors.secondary,
           },
@@ -836,7 +836,7 @@ const ds3 = makeTheme((theme) => ({
           "&&": {
             padding: theme.space.xs,
             borderWidth: 0,
-            borderRadius: 0,
+            borderRadius: theme.radii.none,
           },
         },
         sectionName: {
@@ -946,7 +946,7 @@ const ds3 = makeTheme((theme) => ({
         button: {
           height: "32px",
           width: "32px",
-          borderRadius: "0%",
+          borderRadius: theme.radii.none,
           cursor: "pointer",
           "&:hover": {
             "& .HvVerticalScrollListItem-notSelected": {
@@ -1105,7 +1105,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         container: {
           "&:hover": {
-            borderRadius: "0px",
+            borderRadius: theme.radii.none,
           },
         },
       },
@@ -1183,7 +1183,7 @@ const ds3 = makeTheme((theme) => ({
           padding: "0 20px",
           "&:hover": {
             backgroundColor: "transparent",
-            borderRadius: "0px",
+            borderRadius: theme.radii.none,
             "&::after": {
               height: "1px",
               backgroundColor: theme.colors.secondary_60,
@@ -1298,18 +1298,18 @@ const ds3 = makeTheme((theme) => ({
           backgroundColor: theme.colors.atmo1,
         },
         variantList: {
-          borderRadius: 0,
+          borderRadius: theme.radii.none,
           "& td": {
             borderTop: "1px solid transparent",
             borderBottom: "1px solid transparent",
           },
           "& td:first-of-type": {
             borderLeft: "1px solid transparent",
-            borderRadius: 0,
+            borderRadius: theme.radii.none,
           },
           "& td:last-of-type": {
             borderRight: "1px solid transparent",
-            borderRadius: 0,
+            borderRadius: theme.radii.none,
           },
           "&.HvTableRow-selected": {
             "& td": {
@@ -1318,11 +1318,11 @@ const ds3 = makeTheme((theme) => ({
             },
             "& td:first-of-type": {
               borderLeft: `1px solid ${theme.colors.secondary}`,
-              borderRadius: 0,
+              borderRadius: theme.radii.none,
             },
             "& td:last-of-type": {
               borderRight: `1px solid ${theme.colors.secondary}`,
-              borderRadius: 0,
+              borderRadius: theme.radii.none,
             },
 
             "&:hover": {
@@ -1332,11 +1332,11 @@ const ds3 = makeTheme((theme) => ({
               },
               "& td:first-of-type": {
                 borderLeft: `1px solid ${theme.colors.atmo4}`,
-                borderRadius: 0,
+                borderRadius: theme.radii.none,
               },
               "& td:last-of-type": {
                 borderRight: `1px solid ${theme.colors.atmo4}`,
-                borderRadius: 0,
+                borderRadius: theme.radii.none,
               },
             },
           },
@@ -1348,15 +1348,15 @@ const ds3 = makeTheme((theme) => ({
             },
             "& td:first-of-type": {
               borderLeft: `1px solid ${theme.colors.atmo4}`,
-              borderRadius: 0,
+              borderRadius: theme.radii.none,
             },
             "& td:last-of-type": {
               borderRight: `1px solid ${theme.colors.atmo4}`,
-              borderRadius: 0,
+              borderRadius: theme.radii.none,
             },
           },
           "&.HvIsFocused": {
-            borderRadius: 0,
+            borderRadius: theme.radii.none,
           },
         },
       },
@@ -1378,7 +1378,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         popper: {
           "& .HvTooltip-tooltip": {
-            borderRadius: "0px",
+            borderRadius: theme.radii.none,
           },
         },
       },

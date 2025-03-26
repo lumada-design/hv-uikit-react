@@ -98,7 +98,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
   },
   readOnly: {},
   focusVisible: {
-    borderRadius: "8px",
+    borderRadius: theme.radii.round,
     ...outlineStyles,
   },
 });

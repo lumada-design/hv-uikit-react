@@ -48,7 +48,7 @@ export const { staticClasses, useClasses } = createClasses(
       },
       [`&:hover:not(.${tabClasses.selected}), &:focus:not(.${tabClasses.selected})`]:
         {
-          borderRadius: 0,
+          borderRadius: theme.radii.none,
           backgroundColor: TAB_COLOR,
           borderColor: TAB_COLOR,
           "&:first-of-type": { borderEndStartRadius: theme.radii.base },

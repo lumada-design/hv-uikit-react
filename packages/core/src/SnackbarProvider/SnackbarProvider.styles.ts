@@ -1,4 +1,5 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
 export const { useClasses, staticClasses } = createClasses(
   "HvSnackbarProvider",
@@ -15,7 +16,7 @@ export const { useClasses, staticClasses } = createClasses(
         fontFamily: "inherit",
         fontWeight: "inherit",
         lineHeight: "inherit",
-        borderRadius: "0",
+        borderRadius: theme.radii.none,
         letterSpacing: "inherit",
         backgroundColor: "inherit",
       },

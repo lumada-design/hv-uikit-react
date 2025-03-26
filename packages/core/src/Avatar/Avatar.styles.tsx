@@ -29,7 +29,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
 
     ":focus-visible": {
       ...outlineStyles,
-      borderRadius: 0,
+      borderRadius: theme.radii.none,
     },
   },
   xs: { width: 24, height: 24, fontSize: "0.5rem" },

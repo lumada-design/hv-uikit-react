@@ -22,7 +22,7 @@ const classes = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: "16px",
+    borderRadius: theme.radii.large,
     backgroundColor: theme.colors.atmo1,
     boxShadow: theme.colors.shadow,
     borderWidth: "1px",

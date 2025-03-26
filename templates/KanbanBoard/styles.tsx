@@ -19,7 +19,7 @@ const styles = {
   column: css({
     flex: 1,
     padding: theme.spacing("sm", "xs"),
-    borderRadius: 20,
+    borderRadius: theme.radii.large,
     backgroundColor: theme.colors.primary_20,
   }),
   columnHeader: css({

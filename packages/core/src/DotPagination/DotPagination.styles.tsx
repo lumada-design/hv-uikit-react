@@ -46,7 +46,7 @@ export const { useClasses, staticClasses } = createClasses("HvDotPagination", {
       backgroundColor: "currentcolor",
       width: "1em",
       height: "1em",
-      borderRadius: "50%",
+      borderRadius: theme.radii.full,
     },
   },
 });
