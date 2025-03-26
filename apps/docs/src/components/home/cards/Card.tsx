@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import {
   HvCard,
   HvCardContent,
@@ -18,20 +17,15 @@ type CardProps = {
 
 export const Card = ({ children, title, subtitle, media, icon }: CardProps) => {
   return (
-    <HvCard
-      className={clsx(
-        "!bg-white dark:!bg-[var(--uikit-colors-atmo1)]",
-        "dark:!outline-[var(--uikit-colors-atmo4)]",
-      )}
-    >
+    <HvCard className={"!bg-white dark:!bg-bgContainer dark:!outline-border"}>
       <HvCardHeader
         title={<HvTypography variant="title3">{title}</HvTypography>}
         subheader={<HvTypography variant="caption1">{subtitle}</HvTypography>}
         icon={icon}
-        className="mx-1 mt-1"
+        className="mx-xs mt-xs"
       />
-      {media && <HvCardMedia className="my-1">{media}</HvCardMedia>}
-      <HvCardContent className="!px-3">{children}</HvCardContent>
+      {media && <HvCardMedia className="my-xs">{media}</HvCardMedia>}
+      <HvCardContent className="!px-md">{children}</HvCardContent>
     </HvCard>
   );
 };

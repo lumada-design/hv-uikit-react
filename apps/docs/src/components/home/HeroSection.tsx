@@ -20,7 +20,7 @@ const SlideText = () => {
   return (
     <div className="flex whitespace-nowrap">
       Products
-      <span className="relative ml-2 h-[1.2em] w-full overflow-hidden color-[var(--uikit-colors-primary)]">
+      <span className="relative ml-sm h-[1.2em] w-full overflow-hidden color-primary">
         <style>{slideKeyframes}</style>
         {["Faster", "Smarter", "Smoothly"].map((text, index) => (
           <span
@@ -42,14 +42,14 @@ const SlideText = () => {
 };
 
 export const HeroSection = () => (
-  <div className="p-3 max-md:mt-5">
+  <div className="p-md max-md:mt-40px">
     {/* <div className="text-sm font-mono mb-2 hidden sm:block">
       <code className="!p-1">npx @hitachivantara/hv-uikit-cli create</code>
     </div> */}
     <h1
       className={clsx([
-        "text-[1.5rem] leading-[1.85rem] font-bold",
-        "max-sm:text-[0.9rem] max-sm:leading-[1.25rem]",
+        "text-3rem leading-3rem font-bold",
+        "max-sm:text-1.8rem max-sm:leading-2.5rem",
       ])}
     >
       Build your NEXT
@@ -58,23 +58,23 @@ export const HeroSection = () => (
     </h1>
     <h3
       className={clsx([
-        "max-w-[16.5rem]",
-        "text-[0.65rem] leading-[0.95rem] mt-2",
-        "max-sm:text-[0.5rem] max-sm:leading-[0.8rem]",
+        "max-w-528px",
+        "text-1.2rem leading-2rem mt-sm",
+        "max-sm:text-1rem max-sm:leading-1.6rem",
       ])}
     >
       <b>Hitachi Vantara</b> UI library that gives you the foundation to create
       consistent, top-tier digital experiences efficiently.
     </h3>
-    <HvButton size="lg" className="mt-3 max-sm:w-full mr-2">
+    <HvButton size="lg" className="mt-md max-sm:w-full mr-sm">
       Get Started
     </HvButton>
     <HvButton
       variant="subtle"
       size="lg"
-      className="mt-3 max-sm:w-full hidden sm:inline-flex"
+      className="mt-md max-sm:w-full hidden sm:inline-flex"
     >
-      Explore components <span className="ml-2" />
+      Explore components <span className="ml-sm" />
       <ArrowRight />
     </HvButton>
   </div>

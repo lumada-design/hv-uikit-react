@@ -31,7 +31,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   });
 
   return (
-    <section className="relative mt-md rounded-round [&>*]:border-[var(--uikit-colors-atmo4)]">
+    <section className="relative mt-md rounded-round [&>*]:border-border">
       {/* Compact Controls */}
       <ExpandableControls
         onToggle={() => setIsExpanded((prev) => !prev)}
@@ -43,12 +43,12 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       {/* Preview Section */}
       <div
         className={clsx(
-          "p-md pt-lg bg-[var(--uikit-colors-atmo2)] border rounded-inherit",
+          "p-md pt-lg bg-bgPage border rounded-inherit",
           isExpanded && "rounded-b-0",
         )}
       >
         {liveError ? (
-          <div className="text-red-500">{liveError}</div>
+          <div className="text-negative">{liveError}</div>
         ) : (
           <div>{element}</div>
         )}

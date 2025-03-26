@@ -60,13 +60,13 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
         <div
           className={clsx(
             "p-md pt-lg min-h-400px mb-lg",
-            "border border-[var(--uikit-colors-atmo3)] rounded-round",
-            "bg-[var(--uikit-colors-atmo1)] [&_tr]:table-row",
+            "border border-atmo3 rounded-round",
+            "bg-bgContainer [&_tr]:table-row",
           )}
         >
           {/* Render errors or the live preview */}
           {error ? (
-            <div className="text-red-500">{error}</div>
+            <div className="text-negative">{error}</div>
           ) : (
             <div>{element}</div>
           )}
@@ -90,7 +90,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
               value={activeTab}
               onChange={(_, value) => setActiveTab(value)}
               aria-label="File Tabs"
-              className="py-2"
+              className="py-sm"
             >
               {fileNames.map((fileName) => (
                 <HvTab

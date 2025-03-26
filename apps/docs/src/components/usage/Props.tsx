@@ -74,7 +74,7 @@ const PropsTable = ({ title, propsObj }: PropsTableProps) => {
           {columns.map((col, i) => (
             <HvTableHeader
               key={col.Header}
-              className={`!bg-transparent ${i === 0 ? "!pl-1" : ""}`}
+              className={`!bg-transparent ${i === 0 ? "!pl-xs" : ""}`}
             >
               {col.Header}
             </HvTableHeader>

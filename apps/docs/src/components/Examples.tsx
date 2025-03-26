@@ -49,7 +49,7 @@ export const Examples = () => {
   return (
     <div className="max-w-7xl">
       {/* Page Header */}
-      <div className="px-1 py-3">
+      <div className="px-xs py-md">
         <HvTypography variant="title2">Examples</HvTypography>
         <HvTypography variant="body">
           Explore practical examples demonstrating how to use our components in
@@ -66,26 +66,21 @@ export const Examples = () => {
       </div>
 
       {/* Section Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-lg">
         {sections.map((section) => (
           <Link
             key={section.title}
             href={section.path}
-            className={clsx(
-              "hover:bg-[var(--uikit-colors-atmo1)] rounded-round p-1",
-            )}
+            className={clsx("hover:bg-bgContainer rounded-round p-xs")}
           >
             {/* Placeholder for section preview */}
             <div
               className={clsx(
-                "h-20 bg-[var(--uikit-colors-atmo2)] border border-[var(--uikit-colors-atmo3)]",
-                "rounded-round mb-2 flex items-center justify-center",
+                "h-160px bg-bgPage border border-atmo3",
+                "rounded-round mb-sm flex items-center justify-center",
               )}
             >
-              <HvTypography
-                variant="body"
-                className="text-[var(--uikit-colors-secondary_80)]"
-              >
+              <HvTypography variant="body" className="text-textSubtle">
                 {getSectionIcon(section.title)}
               </HvTypography>
             </div>

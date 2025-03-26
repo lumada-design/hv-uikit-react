@@ -19,10 +19,10 @@ export const DataSecurity = () => {
       <div className="grid grid-cols-3">
         {securityData.map(({ title, count, color }) => (
           <div key={title}>
-            <HvTypography variant="captionLabel" className="mb-1">
+            <HvTypography variant="captionLabel" className="mb-xs">
               {title}
             </HvTypography>
-            <HvTag label={count.toString()} color={color} className="w-6" />
+            <HvTag label={count.toString()} color={color} className="w-48px" />
           </div>
         ))}
       </div>

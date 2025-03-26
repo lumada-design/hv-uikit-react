@@ -19,10 +19,10 @@ export const DataInsights = () => (
     }
   >
     <HvTypography variant="label">Data Quality</HvTypography>
-    <div className="mt-1 grid grid-cols-3 gap-sm justify-between">
+    <div className="mt-xs grid grid-cols-3 gap-sm justify-between">
       {data.map(({ title, value }) => (
         <div key={title}>
-          <HvTypography variant="caption1" className="mb-1">
+          <HvTypography variant="caption1" className="mb-xs">
             {title}
           </HvTypography>
           <HvTypography variant="title2" className="text-primary">

@@ -42,7 +42,7 @@ export const Classes = () => {
               {columns.map((el, i) => (
                 <HvTableHeader
                   key={el.Header}
-                  className={`!bg-transparent ${i === 0 ? "!pl-1" : ""}`}
+                  className={`!bg-transparent ${i === 0 ? "!pl-xs" : ""}`}
                 >
                   {el.Header}
                 </HvTableHeader>
@@ -56,7 +56,7 @@ export const Classes = () => {
                 id={`class-${c.name}`}
                 className="!bg-transparent"
               >
-                <HvTableCell className="w-[25%] !pl-1">
+                <HvTableCell className="w-[25%] !pl-xs">
                   <a
                     href={`#class-${c.name}`}
                     className="[&>span]:hover:visible"

@@ -28,7 +28,7 @@ export const ExpandableControls = ({
   };
 
   return (
-    <div className="absolute right-0 flex items-center p-1 gap-xs">
+    <div className="absolute right-0 flex items-center p-xs gap-xs">
       {/* Toggle Code Button */}
       <HvButton
         size="xs"
