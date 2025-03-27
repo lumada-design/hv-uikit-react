@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { Preview } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../../Button";
+import { EyeIcon } from "../../Input/icons";
 import { staticClasses, useClasses } from "./Preview.styles";
 
 export { staticClasses as fileUploaderPreviewClasses };
@@ -69,7 +69,7 @@ export const HvFileUploaderPreview = (props: HvFileUploaderPreviewProps) => {
         {children}
         {!disableOverlay && (
           <div className={classes.overlay} aria-hidden="true">
-            <Preview
+            <EyeIcon
               className={css({
                 position: "absolute",
                 left: "50%",

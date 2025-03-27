@@ -143,7 +143,7 @@ export const { staticClasses, useClasses } = createClasses(
         marginLeft: "var(--icon-margin-left)",
       },
       "> div:nth-of-type(2)": {
-        width: "14px",
+        width: "12px",
         marginLeft: "auto",
       },
       [`&& .${avatarClasses.root}`]: {
