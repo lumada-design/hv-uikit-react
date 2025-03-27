@@ -654,6 +654,14 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvButtonBase: {
+      classes: {
+        root: {
+          ":hover": { backgroundColor: theme.colors.primaryDimmed },
+          ":active": { backgroundColor: theme.colors.primarySubtle },
+        },
+      },
+    },
     HvButton: {
       classes: {
         root: {
@@ -746,9 +754,6 @@ const pentahoPlus = makeTheme((theme) => ({
             },
           },
         },
-
-        semantic: {},
-
         disabled: {
           color: theme.colors.textDisabled,
           ":not(.HvButton-ghost)": {
@@ -1021,11 +1026,37 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvLabel: {
+      classes: {
+        root: {
+          "& span[aria-hidden]": {
+            color: theme.form.errorColor,
+          },
+        },
+      },
+    },
     HvBaseInput: {
       classes: {
         root: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
+        },
+        disabled: {
+          backgroundColor: theme.colors.bgDisabled,
+        },
+      },
+    },
+    HvInput: {
+      classes: {
+        label: {
+          "& span[aria-hidden]::before": {
+            content: '" "',
+          },
+        },
+        inputRoot: {
+          ":has([type=search])": {
+            borderRadius: theme.radii.full,
+          },
         },
       },
     },

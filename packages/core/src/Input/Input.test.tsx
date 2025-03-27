@@ -110,7 +110,7 @@ describe("Input", () => {
     );
 
     expect(screen.getByLabelText("My input")).toBeDisabled(); // can't find by role searchbox since password inputs don't have a role...
-    const adornment = screen.getByLabelText("Reveal password"); // roles can't be used since the parent has aria-hidden
+    const adornment = screen.getByLabelText("Click to show password."); // roles can't be used since the parent has aria-hidden
     expect(adornment).toHaveAttribute("aria-disabled", "true");
   });
 

@@ -196,7 +196,7 @@ export interface HvInputProps<
 const DEFAULT_LABELS = {
   /** The label of the clear button. */
   clearButtonLabel: "Clear the text",
-  /** The label of the reveal password button. */
+  /** The label of the reveal password button. @deprecated unused */
   revealPasswordButtonLabel: "Reveal password",
   /** The tooltip of the reveal password button when the password is hidden. */
   revealPasswordButtonClickToShowTooltip: "Click to show password.",
@@ -630,8 +630,6 @@ export const HvInput = fixedForwardRef(function HvInput<
 
     return (
       <HvTooltip
-        disableFocusListener
-        disableTouchListener
         title={
           revealPassword
             ? labels?.revealPasswordButtonClickToHideTooltip
@@ -641,7 +639,6 @@ export const HvInput = fixedForwardRef(function HvInput<
         <HvAdornment
           className={classes.adornmentButton}
           onClick={() => setRevealPassword((s) => !s)}
-          aria-label={labels?.revealPasswordButtonLabel}
           aria-controls={setId(elementId, "input")}
           icon={<EyeIcon selected={revealPassword} />}
           tabIndex={0}
@@ -654,7 +651,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     revealPassword,
     labels?.revealPasswordButtonClickToHideTooltip,
     labels?.revealPasswordButtonClickToShowTooltip,
-    labels?.revealPasswordButtonLabel,
     classes.adornmentButton,
     elementId,
   ]);
