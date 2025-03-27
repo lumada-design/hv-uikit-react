@@ -5,7 +5,11 @@ import { suggestionsClasses } from "../FormElement/Suggestions";
 
 export const { staticClasses, useClasses } = createClasses("HvInput", {
   root: { display: "block" },
-  labelContainer: { display: "flex", alignItems: "flex-start" },
+  labelContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+    paddingBottom: 2,
+  },
   label: {},
   description: {},
   adornmentsBox: {
@@ -14,7 +18,7 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     height: "30px",
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 1,
+    borderRadius: "inherit",
   },
   icon: {
     // TODO: review in v6 - don't assume/force size
@@ -24,9 +28,7 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     },
   },
   adornmentButton: {
-    ":focus-visible,:hover": {
-      backgroundColor: "transparent",
-    },
+    borderRadius: "inherit",
   },
   iconClear: { display: "none" },
   hasSuggestions: {},

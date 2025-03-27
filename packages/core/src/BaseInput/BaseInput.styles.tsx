@@ -42,7 +42,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     alignItems: "stretch",
     ...theme.typography.body,
 
-    ":hover:not($disabled,$invalid,$readOnly)": {
+    ":hover:not($disabled,$readOnly)": {
       borderColor: theme.colors.primary,
     },
     ":focus-within:not($disabled)": {

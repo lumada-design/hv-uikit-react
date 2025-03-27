@@ -28,8 +28,5 @@ export const { staticClasses, useClasses } = createClasses("HvButtonBase", {
   disabled: {
     cursor: "not-allowed",
     color: theme.colors.textDisabled,
-    "&:hover, &:focus-visible": {
-      backgroundColor: "transparent",
-    },
   },
 });
