@@ -1,9 +1,29 @@
+import styled from "@emotion/styled";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 import { Table, Tetris, Ungroup } from "@hitachivantara/uikit-react-icons";
 
-import { Container } from "./styles";
+const Container = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  minHeight: 80,
+  gap: 15,
+  "> div": {
+    height: 80,
+    width: 70,
+  },
+  p: {
+    fontSize: 14,
+    textAlign: "left",
+  },
+  h3: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+});
 
-const Resources = () => (
+export const Resources = () => (
   <HvSimpleGrid
     breakpoints={[
       {
@@ -44,5 +64,3 @@ const Resources = () => (
     </Container>
   </HvSimpleGrid>
 );
-
-export default Resources;
