@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+
+  "references": [{ "path": "../app-shell-shared" }],
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "**/tests"],
+
+  "compilerOptions": {
+    "outDir": "dist/esm",
+    "composite": true,
+    "types": ["node"]
+  }
+}
