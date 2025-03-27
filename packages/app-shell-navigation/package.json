@@ -1,0 +1,56 @@
+{
+  "name": "@hitachivantara/app-shell-navigation",
+  "version": "1.2.8",
+  "description": "AppShell Navigation",
+  "author": "Hitachi Vantara - Boba Fett Team",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "module": "dist/esm/index.js",
+  "typings": "./dist/dts/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/dts/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm-run-all clean build:*",
+    "build:js": "npx vite build",
+    "clean": "npx rimraf ./dist *.tgz tsconfig.tsbuildinfo",
+    "dev": "npx vite build --watch",
+    "lint-check": "npx eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:eslint": "npm run lint-check -- --cache --fix",
+    "lint:prettier": "npx prettier --write \"src/**/*.{html,css,js,jsx,ts,tsx}\"",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@hitachivantara/app-shell-shared": "1.4.2",
+    "path-to-regexp": "^8.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@vitejs/plugin-react": "^4.2.0",
+    "i18next": "^23.7.7",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "react-error-boundary": "^4.0.10",
+    "react-i18next": "^13.5.0",
+    "rimraf": "^5.0.5",
+    "vite": "^5.0.4"
+  }
+}

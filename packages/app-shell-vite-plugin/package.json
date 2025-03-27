@@ -1,0 +1,67 @@
+{
+  "name": "@hitachivantara/app-shell-vite-plugin",
+  "version": "1.6.9",
+  "description": "AppShell Vite Plugin",
+  "author": "Hitachi Vantara - Boba Fett Team",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm-run-all clean build:*",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:esm-externals": "npx rollup --config",
+    "clean": "npx rimraf ./dist *.tgz tsconfig.tsbuildinfo",
+    "dev": "tsc-watch --noClear -p tsconfig.json",
+    "lint-check": "npx eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:eslint": "npm run lint-check -- --cache --fix",
+    "lint:prettier": "npx prettier --write \"src/**/*.{html,css,js,jsx,ts,tsx}\"",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@hitachivantara/app-shell-shared": "1.4.2",
+    "@hitachivantara/app-shell-ui": "1.9.0",
+    "@hitachivantara/uikit-react-icons": "^5.11.0",
+    "@hitachivantara/uikit-react-shared": "^5.3.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-virtual": "^3.0.1",
+    "es-module-shims": "^1.6.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "rollup": "^4.6.1",
+    "ts-node": "^10.9.1",
+    "vite-plugin-static-copy": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "tsc-watch": "^6.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^4.1.4 || ^5.0.4"
+  }
+}

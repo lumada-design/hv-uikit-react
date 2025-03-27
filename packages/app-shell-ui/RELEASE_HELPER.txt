@@ -1,0 +1,3 @@
+_The purpose of this file is to help with forcing a new version of the app-shell-ui package. To perform this task, simply change the following line to a new value. To avoid unnecessary/incorrect changelog entries, please do not use the "fix" or "feat" commit type ([check](/CONTRIBUTING.md) for more info).
+
+Dummy line: 2023-10-10 19:06
