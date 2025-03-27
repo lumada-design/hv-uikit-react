@@ -8,62 +8,33 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   container: {
     cursor: "pointer",
     display: "flex",
-    height: "32px",
+    alignItems: "center",
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    borderRadius: theme.radii.base,
 
-    "&:hover": {
+    "&:hover:not($disabled)": {
       backgroundColor: theme.colors.bgHover,
-      borderRadius: theme.radii.base,
+    },
+    ":where(:has($label)) $checkbox": {
+      borderRadius: "inherit",
     },
   },
+  invalidContainer: {},
   disabled: {
     cursor: "not-allowed",
     "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
   },
   focusVisible: {
+    backgroundColor: theme.colors.bgPageSecondary,
     ...outlineStyles,
-
-    "& div": {
-      backgroundColor: theme.colors.bgPageSecondary,
-    },
-
-    [`& $checkbox div > svg`]: {
-      outline: "none",
-      boxShadow: "none",
-    },
   },
-  invalidContainer: {
-    borderBottom: `1px solid ${theme.form.errorColor}`,
-
-    "&:hover": {
-      borderBottomLeftRadius: "0px",
-      borderBottomRightRadius: "0px",
-    },
-  },
-  checkbox: { height: "32px" },
-  invalidCheckbox: {
-    "::after": {
-      content: '""',
-      position: "absolute",
-      bottom: 0,
-      left: 0,
-      width: "100%",
-      height: 1,
-      backgroundColor: theme.form.errorColor,
-    },
-  },
+  checkbox: {},
+  invalidCheckbox: {},
   label: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
     verticalAlign: "middle",
     paddingRight: theme.space.xs,
-    whiteSpace: "nowrap",
     ...theme.typography.body,
     cursor: "pointer",
-    height: "32px",
     lineHeight: "32px",
     width: "100%",
   },

@@ -12,7 +12,7 @@ import { HvButton } from "../../Button";
 import { HvCheckBox } from "../../CheckBox";
 import { HvInput } from "../../Input";
 import { HvList, HvListProps, HvListValue } from "../../List";
-import { HvTypography } from "../../Typography";
+import { CounterLabel } from "../../utils/CounterLabel";
 import { setId } from "../../utils/setId";
 import type { HvDropdownLabels } from "../Dropdown";
 import { getSelected } from "../utils";
@@ -249,46 +249,22 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
     updateSelectAll(newList);
   };
 
-  /**
-   * Create selecteAll component.
-   *
-   * @returns {*}
-   */
   const renderSelectAll = () => {
-    const selectAll = labels?.selectAll;
-    const multiSelectionConjunction = labels?.multiSelectionConjunction;
-    const nbrSelected = getSelected(list).length;
-
-    const defaultLabel = (
-      <HvTypography component="span">
-        {nbrSelected > 0 ? (
-          <>
-            <b>{nbrSelected}</b>
-            {` ${multiSelectionConjunction} ${list.length}`}
-          </>
-        ) : (
-          <>
-            <b>{selectAll}</b>
-            {` (${list.length})`}
-          </>
-        )}
-      </HvTypography>
-    );
-
     return (
-      <div className={classes.selectAllContainer}>
-        <HvCheckBox
-          id={setId(id, "select-all")}
-          label={defaultLabel}
-          onChange={() => handleSelectAll()}
-          classes={{
-            container: classes.selection,
-          }}
-          className={classes.selectAll}
-          indeterminate={anySelected && !allSelected}
-          checked={allSelected}
-        />
-      </div>
+      <HvCheckBox
+        id={setId(id, "select-all")}
+        label={
+          <CounterLabel
+            selected={getSelected(list).length}
+            total={list.length}
+            conjunctionLabel={labels?.multiSelectionConjunction}
+          />
+        }
+        onChange={handleSelectAll}
+        className={classes.selectAll}
+        indeterminate={anySelected && !allSelected}
+        checked={allSelected}
+      />
     );
   };
 

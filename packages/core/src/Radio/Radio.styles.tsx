@@ -12,15 +12,21 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     borderRadius: theme.radii.base,
 
-    ":hover:not($disabled)": {
+    "&:hover:not($disabled)": {
       backgroundColor: theme.colors.bgHover,
+    },
+    ":where(:has($label)) $radio": {
+      borderRadius: "inherit",
     },
   },
   invalidContainer: {},
   disabled: {
     cursor: "not-allowed",
-
     "& $label": { color: theme.colors.textDisabled, cursor: "not-allowed" },
+  },
+  focusVisible: {
+    backgroundColor: theme.colors.bgPageSecondary,
+    ...outlineStyles,
   },
   radio: {},
   invalidRadio: {},
@@ -31,10 +37,6 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     cursor: "pointer",
     lineHeight: "32px",
     width: "100%",
-  },
-  focusVisible: {
-    backgroundColor: theme.colors.bgPageSecondary,
-    ...outlineStyles,
   },
   checked: {},
   semantic: {},

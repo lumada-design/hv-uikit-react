@@ -22,6 +22,7 @@ const { useClasses } = createClasses("HvCheckBoxIcon", {
   },
   indeterminate: {
     color: theme.colors.textSubtle,
+    backgroundColor: theme.colors.bgContainer,
   },
   semantic: {
     "&[data-variant=indeterminate]": {

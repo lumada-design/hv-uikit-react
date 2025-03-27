@@ -454,9 +454,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          "&,:hover": {
-            borderRadius: "4px",
-          },
+          borderRadius: "4px",
         },
       },
     },

@@ -111,29 +111,31 @@ export const TestInputs: StoryObj = {
         <div className="grid gap-xs w-120px">
           {renderStory(CheckBoxGroupVariantsStory, context)}
         </div>
-        <div className="grid gap-xs w-120px">
+        <div className="flex flex-col gap-xs w-120px">
           {renderStory(RadioGroupVariantsStory, context)}
         </div>
-        <div className="grid w-160px">
+        <div className="flex flex-col w-160px">
           {renderStory(CheckBoxTestStory, context)}
         </div>
         <div className="grid gap-sm w-120px">
           <div className="flex w-full flex-wrap">
             {renderStory(RadioTestStory, context)}
           </div>
-          {renderStory(SwitchVariantsStory, context)}
+          <div className="flex w-full flex-wrap">
+            {renderStory(SwitchVariantsStory, context)}
+          </div>
         </div>
         <div className="flex flex-col gap-xs flex-1">
           {renderStory(SliderRangeVariantsStory, context)}
           <div className="flex gap-xs">
             {renderStory(SelectionListVariantsStory, context)}
           </div>
+          {renderStory(RadioGroupHorizontalStory, context)}
         </div>
       </div>
       <div className="flex gap-sm w-full flex-wrap [&>*]:w-220px">
         {renderStory(TagsInputVariantsStory, context)}
       </div>
-      <div>{renderStory(RadioGroupHorizontalStory, context)}</div>
       <div>{renderStory(InlineEditorTestStory, context)}</div>
     </div>
   ),
