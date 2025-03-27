@@ -6,17 +6,11 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { SvgBase } from "../icons";
 import type { HvBaseCheckBoxProps } from "./BaseCheckBox";
 
 const { useClasses } = createClasses("HvCheckBoxIcon", {
   root: {
-    display: "inline-flex",
-    fill: "currentcolor",
-    width: "1em",
-    height: "1em",
-    flexShrink: 0,
-
-    fontSize: 16,
     color: theme.colors.bgContainer,
     borderRadius: theme.radii.base,
     border: `1px solid ${theme.colors.borderStrong}`,
@@ -77,7 +71,7 @@ export const HvCheckBoxIcon = (props: HvCheckBoxIconProps) => {
   }, [variant]);
 
   return (
-    <svg
+    <SvgBase
       viewBox="0 0 14 14"
       data-variant={variant}
       className={cx(classes.root, className, {
@@ -88,6 +82,6 @@ export const HvCheckBoxIcon = (props: HvCheckBoxIconProps) => {
       })}
     >
       <path d={d} />
-    </svg>
+    </SvgBase>
   );
 };

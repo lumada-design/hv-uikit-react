@@ -5,11 +5,9 @@ import {
   HvBaseInput,
   HvFormStatus,
   HvGrid,
-  HvInfoMessage,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
-  HvLabel,
   HvTypography,
   HvValidationMessages,
   theme,
@@ -508,56 +506,39 @@ export const Suggestion: StoryObj<HvInputProps> = {
   },
 };
 
-export const PrefixAndSuffix: StoryObj<HvInputProps> = {
+export const Adornments: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
       description: {
         story:
-          "If you need to apply a custom layout, e.g. for providing a prefix or suffix, you can and should externalize both the label and description.",
+          "You can use `startAdornment` and `endAdornment` to create custom input layouts.",
       },
     },
   },
   decorators: [(Story) => <div style={{ maxWidth: 400 }}>{Story()}</div>],
   render: () => {
-    const validationMessages = {
-      error: "Invalid subdomain",
+    const classes = {
+      adornment: css({
+        height: "100%",
+        alignContent: "center",
+        padding: theme.spacing(0, "xxs"),
+      }),
     };
 
     return (
-      <>
-        <div className={css({ display: "flex", alignItems: "flex-start" })}>
-          <HvLabel label="Subdomain" htmlFor="subdomain-input" />
-          <HvInfoMessage id="subdomain-description">
-            Choose your application subdomain
-          </HvInfoMessage>
-        </div>
-        <div
-          className={css({
-            width: "100%",
-            display: "flex",
-            alignItems: "baseline",
-
-            "& > *": {
-              marginLeft: theme.space.xs,
-            },
-            "& > p:first-of-type": {
-              marginLeft: 0,
-            },
-          })}
-        >
-          <HvTypography>https://</HvTypography>
-          <HvInput
-            id="subdomain"
-            name="subdomain"
-            aria-describedby="subdomain-description"
-            placeholder="Enter sub-domain"
-            className={css({ flexGrow: 1 })}
-            validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
-            validationMessages={validationMessages}
-          />
-          <HvTypography>.lumada.org</HvTypography>
-        </div>
-      </>
+      <HvInput
+        label="Subdomain"
+        description="Choose your application subdomain"
+        startAdornment={<span className={classes.adornment}>https://</span>}
+        endAdornment={<span className={classes.adornment}>.lumada.org</span>}
+        id="subdomain"
+        name="subdomain"
+        aria-describedby="subdomain-description"
+        placeholder="Enter sub-domain"
+        className={css({ flexGrow: 1 })}
+        validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
+        validationMessages={{ error: "Invalid subdomain" }}
+      />
     );
   },
 };
@@ -660,6 +641,16 @@ export const Test: StoryObj<HvInputProps> = {
           inputProps={{ type: "number", min: 10, max: 99 }}
           label="Number native"
           placeholder="Pick a number"
+        />
+        <HvInput
+          label="Domain"
+          placeholder="domain"
+          startAdornment={
+            <span className="content-center px-xxs">https://</span>
+          }
+          endAdornment={
+            <span className="h-full content-center px-xxs">.com</span>
+          }
         />
       </>
     );

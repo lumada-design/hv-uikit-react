@@ -52,8 +52,7 @@ export const Unit = ({
           }}
           classes={{
             input: classes.input,
-            root: classes.inputContainer,
-            inputRoot: classes.inputRoot,
+            root: classes.inputRoot,
           }}
           onKeyDown={(event) => {
             if ("key" in event && event.key === "Enter") {

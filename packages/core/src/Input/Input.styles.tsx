@@ -16,7 +16,13 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     justifyContent: "center",
     marginRight: 1,
   },
-  icon: { width: "30px", height: "30px" },
+  icon: {
+    // TODO: review in v6 - don't assume/force size
+    ":has(svg)": {
+      width: "30px",
+      height: "30px",
+    },
+  },
   adornmentButton: {
     ":focus-visible,:hover": {
       backgroundColor: "transparent",

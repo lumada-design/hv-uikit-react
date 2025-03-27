@@ -32,8 +32,6 @@ export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
     ...theme.typography.title3,
     fontWeight: 600,
     textAlign: "center",
-    height: 40,
-    width: 40,
     padding: 0,
     margin: 0,
     "&::placeholder": {
@@ -48,9 +46,5 @@ export const { staticClasses, useClasses } = createClasses("HvTimePickerUnit", {
 
   subtractIcon: {
     marginTop: theme.space.xs,
-  },
-  inputContainer: {
-    minWidth: 40,
-    maxWidth: 40,
   },
 });

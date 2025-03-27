@@ -8,13 +8,7 @@ import {
   useState,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
-import {
-  CloseXS,
-  Preview,
-  PreviewOff,
-  Search,
-  Success,
-} from "@hitachivantara/uikit-react-icons";
+import { CloseXS, Search, Success } from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -56,6 +50,7 @@ import { HvTooltip } from "../Tooltip";
 import { fixedForwardRef } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
+import { EyeIcon } from "./icons";
 import { staticClasses, useClasses } from "./Input.styles";
 
 export { staticClasses as inputClasses };
@@ -648,7 +643,7 @@ export const HvInput = fixedForwardRef(function HvInput<
           onClick={() => setRevealPassword((s) => !s)}
           aria-label={labels?.revealPasswordButtonLabel}
           aria-controls={setId(elementId, "input")}
-          icon={revealPassword ? <PreviewOff /> : <Preview />}
+          icon={<EyeIcon selected={revealPassword} />}
           tabIndex={0}
           {...({ selected: revealPassword } satisfies HvButtonBaseProps)}
         />
@@ -672,6 +667,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   }, [showValidationIcon, validationState, classes.icon]);
 
   // useMemo to avoid repetitive cloning of the custom icon
+  // TODO: remove in v6. don't assume `endAdornment` must be an icon
   const customIconEl = useMemo(
     () =>
       isValidElement(endAdornment)
