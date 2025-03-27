@@ -29,10 +29,7 @@ export const { staticClasses, useClasses } = createClasses(
       },
     },
     collapsed: {
-      width: "56px",
-      "&$childData": {
-        width: "66px",
-      },
+      width: "fit-content",
       "& > :first-of-type:not(:last-child)": {
         padding: theme.spacing("sm", "xs", "xs", "xs"),
       },
