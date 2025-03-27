@@ -232,6 +232,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
           >
             {checkbox}
             <HvLabel
+              noWrap
               id={setId(elementId, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
@@ -247,7 +248,6 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
             id={setId(elementId, "error")}
             disableAdornment={!hasLabel}
             hideText={!hasLabel}
-            disableBorder
           >
             {validationMessage}
           </HvWarningText>

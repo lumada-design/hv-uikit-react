@@ -232,53 +232,24 @@ export const Test: StoryObj<HvRadioProps> = {
   },
   render: () => (
     <>
-      <HvRadio disabled name="disabled" label="Disabled" value="1" />
-      <HvRadio
-        disabled
-        name="disabled"
-        defaultChecked
-        label="Disabled"
-        value="1"
-      />
-      <HvRadio readOnly name="readonly" label="Readonly" value="1" />
-      <HvRadio
-        readOnly
-        name="readonly"
-        defaultChecked
-        label="Readonly"
-        value="1"
-      />
-      <HvRadio required name="required" label="Required" value="1" />
-      <HvRadio
-        required
-        name="required"
-        defaultChecked
-        label="Required"
-        value="1"
-      />
+      <HvRadio disabled label="Disabled" />
+      <HvRadio disabled defaultChecked label="Disabled" />
+      <HvRadio readOnly label="Readonly" />
+      <HvRadio readOnly defaultChecked label="Readonly" />
+      <HvRadio required label="Required" />
+      <HvRadio required defaultChecked label="Required" />
+      <HvRadio status="invalid" statusMessage="Oh no!" label="Invalid" />
       <HvRadio
         status="invalid"
         statusMessage="Oh no!"
-        name="invalid"
-        label="Invalid"
-        value="1"
-      />
-      <HvRadio
-        status="invalid"
-        statusMessage="Oh no!"
-        name="invalid"
         defaultChecked
         label="Invalid"
-        value="1"
       />
-      <HvRadio semantic name="semantic" label="Semantic" value="1" />
-      <HvRadio
-        semantic
-        name="semantic"
-        defaultChecked
-        label="Semantic"
-        value="1"
-      />
+      <HvRadio semantic label="Semantic" />
+      <HvRadio semantic defaultChecked label="Semantic" />
+      <HvRadio aria-label="radio" />
+      <HvRadio defaultChecked aria-label="radio" />
+      <HvRadio defaultChecked disabled aria-label="radio" />
     </>
   ),
 };

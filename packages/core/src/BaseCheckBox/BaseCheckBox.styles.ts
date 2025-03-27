@@ -9,19 +9,15 @@ export const { staticClasses, useClasses } = createClasses("HvBaseCheckBox", {
     width: 32,
     minWidth: 32,
     height: 32,
-    borderRadius: theme.radii.base,
+    borderRadius: theme.radii.round,
     cursor: "pointer",
-    "&:hover": {
+    ":hover": {
       backgroundColor: theme.colors.bgHover,
-      borderRadius: theme.radii.round,
     },
   },
   disabled: {
     cursor: "not-allowed",
     pointerEvents: "initial",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
   },
   focusVisible: {
     "& svg": {
