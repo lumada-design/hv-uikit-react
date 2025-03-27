@@ -1021,11 +1021,32 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvLabel: {
+      classes: {
+        root: {
+          "& span[aria-hidden]": {
+            color: theme.form.errorColor,
+          },
+        },
+      },
+    },
     HvBaseInput: {
       classes: {
         root: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
+        },
+        disabled: {
+          backgroundColor: theme.colors.bgDisabled,
+        },
+      },
+    },
+    HvInput: {
+      classes: {
+        inputRoot: {
+          ":has([type=search])": {
+            borderRadius: theme.radii.full,
+          },
         },
       },
     },
