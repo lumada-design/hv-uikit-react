@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.1...@hitachivantara/uikit-styles@5.44.2) (2025-03-27)
+
+### Bug Fixes
+
+- **Tag:** checkbox icon colors ([#4622](https://github.com/lumada-design/hv-uikit-react/issues/4622)) ([d4ae887](https://github.com/lumada-design/hv-uikit-react/commit/d4ae887b70f1f56b9f73fe429a62d8635ea266b6))
+
 ## [5.44.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.0...@hitachivantara/uikit-styles@5.44.1) (2025-03-24)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles
