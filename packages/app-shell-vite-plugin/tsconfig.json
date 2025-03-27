@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+
+  "references": [{ "path": "../app-shell-shared" }],
+
+  "include": ["src", "rollup.config.js"],
+  "exclude": ["node_modules", "dist"],
+
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}
