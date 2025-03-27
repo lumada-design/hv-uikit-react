@@ -843,6 +843,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvVerticalNavigation: {
       classes: {
         root: {
+          width: 280,
           color: theme.colors.base_light,
           backgroundColor: slate[900],
           borderRight: `1px solid ${slate[500]}`,
