@@ -161,7 +161,7 @@ export const NavigationProvider = ({ children }: NavigationProviderProps) => {
 export const useNavigationContext = () => {
   const context = useContext(NavigationContext);
 
-  if (context) {
+  if (!context) {
     console.error("NavigationContext was used outside of its Provider");
   }
 

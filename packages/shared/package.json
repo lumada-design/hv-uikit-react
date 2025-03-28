@@ -45,6 +45,11 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json",
+    "./bundles/*": "./dist/bundles/*"
+  },
   "publishConfig": {
     "access": "public",
     "directory": "package",

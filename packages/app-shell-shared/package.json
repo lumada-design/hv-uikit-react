@@ -6,7 +6,6 @@
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Shared",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "src/index.ts",
   "sideEffects": false,
   "license": "Apache-2.0",
   "repository": {
@@ -39,6 +38,11 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json",
+    "./bundles/*": "./dist/bundles/*"
+  },
   "publishConfig": {
     "access": "public",
     "directory": "package",

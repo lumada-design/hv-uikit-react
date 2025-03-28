@@ -9,11 +9,12 @@ vi.mock("react-i18next", async () => {
     initReactI18next: ThirdPartyModule;
   }>("react-i18next");
 
-  const t = (str: any, options?: TOptionsBase) =>
+  const t = (str: string, options?: TOptionsBase) =>
     options?.returnObjects ? undefined : str;
 
   return {
     initReactI18next,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Trans: ({ i18nKey }: TransProps<any>) => i18nKey,
     useTranslation: () => ({
       t,
