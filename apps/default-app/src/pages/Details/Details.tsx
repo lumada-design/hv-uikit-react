@@ -1,0 +1,56 @@
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  HvActionBar,
+  HvActionsGeneric,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+
+import useStyles from "./styles";
+
+type DetailsParams = {
+  cardId: string;
+  cardText: string;
+};
+
+const Details = () => {
+  const classes = useStyles();
+  const navigate = useNavigate();
+  const params = useParams<DetailsParams>();
+
+  const { cardId, cardText } = params;
+
+  const actionsCallbackHandler = () => {
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/", { replace: true });
+    }
+  };
+
+  return (
+    <HvCard bgcolor="atmo1" className={classes.card}>
+      <HvCardHeader title={`Selected card id: ${cardId}`} />
+      <HvCardContent>
+        <div style={{ paddingTop: "20px" }}>
+          <HvTypography variant="label">{cardText}</HvTypography>
+        </div>
+      </HvCardContent>
+      <HvActionBar>
+        <HvActionsGeneric
+          actions={[
+            {
+              id: "goBack",
+              label: "Go back",
+            },
+          ]}
+          actionsCallback={actionsCallbackHandler}
+        />
+      </HvActionBar>
+    </HvCard>
+  );
+};
+
+export default Details;
