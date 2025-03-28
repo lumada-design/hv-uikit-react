@@ -14,7 +14,8 @@ vi.mock("react-i18next", async () => {
 
   return {
     initReactI18next,
-    Trans: ({ i18nKey }: TransProps<string>) => i18nKey,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Trans: ({ i18nKey }: TransProps<any>) => i18nKey,
     useTranslation: () => ({
       t,
       i18n: { changeLanguage: async () => t },
