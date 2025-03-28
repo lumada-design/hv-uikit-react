@@ -641,6 +641,28 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvInput: {
+      classes: {
+        adornmentsBox: {
+          marginRight: 0,
+          backgroundColor: theme.colors.bgContainer,
+        },
+        adornmentButton: {
+          backgroundColor: "inherit",
+          border: "none",
+          ":not(.HvInput-iconClear):first-of-typeß": {
+            borderLeft: `1px solid ${theme.colors.border}`,
+          },
+          ":hover": {
+            backgroundColor: theme.colors.primaryDimmed,
+          },
+          ":focus-visible,:active": {
+            backgroundColor: theme.colors.primarySubtle,
+            boxShadow: "none",
+          },
+        },
+      },
+    },
     HvInlineEditor: {
       classes: {
         button: {

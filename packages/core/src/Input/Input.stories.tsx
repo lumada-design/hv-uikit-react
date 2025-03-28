@@ -433,6 +433,7 @@ export const CustomVariants: StoryObj<HvInputProps> = {
           label="Number"
           placeholder="Insert a number"
           inputProps={{ type: "number", min: 10, max: 99 }}
+          disableClear
         />
         <HvInput
           ref={dateRef}
@@ -539,6 +540,48 @@ export const Adornments: StoryObj<HvInputProps> = {
         validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
         validationMessages={{ error: "Invalid subdomain" }}
       />
+    );
+  },
+};
+
+export const Numeric: StoryObj<HvInputProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Input with a numeric type, and a step of 5. The input will only accept numbers divisible by 5.",
+      },
+    },
+  },
+  decorators: [(Story) => <div style={{ maxWidth: 400 }}>{Story()}</div>],
+  render: () => {
+    const [val, setVal] = useState(3);
+
+    return (
+      <div className="flex gap-sm flex-wrap w-300px">
+        <div className="w-300px">
+          <HvInput type="number" label="Uncontrolled" />
+        </div>
+        <div className="w-300px">
+          <HvInput
+            type="number"
+            label="Controlled"
+            value={val}
+            onChange={(e, v) => setVal(Number(v))}
+          />
+        </div>
+        <div className="w-300px">
+          <HvInput type="number" label="With step" step={5} />
+        </div>
+        <div className="w-300px">
+          <HvInput
+            type="number"
+            label="Decimal"
+            defaultValue={3.5}
+            step={0.1}
+          />
+        </div>
+      </div>
     );
   },
 };

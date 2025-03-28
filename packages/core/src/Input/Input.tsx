@@ -8,7 +8,13 @@ import {
   useState,
 } from "react";
 import { useForkRef } from "@mui/material/utils";
-import { CloseXS, Search, Success } from "@hitachivantara/uikit-react-icons";
+import {
+  Add,
+  CloseXS,
+  Remove,
+  Search,
+  Success,
+} from "@hitachivantara/uikit-react-icons";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -24,6 +30,7 @@ import {
   HvInputValidity,
   validateInput,
 } from "../BaseInput/validations";
+import { HvButton } from "../Button";
 import type { HvButtonBaseProps } from "../ButtonBase";
 import {
   HvAdornment,
@@ -46,6 +53,7 @@ import { useControlled } from "../hooks/useControlled";
 import { useIsMounted } from "../hooks/useIsMounted";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIconButton } from "../IconButton";
 import { HvTooltip } from "../Tooltip";
 import { fixedForwardRef } from "../types/generic";
 import { isKey } from "../utils/keyboardUtils";
@@ -191,6 +199,8 @@ export interface HvInputProps<
   minCharQuantity?: number;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvInputClasses;
+
+  step?: number;
 }
 
 const DEFAULT_LABELS = {
@@ -276,6 +286,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     onFocus,
     onKeyDown,
     inputProps = {},
+    step = 1,
     ...others
   } = useDefaultProps("HvInput", props);
   const { classes, cx } = useClasses(classesProp);
@@ -302,6 +313,11 @@ export const HvInput = fixedForwardRef(function HvInput<
   const [validationMessage, setValidationMessage] = useControlled(
     statusMessage,
     "",
+  );
+
+  const [customValue, setCustomValue] = useControlled<number>(
+    valueProp as number,
+    defaultValue as number,
   );
 
   // validationMessages reference tends to change, as users will not memoize/useState for it;
@@ -384,6 +400,10 @@ export const HvInput = fixedForwardRef(function HvInput<
       return "search";
     }
 
+    if (type === "number") {
+      return "number";
+    }
+
     return "text";
   }, [revealPassword, type]);
 
@@ -449,6 +469,10 @@ export const HvInput = fixedForwardRef(function HvInput<
 
   const onChangeHandler: HvBaseInputProps["onChange"] = (event, newValue) => {
     isDirty.current = true;
+
+    if (type === "number") {
+      setCustomValue(Number(newValue));
+    }
 
     onChange?.(event as any, newValue);
 
@@ -548,6 +572,8 @@ export const HvInput = fixedForwardRef(function HvInput<
 
   const showRevealPasswordButton =
     type === "password" && !disableRevealPassword;
+
+  const showNumbersButtons = type === "number";
 
   /**
    * Clears the input value from the state and refocus the input.
@@ -666,6 +692,48 @@ export const HvInput = fixedForwardRef(function HvInput<
     return <Success color="positive" className={classes.icon} />;
   }, [showValidationIcon, validationState, classes.icon]);
 
+  const numbersButtons = useMemo(() => {
+    if (!showNumbersButtons) return null;
+
+    const handleIncrease = () => {
+      setCustomValue((prev: number) =>
+        Number((prev ? prev + step : step).toFixed(2)),
+      );
+      onChange?.(undefined, Number((customValue + step).toFixed(2)));
+    };
+
+    const handleDecrease = () => {
+      setCustomValue((prev: number) =>
+        Number((prev ? prev - step : -step).toFixed(2)),
+      );
+      onChange?.(undefined, Number((customValue - step).toFixed(2)));
+    };
+
+    return (
+      <>
+        <HvAdornment
+          tabIndex={0}
+          className={classes.adornmentButton}
+          icon={<Remove />}
+          onClick={handleDecrease}
+        />
+        <HvAdornment
+          tabIndex={0}
+          className={classes.adornmentButton}
+          icon={<Add />}
+          onClick={handleIncrease}
+        />
+      </>
+    );
+  }, [
+    classes.adornmentButton,
+    customValue,
+    onChange,
+    setCustomValue,
+    showNumbersButtons,
+    step,
+  ]);
+
   // useMemo to avoid repetitive cloning of the custom icon
   // TODO: remove in v6. don't assume `endAdornment` must be an icon
   const customIconEl = useMemo(
@@ -684,22 +752,27 @@ export const HvInput = fixedForwardRef(function HvInput<
       !revealPasswordButton &&
       !searchButton &&
       !validationIcon &&
-      !customIconEl
+      !customIconEl &&
+      !numbersButtons
     )
       return null;
 
     return (
-      <div className={classes.adornmentsBox}>
+      <>
         {clearButton}
-        {revealPasswordButton}
-        {searchButton}
-        {validationIcon || customIconEl}
-      </div>
+        <div className={classes.adornmentsBox}>
+          {revealPasswordButton}
+          {searchButton}
+          {validationIcon || customIconEl}
+          {numbersButtons}
+        </div>
+      </>
     );
   }, [
     classes.adornmentsBox,
     clearButton,
     customIconEl,
+    numbersButtons,
     revealPasswordButton,
     searchButton,
     validationIcon,
@@ -769,7 +842,7 @@ export const HvInput = fixedForwardRef(function HvInput<
             : setId(id, "input")
         }
         name={name}
-        value={valueProp}
+        value={customValue}
         defaultValue={defaultValue}
         required={required}
         readOnly={readOnly}
