@@ -1,39 +1,27 @@
 {
   "name": "@hitachivantara/app-shell-vite-plugin",
   "version": "1.6.9",
-  "description": "AppShell Vite Plugin",
-  "author": "Hitachi Vantara - Boba Fett Team",
-  "license": "Apache-2.0",
   "type": "module",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "AppShell Vite Plugin",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "main": "src/index.ts",
   "sideEffects": false,
-  "module": "dist/index.js",
-  "main": "dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./package.json": "./package.json"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/app-shell-vite-plugin"
   },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "bugs": "https://github.com/lumada-design/hv-uikit-react/issues",
   "scripts": {
-    "build": "npm-run-all clean build:*",
-    "build:esm": "tsc -p tsconfig.json",
-    "build:esm-externals": "npx rollup --config",
-    "clean": "npx rimraf ./dist *.tgz tsconfig.tsbuildinfo",
+    "build": "npm run clean && tsc -p tsconfig.json && rollup --config",
     "dev": "tsc-watch --noClear -p tsconfig.json",
-    "lint-check": "npx eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "lint": "npm-run-all --parallel lint:*",
-    "lint:eslint": "npm run lint-check -- --cache --fix",
-    "lint:prettier": "npx prettier --write \"src/**/*.{html,css,js,jsx,ts,tsx}\"",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "clean": "npx rimraf dist package",
+    "prepublishOnly": "npm run build && npx clean-publish"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -54,14 +42,39 @@
     "react-router-dom": "^6.9.0",
     "rollup": "^4.6.1",
     "ts-node": "^10.9.1",
-    "vite-plugin-static-copy": "^1.0.0"
+    "vite-plugin-static-copy": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^4.1.4 || ^5.0.4 || ^6.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "tsc-watch": "^6.0.0"
   },
-  "peerDependencies": {
-    "vite": "^4.1.4 || ^5.0.4"
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "package",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [],
+    "files": [
+      "tsconfig.json"
+    ]
   }
 }
