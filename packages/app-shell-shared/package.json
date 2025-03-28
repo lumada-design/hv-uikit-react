@@ -1,39 +1,29 @@
 {
   "name": "@hitachivantara/app-shell-shared",
   "version": "1.4.2",
-  "description": "App Shell Shared",
-  "author": "Hitachi Vantara - Boba Fett Team",
-  "license": "Apache-2.0",
   "type": "module",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "AppShell Shared",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "main": "src/index.ts",
   "sideEffects": false,
-  "module": "dist/esm/index.js",
-  "typings": "./dist/dts/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/dts/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "default": "./dist/esm/index.js"
-    },
-    "./package.json": "./package.json",
-    "./bundles/*": "./dist/bundles/*"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/app-shell-shared"
   },
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
+  "bugs": "https://github.com/lumada-design/hv-uikit-react/issues",
   "scripts": {
-    "build": "npm-run-all clean build:*",
-    "build:js": "npx vite build",
-    "clean": "npx rimraf ./dist *.tgz tsconfig.tsbuildinfo",
-    "dev": "npx vite build --watch",
-    "lint-check": "npx eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "lint": "npm-run-all --parallel lint:*",
-    "lint:eslint": "npm run lint-check -- --cache --fix",
-    "lint:prettier": "npx prettier --write \"src/**/*.{html,css,js,jsx,ts,tsx}\"",
-    "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "build": "npm run clean && vite build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "clean": "npx rimraf dist package",
+    "prepublishOnly": "npm run build && npx clean-publish"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-react-core": "^5.72.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -43,11 +33,34 @@
     "@types/react": "^18.0.28",
     "@vitejs/plugin-react": "^4.2.0",
     "i18next": "^23.7.7",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^5.0.5",
-    "vite": "^5.0.4"
+    "vite": "^6.2.2"
   },
-  "dependencies": {
-    "@hitachivantara/uikit-react-core": "^5.72.0"
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "package",
+    "module": "dist/esm/index.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/esm/index.js",
+        "default": "./dist/esm/index.js"
+      },
+      "./package.json": "./package.json",
+      "./bundles/*": "./dist/bundles/*"
+    }
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
   }
 }
