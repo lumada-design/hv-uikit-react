@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react";
 
 import useLocalStorageHook from "../useLocalStorage";
 
-const LOCAL_STORAGE_DUMMY_KEY = "dummyKey";
+const LOCAL_STORAGE_DUMMY_KEY = "COLOR_MODE";
 
 describe("useThemeEventListener Hook", () => {
   afterEach(() => {

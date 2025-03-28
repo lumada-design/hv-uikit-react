@@ -500,9 +500,9 @@ describe("test navigation utilities", () => {
       ["1-1-1", "1"],
       ["1", "1"],
       [undefined, undefined],
-    ])("Root menu id from path %s matches %s", (value: string, expected) => {
+    ])("Root menu id from path %s matches %s", (value, expected) => {
       const id = getRootIdFromItemId(value);
-      expect(id).toMatchObject(expected);
+      expect(id).toMatchObject(expected!);
     });
   });
 });

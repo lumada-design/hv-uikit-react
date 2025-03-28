@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { act, render } from "@testing-library/react";
 import { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 
@@ -13,7 +13,7 @@ import TestProvider from "./TestProvider";
  * @param bundles
  */
 const renderTestProvider = (
-  children: ReactNode,
+  children: React.ReactNode,
   mockedConfigResponse: Partial<HvAppShellConfig> = {},
   bundles: Record<string, object> = {},
 ) => {

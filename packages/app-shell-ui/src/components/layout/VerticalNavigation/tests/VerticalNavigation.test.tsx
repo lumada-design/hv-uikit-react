@@ -3,11 +3,11 @@ import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 import { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 
-import VerticalNavigation from "..";
 import { LOCAL_STORAGE_KEYS } from "../../../../lib/hooks/useLocalStorage";
 import * as useNavigationContextHook from "../../../../providers/hooks/useNavigationContext";
 import useNavigationContextDefaultMock from "../../../../tests/defaultMocks";
 import renderTestProvider from "../../../../tests/testUtils";
+import VerticalNavigation from "../VerticalNavigation";
 
 const navigationContextSpy = vi.spyOn(useNavigationContextHook, "default");
 const navigateSpy = vi.fn();

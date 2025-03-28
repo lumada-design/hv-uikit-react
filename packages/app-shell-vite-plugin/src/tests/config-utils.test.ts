@@ -1,4 +1,5 @@
-import fs from "fs";
+import fs from "node:fs";
+import { vi } from "vitest";
 import { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 
 import {

@@ -1,5 +1,4 @@
-import { ReactNode, SyntheticEvent } from "react";
-import {
+import type {
   HvActionGeneric,
   HvBannerVariant,
   HvSnackbarVariant,
@@ -14,9 +13,9 @@ export type HvAppShellEventNotification = {
   type: HvAppShellEventNotificationType;
   message?: string;
   variant?: HvBannerVariant | HvSnackbarVariant;
-  actions?: ReactNode | HvActionGeneric[];
+  actions?: React.ReactNode | HvActionGeneric[];
   actionsCallback?: (
-    event: SyntheticEvent<Element, Event>,
+    event: React.SyntheticEvent<Element, Event>,
     id: string,
     action: HvActionGeneric,
   ) => void;

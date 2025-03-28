@@ -1,5 +1,5 @@
-import GenericError from "..";
 import renderTestProvider from "../../../tests/testUtils";
+import GenericError from "../GenericError";
 
 describe("`Generic error", () => {
   it("Should include textual and accessibility info", async () => {
