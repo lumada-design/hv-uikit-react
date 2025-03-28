@@ -2,8 +2,8 @@ import { RenderResult, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
-import ErrorPage from "..";
 import renderTestProvider from "../../../tests/testUtils";
+import ErrorPage from "../ErrorPage";
 
 const navigateSpy = vi.fn();
 vi.mock("@hitachivantara/app-shell-navigation", async () => {

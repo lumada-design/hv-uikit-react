@@ -1,5 +1,5 @@
-import NotFound from "..";
 import renderTestProvider from "../../../tests/testUtils";
+import NotFound from "../NotFound";
 
 describe("`NotFound` page", () => {
   it("Should include textual and accessibility info", async () => {

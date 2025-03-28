@@ -2,8 +2,8 @@ import { vi } from "vitest";
 import { HvAppShellAppSwitcherConfig } from "@hitachivantara/app-shell-shared";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
-import HeaderActions from "..";
 import renderTestProvider from "../../../../../tests/testUtils";
+import HeaderActions from "../HeaderActions";
 import AppSwitcherToggle from "../InternalActions/AppSwitcherToggle";
 import ColorModeSwitcher from "../InternalActions/ColorModeSwitcher";
 import HelpButton from "../InternalActions/HelpButton";

@@ -270,7 +270,7 @@ describe("useNotificationsEventListener Hook", () => {
       notificationsHook.current.handleNotificationEvent(
         new CustomEvent(HvAppShellEventNotificationTrigger, {
           detail: {
-            type: "dummyType",
+            type: "dummyType" as any,
             variant: "error",
             message: "dummyMessage",
           },

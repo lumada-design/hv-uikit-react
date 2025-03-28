@@ -17,15 +17,12 @@
   "bugs": "https://github.com/lumada-design/hv-uikit-react/issues",
   "scripts": {
     "build": "npm run clean && vite build",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
-  "dependencies": {
-    "@hitachivantara/uikit-react-core": "^5.72.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
+    "@hitachivantara/uikit-react-core": "^5.72.0",
     "react": "^18.2.0"
   },
   "devDependencies": {

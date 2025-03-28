@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { render, screen } from "@testing-library/react";
 import { HvAppShellViewContext } from "@hitachivantara/app-shell-shared";
 
-import AppShellViewProvider from "..";
+import AppShellViewProvider from "../AppShellViewProvider";
 
 describe("AppShellViewProvider component", () => {
   const DummyComponent = () => {

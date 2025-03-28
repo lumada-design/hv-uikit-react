@@ -2,10 +2,10 @@ import { RenderResult, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
-import Header from "..";
 import * as useNavigationContextHook from "../../../../providers/hooks/useNavigationContext";
 import useNavigationContextDefaultMock from "../../../../tests/defaultMocks";
 import renderTestProvider from "../../../../tests/testUtils";
+import Header from "../Header";
 
 vi.mock("react-helmet-async", () => ({
   Helmet: vi.fn(),

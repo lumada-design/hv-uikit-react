@@ -1,5 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { initReactI18next } from "react-i18next";
-import i18next, { i18n } from "i18next";
+import { createInstance, type i18n } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 const DUMMY_NAMESPACE = "DummyNamespace";
@@ -15,8 +16,8 @@ export const addResourceBundles = (
   });
 };
 
-export const createI18Next = () => {
-  const newInstance = i18next.createInstance();
+export const createI18Next = (): { i18n: i18n } => {
+  const newInstance = createInstance();
   newInstance
     .use(LanguageDetector)
     .use(initReactI18next)
