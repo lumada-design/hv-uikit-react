@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/lumada-design/hv-app-shell/compare/@hitachivantara/app-shell-ui@1.9.0...@hitachivantara/app-shell-ui@1.9.1) (2025-03-28)
+
+### Bug Fixes
+
+- **VerticalNavigation:** fix incorrect width on collapsed mode ([#847](https://github.com/lumada-design/hv-app-shell/issues/847)) ([cfe009f](https://github.com/lumada-design/hv-app-shell/commit/cfe009fa5a6993de9600b13b158f1678425e82d1))
+
 # [1.9.0](https://github.com/lumada-design/hv-app-shell/compare/@hitachivantara/app-shell-ui@1.8.0...@hitachivantara/app-shell-ui@1.9.0) (2025-02-19)
 
 ### Features
