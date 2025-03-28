@@ -9,12 +9,12 @@ vi.mock("react-i18next", async () => {
     initReactI18next: ThirdPartyModule;
   }>("react-i18next");
 
-  const t = (str: string, options?: TOptionsBase) =>
+  const t = (str: any, options?: TOptionsBase) =>
     options?.returnObjects ? undefined : str;
 
   return {
     initReactI18next,
-    Trans: ({ i18nKey }: TransProps<string>) => i18nKey,
+    Trans: ({ i18nKey }: TransProps<any>) => i18nKey,
     useTranslation: () => ({
       t,
       i18n: { changeLanguage: async () => t },
