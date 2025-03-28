@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { createEsmHooks, register } from "ts-node";
 import type { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 

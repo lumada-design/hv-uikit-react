@@ -1,5 +1,5 @@
-import useClearLocationState from "../../lib/hooks/useClearLocationState";
-import useCustomEventListener from "../../lib/hooks/useCustomEventListener";
+import useClearLocationState from "../../hooks/useClearLocationState";
+import useCustomEventListener from "../../hooks/useCustomEventListener";
 
 const CustomHooksInitializer = () => {
   useCustomEventListener();

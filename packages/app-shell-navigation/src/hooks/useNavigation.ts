@@ -8,7 +8,7 @@ import {
 
 import { NavigationOptions, To, ViewDestination } from "../types/navigation";
 import compileHref from "../utils/navigationUtil";
-import { useLocation as useHvLocation } from "./useLocation";
+import { useHvLocation } from "./useLocation";
 
 const isViewDestination = (to: To): to is ViewDestination => {
   return (to as ViewDestination).viewBundle !== undefined;
@@ -50,7 +50,7 @@ function isSameBundle(
   );
 }
 
-export const useNavigation = () => {
+export const useHvNavigation = () => {
   const config = useHvAppShellConfig();
   const flattenViews = useMemo(() => {
     const flatten = (views: HvAppShellViewsConfig[], base = "") => {

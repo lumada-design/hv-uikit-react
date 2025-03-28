@@ -8,10 +8,10 @@ import {
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import AppShellProvider from "../components/AppShellProvider/AppShellProvider";
-import createI18Next, { addResourceBundles } from "../lib/i18n";
+import createI18Next, { addResourceBundles } from "../i18n";
 import GenericError from "../pages/GenericError";
-import BannerProvider from "../providers/BannerProvider";
-import NavigationProvider from "../providers/NavigationProvider";
+import { BannerProvider } from "../providers/BannerProvider";
+import { NavigationProvider } from "../providers/NavigationProvider";
 
 interface TestProviderProps {
   children: React.ReactNode;
