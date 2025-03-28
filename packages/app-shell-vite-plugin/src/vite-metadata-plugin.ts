@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "node:fs";
 import type { PluginOption } from "vite";
 
 import { resolveModule } from "./nodeModule.js";

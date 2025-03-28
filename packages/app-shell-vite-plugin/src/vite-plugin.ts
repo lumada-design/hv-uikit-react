@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import virtual from "@rollup/plugin-virtual";
 import { loadEnv, PluginOption } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
@@ -135,7 +135,7 @@ export interface AppShellVitePluginOptions {
  * @param opts Plugin options
  * @param env Environment variable
  */
-function appShellVitePlugin(
+export function HvAppShellVitePlugin(
   opts: AppShellVitePluginOptions = {},
   env: Record<string, string> = {},
 ): PluginOption {
@@ -317,5 +317,3 @@ function appShellVitePlugin(
     generateEmptyShell && generateBashScript(externalImportMap, inlineConfig),
   ];
 }
-
-export default appShellVitePlugin;

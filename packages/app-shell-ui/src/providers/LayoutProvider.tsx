@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react";
 
 export type LayoutProviderProps = {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ export const LayoutContext = createContext<LayoutContextValue>({
   },
 });
 
-const LayoutProvider = ({ children }: LayoutProviderProps) => {
+export const LayoutProvider = ({ children }: LayoutProviderProps) => {
   const [bannerMaxHeight, setBannerMaxHeight] = useState<number>(0);
   const [verticalNavigationWidth, setVerticalNavigationWidth] =
     useState<number>(0);
@@ -42,4 +42,12 @@ const LayoutProvider = ({ children }: LayoutProviderProps) => {
   );
 };
 
-export default LayoutProvider;
+export const useLayoutContext = () => {
+  const context = useContext(LayoutContext);
+
+  if (!context) {
+    console.error("LayoutContext was used outside of its Provider");
+  }
+
+  return context;
+};

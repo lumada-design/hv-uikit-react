@@ -1,8 +1,9 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import { useHvAppShellConfig } from "../AppShellContext";
 import { HvAppShellRuntimeContext } from "../AppShellRuntimeContext";
-import CONFIG_TRANSLATIONS_NAMESPACE from "../i18n";
+import { CONFIG_TRANSLATIONS_NAMESPACE } from "../i18n";
 import type { MenuItemsContext } from "../types/menu";
 import {
   addPrefixToHref,
@@ -12,13 +13,12 @@ import {
   getRootIdFromItemId,
   searchHrefInMenuItems,
 } from "../utils/navigationUtils";
-import useAppShellConfig from "./useAppShellConfig";
 
 const MAX_TOP_MENU_DEPTH = 2;
 
-const useMenuItems = (): MenuItemsContext => {
+export const useHvMenuItems = (): MenuItemsContext => {
   const { pathname, search, state: locationState } = useLocation();
-  const appShellContext = useAppShellConfig();
+  const appShellContext = useHvAppShellConfig();
 
   // use the i18n instance from the app shell runtime context to ensure we're using
   // the app shell instance of i18n and not the one from the embedded app
@@ -86,4 +86,3 @@ const useMenuItems = (): MenuItemsContext => {
     rootMenuItemId,
   };
 };
-export default useMenuItems;

@@ -1,4 +1,3 @@
-export { default as HvAppShellVitePlugin } from "./vite-plugin.js";
 export * from "./vite-plugin.js";
 
 // reexport types from shared package

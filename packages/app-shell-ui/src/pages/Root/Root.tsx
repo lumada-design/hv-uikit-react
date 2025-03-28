@@ -5,9 +5,9 @@ import { Outlet } from "react-router-dom";
 import CustomHooksInitializer from "../../components/CustomHooksInitializer";
 import Header from "../../components/layout/Header";
 import Main from "../../components/layout/Main";
-import CombinedProviders from "../../lib/utils/CombinedProviders";
-import BannerProvider from "../../providers/BannerProvider";
-import NavigationProvider from "../../providers/NavigationProvider";
+import { BannerProvider } from "../../providers/BannerProvider";
+import { NavigationProvider } from "../../providers/NavigationProvider";
+import CombinedProviders from "../../utils/CombinedProviders";
 import GenericError from "../GenericError";
 import LoadingPage from "../LoadingPage";
 

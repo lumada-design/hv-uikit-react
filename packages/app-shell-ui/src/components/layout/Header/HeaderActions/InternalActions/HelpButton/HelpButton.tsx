@@ -5,7 +5,6 @@ import {
 } from "@hitachivantara/app-shell-shared";
 import { HvIconButton } from "@hitachivantara/uikit-react-core";
 
-import includesString from "../../../../../../lib/utils/textUtil";
 import IconUiKit from "../../../../../IconUiKit";
 
 const HelpButton: React.FC<HvAppShellHelp> = ({ url, description }) => {
@@ -16,7 +15,7 @@ const HelpButton: React.FC<HvAppShellHelp> = ({ url, description }) => {
     return null;
   }
 
-  const finalUrl = includesString(url, ":") ? url : tConfig(url);
+  const finalUrl = url.includes(":") ? url : tConfig(url);
 
   const finalDescription = description
     ? tConfig(description)
