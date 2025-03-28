@@ -1,0 +1,43 @@
+{
+  "name": "default-app",
+  "description": "This is a default app to showcase the use of the app-shell-ui package with a more complex UI",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.10.5",
+    "@hitachivantara/app-shell-events": "*",
+    "@hitachivantara/app-shell-navigation": "*",
+    "@hitachivantara/app-shell-shared": "*",
+    "@hitachivantara/uikit-react-core": "*",
+    "@hitachivantara/uikit-react-icons": "*",
+    "@mui/material": "^5.12.3",
+    "@types/react-table": "^7.7.14",
+    "clsx": "^2.0.0",
+    "i18next": "^24.2.2",
+    "i18next-browser-languagedetector": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-charts": "^4.0.0",
+    "react-i18next": "^15.4.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "@hitachivantara/app-shell-vite-plugin": "*",
+    "@hitachivantara/uikit-uno-preset": "*",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.4.2",
+    "unocss": "^66.0.0",
+    "vite": "^6.2.2",
+    "vite-plugin-css-injected-by-js": "^3.4.0",
+    "vite-tsconfig-paths": "^5.1.0"
+  }
+}
