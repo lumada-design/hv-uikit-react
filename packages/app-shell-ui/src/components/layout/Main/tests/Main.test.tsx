@@ -1,9 +1,9 @@
 import { vi } from "vitest";
 
-import Main from "..";
 import * as useNavigationContextHook from "../../../../providers/hooks/useNavigationContext";
 import useNavigationContextDefaultMock from "../../../../tests/defaultMocks";
 import renderTestProvider from "../../../../tests/testUtils";
+import Main from "../Main";
 
 const navigationContextSpy = vi.spyOn(useNavigationContextHook, "default");
 

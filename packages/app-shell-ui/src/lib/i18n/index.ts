@@ -1,8 +1,10 @@
 import { initReactI18next } from "react-i18next";
-import i18next, { i18n } from "i18next";
+import { createInstance, type i18n } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+// @ts-ignore
 import en from "./localization/en.json";
+// @ts-ignore
 import pt from "./localization/pt.json";
 
 export const APP_SHELL_NAMESPACE = "appShell";
@@ -21,8 +23,8 @@ export const addResourceBundles = (
   });
 };
 
-const createI18Next = () => {
-  const newInstance = i18next.createInstance();
+const createI18Next = (): { i18n: i18n } => {
+  const newInstance = createInstance();
   newInstance
     .use(LanguageDetector)
     .use(initReactI18next)

@@ -5,6 +5,7 @@ import {
   HvAppShellRuntimeContext,
   useHvAppShellConfig,
 } from "@hitachivantara/app-shell-shared";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
 import createI18Next, {
