@@ -10,10 +10,10 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-import { useResizeObserver } from "../../../lib/hooks/useResizeObserver";
-import { NavigationMenuItem } from "../../../lib/types";
-import useLayoutContext from "../../../providers/hooks/useLayoutContext";
-import useNavigationContext from "../../../providers/hooks/useNavigationContext";
+import { useResizeObserver } from "../../../hooks/useResizeObserver";
+import { useLayoutContext } from "../../../providers/LayoutProvider";
+import { useNavigationContext } from "../../../providers/NavigationProvider";
+import { NavigationMenuItem } from "../../../types";
 import withClickAwayListener from "../../hoc/withClickAwayListener";
 import { NavigationCollapse } from "./NavigationCollapse";
 import { NavigationHeader } from "./NavigationHeader";

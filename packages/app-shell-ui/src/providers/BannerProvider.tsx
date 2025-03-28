@@ -1,12 +1,12 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { css } from "@emotion/css";
 import { uid } from "uid";
 import { HvAppShellEventNotification } from "@hitachivantara/app-shell-events";
 import { HvBanner, theme, useTheme } from "@hitachivantara/uikit-react-core";
 
-import useLayoutContext from "./hooks/useLayoutContext";
-import useNavigationContext from "./hooks/useNavigationContext";
+import { useLayoutContext } from "./LayoutProvider";
+import { useNavigationContext } from "./NavigationProvider";
 
 export type BannerProviderProps = {
   children: React.ReactNode;
@@ -30,7 +30,7 @@ export const BannerContext = createContext<BannerContextValue>({
   },
 });
 
-const BannerProvider = ({ children }: BannerProviderProps) => {
+export const BannerProvider = ({ children }: BannerProviderProps) => {
   const { t } = useTranslation(undefined, {
     keyPrefix: "notifications.banner",
   });
@@ -149,4 +149,12 @@ const BannerProvider = ({ children }: BannerProviderProps) => {
   );
 };
 
-export default BannerProvider;
+export const useBannerContext = () => {
+  const context = useContext(BannerContext);
+
+  if (!context) {
+    console.error("BannerContext was used outside of its Provider");
+  }
+
+  return context;
+};

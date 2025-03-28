@@ -1,4 +1,4 @@
-import { HvAppShellIcon } from "./Config";
+import type { HvAppShellIcon } from "./Config";
 
 export interface MenuItem {
   id: string;

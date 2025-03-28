@@ -76,7 +76,7 @@ class LocationWithViews<State = unknown> implements Location<State> {
   }
 }
 
-export const useLocation = () => {
+export const useHvLocation = () => {
   const location = useLocationReactRouter();
   const config = useHvAppShellConfig();
   const toReturn = useMemo(() => {

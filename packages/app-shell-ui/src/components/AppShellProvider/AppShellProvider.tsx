@@ -21,8 +21,8 @@ import {
   HvProviderProps,
 } from "@hitachivantara/uikit-react-core";
 
-import useLocalStorage from "../../lib/hooks/useLocalStorage";
-import { addResourceBundles } from "../../lib/i18n";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import { addResourceBundles } from "../../i18n";
 
 export type AppShellProviderProps = {
   children: ReactNode;

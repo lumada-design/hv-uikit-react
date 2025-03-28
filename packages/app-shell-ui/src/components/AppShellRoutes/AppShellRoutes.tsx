@@ -14,11 +14,11 @@ import {
 } from "@hitachivantara/app-shell-shared";
 import { HvContainer } from "@hitachivantara/uikit-react-core";
 
-import getBasePath from "../../lib/utils/basePathUtils";
-import { getAppIdFromBundle } from "../../lib/utils/navigationUtil";
 import GenericError from "../../pages/GenericError";
 import LoadingPage from "../../pages/LoadingPage";
 import RootRoute from "../../pages/Root";
+import getBasePath from "../../utils/basePathUtils";
+import { getAppIdFromBundle } from "../../utils/navigationUtil";
 import AppShellViewProvider from "../AppShellViewProvider";
 
 const NotFound = lazy(() => import("../../pages/NotFound"));

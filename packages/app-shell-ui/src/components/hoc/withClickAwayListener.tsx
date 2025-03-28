@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import { ClickAwayListener } from "@mui/material";
 
-import createAppContainerElement from "../../lib/utils/documentUtil";
+import createAppContainerElement from "../../utils/documentUtil";
 
 interface WithClickAwayListenerProps {
   onClickAway?: () => void;

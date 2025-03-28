@@ -16,8 +16,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import createAppContainerElement from "../../../../../../lib/utils/documentUtil";
-import includesString from "../../../../../../lib/utils/textUtil";
+import createAppContainerElement from "../../../../../../utils/documentUtil";
 import IconUiKit from "../../../../../IconUiKit";
 import BrandLogo from "../../../../BrandLogo";
 import StyledIconWrapper from "../../../styles";
@@ -46,9 +45,7 @@ const AppSwitcherToggle: React.FC<HvAppShellAppSwitcherConfig> = ({
           description: app.description
             ? tConfig(app.description).toString()
             : undefined,
-          url: includesString(app.url, ":")
-            ? app.url
-            : tConfig(app.url).toString(),
+          url: app.url.includes(":") ? app.url : tConfig(app.url).toString(),
           target: app.target === "NEW" ? "_blank" : "_top",
           iconElement: app.icon && <IconUiKit name={app.icon.name} />,
         }))

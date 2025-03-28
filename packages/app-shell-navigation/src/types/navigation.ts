@@ -1,4 +1,4 @@
-import { Path } from "react-router-dom";
+import type { Path } from "react-router-dom";
 
 export type ViewDestination = {
   /**

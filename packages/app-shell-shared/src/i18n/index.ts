@@ -1,2 +1,1 @@
-const CONFIG_TRANSLATIONS_NAMESPACE = "configTranslations";
-export default CONFIG_TRANSLATIONS_NAMESPACE;
+export const CONFIG_TRANSLATIONS_NAMESPACE = "configTranslations";

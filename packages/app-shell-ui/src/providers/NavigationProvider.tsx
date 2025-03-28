@@ -2,6 +2,7 @@ import {
   createContext,
   ReactNode,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
   useState,
@@ -9,13 +10,13 @@ import {
 import { useMediaQuery, useTheme } from "@mui/material";
 import { useHvAppShellConfig } from "@hitachivantara/app-shell-shared";
 
-import useLocalStorage from "../lib/hooks/useLocalStorage";
-import useNavigationMenuItems from "../lib/hooks/useNavigationMenuItems";
-import { NavigationMenuItem } from "../lib/types";
+import useLocalStorage from "../hooks/useLocalStorage";
+import useNavigationMenuItems from "../hooks/useNavigationMenuItems";
+import { NavigationMenuItem } from "../types";
 import {
   findItemById,
   removeHrefFromMenuItemsWithChildren,
-} from "../lib/utils/navigationUtil";
+} from "../utils/navigationUtil";
 
 export type NavigationProviderProps = {
   children: ReactNode;
@@ -51,7 +52,7 @@ export const NavigationContext = createContext<NavigationContextValue>({
   },
 });
 
-const NavigationProvider = ({ children }: NavigationProviderProps) => {
+export const NavigationProvider = ({ children }: NavigationProviderProps) => {
   const { navigationMode } = useHvAppShellConfig();
   const { items, selectedMenuItemId, rootMenuItemId } =
     useNavigationMenuItems();
@@ -157,4 +158,12 @@ const NavigationProvider = ({ children }: NavigationProviderProps) => {
   );
 };
 
-export default NavigationProvider;
+export const useNavigationContext = () => {
+  const context = useContext(NavigationContext);
+
+  if (context) {
+    console.error("NavigationContext was used outside of its Provider");
+  }
+
+  return context;
+};

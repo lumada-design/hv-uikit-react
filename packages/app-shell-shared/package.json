@@ -22,12 +22,13 @@
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
-  "dependencies": {
-    "@hitachivantara/uikit-react-core": "^5.72.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^18.2.0",
     "react-router-dom": "^6.9.0"
+  },
+  "optionalDependencies": {
+    "@hitachivantara/uikit-react-core": "^5.72.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
