@@ -1,16 +1,24 @@
 import { createRequire } from "node:module";
+import { join } from "node:path";
+import { findUpSync } from "find-up-simple";
 
 export const require = createRequire(import.meta.url);
 
 /**
- * Resolves the module name and normalizes slashes to be posix/unix-like forward slashes.
+ * Resolves the module entrypoint by name and normalizes slashes to be posix/unix-like forward slashes.
  *
  * @param moduleName The name of the module to be searched for
  * @returns The module path normalized
  */
 export function resolveModule(moduleName: string) {
-  const module = require.resolve(moduleName);
-  return module.replace(/\\+/g, "/");
+  return require.resolve(moduleName).replace(/\\+/g, "/");
+}
+
+/** Resolves the module directory (where `package.json` is) by `moduleName` */
+function resolveModuleDirectory(moduleName: string) {
+  const moduleEntrypoint = resolveModule(moduleName);
+  const modulePackage = findUpSync("package.json", { cwd: moduleEntrypoint });
+  return modulePackage?.slice(0, modulePackage.lastIndexOf("/")) || "";
 }
 
 /**
@@ -22,11 +30,5 @@ export function resolveModule(moduleName: string) {
  * @returns the /path/to/@module/name/<suffix>
  */
 export function getModulePath(moduleName: string, suffix: string) {
-  const moduleNameWithSlashes = `/${moduleName}/`;
-  const module = resolveModule(moduleName);
-  const modulePosition = module.lastIndexOf(moduleNameWithSlashes);
-  return `${module.slice(
-    0,
-    modulePosition + moduleNameWithSlashes.length,
-  )}${suffix}`;
+  return join(resolveModuleDirectory(moduleName), suffix);
 }

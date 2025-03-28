@@ -6,7 +6,6 @@
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Vite Plugin",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
-  "main": "src/index.ts",
   "sideEffects": false,
   "license": "Apache-2.0",
   "repository": {
@@ -38,6 +37,7 @@
     "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-virtual": "^3.0.1",
     "es-module-shims": "^1.6.3",
+    "find-up-simple": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
@@ -59,17 +59,17 @@
   ],
   "publishConfig": {
     "access": "public",
-    "directory": "package",
-    "main": "dist/index.js",
-    "module": "dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "import": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      },
-      "./package.json": "./package.json"
-    }
+    "directory": "package"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
   },
   "clean-publish": {
     "withoutPublish": true,
