@@ -1,0 +1,41 @@
+import {
+  HvBannerContent,
+  HvNumberInput,
+  HvTypography,
+  inputClasses,
+} from "@hitachivantara/uikit-react-core";
+
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData("NumberInput", "core", inputClasses);
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+<Playground
+  Component={HvNumberInput}
+  componentName="HvNumberInput"
+  controls={{
+    label: { type: "text", defaultValue: "Value" },
+    description: { type: "text", defaultValue: "Please enter a number" },
+    placeholder: "Enter a number here...",
+    required: { defaultValue: true },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+/>
+
+<br />
+
+<HvBannerContent variant="warning">
+  <HvTypography component="span">
+    The `HvNumberInput` component shares the same API as the `HvInput`
+    component. Please check the [HvInput component page](/components/input) for
+    documentation.
+  </HvTypography>
+</HvBannerContent>

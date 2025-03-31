@@ -21,7 +21,7 @@ export type HvBaseInputClasses = ExtractNames<typeof useClasses>;
 export interface HvBaseInputProps
   extends Omit<
     InputBaseProps,
-    "onChange" | "classes" | "ref" | "color" | "size"
+    "onChange" | "classes" | "ref" | "color" | "size" | "inputProps"
   > {
   /** The input name. */
   name?: string;
@@ -56,6 +56,12 @@ export interface HvBaseInputProps
    * @deprecated Use `ref` directly instead
    * */
   inputRef?: InputBaseProps["inputRef"];
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps?: React.InputHTMLAttributes<
+    HTMLInputElement | HTMLTextAreaElement
+  >;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBaseInputClasses;
 }
