@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.44.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.2...@hitachivantara/uikit-styles@5.44.3) (2025-03-31)
+
+### Bug Fixes
+
+- **Selection:** align Checkbox/Radio styles ([#4629](https://github.com/lumada-design/hv-uikit-react/issues/4629)) ([1276fc1](https://github.com/lumada-design/hv-uikit-react/commit/1276fc179aa94974c83a1ad259bffa555e7c3c9f))
+
 ## [5.44.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.1...@hitachivantara/uikit-styles@5.44.2) (2025-03-27)
 
 ### Bug Fixes

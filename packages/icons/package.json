@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-icons",
-  "version": "5.14.4",
+  "version": "5.14.5",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -41,7 +41,7 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-styles": "^5.44.2"
+    "@hitachivantara/uikit-styles": "^5.44.3"
   },
   "devDependencies": {
     "@svgr/core": "^8.1.0",

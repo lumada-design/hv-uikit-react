@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.91.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.91.2...@hitachivantara/uikit-react-core@5.91.3) (2025-03-31)
+
+### Bug Fixes
+
+- **input:** adornment styling ([#4624](https://github.com/lumada-design/hv-uikit-react/issues/4624)) ([3f320a4](https://github.com/lumada-design/hv-uikit-react/commit/3f320a4fbd97cbd6a960fd70500ccb530bd7a42e))
+- **Selection:** align Checkbox/Radio styles ([#4629](https://github.com/lumada-design/hv-uikit-react/issues/4629)) ([1276fc1](https://github.com/lumada-design/hv-uikit-react/commit/1276fc179aa94974c83a1ad259bffa555e7c3c9f))
+
 ## [5.91.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.91.1...@hitachivantara/uikit-react-core@5.91.2) (2025-03-27)
 
 ### Bug Fixes
