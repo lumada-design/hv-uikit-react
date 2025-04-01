@@ -1,5 +1,5 @@
 import {
-  HvIconSprite,
+  icons,
   type HvIconSpriteProps,
 } from "@hitachivantara/uikit-react-icons";
 
@@ -8,17 +8,11 @@ export interface IconUiKitProps
   name: string;
 }
 
-const spriteUri = import.meta.resolve?.("@hv/uikit-icons/icons.svg");
-
 const IconUiKit = ({ name, ...others }: IconUiKitProps) => {
-  return (
-    <HvIconSprite
-      spriteUrl={spriteUri!}
-      iconName={name}
-      color="currentcolor"
-      {...others}
-    />
-  );
+  const Icon = icons[name as keyof typeof icons];
+  if (!Icon) return null;
+
+  return <Icon {...others} />;
 };
 
 export default IconUiKit;

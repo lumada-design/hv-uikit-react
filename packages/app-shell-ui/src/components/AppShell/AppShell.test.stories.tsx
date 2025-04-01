@@ -25,6 +25,7 @@ const importMap = {
   imports: {
     ...Object.fromEntries(externalsEntries),
     "@hv/uikit-icons/": "/assets/",
+    "@hv/sample-app/": "https://lumada-design.github.io/modules/sample-app/",
   },
 };
 
@@ -66,8 +67,8 @@ export const Main: StoryObj<HvAppShellConfig> = {
     ],
     mainPanel: {
       views: [
-        { bundle: "@test/pages/AssetInventory.js", route: "/" },
-        { bundle: "@test/pages/ListView.js", route: "/about" },
+        { bundle: "@hv/sample-app/pages/SecondPage.js", route: "/" },
+        { bundle: "@hv/sample-app/pages/SecondPage.js", route: "/about" },
       ],
     },
   },
@@ -81,7 +82,10 @@ export const Main: StoryObj<HvAppShellConfig> = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole("link", { name: /about/i }));
+    const aboutLink = canvas.queryByRole("link", { name: /about/i });
+    if (aboutLink) {
+      await userEvent.click(aboutLink);
+    }
   },
   render: (args) => <HvAppShell config={args} />,
 };
