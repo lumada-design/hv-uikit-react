@@ -13,6 +13,9 @@ export default {
     "@hv/user-information-client": VITE_USER_INFORMATION_URL,
     "@hv/user-notifications-client": VITE_USER_NOTIFICATIONS_URL,
   },
+  logo: {
+    name: "PENTAHO+",
+  },
   theming: {
     themes: ["ds5", "pentahoPlus"],
     theme: "pentahoPlus",
@@ -118,9 +121,6 @@ export default {
       asset: "Asset from config",
       intro: "Intro from ASh",
     },
-  },
-  logo: {
-    name: "LUMADA",
   },
   header: {
     actions: [
