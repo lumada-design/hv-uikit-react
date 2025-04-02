@@ -1,12 +1,4 @@
-import {
-  cloneElement,
-  isValidElement,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
@@ -245,8 +237,8 @@ export const HvInput = fixedForwardRef(function HvInput<
     required,
     readOnly,
     disabled,
-    enablePortal = false,
-    suggestOnFocus = false,
+    enablePortal,
+    suggestOnFocus,
     label,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
@@ -259,17 +251,17 @@ export const HvInput = fixedForwardRef(function HvInput<
     "aria-errormessage": ariaErrorMessage,
     type = "text",
     placeholder,
-    autoFocus = false,
+    autoFocus,
     labels: labelsProp,
     validationMessages,
-    disableClear = false,
-    disableRevealPassword = false,
-    disableSearchButton = false,
+    disableClear,
+    disableRevealPassword,
+    disableSearchButton,
     endAdornment,
     maxCharQuantity,
     minCharQuantity,
     validation,
-    showValidationIcon = false,
+    showValidationIcon,
     suggestionListCallback,
     inputRef: inputRefProp,
     onBlur,
@@ -583,7 +575,7 @@ export const HvInput = fixedForwardRef(function HvInput<
         onClick={handleClear}
         aria-label={labels?.clearButtonLabel}
         aria-controls={setId(elementId, "input")}
-        icon={<HvIcon name="Close" size="xs" />}
+        icon={<HvIcon compact name="Close" size="xs" />}
       />
     );
   }, [
@@ -613,7 +605,7 @@ export const HvInput = fixedForwardRef(function HvInput<
           onEnter &&
           ((evt) => onEnter?.(evt as any, inputRef.current?.value ?? ""))
         }
-        icon={<HvIcon name="Search" title={labels.searchButtonLabel} />}
+        icon={<HvIcon compact name="Search" title={labels.searchButtonLabel} />}
       />
     );
   }, [
@@ -662,25 +654,13 @@ export const HvInput = fixedForwardRef(function HvInput<
     return <HvIcon name="Success" color="positive" className={classes.icon} />;
   }, [showValidationIcon, validationState, classes.icon]);
 
-  // useMemo to avoid repetitive cloning of the custom icon
-  // TODO: remove in v6. don't assume `endAdornment` must be an icon
-  const customIconEl = useMemo(
-    () =>
-      isValidElement(endAdornment)
-        ? cloneElement(endAdornment as React.ReactElement, {
-            className: cx(endAdornment.props.className, classes.icon),
-          })
-        : endAdornment,
-    [classes.icon, endAdornment, cx],
-  );
-
   const adornments = useMemo(() => {
     if (
       !clearButton &&
       !revealPasswordButton &&
       !searchButton &&
       !validationIcon &&
-      !customIconEl
+      !endAdornment
     )
       return null;
 
@@ -689,13 +669,13 @@ export const HvInput = fixedForwardRef(function HvInput<
         {clearButton}
         {revealPasswordButton}
         {searchButton}
-        {validationIcon || customIconEl}
+        {validationIcon || endAdornment}
       </div>
     );
   }, [
     classes.adornmentsBox,
     clearButton,
-    customIconEl,
+    endAdornment,
     revealPasswordButton,
     searchButton,
     validationIcon,

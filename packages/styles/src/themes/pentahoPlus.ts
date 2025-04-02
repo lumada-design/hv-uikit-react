@@ -657,8 +657,10 @@ const pentahoPlus = makeTheme((theme) => ({
     HvButtonBase: {
       classes: {
         root: {
-          ":hover": { backgroundColor: theme.colors.primaryDimmed },
-          ":active": { backgroundColor: theme.colors.primarySubtle },
+          ":where(:not(.HvButtonBase-disabled))": {
+            ":hover": { backgroundColor: theme.colors.primaryDimmed },
+            ":active": { backgroundColor: theme.colors.primarySubtle },
+          },
         },
       },
     },
