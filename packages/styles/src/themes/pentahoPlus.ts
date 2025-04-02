@@ -431,6 +431,7 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         messageIcon: {
           borderRadius: 8,
+          alignSelf: "start",
           color: "var(--icolor)",
           outline: `1px solid var(--outline)`,
           backgroundColor: "var(--bg)",
