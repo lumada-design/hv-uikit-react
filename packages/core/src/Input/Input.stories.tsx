@@ -652,6 +652,15 @@ export const Test: StoryObj<HvInputProps> = {
             <span className="h-full content-center px-xxs">.com</span>
           }
         />
+        <HvInput
+          type="password"
+          label="Password"
+          value="password"
+          status="valid"
+          showValidationIcon
+          placeholder="Enter password"
+          classes={{ inputRoot: "h-48px" }}
+        />
       </>
     );
   },

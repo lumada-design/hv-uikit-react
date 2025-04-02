@@ -16,17 +16,13 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
     display: "flex",
     flexDirection: "row",
     height: "30px",
+    alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "inherit",
+    flexShrink: 0,
   },
-  icon: {
-    // TODO: review in v6 - don't assume/force size
-    ":has(svg)": {
-      width: "30px",
-      height: "30px",
-    },
-  },
+  icon: {},
   adornmentButton: {
     borderRadius: "inherit",
   },
