@@ -1,6 +1,7 @@
 import * as React from "react";
 import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
+import * as materialUi from "@mui/material";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
@@ -25,6 +26,7 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
     "react-table": reactTable,
+    "@mui/material": materialUi,
   },
 };
 
