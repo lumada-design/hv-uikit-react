@@ -10,7 +10,6 @@ import {
   getNavigationItemById,
   getParentItemById,
 } from "./NavigationSlider/utils";
-import { hasChildNavigationItems } from "./utils/VerticalNavigation.utils";
 import { staticClasses, useClasses } from "./VerticalNavigation.styles";
 import {
   NavigationData,
@@ -100,8 +99,9 @@ export const HvVerticalNavigation = forwardRef<
 
   const [parentItem, setParentItem] = useState(initialParentItem);
 
+  /** Checks if there are any sub items in the NavigationItem data structure. */
   const hasAnyChildWithData = useMemo(
-    () => hasChildNavigationItems(parentData),
+    () => parentData.some((item) => item.data && item.data.length > 0),
     [parentData],
   );
 
