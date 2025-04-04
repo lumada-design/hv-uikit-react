@@ -1,9 +1,17 @@
 import { CodeBlock } from "../../components/code/CodeBlock";
 
+import phoneInput from "../../examples/inputs/PhoneInput?raw";
 import tagsDropdown from "../../examples/inputs/TagsDropdown?raw";
 import tagsSuggestions from "../../examples/inputs/TagsSuggestions?raw";
 
 # Inputs examples
+
+## Phone input
+
+A phone input that includes a dropdown to select the country code. The input is automatically formatted based on the selected country code.
+In the example the formatting function is always the same and formats the number as `XX XXX XX XX`.
+
+<CodeBlock code={{ main: phoneInput }} />
 
 ## Tags dropdown input
 

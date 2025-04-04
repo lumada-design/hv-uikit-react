@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Popper } from "@mui/material";
 import {
-  HvInput,
   HvLabel,
   HvPanel,
   HvTag,
   HvTagsInput,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Down, Up } from "@hitachivantara/uikit-react-icons";
+import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
 const colors = [
   "Blue",
@@ -34,7 +33,6 @@ const lastUsed = ["Blue", "Red", "Green"];
 export default function Demo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -42,10 +40,6 @@ export default function Demo() {
       containerRef.current.scrollLeft = containerRef.current.scrollWidth;
     }
   }, [selectedColors]);
-
-  useEffect(() => {
-    setOpen(searchTerm !== "");
-  }, [searchTerm]);
 
   const handleAddColor = (color: string) => {
     setSelectedColors((prev) => {
@@ -63,19 +57,18 @@ export default function Demo() {
       <HvLabel>Tags with suggestions</HvLabel>
       <HvTagsInput
         ref={containerRef}
-        onKeyUp={(e) => setSearchTerm(e.currentTarget.value)}
         onChange={(event, value) => {
           setSelectedColors(
             value.map((v) => (typeof v === "string" ? v : (v.label as string))),
           );
         }}
-        onDelete={(event, value) => {
+        onDelete={(_, value) => {
           handleRemoveColor(value as string);
         }}
         value={selectedColors}
         commitTagOn={["Comma"]}
         endAdornment={
-          <Down
+          <DropDownXS
             rotate={open}
             onClick={() => setOpen((o) => !o)}
             className="cursor-pointer"

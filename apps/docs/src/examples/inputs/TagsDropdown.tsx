@@ -4,7 +4,6 @@ import {
   HvLabel,
   HvPanel,
   HvTag,
-  HvTagsInput,
 } from "@hitachivantara/uikit-react-core";
 
 const colors = [
