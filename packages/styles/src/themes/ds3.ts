@@ -250,14 +250,14 @@ const ds3 = makeTheme((theme) => ({
     HvBaseCheckBox: {
       classes: {
         root: {
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
         },
       },
     },
     HvCheckBoxIcon: {
       classes: {
         root: {
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
           borderColor: theme.colors.text,
         },
         checked: {
@@ -387,7 +387,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           "&:hover": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },
@@ -405,7 +405,7 @@ const ds3 = makeTheme((theme) => ({
         root: {
           width: "32px",
           height: "16px",
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
           "&:hover": {
             backgroundColor: "transparent",
           },
@@ -516,7 +516,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           outline: "none",
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
         },
         selectable: {
           "&:hover": {
@@ -562,7 +562,7 @@ const ds3 = makeTheme((theme) => ({
         },
         thumbnail: {
           "& img": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
         thumbnailSelected: {
@@ -576,7 +576,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         container: {
           "&:hover": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },
@@ -627,13 +627,13 @@ const ds3 = makeTheme((theme) => ({
           marginRight: "5px",
 
           "& > div": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
 
             "& .saturation-white": {
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
 
               "& .saturation-black": {
-                borderRadius: theme.radii.none,
+                borderRadius: 0,
               },
             },
           },
@@ -648,7 +648,7 @@ const ds3 = makeTheme((theme) => ({
           marginTop: "0px",
 
           "& .hue-horizontal": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
         hueSlider: {
@@ -674,7 +674,7 @@ const ds3 = makeTheme((theme) => ({
           margin: "5px",
 
           "& > span > div": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },
@@ -712,7 +712,7 @@ const ds3 = makeTheme((theme) => ({
     HvDialog: {
       classes: {
         paper: {
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
         },
       },
     },
@@ -758,7 +758,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           border: "none",
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
         },
         progressbarContainer: {
           height: "2px",
@@ -782,7 +782,7 @@ const ds3 = makeTheme((theme) => ({
         overlay: {
           backgroundColor: theme.colors.atmo3,
           opacity: "0.75",
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
         },
       },
     },
@@ -791,7 +791,7 @@ const ds3 = makeTheme((theme) => ({
         dropZoneContainer: {
           border: `1px dotted ${theme.colors.atmo4}`,
           background: theme.colors.atmo2,
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
           ":hover,:focus-within": {
             borderColor: theme.colors.secondary,
           },
@@ -836,7 +836,7 @@ const ds3 = makeTheme((theme) => ({
           "&&": {
             padding: theme.space.xs,
             borderWidth: 0,
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
         sectionName: {
@@ -946,7 +946,7 @@ const ds3 = makeTheme((theme) => ({
         button: {
           height: "32px",
           width: "32px",
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
           cursor: "pointer",
           "&:hover": {
             "& .HvVerticalScrollListItem-notSelected": {
@@ -1105,7 +1105,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         container: {
           "&:hover": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },
@@ -1183,7 +1183,7 @@ const ds3 = makeTheme((theme) => ({
           padding: "0 20px",
           "&:hover": {
             backgroundColor: "transparent",
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
             "&::after": {
               height: "1px",
               backgroundColor: theme.colors.secondary_60,
@@ -1298,18 +1298,18 @@ const ds3 = makeTheme((theme) => ({
           backgroundColor: theme.colors.atmo1,
         },
         variantList: {
-          borderRadius: theme.radii.none,
+          borderRadius: 0,
           "& td": {
             borderTop: "1px solid transparent",
             borderBottom: "1px solid transparent",
           },
           "& td:first-of-type": {
             borderLeft: "1px solid transparent",
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
           "& td:last-of-type": {
             borderRight: "1px solid transparent",
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
           "&.HvTableRow-selected": {
             "& td": {
@@ -1318,11 +1318,11 @@ const ds3 = makeTheme((theme) => ({
             },
             "& td:first-of-type": {
               borderLeft: `1px solid ${theme.colors.secondary}`,
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
             },
             "& td:last-of-type": {
               borderRight: `1px solid ${theme.colors.secondary}`,
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
             },
 
             "&:hover": {
@@ -1332,11 +1332,11 @@ const ds3 = makeTheme((theme) => ({
               },
               "& td:first-of-type": {
                 borderLeft: `1px solid ${theme.colors.atmo4}`,
-                borderRadius: theme.radii.none,
+                borderRadius: 0,
               },
               "& td:last-of-type": {
                 borderRight: `1px solid ${theme.colors.atmo4}`,
-                borderRadius: theme.radii.none,
+                borderRadius: 0,
               },
             },
           },
@@ -1348,15 +1348,15 @@ const ds3 = makeTheme((theme) => ({
             },
             "& td:first-of-type": {
               borderLeft: `1px solid ${theme.colors.atmo4}`,
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
             },
             "& td:last-of-type": {
               borderRight: `1px solid ${theme.colors.atmo4}`,
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
             },
           },
           "&.HvIsFocused": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },
@@ -1378,7 +1378,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         popper: {
           "& .HvTooltip-tooltip": {
-            borderRadius: theme.radii.none,
+            borderRadius: 0,
           },
         },
       },

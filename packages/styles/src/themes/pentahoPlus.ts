@@ -783,7 +783,7 @@ const pentahoPlus = makeTheme((theme) => ({
               backgroundColor: theme.colors.primaryDimmed,
             },
             "&:not(.HvMultiButton-firstButton, .HvMultiButton-lastButton)": {
-              borderRadius: theme.radii.none,
+              borderRadius: 0,
             },
           },
         },
