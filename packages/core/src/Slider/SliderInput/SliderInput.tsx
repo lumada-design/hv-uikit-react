@@ -92,7 +92,6 @@ export const HvSliderInput = ({
             aria-label={`${label}-${index}`}
             className={classes.input}
             disabled={disabled}
-            type="number"
             value={Number.isNaN(value) || value == null ? "" : value.toString()}
             onEnter={() => handleChange(index)}
             onBlur={() => handleChange(index)}
