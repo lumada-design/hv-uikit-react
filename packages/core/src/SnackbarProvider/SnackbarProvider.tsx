@@ -7,7 +7,10 @@ import {
   SnackbarProviderProps,
   useSnackbar,
 } from "notistack";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import {
+  useDefaultProps,
+  type ExtractNames,
+} from "@hitachivantara/uikit-react-utils";
 
 import {
   HvSnackbarContent,
@@ -121,20 +124,21 @@ export const useHvSnackbar = () => {
  * This component uses of the [Notistack](https://github.com/iamhosseindhv/notistack) library.
  * Please refer to its [API Reference](https://notistack.com/v2.x/api-reference) for more complex usage scenarios.
  */
-export const HvSnackbarProvider = ({
-  children,
-  notistackClassesOverride,
-  maxSnack = 5,
-  autoHideDuration = 5000,
-  anchorOrigin = {
-    vertical: "top",
-    horizontal: "right",
-  },
-  classes: classesProp,
-  className,
-  container,
-  ...others
-}: HvSnackbarProviderProps) => {
+export const HvSnackbarProvider = (props: HvSnackbarProviderProps) => {
+  const {
+    children,
+    notistackClassesOverride,
+    maxSnack = 5,
+    autoHideDuration = 5000,
+    anchorOrigin = {
+      vertical: "top",
+      horizontal: "right",
+    },
+    classes: classesProp,
+    className,
+    container,
+    ...others
+  } = useDefaultProps("HvSnackbarProvider", props);
   const { classes, css, cx } = useClasses(classesProp);
 
   const { containerRoot, ...otherNotistackClasses } =

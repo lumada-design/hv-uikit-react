@@ -452,6 +452,9 @@ const pentahoPlus = makeTheme((theme) => ({
     HvSnackbar: {
       anchorOrigin: { vertical: "bottom", horizontal: "center" },
     },
+    HvSnackbarProvider: {
+      anchorOrigin: { vertical: "bottom", horizontal: "center" },
+    },
     HvBaseCheckBox: {
       classes: {
         root: {
