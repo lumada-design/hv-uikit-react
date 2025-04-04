@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     cursor: "default",
     color: theme.colors.textDark,
     borderColor: theme.colors.border,
-    borderRadius: theme.radii.none,
+    borderRadius: 0,
     maxWidth: 180,
     whiteSpace: "nowrap",
     transition: "background-color 0.3s ease",
