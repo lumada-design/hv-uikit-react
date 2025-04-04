@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "references": [{ "path": "./tsconfig.node.json" }],
+
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "types": ["node"],
+
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "allowSyntheticDefaultImports": true
+  },
+
+  "include": ["src"]
+}

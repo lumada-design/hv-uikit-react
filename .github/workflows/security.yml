@@ -59,6 +59,11 @@ jobs:
       fail-fast: false
       matrix:
         PACKAGE:
+          - "app-shell-events"
+          - "app-shell-navigation"
+          - "app-shell-shared"
+          - "app-shell-ui"
+          - "app-shell-vite-plugin"
           - "cli"
           - "code-editor"
           - "core"
