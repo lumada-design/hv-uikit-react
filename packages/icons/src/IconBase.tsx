@@ -56,7 +56,7 @@ export interface IconBaseProps extends Omit<HvIconContainerProps, "color"> {
   /**
    * A color or array of colors to override the default icon colors.
    * Accepts any valid CSS color or color from the UI Kit palette.
-   * @example ["brand", "inherit"]
+   * @example "secondary" "brand" "atmo2" "#FF0000" "purple" "inherit"
    */
   color?: HvColorAny | HvColorAny[];
   /**

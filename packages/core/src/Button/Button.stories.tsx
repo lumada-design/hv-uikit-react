@@ -1,4 +1,6 @@
 import { css } from "@emotion/css";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StoryObj } from "@storybook/react";
 import { HvButton, HvButtonProps } from "@hitachivantara/uikit-react-core";
 import {
@@ -374,10 +376,10 @@ export const Test: StoryObj = {
       </HvButton>
 
       <HvButton icon aria-label="Play">
-        <Play iconSize="M" />
+        <Play size="M" />
       </HvButton>
       <HvButton icon disabled aria-label="Stop">
-        <Play iconSize="M" />
+        <Play size="M" />
       </HvButton>
 
       <HvButton startIcon={<Play />} variant="primary" size="lg">
@@ -416,6 +418,15 @@ export const Test: StoryObj = {
       <HvButton startIcon={<Play />} color="lightcyan" variant="ghost">
         lightcyan
       </HvButton>
+
+      <HvButton icon variant="primary" aria-label="Add">
+        <FontAwesomeIcon icon={faAdd} />
+      </HvButton>
+      <HvButton startIcon={<FontAwesomeIcon icon={faAdd} />}>Add</HvButton>
+      <HvButton icon variant="primary" aria-label="Add">
+        <div className="i-ph-plus-bold" />
+      </HvButton>
+      <HvButton startIcon={<div className="i-ph-plus-bold" />}>Add</HvButton>
     </div>
   ),
 };

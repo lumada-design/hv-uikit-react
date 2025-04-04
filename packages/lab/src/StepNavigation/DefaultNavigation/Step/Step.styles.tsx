@@ -1,9 +1,10 @@
-import { createClasses } from "@hitachivantara/uikit-react-core";
+import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
 export const { staticClasses, useClasses } = createClasses("HvStep", {
   root: {
     width: "fit-content",
     height: "fit-content",
+    fontWeight: theme.fontWeights.semibold,
   },
   notCurrent: { margin: "-8px" },
   xs: {},
