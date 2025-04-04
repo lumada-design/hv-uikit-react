@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.92.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.91.3...@hitachivantara/uikit-react-core@5.92.0) (2025-04-04)
+
+### Bug Fixes
+
+- **Adornment:** hover & icon sizing ([#4635](https://github.com/lumada-design/hv-uikit-react/issues/4635)) ([437d986](https://github.com/lumada-design/hv-uikit-react/commit/437d9864aad473ddfa2241ddcf7c6a3661a1c7e5))
+
+### Features
+
+- **icons:** remove core-icons dependency & inline critical icons ([f47cc5b](https://github.com/lumada-design/hv-uikit-react/commit/f47cc5bf5e09705fc02f6a32fcfe0413c8a27dc5))
+- **Input:** align P+ styles ([48b5560](https://github.com/lumada-design/hv-uikit-react/commit/48b5560940088d4a0268b47ce3e765ef33fc5f4e))
+
 ## [5.91.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.91.2...@hitachivantara/uikit-react-core@5.91.3) (2025-03-31)
 
 ### Bug Fixes
