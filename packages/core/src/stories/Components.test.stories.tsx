@@ -101,7 +101,7 @@ export const TestInputs: StoryObj = {
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="grid gap-xs">
-      <div className="flex gap-xs">
+      <div className="flex gap-xs items-start">
         <div className="grid grid-cols-2 gap-xs w-440px">
           {renderStory(InputTestStory, context)}
         </div>
@@ -111,10 +111,10 @@ export const TestInputs: StoryObj = {
         <div className="grid gap-xs w-120px">
           {renderStory(CheckBoxGroupVariantsStory, context)}
         </div>
-        <div className="flex flex-col gap-xs w-120px">
+        <div className="grid gap-xs w-120px">
           {renderStory(RadioGroupVariantsStory, context)}
         </div>
-        <div className="flex flex-col w-160px">
+        <div className="grid w-160px">
           {renderStory(CheckBoxTestStory, context)}
         </div>
         <div className="grid gap-sm w-120px">
@@ -125,7 +125,7 @@ export const TestInputs: StoryObj = {
             {renderStory(SwitchVariantsStory, context)}
           </div>
         </div>
-        <div className="flex flex-col gap-xs flex-1">
+        <div className="grid gap-xs flex-1">
           {renderStory(SliderRangeVariantsStory, context)}
           <div className="flex gap-xs">
             {renderStory(SelectionListVariantsStory, context)}
@@ -162,11 +162,11 @@ export const TestPopups: StoryObj = {
   },
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
-    <div className="flex gap-md">
-      <div className="flex flex-col gap-xs w-240px">
+    <div className="flex gap-md items-start">
+      <div className="grid gap-xs w-240px">
         {renderStory(SelectTestStory, context)}
       </div>
-      <div className="flex flex-col gap-xs w-240px">
+      <div className="grid gap-xs w-240px">
         {renderStory(DropdownVariantsStory, context)}
         {DropdownMultiSelectionStory.render?.({ expanded: true }, context)}
       </div>
@@ -255,16 +255,16 @@ export const TestSurfaces: StoryObj = {
   },
   tags: ["skipTestRunner"],
   render: (args, context: any) => (
-    <div className="flex gap-sm">
+    <div className="flex gap-sm items-start">
       <div className="flex flex-col gap-xs w-340px">
         {renderStory(CardVariantsStory, context)}
         {renderStory(AppSwitcherMainStory, context)}
       </div>
-      <div className="flex flex-col gap-xs w-340px">
+      <div className="grid gap-xs w-340px">
         {renderStory(SectionTestStory, context)}
         {renderStory(ListContainerWithIconsStory, context)}
       </div>
-      <div className="flex flex-col gap-xs flex-1">
+      <div className="grid gap-xs flex-1">
         {renderStory(BannerVariantsStory, context)}
         {renderStory(FooterCustomLabelsStory, context)}
         <div className="mb-60px">{renderStory(HeaderTestStory, context)}</div>
