@@ -22,7 +22,6 @@ import {
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-  validationStates,
 } from "../FormElement";
 import {
   HvSuggestions,
@@ -197,11 +196,11 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
           maxTagsQuantity !== undefined &&
           currValue.length > maxTagsQuantity
         ) {
-          setValidationState(validationStates.invalid);
+          setValidationState("invalid");
           setValidationMessage(errorMessages.maxCharError);
           setStateValid(false);
         } else {
-          setValidationState(validationStates.valid);
+          setValidationState("valid");
           setValidationMessage("");
           setStateValid(true);
         }
@@ -440,7 +439,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
     const onDeleteTagHandler = useCallback(
       (event: React.MouseEvent<HTMLElement>, i: number) => {
         deleteTag(i, event, true);
-        setValidationState(validationStates.standBy);
+        setValidationState("standBy");
       },
       [deleteTag, setValidationState],
     );

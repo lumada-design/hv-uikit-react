@@ -1,6 +1,6 @@
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvFormStatus, validationStates } from "../FormElement";
+import type { HvFormStatus } from "../FormElement";
 import { sliderStyles as styles } from "./Slider.styles";
 import { HvKnobProperty, HvMarkProperty } from "./types";
 
@@ -404,13 +404,13 @@ export const convertStatusToArray = (
   status?: HvFormStatus | HvFormStatus[],
 ): {
   arrayStatus?: HvFormStatus[];
-  arrayDefaultStatus: (keyof typeof validationStates)[];
+  arrayDefaultStatus: HvFormStatus[];
 } => {
   const result: {
     arrayStatus?: HvFormStatus[];
-    arrayDefaultStatus: (keyof typeof validationStates)[];
+    arrayDefaultStatus: HvFormStatus[];
   } = {
-    arrayDefaultStatus: Array.from({ length }, () => validationStates.standBy),
+    arrayDefaultStatus: Array.from({ length }, () => "standBy"),
   };
 
   if (status == null) {
@@ -427,18 +427,16 @@ export const convertStatusToArray = (
 
 export const statusArrayToFormStatus = (
   arrayStatus: HvFormStatus[],
-): keyof typeof validationStates => {
-  const invalid = arrayStatus.some(
-    (status) => status === validationStates.invalid,
-  );
+): HvFormStatus => {
+  const invalid = arrayStatus.some((status) => status === "invalid");
 
-  if (invalid) return validationStates.invalid;
+  if (invalid) return "invalid";
 
-  const valid = arrayStatus.some((status) => status === validationStates.valid);
+  const valid = arrayStatus.some((status) => status === "valid");
 
-  if (valid) return validationStates.valid;
+  if (valid) return "valid";
 
-  return validationStates.standBy;
+  return "standBy";
 };
 
 export const knobsValuesToString = (

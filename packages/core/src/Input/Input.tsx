@@ -26,7 +26,6 @@ import {
   HvWarningText,
   isInvalid,
   isValid,
-  validationStates,
 } from "../FormElement";
 import {
   HvSuggestion,
@@ -286,9 +285,9 @@ export const HvInput = fixedForwardRef(function HvInput<
   const isEmptyValue = !inputRef.current?.value;
 
   // Validation related state
-  const [validationState, setValidationState] = useControlled(
+  const [validationState, setValidationState] = useControlled<HvFormStatus>(
     status,
-    validationStates.standBy,
+    "standBy",
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
@@ -478,7 +477,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     setFocused(true);
 
     // reset validation status to standBy (only when status is uncontrolled)
-    setValidationState(validationStates.standBy);
+    setValidationState("standBy");
 
     onFocus?.(event as any, event.target.value);
   };
@@ -534,7 +533,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     (!onEnter ||
       type !== "search" ||
       disableSearchButton ||
-      validationState !== validationStates.standBy);
+      validationState !== "standBy");
 
   const showSearchIcon = type === "search" && !disableSearchButton;
 
@@ -547,7 +546,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   const handleClear = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) => {
       // reset validation status to standBy (only when status is uncontrolled)
-      setValidationState(validationStates.standBy);
+      setValidationState("standBy");
 
       changeInputValue(inputRef.current, "");
 
@@ -593,8 +592,7 @@ export const HvInput = fixedForwardRef(function HvInput<
     // If the search icon is not actionable, only show it when the input is empty or active
     const reallyShowIt =
       showSearchIcon &&
-      (isEmptyValue ||
-        (onEnter && validationState === validationStates.standBy));
+      (isEmptyValue || (onEnter && validationState === "standBy"));
 
     if (!reallyShowIt) return null;
 

@@ -1,6 +1,6 @@
 import { InputBaseComponentProps } from "@mui/material/InputBase";
 
-import { validationStates } from "../FormElement";
+import { HvFormStatus } from "../FormElement";
 
 /** Checks if the value is a number. */
 const isNumeric = (num: string) =>
@@ -63,17 +63,15 @@ export const hasBuiltInValidations = (
 export const computeValidationState = (
   inputValidity: HvInputValidity,
   isEmptyValue: boolean,
-) => {
+): HvFormStatus => {
   // to keep 2.x behaviour,
   // consider that if the value is empty (and not required) we're returning to the standBy state.
   // might not make sense, as it makes impossible to say if the user explicitly cleared the input.
   if (inputValidity.valid && isEmptyValue) {
-    return validationStates.standBy;
+    return "standBy";
   }
 
-  return inputValidity.valid
-    ? validationStates.valid
-    : validationStates.invalid;
+  return inputValidity.valid ? "valid" : "invalid";
 };
 
 /**

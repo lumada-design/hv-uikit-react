@@ -32,7 +32,6 @@ import {
   HvLabel,
   HvWarningText,
   isInvalid,
-  validationStates,
 } from "../FormElement";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -217,9 +216,9 @@ export const HvTextArea = forwardRef<
 
   const [autoScrolling, setAutoScrolling] = useState(autoScroll);
 
-  const [validationState, setValidationState] = useControlled(
+  const [validationState, setValidationState] = useControlled<HvFormStatus>(
     status,
-    validationStates.standBy,
+    "standBy",
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
@@ -330,7 +329,7 @@ export const HvTextArea = forwardRef<
     setFocused(true);
 
     // Reset validation status to standBy (only when status is uncontrolled)
-    setValidationState(validationStates.standBy);
+    setValidationState("standBy");
 
     onFocus?.(event as any, String(value));
   };
