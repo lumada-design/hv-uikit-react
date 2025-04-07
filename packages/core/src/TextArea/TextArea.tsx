@@ -20,7 +20,6 @@ import {
   hasBuiltInValidations,
   HvInputValidity,
   validateInput,
-  validationTypes,
 } from "../BaseInput/validations";
 import {
   HvCharCounter,
@@ -253,7 +252,7 @@ export const HvTextArea = forwardRef<
       required,
       minCharQuantity,
       maxCharQuantity,
-      validationTypes.none,
+      "none",
       validation,
     );
 
@@ -389,7 +388,7 @@ export const HvTextArea = forwardRef<
       (status === undefined &&
         hasBuiltInValidations(
           required,
-          validationTypes.none,
+          "none",
           minCharQuantity,
           // If blockMax is true maxCharQuantity will never produce an error
           // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity

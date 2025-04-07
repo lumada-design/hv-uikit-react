@@ -67,11 +67,8 @@ export const HvCalendarHeader = (props: HvCalendarHeaderProps) => {
     inputValue.length === 0 || (inputValue && isDate(new Date(inputValue))),
   );
 
-  const validateInput = (incomingValid: any) =>
-    incomingValid === undefined || isDate(new Date(incomingValid));
-
   useEffect(() => {
-    const valid = validateInput(localValue);
+    const valid = !localValue || isDate(new Date(localValue));
     setIsValidValue(valid);
     if (valid) {
       if (!localValue) {

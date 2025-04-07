@@ -14,22 +14,19 @@ const isEmail = (email: string) => {
   return regexp.test(email);
 };
 
-export const validationTypes = Object.freeze({
-  none: "none",
-  number: "number",
-  email: "email",
-});
+type HvValidationType = "none" | "number" | "email";
 
 /** Returns the input's validation type based in the type of the input. */
-export const computeValidationType = (type: React.HTMLInputTypeAttribute) => {
+export const computeValidationType = (
+  type: React.HTMLInputTypeAttribute,
+): HvValidationType => {
   switch (type) {
     case "number":
-      return validationTypes.number;
+      return "number";
     case "email":
-      return validationTypes.email;
-
+      return "email";
     default:
-      return validationTypes.none;
+      return "none";
   }
 };
 
@@ -38,14 +35,14 @@ export const computeValidationType = (type: React.HTMLInputTypeAttribute) => {
  */
 export const hasBuiltInValidations = (
   required: boolean | undefined,
-  validationType: React.HTMLInputTypeAttribute,
+  validationType: HvValidationType,
   minCharQuantity: number | null | undefined,
   maxCharQuantity: number | null | undefined,
   validation?: (value: string) => boolean,
   inputProps?: InputBaseComponentProps,
 ) =>
   required ||
-  validationType !== validationTypes.none ||
+  validationType !== "none" ||
   minCharQuantity != null ||
   maxCharQuantity != null ||
   validation != null ||
@@ -119,7 +116,7 @@ export const validateInput = (
   required: boolean | undefined,
   minCharQuantity: any,
   maxCharQuantity: any,
-  validationType: string,
+  validationType: HvValidationType,
   validation?: (value: string) => boolean,
 ): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
@@ -161,14 +158,14 @@ export const validateInput = (
     // the validationType is used instead of type
     // for the same reason stated above
     switch (validationType) {
-      case validationTypes.number:
+      case "number":
         if (!isNumeric(value)) {
           inputValidity.typeMismatch = true;
           inputValidity.valid = false;
         }
         break;
 
-      case validationTypes.email:
+      case "email":
         if (!isEmail(value)) {
           inputValidity.typeMismatch = true;
           inputValidity.valid = false;
