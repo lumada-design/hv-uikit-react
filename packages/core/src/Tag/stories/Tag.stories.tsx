@@ -26,7 +26,7 @@ export const Main: StoryObj<HvTagProps> = {
   args: {
     label: "Tag Label",
     type: "semantic",
-    color: "infoDimmed",
+    color: "positive",
     disabled: false,
   },
   argTypes: {
