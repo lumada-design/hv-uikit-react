@@ -8,15 +8,22 @@ import {
 import { HvAdornment } from "../FormElement";
 import { HvIcon } from "../icons";
 import { HvInput, HvInputProps } from "../Input";
-import { changeInputValue } from "../utils/input";
+import { changeInputValue } from "../Input/utils";
 import { staticClasses, useClasses } from "./NumberInput.styles";
 
 export { staticClasses as numericInputClasses };
 
 export type HvNumberInputClasses = ExtractNames<typeof useClasses>;
 
-export interface HvNumberInputProps extends HvInputProps {}
+export interface HvNumberInputProps extends HvInputProps<HTMLInputElement> {}
 
+/**
+ * A number input component that allows the user to enter a number and displays two buttons to decrease / increase the value.
+ *
+ * This component extends the `HvInput` component, please check its documentation for more information on the available props.
+ *
+ * @extends HvInput
+ */
 export const HvNumberInput = forwardRef<
   // no-indent
   HTMLInputElement,

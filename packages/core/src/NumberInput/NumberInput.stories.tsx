@@ -1,9 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  HvBannerContent,
   HvNumberInput,
   HvNumberInputProps,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvNumberInput> = {
@@ -29,20 +27,6 @@ export const Main: StoryObj<HvNumberInputProps> = {
   render: (args) => {
     return (
       <div className="flex flex-col gap-md">
-        <HvBannerContent variant="warning">
-          <HvTypography>
-            The HvNumberInput component shares the same API as the `HvInput`
-            component. Please check the{" "}
-            <HvTypography
-              className="color-primary underline underline-primary"
-              component="a"
-              href="/?path=/docs/components-input--docs"
-            >
-              HvInput component page
-            </HvTypography>{" "}
-            for documentation.
-          </HvTypography>
-        </HvBannerContent>
         <HvNumberInput {...args} />
       </div>
     );

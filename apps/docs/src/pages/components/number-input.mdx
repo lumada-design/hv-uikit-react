@@ -1,3 +1,4 @@
+import { Callout } from "nextra/components";
 import {
   HvBannerContent,
   HvNumberInput,
@@ -32,10 +33,8 @@ export const getStaticProps = async ({ params }) => {
 
 <br />
 
-<HvBannerContent variant="warning">
-  <HvTypography component="span">
-    The `HvNumberInput` component shares the same API as the `HvInput`
-    component. Please check the [HvInput component page](/components/input) for
-    documentation.
-  </HvTypography>
-</HvBannerContent>
+<Callout type="info">
+  The `HvNumberInput` component shares the same API as the `HvInput` component.
+  Please check the [HvInput component page](/components/input) for
+  documentation.
+</Callout>

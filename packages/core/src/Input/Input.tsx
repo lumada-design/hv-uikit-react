@@ -40,11 +40,11 @@ import { useUniqueId } from "../hooks/useUniqueId";
 import { HvIcon } from "../icons";
 import { HvTooltip } from "../Tooltip";
 import { fixedForwardRef } from "../types/generic";
-import { changeInputValue } from "../utils/input";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { EyeIcon } from "./icons";
 import { staticClasses, useClasses } from "./Input.styles";
+import { changeInputValue } from "./utils";
 
 export { staticClasses as inputClasses };
 
@@ -108,25 +108,19 @@ export interface HvInputProps<
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
   /** @inheritdoc */
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: string,
-  ) => void;
+  onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
   /**
    * Callback called when the user submits the value by pressing Enter/Return.
    *
    * Also called when the search button is clicked (when `type="search"`).
    */
-  onEnter?: (
-    event: React.KeyboardEvent<HTMLInputElement>,
-    value: string,
-  ) => void;
+  onEnter?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   /**
    * The function that will be executed onBlur, allows checking the validation state,
    * it receives the value and the validation state.
    */
   onBlur?: (
-    event: React.FocusEvent<HTMLInputElement>,
+    event: React.FocusEvent<InputElement>,
     value: string,
     validationState: HvInputValidity,
   ) => void;
@@ -134,15 +128,12 @@ export interface HvInputProps<
    * The function that will be executed onBlur, allows checking the value state,
    * it receives the value.
    */
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>, value: string) => void;
+  onFocus?: (event: React.FocusEvent<InputElement>, value: string) => void;
   /**
    * The function that will be executed onKeyDown, allows checking the value state,
    * it receives the event and value.
    */
-  onKeyDown?: (
-    event: React.KeyboardEvent<HTMLInputElement>,
-    value: string,
-  ) => void;
+  onKeyDown?: (event: React.KeyboardEvent<InputElement>, value: string) => void;
   /** The input type. */
   type?: React.HTMLInputTypeAttribute;
   /** The placeholder value of the input. */
