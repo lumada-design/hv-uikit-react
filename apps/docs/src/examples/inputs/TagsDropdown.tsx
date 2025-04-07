@@ -27,6 +27,7 @@ const colors = [
 
 export default function Demo() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const focusTarget = useRef<HTMLDivElement>(null);
 
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
@@ -55,11 +56,16 @@ export default function Demo() {
     scrollToEnd();
   };
 
+  const focusOnContainer = () => {
+    focusTarget.current?.focus();
+  };
+
   return (
     <div className="w-300px">
       <HvLabel label="Tags dropdown input" id="tags-dropdown-input" />
       <HvBaseDropdown
         aria-labelledby="tags-dropdown-input"
+        onContainerCreation={focusOnContainer}
         placeholder={
           selectedColors.length ? (
             <div
@@ -79,13 +85,14 @@ export default function Demo() {
           )
         }
       >
+        <div ref={focusTarget} tabIndex={-1} />
         <HvPanel className="flex gap-xs flex-wrap">
           {colors
             .filter((color) => !selectedColors.includes(color))
             .map((color, idx) => {
               return (
                 <HvTag
-                  autoFocus={idx === 0}
+                  // autoFocus={idx === 0}
                   key={color}
                   label={color}
                   onClick={() => handleAddColor(color)}

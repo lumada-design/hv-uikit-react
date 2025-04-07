@@ -1,5 +1,6 @@
 import { CodeBlock } from "../../components/code/CodeBlock";
 
+import copyButton from "../../examples/inputs/CopyButton?raw";
 import phoneInput from "../../examples/inputs/PhoneInput?raw";
 import tagsDropdown from "../../examples/inputs/TagsDropdown?raw";
 import tagsSuggestions from "../../examples/inputs/TagsSuggestions?raw";
@@ -12,6 +13,12 @@ A phone input that includes a dropdown to select the country code. The input is 
 In the example the formatting function is always the same and formats the number as `XX XXX XX XX`.
 
 <CodeBlock code={{ main: phoneInput }} layout="expandable" />
+
+## Input with copy button
+
+An input that includes a button to copy the input value to the clipboard. The button is disabled when the input is empty.
+
+<CodeBlock code={{ main: copyButton }} layout="expandable" />
 
 ## Tags dropdown input
 
