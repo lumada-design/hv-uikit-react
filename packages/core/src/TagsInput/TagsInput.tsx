@@ -23,6 +23,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import {
   HvSuggestions,
   HvSuggestionsProps,
@@ -486,10 +487,9 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
         )}
       >
         {(hasLabel || hasDescription) && (
-          <div className={classes.labelContainer}>
+          <HvLabelContainer className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
-                showGutter
                 className={classes.label}
                 id={setId(id, "label")}
                 htmlFor={setId(elementId, "input")}
@@ -499,13 +499,14 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
 
             {hasDescription && (
               <HvInfoMessage
+                disableGutter
                 className={classes.description}
                 id={setId(elementId, "description")}
               >
                 {description}
               </HvInfoMessage>
             )}
-          </div>
+          </HvLabelContainer>
         )}
 
         {hasCounter && (

@@ -27,6 +27,7 @@ import {
   isInvalid,
   isValid,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import {
   HvSuggestion,
   HvSuggestions,
@@ -715,10 +716,9 @@ export const HvInput = fixedForwardRef(function HvInput<
       onBlur={onContainerBlurHandler}
     >
       {(hasLabel || hasDescription) && (
-        <div className={classes.labelContainer}>
+        <HvLabelContainer className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              showGutter
               id={setId(elementId, "label")}
               className={classes.label}
               htmlFor={setId(elementId, "input")}
@@ -728,13 +728,14 @@ export const HvInput = fixedForwardRef(function HvInput<
 
           {hasDescription && (
             <HvInfoMessage
+              disableGutter
               id={setId(elementId, "description")}
               className={classes.description}
             >
               {description}
             </HvInfoMessage>
           )}
-        </div>
+        </HvLabelContainer>
       )}
       <HvBaseInput
         id={

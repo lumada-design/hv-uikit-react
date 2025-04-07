@@ -13,10 +13,7 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   invalid: {
     borderColor: theme.form.errorColor,
   },
-  labelContainer: {
-    display: "flex",
-    alignItems: "flex-start",
-  },
+  labelContainer: {},
   label: {},
   description: {},
   select: {},

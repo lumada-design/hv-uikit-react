@@ -10,6 +10,7 @@ import {
   HvInfoMessage,
   HvLabel,
 } from "../../FormElement";
+import { HvLabelContainer } from "../../FormElement/LabelContainer";
 import { useLabels } from "../../hooks/useLabels";
 import { useUniqueId } from "../../hooks/useUniqueId";
 import { HvIcon } from "../../icons";
@@ -170,22 +171,21 @@ export const HvDropZone = (props: HvDropZoneProps) => {
   return (
     <>
       {!hideLabels && (
-        <div id={id} className={classes.dropZoneLabelsGroup}>
+        <HvLabelContainer id={id} className={classes.dropZoneLabelsGroup}>
           <HvLabel
-            showGutter
             id={setId(id, "input-file-label")}
             htmlFor={setId(id, "input-file")}
             label={label ?? labels?.dropzone}
             className={classes.dropZoneLabel}
           />
-          <HvInfoMessage id={setId(id, "description")}>
+          <HvInfoMessage disableGutter id={setId(id, "description")}>
             {Number.isInteger(maxFileSize) &&
               `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
             {labels?.acceptedFiles
               ? labels.acceptedFiles
               : accept && `\u00A0(${accept?.replaceAll(",", ", ")})`}
           </HvInfoMessage>
-        </div>
+        </HvLabelContainer>
       )}
       <div
         id={setId(id, "input-file-container")}

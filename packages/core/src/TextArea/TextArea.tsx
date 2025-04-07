@@ -32,6 +32,7 @@ import {
   HvWarningText,
   isInvalid,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import type { HvValidationMessages } from "../Input";
@@ -425,38 +426,36 @@ export const HvTextArea = forwardRef<
       )}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription) && (
-        <div className={classes.labelContainer}>
+      {(hasLabel || hasDescription || hasCounter) && (
+        <HvLabelContainer className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              showGutter
               className={classes.label}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
             />
           )}
-
           {hasDescription && (
             <HvInfoMessage
+              disableGutter
               className={classes.description}
               id={setId(elementId, "description")}
             >
               {description}
             </HvInfoMessage>
           )}
-        </div>
-      )}
-
-      {hasCounter && (
-        <HvCharCounter
-          id={setId(elementId, "charCounter")}
-          className={classes.characterCounter}
-          separator={middleCountLabel}
-          currentCharQuantity={String(value).length}
-          maxCharQuantity={maxCharQuantity}
-          {...countCharProps}
-        />
+          {hasCounter && (
+            <HvCharCounter
+              id={setId(elementId, "charCounter")}
+              className={classes.characterCounter}
+              separator={middleCountLabel}
+              currentCharQuantity={String(value).length}
+              maxCharQuantity={maxCharQuantity}
+              {...countCharProps}
+            />
+          )}
+        </HvLabelContainer>
       )}
 
       <HvBaseInput

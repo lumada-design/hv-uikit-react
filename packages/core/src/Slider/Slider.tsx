@@ -19,6 +19,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInputProps } from "../Input";
@@ -605,7 +606,7 @@ export const HvSlider = forwardRef<
       {...others}
     >
       {(hasLabel || !hideInput) && (
-        <div
+        <HvLabelContainer
           className={cx(classes.labelContainer, {
             [classes.labelIncluded]: hasLabel,
             [classes.onlyInput]: !hasLabel,
@@ -633,7 +634,7 @@ export const HvSlider = forwardRef<
               inputProps={inputProps}
             />
           )}
-        </div>
+        </HvLabelContainer>
       )}
 
       <div className={cx(classes.sliderBase, classes.sliderContainer)}>

@@ -31,6 +31,7 @@ export function useDefaultProps<T extends Record<string, any>>(
       ...Object.keys(themeClasses),
       ...Object.keys(propsClasses),
     ];
+    if (classKeys.length === 0) return undefined;
     return classKeys.reduce<Record<string, string>>((acc, key) => {
       acc[key] = cx(
         themeClasses[key] && css(themeClasses[key]),
@@ -43,6 +44,6 @@ export function useDefaultProps<T extends Record<string, any>>(
   return {
     ...themeDefaultProps,
     ...filterProps(props),
-    ...(classes ? { classes } : {}),
+    ...(classes && { classes }),
   };
 }
