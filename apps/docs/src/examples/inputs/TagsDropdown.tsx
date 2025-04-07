@@ -27,35 +27,39 @@ const colors = [
 
 export default function Demo() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const focusTarget = useRef<HTMLDivElement>(null);
 
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = containerRef.current.scrollWidth;
-    }
-  }, [selectedColors]);
+  const scrollToEnd = () => {
+    setTimeout(
+      () => {
+        if (containerRef.current) {
+          containerRef.current.scrollLeft = containerRef.current.scrollWidth;
+        }
+      },
+
+      0,
+    );
+  };
 
   const handleAddColor = (color: string) => {
     setSelectedColors((prev) => {
       const newColors = prev.filter((c) => c !== color);
       return newColors.length ? [...newColors, color] : [color];
     });
+    scrollToEnd();
   };
 
   const handleRemoveColor = (color: string) => {
     setSelectedColors((prev) => prev.filter((c) => c !== color));
-  };
-
-  const focusOnContainer = () => {
-    focusTarget.current?.focus();
+    scrollToEnd();
   };
 
   return (
     <div className="w-300px">
-      <HvLabel>Tags dropdown input</HvLabel>
+      <HvLabel label="Tags dropdown input" id="tags-dropdown-input" />
       <HvBaseDropdown
+        aria-labelledby="tags-dropdown-input"
         placeholder={
           selectedColors.length ? (
             <div
@@ -74,7 +78,6 @@ export default function Demo() {
             "Select colors"
           )
         }
-        onContainerCreation={focusOnContainer}
       >
         <HvPanel className="flex gap-xs flex-wrap">
           {colors
@@ -86,11 +89,6 @@ export default function Demo() {
                   key={color}
                   label={color}
                   onClick={() => handleAddColor(color)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      handleAddColor(color);
-                    }
-                  }}
                 />
               );
             })}

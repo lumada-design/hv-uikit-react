@@ -1,11 +1,5 @@
-import { useRef, useState } from "react";
-import { set } from "zod";
-import {
-  HvInput,
-  HvOption,
-  HvSelect,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
+import { useState } from "react";
+import { HvInput, HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
 
 const formatPhoneNumber = (value: string) => {
   const digits = value.replace(/\D/g, "");
@@ -50,42 +44,39 @@ export default function Demo() {
   const [formatttedPhoneNumber, setFormattedPhoneNumber] = useState("");
 
   return (
-    <div className="w-300px">
-      <HvInput
-        classes={{
-          inputRoot: "overflow-visible",
-        }}
-        onChange={(_, value) => {
-          setFormattedPhoneNumber(
-            countries.find((c) => c.label === selectedCountry)?.format(value) ||
-              "",
-          );
-        }}
-        value={formatttedPhoneNumber}
-        startAdornment={
-          <HvSelect
-            value={selectedCountry}
-            classes={{
-              panel: "w-100px!",
-              root: "w-100px! border-r-1! border-r-atmo3! bg-bgContainer! rounded-l-[4px]",
-              select: "bg-transparent! border-none!",
-            }}
-            onChange={(evt, val) => {
-              setSelectedCountry(val || "");
-            }}
-          >
-            {countries.map((country) => (
-              <HvOption
-                key={country.label}
-                value={country.label}
-                selected={selectedCountry === country.label}
-              >
-                {country.flag} {country.code}
-              </HvOption>
-            ))}
-          </HvSelect>
-        }
-      />
-    </div>
+    <HvInput
+      className="w-300px"
+      onChange={(_, value) => {
+        setFormattedPhoneNumber(
+          countries.find((c) => c.label === selectedCountry)?.format(value) ||
+            "",
+        );
+      }}
+      value={formatttedPhoneNumber}
+      startAdornment={
+        <HvSelect
+          value={selectedCountry}
+          classes={{
+            panel: "w-100px!",
+            root: "w-100px! border-r-1! border-r-atmo3! bg-bgContainer! rounded-l-[4px]",
+            select: "bg-transparent! border-none!",
+          }}
+          onChange={(evt, val) => {
+            setSelectedCountry(val || "");
+          }}
+          enablePortal
+        >
+          {countries.map((country) => (
+            <HvOption
+              key={country.label}
+              value={country.label}
+              selected={selectedCountry === country.label}
+            >
+              {country.flag} {country.code}
+            </HvOption>
+          ))}
+        </HvSelect>
+      }
+    />
   );
 }

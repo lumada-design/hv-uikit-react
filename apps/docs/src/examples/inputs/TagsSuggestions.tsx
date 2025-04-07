@@ -54,8 +54,8 @@ export default function Demo() {
 
   return (
     <div className="w-300px">
-      <HvLabel>Tags with suggestions</HvLabel>
       <HvTagsInput
+        label="Tags with suggestions"
         ref={containerRef}
         onChange={(event, value) => {
           setSelectedColors(
@@ -80,7 +80,7 @@ export default function Demo() {
         }}
       />
       <Popper anchorEl={containerRef.current} open={open}>
-        <HvPanel className="flex flex-wrap flex-col gap-xs w-300px bg-bgContainer border-rounded-16px border border-atmo3">
+        <HvPanel className="flex flex-wrap flex-col gap-xs w-300px border rounded-round">
           <HvTypography variant="caption1">Last Used:</HvTypography>
           <div className="flex gap-xs">
             {lastUsed.map((color, idx) => (
