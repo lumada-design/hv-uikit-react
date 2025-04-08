@@ -1,34 +1,15 @@
 import { CodeBlock } from "../../components/code/CodeBlock";
 
 import copyButton from "../../examples/inputs/CopyButton?raw";
-import phoneInput from "../../examples/inputs/PhoneInput?raw";
+import dropdownPrefix from "../../examples/inputs/DropdownPrefix?raw";
 import tagsDropdown from "../../examples/inputs/TagsDropdown?raw";
 import tagsSuggestions from "../../examples/inputs/TagsSuggestions?raw";
 
 # Inputs examples
 
-## Phone input
-
-A phone input that includes a dropdown to select the country code. The input is automatically formatted based on the selected country code.
-In the example the formatting function is always the same and formats the number as `XX XXX XX XX`.
-
-<CodeBlock code={{ main: phoneInput }} layout="expandable" />
-
-## Input with copy button
-
-An input that includes a button to copy the input value to the clipboard. The button is disabled when the input is empty.
-
-<CodeBlock code={{ main: copyButton }} layout="expandable" />
-
-## Tags dropdown input
-
-A dropdown input that allows users to select multiple tags. The selected tags are displayed in the input and removed from the suggestions list
-and the user can remove any tags previously selected. The tags container in the dropdown input will keep scroll to the end to show the last added tag.
-
-<CodeBlock code={{ main: tagsDropdown }} layout="expandable" />
-
-## Tags input with suggestions
-
-An input that allows users to select tags from a list of suggestions or by typing them. Tags are entered when the users presses the `Comma` key.
-
-<CodeBlock code={{ main: tagsSuggestions }} layout="expandable" />
+<div className="w-full grid [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))] gap-md">
+  <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
+  <CodeBlock code={{ main: copyButton }} layout="popup" />
+  <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
+  <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
+</div>

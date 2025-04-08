@@ -16,6 +16,7 @@ export default function Demo() {
 
   return (
     <HvInput
+      label="Copy to clipboard"
       ref={inputRef}
       className="w-300px"
       defaultValue={"Copy this text"}

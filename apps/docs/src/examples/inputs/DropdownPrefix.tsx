@@ -45,6 +45,7 @@ export default function Demo() {
 
   return (
     <HvInput
+      label="Dropdown prefix"
       className="w-300px"
       onChange={(_, value) => {
         setFormattedPhoneNumber(
