@@ -29,6 +29,7 @@ export const getStaticProps = async ({ params }) => {
     readOnly: { defaultValue: false },
     disabled: { defaultValue: false },
   }}
+  decorator={(c) => <div className="w-full">{c}</div>}
 />
 
 <br />

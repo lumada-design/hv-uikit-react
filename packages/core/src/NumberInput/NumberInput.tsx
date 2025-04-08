@@ -32,6 +32,7 @@ export const HvNumberInput = forwardRef<
   const {
     classes: classesProp,
     className,
+    readOnly,
     ...others
   } = useDefaultProps("HvNumberInput", props);
 
@@ -68,10 +69,11 @@ export const HvNumberInput = forwardRef<
       ref={forkedRef}
       type="number"
       className={cx(classes.root, className)}
-      endAdornment={buttons}
+      endAdornment={!readOnly && buttons}
       classes={{
         adornmentsBox: classes.adornmentsBox,
       }}
+      readOnly={readOnly}
       disableClear
       {...others}
     />
