@@ -137,6 +137,9 @@ export const TestInputs: StoryObj = {
         {renderStory(TagsInputVariantsStory, context)}
       </div>
       <div>{renderStory(InlineEditorTestStory, context)}</div>
+      <div className="w-400px">
+        {renderStory(FileUploaderWithPreviewThumbnailsStory, context)}
+      </div>
     </div>
   ),
 };
@@ -269,9 +272,6 @@ export const TestSurfaces: StoryObj = {
         {renderStory(FooterCustomLabelsStory, context)}
         <div className="mb-60px">{renderStory(HeaderTestStory, context)}</div>
         {renderStory(AppSwitcherManyEntriesStory, context)}
-        <div className="grid grid-cols-2 gap-xs">
-          {renderStory(FileUploaderWithPreviewThumbnailsStory, context)}
-        </div>
       </div>
     </div>
   ),
