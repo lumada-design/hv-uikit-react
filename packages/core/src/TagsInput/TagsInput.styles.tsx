@@ -44,7 +44,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     display: "flex",
     alignItems: "center",
     alignContent: "flex-start",
-    gap: theme.spacing("xxs", "xs"),
+    gap: theme.space.xxs,
     cursor: "text",
     width: "100%",
     minHeight: 32,
