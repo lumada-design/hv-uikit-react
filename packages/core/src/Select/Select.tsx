@@ -25,6 +25,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { fixedForwardRef } from "../types/generic";
@@ -239,10 +240,9 @@ export const HvSelect = fixedForwardRef(function HvSelect<
       {...others}
     >
       {(label || description) && (
-        <div className={classes.labelContainer}>
+        <HvLabelContainer className={classes.labelContainer}>
           {label && (
             <HvLabel
-              showGutter
               id={labelId}
               htmlFor={id}
               label={label}
@@ -250,11 +250,15 @@ export const HvSelect = fixedForwardRef(function HvSelect<
             />
           )}
           {description && (
-            <HvInfoMessage id={descriptionId} className={classes.description}>
+            <HvInfoMessage
+              disableGutter
+              id={descriptionId}
+              className={classes.description}
+            >
               {description}
             </HvInfoMessage>
           )}
-        </div>
+        </HvLabelContainer>
       )}
       <HvDropdownButton
         id={id}

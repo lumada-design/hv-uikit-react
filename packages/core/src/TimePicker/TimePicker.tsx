@@ -21,6 +21,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvIcon } from "../icons";
@@ -235,10 +236,9 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         {...others}
       >
         {(label || description) && (
-          <div className={classes.labelContainer}>
+          <HvLabelContainer className={classes.labelContainer}>
             {label && (
               <HvLabel
-                showGutter
                 label={label}
                 className={classes.label}
                 {...labelProps}
@@ -246,13 +246,14 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
             )}
             {description && (
               <HvInfoMessage
+                disableGutter
                 className={classes.description}
                 {...descriptionProps}
               >
                 {description}
               </HvInfoMessage>
             )}
-          </div>
+          </HvLabelContainer>
         )}
 
         <HvBaseDropdown

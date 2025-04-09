@@ -17,6 +17,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvBaseProps } from "../types/generic";
@@ -246,20 +247,21 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
         readOnly={readOnly}
         className={cx(classes.root, className)}
       >
-        {label && (
-          <HvLabel
-            showGutter
-            id={setId(elementId, "label")}
-            label={label}
-            className={classes.label}
-          />
-        )}
+        <HvLabelContainer>
+          {label && (
+            <HvLabel
+              id={setId(elementId, "label")}
+              label={label}
+              className={classes.label}
+            />
+          )}
 
-        {description && (
-          <HvInfoMessage id={setId(elementId, "description")}>
-            {description}
-          </HvInfoMessage>
-        )}
+          {description && (
+            <HvInfoMessage disableGutter id={setId(elementId, "description")}>
+              {description}
+            </HvInfoMessage>
+          )}
+        </HvLabelContainer>
 
         <div
           ref={ref}

@@ -132,13 +132,5 @@ export const buildAriaPropsFromContext = (
   return arias;
 };
 
-export const validationStates = Object.freeze({
-  standBy: "standBy",
-  valid: "valid",
-  invalid: "invalid",
-});
-
-export const isValid = (state: HvFormStatus) =>
-  state === validationStates.valid;
-export const isInvalid = (state: HvFormStatus) =>
-  state === validationStates.invalid;
+export const isValid = (state: HvFormStatus) => state === "valid";
+export const isInvalid = (state: HvFormStatus) => state === "invalid";

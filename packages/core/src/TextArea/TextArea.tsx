@@ -20,7 +20,6 @@ import {
   hasBuiltInValidations,
   HvInputValidity,
   validateInput,
-  validationTypes,
 } from "../BaseInput/validations";
 import {
   HvCharCounter,
@@ -32,8 +31,8 @@ import {
   HvLabel,
   HvWarningText,
   isInvalid,
-  validationStates,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import type { HvValidationMessages } from "../Input";
@@ -217,9 +216,9 @@ export const HvTextArea = forwardRef<
 
   const [autoScrolling, setAutoScrolling] = useState(autoScroll);
 
-  const [validationState, setValidationState] = useControlled(
+  const [validationState, setValidationState] = useControlled<HvFormStatus>(
     status,
-    validationStates.standBy,
+    "standBy",
   );
 
   const [validationMessage, setValidationMessage] = useControlled(
@@ -254,7 +253,7 @@ export const HvTextArea = forwardRef<
       required,
       minCharQuantity,
       maxCharQuantity,
-      validationTypes.none,
+      "none",
       validation,
     );
 
@@ -330,7 +329,7 @@ export const HvTextArea = forwardRef<
     setFocused(true);
 
     // Reset validation status to standBy (only when status is uncontrolled)
-    setValidationState(validationStates.standBy);
+    setValidationState("standBy");
 
     onFocus?.(event as any, String(value));
   };
@@ -390,7 +389,7 @@ export const HvTextArea = forwardRef<
       (status === undefined &&
         hasBuiltInValidations(
           required,
-          validationTypes.none,
+          "none",
           minCharQuantity,
           // If blockMax is true maxCharQuantity will never produce an error
           // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity
@@ -427,38 +426,36 @@ export const HvTextArea = forwardRef<
       )}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription) && (
-        <div className={classes.labelContainer}>
+      {(hasLabel || hasDescription || hasCounter) && (
+        <HvLabelContainer className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              showGutter
               className={classes.label}
               id={setId(id, "label")}
               htmlFor={setId(elementId, "input")}
               label={label}
             />
           )}
-
           {hasDescription && (
             <HvInfoMessage
+              disableGutter
               className={classes.description}
               id={setId(elementId, "description")}
             >
               {description}
             </HvInfoMessage>
           )}
-        </div>
-      )}
-
-      {hasCounter && (
-        <HvCharCounter
-          id={setId(elementId, "charCounter")}
-          className={classes.characterCounter}
-          separator={middleCountLabel}
-          currentCharQuantity={String(value).length}
-          maxCharQuantity={maxCharQuantity}
-          {...countCharProps}
-        />
+          {hasCounter && (
+            <HvCharCounter
+              id={setId(elementId, "charCounter")}
+              className={classes.characterCounter}
+              separator={middleCountLabel}
+              currentCharQuantity={String(value).length}
+              maxCharQuantity={maxCharQuantity}
+              {...countCharProps}
+            />
+          )}
+        </HvLabelContainer>
       )}
 
       <HvBaseInput

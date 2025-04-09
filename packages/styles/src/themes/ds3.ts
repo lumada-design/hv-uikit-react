@@ -315,6 +315,13 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvLabelContainer: {
+      classes: {
+        root: {
+          height: "auto",
+        },
+      },
+    },
     HvBaseInput: {
       classes: {
         root: {
@@ -1086,7 +1093,7 @@ const ds3 = makeTheme((theme) => ({
         root: {
           "&::before": {
             width: "21px",
-            height: "39px",
+            height: "36px",
 
             left: `calc( -1 * 21px)`,
           },

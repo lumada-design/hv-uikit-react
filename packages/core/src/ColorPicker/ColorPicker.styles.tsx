@@ -2,10 +2,7 @@ import { createClasses } from "@hitachivantara/uikit-react-utils";
 
 export const { staticClasses, useClasses } = createClasses("HvColorPicker", {
   root: {},
-  labelContainer: {
-    display: "flex",
-    alignItems: "flex-start",
-  },
+  labelContainer: {},
   label: {},
   description: {},
   headerColorValue: {

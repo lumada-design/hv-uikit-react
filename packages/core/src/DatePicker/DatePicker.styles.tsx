@@ -10,11 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvDatePicker", {
   },
   leftContainer: {},
   rightContainer: {},
-
-  labelContainer: {
-    display: "flex",
-    alignItems: "flex-start",
-  },
+  labelContainer: {},
   label: {},
   description: {},
   error: {},

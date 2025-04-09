@@ -26,7 +26,7 @@ export const { useClasses, staticClasses } = createClasses(
         zIndex: 2,
 
         width: "17px",
-        height: "39px",
+        height: "44px",
 
         borderBottom: `1px solid ${theme.colors.border}`,
         borderLeft: `1px solid ${theme.colors.border}`,

@@ -22,8 +22,8 @@ import {
   HvInfoMessage,
   HvLabel,
   HvWarningText,
-  validationStates,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import {
   HvSuggestions,
   HvSuggestionsProps,
@@ -197,11 +197,11 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
           maxTagsQuantity !== undefined &&
           currValue.length > maxTagsQuantity
         ) {
-          setValidationState(validationStates.invalid);
+          setValidationState("invalid");
           setValidationMessage(errorMessages.maxCharError);
           setStateValid(false);
         } else {
-          setValidationState(validationStates.valid);
+          setValidationState("valid");
           setValidationMessage("");
           setStateValid(true);
         }
@@ -440,7 +440,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
     const onDeleteTagHandler = useCallback(
       (event: React.MouseEvent<HTMLElement>, i: number) => {
         deleteTag(i, event, true);
-        setValidationState(validationStates.standBy);
+        setValidationState("standBy");
       },
       [deleteTag, setValidationState],
     );
@@ -487,10 +487,9 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
         )}
       >
         {(hasLabel || hasDescription) && (
-          <div className={classes.labelContainer}>
+          <HvLabelContainer className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
-                showGutter
                 className={classes.label}
                 id={setId(id, "label")}
                 htmlFor={setId(elementId, "input")}
@@ -500,13 +499,14 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
 
             {hasDescription && (
               <HvInfoMessage
+                disableGutter
                 className={classes.description}
                 id={setId(elementId, "description")}
               >
                 {description}
               </HvInfoMessage>
             )}
-          </div>
+          </HvLabelContainer>
         )}
 
         {hasCounter && (

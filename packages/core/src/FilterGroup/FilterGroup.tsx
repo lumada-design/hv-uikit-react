@@ -12,6 +12,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -178,10 +179,9 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
         {...others}
       >
         {(hasLabel || hasDescription) && (
-          <div className={classes.labelContainer}>
+          <HvLabelContainer className={classes.labelContainer}>
             {hasLabel && (
               <HvLabel
-                showGutter
                 id={setId(elementId, "label")}
                 htmlFor={setId(elementId, "input")}
                 label={label}
@@ -191,13 +191,14 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
 
             {hasDescription && (
               <HvInfoMessage
+                disableGutter
                 id={setId(elementId, "description")}
                 className={classes.description}
               >
                 {description}
               </HvInfoMessage>
             )}
-          </div>
+          </HvLabelContainer>
         )}
         <HvFilterGroupProvider
           defaultValue={defaultValue}

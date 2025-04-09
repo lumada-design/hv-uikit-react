@@ -18,8 +18,8 @@ import {
   HvFormStatus,
   HvLabel,
   HvWarningText,
-  validationStates,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvInputProps } from "../Input";
@@ -357,19 +357,19 @@ export const HvSlider = forwardRef<
     const mappedValues =
       generateKnobsPositionAndValues(knobsPositions).knobsValues;
 
-    const newValidationState = mappedValues.map((knobValue) => {
+    const newValidationState = mappedValues.map<HvFormStatus>((knobValue) => {
       if (required && (knobValue == null || Number.isNaN(knobValue))) {
         invalid = true;
         requiredMsg = true;
-        return validationStates.invalid;
+        return "invalid";
       }
 
       if (knobValue < minPointValue || knobValue > maxPointValue) {
         invalid = true;
-        return validationStates.invalid;
+        return "invalid";
       }
 
-      return validationStates.valid;
+      return "valid";
     });
 
     setValidationState([...newValidationState]);
@@ -606,7 +606,7 @@ export const HvSlider = forwardRef<
       {...others}
     >
       {(hasLabel || !hideInput) && (
-        <div
+        <HvLabelContainer
           className={cx(classes.labelContainer, {
             [classes.labelIncluded]: hasLabel,
             [classes.onlyInput]: !hasLabel,
@@ -634,7 +634,7 @@ export const HvSlider = forwardRef<
               inputProps={inputProps}
             />
           )}
-        </div>
+        </HvLabelContainer>
       )}
 
       <div className={cx(classes.sliderBase, classes.sliderContainer)}>

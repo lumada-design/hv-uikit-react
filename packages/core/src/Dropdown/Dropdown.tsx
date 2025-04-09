@@ -15,6 +15,7 @@ import {
   HvWarningText,
   isInvalid,
 } from "../FormElement";
+import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -458,25 +459,24 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
       {...others}
     >
       {(hasLabel || hasDescription) && (
-        <div className={classes.labelContainer}>
+        <HvLabelContainer className={classes.labelContainer}>
           {hasLabel && (
             <HvLabel
-              showGutter
               id={setId(elementId, "label")}
               label={label}
               className={classes.label}
             />
           )}
-
           {hasDescription && (
             <HvInfoMessage
+              disableGutter
               id={setId(elementId, "description")}
               className={classes.description}
             >
               {description}
             </HvInfoMessage>
           )}
-        </div>
+        </HvLabelContainer>
       )}
       <HvBaseDropdown
         ref={dropdownForkedRef}

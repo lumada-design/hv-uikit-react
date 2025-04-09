@@ -23,11 +23,6 @@ export const { staticClasses, useClasses } = createClasses("HvDropZone", {
     },
   },
   dropZoneLabelsGroup: {
-    display: "flex",
-    justifyContent: "start",
-
-    "& label:nth-of-type(1)": {},
-
     "& p:nth-of-type(2)": {
       marginLeft: "auto",
     },
