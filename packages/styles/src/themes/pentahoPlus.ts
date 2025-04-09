@@ -556,13 +556,18 @@ const pentahoPlus = makeTheme((theme) => ({
         tagsList: {
           backgroundColor: inputColors.bg,
         },
+        singleLine: {
+          height: 32,
+        },
       },
     },
     HvTag: {
       showSelectIcon: false,
+      size: "sm",
       classes: {
         root: {
           outline: `1px solid ${theme.colors.border}`,
+          outlineOffset: -1,
           borderRadius: theme.radii.round,
           ":where(:not([data-color],.HvTag-disabled))": {
             color: theme.colors.text,
