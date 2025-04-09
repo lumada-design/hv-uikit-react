@@ -9,6 +9,7 @@ import {
 import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
+  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
@@ -170,11 +171,11 @@ export const HvTextArea = forwardRef<
     classes: classesProp,
     name,
     label,
-    description,
+    description: descriptionProp,
     placeholder,
     status,
     statusMessage,
-    infoMessage,
+    infoMessage: infoMessageProp,
     validationMessages,
     maxCharQuantity,
     minCharQuantity,
@@ -203,18 +204,21 @@ export const HvTextArea = forwardRef<
     onFocus,
     ...others
   } = useDefaultProps("HvTextArea", props);
-
   const { classes, cx } = useClasses(classesProp);
-
   const elementId = useUniqueId(id);
+  const { activeTheme } = useTheme();
 
   // Signals that the user has manually edited the input value
-  const isDirty = useRef<boolean>(false);
-
+  const isDirty = useRef(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const forkedRef = useForkRef(ref, inputRefProp, inputRef);
 
-  const [focused, setFocused] = useState<boolean>(false);
+  const [description, infoMessage] =
+    activeTheme?.name === "pentahoPlus"
+      ? [infoMessageProp, descriptionProp]
+      : [descriptionProp, infoMessageProp];
+
+  const [focused, setFocused] = useState(false);
 
   const [autoScrolling, setAutoScrolling] = useState(autoScroll);
 
