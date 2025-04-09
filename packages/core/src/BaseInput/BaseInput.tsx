@@ -120,7 +120,7 @@ export const HvBaseInput = forwardRef<
       value={value}
       defaultValue={defaultValue}
       placeholder={placeholder}
-      readOnly={!!formElementProps.readOnly}
+      readOnly={formElementProps.readOnly}
       disabled={formElementProps.disabled}
       onChange={(event) => onChange?.(event, event.target.value)}
       className={cx(classes.root, classes.inputRoot, className, {

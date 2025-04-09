@@ -51,23 +51,19 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           label="Required"
           placeholder="Enter value"
           required
-          value={[{ label: "tag 1" }, { label: "tag 2" }, { label: "tag 3" }]}
+          defaultValue={["tag 1", "tag 2", "tag 3"]}
         />
         <HvTagsInput
           label="Disabled"
           placeholder="Enter value"
           disabled
-          value={[
-            { label: "tag 4", disabled: true },
-            { label: "tag 5", disabled: true },
-            { label: "tag 6", disabled: true },
-          ]}
+          defaultValue={["tag 4", "tag 5", "tag 6"]}
         />
         <HvTagsInput
           label="Readonly"
           placeholder="Enter value"
           readOnly
-          value={[{ label: "tag 7" }, { label: "tag 8" }, { label: "tag 9" }]}
+          defaultValue={["tag 7", "tag 8", "tag 9"]}
         />
         <HvTagsInput
           label="Invalid"
@@ -75,7 +71,7 @@ export const Variants: StoryObj<HvTagsInputProps> = {
           status="invalid"
           statusMessage="Oh no!"
           value={[
-            { label: "tag 10" },
+            { label: "tag 10", disabled: true },
             { label: "tag 11" },
             { label: "tag 12" },
           ]}

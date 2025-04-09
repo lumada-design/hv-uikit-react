@@ -16,6 +16,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvInputHeader } from "../FormElement/InputHeader";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvIcon } from "../icons";
@@ -236,8 +237,10 @@ const BaseDropdown = forwardRef<
   );
 
   const defaultHeaderElement = (
-    <div
+    <HvInputHeader
       id={setId(id, "header")}
+      readOnly={readOnly}
+      disabled={disabled}
       data-popper-placement={popperPlacement}
       className={cx(classes.header, {
         [classes.headerOpen]: isOpen,
@@ -249,7 +252,6 @@ const BaseDropdown = forwardRef<
       // TODO: review "textbox" role
       role={ariaRole === "combobox" ? "textbox" : undefined}
       {...headerAriaLabels}
-      style={disabled || readOnly ? { pointerEvents: "none" } : undefined}
       // Removes the element from the navigation sequence for keyboard focus if disabled
       tabIndex={disabled ? -1 : 0}
       ref={headerRef}
@@ -278,7 +280,7 @@ const BaseDropdown = forwardRef<
           />
         )}
       </div>
-    </div>
+    </HvInputHeader>
   );
 
   const headerElement =

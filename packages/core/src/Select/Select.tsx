@@ -16,7 +16,6 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButtonProps } from "../Button";
-import { HvDropdownButton } from "../DropdownButton";
 import {
   HvFormElement,
   HvFormElementProps,
@@ -25,8 +24,10 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvInputHeader } from "../FormElement/InputHeader";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useUniqueId } from "../hooks/useUniqueId";
+import { HvIcon } from "../icons";
 import { HvListContainer } from "../ListContainer";
 import { fixedForwardRef } from "../types/generic";
 import { getContainerElement } from "../utils/document";
@@ -260,17 +261,18 @@ export const HvSelect = fixedForwardRef(function HvSelect<
           )}
         </HvLabelContainer>
       )}
-      <HvDropdownButton
+      <HvInputHeader
         id={id}
         open={isOpen}
         disabled={disabled}
         readOnly={readOnly}
+        invalid={validationState === "invalid"}
         className={cx(classes.select, {
           [classes.invalid]: validationState === "invalid",
         })}
-        placement={placement}
-        size={size}
-        variant={variant}
+        data-popper-placement={placement}
+        // size={size}
+        // variant={variant}
         aria-label={ariaLabel}
         aria-labelledby={mergeIds(ariaLabelledBy, { [labelId]: label })}
         aria-invalid={isInvalid ? true : undefined}
@@ -281,7 +283,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         {...getButtonProps()}
       >
         {defaultRenderValue(actualValue) ?? placeholder}
-      </HvDropdownButton>
+        <HvIcon compact name="CaretDown" size="xs" rotate={open} />
+      </HvInputHeader>
       <Popper
         role="none"
         open={isOpen}

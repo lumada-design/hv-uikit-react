@@ -530,12 +530,6 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvSelect: {
       classes: {
-        root: {
-          "&& .HvButton-secondarySubtle": {
-            borderColor: theme.colors.textDimmed,
-            backgroundColor: inputColors.bg,
-          },
-        },
         select: {
           borderRadius: theme.radii.base,
         },
@@ -1080,17 +1074,19 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
-    HvBaseDropdown: {
+    HvInputHeader: {
       classes: {
-        header: {
+        root: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
         },
-        headerOpen: {
-          "&,:hover": {
-            borderColor: theme.colors.textDimmed,
-          },
+        disabled: {
+          backgroundColor: theme.colors.bgDisabled,
         },
+      },
+    },
+    HvBaseDropdown: {
+      classes: {
         panel: {
           borderColor: theme.colors.textDimmed,
         },

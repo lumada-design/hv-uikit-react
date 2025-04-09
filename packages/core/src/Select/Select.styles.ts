@@ -10,13 +10,17 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   },
   disabled: {},
   readOnly: {},
-  invalid: {
-    borderColor: theme.form.errorColor,
-  },
+  invalid: {},
   labelContainer: {},
   label: {},
   description: {},
-  select: {},
+  select: {
+    userSelect: "none",
+    position: "relative",
+    width: "100%",
+    justifyContent: "space-between",
+    padding: theme.spacing(0, "xs"),
+  },
   popper: {
     zIndex: theme.zIndices.popover,
 

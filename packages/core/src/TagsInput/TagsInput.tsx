@@ -23,6 +23,7 @@ import {
   HvLabel,
   HvWarningText,
 } from "../FormElement";
+import { HvInputHeader } from "../FormElement/InputHeader";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import {
   HvSuggestions,
@@ -521,8 +522,11 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
         )}
 
         {/* eslint-disable jsx-a11y/no-static-element-interactions */}
-        <div
+        <HvInputHeader
           ref={forkedContainerRef}
+          readOnly={readOnly}
+          disabled={disabled}
+          invalid={isStateInvalid}
           className={cx(classes.tagsList, {
             [classes.error]: canShowError,
             [classes.resizable]: resizable && multiline,
@@ -575,7 +579,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
             />
           )}
           {!disabled && !readOnly && endAdornment}
-        </div>
+        </HvInputHeader>
         {canShowSuggestions && (
           <>
             {hasSuggestions && (

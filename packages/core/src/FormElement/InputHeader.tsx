@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvBaseInputProps } from "../BaseInput";
+import type { HvBaseInputProps } from "../BaseInput";
 import { outlineStyles } from "../utils/focusUtils";
 import { HvFormElementProps } from "./FormElement";
 
@@ -18,11 +18,13 @@ const { useClasses } = createClasses("HvInputHeader", {
     minHeight: 32,
 
     position: "relative",
+    boxSizing: "border-box",
     border: `1px solid ${theme.colors.text}`,
     borderRadius: theme.radii.base,
     backgroundColor: theme.colors.bgContainer,
-    ":hover:not($disabled,$readOnly)": {
-      borderColor: theme.colors.primary,
+    "--hover-color": theme.colors.primary,
+    ":hover:not($disabled,$readOnly,$open)": {
+      borderColor: "var(--hover-color)",
     },
     ":focus-within,:focus-visible": {
       ...outlineStyles,
@@ -31,9 +33,10 @@ const { useClasses } = createClasses("HvInputHeader", {
   invalid: {
     borderColor: theme.form.errorColor,
   },
+  open: {},
   readOnly: {
-    color: theme.colors.textDisabled,
-    borderColor: "currentcolor",
+    // color: theme.colors.textDisabled,
+    borderColor: theme.colors.textDisabled,
     backgroundColor: theme.colors.bgPage,
   },
   disabled: {
@@ -49,6 +52,7 @@ export interface HvInputHeaderProps
     Pick<HvFormElementProps, "disabled" | "readOnly">,
     Pick<HvBaseInputProps, "invalid"> {
   classes?: ExtractNames<typeof useClasses>;
+  open?: boolean;
 }
 
 /**
@@ -63,17 +67,19 @@ export const HvInputHeader = forwardRef<
   const {
     className,
     classes: classesProp,
+    open,
     invalid,
     readOnly,
     disabled,
     ...others
   } = useDefaultProps("HvInputHeader", props);
-  const { classes, cx } = useClasses(classesProp, false);
+  const { classes, cx } = useClasses(classesProp);
 
   return (
     <div
       ref={ref}
       className={cx(classes.root, className, {
+        [classes.open]: open,
         [classes.invalid]: invalid,
         [classes.readOnly]: readOnly,
         [classes.disabled]: disabled,

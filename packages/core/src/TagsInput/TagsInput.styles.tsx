@@ -1,8 +1,6 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
-
 export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   /** @deprecated unused */
   listItemGutters: {},
@@ -13,22 +11,8 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
   chipRoot: {
     maxWidth: "none",
   },
-  disabled: {
-    "& $tagsList": {
-      backgroundColor: theme.colors.bgPage,
-      "&,:hover": {
-        borderColor: theme.colors.border,
-      },
-    },
-  },
-  readOnly: {
-    "& $tagsList": {
-      backgroundColor: theme.colors.bgPage,
-      "&,:hover": {
-        borderColor: theme.colors.textDisabled,
-      },
-    },
-  },
+  disabled: {},
+  readOnly: {},
   resizable: { width: "auto", resize: "both", clear: "both", overflow: "auto" },
   invalid: {},
   labelContainer: {},
@@ -49,31 +33,15 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     width: "100%",
     minHeight: 32,
     padding: theme.spacing("xxs", "xs"),
-    overflow: "auto",
-    position: "relative",
 
     flexDirection: "row",
     flexWrap: "wrap",
 
-    backgroundColor: theme.colors.bgContainer,
-    borderWidth: 1,
     borderColor: theme.colors.textSubtle,
-    borderRadius: theme.radii.base,
-
-    "&:hover": {
-      borderColor: theme.colors.primary,
-    },
-
-    "&:focus-within, &:focus-visible": {
-      ...outlineStyles,
-    },
 
     "&$singleLine": {
       flexWrap: "nowrap",
-    },
-
-    "&$error, $invalid": {
-      borderColor: theme.form.errorColor,
+      overflow: "auto hidden",
     },
   },
   /** @deprecated use `classes.input` instead */

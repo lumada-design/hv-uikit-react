@@ -1,8 +1,6 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { outlineStyles } from "../utils/focusUtils";
-
 export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   root: { width: "100%", position: "relative" },
   rootDisabled: {
@@ -16,26 +14,8 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   header: {
     cursor: "pointer",
     userSelect: "none",
-    position: "relative",
-    backgroundColor: theme.colors.bgContainer,
-    boxSizing: "border-box",
-    border: `1px solid ${theme.colors.text}`,
-    borderRadius: theme.radii.base,
-    ":hover,:focus-visible": {
-      borderColor: theme.colors.primary,
-    },
-    ":focus": {
-      outline: "none",
-    },
-    ":focus-visible": {
-      ...outlineStyles,
-    },
   },
   headerOpen: {
-    "&,:hover": {
-      borderColor: theme.colors.text,
-    },
-
     "&[data-popper-placement*='top']": {
       borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
     },
@@ -48,20 +28,16 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   /** @deprecated use `[data-popper-placement*='bottom']` selector instead */
   headerOpenDown: {},
   headerDisabled: {
-    cursor: "not-allowed",
     pointerEvents: "none",
     color: theme.colors.textDisabled,
-    backgroundColor: theme.colors.bgPage,
     "&,:hover": {
       borderColor: "currentcolor",
     },
   },
   headerReadOnly: {
-    cursor: "not-allowed",
     pointerEvents: "none",
     color: theme.colors.textSubtle,
     borderColor: "currentcolor",
-    backgroundColor: theme.colors.bgPage,
     userSelect: "text",
     ":focus-visible": {
       outline: "none",

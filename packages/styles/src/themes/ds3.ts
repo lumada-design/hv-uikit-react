@@ -275,32 +275,34 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
-    HvBaseDropdown: {
+    HvInputHeader: {
       classes: {
-        header: {
-          border: `1px solid ${theme.colors.atmo4}`,
-          ":hover,:focus-visible": {
-            borderColor: theme.colors.secondary,
-          },
+        root: {
+          borderColor: theme.colors.atmo4,
+          "--hover-color": theme.colors.secondary,
         },
-        headerOpen: {
+        open: {
           "&,:hover": {
             borderColor: "transparent",
             boxShadow: theme.colors.shadow,
           },
         },
-        headerDisabled: {
-          background: theme.colors.atmo3,
+        disabled: {
+          backgroundColor: theme.colors.atmo3,
           "&,:hover": {
             borderColor: theme.colors.atmo4,
           },
         },
-        headerReadOnly: {
-          background: theme.colors.atmo1,
+        readOnly: {
+          backgroundColor: theme.colors.atmo1,
           "&,:focus-visible": {
             border: "none",
           },
         },
+      },
+    },
+    HvBaseDropdown: {
+      classes: {
         placeholder: {
           color: theme.colors.secondary_60,
         },
@@ -927,11 +929,6 @@ const ds3 = makeTheme((theme) => ({
     },
     HvSelect: {
       classes: {
-        select: {
-          ".HvButton-endIcon": {
-            marginRight: theme.spacing(-1),
-          },
-        },
         panel: {
           borderColor: theme.colors.atmo4,
         },

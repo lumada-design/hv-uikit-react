@@ -27,6 +27,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
       },
     // #endregion
 
+    // TODO: inherit styles from InputHeader
     display: "inline-flex",
     width: "100%",
     position: "relative",
