@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useForkRef } from "@mui/material/utils";
 import {
   useDefaultProps,
+  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
@@ -242,8 +243,8 @@ export const HvInput = fixedForwardRef(function HvInput<
     enablePortal,
     suggestOnFocus,
     label,
-    description,
-    info,
+    description: descriptionProp,
+    info: infoProp,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
     "aria-describedby": ariaDescribedBy,
@@ -276,10 +277,16 @@ export const HvInput = fixedForwardRef(function HvInput<
   const { classes, cx } = useClasses(classesProp);
   const labels = useLabels(DEFAULT_LABELS, labelsProp);
   const elementId = useUniqueId(id);
+  const { activeTheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
   const forkedRef = useForkRef(ref, inputRef, inputRefProp);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  const [description, info] =
+    activeTheme?.name === "pentahoPlus"
+      ? [infoProp, descriptionProp]
+      : [descriptionProp, infoProp];
 
   const [focused, setFocused] = useState(false);
 
