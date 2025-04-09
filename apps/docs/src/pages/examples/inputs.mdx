@@ -1,0 +1,15 @@
+import { CodeBlock } from "../../components/code/CodeBlock";
+
+import copyButton from "../../examples/inputs/CopyButton?raw";
+import dropdownPrefix from "../../examples/inputs/DropdownPrefix?raw";
+import tagsDropdown from "../../examples/inputs/TagsDropdown?raw";
+import tagsSuggestions from "../../examples/inputs/TagsSuggestions?raw";
+
+# Inputs examples
+
+<div className="w-full grid [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))] gap-md">
+  <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
+  <CodeBlock code={{ main: copyButton }} layout="popup" />
+  <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
+  <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
+</div>

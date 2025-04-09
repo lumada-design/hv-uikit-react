@@ -1,13 +1,20 @@
 import { useMemo } from "react";
 
 import { ExpandableLayout } from "./ExpandableLayout";
+import { PopupLayout } from "./PopupLayout";
 import { ToggableLayout } from "./ToggableLayout";
 import { resolveComponents, resolveImports } from "./utils";
 
 type CodeBlockProps = {
   title?: string;
-  layout?: "expandable" | "toggable";
+  layout?: "expandable" | "toggable" | "popup";
   code: Record<string, string> | string;
+};
+
+const layoutMap = {
+  expandable: ExpandableLayout,
+  toggable: ToggableLayout,
+  popup: PopupLayout,
 };
 
 /**
@@ -39,8 +46,7 @@ export const CodeBlock = ({
   const scope = { ...components, ...imports };
 
   // Select the layout component based on the `layout` prop.
-  const ComponentLayout =
-    layout === "expandable" ? ExpandableLayout : ToggableLayout;
+  const ComponentLayout = layoutMap[layout] || layoutMap.toggable;
 
   return <ComponentLayout title={title} code={normalizedCode} scope={scope} />;
 };

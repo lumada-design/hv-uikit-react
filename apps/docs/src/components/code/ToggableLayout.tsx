@@ -59,7 +59,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
       {showPreview ? (
         <div
           className={clsx(
-            "p-md pt-lg min-h-400px mb-lg",
+            "p-md pt-lg min-h-100px mb-lg",
             "border border-atmo3 rounded-round",
             "bg-bgContainer [&_tr]:table-row",
           )}

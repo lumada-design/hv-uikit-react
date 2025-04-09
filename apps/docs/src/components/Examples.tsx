@@ -1,9 +1,10 @@
 import { clsx } from "clsx";
 import Link from "next/link";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
-import { BarChart, Table } from "@hitachivantara/uikit-react-icons";
+import { BarChart, Table, TextColor } from "@hitachivantara/uikit-react-icons";
 
 import charts from "../pages/examples/charts.mdx?raw";
+import inputs from "../pages/examples/inputs.mdx?raw";
 import tables from "../pages/examples/tables.mdx?raw";
 
 /**
@@ -22,6 +23,8 @@ const getSectionIcon = (title: string) => {
       return <Table size="md" />;
     case "Charts":
       return <BarChart size="md" />;
+    case "Inputs":
+      return <TextColor size="md" />;
     default:
       return null;
   }
@@ -43,6 +46,11 @@ export const Examples = () => {
       title: "Charts",
       total: countCodeBlocks(charts),
       path: "/examples/charts",
+    },
+    {
+      title: "Inputs",
+      total: countCodeBlocks(inputs),
+      path: "/examples/inputs",
     },
   ];
 
