@@ -551,6 +551,13 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvTagsInput: {
+      classes: {
+        tagsList: {
+          backgroundColor: inputColors.bg,
+        },
+      },
+    },
     HvTag: {
       showSelectIcon: false,
       classes: {
