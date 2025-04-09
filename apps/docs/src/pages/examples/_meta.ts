@@ -17,4 +17,10 @@ export default {
       layout: "full",
     },
   },
+  inputs: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };
