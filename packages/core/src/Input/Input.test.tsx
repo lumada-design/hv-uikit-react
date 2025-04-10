@@ -57,6 +57,33 @@ describe("Input", () => {
     expect(screen.getByText("kg")).toBeVisible();
   });
 
+  it("renders the label and description", () => {
+    render(<HvInput label="LABEL" description="DESCRIPTION" />);
+    expect(screen.getByRole("textbox", { name: "LABEL" })).toBeInTheDocument();
+    expect(screen.getByText("DESCRIPTION")).toBeInTheDocument();
+  });
+
+  it("renders the info message", () => {
+    render(<HvInput infoMessage="INFO" />);
+    expect(screen.getByText("INFO")).toBeInTheDocument();
+  });
+
+  it("renders only the statusMessage when invalid status", () => {
+    render(
+      <HvInput status="invalid" infoMessage="INFO" statusMessage="ERROR" />,
+    );
+    expect(screen.getByText("ERROR")).toBeInTheDocument();
+    expect(screen.queryByText("INFO")).toBeNull();
+  });
+
+  it("renders only the info message when in standby status", () => {
+    render(
+      <HvInput status="standBy" infoMessage="INFO" statusMessage="ERROR" />,
+    );
+    expect(screen.getByText("INFO")).toBeInTheDocument();
+    expect(screen.queryByText("ERROR")).toBeNull();
+  });
+
   it("can press custom endAdornment with keyboard", async () => {
     const clickMock = vi.fn();
     render(

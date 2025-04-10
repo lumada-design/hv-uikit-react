@@ -27,6 +27,7 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
+  HvInfoMessage,
   HvWarningText,
   isInvalid,
 } from "../FormElement";
@@ -72,6 +73,8 @@ export interface HvTextAreaProps
    * The error message to show when `status` is "invalid".
    */
   statusMessage?: React.ReactNode;
+  /** An informational message, used for error-prevention. Replaces `statusMessage` when it isn't visible. */
+  infoMessage?: React.ReactNode;
   /**
    * Text between the current char counter and max value.
    */
@@ -171,6 +174,7 @@ export const HvTextArea = forwardRef<
     placeholder,
     status,
     statusMessage,
+    infoMessage,
     validationMessages,
     maxCharQuantity,
     minCharQuantity,
@@ -179,8 +183,8 @@ export const HvTextArea = forwardRef<
     rows = 1,
     defaultValue = "",
     middleCountLabel = "/",
-    countCharProps = {},
-    inputProps = {},
+    countCharProps,
+    inputProps,
     required,
     readOnly,
     disabled,
@@ -395,6 +399,9 @@ export const HvTextArea = forwardRef<
           inputProps,
         )));
 
+  const willShowError = canShowError && isStateInvalid;
+  const canShowInfo = !!infoMessage && !willShowError;
+
   let errorMessageId;
   if (isStateInvalid) {
     errorMessageId = canShowError
@@ -490,6 +497,11 @@ export const HvTextArea = forwardRef<
         >
           {validationMessage}
         </HvWarningText>
+      )}
+      {canShowInfo && (
+        <HvInfoMessage disableGutter variant="caption1">
+          {infoMessage}
+        </HvInfoMessage>
       )}
     </HvFormElement>
   );

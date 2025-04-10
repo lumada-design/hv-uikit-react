@@ -21,6 +21,7 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
+  HvInfoMessage,
   HvWarningText,
   isInvalid,
   isValid,
@@ -105,6 +106,8 @@ export interface HvInputProps<
   status?: HvFormStatus;
   /** The error message to show when `status` is "invalid". */
   statusMessage?: string;
+  /** An informational message, used for error-prevention. Replaces `statusMessage` when it isn't visible. */
+  infoMessage?: React.ReactNode;
   /** @inheritdoc */
   onChange?: (event: React.ChangeEvent<InputElement>, value: string) => void;
   /**
@@ -225,14 +228,15 @@ export const HvInput = fixedForwardRef(function HvInput<
     enablePortal,
     suggestOnFocus,
     label,
+    description,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
-    description,
     "aria-describedby": ariaDescribedBy,
     onChange,
     onEnter,
     status,
     statusMessage,
+    infoMessage,
     "aria-errormessage": ariaErrorMessage,
     type = "text",
     placeholder,
@@ -348,6 +352,8 @@ export const HvInput = fixedForwardRef(function HvInput<
         )));
 
   const isStateInvalid = isInvalid(validationState);
+  const willShowError = canShowError && isStateInvalid;
+  const canShowInfo = !!infoMessage && !willShowError;
 
   // Input type related state
   const [revealPassword, setRevealPassword] = useState(false);
@@ -812,6 +818,11 @@ export const HvInput = fixedForwardRef(function HvInput<
         >
           {validationMessage}
         </HvWarningText>
+      )}
+      {canShowInfo && (
+        <HvInfoMessage disableGutter variant="caption1">
+          {infoMessage}
+        </HvInfoMessage>
       )}
     </HvFormElement>
   );
