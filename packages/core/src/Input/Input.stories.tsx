@@ -53,6 +53,7 @@ export const Main: StoryObj<HvInputProps> = {
     type: "text",
     status: "valid",
     statusMessage: "My status message",
+    infoMessage: "",
     autoFocus: false,
     disableClear: false,
     disableRevealPassword: false,

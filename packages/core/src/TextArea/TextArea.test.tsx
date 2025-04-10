@@ -47,6 +47,29 @@ describe("TextArea", () => {
     expect(label).toHaveTextContent("Label*");
   });
 
+  it("renders the label and description", () => {
+    render(<HvTextArea label="Label" description="Description" />);
+
+    expect(screen.getByRole("textbox", { name: "Label" })).toBeInTheDocument();
+    expect(screen.getByText("Description")).toBeInTheDocument();
+  });
+
+  it("renders only the statusMessage when invalid status", () => {
+    render(
+      <HvTextArea status="invalid" infoMessage="INFO" statusMessage="ERROR" />,
+    );
+    expect(screen.getByText("ERROR")).toBeInTheDocument();
+    expect(screen.queryByText("INFO")).toBeNull();
+  });
+
+  it("renders only the info message when in standby status", () => {
+    render(
+      <HvTextArea status="standBy" infoMessage="INFO" statusMessage="ERROR" />,
+    );
+    expect(screen.getByText("INFO")).toBeInTheDocument();
+    expect(screen.queryByText("ERROR")).toBeNull();
+  });
+
   it("should be readonly", () => {
     render(<HvTextArea rows={4} label="Label" readOnly />);
 
