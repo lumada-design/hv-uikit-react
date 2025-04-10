@@ -46,7 +46,7 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
   };
 
   return (
-    <section className="relative mt-md rounded-round [&>*]:border-border">
+    <section className="relative border-1 -mt-px -ml-px">
       <HvDialog
         onClose={() => setIsExpanded(false)}
         open={isExpanded}
@@ -81,11 +81,7 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
       />
 
       {/* Preview Section */}
-      <div
-        className={clsx(
-          "p-md pt-lg bg-bgPage border rounded-inherit flex items-center justify-center",
-        )}
-      >
+      <div className="p-md flex items-center justify-center">
         <div>{element}</div>
       </div>
     </section>

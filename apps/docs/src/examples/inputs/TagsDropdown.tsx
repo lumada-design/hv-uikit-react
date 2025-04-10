@@ -62,7 +62,11 @@ export default function Demo() {
 
   return (
     <div className="w-300px">
-      <HvLabel label="Tags dropdown input" id="tags-dropdown-input" />
+      <HvLabel
+        label="Tags dropdown input"
+        id="tags-dropdown-input"
+        showGutter
+      />
       <HvBaseDropdown
         aria-labelledby="tags-dropdown-input"
         onContainerCreation={focusOnContainer}
