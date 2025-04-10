@@ -89,6 +89,8 @@ export interface HvInputProps<
   label?: React.ReactNode;
   /** Provide additional descriptive text for the form element. */
   description?: React.ReactNode;
+  /** An additional description information element, used for error-prevention. Replaces the error section when there isn't one */
+  info?: React.ReactNode;
   /** @inheritdoc */
   disabled?: boolean;
   /** @inheritdoc */
@@ -240,9 +242,10 @@ export const HvInput = fixedForwardRef(function HvInput<
     enablePortal,
     suggestOnFocus,
     label,
+    description,
+    info,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledBy,
-    description,
     "aria-describedby": ariaDescribedBy,
     onChange,
     onEnter,
@@ -363,6 +366,8 @@ export const HvInput = fixedForwardRef(function HvInput<
         )));
 
   const isStateInvalid = isInvalid(validationState);
+  const willShowError = canShowError && isStateInvalid;
+  const canShowInfo = !!info && !willShowError;
 
   // Input type related state
   const [revealPassword, setRevealPassword] = useState(false);
@@ -834,6 +839,11 @@ export const HvInput = fixedForwardRef(function HvInput<
         >
           {validationMessage}
         </HvWarningText>
+      )}
+      {canShowInfo && (
+        <HvInfoMessage disableGutter variant="caption1">
+          {info}
+        </HvInfoMessage>
       )}
     </HvFormElement>
   );

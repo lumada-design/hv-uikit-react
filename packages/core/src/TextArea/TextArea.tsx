@@ -61,6 +61,8 @@ export interface HvTextAreaProps
    * Provide additional descriptive text for the form element.
    */
   description?: React.ReactNode;
+  /** An additional description information element, used for error-prevention. Replaces the error section when there isn't one */
+  info?: React.ReactNode;
   /**
    * The status of the form element.
    *
@@ -170,6 +172,7 @@ export const HvTextArea = forwardRef<
     name,
     label,
     description,
+    info,
     placeholder,
     status,
     statusMessage,
@@ -181,8 +184,8 @@ export const HvTextArea = forwardRef<
     rows = 1,
     defaultValue = "",
     middleCountLabel = "/",
-    countCharProps = {},
-    inputProps = {},
+    countCharProps,
+    inputProps,
     required,
     readOnly,
     disabled,
@@ -400,6 +403,9 @@ export const HvTextArea = forwardRef<
           inputProps,
         )));
 
+  const willShowError = canShowError && isStateInvalid;
+  const canShowInfo = !!info && !willShowError;
+
   let errorMessageId;
   if (isStateInvalid) {
     errorMessageId = canShowError
@@ -504,6 +510,11 @@ export const HvTextArea = forwardRef<
         >
           {validationMessage}
         </HvWarningText>
+      )}
+      {canShowInfo && (
+        <HvInfoMessage disableGutter variant="caption1">
+          {info}
+        </HvInfoMessage>
       )}
     </HvFormElement>
   );
