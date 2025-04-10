@@ -121,7 +121,10 @@ export default function Demo() {
         label="Date"
         inputProps={{ type: "date" }}
         endAdornment={
-          <Calendar onClick={() => dateRef.current?.showPicker()} />
+          <HvAdornment
+            icon={<Calendar />}
+            onClick={() => dateRef.current?.showPicker()}
+          />
         }
       />
       <HvInput
@@ -129,14 +132,22 @@ export default function Demo() {
         label="Datetime-local"
         inputProps={{ type: "datetime-local", step: 1 }}
         endAdornment={
-          <Calendar onClick={() => dateTimeRef.current?.showPicker()} />
+          <HvAdornment
+            icon={<Calendar />}
+            onClick={() => dateTimeRef.current?.showPicker()}
+          />
         }
       />
       <HvInput
         ref={timeRef}
         label="Time"
         inputProps={{ type: "time", step: 1 }}
-        endAdornment={<Time onClick={() => timeRef.current?.showPicker()} />}
+        endAdornment={
+          <HvAdornment
+            icon={<Time />}
+            onClick={() => timeRef.current?.showPicker()}
+          />
+        }
       />
     </div>
   );
@@ -181,10 +192,14 @@ You can use `startAdornment` and `endAdornment` to create custom input layouts, 
   placeholder="Enter sub-domain"
   className="w-400px"
   startAdornment={
-    <span className="h-full content-center px-xxs">https://</span>
+    <span className="content-center bg-bgContainer border-border border-r px-xxs">
+      https://
+    </span>
   }
   endAdornment={
-    <span className="h-full content-center px-xxs">.hitachivantara.com</span>
+    <span className="h-full content-center bg-bgContainer border-border border-l px-xxs">
+      .hitachivantara.com
+    </span>
   }
   validation={(value) => !/[^a-zA-Z0-9-]/.test(value)}
   validationMessages={{ error: "Invalid subdomain" }}
