@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -47,16 +47,17 @@ export const HvLabel = (props: HvLabelProps) => {
     htmlFor: htmlForProp,
     ...others
   } = useDefaultProps("HvLabel", props);
-
   const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(HvFormElementContext);
-
   const disabled = disabledProp ?? context.disabled;
   const required = requiredProp ?? context.required;
   const id = idProp ?? setId(context.id, "label");
 
-  const forId = htmlForProp || findDescriptors(children)?.input?.[0]?.id;
+  const forId = useMemo(
+    () => htmlForProp || findDescriptors(children)?.input?.[0]?.id,
+    [children, htmlForProp],
+  );
 
   return (
     <>

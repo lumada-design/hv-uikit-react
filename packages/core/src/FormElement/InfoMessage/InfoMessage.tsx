@@ -32,10 +32,9 @@ export const HvInfoMessage = (props: HvInfoMessageProps) => {
     className,
     children,
     disabled: disabledProp,
-    disableGutter = false,
+    disableGutter,
     ...others
   } = useDefaultProps("HvInfoMessage", props);
-
   const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(HvFormElementContext);

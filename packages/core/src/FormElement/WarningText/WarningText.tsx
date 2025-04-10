@@ -45,13 +45,12 @@ export const HvWarningText = (props: HvWarningTextProps) => {
     className,
     id: idProp,
     disabled: disabledProp,
-    disableGutter = false,
-    disableBorder = false,
-    disableAdornment = false,
-    hideText = false,
+    disableGutter,
+    disableBorder,
+    disableAdornment,
+    hideText,
     ...others
   } = useDefaultProps("HvWarningText", props);
-
   const { classes, cx } = useClasses(classesProp);
 
   const context = useContext(HvFormElementContext);

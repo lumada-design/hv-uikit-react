@@ -555,6 +555,7 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         tagsList: {
           backgroundColor: inputColors.bg,
+          padding: theme.space.xxs,
         },
         singleLine: {
           height: 32,
