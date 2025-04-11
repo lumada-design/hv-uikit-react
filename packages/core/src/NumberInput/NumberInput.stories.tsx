@@ -25,10 +25,6 @@ export const Main: StoryObj<HvNumberInputProps> = {
     classes: { control: { disable: true } },
   },
   render: (args) => {
-    return (
-      <div className="flex flex-col gap-md">
-        <HvNumberInput {...args} />
-      </div>
-    );
+    return <HvNumberInput {...args} />;
   },
 };

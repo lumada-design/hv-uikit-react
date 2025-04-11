@@ -1,19 +1,12 @@
 import { forwardRef, useMemo, useRef } from "react";
 import { useForkRef } from "@mui/material";
-import {
-  ExtractNames,
-  useDefaultProps,
-} from "@hitachivantara/uikit-react-utils";
+import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 
 import { HvAdornment } from "../FormElement";
 import { HvIcon } from "../icons";
 import { HvInput, HvInputProps } from "../Input";
 import { changeInputValue } from "../Input/utils";
-import { staticClasses, useClasses } from "./NumberInput.styles";
-
-export { staticClasses as numericInputClasses };
-
-export type HvNumberInputClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./NumberInput.styles";
 
 export interface HvNumberInputProps extends HvInputProps<HTMLInputElement> {}
 
@@ -70,9 +63,7 @@ export const HvNumberInput = forwardRef<
       type="number"
       className={cx(classes.root, className)}
       endAdornment={!readOnly && buttons}
-      classes={{
-        adornmentsBox: classes.adornmentsBox,
-      }}
+      classes={classes}
       readOnly={readOnly}
       disableClear
       {...others}

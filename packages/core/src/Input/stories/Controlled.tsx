@@ -13,10 +13,7 @@ export default function Controlled() {
         placeholder="Enter value"
         value={value}
         // to be possible to change the input value by user action
-        onChange={(event, newValue) => {
-          console.log("YEY", newValue);
-          setValue(newValue);
-        }}
+        onChange={(event, newValue) => setValue(newValue)}
       />
       <br />
       <div className={css({ display: "flex", gap: theme.space.xs })}>
