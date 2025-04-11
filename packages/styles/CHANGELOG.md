@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.45.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.45.0...@hitachivantara/uikit-styles@5.45.1) (2025-04-11)
+
+### Bug Fixes
+
+- **Tag:** change default P+ size to sm ([#4647](https://github.com/lumada-design/hv-uikit-react/issues/4647)) ([c0e52c9](https://github.com/lumada-design/hv-uikit-react/commit/c0e52c929d22fd2bf2fd12376937857783f04c9a))
+- **TagsInput:** fix background color ([#4649](https://github.com/lumada-design/hv-uikit-react/issues/4649)) ([f3a2e21](https://github.com/lumada-design/hv-uikit-react/commit/f3a2e21f5f53cad84805dc30124061175afeba07))
+
 # [5.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.3...@hitachivantara/uikit-styles@5.45.0) (2025-04-04)
 
 ### Bug Fixes
