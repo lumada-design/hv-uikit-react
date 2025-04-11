@@ -1109,6 +1109,20 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
+    HvNumberInput: {
+      classes: {
+        root: {
+          ".HvBaseInput-disabled .HvInput-adornmentsBox": {
+            backgroundColor: theme.colors.bgDisabled,
+          },
+        },
+        adornmentsBox: {
+          backgroundColor: theme.colors.bgContainer,
+          borderLeft: `1px solid ${theme.colors.border}`,
+          borderRadius: theme.radii.none,
+        },
+      },
+    },
   } satisfies Record<
     string,
     Record<string, any> & { classes?: Record<string, CSSObject> }
