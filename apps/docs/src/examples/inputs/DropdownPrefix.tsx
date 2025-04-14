@@ -41,7 +41,7 @@ const countries = [
 
 export default function Demo() {
   const [selectedCountry, setSelectedCountry] = useState("Portugal");
-  const [formatttedPhoneNumber, setFormattedPhoneNumber] = useState("");
+  const [formattedPhoneNumber, setFormattedPhoneNumber] = useState("");
 
   return (
     <HvInput
@@ -53,7 +53,7 @@ export default function Demo() {
             "",
         );
       }}
-      value={formatttedPhoneNumber}
+      value={formattedPhoneNumber}
       startAdornment={
         <HvSelect
           value={selectedCountry}

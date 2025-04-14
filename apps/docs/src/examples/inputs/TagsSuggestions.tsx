@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Popper } from "@mui/material";
 import {
-  HvLabel,
   HvPanel,
   HvTag,
   HvTagsInput,

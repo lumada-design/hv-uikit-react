@@ -4,6 +4,7 @@ import * as tokens from "./tokens";
 import { colors } from "./tokens/colors";
 
 // Theme tokens
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const flattenTokens = {
   ...tokens,
   colors: {

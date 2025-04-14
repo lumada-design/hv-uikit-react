@@ -2,14 +2,12 @@ import { HvOptional } from "../types/generic";
 
 export const defaultRendererKey = "DEFAULT";
 
-const defaultAttributes = [
-  "boolean",
-  "numeric",
-  "dateandtime",
-  "text",
-  "textarea",
-] as const;
-type DefaultAttributes = (typeof defaultAttributes)[number];
+type DefaultAttributes =
+  | "boolean"
+  | "numeric"
+  | "dateandtime"
+  | "text"
+  | "textarea";
 
 export interface HvQueryBuilderAttribute extends Record<string, unknown> {
   id?: string;
