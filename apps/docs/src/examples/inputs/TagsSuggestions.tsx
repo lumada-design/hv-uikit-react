@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Popper } from "@mui/material";
 import {
+  HvAdornment,
   HvPanel,
   HvTag,
   HvTagsInput,
@@ -67,11 +68,10 @@ export default function Demo() {
         value={selectedColors}
         commitTagOn={["Comma"]}
         endAdornment={
-          <DropDownXS
-            rotate={open}
+          <HvAdornment
+            tabIndex={0}
+            icon={<DropDownXS rotate={open} size="xs" />}
             onClick={() => setOpen((o) => !o)}
-            className="cursor-pointer"
-            size="xs"
           />
         }
         classes={{
