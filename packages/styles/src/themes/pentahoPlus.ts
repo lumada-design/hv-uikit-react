@@ -1040,7 +1040,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
           "& .HvTabs-flexContainer": {
             display: "inline-flex",
-            backgroundColor: theme.colors.bgContainerSecondary,
+            backgroundColor: theme.colors.bgPageSecondary,
             borderRadius: theme.radii.full,
             marginLeft: 0,
           },
