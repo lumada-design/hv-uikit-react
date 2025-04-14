@@ -1,0 +1,40 @@
+import React from "react";
+
+export default React;
+/* eslint no-underscore-dangle: "off" */
+export const __esmModule = true;
+export const {
+  Fragment,
+  StrictMode,
+  Profiler,
+  Suspense,
+  Children,
+  Component,
+  PureComponent,
+  cloneElement,
+  createContext,
+  createElement,
+  createFactory,
+  createRef,
+  forwardRef,
+  isValidElement,
+  lazy,
+  memo,
+  startTransition,
+  useCallback,
+  useContext,
+  useDebugValue,
+  useDeferredValue,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useInsertionEffect,
+  useLayoutEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  useTransition,
+  version,
+} = React;

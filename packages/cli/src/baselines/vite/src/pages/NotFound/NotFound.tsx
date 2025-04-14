@@ -6,6 +6,8 @@ import { Info } from "@hitachivantara/uikit-react-icons";
 import classes from "./styles";
 
 const NotFound = () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const { t } = useTranslation("common");
   const navigate = useNavigate();
 

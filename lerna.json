@@ -10,7 +10,6 @@
       "npmClientArgs": ["--legacy-peer-deps", "--production=false"]
     },
     "version": {
-      "allowBranch": ["master", "next"],
       "preid": "next",
       "message": "chore(release): publish",
       "conventionalCommits": true,

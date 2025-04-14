@@ -1,0 +1,71 @@
+{
+  "name": "@hitachivantara/app-shell-shared",
+  "version": "1.4.2",
+  "type": "module",
+  "private": false,
+  "author": "Hitachi Vantara UI Kit Team",
+  "description": "AppShell Shared",
+  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "sideEffects": false,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "directory": "packages/app-shell-shared"
+  },
+  "bugs": "https://github.com/lumada-design/hv-uikit-react/issues",
+  "scripts": {
+    "build": "npm run clean && vite build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "clean": "npx rimraf dist package",
+    "prepublishOnly": "npm run build && npx clean-publish"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "optionalDependencies": {
+    "@hitachivantara/uikit-react-core": "^5.72.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@vitejs/plugin-react": "^4.2.0",
+    "i18next": "^24.2.2",
+    "vite": "^6.2.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json",
+    "./bundles/*": "./dist/bundles/*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "package",
+    "module": "dist/esm/index.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/esm/index.js",
+        "default": "./dist/esm/index.js"
+      },
+      "./package.json": "./package.json",
+      "./bundles/*": "./dist/bundles/*"
+    }
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package",
+    "fields": [
+      "main"
+    ],
+    "files": [
+      "tsconfig.json"
+    ]
+  }
+}

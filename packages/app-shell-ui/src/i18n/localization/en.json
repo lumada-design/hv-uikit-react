@@ -1,0 +1,48 @@
+{
+  "errors": {
+    "missing": {
+      "configuration": "Missing or incomplete configuration."
+    },
+    "notFound": {
+      "code": "404",
+      "title": "Oops! Seems like the page is lost in space.",
+      "image_description": "404 Page not found"
+    },
+    "genericError": {
+      "code": "500",
+      "title": "Shoot! We have a problem! Be back soon.",
+      "image_description": "500 Generic error"
+    },
+    "footer": "Click <navigate>here</navigate> to go back to the {{label}} page."
+  },
+  "header": {
+    "helpUrl": {
+      "documentationLink": "Documentation link"
+    },
+    "appSwitcher": {
+      "title": "Apps",
+      "ariaLabel": "App Switcher Panel"
+    },
+    "navigation": {
+      "openNavigationPanel": "Open navigation panel",
+      "closeNavigationPanel": "Close navigation panel"
+    },
+    "colorModeSwitcher": {
+      "ariaLabel": "Switch color mode"
+    }
+  },
+  "verticalNavigation": {
+    "ariaLabelNavigationTree": "Vertical navigation",
+    "ariaLabelCollapse": "Collapse vertical navigation",
+    "ariaLabelExpand": "Expand vertical navigation",
+    "title": "Menu",
+    "ariaLabelSliderForwardButton": "Navigate to submenu",
+    "ariaLabelHeaderBackButton": "Back",
+    "collapseAction": "Collapse Menu"
+  },
+  "notifications": {
+    "banner": {
+      "close": "Close banner"
+    }
+  }
+}

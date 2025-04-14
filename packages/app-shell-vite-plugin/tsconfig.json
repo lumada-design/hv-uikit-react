@@ -1,0 +1,16 @@
+{
+  "include": ["src", "rollup.config.js"],
+  "exclude": ["node_modules", "dist", "tests"],
+
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    "noEmit": false,
+    "noCheck": true,
+    "sourceMap": false,
+    "declaration": true,
+    "outDir": "dist"
+  }
+}
