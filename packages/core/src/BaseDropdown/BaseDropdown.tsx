@@ -346,6 +346,7 @@ const BaseDropdown = forwardRef<
           classes={classes}
           containerId={containerId}
           onClickAway={handleOutside}
+          disablePortal={disablePortal}
           onContainerKeyDown={handleContainerKeyDown}
         >
           {children}
