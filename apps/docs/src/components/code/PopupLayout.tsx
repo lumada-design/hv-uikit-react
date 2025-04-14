@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { Check, Copy } from "@phosphor-icons/react";
-import { clsx } from "clsx";
 import {
   HvButton,
   HvDialog,

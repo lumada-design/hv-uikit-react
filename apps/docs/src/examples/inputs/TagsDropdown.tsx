@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   HvBaseDropdown,
   HvLabel,
@@ -93,16 +93,13 @@ export default function Demo() {
         <HvPanel className="flex gap-xs flex-wrap">
           {colors
             .filter((color) => !selectedColors.includes(color))
-            .map((color, idx) => {
-              return (
-                <HvTag
-                  // autoFocus={idx === 0}
-                  key={color}
-                  label={color}
-                  onClick={() => handleAddColor(color)}
-                />
-              );
-            })}
+            .map((color) => (
+              <HvTag
+                key={color}
+                label={color}
+                onClick={() => handleAddColor(color)}
+              />
+            ))}
         </HvPanel>
       </HvBaseDropdown>
     </div>
