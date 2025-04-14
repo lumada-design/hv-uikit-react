@@ -1100,7 +1100,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvDropDownMenu: {
       classes: {
         root: {
-          "--r": theme.radii.full,
+          "--r": "calc(var(--HvButton-height) / 2)",
         },
         iconSelected: {
           "&[data-color=secondary]": {
