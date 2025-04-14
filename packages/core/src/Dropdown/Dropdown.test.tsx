@@ -74,6 +74,24 @@ describe("Dropdown", () => {
     expect(DropdownHeader).toHaveAttribute("aria-invalid", "true");
   });
 
+  it("renders list inside combobox if disablePortal", () => {
+    render(
+      <HvDropdown
+        label="Sample"
+        expanded
+        disablePortal
+        values={[
+          { label: "value 1" },
+          { label: "value 2" },
+          { label: "value 3" },
+        ]}
+      />,
+    );
+
+    const dropdownHeader = screen.getByRole("combobox");
+    expect(dropdownHeader.parentElement?.querySelector("ul")).toBeTruthy();
+  });
+
   it("should select one", async () => {
     render(
       <HvDropdown
