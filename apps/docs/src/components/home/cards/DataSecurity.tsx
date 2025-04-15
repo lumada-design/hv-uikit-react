@@ -4,9 +4,9 @@ import { SystemActivity } from "@hitachivantara/uikit-react-icons";
 import { Card } from "./Card";
 
 const securityData = [
-  { title: "Critical", count: 5, color: "positive_20" },
-  { title: "Warning", count: 12, color: "negative_20" },
-  { title: "Informational", count: 20, color: "warning_20" },
+  { title: "Critical", count: 5, color: "negative" },
+  { title: "Warning", count: 12, color: "warning" },
+  { title: "Informational", count: 20, color: "info" },
 ];
 
 export const DataSecurity = () => {
@@ -16,7 +16,7 @@ export const DataSecurity = () => {
       subtitle="Incidents from the last 30 days."
       icon={<SystemActivity color="primary" />}
     >
-      <div className="grid grid-cols-3">
+      <div className="flex gap-xs justify-between">
         {securityData.map(({ title, count, color }) => (
           <div key={title}>
             <HvTypography variant="captionLabel" className="mb-xs">

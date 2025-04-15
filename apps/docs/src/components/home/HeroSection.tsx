@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
 import { clsx } from "clsx";
+import Link from "next/link";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 
 const SlideText = () => {
@@ -66,16 +67,23 @@ export const HeroSection = () => (
       <b>Hitachi Vantara</b> UI library that gives you the foundation to create
       consistent, top-tier digital experiences efficiently.
     </h3>
-    <HvButton size="lg" className="mt-md max-sm:w-full mr-sm">
+    <HvButton
+      component={Link}
+      href="/documentation/introduction"
+      size="lg"
+      className="mt-md max-sm:w-full mr-sm"
+    >
       Get Started
     </HvButton>
     <HvButton
+      component={Link}
+      href="/components/accordion"
       variant="subtle"
       size="lg"
       className="mt-md max-sm:w-full hidden sm:inline-flex"
+      endIcon={<ArrowRight />}
     >
-      Explore components <span className="ml-sm" />
-      <ArrowRight />
+      Explore components
     </HvButton>
   </div>
 );
