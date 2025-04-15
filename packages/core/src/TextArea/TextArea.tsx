@@ -446,6 +446,7 @@ export const HvTextArea = forwardRef<
       >
         {hasCounter && (
           <HvCharCounter
+            disableGutter
             id={setId(elementId, "charCounter")}
             className={classes.characterCounter}
             separator={middleCountLabel}
