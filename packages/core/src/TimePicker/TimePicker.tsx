@@ -17,8 +17,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
 } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
@@ -235,27 +233,17 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
         className={cx(classes.root, className)}
         {...others}
       >
-        {(label || description) && (
-          <HvLabelContainer className={classes.labelContainer}>
-            {label && (
-              <HvLabel
-                label={label}
-                className={classes.label}
-                {...labelProps}
-              />
-            )}
-            {description && (
-              <HvInfoMessage
-                disableGutter
-                className={classes.description}
-                {...descriptionProps}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </HvLabelContainer>
-        )}
-
+        <HvLabelContainer
+          label={label}
+          description={description}
+          classes={{
+            root: classes.labelContainer,
+            label: classes.label,
+            description: classes.description,
+          }}
+          labelProps={labelProps}
+          descriptionProps={descriptionProps}
+        />
         <HvBaseDropdown
           ref={dropdownForkedRef}
           role="combobox"

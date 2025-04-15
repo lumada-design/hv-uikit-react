@@ -8,7 +8,7 @@ import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseDropdown } from "../BaseDropdown";
 import { HvDropdownProps } from "../Dropdown";
-import { HvFormElement, HvInfoMessage, HvLabel } from "../FormElement";
+import { HvFormElement } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useLabels } from "../hooks/useLabels";
@@ -165,8 +165,6 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
       defaultSavedColorsValue,
     );
     const elementId = useUniqueId(id);
-    const hasLabel = label != null;
-    const hasDescription = description != null;
 
     const handleToggle: HvDropdownProps["onToggle"] = (_, open) => {
       setIsOpen(open);
@@ -227,26 +225,17 @@ export const HvColorPicker = forwardRef<HTMLDivElement, HvColorPickerProps>(
         required={required}
         className={cx(classes.root, className)}
       >
-        {(hasLabel || hasDescription) && (
-          <HvLabelContainer className={classes.labelContainer}>
-            {hasLabel && (
-              <HvLabel
-                id={setId(elementId, "label")}
-                label={label}
-                className={classes.label}
-              />
-            )}
-            {hasDescription && (
-              <HvInfoMessage
-                disableGutter
-                id={setId(elementId, "description")}
-                className={classes.description}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </HvLabelContainer>
-        )}
+        <HvLabelContainer
+          label={label}
+          description={description}
+          labelId={setId(elementId, "label")}
+          descriptionId={setId(elementId, "description")}
+          classes={{
+            root: classes.labelContainer,
+            label: classes.label,
+            description: classes.description,
+          }}
+        />
         <HvBaseDropdown
           ref={ref}
           variableWidth

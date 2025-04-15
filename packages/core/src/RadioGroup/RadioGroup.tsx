@@ -10,13 +10,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import {
-  HvFormElement,
-  HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
-  HvWarningText,
-} from "../FormElement";
+import { HvFormElement, HvFormStatus, HvWarningText } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -247,22 +241,15 @@ export const HvRadioGroup = forwardRef<HTMLDivElement, HvRadioGroupProps>(
         readOnly={readOnly}
         className={cx(classes.root, className)}
       >
-        <HvLabelContainer>
-          {label && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              label={label}
-              className={classes.label}
-            />
-          )}
-
-          {description && (
-            <HvInfoMessage disableGutter id={setId(elementId, "description")}>
-              {description}
-            </HvInfoMessage>
-          )}
-        </HvLabelContainer>
-
+        <HvLabelContainer
+          label={label}
+          description={description}
+          labelId={setId(elementId, "label")}
+          descriptionId={setId(elementId, "description")}
+          classes={{
+            label: classes.label,
+          }}
+        />
         <div
           ref={ref}
           role="radiogroup"

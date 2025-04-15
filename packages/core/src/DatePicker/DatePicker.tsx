@@ -14,8 +14,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
   isInvalid,
 } from "../FormElement";
@@ -413,9 +411,6 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
     const dateValue = rangeMode ? { startDate, endDate } : startDate;
     const dateString = getDateLabel(dateValue, rangeMode, locale);
 
-    const hasLabel = label != null;
-    const hasDescription = description != null;
-
     // the error message area will only be created if:
     // - an external element that provides an error message isn't identified via aria-errormessage AND
     //   - both status and statusMessage properties are being controlled OR
@@ -446,26 +441,17 @@ export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
         readOnly={readOnly}
         {...others}
       >
-        {(hasLabel || hasDescription) && (
-          <HvLabelContainer className={classes.labelContainer}>
-            {hasLabel && (
-              <HvLabel
-                id={setId(elementId, "label")}
-                label={label}
-                className={classes.label}
-              />
-            )}
-            {hasDescription && (
-              <HvInfoMessage
-                disableGutter
-                id={setId(elementId, "description")}
-                className={classes.description}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </HvLabelContainer>
-        )}
+        <HvLabelContainer
+          label={label}
+          description={description}
+          labelId={setId(elementId, "label")}
+          descriptionId={setId(elementId, "description")}
+          classes={{
+            root: classes.labelContainer,
+            label: classes.label,
+            description: classes.description,
+          }}
+        />
         <HvBaseDropdown
           ref={dropdownForkedRef}
           role="combobox"

@@ -21,8 +21,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
 } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
@@ -239,27 +237,18 @@ export const HvSelect = fixedForwardRef(function HvSelect<
       })}
       {...others}
     >
-      {(label || description) && (
-        <HvLabelContainer className={classes.labelContainer}>
-          {label && (
-            <HvLabel
-              id={labelId}
-              htmlFor={id}
-              label={label}
-              className={classes.label}
-            />
-          )}
-          {description && (
-            <HvInfoMessage
-              disableGutter
-              id={descriptionId}
-              className={classes.description}
-            >
-              {description}
-            </HvInfoMessage>
-          )}
-        </HvLabelContainer>
-      )}
+      <HvLabelContainer
+        label={label}
+        description={description}
+        inputId={id}
+        labelId={labelId}
+        descriptionId={descriptionId}
+        classes={{
+          root: classes.labelContainer,
+          label: classes.label,
+          description: classes.description,
+        }}
+      />
       <HvDropdownButton
         id={id}
         open={isOpen}

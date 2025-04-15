@@ -19,8 +19,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
 } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
@@ -113,7 +111,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
       readOnly,
       disabled,
       required,
-      label: textAreaLabel,
+      label,
       "aria-label": ariaLabel,
       "aria-labelledby": ariaLabelledBy,
       description,
@@ -146,9 +144,6 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
     const { classes, cx } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
-
-    const hasLabel = textAreaLabel != null;
-    const hasDescription = description != null;
 
     const [value, setValue] = useControlled(valueProp, defaultValue);
 
@@ -486,40 +481,29 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
           className,
         )}
       >
-        {(hasLabel || hasDescription) && (
-          <HvLabelContainer className={classes.labelContainer}>
-            {hasLabel && (
-              <HvLabel
-                className={classes.label}
-                id={setId(id, "label")}
-                htmlFor={setId(elementId, "input")}
-                label={textAreaLabel}
-              />
-            )}
-
-            {hasDescription && (
-              <HvInfoMessage
-                disableGutter
-                className={classes.description}
-                id={setId(elementId, "description")}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </HvLabelContainer>
-        )}
-
-        {hasCounter && (
-          <HvCharCounter
-            id={setId(elementId, "charCounter")}
-            className={classes.characterCounter}
-            separator={middleCountLabel}
-            currentCharQuantity={value.length}
-            maxCharQuantity={maxTagsQuantity}
-            {...countCharProps}
-          />
-        )}
-
+        <HvLabelContainer
+          label={label}
+          description={description}
+          inputId={setId(elementId, "input")}
+          labelId={setId(elementId, "label")}
+          descriptionId={setId(elementId, "description")}
+          classes={{
+            root: classes.labelContainer,
+            label: classes.label,
+            description: classes.description,
+          }}
+        >
+          {hasCounter && (
+            <HvCharCounter
+              id={setId(elementId, "charCounter")}
+              className={classes.characterCounter}
+              separator={middleCountLabel}
+              currentCharQuantity={value.length}
+              maxCharQuantity={maxTagsQuantity}
+              {...countCharProps}
+            />
+          )}
+        </HvLabelContainer>
         {/* eslint-disable jsx-a11y/no-static-element-interactions */}
         <div
           ref={forkedContainerRef}
