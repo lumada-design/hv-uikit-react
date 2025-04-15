@@ -8,15 +8,11 @@ import {
   HvCalendar,
   HvDatePicker,
   HvDatePickerProps,
-  HvFormStatus,
-  HvGrid,
   HvListContainer,
   HvListItem,
   HvPanel,
   HvRadio,
   HvRadioGroup,
-  HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { setupChromatic } from ".storybook/setupChromatic";
@@ -394,103 +390,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
         showClear
         {...args}
       />
-    );
-  },
-};
-
-export const ExternalErrorMessage: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
-      },
-    },
-  },
-  decorators: [unsetDecorator],
-  render: () => {
-    const [endValidationState, setEndValidationState] =
-      useState<HvFormStatus>("invalid");
-
-    const [startErrorMessage, setStartErrorMessage] = useState<string>();
-    const [endErrorMessage, setEndErrorMessage] = useState(
-      "The end date will always be invalid.",
-    );
-
-    return (
-      <HvGrid container>
-        <HvGrid container item xs={12} md={6}>
-          <HvGrid item xs={12}>
-            <HvDatePicker
-              label="Start date"
-              description="Enter a start date"
-              placeholder="Choose a date"
-              required
-              aria-errormessage="start-error"
-              onChange={(value) => {
-                setStartErrorMessage(
-                  value ? undefined : "Start date is required.",
-                );
-              }}
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvDatePicker
-              label="End date"
-              description="Enter an end date"
-              placeholder="Choose a date"
-              required
-              status={endValidationState}
-              aria-errormessage="end-error"
-              onChange={(value) => {
-                setEndValidationState("invalid");
-
-                setEndErrorMessage(
-                  value
-                    ? "The end date will always be invalid."
-                    : "You can try choosing an end date.",
-                );
-              }}
-            />
-          </HvGrid>
-        </HvGrid>
-        <HvGrid item xs={12} md={6}>
-          <div
-            className={css({
-              backgroundColor: theme.colors.negativeDimmed,
-              color: theme.colors.textDark,
-              padding: theme.space.md,
-            })}
-          >
-            <HvTypography
-              component="h4"
-              variant="title4"
-              style={{
-                color: theme.colors.textDark,
-              }}
-            >
-              Form errors:
-            </HvTypography>
-            <ul
-              className={css({
-                margin: theme.spacing("sm", 0),
-                paddingLeft: theme.space.md,
-              })}
-            >
-              {startErrorMessage && (
-                <li id="start-error" aria-live="polite">
-                  {startErrorMessage}
-                </li>
-              )}
-              {endErrorMessage && (
-                <li id="end-error" aria-live="polite">
-                  {endErrorMessage}
-                </li>
-              )}
-            </ul>
-          </div>
-        </HvGrid>
-      </HvGrid>
     );
   },
 };

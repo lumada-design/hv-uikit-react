@@ -31,12 +31,12 @@ export default meta;
 const StyledRoot = styled("div")({
   display: "flex",
   flexWrap: "wrap",
-  justifyContent: "center",
+  gap: theme.space.xs,
   "&>*": {
+    display: "flex",
+    justifyContent: "center",
     width: 160,
     padding: theme.space.xs,
-    margin: theme.space.xs,
-    textAlign: "center",
     borderRadius: 4,
     backgroundColor: theme.colors.bgContainer,
   },
@@ -60,13 +60,12 @@ type SampleComponentProps = {
 const SampleComponent = ({ data, onChange }: SampleComponentProps) => (
   <StyledRoot>
     {data.map((el, i) => (
-      <div key={el.id}>
-        <HvCheckBox
-          label={el.value}
-          checked={el.checked}
-          onChange={(e, checked) => onChange(e, i, checked)}
-        />
-      </div>
+      <HvCheckBox
+        key={el.id}
+        label={el.value}
+        checked={el.checked}
+        onChange={(e, checked) => onChange(e, i, checked)}
+      />
     ))}
   </StyledRoot>
 );

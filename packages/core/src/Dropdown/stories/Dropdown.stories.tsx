@@ -10,8 +10,6 @@ import {
 
 import { CustomDropdown as CustomDropdownStory } from "./CustomDropdown";
 import CustomDropdownRaw from "./CustomDropdown?raw";
-import { ExternalErrorMessage as ExternalErrorMessageStory } from "./ExternalErrorMessage";
-import ExternalErrorMessageRaw from "./ExternalErrorMessage?raw";
 import { MultiSelection as MultiSelectionStory } from "./MultiSelection";
 import MultiSelectionRaw from "./MultiSelection?raw";
 import { Variants as VariantsStory } from "./Variants";
@@ -139,21 +137,6 @@ export const MultiSelection: StoryObj<HvDropdownProps> = {
     await expect(canvas.getByRole("list")).toBeInTheDocument();
   },
   render: (args) => <MultiSelectionStory {...args} />,
-};
-
-export const ExternalErrorMessage: StoryObj<HvDropdownProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
-      },
-      source: {
-        code: ExternalErrorMessageRaw,
-      },
-    },
-  },
-  render: () => <ExternalErrorMessageStory />,
 };
 
 export const Virtualized: StoryObj<HvDropdownProps> = {

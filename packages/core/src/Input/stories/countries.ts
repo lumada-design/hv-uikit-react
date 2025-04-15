@@ -225,5 +225,3 @@ export const countries = [
 ];
 
 export const allCountries = countries.flat().sort();
-
-export default allCountries;
