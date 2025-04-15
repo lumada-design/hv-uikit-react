@@ -4,12 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import {
-  HvFormElementContext,
-  HvFormElementProps,
-  HvInfoMessage,
-  HvLabel,
-} from "../../FormElement";
+import { HvFormElementContext, HvFormElementProps } from "../../FormElement";
 import { HvLabelContainer } from "../../FormElement/LabelContainer";
 import { useLabels } from "../../hooks/useLabels";
 import { useUniqueId } from "../../hooks/useUniqueId";
@@ -168,24 +163,30 @@ export const HvDropZone = (props: HvDropZoneProps) => {
     onFilesAdded?.(newFiles);
   };
 
+  const description = (
+    <>
+      {Number.isInteger(maxFileSize) &&
+        `${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
+      {labels.acceptedFiles ||
+        (accept && `\u00A0(${accept?.replaceAll(",", ", ")})`)}
+    </>
+  );
+
   return (
     <>
       {!hideLabels && (
-        <HvLabelContainer id={id} className={classes.dropZoneLabelsGroup}>
-          <HvLabel
-            id={setId(id, "input-file-label")}
-            htmlFor={setId(id, "input-file")}
-            label={label ?? labels?.dropzone}
-            className={classes.dropZoneLabel}
-          />
-          <HvInfoMessage disableGutter id={setId(id, "description")}>
-            {Number.isInteger(maxFileSize) &&
-              `${labels?.sizeWarning} ${convertUnits(maxFileSize)}`}
-            {labels?.acceptedFiles
-              ? labels.acceptedFiles
-              : accept && `\u00A0(${accept?.replaceAll(",", ", ")})`}
-          </HvInfoMessage>
-        </HvLabelContainer>
+        <HvLabelContainer
+          id={id}
+          label={label ?? labels.dropzone}
+          description={description}
+          inputId={setId(id, "input-file")}
+          labelId={setId(id, "input-file-label")}
+          descriptionId={setId(id, "description")}
+          classes={{
+            root: classes.dropZoneLabelsGroup,
+            label: classes.dropZoneLabel,
+          }}
+        />
       )}
       <div
         id={setId(id, "input-file-container")}

@@ -27,8 +27,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
   isInvalid,
 } from "../FormElement";
@@ -233,9 +231,6 @@ export const HvTextArea = forwardRef<
   const isEmptyValue = value == null || value === "";
 
   const hasLabel = label != null;
-
-  const hasDescription = description != null;
-
   const hasCounter = maxCharQuantity != null && !hideCounter;
 
   // ValidationMessages reference tends to change, as users will not memorize/useState for it;
@@ -426,38 +421,29 @@ export const HvTextArea = forwardRef<
       )}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription || hasCounter) && (
-        <HvLabelContainer className={classes.labelContainer}>
-          {hasLabel && (
-            <HvLabel
-              className={classes.label}
-              id={setId(id, "label")}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-            />
-          )}
-          {hasDescription && (
-            <HvInfoMessage
-              disableGutter
-              className={classes.description}
-              id={setId(elementId, "description")}
-            >
-              {description}
-            </HvInfoMessage>
-          )}
-          {hasCounter && (
-            <HvCharCounter
-              id={setId(elementId, "charCounter")}
-              className={classes.characterCounter}
-              separator={middleCountLabel}
-              currentCharQuantity={String(value).length}
-              maxCharQuantity={maxCharQuantity}
-              {...countCharProps}
-            />
-          )}
-        </HvLabelContainer>
-      )}
-
+      <HvLabelContainer
+        label={label}
+        description={description}
+        inputId={setId(elementId, "input")}
+        labelId={setId(elementId, "label")}
+        descriptionId={setId(elementId, "description")}
+        classes={{
+          root: classes.labelContainer,
+          label: classes.label,
+          description: classes.description,
+        }}
+      >
+        {hasCounter && (
+          <HvCharCounter
+            id={setId(elementId, "charCounter")}
+            className={classes.characterCounter}
+            separator={middleCountLabel}
+            currentCharQuantity={String(value).length}
+            maxCharQuantity={maxCharQuantity}
+            {...countCharProps}
+          />
+        )}
+      </HvLabelContainer>
       <HvBaseInput
         classes={{
           root: classes.baseInput,

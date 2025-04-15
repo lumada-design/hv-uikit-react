@@ -8,8 +8,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
 } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
@@ -159,10 +157,6 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
 
     const labels = useLabels(DEFAULT_LABELS, labelsProp);
 
-    const hasLabel = label != null;
-
-    const hasDescription = description != null;
-
     // Error message area will only be needed if the status is being controlled
     // or if required is true
     const canShowError = status !== undefined || required;
@@ -178,28 +172,18 @@ export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
         className={cx(classes.root, className)}
         {...others}
       >
-        {(hasLabel || hasDescription) && (
-          <HvLabelContainer className={classes.labelContainer}>
-            {hasLabel && (
-              <HvLabel
-                id={setId(elementId, "label")}
-                htmlFor={setId(elementId, "input")}
-                label={label}
-                className={classes.label}
-              />
-            )}
-
-            {hasDescription && (
-              <HvInfoMessage
-                disableGutter
-                id={setId(elementId, "description")}
-                className={classes.description}
-              >
-                {description}
-              </HvInfoMessage>
-            )}
-          </HvLabelContainer>
-        )}
+        <HvLabelContainer
+          label={label}
+          description={description}
+          inputId={setId(elementId, "input")}
+          labelId={setId(elementId, "label")}
+          descriptionId={setId(elementId, "description")}
+          classes={{
+            root: classes.labelContainer,
+            label: classes.label,
+            description: classes.description,
+          }}
+        />
         <HvFilterGroupProvider
           defaultValue={defaultValue}
           value={value}

@@ -13,12 +13,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import {
-  HvFormElement,
-  HvFormStatus,
-  HvLabel,
-  HvWarningText,
-} from "../FormElement";
+import { HvFormElement, HvFormStatus, HvWarningText } from "../FormElement";
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
@@ -237,24 +232,18 @@ export const HvSlider = forwardRef<
       // We always show an error when the value(s) are not between maxPointValue and minPointValue; and when required is true (set by user).
       status === undefined);
 
-  const isSingle: boolean = useMemo(
+  const isSingle = useMemo(
     () => isSingleSlider(valuesProp, defaultValues),
     [defaultValues, valuesProp],
   );
 
-  const value: number[] | undefined = useMemo(
-    () =>
-      valuesProp?.length > 0
-        ? knobsValuesToKnobsPositions(
-            valuesProp,
-            inverseStepValue,
-            minPointValue,
-          )
-        : undefined,
-    [inverseStepValue, minPointValue, valuesProp],
-  );
+  const value = useMemo(() => {
+    return valuesProp?.length > 0
+      ? knobsValuesToKnobsPositions(valuesProp, inverseStepValue, minPointValue)
+      : undefined;
+  }, [inverseStepValue, minPointValue, valuesProp]);
 
-  const defaultKnobsPositions: number[] = useMemo(
+  const defaultKnobsPositions = useMemo(
     () =>
       knobsValuesToKnobsPositions(
         defaultValues,
@@ -605,38 +594,33 @@ export const HvSlider = forwardRef<
       onBlur={onBlurHandler}
       {...others}
     >
-      {(hasLabel || !hideInput) && (
-        <HvLabelContainer
-          className={cx(classes.labelContainer, {
+      <HvLabelContainer
+        label={label}
+        inputId={sliderInputId}
+        labelId={setId(elementId, "label")}
+        descriptionId={setId(elementId, "description")}
+        classes={{
+          root: cx(classes.labelContainer, {
             [classes.labelIncluded]: hasLabel,
             [classes.onlyInput]: !hasLabel,
-          })}
-        >
-          {hasLabel && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              className={classes.label}
-              htmlFor={sliderInputId}
-              label={label}
-            />
-          )}
-
-          {!hideInput && (
-            <HvSliderInput
-              id={sliderInputId}
-              label={label}
-              values={knobsValues}
-              onChange={onInputChangeHandler}
-              status={validationStatus}
-              disabled={disabled}
-              readOnly={readOnly}
-              markDigits={markDigits}
-              inputProps={inputProps}
-            />
-          )}
-        </HvLabelContainer>
-      )}
-
+          }),
+          label: classes.label,
+        }}
+      >
+        {!hideInput && (
+          <HvSliderInput
+            id={sliderInputId}
+            label={label}
+            values={knobsValues}
+            onChange={onInputChangeHandler}
+            status={validationStatus}
+            disabled={disabled}
+            readOnly={readOnly}
+            markDigits={markDigits}
+            inputProps={inputProps}
+          />
+        )}
+      </HvLabelContainer>
       <div className={cx(classes.sliderBase, classes.sliderContainer)}>
         <Slider
           ref={ref}

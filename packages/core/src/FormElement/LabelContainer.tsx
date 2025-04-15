@@ -5,6 +5,9 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
+import { HvInfoMessage } from "./InfoMessage/InfoMessage";
+import { HvLabel } from "./Label/Label";
+
 const { useClasses } = createClasses("HvLabelContainer", {
   root: {
     display: "flex",
@@ -13,11 +16,20 @@ const { useClasses } = createClasses("HvLabelContainer", {
     height: 24,
     marginBottom: theme.space.xxs,
   },
+  label: {},
+  description: {},
 });
 
 export interface HvLabelContainerProps
   extends React.HTMLAttributes<HTMLDivElement> {
   classes?: ExtractNames<typeof useClasses>;
+  label?: React.ReactNode;
+  description?: React.ReactNode;
+  inputId?: string;
+  labelId?: string;
+  descriptionId?: string;
+  labelProps?: React.ComponentProps<typeof HvLabel>;
+  descriptionProps?: React.ComponentProps<typeof HvInfoMessage>;
 }
 
 /**
@@ -26,11 +38,43 @@ export interface HvLabelContainerProps
  */
 export const HvLabelContainer = (props: HvLabelContainerProps) => {
   const {
-    className,
+    label,
+    description,
+    inputId,
+    labelId,
+    descriptionId,
     classes: classesProp,
+    labelProps,
+    descriptionProps,
+    children,
     ...others
   } = useDefaultProps("HvLabelContainer", props);
-  const { classes, cx } = useClasses(classesProp, false);
+  const { classes } = useClasses(classesProp, false);
 
-  return <div className={cx(classes.root, className)} {...others} />;
+  if (label == null && description == null && children == null) return null;
+
+  return (
+    <div className={classes.root} {...others}>
+      {label != null && (
+        <HvLabel
+          id={labelId}
+          className={classes.label}
+          htmlFor={inputId}
+          label={label}
+          {...labelProps}
+        />
+      )}
+      {description != null && (
+        <HvInfoMessage
+          disableGutter
+          id={descriptionId}
+          className={classes.description}
+          {...descriptionProps}
+        >
+          {description}
+        </HvInfoMessage>
+      )}
+      {children}
+    </div>
+  );
 };

@@ -21,8 +21,6 @@ import {
   HvFormElement,
   HvFormElementProps,
   HvFormStatus,
-  HvInfoMessage,
-  HvLabel,
   HvWarningText,
   isInvalid,
   isValid,
@@ -389,7 +387,6 @@ export const HvInput = fixedForwardRef(function HvInput<
 
   // Miscellaneous state
   const hasLabel = label != null;
-  const hasDescription = description != null;
 
   /**
    * Looks for the node that represent the input inside the material tree and focus it.
@@ -715,28 +712,18 @@ export const HvInput = fixedForwardRef(function HvInput<
       )}
       onBlur={onContainerBlurHandler}
     >
-      {(hasLabel || hasDescription) && (
-        <HvLabelContainer className={classes.labelContainer}>
-          {hasLabel && (
-            <HvLabel
-              id={setId(elementId, "label")}
-              className={classes.label}
-              htmlFor={setId(elementId, "input")}
-              label={label}
-            />
-          )}
-
-          {hasDescription && (
-            <HvInfoMessage
-              disableGutter
-              id={setId(elementId, "description")}
-              className={classes.description}
-            >
-              {description}
-            </HvInfoMessage>
-          )}
-        </HvLabelContainer>
-      )}
+      <HvLabelContainer
+        label={label}
+        description={description}
+        inputId={setId(elementId, "input")}
+        labelId={setId(elementId, "label")}
+        descriptionId={setId(elementId, "description")}
+        classes={{
+          root: classes.labelContainer,
+          label: classes.label,
+          description: classes.description,
+        }}
+      />
       <HvBaseInput
         id={
           hasLabel || showClear || showRevealPasswordButton
