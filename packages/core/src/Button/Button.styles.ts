@@ -66,6 +66,7 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
   icon: {
     margin: 0,
     padding: 0,
+    flexShrink: 0,
     width: "var(--HvButton-height, fit-content)",
   },
   /** applied to the root element when using the `contained` variant */
