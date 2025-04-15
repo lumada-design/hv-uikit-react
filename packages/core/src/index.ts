@@ -95,6 +95,7 @@ export * from "./Loading";
 export * from "./LoadingContainer";
 export * from "./Login";
 export * from "./MultiButton";
+export * from "./NumberInput";
 export * from "./OverflowTooltip";
 export * from "./Pagination";
 export * from "./Panel";

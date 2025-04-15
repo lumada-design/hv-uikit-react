@@ -44,6 +44,7 @@ import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
 import { EyeIcon } from "./icons";
 import { staticClasses, useClasses } from "./Input.styles";
+import { changeInputValue } from "./utils";
 
 export { staticClasses as inputClasses };
 
@@ -207,20 +208,6 @@ function eventTargetIsInsideContainer(
   return !!container?.contains(event.relatedTarget);
 }
 
-/** Changes a given `input`'s `value`, triggering its `onChange` */
-const changeInputValue = (input: HTMLInputElement | null, value = "") => {
-  const event = new Event("input", { bubbles: true });
-
-  /** Original `input.value` setter (React overrides it). */
-  const setInputValue = Object.getOwnPropertyDescriptor(
-    window.HTMLInputElement.prototype,
-    "value",
-  )?.set;
-
-  setInputValue?.call(input, value);
-  input?.dispatchEvent(event);
-};
-
 /**
  * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
  */
@@ -374,6 +361,10 @@ export const HvInput = fixedForwardRef(function HvInput<
 
     if (type === "search") {
       return "search";
+    }
+
+    if (type === "number") {
+      return "number";
     }
 
     return "text";
