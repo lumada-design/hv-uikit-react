@@ -26,7 +26,7 @@ If you just want to play around with **UI Kit** without setting up a project, yo
 
 Using the [CLI]() is the easiest way to start a **UI Kit** project. You can initialize your project directly via the CLI:
 
-```bash
+```sh
 npx @hitachivantara/hv-uikit-cli@latest create
 ```
 
@@ -42,14 +42,14 @@ If you prefer not to use the CLI, follow these steps to manually set up **UI Kit
 To use **UI Kit** in your project, run the following command:
 
 ```sh npm2yarn
-npm install @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
+npm i @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
 ```
 
 ### Provider Setup
 
 It is essential to add the **UI Kit** Provider at the root of your application.
 
-```js
+```tsx
 // 1. import `Provider` component
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 
@@ -67,7 +67,7 @@ function App() {
 
 After setting up the provider, you can start using the components provided.
 
-```javascript
+```tsx
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 const MyComponent = () => {

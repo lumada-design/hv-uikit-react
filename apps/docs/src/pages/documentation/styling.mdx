@@ -1,3 +1,272 @@
-# Styling
+import { Callout } from "nextra/components";
 
-This is the Styling page!
+# Component styling
+
+Although UI Kit components are pre-styled with with the Design System specifications, sometimes there's a need to customize them in order to meet your specific needs.
+
+## Styling properties
+
+The UI Kit components can be customized the following ways:
+
+### `style` and `className`
+
+UI Kit components can be styled using the React `style` and `className` props, as these props are passed down to the root HTML element.
+The `style` prop accepts a JS object with CSS properties, while the `className` prop accepts a string with CSS classes,
+which allows for the use of various [styling strategies](#styling-strategies).
+
+```tsx
+<HvButton
+  style={{ marginLeft: "auto", borderColor: "red" }}
+  className="ml-auto border-red"
+/>
+```
+
+### `classes` object
+
+As many UI Kit components are built using multiple HTML elements and internal state, the `classes` prop allows for customization of these _sub-components_ and _state variants_.
+The `classes.root` (along with `className` and `style`) is passed to the main element of the component, and the conditional classes are applied to the same element.
+
+```tsx
+<HvButton
+  classes={{
+    root: "p-xs", // applied to the top-level element, same as `className`
+    disabled: "bg-black", // applied to the `root` element, WHEN the component is disabled
+    startIcon: "bg-red", // applied to the start/left icon element container
+  }}
+/>
+```
+
+These classes are also injected as CSS classes HTML elements, following a `Hv{ComponentName}-{className}` naming convention, and are exported as a `<componentName>Classes` object:
+
+```tsx
+import { buttonClasses } from "@hitachivantara/uikit-react-core";
+
+buttonClasses.root; // "HvButton-root"
+buttonClasses.disabled; // "HvButton-disabled"
+buttonClasses.startIcon; // "HvButton-startIcon"
+```
+
+## Styling strategies
+
+The `className` property allows for the use of many styling strategies, such as
+Global CSS, [CSS Modules](https://github.com/css-modules/css-modules), Utility classes like [Tailwind](https://tailwindcss.com) or [UnoCSS](http://unocss.dev), CSS-in-JS like [Emotion](https://emotion.sh), etc.
+
+This guide will focus on [UnoCSS](#unocss) (Utility classes) and [Emotion](#emotion) (CSS-in-JS).
+For other styling strategies and tools, please refer to their respective documentation.
+
+### Emotion
+
+The UI Kit is built using [Emotion](https://emotion.sh), a CSS-in-JS library that allows for the use of dynamic styles and theming.
+
+Emotion supports creating complex, reusable classes using the `css` prop, or components via the `styled` function.
+It is especially useful when dealing with complex styles or overrides, or when the components need additional overrides.
+
+<Callout type="info">
+  Please check out the [Emotion Best
+  Practices](https://emotion.sh/docs/best-practices) for a guide on how to use
+  Emotion effectively, such as leveraging colocation or type-safety.
+</Callout>
+
+#### Using the `css` function
+
+```tsx
+import { css } from "@emotion/css";
+import { buttonClasses, theme } from "@hitachivantara/uikit-react-core";
+
+const classes = {
+  button: css({
+    backgroundColor: theme.colors.negative,
+    [`:hover:not(:disabled) ${buttonClasses.startIcon}`]: {
+      backgroundColor: theme.colors.negativeDimmed,
+    },
+    "@media (max-width: 600px)": {
+      backgroundColor: theme.colors.positive,
+    },
+  }),
+};
+
+<button className={classes.button} />;
+```
+
+#### Using the `styled` function
+
+```tsx
+import styled from "@emotion/styled";
+import { buttonClasses, theme } from "@hitachivantara/uikit-react-core";
+
+const CustomButton = styled(HvButton)({
+  backgroundColor: theme.colors.negative,
+  [`:hover:not(:disabled) ${buttonClasses.startIcon}`]: {
+    backgroundColor: theme.colors.negativeDimmed,
+  },
+  "@media (max-width: 600px)": {
+    backgroundColor: theme.colors.positive,
+  },
+});
+
+<CustomButton />;
+```
+
+### UnoCSS
+
+_Utility classes_, popularized by frameworks like [TailwindCSS](https://tailwindcss.com), offer a streamlined and efficient way to style components, allowing to colocate elements and styles while allowing access to theme-based values.
+
+The UI Kit team recommends utility classes due to their **built-in theme support**, **performance** (no runtime or external dependencies),
+**portability** (to any build tool or framework), and **colocation** (easier maintenance).
+
+UI Kit offers a utility classes plugin via a [UnoCSS](https://unocss.dev) plugin, `@hitachivantara/uikit-uno-preset`.
+
+#### Setup
+
+<Callout type="info">
+  Please check out the [uno-preset
+  package](https://github.com/lumada-design/hv-uikit-react/blob/master/packages/uno-preset)
+  and the [official UnoCSS docs](https://unocss.dev/integrations) for a full
+  setup guide.
+</Callout>
+
+1. Install UnoCSS and the UI Kit UnoCSS plugin packages
+
+```sh
+npm i -D unocss @hitachivantara/uikit-uno-preset
+```
+
+2. Add them to your `vite.config.ts` and optionally the `unocss.config.ts` file.
+
+```ts
+// vite.config.ts
+import unoCSS from "unocss/vite";
+import { defineConfig } from "vite";
+import { presetHv } from "@hitachivantara/uikit-uno-preset";
+
+export default defineConfig({
+  plugins: [
+    unoCSS({
+      presets: [presetHv()],
+    }),
+  ],
+});
+```
+
+3. Add UnoCSS to your app's entry-file (eg. `main.ts`).
+
+```ts
+// main.ts
+import "virtual:uno.css";
+```
+
+When there isn't a clear entry-point (ie. micro-frontend with App Shell), you will also need to configure the `"per-module"` mode
+and add [`vite-plugin-css-injected-by-js`](https://www.npmjs.com/package/vite-plugin-css-injected-by-js):
+
+```diff
++ cssInjectedByJsPlugin({ relativeCSSInjection: true }),
+  unoCSS({
++   mode: "per-module",
+    presets: [presetHv()],
+  }),
+```
+
+#### Usage
+
+_**Note:**_ Usage of an [IDE plugin](https://unocss.dev/integrations/vscode) is recommended for a better developer experience.
+
+To use the utility classes, simply add them to a component's `className` prop or to one of the `classes`' keys.
+For a list of the available classes, check out the [Uno Preset documentation](https://unocss.dev/presets/uno#rules).
+Using a [cheat sheet](https://tailwindcomponents.com/cheatsheet) can be useful to ease the learning curve of the classes.
+
+#### Examples
+
+The utility classes integrate with the Design System theme for colors and sizing units:
+
+```tsx
+"p-sm"; // padding `sm` (16px)
+"pb-sm"; // padding bottom `sm` (16px)
+"my-md"; // margin-y (top+bottom) `md` (24px)
+"bg-warning"; // background color of `atmo3`
+```
+
+##### Sizes and colors
+
+```tsx live
+<section className="flex items-center gap-sm">
+  <div className="size-10 rounded bg-positive" />
+  <div className="size-11 rounded bg-warning" />
+  <div className="size-12 rounded bg-negative" />
+  <div className="size-12 rounded bg-primaryDimmed" />
+</section>
+```
+
+##### Breakpoints
+
+```tsx live
+<section className="grid gap-xs grid-cols-2 md:gap-sm md:grid-cols-6">
+  {[...Array(12).keys()].map((i) => (
+    <HvPanel key={i} className="h-40px border flex items-center justify-center">
+      <HvTypography variant="title3">{i + 1}</HvTypography>
+    </HvPanel>
+  ))}
+</section>
+```
+
+##### Overriding `classes` object
+
+```tsx live
+<HvInput
+  label="Label"
+  placeholder="Enter text"
+  classes={{
+    root: "p-sm bg-bgContainer",
+    label: "text-positive",
+    inputRoot: "border-positive",
+    input: "text-primary",
+  }}
+/>
+```
+
+##### Animations
+
+```tsx live
+<div className="flex gap-xs">
+  <HvButton icon>
+    <DropRightXS className="transition-transform hover:rotate-90" />
+  </HvButton>
+  <HvButton icon>
+    <Alert className="hover:animate-swing" />
+  </HvButton>
+  <InProgress className="animate-spin" />
+</div>
+```
+
+##### Difference from Emotion
+
+To illustrate the code difference from Emotion to UnoCSS, here's a typical scenario of styling a container and UI Kit component:
+
+```diff
+-import { css } from "@emotion/css";
+-import { theme } from "@hitachivantara/uikit-react-core";
+
+-const classes = {
+-  container: css({
+-    display: "flex",
+-    alignItems: "center",
+-    gap: theme.space.sm,
+-  }),
+-  buttonIcon: css({
+-    paddingLeft: theme.space.sm,
+-    color: theme.colors.negative,
+-  }),
+-};
+
+<div
+-  className={classes.container}
++  className="flex items-center gap-sm"
+>
+  <HvButton
+    classes={{
+-      startIcon: classes.buttonIcon,
++      startIcon: "pl-sm text-negative",
+    }}
+  />
+  <HvTypography />
+</div>;
+```

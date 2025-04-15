@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
-import { Check, Copy } from "@phosphor-icons/react";
+import { Check, Code, Copy } from "@phosphor-icons/react";
 import {
-  HvButton,
   HvDialog,
   HvDialogContent,
   HvDialogTitle,
-  HvTooltip,
+  HvIconButton,
 } from "@hitachivantara/uikit-react-core";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
-import { PopupControls } from "./PopupControls";
 
 type PopupLayoutProps = {
   scope: Scope | null;
@@ -54,17 +52,14 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
       >
         <HvDialogTitle>Code</HvDialogTitle>
         <HvDialogContent className="py-sm">
-          <HvTooltip title={copySuccess ? "Copied!" : "Copy Code"}>
-            <HvButton
-              icon
-              variant="secondarySubtle"
-              onClick={handleCopyToClipboard}
-              aria-label="Copy Code"
-              className="z-1 absolute right-md top-64px"
-            >
-              {copySuccess ? <Check /> : <Copy />}
-            </HvButton>
-          </HvTooltip>
+          <HvIconButton
+            title={copySuccess ? "Copied!" : "Copy Code"}
+            variant="secondarySubtle"
+            onClick={handleCopyToClipboard}
+            className="z-1 absolute right-md top-64px"
+          >
+            {copySuccess ? <Check /> : <Copy />}
+          </HvIconButton>
           <CodeEditor
             value={editorCode}
             theme={editorTheme}
@@ -73,11 +68,14 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
         </HvDialogContent>
       </HvDialog>
       {/* Poupup Controls */}
-      <PopupControls
-        onToggle={() => setIsExpanded((prev) => !prev)}
-        isExpanded={isExpanded}
-        code={editorCode}
-      />
+      <div className="absolute right-0 flex items-center p-xs gap-xs">
+        <HvIconButton
+          title="Show Code"
+          onClick={() => setIsExpanded((prev) => !prev)}
+        >
+          <Code />
+        </HvIconButton>
+      </div>
 
       {/* Preview Section */}
       <div className="p-md flex items-center justify-center">
