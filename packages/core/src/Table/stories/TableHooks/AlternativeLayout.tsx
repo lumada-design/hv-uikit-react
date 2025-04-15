@@ -16,7 +16,6 @@ import {
   HvTableHeader,
   HvTableProps,
   HvTableRow,
-  HvTypography,
   useHvBulkActions,
   useHvData,
   useHvPagination,
@@ -178,37 +177,26 @@ export const AlternativeLayout = () => {
 
   return (
     <div>
-      <div
-        style={{ display: "flex", alignItems: "baseline", marginBottom: 20 }}
-      >
+      <div className="flex items-baseline gap-sm mb-sm">
         <div style={{ width: 200 }}>
           <HvDropdown
             label="Select layout"
             values={alternativeLayouts}
-            multiSelect={false}
             onChange={(item) => setLayoutHook(() => item?.hook)}
           />
         </div>
-        <div style={{ display: "flex", alignItems: "center", marginLeft: 20 }}>
-          <HvTypography
-            aria-hidden="true"
-            onClick={() => setTableElements((v) => !v)}
-            style={{ marginRight: 10 }}
-          >
-            <pre>&lt;div&gt;</pre>
-          </HvTypography>
+        <div className="flex items-center cursor-pointer">
+          <pre aria-hidden onClick={() => setTableElements((v) => !v)}>
+            &lt;div&gt;
+          </pre>
           <HvSwitch
             checked={tableElements}
             aria-label="Use table html elements"
             onChange={(_evt, newChecked) => setTableElements(newChecked)}
           />
-          <HvTypography
-            aria-hidden="true"
-            onClick={() => setTableElements((v) => !v)}
-            style={{ marginLeft: 10 }}
-          >
-            <pre>&lt;table&gt;</pre>
-          </HvTypography>
+          <pre aria-hidden onClick={() => setTableElements((v) => !v)}>
+            &lt;table&gt;
+          </pre>
         </div>
       </div>
       {table}
