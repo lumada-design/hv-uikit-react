@@ -16,18 +16,19 @@ article > main h3._mt-8 + p {
   margin-top: 8px !important;
 }
 
-article > main p,
-article > main p._leading-7 {
-  font-size: 15px;
-  line-height: 24px;
+article {
+  font-size: 1rem;
 }
 
 body,
 .nextra-nav-container-blur,
 .nextra-sidebar-footer,
-.nextra-toc-footer,
-.nextra-sidebar-container a {
-  background-color: transparent;
+.nextra-toc-footer {
+  @apply bg-transparent;
+}
+
+.nextra-sidebar-container .active a {
+  @apply light:bg-slate-100;
 }
 
 .nextra-sidebar-container {
@@ -71,8 +72,7 @@ body,
   @apply shadow-none;
 }
 
-.nextra-scrollbar a._text-primary-800,
-.nextra-scrollbar a._text-primary-600 {
+.nextra-scrollbar a._text-primary-800 {
   @apply font-medium text-slate-800 dark:text-slate-200;
 }
 
@@ -97,6 +97,10 @@ body,
   }
 }
 
-.markdown a {
-  color: var(--uikit-colors-primary);
+[aria-current="true"].nextra-focus {
+  @apply font-medium text-dark;
+}
+
+[aria-current="false"].nextra-focus {
+  @apply text-textSubtle;
 }

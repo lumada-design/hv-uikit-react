@@ -1,0 +1,38 @@
+import { Callout } from "nextra/components";
+
+import { DesignTokens } from "../../components/docs/DesignTokens";
+
+# Design Tokens
+
+Design tokens are the **code representations** behind **design decisions** of foundational styles in the UI Kit. They provide a **centralized system** to ensure visual consistency, scalability, and theme support across the system.
+
+<Callout type="warning">
+  Use design tokens instead of hardcoded values to build components that
+  automatically respond to **themes** and **accessibility needs** making future
+  updates or branding changes easier to implement.
+</Callout>
+
+Design tokens can be accessed through the `theme` object:
+
+```tsx
+import { theme } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => (
+  <div
+    style={{
+      fontSize: theme.fontSizes.lg,
+      fontWeight: theme.fontWeights.semibold,
+      padding: theme.space.sm,
+      borderRadius: theme.radii.round,
+      color: theme.colors.primary,
+      backgroundColor: theme.colors.bg.surface,
+    }}
+  >
+    Hello, themed world!
+  </div>
+);
+```
+
+##
+
+<DesignTokens />
