@@ -48,8 +48,8 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
       ]}
     >
       {items.map((item) => {
-        const rowId = item ? item.id : null;
-        const statusColor = item ? item.statusColor : "sema0";
+        const rowId = item?.id;
+        const statusColor = item?.statusColor;
 
         return (
           <HvCard

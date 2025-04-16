@@ -22,10 +22,7 @@ export interface HvCardProps extends HvBaseProps {
   selected?: boolean;
   /** The background color of the card. */
   bgcolor?: "sema0" | HvColorAny;
-  /**
-   *  The border color at the top of the card. Must be one of palette semantic or atmosphere colors.
-   *  To set another color, the borderTop should be override.
-   */
+  /** The border color at the top of the card. */
   statusColor?: "sema0" | HvColorAny;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvCardClasses;
@@ -48,28 +45,28 @@ export const HvCard = forwardRef<
     className,
     children,
     icon,
-    selectable = false,
-    selected = false,
+    selectable,
+    selected,
     statusColor = "sema0",
     bgcolor,
     ...others
   } = useDefaultProps("HvCard", props);
-
   const { classes, cx } = useClasses(classesProp);
 
   const barColor =
     (statusColor !== "sema0" && statusColor) ||
     (selected && "text") ||
-    "border";
+    undefined;
 
   return (
     <div
       ref={ref}
       style={mergeStyles(style, {
         "--bg-color": getColor(bgcolor),
-        "--bar-height": `${selected ? 4 : 2}px`,
+        "--bar-height": selected && "4px",
         "--bar-color": getColor(barColor),
       })}
+      data-color={statusColor}
       className={cx(
         "HvIsCardGridElement",
         classes.root,

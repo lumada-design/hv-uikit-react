@@ -111,7 +111,6 @@ export const Card: StoryObj<HvSkeletonProps> = {
               bgcolor="bgContainer"
               key={`card-${i}`}
               style={{ width: "100%" }}
-              statusColor="sema0"
             >
               <HvCardHeader
                 title={
