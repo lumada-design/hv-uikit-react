@@ -5,6 +5,7 @@ import { BarChart, Table, TextColor } from "@hitachivantara/uikit-react-icons";
 
 import charts from "../pages/examples/charts.mdx?raw";
 import inputs from "../pages/examples/inputs.mdx?raw";
+import kpis from "../pages/examples/kpis.mdx?raw";
 import tables from "../pages/examples/tables.mdx?raw";
 
 /**
@@ -51,6 +52,11 @@ export const Examples = () => {
       title: "Inputs",
       total: countCodeBlocks(inputs),
       path: "/examples/inputs",
+    },
+    {
+      title: "KPIs",
+      total: countCodeBlocks(kpis),
+      path: "/examples/kpis",
     },
   ];
 

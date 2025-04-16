@@ -23,4 +23,10 @@ export default {
       layout: "full",
     },
   },
+  kpis: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };
