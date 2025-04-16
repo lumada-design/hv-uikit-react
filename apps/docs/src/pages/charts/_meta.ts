@@ -4,4 +4,5 @@ export default {
     title: "Charts",
   },
   "get-started": "Get Started",
+  "base-chart": "Base Chart",
 };
