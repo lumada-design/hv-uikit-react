@@ -1,4 +1,4 @@
-import { theme } from "./theme";
+import { theme } from "./theme/base";
 
 const baseline = {
   /* Clears input's clear button from Chrome */

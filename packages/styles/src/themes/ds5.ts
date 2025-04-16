@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 
-import { makeTheme } from "../makeTheme";
-import { colors } from "../tokens/colors";
+import { colors } from "../theme/base";
+import { makeTheme } from "../utils/theme";
 
 const ds5 = makeTheme((theme) => ({
   name: "ds5",
