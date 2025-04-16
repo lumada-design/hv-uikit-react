@@ -25,7 +25,7 @@ const useRootRedirect = () => {
 
 /** Navigation layout & provider */
 const Navigation = () => {
-  const { selectedMode } = useTheme();
+  const { selectedMode, selectedTheme } = useTheme();
   useRootRedirect();
 
   const {
@@ -47,6 +47,7 @@ const Navigation = () => {
         rootElementId="gen-root"
         cssTheme="scoped"
         themes={[customTheme]}
+        theme={selectedTheme}
         colorMode={selectedMode}
         cssBaseline="none" // the main provider already applies the baseline styles globally
       >

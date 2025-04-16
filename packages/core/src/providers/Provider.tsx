@@ -1,182 +1,130 @@
-import { useMemo } from "react";
-import createCache, { EmotionCache } from "@emotion/cache";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { EmotionCache } from "@emotion/cache";
 import {
-  CacheProvider,
-  ClassNames,
-  css as cssReact,
-  Global,
-} from "@emotion/react";
+  HvThemeContext,
+  type HvThemeContextValue,
+} from "@hitachivantara/uikit-react-shared";
 import {
-  CssBaseline,
-  CssScopedBaseline,
+  applyTheme,
+  getMode,
+  getTheme,
   getThemesVars,
   HvThemeStructure,
+  pentahoPlus,
 } from "@hitachivantara/uikit-styles";
 
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvTheme } from "../types/theme";
-import { getElementById } from "../utils/document";
-import { processThemes } from "../utils/theme";
-import {
-  defaultCacheKey,
-  defaultEmotionCache,
-  HvThemeProvider,
-} from "./ThemeProvider";
+import { EmotionProvider } from "./EmotionProvider";
+import { MuiProvider } from "./MuiProvider";
 
-// Provider props
+/**
+ * Defines the props for the `HvProvider` component.
+ */
 export interface HvProviderProps {
-  /**
-   * Your component tree.
-   */
-  children?: React.ReactNode;
-  /**
-   * Id of your root element.
-   */
+  /** A collection of themes to be used in the application. */
+  themes?: HvThemeStructure[];
+  /** The initial theme name.  */
+  theme?: string;
+  /** The initial color mode key. */
+  colorMode?: string;
+  /** The ID of the root element to apply the theme to. Defaults to the document's root element. */
   rootElementId?: string;
   /**
-   * By default the baseline styles are applied globally, `global`, to the application for the UI Kit components to work properly.
-   * If you need to scope the baseline styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the baseline to your root, you need to add the `rootElementId` property.
-   * If the `rootElementId` property is not set, the baseline will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
-   * If you are providing your own baseline styles, you can set this property to `none` to disable the baseline styles.
+   * Controls how baseline styles are applied.
+   * - `global`: Inject baseline styles globally (default).
+   * - `scoped`: Inject baseline styles scoped to a specific root.
+   * - `none`: Do not inject any baseline styles.
    */
   cssBaseline?: "global" | "scoped" | "none";
   /**
-   * By default the theme styles are applied globally, `global`, to the application.
-   * If you need to scope the theme styles to avoid styling conflicts, you can set this property to `scoped`.
-   * To scope the theme to your root, you need to add the `rootElementId` property.
-   * If the `rootElementId` property is not set, the theme will be scoped to a new container, `hv-uikit-scoped-root*`, created around your content.
+   * Controls how theme styles are applied.
+   * - `global`: Inject theme globally (default).
+   * - `scoped`: Apply theme to a scoped root container.
    */
   cssTheme?: "global" | "scoped";
+  /**  Optionally provide a custom Emotion cache instance. */
+  emotionCache?: EmotionCache;
   /**
-   * The string used to prefix the class names and uniquely identify them. The key can only contain lower case alphabetical characters.
-   * This is useful to avoid class name collisions.
-   *
-   * If `emotionCache` is passed, this is value is ignored.
+   * A unique prefix to avoid Emotion class name collisions.
+   * If `emotionCache` is provided, this value is ignored.
    *
    * @default "hv"
    */
   classNameKey?: string;
-  /**
-   * The emotion cache instance to use. If no value is provided, the default cache is used.
-   */
-  emotionCache?: EmotionCache;
-  /**
-   * List of themes to be used by UI Kit.
-   * You can provide your own themes created with the `createTheme` utility and/or the default themes `ds3` and `ds5` provided by UI Kit.
-   *
-   * If no value is provided, the `ds5` theme will be used.
-   */
-  themes?: (HvTheme | HvThemeStructure)[];
-  /**
-   * The active theme. It must be one of the themes passed to `themes`.
-   *
-   * If no value is provided, the first theme from the `themes` list is used. If no `themes` list is provided, the `ds5` theme will be used.
-   */
-  theme?: string;
-  /**
-   * The active color mode. It must be one of the color modes of the active theme.
-   *
-   * If no value is provided, the first color mode defined in the active theme is used.
-   * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one used.
-   */
-  colorMode?: string;
+  /** Your component tree. */
+  children?: React.ReactNode;
 }
 
-const scopedRootPrefix = "hv-uikit-scoped-root" as const;
-
 /**
- * Enables theming capabilities and makes cross-component theme properties available down the tree.
+ * The `HvProvider` enables theming and baseline styling using the UI Kit.
  */
 export const HvProvider = ({
-  children,
+  themes = [pentahoPlus],
+  theme: initialTheme,
+  colorMode: initialMode,
   rootElementId,
   cssBaseline = "global",
   cssTheme = "global",
-  themes,
-  theme,
-  colorMode,
-  emotionCache: emotionCacheProp,
-  classNameKey = defaultCacheKey,
+  emotionCache,
+  classNameKey,
+  children,
 }: HvProviderProps) => {
-  const generatedId = useUniqueId();
-  const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
+  const uniqueId = useUniqueId();
 
-  // Themes
-  const themesList = processThemes(themes);
+  const [theme, setTheme] = useState(() => getTheme(themes, initialTheme));
+  const [mode, setMode] = useState(() => getMode(theme, initialMode));
 
-  // Emotion cache
-  // Moves UI Kit styles to the top of the <head> so they're loaded first
-  // This enables users to override the UI Kit styles if necessary
-  const emotionCache = useMemo(() => {
-    if (emotionCacheProp) return emotionCacheProp;
-    // reuse the default shared cache if `classNameKey` is the same
-    if (classNameKey === defaultCacheKey) return defaultEmotionCache;
+  const rootId =
+    cssTheme === "scoped"
+      ? rootElementId || `hv-uikit-scoped-root-${uniqueId}`
+      : undefined;
 
-    return createCache({ key: classNameKey, prepend: true });
-  }, [classNameKey, emotionCacheProp]);
+  const changeTheme = useCallback(
+    (themeName?: string, themeMode?: string) => {
+      const newTheme = getTheme(themes, themeName);
+      const newMode = getMode(newTheme, themeMode);
+      setTheme(newTheme);
+      setMode(newMode);
+    },
+    [themes],
+  );
+
+  useEffect(() => {
+    applyTheme(theme, mode, rootId);
+  }, [theme, mode, rootId]);
+
+  // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
+  useEffect(() => {
+    changeTheme(initialTheme, initialMode);
+  }, [initialTheme, initialMode, changeTheme]);
+
+  const contextValue = useMemo<HvThemeContextValue>(
+    () => ({
+      themes: themes.map((t) => t.name),
+      activeTheme: theme as any,
+      selectedTheme: theme.name,
+      colorModes: Object.keys(theme.colors.modes),
+      selectedMode: mode,
+      changeTheme,
+      rootId,
+    }),
+    [themes, theme, mode, changeTheme, rootId],
+  );
 
   return (
-    <CacheProvider value={emotionCache}>
-      <Global
-        styles={cssReact`
-          ${
-            cssBaseline === "global" && {
-              [`@layer hv-uikit-baseline`]: {
-                ...CssBaseline,
-              },
-            }
-          }
-          ${getThemesVars(themesList)}
-        `}
-      />
-      <HvThemeProvider
-        themes={themesList}
-        theme={theme || themesList[0].name}
-        emotionCache={emotionCache}
-        colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
-        themeRootId={
-          cssTheme === "scoped" ? rootElementId || scopedRootId : undefined
-        }
-      >
-        <ClassNames>
-          {({ css }) => {
-            if (cssBaseline === "scoped") {
-              const rootElement = getElementById(rootElementId);
-
-              if (rootElement) {
-                rootElement.classList.add(
-                  css({
-                    [`@layer ${rootElementId}-baseline`]: {
-                      ...CssScopedBaseline,
-                    },
-                  }),
-                );
-              }
-            }
-
-            return (cssTheme === "scoped" || cssBaseline === "scoped") &&
-              !rootElementId ? (
-              <div
-                id={scopedRootId}
-                className={
-                  cssBaseline === "scoped"
-                    ? css({
-                        [`@layer ${rootElementId}-baseline`]: {
-                          ...CssScopedBaseline,
-                        },
-                      })
-                    : undefined
-                }
-              >
-                {children}
-              </div>
-            ) : (
-              children
-            );
-          }}
-        </ClassNames>
-      </HvThemeProvider>
-    </CacheProvider>
+    <HvThemeContext.Provider value={contextValue}>
+      <MuiProvider theme={theme} mode={mode}>
+        <EmotionProvider
+          rootId={rootId}
+          themesVars={getThemesVars(themes)}
+          cssBaseline={cssBaseline}
+          cssTheme={cssTheme}
+          emotionCache={emotionCache}
+          classNameKey={classNameKey}
+        >
+          {children}
+        </EmotionProvider>
+      </MuiProvider>
+    </HvThemeContext.Provider>
   );
 };

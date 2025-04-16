@@ -5,28 +5,7 @@ import {
 } from "@hitachivantara/uikit-styles";
 
 import { HvCreateThemeProps, HvTheme } from "../types/theme";
-import { getContainerElement, getElementById } from "./document";
-
-/**
- * Sets the element attributes and style for a theme and color mode.
- */
-export const setElementAttrs = (
-  themeName: string,
-  modeName: string,
-  colorScheme: string,
-  themeRootId?: string,
-) => {
-  const element = getContainerElement(themeRootId);
-
-  if (element) {
-    element.setAttribute(`data-theme`, themeName);
-    element.setAttribute(`data-color-mode`, modeName);
-
-    // set default styles for child components to inherit
-    element.classList.add(`uikit-root-element`);
-    element.style.colorScheme = colorScheme;
-  }
-};
+import { getElementById } from "./document";
 
 /**
  * Applies customizations to a theme.
@@ -108,37 +87,6 @@ export const createTheme = (
 
   // Created theme
   return customizedTheme;
-};
-
-/**
- * Process the themes provided to the HvProvider:
- *  - Cleans themes with the same name
- *  - Returns the default if the list is empty (ds5)
- */
-export const processThemes = (
-  themesList?: (HvTheme | HvThemeStructure)[],
-): (HvTheme | HvThemeStructure)[] => {
-  if (themesList && Array.isArray(themesList) && themesList.length > 0) {
-    const list: (HvTheme | HvThemeStructure)[] = [];
-
-    themesList.forEach((thm) => {
-      const i: number = list.findIndex(
-        (t) => t.name.trim() === thm.name.trim(),
-      );
-
-      if (i !== -1) {
-        list.splice(i, 1);
-        list.push(thm);
-      } else {
-        list.push(thm);
-      }
-    });
-
-    // Cleaned themes
-    return list;
-  }
-  // DS5
-  return [themes.ds5];
 };
 
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
