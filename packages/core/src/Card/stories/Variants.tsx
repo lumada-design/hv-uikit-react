@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import {
   HvActionBar,
   HvButton,
@@ -7,7 +6,6 @@ import {
   HvCardHeader,
   HvCardMedia,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Level0Good,
@@ -16,52 +14,18 @@ import {
   WorldGlobe,
 } from "@hitachivantara/uikit-react-icons";
 
-const classes = {
-  root: css({
-    display: "flex",
-    gap: theme.space.sm,
-    flexWrap: "wrap",
-  }),
-  card: css({
-    width: 380,
-  }),
-  header: css({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-  }),
-  subheader: css({
-    display: "flex",
-    alignItems: "center",
-    "& > div": {
-      width: 16,
-      height: 16,
-    },
-  }),
-  content: css({
-    padding: theme.space.xs,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: theme.colors.bgPage,
-    borderRadius: theme.radii.round,
-  }),
-  actions: css({
-    display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
-  }),
-  sideActions: css({
-    display: "flex",
-    gap: theme.space.xs,
-  }),
-};
+const subheader = (
+  <div className="flex items-center">
+    <LocationPin size="XS" style={{ width: 16, height: 16 }} />
+    <HvTypography variant="caption2">Portugal</HvTypography>
+  </div>
+);
 
 export const Variants = () => {
   return (
-    <div className={classes.root}>
+    <div className="flex flex-wrap gap-sm">
       <HvCard
-        className={classes.card}
+        className="flex flex-col w-380px"
         bgcolor="bgContainer"
         statusColor="positive"
         icon={<Level0Good iconSize="S" color="positive" />}
@@ -82,7 +46,7 @@ export const Variants = () => {
       </HvCard>
 
       <HvCard
-        className={classes.card}
+        className="flex flex-col items-stretch h-fit w-380px"
         bgcolor="bgContainer"
         statusColor="negative"
         icon={<Level3Bad color="negative" />}
@@ -91,14 +55,10 @@ export const Variants = () => {
           title={
             <HvTypography variant="title4">The island of Madeira</HvTypography>
           }
-          subheader={
-            <div className={classes.subheader}>
-              <LocationPin iconSize="XS" />
-              <HvTypography variant="caption2">Portugal</HvTypography>
-            </div>
-          }
+          subheader={subheader}
         />
         <HvCardMedia
+          className="rounded-b-inherit"
           component="img"
           alt="Nature"
           height={140}
@@ -106,32 +66,18 @@ export const Variants = () => {
         />
       </HvCard>
 
-      <HvCard
-        className={classes.card}
-        bgcolor="bgContainer"
-        statusColor="warning"
-      >
+      <HvCard className="flex flex-col w-380px">
         <HvCardHeader
           title="The island of Madeira"
-          subheader={
-            <div className={classes.subheader}>
-              <LocationPin iconSize="XS" />
-              <HvTypography variant="caption2">Portugal</HvTypography>
-            </div>
-          }
+          subheader={subheader}
           icon={<WorldGlobe />}
         />
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="info">
+      <HvCard className="flex flex-col w-380px" bgcolor="bgContainer">
         <HvCardHeader
           title="The island of Madeira"
-          subheader={
-            <div className={classes.subheader}>
-              <LocationPin iconSize="XS" />
-              <HvTypography variant="caption2">Portugal</HvTypography>
-            </div>
-          }
+          subheader={subheader}
           icon={<WorldGlobe />}
         />
         <HvCardContent>
@@ -143,33 +89,29 @@ export const Variants = () => {
         </HvCardContent>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="cat1">
+      <HvCard
+        className="flex flex-col w-380px"
+        bgcolor="bgContainer"
+        statusColor="cat1"
+      >
         <HvCardHeader
           title={
-            <div className={classes.header}>
-              <HvTypography variant="title4">
-                The island of Madeira
-              </HvTypography>
-            </div>
+            <HvTypography variant="title4">The island of Madeira</HvTypography>
           }
-          subheader={
-            <div className={classes.subheader}>
-              <LocationPin iconSize="XS" />
-              <HvTypography variant="caption2">Portugal</HvTypography>
-            </div>
-          }
+          subheader={subheader}
           icon={<WorldGlobe />}
         />
-
-        <HvActionBar>
-          <div className={classes.actions}>
-            <HvButton variant="secondaryGhost">Add to Wishlist</HvButton>
-            <HvButton variant="secondarySubtle">Book Now</HvButton>
-          </div>
+        <HvActionBar className="justify-between mt-auto">
+          <HvButton variant="secondaryGhost">Add to Wishlist</HvButton>
+          <HvButton variant="secondarySubtle">Book Now</HvButton>
         </HvActionBar>
       </HvCard>
 
-      <HvCard className={classes.card} bgcolor="bgContainer" statusColor="cat2">
+      <HvCard
+        className="flex flex-col w-380px"
+        bgcolor="bgContainer"
+        statusColor="cat2"
+      >
         <HvCardContent>
           <HvTypography>
             Madeira is a stunning Portuguese archipelago known for its lush
@@ -177,11 +119,9 @@ export const Variants = () => {
             Atlantic Ocean.
           </HvTypography>
         </HvCardContent>
-        <HvActionBar className={classes.actions}>
-          <div className={classes.actions}>
-            <HvButton variant="secondaryGhost">Add to Wishlist</HvButton>
-            <HvButton variant="secondarySubtle">Book Now</HvButton>
-          </div>
+        <HvActionBar className="justify-between mt-auto">
+          <HvButton variant="secondaryGhost">Add to Wishlist</HvButton>
+          <HvButton variant="secondarySubtle">Book Now</HvButton>
         </HvActionBar>
       </HvCard>
     </div>

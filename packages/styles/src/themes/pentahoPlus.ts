@@ -965,10 +965,17 @@ const pentahoPlus = makeTheme((theme) => ({
     HvCard: {
       classes: {
         root: {
-          outline: `1px solid ${theme.colors.borderSubtle}`,
-          overflow: "hidden",
-          height: "fit-content",
-          borderRadius: theme.radii.large,
+          outlineColor: theme.colors.borderSubtle,
+          "--rb": theme.radii.large,
+          // default non-semantic card
+          "&[data-color=sema0]": {
+            overflow: "hidden",
+            height: "fit-content",
+            "--rt": theme.radii.large,
+            "& .HvCard-semanticContainer": {
+              display: "none",
+            },
+          },
           "& > :last-child:not(.HvCardMedia-root)": {
             paddingBottom: theme.space.sm,
           },
@@ -979,15 +986,16 @@ const pentahoPlus = makeTheme((theme) => ({
         },
         selectable: {
           ":hover": {
-            outline: `1px solid ${theme.colors.primary_20}`,
+            outlineColor: theme.colors.bgHover,
             backgroundColor: theme.colors.primaryDimmed,
           },
         },
-        semanticContainer: {
-          display: "none",
-        },
         selected: {
-          outline: `1px solid ${theme.colors.primaryDeep}`,
+          outlineColor: theme.colors.primaryDeep,
+        },
+        semanticBar: {
+          "--bar-height": "2px",
+          borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
         },
       },
     },
@@ -995,17 +1003,15 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         root: {
           flexDirection: "row-reverse",
-          padding: `${theme.space.xs} ${theme.space.sm}`,
-        },
-        action: {
-          paddingLeft: 0,
+          padding: theme.spacing("xs", "sm"),
+          gap: 0,
         },
       },
     },
     HvCardContent: {
       classes: {
         content: {
-          padding: `${theme.space.xs} ${theme.space.sm}`,
+          padding: theme.spacing("xs", "sm"),
           "&:last-child": {
             paddingBottom: theme.space.xs,
           },
