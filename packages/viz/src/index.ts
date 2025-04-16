@@ -1,11 +1,12 @@
-export * from "./LineChart";
+export * from "./BaseChart";
 export * from "./BarChart";
-export * from "./DonutChart";
-export * from "./Treemap";
-export * from "./ConfusionMatrix";
-export * from "./ScatterPlot";
-export * from "./Heatmap";
 export * from "./Boxplot";
+export * from "./ConfusionMatrix";
+export * from "./DonutChart";
+export * from "./Heatmap";
+export * from "./LineChart";
+export * from "./ScatterPlot";
+export * from "./Treemap";
 
 export * from "./providers/Provider";
 
