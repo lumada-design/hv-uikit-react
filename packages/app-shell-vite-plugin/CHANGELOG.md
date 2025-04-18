@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.7.0 (2025-04-18)
+
+### Features
+
+- **AppShell:** migrate packages ([#4631](https://github.com/lumada-design/hv-uikit-react/issues/4631)) ([5601708](https://github.com/lumada-design/hv-uikit-react/commit/560170844dcc962308a6945f40a9e7c13e131a39))
+
 ## [1.6.10](https://github.com/lumada-design/hv-app-shell/compare/@hitachivantara/app-shell-vite-plugin@1.6.9...@hitachivantara/app-shell-vite-plugin@1.6.10) (2025-03-28)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-vite-plugin

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.5.0 (2025-04-18)
+
+### Features
+
+- **AppShell:** migrate packages ([#4631](https://github.com/lumada-design/hv-uikit-react/issues/4631)) ([5601708](https://github.com/lumada-design/hv-uikit-react/commit/560170844dcc962308a6945f40a9e7c13e131a39))
+
 ## 1.4.2 (2024-09-11)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-shared

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.46.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.45.0...@hitachivantara/uikit-styles@5.46.0) (2025-04-18)
+
+### Bug Fixes
+
+- **Card:** semantic card overrides ([0f30a21](https://github.com/lumada-design/hv-uikit-react/commit/0f30a216f70e45eabd8f54fbef4fc5576cea1791))
+- **Tabs:** add proper background color to floating tabs ([94103c7](https://github.com/lumada-design/hv-uikit-react/commit/94103c76b2430d69f160521574147873df5ead3b))
+- **Tag:** change default P+ size to sm ([#4647](https://github.com/lumada-design/hv-uikit-react/issues/4647)) ([c0e52c9](https://github.com/lumada-design/hv-uikit-react/commit/c0e52c929d22fd2bf2fd12376937857783f04c9a))
+- **TagsInput:** fix background color ([#4649](https://github.com/lumada-design/hv-uikit-react/issues/4649)) ([f3a2e21](https://github.com/lumada-design/hv-uikit-react/commit/f3a2e21f5f53cad84805dc30124061175afeba07))
+
+### Features
+
+- **NumberInput:** add `NumberInput` component ([#4634](https://github.com/lumada-design/hv-uikit-react/issues/4634)) ([26653a8](https://github.com/lumada-design/hv-uikit-react/commit/26653a899c4bfaf54272a3a4694bf9bc33fa8538))
+
+### Reverts
+
+- Revert "chore(release): publish" ([f507bec](https://github.com/lumada-design/hv-uikit-react/commit/f507becd237290280f3362427fc658df6c37cd64))
+
 # [5.45.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.44.3...@hitachivantara/uikit-styles@5.45.0) (2025-04-04)
 
 ### Bug Fixes

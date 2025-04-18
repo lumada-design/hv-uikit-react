@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-events",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -20,7 +20,6 @@
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
-  "dependencies": {},
   "peerDependencies": {
     "@hitachivantara/uikit-react-core": "^5.72.0",
     "react": "^18.2.0"

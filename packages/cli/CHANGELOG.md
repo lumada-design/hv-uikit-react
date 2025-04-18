@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.21.2...@hitachivantara/hv-uikit-cli@1.22.0) (2025-04-18)
+
+### Features
+
+- **AppShell:** migrate packages ([#4631](https://github.com/lumada-design/hv-uikit-react/issues/4631)) ([5601708](https://github.com/lumada-design/hv-uikit-react/commit/560170844dcc962308a6945f40a9e7c13e131a39))
+
 ## [1.21.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.21.1...@hitachivantara/hv-uikit-cli@1.21.2) (2025-02-21)
 
 ### Reverts

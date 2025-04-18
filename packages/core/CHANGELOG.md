@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.93.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.92.0...@hitachivantara/uikit-react-core@5.93.0) (2025-04-18)
+
+### Bug Fixes
+
+- **Button:** icon shrinking ([fa6799e](https://github.com/lumada-design/hv-uikit-react/commit/fa6799e7513d49eee2a9ab4f81ba9affe5822737))
+- **Card:** semantic card overrides ([0f30a21](https://github.com/lumada-design/hv-uikit-react/commit/0f30a216f70e45eabd8f54fbef4fc5576cea1791))
+- **Dropdown:** disablePortal usage ([4862c78](https://github.com/lumada-design/hv-uikit-react/commit/4862c78bbd6c7c6ddea275131f5ff7bb8090554e))
+
+### Features
+
+- **Button:** support external icons ([4c1e8f0](https://github.com/lumada-design/hv-uikit-react/commit/4c1e8f04f86af8f902062c53345db7fed31c8cd3))
+- **Input:** add infoMessage prop ([102eea3](https://github.com/lumada-design/hv-uikit-react/commit/102eea3abe1e2391454a0a38553c0e9635452326))
+- **NumberInput:** add `NumberInput` component ([#4634](https://github.com/lumada-design/hv-uikit-react/issues/4634)) ([26653a8](https://github.com/lumada-design/hv-uikit-react/commit/26653a899c4bfaf54272a3a4694bf9bc33fa8538))
+- **SearchInput:** add `SearchInput` component ([#4650](https://github.com/lumada-design/hv-uikit-react/issues/4650)) ([c71322f](https://github.com/lumada-design/hv-uikit-react/commit/c71322f1a210bb9f99a09e32cf0eb5b25ea2560e))
+
+### Reverts
+
+- Revert "chore(release): publish" ([f507bec](https://github.com/lumada-design/hv-uikit-react/commit/f507becd237290280f3362427fc658df6c37cd64))
+
 # [5.92.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.91.3...@hitachivantara/uikit-react-core@5.92.0) (2025-04-04)
 
 ### Bug Fixes

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.44.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.43.11...@hitachivantara/uikit-react-lab@5.44.0) (2025-04-18)
+
+### Features
+
+- **Button:** support external icons ([4c1e8f0](https://github.com/lumada-design/hv-uikit-react/commit/4c1e8f04f86af8f902062c53345db7fed31c8cd3))
+
+### Reverts
+
+- Revert "chore(release): publish" ([f507bec](https://github.com/lumada-design/hv-uikit-react/commit/f507becd237290280f3362427fc658df6c37cd64))
+
 ## [5.43.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.43.10...@hitachivantara/uikit-react-lab@5.43.11) (2025-04-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

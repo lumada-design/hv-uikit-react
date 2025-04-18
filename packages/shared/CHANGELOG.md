@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.3.31...@hitachivantara/uikit-react-shared@5.4.0) (2025-04-18)
+
+### Features
+
+- **AppShell:** migrate packages ([#4631](https://github.com/lumada-design/hv-uikit-react/issues/4631)) ([5601708](https://github.com/lumada-design/hv-uikit-react/commit/560170844dcc962308a6945f40a9e7c13e131a39))
+
+### Reverts
+
+- Revert "chore(release): publish" ([f507bec](https://github.com/lumada-design/hv-uikit-react/commit/f507becd237290280f3362427fc658df6c37cd64))
+
 ## [5.3.31](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.3.30...@hitachivantara/uikit-react-shared@5.3.31) (2025-04-04)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared

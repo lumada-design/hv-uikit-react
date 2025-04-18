@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-shared",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -21,13 +21,12 @@
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "^18.2.0",
     "react-router-dom": "^6.9.0"
   },
   "optionalDependencies": {
-    "@hitachivantara/uikit-react-core": "^5.72.0"
+    "@hitachivantara/uikit-react-core": "^5.93.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
