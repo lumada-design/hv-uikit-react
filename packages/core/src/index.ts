@@ -140,7 +140,6 @@ export * from "./hooks/useUniqueId";
 export * from "./hooks/useWidth";
 
 export * from "./providers/Provider";
-export * from "./providers/ThemeProvider";
 
 export * from "./types/generic";
 export * from "./types/theme";
