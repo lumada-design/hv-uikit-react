@@ -3,12 +3,15 @@ import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
+import * as echartsCharts from "echarts/charts";
+import * as echartsCore from "echarts/core";
 import useSWR from "swr";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 import * as HvLab from "@hitachivantara/uikit-react-lab";
 import * as HvViz from "@hitachivantara/uikit-react-viz";
+import * as HvStyles from "@hitachivantara/uikit-styles";
 
 type ResolveContext = {
   files: Record<string, string>;
@@ -27,10 +30,13 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
+    "@hitachivantara/uikit-styles": HvStyles,
     "react-table": reactTable,
     "@mui/material": materialUi,
     clsx,
     swr: useSWR,
+    "echarts/core": echartsCore,
+    "echarts/charts": echartsCharts,
   },
 };
 
