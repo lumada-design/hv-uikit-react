@@ -40,6 +40,8 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="py-lg border-t border-bgPage">
       <div className="max-w-1400px mx-auto px-md">
@@ -53,7 +55,7 @@ export const Footer = () => {
             >
               <UIKitLogo />
             </a>
-            <p className="text-sm mt-sm">by Hitachi Vantara © 2024</p>
+            <p className="text-sm mt-sm">by Hitachi Vantara © {year}</p>
           </div>
 
           {/* Link Groups Right-Aligned */}

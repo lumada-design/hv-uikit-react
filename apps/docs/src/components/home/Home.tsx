@@ -11,7 +11,7 @@ export const Home = () => (
 
     {/* Main content area */}
     <main className="h-full">
-      <div className="relative max-w-1408px mx-auto grid h-full md:grid-cols-[42%_58%]">
+      <div className="relative max-w-1408px mx-auto grid h-full md:grid-cols-[40%_60%]">
         {/* Hero Section */}
         <section className="flex flex-col justify-center">
           <HeroSection />
