@@ -11,8 +11,18 @@ export default {
     title: "Foundation",
   },
   theme: "Theme",
-  colors: "Colors",
-  tokens: "Tokens",
+  "color-tokens": {
+    title: "Color Tokens",
+    theme: {
+      toc: false,
+    },
+  },
+  "color-palette": {
+    title: "Color Palette",
+    theme: {
+      toc: false,
+    },
+  },
   "-- Guides": {
     type: "separator",
     title: "Guides",

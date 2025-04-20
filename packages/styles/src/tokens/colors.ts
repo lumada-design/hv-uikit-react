@@ -18,7 +18,8 @@ type SemanticKeys<Prefix extends string> =
   | `${Prefix}Deep`;
 // 🔎: border tokens don't exist for "primary"
 
-interface ColorTokens extends Record<SemanticKeys<SemanticTypes>, string> {
+export interface ColorTokens
+  extends Record<SemanticKeys<SemanticTypes>, string> {
   // #region semantic
   // 🔎: border tokens don't exist for "primary"
   accentBorder: string;
