@@ -1,0 +1,30 @@
+import { Callout } from "nextra/components";
+
+import { ColorTokens } from "../../components/docs/ColorTokens";
+
+# Color Tokens
+
+Color tokens are the **semantic layer** of the UI Kit’s color system, providing **consistent**, and **themeable** values for UI development.
+They ensure design integrity, maintainability, and seamless alignment between design and implementation.
+
+<Callout type="info">
+  Think of color tokens as the handshake between design and development. They
+  keep everyone on the same page — so always use them to ensure things stay
+  consistent and clean.
+</Callout>
+
+Color tokens can be accessed through the `theme.colors` object:
+
+```tsx
+import { theme } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => (
+  <div style={{ color: theme.colors.primary }}>
+    This text uses the semantic primary color.
+  </div>
+);
+```
+
+##
+
+<ColorTokens />
