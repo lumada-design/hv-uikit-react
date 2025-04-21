@@ -1,3 +1,4 @@
+import { Callout } from "nextra/components";
 import { HvInput, inputClasses } from "@hitachivantara/uikit-react-core";
 
 import { getComponentData } from "../../utils/component";
@@ -11,6 +12,13 @@ export const getStaticProps = async ({ params }) => {
 };
 
 <Header />
+
+<Callout type="info">
+  If you need a search or number input consider using the
+  [`HvSearchInput`](/components/search-input) or
+  [`HvNumberInput`](/components/number-input) components.
+</Callout>
+<br />
 
 <Playground
   Component={HvInput}
@@ -264,8 +272,10 @@ Inputs not using the visual `label` prop should instead provide an `aria-label` 
 
 ### Related components
 
-- [`HvFormElement`](/components/form-element)
-- [`HvTextArea`](/components/textarea)
-- [`HvSelect`](/components/select)
 - [`HvDatePicker`](/components/date-picker)
+- [`HvFormElement`](/components/form-element)
+- [`HvNumberInput`](/components/number-input)
+- [`HvSearchInput`](/components/search-input)
+- [`HvSelect`](/components/select)
+- [`HvTextArea`](/components/textarea)
 - [`HvTimePicker`](/components/time-picker)
