@@ -177,4 +177,34 @@ describe("Dropdown", () => {
     await userEvent.click(getCheckBox());
     expect(getApplyButton()).toBeDisabled();
   });
+
+  it("doesn't select disabled items when Select All is clicked", async () => {
+    render(
+      <HvDropdown
+        aria-label="Main sample"
+        multiSelect
+        showSearch
+        values={[
+          { label: "value 1", disabled: true, selected: false },
+          { label: "value 2", selected: false },
+          { label: "value 3", selected: false },
+        ]}
+      />,
+    );
+
+    await userEvent.click(screen.getByRole("combobox"));
+
+    const checkboxes = screen.getAllByRole("checkbox");
+
+    const selectAllCheckbox = checkboxes[0];
+    await userEvent.click(selectAllCheckbox);
+
+    expect(checkboxes).toHaveLength(4);
+
+    expect(checkboxes[1]).not.toBeChecked();
+    expect(checkboxes[1]).toBeDisabled();
+
+    expect(checkboxes[2]).toBeChecked();
+    expect(checkboxes[3]).toBeChecked();
+  });
 });

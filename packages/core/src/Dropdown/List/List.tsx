@@ -244,7 +244,10 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
    *
    */
   const handleSelectAll = () => {
-    const newList = list.map((elem) => ({ ...elem, selected: !anySelected }));
+    const newList = list.map((elem) => {
+      if (elem.disabled) return elem;
+      return { ...elem, selected: !anySelected };
+    });
     setList(newList);
     updateSelectAll(newList);
   };
