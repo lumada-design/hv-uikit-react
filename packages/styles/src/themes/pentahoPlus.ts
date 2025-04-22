@@ -537,7 +537,7 @@ const pentahoPlus = makeTheme((theme) => ({
           },
         },
         select: {
-          borderRadius: theme.radii.base,
+          borderRadius: theme.radii.round,
         },
         panel: {
           borderColor: theme.colors.textDimmed,
@@ -1067,6 +1067,7 @@ const pentahoPlus = makeTheme((theme) => ({
         root: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
+          borderRadius: theme.radii.round,
         },
         disabled: {
           backgroundColor: theme.colors.bgDisabled,
@@ -1092,14 +1093,27 @@ const pentahoPlus = makeTheme((theme) => ({
         header: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
+          borderRadius: theme.radii.round,
         },
         headerOpen: {
           "&,:hover": {
             borderColor: theme.colors.textDimmed,
           },
+          "&[data-popper-placement*='top']": {
+            borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
+          },
+          "&[data-popper-placement*='bottom']": {
+            borderRadius: `${theme.radii.round} ${theme.radii.round} 0px 0px`,
+          },
         },
         panel: {
           borderColor: theme.colors.textDimmed,
+          "&[data-popper-placement*='top']": {
+            borderRadius: `${theme.radii.round} ${theme.radii.round} 0 0`,
+          },
+          "&[data-popper-placement*='bottom']": {
+            borderRadius: `0 0 ${theme.radii.round} ${theme.radii.round}`,
+          },
         },
       },
     },
