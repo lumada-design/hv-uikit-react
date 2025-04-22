@@ -1,27 +1,21 @@
-import { useMemo } from "react";
-import createCache, { EmotionCache } from "@emotion/cache";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { EmotionCache } from "@emotion/cache";
 import {
-  CacheProvider,
-  ClassNames,
-  css as cssReact,
-  Global,
-} from "@emotion/react";
+  HvThemeContext,
+  type HvThemeContextValue,
+} from "@hitachivantara/uikit-react-shared";
 import {
-  CssBaseline,
-  CssScopedBaseline,
+  applyTheme,
+  ds5,
+  getMode,
+  getTheme,
   getThemesVars,
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvTheme } from "../types/theme";
-import { getElementById } from "../utils/document";
-import { processThemes } from "../utils/theme";
-import {
-  defaultCacheKey,
-  defaultEmotionCache,
-  HvThemeProvider,
-} from "./ThemeProvider";
+import { EmotionProvider } from "./EmotionProvider";
+import { MuiProvider } from "./MuiProvider";
 
 // Provider props
 export interface HvProviderProps {
@@ -67,7 +61,7 @@ export interface HvProviderProps {
    *
    * If no value is provided, the `ds5` theme will be used.
    */
-  themes?: (HvTheme | HvThemeStructure)[];
+  themes?: HvThemeStructure[];
   /**
    * The active theme. It must be one of the themes passed to `themes`.
    *
@@ -83,8 +77,6 @@ export interface HvProviderProps {
   colorMode?: string;
 }
 
-const scopedRootPrefix = "hv-uikit-scoped-root" as const;
-
 /**
  * Enables theming capabilities and makes cross-component theme properties available down the tree.
  */
@@ -93,90 +85,73 @@ export const HvProvider = ({
   rootElementId,
   cssBaseline = "global",
   cssTheme = "global",
-  themes,
-  theme,
-  colorMode,
-  emotionCache: emotionCacheProp,
-  classNameKey = defaultCacheKey,
+  themes: initialThemes,
+  theme: initialTheme,
+  colorMode: initialMode,
+  emotionCache,
+  classNameKey,
 }: HvProviderProps) => {
   const generatedId = useUniqueId();
-  const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
+  const scopedRootId = `${"hv-uikit-scoped-root"}-${generatedId}`;
 
-  // Themes
-  const themesList = processThemes(themes);
+  const themes = useMemo(
+    () => (initialThemes?.length ? initialThemes : [ds5]),
+    [initialThemes],
+  );
 
-  // Emotion cache
-  // Moves UI Kit styles to the top of the <head> so they're loaded first
-  // This enables users to override the UI Kit styles if necessary
-  const emotionCache = useMemo(() => {
-    if (emotionCacheProp) return emotionCacheProp;
-    // reuse the default shared cache if `classNameKey` is the same
-    if (classNameKey === defaultCacheKey) return defaultEmotionCache;
+  const [theme, setTheme] = useState(() => getTheme(themes, initialTheme));
+  const [mode, setMode] = useState(() => getMode(theme, initialMode));
 
-    return createCache({ key: classNameKey, prepend: true });
-  }, [classNameKey, emotionCacheProp]);
+  const rootId =
+    cssTheme === "scoped" ? rootElementId || scopedRootId : undefined;
+
+  const changeTheme = useCallback(
+    (themeName?: string, themeMode?: string) => {
+      const newTheme = getTheme(themes, themeName);
+      const newMode = getMode(newTheme, themeMode);
+      setTheme(newTheme);
+      setMode(newMode);
+    },
+    [themes],
+  );
+
+  useEffect(() => {
+    applyTheme(theme, mode, rootId);
+  }, [theme, mode, rootId]);
+
+  // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
+  useEffect(() => {
+    changeTheme(initialTheme, initialMode);
+  }, [initialTheme, initialMode, changeTheme]);
+
+  const contextValue = useMemo<HvThemeContextValue>(
+    () => ({
+      themes: themes.map((t) => t.name),
+      activeTheme: theme as any,
+      selectedTheme: theme.name,
+      colorModes: Object.keys(theme.colors.modes),
+      selectedMode: mode,
+      changeTheme,
+      rootId,
+    }),
+    [themes, theme, mode, changeTheme, rootId],
+  );
 
   return (
-    <CacheProvider value={emotionCache}>
-      <Global
-        styles={cssReact`
-          ${
-            cssBaseline === "global" && {
-              [`@layer hv-uikit-baseline`]: {
-                ...CssBaseline,
-              },
-            }
-          }
-          ${getThemesVars(themesList)}
-        `}
-      />
-      <HvThemeProvider
-        themes={themesList}
-        theme={theme || themesList[0].name}
-        emotionCache={emotionCache}
-        colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
-        themeRootId={
-          cssTheme === "scoped" ? rootElementId || scopedRootId : undefined
-        }
-      >
-        <ClassNames>
-          {({ css }) => {
-            if (cssBaseline === "scoped") {
-              const rootElement = getElementById(rootElementId);
-
-              if (rootElement) {
-                rootElement.classList.add(
-                  css({
-                    [`@layer ${rootElementId}-baseline`]: {
-                      ...CssScopedBaseline,
-                    },
-                  }),
-                );
-              }
-            }
-
-            return (cssTheme === "scoped" || cssBaseline === "scoped") &&
-              !rootElementId ? (
-              <div
-                id={scopedRootId}
-                className={
-                  cssBaseline === "scoped"
-                    ? css({
-                        [`@layer ${rootElementId}-baseline`]: {
-                          ...CssScopedBaseline,
-                        },
-                      })
-                    : undefined
-                }
-              >
-                {children}
-              </div>
-            ) : (
-              children
-            );
-          }}
-        </ClassNames>
-      </HvThemeProvider>
-    </CacheProvider>
+    <HvThemeContext.Provider value={contextValue}>
+      <MuiProvider theme={theme} mode={mode}>
+        <EmotionProvider
+          rootId={rootElementId}
+          scopedId={scopedRootId}
+          themesVars={getThemesVars(themes)}
+          cssBaseline={cssBaseline}
+          cssTheme={cssTheme}
+          emotionCache={emotionCache}
+          classNameKey={classNameKey}
+        >
+          {children}
+        </EmotionProvider>
+      </MuiProvider>
+    </HvThemeContext.Provider>
   );
 };
