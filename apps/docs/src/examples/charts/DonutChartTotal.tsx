@@ -21,6 +21,12 @@ export default function Demo() {
         data={data}
         groupBy="Country"
         measure="Tickets Sold"
+        legend={{
+          position: {
+            y: "bottom",
+            x: "center",
+          },
+        }}
       />
       <div
         style={{

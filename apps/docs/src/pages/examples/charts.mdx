@@ -6,20 +6,10 @@ import lineChartStreamingCode from "../../examples/charts/LineChartStreaming?raw
 
 # Charts examples
 
-## Line chart with streaming
-
-A line chart with regular interval updates.
-
-<CodeBlock code={{ main: lineChartStreamingCode }} />
-
-## Donut chart with total inside
-
-A donut chart that shows the total in the center
-
-<CodeBlock code={{ main: donutChartTotal }} />
-
-### Gauge chart
-
-A gauge chart that shows the current value of a metric.
-
-<CodeBlock code={{ main: gaugeChart }} />
+<div className="overflow-hidden">
+  <div className="w-101% grid  divide-border [grid-template-columns:repeat(auto-fit,minmax(480px,1fr))] -mt-px -mb-px">
+    <CodeBlock code={{ main: donutChartTotal }} layout="popup" />
+    <CodeBlock code={{ main: gaugeChart }} layout="popup" />
+    <CodeBlock code={{ main: lineChartStreamingCode }} layout="popup" />
+  </div>
+</div>

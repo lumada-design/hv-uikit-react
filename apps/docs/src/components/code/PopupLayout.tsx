@@ -80,9 +80,7 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
       />
 
       {/* Preview Section */}
-      <div className="p-md flex items-center justify-center">
-        <div>{element}</div>
-      </div>
+      <div className="p-md flex items-center justify-center">{element}</div>
     </section>
   );
 };
