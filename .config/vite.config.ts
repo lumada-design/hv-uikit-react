@@ -23,7 +23,10 @@ const esmOutput: OutputOptions = {
   preserveModules: true,
   dir: "dist/esm",
   // keep react-based packages as `.js` for backwards compatibility
-  entryFileNames: pkg.name.includes("react") ? "[name].js" : "[name].mjs",
+  entryFileNames:
+    pkg.name.includes("react") || pkg.name.includes("app-shell")
+      ? "[name].js"
+      : "[name].mjs",
   exports: "named",
   interop: "auto",
 };
