@@ -245,7 +245,6 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
    */
   const handleSelectAll = () => {
     const newList = list.map((elem) => {
-      // if the element is disabled just return it unchanged
       if (elem.disabled) return elem;
       return { ...elem, selected: !anySelected };
     });
