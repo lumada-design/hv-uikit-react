@@ -6,6 +6,13 @@ export default {
   introduction: "Introduction",
   "get-started": "Get Started",
   changelog: "Changelog",
+  "-- Community": {
+    type: "separator",
+    title: "Community",
+  },
+  releases: "Releases",
+  contributing: "Contributing",
+  "component-guidelines": "Component Guidelines",
   "-- Foundation": {
     type: "separator",
     title: "Foundation",
