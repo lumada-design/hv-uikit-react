@@ -14,10 +14,6 @@ export default {
     type: "page",
     title: "Components",
   },
-  lab: {
-    type: "page",
-    title: "Lab",
-  },
   charts: {
     type: "page",
     title: "Charts",
