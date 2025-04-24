@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
+import {
+  ds3,
+  ds5,
+  HvProvider,
+  pentahoPlus,
+} from "@hitachivantara/uikit-react-core";
 
+import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { ExpandableControls } from "./ExpandableControls";
 
@@ -16,6 +23,7 @@ type ExpandableLayoutProps = {
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   const editorTheme = useEditorTheme();
+  const { docsTheme } = useDocsThemeContext();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const initialCode = Object.values(code)[0];
@@ -47,11 +55,18 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
           isExpanded && "rounded-b-0",
         )}
       >
-        {liveError ? (
-          <div className="text-negative">{liveError}</div>
-        ) : (
-          <div>{element}</div>
-        )}
+        <div
+          className={clsx(
+            "p-md pt-lg bg-bgPage border rounded-inherit",
+            isExpanded && "rounded-b-0",
+          )}
+        >
+          {liveError ? (
+            <div className="text-negative">{liveError}</div>
+          ) : (
+            <>{element}</>
+          )}
+        </div>
       </div>
 
       {/* Code Editor Section */}

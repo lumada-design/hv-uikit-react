@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
-import { HvTab, HvTabs, HvTypography } from "@hitachivantara/uikit-react-core";
+import {
+  ds3,
+  ds5,
+  HvProvider,
+  HvTab,
+  HvTabs,
+  HvTypography,
+  pentahoPlus,
+} from "@hitachivantara/uikit-react-core";
 
+import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { ToggableControls } from "./ToggableControls";
 
@@ -14,6 +23,7 @@ type ToggableLayoutProps = {
 
 export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   const editorTheme = useEditorTheme();
+  const { docsTheme } = useDocsThemeContext();
 
   const [tmpCode, setTmpCode] = useState({ ...code });
   const [activeTab, setActiveTab] = useState(0);
@@ -57,20 +67,27 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
 
       {/* Main content: Preview or Editor */}
       {showPreview ? (
-        <div
-          className={clsx(
-            "p-md pt-lg min-h-100px mb-lg",
-            "border border-atmo3 rounded-round",
-            "bg-bgContainer [&_tr]:table-row",
-          )}
+        <HvProvider
+          themes={[pentahoPlus, ds5, ds3]}
+          theme={docsTheme.theme}
+          colorMode={docsTheme.mode}
+          cssTheme="scoped"
         >
-          {/* Render errors or the live preview */}
-          {error ? (
-            <div className="text-negative">{error}</div>
-          ) : (
-            <div>{element}</div>
-          )}
-        </div>
+          <div
+            className={clsx(
+              "p-md pt-lg min-h-100px mb-lg",
+              "border border-atmo3 rounded-round",
+              "bg-bgContainer [&_tr]:table-row",
+            )}
+          >
+            {/* Render errors or the live preview */}
+            {error ? (
+              <div className="text-negative">{error}</div>
+            ) : (
+              <div>{element}</div>
+            )}
+          </div>
+        </HvProvider>
       ) : (
         <>
           {/* Code editor for active tab */}
