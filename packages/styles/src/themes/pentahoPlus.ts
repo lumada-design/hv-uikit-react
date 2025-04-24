@@ -1,6 +1,7 @@
 import type { CSSObject } from "@emotion/serialize";
 
 import { makeTheme } from "../makeTheme";
+import { HvTheme } from "../theme";
 import { radii } from "../tokens";
 import { colors } from "../tokens/colors";
 import {
@@ -36,6 +37,13 @@ const notificationMap = {
 const inputColors = {
   bg: ld("#FFFFFF", "#020617"),
 };
+
+const popperStyles = (theme: HvTheme) => ({
+  backgroundColor: theme.colors.bgContainer,
+  border: `1px solid ${theme.colors.borderSubtle}`,
+  borderRadius: theme.radii.large,
+  boxShadow: `0px 0px 6px 0px rgba(65, 65, 65, 0.08)`,
+});
 
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
@@ -531,6 +539,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvSelect: {
       classes: {
         root: {
+          borderRadius: theme.radii.round,
           "&& .HvButton-secondarySubtle": {
             borderColor: theme.colors.textDimmed,
             backgroundColor: inputColors.bg,
@@ -540,14 +549,35 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: theme.radii.round,
         },
         panel: {
-          borderColor: theme.colors.textDimmed,
+          ...popperStyles(theme),
+        },
+        popper: {
+          "--r": theme.radii.large,
+          "&[data-popper-placement*='bottom'] .HvSelect-panel": {
+            borderRadius: "var(--r)",
+            top: 1,
+          },
+          "&[data-popper-placement*='top'] .HvSelect-panel": {
+            borderRadius: "var(--r)",
+            top: -1,
+          },
         },
       },
     },
     HvSuggestions: {
       classes: {
+        popper: {
+          ":not(.HvSuggestions-portal)": {
+            "&[data-popper-placement*='top']": {
+              transform: "translate3d(0, -26px, 0) !important",
+            },
+            "&[data-popper-placement*='bottom']": {
+              transform: "translate3d(0, 0px, 0) !important",
+            },
+          },
+        },
         list: {
-          borderColor: theme.colors.textDimmed,
+          ...popperStyles(theme),
         },
       },
     },
@@ -827,6 +857,15 @@ const pentahoPlus = makeTheme((theme) => ({
             },
           },
         },
+        open: {
+          "--r": theme.radii.round,
+          "&[data-popper-placement*='top']": {
+            borderRadius: "var(--r)",
+          },
+          "&[data-popper-placement*='bottom']": {
+            borderRadius: "var(--r)",
+          },
+        },
       },
     },
     HvHeader: {
@@ -1086,6 +1125,11 @@ const pentahoPlus = makeTheme((theme) => ({
             borderRadius: theme.radii.full,
           },
         },
+        inputExtension: {
+          backgroundColor: "transparent",
+          height: 0,
+          boxShadow: "none",
+        },
       },
     },
     HvBaseDropdown: {
@@ -1094,26 +1138,26 @@ const pentahoPlus = makeTheme((theme) => ({
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
           borderRadius: theme.radii.round,
+          ":hover": {
+            borderRadius: theme.radii.round,
+          },
         },
         headerOpen: {
           "&,:hover": {
             borderColor: theme.colors.textDimmed,
-          },
-          "&[data-popper-placement*='top']": {
-            borderRadius: `0px 0px ${theme.radii.round} ${theme.radii.round}`,
-          },
-          "&[data-popper-placement*='bottom']": {
-            borderRadius: `${theme.radii.round} ${theme.radii.round} 0px 0px`,
+            borderRadius: theme.radii.round,
+            "&[data-popper-placement*='top'],&[data-popper-placement*='bottom']":
+              {
+                borderRadius: theme.radii.round,
+              },
           },
         },
         panel: {
-          borderColor: theme.colors.textDimmed,
-          "&[data-popper-placement*='top']": {
-            borderRadius: `${theme.radii.round} ${theme.radii.round} 0 0`,
-          },
-          "&[data-popper-placement*='bottom']": {
-            borderRadius: `0 0 ${theme.radii.round} ${theme.radii.round}`,
-          },
+          "&[data-popper-placement*='top'],&[data-popper-placement*='bottom']":
+            {
+              top: 0,
+              ...popperStyles(theme),
+            },
         },
       },
     },
