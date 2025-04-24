@@ -15,7 +15,12 @@ export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
     position: "absolute",
     zIndex: theme.zIndices.tooltip,
     ":not($portal)": {
-      transform: "translate3d(0, -1px, 0) !important",
+      "&[data-popper-placement*='top']": {
+        transform: "translate3d(0, -42px, 0) !important",
+      },
+      "&[data-popper-placement*='bottom']": {
+        transform: "translate3d(0, -1px, 0) !important",
+      },
     },
   },
   portal: {},
