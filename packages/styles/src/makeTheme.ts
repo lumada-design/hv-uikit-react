@@ -1,6 +1,7 @@
 import { HvTheme, theme } from "./theme";
 import * as tokens from "./tokens";
-import type { HvCustomTheme, HvThemeStructure } from "./types";
+import { colors, type ColorTokens } from "./tokens";
+import type { HvCustomTheme, HvThemeColors, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
 /**
@@ -17,4 +18,42 @@ export const makeTheme = <Mode extends string = string>(
   const newTheme = mergeTheme(tokens, customTheme);
 
   return newTheme;
+};
+
+export const makeColors = (
+  inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
+): HvCustomTheme<"dawn" | "wicked">["colors"] => {
+  const [lightColors, darkColors] = Object.entries(inputColors).reduce(
+    (acc, [key, color]) => {
+      const [lightColor, darkColor] =
+        typeof color === "string" ? [color, color] : color;
+
+      if (lightColor) {
+        acc[0][key as keyof ColorTokens] = lightColor;
+      }
+      if (darkColor) {
+        acc[1][key as keyof ColorTokens] = darkColor;
+      }
+      return acc;
+    },
+    [{}, {}] as [Partial<HvThemeColors>, Partial<HvThemeColors>],
+  );
+
+  return {
+    // TODO: review any number of modes vs light/dark only
+    modes: {
+      dawn: {
+        type: "light",
+        ...colors.common,
+        ...colors.light,
+        ...lightColors,
+      },
+      wicked: {
+        type: "dark",
+        ...colors.common,
+        ...colors.dark,
+        ...darkColors,
+      },
+    },
+  };
 };
