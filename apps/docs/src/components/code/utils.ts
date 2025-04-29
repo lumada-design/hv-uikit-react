@@ -1,11 +1,14 @@
 import * as React from "react";
+import * as reactHookForm from "react-hook-form";
 import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
+import * as hookFormZod from "@hookform/resolvers/zod";
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
 import * as echartsCore from "echarts/core";
 import useSWR from "swr";
+import * as zod from "zod";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
@@ -31,8 +34,11 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
     "@hitachivantara/uikit-styles": HvStyles,
-    "react-table": reactTable,
     "@mui/material": materialUi,
+    "react-table": reactTable,
+    "react-hook-form": reactHookForm,
+    "@hookform/resolvers/zod": hookFormZod,
+    zod,
     clsx,
     swr: useSWR,
     "echarts/core": echartsCore,

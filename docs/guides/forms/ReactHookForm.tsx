@@ -166,7 +166,6 @@ export default () => {
             label="Repeat password"
           />
         </HvGrid>
-        <HvGrid item xs={12} component="hr" />
         <HvGrid item xs={12} sm={6}>
           <Controller
             control={control}
@@ -190,7 +189,6 @@ export default () => {
             // TODO: onchange?
           />
         </HvGrid>
-        <HvGrid item xs={12} component="hr" />
         <HvGrid item xs={12}>
           <InputControl
             control={control}

@@ -12,26 +12,11 @@ import {
 import { Map, Phone } from "@hitachivantara/uikit-react-icons";
 
 const countries = [
-  {
-    id: "Portugal",
-    label: "Portugal",
-  },
-  {
-    id: "Spain",
-    label: "Spain",
-  },
-  {
-    id: "France",
-    label: "France",
-  },
-  {
-    id: "Germany",
-    label: "Germany",
-  },
-  {
-    id: "United States",
-    label: "United States",
-  },
+  { id: "pt", label: "Portugal" },
+  { id: "es", label: "Spain" },
+  { id: "fr", label: "France" },
+  { id: "de", label: "Germany" },
+  { id: "us", label: "United States" },
 ];
 
 export default () => (
@@ -72,14 +57,12 @@ export default () => (
       <HvGrid item xs={12} sm={6}>
         <HvInput type="password" name="password" label="Password" />
       </HvGrid>
-      <HvGrid item xs={12} component="hr" />
       <HvGrid item xs={12} sm={6}>
         <HvDatePicker name="bday" label="Birthday" placeholder="Select date" />
       </HvGrid>
       <HvGrid item xs={12} sm={6}>
         <HvTimePicker name="startTime" label="Start time" />
       </HvGrid>
-      <HvGrid item xs={12} component="hr" />
       <HvGrid item xs={12}>
         <HvTextArea
           required
