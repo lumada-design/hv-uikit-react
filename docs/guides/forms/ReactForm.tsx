@@ -166,27 +166,21 @@ export default () => {
             onChange={(evt, val) => setValue("repeatPassword", val)}
           />
         </HvGrid>
-        <HvGrid item xs={12} component="hr" />
         <HvGrid item xs={12} sm={6}>
           <HvDatePicker
             name="bday"
             label="Birthday"
             placeholder="Select date"
-            onChange={(val) => {
-              setValue("bday", val);
-            }}
+            onChange={(val) => setValue("bday", val)}
           />
         </HvGrid>
         <HvGrid item xs={12} sm={6}>
           <HvTimePicker
             name="startTime"
             label="Start time"
-            onChange={(val) => {
-              setValue("startTime", val);
-            }}
+            onChange={(val) => setValue("startTime", val)}
           />
         </HvGrid>
-        <HvGrid item xs={12} component="hr" />
         <HvGrid item xs={12}>
           <HvTextArea
             required
