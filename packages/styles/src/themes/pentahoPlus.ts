@@ -89,7 +89,7 @@ const pentahoPlus = makeTheme((theme) => ({
     text: [slate[700], slate[50]],
     textSubtle: [slate[500], slate[400]],
     textDisabled: [neutral[400], neutral[500]],
-    textDimmed: [slate[400], slate[700]],
+    textDimmed: [slate[400], slate[600]],
     textLight: slate[50],
     textDark: slate[700],
 
@@ -102,7 +102,7 @@ const pentahoPlus = makeTheme((theme) => ({
     bgContainer: [slate[50], slate[800]],
     bgPageSecondary: [slate[200], slate[950]],
     bgContainerSecondary: [slate[100], slate[900]],
-    bgHover: theme.alpha(blue[600], 0.2),
+    bgHover: theme.alpha(blue[600], 0.08),
     bgDisabled: [neutral[200], neutral[900]],
     bgOverlay: [theme.alpha(slate[950], 0.6), theme.alpha(slate[900], 0.4)],
     dimmer: ["#FFFFFF", "#000000"],
