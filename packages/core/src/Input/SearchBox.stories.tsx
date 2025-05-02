@@ -15,7 +15,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Fail } from "@hitachivantara/uikit-react-icons";
 
-import countryNamesArray, { continents, countries } from "./stories/countries";
+import { allCountries, continents, countries } from "./stories/countries";
 
 const description = `
  A search box is a text input box with the dedicated function of accepting user input to be searched for in a database.
@@ -127,7 +127,7 @@ export const DynamicSearch: StoryObj = {
     const handleSearch: HvInputProps["onEnter"] = (_, value) => {
       const newResults: string[] = [];
 
-      countryNamesArray
+      allCountries
         .filter((v) => v.toUpperCase().startsWith(value.toUpperCase()))
         .forEach((country) => {
           newResults.push(`${country}: Population`);
@@ -143,7 +143,7 @@ export const DynamicSearch: StoryObj = {
         return null;
       }
 
-      return countryNamesArray
+      return allCountries
         .filter((v) => v.toUpperCase().startsWith(value.toUpperCase()))
         .map((v) => ({
           id: v,
@@ -226,7 +226,7 @@ export const ScopedSearch: StoryObj = {
 
     const filterByContinent = () => {
       const index = continents.indexOf(filter);
-      return index !== -1 ? countries[index] : countryNamesArray;
+      return index !== -1 ? countries[index] : allCountries;
     };
 
     const filterHighlighted = (value: string): HvInputSuggestion[] =>

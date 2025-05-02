@@ -44,7 +44,7 @@ export const HvCharCounter = (props: HvCharCounterProps) => {
     className,
     id: idProp,
     disabled: disabledProp,
-    disableGutter = false,
+    disableGutter,
     ...others
   } = useDefaultProps("HvCharCounter", props);
 

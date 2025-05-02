@@ -495,6 +495,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
         >
           {hasCounter && (
             <HvCharCounter
+              disableGutter
               id={setId(elementId, "charCounter")}
               className={classes.characterCounter}
               separator={middleCountLabel}

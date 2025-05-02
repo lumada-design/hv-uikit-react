@@ -5,7 +5,6 @@ import {
   HvGrid,
   HvInlineEditor,
   HvInlineEditorProps,
-  HvInput,
   HvTypographyVariants,
 } from "@hitachivantara/uikit-react-core";
 
@@ -31,7 +30,7 @@ const variants: HvTypographyVariants[] = [
   "caption2",
 ];
 
-export const Main: StoryObj<typeof HvInlineEditor<typeof HvInput>> = {
+export const Main: StoryObj<typeof HvInlineEditor> = {
   args: {
     showIcon: false,
     variant: "body",

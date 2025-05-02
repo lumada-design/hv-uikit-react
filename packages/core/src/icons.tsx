@@ -17,7 +17,7 @@ interface SvgProps extends Omit<React.SVGProps<SVGSVGElement>, "rotate"> {
   color?: HvColorAny;
   compact?: boolean;
   title?: string;
-  rotate?: boolean;
+  rotation?: boolean;
 }
 
 export const SvgBase = styled("svg")({
@@ -30,8 +30,8 @@ export const SvgBase = styled("svg")({
   transition: "rotate 0.2s ease",
 });
 
-const Svg = styled(SvgBase)<SvgProps>(({ size, color, compact, rotate }) => ({
-  rotate: rotate ? "180deg" : undefined,
+const Svg = styled(SvgBase)<SvgProps>(({ size, color, compact, rotation }) => ({
+  rotate: rotation ? "180deg" : undefined,
   margin: compact ? 0 : size === "xs" ? 10 : 8,
   color: getColor(color) ?? "inherit",
   fontSize: svgSizeMap[size as HvSize] ?? size ?? svgSizeMap.sm,
@@ -83,10 +83,10 @@ const defaultIconPathMap = {
 } satisfies Record<string, string>;
 
 function HvIconInternal(
-  props: SvgProps & { name: keyof typeof defaultIconPathMap },
+  props: SvgProps & { name: keyof typeof defaultIconPathMap; rotate?: boolean },
   ref: React.Ref<SVGSVGElement>,
 ) {
-  const { name, title, "aria-label": ariaLabel, children, ...others } = props;
+  const { name, title, "aria-label": ariaLabel, rotate, ...others } = props;
   const { activeTheme } = useTheme();
 
   const iconsPathMap = useMemo(
@@ -97,10 +97,10 @@ function HvIconInternal(
   const isDefaultIcon = iconsPathMap[name] === defaultIconPathMap[name];
 
   return (
-    // @ts-expect-error `rotate` is fine
     <Svg
       ref={ref}
       data-name={name}
+      rotation={rotate}
       viewBox={(!isDefaultIcon && activeTheme?.icons?.viewBox) || "0 0 16 16"}
       focusable={false}
       aria-label={ariaLabel}

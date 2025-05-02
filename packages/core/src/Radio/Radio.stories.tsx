@@ -3,11 +3,8 @@ import { css } from "@emotion/css";
 import { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseRadio,
-  HvGrid,
   HvRadio,
   HvRadioProps,
-  HvRadioStatus,
-  HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -99,116 +96,18 @@ export const WithoutLabel: StoryObj<HvRadioProps> = {
   },
 };
 
-export const ExternalErrorMessage: StoryObj<HvRadioProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
-      },
-    },
-  },
-  render: () => {
-    const [secondRadioStatus, setSecondRadioStatus] =
-      useState<HvRadioStatus>("standBy");
-    const [firstRadioErrorMessage, setFirstRadioErrorMessage] = useState<
-      string | null
-    >("");
-
-    const [secondRadioErrorMessage, setSecondRadioErrorMessage] = useState(
-      "No way for the second radio to be valid!",
-    );
-
-    return (
-      <HvGrid container>
-        <HvGrid container item xs={12} md={6}>
-          <HvGrid item xs={12}>
-            <HvRadio
-              status={secondRadioStatus}
-              aria-errormessage="firstRadio-error"
-              onChange={(_e, checked) => {
-                if (checked) {
-                  setSecondRadioStatus("invalid");
-                  setFirstRadioErrorMessage("Don't choose the first radio.");
-                } else if (!checked) {
-                  setSecondRadioStatus("valid");
-                  setFirstRadioErrorMessage(null);
-                }
-              }}
-              label="First Radio"
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvRadio
-              status="invalid"
-              aria-errormessage="secondRadio-error"
-              onChange={() => {
-                setSecondRadioErrorMessage(
-                  "No way for the second radio to be valid! I told you!",
-                );
-              }}
-              label="Second Radio"
-            />
-          </HvGrid>
-        </HvGrid>
-        <HvGrid item xs={12} md={6}>
-          <div
-            className={css({
-              backgroundColor: theme.colors.negativeDimmed,
-              color: theme.colors.textDark,
-              padding: theme.space.md,
-            })}
-          >
-            <HvTypography
-              component="h4"
-              variant="title4"
-              style={{
-                color: theme.colors.textDark,
-              }}
-            >
-              Form errors:
-            </HvTypography>
-            <ul
-              className={css({
-                margin: theme.spacing("sm", 0),
-                paddingLeft: theme.space.md,
-              })}
-            >
-              {firstRadioErrorMessage && (
-                <li id="firstRadio-error" aria-live="polite">
-                  {firstRadioErrorMessage}
-                </li>
-              )}
-              {secondRadioErrorMessage && (
-                <li id="secondRadio-error" aria-live="polite">
-                  {secondRadioErrorMessage}
-                </li>
-              )}
-            </ul>
-          </div>
-        </HvGrid>
-      </HvGrid>
-    );
-  },
-};
-
 export const Custom: StoryObj<HvRadioProps> = {
   render: () => {
     const styles = {
-      group: css({
-        display: "flex",
-        flexDirection: "row",
-        gap: 20,
-      }),
       box: css({
         "& svg": {
           borderRadius: theme.radii.full,
-          border: `1px solid ${theme.colors.warning}`,
+          borderColor: theme.colors.warning,
         },
       }),
       checked: css({
         "& svg": {
-          border: `1px solid ${theme.colors.warning}`,
+          borderColor: theme.colors.warning,
           backgroundColor: theme.colors.bgContainer,
           color: theme.colors.warning,
         },
@@ -216,12 +115,10 @@ export const Custom: StoryObj<HvRadioProps> = {
     };
 
     return (
-      <div className={styles.group}>
-        <HvRadio
-          label="Radio 1"
-          classes={{ root: styles.box, checked: styles.checked }}
-        />
-      </div>
+      <HvRadio
+        label="Radio 1"
+        classes={{ root: styles.box, checked: styles.checked }}
+      />
     );
   },
 };

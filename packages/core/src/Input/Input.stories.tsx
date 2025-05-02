@@ -4,10 +4,10 @@ import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvFormStatus,
-  HvGrid,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
+  HvPanel,
   HvTypography,
   HvValidationMessages,
   theme,
@@ -16,20 +16,10 @@ import { Calendar, Map, Time } from "@hitachivantara/uikit-react-icons";
 
 import ControlledStory from "./stories/Controlled";
 import ControlledRaw from "./stories/Controlled?raw";
-import countryNamesArray from "./stories/countries";
+import { allCountries } from "./stories/countries";
 
 const showcaseDecorator: Decorator = (Story) => (
-  <div
-    className={css({
-      display: "flex",
-      justifyContent: "flex-start",
-      flexFlow: "row wrap",
-      gap: theme.space.sm,
-      "& > div": {
-        width: 200,
-      },
-    })}
-  >
+  <div className="flex flex-wrap justify-start gap-sm [&>div]:w-200px">
     {Story()}
   </div>
 );
@@ -239,90 +229,67 @@ export const ExternalErrorMessage: StoryObj<HvInputProps> = {
     );
 
     return (
-      <HvGrid container>
-        <HvGrid container item xs={12} md={6}>
-          <HvGrid item xs={12}>
-            <HvInput
-              label="First name"
-              description="Please enter your first name"
-              placeholder="Insert first name"
-              required
-              minCharQuantity={2}
-              aria-errormessage="firstName-error"
-              onBlur={(_e, _value, inputValidity) => {
-                if (inputValidity.valid) {
-                  setFirstNameErrorMessage(undefined);
-                } else if (inputValidity.valueMissing) {
-                  setFirstNameErrorMessage("You must provide a first name");
-                } else if (inputValidity.tooShort) {
-                  setFirstNameErrorMessage("The first name is too short");
-                }
-              }}
-            />
-          </HvGrid>
-          <HvGrid item xs={12}>
-            <HvInput
-              label="Last name"
-              description="Please enter your last name"
-              placeholder="Insert last name"
-              defaultValue="Not a name!"
-              required
-              status={lastNameValidationState}
-              aria-errormessage="lastName-error"
-              onFocus={(_, value) => {
-                setLastNameValidationState(value ? "standBy" : "empty");
-              }}
-              onBlur={(_e, _value, inputValidity) => {
-                setLastNameValidationState("invalid");
-
-                if (inputValidity.valueMissing) {
-                  setLastNameErrorMessage("You must provide a last name");
-                } else {
-                  setLastNameErrorMessage(
-                    "Nice try, but the last name will always be invalid. I told you!",
-                  );
-                }
-              }}
-            />
-          </HvGrid>
-        </HvGrid>
-        <HvGrid item xs={12} md={6}>
-          <div
-            style={{
-              backgroundColor: theme.colors.negativeDimmed,
-              color: theme.colors.textDark,
-              padding: theme.space.md,
+      <div className="grid gap-sm grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-xs">
+          <HvInput
+            label="First name"
+            description="Please enter your first name"
+            placeholder="Insert first name"
+            required
+            minCharQuantity={2}
+            aria-errormessage="firstName-error"
+            onBlur={(_e, _value, inputValidity) => {
+              if (inputValidity.valid) {
+                setFirstNameErrorMessage(undefined);
+              } else if (inputValidity.valueMissing) {
+                setFirstNameErrorMessage("You must provide a first name");
+              } else if (inputValidity.tooShort) {
+                setFirstNameErrorMessage("The first name is too short");
+              }
             }}
-          >
-            <HvTypography
-              component="h4"
-              variant="title4"
-              style={{
-                color: theme.colors.textDark,
-              }}
-            >
-              Form errors:
-            </HvTypography>
-            <ul
-              className={css({
-                margin: theme.spacing("sm", 0),
-                paddingLeft: theme.space.md,
-              })}
-            >
-              {firstNameErrorMessage && (
-                <li id="firstName-error" aria-live="polite">
-                  {firstNameErrorMessage}
-                </li>
-              )}
-              {lastNameErrorMessage && (
-                <li id="lastName-error" aria-live="polite">
-                  {lastNameErrorMessage}
-                </li>
-              )}
-            </ul>
-          </div>
-        </HvGrid>
-      </HvGrid>
+          />
+          <HvInput
+            label="Last name"
+            description="Please enter your last name"
+            placeholder="Insert last name"
+            defaultValue="Not a name!"
+            required
+            status={lastNameValidationState}
+            aria-errormessage="lastName-error"
+            onFocus={(_, value) => {
+              setLastNameValidationState(value ? "standBy" : "empty");
+            }}
+            onBlur={(_e, _value, inputValidity) => {
+              setLastNameValidationState("invalid");
+
+              if (inputValidity.valueMissing) {
+                setLastNameErrorMessage("You must provide a last name");
+              } else {
+                setLastNameErrorMessage(
+                  "Nice try, but the last name will always be invalid. I told you!",
+                );
+              }
+            }}
+          />
+        </div>
+        <HvPanel className="border-2px border-negative">
+          <HvTypography component="h4" variant="title4">
+            Form errors:
+          </HvTypography>
+          <ul className="mt-xs pl-md">
+            {firstNameErrorMessage && (
+              <li id="firstName-error" aria-live="polite">
+                {firstNameErrorMessage}
+              </li>
+            )}
+            {lastNameErrorMessage && (
+              <li id="lastName-error" aria-live="polite">
+                {lastNameErrorMessage}
+              </li>
+            )}
+          </ul>
+        </HvPanel>
+      </div>
     );
   },
 };
@@ -477,11 +444,9 @@ export const Suggestion: StoryObj<HvInputProps> = {
   render: () => {
     const [value, setValue] = useState("");
 
-    const countries = countryNamesArray;
-
     const suggestionHandler = (val: string): HvInputSuggestion[] | null => {
       if (typeof val !== "string" || val === "") return null;
-      const foundCountries = countries.filter((country) =>
+      const foundCountries = allCountries.filter((country) =>
         country.toUpperCase().startsWith(val.toUpperCase()),
       );
 

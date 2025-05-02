@@ -91,7 +91,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Event</HvTypography>
-                  <HvTypography noWrap>
+                  <HvTypography noWrap component="div">
                     <HvSkeleton hidden={!loading} animation={mode}>
                       {item.eventType}
                     </HvSkeleton>
@@ -99,7 +99,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Severity</HvTypography>
-                  <HvTypography noWrap>
+                  <HvTypography noWrap component="div">
                     <HvSkeleton hidden={!loading} animation={mode}>
                       {item.severity}
                     </HvSkeleton>
@@ -109,7 +109,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
               <div>
                 <HvCardContent>
                   <HvTypography variant="label">Status</HvTypography>
-                  <HvTypography noWrap>
+                  <HvTypography noWrap component="div">
                     <HvSkeleton hidden={!loading} animation={mode}>
                       {item.status}{" "}
                     </HvSkeleton>
@@ -117,7 +117,7 @@ export const CardView = ({ id, instance, loading }: CardViewProps) => {
                 </HvCardContent>
                 <HvCardContent>
                   <HvTypography variant="label">Priority</HvTypography>
-                  <HvTypography noWrap>
+                  <HvTypography noWrap component="div">
                     <HvSkeleton hidden={!loading} animation={mode}>
                       {item.priority}{" "}
                     </HvSkeleton>
