@@ -23,8 +23,12 @@ export const getStaticProps = async ({ params }) => {
   Component={HvIconContainer}
   componentName="HvIconContainer"
   controls={{
-    color: { defaultValue: "warning" },
-    size: { defaultValue: "M" },
+    color: { type: "color", defaultValue: "warning" },
+    size: {
+      type: "slider",
+      defaultValue: "md",
+      values: ["xs", "sm", "md", "lg", "xl"],
+    },
     rotate: { defaultValue: false },
   }}
 >
