@@ -18,6 +18,11 @@ export default {
     title: "Foundation",
   },
   theme: "Theme",
+  icons: "Icons",
+  "icon-library": {
+    title: "Icon Library",
+    theme: { toc: false },
+  },
   "color-tokens": {
     title: "Color Tokens",
     theme: {

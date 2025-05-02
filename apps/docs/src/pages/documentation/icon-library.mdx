@@ -1,0 +1,42 @@
+import { HvPanel } from "@hitachivantara/uikit-react-core";
+import { Alert, icons } from "@hitachivantara/uikit-react-icons";
+
+import { Playground } from "../../components/code/Playground";
+
+# NEXT Icon Library
+
+UI Kit also provides a library of SVG icons packaged as React components for use in applications,
+meant for the [NEXT Design System users](https://designsystem.hitachivantara.com/6c705d900/p/31e481-icons).
+
+The icons are available in the `@hitachivantara/uikit-react-icons` package, and follow the [`HvIconContainer`](/components/icon-container) API.
+
+```tsx
+import { Alert } from "@hitachivantara/uikit-react-icons";
+```
+
+<br />
+
+<Playground
+  Component={Alert}
+  componentName="Alert"
+  controls={{
+    size: { defaultValue: "M" },
+    color: { defaultValue: "warning" },
+  }}
+/>
+
+## Library
+
+<br />
+
+<HvPanel className="flex flex-wrap gap-xs justify-around px-xs">
+  {Object.entries(icons).map(([name, Icon]) => (
+    <div
+      key={name}
+      className="flex flex-col items-center justify-center w-112px"
+    >
+      <Icon size="M" />
+      <code className="text-sm h-2em text-center break-all">{name}</code>
+    </div>
+  ))}
+</HvPanel>

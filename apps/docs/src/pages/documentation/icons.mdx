@@ -1,0 +1,66 @@
+import { Callout } from "nextra/components";
+
+# Icons
+
+The UI Kit library aims to support any external SVG icon, provided that its converted to a React component.
+In most scenarios, you'll be passing the icons as properties to UI Kit components.
+
+<Callout type="info">
+  To easily convert `.svg` files to React components, use
+  [SVGR](https://react-svgr.com) and
+  [`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr).
+</Callout>
+
+Given a `<CustomIcon />` SVG React component, usage would look like this:
+
+```tsx
+<HvButton startIcon={<CustomIcon />} />
+<HvInput endAdornment={<CustomIcon />} />
+<HvCardHeader icon={<CustomIcon />} />
+```
+
+To ensure the icons are colored and sized automatically, icons should default to `currentColor` color and `1em` size.
+Most icon libraries such as [Material Icons](https://mui.com/material-ui/material-icons/), [Font Awesome](https://fontawesome.com), and [Phosphor Icons](https://phosphoricons.com), already follow this convention.
+
+```tsx live
+const CustomIcon = () => (
+  <svg viewBox="0 0 16 16" fill="currentcolor" width="1em" height="1em">
+    <path d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z" />
+  </svg>
+);
+
+export default function Demo() {
+  return (
+    <HvButton variant="warningSubtle" startIcon={<CustomIcon />}>
+      Button
+    </HvButton>
+  );
+}
+```
+
+## `HvIconContainer`
+
+As oftentimes icons need to be used separately from components, UI Kit also provides an `HvIconContainer` utility component
+that handles coloring and sizing icons according to the Design System specifications.
+
+It extends an icon's capabilities by adding support for `HvColor`, and a "container box" that adds padding according to the configured icon size.
+Please check out the [`HvIconContainer`](/components/icon-container) component documentation for more usage information.
+
+```tsx live
+export default function Demo() {
+  return (
+    <div className="flex gap-xs items-center text-warning">
+      <HvIconContainer size="M">
+        <CustomIcon />
+      </HvIconContainer>
+      <HvTypography variant="title2">Title</HvTypography>
+    </div>
+  );
+}
+
+const CustomIcon = () => (
+  <svg viewBox="0 0 16 16" fill="currentcolor" width="1em" height="1em">
+    <path d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z" />
+  </svg>
+);
+```
