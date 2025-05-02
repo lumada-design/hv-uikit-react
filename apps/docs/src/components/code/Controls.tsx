@@ -46,8 +46,8 @@ const defaultMap: Record<string, ControlType> = {
 
 export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   const { colors } = useTheme();
-  const { meta } = useData();
-  const propMeta = meta.docgen.props[prop];
+  const data = useData();
+  const propMeta = data?.meta?.docgen.props[prop];
 
   const type: ControlType =
     control?.type ||
@@ -65,7 +65,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
   const findCurrentIndex = (value: string) =>
     getOptions().findIndex((opt) => cleanValue(opt.value) === value) + 1;
 
-  // TODO: consider adding `capitalize` or  `nextra-code`
+  // TODO: consider adding `capitalize` or `.nextra-code`
   const propLabel = <code>{prop}</code>;
 
   // Render slider control for enum types with multiple options
