@@ -20,8 +20,12 @@ import { Alert } from "@hitachivantara/uikit-react-icons";
   Component={Alert}
   componentName="Alert"
   controls={{
-    size: { defaultValue: "M" },
-    color: { defaultValue: "warning" },
+    color: { type: "color", defaultValue: "warning" },
+    size: {
+      type: "slider",
+      defaultValue: "md",
+      values: ["xs", "sm", "md", "lg", "xl"],
+    },
   }}
 />
 
