@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useId, useMemo } from "react";
 import createCache, { EmotionCache } from "@emotion/cache";
 import {
   CacheProvider,
@@ -14,7 +14,6 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { useUniqueId } from "../hooks/useUniqueId";
 import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
 import {
@@ -83,8 +82,6 @@ export interface HvProviderProps {
   colorMode?: string;
 }
 
-const scopedRootPrefix = "hv-uikit-scoped-root" as const;
-
 /**
  * Enables theming capabilities and makes cross-component theme properties available down the tree.
  */
@@ -99,8 +96,7 @@ export const HvProvider = ({
   emotionCache: emotionCacheProp,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
-  const generatedId = useUniqueId();
-  const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
+  const scopedRootId = useId();
 
   // Themes
   const themesList = processThemes(themes);
