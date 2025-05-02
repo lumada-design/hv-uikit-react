@@ -207,8 +207,9 @@ export function HvAppShellVitePlugin(
           {
             src: resolveModule(
               "@hitachivantara/uikit-react-icons",
-              "../sprites/*.svg",
+              "./sprites/*.svg",
             ),
+
             dest: "icons",
           },
           ...(!devMode && buildEntryPoint
