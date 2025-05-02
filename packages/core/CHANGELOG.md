@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.93.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.0...@hitachivantara/uikit-react-core@5.93.1) (2025-05-02)
+
+### Bug Fixes
+
+- **Dropdown:** ignore `disabled` items on select all ([#4673](https://github.com/lumada-design/hv-uikit-react/issues/4673)) ([0797c48](https://github.com/lumada-design/hv-uikit-react/commit/0797c4864e6a2f4facc3c8791e0c0247f67a7817))
+
 # [5.93.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.92.0...@hitachivantara/uikit-react-core@5.93.0) (2025-04-18)
 
 ### Bug Fixes
