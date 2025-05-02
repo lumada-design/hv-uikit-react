@@ -63,6 +63,7 @@ export const BaseDropdownPanel = ({
       <HvPanel
         // TODO: review in v6. `containerId` needs to be on the role element (`children` has it)
         id={containerId}
+        data-popper-placement={popperPlacement}
         className={cx(classes.panel, {
           [classes.panelOpenedUp]: popperPlacement?.includes("top"),
           [classes.panelOpenedDown]: popperPlacement?.includes("bottom"),

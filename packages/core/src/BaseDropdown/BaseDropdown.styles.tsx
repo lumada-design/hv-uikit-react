@@ -92,16 +92,19 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     // TODO: remove padding override in v6 (most elements need it)
     padding: 0,
     border: `1px solid ${theme.colors.text}`,
+    "&[data-popper-placement*='top']": {
+      top: 1,
+      borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
+    },
+    "&[data-popper-placement*='bottom']": {
+      top: -1,
+      borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
+    },
   },
-  // TODO: change from classes to [data-popper-placement] selectors
-  panelOpenedUp: {
-    top: 1,
-    borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
-  },
-  panelOpenedDown: {
-    top: -1,
-    borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
-  },
+  /** @deprecated leverage `[data-popper-placement]` instead */
+  panelOpenedUp: {},
+  /** @deprecated leverage `[data-popper-placement]` instead */
+  panelOpenedDown: {},
   inputExtensionOpen: {
     height: "0px",
     backgroundColor: theme.colors.bgContainer,
