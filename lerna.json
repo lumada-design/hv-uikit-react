@@ -6,9 +6,6 @@
   "distTag": "latest",
   "preDistTag": "next",
   "command": {
-    "publish": {
-      "npmClientArgs": ["--legacy-peer-deps", "--production=false"]
-    },
     "version": {
       "preid": "next",
       "message": "chore(release): publish",
