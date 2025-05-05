@@ -1,4 +1,5 @@
 import {
+  HvBanner,
   HvButton,
   HvCheckBox,
   HvDropdown,
@@ -17,6 +18,14 @@ export const DataConfig = () => {
   return (
     <Card title="Data Management Configuration">
       <div className="grid gap-sm">
+        <HvBanner
+          open
+          offset={0}
+          label="Backup impacts storage."
+          showIcon
+          className="relative"
+          variant="info"
+        />
         <HvInput
           label="Storage Limit (in GB)"
           placeholder="Enter storage limit"

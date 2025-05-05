@@ -94,9 +94,9 @@ body,
 }
 
 [aria-current="true"].nextra-focus {
-  @apply font-medium text-dark;
+  @apply font-medium text-secondary;
 }
 
 [aria-current="false"].nextra-focus {
-  @apply text-textSubtle;
+  @apply text-text;
 }

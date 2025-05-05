@@ -1,7 +1,12 @@
 import { clsx } from "clsx";
 import Link from "next/link";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
-import { BarChart, Table, TextColor } from "@hitachivantara/uikit-react-icons";
+import {
+  BarChart,
+  Speedometer,
+  Table,
+  TextColor,
+} from "@hitachivantara/uikit-react-icons";
 
 import charts from "../pages/examples/charts.mdx?raw";
 import inputs from "../pages/examples/inputs.mdx?raw";
@@ -26,6 +31,8 @@ const getSectionIcon = (title: string) => {
       return <BarChart size="md" />;
     case "Inputs":
       return <TextColor size="md" />;
+    case "KPIs":
+      return <Speedometer size="md" />;
     default:
       return null;
   }
