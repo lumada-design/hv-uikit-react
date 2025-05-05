@@ -4,12 +4,9 @@ import { Card } from "./Card";
 
 export const StorageOverview = () => {
   return (
-    <Card
-      title="Storage Overview"
-      subtitle="Monitor Data Utilization and Backup Across Departments"
-    >
+    <Card title="Storage Overview" subtitle="Monitor Data Utilization">
       <HvBarChart
-        height={150}
+        height={100}
         data={{
           Category: [
             "IT Operations",

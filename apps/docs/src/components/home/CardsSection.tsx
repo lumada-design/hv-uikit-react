@@ -1,3 +1,4 @@
+import { ActiveUsers } from "./cards/ActiveUsers";
 import { ApiUsage } from "./cards/ApiUsage";
 import { DataConfig } from "./cards/DataConfig";
 import { DataInsights } from "./cards/DataInsights";
@@ -17,6 +18,7 @@ export const CardsSection = () => {
       <div className="space-y-4">
         <FinancialPerformance />
         <StorageOverview />
+        <ActiveUsers />
         <DataProcessing />
       </div>
       <div className="space-y-4">
