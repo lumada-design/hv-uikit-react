@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { useRouter } from "next/router";
 import {
   HvOption,
   HvSelect,
@@ -10,7 +11,10 @@ import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
 
 const themes = ["pentahoPlus", "ds5", "ds3"];
 
+const allowedPaths = ["/components", "/charts", "/examples"];
+
 export const ThemeSwitcher = () => {
+  const router = useRouter();
   const { docsTheme, setDocsTheme } = useDocsThemeContext();
 
   const handleThemeChange = useCallback(
@@ -20,6 +24,10 @@ export const ThemeSwitcher = () => {
     },
     [setDocsTheme],
   );
+
+  if (!allowedPaths.some((path) => router.pathname.startsWith(path))) {
+    return null;
+  }
 
   return (
     <div className="flex items-center gap-0">
