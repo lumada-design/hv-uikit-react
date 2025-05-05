@@ -6,13 +6,11 @@ import { colors } from "../tokens/colors";
 const ds3 = makeTheme((theme) => ({
   name: "ds3",
   colors: makeColors({
-    backgroundColor: ["#F0F0F0", colors.dark.atmo2],
-    containerBackgroundHover: [colors.light.atmo3, colors.dark.atmo3],
+    bgPage: ["#F0F0F0", colors.dark.atmo2],
     bgHover: [colors.light.atmo3, colors.dark.atmo3],
-    primary_80: ["#477DBD", ""],
-    atmo2: ["#F0F0F0", ""],
+    primaryStrong: ["#477DBD", ""],
     positive: ["", "#63A621"],
-    neutral: ["#4D9284", "#72CCCB"],
+    info: ["#4D9284", "#72CCCB"],
     catastrophic: ["#C51162", "#E26BD2"],
     cat1: "#6EAFFF",
     cat2: "#FFAB5C",
