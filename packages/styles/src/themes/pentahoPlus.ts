@@ -1171,6 +1171,20 @@ const pentahoPlus = makeTheme((theme) => ({
             borderColor: theme.colors.textDimmed,
           },
         },
+        baseContainer: {
+          "&[data-popper-placement=bottom-end] .HvBaseDropdown-panel": {
+            borderRadius: theme.radii.large,
+          },
+          "&[data-popper-placement=bottom-start] .HvBaseDropdown-panel": {
+            borderRadius: theme.radii.large,
+          },
+          "&[data-popper-placement=top-start] .HvBaseDropdown-panel": {
+            borderRadius: theme.radii.large,
+          },
+          "&[data-popper-placement=top-end] .HvBaseDropdown-panel": {
+            borderRadius: theme.radii.large,
+          },
+        },
       },
     },
     HvNumberInput: {
