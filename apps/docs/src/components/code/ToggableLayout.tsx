@@ -23,7 +23,7 @@ type ToggableLayoutProps = {
 
 export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsThemeContext();
 
   const [tmpCode, setTmpCode] = useState({ ...code });
   const [activeTab, setActiveTab] = useState(0);
@@ -69,8 +69,8 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
       {showPreview ? (
         <HvProvider
           themes={[pentahoPlus, ds5, ds3]}
-          theme={docsTheme.theme}
-          colorMode={docsTheme.mode}
+          theme={docsTheme}
+          colorMode={docsMode}
           cssTheme="scoped"
         >
           <div

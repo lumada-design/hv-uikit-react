@@ -3,18 +3,17 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
-
-interface DocsTheme {
-  theme: string;
-  mode: string;
-}
+import { useTheme } from "next-themes";
 
 interface DocsThemeContextValue {
-  docsTheme: DocsTheme;
-  setDocsTheme?: Dispatch<SetStateAction<DocsTheme>>;
+  docsTheme: string;
+  docsMode: string;
+  setDocsTheme?: Dispatch<SetStateAction<string>>;
+  setDocsMode?: Dispatch<SetStateAction<string>>;
 }
 
 const DEFAULT_THEME = {
@@ -23,7 +22,8 @@ const DEFAULT_THEME = {
 };
 
 const DocsThemeContext = createContext<DocsThemeContextValue>({
-  docsTheme: DEFAULT_THEME,
+  docsTheme: DEFAULT_THEME.theme,
+  docsMode: DEFAULT_THEME.mode,
 });
 
 interface DocsThemeProviderProps {
@@ -31,14 +31,32 @@ interface DocsThemeProviderProps {
 }
 
 export const DocsThemeProvider = ({ children }: DocsThemeProviderProps) => {
-  const [docsTheme, setDocsTheme] = useState<DocsTheme>(DEFAULT_THEME);
+  const [docsTheme, setDocsTheme] = useState<string>("");
+  const [docsMode, setDocsMode] = useState<string>("");
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setDocsTheme(
+      localStorage.getItem("uikit-docs-theme") ?? DEFAULT_THEME.theme,
+    );
+    setDocsMode(localStorage.getItem("uikit-docs-mode") ?? DEFAULT_THEME.mode);
+  }, []);
+
+  useEffect(() => {
+    if (resolvedTheme) {
+      localStorage.setItem("uikit-docs-mode", resolvedTheme);
+      setDocsMode(resolvedTheme === "dark" ? "wicked" : "dawn");
+    }
+  }, [resolvedTheme]);
 
   const value = useMemo(
     () => ({
       docsTheme,
+      docsMode,
       setDocsTheme,
+      setDocsMode,
     }),
-    [docsTheme],
+    [docsTheme, docsMode],
   );
 
   return (

@@ -29,7 +29,7 @@ type PopupLayoutProps = {
  */
 export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsThemeContext();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
@@ -54,8 +54,8 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   return (
     <HvProvider
       themes={[pentahoPlus, ds5, ds3]}
-      theme={docsTheme.theme}
-      colorMode={docsTheme.mode}
+      theme={docsTheme}
+      colorMode={docsMode}
       cssTheme="scoped"
       rootElementId={id}
     >

@@ -23,7 +23,7 @@ type ExpandableLayoutProps = {
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsThemeContext();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const initialCode = Object.values(code)[0];

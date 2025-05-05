@@ -1,48 +1,44 @@
 import { useCallback } from "react";
-import { HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
+import {
+  HvOption,
+  HvSelect,
+  HvTooltip,
+} from "@hitachivantara/uikit-react-core";
+import { Info } from "@hitachivantara/uikit-react-icons";
 
 import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
 
-const themesModes = [
-  "pentahoPlus-dawn",
-  "pentahoPlus-wicked",
-  "ds5-dawn",
-  "ds5-wicked",
-  "ds3-dawn",
-  "ds3-wicked",
-];
+const themes = ["pentahoPlus", "ds5", "ds3"];
 
 export const ThemeSwitcher = () => {
   const { docsTheme, setDocsTheme } = useDocsThemeContext();
 
   const handleThemeChange = useCallback(
     (value: any) => {
-      const theme = value.split("-")[0];
-      const mode = value.split("-")[1];
-
-      if (!theme || !mode) return;
-
-      setDocsTheme?.({ theme, mode });
+      localStorage.setItem("uikit-docs-theme", value);
+      setDocsTheme?.(value);
     },
     [setDocsTheme],
   );
 
-  console.log(docsTheme);
-
   return (
-    <HvSelect
-      onChange={(e, value) => handleThemeChange(value)}
-      value={`${docsTheme.theme}-${docsTheme.mode}`}
-      className="w-180px"
-    >
-      {themesModes.map((t) => {
-        console.log(t, t === `${docsTheme.theme}-${docsTheme.mode}`);
-        return (
-          <HvOption value={t} key={t} label={t}>
-            {t}
-          </HvOption>
-        );
-      })}
-    </HvSelect>
+    <div className="flex items-center gap-0">
+      <HvSelect
+        onChange={(e, value) => handleThemeChange(value)}
+        value={docsTheme}
+        className="w-140px"
+      >
+        {themes.map((t) => {
+          return (
+            <HvOption value={t} key={t} label={t}>
+              {t}
+            </HvOption>
+          );
+        })}
+      </HvSelect>
+      <HvTooltip title="Change the theme on the samples">
+        <Info />
+      </HvTooltip>
+    </div>
   );
 };

@@ -1,7 +1,14 @@
 import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
+import {
+  ds3,
+  ds5,
+  HvProvider,
+  pentahoPlus,
+} from "@hitachivantara/uikit-react-core";
 
+import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
 
@@ -64,6 +71,7 @@ export const Playground = ({
   decorator,
 }: PlaygroundProps) => {
   const editorTheme = useEditorTheme();
+  const { docsTheme, docsMode } = useDocsThemeContext();
 
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(
@@ -105,8 +113,16 @@ export const Playground = ({
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
+
         <div className={"grid place-items-center p-sm"}>
-          {decorator ? decorator(componentElement) : componentElement}
+          <HvProvider
+            themes={[pentahoPlus, ds5, ds3]}
+            theme={docsTheme}
+            colorMode={docsMode}
+            cssTheme="scoped"
+          >
+            {decorator ? decorator(componentElement) : componentElement}
+          </HvProvider>
         </div>
 
         {/* Controls Area */}
