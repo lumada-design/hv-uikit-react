@@ -6,7 +6,7 @@ export default {
       layout: "full",
     },
   },
-  documentation: {
+  docs: {
     type: "page",
     title: "Docs",
   },
