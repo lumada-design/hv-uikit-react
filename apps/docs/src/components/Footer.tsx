@@ -4,9 +4,9 @@ const footerLinks = [
   {
     title: "Project",
     links: [
-      { label: "Get Started", href: "/documentation/get-started" },
-      { label: "Contribute", href: "/documentation/contribute/" },
-      { label: "Changelog", href: "/documentation/changelog/" },
+      { label: "Get Started", href: "/docs/get-started" },
+      { label: "Contribute", href: "/docs/contribute/" },
+      { label: "Changelog", href: "/docs/changelog/" },
       {
         label: "Releases",
         href: "https://github.com/lumada-design/hv-uikit-react/releases",
@@ -16,7 +16,7 @@ const footerLinks = [
   {
     title: "Documentation",
     links: [
-      { label: "Docs", href: "/documentation/" },
+      { label: "Docs", href: "/docs/" },
       { label: "Components", href: "/components" },
       { label: "Charts", href: "/charts" },
       { label: "Examples", href: "/examples" },

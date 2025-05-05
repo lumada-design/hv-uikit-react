@@ -69,7 +69,7 @@ export const HeroSection = () => (
     </h3>
     <HvButton
       component={Link}
-      href="/documentation/introduction"
+      href="/docs/introduction"
       size="lg"
       className="mt-md max-sm:w-full mr-sm"
     >
