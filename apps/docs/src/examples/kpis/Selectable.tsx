@@ -58,14 +58,14 @@ function Kpi({
       <div className="flex items-center gap-xxs">
         <HvIconContainer
           size="xs"
-          className="p-4px rounded-round bg-bgContainerSecondary border-borderSubtle"
+          className="p-4px rounded-round bg-bgContainerSecondary border border-borderSubtle"
         >
           <div className="i-ph-copy-simple" />
         </HvIconContainer>
         <span id={titleId}>{title}</span>
       </div>
       <div className="flex justify-between items-center">
-        <div className="flex items-baseline">
+        <div className="flex items-baseline gap-2px">
           <HvTypography variant="title3">{value}</HvTypography>
           <HvTypography variant="caption2" className="text-textSubtle">
             {unit}
