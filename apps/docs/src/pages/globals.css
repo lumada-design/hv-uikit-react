@@ -1,23 +1,7 @@
 @unocss all;
 
 .dark {
-  background-color: #151c26;
-}
-
-article > main h2 {
-  @apply !border-none;
-}
-
-article > main h3._mt-8 {
-  @apply mt-lg;
-}
-
-article > main h3._mt-8 + p {
-  margin-top: 8px !important;
-}
-
-article {
-  font-size: 1rem;
+  @apply bg-[#151c26];
 }
 
 body,
@@ -25,6 +9,31 @@ body,
 .nextra-sidebar-footer,
 .nextra-toc-footer {
   @apply bg-transparent;
+}
+
+pre {
+  @apply mt-4 mb-4;
+}
+
+article {
+  font-size: 1rem;
+}
+
+.nextra-content h2 {
+  @apply !border-none;
+}
+
+.nextra-content h3 {
+  font-size: 1.4rem;
+}
+
+.nextra-content h3 + p {
+  @apply !mt-2;
+}
+
+.nextra-content main ul,
+.nextra-content main ol {
+  @apply !my-4;
 }
 
 .nextra-sidebar-container .active a {
@@ -40,20 +49,12 @@ body,
   @apply max-w-1408px;
 }
 
-.nextra-nav-container nav {
-  @apply px-md;
-}
-
 .nextra-nav-container a:last-of-type svg {
   @apply w-20px;
 }
 
 .nextra-nav-container button div svg {
   @apply size-16px;
-}
-
-.nextra-content {
-  justify-content: unset;
 }
 
 .nextra-toc {
@@ -77,8 +78,12 @@ body,
   display: none;
 }
 
-.nextra-breadcrumb {
-  @apply mb-sm;
+.nextra-code {
+  @apply !my-0;
+}
+
+.nextra-code .nextra-focus {
+  @apply bg-slate-50;
 }
 
 @media only screen and (max-width: 768px) {
@@ -98,5 +103,5 @@ body,
 }
 
 [aria-current="false"].nextra-focus {
-  @apply text-text;
+  @apply text-textSubtle;
 }
