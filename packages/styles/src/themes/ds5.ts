@@ -1,24 +1,10 @@
 import type { CSSProperties } from "react";
 
-import { makeTheme } from "../makeTheme";
-import { colors } from "../tokens/colors";
+import { makeColors, makeTheme } from "../makeTheme";
 
 const ds5 = makeTheme((theme) => ({
   name: "ds5",
-  colors: {
-    modes: {
-      dawn: {
-        type: "light",
-        ...colors.common,
-        ...colors.light,
-      },
-      wicked: {
-        type: "dark",
-        ...colors.common,
-        ...colors.dark,
-      },
-    },
-  },
+  colors: makeColors({}),
   typography: {
     display: {
       color: theme.colors.secondary,
