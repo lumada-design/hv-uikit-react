@@ -7,7 +7,7 @@ export const ColorPalette = () => {
     <div className="space-y-10">
       {Object.entries(palette).map(([colorName, shades]) => (
         <section key={colorName}>
-          <HvTypography className="font-semibold">
+          <HvTypography className="font-semibold mb-2">
             {colorName.charAt(0).toUpperCase() + colorName.slice(1)}
           </HvTypography>
 

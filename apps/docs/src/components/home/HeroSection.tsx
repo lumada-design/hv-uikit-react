@@ -8,11 +8,11 @@ const SlideText = () => {
   const slideKeyframes = useMemo(
     () => `
     @keyframes slide {
-      0% { transform: translateY(100%); opacity: 0.1; }
+      0% { transform: translateY(110%); opacity: 0.1; }
       15% { transform: translateY(0); opacity: 1; }
       30% { transform: translateY(0); opacity: 1; }
-      45% { transform: translateY(-100%); opacity: 1; }
-      100% { transform: translateY(-100%); opacity: 0.1; }
+      45% { transform: translateY(-110%); opacity: 1; }
+      100% { transform: translateY(-110%); opacity: 0.1; }
     }
   `,
     [],
@@ -31,7 +31,7 @@ const SlideText = () => {
               animation:
                 "slide 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite",
               animationDelay: `${index * 1.66}s`,
-              transform: "translateY(-100%)",
+              transform: "translateY(-110%)",
             }}
           >
             {text}
