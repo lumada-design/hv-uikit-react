@@ -119,7 +119,7 @@ export default function Demo() {
         justifyContent: "center",
       }}
     >
-      <HvBaseChart width={400} height={350} option={optionGauge} />
+      <HvBaseChart width={400} height={300} option={optionGauge} />
     </div>
   );
 }
