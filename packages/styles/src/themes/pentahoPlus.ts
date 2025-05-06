@@ -94,13 +94,13 @@ const pentahoPlus = makeTheme((theme) => ({
     textDark: slate[700],
 
     border: [slate[300], slate[700]],
-    borderSubtle: [slate[200], slate[950]],
+    borderSubtle: [slate[200], slate[800]],
     borderStrong: [slate[500], slate[400]],
     borderDisabled: [neutral[400], neutral[700]],
 
     bgPage: [slate[100], slate[900]],
-    bgContainer: [slate[50], slate[800]],
-    bgPageSecondary: [slate[200], slate[950]],
+    bgContainer: [slate[50], slate[950]],
+    bgPageSecondary: [slate[200], slate[800]],
     bgContainerSecondary: [slate[100], slate[900]],
     bgHover: theme.alpha(blue[600], 0.08),
     bgDisabled: [neutral[200], neutral[900]],
