@@ -1,16 +1,16 @@
 import { Callout } from "nextra/components";
 
-# Component styling
+# Styling
 
-Although UI Kit components are pre-styled with with the Design System specifications, sometimes there's a need to customize them in order to meet your specific needs.
+Although **UI Kit** components are pre-styled with with the Design System specifications, sometimes there's a need to customize them in order to meet your specific needs.
 
 ## Styling properties
 
-The UI Kit components can be customized the following ways:
+The **UI Kit** components can be customized the following ways:
 
 ### `style` and `className`
 
-UI Kit components can be styled using the React `style` and `className` props, as these props are passed down to the root HTML element.
+**UI Kit** components can be styled using the React `style` and `className` props, as these props are passed down to the root HTML element.
 The `style` prop accepts a JS object with CSS properties, while the `className` prop accepts a string with CSS classes,
 which allows for the use of various [styling strategies](#styling-strategies).
 
@@ -23,7 +23,7 @@ which allows for the use of various [styling strategies](#styling-strategies).
 
 ### `classes` object
 
-As many UI Kit components are built using multiple HTML elements and internal state, the `classes` prop allows for customization of these _sub-components_ and _state variants_.
+As many **UI Kit** components are built using multiple HTML elements and internal state, the `classes` prop allows for customization of these _sub-components_ and _state variants_.
 The `classes.root` (along with `className` and `style`) is passed to the main element of the component, and the conditional classes are applied to the same element.
 
 ```tsx
@@ -56,7 +56,7 @@ For other styling strategies and tools, please refer to their respective documen
 
 ### Emotion
 
-The UI Kit is built using [Emotion](https://emotion.sh), a CSS-in-JS library that allows for the use of dynamic styles and theming.
+The **UI Kit** is built using [Emotion](https://emotion.sh), a CSS-in-JS library that allows for the use of dynamic styles and theming.
 
 Emotion supports creating complex, reusable classes using the `css` prop, or components via the `styled` function.
 It is especially useful when dealing with complex styles or overrides, or when the components need additional overrides.
@@ -111,10 +111,10 @@ const CustomButton = styled(HvButton)({
 
 _Utility classes_, popularized by frameworks like [TailwindCSS](https://tailwindcss.com), offer a streamlined and efficient way to style components, allowing to colocate elements and styles while allowing access to theme-based values.
 
-The UI Kit team recommends utility classes due to their **built-in theme support**, **performance** (no runtime or external dependencies),
+The **UI Kit** team recommends utility classes due to their **built-in theme support**, **performance** (no runtime or external dependencies),
 **portability** (to any build tool or framework), and **colocation** (easier maintenance).
 
-UI Kit offers a utility classes plugin via a [UnoCSS](https://unocss.dev) plugin, `@hitachivantara/uikit-uno-preset`.
+**UI Kit** offers a utility classes plugin via a [UnoCSS](https://unocss.dev) plugin, `@hitachivantara/uikit-uno-preset`.
 
 #### Setup
 
@@ -125,7 +125,7 @@ UI Kit offers a utility classes plugin via a [UnoCSS](https://unocss.dev) plugin
   setup guide.
 </Callout>
 
-1. Install UnoCSS and the UI Kit UnoCSS plugin packages
+1. Install UnoCSS and the **UI Kit** UnoCSS plugin packages
 
 ```sh
 npm i -D unocss @hitachivantara/uikit-uno-preset
@@ -239,7 +239,7 @@ The utility classes integrate with the Design System theme for colors and sizing
 
 ##### Difference from Emotion
 
-To illustrate the code difference from Emotion to UnoCSS, here's a typical scenario of styling a container and UI Kit component:
+To illustrate the code difference from Emotion to UnoCSS, here's a typical scenario of styling a container and **UI Kit** component:
 
 ```diff
 -import { css } from "@emotion/css";
