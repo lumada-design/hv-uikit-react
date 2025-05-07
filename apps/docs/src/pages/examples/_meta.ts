@@ -29,4 +29,10 @@ export default {
       layout: "full",
     },
   },
+  dnd: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };
