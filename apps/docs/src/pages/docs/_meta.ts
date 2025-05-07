@@ -5,6 +5,7 @@ export default {
   },
   introduction: "Introduction",
   "get-started": "Get Started",
+  "project-status": "Project Status",
   "-- Community": {
     type: "separator",
     title: "Community",
