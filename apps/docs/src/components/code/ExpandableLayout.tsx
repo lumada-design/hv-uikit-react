@@ -3,7 +3,7 @@ import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
-import { DocsProvider } from "./DocsProvider";
+import { DocsContainer } from "./DocsProvider";
 import { ExpandableControls } from "./ExpandableControls";
 
 type ExpandableLayoutProps = {
@@ -32,7 +32,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   });
 
   return (
-    <section className="relative mt-md rounded-round [&>*]:border-border">
+    <section className="relative mt-md rounded-round">
       {/* Compact Controls */}
       <ExpandableControls
         onToggle={() => setIsExpanded((prev) => !prev)}
@@ -42,20 +42,14 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       />
 
       {/* Preview Section */}
-      <DocsProvider>
-        <div
-          className={clsx(
-            "p-md py-[40px] bg-bgPage border rounded-inherit",
-            isExpanded && "rounded-b-0",
-          )}
-        >
-          {liveError ? (
-            <div className="text-negative">{liveError}</div>
-          ) : (
-            <div>{element}</div>
-          )}
-        </div>
-      </DocsProvider>
+      <DocsContainer
+        className={clsx(
+          "px-md py-40px bg-bgPage border border-border rounded-round",
+          isExpanded && "rounded-b-0",
+        )}
+        error={liveError}
+        element={element}
+      />
 
       {/* Code Editor Section */}
       <div
