@@ -1,4 +1,4 @@
-import { SealWarning } from "@phosphor-icons/react";
+import { Info } from "@phosphor-icons/react";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { alignmentData } from "./alignmentData";
@@ -9,13 +9,12 @@ type AlignmentBadgeProps = {
 
 export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
   const entry = Object.entries(alignmentData).find(
-    ([key]) => key.toLowerCase() === component.toLowerCase(),
+    ([key]) => key.replace(/ /g, "").toLowerCase() === component.toLowerCase(),
   );
 
   if (!entry) return null;
 
   const [, values] = entry;
-  console.log("values: ", values);
 
   const items = [
     ["Pentaho+", values.pentahoPlus || "—"],
@@ -25,6 +24,7 @@ export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
 
   return (
     <HvIconButton
+      color="primary"
       title={
         <div className="flex flex-col gap-xs w-[100px]">
           <HvTypography variant="label">DS Alignment</HvTypography>
@@ -38,7 +38,7 @@ export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
         </div>
       }
     >
-      <SealWarning size={18} />
+      <Info size={18} />
     </HvIconButton>
   );
 };

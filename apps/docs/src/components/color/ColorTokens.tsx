@@ -1,7 +1,7 @@
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 
-import { descriptions } from "./descriptions/colorDescriptions";
-import { colorTokensSpec, groupColorTokensByCategory } from "./utils/color";
+import { descriptions } from "./descriptions";
+import { colorTokensSpec, groupColorTokensByCategory } from "./utils";
 
 export const ColorTokens = () => {
   const { selectedMode, activeTheme } = useTheme();
