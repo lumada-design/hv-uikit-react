@@ -1,10 +1,11 @@
 import ReactMarkdown from "react-markdown";
-import { ArrowUpRight } from "@phosphor-icons/react/ArrowUpRight";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import { useData } from "nextra/hooks";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { GitHubLogo } from "../logo/gh";
 import { NpmLogo } from "../logo/npm";
+import { AlignmentBadge } from "./AlignmentBadge";
 
 /**
  * The `Description` component displays metadata information
@@ -16,7 +17,10 @@ export const Description = () => {
 
   return (
     <>
-      <HvTypography variant="title1">{meta.component}</HvTypography>
+      <div className="flex flex-row gap-xs items-center">
+        <HvTypography variant="title1">{meta.component}</HvTypography>
+        <AlignmentBadge component={meta.component} />
+      </div>
       <ReactMarkdown className="markdown">
         {meta.docgen?.description}
       </ReactMarkdown>
@@ -40,6 +44,7 @@ export const Description = () => {
           </HvTypography>
           <ArrowUpRight />
         </div>
+        <div className="flex flex-row gap-xs items-center"></div>
       </div>
     </>
   );
