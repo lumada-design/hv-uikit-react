@@ -1,47 +1,49 @@
 # Releases and Versioning
 
-We are commited to providing a stable and reliable product that is easy to use and upgrade, ensuring that future changes are always introduced predictably.
+We are committed to deliver a stable, reliable, and easy-to-adopt product. All updates are introduced through a predictable and transparent release process to ensure consistency and confidence for our users.
 
-Here you can find the practices that are followed to provide you a stable and reliable product to use.
+## Release Process
 
-## Releases
+From day one, we’ve implemented a robust CI/CD pipeline to ensure that every change is thoroughly validated and tested before being published.
 
-Since day one we have a CI/ CD process in place to ensure that every change is validated and tested before being released to the public.
+- **Weekly Releases**  
+  All active branches are released weekly. Code merged during the week is included in the next release, provided it passes all validations in our test suite.
 
-We trigger a release build of all our active branches every week. This means that all code merged during that week will be validated against our tests and a new release will be made public. If needed we can also trigger a release build manually for critical fixes.
+- **Manual Releases**  
+  Critical fixes may trigger manual releases outside the weekly cycle when necessary.
 
-When working on a major version, preview builds (alpha, beta or rc) should be available whenever we feel we have a good subset of things for teams to try out.
+- **Preview Builds**  
+  During major version development, preview builds such as `alpha`, `beta`, or `rc` (release candidate) are published when a meaningful subset of new features is ready for early testing and feedback.
 
-Every release changelogs will be available in the [github releases section](https://github.com/lumada-design/hv-uikit-react/releases) and our documentation updated.
+## Changelogs
+
+Release changelogs are published in the [GitHub Releases](https://github.com/lumada-design/hv-uikit-react/releases) section, and relevant updates are reflected in the documentation.
 
 ## Versioning
 
-NEXT UI Kit follows [Semantic Versioning Guidelines](https://semver.org/). Version numbers have three parts: major.minor.patch. The version number is incremented based on the level of change included in the release.
+**UI Kit** follows [Semantic Versioning](https://semver.org/), using the format `MAJOR.MINOR.PATCH`:
 
-- **Major releases** contain significant new features. These releases include breaking changes. When updating to a new major release, you may need to refactor code, run additional tests, and learn new APIs.
-- **Minor releases** contain important new features. Minor releases are fully backward-compatible, you can modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
-- **Patch releases** are low risk, contain bug fixes and small new features.
+- **Major** releases introduce significant new functionality and may include breaking changes. Upgrading may require code modifications, additional testing, and familiarization with new APIs.
+- **Minor** releases introduce new features in a backward-compatible manner. You can adopt new capabilities without altering existing code.
+- **Patch** releases focus on bug fixes and minor improvements, and are safe to apply with minimal risk.
 
-## Breaking changes exceptions
+## Breaking Change Exceptions
 
-We consider "breaking changes" to be modifications to APIS that will require apps to change their codebase.
+We define a “breaking change” as any modification to public APIs that requires users to change their implementation. However, the following cases are not considered breaking:
 
-The following cases are exceptions to this rule:
+- Changes to **unstable APIs**, marked as experimental or prefixed with `unstable_`.
+- Changes to **private APIs**, including non-exported or undocumented modules.
+- **Minor CSS adjustments**, particularly when aligning with updated design system specifications.
+- **Accessibility improvements** that adjust semantics without affecting visual presentation or user-facing functionality (although they may impact tests).
+- **TypeScript declaration corrections** when typings were previously inaccurate or misaligned with runtime behavior.
+- **Reverts of recent breaking changes**, restoring prior behavior.
 
-- **Changes to _unstable_ APIs** documented as WIP/experimental, or prefixed with `unstable_`.
-- **Changes to _private_ APIs** that are not exported and/or are not documented.
-- **CSS changes** that are minor, or to align with the latest design system specification.
-- **Accessibility fixes** that do not alter the functionality or appearance of components but modify DOM semantics and may impact tests.
-- **Bugs in typings**, whenever the TS declarations are missaligned with the real values.
-- **Reverts in breaking changes** that were recently introduced.
+## Long-Term Support (LTS)
 
-## Long-term support (LTS)
+**UI Kit** offers maintenance—including security updates, bug fixes, and compatibility adjustments—for the **two most recent major** versions. LTS support is available upon request via the [GitHub Issues](https://github.com/lumada-design/hv-uikit-react/issues) page.
 
-NEXT UI Kit provides support for security updates, bug fixes or external regressions for the two previous major versions.
-This support is made upon request via the [GitHub Issues](https://github.com/lumada-design/hv-uikit-react/issues) page.
+## Deprecation Policy
 
-## Deprecation policy
-
-- Deprecated features are announced in the changelog, and when possible, with warnings at runtime.
-- When a deprecation is announced, recommended update path is provided.
-- Existing use of a stable API during the deprecation period is supported, so your code will keep working during that period.
+- Deprecations are clearly announced in changelogs and, when feasible, surfaced via runtime warnings.
+- Each deprecation includes guidance on how to migrate to the recommended alternative.
+- Stable APIs marked as deprecated will continue to function during the deprecation window to ensure a smooth migration experience.

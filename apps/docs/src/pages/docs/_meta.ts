@@ -5,23 +5,16 @@ export default {
   },
   introduction: "Introduction",
   "get-started": "Get Started",
-  changelog: "Changelog",
   "-- Community": {
     type: "separator",
     title: "Community",
   },
-  releases: "Releases",
   contributing: "Contributing",
-  "component-guidelines": "Component Guidelines",
+  guidelines: "Guidelines",
+  releases: "Releases",
   "-- Foundation": {
     type: "separator",
     title: "Foundation",
-  },
-  theme: "Theme",
-  icons: "Icons",
-  "icon-library": {
-    title: "Icon Library",
-    theme: { toc: false },
   },
   "color-tokens": {
     title: "Color Tokens",
@@ -34,6 +27,11 @@ export default {
     theme: {
       toc: false,
     },
+  },
+  icons: "Icons",
+  "icon-library": {
+    title: "Icon Library",
+    theme: { toc: false },
   },
   "-- Guides": {
     type: "separator",

@@ -1,39 +1,49 @@
+import { Callout } from "nextra/components";
+
 # Accessibility
 
-We strive to ensure our component library adheres to accessibility best practices by aligning development and testing efforts
-with [WCAG (Web Content Accessibility Guidelines)](https://www.w3.org/WAI/standards-guidelines/wcag/) and
-[Section 508](https://www.section508.gov/) standards.
+We are committed to building a component library that adheres to accessibility best practices. Our components are developed and tested to align with [WCAG (Web Content Accessibility Guidelines)](https://www.w3.org/WAI/standards-guidelines/wcag/) and [Section 508](https://www.section508.gov/) standards.
 
-Many of our components are custom-built, which means we pay special attention to keyboard support, screen reader compatibility,
-and ARIA attributes. However, we recognize that accessibility is an ongoing process. If you notice any areas where a component's
-accessibility could be improved, we welcome your feedback — please don't hesitate to reach out.
+Because many **UI Kit** components are custom-built, we pay particular attention to:
 
-While we aim to deliver accessible components, the responsibility for ensuring overall accessibility ultimately lies with the
-applications that use them. Proper configuration, context-appropriate usage, and thoughtful integration are key to creating
-accessible user experiences.
+- Keyboard navigation support
+- Screen reader compatibility
+- Proper ARIA attributes and roles
+
+Accessibility is an ongoing effort. If you encounter a component that could be improved, we encourage you to share your feedback — we’re always looking to improve.
+
+<Callout type="warning">
+  While we strive to provide accessible components out of the box, developers
+  are responsible for ensuring accessibility within their applications by using
+  components correctly and in context.
+</Callout>
 
 ## Keyboard Navigation
 
-Most of our components support keyboard navigation, allowing users to interact with them using the keyboard. This includes
-navigating through items, selecting options, and performing actions without relying solely on a mouse or touch input.
+Most **UI Kit** components support keyboard interaction to ensure usability without relying on a mouse or touch interface.
 
-Here are some examples of standard keyboard interactions you can expect from our components:
-
-| Key               | Action                                                                         |
-| ----------------- | ------------------------------------------------------------------------------ |
-| Buttons           | `Enter` or `Space` to activate                                                 |
-| Modals            | `Esc` to close                                                                 |
-| Tabs              | `Arrow keys` to navigate between tabs, `Tab` to move focus                     |
-| Dropdowns         | `Enter` or `Space` to select, `Arrow keys` to navigate options, `Esc` to close |
-| Checkboxs, Radios | `Space` to toggle selection                                                    |
-| Groups            | `Arrow keys` to navigate between items, `Tab` to move focus                    |
+| Key                   | Action                                                                         |
+| --------------------- | ------------------------------------------------------------------------------ |
+| **Buttons**           | `Enter` or `Space` to activate                                                 |
+| **Modals**            | `Esc` to close                                                                 |
+| **Tabs**              | `Arrow keys` to navigate between tabs, `Tab` to move focus                     |
+| **Dropdowns**         | `Enter` or `Space` to select, `Arrow keys` to navigate options, `Esc` to close |
+| **Checkboxes/Radios** | `Space` to toggle selection                                                    |
+| **Groups**            | `Arrow keys` to move between items, `Tab` to move focus                        |
 
 ## ARIA and Role Customization
 
-Most components expose props to enhance or override accessibility settings. You can:
+Many components provide props for enhancing or overriding default accessibility behavior:
 
-- Pass aria-label, aria-labelledby, or aria-describedby
-- Override the default role if needed
-- Control aria-expanded, aria-checked, and other dynamic attributes through props
+- `aria-label`, `aria-labelledby`, `aria-describedby`
+- `role` override (e.g., `role="dialog"` for modals)
+- Dynamic ARIA attributes such as:
+  - `aria-expanded`
+  - `aria-checked`
+  - `aria-selected`
+  - `aria-hidden`
 
-We recommend referring to [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/) when customizing accessibility behavior.
+These are passed directly to the relevant HTML elements when supported.
+
+For advanced accessibility behavior, we recommend referencing the [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/).  
+If you'd like to report an accessibility issue, please open an issue on our [GitHub repo](https://github.com/lumada-design/hv-uikit-react/issues).

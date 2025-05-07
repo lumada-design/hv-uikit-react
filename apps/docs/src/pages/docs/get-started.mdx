@@ -3,9 +3,7 @@ import { Card, Cards, Steps, Tabs } from "nextra/components";
 
 # Get Started
 
-## Play Online
-
-If you just want to play around with **UI Kit** without setting up a project, you can use one of our online sandboxes:
+If you just want to try out **UI Kit** without setting up a local project, launch one of our live examples:
 
 <Cards>
   <Cards.Card
@@ -24,30 +22,31 @@ If you just want to play around with **UI Kit** without setting up a project, yo
 
 ## Automatic Installation
 
-Using the [CLI]() is the easiest way to start a **UI Kit** project. You can initialize your project directly via the CLI:
+The quickest way to start a **UI Kit** project is with our CLI:
 
 ```sh
 npx @hitachivantara/hv-uikit-cli@latest create
 ```
 
+This will scaffold a preconfigured project with all dependencies and setup included.
+
 ## Manual Installation
 
-If you prefer not to use the CLI, follow these steps to manually set up **UI Kit** in your project:
+Prefer to set things up yourself? Follow these steps:
 
 <Steps>
 
-### Install packages
+### Install Packages
 
-[`Emotion`](https://emotion.sh/docs/introduction) and [`MUI`](https://mui.com/) are peer dependencies and must be included in your project.  
-To use **UI Kit** in your project, run the following command:
+[`@emotion/react`](https://emotion.sh/docs/introduction) and [`@mui/material`](https://mui.com/) are required peer dependencies.
 
 ```sh npm2yarn
 npm i @hitachivantara/uikit-react-core @emotion/react @emotion/styled @mui/material
 ```
 
-### Provider Setup
+### Set Up the Provider
 
-It is essential to add the **UI Kit** Provider at the root of your application.
+Wrap your app with `HvProvider` to enable theming and global configuration:
 
 ```tsx
 // 1. import `Provider` component
@@ -63,9 +62,9 @@ function App() {
 }
 ```
 
-### Use the components
+### Use UI Kit Components
 
-After setting up the provider, you can start using the components provided.
+Now you can start building with UI Kit components:
 
 ```tsx
 import { HvTypography } from "@hitachivantara/uikit-react-core";
