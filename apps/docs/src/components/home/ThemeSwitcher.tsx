@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import {
   HvOption,
@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
+import { useDocsTheme } from "../../hooks/useDocsTheme";
 
 const themes = ["pentahoPlus", "ds5", "ds3"];
 
@@ -15,15 +15,11 @@ const allowedPaths = ["/components", "/charts", "/examples"];
 
 export const ThemeSwitcher = () => {
   const router = useRouter();
-  const { docsTheme, setDocsTheme } = useDocsThemeContext();
+  const { docsTheme, setDocsTheme } = useDocsTheme();
 
-  const handleThemeChange = useCallback(
-    (value: any) => {
-      localStorage.setItem("uikit-docs-theme", value);
-      setDocsTheme?.(value);
-    },
-    [setDocsTheme],
-  );
+  const handleThemeChange = useCallback((value: any) => {
+    setDocsTheme(value);
+  }, []);
 
   if (!allowedPaths.some((path) => router.pathname.startsWith(path))) {
     return null;

@@ -11,7 +11,7 @@ import {
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
+import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { ToggableControls } from "./ToggableControls";
 
@@ -23,7 +23,7 @@ type ToggableLayoutProps = {
 
 export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsTheme();
 
   const [tmpCode, setTmpCode] = useState({ ...code });
   const [activeTab, setActiveTab] = useState(0);

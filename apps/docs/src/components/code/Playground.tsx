@@ -8,7 +8,7 @@ import {
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
+import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
 
@@ -71,7 +71,7 @@ export const Playground = ({
   decorator,
 }: PlaygroundProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsTheme();
 
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(

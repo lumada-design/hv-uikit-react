@@ -8,7 +8,7 @@ import {
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
+import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { ExpandableControls } from "./ExpandableControls";
 
@@ -23,7 +23,7 @@ type ExpandableLayoutProps = {
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const initialCode = Object.values(code)[0];

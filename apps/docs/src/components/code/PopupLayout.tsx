@@ -14,7 +14,7 @@ import {
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
 
-import { useDocsThemeContext } from "../../contexts/DocsThemeContext";
+import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
 
 type PopupLayoutProps = {
@@ -29,7 +29,7 @@ type PopupLayoutProps = {
  */
 export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsThemeContext();
+  const { docsTheme, docsMode } = useDocsTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
