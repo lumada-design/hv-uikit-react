@@ -128,10 +128,10 @@ export const Playground = ({
       </div>
 
       {/* Code editor */}
-      <div className="max-h-72 overflow-auto rounded-b-round border border-t-0 max-h-250px">
+      <div className="max-h-100 overflow-auto rounded-b-round border border-t-0 max-h-250px">
         <CodeEditor
           readOnly
-          className="font-mono text-sm leading-sm"
+          className="font-mono text-[.85em]"
           value={code}
           theme={editorTheme}
         />
