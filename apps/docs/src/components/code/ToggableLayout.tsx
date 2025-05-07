@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
-import {
-  ds3,
-  ds5,
-  HvProvider,
-  HvTab,
-  HvTabs,
-  HvTypography,
-  pentahoPlus,
-} from "@hitachivantara/uikit-react-core";
+import { HvTab, HvTabs, HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
+import { DocsProvider } from "./DocsProvider";
 import { ToggableControls } from "./ToggableControls";
 
 type ToggableLayoutProps = {
@@ -23,7 +15,6 @@ type ToggableLayoutProps = {
 
 export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsTheme();
 
   const [tmpCode, setTmpCode] = useState({ ...code });
   const [activeTab, setActiveTab] = useState(0);
@@ -67,12 +58,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
 
       {/* Main content: Preview or Editor */}
       {showPreview ? (
-        <HvProvider
-          themes={[pentahoPlus, ds5, ds3]}
-          theme={docsTheme}
-          colorMode={docsMode}
-          cssTheme="scoped"
-        >
+        <DocsProvider>
           <div
             className={clsx(
               "p-md pt-lg min-h-100px mb-lg",
@@ -87,7 +73,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
               <div>{element}</div>
             )}
           </div>
-        </HvProvider>
+        </DocsProvider>
       ) : (
         <>
           {/* Code editor for active tab */}

@@ -1,16 +1,10 @@
 import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
-import {
-  ds3,
-  ds5,
-  HvProvider,
-  pentahoPlus,
-} from "@hitachivantara/uikit-react-core";
 
-import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
+import { DocsProvider } from "./DocsProvider";
 
 type PlaygroundProps = {
   Component: React.ComponentType<{ children?: React.ReactNode }>;
@@ -71,7 +65,6 @@ export const Playground = ({
   decorator,
 }: PlaygroundProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsTheme();
 
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(
@@ -114,16 +107,11 @@ export const Playground = ({
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
 
-        <div className={"grid place-items-center p-sm"}>
-          <HvProvider
-            themes={[pentahoPlus, ds5, ds3]}
-            theme={docsTheme}
-            colorMode={docsMode}
-            cssTheme="scoped"
-          >
+        <DocsProvider>
+          <div className={"grid place-items-center p-sm h-full"}>
             {decorator ? decorator(componentElement) : componentElement}
-          </HvProvider>
-        </div>
+          </div>
+        </DocsProvider>
 
         {/* Controls Area */}
         <div className="flex flex-col gap-xs border-l border-color-inherit py-sm px-xs">

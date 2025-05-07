@@ -59,7 +59,7 @@ export default function Demo() {
           value={selectedCountry}
           classes={{
             panel: "w-100px!",
-            root: "w-100px! border-r-1! border-r-atmo3! bg-bgContainer! rounded-l-[4px]",
+            root: "w-100px! border-r-1! border-r-border! bg-bgContainer! rounded-none!",
             select: "bg-transparent! border-none!",
           }}
           onChange={(evt, val) => {

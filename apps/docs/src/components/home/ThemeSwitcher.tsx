@@ -1,11 +1,6 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useRouter } from "next/router";
-import {
-  HvOption,
-  HvSelect,
-  HvTooltip,
-} from "@hitachivantara/uikit-react-core";
-import { Info } from "@hitachivantara/uikit-react-icons";
+import { HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
 
 import { useDocsTheme } from "../../hooks/useDocsTheme";
 
@@ -17,9 +12,12 @@ export const ThemeSwitcher = () => {
   const router = useRouter();
   const { docsTheme, setDocsTheme } = useDocsTheme();
 
-  const handleThemeChange = useCallback((value: any) => {
-    setDocsTheme(value);
-  }, []);
+  const handleThemeChange = useCallback(
+    (value: any) => {
+      setDocsTheme(value);
+    },
+    [setDocsTheme],
+  );
 
   if (!allowedPaths.some((path) => router.pathname.startsWith(path))) {
     return null;
@@ -31,6 +29,7 @@ export const ThemeSwitcher = () => {
         onChange={(e, value) => handleThemeChange(value)}
         value={docsTheme}
         className="w-140px"
+        title="Change the theme on the samples"
       >
         {themes.map((t) => {
           return (
@@ -40,9 +39,6 @@ export const ThemeSwitcher = () => {
           );
         })}
       </HvSelect>
-      <HvTooltip title="Change the theme on the samples">
-        <Info />
-      </HvTooltip>
     </div>
   );
 };

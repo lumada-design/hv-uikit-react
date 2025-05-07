@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
-import {
-  ds3,
-  ds5,
-  HvProvider,
-  pentahoPlus,
-} from "@hitachivantara/uikit-react-core";
 
-import { useDocsTheme } from "../../hooks/useDocsTheme";
 import useEditorTheme from "../../hooks/useEditorTheme";
+import { DocsProvider } from "./DocsProvider";
 import { ExpandableControls } from "./ExpandableControls";
 
 type ExpandableLayoutProps = {
@@ -23,7 +17,6 @@ type ExpandableLayoutProps = {
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   const editorTheme = useEditorTheme();
-  const { docsTheme, docsMode } = useDocsTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const initialCode = Object.values(code)[0];
@@ -49,25 +42,20 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       />
 
       {/* Preview Section */}
-      <div
-        className={clsx(
-          "p-md py-[40px] bg-bgPage border rounded-inherit",
-          isExpanded && "rounded-b-0",
-        )}
-      >
+      <DocsProvider>
         <div
           className={clsx(
-            "p-md pt-lg bg-bgPage border rounded-inherit",
+            "p-md py-[40px] bg-bgPage border rounded-inherit",
             isExpanded && "rounded-b-0",
           )}
         >
           {liveError ? (
             <div className="text-negative">{liveError}</div>
           ) : (
-            <>{element}</>
+            <div>{element}</div>
           )}
         </div>
-      </div>
+      </DocsProvider>
 
       {/* Code Editor Section */}
       <div
