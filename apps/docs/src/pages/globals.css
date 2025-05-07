@@ -19,20 +19,18 @@ article {
   font-size: 1rem;
 }
 
-.nextra-content h2 {
+article > main h2 {
+  font-size: 1.7rem !important;
   @apply !border-none;
 }
 
-.nextra-content h3 {
-  font-size: 1.4rem;
-}
-
-.nextra-content h3 + p {
+article > main h2 + p,
+article > main h3 + p {
   @apply !mt-2;
 }
 
-.nextra-content main ul,
-.nextra-content main ol {
+article > main ul,
+article > main ol {
   @apply !my-4;
 }
 
@@ -84,6 +82,10 @@ article {
 
 .nextra-code .nextra-focus {
   @apply bg-slate-50;
+}
+
+.nextra-breadcrumb {
+  @apply !mb-4;
 }
 
 @media only screen and (max-width: 768px) {

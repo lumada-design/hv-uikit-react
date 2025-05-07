@@ -43,7 +43,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       {/* Preview Section */}
       <div
         className={clsx(
-          "p-md pt-lg bg-bgPage border rounded-inherit",
+          "p-md py-[40px] bg-bgPage border rounded-inherit",
           isExpanded && "rounded-b-0",
         )}
       >
@@ -56,9 +56,9 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
 
       {/* Code Editor Section */}
       <div
-        className="max-h-300px overflow-auto rounded-b-inherit -mt-xxs transition-max-height"
+        className="max-h-400px overflow-auto rounded-b-inherit -mt-xxs transition-max-height"
         style={{
-          maxHeight: isExpanded ? 300 : 0,
+          maxHeight: isExpanded ? 400 : 0,
         }}
       >
         <CodeEditor

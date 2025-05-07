@@ -76,21 +76,31 @@ export const Examples = () => {
   ];
 
   return (
-    <div className="max-w-7xl">
+    <div className="max-w-6xl mx-auto px-md py-xl">
       {/* Page Header */}
-      <div className="px-xs py-md">
-        <HvTypography variant="title2">Examples</HvTypography>
-        <HvTypography variant="body">
-          Explore practical examples demonstrating how to use our components in
-          different scenarios and real-world scenarios. You can find an extended
-          list of UI Kit examples on our{" "}
+      <div className="mb-lg md:text-center px-sm">
+        <HvTypography
+          className={clsx(
+            "text-2.3em leading-1.3em mb-md",
+            "max-sm:text-1.5rem max-sm:leading-2.2rem max-sm:mb-sm",
+          )}
+        >
+          Building blocks to streamline <br />
+          your development workflow.
+        </HvTypography>
+        <HvTypography className="text-md max-w-3xl mx-auto">
+          Find more on our{" "}
           <HvTypography
+            variant="captionLabel"
             className="color-primary hover:underline"
             component="a"
             href="https://stackblitz.com/orgs/github/lumada-design/collections"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             StackBlitz collection
           </HvTypography>
+          .
         </HvTypography>
       </div>
 
