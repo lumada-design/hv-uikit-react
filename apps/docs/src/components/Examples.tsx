@@ -4,6 +4,7 @@ import { HvTypography } from "@hitachivantara/uikit-react-core";
 import {
   BarChart,
   Speedometer,
+  SwipeRight,
   Table,
   TextColor,
 } from "@hitachivantara/uikit-react-icons";
@@ -33,6 +34,8 @@ const getSectionIcon = (title: string) => {
       return <TextColor size="md" />;
     case "KPIs":
       return <Speedometer size="md" />;
+    case "Drag and Drop":
+      return <SwipeRight size="md" />;
     default:
       return null;
   }
@@ -64,6 +67,11 @@ export const Examples = () => {
       title: "KPIs",
       total: countCodeBlocks(kpis),
       path: "/examples/kpis",
+    },
+    {
+      title: "Drag and Drop",
+      total: countCodeBlocks(kpis),
+      path: "/examples/dnd",
     },
   ];
 

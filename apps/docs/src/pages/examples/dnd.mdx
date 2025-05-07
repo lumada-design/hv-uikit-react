@@ -1,0 +1,52 @@
+import { CodeBlock } from "../../components/code/CodeBlock";
+
+import dndKitMultiple from "../../examples/dnd/DndKitMultiple?raw";
+import dndKitSingle from "../../examples/dnd/DndKitSingle?raw";
+import dndNative from "../../examples/dnd/DndNative?raw";
+import dndTypes from "../../examples/dnd/types?raw";
+
+import kanbanComponents from "../../examples/dnd/kanban/Components?raw";
+import kanbanData from "../../examples/dnd/kanban/data?raw";
+import kanban from "../../examples/dnd/kanban/Kanban?raw";
+import kanbanTypes from "../../examples/dnd/kanban/types?raw";
+
+# Drag and drop examples
+
+For UI Kit users that want to use drag and drop functionality, the UI Kit team recommends the [@dnd-kit](https://docs.dndkit.com/) library
+for its performance, accessibility and extensibility. We strongly recommend checking their documentation.
+
+## Simple sortable list
+
+This sample showcases a scenario where we have a single column and we want to drag items within this column. You can drag the items
+by their handle or by using the keyboard. In this case you just have to tab your way to the item and press the `Space` key (or `Enter`)
+to select it and then use the arrows to move the item to its new place Then just press `Space` again to release it.
+
+<CodeBlock code={{ main: dndKitSingle, "./types": dndTypes }} />
+
+## Multiple Containers
+
+In this sample we showcase how to use drag and drop between different containers. Note that you can reorder the columns by dragging each
+column by its header.
+
+<CodeBlock code={{ main: dndKitMultiple, "./types": dndTypes }} />
+
+## Native Drag and Drop
+
+If you don't want to use any external libraries you can still achieve a similar result by using plain Javascript.
+
+<CodeBlock code={{ main: dndNative, "./types": dndTypes }} />
+
+## Complex example
+
+This example showcases a more complex use case of drag and drop, where we have a kanban board with multiple columns and cards.
+You can drag the cards between columns and reorder them within the same column. You can also reorder the columns by dragging them.
+You can
+
+<CodeBlock
+  code={{
+    main: kanban,
+    "./data": kanbanData,
+    "./types": kanbanTypes,
+    "./Components": kanbanComponents,
+  }}
+/>

@@ -2,6 +2,10 @@ import * as React from "react";
 import * as reactHookForm from "react-hook-form";
 import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
+import * as DndKitCore from "@dnd-kit/core";
+import * as DndKitModifiers from "@dnd-kit/modifiers";
+import * as DndKitSortable from "@dnd-kit/sortable";
+import * as DndKitUtilities from "@dnd-kit/utilities";
 import * as hookFormZod from "@hookform/resolvers/zod";
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
@@ -43,6 +47,10 @@ const defaultScope: Scope = {
     swr: useSWR,
     "echarts/core": echartsCore,
     "echarts/charts": echartsCharts,
+    "@dnd-kit/core": DndKitCore,
+    "@dnd-kit/modifiers": DndKitModifiers,
+    "@dnd-kit/sortable": DndKitSortable,
+    "@dnd-kit/utilities": DndKitUtilities,
   },
 };
 
