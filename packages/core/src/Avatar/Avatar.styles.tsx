@@ -26,6 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     alignItems: "center",
     position: "relative",
     padding: theme.space.xxs,
+    height: "fit-content",
 
     ":focus-visible": {
       ...outlineStyles,
