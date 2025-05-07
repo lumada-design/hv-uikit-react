@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
-import { DocsProvider } from "./DocsProvider";
+import { DocsContainer } from "./DocsProvider";
 
 type PopupLayoutProps = {
   id?: string;
@@ -29,7 +29,11 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
 
   const initialCode = Object.values(code)[0];
 
-  const { element, code: editorCode } = useLiveRunner({
+  const {
+    element,
+    error,
+    code: editorCode,
+  } = useLiveRunner({
     initialCode,
     scope: scope || {},
   });
@@ -83,12 +87,12 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
         </HvIconButton>
       </div>
       <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
-        <DocsProvider>
-          {/* Preview Section */}
-          <div className="p-md flex items-center justify-center h-full [&>div]:w-full">
-            <div>{element}</div>
-          </div>
-        </DocsProvider>
+        {/* Preview Section */}
+        <DocsContainer
+          className="p-md flex items-center justify-center h-full [&>div]:w-full"
+          error={error}
+          element={element}
+        />
       </div>
     </section>
   );

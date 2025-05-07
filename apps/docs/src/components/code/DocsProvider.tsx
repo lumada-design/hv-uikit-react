@@ -1,3 +1,4 @@
+import { useId } from "react";
 import {
   ds3,
   ds5,
@@ -7,17 +8,50 @@ import {
 
 import { useDocsTheme } from "../../hooks/useDocsTheme";
 
-export const DocsProvider = ({ children }: { children: React.ReactNode }) => {
+export const DocsProvider = ({
+  children,
+  className,
+}: React.HTMLAttributes<HTMLDivElement>) => {
+  const id = useId();
   const { docsTheme, docsMode } = useDocsTheme();
 
   return (
-    <HvProvider
-      themes={[pentahoPlus, ds5, ds3]}
-      theme={docsTheme}
-      colorMode={docsMode}
-      cssTheme="scoped"
-    >
-      {children}
-    </HvProvider>
+    // ensures docs container styles change according to theme
+    <div id={id} className={className}>
+      <HvProvider
+        themes={[pentahoPlus, ds5, ds3]}
+        theme={docsTheme}
+        colorMode={docsMode}
+        cssTheme="scoped"
+        rootElementId={id}
+      >
+        {children}
+      </HvProvider>
+    </div>
+  );
+};
+
+export const DocsContainer = ({
+  element,
+  error,
+  className,
+}: {
+  /** render-able element provided by `react-live` */
+  element: React.ReactElement | null;
+  /** error message provided by `react-live */
+  error?: string | null;
+  /** container styles `className` */
+  className?: string;
+}) => {
+  return (
+    <DocsProvider className={className}>
+      {error ? (
+        // render errors or the live preview
+        <div className="text-negative">{error}</div>
+      ) : (
+        // an unstyled `div` must wrap `element` to ensure predictable layout
+        <div className="sample-container">{element}</div>
+      )}
+    </DocsProvider>
   );
 };
