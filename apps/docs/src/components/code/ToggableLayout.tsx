@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import { HvTab, HvTabs, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
+import { DocsProvider } from "./DocsProvider";
 import { ToggableControls } from "./ToggableControls";
 
 type ToggableLayoutProps = {
@@ -57,20 +58,22 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
 
       {/* Main content: Preview or Editor */}
       {showPreview ? (
-        <div
-          className={clsx(
-            "p-md pt-lg min-h-100px mb-lg",
-            "border border-atmo3 rounded-round",
-            "bg-bgContainer [&_tr]:table-row",
-          )}
-        >
-          {/* Render errors or the live preview */}
-          {error ? (
-            <div className="text-negative">{error}</div>
-          ) : (
-            <div>{element}</div>
-          )}
-        </div>
+        <DocsProvider>
+          <div
+            className={clsx(
+              "p-md pt-lg min-h-100px mb-lg",
+              "border border-atmo3 rounded-round",
+              "bg-bgContainer [&_tr]:table-row",
+            )}
+          >
+            {/* Render errors or the live preview */}
+            {error ? (
+              <div className="text-negative">{error}</div>
+            ) : (
+              <div>{element}</div>
+            )}
+          </div>
+        </DocsProvider>
       ) : (
         <>
           {/* Code editor for active tab */}

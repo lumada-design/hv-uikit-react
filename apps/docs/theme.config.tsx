@@ -2,6 +2,7 @@ import { ThemeSwitch, type DocsThemeConfig } from "nextra-theme-docs";
 
 import { Pre } from "./src/components/code/Pre";
 import { Footer } from "./src/components/Footer";
+import { ThemeSwitcher } from "./src/components/home/ThemeSwitcher";
 import { UIKitLogo } from "./src/components/logo/uikit";
 import { Main } from "./src/components/Main";
 
@@ -18,7 +19,12 @@ const config: DocsThemeConfig = {
     pre: Pre,
   },
   navbar: {
-    extraContent: <ThemeSwitch lite />,
+    extraContent: (
+      <>
+        <ThemeSwitch lite />
+        <ThemeSwitcher />
+      </>
+    ),
   },
   search: {
     placeholder: "Search...",

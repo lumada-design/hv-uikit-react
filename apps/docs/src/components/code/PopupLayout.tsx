@@ -9,8 +9,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
+import { DocsProvider } from "./DocsProvider";
 
 type PopupLayoutProps = {
+  id?: string;
   scope: Scope | null;
   code: Record<string, string>;
 };
@@ -19,7 +21,7 @@ type PopupLayoutProps = {
  * PopupLayout renders a live preview and an expandable code editor
  * with interactive controls for toggling and resetting the code.
  */
-export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
+export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   const editorTheme = useEditorTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -43,7 +45,10 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
   };
 
   return (
-    <section className="relative border-1 -mt-px -ml-px">
+    <section
+      id={id}
+      className="bg-transparent relative border-1 border-t-0 -ml-px h-full"
+    >
       <HvDialog
         onClose={() => setIsExpanded(false)}
         open={isExpanded}
@@ -67,6 +72,7 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
           />
         </HvDialogContent>
       </HvDialog>
+
       {/* Poupup Controls */}
       <div className="absolute right-0 flex items-center p-xs gap-xs">
         <HvIconButton
@@ -76,9 +82,14 @@ export const PopupLayout = ({ scope, code }: PopupLayoutProps) => {
           <Code />
         </HvIconButton>
       </div>
-
-      {/* Preview Section */}
-      <div className="p-md flex items-center justify-center">{element}</div>
+      <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
+        <DocsProvider>
+          {/* Preview Section */}
+          <div className="p-md flex items-center justify-center h-full [&>div]:w-full">
+            <div>{element}</div>
+          </div>
+        </DocsProvider>
+      </div>
     </section>
   );
 };

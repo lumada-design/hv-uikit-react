@@ -101,7 +101,7 @@ article > main ol {
 }
 
 [aria-current="true"].nextra-focus {
-  @apply font-medium text-secondary;
+  @apply font-medium text-text;
 }
 
 [aria-current="false"].nextra-focus {
