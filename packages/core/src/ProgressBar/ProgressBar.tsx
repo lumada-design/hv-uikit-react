@@ -14,9 +14,6 @@ export type HvProgressBarClasses = ExtractNames<typeof useClasses>;
 
 export type HvProgressBarStatus = "inProgress" | "completed" | "error";
 
-/**
- * ProgressBar provides feedback about a process that is taking place in the application.
- */
 export interface HvProgressBarProps extends HvBaseProps {
   /** The value of the progress bar. */
   value: number;
@@ -38,6 +35,9 @@ export interface HvProgressBarProps extends HvBaseProps {
   hideLabel?: boolean;
 }
 
+/**
+ * ProgressBar provides feedback about a process that is taking place in the application.
+ */
 export const HvProgressBar = (props: HvProgressBarProps) => {
   const {
     className,
