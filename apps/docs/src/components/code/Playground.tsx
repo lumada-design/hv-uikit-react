@@ -4,7 +4,7 @@ import { CodeEditor } from "react-live-runner";
 
 import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
-import { DocsContainer } from "./DocsProvider";
+import { DocsProvider } from "./DocsProvider";
 
 type PlaygroundProps = {
   Component: React.ComponentType<{ children?: React.ReactNode }>;
@@ -12,7 +12,7 @@ type PlaygroundProps = {
   componentProps?: Record<string, unknown>;
   controls: Record<string, Control>;
   children?: React.ReactNode;
-  decorator?: (children: React.ReactNode) => React.ReactElement;
+  decorator?: (children: React.ReactNode) => React.ReactNode;
 };
 
 const parseChildren = (child: React.ReactNode) =>
@@ -106,10 +106,9 @@ export const Playground = ({
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
-        <DocsContainer
-          className="grid place-items-center p-sm h-full"
-          element={decorator ? decorator(componentElement) : componentElement}
-        />
+        <DocsProvider className="grid place-items-center p-sm h-full">
+          {decorator ? decorator(componentElement) : componentElement}
+        </DocsProvider>
 
         {/* Controls Area */}
         <div className="flex flex-col gap-xs border-l border-color-inherit py-sm px-xs">
