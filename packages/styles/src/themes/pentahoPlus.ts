@@ -340,11 +340,6 @@ const pentahoPlus = makeTheme((theme) => ({
         },
       },
     },
-    HvBannerContent: {
-      classes: {
-        root: { borderRadius: theme.radii.round },
-      },
-    },
     HvSnackbar: {
       anchorOrigin: { vertical: "bottom", horizontal: "center" },
     },

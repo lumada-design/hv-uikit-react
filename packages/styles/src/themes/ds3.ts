@@ -223,6 +223,13 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvCallout: {
+      classes: {
+        root: {
+          borderRadius: 0,
+        },
+      },
+    },
     HvCheckBoxIcon: {
       classes: {
         root: {
