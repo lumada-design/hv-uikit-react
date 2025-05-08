@@ -433,13 +433,12 @@ const pentahoPlus = makeTheme((theme) => ({
           ...popperStyles(theme),
         },
         popper: {
-          "--r": theme.radii.large,
           "&[data-popper-placement*='bottom'] .HvSelect-panel": {
-            borderRadius: "var(--r)",
+            borderRadius: theme.radii.large,
             top: 1,
           },
           "&[data-popper-placement*='top'] .HvSelect-panel": {
-            borderRadius: "var(--r)",
+            borderRadius: theme.radii.large,
             top: -1,
           },
         },
@@ -447,16 +446,6 @@ const pentahoPlus = makeTheme((theme) => ({
     },
     HvSuggestions: {
       classes: {
-        popper: {
-          ":not(.HvSuggestions-portal)": {
-            "&[data-popper-placement*='top']": {
-              transform: "translate3d(0, -26px, 0) !important",
-            },
-            "&[data-popper-placement*='bottom']": {
-              transform: "translate3d(0, 0px, 0) !important",
-            },
-          },
-        },
         list: {
           ...popperStyles(theme),
         },
@@ -738,15 +727,6 @@ const pentahoPlus = makeTheme((theme) => ({
             },
           },
         },
-        open: {
-          "--r": theme.radii.round,
-          "&[data-popper-placement*='top']": {
-            borderRadius: "var(--r)",
-          },
-          "&[data-popper-placement*='bottom']": {
-            borderRadius: "var(--r)",
-          },
-        },
       },
     },
     HvHeader: {
@@ -987,7 +967,6 @@ const pentahoPlus = makeTheme((theme) => ({
         root: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
-          borderRadius: theme.radii.round,
         },
         disabled: {
           backgroundColor: theme.colors.bgDisabled,
@@ -1018,25 +997,15 @@ const pentahoPlus = makeTheme((theme) => ({
         header: {
           borderColor: theme.colors.textDimmed,
           backgroundColor: inputColors.bg,
-          borderRadius: theme.radii.round,
-          ":hover": {
-            borderRadius: theme.radii.round,
-          },
         },
         headerOpen: {
           "&,:hover": {
             borderColor: theme.colors.textDimmed,
-            borderRadius: theme.radii.round,
-            "&[data-popper-placement*='top'],&[data-popper-placement*='bottom']":
-              {
-                borderRadius: theme.radii.round,
-              },
           },
         },
         panel: {
           "&[data-popper-placement*='top'],&[data-popper-placement*='bottom']":
             {
-              top: 0,
               ...popperStyles(theme),
             },
         },
@@ -1050,20 +1019,6 @@ const pentahoPlus = makeTheme((theme) => ({
         iconSelected: {
           "&[data-color=secondary]": {
             borderColor: theme.colors.textDimmed,
-          },
-        },
-        baseContainer: {
-          "&[data-popper-placement=bottom-end] .HvBaseDropdown-panel": {
-            borderRadius: theme.radii.large,
-          },
-          "&[data-popper-placement=bottom-start] .HvBaseDropdown-panel": {
-            borderRadius: theme.radii.large,
-          },
-          "&[data-popper-placement=top-start] .HvBaseDropdown-panel": {
-            borderRadius: theme.radii.large,
-          },
-          "&[data-popper-placement=top-end] .HvBaseDropdown-panel": {
-            borderRadius: theme.radii.large,
           },
         },
       },

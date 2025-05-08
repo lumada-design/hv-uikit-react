@@ -796,26 +796,21 @@ export const HvInput = fixedForwardRef(function HvInput<
         {...others}
       />
       {canShowSuggestions && (
-        <>
-          {hasSuggestions && (
-            <div role="presentation" className={classes.inputExtension} />
-          )}
-          <HvSuggestions
-            id={setId(elementId, "suggestions")}
-            classes={{
-              root: classes.suggestionsContainer,
-              list: classes.suggestionList,
-            }}
-            expanded={hasSuggestions}
-            anchorEl={inputRef.current?.parentElement}
-            onClose={suggestionClearHandler}
-            onKeyDown={onSuggestionKeyDown}
-            onSuggestionSelected={suggestionSelectedHandler}
-            suggestionValues={suggestionValues}
-            enablePortal={enablePortal}
-            popperProps={{ ref: suggestionsRef }}
-          />
-        </>
+        <HvSuggestions
+          id={setId(elementId, "suggestions")}
+          classes={{
+            root: classes.suggestionsContainer,
+            list: classes.suggestionList,
+          }}
+          expanded={hasSuggestions}
+          anchorEl={inputRef.current?.parentElement}
+          onClose={suggestionClearHandler}
+          onKeyDown={onSuggestionKeyDown}
+          onSuggestionSelected={suggestionSelectedHandler}
+          suggestionValues={suggestionValues}
+          enablePortal={enablePortal}
+          popperProps={{ ref: suggestionsRef }}
+        />
       )}
       {canShowError && (
         <HvWarningText

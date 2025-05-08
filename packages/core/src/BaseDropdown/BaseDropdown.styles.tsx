@@ -20,7 +20,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     backgroundColor: theme.colors.bgContainer,
     boxSizing: "border-box",
     border: `1px solid ${theme.colors.text}`,
-    borderRadius: theme.radii.base,
+    borderRadius: theme.radii.round,
     ":hover,:focus-visible": {
       borderColor: theme.colors.primary,
     },
@@ -34,13 +34,6 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
   headerOpen: {
     "&,:hover": {
       borderColor: theme.colors.text,
-    },
-
-    "&[data-popper-placement*='top']": {
-      borderRadius: `0px 0px ${theme.radii.base} ${theme.radii.base}`,
-    },
-    "&[data-popper-placement*='bottom']": {
-      borderRadius: `${theme.radii.base} ${theme.radii.base} 0px 0px`,
     },
   },
   /** @deprecated use `[data-popper-placement*='top']` selector instead */
@@ -92,14 +85,6 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     // TODO: remove padding override in v6 (most elements need it)
     padding: 0,
     border: `1px solid ${theme.colors.text}`,
-    "&[data-popper-placement*='top']": {
-      top: 1,
-      borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
-    },
-    "&[data-popper-placement*='bottom']": {
-      top: -1,
-      borderRadius: `0 0 ${theme.radii.base} ${theme.radii.base}`,
-    },
   },
   /** @deprecated leverage `[data-popper-placement]` instead */
   panelOpenedUp: {},

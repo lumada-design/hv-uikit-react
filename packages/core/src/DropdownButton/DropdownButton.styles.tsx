@@ -32,14 +32,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropdownButton", {
     ...disabledStyle,
   },
   open: {
-    "--r": theme.radii.base,
     backgroundColor: theme.colors.bgContainer,
-    "&[data-popper-placement*='top']": {
-      borderRadius: "0px 0px var(--r) var(--r)",
-    },
-    "&[data-popper-placement*='bottom']": {
-      borderRadius: "var(--r) var(--r) 0px 0px",
-    },
   },
   selection: {
     color: "inherit",

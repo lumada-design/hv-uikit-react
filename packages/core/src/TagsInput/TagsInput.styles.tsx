@@ -58,7 +58,7 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     backgroundColor: theme.colors.bgContainer,
     borderWidth: 1,
     borderColor: theme.colors.textSubtle,
-    borderRadius: theme.radii.base,
+    borderRadius: theme.radii.round,
 
     "&:hover": {
       borderColor: theme.colors.primary,

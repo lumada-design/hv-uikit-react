@@ -19,14 +19,6 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   },
   popper: {
     zIndex: theme.zIndices.popover,
-
-    "--r": theme.radii.base,
-    "&[data-popper-placement*='top'] $panel": {
-      borderRadius: `var(--r) var(--r) 0 0`,
-    },
-    "&[data-popper-placement*='bottom'] $panel": {
-      borderRadius: `0 0 var(--r) var(--r)`,
-    },
   },
   panel: {
     maxHeight: 400,

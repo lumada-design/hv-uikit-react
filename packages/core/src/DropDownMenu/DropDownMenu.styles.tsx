@@ -10,21 +10,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   },
   /** @deprecated use `classes.root` instead */
   container: {},
-  baseContainer: {
-    "--r": theme.radii.base,
-    "&[data-popper-placement=bottom-end] .HvBaseDropdown-panel": {
-      borderRadius: "var(--r) 0 var(--r) var(--r)",
-    },
-    "&[data-popper-placement=bottom-start] .HvBaseDropdown-panel": {
-      borderRadius: "0 var(--r) var(--r) var(--r)",
-    },
-    "&[data-popper-placement=top-start] .HvBaseDropdown-panel": {
-      borderRadius: "var(--r) var(--r) var(--r) 0",
-    },
-    "&[data-popper-placement=top-end] .HvBaseDropdown-panel": {
-      borderRadius: "var(--r) var(--r) 0 var(--r)",
-    },
-  },
+  baseContainer: {},
   /** @deprecated use `classes.root` instead */
   icon: {},
   iconSelected: {

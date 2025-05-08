@@ -254,6 +254,7 @@ const ds3 = makeTheme((theme) => ({
     HvBaseDropdown: {
       classes: {
         header: {
+          borderRadius: 0,
           border: `1px solid ${theme.colors.atmo4}`,
           ":hover,:focus-visible": {
             borderColor: theme.colors.secondary,
@@ -302,8 +303,9 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         root: {
           border: "none",
+          borderRadius: 0,
 
-          ":not(.HvBaseInput-disabled):not(.HvBaseInput-invalid):not(.HvBaseInput-readOnly)":
+          ":not(.HvBaseInput-disabled,.HvBaseInput-invalid,.HvBaseInput-readOnly)":
             {
               ":hover,:focus-within": {
                 borderColor: theme.colors.secondary,
@@ -1160,6 +1162,14 @@ const ds3 = makeTheme((theme) => ({
         },
       },
     },
+    HvSuggestions: {
+      classes: {
+        list: {
+          borderColor: "transparent",
+          borderRadius: 0,
+        },
+      },
+    },
     HvTab: {
       classes: {
         root: {
@@ -1208,6 +1218,7 @@ const ds3 = makeTheme((theme) => ({
         },
         tagsList: {
           borderColor: theme.colors.atmo4,
+          borderRadius: 0,
           "&:hover": {
             borderColor: theme.colors.secondary,
           },
