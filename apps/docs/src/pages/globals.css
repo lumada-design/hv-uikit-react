@@ -15,22 +15,22 @@ pre {
   @apply mt-4 mb-4;
 }
 
-.nextra-content main {
+.nextra-content :not(.uikit-root-element) main {
   font-size: 1rem;
 }
 
-.nextra-content main h2 {
+.nextra-content :not(.uikit-root-element) main h2 {
   font-size: 1.7rem !important;
   @apply !border-none;
 }
 
-.nextra-content main h2 + p,
-.nextra-content main h3 + p {
+.nextra-content :not(.uikit-root-element) main h2 + p,
+.nextra-content :not(.uikit-root-element) main h3 + p {
   @apply !mt-2;
 }
 
-.nextra-content main ul,
-.nextra-content main ol {
+.nextra-content :not(.uikit-root-element) main ul,
+.nextra-content :not(.uikit-root-element) main ol {
   @apply !my-4;
 }
 
