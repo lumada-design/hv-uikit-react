@@ -55,6 +55,7 @@ const { useClasses } = createClasses("HvCallout", {
   },
   messageIcon: {
     lineHeight: 0,
+    flexShrink: 0,
   },
   messageTitle: {
     display: "block",
