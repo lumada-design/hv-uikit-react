@@ -8,27 +8,23 @@ type AlignmentBadgeProps = {
 };
 
 export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
-  const entry = Object.entries(alignmentData).find(
-    ([key]) => key.replace(/ /g, "").toLowerCase() === component.toLowerCase(),
-  );
+  const values = alignmentData[component];
 
-  if (!entry) return null;
-
-  const [, values] = entry;
+  if (!values) return null;
 
   const items = [
     ["Pentaho+", values.pentahoPlus || "—"],
-    ["DS 5", values.ds5 || "—"],
-    ["DS 3", values.ds3 || "—"],
+    ["NEXT v5", values.ds5 || "—"],
+    ["NEXT v3", values.ds3 || "—"],
   ];
 
   return (
     <HvIconButton
       color="primary"
       title={
-        <div className="flex flex-col gap-xs w-[100px]">
+        <div className="flex flex-col gap-xs">
           <HvTypography variant="label">DS Alignment</HvTypography>
-          <div className="border-b-3px border-atmo2 m-xs -mx-sm" />
+          <div className="border-b-3px border-bgPage my-xs -mx-sm" />
           {items.map(([name, value]) => (
             <div key={name} className="flex justify-between gap-xs">
               <HvTypography>{name}</HvTypography>
