@@ -44,7 +44,6 @@ export const Description = () => {
           </HvTypography>
           <ArrowUpRight />
         </div>
-        <div className="flex flex-row gap-xs items-center"></div>
       </div>
     </>
   );
