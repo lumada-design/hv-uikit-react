@@ -22,6 +22,7 @@ const { useClasses } = createClasses("HvCallout", {
     boxShadow: "none",
     flexWrap: "nowrap",
     padding: 0,
+    borderRadius: theme.radii.round,
   },
   success: {
     backgroundColor: theme.colors.positiveDimmed,
