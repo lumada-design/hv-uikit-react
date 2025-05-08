@@ -19,9 +19,10 @@ export const getStaticProps = async ({ params }) => {
 
 ### Usage
 
-This example demonstrates a simple line chart with a single data series. Each dot represents a data point,
-and a tooltip appears on hover to display additional information. Setting the `horizontalRangeSlider.show` prop to `true`
-will display a range slider at the bottom of the chart to allow users to zoom in on a specific range of data.
+This example shows a simple line chart with one data series.  
+Each dot represents a data point, and a tooltip appears on hover.
+
+Set `horizontalRangeSlider.show` to `true` to display a range slider below the chart for zooming into specific data ranges.
 
 ```tsx live
 <HvLineChart
@@ -53,7 +54,7 @@ will display a range slider at the bottom of the chart to allow users to zoom in
 
 ### Area
 
-If you to color the area below the line on the chart just set the `area` prop to `true`.
+To fill the area below the line, set the `area` prop to `true`.
 
 ```tsx live
 <HvLineChart
@@ -85,7 +86,8 @@ If you to color the area below the line on the chart just set the `area` prop to
 
 ### Mixed line and area
 
-The `area` prop can also be set to `true` for a specific measure so that you can combine area and line views on the same chart.
+Set the `area` prop to `true` to fill the area below the line.  
+You can also enable it for a specific measure to combine area and line views in the same chart.
 
 ```tsx live
 <HvLineChart
@@ -102,7 +104,7 @@ The `area` prop can also be set to `true` for a specific measure so that you can
 
 ### Stacked area chart
 
-The following example illustrates how to use the `stacked` prop to stack the lines on top of each other.
+The following example shows how to use the `stacked` prop to stack multiple lines on top of each other.
 
 ```tsx live
 <HvLineChart
@@ -130,7 +132,7 @@ The following example illustrates how to use the `stacked` prop to stack the lin
 
 ### Mixed line and stacked area
 
-You can also mix a stacked area chart with a line chart by setting the `stack` and `area` props accordingly for the measures you want to stack.
+You can mix a stacked area chart with a line chart by setting the `stack` and `area` props on the specific measures you want to stack.
 
 ```tsx live
 <HvLineChart
@@ -187,9 +189,8 @@ You can display multiple lines on the same chart by providing an array of measur
 
 ### Multiple lines with splitBy
 
-The following example illustrates how to use `splitBy` to split the data by a specific criteria.
-In this case the data is split by `Country` and `Medal` creating several lines for each combination.
-Use the live editor to remove or change the split by criteria and see the differences.
+The following example uses `splitBy` to divide the data by `Country` and `Medal`, generating a line for each combination.
+Try removing or changing the `splitBy` criteria in the live editor to see how it affects the chart.
 
 ```tsx live
 <HvLineChart
@@ -319,9 +320,13 @@ Use the live editor to remove or change the split by criteria and see the differ
 
 ### Custom ECharts options
 
-If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.
-In this example we change the type of line to a smooth curved line and add a markLine to show the average value.
-We also change the color of the line and the dots based on the value of the data point.
+You can customize the chart using ECharts options.
+
+In this example:
+
+- The line is rendered as a smooth curve
+- A `markLine` is added to show the average
+- Line and dot colors change based on data point values
 
 ```tsx live
 <HvLineChart

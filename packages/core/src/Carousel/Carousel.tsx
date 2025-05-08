@@ -82,8 +82,7 @@ export interface HvCarouselProps
 }
 
 /**
- * A Carousel is commonly used to browse images, it can also be used to browse any kind of content like text, video, or charts.
- * It allows you to focus on a particular content while having a notion of how many you have to explore.
+ A Carousel is used to browse content—commonly images, but also text, video, or charts. It highlights one item at a time while giving users a sense of the total content available.
  */
 export const HvCarousel = forwardRef<
   React.ComponentRef<typeof HvContainer>,

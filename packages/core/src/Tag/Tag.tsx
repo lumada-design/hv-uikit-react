@@ -66,10 +66,9 @@ export interface HvTagProps
 }
 
 /**
- * A Tag is one word that describes a specific aspect of an asset. A single asset can have
- * multiple tags.
- * Use tags to highlight an item's status for quick recognition and navigation
- * Use color to indicate meanings that users can learn and recognize across products.
+ * A Tag is a single word that highlights a specific aspect of an asset. An asset can have multiple tags.
+ *
+ * Use tags to indicate status, aid recognition, and support navigation—leveraging color to convey consistent meaning across products.
  */
 export const HvTag = forwardRef<
   // no-indent

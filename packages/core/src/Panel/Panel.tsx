@@ -17,9 +17,7 @@ export interface HvPanelProps extends HvBaseProps {
 }
 
 /**
- * A panel is a container used in a variety of patterns (e.g. dropdown, filter group, details section).
- * It can be horizontal or vertical and its size is defined by its content and how it relates to surrounding patterns.
- * Regardless of its content, a panel look and feel should be consistent.
+ * A Panel is a flexible container used in patterns like dropdowns, filter groups, or detail sections. It can be horizontal or vertical, with size defined by its content and context. Its appearance should remain consistent regardless of usage.
  */
 export const HvPanel = forwardRef<HTMLDivElement, HvPanelProps>(
   function HvPanel(props, ref) {

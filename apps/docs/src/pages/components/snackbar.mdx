@@ -88,12 +88,11 @@ Although not desirable, sometimes you may need to display a long message in the 
 
 ### Customization
 
-You can customize the snackbar and change it's position, transition direction and autohide duration,.
+You can customize the `Snackbar` by setting its position, transition direction, and auto-hide duration.
 
-You can specify the position of the snackbar by using the `anchorOrigin` prop. To set the transition direction of the snackbar use the `transitionDirection` prop.
-
-The `setAutoHideDuration` prop is used to specify the duration in milliseconds after which the snackbar will automatically close. This will
-trigger the `onClose` callback of the snackbar component with the reason set to `timeout`.
+- Use `anchorOrigin` to define its position on the screen.
+- Use `transitionDirection` to control how it appears and disappears.
+- Use `setAutoHideDuration` (in milliseconds) to specify how long it stays visible. When it closes, the `onClose` callback is triggered with the reason set to `"timeout"`.
 
 ```tsx live
 import { useState } from "react";

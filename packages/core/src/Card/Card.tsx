@@ -29,10 +29,7 @@ export interface HvCardProps extends HvBaseProps {
 }
 
 /**
- * A card is a container for a few short and related pieces of content.
- * It roughly resembles a playing card in size and shape and is intended as a
- * linked short representation of a conceptual unit. For that reason,
- * this pattern must be used as an entry-point for further information.
+ * A Card is a container for short, related content—similar in shape to a playing card—and serves as an entry point to more detailed information.
  */
 export const HvCard = forwardRef<
   // no-indent

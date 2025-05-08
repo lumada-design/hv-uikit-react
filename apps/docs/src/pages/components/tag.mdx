@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### Colors
 
-The color of the tag can be changed using the `color` prop. It accepts any UI Kit or CSS color.
+Customize the tag’s color using the `color` prop. It accepts any UI Kit or CSS color.
 
 ```tsx live
 <div className="flex gap-xs">
@@ -40,7 +40,7 @@ The color of the tag can be changed using the `color` prop. It accepts any UI Ki
 
 ### Sizes
 
-The size of the tag can be changed using the `size` prop.
+Change the tag’s size using the `size` prop.
 
 ```tsx live
 <div className="flex gap-xs">
@@ -52,8 +52,7 @@ The size of the tag can be changed using the `size` prop.
 
 ### Icons
 
-An icon can be added using `icon` prop.
-A built-in checkbox icon can be shown by using the `showSelectIcon` prop.
+Add an icon using the `icon` prop. To show a built-in checkbox icon, use the `showSelectIcon` prop.
 
 ```tsx live
 <div className="flex gap-xs">
@@ -69,7 +68,8 @@ A built-in checkbox icon can be shown by using the `showSelectIcon` prop.
 
 ### Long text
 
-The tag component will automatically truncate the text if it is too long to fit in the container. You can add a tooltip to show the full text when the user hovers over the tag.
+The `Tag` component automatically truncates text that overflows.  
+To display the full text on hover, add a tooltip.
 
 ```tsx live
 <HvTag

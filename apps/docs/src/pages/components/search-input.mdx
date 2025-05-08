@@ -13,6 +13,14 @@ export const getStaticProps = async ({ params }) => {
 
 <Header />
 
+<Callout type="info">
+  The `HvSearchInput` component shares the same API as the `HvInput` component.
+  Please check the [HvInput component page](/components/input) for
+  documentation.
+</Callout>
+
+<br />
+
 <Playground
   Component={HvSearchInput}
   componentName="HvSearchInput"
@@ -26,11 +34,3 @@ export const getStaticProps = async ({ params }) => {
   }}
   decorator={(c) => <div className="w-full">{c}</div>}
 />
-
-<br />
-
-<Callout type="info">
-  The `HvSearchInput` component shares the same API as the `HvInput` component.
-  Please check the [HvInput component page](/components/input) for
-  documentation.
-</Callout>

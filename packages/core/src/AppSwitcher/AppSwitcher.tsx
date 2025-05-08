@@ -46,6 +46,9 @@ export interface HvAppSwitcherProps extends HvBaseProps {
   classes?: HvAppSwitcherClasses;
 }
 
+/**
+ * An app switcher lets users quickly navigate between different applications or modules within a platform.
+ */
 export const HvAppSwitcher = forwardRef<
   React.ComponentRef<typeof HvPanel>,
   HvAppSwitcherProps

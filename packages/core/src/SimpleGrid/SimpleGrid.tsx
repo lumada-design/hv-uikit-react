@@ -43,6 +43,9 @@ export interface HvSimpleGridProps extends HvBaseProps {
   classes?: HvSimpleGridClasses;
 }
 
+/**
+ * SimpleGrid is a lightweight, responsive grid for evenly spaced items across a fixed number of columns.
+ */
 export const HvSimpleGrid = (props: HvSimpleGridProps) => {
   const {
     children,

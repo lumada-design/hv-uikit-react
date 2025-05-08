@@ -83,9 +83,11 @@ export interface HvConfusionMatrixProps
 }
 
 /**
- * Confusion Matrix is a table displaying the performance of a predictive model.
- * Typically the columns show the predicted class and the rows the expected class.
- * The main diagonal counts the positive matches while the cells outside it count the mismatches between predicted and expected.
+ * A Confusion Matrix is a table used to evaluate the performance of a predictive model.
+ * Rows represent the actual classes, and columns show the predicted classes.
+ *
+ * - The diagonal cells show correct predictions and off-diagonal cells represent misclassifications.
+ *
  */
 export const HvConfusionMatrix = forwardRef<
   ReactECharts,

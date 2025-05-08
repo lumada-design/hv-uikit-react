@@ -11,9 +11,8 @@ import { useClasses } from "./NumberInput.styles";
 export interface HvNumberInputProps extends HvInputProps<HTMLInputElement> {}
 
 /**
- * A number input component that allows the user to enter a number and displays two buttons to decrease / increase the value.
- *
- * This component extends the `HvInput` component, please check its documentation for more information on the available props.
+ *A Number Input lets users enter numeric values and provides buttons to increment or decrement the value.
+ *It extends the HvInput component—refer to its documentation for additional available props.
  *
  * @extends HvInput
  */

@@ -65,8 +65,10 @@ This example demonstrates a simple confusion matrix.
 
 ### Delta confusion matrix
 
-If you want to show the delta between the expected and predicted values, set the `delta` prop to the column you want to use
-or set it to `true` in case the `measure` already has the calculations for the delta confusion matrix.
+To display the delta between expected and predicted values, use the `delta` prop:
+
+- Set it to the column containing delta values, **or**
+- Set it to `true` if the `measure` already includes precomputed delta values
 
 ```tsx live
 <HvConfusionMatrix
@@ -121,9 +123,14 @@ or set it to `true` in case the `measure` already has the calculations for the d
 
 ### Custom colors
 
-You can use the `colorScale` prop to define custom colors for the confusion matrix. There are two ways to define the colors:
-the first way is to pass an array of two strings where each string represents the lower and upper bounds of the color scale.
-The colors used can be any of the UI Kit palette (for example, `positive`) or any valid CSS color (for example, `#FF0000` or `red`).
+Use the `colorScale` prop to customize the colors in a confusion matrix.
+
+You can provide:
+
+- An array of two strings representing the color scale's lower and upper bounds  
+  (e.g., `["positive", "#FF0000"]`)
+
+Colors can be from the UI Kit palette (e.g., `positive`) or any valid CSS color.
 
 ```tsx live
 <HvConfusionMatrix
@@ -175,9 +182,13 @@ The colors used can be any of the UI Kit palette (for example, `positive`) or an
 />
 ```
 
-The other way to use the `colorScale` is to pass an array of objects where each object has a `color` property
-and a `min` and `max` property. The `min` and `max` properties define the range of values that will be colored. Also
-the `label` prop will allow you to add a label to the color.
+Use the `colorScale` prop to customize confusion matrix colors:
+
+- **Two-color scale**:  
+  Pass an array like `["positive", "#FF0000"]` to define the color range.
+
+- **Custom ranges**:  
+  Pass an array of objects with `color`, `min`, `max`, and optional `label`
 
 ```tsx live
 <HvConfusionMatrix
@@ -255,9 +266,16 @@ the `label` prop will allow you to add a label to the color.
 
 ### Customizing values
 
-The `valuesProp` can be used to customize the font used to display the values inside each of the cells of the confusion matrix.
-You can set its `color`, `fontSize`, `fontStyle` and `fontWeight` properties. If you want to hide the values just set
-the `valuesProp.show` prop to `false`.
+Use the `valuesProp` to customize the text inside confusion matrix cells.
+
+You can set:
+
+- `color`
+- `fontSize`
+- `fontStyle`
+- `fontWeight`
+
+To hide the values, set `valuesProp.show` to `false`.
 
 ```tsx live
 <HvConfusionMatrix
@@ -316,7 +334,8 @@ the `valuesProp.show` prop to `false`.
 
 ### Landscape
 
-By default the confusion matrix will have a square format but you can set the `format` prop to `landscape` to have a landscape format.
+By default, the confusion matrix uses a square format.  
+To switch to a landscape layout, set the `format` prop to `"landscape"`.
 
 ```tsx live
 <HvConfusionMatrix

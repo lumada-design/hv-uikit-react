@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### Maximum length
 
-The `maxCharQuantity` prop can be used to limit the number of allowed characters.
+Use the `maxCharQuantity` prop to limit the number of characters.
 
 - By default, the limited can be exceeded, but you can set the `blockMax` prop to prevent this.
 - The `middleCountLabel` allows customizing the count separator (`/`).
@@ -66,7 +66,8 @@ The `maxCharQuantity` prop can be used to limit the number of allowed characters
 
 ### Auto scroll
 
-Use the `autoScroll` prop to automatically scroll to bottom. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.
+Enable automatic scrolling to the bottom using the `autoScroll` prop.  
+Scrolling stops when the user scrolls up and resumes when they return to the bottom.
 
 ```tsx live
 import { useEffect, useState } from "react";

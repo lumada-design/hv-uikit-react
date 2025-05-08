@@ -72,8 +72,7 @@ export interface HvBannerProps
 }
 
 /**
- * A Banner displays an important and succinct message. It can also provide actions for the user to address, or dismiss.
- * It requires a user action, for it to be dismissed. Banners should appear at the top of the screen, below a top app bar.
+ * A **Banner** shows an important message with optional actions. It appears below the top app bar and requires user dismissal.
  */
 export const HvBanner = forwardRef<
   React.ComponentRef<typeof Snackbar>,

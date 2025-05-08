@@ -2,24 +2,17 @@ import { Callout } from "nextra/components";
 
 ### Base Chart
 
-UI Kit provides several chart components that are built on top of the ECharts library. But you might need to create other kinds of charts
-that UI Kit doesn't provide. In that case, you can use the `HvBaseChart` component.
+**UI Kit** includes several chart components powered by ECharts. For unsupported chart types, use `HvBaseChart`—a flexible wrapper around the ECharts API that lets you build fully custom configurations.
 
-The `HvBaseChart` component is a wrapper around the ECharts library that allows you to directly use the ECharts API.
-This gives you the flexibility to create any custom chart configuration supported by ECharts.
-
-The example below illustrates how to create a simple Sankey Chart using the `HvBaseChart` component, which is a chart that UI Kit doesn't
-provide out of the box. Please notice that you'll need to import the appropriate ECharts components and/or renderers to use them.
-In this case, becasue the `HvBaseChart` already imports the `CanvasRenderer` (responsible for rendering the charts) and the `AriaComponent`
-(that generates accessible descriptions for the charts), you won't need to import them. But you will need to import the `SankeyChart` component
-and use it by calling:
+The example below demonstrates how to create a **Sankey chart**, which is not available out of the box.  
+`HvBaseChart` includes the `CanvasRenderer` and `AriaComponent` by default, but you must manually import and register the `SankeyChart` component from ECharts.
 
 ```tsx
 echarts.use([SankeyChart]);
 ```
 
-You might also want to add other components to your chart (like `TooltipComponent`
-or `LegendComponent`), check this [ECharts cheat sheet](https://echarts.apache.org/en/cheat-sheet.html) for more information.
+You can also enhance your chart with additional ECharts components like `TooltipComponent` or `LegendComponent`.  
+Refer to the [ECharts cheat sheet](https://echarts.apache.org/en/cheat-sheet.html) for a full list of available components.
 
 ```tsx live
 import { SankeyChart } from "echarts/charts";

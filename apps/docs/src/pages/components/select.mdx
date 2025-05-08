@@ -53,9 +53,8 @@ export const getStaticProps = async ({ params }) => {
 
 ### Options
 
-As an alternative to the `HvOption` `children`, `HvSelect` supports passing an `options` array of options (with `value` and `label`).
-
-Keep in mind that the `children` is more flexible, as it allows using `HvOptionGroup` and distinct `label` and rendering (`children`) values.
+In addition to `HvOption` children, `HvSelect` also supports an `options` prop—an array of objects with `value` and `label`.
+For more flexibility (e.g., using `HvOptionGroup` or custom rendering), use `HvOption` as children instead.
 
 ```tsx live
 <HvSelect
@@ -75,8 +74,9 @@ Keep in mind that the `children` is more flexible, as it allows using `HvOptionG
 
 ### Form
 
-To integrate `HvSelect` in a form, make sure you're giving it a `name`.
-The value result will be the selected option's `value`, or a JSON of the selected values when multi-select is enabled. The value can be customized via the `getSerializedValue` prop.
+To use `HvSelect` in a form, provide a `name` prop.  
+By default, the submitted value will be the selected option’s `value`, or a JSON string of selected values in multi-select mode.
+You can customize the submitted value using the `getSerializedValue` prop.
 
 ```tsx live
 <form

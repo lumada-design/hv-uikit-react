@@ -42,8 +42,8 @@ export const getStaticProps = async ({ params }) => {
 
 ### Thumbnails
 
-To display thumbnails below the carousel, you should pass a `renderThumbnail` function to the `HvCarousel` component and the `hideThumbnail` prop should be set to `false` (its default value).
-The `thumbnailsPosition` prop allows you to set the position of the thumbnails, above or below (the default) the images.
+To show thumbnails below the carousel, set `hideThumbnail` to `false` (default) and provide a `renderThumbnail` function.  
+Use the `thumbnailsPosition` prop to place thumbnails either below (default) or above the carousel.
 
 ```tsx live
 export default function Demo() {

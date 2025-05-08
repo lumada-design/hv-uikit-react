@@ -1,3 +1,4 @@
+import { Callout } from "nextra/components";
 import {
   filterGroupClasses,
   HvFilterGroup,
@@ -18,6 +19,12 @@ export const getStaticProps = async ({ params }) => {
 };
 
 <Header />
+
+<Callout type="warning">
+  This component offers one implementation of the **Filter Group** pattern. Due
+  to the variety of filtering needs, we recommend reviewing and extending the
+  code as needed. A more modular solution may be provided in the future.
+</Callout>
 
 ### Usage
 

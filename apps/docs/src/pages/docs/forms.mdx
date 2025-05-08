@@ -1,3 +1,5 @@
+import { Callout } from "nextra/components";
+
 import nativeFormCode from "../../../../../docs/guides/forms/NativeForm?raw";
 import reactFormCode from "../../../../../docs/guides/forms/ReactForm?raw";
 import reactHookFormCode from "../../../../../docs/guides/forms/ReactHookForm?raw";
@@ -5,48 +7,46 @@ import { CodeBlock } from "../../components/code/CodeBlock";
 
 # Forms
 
-Web forms play a crucial role in web applications, as they are the primary form to collect user information.
-By providing a standardized way to capture user input and validate it, we can ensure a consistent user experience across the different applications.
+Forms are essential to web applications—they're the primary way to collect user input. By providing a consistent structure for capturing and validating data, we ensure a reliable user experience across different applications.
 
 ## Form Components
 
-UI Kit provides a set of **Form Components** to build forms. These components have the goals of providing a **consistent React API** to build forms **following the HV Design spec** and
-**ease of use and integration with** native HTML form, React forms and form libraries.
+The **UI Kit** includes a set of **form components** designed to offer a **consistent API** and integrate smoothly with native HTML forms, React forms, and form libraries.
 
-The base API of all the form components is established by the [`HvFormElement`](/components/form-element) component.
-It provides the necessary props to listen to the events, manage the component `status` as well as a `value` prop to make each component **controlled**.
-For a full list of form components, check out `HvFormElement`'s [related components](/components/form-element#related-components)
+All form components are built on top of [`HvFormElement`](/components/form-element), which provides a shared API to handle events, manage `status`, and expose a `value` prop to support controlled components.
 
-## Building forms
+<Callout type="warning">
+  Not all UI Kit form components support native form data serialization or
+  validation.
+</Callout>
 
-There are multiple ways to build forms in React, and each one has its pros and cons. In the following section we will cover the most common ways to build forms in React with UI Kit.
+For a complete list of available components, check out [`HvFormElement`’s related components](/components/form-element#related-components).
 
-### Native form
+## Building Forms
 
-The simplest way to build a form is by using a native uncontrolled `form`, leveraging the [built-in form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation)
-and reading the results from `FormData`.
-It's a good option for **simple forms** using form components based on native form controls (eg. `input`) where **custom validation is not needed**.
+There are several ways to build forms in React, each with its own trade-offs. Below are the most common approaches when using the UI Kit.
 
-**Note:** Not all UI Kit form components integrate with the native form data or validation.
+### Native Form
+
+The simplest method is using an uncontrolled native `form`, taking advantage of [built-in browser validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#using_built-in_form_validation) and accessing form values via `FormData`.
+
+This approach is ideal for **basic forms** using native-compatible components (e.g., `input`), where **custom validation is not needed**.
 
 <CodeBlock code={nativeFormCode} layout="expandable" />
 
 ### React form
 
-Whenever control of internal form values or a custom validation is required, controlling the form with React state is a good option.
-When doing so, you should handle the state with controlled components and control changes by adding event handlers in the `onChange` attribute.
+Whenever you need to manage internal form values or apply custom validation, using **controlled components** with React state is a good approach. In this setup, each form input is tied to a state variable, and changes are handled via the `onChange` event.
 
 <CodeBlock code={reactFormCode} layout="expandable" />
 
 ### Form libraries
 
-When working with React and forms there are a lot of complexities and intricacies that we all struggle with: form verbosity, form validations, and managing the state of the forms and its components.
+Working with forms in React can be challenging—handling validation, verbosity, and state management often adds complexity.
 
-There are libraries like **[React Hook Form](https://react-hook-form.com/)** or **[Formik](https://formik.org/)** that can help you build forms with less pain.
-Both are solving the same problems, and we don't enforce the use of any of them.
+Libraries like **[React Hook Form](https://react-hook-form.com/)** and **[Formik](https://formik.org/)** help simplify form handling. Both address similar problems, and the **UI Kit** does not enforce the use of either.
 
-Our **Form Components** are compatible with these libraries, but we recommend the use of **imperative set value functions** on each library when handling the `onChange` event of our components.
-While our APIs are not fully aligned, this will be the most consistent way of managing the state of the forms and its components.
+Our **Form Components** are compatible with these libraries. However, we recommend using each library’s **imperative set value functions** when handling the `onChange` events of our components. While the APIs are not fully aligned, this approach provides the most consistent and predictable experience.
 
 #### React Hook Form
 

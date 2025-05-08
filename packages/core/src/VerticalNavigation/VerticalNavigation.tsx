@@ -51,20 +51,7 @@ export interface HvVerticalNavigationProps extends HvBaseProps<HTMLDivElement> {
 }
 
 /**
- * Navigation enables users to move through an app to complete tasks.
- *
- * It is recommended to use vertical navigation when your application requires global navigation that is displayed on the left.
- * While vertical navigation menus generally consume more space than their horizontal counterparts, they have become more popular as desktop monitors move to wide-screen formats.
- *
- * Although both the hierarchically organized data and the visual style resemble a treeview-like structure, the [Treeview Design Pattern](https://w3c.github.io/aria-practices/#TreeView)
- * isn't necessarily the most appropriate.
- *
- * The tree role provides complex functionality that is not needed for typical site navigation, and changes the most common keyboard navigation using TAB.
- *
- * The [Disclosure Design Pattern](https://w3c.github.io/aria-practices/#disclosure) is more suited for typical site navigation, with expandable groups of links.
- * However it can be tedious to TAB through all navigation items to reach the actions panel.
- *
- * Both modes are available via the `mode` property and each app should choose the most appropriate.
+ * Use a vertical layout for global navigation on wide screens. treeview mode provides structured hierarchy but overrides standard keyboard navigation.
  */
 export const HvVerticalNavigation = forwardRef<
   HTMLDivElement,

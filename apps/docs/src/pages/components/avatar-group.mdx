@@ -55,9 +55,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### Custom overflow component
 
-By default, when the number of avatars exceeds the `maxVisible` prop, the `HvAvatarGroup` component will show **+X** where **X**
-is the number of avatars that are not visible. The `overflowComponent` prop allows you to customize the overflow component that is
-displayed in this scenario.
+By default, when the number of avatars exceeds the `maxVisible` prop, the `HvAvatarGroup` component displays a `+X` indicator for the hidden avatars. You can customize this overflow behavior using the `overflowComponent` prop.
 
 ```tsx live
 <HvAvatarGroup

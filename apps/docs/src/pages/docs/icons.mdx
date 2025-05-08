@@ -2,25 +2,10 @@ import { Callout } from "nextra/components";
 
 # Icons
 
-The **UI Kit** library aims to support any external SVG icon, provided that its converted to a React component.
-In most scenarios, you'll be passing the icons as properties to **UI Kit** components.
+The **UI Kit** is designed to work seamlessly with popular icon libraries like **[Phosphor Icons](https://phosphoricons.com)**, **[Font Awesome](https://fontawesome.com)** or **[Material Icons](https://mui.com/material-ui/material-icons/)**.
+These libraries follow the recommended conventions—using `currentColor` for fill and `1em` for size—ensuring icons inherit color and scale properly when used within **UI Kit** components.
 
-<Callout type="info">
-  To easily convert `.svg` files to React components, use
-  [SVGR](https://react-svgr.com) and
-  [`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr).
-</Callout>
-
-Given a `<CustomIcon />` SVG React component, usage would look like this:
-
-```tsx
-<HvButton startIcon={<CustomIcon />} />
-<HvInput endAdornment={<CustomIcon />} />
-<HvCardHeader icon={<CustomIcon />} />
-```
-
-To ensure the icons are colored and sized automatically, icons should default to `currentColor` color and `1em` size.
-Most icon libraries such as [Material Icons](https://mui.com/material-ui/material-icons/), [Font Awesome](https://fontawesome.com), and [Phosphor Icons](https://phosphoricons.com), already follow this convention.
+If you're using custom SVG icons, make sure they follow the same conventions and are converted to React components.
 
 ```tsx live
 const CustomIcon = () => (
@@ -38,13 +23,27 @@ export default function Demo() {
 }
 ```
 
+<Callout type="info">
+  To easily convert `.svg` files to React components, use
+  [SVGR](https://react-svgr.com) and
+  [`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr).
+</Callout>
+
+Given a `<CustomIcon />` SVG React component, usage would look like this:
+
+```tsx
+<HvButton startIcon={<CustomIcon />} />
+<HvInput endAdornment={<CustomIcon />} />
+<HvCardHeader icon={<CustomIcon />} />
+```
+
 ## `HvIconContainer`
 
-As oftentimes icons need to be used separately from components, **UI Kit** also provides an `HvIconContainer` utility component
-that handles coloring and sizing icons according to the Design System specifications.
+Icons are often used independently from other components. To support this, the **UI Kit** provides the [`HvIconContainer`](/components/icon-container) utility component, which ensures icons are styled according to the design specifications.
 
-It extends an icon's capabilities by adding support for `HvColor`, and a "container box" that adds padding according to the configured icon size.
-Please check out the [`HvIconContainer`](/components/icon-container) component documentation for more usage information.
+`HvIconContainer` enhances icon usage by adding support for `HvColor` and applying consistent padding through a “container box” based on the icon size. This helps maintain visual alignment and spacing across your UI.
+
+For detailed usage and examples, see the [`HvIconContainer`](/components/icon-container) documentation.
 
 ```tsx live
 export default function Demo() {

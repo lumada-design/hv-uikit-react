@@ -24,8 +24,8 @@ export const getStaticProps = async ({ params }) => {
 
 <Header />
 
-GlobalActions is of variant `global` by default, meaning that an `h1` element will be rendered and it will be `sticky` by default.<br />
-The `section` variant of Global Actions should be used to group related blocks of information. Use with parsimony, you might not need such a clear separator.
+`GlobalActions` uses the `global` variant by default, rendering an `h1` element and applying sticky positioning.
+Use the `section` variant to group related content blocks. Use it sparingly—it introduces strong visual separation, which may not always be necessary.
 
 <Playground
   Component={HvGlobalActions}

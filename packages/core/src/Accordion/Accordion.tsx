@@ -42,7 +42,7 @@ export interface HvAccordionProps
 }
 
 /**
- * A accordion is a design element that expands in place to expose hidden information.
+ * An accordion is a design element that expands in place to expose hidden information.
  */
 export const HvAccordion = forwardRef<
   React.ComponentRef<"div">,

@@ -53,7 +53,7 @@ export const getStaticProps = async ({ params }) => {
 
 ### Media
 
-You can place an image on your card using the `HvCardMedia` component. It will adapt to the location of the card it is placed on.
+Use the `HvCardMedia` component to add an image to your card. It automatically adapts to its placement within the card.
 
 ```tsx live
 <HvCard className="w-240px" bgcolor="atmo1">
@@ -74,7 +74,7 @@ You can place an image on your card using the `HvCardMedia` component. It will a
 
 ### Actions
 
-If you want to add actions to the card, you can use the `HvActionBar` component.
+To add actions to a card, use the `HvActionBar` component.
 
 ```tsx live
 <>
@@ -103,7 +103,7 @@ If you want to add actions to the card, you can use the `HvActionBar` component.
 
 ### Selectable
 
-You can mark a card as selectable by adding the `selectable` prop. The `selected` prop indicates whether or not the card is selected.
+Make a card selectable by using the `selectable` prop. Use the `selected` prop to control its selection state.
 
 ```tsx live
 import { useState } from "react";

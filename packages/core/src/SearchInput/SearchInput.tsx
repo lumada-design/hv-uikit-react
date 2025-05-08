@@ -9,9 +9,7 @@ import { useClasses } from "./SearchInput.styles";
 export interface HvSearchInputProps extends HvInputProps<HTMLInputElement> {}
 
 /**
- * A search input component that allows the user to enter a search term.
- *
- * This component extends the `HvInput` component, please check its documentation for more information on the available props.
+ * A Search Input allows users to enter and submit a search term.
  *
  * @extends HvInput
  */
