@@ -254,6 +254,7 @@ const ds3 = makeTheme((theme) => ({
     HvBaseDropdown: {
       classes: {
         header: {
+          borderRadius: 0,
           border: `1px solid ${theme.colors.atmo4}`,
           ":hover,:focus-visible": {
             borderColor: theme.colors.secondary,
@@ -1165,6 +1166,7 @@ const ds3 = makeTheme((theme) => ({
       classes: {
         list: {
           borderColor: "transparent",
+          borderRadius: 0,
         },
       },
     },
@@ -1436,7 +1438,6 @@ const ds3 = makeTheme((theme) => ({
   },
   form: {
     errorColor: theme.colors.negative_120,
-    radius: theme.radii.none,
   },
   bulkActions: {
     actionButtonVariant: "semantic",

@@ -1047,7 +1047,6 @@ const pentahoPlus = makeTheme((theme) => ({
   },
   form: {
     errorColor: theme.colors.negative,
-    radius: theme.radii.round,
   },
   bulkActions: {
     actionButtonVariant: "primaryGhost",

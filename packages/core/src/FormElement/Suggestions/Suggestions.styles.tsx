@@ -6,7 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
   list: {
     backgroundColor: theme.colors.bgContainer,
     border: `1px solid ${theme.colors.text}`,
-    borderRadius: theme.form.radius,
+    borderRadius: theme.radii.round,
     boxShadow: theme.colors.shadow,
     padding: theme.space.xs,
     width: "100%",

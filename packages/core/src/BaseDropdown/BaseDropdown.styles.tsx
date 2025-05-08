@@ -20,7 +20,7 @@ export const { useClasses, staticClasses } = createClasses("HvBaseDropdown", {
     backgroundColor: theme.colors.bgContainer,
     boxSizing: "border-box",
     border: `1px solid ${theme.colors.text}`,
-    borderRadius: theme.form.radius,
+    borderRadius: theme.radii.round,
     ":hover,:focus-visible": {
       borderColor: theme.colors.primary,
     },

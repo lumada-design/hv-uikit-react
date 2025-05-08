@@ -182,21 +182,23 @@ const ds5 = makeTheme((theme) => ({
     HvBaseDropdown: {
       classes: {
         headerOpen: {
+          "--r": theme.radii.round,
           "&[data-popper-placement*='top']": {
-            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
+            borderRadius: "0 0 var(--r) var(--r)",
           },
           "&[data-popper-placement*='bottom']": {
-            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+            borderRadius: "var(--r) var(--r) 0 0",
           },
         },
         panel: {
+          "--r": theme.radii.round,
           "&[data-popper-placement*='top']": {
             top: 1,
-            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+            borderRadius: "var(--r) var(--r) 0 0",
           },
           "&[data-popper-placement*='bottom']": {
             top: -1,
-            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
+            borderRadius: "0 0 var(--r) var(--r)",
           },
         },
       },
@@ -268,11 +270,12 @@ const ds5 = makeTheme((theme) => ({
     HvSelect: {
       classes: {
         popper: {
+          "--r": theme.radii.round,
           "&[data-popper-placement*='top'] .HvSelect-panel": {
-            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+            borderRadius: "var(--r) var(--r) 0 0",
           },
           "&[data-popper-placement*='bottom'] .HvSelect-panel": {
-            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
+            borderRadius: "0 0 var(--r) var(--r)",
           },
         },
       },
@@ -303,7 +306,6 @@ const ds5 = makeTheme((theme) => ({
   },
   form: {
     errorColor: theme.colors.negative_120,
-    radius: theme.radii.round,
   },
   bulkActions: {
     actionButtonVariant: "primaryGhost",

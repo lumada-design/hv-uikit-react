@@ -32,7 +32,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseInput", {
     position: "relative",
     overflow: "hidden",
     margin: 0,
-    borderRadius: theme.form.radius,
+    borderRadius: theme.radii.round,
     height: "32px",
     borderWidth: 1,
     borderColor: theme.colors.text,
