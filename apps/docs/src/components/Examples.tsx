@@ -76,13 +76,13 @@ export const Examples = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-md py-xl">
+    <div className="max-w-6xl mx-auto px-sm md:px-md py-lg md:py-xl">
       {/* Page Header */}
-      <div className="mb-lg md:text-center px-sm">
+      <div className="mb-lg md:mb-xl md:text-center">
         <HvTypography
           className={clsx(
-            "text-2.3em leading-1.3em mb-md",
-            "max-sm:text-1.5rem max-sm:leading-2.2rem max-sm:mb-sm",
+            "text-[2.3em] leading-[1.3em] mb-md",
+            "max-sm:text-[1.5rem] max-sm:leading-[2.2rem] max-sm:mb-sm",
           )}
         >
           Building blocks to streamline <br />
@@ -100,12 +100,11 @@ export const Examples = () => {
           >
             StackBlitz collection
           </HvTypography>
-          .
         </HvTypography>
       </div>
 
       {/* Section Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-lg">
         {sections.map((section) => (
           <Link
             key={section.title}

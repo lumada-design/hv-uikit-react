@@ -15,22 +15,22 @@ pre {
   @apply mt-4 mb-4;
 }
 
-article {
+.nextra-content main {
   font-size: 1rem;
 }
 
-article > main h2 {
+.nextra-content main h2 {
   font-size: 1.7rem !important;
   @apply !border-none;
 }
 
-article > main h2 + p,
-article > main h3 + p {
+.nextra-content main h2 + p,
+.nextra-content main h3 + p {
   @apply !mt-2;
 }
 
-article > main ul,
-article > main ol {
+.nextra-content main ul,
+.nextra-content main ol {
   @apply !my-4;
 }
 
