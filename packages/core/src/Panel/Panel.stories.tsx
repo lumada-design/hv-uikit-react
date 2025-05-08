@@ -30,13 +30,13 @@ export const Main: StoryObj<HvPanelProps> = {
 export const WithScroll: StoryObj<HvPanelProps> = {
   render: () => {
     const chars = "abcdefghijklmnopqrstuvwxyz";
+
     return (
-      <HvPanel
-        style={{ width: 300, height: 300, letterSpacing: "1rem" }}
-        tabIndex={0}
-      >
-        {[...chars].map((char, i) => (
-          <div key={i}>{i === 0 ? chars : char}</div>
+      <HvPanel className="w-[300px] h-[300px] overflow-auto p-4" tabIndex={0}>
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div key={i}>
+            {i === 0 ? chars : `Line ${i}: ${chars[i % chars.length]}`}
+          </div>
         ))}
       </HvPanel>
     );

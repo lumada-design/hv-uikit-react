@@ -5,27 +5,27 @@ const footerLinks = [
     title: "Project",
     links: [
       { label: "Get Started", href: "/docs/get-started" },
-      { label: "Contribute", href: "/docs/contribute/" },
-      { label: "Changelog", href: "/docs/changelog/" },
-      {
-        label: "Releases",
-        href: "https://github.com/lumada-design/hv-uikit-react/releases",
-      },
+      { label: "Project Status", href: "/docs/project-status" },
+      { label: "Contributing", href: "/docs/contributing" },
+      { label: "Releases", href: "/docs/releases" },
     ],
   },
   {
     title: "Documentation",
     links: [
-      { label: "Docs", href: "/docs/" },
-      { label: "Components", href: "/components" },
-      { label: "Charts", href: "/charts" },
+      { label: "Docs", href: "/docs/introduction" },
+      { label: "Components", href: "/components/accordion" },
+      { label: "Charts", href: "/charts/get-started" },
       { label: "Examples", href: "/examples" },
     ],
   },
   {
     title: "Community",
     links: [
-      { label: "Team", href: "/" },
+      {
+        label: "Team",
+        href: "https://github.com/lumada-design/hv-uikit-react?tab=readme-ov-file#team-",
+      },
       {
         label: "Slack",
         href: "https://hitachivantara-eng.slack.com/archives/CFY74GK6G",
@@ -34,7 +34,10 @@ const footerLinks = [
         label: "GitHub",
         href: "https://github.com/lumada-design/hv-uikit-react",
       },
-      { label: "License", href: "/" },
+      {
+        label: "License",
+        href: "https://github.com/lumada-design/hv-uikit-react/?tab=Apache-2.0-1-ov-file#readme",
+      },
     ],
   },
 ];
@@ -70,6 +73,10 @@ export const Footer = () => {
                     key={link.label}
                     href={link.href}
                     className="hover:text-primary pb-xs"
+                    target={link.href.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      link.href.startsWith("http") ? "noreferrer" : undefined
+                    }
                   >
                     {link.label}
                   </a>
