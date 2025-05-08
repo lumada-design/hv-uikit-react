@@ -17,6 +17,7 @@ export default {
     type: "separator",
     title: "Foundation",
   },
+  theming: "Theming",
   "color-tokens": {
     title: "Color Tokens",
     theme: {
