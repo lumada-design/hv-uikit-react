@@ -6,6 +6,7 @@ export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
   list: {
     backgroundColor: theme.colors.bgContainer,
     border: `1px solid ${theme.colors.text}`,
+    borderRadius: theme.form.radius,
     boxShadow: theme.colors.shadow,
     padding: theme.space.xs,
     width: "100%",
@@ -16,10 +17,10 @@ export const { staticClasses, useClasses } = createClasses("HvSuggestions", {
     zIndex: theme.zIndices.tooltip,
     ":not($portal)": {
       "&[data-popper-placement*='top']": {
-        transform: "translate3d(0, -42px, 0) !important",
+        transform: "translate3d(0, -28px, 0) !important",
       },
       "&[data-popper-placement*='bottom']": {
-        transform: "translate3d(0, -1px, 0) !important",
+        transform: "translate3d(0, 2px, 0) !important",
       },
     },
   },

@@ -34,6 +34,7 @@ export type HvThemeComponents = {
   };
   form: {
     errorColor: string;
+    radius: string;
   };
   bulkActions: {
     actionButtonVariant: string;

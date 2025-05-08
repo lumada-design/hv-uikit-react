@@ -23,6 +23,7 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   form: {
     errorColor: "string",
+    radius: "string",
   },
   bulkActions: {
     actionButtonVariant: "string",

@@ -1,5 +1,4 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { suggestionsClasses } from "../FormElement/Suggestions";
 
@@ -30,11 +29,8 @@ export const { staticClasses, useClasses } = createClasses("HvInput", {
       width: "100%",
     },
   },
-  inputExtension: {
-    height: theme.space.xs,
-    backgroundColor: theme.colors.bgContainer,
-    boxShadow: `0px 8px 0px ${theme.colors.bgContainer}, 0px 0px 9px 0px rgba(65,65,65,.12)`,
-  },
+  /** @deprecated unused. use `classes.suggestionsContainer ::before` instead */
+  inputExtension: {},
   input: {},
   inputRoot: {
     ":is(:hover,:focus-within) $iconClear": {

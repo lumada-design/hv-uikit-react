@@ -179,6 +179,28 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvBaseDropdown: {
+      classes: {
+        headerOpen: {
+          "&[data-popper-placement*='top']": {
+            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
+          },
+          "&[data-popper-placement*='bottom']": {
+            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+          },
+        },
+        panel: {
+          "&[data-popper-placement*='top']": {
+            top: 1,
+            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+          },
+          "&[data-popper-placement*='bottom']": {
+            top: -1,
+            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
+          },
+        },
+      },
+    },
     HvButton: {
       radius: "round",
       classes: {
@@ -216,6 +238,20 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvDropdownButton: {
+      classes: {
+        open: {
+          "&[data-popper-placement*='top']": {
+            borderTopLeftRadius: 0,
+            borderTopRightRadius: 0,
+          },
+          "&[data-popper-placement*='bottom']": {
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+          },
+        },
+      },
+    },
     HvMultiButton: {
       classes: {
         splitGroup: {
@@ -225,6 +261,18 @@ const ds5 = makeTheme((theme) => ({
           },
           "&& .HvButton-disabled": {
             backgroundColor: theme.colors.atmo3,
+          },
+        },
+      },
+    },
+    HvSelect: {
+      classes: {
+        popper: {
+          "&[data-popper-placement*='top'] .HvSelect-panel": {
+            borderRadius: `${theme.form.radius} ${theme.form.radius} 0 0`,
+          },
+          "&[data-popper-placement*='bottom'] .HvSelect-panel": {
+            borderRadius: `0 0 ${theme.form.radius} ${theme.form.radius}`,
           },
         },
       },
@@ -255,6 +303,7 @@ const ds5 = makeTheme((theme) => ({
   },
   form: {
     errorColor: theme.colors.negative_120,
+    radius: theme.radii.round,
   },
   bulkActions: {
     actionButtonVariant: "primaryGhost",
