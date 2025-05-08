@@ -600,9 +600,9 @@ const pentahoPlus = makeTheme((theme) => ({
       },
     },
     HvButton: {
+      radius: "full",
       classes: {
         root: {
-          "--radius": theme.radii.full,
           ":where(:not(.HvButton-disabled,.HvButton-contained))": {
             "&[data-color=positive]": { color: theme.colors.positive },
             "&[data-color=warning]": { color: theme.colors.warning },

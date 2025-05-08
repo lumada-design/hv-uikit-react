@@ -173,6 +173,7 @@ const ds5 = makeTheme((theme) => ({
   },
   components: {
     HvButton: {
+      radius: "round",
       classes: {
         root: {
           ":where(:not(.HvButton-disabled,.HvButton-contained))": {
