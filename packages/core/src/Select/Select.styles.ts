@@ -10,13 +10,13 @@ export const { staticClasses, useClasses } = createClasses("HvSelect", {
   },
   disabled: {},
   readOnly: {},
-  invalid: {
-    borderColor: theme.form.errorColor,
-  },
+  invalid: {},
   labelContainer: {},
   label: {},
   description: {},
-  select: {},
+  select: {
+    "&&$invalid": { borderColor: theme.form.errorColor },
+  },
   popper: {
     zIndex: theme.zIndices.popover,
 
