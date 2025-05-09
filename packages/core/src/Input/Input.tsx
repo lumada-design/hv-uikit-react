@@ -211,7 +211,7 @@ function eventTargetIsInsideContainer(
 }
 
 /**
- * A text input box is a graphical control element intended to enable the user to input text information to be used by the software.
+ The Input is a UI control that allows users to enter and edit text, typically used for collecting user-provided information.
  */
 export const HvInput = fixedForwardRef(function HvInput<
   InputElement extends HTMLElement = HTMLInputElement | HTMLTextAreaElement,

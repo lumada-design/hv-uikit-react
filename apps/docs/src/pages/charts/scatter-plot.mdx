@@ -12,7 +12,10 @@ export const getStaticProps = async ({ params }) => {
 
 ### Usage
 
-This example demonstrates a simple scatter plot with a single data series. Each bar represents a data point, and a tooltip appears on hover to display additional information. Setting the `horizontalRangeSlider.show` prop to true will display a range slider at the bottom of the chart to allow users to zoom in on a specific range of data.
+This example shows a simple scatter plot with one data series.  
+Each dot represents a data point, and a tooltip appears on hover.
+
+Set `horizontalRangeSlider.show` to `true` to add a range slider below the chart for zooming into specific data ranges.
 
 ```tsx live
 <HvScatterPlot
@@ -31,8 +34,8 @@ This example demonstrates a simple scatter plot with a single data series. Each 
 
 ### Multiple plots with splitBy
 
-Use the `splitBy` to create multiple plots in the same chart. In this example we have two countries with 10 data points each.
-The `splitBy` prop is used to create two separate plots, one for each country.
+Use the `splitBy` prop to create multiple plots within the same chart.  
+In this example, two countries each have 10 data points. `splitBy` is set to `Country` to display a separate plot for each one.
 
 ```tsx live
 <HvScatterPlot
@@ -83,9 +86,8 @@ The `splitBy` prop is used to create two separate plots, one for each country.
 
 ### Multiple Y axes
 
-You can create a scatter plot with multiple Y axes by defining the `yAxis` prop as an array of objects.
-Each object should have a unique `id` and a `name` to identify the axis.
-The `measures` prop should be an array of objects, each with a `yAxis` field that matches the `id` of the corresponding axis.
+To create a scatter plot with multiple Y axes, define the `yAxis` prop as an array of objects.  
+Each object must have a unique `id` and a `name`. Then, set the `measures` prop as an array, where each measure includes a `yAxis` field that matches one of the defined axis `id`s.
 
 ```tsx live
 <HvScatterPlot
@@ -139,8 +141,8 @@ The `measures` prop should be an array of objects, each with a `yAxis` field tha
 
 ### Custom ECharts options
 
-If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.
-Here we are adding a mark line to the chart.
+You can customize the chart using ECharts options.  
+In this example, a `markLine` is added to highlight a specific value or trend in the chart.
 
 ```tsx live
 <HvScatterPlot

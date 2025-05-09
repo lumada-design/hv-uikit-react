@@ -15,23 +15,24 @@ pre {
   @apply mt-4 mb-4;
 }
 
-.nextra-content :not(.uikit-root-element) main {
+.nextra-content,
+.nextra-content._w-full {
   font-size: 1rem;
 }
 
-.nextra-content :not(.uikit-root-element) main h2 {
+.nextra-content h2,
+.nextra-content._w-full h2 {
   font-size: 1.7rem !important;
   @apply !border-none;
 }
 
-.nextra-content :not(.uikit-root-element) main h2 + p,
-.nextra-content :not(.uikit-root-element) main h3 + p {
+.nextra-content h2 + p,
+.nextra-content h3 + p {
   @apply !mt-2;
 }
 
-.nextra-content :not(.uikit-root-element) main ul,
-.nextra-content :not(.uikit-root-element) main ol {
-  @apply !my-4;
+.nextra-content._w-full {
+  @apply max-w-5xl mx-auto;
 }
 
 .nextra-sidebar-container .active a {

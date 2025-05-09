@@ -43,7 +43,8 @@ export const getStaticProps = async ({ params }) => {
 
 ### Disabled
 
-To "hide" a Tooltip, remove its `title`; `disableFocusListener` and `disableHoverListener` disable focus or hover, respectively.
+To hide a `Tooltip`, remove its `title`.  
+Use `disableFocusListener` or `disableHoverListener` to disable showing it on focus or hover, respectively.
 
 ```tsx live
 <div className="w-full flex justify-around pt-xl">
@@ -61,8 +62,8 @@ To "hide" a Tooltip, remove its `title`; `disableFocusListener` and `disableHove
 
 ### Custom elements
 
-A Tooltip can be attached to any side (see `placement`) of any element or component that holds a `ref` and spreads its props.\
- If the component doesn't do so, a workaround is to wrap it in a `div`.
+A `Tooltip` can be placed on any side of an element using the `placement` prop.  
+It requires the target component to hold a `ref` and spread its props—if not, wrap it in a `<div>` as a workaround.
 
 ```tsx live
 <div className="w-full flex justify-around pt-xl">
@@ -99,8 +100,8 @@ A Tooltip can be attached to any side (see `placement`) of any element or compon
 
 ### Custom content
 
-A Tooltip will grow to the size of its content. Keep in mind that the Tooltip `title` labels the content `children` \
- and is not keyboard-navigable, therefore it shouldn't be too complex or contain interactable elements.
+A `Tooltip` grows to fit its content.  
+Since it labels the target element and isn’t keyboard-navigable, avoid complex or interactive content in the tooltip.
 
 ```tsx live
 <div className="w-full flex justify-around pt-xl">

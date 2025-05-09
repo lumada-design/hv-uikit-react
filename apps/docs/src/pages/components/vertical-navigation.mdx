@@ -25,9 +25,14 @@ export const getStaticProps = async ({ params }) => {
 
 <Header />
 
+<Callout type="info">
+  Use mode="disclosure" for most apps. Avoid mode="treeview" unless complex
+  hierarchy and custom keyboard interaction are required.
+</Callout>
+
 ### Usage
 
-The sample below illustrates a common use of the `HvVerticalNavigation` component. The `HvVerticalNavigationTree` component is used to render the navigation tree. The `HvVerticalNavigationActions` component is used to render the actions at the bottom of the navigation.
+The example below demonstrates a typical use of the `VerticalNavigation` component, combining `VerticalNavigationTree` to render the navigation structure and `VerticalNavigationActions` to display bottom-aligned actions.
 
 ```tsx live
 import { useState } from "react";
@@ -110,9 +115,7 @@ const navigationData = [
 
 ### Tree view
 
-Usage of the Treeview Design Pattern to build a navigation tree for a set of hierarchically organized web pages. Instead of TAB, use the arrow keys to navigate through items. Enter performs its default action (i.e. open/close parent nodes, select otherwise).
-
-Set the `mode` prop to `treeview` to enable the tree view and set `collpasible` to `true` to enable collpasing non-leaf items.
+Use `mode="treeview"` to enable keyboard navigation with arrow keys. Press Enter to expand/collapse or select items. Set `collapsible` to `true` to allow collapsing non-leaf nodes.
 
 ```tsx live
 import { useState } from "react";
@@ -188,11 +191,9 @@ const navigationData = [
 
 ### Collapsible
 
-If you want the navigation to be collapsible, you can use the `HvVerticalNavigationHeader` component to add a collapse button to the navigation.
-You'll have to manage the open state of the navigation yourself and pass it to the `open` prop of the `HvVerticalNavigation` component. The
-collapse button will show if you pass a handler function to the `onCollapseButtonClick` prop.
+To make the navigation collapsible, use `HvVerticalNavigationHeader` with a collapse button. Control the open state via the `open` prop and show the button by passing a handler to `onCollapseButtonClick`.
 
-You can also use the `useIcons` prop to show icons in the navigation when collapsed, if an icon is not provided one will be generated based on the first letter of the label.
+Enable `useIcons` to display icons when collapsed—defaults to the first letter of the label if no icon is provided.
 
 ```tsx live
 import { useState } from "react";

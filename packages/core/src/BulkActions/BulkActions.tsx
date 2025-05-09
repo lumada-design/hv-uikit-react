@@ -57,8 +57,7 @@ export interface HvBulkActionsProps extends HvBaseProps {
 }
 
 /**
- * Bulk Actions allow users to perform an action on a single or multiple items.
- * Also known as "batch production" of multiple items at once, one stage at a time.
+ * Bulk Actions let users apply an action to one or multiple items at once, streamlining repetitive tasks.
  */
 export const HvBulkActions = forwardRef<
   React.ComponentRef<"div">,

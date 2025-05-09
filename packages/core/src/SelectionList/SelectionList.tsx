@@ -110,10 +110,9 @@ const getValueFromSelectedChildren = (
 };
 
 /**
- * Allows the user to select one or more items from a list of choices.
+ * SelectionList allows users to select one or more items from a list.
  *
- * Although it supports multi-selection, DS recommends the use of a selection list
- * when it’s clear that the user can only select just one option from the range provided.
+ * While it supports multi-selection, it’s recommended to use it when it’s clear that only a single option should be selected.
  */
 export const HvSelectionList = forwardRef<
   HTMLUListElement,

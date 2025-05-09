@@ -36,7 +36,7 @@ export interface HvProgressBarProps extends HvBaseProps {
 }
 
 /**
- * ProgressBar provides feedback about a process that is taking place in the application.
+ * Progress Bar provides feedback about a process that is taking place in the application.
  */
 export const HvProgressBar = (props: HvProgressBarProps) => {
   const {

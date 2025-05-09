@@ -123,13 +123,9 @@ export interface HvRadioProps
 }
 
 /**
- * A Radio Button is a mechanism that allows user to select just an option from a group of options.
- *
- * It should used in a Radio Button Group to present the user with a range of options from
- * which the user **may select just one option** to complete their task.
- *
- * Individual use of radio buttons, at least uncontrolled, is unadvised as React state management doesn't
- * respond to the browser's native management of radio inputs checked state.
+A Radio Button lets users select a single option from a group.
+
+Use it within a Radio Button Group—individual usage is discouraged, as React may not track the `checked` state reliably outside a group.
  */
 export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
   function HvRadio(props, ref) {

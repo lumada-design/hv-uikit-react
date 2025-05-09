@@ -138,7 +138,7 @@ export interface HvSliderProps
 }
 
 /**
- * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters.
+ * Sliders let users select a value from a range along a track. They're ideal for settings like volume, brightness, or image filters.
  */
 export const HvSlider = forwardRef<
   // no-indent

@@ -49,7 +49,7 @@ export const ColorTokens = () => {
                     ></div>
 
                     {/* Token name */}
-                    <HvTypography className="mt-2 text-sm text-center">
+                    <HvTypography className="mt-2 text-md text-center">
                       {token}
                     </HvTypography>
 

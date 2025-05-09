@@ -115,9 +115,7 @@ const DEFAULT_LABELS = {
 export type HvFilterGroupLabels = Partial<typeof DEFAULT_LABELS>;
 
 /**
- * This component implements one potential use-case of the Filter Group pattern Design System Specifies.
- * Due to the enormous variety of capabilities required for this, we strongly recommend checking the code of the component and extend it yourself,
- * while we do not provide a better approach for building this component with smaller and more composable parts.
+ A Filter Group is a UI pattern used to organize and apply multiple filters to a dataset, helping users refine and narrow down results.
  */
 export const HvFilterGroup = forwardRef<HTMLDivElement, HvFilterGroupProps>(
   function HvFilterGroup(props, ref) {

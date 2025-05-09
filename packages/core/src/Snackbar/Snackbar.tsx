@@ -78,12 +78,13 @@ export interface HvSnackbarProps
 }
 
 /**
- * A Snackbar provides brief messages about app processes.
- * It is dismissed automatically after a given interval.
+ * A Snackbar displays brief messages about app processes and dismisses automatically after a set time.
  *
- * Snackbar can be built with two different components:
- * - `HvSnackbar`, which wraps all the positioning, transition, auto hide, etc.
- * - `HvSnackbarContent`, which allows a finer control and customization of the content of the Snackbar.
+ * You can build a Snackbar using:
+ *
+ * - `HvSnackbar` – handles positioning, transitions, auto-hide, and more.
+ * - `HvSnackbarContent` – offers fine-grained control over the content and appearance.
+ *
  */
 export const HvSnackbar = forwardRef<
   React.ComponentRef<typeof MuiSnackbar>,

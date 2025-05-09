@@ -57,11 +57,9 @@ export const getStaticProps = async ({ params }) => {
 
 ### Icon
 
-Use the `startIcon` or `endIcon` props to insert an icon on the button.
-You can also use the `icon` prop and pass icon directly to `children` of the `HvButton` component.
+Use the `startIcon` or `endIcon` props to add icons to a button. You can also use the `icon` prop to pass an icon directly as a child of `HvButton`.
 
-When using icon-only buttons (`icon` prop), it's preferable to use the `HvIconButton` component instead,
-as it wraps the button in an `HvTooltip` component and enforces an accessible `title` label.
+For icon-only buttons, prefer using `HvIconButton`, which wraps the icon in a `HvTooltip` and enforces an accessible `title` for better usability.
 
 ```tsx live
 <div className="flex gap-xs items-center">
@@ -134,8 +132,7 @@ If you need a button that exists on a semantic container you can set the `varian
 
 ### Focusable when disabled
 
-If you still need the button to be focusable when disabled for accessibility purposes, you can set the `focusableWhenDisabled` property to `true`.
-When using this property, the buttons will continue to be read by screen readers when disabled.
+If needed for accessibility, set `focusableWhenDisabled` to `true` to keep the button focusable and readable by screen readers, even when disabled.
 
 ```tsx live
 <HvButton disabled focusableWhenDisabled>

@@ -16,18 +16,13 @@ npm install @hitachivantara/uikit-react-viz
 
 ## Apache ECharts
 
-UI Kit's charts are based on the [Apache ECharts](https://echarts.apache.org/en/index.html) library.
-If you need any feature that's not covered by the UI Kit charts documentation, please refer to the [Apache ECharts documentation](https://echarts.apache.org/en/option.html#title).
+UI Kit charts are built on [Apache ECharts](https://echarts.apache.org/en/index.html).  
+For advanced features not covered here, see the [Apache ECharts documentation](https://echarts.apache.org/en/option.html#title).
 
 ## Provider
 
-Before using any of the UI Kit visualizations, it's necessary to add the `HvVizProvider` component to your application.
-This component is responsible for enabling theming capabilities for the visualizations.
-
-The `HvVizProvider` component should preferably be used at the root of your component tree and should always be wrapped by the `HvProvider` component
-since the former uses the themes provided by the latter to configure the visualizations themes.
-
-Thus, you can setup the `HvVizProvider` like so:
+Before using any UI Kit visualizations, wrap your app with the `HvVizProvider` component to enable theming.  
+It should be placed near the root of your component tree and must be wrapped by `HvProvider`, as it relies on the UI Kit theme.
 
 ```tsx
 import { HvProvider } from "@hitachivantara/uikit-react-core";
@@ -46,13 +41,11 @@ The `HvVizProvider` only accepts a `children` and doesn't need any extra configu
 
 ## Data
 
-The visualizations `data` can have one of the following formats:
+The `data` prop in visualizations supports the **columns format**:
 
-- **Columns format**: an object with a set of key-value pairs where the keys are the column names and the values are arrays of identical length containing the row values.
+- **Columns format**: An object where each key is a column name and its value is an array of values (all arrays must have the same length).
 
-_Examples:_
-
-Both examples represent a table with 3 columns (`Month`, `Sales Target`, and `Monthly Sales`) and 12 rows.
+Both examples below represent a table with 3 columns (`Month`, `Sales Target`, and `Monthly Sales`) and 12 rows.
 
 ```tsx
 {
@@ -91,9 +84,7 @@ new Map()
 - **Rows format**: an array containing a set of objects where each object is a row. Each key-value pair from the row object represent
   the column name (key) and row value (value).
 
-_Example:_
-
-The example illustrates a table with 3 columns (`Country`, `Population`, and `Area`) and 4 rows.
+Example illustrating a table with 3 columns (`Country`, `Population`, and `Area`) and 4 rows.
 
 ```tsx
 [
@@ -120,55 +111,58 @@ The example illustrates a table with 3 columns (`Country`, `Population`, and `Ar
 ];
 ```
 
-- **Arquero table format**: a table created using the [Arquero library](https://uwdata.github.io/arquero/). Arquero is a library for query processing and data tables
-  transformation. We already use this library internally to manipulate and transform data points. However, we don't cover all the capabilities supported by this library.
-  Thus, we decided to support tables created with Arquero as a valid data format for our visualizations.
+- **Arquero table format**: A table created using the [Arquero](https://uwdata.github.io/arquero/) library, which provides powerful data transformation and query capabilities. UI Kit visualizations support Arquero tables as a valid `data` format. While we use Arquero internally, not all of its features are exposed—refer to the official documentation for advanced usage.
 
-_Example:_
-
-For instance, if your data is a JSON, you can use Arquero to transform the JSON into a data table and pass it to the visualizations. The example below will create a
-table with 2 columns (`Country` and `Population`) and 2 rows.
-
-For more information take a look at the [Arquero API documentation](https://uwdata.github.io/arquero/api/).
+For instance, if your data is a JSON, you can use Arquero to transform it into a table and pass it to a visualization.
+The example below creates a table with 2 columns (`Country` and `Population`) and 2 rows.
 
 ```tsx
 aq.fromJSON('{"Country":["Portugal","Spain"],"Population":[10.33,47.42]}');
 ```
 
+For more details, see the [Arquero API documentation](https://uwdata.github.io/arquero/api/).
+
 ## Axis types
 
-Regarding the charts that rely on axes, the `xAxis` and `yAxis` are by default of type `categorical` and `continuous`, respectively.
-For horizontal bar charts, these default values are inverted.
-These types must be updated if necessary depending on the data provided. The valid values are `continuous` for continuous data, `categorical`
-for discrete data, and `time` for continuous time data.
+For charts with axes, `xAxis` defaults to `categorical` and `yAxis` to `continuous`.  
+In horizontal bar charts, these defaults are inverted.
+
+You can change the axis type based on your data:
+
+- `continuous` – for numeric data
+- `categorical` – for discrete categories
+- `time` – for time series data
 
 ## Visual roles
 
-In order to create visualizations, you'll also need to define visual roles for your data table columns. The following visual roles are supported:
+To create visualizations, you must define **visual roles** for your data table columns. Supported roles include:
 
-- `groupBy`: the data will be grouped based on the columns selected for this visual role.
-- `measures`: columns that you want to measure on the chart. For each one of the selected columns, you can
-  choose a function to aggregate the values. When no aggregation function is specified, the values will be summed by default.
-  The valid aggregation functions are `sum`, `average`, `min`, `max`, and `count`.
-- `splitBy`: splits your data based on specific data table columns.
-- `sortBy`: sorts data points by specifying the columns to use. For each one of the selected columns, you can
-  choose how to order the data points. The values will be sorted in ascending order by default.
-  The valid sorting functions are `asc` and `desc`.
+- `groupBy` Groups data by the selected columns.
+- `measures`: Specifies numeric columns to be measured. Defaults to `sum` if no aggregation is provided.  
+  Supported aggregations: `sum`, `average`, `min`, `max`, `count`.
+- `splitBy`: Splits data series based on the selected columns.
+- `sortBy`: Sorts data points by column(s). Defaults to ascending order.  
+  Sorting options: `asc`, `desc`.
 
 Please find below an example with the `HvLineChart`.
 
-_Example:_
+In this example, a data table with 4 columns (`Country`, `Year`, `Medal`, and `Total`) and 8 rows was used.
 
-In this example, a data table with 4 columns (`Country`, `Year`, `Medal`, and `Total`) and 8 rows
-was provided. Since we want to showcase the total of medals for each country over the years, the `Year` column was used for the `groupBy` visual role in order to group
-the data by year. Then, the `Total` column was used for the `measures` since it's the column we want to visually measure on the vertical axis.
-In this case, no aggregation function was specified for the `measures` since the values will be summed by default. Regarding the `splitBy` visual role,
-the `Country` column was used in order to split the data by country and showcase one line for each country. The `sortBy` visual role was also needed since the data
-didn't have the years sorted by ascending order originally.
+To visualize total medals by year:
+
+- `groupBy`: `Year` – groups data by year
+- `measures`: `Total` – measures total medals (default aggregation: `sum`)
+- `splitBy`: `Country` – displays one line per country
+- `sortBy`: `Year` – ensures chronological order since the input wasn't sorted
 
 ## Filters
 
-You can filter data points by specifying the columns to use and the values to filter. The `filters` prop is an array of objects where each object has the following properties:
+You can filter data points using the `filters` prop—an array of objects that define which columns and values to filter.
+
+Each filter object supports:
+
+- `column`: the column name to filter on
+- `values`: an array of values to include
 
 ```tsx
 type HvChartFilterOperation =
@@ -193,10 +187,10 @@ type HvChartFilter = {
 };
 ```
 
-_Example:_
+In this `HvBarChart` example, two filters are applied:
 
-In this example with the `HvBarChart`, two filters are defined for the `Country` and `Sales` columns. The `Country` filter will only show data points for the selected country,
-and the `Sales` filter will only show data points with sales values between the selected range.
+- `Country`: displays data points for the selected country only
+- `Sales`: filters data points within a selected sales range
 
 ```tsx
 <HvBarChart

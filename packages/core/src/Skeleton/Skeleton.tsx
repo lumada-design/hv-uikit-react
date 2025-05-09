@@ -28,7 +28,7 @@ export interface HvSkeletonProps extends HvBaseProps {
 }
 
 /**
- * The `HvSkeleton` component is used to create a placeholder element that represents the shape and size of the content that will be loaded.
+ * The Skeleton component displays a placeholder that mimics the shape and size of loading content.
  */
 export const HvSkeleton = (props: HvSkeletonProps) => {
   const {

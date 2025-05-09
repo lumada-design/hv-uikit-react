@@ -6,14 +6,18 @@ import editableValue from "../../examples/inputs/EditableInput?raw";
 import tagsDropdown from "../../examples/inputs/TagsDropdown?raw";
 import tagsSuggestions from "../../examples/inputs/TagsSuggestions?raw";
 
-# Inputs examples
-
-<div className="overflow-hidden">
-  <div className="w-101% grid  divide-border [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] -mt-px -mb-px">
-    <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
-    <CodeBlock code={{ main: copyButton }} layout="popup" />
-    <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
-    <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
-    <CodeBlock code={{ main: editableValue }} layout="popup" />
+<div className="overflow-hidden mt-20">
+  <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] -mt-px -mb-px auto-rows-min">
+    {[
+      dropdownPrefix,
+      copyButton,
+      tagsDropdown,
+      tagsSuggestions,
+      editableValue,
+    ].map((code, i) => (
+      <div key={i} className="min-h-[200px]">
+        <CodeBlock code={{ main: code }} layout="popup" />
+      </div>
+    ))}
   </div>
 </div>

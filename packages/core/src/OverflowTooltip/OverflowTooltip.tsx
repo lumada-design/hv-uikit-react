@@ -43,7 +43,7 @@ export interface HvOverflowTooltipProps extends HvBaseProps {
 const isParagraph = (children = "") => /\s/.test(children);
 
 /**
- * This component generates a tooltip whenever the text is overflowed.
+ * Displays a tooltip automatically when the text content overflows its container.
  */
 export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
   const {

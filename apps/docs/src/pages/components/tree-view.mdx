@@ -131,8 +131,8 @@ export default function Demo() {
 
 ### Controlled
 
-The tree view can be controlled by passing in `expanded`/`onNodeToggle` and `selected`/`onNodeSelect` props to control expansion and selection state respectively.
-When using `multiSelect`, the values and callbacks are of type `string[]`, and `string` otherwise.
+The `TreeView` can be controlled using the `expanded`/`onNodeToggle` props for expansion state, and `selected`/`onNodeSelect` for selection state.
+When `multiSelect` is enabled, values and callbacks use `string[]`; otherwise, they use a single `string`.
 
 ```tsx live
 import { useState } from "react";
@@ -198,7 +198,8 @@ export default function Demo() {
 
 ### Loading data
 
-Sometimes the full tree data is unknown or paginated. This sample showcases how a custom `LoadingItem` can be used to handle server-side tree data.
+In cases where tree data is paginated or partially loaded, you can use a custom `LoadingItem` to indicate server-side data fetching.
+This approach allows dynamic expansion as new data becomes available.
 
 ```tsx live
 import { forwardRef, useState } from "react";

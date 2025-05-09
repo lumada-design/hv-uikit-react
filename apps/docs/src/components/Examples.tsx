@@ -80,8 +80,9 @@ export const Examples = () => {
       {/* Page Header */}
       <div className="mb-lg md:mb-xl md:text-center">
         <HvTypography
+          variant="title1"
           className={clsx(
-            "text-[2.3em] leading-[1.3em] mb-md",
+            "text-[2.1em] leading-[1.3em] mb-md",
             "max-sm:text-[1.5rem] max-sm:leading-[2.2rem] max-sm:mb-sm",
           )}
         >

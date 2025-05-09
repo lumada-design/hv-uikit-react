@@ -92,9 +92,9 @@ export interface HvSelectProps<
 }
 
 /**
- * The `HvSelect` component is a form control element that allows selection from a list of options.
+ * The `HvSelect` component is a form control for choosing an option from a list.
  *
- * It aims to be aligned with the native HTML `<select>` and `<option>` APIs and be easily integrated with forms.
+ * It aligns with the native `<select>` and `<option>` APIs, making it easy to integrate into forms.
  *
  * @example
  * <HvSelect name="pets">

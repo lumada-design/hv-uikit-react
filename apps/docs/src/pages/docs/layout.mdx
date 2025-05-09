@@ -1,37 +1,39 @@
+import { Callout } from "nextra/components";
+
 # Layout
 
 When building UIs you should always strive for **responsive layouts** to enable your pages to adapt to different screen sizes and orientations,
 ensuring overall consistency across platforms and environments.
 
-The NEXT UI Kit provides the following components to help you create responsive layouts:
+<Callout type="info">
+  While responsive design is a best practice, not all applications need to
+  support every viewport size. Consider your users and use cases—target the
+  screen sizes that make sense for your specific product or context.
+</Callout>
 
-- [Container](#container)
-- [Grid](#grid)
-- [Simple Grid](#simple-grid)
+### Breakpoints
 
-One underlying concept for all these components are **breakpoints**. While the container and grid components use internally the breakpoints defined by
-the Design System, the simple grid component enables you to create your own breakpoints. These breakpoints are specific screen sizes at which the layouts
-should adjust themselves to suit the screen resolution and orientation.
+All layout components in the **UI Kit** rely on **breakpoints**—specific screen widths where the layout adjusts to better fit the available space and maintain usability across different devices.
+When the screen width crosses a breakpoint, the layout automatically adapts to ensure content remains accessible and well-structured.
 
-The breakpoints defined by the Design System are:
+| Breakpoint | Width (px) | Gutters (px) | Columns |
+| ---------- | ---------- | ------------ | ------- |
+| `xs`       | 0          | 16           | 4       |
+| `sm`       | 600        | 16           | 8       |
+| `md`       | 960        | 32           | 12      |
+| `lg`       | 1270       | 32           | 12      |
+| `xl`       | 1920       | 32           | 12      |
 
-| Breakpoint | Width (px) | Gutters (px) | Number of columns |
-| ---------- | ---------- | ------------ | ----------------- |
-| xs         | 0          | 16           | 4                 |
-| sm         | 600        | 16           | 8                 |
-| md         | 960        | 32           | 12                |
-| lg         | 1270       | 32           | 12                |
-| xl         | 1920       | 32           | 12                |
+## Layout Components
 
-Whenever the screen resolution goes above or below a breakpoint, the layout should adapt itself to suit the screen size and for the content to be accessible.
+The **UI Kit** provides a set of components to help you create responsive layouts.
+The **Container** and **Grid** components use the predefined breakpoints. In contrast, **SimpleGrid** gives you the flexibility to define custom breakpoints based on your layout needs.
 
-## Container
+### Container
 
 The [`HvContainer`](/components/container) is one of the most basic layout components we provide to our community, and it enables you to center content horizontally on the page.
 
-This component is very useful when your content can't grow beyond a specific breakpoint. In this case, you can use `maxWidth` to specify the breakpoint
-to which the content is bounded. The content will automatically grow or shrink according with the size of the screen and breakpoint used ensuring that
-it doesn't grow beyond the specified width.
+This component is ideal when your content should stay within a specific width. Use the `maxWidth` prop to define the breakpoint that sets this limit. The layout will automatically adjust to the screen size but will never grow beyond the specified maximum width.
 
 ```tsx live
 <HvContainer maxWidth="sm">
@@ -50,18 +52,12 @@ it doesn't grow beyond the specified width.
 </HvContainer>
 ```
 
-## Grid
+### Grid
 
-The [`HvGrid`](/components/grid) component enables you to create responsive grid layouts with a variable amount of columns. The grid items will also adapt themselves
-to suit the screen sizes.
+The [`HvGrid`](/components/grid) component lets you build responsive grid layouts with a customizable number of columns. Grid items automatically adapt to different screen sizes.
 
-By default this component is based on a 12-column grid layout. This can be easily changed through the `columns` property. If this property is set to
-`auto`, the Design System directives will be used where the number of columns will update depending on the breakpoint.
-
-The grid component also enables you to span items across columns if needed. Thus, with this component you'll be able to create a variety of layouts depending
-on your needs.
-
-Below is an example on how to use the grid component where the Design System directives were used and some grid items were spanned across multiple columns.
+By default, the grid uses a 12-column layout. You can customize this using the `columns` prop—set it to a specific number for a fixed column count, or use `auto` to apply responsive behavior based on the default breakpoints.
+Grid items can also span across multiple columns, allowing you to build flexible and adaptive layouts to fit your design needs.
 
 ```tsx live
 <HvGrid columns="auto" container>
@@ -130,19 +126,12 @@ Below is an example on how to use the grid component where the Design System dir
 </HvGrid>
 ```
 
-## Simple Grid
+### Simple Grid
 
-The [`HvSimpleGrid`](/components/simple-grid) component is an alternative to the grid component mentioned above and it provides an easy way of creating responsive grids where each item takes an equal amount
-of space. The items will grow or shrink whenever the screen size changes.
+The [`HvSimpleGrid`](/components/simple-grid) component is a simplified alternative to `HvGrid`, perfect for responsive layouts where each item takes up equal space and adapts to screen size changes.
+Use it when you need a uniform grid with a fixed number of equally sized columns.
 
-This component should be used whenever you need to create grids where items should be distributed across a specific number of columns with the same width.
-
-This component also enables you to create your own breakpoints and define the spacing and number of columns for each one. Thus, contrary to the grid component,
-the simple grid does not rely on the Design System breakpoints. Furthermore, you can only define the number of columns per row and not the span of each grid item
-enabling you to create much simpler grids than the grid component.
-
-In the example below a grid with three columns was created to distribute the cards across them, and when the screen width goes under the Design System
-`sm` (600px) breakpoint the grid only has two columns.
+Unlike `HvGrid`, it doesn’t rely on default breakpoints. Instead, you can define custom breakpoints, column counts, and spacing. It doesn’t support column spans—each item always takes up one column—making it ideal for simpler, evenly spaced layouts.
 
 ```tsx live
 export default function Demo() {

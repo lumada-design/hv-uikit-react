@@ -30,7 +30,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 ```
 
-After adding the provider at the root of your app, you can call the `useHvSnackbar` at any component inside your app. This hook will allow you to request the rendering of a snackbar through the use of the `enqueueSnackbar` function or close one with `closeSnackbar`.
+After adding the provider at the root of your app, you can use the `useHvSnackbar` hook in any component.  
+This hook provides the `enqueueSnackbar` function to show a snackbar and `closeSnackbar` to dismiss it programmatically.
 
 ```tsx live
 export default function Demo() {
@@ -65,8 +66,10 @@ const SnackbarButton = ({ variant }: { variant: HvSnackbarVariant }) => {
 
 ### Content
 
-Internally, the `HvSnackbarProvider` uses the `HvSnackbarContent` to render the snackbar. You can use the `snackbarContentProps` to customize the content of the snackbar.
-Check the [`HvSnackbar`](/components/snackbar) documentation for more information.
+The `HvSnackbarProvider` uses `HvSnackbarContent` internally to render snackbars.  
+You can customize the content using the `snackbarContentProps` prop.
+
+For more details, see the [`HvSnackbar`](/components/snackbar) documentation.
 
 ```tsx live
 export default function Demo() {
@@ -105,10 +108,9 @@ const SnackbarButton = () => {
 
 ### Label
 
-The snackbar label acceps a `React.ReactNode` which means you can pass any component as the label.
-This allows you to use the `HvOverflowTooltip` component to display a long message with ellipsis and a tooltip.
-Note, though, that you shouldn't have long messages displayed in a snackbar as it is meant to be a ephemerous message that will
-be dismissed automically after a some time.
+The snackbar `label` accepts a `React.ReactNode`, allowing you to pass any component—including `HvOverflowTooltip` for long messages.
+
+However, avoid displaying lengthy content in a snackbar, as it’s meant for brief, ephemeral messages that auto-dismiss after a short time.
 
 ```tsx live
 export default function Demo() {

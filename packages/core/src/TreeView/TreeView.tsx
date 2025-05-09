@@ -28,13 +28,8 @@ export interface HvTreeViewProps<Multiple extends boolean | undefined>
 }
 
 /**
- * A Tree View displays hierarchical structures.
- * It also facilitates the exploration of categorical levels and their content.
- *
- * Tree structures are built through composing the `HvTreeItem` component,
- * or a custom variation of it.
- *
- * It is based on the [MUI X TreeView](https://mui.com/x/react-tree-view) component.
+ * A Tree View displays hierarchical data and helps users explore nested categories.
+ * Tree structures are built using `HvTreeItem` or a custom variation of it.
  *
  * @example
  * ```tsx

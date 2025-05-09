@@ -58,9 +58,10 @@ const getDirection = (direction: any, width: any, breakpoints: any) => {
 };
 
 /**
- * A Stack component allows the organization of its children in a vertical or horizontal layout.
+ * The Stack component arranges its children in a vertical or horizontal layout.
  *
- * It also allows the specification of the spacing between the stack elements and the addition of a divider between the elements.
+ * It supports customizable spacing and optional dividers between elements.
+ *
  */
 export const HvStack = (props: HvStackProps) => {
   const {
