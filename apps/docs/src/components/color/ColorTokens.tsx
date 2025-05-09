@@ -2,7 +2,11 @@ import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { DocsProvider } from "../code/DocsProvider";
 import { descriptions } from "./descriptions";
-import { colorTokensSpec, groupColorTokensByCategory } from "./utils";
+import {
+  colorTokensSpec,
+  compatMap,
+  groupColorTokensByCategory,
+} from "./utils";
 
 export const ColorTokens = () => {
   return (
@@ -13,13 +17,10 @@ export const ColorTokens = () => {
 };
 
 export const ColorTokensInternal = () => {
-  const { selectedMode, activeTheme } = useTheme();
-  const activeColors = activeTheme?.colors.modes[selectedMode];
+  const { activeTheme, colors } = useTheme();
 
   const colorTokens = Object.fromEntries(
-    Object.entries(activeColors ?? {}).filter(
-      ([key]) => key in colorTokensSpec,
-    ),
+    Object.entries(colors ?? {}).filter(([key]) => key in colorTokensSpec),
   );
 
   const groupedTokens = groupColorTokensByCategory(colorTokens);
@@ -32,40 +33,46 @@ export const ColorTokensInternal = () => {
         if (!tokens || tokens.length === 0) return null;
 
         return (
-          <section key={categoryKey}>
+          <section key={categoryKey} id={categoryKey}>
             <HvTypography variant="title4" className="font-semibold">
               {label}
             </HvTypography>
 
             {description && (
-              <HvTypography variant="body" className="mb-4">
+              <HvTypography variant="body" className="mb-sm">
                 {description}
               </HvTypography>
             )}
 
-            <div className="w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-xs">
               {tokens.map(({ token, value }) => {
+                const compatToken = compatMap[token as keyof typeof compatMap];
+
                 return (
                   <div
                     key={token}
-                    className="flex flex-col items-center"
-                    aria-label={`Color Token ${label} ${token}`}
+                    className="flex flex-col items-center gap-xs"
+                    title={token}
                   >
                     {/* Swatch */}
                     <div
                       className="w-full h-20 rounded-base"
                       style={{ backgroundColor: value }}
-                    ></div>
+                    />
 
-                    {/* Token name */}
-                    <HvTypography className="mt-2 text-md text-center">
-                      {token}
-                    </HvTypography>
+                    <div className="grid text-center gap-xs">
+                      {compatToken && activeTheme?.name !== "pentahoPlus" && (
+                        <code className="text-sm grid-area-[1/1] text-[#0000]">
+                          {compatToken}
+                        </code>
+                      )}
+                      <code className="text-sm grid-area-[1/1]">{token}</code>
 
-                    {/* Color value */}
-                    <HvTypography className="text-xs text-center mt-1">
-                      {value}
-                    </HvTypography>
+                      {/* Color value */}
+                      {value.startsWith("#") && (
+                        <code className="text-xs">{value}</code>
+                      )}
+                    </div>
                   </div>
                 );
               })}

@@ -1,4 +1,37 @@
-import { ColorTokens } from "@hitachivantara/uikit-styles";
+import { ColorTokens, HvThemeColors } from "@hitachivantara/uikit-styles";
+
+/** Compatibility object between UI Kit tokens and NEXT tokens */
+export const compatMap: Partial<
+  Record<keyof ColorTokens, keyof HvThemeColors>
+> = {
+  primaryStrong: "primary_80",
+  primaryDimmed: "primary_20",
+  positiveStrong: "positive_80",
+  positiveDeep: "positive_120",
+  positiveDimmed: "positive_20",
+  warningStrong: "warning_120",
+  warningDeep: "warning_140",
+  warningDimmed: "warning_20",
+  negativeStrong: "negative_80",
+  negativeDeep: "negative_120",
+  negativeDimmed: "negative_20",
+  info: "neutral",
+  infoDimmed: "neutral_20",
+
+  text: "secondary",
+  textSubtle: "secondary_80",
+  textDisabled: "secondary_60",
+  textDimmed: "atmo1",
+  textLight: "base_light",
+  textDark: "base_dark",
+
+  bgHover: "primary_20",
+  bgDisabled: "atmo3",
+  bgPage: "atmo2",
+  bgContainer: "atmo1",
+  bgPageSecondary: "atmo3",
+  border: "atmo4",
+};
 
 // Groups color tokens by their prefix category.
 export const groupColorTokensByCategory = (
