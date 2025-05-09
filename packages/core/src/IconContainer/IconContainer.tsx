@@ -14,7 +14,7 @@ export const { staticClasses, useClasses } = createClasses("HvIconContainer", {
   root: {
     display: "inline-flex",
     flex: "0 0 auto", // ensure icon doesn't flex grow/shrink
-    fontSize: `var(--icsize, 16px)`, // default size of 16px
+    fontSize: `var(--isize, 16px)`, // default size of 16px
     transition: "rotate 0.2s ease",
     justifyContent: "center",
     alignItems: "center",
@@ -87,22 +87,21 @@ export const HvIconContainer = forwardRef<
     classes: classesProp,
     style,
     color,
-    size: sizeProp = "S",
+    size = "S",
     rotate,
     children,
     ...others
   } = useDefaultProps("HvIconContainer", props);
   const { cx, classes } = useClasses(classesProp);
 
-  const size = mapSizes(sizeProp);
-
   return (
     <div
       ref={ref}
       className={cx(classes.root, className, {
-        [classes[size!]]: size,
+        [classes[mapSizes(size)!]]: size,
       })}
       style={mergeStyles(style, {
+        "--isize": typeof size === "number" ? `${size}px` : undefined,
         color: getColor(color),
         rotate: rotate ? "180deg" : undefined,
         ...style,

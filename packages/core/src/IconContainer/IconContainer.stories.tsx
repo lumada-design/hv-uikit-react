@@ -57,6 +57,9 @@ export const Variants: StoryObj<typeof HvIconContainer> = {
           <HvIconContainer {...args} size="xl">
             <FontAwesomeIcon icon={faUser} />
           </HvIconContainer>
+          <HvIconContainer {...args} size={100}>
+            <FontAwesomeIcon icon={faUser} />
+          </HvIconContainer>
         </div>
         <HvTypography variant="title3">Phosphor Icons</HvTypography>
         <div className="flex gap-xs items-center">
@@ -75,6 +78,9 @@ export const Variants: StoryObj<typeof HvIconContainer> = {
           <HvIconContainer {...args} size="xl">
             <User />
           </HvIconContainer>
+          <HvIconContainer {...args} size={100}>
+            <User />
+          </HvIconContainer>
         </div>
         <HvTypography variant="title3">NEXT Icons</HvTypography>
         <div className="flex gap-xs items-center">
@@ -83,6 +89,7 @@ export const Variants: StoryObj<typeof HvIconContainer> = {
           <HvUser {...args} size="md" />
           <HvUser {...args} size="lg" />
           <HvUser {...args} size="xl" />
+          <HvUser {...args} size={100} />
         </div>
       </div>
     );
