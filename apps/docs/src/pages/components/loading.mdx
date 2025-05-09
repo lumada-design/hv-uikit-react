@@ -23,10 +23,6 @@ export const getStaticProps = async ({ params }) => {
     small: {
       defaultValue: false,
     },
-    color: {
-      type: "color",
-      defaultValue: "primary",
-    },
   }}
 />
 
@@ -35,12 +31,12 @@ export const getStaticProps = async ({ params }) => {
 You can change the default color of the loader by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
 
 ```tsx live
-<>
+<div className="flex gap-sm">
   <HvLoading color="positive" />
   <HvLoading color="cat2" />
   <HvLoading color="aquamarine" />
   <HvLoading color="#c73aa8" />
-</>
+</div>
 ```
 
 ### Loading button
