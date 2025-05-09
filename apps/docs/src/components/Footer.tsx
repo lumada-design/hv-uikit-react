@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { UIKitLogo } from "./logo/uikit";
 
 const footerLinks = [
@@ -51,13 +53,13 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between space-y-md md:space-y-0">
           {/* Logo Section with More Space */}
           <div className="flex flex-col">
-            <a
+            <Link
               aria-label="UIKit"
               href="/"
               className="flex items-center space-x-sm"
             >
               <UIKitLogo />
-            </a>
+            </Link>
             <p className="text-sm mt-sm">by Hitachi Vantara © {year}</p>
           </div>
 
@@ -69,17 +71,14 @@ export const Footer = () => {
                   {group.title}
                 </p>
                 {group.links.map((link) => (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     className="hover:text-primary pb-xs"
                     target={link.href.startsWith("http") ? "_blank" : "_self"}
-                    rel={
-                      link.href.startsWith("http") ? "noreferrer" : undefined
-                    }
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             ))}
