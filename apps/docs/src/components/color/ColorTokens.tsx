@@ -1,9 +1,18 @@
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 
+import { DocsProvider } from "../code/DocsProvider";
 import { descriptions } from "./descriptions";
 import { colorTokensSpec, groupColorTokensByCategory } from "./utils";
 
 export const ColorTokens = () => {
+  return (
+    <DocsProvider className="bg-transparent space-y-10">
+      <ColorTokensInternal />
+    </DocsProvider>
+  );
+};
+
+export const ColorTokensInternal = () => {
   const { selectedMode, activeTheme } = useTheme();
   const activeColors = activeTheme?.colors.modes[selectedMode];
 
@@ -16,7 +25,7 @@ export const ColorTokens = () => {
   const groupedTokens = groupColorTokensByCategory(colorTokens);
 
   return (
-    <div className="space-y-10">
+    <>
       {descriptions.map(({ key: categoryKey, label, description }) => {
         const tokens = groupedTokens[categoryKey];
 
@@ -64,6 +73,6 @@ export const ColorTokens = () => {
           </section>
         );
       })}
-    </div>
+    </>
   );
 };
