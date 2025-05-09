@@ -122,6 +122,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
       onBlur,
       onFocus,
       placeholder,
+      startAdornment,
       endAdornment,
       hideCounter,
       middleCountLabel = "/",
@@ -536,6 +537,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
               />
             );
           })}
+          {!disabled && !readOnly && startAdornment}
           {!disabled && !readOnly && (
             <input
               id={setId(elementId, "input")}

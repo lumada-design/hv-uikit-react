@@ -33,6 +33,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
     element,
     error,
     code: editorCode,
+    onChange,
   } = useLiveRunner({
     initialCode,
     scope: scope || {},
@@ -72,6 +73,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
           <CodeEditor
             value={editorCode}
             theme={editorTheme}
+            onChange={onChange}
             className="font-mono text-[.85em] rounded-round border border-color-inherit"
           />
         </HvDialogContent>
@@ -89,7 +91,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
       <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
         {/* Preview Section */}
         <DocsContainer
-          className="p-md flex items-center justify-center h-full [&>div]:w-full"
+          className="p-md flex items-center justify-center h-full [&>div]:w-full [&>div]:flex-wrap"
           error={error}
           element={element}
         />
