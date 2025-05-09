@@ -10,7 +10,12 @@ const themes = [
   { value: "ds3", label: "NEXT v3" },
 ];
 
-const allowedPaths = ["/components", "/charts", "/examples"];
+const allowedPaths = [
+  "/components",
+  "/charts",
+  "/examples",
+  "/docs/color-tokens",
+];
 
 export const ThemeSwitcher = () => {
   const router = useRouter();
