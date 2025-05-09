@@ -28,32 +28,6 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
-      - name: Build Documentation
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        run: npm run build:doc
-        env:
-          NODE_OPTIONS: "--max_old_space_size=8192"
-
-      - name: Archive Documentation
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: documentation
-          path: ${{ github.workspace }}/dist
-          retention-days: 2
-
-      - name: Build App
-        if: ${{ env.PUBLISH_APP == 'true' }}
-        run: npm run build:app -- --base=/uikit-app/${{ env.PUBLISH_FOLDER }}/
-
-      - name: Archive App
-        if: ${{ env.PUBLISH_APP == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: app
-          path: ${{ github.workspace }}/apps/app/dist
-          retention-days: 2
-
       # Bypassing Jekyll processing on GitHub Pages by adding .nojekyll to read folders that start with an underscore
       - name: Build Nextra Docs
         if: ${{ env.PUBLISH_DOCS == 'true' }}
@@ -69,32 +43,44 @@ jobs:
           path: ${{ github.workspace }}/apps/docs/dist
           retention-days: 2
 
+      - name: Build Storybook
+        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
+        run: npm run build:doc
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+
+      - name: Archive Storybook
+        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook
+          path: ${{ github.workspace }}/dist
+          retention-days: 2
+
+      - name: Build App
+        if: ${{ env.PUBLISH_APP == 'true' }}
+        run: npm run build:app -- --base=/uikit-app/${{ env.PUBLISH_FOLDER }}/
+
+      - name: Archive App
+        if: ${{ env.PUBLISH_APP == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: uikit-app
+          path: ${{ github.workspace }}/apps/app/dist
+          retention-days: 2
+
   deploy-artifacts:
     name: Deploy
     runs-on: ubuntu-latest
     needs: build-artifacts
 
+    concurrency:
+      group: docs-deployment
+      cancel-in-progress: false
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Deploy Storybook
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        uses: ./.github/actions/deploy-artifacts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
-          ARTIFACT: documentation
-
-      - name: Deploy App
-        if: ${{ env.PUBLISH_APP == 'true' }}
-        uses: ./.github/actions/deploy-artifacts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          PUBLISH_FOLDER: uikit-app/${{ env.PUBLISH_FOLDER }}
-          ARTIFACT: app
 
       - name: Deploy Docs
         if: ${{ env.PUBLISH_DOCS == 'true' }}
@@ -104,3 +90,21 @@ jobs:
           ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           PUBLISH_FOLDER: uikit-docs/${{ env.PUBLISH_FOLDER }}
           ARTIFACT: nextra-docs
+
+      - name: Deploy Storybook
+        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
+        uses: ./.github/actions/deploy-artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
+          ARTIFACT: storybook
+
+      - name: Deploy App
+        if: ${{ env.PUBLISH_APP == 'true' }}
+        uses: ./.github/actions/deploy-artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          PUBLISH_FOLDER: uikit-app/${{ env.PUBLISH_FOLDER }}
+          ARTIFACT: uikit-app
