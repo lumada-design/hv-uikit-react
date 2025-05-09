@@ -1,5 +1,5 @@
 import {
-  HvBanner,
+  HvBannerContent,
   HvButton,
   HvCheckBox,
   HvDropdown,
@@ -8,24 +8,19 @@ import {
 
 import { Card } from "./Card";
 
-export const DataConfig = () => {
-  const backupOptions = [
-    { label: "Daily", value: "daily" },
-    { label: "Weekly", value: "weekly" },
-    { label: "Monthly", value: "monthly" },
-  ];
+const backupOptions = [
+  { label: "Daily", value: "daily" },
+  { label: "Weekly", value: "weekly" },
+  { label: "Monthly", value: "monthly" },
+];
 
+export const DataConfig = () => {
   return (
     <Card title="Data Management Configuration">
       <div className="grid gap-sm">
-        <HvBanner
-          open
-          offset={0}
-          label="Backup impacts storage."
-          showIcon
-          className="relative"
-          variant="info"
-        />
+        <HvBannerContent showIcon variant="info" action={null}>
+          Backup impacts storage.
+        </HvBannerContent>
         <HvInput
           label="Storage Limit (in GB)"
           placeholder="Enter storage limit"

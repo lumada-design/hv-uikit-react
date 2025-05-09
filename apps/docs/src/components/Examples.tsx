@@ -1,13 +1,9 @@
 import { clsx } from "clsx";
 import Link from "next/link";
-import { HvTypography } from "@hitachivantara/uikit-react-core";
 import {
-  BarChart,
-  Speedometer,
-  SwipeRight,
-  Table,
-  TextColor,
-} from "@hitachivantara/uikit-react-icons";
+  HvIconContainer,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
 import charts from "../pages/examples/charts.mdx?raw";
 import inputs from "../pages/examples/inputs.mdx?raw";
@@ -27,15 +23,15 @@ const countCodeBlocks = (fileContent: string): number => {
 const getSectionIcon = (title: string) => {
   switch (title) {
     case "Tables":
-      return <Table size="md" />;
+      return <div className="i-ph-table" />;
     case "Charts":
-      return <BarChart size="md" />;
+      return <div className="i-ph-chart-bar" />;
     case "Inputs":
-      return <TextColor size="md" />;
+      return <div className="i-ph-text-a-underline" />;
     case "KPIs":
-      return <Speedometer size="md" />;
+      return <div className="i-ph-speedometer" />;
     case "Drag and Drop":
-      return <SwipeRight size="md" />;
+      return <div className="i-ph-hand-swipe-right" />;
     default:
       return null;
   }
@@ -119,9 +115,9 @@ export const Examples = () => {
                 "rounded-round mb-sm flex items-center justify-center",
               )}
             >
-              <HvTypography variant="body" className="text-textSubtle">
+              <HvIconContainer color="textSubtle" size="xl">
                 {getSectionIcon(section.title)}
-              </HvTypography>
+              </HvIconContainer>
             </div>
             {/* Section Title */}
             <HvTypography variant="label" className="font-semibold">
