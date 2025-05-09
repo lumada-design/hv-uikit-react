@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.46.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.46.1...@hitachivantara/uikit-styles@5.46.2) (2025-05-09)
+
+### Bug Fixes
+
+- **Button:** default borderRadius ([#4705](https://github.com/lumada-design/hv-uikit-react/issues/4705)) ([dddd4cf](https://github.com/lumada-design/hv-uikit-react/commit/dddd4cf737065892db3ebef185842fe88bc0a30b))
+- form element header & popper radius ([#4715](https://github.com/lumada-design/hv-uikit-react/issues/4715)) ([e6ed8d7](https://github.com/lumada-design/hv-uikit-react/commit/e6ed8d70503b2dd23fe0f798887082c030ab444b))
+- **notifications:** borderRadius ([#4704](https://github.com/lumada-design/hv-uikit-react/issues/4704)) ([f169ce0](https://github.com/lumada-design/hv-uikit-react/commit/f169ce072e69fa64dc716d2e2bee65e96a08dbb2))
+- **Popper:** align styles of poppers with specs ([c30cc3a](https://github.com/lumada-design/hv-uikit-react/commit/c30cc3af027c734fe916041cbbd2da788b6c2fef))
+- **Popper:** align styles of poppers with specs ([1d3e78a](https://github.com/lumada-design/hv-uikit-react/commit/1d3e78af43d02d7f18ac85a336057067d28e16cd))
+- **theme:** update P+ textDimmed & bgHover colors ([#4690](https://github.com/lumada-design/hv-uikit-react/issues/4690)) ([df23da8](https://github.com/lumada-design/hv-uikit-react/commit/df23da83bab960eead4e6835f7e29a87d8920352))
+- update radius on several input components ([#4674](https://github.com/lumada-design/hv-uikit-react/issues/4674)) ([c6a8a93](https://github.com/lumada-design/hv-uikit-react/commit/c6a8a93d143cfe02b2b27385edcfbd4da773e74f))
+
 ## [5.46.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.46.0...@hitachivantara/uikit-styles@5.46.1) (2025-05-02)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

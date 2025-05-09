@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.93.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.1...@hitachivantara/uikit-react-core@5.93.2) (2025-05-09)
+
+### Bug Fixes
+
+- **Avatar:** fix container height ([#4701](https://github.com/lumada-design/hv-uikit-react/issues/4701)) ([a9e0586](https://github.com/lumada-design/hv-uikit-react/commit/a9e0586fe0b5b9053346503a8f1a98d1c052a58f))
+- **BulkActions:** backgroundColor ([#4706](https://github.com/lumada-design/hv-uikit-react/issues/4706)) ([7bb33b1](https://github.com/lumada-design/hv-uikit-react/commit/7bb33b17d322f3433592b4ff98ae15572079d4c1))
+- **Callout:** icon container shrinking ([#4709](https://github.com/lumada-design/hv-uikit-react/issues/4709)) ([cfc595a](https://github.com/lumada-design/hv-uikit-react/commit/cfc595a9e01a600811f799b0a934cac6be28be35))
+- form element header & popper radius ([#4715](https://github.com/lumada-design/hv-uikit-react/issues/4715)) ([e6ed8d7](https://github.com/lumada-design/hv-uikit-react/commit/e6ed8d70503b2dd23fe0f798887082c030ab444b))
+- **notifications:** borderRadius ([#4704](https://github.com/lumada-design/hv-uikit-react/issues/4704)) ([f169ce0](https://github.com/lumada-design/hv-uikit-react/commit/f169ce072e69fa64dc716d2e2bee65e96a08dbb2))
+- **Popper:** align styles of poppers with specs ([1d3e78a](https://github.com/lumada-design/hv-uikit-react/commit/1d3e78af43d02d7f18ac85a336057067d28e16cd))
+- **Select:** invalid border color ([#4708](https://github.com/lumada-design/hv-uikit-react/issues/4708)) ([20878dc](https://github.com/lumada-design/hv-uikit-react/commit/20878dc4d49d0947649f1fff194b73844e5f0b7e))
+- update radius on several input components ([#4674](https://github.com/lumada-design/hv-uikit-react/issues/4674)) ([c6a8a93](https://github.com/lumada-design/hv-uikit-react/commit/c6a8a93d143cfe02b2b27385edcfbd4da773e74f))
+
 ## [5.93.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.0...@hitachivantara/uikit-react-core@5.93.1) (2025-05-02)
 
 ### Bug Fixes

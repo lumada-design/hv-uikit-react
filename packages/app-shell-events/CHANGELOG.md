@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-events@1.1.0...@hitachivantara/app-shell-events@1.1.1) (2025-05-09)
+
+### Bug Fixes
+
+- **app-shell-events:** inherit types & docs from core ([#4699](https://github.com/lumada-design/hv-uikit-react/issues/4699)) ([6dba3e9](https://github.com/lumada-design/hv-uikit-react/commit/6dba3e9c3b198fc32936295570d88a7264b99426))
+
 # 1.1.0 (2025-04-18)
 
 ### Features
