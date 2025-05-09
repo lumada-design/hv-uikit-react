@@ -26,20 +26,6 @@ export const neutral = {
   950: "#0A0A0A",
 } as const;
 
-export const blue = {
-  50: "#EFF6FF",
-  100: "#DBEAFE",
-  200: "#BFDBFE",
-  300: "#93C5FD",
-  400: "#60A5FA",
-  500: "#3B82F6",
-  600: "#2563EB",
-  700: "#1D4ED8",
-  800: "#1E40AF",
-  900: "#1E3A8A",
-  950: "#172554",
-} as const;
-
 export const red = {
   50: "#FEF2F2",
   100: "#FEE2E2",
@@ -180,6 +166,20 @@ export const sky = {
   950: "#082F49",
 } as const;
 
+export const blue = {
+  50: "#EFF6FF",
+  100: "#DBEAFE",
+  200: "#BFDBFE",
+  300: "#93C5FD",
+  400: "#60A5FA",
+  500: "#3B82F6",
+  600: "#2563EB",
+  700: "#1D4ED8",
+  800: "#1E40AF",
+  900: "#1E3A8A",
+  950: "#172554",
+} as const;
+
 export const indigo = {
   50: "#EEF2FF",
   100: "#E0E7FF",
@@ -271,21 +271,22 @@ export const rose = {
 export const palette = {
   slate,
   neutral,
-  blue,
+  // keep colors sorted by 🌈 order
   red,
-  amber,
   orange,
+  amber,
   yellow,
   lime,
   green,
+  emerald,
   teal,
   cyan,
   sky,
+  blue,
   indigo,
   violet,
+  purple,
   fuchsia,
   pink,
   rose,
-  purple,
-  emerald,
 };
