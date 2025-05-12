@@ -30,6 +30,3 @@ Because of that, _Application Bundles_ must ensure they use its own i18next inst
 For more information check the documentation at [i18next.com/overview/api](https://www.i18next.com/overview/api#createinstance).
 
 An `I18nextProvider` can be used to share the i18next instance. Look at the [internal-route-candy-app sample](../client/samples/internal-route-candy-app/src/pages/Main/Main.tsx).
-
-___
-[Documentation Index](./README.md)

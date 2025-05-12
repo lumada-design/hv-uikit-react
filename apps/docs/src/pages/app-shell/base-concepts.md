@@ -72,8 +72,3 @@ The **App Shell** itself is able to load the following types of _Shared Modules_
 - **Theme**: Module that exports a NEXT UI Kit theme definition. They can be referenced in the **App Shell** configuration file in the `theming.themes` array. They're detailed in the [Theming](./theming.md) section.
 
 All the above _Shared Modules_ types assume its subject is exported as the default export of the module.
-
-___
-➡️ **Next step**: [App Shell configuration](./config-file.md)
-
-[Documentation Index](./README.md)

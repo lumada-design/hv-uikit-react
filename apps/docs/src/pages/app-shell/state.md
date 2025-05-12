@@ -63,6 +63,3 @@ Redux is a [state management library](https://redux.js.org) that can be used wit
 Historically, there has been an overuse of Redux. [Not all apps need Redux](https://redux.js.org/faq/general#when-should-i-use-redux). It is a good fit for applications that have a lot of application-wide state that is shared between components, and that needs to be persisted and synchronized with the server. It might also be useful for applications that have asynchronous actions that need to be coordinated.
 
 The current recommendation is to avoid Redux. But, if needed, it makes sense to be managed by the **App Shell**. If the need arises, the feature will be evaluated and eventually added to the **App Shell**.
-
-___
-[Documentation Index](./README.md)

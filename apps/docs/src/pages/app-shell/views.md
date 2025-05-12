@@ -58,25 +58,19 @@ Declare it like this in the **App Shell** configuration file:
 
 ```typescript
 // ...
-  mainPanel: {
-    views: [
-      {
-        bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
-        route: "/persons",
-        views: [
-          {
-            bundle: "@hv-apps/my-app/pages/NewPersonForm.js",
-            route: "/new",
-          },
-          {
-            bundle: "@hv-apps/my-app/pages/PersonDetails.js",
-            route: "/:id",
-          }
-        ]
-      }
-      // ...
-    ]
-  }
+mainPanel: {
+  views: [
+    {
+      bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
+      route: "/persons",
+      views: [
+        { route: "/new", bundle: "@hv-apps/my-app/pages/NewPersonForm.js" },
+        { route: "/:id", bundle: "@hv-apps/my-app/pages/PersonDetails.js" },
+      ],
+    },
+    // ...
+  ];
+}
 // ...
 ```
 
@@ -123,33 +117,21 @@ With this configuration:
 
 ```typescript
 // ...
-  mainPanel: {
-    views: [
-      {
-        bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
-        route: "/persons",
-        views: [
-          {
-            bundle: "@hv-apps/my-app/pages/NewPersonForm.js",
-            route: "/new",
-          },
-          {
-            bundle: "@hv-apps/my-app/pages/PersonDetails.js",
-            route: "/:id",
-          },
-          {
-            bundle: "@hv-apps/my-app/pages/PersonKPIs.js",
-            route: "/",
-          }
-        ]
-      }
-      // ...
-    ]
-  }
+mainPanel: {
+  views: [
+    {
+      bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
+      route: "/persons",
+      views: [
+        { route: "/new", bundle: "@hv-apps/my-app/pages/NewPersonForm.js" },
+        { route: "/:id", bundle: "@hv-apps/my-app/pages/PersonDetails.js" },
+        { route: "/", bundle: "@hv-apps/my-app/pages/PersonKPIs.js" },
+      ],
+    },
+    // ...
+  ];
+}
 // ...
 ```
 
 While when navigating to `/persons/1`, the `PersonBrowser` component receives the `PersonDetails` component as `children`, when navigating to `/persons` it receives the `PersonKPIs` component.
-
-___
-[Documentation Index](./README.md)

@@ -92,7 +92,3 @@ It can be enabled by adding the `@hv/theming-client/colorModeSwitcher.js` module
   }
 // ...
 ```
-
----
-
-[Documentation Index](./README.md)

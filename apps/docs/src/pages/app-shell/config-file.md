@@ -334,9 +334,3 @@ These variables should be set at `.env` files like explained [here](https://crea
 ```
 VITE_USER_NOTIFICATIONS_URL="http://example:7070"
 ```
-
----
-
-➡️ **Next step**: [Notifications](./notifications.md)
-
-[Documentation Index](./README.md)

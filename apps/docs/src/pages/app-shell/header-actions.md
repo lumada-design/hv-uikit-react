@@ -40,13 +40,13 @@ To use this action, the bundle must be defined as `@hv/app-switcher-client/toggl
 
 - _**title**_: The App Switcher panel title. Supports internationalization.
 - _**apps**_: Array of apps that are included at the app switcher panel. Each App has the following properties:
-    - _**label**_: Title of the app. **Required**. Supports internationalization.
-    - _**description**_: Description of the app. Supports internationalization.
-    - _**url**_: URL to be used for navigation when clicking the button. **Required**. Supports internationalization.
-    - _**target**_: `NEW` or `SELF`. If value provided is `NEW`, it will open the provided url in a new tab. If value is `SELF`, will navigate in the current browser tab. **Required**.
-    - _**icon**_: The icon associated with the app.
-        - _**iconType**_: Type of icon to be used (at this moment the only possible value is `uikit`).
-        - _**name**_: Name of the icon to be used (as identified at [UI Kit's icons library](https://lumada-design.github.io/uikit/master/?path=/docs/foundation-icons--main))
+  - _**label**_: Title of the app. **Required**. Supports internationalization.
+  - _**description**_: Description of the app. Supports internationalization.
+  - _**url**_: URL to be used for navigation when clicking the button. **Required**. Supports internationalization.
+  - _**target**_: `NEW` or `SELF`. If value provided is `NEW`, it will open the provided url in a new tab. If value is `SELF`, will navigate in the current browser tab. **Required**.
+  - _**icon**_: The icon associated with the app.
+    - _**iconType**_: Type of icon to be used (at this moment the only possible value is `uikit`).
+    - _**name**_: Name of the icon to be used (as identified at [UI Kit's icons library](https://lumada-design.github.io/uikit/master/?path=/docs/foundation-icons--main))
 
 Example:
 
@@ -137,8 +137,3 @@ Example:
   }
 // ...
 ```
-
-See [Theming](./theming.md) for more information.
-
-___
-[Documentation Index](./README.md)

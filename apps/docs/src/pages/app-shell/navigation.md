@@ -67,6 +67,3 @@ Besides navigation between _Views_, one can use the [**App Shell** built-in acti
 
 - multiple conceptually separate _Products_;
 - a new tab with the configured url.
-
-___
-[Documentation Index](./README.md)

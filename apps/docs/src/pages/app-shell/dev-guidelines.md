@@ -83,8 +83,3 @@ When adapting existing applications, the existing routing solution must be confi
 Remember that if the existing routing library is also React Router 6, that dependency should be marked as external, so it uses the same version as the **App Shell**. This is handled automatically by the [App Shell's Vite plugin](../client/packages/app-shell-vite-plugin).
 
 If the application is using a different React Router major version we currently don't have a solution for adopting the **App Shell**, other than migrating the application to React Router 6.
-
-___
-➡️ **Next step**: [Kubernetes deployment](./K8s.md)
-
-[Documentation Index](./README.md)

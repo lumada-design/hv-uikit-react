@@ -17,7 +17,6 @@ The [vite-plugin-css-injected-by-js](https://github.com/marco-prontera/vite-plug
 ```typescript
 // ...
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-// ...
 
 export default defineConfig(({ mode }) => ({
   // ...
@@ -51,8 +50,9 @@ Configure the plugins in the `vite.config.ts` file:
 ```typescript
 // ...
 import unoCSS from "unocss/vite";
-import { presetHv } from "@hitachivantara/uikit-uno-preset";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import { presetHv } from "@hitachivantara/uikit-uno-preset";
+
 // ...
 
 export default defineConfig(({ mode }) => ({
@@ -97,9 +97,3 @@ The UnoCSS plugin can be configured to operate in different modes, of which the 
   ],
   // ...
   ```
-
----
-
-➡️ **Next step**: [Static assets and API calls](./assets-and-apis.md)
-
-[Documentation Index](./README.md)

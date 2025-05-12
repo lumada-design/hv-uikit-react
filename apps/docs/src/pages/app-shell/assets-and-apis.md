@@ -33,8 +33,3 @@ Check [Importing CSS files](./styling.md#importing-css-files) for an alternative
 The usage of a data-fetching library is highly recommended to avoid the need to write boilerplate code for data fetching and error handling.
 
 For REST APIs, libraries like [SWR](https://swr.vercel.app/) or [React Query](https://react-query.tanstack.com/) are recommended. For GraphQL APIs, [Apollo Client](https://www.apollographql.com/docs/react/) is recommended.
-
-___
-➡️ **Next step**: [Development Guidelines](./dev-guidelines.md)
-
-[Documentation Index](./README.md)

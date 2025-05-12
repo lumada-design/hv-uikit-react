@@ -40,6 +40,3 @@ export default function Hello() {
   return <h1>Hello {getName()}!</h1>;
 }
 ```
-
-___
-[Documentation Index](./README.md)

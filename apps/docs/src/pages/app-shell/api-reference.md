@@ -17,16 +17,16 @@ The main goal is to allow the module to navigate to a given _View_ regardless of
 
 A destination can be defined as either a `string` or a `Partial<Path>` object (both from react-router API) or also as a `ViewDestination` object. To better describe each type:
 
-  1. If it is a `string`, it can be either the module identifier of the _View_ or the final path to navigate to.
-  2. If it is a `ViewDestination` object, it represents the _View_ to navigate to and can have the following properties:
-      1. viewBundle - The module identifier of the _View_
-      2. pathParams - The path parameters to be compiled against the route based on the viewBundle
-      3. search - A URL search string, beginning with a ?
-      4. hash - A URL fragment identifier, beginning with a #
-  3. If it is a `Partial<Path>` object, it represents the final path to navigate to and can have the following properties:
-      1. pathname - A URL pathname, beginning with a /
-      2. search - A URL search string, beginning with a ?
-      3. hash - A URL fragment identifier, beginning with a #
+1. If it is a `string`, it can be either the module identifier of the _View_ or the final path to navigate to.
+2. If it is a `ViewDestination` object, it represents the _View_ to navigate to and can have the following properties:
+   1. viewBundle - The module identifier of the _View_
+   2. pathParams - The path parameters to be compiled against the route based on the viewBundle
+   3. search - A URL search string, beginning with a ?
+   4. hash - A URL fragment identifier, beginning with a #
+3. If it is a `Partial<Path>` object, it represents the final path to navigate to and can have the following properties:
+   1. pathname - A URL pathname, beginning with a /
+   2. search - A URL search string, beginning with a ?
+   3. hash - A URL fragment identifier, beginning with a #
 
 #### View matching modes
 
@@ -68,8 +68,3 @@ It returns an array of object with the following structure:
 
 - **label** - This field represents the label or name of the menu item. The value of this field is internationalized using the current active locale.
 - **path** - This field indicates the menu item's path, if any.
-
-___
-➡️ **Next step**: [Styling](./styling.md)
-
-[Documentation Index](./README.md)
