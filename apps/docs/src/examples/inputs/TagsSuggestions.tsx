@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Popper } from "@mui/material";
+import { ClickAwayListener, Popper } from "@mui/material";
 import {
   HvAdornment,
   HvPanel,
@@ -66,7 +66,7 @@ export default function Demo() {
           handleRemoveColor(value as string);
         }}
         value={selectedColors}
-        commitTagOn={["Comma"]}
+        commitTagOn={["Comma", "Enter"]}
         endAdornment={
           <HvAdornment
             tabIndex={0}
@@ -75,38 +75,45 @@ export default function Demo() {
           />
         }
         classes={{
-          tagsList: "h-32px pr-0 overflow-hidden",
+          tagsList: "h-32px pr-0! overflow-hidden",
         }}
       />
-      <Popper anchorEl={containerRef.current} open={open}>
-        <HvPanel className="flex flex-wrap flex-col gap-xs w-300px border rounded-round">
-          <HvTypography variant="caption1">Last Used:</HvTypography>
-          <div className="flex gap-xs">
-            {lastUsed.map((color, idx) => (
-              <HvTag
-                autoFocus={idx === 0}
-                key={color}
-                label={color}
-                onClick={() => handleAddColor(color)}
-              />
-            ))}
-          </div>
-          <HvTypography variant="caption1">More colors:</HvTypography>
-          <div className="flex flex-wrap gap-xs">
-            {colors
-              .filter(
-                (color) =>
-                  !selectedColors.includes(color) && !lastUsed.includes(color),
-              )
-              .map((color) => (
+      <Popper
+        anchorEl={containerRef.current}
+        open={open}
+        placement="bottom-start"
+      >
+        <ClickAwayListener onClickAway={() => setOpen(false)}>
+          <HvPanel className="grid gap-xs w-300px border rounded-large!">
+            <HvTypography variant="caption1">Last Used:</HvTypography>
+            <div className="flex gap-xs">
+              {lastUsed.map((color, idx) => (
                 <HvTag
+                  autoFocus={idx === 0}
                   key={color}
                   label={color}
                   onClick={() => handleAddColor(color)}
                 />
               ))}
-          </div>
-        </HvPanel>
+            </div>
+            <HvTypography variant="caption1">More colors:</HvTypography>
+            <div className="flex flex-wrap gap-xs">
+              {colors
+                .filter(
+                  (color) =>
+                    !selectedColors.includes(color) &&
+                    !lastUsed.includes(color),
+                )
+                .map((color) => (
+                  <HvTag
+                    key={color}
+                    label={color}
+                    onClick={() => handleAddColor(color)}
+                  />
+                ))}
+            </div>
+          </HvPanel>
+        </ClickAwayListener>
       </Popper>
     </div>
   );

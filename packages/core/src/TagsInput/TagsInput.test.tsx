@@ -95,8 +95,14 @@ describe("TagsInput Component", () => {
   });
 
   it("renders a custom adornment", () => {
-    render(<HvTagsInput endAdornment={<div>endAdornment</div>} />);
+    render(
+      <HvTagsInput
+        startAdornment={<div>startAdornment</div>}
+        endAdornment={<div>endAdornment</div>}
+      />,
+    );
 
+    expect(screen.getByText("startAdornment")).toBeInTheDocument();
     expect(screen.getByText("endAdornment")).toBeInTheDocument();
   });
 
