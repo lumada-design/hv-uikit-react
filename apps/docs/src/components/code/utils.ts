@@ -72,6 +72,8 @@ export const resolveComponents = (
   const jsxComponentRegex = /<([A-Z][A-Za-z0-9]*)/g;
   // Regex to capture hook calls that start with "use" followed by an uppercase letter
   const hookRegex = /\b(use[A-Z][A-Za-z0-9]*)\b/g;
+  // Regex to capture utils that start with "hv" followed by an uppercase letter
+  const hvRegex = /\b(hv[A-Z][A-Za-z0-9]*)\b/g;
 
   // Helper to resolve an identifier from available libraries
   const resolveIdentifier = (identifier: string): unknown =>
@@ -87,8 +89,13 @@ export const resolveComponents = (
   contents.forEach((content) => {
     const jsxMatches = extractUniqueMatches(content, jsxComponentRegex);
     const hookMatches = extractUniqueMatches(content, hookRegex);
+    const hvMatches = extractUniqueMatches(content, hvRegex);
     // Combine matches from both regex patterns
-    const allMatches = new Set<string>([...jsxMatches, ...hookMatches]);
+    const allMatches = new Set<string>([
+      ...jsxMatches,
+      ...hookMatches,
+      ...hvMatches,
+    ]);
 
     allMatches.forEach((identifier) => {
       if (!componentsScope[identifier]) {
