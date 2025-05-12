@@ -1,0 +1,155 @@
+# Views and Routes
+
+A _View_ is a React Component exported as an ES module. It is the main building block of any _Product_ and are most commonly known as _pages_.
+
+> [!IMPORTANT]
+> Note that the component to be rendered must be the **default export** of the module.
+
+A Route is a mapping between a URL and a _View_, and it is used to define the navigation tree of a _Product_. The **App Shell** is responsible for loading the _View_ and rendering it at the correct moment and place. On the main panel, it does it according to the active location route.
+
+Example:
+
+Create `src/pages/Hello.tsx` with the following code:
+
+```typescript
+export default function Hello() {
+  return <h1>Hello World!</h1>;
+}
+```
+
+Declare the _View_ in the **App Shell** configuration file:
+
+```jsonc
+// ...
+  mainPanel: {
+    views: [
+      {
+        bundle: "@hv-apps/my-app/pages/Hello.js",
+        route: "/hello"
+      }
+      // ...
+    ]
+  }
+// ...
+```
+
+Now, when launching your application, you can navigate to this _View_ with `http://.../hello`.
+
+Check the [configuration file reference](./config-file.md#main-panel) for more information on how to declare _Views_.
+
+> [!TIP]
+> You can also enable the `autoViewsAndRoutes` option in the `vite.config.ts` file and when set it will search for _Views_ at the folder specified by the `viewsFolder` parameter (`src/pages` by default) and add them automatically. For details on file-based routing, refer to the [plugin documentation](../client/packages/app-shell-vite-plugin/README.md). Note that _Shared Modules_ other than _Views_ must still be listed in the `modules` parameter at the `vite.config.ts` file.
+
+## Route Parameters
+
+Routes can contain parameters (the same parameters that react-router supports). The main use-case are the ones defined by a colon followed by the name of the parameter. For example, the route `/hello/:name` defines a parameter named `name`.
+
+## Nested Views
+
+Nested _Views_ allows coupling segments of the URL to the component hierarchy, nesting layouts. It leverages react-router's [nested routes](https://reactrouter.com/en/main/start/overview#nested-routes) feature.
+
+> [!NOTE]
+> Nested _Views_ are not supported by the file-based routing feature and must be declared manually in the **App Shell** configuration file.
+> The automatic and manual definition of _Views_ will be merged.
+
+Example:
+
+Declare it like this in the **App Shell** configuration file:
+
+```typescript
+// ...
+  mainPanel: {
+    views: [
+      {
+        bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
+        route: "/persons",
+        views: [
+          {
+            bundle: "@hv-apps/my-app/pages/NewPersonForm.js",
+            route: "/new",
+          },
+          {
+            bundle: "@hv-apps/my-app/pages/PersonDetails.js",
+            route: "/:id",
+          }
+        ]
+      }
+      // ...
+    ]
+  }
+// ...
+```
+
+The `PersonBrowser` component will receive the nested view in the `children` prop, and it can render it at the desired place:
+
+```typescript
+export default function PersonBrowser({ children }) {
+  return (
+    <div>
+      <h1>Person Browser</h1>
+      <select>
+        <option>John Doe</option>
+        <option>Jane Doe</option>
+      </select>
+      <div>{children}</div>
+    </div>
+  );
+}
+```
+
+> [!NOTE]
+> **Why `children` instead of using react-router's `<Outlet />`?**
+>
+> The current architectural guidelines, and one of the goals of the App Shell Framework and its plugin, is to keep the exported _Shared Modules_ generaly, and _Views_ in particular, uncoupled from the App Shell and its shared dependencies (react-router in this case). This would allow, for example, to use the same exported ES Module in another context - without the App Shell and react-router - by simply passing it `children`.
+> When loaded by the App Shell, a `<Outlet />` instance is automatically passed to the _View_ as `children`, so it will work as expected and render the active nested _View_.
+
+> [!TIP]
+> **How can I use react-router's `<Outlet />` context and `useOutletContext()`?**
+>
+> The Outlet's context is just an utility. You can create your own context provider and hooks to achieve the same result, benefiting from better type safety and avoiding the coupling to react-router.
+
+> [!CAUTION]
+> **But I really want to use `<Outlet />`!**
+>
+> If keeping the _Shared Modules_ uncoupled from the App Shell is not a concern, you can use `<Outlet />` directly in the _View_ and just ignore the `children` prop.
+
+### Index Route
+
+For the **App Shell** the index route, meaning the _View_ that is rendered when the URL matches the parent _View_ route exactly, is just a regular nested _View_ with `/` as the route.
+
+Example:
+
+With this configuration:
+
+```typescript
+// ...
+  mainPanel: {
+    views: [
+      {
+        bundle: "@hv-apps/my-app/pages/PersonBrowser.js",
+        route: "/persons",
+        views: [
+          {
+            bundle: "@hv-apps/my-app/pages/NewPersonForm.js",
+            route: "/new",
+          },
+          {
+            bundle: "@hv-apps/my-app/pages/PersonDetails.js",
+            route: "/:id",
+          },
+          {
+            bundle: "@hv-apps/my-app/pages/PersonKPIs.js",
+            route: "/",
+          }
+        ]
+      }
+      // ...
+    ]
+  }
+// ...
+```
+
+While when navigating to `/persons/1`, the `PersonBrowser` component receives the `PersonDetails` component as `children`, when navigating to `/persons` it receives the `PersonKPIs` component.
+
+___
+[Documentation Index](./README.md)

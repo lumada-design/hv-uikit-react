@@ -18,6 +18,10 @@ export default {
     type: "page",
     title: "Charts",
   },
+  "app-shell": {
+    type: "page",
+    title: "App Shell",
+  },
   examples: {
     type: "page",
     title: "Examples",
