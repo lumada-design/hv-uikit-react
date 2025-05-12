@@ -4,24 +4,24 @@ export const ColorPalette = () => {
   const { palette } = theme;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-md">
       {Object.entries(palette).map(([colorName, shades]) => (
-        <section key={colorName}>
+        <section key={colorName} id={colorName}>
           <HvTypography className="font-semibold mb-2">
             {colorName.charAt(0).toUpperCase() + colorName.slice(1)}
           </HvTypography>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-11 gap-1">
+          <div className="flex w-full [&>*]:flex-1">
             {Object.entries(shades).map(([shade, value]) => {
               return (
                 <div
                   key={`${colorName}-${shade}`}
+                  title={`${colorName}.${shade}`}
                   className="flex flex-col items-center"
                 >
                   <div
-                    className="h-15 w-full rounded-base"
+                    className="h-15 w-full"
                     style={{ backgroundColor: value }}
-                    aria-label={`Color ${colorName} ${shade}`}
                   />
 
                   <HvTypography className="mt-2 text-sm">{shade}</HvTypography>
