@@ -88,7 +88,7 @@ export const Test: StoryObj = {
       <section className="flex gap-xs">
         {[
           "rounded-none m-1",
-          "rounded-base my-sm",
+          "rounded-large my-sm",
           "rounded mr-md",
           "rounded-2",
           "rounded-full",

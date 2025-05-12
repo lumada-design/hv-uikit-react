@@ -21,8 +21,8 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   ...baseTheme,
 
   borderRadius: {
-    DEFAULT: hvTheme.radii.base,
-    ...hvTheme.radii,
+    DEFAULT: theme.radii.base,
+    ...theme.radii,
   },
   breakpoints: Object.fromEntries(hvBreakpoints),
   containers: Object.fromEntries(
