@@ -3,7 +3,7 @@ export default {
     type: "separator",
     title: "Overview",
   },
-  introduction: "Introduction",
+  index: "Introduction",
   "get-started": "Get Started",
   "project-status": "Project Status",
   "-- Community": {

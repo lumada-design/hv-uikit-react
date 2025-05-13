@@ -15,7 +15,7 @@ const footerLinks = [
   {
     title: "Documentation",
     links: [
-      { label: "Docs", href: "/docs/introduction" },
+      { label: "Docs", href: "/docs" },
       { label: "Components", href: "/components/accordion" },
       { label: "Charts", href: "/charts/get-started" },
       { label: "Examples", href: "/examples" },
