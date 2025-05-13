@@ -1,22 +1,17 @@
-# Base Concepts
+# Base concepts
 
 This section aims to clarify some of the terms used throughout the **App Shell** documentation.
 
-## Terminology
-
-- **Product Suite**: What the costumer bought from Hitachi Vantara.
-- **Product**: What, from the costumer perspective, seems and works as a single product. A _Product Suite_ might have multiple _Products_.
-- **Application Bundle**: What, from a domain and/or engineering perspective, is an application. It provides both complete views/pages and more focused UI components that are used to assemble _Products_.
-
-## Micro-Frontends
+## Micro-frontends
 
 Client-side architectural pattern where independently deployed frontend functionality is put together to form an application.
+Check out [micro-frontends.org](https://micro-frontends.org/) for more information.
 
-## Module format: ES Modules
+## ES Modules
 
-**ES modules** are the native module system for JavaScript, introduced in ECMAScript 2015 (ES6). They are natively supported by modern browsers, which makes them a future-proof choice.
+[**ES modules**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) are the native module system for JavaScript, introduced in ECMAScript 2015 (ES6). They are natively supported by modern browsers, which makes them a future-proof choice.
 
-Bundling is the process of combining all modules accessible from an entry point into a single ES module. This process improves performance, optimizes loading, and enhances code organization.
+**Bundling** is the process of combining all modules accessible from an entry point into a single ES module. This process improves performance, optimizes loading, and enhances code organization.
 
 ## Shared dependencies
 
@@ -26,49 +21,34 @@ That means that, despite the version of the library used by the _Application Bun
 
 These are the current shared dependencies and their versions:
 
-| Library                            | Version  |
-| ---------------------------------- | -------- |
-| react                              | ^18.2.0  |
-| react-dom                          | ^18.2.0  |
-| react-router-dom                   | ^6.9.0   |
-| @emotion/cache                     | ^11.11.0 |
-| @emotion/react                     | ^11.11.1 |
-| @hitachivantara/uikit-react-shared | ^5.1.0   |
+| Library                              | Version    |
+| ------------------------------------ | ---------- |
+| `react`, `react-dom`                 | `^18.2.0`  |
+| `react-router-dom`                   | `^6.9.0`   |
+| `@emotion/cache`, `@emotion/react`   | `^11.11.0` |
+| `@hitachivantara/uikit-react-shared` | `latest`   |
 
 ## Shared Modules
 
 _Shared Modules_ are ES modules exported by _Application Bundles_ to be imported by other _Application Bundles_. They can be UI components or simply functionality exposed via an API.
 
-They are declared in the `vite.config.ts` file, using the `modules` parameter.
+They are declared in the `vite.config.ts` file, using the `modules` parameter:
 
-Example:
-
-```typescript
-// ...
-  return {
-    plugins: [
-      // ...
-      HvAppShellVitePlugin(
-        {
-          mode,
-          modules: [
-            "src/pages/PlanetList",
-            "src/utils/getPlanetName"
-          ],
-          // ...
-        }
-      )
-    ],
-    // ...
-  };
-// ...
+```ts
+HvAppShellVitePlugin({
+  modules: [
+    "src/pages/PlanetList",
+    "src/pages/PlanetView",
+    "src/pages/PlanetForm",
+  ],
+});
 ```
 
 The **App Shell** itself is able to load the following types of _Shared Modules_:
 
-- **View**: Module exporting a React Component intended to be rendered in a **App Shell** panel (usually the main panel, as a page). It's configured in the **App Shell** configuration file in the `mainPanel.views` array. Detailed in the [next section](./views.md).
-- **Header Action**: Module exporting a React Component that provides a button (or other small UI component) to be rendered in the right-hand side of the **App Shell** header. It's configured in the **App Shell** configuration file in the `header.actions` array. Detailed in the [Header Actions](./header-actions.md) section.
-- **Provider**: Module exporting a React Component that provides a React Context to be used by other _Shared Modules_. It's configured in the **App Shell** configuration file in the `providers` array. Detailed in the [State](./state.md) section.
-- **Theme**: Module that exports a NEXT UI Kit theme definition. They can be referenced in the **App Shell** configuration file in the `theming.themes` array. They're detailed in the [Theming](./theming.md) section.
+- **View**: Module exporting a React Component intended to be rendered in a **App Shell** panel (usually the main panel, as a page). It's configured in the **App Shell** configuration file in the `mainPanel.views` array. Detailed in the [next section](./routing).
+- **Header Action**: Module exporting a React Component that provides a button (or other small UI component) to be rendered in the right-hand side of the **App Shell** header. It's configured in the **App Shell** configuration file in the `header.actions` array. Detailed in the [Header Actions](./header-actions) section.
+- **Provider**: Module exporting a React Component that provides a React Context to be used by other _Shared Modules_. It's configured in the **App Shell** configuration file in the [`providers`](./configuration#providers) array.
+- **Theme**: Module that exports a UI Kit theme definition. They can be referenced in the **App Shell** configuration file in the [`theming`](./configuration#theming) section.
 
 All the above _Shared Modules_ types assume its subject is exported as the default export of the module.

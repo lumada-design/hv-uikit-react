@@ -1,22 +1,7 @@
 # Development Guidelines
 
-Developing UI components with a micro-frontend architecture mindset requires some efforts to ensure a cohesive and solid user experience. This page provides guidelines and best practices to help you build a consistent user experience across all Hitachi Vantara products.
-
-## UI design and UX
-
-The **App Shell** implements several of the [NEXT Design System](https://designsystem.hitachivantara.com) patterns and uses the [NEXT UI Kit library](https://lumada-design.github.io/uikit/master/) to do so. All _Views_ and other UI components should be built using the UI Kit and must comply with the NEXT Design System.
-
-### Design System
-
-As a part of the Product Design group, the Design System team is responsible, in collaboration with the Product teams, for defining reference Design patterns, guidelines and methodologies, producing reusable patterns that reduce design and implementation effort, while ensuring a consistent user experience across the Hitachi Vantara products.
-
-### UI Kit
-
-The [UI Kit library](https://lumada-design.github.io/uikit/master/) provides a collection of **reusable React components** aligned with the **Design System** specifications. It is a **living library** that is constantly evolving and growing.
-
-- **Components**: UI Kit building blocks for creating your apps.
-- **Widgets**: Complex components that address specific common use cases; users can use them as-is or copy them and customize to their needs.
-- **Templates**: UI Kit provides a set of templates with common use cases found along Hitachi Vantara's portfolio to help teams accelerate the development of their apps.
+Developing UI components with a micro-frontend architecture mindset requires some efforts to ensure a cohesive and solid user experience.
+This page provides guidelines and best practices to help you build a consistent user experience across products using **UI Kit** and **App Shell**.
 
 ## Events
 
@@ -40,7 +25,7 @@ Direct communication between UI components with callbacks registered, or using t
 
 ## Error Handling
 
-React's [Error Boundaries](https://reactjs.org/docs/error-boundaries.html) are a graceful way to handle a JavaScript error so that the other parts of the application continue working. In addition to preventing the application from crashing, it allows to provide a custom fallback component and even log error information.
+React's [Error Boundaries](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) are a graceful way to handle a JavaScript error so that the other parts of the application continue working. In addition to preventing the application from crashing, it allows to provide a custom fallback component and even log error information.
 
 _Views_ should as much as possible handle errors locally in a graceful way and provide information useful to the user on how to recover from the error, instead of a generic error message.
 
@@ -54,18 +39,15 @@ _Views_ can also have their own internal routing. This feature primarily aims to
 
 Such _Views'_ route should end with a placeholder, e.g. with a `*` wildcard or with a dynamic `:id`-style segment, like in `/contacts/:id?`.
 
-```jsonc
-// ...
-  mainPanel: {
-    views: [
-      {
-        bundle: "@hv-apps/my-app/pages/Persons.js",
-        route: "/contacts/*"
-      }
-      // ...
-    ]
-  }
-// ...
+```ts
+mainPanel: {
+  views: [
+    {
+      bundle: "@hv-apps/my-app/pages/Persons.js",
+      route: "/contacts/*",
+    },
+  ];
+}
 ```
 
 The **App Shell** router will then match any route that starts with `/contacts/` and render the `persons` _View_. Internally, the _View_ can define its own routing and, for instance, render a list of persons at `/contacts/` and a detail view at `/contacts/:id`.
@@ -74,12 +56,57 @@ The _View_ should use the same React Router library instance as the **App Shell*
 
 Any navigation within the _View_ should be relative to the _View_'s route. For instance, a link to the detail view of a person with id `123` should be rendered as `<Link to="./123">`.
 
-A concrete usage of this can be found [here](../client/samples/README.md#internal-route-candy-app).
-
 ### Adopting App Shell for existing applications
 
 When adapting existing applications, the existing routing solution must be configured with the base path of the _View_'s route. For instance, if the _View_'s route is `/contacts/*`, the base path should be `/contacts/`.
 
-Remember that if the existing routing library is also React Router 6, that dependency should be marked as external, so it uses the same version as the **App Shell**. This is handled automatically by the [App Shell's Vite plugin](../client/packages/app-shell-vite-plugin).
+Remember that if the existing routing library is also React Router 6, that dependency should be marked as external, so it uses the same version as the **App Shell**. This is handled automatically by the App Shell Vite plugin.
 
 If the application is using a different React Router major version we currently don't have a solution for adopting the **App Shell**, other than migrating the application to React Router 6.
+
+## Static assets and API calls
+
+_Application Bundles'_ code will be executing in the context of the **App Shell** entrypoint, which provides no proxy capabilities for backend calls intended for the embedded application's backend, nor is able to serve its static assets.
+
+The `require.meta.url` parameter and the `require.meta.resolve` method can be used to construct URLs relative to the _Application Bundles'_ origin and used for calls loading additional resources, or invoking backend service APIs.
+
+Example:
+
+Instead of something like:
+
+```ts
+const BASE_URL_API = "/api/v1/";
+const BASE_URL_ASSETS = "/assets/";
+```
+
+Use:
+
+```ts
+const BASE_URL_API = import.meta.resolve("@hv-apps/my-app/api/v1/");
+const BASE_URL_ASSETS = import.meta.resolve("@hv-apps/my-app/assets/");
+```
+
+### Importing static assets
+
+Vite allows [importing assets as URLs](https://vitejs.dev/guide/assets.html#importing-asset-as-url). However, the resolved public URL will be relative to the **App Shell** entrypoint, not taking into account the microfrontend's architecture and the _Application Bundles'_ origin.
+
+As such, the functionality provided by Vite should not be used. Instead, the `require.meta.resolve` method should be used to construct URLs relative to the _Application Bundles'_ origin, as shown above.
+
+The [vite-plugin-css-injected-by-js](https://github.com/marco-prontera/vite-plugin-css-injected-by-js) takes all the CSS generated by the build process and adds it inlined in the JS files.
+It should be configured to inject the CSS code only relative to the importer, so each _View_ and _Shared Module_ will have its own CSS code injected.
+
+```ts
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+
+export default defineConfig({
+  plugins: [
+    cssInjectedByJsPlugin({
+      relativeCSSInjection: true,
+    }),
+  ],
+});
+```
+
+### Data fetching
+
+The usage of a data-fetching library, such as [SWR](https://swr.vercel.app/) or [React Query](https://react-query.tanstack.com/), is highly recommended to avoid the need to write boilerplate code for data fetching and error handling.
