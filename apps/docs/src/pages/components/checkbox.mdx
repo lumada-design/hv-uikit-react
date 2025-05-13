@@ -16,18 +16,11 @@ export const getStaticProps = async ({ params }) => {
   Component={HvCheckBox}
   componentName="HvCheckBox"
   controls={{
-    checked: {
-      defaultValue: false,
-    },
-    indeterminate: {
-      defaultValue: false,
-    },
-    required: {
-      defaultValue: true,
-    },
-    disabled: {
-      defaultValue: false,
-    },
+    checked: { defaultValue: false },
+    indeterminate: { defaultValue: false },
+    required: { defaultValue: true },
+    disabled: { defaultValue: false },
+    color: { type: "color" },
   }}
   componentProps={{
     label: "I have read and agree to the terms and conditions",
@@ -36,6 +29,19 @@ export const getStaticProps = async ({ params }) => {
     indeterminate: false,
   }}
 />
+
+### Color
+
+You can use the `color` prop to style the color of the checkbox. It accepts any UI Kit or CSS color.
+
+```tsx live
+<div className="flex gap-sm">
+  <HvCheckBox defaultChecked color="primary" />
+  <HvCheckBox defaultChecked color="positive" />
+  <HvCheckBox defaultChecked color="coral" />
+  <HvCheckBox defaultChecked color="#c73aa8" />
+</div>
+```
 
 ### Controlled
 

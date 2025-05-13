@@ -237,7 +237,7 @@ const ds3 = makeTheme((theme) => ({
           borderColor: theme.colors.text,
         },
         checked: {
-          backgroundColor: theme.colors.text,
+          "--bg-color": theme.colors.text,
           color: theme.colors.atmo1,
         },
         semantic: {

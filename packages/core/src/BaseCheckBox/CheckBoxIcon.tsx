@@ -2,9 +2,10 @@ import { useMemo } from "react";
 import {
   createClasses,
   ExtractNames,
+  mergeStyles,
   useDefaultProps,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { SvgBase } from "../icons";
 import type { HvBaseCheckBoxProps } from "./BaseCheckBox";
@@ -17,7 +18,7 @@ const { useClasses } = createClasses("HvCheckBoxIcon", {
   },
   checked: {
     borderColor: "transparent",
-    backgroundColor: theme.colors.primaryStrong,
+    backgroundColor: `var(--bg-color, ${theme.colors.primaryStrong})`,
     color: theme.colors.bgContainer,
   },
   indeterminate: {
@@ -46,6 +47,7 @@ export type HvCheckBoxIconClasses = ExtractNames<typeof useClasses>;
 export interface HvCheckBoxIconProps
   extends Pick<HvBaseCheckBoxProps, "className" | "disabled" | "semantic"> {
   variant?: "default" | "checked" | "indeterminate";
+  color?: HvColorAny;
   classes?: HvCheckBoxIconClasses;
 }
 
@@ -56,6 +58,7 @@ export const HvCheckBoxIcon = (props: HvCheckBoxIconProps) => {
     variant,
     disabled,
     semantic,
+    color,
   } = useDefaultProps("HvCheckBoxIcon", props);
   const { classes, cx } = useClasses(classesProp, false);
 
@@ -81,6 +84,7 @@ export const HvCheckBoxIcon = (props: HvCheckBoxIconProps) => {
         [classes.semantic]: semantic,
         [classes.disabled]: disabled,
       })}
+      style={mergeStyles({}, { "--bg-color": getColor(color) })}
     >
       <path d={d} />
     </SvgBase>
