@@ -20,6 +20,7 @@ export const getStaticProps = async ({ params }) => {
     showCount: { defaultValue: true },
     label: { type: "number", defaultValue: 2 },
     maxCount: { type: "number", defaultValue: 99 },
+    color: { type: "color", defaultValue: "text" },
   }}
   componentProps={{
     icon: <Alert />,
@@ -77,6 +78,21 @@ To display a badge on any content, wrap the `children` content with the badge co
   <HvBadge label="100%">
     <HvTypography variant="title2">Events</HvTypography>
   </HvBadge>
+</div>
+```
+
+### Color
+
+Customize the badge’s color using the color prop. It accepts any UI Kit or CSS color.
+
+```tsx live
+<div className="flex gap-sm">
+  <HvBadge showCount label={8} icon={<Alert />} />
+  <HvBadge color="primary" showCount label={8} icon={<Alert />} />
+  <HvBadge color="bgPageSecondary" showCount label={8} icon={<Alert />} />
+  <HvBadge color="positive" showCount label={8} icon={<Alert />} />
+  <HvBadge color="coral" showCount label={8} icon={<Alert />} />
+  <HvBadge color="#c73aa8" showCount label={8} icon={<Alert />} />
 </div>
 ```
 

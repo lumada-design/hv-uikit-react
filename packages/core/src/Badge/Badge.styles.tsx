@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
     ...theme.typography.caption2,
     color: theme.colors.textDimmed,
     borderRadius: theme.radii.full,
-    backgroundColor: theme.colors.text,
+    backgroundColor: `var(--bg-color, ${theme.colors.text})`,
     lineHeight: "16px",
     minWidth: 8,
     padding: "0 5px",

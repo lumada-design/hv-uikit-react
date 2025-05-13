@@ -300,8 +300,10 @@ const pentahoPlus = makeTheme((theme) => ({
     HvBadge: {
       classes: {
         badgePosition: {
-          color: theme.colors.base_light,
-          backgroundColor: "#334155",
+          color: ld(theme.colors.textLight, theme.colors.textDark),
+          "&[data-color='bgPageSecondary']": {
+            color: theme.colors.text,
+          },
         },
       },
     },
