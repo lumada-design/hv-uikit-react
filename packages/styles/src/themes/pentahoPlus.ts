@@ -376,7 +376,7 @@ const pentahoPlus = makeTheme((theme) => ({
     HvRadioIcon: {
       classes: {
         checked: {
-          backgroundColor: theme.colors.primary,
+          "--bg-color": theme.colors.primary,
         },
       },
     },
