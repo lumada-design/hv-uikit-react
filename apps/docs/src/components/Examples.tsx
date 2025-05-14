@@ -6,6 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import charts from "../pages/examples/charts.mdx?raw";
+import dnd from "../pages/examples/dnd.mdx?raw";
 import inputs from "../pages/examples/inputs.mdx?raw";
 import kpis from "../pages/examples/kpis.mdx?raw";
 import tables from "../pages/examples/tables.mdx?raw";
@@ -14,8 +15,7 @@ import tables from "../pages/examples/tables.mdx?raw";
  * Extracts the number of CodeBlock components in the given file content.
  */
 const countCodeBlocks = (fileContent: string): number => {
-  const codeBlockRegex =
-    /<CodeBlock[\s\S]*?>[\s\S]*?<\/CodeBlock>|<CodeBlock[\s\S]*?\/>/g;
+  const codeBlockRegex = /<CodeBlock/g;
   const matches = fileContent.match(codeBlockRegex);
   return matches ? matches.length : 0;
 };
@@ -66,7 +66,7 @@ export const Examples = () => {
     },
     {
       title: "Drag and Drop",
-      total: countCodeBlocks(kpis),
+      total: countCodeBlocks(dnd),
       path: "/examples/dnd",
     },
   ];
