@@ -3,6 +3,6 @@ export default {
     type: "separator",
     title: "Charts",
   },
-  "get-started": "Get Started",
+  index: "Get started",
   "base-chart": "Base Chart",
 };

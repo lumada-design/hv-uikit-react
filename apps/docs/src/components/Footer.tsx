@@ -16,8 +16,8 @@ const footerLinks = [
     title: "Documentation",
     links: [
       { label: "Docs", href: "/docs" },
-      { label: "Components", href: "/components/accordion" },
-      { label: "Charts", href: "/charts/get-started" },
+      { label: "Components", href: "/components" },
+      { label: "Charts", href: "/charts" },
       { label: "Examples", href: "/examples" },
     ],
   },
@@ -66,16 +66,14 @@ export const Footer = () => {
           {/* Link Groups Right-Aligned */}
           <div className="grid grid-cols-3 text-md gap-lg md:gap-xl">
             {footerLinks.map((group) => (
-              <div key={group.title} className="flex flex-col">
-                <p className="font-semibold text-primary mb-xs">
-                  {group.title}
-                </p>
+              <div key={group.title} className="flex flex-col gap-xs">
+                <p className="font-semibold text-primary">{group.title}</p>
                 {group.links.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="hover:text-primary pb-xs"
-                    target={link.href.startsWith("http") ? "_blank" : "_self"}
+                    className="hover:text-primary"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
                   >
                     {link.label}
                   </Link>
