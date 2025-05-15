@@ -32,7 +32,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   });
 
   return (
-    <section className="relative mt-md rounded-round">
+    <section className="relative mt-md border-border rounded-round">
       {/* Compact Controls */}
       <ExpandableControls
         onToggle={() => setIsExpanded((prev) => !prev)}
@@ -44,7 +44,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
       {/* Preview Section */}
       <DocsContainer
         className={clsx(
-          "px-md py-40px bg-bgPage border border-border rounded-round",
+          "px-md py-40px bg-bgPage border rounded-round border-color-inherit",
           isExpanded && "rounded-b-0",
         )}
         error={liveError}
@@ -53,7 +53,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
 
       {/* Code Editor Section */}
       <div
-        className="max-h-400px overflow-auto rounded-b-inherit -mt-xxs transition-max-height"
+        className="max-h-400px overflow-auto rounded-b-inherit -mt-xxs transition-max-height border-color-inherit"
         style={{
           maxHeight: isExpanded ? 400 : 0,
         }}

@@ -111,7 +111,7 @@ export const Examples = () => {
             {/* Placeholder for section preview */}
             <div
               className={clsx(
-                "h-160px bg-bgPage border border-atmo3",
+                "h-160px bg-bgContainer border border-atmo3",
                 "rounded-round mb-sm flex items-center justify-center",
               )}
             >
