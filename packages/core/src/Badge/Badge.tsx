@@ -1,8 +1,10 @@
 import { forwardRef } from "react";
 import {
+  mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseProps } from "../types/generic";
 import { HvTypography, HvTypographyVariants } from "../Typography";
@@ -13,6 +15,8 @@ export { staticClasses as badgeClasses };
 export type HvBadgeClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBadgeProps extends HvBaseProps {
+  /** The badge color. */
+  color?: HvColorAny;
   /**
    * Count is the number of unread notifications.
    * Note count and label are mutually exclusive.
@@ -55,6 +59,7 @@ export const HvBadge = forwardRef<
   const {
     classes: classesProp,
     className,
+    color,
     showCount = false,
     count: countProp = 0,
     maxCount = 99,
@@ -63,6 +68,7 @@ export const HvBadge = forwardRef<
     text,
     textVariant,
     children: childrenProp,
+    style,
     ...others
   } = useDefaultProps("HvBadge", props);
 
@@ -86,6 +92,10 @@ export const HvBadge = forwardRef<
     <div ref={ref} className={cx(classes.root, className)} {...others}>
       {children}
       <div
+        data-color={color}
+        style={mergeStyles(style, {
+          "--bg-color": color && getColor(color),
+        })}
         className={cx(classes.badgePosition, {
           [classes.badgeContainer]: children,
           [classes.badgeHidden]: !(count > 0 || renderedCountOrLabel),

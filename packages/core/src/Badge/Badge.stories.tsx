@@ -27,6 +27,7 @@ export const Main: StoryObj<HvBadgeProps> = {
     maxCount: 99,
     text: "Messages",
     textVariant: "label",
+    color: "text",
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -157,6 +158,7 @@ export const Test: StoryObj = {
       <HvBadge showCount label={8}>
         <HvTypography variant="title4">Events</HvTypography>
       </HvBadge>
+      <HvBadge color="bgPageSecondary" showCount label={88} icon={<Alert />} />
     </div>
   ),
 };
