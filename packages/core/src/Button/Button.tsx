@@ -146,7 +146,7 @@ export const HvButton = fixedForwardRef(function HvButton<
       style={mergeStyles(style, {
         "--color": color && getColor(color),
         "--radius": radius && theme.radii[radius],
-        "--HvButton-height": sizeStyles?.height ?? "32px",
+        "--HvButton-height": sizeStyles?.height ?? (!icon && "32px"),
       })}
       className={cx(
         classes.root,

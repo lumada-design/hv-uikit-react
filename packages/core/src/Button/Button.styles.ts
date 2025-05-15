@@ -68,6 +68,8 @@ export const { staticClasses, useClasses } = createClasses("HvButton", {
     padding: 0,
     flexShrink: 0,
     width: "var(--HvButton-height, fit-content)",
+    minWidth: 24,
+    minHeight: 24,
   },
   /** applied to the root element when using the `contained` variant */
   contained: {
@@ -128,7 +130,7 @@ const sizes: Record<
 };
 
 export const getSizeStyles = (size: HvSize) => {
-  const { height, space = "sm", fontSize } = sizes[size];
+  const { height = "auto", space = "sm", fontSize } = sizes[size] || {};
   return {
     height,
     padding: theme.spacing(0, space),
@@ -137,7 +139,7 @@ export const getSizeStyles = (size: HvSize) => {
 };
 
 export const getIconSizeStyles = (size: HvSize) => {
-  const { height } = sizes[size];
+  const height = sizes[size]?.height || size || "auto";
   return {
     height,
     width: height,

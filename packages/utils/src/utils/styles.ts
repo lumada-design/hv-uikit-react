@@ -1,7 +1,7 @@
 function stripNullish<T extends Record<string, unknown>>(obj: T) {
   return Object.entries(obj).reduce<Record<string, unknown>>(
     (acc, [key, value]) => {
-      if (value != null && value !== "") {
+      if (value != null && value !== "" && value !== false) {
         acc[key] = value;
       }
       return acc;
