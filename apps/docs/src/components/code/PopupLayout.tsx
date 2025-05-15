@@ -52,7 +52,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   return (
     <section
       id={id}
-      className="bg-transparent relative border-1 border-t-0 -ml-px h-full"
+      className="bg-transparent relative border-border border-1 border-t-0 -ml-px h-full"
     >
       <HvDialog
         onClose={() => setIsExpanded(false)}
