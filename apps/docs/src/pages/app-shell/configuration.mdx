@@ -1,0 +1,323 @@
+# Configuration
+
+The **App Shell** `app-shell.config.ts` configuration file holds the application's configuration.
+
+It expects a `default export` of an object that adheres to the `HvAppShellConfig` interface.
+You can find the [configuration properties documentation](#configuration-properties) below.
+
+```tsx
+// app-shell.config.ts
+import type { HvAppShellConfig } from "@hitachivantara/app-shell-vite-plugin";
+
+export default {
+  name: "App Name",
+  baseUrl: "/",
+  navigationMode: "ONLY_LEFT",
+  apps: {
+    "@hv-apps/my-app": "https://example.com:3001/",
+    "@hv-apps/another-app": "https://example.com:5001/",
+  },
+  // ...
+} satisfies HvAppShellConfig;
+```
+
+## Module locations
+
+Properties that reference modules' locations can be:
+
+1. A **bare-specifier**, such as `@hv-apps/my-app/pages/Hello.js`. The bare-specifier prefix must be mapped to a URL ([`baseUrl`](#baseurl)) in the [`apps` property](#apps).
+2. A fully qualified URL, like `http://localhost:3001/pages/Hello.js`, which directly points to the module's location.
+
+Note: During development, the bare-specifier with a `@self` prefix (eg. `@self/pages/Hello.js`) can also be used, referring to the module within the current Application Bundle.
+
+### Module structure
+
+The **App Shell** configuration file uses a common structure to declare modules, which be found in [`mainPanel`](#mainpanel) views, [`header`](#header) actions, or [`providers`](#providers).
+The common structure has the following specification:
+
+- `bundle`: a string with the [module location](#module-locations).
+- `config`: an optional properties object, passed to the module when it is loaded.
+
+Example:
+
+```ts
+{
+  bundle: "@hv-apps/my-app/pages/Hello.js",
+  config: {
+    name: "John",
+    age: 30,
+  }
+}
+```
+
+```tsx
+// Hello.tsx
+export default function Hello({ name, age }) {
+  return <h1>{`Hello ${name} (${age})!`}</h1>;
+}
+```
+
+## Internationalization
+
+Properties that receive text values can be internationalized by using a key that is present on the bundle of the [`translations` property](#translations).
+
+If a value, used in any of the internationalizable properties, is not present on the translations bundle then it will be used as is.
+
+## Configuration properties
+
+The `HvAppShellConfig` configuration has the following properties:
+
+### `name`
+
+Specifies the product name displayed in the header and in the browser tab. Supports internationalization.
+
+### `baseUrl`
+
+The base path for the product, required when it isn't hosted at the root of the hosting service. Defaults to `"/"` if not present.
+
+### `logo`
+
+Defines the product logo. It includes:
+
+- `name`: Either `HITACHI`, `LUMADA`, or `PENTAHO+`. Defaults to `HITACHI`.
+- `description`: The descriptive text of the logo, that is also subject to internationalization.
+
+If you don't want to add a logo to the header, explicitly set the menu item `logo` to `null`.
+
+### `apps`
+
+Key-value object of _Application Bundles_ IDs and their respective locations. Used by the **App Shell** to generate the importmap and thus allowing the import of ES Modules from different _Application Bundles_.
+
+Example:
+
+```ts
+apps: {
+  "@hv-apps/an-app": "http://localhost:3001/",
+  "@hv-apps/another-app": "http://localhost:5001/"
+}
+```
+
+In order to reference Views and Shared Modules from other Application Bundles', one must be registered in the App Shell's configuration.
+
+When registered, the _Application Bundle_'s contents can then be referenced as "subpaths" of its module ID.
+
+```ts
+{ route: "/hello", bundle: "@hv-apps/another-app/pages/Other.js" }
+```
+
+```tsx
+import { getName } from "@hv-apps/another-app/modules/nameGenerator.js";
+
+export default function Hello() {
+  return <h1>Hello {getName()}!</h1>;
+}
+```
+
+### `mainPanel`
+
+Defines the main panel content properties. Accepts the following:
+
+#### `mainPanel.views`
+
+An array of _View_ items that will be displayed in the main panel, extending the base [module structure](#module-structure) with the following properties:
+
+- `route`: Defines the route path of the _View_.
+- `views`: Array of nested _View_ items. **route** will be appended to the parent route. See [Nested Views](./routing#nested-views) for more information.
+
+Note: The `mainPanel` and non-nested `views` accept any of the [`HvContainer` props](/components/container?tab=props), for configuring the container that wraps the _Views_.
+The `maxWidth` prop defaults to `"xl"`, instead of `false` as in the UI Kit.
+
+Example:
+
+```ts
+mainPanel: {
+  maxWidth: "sm",
+  views: [
+    {
+      bundle: "@hv-apps/my-app/pages/Hello.js",
+      route: "/hello",
+      config: {
+        name: "John"
+      }
+    },
+    {
+      bundle: "@hv-apps/another-app/pages/Person.js",
+      route: "/contacts/:name",
+      maxWidth: "lg",
+      fixed: true
+    }
+  ]
+}
+```
+
+See [Routing](./routing) for more information.
+
+### `menu`
+
+Describes the _Product's_ menus, with each item potentially having submenus and associated icons. It's an array where each menu item is defined by the following set of values:
+
+- `label`: The menu label (visible by the users at the browser). **Required**. Supports internationalization.
+- `target`: The route value defined at the view.
+- `icon`: The icon associated with the app.
+  - `iconType`: Type of icon to be used (at this moment the only possible value is `uikit`).
+  - `name`: Name of the icon to be used (as identified at [UI Kit's icons library](/docs/icon-library#library))
+- `submenus`: Nested/recursive array of [`menu`](#menu) items.
+
+> **WARNING:** `target` and `submenus` properties should not be used together in the definition of a menu item.
+
+To give more context, when we use the Vertical Navigation panel and perform a menu item click, it needs to know if it should navigate to the given target or open its submenu tree. Since this is done by explicitly checking which property exists. Also, when navigating to a URL, **App Shell** will try its best to find which menu should be selected and as such, having both target and submenus property can lead to behaviour inconsistency.
+
+Example:
+
+```ts
+menu: [
+  {
+    label: "Page 1",
+    icon: { iconType: "uikit", name: "Open" },
+    submenus: [
+      {
+        label: "Sub Page 1",
+        target: "/subpage1",
+        icon: { iconType: "uikit", name: "Close" },
+      },
+    ],
+  },
+  {
+    label: "Page 2",
+    target: "/page2",
+  },
+];
+```
+
+See [Navigation](./navigation) for more information.
+
+### `navigationMode`
+
+Determines the layout of the navigation. The possible options are:
+
+- `TOP_AND_LEFT`: In this mode, the first level of menu items will be displayed on the top (inside the header), and the remaining items will be displayed inside a vertical navigation panel on the left.
+- `ONLY_TOP`: In this mode all navigation will be presented on the top. With this mode, only two levels of menus will be displayed: the first one inside the header, and the second one will appear below the header on an extra navigation bar.
+- `ONLY_LEFT`: In this mode, all the menu structure will be displayed on the left vertical navigation panel. No items will appear on the top.
+
+### `header`
+
+Defines all customizations that can be applied to the Header of the **App Shell**:
+
+#### `header.actions`
+
+_Header Actions_ that will be displayed on the Header. It follows the [module structure](#module-structure) object API.
+
+Example:
+
+```ts
+actions: [
+  {
+    bundle: "@hv/user-notifications-client/index.js",
+    config: {
+      showCount: false,
+    },
+  },
+  {
+    bundle: "@hv/theming-client/colorModeSwitcher.js",
+  },
+];
+```
+
+See [Header actions](./header-actions) for more information and see the available **App Shell** built-in actions.
+
+### `providers`
+
+This prop defines the _Providers_ that will wrap all the _Views_ and _Shared Modules_:
+
+```ts
+providers: [
+  { bundle: "@hv-apps/some-app/providers/SomeProvider.js" },
+  { bundle: "@hv-apps/other-app/providers/OtherProvider.js" },
+];
+```
+
+Notes:
+
+- Each _Application Bundle_ ideally should expose just a single _Provider_. If multiple _Providers_ are needed, they can be composed into a single _Provider_.
+- The **App Shell** will instantiate the _Providers_ in the order they are declared in the configuration file. However, dependencies between _Providers_ should be avoided, and never rely on the existence of another _Provider_.
+- This shouldn't be abused: Context only needed for the rendering of a _View_ shouldn't be put on a global _Provider_ just because another _View_ needs it. E.g. the i18next provider should continue to be instantiated on every view, using a HOC for example, instead of having a global provider for each _Application Bundle_, each with its own i18next provider always instanced in case it is needed.
+
+### `translations`
+
+This property defines bundles of translations that need to be added in runtime to **App Shell** translation bundle.
+These are **NOT** available to the _Views_.
+
+Being an object, it is required to have as root the language (en, pt, etc.) of the bundle:
+
+```ts
+name: "translationKey",
+logo: {
+  name: "HITACHI",
+  description: "logoDesc"
+},
+menu: [
+  {
+    label: "pageOne",
+    target: "/page1"
+  }
+],
+translations: {
+  en: {
+    translationKey: "An Amazing App",
+    logoDesc: "Company logo",
+    pageOne: "Page One"
+  },
+  pt: {
+    translationKey: "Uma App Fantástica",
+    logoDesc: "Logo da empresa",
+    pageOne: "Página Um"
+  }
+}
+```
+
+In the example above, the name of the application, that appears on the browser tab and on the header,
+defines a key that exists on the translations bundle and so will be translated by **App Shell** accordingly.
+The same happens with other localized properties (like the logo description or menu labels).
+
+_Application Bundles_ may use different localization libraries, but using i18next is the recommendation.
+The **App Shell does not** provide translations to the embedded _Views_ meaning that each _Application Bundle_ must handle its own translations.
+
+A _View_ may accidentally access the **App Shell**'s i18next instance when using the `useTranslation` hook.
+Because of that, _Application Bundles_ must ensure they use its own i18next instance to avoid collision and incorrect information display.
+For more information check the documentation at [i18next.com/overview/api](https://www.i18next.com/overview/api#createinstance).
+
+### `theming`
+
+This property defines the theme of the _Product_, and it supports both the base UI Kit themes and custom themes.
+
+The config object for it has the following options:
+
+- `themes`: Array of available themes. Can be one of the built-in UI Kit themes (`"ds3"`, `"ds5"`, `"pentahoPlus"`), or a custom theme identified by the module.
+- `theme`: The active theme. It is the name defined in the theme definition, not the module name. Defaults to the first theme in the themes array.
+- `colorMode`: The color mode of the theme. Defaults to the default color mode of the theme. UI Kit base themes support "dawn" and "wicked" color modes (defaulting to "dawn"). Custom themes define their own color modes.
+
+Example:
+
+```ts
+theming: {
+  themes: ["ds5", "@hv-apps/my-app/tatooine.js"],
+  theme: "tatooine",
+  colorMode: "sand"
+}
+```
+
+#### Custom theme
+
+Custom themes are a _Shared Module_ that exports a UI Kit theme definition. For more information on theme structures, refer to the [UI Kit theming documentation](/docs/theming).
+
+## Env variables
+
+The configuration can use environment variables that are to be replaced at build time.
+
+```ts
+apps: {
+  "@hv/user-notifications-client": process.env.VITE_USER_NOTIFICATIONS_URL || "http://localhost:8080"
+}
+```
+
+These variables should be set at `.env` files like explained [here](https://vite.dev/guide/env-and-mode).

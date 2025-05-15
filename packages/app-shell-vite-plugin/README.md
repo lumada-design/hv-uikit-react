@@ -19,31 +19,25 @@ This plugin is responsible for the hard lifting during development time and buil
 
 Install the plugin:
 
-```
+```sh
 npm install -D @hitachivantara/app-shell-vite-plugin
 ```
 
 Add the plugin to the vite plugin list in `vite.config.ts`.
 
-```typescript
-// imports omitted
+```ts
 import { HvAppShellVitePlugin } from "@hitachivantara/app-shell-vite-plugin";
 
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [
-      // other plugins omitted
-      HvAppShellVitePlugin({ mode }),
-    ],
+    plugins: [HvAppShellVitePlugin({ mode })],
   };
 });
 ```
 
-## app-shell.config
+## app-shell.config.ts
 
-The configuration file must be placed at the root directory of the app and the vite-plugin can process the `app-shell.config` as a JSON or Typescript extension.
-
-Managing settings in TypeScript however provides more efficiency and type safety features. You can check this configuration in action [here](../../samples/default-app/app-shell.config.ts).
+The configuration file must be placed at the root directory of the app and the vite-plugin can process the `app-shell.config.ts` file.
 
 ## Configuration properties
 
@@ -67,8 +61,7 @@ The `<base href="...">` tag is automatically injected at the `index.html` file d
 
 In the below snippet, the value injected in the base href tag will be `/example/` regardless of the App Shell configuration file.
 
-```typescript
-// other configurations omitted
+```ts
 export default defineConfig(({ mode }) => {
   return {
     plugins: [HvAppShellVitePlugin({ mode })],
