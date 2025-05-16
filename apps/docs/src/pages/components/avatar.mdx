@@ -148,21 +148,43 @@ An avatar can have a status, represented by either the status colored border or 
 An avatar should be interacted with by wrapping it in an interactable element, such as an `HvButton` or a link. Make sure the elements are labelled accordingly.
 
 ```tsx live
-<div className="flex gap-xs">
-  <HvButton icon component="a" href="#profile-url" aria-label="External link">
+<div className="flex align-start gap-xs">
+  <HvButton
+    component="a"
+    href="#profile-url"
+    aria-label="External link"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
     <HvAvatar size="md">
       <Bookmark />
     </HvAvatar>
   </HvButton>
-  <HvButton icon aria-label="Open the user profile">
-    <HvAvatar size="md" />
+  <HvButton
+    aria-label="Open the user profile"
+    icon
+    radius="base"
+    className="size-fit!"
+  >
+    <HvAvatar variant="square" size="md" />
   </HvButton>
-  <HvButton icon aria-label="Business Manager">
+  <HvButton
+    aria-label="Business Manager"
+    icon
+    radius="base"
+    className="size-fit!"
+  >
     <HvAvatar backgroundColor="sema19" size="md" badge="negative">
       BM
     </HvAvatar>
   </HvButton>
-  <HvButton icon aria-label="Business Manager" radius="none">
+  <HvButton
+    aria-label="Business Manager"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
     <HvAvatar
       backgroundColor="sema19"
       size="md"
@@ -172,7 +194,12 @@ An avatar should be interacted with by wrapping it in an interactable element, s
       BM
     </HvAvatar>
   </HvButton>
-  <HvButton icon aria-label="Clara Soul profile">
+  <HvButton
+    aria-label="Clara Soul profile"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
     <HvAvatar
       alt="Clara Soul"
       src="https://i.imgur.com/6sYhSb6.png"
@@ -180,7 +207,12 @@ An avatar should be interacted with by wrapping it in an interactable element, s
       status="positive"
     />
   </HvButton>
-  <HvButton icon aria-label="Clara Soul profile" radius="none">
+  <HvButton
+    aria-label="Clara Soul profile"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
     <HvAvatar
       alt="Clara Soul"
       src="https://i.imgur.com/6sYhSb6.png"
