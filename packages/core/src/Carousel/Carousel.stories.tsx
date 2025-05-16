@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvCard,
   HvCardContent,
@@ -14,7 +14,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 export default {
-  title: "Widgets/Carousel",
+  title: "Components/Carousel",
   component: HvCarousel,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCarouselSlide },

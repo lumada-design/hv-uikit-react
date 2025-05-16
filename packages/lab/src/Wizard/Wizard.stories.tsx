@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import isChromatic from "chromatic/isChromatic";
 import {

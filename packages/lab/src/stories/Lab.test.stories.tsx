@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
 import { Variants as BladeVariantsStory } from "../Blade/Blade.stories";
@@ -34,7 +34,6 @@ export const Test: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
     a11y: {
       disable: true,
     },

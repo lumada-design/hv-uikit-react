@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvControls,
   HvLeftControl,
@@ -16,7 +16,7 @@ import MixedControlsRaw from "./stories/MixedControls?raw";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvControls> = {
-  title: "Widgets/Controls",
+  title: "Components/Controls",
   component: HvControls,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvLeftControl, HvRightControl },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvTextArea> = {

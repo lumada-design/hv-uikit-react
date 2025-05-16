@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvDialog,
   HvDialogContent,
@@ -14,7 +14,7 @@ import { Code, DocWord } from "@hitachivantara/uikit-react-icons";
 import { cancelUpload, simulateUpload } from "./stories/simulators";
 
 const meta: Meta<typeof HvFileUploader> = {
-  title: "Widgets/File Uploader",
+  title: "Components/File Uploader",
   component: HvFileUploader,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvFileUploaderPreview },

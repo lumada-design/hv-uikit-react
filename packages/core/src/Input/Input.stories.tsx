@@ -510,9 +510,6 @@ export const Adornments: StoryObj<HvInputProps> = {
 };
 
 export const Test: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
   decorators: [showcaseDecorator],
   args: {
     description: "Enter name",

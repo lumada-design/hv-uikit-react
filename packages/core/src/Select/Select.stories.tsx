@@ -156,7 +156,6 @@ export const Controlled: StoryObj<HvSelectProps<{}, false>> = {
 
 export const Test: StoryObj<HvSelectProps<{}, false>> = {
   parameters: {
-    docs: { disable: true },
     a11y: {
       config: {
         rules: [

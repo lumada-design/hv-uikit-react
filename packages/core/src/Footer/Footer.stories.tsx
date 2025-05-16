@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvFooter,
   HvFooterProps,
@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvFooter> = {
-  title: "Widgets/Footer",
+  title: "Components/Footer",
   component: HvFooter,
 };
 export default meta;

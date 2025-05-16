@@ -287,9 +287,6 @@ export const CustomRootComponent: StoryObj<HvButtonProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
       <HvButton variant="primary">Primary</HvButton>

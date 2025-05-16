@@ -1,6 +1,6 @@
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvIconButton } from "@hitachivantara/uikit-react-core";
 import {
   Bookmark,
@@ -150,7 +150,6 @@ const SpriteCheckbox = (props: Partial<HvIconSpriteProps>) => (
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(),
-    docs: { disable: true },
   },
   render: () => {
     return (

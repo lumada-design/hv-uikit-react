@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseRadio,
   HvRadio,
@@ -124,9 +124,6 @@ export const Custom: StoryObj<HvRadioProps> = {
 };
 
 export const Test: StoryObj<HvRadioProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <HvRadio disabled label="Disabled" />

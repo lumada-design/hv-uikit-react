@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ReactChart from "react-google-charts";
 import { css, cx } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   cardClasses,
   HvCard,

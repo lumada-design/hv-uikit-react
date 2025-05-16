@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBreadCrumb,
   HvButton,
@@ -27,7 +27,7 @@ const data = [
 ];
 
 const meta: Meta<typeof HvGlobalActions> = {
-  title: "Widgets/Global Actions",
+  title: "Components/Global Actions",
   component: HvGlobalActions,
   decorators: [
     (Story) => (
@@ -259,9 +259,6 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
 };
 
 export const Test: StoryObj<HvGlobalActionsProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => {
     const backButton = (
       <HvButton aria-label="Back" icon>

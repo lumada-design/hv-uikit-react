@@ -141,7 +141,6 @@ export const Test: StoryObj = {
       "Pentaho+ dawn",
       "Pentaho+ wicked",
     ]),
-    docs: { disable: true },
     a11y: {
       disable: true,
     },
@@ -171,7 +170,7 @@ export const Test2: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -197,7 +196,7 @@ export const Test3: StoryObj = {
       "Pentaho+ dawn",
       "Pentaho+ wicked",
     ]),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -236,7 +235,7 @@ export const Test4: StoryObj = {
       "Pentaho+ dawn",
       "Pentaho+ wicked",
     ]),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },

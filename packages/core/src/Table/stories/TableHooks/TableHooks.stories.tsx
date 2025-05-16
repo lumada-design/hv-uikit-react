@@ -168,7 +168,6 @@ export const UseHvRowStateStory: StoryObj = {
 /** This was created to test grouped headers with sticky columns */
 export const TestHeaders: StoryObj = {
   parameters: {
-    docs: { disable: true },
     a11y: {
       config: {
         rules: [

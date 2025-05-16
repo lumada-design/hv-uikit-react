@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvBreadCrumb,
@@ -18,7 +18,7 @@ const data = [
 ];
 
 const meta: Meta<typeof HvBreadCrumb> = {
-  title: "Widgets/Breadcrumb",
+  title: "Components/Breadcrumb",
   component: HvBreadCrumb,
   argTypes: {
     onClick: { action: "clicked" },

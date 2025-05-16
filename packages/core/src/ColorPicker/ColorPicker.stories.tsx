@@ -13,7 +13,7 @@ const makeDecorator =
   (Story) => <div style={styles}>{Story()}</div>;
 
 const meta: Meta<typeof HvColorPicker> = {
-  title: "Widgets/Color Picker",
+  title: "Components/Color Picker",
   component: HvColorPicker,
 };
 export default meta;
@@ -250,9 +250,6 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   decorators: [(Story) => <div className="flex gap-xs">{Story()}</div>],
   render: () => (
     <>

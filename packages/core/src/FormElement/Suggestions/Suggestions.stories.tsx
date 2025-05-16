@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvBaseInputProps,

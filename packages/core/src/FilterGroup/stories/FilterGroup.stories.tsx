@@ -20,7 +20,7 @@ const widthDecorator: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof HvFilterGroup> = {
-  title: "Widgets/Filter Group",
+  title: "Components/Filter Group",
   component: HvFilterGroup,
   decorators: [(storyFn) => <div style={{ height: 550 }}>{storyFn()}</div>],
   parameters: {

@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvOverflowTooltip,
   HvTag,
@@ -118,9 +118,6 @@ export const SelectableControlled: StoryObj<HvTagProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div className="flex flex-wrap gap-xs">
       <HvTag label="Informational" />

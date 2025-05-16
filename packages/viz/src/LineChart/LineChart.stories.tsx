@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import { loadArrow } from "arquero";
 import {
@@ -891,7 +891,6 @@ export const CustomEchartsOptions: StoryObj<HvLineChartProps> = {
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(["DS5 dawn"], 5000, { diffThreshold: 0.8 }),
-    docs: { disable: true },
   },
   decorators: [
     (Story) => (

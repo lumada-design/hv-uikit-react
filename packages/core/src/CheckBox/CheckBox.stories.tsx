@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseCheckBox,
   HvCheckBox,
@@ -178,9 +178,6 @@ export const Custom: StoryObj<HvCheckBoxProps> = {
 };
 
 export const Test: StoryObj<HvCheckBoxProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <HvCheckBox disabled label="Checkbox 1" />

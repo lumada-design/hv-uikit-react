@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvBadgeProps,
@@ -143,9 +143,6 @@ export const Accessibility: StoryObj<HvBadgeProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div style={{ display: "flex", gap: 60, flexWrap: "wrap" }}>
       <HvBadge count={10} icon={<Alert />} />
