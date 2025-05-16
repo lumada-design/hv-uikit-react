@@ -361,7 +361,7 @@ const pentahoPlus = makeTheme((theme) => ({
           borderRadius: theme.radii.base,
         },
         checked: {
-          backgroundColor: theme.colors.primary,
+          "--bg-color": theme.colors.primary,
           color: theme.colors.atmo1,
         },
       },

@@ -6,6 +6,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { staticClasses, useClasses } from "./BaseCheckBox.styles";
 import { HvCheckBoxIcon } from "./CheckBoxIcon";
@@ -15,7 +16,7 @@ export { staticClasses as baseCheckBoxClasses };
 export type HvBaseCheckBoxClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseCheckBoxProps
-  extends Omit<MuiCheckboxProps, "onChange" | "classes"> {
+  extends Omit<MuiCheckboxProps, "onChange" | "classes" | "color"> {
   /**
    * The input name.
    */
@@ -81,6 +82,10 @@ export interface HvBaseCheckBoxProps
    */
   onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
   /**
+   * Color applied to the check box.
+   */
+  color?: HvColorAny;
+  /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
   classes?: HvBaseCheckBoxClasses;
@@ -111,6 +116,8 @@ export const HvBaseCheckBox = forwardRef<
     readOnly = false,
     disabled = false,
     semantic = false,
+    color,
+    style,
     ...others
   } = useDefaultProps("HvBaseCheckBox", props);
 
@@ -145,7 +152,7 @@ export const HvBaseCheckBox = forwardRef<
     [onFocusVisible],
   );
 
-  const params = { indeterminate, disabled, semantic };
+  const params = { indeterminate, disabled, semantic, color };
 
   return (
     <MuiCheckbox
