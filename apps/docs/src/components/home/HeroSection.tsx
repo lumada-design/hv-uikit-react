@@ -77,7 +77,7 @@ export const HeroSection = () => (
     </HvButton>
     <HvButton
       component={Link}
-      href="/components/accordion"
+      href="/components"
       variant="subtle"
       size="lg"
       className="mt-md max-sm:w-full hidden sm:inline-flex"

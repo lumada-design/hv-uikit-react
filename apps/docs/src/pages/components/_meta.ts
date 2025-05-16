@@ -4,6 +4,8 @@ export default {
     title: "Components",
     type: "separator",
   },
+  index: "Get started",
+  // eslint-disable-next-line sort-keys
   accordion: "Accordion",
   "action-bar": "Action Bar",
   "app-switcher": "App Switcher",
@@ -77,6 +79,8 @@ export default {
     title: "Lab",
     type: "separator",
   },
+  lab: "Get started",
+  // eslint-disable-next-line sort-keys
   blade: "Blade",
   blades: "Blades",
   dashboard: "Dashboard",

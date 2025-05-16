@@ -4,7 +4,7 @@ export default {
     title: "Overview",
   },
   index: "Introduction",
-  "get-started": "Get Started",
+  "get-started": "Get started",
   "project-status": "Project Status",
   "-- Community": {
     type: "separator",
