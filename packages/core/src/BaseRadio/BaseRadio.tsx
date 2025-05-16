@@ -4,6 +4,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { staticClasses, useClasses } from "./BaseRadio.styles";
 import { HvRadioIcon } from "./RadioIcon";
@@ -13,7 +14,7 @@ export { staticClasses as baseRadioClasses };
 export type HvBaseRadioClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseRadioProps
-  extends Omit<MuiRadioProps, "onChange" | "classes"> {
+  extends Omit<MuiRadioProps, "onChange" | "classes" | "color"> {
   /**
    * Class names to be applied.
    */
@@ -58,6 +59,10 @@ export interface HvBaseRadioProps
    * When uncontrolled, defines the initial checked state.
    */
   defaultChecked?: boolean;
+  /**
+   * Color applied to the radio button.
+   */
+  color?: HvColorAny;
   /**
    * The callback fired when the radio button is pressed.
    */
@@ -105,6 +110,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
       onChange,
       semantic,
       inputProps,
+      color,
       onFocusVisible,
       onBlur,
       ...others
@@ -155,7 +161,7 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
           className,
         )}
         icon={<HvRadioIcon disabled={disabled} />}
-        checkedIcon={<HvRadioIcon checked disabled={disabled} />}
+        checkedIcon={<HvRadioIcon checked disabled={disabled} color={color} />}
         color="default"
         disabled={disabled}
         required={required}

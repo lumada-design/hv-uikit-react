@@ -1,9 +1,10 @@
 import {
   createClasses,
   ExtractNames,
+  mergeStyles,
   useDefaultProps,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
+import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { SvgBase } from "../icons";
 import type { HvBaseRadioProps } from "./BaseRadio";
@@ -16,7 +17,7 @@ const { useClasses } = createClasses("HvRadioIcon", {
   },
   checked: {
     borderColor: "transparent",
-    backgroundColor: theme.colors.primaryStrong,
+    backgroundColor: `var(--bg-color, ${theme.colors.primaryStrong})`,
     color: theme.colors.bgContainer,
   },
   disabled: {
@@ -34,6 +35,7 @@ export type HvRadioIconClasses = ExtractNames<typeof useClasses>;
 
 export interface HvRadioIconProps
   extends Pick<HvBaseRadioProps, "checked" | "disabled" | "className"> {
+  color?: HvColorAny;
   classes?: HvRadioIconClasses;
 }
 
@@ -43,6 +45,7 @@ export const HvRadioIcon = (props: HvRadioIconProps) => {
     classes: classesProp,
     checked,
     disabled,
+    color,
   } = useDefaultProps("HvRadioIcon", props);
   const { classes, cx } = useClasses(classesProp, false);
 
@@ -54,6 +57,7 @@ export const HvRadioIcon = (props: HvRadioIconProps) => {
         [classes.disabled]: disabled,
         [classes.checkedDisabled]: checked && disabled,
       })}
+      style={mergeStyles({}, { "--bg-color": getColor(color) })}
     >
       {checked && <circle cx="8" cy="8" r="4.5" />}
     </SvgBase>

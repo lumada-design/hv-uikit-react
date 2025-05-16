@@ -19,6 +19,7 @@ export const getStaticProps = async ({ params }) => {
     required: { defaultValue: true },
     disabled: { defaultValue: false },
     semantic: { defaultValue: false },
+    color: { type: "color" },
   }}
   componentProps={{
     label: "I have read and agree to the terms and conditions",
@@ -27,6 +28,19 @@ export const getStaticProps = async ({ params }) => {
     indeterminate: false,
   }}
 />
+
+### Color
+
+You can use the `color` prop to style the color of the radio. It accepts any UI Kit or CSS color.
+
+```tsx live
+<div className="flex gap-sm">
+  <HvRadio checked color="primary" />
+  <HvRadio checked color="positive" />
+  <HvRadio checked color="coral" />
+  <HvRadio checked color="#c73aa8" />
+</div>
+```
 
 ### Controlled
 
