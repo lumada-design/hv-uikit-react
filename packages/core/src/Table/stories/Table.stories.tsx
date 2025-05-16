@@ -108,6 +108,10 @@ export const ListRow: StoryObj<HvTableProps> = {
   render: () => <ListRowStory />,
 };
 
+export const TableRenderers: StoryObj = {
+  render: () => <AllColumnRenderers />,
+};
+
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic([
