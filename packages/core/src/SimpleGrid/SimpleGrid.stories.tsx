@@ -1,22 +1,11 @@
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvSimpleGrid,
   HvSimpleGridProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
-const style = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  color: theme.colors.textDark,
-  backgroundColor: theme.colors.infoDimmed,
-  minHeight: 80,
-};
-
 const meta: Meta<typeof HvSimpleGrid> = {
-  title: "Components/Grid/Simple Grid",
+  title: "Components/Simple Grid",
   component: HvSimpleGrid,
 };
 export default meta;
@@ -31,9 +20,14 @@ export const Main: StoryObj<HvSimpleGridProps> = {
   },
   render: (args) => {
     return (
-      <HvSimpleGrid className={css({ "& > div": style })} {...args}>
+      <HvSimpleGrid {...args}>
         {[...Array(5).keys()].map((i) => (
-          <div key={i}>{i + 1}</div>
+          <div
+            key={i}
+            className="grid place-items-center text-textDark bg-infoDimmed min-h-80px"
+          >
+            {i + 1}
+          </div>
         ))}
       </HvSimpleGrid>
     );
@@ -50,16 +44,16 @@ export const BreakpointsGrid: StoryObj<HvSimpleGridProps> = {
       { minWidth: 600, cols: 1, spacing: "sm" },
     ],
   },
-  render: ({ spacing, cols, breakpoints }) => {
+  render: (args) => {
     return (
-      <HvSimpleGrid
-        spacing={spacing}
-        breakpoints={breakpoints}
-        cols={cols}
-        className={css({ "& > div": style })}
-      >
+      <HvSimpleGrid {...args}>
         {[...Array(5).keys()].map((i) => (
-          <div key={i}>{i + 1}</div>
+          <div
+            key={i}
+            className="grid place-items-center text-textDark bg-infoDimmed min-h-80px"
+          >
+            {i + 1}
+          </div>
         ))}
       </HvSimpleGrid>
     );

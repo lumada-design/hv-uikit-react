@@ -16,17 +16,11 @@ import { TestHeaders as TestHeadersStory } from "./TableHooks/TableHooks.stories
 import { UseHvGroupBy } from "./TableHooks/UseHvGroupBy";
 import { AllColumnRenderers } from "./TableRenderers/AllColumnRenderers";
 import { GroupedRows as GroupedRowsStory } from "./TableSamples/GroupedRows";
-import GroupedRowsRaw from "./TableSamples/GroupedRows?raw";
 import { ListRow as ListRowStory } from "./TableSamples/ListRow";
-import ListRowRaw from "./TableSamples/ListRow?raw";
 import { Main as MainStory } from "./TableSamples/Main";
-import MainRaw from "./TableSamples/Main?raw";
 import { NoData as NoDataStory } from "./TableSamples/NoData";
-import NoDataRaw from "./TableSamples/NoData?raw";
 import { ResponsiveTable as ResponsiveTableStory } from "./TableSamples/ResponsiveTable";
-import ResponsiveTableRaw from "./TableSamples/ResponsiveTable?raw";
 import { SimpleTable as SimpleTableStory } from "./TableSamples/SimpleTable";
-import SimpleTableRaw from "./TableSamples/SimpleTable?raw";
 import { PropsTableSection } from "./TableSection/PropsTableSection";
 import { setupChromatic } from ".storybook/setupChromatic";
 
@@ -54,18 +48,12 @@ export const Main: StoryObj<HvTableProps> = {
     classes: { control: { disable: true } },
     component: { control: { disable: true } },
   },
-  parameters: {
-    docs: {
-      source: { code: MainRaw },
-    },
-  },
   render: (args) => <MainStory {...args} />,
 };
 
 export const NoData: StoryObj<HvTableProps> = {
   parameters: {
     docs: {
-      source: { code: NoDataRaw },
       description: {
         story: "Table with no data available.",
       },
@@ -77,7 +65,6 @@ export const NoData: StoryObj<HvTableProps> = {
 export const SimpleTable: StoryObj<HvTableProps> = {
   parameters: {
     docs: {
-      source: { code: SimpleTableRaw },
       description: {
         story:
           "Simple table that uses `HvTable` features in order to style checkbox and secondary actions columns.",
@@ -90,7 +77,6 @@ export const SimpleTable: StoryObj<HvTableProps> = {
 export const GroupedRows: StoryObj<HvTableProps> = {
   parameters: {
     docs: {
-      source: { code: GroupedRowsRaw },
       description: {
         story: "A table example with grouped rows.",
       },
@@ -102,7 +88,6 @@ export const GroupedRows: StoryObj<HvTableProps> = {
 export const ResponsiveTable: StoryObj<HvTableProps> = {
   parameters: {
     docs: {
-      source: { code: ResponsiveTableRaw },
       description: {
         story:
           "A table with non-table elements and responsive layout (try resizing your browser).",
@@ -115,7 +100,6 @@ export const ResponsiveTable: StoryObj<HvTableProps> = {
 export const ListRow: StoryObj<HvTableProps> = {
   parameters: {
     docs: {
-      source: { code: ListRowRaw },
       description: {
         story: "List row variant of the table.",
       },

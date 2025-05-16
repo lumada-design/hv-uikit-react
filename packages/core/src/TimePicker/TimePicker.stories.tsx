@@ -1,14 +1,10 @@
-import { useState } from "react";
-import { css } from "@emotion/css";
-import type { CSSInterpolation } from "@emotion/serialize";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvButton,
   HvTimePicker,
   HvTimePickerProps,
   HvTimePickerValue,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 import { setupChromatic } from ".storybook/setupChromatic";
@@ -28,10 +24,6 @@ export default {
   },
 } satisfies Meta<typeof HvTimePicker>;
 
-const makeDecorator =
-  (style: CSSInterpolation): Decorator =>
-  (Story) => <div className={css(style)}>{Story()}</div>;
-
 export const Main: StoryObj<HvTimePickerProps> = {
   args: {
     label: "Time Picker",
@@ -45,7 +37,7 @@ export const Main: StoryObj<HvTimePickerProps> = {
     defaultValue: { control: { disable: true } },
     dropdownProps: { control: { disable: true } },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
+  decorators: [(Story) => <div className="min-h-200px w-200px">{Story()}</div>],
   render: (args) => {
     return <HvTimePicker {...args} />;
   },
@@ -61,7 +53,7 @@ export const Form: StoryObj<HvTimePickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
+  decorators: [(Story) => <div className="min-h-200px w-200px">{Story()}</div>],
   render: () => {
     return (
       <form
@@ -130,48 +122,6 @@ export const Variants: StoryObj<HvTimePickerProps> = {
   },
 };
 
-export const Controlled: StoryObj<HvTimePickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Using `HvTimePicker` with _controlled_ state, using the `value` with initial `null` state to render the placeholder.",
-      },
-    },
-  },
-  decorators: [makeDecorator({ minHeight: 200, width: 200 })],
-  render: () => {
-    const [value, setValue] = useState<HvTimePickerProps["value"]>(null);
-
-    const prettyValue = value
-      ? `${value.hours}h ${value.minutes}'${value.seconds}"`
-      : "—";
-
-    return (
-      <>
-        <HvTypography variant="title4">Date: {prettyValue}</HvTypography>
-        <br />
-        <HvTimePicker
-          label="Time Picker"
-          placeholder="Select a time"
-          value={value}
-          onChange={setValue}
-        />
-        <br />
-        <HvButton
-          variant="secondarySubtle"
-          disabled={!value}
-          onClick={() => {
-            setValue((d) => d && { ...d, minutes: (d.minutes + 1) % 60 });
-          }}
-        >
-          +1 minute
-        </HvButton>
-      </>
-    );
-  },
-};
-
 export const Format12Hours: StoryObj<HvTimePickerProps> = {
   parameters: {
     docs: {
@@ -182,7 +132,7 @@ export const Format12Hours: StoryObj<HvTimePickerProps> = {
     },
     ...setupChromatic(),
   },
-  decorators: [makeDecorator({ minHeight: 200, width: 220 })],
+  decorators: [(Story) => <div className="min-h-200px w-220px">{Story()}</div>],
   // For visual testing and a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

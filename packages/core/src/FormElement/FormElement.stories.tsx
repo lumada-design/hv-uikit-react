@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvAdornment,
@@ -15,7 +15,7 @@ import {
 import { CloseXS, Success } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvFormElement> = {
-  title: "Guides/Forms/Form Element",
+  title: "Components/Form Element",
   component: HvFormElement,
 };
 export default meta;
@@ -132,7 +132,7 @@ export const Main: StoryObj<HvFormElementProps> = {
   },
 };
 
-export const FormElementInvalid: StoryObj<HvFormElementProps> = {
+export const Invalid: StoryObj<HvFormElementProps> = {
   parameters: {
     docs: {
       description: {
@@ -141,15 +141,14 @@ export const FormElementInvalid: StoryObj<HvFormElementProps> = {
     },
   },
   render: () => {
+    const inputId = useId();
     return (
       <HvFormElement status="invalid">
-        <HvLabel id="invalid-input-label" label="First name">
-          <HvInfoMessage id="invalid-info-message">
-            Do not put numbers.
-          </HvInfoMessage>
-          <HvBaseInput id="invalid-input" defaultValue="Albert2" />
+        <HvLabel htmlFor={inputId} label="First name">
+          <HvInfoMessage>Do not put numbers.</HvInfoMessage>
+          <HvBaseInput id={inputId} defaultValue="Albert2" />
         </HvLabel>
-        <HvWarningText id="invalid-warning-text" disableBorder>
+        <HvWarningText disableBorder>
           Names do not contain numbers.
         </HvWarningText>
       </HvFormElement>
@@ -157,7 +156,7 @@ export const FormElementInvalid: StoryObj<HvFormElementProps> = {
   },
 };
 
-export const FormElementValid: StoryObj<HvFormElementProps> = {
+export const Valid: StoryObj<HvFormElementProps> = {
   parameters: {
     docs: {
       description: {
@@ -166,14 +165,14 @@ export const FormElementValid: StoryObj<HvFormElementProps> = {
     },
   },
   render: () => {
+    const inputId = useId();
+
     return (
       <HvFormElement status="valid">
-        <HvLabel id="valid-input-label" label="First name">
-          <HvInfoMessage id="valid-info-message">
-            This will always be valid.
-          </HvInfoMessage>
+        <HvLabel htmlFor={inputId} label="First name">
+          <HvInfoMessage>This will always be valid.</HvInfoMessage>
           <HvBaseInput
-            id="valid-input"
+            id={inputId}
             defaultValue="Hello"
             endAdornment={
               <HvAdornment
@@ -183,15 +182,13 @@ export const FormElementValid: StoryObj<HvFormElementProps> = {
             }
           />
         </HvLabel>
-        <HvWarningText id="valid-warning-text">
-          Names do not contain numbers.
-        </HvWarningText>
+        <HvWarningText>Names do not contain numbers.</HvWarningText>
       </HvFormElement>
     );
   },
 };
 
-export const FormElementDisabled: StoryObj<HvFormElementProps> = {
+export const Disabled: StoryObj<HvFormElementProps> = {
   parameters: {
     docs: {
       description: {
@@ -203,14 +200,10 @@ export const FormElementDisabled: StoryObj<HvFormElementProps> = {
     return (
       <HvFormElement disabled status="invalid">
         <HvLabel label="First name">
-          <HvInfoMessage id="the-disabled-description">
-            Info message here
-          </HvInfoMessage>
-          <HvBaseInput id="the-disabled-input" placeholder="Insert your name" />
+          <HvInfoMessage>Info message here</HvInfoMessage>
+          <HvBaseInput placeholder="Insert your name" />
         </HvLabel>
-        <HvWarningText id="the-disabled-error">
-          Names do not contain numbers.
-        </HvWarningText>
+        <HvWarningText>Names do not contain numbers.</HvWarningText>
       </HvFormElement>
     );
   },

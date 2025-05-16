@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvCharCounter> = {
-  title: "Guides/Forms/Form Element Blocks/Char Counter",
+  title: "Components/Form Element Blocks/Char Counter",
   component: HvCharCounter,
   decorators: [
     (Story) => (

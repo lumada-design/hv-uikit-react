@@ -1,9 +1,36 @@
 import { useState } from "react";
+import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { expect, userEvent, within } from "@storybook/test";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
   HvFilterGroupValue,
 } from "@hitachivantara/uikit-react-core";
+
+import { EmptyFilters as EmptyFiltersStory } from "./stories/EmptyFilters";
+import { setupChromatic } from ".storybook/setupChromatic";
+
+const widthDecorator: Decorator = (Story) => (
+  <div style={{ width: 180 }}>{Story()}</div>
+);
+
+const meta: Meta<typeof HvFilterGroup> = {
+  title: "Components/Filter Group",
+  component: HvFilterGroup,
+  decorators: [(storyFn) => <div style={{ height: 550 }}>{storyFn()}</div>],
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // TODO: review aria-haspopup on a role-less element
+          { id: "aria-valid-attr-value", enabled: false },
+        ],
+      },
+    },
+  },
+};
+
+export default meta;
 
 const filters: HvFilterGroupProps["filters"] = [
   {
@@ -55,19 +82,38 @@ const filters: HvFilterGroupProps["filters"] = [
   },
 ];
 
-export const Main = () => {
-  const [value, setValue] = useState<HvFilterGroupValue | undefined>([
-    ["category1", 2],
-    [],
-    ["subsubcategory2", "subsubcategory8"],
-  ]);
+export const Main: StoryObj<HvFilterGroupProps> = {
+  parameters: {
+    ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho+ dawn"]),
+  },
+  // For visual testing and a11y
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const combobox = canvas.getByRole("combobox", { name: /main filter/i });
+    await userEvent.click(combobox);
+    await expect(
+      canvas.getByRole("button", { name: /clear filters/i }),
+    ).toBeInTheDocument();
+  },
+  decorators: [widthDecorator],
+  render: () => {
+    const [value, setValue] = useState<HvFilterGroupValue | undefined>([
+      ["category1", 2],
+      [],
+      ["subsubcategory2", "subsubcategory8"],
+    ]);
 
-  return (
-    <HvFilterGroup
-      aria-label="Main filter group"
-      value={value}
-      filters={filters}
-      onChange={(_, values) => setValue(values)}
-    />
-  );
+    return (
+      <HvFilterGroup
+        aria-label="Main filter group"
+        value={value}
+        filters={filters}
+        onChange={(_, values) => setValue(values)}
+      />
+    );
+  },
+};
+
+export const EmptyFilters: StoryObj<HvFilterGroupProps> = {
+  render: () => <EmptyFiltersStory />,
 };

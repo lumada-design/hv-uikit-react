@@ -22,7 +22,7 @@ const classes = {
 };
 
 const meta: Meta<typeof HvAdornment> = {
-  title: "Guides/Forms/Form Element Blocks/Adornment",
+  title: "Components/Form Element Blocks/Adornment",
   component: HvAdornment,
 };
 export default meta;

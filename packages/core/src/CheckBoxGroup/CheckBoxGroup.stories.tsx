@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvCheckBox,
@@ -7,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvCheckBoxGroup> = {
-  title: "Components/Checkbox/Checkbox Group",
+  title: "Components/Checkbox Group",
   component: HvCheckBoxGroup,
 };
 
@@ -89,71 +88,6 @@ export const Horizontal: StoryObj<HvCheckBoxGroupProps> = {
         <HvCheckBox label="Checkbox 1" value="1" />
         <HvCheckBox label="Checkbox 2" value="2" checked />
         <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
-export const WithoutLabel: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A checkbox group without label. The accessible name is provided via the `aria-label` property.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvCheckBoxGroup aria-label="Non-visible label sample">
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" checked />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
-export const Controlled: StoryObj<HvCheckBoxGroupProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Controlled checkbox group.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState(["2"]);
-
-    const handleOnChange: HvCheckBoxGroupProps["onChange"] = (_, newValue) => {
-      setValue(newValue);
-    };
-
-    return (
-      <HvCheckBoxGroup
-        label="Choose the best checkbox"
-        value={value}
-        onChange={handleOnChange}
-        showSelectAll
-      >
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" />
-        <HvCheckBox label="Checkbox 3" value="3" />
-      </HvCheckBoxGroup>
-    );
-  },
-};
-
-export const ShiftSelect: StoryObj<HvCheckBoxGroupProps> = {
-  render: () => {
-    return (
-      <HvCheckBoxGroup label="Choose the best checkbox">
-        <HvCheckBox label="Checkbox 1" value="1" />
-        <HvCheckBox label="Checkbox 2" value="2" />
-        <HvCheckBox label="Checkbox 3" value="3" />
-        <HvCheckBox label="Checkbox 4" value="4" />
-        <HvCheckBox label="Checkbox 5" value="5" />
-        <HvCheckBox label="Checkbox 6" value="6" />
       </HvCheckBoxGroup>
     );
   },

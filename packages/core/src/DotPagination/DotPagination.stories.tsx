@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvDotPagination,
-  HvDotPaginationClasses,
   HvDotPaginationProps,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import {
   CurrentStep,
@@ -14,14 +11,14 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvDotPagination> = {
-  title: "Components/Pagination/Dot Pagination",
+  title: "Components/Dot Pagination",
   component: HvDotPagination,
 };
 
 export default meta;
 
 const styles = {
-  page: css({ textAlign: "center" }),
+  page: "text-center",
 };
 
 export const Main: StoryObj<HvDotPaginationProps> = {
@@ -77,7 +74,7 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
     },
   },
   render: () => {
-    const [page, setPage] = useState<number>(0);
+    const [page, setPage] = useState(0);
     const pages = [
       "This is page 1",
       "And this is page 2",
@@ -86,34 +83,17 @@ export const CustomizedDotPagination: StoryObj<HvDotPaginationProps> = {
       "And finally, this is page 5",
     ];
 
-    const dotpaginationStyle: HvDotPaginationClasses = {
-      radioRoot: css({
-        marginLeft: 0,
-      }),
-      horizontal: css({
-        "&>*:not(:first-of-type)": {
-          marginLeft: 0,
-        },
-      }),
-      radio: css({
-        height: "32px",
-        width: "32px",
-
-        "&:hover": {
-          backgroundColor: theme.colors.bgPageSecondary,
-          borderRadius: 0,
-        },
-      }),
-    };
-
     return (
       <div>
         <HvTypography className={styles.page}>{pages[page]}</HvTypography>
         <br />
         <HvDotPagination
-          classes={dotpaginationStyle}
-          unselectedIcon={<RadioButtonUnselected iconSize="XS" />}
-          selectedIcon={<CurrentStep iconSize="XS" />}
+          classes={{
+            radioRoot: "ml-0",
+            radio: "size-32px hover:bg-bgPageSecondary hover:rounded-0",
+          }}
+          unselectedIcon={<RadioButtonUnselected size="XS" />}
+          selectedIcon={<CurrentStep size="XS" />}
           page={page}
           pages={pages.length}
           onPageChange={(_, value) => setPage(value)}

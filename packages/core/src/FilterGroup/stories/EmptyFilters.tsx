@@ -9,40 +9,37 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Info } from "@hitachivantara/uikit-react-icons";
 
-export const EmptyFilters = () => {
-  const [hasFilters, setHasFilters] = useState<boolean>(true);
-  const myFilters: HvFilterGroupProps["filters"] = hasFilters
-    ? [
-        {
-          id: "1",
-          name: "Filter with data",
-          data: Array.from(Array(5), (el, i) => ({
-            id: `opt${i}`,
-            name: `Option ${i}`,
-          })),
-        },
-        {
-          id: "2",
-          name: "Filter with no data",
-          data: [],
-        },
-      ]
-    : [];
+const filters: HvFilterGroupProps["filters"] = [
+  {
+    id: "1",
+    name: "Filter with data",
+    data: Array.from(Array(5), (el, i) => ({
+      id: `opt${i}`,
+      name: `Option ${i}`,
+    })),
+  },
+  {
+    id: "2",
+    name: "Filter with no data",
+    data: [],
+  },
+];
 
-  const leftEmptyElement = (
-    <HvLoading label="Loading filters..." style={{ height: "100%" }} />
-  );
-  const rightEmptyElement = (
-    <HvEmptyState icon={<Info />} message="No values found for the filter" />
-  );
+const filterContent = {
+  leftEmptyElement: <HvLoading label="Loading filters..." className="h-full" />,
+  rightEmptyElement: <HvEmptyState icon={<Info />} message="No values found" />,
+};
+
+export const EmptyFilters = () => {
+  const [hasFilters, setHasFilters] = useState(true);
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-      <div style={{ width: 180 }}>
+    <div className="flex items-center gap-20px">
+      <div className="w-180px">
         <HvFilterGroup
           aria-label="Empty filter group"
-          filters={myFilters}
-          filterContentProps={{ leftEmptyElement, rightEmptyElement }}
+          filters={hasFilters ? filters : []}
+          filterContentProps={filterContent}
         />
       </div>
       <HvSwitch

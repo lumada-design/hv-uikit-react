@@ -39,7 +39,6 @@ export const parameters: Preview["parameters"] = {
           "Forms",
         ],
         "Components",
-        "Widgets",
         "Templates",
         ["Overview"],
         "Visualizations",

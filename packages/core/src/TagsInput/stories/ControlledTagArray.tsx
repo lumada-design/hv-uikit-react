@@ -1,21 +1,10 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import {
   HvButton,
   HvTagProps,
   HvTagsInput,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
-
-const styles = {
-  btnContainer: css({
-    "& button": {
-      marginRight: theme.space.xs,
-      marginBottom: theme.spacing(4),
-    },
-  }),
-};
 
 export const ControlledTagArray = () => {
   const [currValueArr, setCurrValueArr] = useState<HvTagProps[]>([
@@ -31,7 +20,7 @@ export const ControlledTagArray = () => {
 
   return (
     <>
-      <div className={styles.btnContainer}>
+      <div className="flex gap-xs mb-sm">
         <HvButton
           variant="secondarySubtle"
           onClick={() => {

@@ -10,10 +10,9 @@ import {
 
 import countryNamesArray from "./countries";
 import { ControlledTagArray as ControlledTagArrayStory } from "./stories/ControlledTagArray";
-import ControlledTagArrayRaw from "./stories/ControlledTagArray?raw";
 
 const meta: Meta<typeof HvTagsInput> = {
-  title: "Components/Tag/Tags Input",
+  title: "Components/Tags Input",
   component: HvTagsInput,
   decorators: [
     (storyFn) => <div style={{ maxWidth: "600px" }}>{storyFn()}</div>,
@@ -123,7 +122,6 @@ export const ControlledTagArray = {
       description: {
         story: "Controlled Tags Input with Tags array",
       },
-      source: { code: ControlledTagArrayRaw },
     },
   },
   render: () => <ControlledTagArrayStory />,
@@ -138,10 +136,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
     },
   },
   render: () => {
-    const [currValueStr, setCurrValueStr] = useState<string[]>([
-      "tag 1",
-      "tag 2",
-    ]);
+    const [currValueStr, setCurrValueStr] = useState(["tag 1", "tag 2"]);
     const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
@@ -230,26 +225,6 @@ export const Multiline: StoryObj<HvTagsInputProps> = {
         label="MultiLine"
         placeholder="Enter value"
         multiline
-      />
-    );
-  },
-};
-
-export const Resizable: StoryObj<HvTagsInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Tags Input multiline and resizable",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTagsInput
-        classes={{ tagsList: "h-100px" }}
-        label="Multiline resizable"
-        placeholder="Enter value"
-        multiline
         resizable
       />
     );
@@ -272,11 +247,7 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
         label="Tags"
         description="Maximum 3 tags"
         placeholder="Enter value"
-        onChange={(event, value) => {
-          console.log("in onChange callback. data: ", value);
-          setTagsLength(value.length);
-          return value;
-        }}
+        onChange={(event, value) => setTagsLength(value.length)}
         validationMessages={{
           maxCharError: "Too many tags",
         }}
@@ -285,27 +256,6 @@ export const TagsCounterValidation: StoryObj<HvTagsInputProps> = {
           "aria-label": `You have inserted ${tagsLength} tags`,
           role: "status",
         }}
-      />
-    );
-  },
-};
-
-export const CustomCommitCharacter: StoryObj<HvTagsInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Custom commit character.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTagsInput
-        label="Custom commit character"
-        description="Will only add a tag when a space or comma is entered or when the user clicks outside the input box and there's text that's not been commited"
-        placeholder="Enter value"
-        commitTagOn={["Space", "Comma"]}
-        commitOnBlur
       />
     );
   },
