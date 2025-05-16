@@ -6,13 +6,9 @@ on:
     inputs:
       publish-folder:
         type: string
-      publish-storybook:
-        type: boolean
-        default: true
 
 env:
   PUBLISH_FOLDER: ${{ inputs.publish-folder || github.ref_name }}
-  PUBLISH_STORYBOOK: ${{ inputs.publish-storybook }}
   PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
   PUBLISH_DOCS: true
 
@@ -41,20 +37,6 @@ jobs:
         with:
           name: nextra-docs
           path: ${{ github.workspace }}/apps/docs/dist
-          retention-days: 2
-
-      - name: Build Storybook
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        run: npm run build:doc
-        env:
-          NODE_OPTIONS: "--max_old_space_size=8192"
-
-      - name: Archive Storybook
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: storybook
-          path: ${{ github.workspace }}/dist
           retention-days: 2
 
       - name: Build App
@@ -90,15 +72,6 @@ jobs:
           ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           PUBLISH_FOLDER: uikit-docs/${{ env.PUBLISH_FOLDER }}
           ARTIFACT: nextra-docs
-
-      - name: Deploy Storybook
-        if: ${{ env.PUBLISH_STORYBOOK == 'true' }}
-        uses: ./.github/actions/deploy-artifacts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG_GHPAGES_DEPLOY_KEY: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          PUBLISH_FOLDER: uikit/${{ env.PUBLISH_FOLDER }}
-          ARTIFACT: storybook
 
       - name: Deploy App
         if: ${{ env.PUBLISH_APP == 'true' }}
