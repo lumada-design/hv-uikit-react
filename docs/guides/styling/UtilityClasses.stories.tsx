@@ -71,7 +71,6 @@ export const Animations: StoryObj = {
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(["DS5 dawn", "DS5 wicked", "Pentaho+ wicked"]),
-    docs: { disable: true },
   },
   render: () => (
     <>

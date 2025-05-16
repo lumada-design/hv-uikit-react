@@ -102,9 +102,6 @@ export const CustomRootComponent: StoryObj<HvTypographyProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   decorators: [
     (Story) => <div className="flex flex-wrap gap-sm">{Story()}</div>,
   ],

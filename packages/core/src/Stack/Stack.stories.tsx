@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvActionBar,
   HvButton,
@@ -275,9 +275,6 @@ export const WithNavigation: StoryObj<HvStackProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <div style={{ display: "flex", gap: theme.space.sm }}>

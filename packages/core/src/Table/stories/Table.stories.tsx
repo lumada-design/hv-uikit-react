@@ -134,7 +134,6 @@ export const Test: StoryObj = {
       "Pentaho+ dawn",
       "Pentaho+ wicked",
     ]),
-    docs: { disable: true },
     a11y: {
       disable: true,
     },

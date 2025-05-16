@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvAppSwitcher,
   HvAppSwitcherActionApplication,
@@ -44,7 +44,7 @@ const applicationsList: HvAppSwitcherActionApplication[] = [
 ];
 
 const meta: Meta<typeof HvAppSwitcher> = {
-  title: "Widgets/App Switcher",
+  title: "Components/App Switcher",
   component: HvAppSwitcher,
 };
 export default meta;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvButton,
@@ -82,7 +82,7 @@ const navigationDataMain = [
 ];
 
 export default {
-  title: "Widgets/Header",
+  title: "Components/Header",
   component: HvHeader,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvHeaderBrand, HvHeaderNavigation, HvHeaderActions },
@@ -315,7 +315,6 @@ export const CombinedNavigation: StoryObj<HvHeaderProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    docs: { disable: true },
     a11y: {
       config: {
         rules: [

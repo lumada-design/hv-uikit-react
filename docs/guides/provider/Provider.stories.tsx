@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   ds3,
   ds5,
@@ -86,7 +86,6 @@ export const Main: StoryObj<HvProviderProps> = {
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(),
-    docs: { disable: true },
   },
   render: () => {
     return (

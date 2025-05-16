@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
@@ -15,7 +15,7 @@ import XmlStoryRaw from "./stories/Xml/Xml?raw";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvCodeEditor> = {
-  title: "Widgets/Code Editor",
+  title: "Components/Code Editor",
   component: HvCodeEditor,
 };
 export default meta;

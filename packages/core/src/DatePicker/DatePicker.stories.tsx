@@ -395,9 +395,6 @@ export const WithSelectionList: StoryObj<HvDatePickerProps> = {
 };
 
 export const Test: StoryObj<HvDatePickerProps> = {
-  parameters: {
-    docs: { disable: true },
-  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: /october/i }));

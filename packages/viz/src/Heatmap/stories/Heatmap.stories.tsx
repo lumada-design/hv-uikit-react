@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvHeatmap, HvHeatmapProps } from "@hitachivantara/uikit-react-viz";
 
 import { vizDecorator } from "../../BaseChart/stories/utils";

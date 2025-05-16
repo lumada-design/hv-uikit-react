@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvButton,
@@ -16,7 +16,7 @@ import {
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvDrawer> = {
-  title: "Widgets/Drawer",
+  title: "Components/Drawer",
   component: HvDrawer,
   decorators: [(Story) => <div style={{ minHeight: 600 }}>{Story()}</div>],
 };

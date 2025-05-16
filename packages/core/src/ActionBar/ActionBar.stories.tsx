@@ -23,7 +23,7 @@ const containerDecorator: Decorator = (Story) => (
 );
 
 const meta: Meta<typeof HvActionBar> = {
-  title: "Widgets/Action Bar",
+  title: "Components/Action Bar",
   component: HvActionBar,
   decorators: [containerDecorator],
 };

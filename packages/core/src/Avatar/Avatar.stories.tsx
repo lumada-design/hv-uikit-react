@@ -272,9 +272,6 @@ export const Actions: StoryObj<HvAvatarProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div
       style={{

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvVerticalNavigation,
@@ -32,7 +32,7 @@ import WithoutActionsRaw from "./stories/WithoutActions?raw";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvVerticalNavigation> = {
-  title: "Widgets/Vertical Navigation",
+  title: "Components/Vertical Navigation",
   component: HvVerticalNavigation,
   subcomponents: {
     // @ts-ignore https://github.com/storybookjs/storybook/issues/23170

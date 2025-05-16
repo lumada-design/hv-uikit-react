@@ -87,9 +87,6 @@ export const LargeVariants = () => {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => {
     return (
       <div className="flex flex-wrap gap-5px justify-start items-start">

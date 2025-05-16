@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvSwitch,
   HvTypography,
@@ -14,7 +14,7 @@ import { HvButton } from "../Button";
 import { HvSection, HvSectionProps } from "./Section";
 
 const meta: Meta<typeof HvSection> = {
-  title: "Widgets/Section",
+  title: "Components/Section",
   component: HvSection,
 };
 export default meta;
@@ -271,7 +271,6 @@ export const Multiple: StoryObj<HvSectionProps> = {
 
 export const Test: StoryObj = {
   parameters: {
-    docs: { disable: true },
     a11y: {
       config: {
         rules: [{ id: "landmark-unique", enabled: false }],

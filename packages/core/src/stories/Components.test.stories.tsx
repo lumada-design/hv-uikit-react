@@ -93,7 +93,6 @@ export const TestInputs: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
     a11y: {
       disable: true,
     },
@@ -158,7 +157,7 @@ export const TestPopups: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -203,7 +202,7 @@ export const TestButtons: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -251,7 +250,7 @@ export const TestSurfaces: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -291,7 +290,7 @@ export const TestOthers: StoryObj = {
       ],
       5000,
     ),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },
@@ -343,7 +342,7 @@ export const TestOthers: StoryObj = {
 export const TestStructure: StoryObj = {
   parameters: {
     ...setupChromatic(["DS5 dawn"], 5000),
-    docs: { disable: true },
+
     a11y: {
       disable: true,
     },

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvMultiButton,
@@ -186,9 +186,6 @@ export const SplitButton: StoryObj<HvMultiButtonProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <SplitButtonStory />

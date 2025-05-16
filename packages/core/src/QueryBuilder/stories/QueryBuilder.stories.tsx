@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvQueryBuilder,
   HvQueryBuilderProps,
@@ -17,7 +17,7 @@ import ReadOnlyRaw from "./ReadOnly?raw";
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvQueryBuilder> = {
-  title: "Widgets/Query Builder",
+  title: "Components/Query Builder",
   component: HvQueryBuilder,
 };
 export default meta;

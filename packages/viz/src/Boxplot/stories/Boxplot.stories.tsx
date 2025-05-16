@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { loadArrow } from "arquero";
 import { HvBoxplot, HvBoxplotProps } from "@hitachivantara/uikit-react-viz";
 

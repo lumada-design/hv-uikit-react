@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvSimpleGrid,
@@ -256,9 +256,6 @@ export const Icons: StoryObj<HvTabsProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <HvSimpleGrid
       cols={3}

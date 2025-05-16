@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvCheckBox,
@@ -12,7 +12,7 @@ import {
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvLogin> = {
-  title: "Widgets/Login",
+  title: "Components/Login",
   component: HvLogin,
   decorators: [
     (Story) => (

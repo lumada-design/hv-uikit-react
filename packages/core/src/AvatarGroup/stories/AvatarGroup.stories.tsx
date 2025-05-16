@@ -215,9 +215,6 @@ export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div style={{ display: "flex", gap: 20 }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
