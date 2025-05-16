@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.47.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.46.2...@hitachivantara/uikit-styles@5.47.0) (2025-05-16)
+
+### Features
+
+- **Badge:** add `color` prop ([#4731](https://github.com/lumada-design/hv-uikit-react/issues/4731)) ([f9af830](https://github.com/lumada-design/hv-uikit-react/commit/f9af8309c38f5a3f2a7e71463b3f9ba7b0837c7b))
+
 ## [5.46.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.46.1...@hitachivantara/uikit-styles@5.46.2) (2025-05-09)
 
 ### Bug Fixes

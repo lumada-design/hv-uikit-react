@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.94.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.2...@hitachivantara/uikit-react-core@5.94.0) (2025-05-16)
+
+### Bug Fixes
+
+- **IconContainer:** numeric `size` being ignored ([#4723](https://github.com/lumada-design/hv-uikit-react/issues/4723)) ([9f25178](https://github.com/lumada-design/hv-uikit-react/commit/9f2517858af8e53c30ed22da89e1793701a49639))
+- **TagsInput:** add start adornment ([#4721](https://github.com/lumada-design/hv-uikit-react/issues/4721)) ([bb9b485](https://github.com/lumada-design/hv-uikit-react/commit/bb9b4859aaee274cf3a90537f63247406217b197))
+
+### Features
+
+- **Badge:** add `color` prop ([#4731](https://github.com/lumada-design/hv-uikit-react/issues/4731)) ([f9af830](https://github.com/lumada-design/hv-uikit-react/commit/f9af8309c38f5a3f2a7e71463b3f9ba7b0837c7b))
+
 ## [5.93.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.1...@hitachivantara/uikit-react-core@5.93.2) (2025-05-09)
 
 ### Bug Fixes
