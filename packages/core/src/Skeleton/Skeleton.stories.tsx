@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvActionBar,
   HvActionsGeneric,
@@ -15,11 +15,7 @@ import {
   HvSkeletonProps,
   HvSwitch,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
-
-import { CustomSkeleton } from "./stories/CustomSkeleton";
-import CustomSkeletonRaw from "./stories/CustomSkeleton?raw";
 
 const meta: Meta<typeof HvSkeleton> = {
   title: "Components/Skeleton",
@@ -88,9 +84,7 @@ export const Card: StoryObj<HvSkeletonProps> = {
 
     return (
       <>
-        <div
-          style={{ display: "flex", flexDirection: "row", gap: theme.space.lg }}
-        >
+        <div className="flex gap-lg">
           <HvRadioGroup
             label="Animation type"
             onChange={(_, value) => setMode(value)}
@@ -105,7 +99,7 @@ export const Card: StoryObj<HvSkeletonProps> = {
             onChange={() => setLoading((prev) => !prev)}
           />
         </div>
-        <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
+        <div className="flex gap-xs">
           {Array.from({ length: 3 }).map((_, i) => (
             <HvCard
               bgcolor="bgContainer"
@@ -121,13 +115,7 @@ export const Card: StoryObj<HvSkeletonProps> = {
                   </HvSkeleton>
                 }
               />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                }}
-              >
+              <div className="flex flex-wrap">
                 <div style={{ width: "50%" }}>
                   <HvCardContent>
                     <HvSkeleton hidden={!loading} animation={mode} width={100}>
@@ -201,19 +189,4 @@ export const Card: StoryObj<HvSkeletonProps> = {
       </>
     );
   },
-};
-
-export const CustomAnimation: StoryObj<HvSkeletonProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "The `HvSkeleton` component can be customized with a custom animation if none of the default animations fit your needs.",
-      },
-      source: {
-        code: CustomSkeletonRaw,
-      },
-    },
-  },
-  render: () => <CustomSkeleton />,
 };

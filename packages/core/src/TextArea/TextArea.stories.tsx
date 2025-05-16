@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvTextArea, HvTextAreaProps } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvTextArea> = {
@@ -122,107 +121,6 @@ export const LimitedBlocking: StoryObj<HvTextAreaProps> = {
         placeholder="Enter value"
         maxCharQuantity={10}
         blockMax
-      />
-    );
-  },
-};
-
-export const Resizable: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Text area that allow resizing." },
-    },
-  },
-  render: () => {
-    return (
-      <HvTextArea
-        label="Label"
-        placeholder="Enter value"
-        rows={5}
-        maxCharQuantity={1000}
-        resizable
-      />
-    );
-  },
-};
-
-export const WithoutLabel: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Text area without label. The accessible name is provided via the `aria-label` property.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTextArea aria-label="The label" placeholder="Enter value" rows={5} />
-    );
-  },
-};
-
-export const CustomValidation: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Text area value that can't contain numbers.",
-      },
-    },
-  },
-  render: () => {
-    const validationMessages = {
-      error: "This text area has a number",
-    };
-
-    const hasNumber = (value: string) => /\d/.test(value);
-
-    return (
-      <HvTextArea
-        rows={5}
-        label="Label"
-        placeholder="Enter value"
-        validationMessages={validationMessages}
-        validation={(value) => !hasNumber(value)}
-      />
-    );
-  },
-};
-
-export const AutoScroll: StoryObj<HvTextAreaProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Text Area using `autoScroll` to automatically scroll down. Auto-scroll stops once the user scrolls up, and resumes once the user scrolls back to the bottom.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState<string>("");
-
-    useEffect(() => {
-      let idx = 1;
-      let newline: string;
-
-      const id = setInterval(() => {
-        newline = idx === 1 ? "" : "\n";
-        setValue((val) => `${val}${newline}${idx}: ${Math.random()}`);
-        idx += 1;
-      }, 2000);
-
-      return () => {
-        clearInterval(id);
-      };
-    }, []);
-
-    return (
-      <HvTextArea
-        rows={5}
-        label="Logs"
-        placeholder="Enter value"
-        autoScroll
-        value={value}
       />
     );
   },

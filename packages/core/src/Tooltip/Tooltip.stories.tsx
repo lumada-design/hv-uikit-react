@@ -1,5 +1,4 @@
-import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvAvatar,
@@ -7,14 +6,13 @@ import {
   HvTooltip,
   HvTooltipProps,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import { Play } from "@hitachivantara/uikit-react-icons";
 
 import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvTooltip> = {
-  title: "Components/Tooltip/Tooltip",
+  title: "Components/Tooltip",
   component: HvTooltip,
 };
 export default meta;
@@ -28,13 +26,7 @@ export const Main: StoryObj<HvTooltipProps> = {
   },
   render: ({ open }) => {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          paddingTop: 80,
-        }}
-      >
+      <div className="flex justify-around pt-80px">
         <HvTooltip title="Grid View">
           <HvButton variant="secondaryGhost">Hover or focus here</HvButton>
         </HvTooltip>
@@ -56,13 +48,7 @@ export const Disabled: StoryObj<HvTooltipProps> = {
     },
   },
   render: () => (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        paddingTop: 100,
-      }}
-    >
+    <div className="flex justify-around pt-100px">
       <HvTooltip placement="right" title="">
         <HvButton variant="secondaryGhost">No tooltip</HvButton>
       </HvTooltip>
@@ -102,13 +88,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
     await expect(tooltip).toBeInTheDocument();
   },
   render: () => (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        padding: "60px 0",
-      }}
-    >
+    <div className="flex justify-around py-60px">
       <HvTooltip
         placement="right"
         title="Tooltips can showcase truncated text. The text should be concise and not
@@ -165,20 +145,9 @@ export const CustomContent: StoryObj<HvTooltipProps> = {
   },
   render: () => {
     const classes = {
-      verticalTooltip: css({
-        display: "flex",
-        flexDirection: "column",
-        gap: theme.space.xs,
-      }),
-      separator: css({
-        margin: theme.spacing(1, -2),
-        borderBottom: `3px solid ${theme.colors.bgPage}`,
-      }),
-      tabularContent: css({
-        display: "flex",
-        justifyContent: "space-between",
-        gap: theme.space.xs,
-      }),
+      verticalTooltip: "flex flex-col gap-xs",
+      separator: "-mx-sm my-xs border-b-3px border-bgPage",
+      tabularContent: "flex justify-between gap-xs",
     };
 
     const longTextTooltip = (

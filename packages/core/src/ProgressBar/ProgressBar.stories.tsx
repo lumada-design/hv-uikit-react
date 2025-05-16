@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvProgressBar,
   HvProgressBarProps,
@@ -8,7 +8,7 @@ import {
 import { ProgressBarSimulator } from "./ProgressBarSimulator";
 
 const meta: Meta<typeof HvProgressBar> = {
-  title: "Components/Loading/Progress Bar",
+  title: "Components/Progress Bar",
   component: HvProgressBar,
   decorators: [(Story) => <div className="pl-sm">{Story()}</div>],
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvAdornment,
   HvAdornmentProps,
@@ -22,7 +22,7 @@ const classes = {
 };
 
 const meta: Meta<typeof HvAdornment> = {
-  title: "Guides/Forms/Form Element Blocks/Adornment",
+  title: "Components/Form Element Blocks/Adornment",
   component: HvAdornment,
 };
 export default meta;

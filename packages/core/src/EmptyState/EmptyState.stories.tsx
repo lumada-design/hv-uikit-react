@@ -1,11 +1,10 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvEmptyState,
   HvEmptyStateProps,
-  HvLink,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { BarChart, Ghost, Info } from "@hitachivantara/uikit-react-icons";
+import { BarChart, Info } from "@hitachivantara/uikit-react-icons";
 
 const meta: Meta<typeof HvEmptyState> = {
   title: "Components/Empty State",
@@ -31,36 +30,16 @@ export const Main: StoryObj<HvEmptyStateProps> = {
 
 export const WithAction: StoryObj<HvEmptyStateProps> = {
   render: () => {
-    const CustomAction = <HvLink route="/">Create a new data route</HvLink>;
     return (
       <HvEmptyState
         title="No data routes"
         message="After you start adding Data Routes, they will appear here."
         icon={<BarChart />}
-        action={CustomAction}
-      />
-    );
-  },
-};
-
-export const CustomMessages: StoryObj<HvEmptyStateProps> = {
-  render: () => {
-    const CustomAction = (
-      <>
-        <HvTypography>Here are some helpful links instead:</HvTypography>
-        <HvTypography link component="a" href="#" target="_blank">
-          Online help
-        </HvTypography>
-      </>
-    );
-
-    const CustomMessage = <HvTypography>404 Not Found</HvTypography>;
-    return (
-      <HvEmptyState
-        title="This page can't be displayed"
-        message={CustomMessage}
-        icon={<Ghost />}
-        action={CustomAction}
+        action={
+          <HvTypography link component="a" href="#" target="_blank">
+            Create a new data route
+          </HvTypography>
+        }
       />
     );
   },

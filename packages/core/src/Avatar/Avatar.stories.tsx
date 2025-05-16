@@ -1,4 +1,4 @@
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvAvatar,
   HvAvatarProps,
@@ -12,16 +12,12 @@ import {
   Search,
 } from "@hitachivantara/uikit-react-icons";
 
-const flexDecorator: Decorator = (Story) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-    {Story()}
-  </div>
-);
-
 const meta: Meta<typeof HvAvatar> = {
-  title: "Components/Avatar/Avatar",
+  title: "Components/Avatar",
   component: HvAvatar,
-  decorators: [flexDecorator],
+  decorators: [
+    (Story) => <div className="flex items-center gap-md">{Story()}</div>,
+  ],
 };
 export default meta;
 
@@ -272,18 +268,8 @@ export const Actions: StoryObj<HvAvatarProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 10,
-        flexWrap: "wrap",
-      }}
-    >
+    <div className="flex items-center gap-xs flex-wrap">
       <HvAvatar size="xs" />
       <HvAvatar size="xs" variant="square" />
       <HvAvatar backgroundColor="sema6" size="sm">

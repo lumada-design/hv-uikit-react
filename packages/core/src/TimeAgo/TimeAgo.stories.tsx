@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvRadio,
   HvRadioGroup,
@@ -10,10 +10,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const styles = {
-  root: css({
-    display: "flex",
-    alignItems: "center",
-  }),
   container: css({
     minHeight: 300,
     "& > div": {
@@ -72,31 +68,6 @@ const dates = [
   new Date().setDate(new Date().getDate() + 1),
   new Date().setMonth(new Date().getMonth() + 6),
 ].map((date) => date.valueOf());
-
-export const Samples: StoryObj<HvTimeAgoProps> = {
-  render: () => {
-    return (
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>ISO Date</th>
-            <th>{"<TimeAgo />"}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dates.map((dateTs) => (
-            <tr key={dateTs}>
-              <td>{new Date(dateTs).toISOString()}</td>
-              <td aria-label="Time ago">
-                <HvTimeAgo timestamp={dateTs} showSeconds />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  },
-};
 
 export const LocaleOverride: StoryObj<HvTimeAgoProps> = {
   parameters: {

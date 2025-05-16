@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvFormElement,
@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvWarningText> = {
-  title: "Guides/Forms/Form Element Blocks/Warning Text",
+  title: "Components/Form Element Blocks/Warning Text",
   component: HvWarningText,
   decorators: [(storyFn) => <div style={{ width: "400px" }}>{storyFn()}</div>],
 };

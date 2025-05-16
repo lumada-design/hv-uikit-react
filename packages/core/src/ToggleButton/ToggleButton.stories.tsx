@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvToggleButton,
   HvToggleButtonProps,
-  HvTooltip,
 } from "@hitachivantara/uikit-react-core";
 import {
   BackwardsEmpty,
@@ -112,48 +111,6 @@ export const Multiple: StoryObj<HvToggleButtonProps> = {
           disabled
         />
       </>
-    );
-  },
-};
-
-export const Disabled: StoryObj<HvToggleButtonProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A sample showcasing a disabled toggle button combined with a tooltip.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvTooltip title="Can not turn the light on">
-        <HvToggleButton disabled>
-          <LightOff />
-        </HvToggleButton>
-      </HvTooltip>
-    );
-  },
-};
-
-export const Tooltip: StoryObj<HvToggleButtonProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A sample showcasing a tooltip changing its content combined with the toggle button.",
-      },
-    },
-  },
-  render: () => {
-    const [selected, setSelected] = useState(false);
-
-    return (
-      <HvTooltip title={selected ? "Turn off" : "Turn on"}>
-        <HvToggleButton onClick={() => setSelected(!selected)}>
-          {selected ? <LightOn /> : <LightOff />}
-        </HvToggleButton>
-      </HvTooltip>
     );
   },
 };

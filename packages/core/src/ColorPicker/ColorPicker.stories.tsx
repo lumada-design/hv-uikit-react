@@ -1,19 +1,13 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvColorPicker,
   HvColorPickerProps,
-  HvStack,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-const makeDecorator =
-  (styles: React.CSSProperties): Decorator =>
-  (Story) => <div style={styles}>{Story()}</div>;
-
 const meta: Meta<typeof HvColorPicker> = {
-  title: "Widgets/Color Picker",
+  title: "Components/Color Picker",
   component: HvColorPicker,
 };
 export default meta;
@@ -21,6 +15,8 @@ export default meta;
 export const Main: StoryObj<HvColorPickerProps> = {
   args: {
     label: "Color",
+    showSavedColors: true,
+    showCustomColors: true,
   },
   argTypes: {
     classes: { control: { disable: true } },
@@ -29,66 +25,11 @@ export const Main: StoryObj<HvColorPickerProps> = {
     "aria-describedby": { table: { disable: true } },
     "aria-labelledby": { table: { disable: true } },
   },
-  decorators: [makeDecorator({ display: "flex", height: 550 })],
   render: (args) => {
     return (
       <HvColorPicker
         onChangeComplete={(value) => console.log(value)}
         {...args}
-      />
-    );
-  },
-};
-
-export const WithoutSavedColors: StoryObj<HvColorPickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "ColorPicker component without the saved colors area.",
-      },
-    },
-  },
-  decorators: [makeDecorator({ display: "flex", height: 480 })],
-  render: () => {
-    return (
-      <HvColorPicker
-        aria-label="Color"
-        showSavedColors={false}
-        onChange={(color) => console.log(color)}
-        defaultValue="#C62828"
-      />
-    );
-  },
-};
-
-export const OnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "ColorPicker component with only the recommend colors area. The recommended colors are an array of colors of type `HvColorAny` which means that you can pass any color from the UI Kit theme or any CSS valid color.",
-      },
-    },
-  },
-  decorators: [makeDecorator({ display: "flex", height: 180 })],
-  render: () => {
-    return (
-      <HvColorPicker
-        aria-label="Color"
-        showSavedColors={false}
-        showCustomColors={false}
-        onChange={(color) => {
-          console.log(color);
-        }}
-        defaultValue="#059669"
-        recommendedColors={[
-          "positive",
-          "negative",
-          "primary",
-          "cat1",
-          "gold",
-          "#3399AA",
-        ]}
       />
     );
   },
@@ -102,59 +43,12 @@ export const IconOnly: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ display: "flex", height: 550 })],
   render: () => {
     return (
       <HvColorPicker
-        aria-label="Color"
         iconOnly
-        onChange={(color) => console.log(color)}
-      />
-    );
-  },
-};
-
-export const IconOnlyWithoutSavedColors: StoryObj<HvColorPickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "ColorPicker component that only shows an icon and without the saved colors area.",
-      },
-    },
-  },
-  decorators: [makeDecorator({ display: "flex", height: 480 })],
-  render: () => {
-    return (
-      <HvColorPicker
-        aria-label="Color"
-        iconOnly
-        showSavedColors={false}
+        label="Color"
         defaultValue="#477DBD"
-        onChange={(color) => console.log(color)}
-      />
-    );
-  },
-};
-
-export const IconOnlyRecommendedColors: StoryObj<HvColorPickerProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "ColorPicker component that only shows an icon and the recommended colors.",
-      },
-    },
-  },
-  decorators: [makeDecorator({ display: "flex", height: 180 })],
-  render: () => {
-    return (
-      <HvColorPicker
-        aria-label="Color"
-        iconOnly
-        showSavedColors={false}
-        showCustomColors={false}
-        defaultValue="#59941B"
         onChange={(color) => console.log(color)}
       />
     );
@@ -170,7 +64,6 @@ export const CustomizedColorPicker: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ display: "flex", height: 450 })],
   render: () => {
     return (
       <HvColorPicker
@@ -213,24 +106,14 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
       },
     },
   },
-  decorators: [makeDecorator({ display: "flex", height: 480 })],
   render: () => {
-    const [color, setColor] = useState<string | undefined>("#95AFE8");
-
-    const [squareColor, setSquareColor] = useState<string | undefined>(
-      "#95AFE8",
-    );
+    const [color, setColor] = useState("#95AFE8");
+    const [squareColor, setSquareColor] = useState("#95AFE8");
 
     return (
-      <HvStack direction="row" spacing="lg">
+      <div className="flex gap-lg">
         <div
-          className={css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "134px",
-            height: "134px",
-          })}
+          className="grid place-items-center size-134px"
           style={{ backgroundColor: squareColor }}
         >
           <HvTypography variant="label">{squareColor}</HvTypography>
@@ -238,21 +121,16 @@ export const ControlledColorPicker: StoryObj<HvColorPickerProps> = {
         <HvColorPicker
           aria-label="Color"
           showSavedColors={false}
-          onChange={(value) => {
-            setColor(value);
-          }}
+          onChange={(value) => setColor(value)}
           onChangeComplete={setSquareColor}
           value={color}
         />
-      </HvStack>
+      </div>
     );
   },
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   decorators: [(Story) => <div className="flex gap-xs">{Story()}</div>],
   render: () => (
     <>

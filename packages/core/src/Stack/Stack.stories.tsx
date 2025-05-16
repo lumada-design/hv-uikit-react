@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvActionBar,
   HvButton,
   HvCard,
   HvCardContent,
   HvCardHeader,
+  HvPanel,
   HvStack,
   HvStackProps,
   HvToggleButton,
@@ -19,23 +20,13 @@ import {
   Tool,
 } from "@hitachivantara/uikit-react-icons";
 
-const Box = styled("div")({
-  display: "flex",
-  color: theme.colors.textDark,
-  border: `1px solid ${theme.colors.sema15}`,
-  backgroundColor: theme.colors.infoDimmed,
+const Box = styled(HvPanel)({
+  display: "grid",
+  placeItems: "center",
+  borderWidth: 1,
   width: 150,
   height: 50,
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: 5,
-  flexWrap: "wrap",
-  "& > *": {
-    margin: "0 10px 5px 0",
-  },
 });
-
-Box.displayName = "Box";
 
 const meta: Meta<typeof HvStack> = {
   title: "Components/Stack",
@@ -109,40 +100,6 @@ export const Spacing: StoryObj<HvStackProps> = {
           </HvStack>
         </div>
       </>
-    );
-  },
-};
-
-export const CustomDivider = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "The `divider` property can be a boolean (rendering the MUI Divider), or a `ReactNode` which allows custom dividers to be used.",
-      },
-    },
-  },
-  render: () => {
-    const StyledDivider = styled("div")({
-      width: 150,
-      height: 5,
-      border: `1px solid ${theme.colors.textDisabled}`,
-      borderRadius: 5,
-      backgroundColor: theme.colors.border,
-      alignSelf: "center",
-    });
-
-    return (
-      <HvStack
-        style={{ display: "inline-flex" }}
-        spacing="xs"
-        divider={<StyledDivider />}
-      >
-        <Box>1</Box>
-        <Box>2</Box>
-        <Box>3</Box>
-        <Box>4</Box>
-      </HvStack>
     );
   },
 };
@@ -275,9 +232,6 @@ export const WithNavigation: StoryObj<HvStackProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <div style={{ display: "flex", gap: theme.space.sm }}>

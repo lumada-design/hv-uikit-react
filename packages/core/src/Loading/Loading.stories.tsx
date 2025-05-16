@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvButton,
   HvButtonProps,
@@ -8,7 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvLoading> = {
-  title: "Components/Loading/Loading",
+  title: "Components/Loading",
   component: HvLoading,
 };
 export default meta;

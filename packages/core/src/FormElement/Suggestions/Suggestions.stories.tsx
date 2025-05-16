@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvBaseInputProps,
@@ -13,7 +13,7 @@ import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 import { allCountries } from "../../Input/stories/countries";
 
 const meta: Meta<typeof HvSuggestions> = {
-  title: "Guides/Forms/Form Element Blocks/Suggestions",
+  title: "Components/Form Element Blocks/Suggestions",
   component: HvSuggestions,
   decorators: [
     (Story) => <div style={{ width: 500, height: 320 }}>{Story()}</div>,

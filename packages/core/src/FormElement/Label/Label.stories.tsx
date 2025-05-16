@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvLabel, HvLabelProps } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvLabel> = {
-  title: "Guides/Forms/Form Element Blocks/Label",
+  title: "Components/Form Element Blocks/Label",
   component: HvLabel,
 };
 export default meta;

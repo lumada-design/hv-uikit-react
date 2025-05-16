@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvListContainer,
   HvListItem,
@@ -10,7 +10,7 @@ import {
 import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
-  title: "Components/Loading/Loading Container",
+  title: "Components/Loading Container",
   component: HvLoadingContainer,
 } satisfies Meta<typeof HvLoadingContainer>;
 
@@ -28,8 +28,8 @@ export const Main: StoryObj<HvLoadingContainerProps> = {
     ...setupChromatic(),
   },
   render: (args) => (
-    <HvLoadingContainer style={{ display: "inline-flex" }} {...args}>
-      <HvPanel style={{ width: 300 }}>
+    <HvLoadingContainer className="inline-flex" {...args}>
+      <HvPanel className="w-300px">
         <HvListContainer>
           {[...Array(4).keys()].map((i) => (
             <HvListItem key={i}>Item {i + 1}</HvListItem>
