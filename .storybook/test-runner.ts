@@ -4,10 +4,6 @@ import { NodeResult, Result } from "axe-core";
 import { configureAxe, getAxeResults, injectAxe } from "axe-playwright";
 
 const excludeStories = [
-  "Overview",
-  "Foundation",
-  "Guides",
-  "Templates",
   "Visualizations/Bar Chart",
   "Visualizations/Line Chart",
   "Visualizations/Donut Chart",
