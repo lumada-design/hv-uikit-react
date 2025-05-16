@@ -10,7 +10,6 @@ env:
   PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
   PUBLISH_BRANCH: master
   NEXTRA_PUBLISH_FOLDER: uikit-docs/pr-${{ github.event.number }}
-  STORYBOOK_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
   APP_PUBLISH_FOLDER: uikit-app/pr-${{ github.event.number }}
   PUBLISH_MESSAGE: "chore: remove PR ${{ github.event.number }} of ${{ github.repository }}"
 
@@ -36,17 +35,8 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git rm -r --ignore-unmatch ${APP_PUBLISH_FOLDER}
           git rm -r --ignore-unmatch ${NEXTRA_PUBLISH_FOLDER}
-          git rm -r --ignore-unmatch ${STORYBOOK_PUBLISH_FOLDER}
           git commit -m "${PUBLISH_MESSAGE}"
           git push
-
-      - name: Prune Deployment for Storybook Documentation
-        uses: bobheadxi/deployments@v1
-        with:
-          step: deactivate-env
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.STORYBOOK_PUBLISH_FOLDER}}
-          desc: Deployment for Stroybook documentation was pruned
 
       - name: Prune Deployment for Nextra Documentation
         if: ${{ false }}
