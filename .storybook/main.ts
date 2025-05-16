@@ -11,8 +11,6 @@ export default {
     options: {},
   },
   stories: [
-    "../docs/**/*.mdx",
-    "../docs/**/*.stories.tsx",
     "../packages/*/src/**/*.mdx",
     "../packages/*/src/**/*.stories.@(ts|tsx)",
   ],
