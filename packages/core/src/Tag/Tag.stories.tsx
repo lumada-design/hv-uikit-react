@@ -1,20 +1,10 @@
 import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  HvOverflowTooltip,
-  HvTag,
-  HvTagProps,
-  theme,
-} from "@hitachivantara/uikit-react-core";
+import { HvTag, HvTagProps, theme } from "@hitachivantara/uikit-react-core";
 import { Abacus } from "@hitachivantara/uikit-react-icons";
 
-import { Selectable as SelectableStory } from "./Selectable";
-import SelectableRaw from "./Selectable?raw";
-import { SelectableControlled as SelectableControlledStory } from "./SelectableControlled";
-import SelectableControlledRaw from "./SelectableControlled?raw";
-
 const meta: Meta<typeof HvTag> = {
-  title: "Components/Tag/Tag",
+  title: "Components/Tag",
   component: HvTag,
   decorators: [
     (Story) => <div style={{ display: "flex", gap: 20 }}>{Story()}</div>,
@@ -64,19 +54,6 @@ export const Variants: StoryObj<HvTagProps> = {
   },
 };
 
-export const LongLabelText: StoryObj<HvTagProps> = {
-  render: () => {
-    const longText = "This is an example of a extremely long tag";
-
-    return (
-      <>
-        <HvTag label={<HvOverflowTooltip data={longText} />} />
-        <HvTag label={`${longText} with default overflow`} />
-      </>
-    );
-  },
-};
-
 export const WithActions: StoryObj<HvTagProps> = {
   render: () => {
     return (
@@ -86,35 +63,6 @@ export const WithActions: StoryObj<HvTagProps> = {
       </>
     );
   },
-};
-
-export const Selectable: StoryObj<HvTagProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "To have selectable `tags` set the `selectable` prop to `true`",
-      },
-      source: {
-        code: SelectableRaw,
-      },
-    },
-  },
-  render: () => <SelectableStory />,
-};
-
-export const SelectableControlled: StoryObj<HvTagProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "To use the selectable tags in a controlled way, set the `selected` prop to `true` of `false",
-      },
-      source: {
-        code: SelectableControlledRaw,
-      },
-    },
-  },
-  render: () => <SelectableControlledStory />,
 };
 
 export const Test: StoryObj = {

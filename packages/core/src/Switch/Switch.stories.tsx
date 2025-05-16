@@ -3,26 +3,14 @@ import { css } from "@emotion/css";
 import { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseSwitch,
-  HvButton,
   HvInfoMessage,
   HvLabel,
   HvSwitch,
   HvSwitchProps,
-  HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 const decorator: Decorator = (Story) => (
-  <div
-    className={css({
-      display: "flex",
-      alignItems: "center",
-      flexWrap: "wrap",
-      gap: theme.space.md,
-    })}
-  >
-    {Story()}
-  </div>
+  <div className="flex flex-wrap items-center gap-md">{Story()}</div>
 );
 
 const meta: Meta<typeof HvSwitch> = {
@@ -59,11 +47,7 @@ export const Variants: StoryObj<HvSwitchProps> = {
   decorators: [decorator],
   render: () => {
     const styles = {
-      group: css({
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "flex-end",
-      }),
+      group: "flex items-end",
     };
 
     return (
@@ -94,34 +78,6 @@ export const Variants: StoryObj<HvSwitchProps> = {
             aria-label="Engine 2"
           />
         </div>
-      </>
-    );
-  },
-};
-
-export const Controlled: StoryObj<HvSwitchProps> = {
-  parameters: {
-    docs: {
-      description: { story: "Controlled Switch." },
-    },
-  },
-  decorators: [decorator],
-  render: () => {
-    const [state, setState] = useState(false);
-
-    return (
-      <>
-        <HvButton onClick={() => setState((prev) => !prev)}>Toggle</HvButton>
-        <HvSwitch
-          checked={state}
-          aria-label="Engine Control"
-          onChange={(_evt, newChecked) => setState(newChecked)}
-        />
-        <HvTypography
-          style={{ color: state ? theme.colors.positive : theme.colors.sema14 }}
-        >
-          The switch is {state ? "On" : "Off"}
-        </HvTypography>
       </>
     );
   },
@@ -178,17 +134,14 @@ export const WithCustomColors: StoryObj<HvSwitchProps> = {
   },
   decorators: [decorator],
   render: () => {
-    const [state, setState] = useState(false);
+    const [checked, setChecked] = useState(false);
     return (
-      <>
-        <HvButton onClick={() => setState((prev) => !prev)}>Toggle</HvButton>
-        <HvSwitch
-          checked={state}
-          aria-label="Engine Control"
-          onChange={(_evt, newChecked) => setState(newChecked)}
-          color={state ? "positive" : "negative"}
-        />
-      </>
+      <HvSwitch
+        checked={checked}
+        aria-label="Engine Control"
+        onChange={(_evt, newChecked) => setChecked(newChecked)}
+        color={checked ? "positive" : "negative"}
+      />
     );
   },
 };

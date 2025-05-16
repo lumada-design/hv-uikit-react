@@ -1,4 +1,4 @@
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 import {
   HvOption,
@@ -6,15 +6,6 @@ import {
   HvSelect,
   HvSelectProps,
 } from "@hitachivantara/uikit-react-core";
-
-import ControlledStory from "./stories/Controlled";
-import ControlledStoryRaw from "./stories/Controlled?raw";
-import FormStory from "./stories/Form";
-import FormStoryRaw from "./stories/Form?raw";
-
-const decorator: Decorator = (Story) => (
-  <div className="w-[300px] min-h-[300px]">{Story()}</div>
-);
 
 export default {
   title: "Components/Select",
@@ -29,7 +20,7 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
     size: "md",
     variant: "secondarySubtle",
   },
-  decorators: [decorator],
+  decorators: [(Story) => <div className="w-300px min-h-300px">{Story()}</div>],
   parameters: {
     a11y: {
       config: {
@@ -121,37 +112,6 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
       </>
     );
   },
-};
-
-export const Form: StoryObj<HvSelectProps<{}, false>> = {
-  parameters: {
-    docs: {
-      source: { code: FormStoryRaw },
-      description: {
-        story:
-          "To integrate `HvSelect` in a form, make sure you're giving it a `name`. <br />\
-          The value result will be the selected option's `value`, or a JSON of the selected values when multi-select is enabled. The value can be customized via the `getSerializedValue` prop.",
-      },
-    },
-  },
-  decorators: [decorator],
-  render: () => <FormStory />,
-};
-
-export const Controlled: StoryObj<HvSelectProps<{}, false>> = {
-  parameters: {
-    docs: {
-      source: { code: ControlledStoryRaw },
-      description: {
-        story:
-          "The value and open states of `HvSelect` can be controlled by using the `value`/`onChange` and `open`/`onOpenChange` props respectively.",
-      },
-    },
-  },
-  decorators: [
-    (Story) => <div className="flex gap-sm min-h-[300px]">{Story()}</div>,
-  ],
-  render: () => <ControlledStory />,
 };
 
 export const Test: StoryObj<HvSelectProps<{}, false>> = {

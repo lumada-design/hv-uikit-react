@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
@@ -9,7 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvRadio> = {
-  title: "Components/Radio/Radio",
+  title: "Components/Radio",
   component: HvRadio,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvBaseRadio },
@@ -57,39 +56,6 @@ export const Variants: StoryObj<HvRadioProps> = {
           name="invalid"
           label="Invalid"
           value="1"
-        />
-      </>
-    );
-  },
-};
-
-export const WithoutLabel: StoryObj<HvRadioProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Radio buttons without labels. The accessible name is provided via the `aria-label` property.",
-      },
-    },
-  },
-  render: () => {
-    const [checkedValue, setCheckedValue] = useState("2");
-
-    return (
-      <>
-        <HvRadio
-          name="nolabel"
-          aria-label="Radio 1"
-          value="1"
-          checked={checkedValue === "1"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
-        />
-        <HvRadio
-          name="nolabel"
-          aria-label="Radio 2"
-          value="2"
-          checked={checkedValue === "2"}
-          onChange={(_evt, _checked, value) => setCheckedValue(value)}
         />
       </>
     );

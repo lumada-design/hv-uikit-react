@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvInfoMessage> = {
-  title: "Guides/Forms/Form Element Blocks/Info Message",
+  title: "Components/Form Element Blocks/Info Message",
   component: HvInfoMessage,
 };
 export default meta;

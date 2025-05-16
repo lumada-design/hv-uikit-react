@@ -1,21 +1,17 @@
 import { useRef, useState } from "react";
 import { css } from "@emotion/css";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Decorator, Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseInput,
   HvFormStatus,
   HvInput,
   HvInputProps,
   HvInputSuggestion,
-  HvPanel,
-  HvTypography,
   HvValidationMessages,
   theme,
 } from "@hitachivantara/uikit-react-core";
 import { Calendar, Map, Time } from "@hitachivantara/uikit-react-icons";
 
-import ControlledStory from "./stories/Controlled";
-import ControlledRaw from "./stories/Controlled?raw";
 import { allCountries } from "./stories/countries";
 
 const showcaseDecorator: Decorator = (Story) => (
@@ -147,32 +143,6 @@ export const Variants: StoryObj<HvInputProps> = {
   },
 };
 
-export const Accessibility: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Inputs not using the visual `label` prop should instead provide an `aria-label` property.",
-      },
-    },
-  },
-  render: () => {
-    return <HvInput aria-label="First name" placeholder="Insert first name" />;
-  },
-};
-
-export const Controlled: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      source: { code: ControlledRaw },
-      description: {
-        story: "Changing the input value from outside the input component.",
-      },
-    },
-  },
-  render: () => <ControlledStory />,
-};
-
 export const InvalidState: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
@@ -209,91 +179,6 @@ export const InvalidState: StoryObj<HvInputProps> = {
   },
 };
 
-export const ExternalErrorMessage: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "A form element can be invalid but render its error message elsewhere. For instance if a business rule error relates to the combination of two or more fields, or if we want to display all the form errors together in a summary section. The [aria-errormessage](https://w3c.github.io/aria/#aria-errormessage) property should reference another element that contains error message text. It can be used when controlling the validation status or when relying on the built-in validations, but the message text computation is reponsability of the app.",
-      },
-    },
-  },
-  render: () => {
-    const [lastNameValidationState, setLastNameValidationState] =
-      useState<HvFormStatus>("invalid");
-
-    const [firstNameErrorMessage, setFirstNameErrorMessage] =
-      useState<string>();
-    const [lastNameErrorMessage, setLastNameErrorMessage] = useState(
-      "The last name is invalid just because I said so.",
-    );
-
-    return (
-      <div className="grid gap-sm grid-cols-1 md:grid-cols-2">
-        <div className="grid gap-xs">
-          <HvInput
-            label="First name"
-            description="Please enter your first name"
-            placeholder="Insert first name"
-            required
-            minCharQuantity={2}
-            aria-errormessage="firstName-error"
-            onBlur={(_e, _value, inputValidity) => {
-              if (inputValidity.valid) {
-                setFirstNameErrorMessage(undefined);
-              } else if (inputValidity.valueMissing) {
-                setFirstNameErrorMessage("You must provide a first name");
-              } else if (inputValidity.tooShort) {
-                setFirstNameErrorMessage("The first name is too short");
-              }
-            }}
-          />
-          <HvInput
-            label="Last name"
-            description="Please enter your last name"
-            placeholder="Insert last name"
-            defaultValue="Not a name!"
-            required
-            status={lastNameValidationState}
-            aria-errormessage="lastName-error"
-            onFocus={(_, value) => {
-              setLastNameValidationState(value ? "standBy" : "empty");
-            }}
-            onBlur={(_e, _value, inputValidity) => {
-              setLastNameValidationState("invalid");
-
-              if (inputValidity.valueMissing) {
-                setLastNameErrorMessage("You must provide a last name");
-              } else {
-                setLastNameErrorMessage(
-                  "Nice try, but the last name will always be invalid. I told you!",
-                );
-              }
-            }}
-          />
-        </div>
-        <HvPanel className="border-2px border-negative">
-          <HvTypography component="h4" variant="title4">
-            Form errors:
-          </HvTypography>
-          <ul className="mt-xs pl-md">
-            {firstNameErrorMessage && (
-              <li id="firstName-error" aria-live="polite">
-                {firstNameErrorMessage}
-              </li>
-            )}
-            {lastNameErrorMessage && (
-              <li id="lastName-error" aria-live="polite">
-                {lastNameErrorMessage}
-              </li>
-            )}
-          </ul>
-        </HvPanel>
-      </div>
-    );
-  },
-};
-
 export const CustomValidation: StoryObj<HvInputProps> = {
   parameters: {
     docs: {
@@ -318,62 +203,6 @@ export const CustomValidation: StoryObj<HvInputProps> = {
         showValidationIcon
         onBlur={(event, value, validationState) => {
           console.log(value, validationState);
-        }}
-      />
-    );
-  },
-};
-
-export const EventDemonstration: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Input with all events functions enabled.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState("");
-
-    return (
-      <HvInput
-        label="Text I will modify"
-        description="Look at the browser's developer console to see the event handlers output"
-        placeholder="Insert text"
-        value={value}
-        onFocus={(_event, newValue) => {
-          console.log(`my value is ${newValue}`);
-        }}
-        onBlur={(_event, newValue, validationState) => {
-          console.log(
-            `my value is ${newValue} and my validation state is`,
-            validationState,
-          );
-        }}
-        onChange={(_event, newValue) => setValue(`${newValue}.`)}
-      />
-    );
-  },
-};
-
-export const CustomProps: StoryObj<HvInputProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Using `inputProps` to inject custom props. This input will block values exceeding 25 character and display an error if less than 5 characters.",
-      },
-    },
-  },
-  render: () => {
-    return (
-      <HvInput
-        label="Short story of your life"
-        description="Try to write more than 25 characters"
-        placeholder="Insert text"
-        inputProps={{
-          minLength: 5,
-          maxLength: 25,
         }}
       />
     );

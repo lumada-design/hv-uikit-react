@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvOverflowTooltip> = {
-  title: "Components/Tooltip/Overflow Tooltip",
+  title: "Components/Overflow Tooltip",
   component: HvOverflowTooltip,
 };
 export default meta;
@@ -22,15 +22,7 @@ export const Main: StoryObj<HvOverflowTooltipProps> = {
   },
   decorators: [
     (Story) => (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          margin: "0 auto",
-          height: 200,
-          maxWidth: 200,
-        }}
-      >
+      <div className="flex items-center mx-auto h-200px max-w-200px">
         {Story()}
       </div>
     ),

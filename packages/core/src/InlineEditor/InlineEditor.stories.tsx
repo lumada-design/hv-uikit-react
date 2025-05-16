@@ -1,8 +1,5 @@
-import { useState } from "react";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
-  HvContainer,
-  HvGrid,
   HvInlineEditor,
   HvInlineEditorProps,
   HvTypographyVariants,
@@ -13,10 +10,6 @@ const meta: Meta<HvInlineEditorProps> = {
   component: HvInlineEditor,
 };
 export default meta;
-
-const decorator: Decorator = (Story) => (
-  <div style={{ width: 300 }}>{Story()}</div>
-);
 
 const variants: HvTypographyVariants[] = [
   "display",
@@ -38,52 +31,8 @@ export const Main: StoryObj<typeof HvInlineEditor> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  decorators: [decorator],
+  decorators: [(Story) => <div style={{ width: 300 }}>{Story()}</div>],
   render: (args) => <HvInlineEditor {...args} />,
-};
-
-export const Disabled: StoryObj<HvInlineEditorProps> = {
-  decorators: [decorator],
-  render: () => <HvInlineEditor disabled />,
-};
-
-export const Controlled: StoryObj<HvInlineEditorProps> = {
-  decorators: [decorator],
-  render: () => {
-    const [value, setValue] = useState("My value");
-
-    return (
-      <HvInlineEditor
-        value={value}
-        onChange={(event, newValue) => setValue(newValue)}
-        onBlur={(event, newValue) => setValue(newValue)}
-        onKeyDown={(event, newValue) => setValue(newValue)}
-      />
-    );
-  },
-};
-
-export const LargeVariants = () => {
-  const [value, setValue] = useState(
-    "Very very very long text that is likely to be truncated",
-  );
-
-  return (
-    <HvContainer>
-      <HvGrid container>
-        {variants.map((variant) => (
-          <HvGrid item key={variant} xs={12} sm={6} style={{ minHeight: 64 }}>
-            <HvInlineEditor
-              variant={variant}
-              value={value}
-              onBlur={(evt, val) => setValue(val)}
-              onChange={(evt, val) => setValue(val)}
-            />
-          </HvGrid>
-        ))}
-      </HvGrid>
-    </HvContainer>
-  );
 };
 
 export const Test: StoryObj = {
@@ -98,7 +47,7 @@ export const Test: StoryObj = {
           <div style={{ maxWidth: 300 }} key={variant}>
             <HvInlineEditor
               variant={variant}
-              value="Very very very long text that is likely to be truncated"
+              defaultValue="Very very very long text that is likely to be truncated"
             />
           </div>
         ))}

@@ -8,7 +8,7 @@ import {
   ManyEntries as AppSwitcherManyEntriesStory,
 } from "../AppSwitcher/AppSwitcher.stories";
 import { Test as AvatarTestStory } from "../Avatar/Avatar.stories";
-import { Test as AvatarGroupTestStory } from "../AvatarGroup/stories/AvatarGroup.stories";
+import { Test as AvatarGroupTestStory } from "../AvatarGroup/AvatarGroup.stories";
 import { Test as BadgeTestStory } from "../Badge/Badge.stories";
 import { Variants as BannerVariantsStory } from "../Banner/Banner.stories";
 import { Test as BreadCrumbTestStory } from "../BreadCrumb/BreadCrumb.stories";
@@ -27,14 +27,14 @@ import { Main as DotPaginationMainStory } from "../DotPagination/DotPagination.s
 import {
   MultiSelection as DropdownMultiSelectionStory,
   Variants as DropdownVariantsStory,
-} from "../Dropdown/stories/Dropdown.stories";
+} from "../Dropdown/Dropdown.stories";
 import { Main as DropDownMenuMainStory } from "../DropDownMenu/DropDownMenu.stories";
 import {
   Minimal as EmptyStateMinimalStory,
   WithAction as EmptyStateWithActionStory,
 } from "../EmptyState/EmptyState.stories";
 import { WithPreviewThumbnails as FileUploaderWithPreviewThumbnailsStory } from "../FileUploader/FileUploader.stories";
-import { CustomLabels as FooterCustomLabelsStory } from "../Footer/Footer.stories";
+import { Main as FooterCustomLabelsStory } from "../Footer/Footer.stories";
 import { Test as GlobalActionsTestStory } from "../GlobalActions/GlobalActions.stories";
 import { TheDesignSystemColumns as GridTheDesignSystemColumnsStory } from "../Grid/Grid.stories";
 import { Test as HeaderTestStory } from "../Header/Header.stories";
@@ -44,7 +44,7 @@ import { Test as InputTestStory } from "../Input/Input.stories";
 import { Main as KpiMainStory } from "../Kpi/Kpi.stories";
 import { WithIcons as ListContainerWithIconsStory } from "../ListContainer/ListContainer.stories";
 import { Variants as LoadingVariantsStory } from "../Loading/Loading.stories";
-import { Test as MultiButtonTestStory } from "../MultiButton/stories/MultiButton.stories";
+import { Test as MultiButtonTestStory } from "../MultiButton/MultiButton.stories";
 import { Main as OverflowTooltipMainStory } from "../OverflowTooltip/OverflowTooltip.stories";
 import { Main as PaginationMainStory } from "../Pagination/Pagination.stories";
 import { Main as PanelMainStory } from "../Panel/Panel.stories";
@@ -66,7 +66,7 @@ import { Variants as SnackbarVariantsStory } from "../Snackbar/Snackbar.stories"
 import { Test as StackTestStory } from "../Stack/Stack.stories";
 import { Variants as SwitchVariantsStory } from "../Switch/Switch.stories";
 import { Test as TabsTestStory } from "../Tabs/Tabs.stories";
-import { Test as TagTestStory } from "../Tag/stories/Tag.stories";
+import { Test as TagTestStory } from "../Tag/Tag.stories";
 import { Variants as TagsInputVariantsStory } from "../TagsInput/TagsInput.stories";
 import { Variants as TextAreaVariantsStory } from "../TextArea/TextArea.stories";
 import { Multiple as ToggleButtonMultipleStory } from "../ToggleButton/ToggleButton.stories";
