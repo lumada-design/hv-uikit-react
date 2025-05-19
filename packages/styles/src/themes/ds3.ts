@@ -380,7 +380,7 @@ const ds3 = makeTheme((theme) => ({
     HvRadioIcon: {
       classes: {
         checked: {
-          backgroundColor: theme.colors.text,
+          "--bg-color": theme.colors.text,
           color: theme.colors.bgPage,
         },
       },
