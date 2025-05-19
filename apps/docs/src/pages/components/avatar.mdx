@@ -32,6 +32,12 @@ export const getStaticProps = async ({ params }) => {
       type: "color",
       defaultValue: "secondary",
     },
+    status: {
+      type: "color",
+    },
+    badge: {
+      type: "color",
+    },
   }}
 />
 
@@ -181,7 +187,7 @@ An avatar should be interacted with by wrapping it in an interactable element, s
   </HvButton>
   <HvButton
     aria-label="Business Manager"
-    radius="base"
+    radius="round"
     icon
     className="size-fit!"
   >
@@ -209,7 +215,7 @@ An avatar should be interacted with by wrapping it in an interactable element, s
   </HvButton>
   <HvButton
     aria-label="Clara Soul profile"
-    radius="base"
+    radius="round"
     icon
     className="size-fit!"
   >

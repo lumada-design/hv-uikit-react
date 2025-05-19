@@ -172,6 +172,13 @@ const ds5 = makeTheme((theme) => ({
     },
   },
   components: {
+    HvAvatar: {
+      classes: {
+        square: {
+          borderRadius: theme.radii.round,
+        },
+      },
+    },
     HvBannerContent: {
       classes: {
         root: {

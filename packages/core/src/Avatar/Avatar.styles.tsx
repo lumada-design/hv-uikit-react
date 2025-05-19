@@ -26,6 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
     alignItems: "center",
     position: "relative",
     padding: theme.space.xxs,
+
     height: "fit-content",
 
     ":focus-visible": {
@@ -38,7 +39,7 @@ export const { staticClasses, useClasses } = createClasses("HvAvatar", {
   md: { width: 40, height: 40, fontSize: "1rem" },
   lg: { width: 52, height: 52, fontSize: "1.5rem" },
   xl: { width: 88, height: 88, fontSize: "2rem" },
-  avatar: {},
+  avatar: { borderRadius: "inherit" },
   badge: {
     width: 8,
     height: 8,
