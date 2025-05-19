@@ -16,12 +16,12 @@ pre {
 }
 
 .nextra-content,
-.nextra-content._w-full {
+.nextra-content.x\:w-full {
   font-size: 1rem;
 }
 
 .nextra-content h2,
-.nextra-content._w-full h2 {
+.nextra-content.x\:w-full h2 {
   font-size: 1.7rem !important;
   @apply !border-none;
 }
@@ -31,7 +31,7 @@ pre {
   @apply !mt-2;
 }
 
-.nextra-content._w-full {
+.nextra-content.x\:w-full {
   @apply max-w-5xl mx-auto;
 }
 
@@ -68,7 +68,7 @@ pre {
   @apply shadow-none;
 }
 
-.nextra-scrollbar a._text-primary-800 {
+.nextra-scrollbar a.x\:text-primary-800 {
   @apply font-medium text-slate-800 dark:text-slate-200;
 }
 

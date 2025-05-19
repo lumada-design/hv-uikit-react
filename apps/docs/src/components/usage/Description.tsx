@@ -1,8 +1,10 @@
+"use client";
+
 import ReactMarkdown from "react-markdown";
 import { ArrowUpRight } from "@phosphor-icons/react";
-import { useData } from "nextra/hooks";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
+import { ComponentMeta } from "../../utils/component";
 import { GitHubLogo } from "../logo/gh";
 import { NpmLogo } from "../logo/npm";
 import { AlignmentBadge } from "./AlignmentBadge";
@@ -12,9 +14,7 @@ import { AlignmentBadge } from "./AlignmentBadge";
  * about the current component, including its name, description,
  * GitHub source link, and NPM package link.
  */
-export const Description = () => {
-  const { meta } = useData();
-
+export const Description = ({ meta }: { meta: ComponentMeta }) => {
   return (
     <>
       <div className="flex flex-row gap-xs items-center">

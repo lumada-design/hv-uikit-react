@@ -1,3 +1,5 @@
+"use client";
+
 import { useLocalStorage } from "usehooks-ts";
 
 export const useDocsTheme = () => {
