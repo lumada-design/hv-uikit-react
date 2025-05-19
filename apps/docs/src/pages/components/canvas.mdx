@@ -1,0 +1,34 @@
+# What are Canvas components?
+
+Canvas components are a set of UI components designed to address specific needs of Pentaho+ applications that use
+a canvas-based interface. For that reason, they are available in the `@hitachivantara/uikit-react-pentaho` package.
+
+## Installation
+
+```sh
+npm install @hitachivantara/uikit-react-pentaho
+```
+
+## Usage
+
+These components are designed to be used together and react to each other. When the `SidePanel` is opened, closed or resized,
+the `Toolbar` and `BottomPanel` will adjust their widths accordingly.
+
+For this to work, you'll need to import the `HvCanvasProvider` component:
+
+```tsx
+import { HvCanvasProvider } from "@hitachivantara/uikit-react-pentaho";
+```
+
+And wrap your components with it:
+
+```tsx
+<HvCanvasProvider>
+  <HvCanvasToolbar>...</HvCanvasToolbar>
+  <HvCanvasSidePanel>...</HvCanvasSidePanel>
+  <HvCanvasBottomPanel>...</HvCanvasBottomPanel>
+</HvCanvasProvider>
+```
+
+A sample that exemplifies how the canvas components can be used is available
+[here](https://lumada-design.github.io/uikit-app/master/templates/canvas).

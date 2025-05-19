@@ -17,6 +17,7 @@ import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 import * as HvLab from "@hitachivantara/uikit-react-lab";
+import * as HvPentaho from "@hitachivantara/uikit-react-pentaho";
 import * as HvViz from "@hitachivantara/uikit-react-viz";
 import * as HvStyles from "@hitachivantara/uikit-styles";
 
@@ -37,6 +38,7 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
+    "@hitachivantara/uikit-react-pentaho": HvPentaho,
     "@hitachivantara/uikit-styles": HvStyles,
     "@mui/material": materialUi,
     "react-table": reactTable,
@@ -81,7 +83,8 @@ export const resolveComponents = (
     HvIcons[identifier as keyof typeof HvIcons] ||
     HvCodeEditor[identifier as keyof typeof HvCodeEditor] ||
     HvLab[identifier as keyof typeof HvLab] ||
-    HvViz[identifier as keyof typeof HvViz];
+    HvViz[identifier as keyof typeof HvViz] ||
+    HvPentaho[identifier as keyof typeof HvPentaho];
 
   // Normalize input to an array of code strings
   const contents = typeof code === "string" ? [code] : Object.values(code);

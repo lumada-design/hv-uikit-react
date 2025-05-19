@@ -324,18 +324,19 @@ export const HvCanvasToolbarTabs = forwardRef<
           </HvCanvasPanelTabs>
         )}
         {hiddenTabs.length > 0 && (
-          <HvDropDownMenu
-            classes={{
-              container: classes.dropdownMenuContainer,
-              menuListRoot: classes.dropdownMenuListRoot,
-            }}
-            dataList={hiddenTabs}
-            icon={<MoreOptionsHorizontal />}
-            labels={{ dropdownMenu: labels.dropdownMenu }}
-            onClick={(event, value) =>
-              handleChangeSelectedTab(event, value.id ?? "none")
-            }
-          />
+          <div className={classes.dropdownMenuContainer}>
+            <HvDropDownMenu
+              classes={{
+                menuListRoot: classes.dropdownMenuListRoot,
+              }}
+              dataList={hiddenTabs}
+              icon={<MoreOptionsHorizontal />}
+              labels={{ dropdownMenu: labels.dropdownMenu }}
+              onClick={(event, value) =>
+                handleChangeSelectedTab(event, value.id ?? "none")
+              }
+            />
+          </div>
         )}
       </div>
       <div ref={actionsRef} className={classes.actionsContainer}>

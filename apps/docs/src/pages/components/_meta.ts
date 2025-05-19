@@ -86,4 +86,14 @@ export default {
   dashboard: "Dashboard",
   "step-navigation": "Step Navigation",
   wizard: "Wizard",
+  // eslint-disable-next-line sort-keys
+  "-- Canvas": {
+    title: "Canvas",
+    type: "separator",
+  },
+  canvas: "Get Started",
+  "canvas-bottom-panel": "Bottom Panel",
+  "canvas-side-panel": "Side Panel",
+  "canvas-toolbar": "Toolbar",
+  "canvas-toolbar-tabs": "Toolbar Tabs",
 };
