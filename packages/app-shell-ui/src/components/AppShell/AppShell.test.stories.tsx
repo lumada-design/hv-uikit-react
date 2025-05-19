@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Global } from "@emotion/react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/test";
 import type { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 import HvAppShell from "@hitachivantara/app-shell-ui";
@@ -78,7 +78,6 @@ export const Main: StoryObj<HvAppShellConfig> = {
       ["DS5 dawn", "DS5 wicked", "Pentaho+ dawn", "Pentaho+ wicked"],
       5000,
     ),
-    docs: { disable: true },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

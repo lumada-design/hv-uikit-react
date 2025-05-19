@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { User } from "@phosphor-icons/react/User";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvIconContainer,
   HvTypography,

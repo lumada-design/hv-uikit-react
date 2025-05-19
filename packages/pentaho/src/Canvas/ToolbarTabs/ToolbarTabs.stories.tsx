@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { Leaf } from "@hitachivantara/uikit-react-icons";
 import {
   HvCanvasToolbarTabs,
@@ -132,9 +132,6 @@ export const Test: StoryObj = {
         icon: <Leaf />,
       },
     ],
-  },
-  parameters: {
-    docs: { disable: true },
   },
   render: (args) => (
     <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>

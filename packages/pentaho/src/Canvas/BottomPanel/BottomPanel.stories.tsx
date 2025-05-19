@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
 import {
@@ -58,9 +58,6 @@ const tabs: HvCanvasBottomPanelProps["tabs"] = [
 ];
 
 export const PlaywrightTest: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => {
     const [minimize, setMinimize] = useState(false);
     const [open, setOpen] = useState(true);
@@ -100,9 +97,6 @@ export const PlaywrightTest: StoryObj = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <>
       <HvCanvasBottomPanel

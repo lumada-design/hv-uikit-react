@@ -16,34 +16,7 @@ export const parameters: Preview["parameters"] = {
   controls: {},
   options: {
     storySort: {
-      order: [
-        "Overview",
-        [
-          "Welcome",
-          "Introduction",
-          "Get Started",
-          "Community",
-          ["Releases", "Contributing", "Component Guidelines"],
-          "Migration",
-          "Project Status",
-        ],
-        "Foundation",
-        ["Typography", "Colors", "Icons"],
-        "Guides",
-        [
-          "Provider",
-          "Theming",
-          ["Theming", "White Labeling"],
-          "Styling",
-          ["Customization"],
-          "Forms",
-        ],
-        "Components",
-        "Widgets",
-        "Templates",
-        ["Overview"],
-        "Visualizations",
-      ],
+      order: ["Components", "Visualizations"],
     },
   },
   a11y: {

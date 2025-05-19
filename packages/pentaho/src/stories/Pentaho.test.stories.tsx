@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
 import { Test as BottomPanelTestStory } from "../Canvas/BottomPanel/BottomPanel.stories";
@@ -20,7 +20,6 @@ export default meta;
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(["Pentaho+ dawn", "Pentaho+ wicked"], 5000),
-    docs: { disable: true },
     a11y: {
       disable: true,
     },

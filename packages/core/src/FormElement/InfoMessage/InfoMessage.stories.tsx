@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvInfoMessage,
   HvInfoMessageProps,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvInfoMessage> = {
-  title: "Guides/Forms/Form Element Blocks/Info Message",
+  title: "Components/Form Element Blocks/Info Message",
   component: HvInfoMessage,
 };
 export default meta;

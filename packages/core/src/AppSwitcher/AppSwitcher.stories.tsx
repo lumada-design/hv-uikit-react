@@ -1,12 +1,10 @@
-import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvAppSwitcher,
   HvAppSwitcherActionApplication,
   HvAppSwitcherProps,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Champion, Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
+import { Code, LeftAlign } from "@hitachivantara/uikit-react-icons";
 
 const applicationsList: HvAppSwitcherActionApplication[] = [
   {
@@ -44,7 +42,7 @@ const applicationsList: HvAppSwitcherActionApplication[] = [
 ];
 
 const meta: Meta<typeof HvAppSwitcher> = {
-  title: "Widgets/App Switcher",
+  title: "Components/App Switcher",
   component: HvAppSwitcher,
 };
 export default meta;
@@ -56,32 +54,22 @@ export const Main: StoryObj<HvAppSwitcherProps> = {
   argTypes: {
     classes: { control: { disable: true } },
   },
-  render: ({ layout }) => {
-    const handlesActionSelectedCallback: HvAppSwitcherProps["isActionSelectedCallback"] =
-      (application) => {
-        return (
-          application.url != null &&
-          window.location.href.startsWith(application.url)
-        );
-      };
-
-    const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
-      event,
-      application,
-    ) => {
-      if (!application.url) {
-        alert(`The clicked application was: ${application.name}`);
-      }
-    };
-
+  render: (args) => {
     return (
       <HvAppSwitcher
         title="My Apps"
-        layout={layout}
         applications={applicationsList}
-        isActionSelectedCallback={handlesActionSelectedCallback}
-        onActionClickedCallback={handleActionClicked}
+        isActionSelectedCallback={(application) =>
+          application.url != null &&
+          window.location.href.startsWith(application.url)
+        }
+        onActionClickedCallback={(event, application) => {
+          if (!application.url) {
+            alert(`The clicked application was: ${application.name}`);
+          }
+        }}
         footer="And this is a footer"
+        {...args}
       />
     );
   },
@@ -114,46 +102,6 @@ export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
         isActionSelectedCallback={(application) =>
           window.location.href.startsWith(application.url || "")
         }
-      />
-    );
-  },
-};
-
-export const CustomHeader: StoryObj<HvAppSwitcherProps> = {
-  render: () => {
-    const [selected, setSelected] = useState<string>();
-
-    const handleIsActionSelected: HvAppSwitcherProps["isActionSelectedCallback"] =
-      (application) => {
-        return !!selected && application.name === selected;
-      };
-
-    const handleActionClicked: HvAppSwitcherProps["onActionClickedCallback"] = (
-      event,
-      application,
-    ) => {
-      setSelected(application.name);
-    };
-
-    return (
-      <HvAppSwitcher
-        applications={applicationsList}
-        isActionSelectedCallback={handleIsActionSelected}
-        onActionClickedCallback={handleActionClicked}
-        header={
-          <HvTypography
-            variant="title4"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Champion iconSize="S" />
-            This is a custom header
-          </HvTypography>
-        }
-        footer="And this is a footer"
       />
     );
   },

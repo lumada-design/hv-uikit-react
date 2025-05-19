@@ -101,7 +101,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Build Storybook
-        run: npm run build:doc:test
+        run: npm run build:doc
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
 

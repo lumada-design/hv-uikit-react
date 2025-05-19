@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import {
   HvButton,
   HvOverflowTooltip,
@@ -10,14 +9,7 @@ const SnackbarButtons = () => {
   const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
 
   return (
-    <div
-      className={css({
-        display: "flex",
-        flexDirection: "column",
-        gap: 8,
-        width: 150,
-      })}
-    >
+    <div className="grid gap-xs w-150px">
       <HvButton
         variant="secondarySubtle"
         onClick={() => {

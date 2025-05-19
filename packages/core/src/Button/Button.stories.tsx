@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StoryObj } from "@storybook/react";
@@ -159,17 +158,7 @@ export const FocusableWhenDisabled: StoryObj<HvButtonProps> = {
 export const Icons: StoryObj<HvButtonProps> = {
   decorators: [
     (Story) => (
-      <div
-        className={css({
-          display: "flex",
-          flexFlow: "column",
-          gap: 10,
-          "& > div": {
-            display: "flex",
-            gap: 20,
-          },
-        })}
-      >
+      <div className="flex flex-col gap-sm [&>div]:flex [&>div]:gap-sm">
         {Story()}
       </div>
     ),
@@ -287,9 +276,6 @@ export const CustomRootComponent: StoryObj<HvButtonProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
       <HvButton variant="primary">Primary</HvButton>

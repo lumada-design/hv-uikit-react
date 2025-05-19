@@ -27,7 +27,39 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
 
-import { makeRenderersData, NewRendererEntry } from "./utils";
+const getOption = (opts: string[], i: number) => opts[i % opts.length];
+
+const generateLongString = (value: string | undefined, i: number) =>
+  i === 6
+    ? "very long string that should be cut if it doesn't fit in the column"
+    : value;
+
+const getDropdownOptions = (options: string[] = [], selected = "") => {
+  return options.map((option, index) => ({
+    id: `${option}-${index}`,
+    label: option,
+    selected: selected === option,
+  }));
+};
+
+const severities = ["Critical", "Major", "Average", "Minor"];
+const makeRendererEntry = (i: number) => ({
+  id: `${i + 1}`,
+  name: `Event ${i + 1}`,
+  createdDate:
+    i === 7 ? undefined : new Date("2020-03-20").toISOString().slice(0, 10),
+  eventQuantity: i === 6 ? undefined : i,
+  eventType: generateLongString(i === 3 ? undefined : "Anomaly detection", i),
+  status: {
+    status_name: getOption(["Closed", "Open"], i),
+    status_color: getOption(["negative_20", "positive_20"], i),
+  },
+  riskScore: (i % 100) + 1,
+  isDisabled: i % 3 === 0,
+  severity: getDropdownOptions(severities, getOption(severities, i)),
+});
+
+type NewRendererEntry = ReturnType<typeof makeRendererEntry>;
 
 const columns = [
   hvSwitchColumn<NewRendererEntry>(
@@ -111,7 +143,7 @@ const columns = [
 ];
 
 export const AllColumnRenderers = () => {
-  const [data] = useState(() => makeRenderersData(64));
+  const [data] = useState(() => [...Array(64).keys()].map(makeRendererEntry));
 
   const table = useHvTable<NewRendererEntry>(
     { columns, data, disableCreateExpandButton: true },

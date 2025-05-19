@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
-import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvSimpleGrid,
@@ -9,8 +8,6 @@ import {
   HvTabProps,
   HvTabs,
   HvTabsProps,
-  HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Alert,
@@ -48,11 +45,11 @@ export const Main: StoryObj<HvTabsProps> = {
   },
 };
 
-export const FullWidth: StoryObj<HvTabsProps> = {
+export const Variants: StoryObj<HvTabsProps> = {
   parameters: {
     docs: {
       description: {
-        story: "Tabs occupying the full width of the available space.",
+        story: "Tabs with the `fullWidth` and `scrollable` variants.",
       },
     },
   },
@@ -60,141 +57,29 @@ export const FullWidth: StoryObj<HvTabsProps> = {
     const [value, setValue] = useState(0);
 
     return (
-      <HvTabs
-        variant="fullWidth"
-        value={value}
-        onChange={(_, val) => setValue(val)}
-      >
-        <HvTab label="Clickable tab 1" />
-        <HvTab label="Clickable tab 2" />
-        <HvTab label="Clickable tab 3" />
-      </HvTabs>
-    );
-  },
-};
-
-export const Scrollable: StoryObj<HvTabsProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Tabs with scroll buttons.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    return (
-      <div className="max-w-400px">
+      <div className="grid gap-md">
         <HvTabs
-          variant="scrollable"
-          scrollButtons="auto"
+          variant="fullWidth"
           value={value}
-          onChange={(_, newValue) => setValue(newValue)}
+          onChange={(_, val) => setValue(val)}
         >
-          {[...Array(12).keys()].map((i) => (
-            <HvTab key={i} label={`Clickable tab ${i + 1}`} />
-          ))}
-        </HvTabs>
-      </div>
-    );
-  },
-};
-
-export const ContentChanging: StoryObj<HvTabsProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Tabs changing the content to display according to the selected tab.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    return (
-      <>
-        <HvTabs value={value} onChange={(_, val) => setValue(val)}>
           <HvTab label="Clickable tab 1" />
           <HvTab label="Clickable tab 2" />
           <HvTab label="Clickable tab 3" />
         </HvTabs>
-        <HvTypography style={{ padding: 16 }}>{`Page ${value}`}</HvTypography>
-      </>
-    );
-  },
-};
-
-export const TextSize: StoryObj<HvTabsProps> = {
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const StyledHvTab = styled(HvTab, { label: "StyledHvTab" })({
-      ...theme.typography.title2,
-      minHeight: 48,
-    });
-
-    return (
-      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
-        <StyledHvTab label="Large tab 1" />
-        <StyledHvTab disabled label="Large tab 2" />
-        <StyledHvTab label="Large tab 3" />
-      </HvTabs>
-    );
-  },
-};
-
-export const CenteredTabs: StoryObj<HvTabsProps> = {
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    return (
-      <HvTabs
-        value={value}
-        onChange={(_, val) => setValue(val)}
-        classes={{ flexContainer: css({ justifyContent: "center" }) }}
-      >
-        <HvTab label="Clickable tab 1" />
-        <HvTab label="Clickable tab 2" />
-        <HvTab label="Clickable tab 3" />
-      </HvTabs>
-    );
-  },
-};
-
-export const WithBadges: StoryObj<HvTabsProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Badges applied to Tabs component.",
-      },
-    },
-  },
-  render: () => {
-    const [value, setValue] = useState(0);
-
-    const StyledHvTab = styled(HvTab, { label: "StyledHvTab" })({
-      minHeight: 48,
-      justifyContent: "center",
-      "& div p": {
-        ...theme.typography.title3,
-        fontWeight: 400,
-      },
-      "&.Mui-selected": {
-        "& div p": {
-          fontWeight: 600,
-        },
-      },
-    });
-
-    return (
-      <HvTabs value={value} onChange={(_, val) => setValue(val)}>
-        <StyledHvTab
-          label={<HvBadge showCount count={2} text="Track events" />}
-        />
-        <StyledHvTab label={<HvBadge count={1} text="Vehicle events" />} />
-      </HvTabs>
+        <div className="max-w-400px">
+          <HvTabs
+            variant="scrollable"
+            scrollButtons="auto"
+            value={value}
+            onChange={(_, newValue) => setValue(newValue)}
+          >
+            {[...Array(12).keys()].map((i) => (
+              <HvTab key={i} label={`Clickable tab ${i + 1}`} />
+            ))}
+          </HvTabs>
+        </div>
+      </div>
     );
   },
 };
@@ -256,9 +141,6 @@ export const Icons: StoryObj<HvTabsProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <HvSimpleGrid
       cols={3}

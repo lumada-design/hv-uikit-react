@@ -29,7 +29,7 @@ export interface HvAccordionProps
   defaultExpanded?: boolean;
   /** An object containing props to be passed onto container holding the accordion children. */
   containerProps?: React.HTMLAttributes<HTMLDivElement>;
-  /** Heading level to apply to accordion button. If ´undefined´ the button won't have a header wrapper. */
+  /** Heading level to apply to accordion button. If `undefined` the button won't have a header wrapper. */
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
   /** Whether the accordion is disabled. */
   disabled?: boolean;

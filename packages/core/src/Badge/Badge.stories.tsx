@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { css } from "@emotion/css";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBadge,
   HvBadgeProps,
-  HvButton,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Alert } from "@hitachivantara/uikit-react-icons";
@@ -12,11 +9,7 @@ import { Alert } from "@hitachivantara/uikit-react-icons";
 const meta: Meta<typeof HvBadge> = {
   title: "Components/Badge",
   component: HvBadge,
-  decorators: [
-    (Story) => (
-      <div className={css({ display: "flex", gap: 60 })}>{Story()}</div>
-    ),
-  ],
+  decorators: [(Story) => <div className="flex gap-60px">{Story()}</div>],
 };
 export default meta;
 
@@ -102,50 +95,7 @@ export const WithText: StoryObj<HvBadgeProps> = {
   },
 };
 
-export const WithState: StoryObj<HvBadgeProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Badge sample using react hooks to set the number of events.",
-      },
-    },
-  },
-  render: () => {
-    const [count, setCount] = useState(1);
-    const addCount = () => setCount(count * 2);
-
-    return (
-      <>
-        <HvButton onClick={addCount}>Double Value</HvButton>
-        <HvBadge showCount label={count} icon={<Alert />} />
-      </>
-    );
-  },
-};
-
-export const Accessibility: StoryObj<HvBadgeProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "If you want to specify a custom aria-label, use the role prop.",
-      },
-    },
-  },
-  render: () => (
-    <HvBadge
-      showCount
-      label={25}
-      icon={<Alert />}
-      role="status"
-      aria-label="25 unread notifications"
-    />
-  ),
-};
-
 export const Test: StoryObj = {
-  parameters: {
-    docs: { disable: true },
-  },
   render: () => (
     <div style={{ display: "flex", gap: 60, flexWrap: "wrap" }}>
       <HvBadge count={10} icon={<Alert />} />

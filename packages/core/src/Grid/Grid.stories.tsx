@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvGrid,
   HvGridProps,
@@ -9,7 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvGrid> = {
-  title: "Components/Grid/Grid",
+  title: "Components/Grid",
   component: HvGrid,
 };
 export default meta;
