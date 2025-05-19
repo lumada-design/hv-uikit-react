@@ -2,7 +2,6 @@ import { Fragment, useState } from "react";
 import type { PropItem } from "react-docgen-typescript";
 import { clsx } from "clsx";
 import Link from "next/link";
-import { useData } from "nextra/hooks";
 import {
   HvEmptyState,
   HvInput,
@@ -17,6 +16,8 @@ import {
   type HvTableColumnConfig,
 } from "@hitachivantara/uikit-react-core";
 import { Ban } from "@hitachivantara/uikit-react-icons";
+
+import { ComponentMeta } from "../../utils/component";
 
 type PropsTableProps = {
   title: string;
@@ -163,9 +164,8 @@ const PropsTableContainer = ({ title, propsObj }: PropsTableProps) => {
 };
 
 // Main Props Component
-export const Props = () => {
-  const { meta } = useData();
-  const { docgen, subComponentsDocgen } = meta;
+export const Props = ({ meta }: { meta: ComponentMeta }) => {
+  const { docgen, subComponentsDocgen = {} } = meta;
   const [searchTerm, setSearchTerm] = useState("");
 
   // Process main component props
@@ -213,7 +213,10 @@ export const Props = () => {
       {Object.entries(filteredSubComponents).map(([subComponent, props]) => (
         <PropsTableContainer
           key={subComponent}
-          title={subComponentsDocgen[subComponent]?.displayName || subComponent}
+          title={
+            (subComponentsDocgen[subComponent] as React.FC)?.displayName ||
+            subComponent
+          }
           propsObj={props}
         />
       ))}

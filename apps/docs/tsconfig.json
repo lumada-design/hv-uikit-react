@@ -4,8 +4,9 @@
     "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [{ "name": "next" }]
   },
-  "include": ["**/*"],
+  "include": ["**/*", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

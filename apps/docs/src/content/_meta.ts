@@ -1,3 +1,5 @@
+import { MetaRecord } from "nextra";
+
 export default {
   index: {
     type: "page",
@@ -29,4 +31,4 @@ export default {
     title: "Examples",
     theme: { layout: "full", toc: false },
   },
-};
+} satisfies MetaRecord;
