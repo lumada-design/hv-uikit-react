@@ -46,6 +46,23 @@ buttonClasses.disabled; // "HvButton-disabled"
 buttonClasses.startIcon; // "HvButton-startIcon"
 ```
 
+### `color` prop
+
+Several **UI Kit** components have a [`color`](/docs/styling#color-prop) prop, which allows the user to override the default color of the component.
+The prop accepts any UI Kit or CSS color. These include UI Kit [color tokens](/docs/color-tokens) (`primary`, `positive`, etc.)
+or [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) (`blue`, `#0000FF`, `rgb(0, 0, 255)`, `rgba(0, 0, 255, 0.5)`, etc.).
+
+```tsx live
+<div className="flex items-center gap-sm">
+  <HvButton color="positive">Button</HvButton>
+  <HvTag color="coral" label="Tag" />
+  <HvBadge color="#c73aa8" showCount label={8} icon={<Alert />} />
+  <HvCheckBox defaultChecked color="info" />
+  <HvRadio defaultChecked color="salmon" />
+  <HvSwitch defaultChecked color="warning" />
+</div>
+```
+
 ## Styling strategies
 
 The `className` property allows for the use of many styling strategies, such as
