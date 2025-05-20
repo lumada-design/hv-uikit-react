@@ -13,10 +13,12 @@ export default {
   components: {
     type: "page",
     title: "Components",
+    theme: { layout: "full", toc: false },
   },
   charts: {
     type: "page",
     title: "Charts",
+    theme: { layout: "full", toc: false },
   },
   "app-shell": {
     type: "page",
@@ -25,5 +27,6 @@ export default {
   examples: {
     type: "page",
     title: "Examples",
+    theme: { layout: "full", toc: false },
   },
 };
