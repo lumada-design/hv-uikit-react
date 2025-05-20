@@ -10,6 +10,12 @@ const withNextra = nextra({
   },
   mdxOptions: {
     rehypePlugins: [rehypeMdxCodeProps],
+    rehypePrettyCodeOptions: {
+      theme: {
+        light: "one-dark-pro",
+        dark: "one-dark-pro",
+      },
+    },
   },
 });
 

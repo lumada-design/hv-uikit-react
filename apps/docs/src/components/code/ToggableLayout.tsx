@@ -3,7 +3,6 @@ import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
 import { HvTab, HvTabs, HvTypography } from "@hitachivantara/uikit-react-core";
 
-import useEditorTheme from "../../hooks/useEditorTheme";
 import { DocsContainer } from "./DocsProvider";
 import { ToggableControls } from "./ToggableControls";
 
@@ -14,8 +13,6 @@ type ToggableLayoutProps = {
 };
 
 export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
-  const editorTheme = useEditorTheme();
-
   const [tmpCode, setTmpCode] = useState({ ...code });
   const [activeTab, setActiveTab] = useState(0);
   const [showPreview, setShowPreview] = useState(true);
@@ -74,7 +71,6 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
             <CodeEditor
               value={Object.values(tmpCode)[activeTab]}
               onChange={handleEditorChange}
-              theme={editorTheme}
               className="font-mono text-[.88em]"
             />
           </div>

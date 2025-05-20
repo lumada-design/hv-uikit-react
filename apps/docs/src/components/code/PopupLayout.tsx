@@ -8,7 +8,6 @@ import {
   HvIconButton,
 } from "@hitachivantara/uikit-react-core";
 
-import useEditorTheme from "../../hooks/useEditorTheme";
 import { DocsContainer } from "./DocsProvider";
 
 type PopupLayoutProps = {
@@ -22,10 +21,8 @@ type PopupLayoutProps = {
  * with interactive controls for toggling and resetting the code.
  */
 export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
-  const editorTheme = useEditorTheme();
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const [copySuccess, setCopySuccess] = useState<boolean>(false);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const initialCode = Object.values(code)[0];
 
@@ -72,7 +69,6 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
           </HvIconButton>
           <CodeEditor
             value={editorCode}
-            theme={editorTheme}
             onChange={onChange}
             className="font-mono text-[.85em] rounded-round border border-color-inherit"
           />

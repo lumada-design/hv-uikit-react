@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { useTheme } from "nextra-theme-docs";
 import {
   ds3,
   ds5,
@@ -13,7 +14,8 @@ export const DocsProvider = ({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) => {
   const id = useId();
-  const { docsTheme, docsMode } = useDocsTheme();
+  const { resolvedTheme } = useTheme();
+  const [docsTheme] = useDocsTheme();
 
   return (
     // ensures docs container styles change according to theme
@@ -21,7 +23,7 @@ export const DocsProvider = ({
       <HvProvider
         themes={[pentahoPlus, ds5, ds3]}
         theme={docsTheme}
-        colorMode={docsMode}
+        colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
         cssTheme="scoped"
         rootElementId={id}
       >
