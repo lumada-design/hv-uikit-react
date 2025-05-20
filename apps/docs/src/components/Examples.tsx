@@ -16,21 +16,31 @@ import tables from "../pages/examples/tables.mdx?raw";
  */
 const countCodeBlocks = (fileContent: string): number => {
   const codeBlockRegex = /<CodeBlock/g;
-  const matches = fileContent.match(codeBlockRegex);
+  const matches = fileContent?.match?.(codeBlockRegex);
   return matches ? matches.length : 0;
 };
 
-const getSectionIcon = (title: string) => {
+const sections = [
+  { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
+  { slug: "charts", title: "Charts", total: countCodeBlocks(charts) },
+  { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
+  { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
+  { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
+] as const;
+
+type Slug = (typeof sections)[number]["slug"];
+
+const getSectionIcon = (title: Slug) => {
   switch (title) {
-    case "Tables":
+    case "tables":
       return <div className="i-ph-table" />;
-    case "Charts":
+    case "charts":
       return <div className="i-ph-chart-bar" />;
-    case "Inputs":
+    case "inputs":
       return <div className="i-ph-text-a-underline" />;
-    case "KPIs":
+    case "kpis":
       return <div className="i-ph-speedometer" />;
-    case "Drag and Drop":
+    case "dnd":
       return <div className="i-ph-hand-swipe-right" />;
     default:
       return null;
@@ -42,35 +52,6 @@ const getSectionIcon = (title: string) => {
  * with details about the number of components in each category.
  */
 export const Examples = () => {
-  // Define section categories with their respective titles and component counts
-  const sections = [
-    {
-      title: "Tables",
-      total: countCodeBlocks(tables),
-      path: "/examples/tables",
-    },
-    {
-      title: "Charts",
-      total: countCodeBlocks(charts),
-      path: "/examples/charts",
-    },
-    {
-      title: "Inputs",
-      total: countCodeBlocks(inputs),
-      path: "/examples/inputs",
-    },
-    {
-      title: "KPIs",
-      total: countCodeBlocks(kpis),
-      path: "/examples/kpis",
-    },
-    {
-      title: "Drag and Drop",
-      total: countCodeBlocks(dnd),
-      path: "/examples/dnd",
-    },
-  ];
-
   return (
     <div className="max-w-6xl mx-auto px-sm md:px-md py-lg md:py-xl">
       {/* Page Header */}
@@ -104,9 +85,9 @@ export const Examples = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-lg">
         {sections.map((section) => (
           <Link
-            key={section.title}
-            href={section.path}
-            className={clsx("hover:bg-bgContainer rounded-round p-xs")}
+            key={section.slug}
+            href={`/examples/${section.slug}`}
+            className="hover:bg-bgContainer rounded-round p-xs"
           >
             {/* Placeholder for section preview */}
             <div
@@ -116,7 +97,7 @@ export const Examples = () => {
               )}
             >
               <HvIconContainer color="textSubtle" size="xl">
-                {getSectionIcon(section.title)}
+                {getSectionIcon(section.slug)}
               </HvIconContainer>
             </div>
             {/* Section Title */}

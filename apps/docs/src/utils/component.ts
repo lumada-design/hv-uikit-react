@@ -1,3 +1,4 @@
+import { resolve } from "path";
 import { withDefaultConfig, type Props } from "react-docgen-typescript";
 
 export interface Meta {
@@ -60,62 +61,51 @@ const parser = withDefaultConfig({
 });
 
 const getParsedDocgen = (path: string) => {
-  return parser.parse(path);
+  return parser.parse(resolve("../..", path));
 };
 
 export const getComponentData = async (
   componentName: string,
   packageName: string,
   classes: Record<string, string>,
-  subComponents?: string[],
+  subComponents: string[] = [],
   includeInheritedProps = false,
 ): Promise<Meta> => {
-  try {
-    const componentLocation = `/packages/${packageName}/src/${componentName}/${componentName}.tsx`;
-    const path = `${process.cwd()}../../..${componentLocation}`;
-    const source = `https://github.com/lumada-design/hv-uikit-react/blob/master${componentLocation}`;
+  const componentLocation = `packages/${packageName}/src/${componentName}/${componentName}.tsx`;
+  const source = `https://github.com/lumada-design/hv-uikit-react/blob/master/${componentLocation}`;
 
-    const parsed = getParsedDocgen(path);
+  const parsed = getParsedDocgen(componentLocation);
 
-    const cleanedDocgen = cleanUndefinedValues(parsed[0]) as Docgen;
-    cleanedDocgen.props = filterInheritedProps(
-      cleanedDocgen.props,
+  const cleanedDocgen = cleanUndefinedValues(parsed[0]) as Docgen;
+  cleanedDocgen.props = filterInheritedProps(
+    cleanedDocgen.props,
+    componentName,
+    includeInheritedProps,
+  );
+
+  const parsedSubComponents: Record<string, Docgen> = {};
+  for (const subComponent of subComponents) {
+    const subComponentLocation = `packages/${packageName}/src/${componentName}/${subComponent}/${subComponent}.tsx`;
+
+    const parsedSubComponent = getParsedDocgen(subComponentLocation);
+    const cleanedSubComponentDocgen = cleanUndefinedValues(
+      parsedSubComponent[0],
+    ) as Docgen;
+    cleanedSubComponentDocgen.props = filterInheritedProps(
+      cleanedSubComponentDocgen.props,
       componentName,
-      includeInheritedProps,
     );
 
-    let parsedSubComponents: Record<string, Docgen> = {};
-    if (subComponents?.length) {
-      for (const subComponent of subComponents) {
-        const subComponentLocation = `/packages/${packageName}/src/${componentName}/${subComponent}/${subComponent}.tsx`;
-        const subPath = `${process.cwd()}../../..${subComponentLocation}`;
-
-        const parsedSubComponent = getParsedDocgen(subPath);
-        const cleanedSubComponentDocgen = cleanUndefinedValues(
-          parsedSubComponent[0],
-        ) as Docgen;
-        cleanedSubComponentDocgen.props = filterInheritedProps(
-          cleanedSubComponentDocgen.props,
-          componentName,
-        );
-
-        parsedSubComponents = {
-          ...parsedSubComponents,
-          [subComponent]: cleanedSubComponentDocgen,
-        };
-      }
-    }
-
-    return {
-      component: componentName,
-      source,
-      package: packageName || "",
-      docgen: cleanedDocgen || {},
-      classes,
-      subComponents: subComponents || [],
-      subComponentsDocgen: parsedSubComponents,
-    };
-  } catch (error) {
-    throw new Error(error as string);
+    parsedSubComponents[subComponent] = cleanedSubComponentDocgen;
   }
+
+  return {
+    component: componentName,
+    source,
+    package: packageName || "",
+    docgen: cleanedDocgen || {},
+    classes,
+    subComponents: subComponents || [],
+    subComponentsDocgen: parsedSubComponents,
+  };
 };
