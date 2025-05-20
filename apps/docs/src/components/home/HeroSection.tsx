@@ -53,7 +53,7 @@ export const HeroSection = () => (
         "max-sm:text-1.8rem max-sm:leading-2.5rem",
       ])}
     >
-      Build your NEXT
+      Build your
       <br />
       <SlideText />
     </h1>
@@ -64,8 +64,8 @@ export const HeroSection = () => (
         "max-sm:text-1rem max-sm:leading-1.6rem",
       ])}
     >
-      <b>Hitachi Vantara</b> UI library that gives you the foundation to create
-      consistent, top-tier digital experiences efficiently.
+      Open-source React <b>UI library</b> that gives you the foundation to
+      create consistent, top-tier digital experiences efficiently.
     </h3>
     <HvButton
       component={Link}

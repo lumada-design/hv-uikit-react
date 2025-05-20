@@ -1,15 +1,16 @@
-<p align="center">
- <a href="https://lumada-design.github.io/">
-    <img src="https://user-images.githubusercontent.com/14975353/229386613-8f17d06d-9530-4e77-a173-dcb7587a85ea.png" alt="UI Kit logo" width="250" />
-  </a>
-</p>
+<div align="center">
 
-<h4 align="center">React UI library for the Next Design System.
-</h4>
+<picture>
+  <source srcset=".github/assets/uikit-logo-dark.svg" media="(prefers-color-scheme: dark)">
+  <img src=".github/assets/uikit-logo-light.svg" width="160" alt="UI Kit Logo">
+</picture>
 
 <br/>
+<br/>
 
-<div align="center">
+Open-source **React UI library** to build high-quality digital products.
+
+<br/>
 
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![React](https://img.shields.io/badge/react-17+-blue.svg)
@@ -18,16 +19,19 @@
 
 </div>
 
-<br/>
+## Why UI Kit
 
-**NEXT UI Kit** is Hitachi Vantara open source React component library that gives you the foundation to build your application faster and consistently.
+- **Enhanced Productivity**  
+  Quickly iterate with reusable, pre-built components tailored for production.
 
-## Why use the UI Kit?
+- **Flexible Customization**  
+  Leverage an extensive theming system for fine-grained control over layout and appearance.
 
-- **Ready to go**: Start your project with over 50 high-quality React components out of the box.
-- **Composable**: Compose your application UI with reusable building blocks.
-- **Accessible**: UI Kit follows WAI-ARIA standards for all components.
-- **Themeable**: Use Next Design System or customize it to match your design needs.
+- **Seamless Multi-Theming**  
+  Easily manage multiple themes across your application with minimal setup.
+
+- **Accessibility-Centric**  
+  Built to meet accessibility standards and ensure inclusivity for all users.
 
 Check the [project status](https://lumada-design.github.io/uikit-docs/master/docs/project-status) so you can stay up-to-date on the project development, available packages, components status and supported versions.
 
