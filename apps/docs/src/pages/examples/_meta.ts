@@ -17,4 +17,10 @@ export default {
   dnd: {
     type: "page",
   },
+  canvas: {
+    type: "page",
+    theme: {
+      layout: "full",
+    },
+  },
 };

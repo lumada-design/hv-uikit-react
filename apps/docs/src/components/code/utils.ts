@@ -11,6 +11,7 @@ import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
 import * as echartsCore from "echarts/core";
+import * as reactflow from "reactflow";
 import useSWR from "swr";
 import * as zod from "zod";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
@@ -46,6 +47,7 @@ const defaultScope: Scope = {
     "@hookform/resolvers/zod": hookFormZod,
     zod,
     clsx,
+    reactflow,
     swr: useSWR,
     "echarts/core": echartsCore,
     "echarts/charts": echartsCharts,
