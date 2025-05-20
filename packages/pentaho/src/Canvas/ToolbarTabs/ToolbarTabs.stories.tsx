@@ -70,23 +70,14 @@ export const NotEditable: StoryObj<HvCanvasToolbarTabsProps> = {
       },
     },
   },
-  render: () => (
-    <HvCanvasToolbarTabs
-      disableTabEdit
-      icon={<Leaf />}
-      defaultTabs={[
-        {
-          id: "tab1",
-          label: "Tab 1",
-          icon: <Leaf />,
-        },
-        {
-          id: "tab2",
-          label: "Tab 2",
-          icon: <Leaf />,
-        },
-      ]}
-    />
+  args: {
+    defaultTabs: [
+      { id: "tab1", label: "Tab 1", icon: <Leaf /> },
+      { id: "tab2", label: "Tab 2", icon: <Leaf /> },
+    ],
+  },
+  render: (args) => (
+    <HvCanvasToolbarTabs disableTabEdit icon={<Leaf />} {...args} />
   ),
 };
 
@@ -99,76 +90,43 @@ export const NotRemovable: StoryObj<HvCanvasToolbarTabsProps> = {
       },
     },
   },
-  render: () => (
-    <HvCanvasToolbarTabs
-      hideCreateNew
-      disableTabEdit
-      defaultTabs={[
-        {
-          id: "tab1",
-          label: "Tab 1",
-          fixed: true,
-        },
-        {
-          id: "tab2",
-          label: "Tab 2",
-        },
-      ]}
-    />
-  ),
-};
-
-export const Test: StoryObj = {
   args: {
     defaultTabs: [
-      {
-        id: "tab1",
-        label: "My first tab",
-        icon: <Leaf />,
-      },
-      {
-        id: "tab2",
-        label: "My tab with a very long label",
-        icon: <Leaf />,
-      },
+      { id: "tab1", label: "Tab 1", fixed: true },
+      { id: "tab2", label: "Tab 2" },
     ],
   },
   render: (args) => (
+    <HvCanvasToolbarTabs hideCreateNew disableTabEdit {...args} />
+  ),
+};
+
+// `defaultTabs` passed statically because the icons make storybook freeze
+const defaultTabs = [
+  { id: "tab1", label: "My tab with a very long label" },
+  { id: "tab2", label: "My tab" },
+];
+
+const defaultTabs2 = [
+  { id: "tab1", label: "My tab with a very long label", fixed: true },
+  { id: "tab2", label: "My tab" },
+];
+
+const defaultTabs3 = [
+  { id: "tab1", label: "My first tab", icon: <Leaf /> },
+  { id: "tab2", label: "My tab with a very long label", icon: <Leaf /> },
+];
+
+export const Test: StoryObj = {
+  render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
       <HvCanvasToolbarTabs />
       <HvCanvasToolbarTabs hideCreateNew />
-      <HvCanvasToolbarTabs
-        defaultTabs={[
-          { id: "tab1", label: "My tab with a very long label" },
-          { id: "tab2", label: "My tab" },
-        ]}
-      />
-      <HvCanvasToolbarTabs
-        hideCreateNew
-        defaultTabs={[
-          { id: "tab1", label: "My tab with a very long label" },
-          { id: "tab2", label: "My tab" },
-        ]}
-      />
-      <HvCanvasToolbarTabs
-        disableTabEdit
-        defaultTabs={[
-          { id: "tab1", label: "My tab with a very long label" },
-          { id: "tab2", label: "My tab" },
-        ]}
-      />
-      <HvCanvasToolbarTabs
-        defaultTabs={[
-          {
-            id: "tab1",
-            label: "My tab with a very long label",
-            fixed: true,
-          },
-          { id: "tab2", label: "My tab" },
-        ]}
-      />
-      {/* Note: Passed through args because the icons freeze storybook otherwise */}
-      <HvCanvasToolbarTabs {...args} />
+      <HvCanvasToolbarTabs defaultTabs={defaultTabs} />
+      <HvCanvasToolbarTabs hideCreateNew defaultTabs={defaultTabs} />
+      <HvCanvasToolbarTabs disableTabEdit defaultTabs={defaultTabs} />
+      <HvCanvasToolbarTabs defaultTabs={defaultTabs2} />
+      <HvCanvasToolbarTabs defaultTabs={defaultTabs3} />
     </div>
   ),
 };
