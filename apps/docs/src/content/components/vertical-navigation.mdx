@@ -1,29 +1,15 @@
 import { Callout } from "nextra/components";
-import {
-  HvVerticalNavigation,
-  HvVerticalNavigationAction,
-  HvVerticalNavigationActions,
-  HvVerticalNavigationTree,
-  verticalNavigationClasses,
-} from "@hitachivantara/uikit-react-core";
 import { LogOut, User } from "@hitachivantara/uikit-react-icons";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "VerticalNavigation",
-    "core",
-    verticalNavigationClasses,
-    ["Actions", "Header", "Navigation"],
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "VerticalNavigation",
+    classes,
+    subComponents: ["Actions", "Header", "Navigation"],
+  }}
+/>
 
 <Callout type="info">
   Use mode="disclosure" for most apps. Avoid mode="treeview" unless complex

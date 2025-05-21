@@ -1,24 +1,26 @@
 import { Callout } from "nextra/components";
-import { HvTable, tableClasses } from "@hitachivantara/uikit-react-core";
+import {
+  tableClasses as classes,
+  HvTable,
+} from "@hitachivantara/uikit-react-core";
 
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-import { getComponentData } from "../../utils/component";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Table", "core", tableClasses, [
-    "TableBody",
-    "TableCell",
-    "TableContainer",
-    "TableHead",
-    "TableHeader",
-    "TableRow",
-    "TableSection",
-  ]);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "Table",
+    classes,
+    subComponents: [
+      "TableBody",
+      "TableCell",
+      "TableContainer",
+      "TableHead",
+      "TableHeader",
+      "TableRow",
+      "TableSection",
+    ],
+  }}
+/>
 
 <Callout type="info">
   Please check our [table examples](/examples/tables) and or the [`react-table`

@@ -1,26 +1,16 @@
 import {
-  fileUploaderClasses,
+  fileUploaderClasses as classes,
   HvFileUploader,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "FileUploader",
-    "core",
-    fileUploaderClasses,
-    ["DropZone", "FileList"],
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{
+    name: "FileUploader",
+    classes,
+    subComponents: ["DropZone", "FileList"],
+  }}
   Component={HvFileUploader}
   componentName="HvFileUploader"
   controls={{

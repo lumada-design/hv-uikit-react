@@ -1,18 +1,12 @@
-import { HvLoading, loadingClasses } from "@hitachivantara/uikit-react-core";
+import {
+  loadingClasses as classes,
+  HvLoading,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Loading", "core", loadingClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Loading", classes }}
   Component={HvLoading}
   componentName="HvLoading"
   controls={{

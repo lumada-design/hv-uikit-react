@@ -1,18 +1,12 @@
-import { avatarClasses, HvAvatar } from "@hitachivantara/uikit-react-core";
+import {
+  avatarClasses as classes,
+  HvAvatar,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Avatar", "core", avatarClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Avatar", classes }}
   Component={HvAvatar}
   componentName="HvAvatar"
   controls={{

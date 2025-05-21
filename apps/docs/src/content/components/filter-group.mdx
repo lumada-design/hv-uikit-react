@@ -1,24 +1,12 @@
 import { Callout } from "nextra/components";
 import {
-  filterGroupClasses,
+  filterGroupClasses as classes,
   HvFilterGroup,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "FilterGroup",
-    "core",
-    filterGroupClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "FilterGroup", classes }} />
 
 <Callout type="warning">
   This component offers one implementation of the **Filter Group** pattern. Due

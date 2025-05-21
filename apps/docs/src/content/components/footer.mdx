@@ -1,18 +1,12 @@
-import { footerClasses, HvFooter } from "@hitachivantara/uikit-react-core";
+import {
+  footerClasses as classes,
+  HvFooter,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Footer", "core", footerClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Footer", classes }}
   Component={HvFooter}
   componentName="HvFooter"
   controls={{

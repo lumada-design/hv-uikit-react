@@ -1,20 +1,12 @@
 import {
+  tagsInputClasses as classes,
   HvTagsInput,
-  tagsInputClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-import { getComponentData } from "../../utils/component";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("TagsInput", "core", tagsInputClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "TagsInput", classes }}
   Component={HvTagsInput}
   componentName="HvTagsInput"
   controls={{

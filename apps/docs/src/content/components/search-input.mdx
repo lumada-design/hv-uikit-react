@@ -1,17 +1,10 @@
 import { Callout } from "nextra/components";
-import { HvSearchInput, inputClasses } from "@hitachivantara/uikit-react-core";
+import {
+  inputClasses as classes,
+  HvSearchInput,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("SearchInput", "core", inputClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
 
 <Callout type="info">
   The `HvSearchInput` component shares the same API as the `HvInput` component.
@@ -19,9 +12,8 @@ export const getStaticProps = async ({ params }) => {
   documentation.
 </Callout>
 
-<br />
-
-<Playground
+<Header
+  params={{ name: "SearchInput", classes }}
   Component={HvSearchInput}
   componentName="HvSearchInput"
   controls={{

@@ -31,7 +31,7 @@ export type Control = {
 type ControlsProps = {
   prop: string;
   state: Record<string, any>;
-  meta: ComponentMeta;
+  meta?: ComponentMeta;
   control: Control;
   onChange: (prop: string, value: unknown) => void;
 };
@@ -235,7 +235,7 @@ export const Controls = ({
 
   const type: ControlType =
     control?.type ||
-    defaultMap[propMeta?.type?.name] ||
+    (propMeta?.type?.name && defaultMap[propMeta?.type?.name]) ||
     defaultMap[typeof control.defaultValue] ||
     "text";
 

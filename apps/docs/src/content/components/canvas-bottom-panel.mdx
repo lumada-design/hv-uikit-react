@@ -1,26 +1,18 @@
 import {
-  canvasBottomPanelClasses,
+  canvasBottomPanelClasses as classes,
   HvCanvasBottomPanel,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "BottomPanel",
-    "pentaho",
-    canvasBottomPanelClasses,
-    [],
-    false,
-    "Canvas",
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "BottomPanel",
+    packageName: "pentaho",
+    classes,
+    componentPath: "Canvas/BottomPanel",
+  }}
+/>
 
 ## Usage
 
@@ -34,13 +26,7 @@ export default function Demo() {
 }
 
 const tabs = [
-  {
-    id: 0,
-    title: "Tab 1",
-  },
-  {
-    id: 1,
-    title: "Tab 2",
-  },
+  { id: 0, title: "Tab 1" },
+  { id: 1, title: "Tab 2" },
 ];
 ```

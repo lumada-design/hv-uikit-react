@@ -1,6 +1,6 @@
 import { Callout } from "nextra/components";
 import {
-  globalActionsClasses,
+  globalActionsClasses as classes,
   HvButton,
   HvDropDownMenu,
   HvGlobalActions,
@@ -8,26 +8,10 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Backwards } from "@hitachivantara/uikit-react-icons";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "GlobalActions",
-    "core",
-    globalActionsClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-`GlobalActions` uses the `global` variant by default, rendering an `h1` element and applying sticky positioning.
-Use the `section` variant to group related content blocks. Use it sparingly—it introduces strong visual separation, which may not always be necessary.
-
-<Playground
+<Header
+  params={{ name: "GlobalActions", classes }}
   Component={HvGlobalActions}
   componentName="HvGlobalActions"
   controls={{
@@ -54,7 +38,7 @@ Use the `section` variant to group related content blocks. Use it sparingly—it
       { label: "Action 3" },
     ]}
   />
-</Playground>
+</Header>
 
 ### Custom content
 

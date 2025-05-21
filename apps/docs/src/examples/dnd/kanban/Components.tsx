@@ -241,5 +241,3 @@ export const ColumnContainer = ({
     </div>
   );
 };
-
-export default ColumnContainer;

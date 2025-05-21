@@ -1,26 +1,13 @@
 import { Callout } from "nextra/components";
-import { HvInput, inputClasses } from "@hitachivantara/uikit-react-core";
+import {
+  inputClasses as classes,
+  HvInput,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Input", "core", inputClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Callout type="info">
-  If you need a search or number input consider using the
-  [`HvSearchInput`](/components/search-input) or
-  [`HvNumberInput`](/components/number-input) components.
-</Callout>
-<br />
-
-<Playground
+<Header
+  params={{ name: "Input", classes }}
   Component={HvInput}
   componentName="HvInput"
   controls={{

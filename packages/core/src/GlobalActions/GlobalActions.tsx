@@ -43,6 +43,10 @@ export interface HvGlobalActionsProps
 /**
  * Global Actions are actions that affect the entire page they live in.
  * They should persist while scrolling down the screen.
+ *
+ * It uses `variant="global"` by default, rendering an `h1` element and applying sticky positioning.
+ * Use `variant="section"` to group related content blocks.
+ * Use it sparingly, as it introduces strong visual separation, which may not always be necessary.
  */
 export const HvGlobalActions = forwardRef<
   React.ComponentRef<"div">,

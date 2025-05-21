@@ -1,22 +1,12 @@
 import {
-  HvActionsGeneric,
+  sectionClasses as classes,
   HvSection,
-  sectionClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Section", "core", sectionClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Section", classes }}
   Component={HvSection}
   componentName="HvSection"
   controls={{
@@ -33,7 +23,7 @@ export const getStaticProps = async ({ params }) => {
   }}
 >
   <div>My section example content</div>
-</Playground>
+</Header>
 
 ### Actions
 

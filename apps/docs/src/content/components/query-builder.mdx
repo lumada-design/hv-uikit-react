@@ -1,48 +1,12 @@
 import {
+  queryBuilderClasses as classes,
   HvQueryBuilder,
-  queryBuilderClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-import { getComponentData } from "../../utils/component";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "QueryBuilder",
-    "core",
-    queryBuilderClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-### How to use
-
-The query builder component enables you to create conditions and then group them using logical operators to create structured sets of rules. The output of this component can be easily parsed to create SQL, NoSQL, or any other type of query depending on your use case.
-
-#### Attributes
-
-To use this component, you'll need to define your attributes using the `attributes` property. This property receives an object with all the attributes you'll be able to choose from to create conditions in the query builder.
-
-An attribute has the following specification:
-
-```tsx
-interface HvQueryBuilderAttribute {
-  id?: string;
-  label: string;
-  type: "boolean" | "numeric" | "dateandtime" | "text" | "textarea" | string;
-}
-```
-
-The depth of the query, i.e. the number of nested query groups, can be controlled through the `maxDepth` where the default value is `1`.
-Furthermore, confirmation dialogs will always be shown by default when removing a condition or group.
-To change this behavior, the `disableConfirmation` property is available. If you need your QueryBuilder to be read-only, you can set the `readOnly` property to `true`.
-
-<br />
-
-<Playground
+<Header
+  params={{ name: "QueryBuilder", classes }}
   Component={HvQueryBuilder}
   componentName="HvQueryBuilder"
   controls={{
@@ -68,6 +32,28 @@ To change this behavior, the `disableConfirmation` property is available. If you
   }}
   decorator={(component) => <div className="w-full">{component}</div>}
 />
+
+### How to use
+
+The query builder component enables you to create conditions and then group them using logical operators to create structured sets of rules. The output of this component can be easily parsed to create SQL, NoSQL, or any other type of query depending on your use case.
+
+#### Attributes
+
+To use this component, you'll need to define your attributes using the `attributes` property. This property receives an object with all the attributes you'll be able to choose from to create conditions in the query builder.
+
+An attribute has the following specification:
+
+```tsx
+interface HvQueryBuilderAttribute {
+  id?: string;
+  label: string;
+  type: "boolean" | "numeric" | "dateandtime" | "text" | "textarea" | string;
+}
+```
+
+The depth of the query, i.e. the number of nested query groups, can be controlled through the `maxDepth` where the default value is `1`.
+Furthermore, confirmation dialogs will always be shown by default when removing a condition or group.
+To change this behavior, the `disableConfirmation` property is available. If you need your QueryBuilder to be read-only, you can set the `readOnly` property to `true`.
 
 The query builder already has 5 built-in attribute types, `boolean`, `numeric`, `text`, `textarea`, and `dateandtime`, but custom ones can be created if needed.
 

@@ -1,24 +1,12 @@
 import { Callout } from "nextra/components";
 import {
-  codeEditorClasses,
+  codeEditorClasses as classes,
   HvCodeEditor,
 } from "@hitachivantara/uikit-react-code-editor";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "CodeEditor",
-    "code-editor",
-    codeEditorClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "CodeEditor", packageName: "code-editor", classes }} />
 
 ### Usage
 

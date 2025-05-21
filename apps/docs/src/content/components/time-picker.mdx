@@ -1,21 +1,12 @@
 import {
+  timePickerClasses as classes,
   HvTimePicker,
-  timePickerClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("TimePicker", "core", timePickerClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "TimePicker", classes }}
   Component={HvTimePicker}
   componentName="HvTimePicker"
   controls={{

@@ -1,16 +1,11 @@
-import { HvWizard, wizardClasses } from "@hitachivantara/uikit-react-lab";
+import {
+  wizardClasses as classes,
+  HvWizard,
+} from "@hitachivantara/uikit-react-lab";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Wizard", "lab", wizardClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "Wizard", packageName: "lab", classes }} />
 
 ### Usage
 

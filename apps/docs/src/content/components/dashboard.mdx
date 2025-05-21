@@ -1,16 +1,11 @@
-import { dashboardClasses, HvDashboard } from "@hitachivantara/uikit-react-lab";
+import {
+  dashboardClasses as classes,
+  HvDashboard,
+} from "@hitachivantara/uikit-react-lab";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Dashboard", "lab", dashboardClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "Dashboard", packageName: "lab", classes }} />
 
 ### Usage
 

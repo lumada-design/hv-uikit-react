@@ -1,7 +1,7 @@
 import {
+  multiButtonClasses as classes,
   HvButton,
   HvMultiButton,
-  multiButtonClasses,
 } from "@hitachivantara/uikit-react-core";
 import {
   Abacus,
@@ -10,23 +10,10 @@ import {
   Map,
 } from "@hitachivantara/uikit-react-icons";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "MultiButton",
-    "core",
-    multiButtonClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "MultiButton", classes }}
   Component={HvMultiButton}
   componentName="HvMultiButton"
   controls={{
@@ -49,7 +36,7 @@ export const getStaticProps = async ({ params }) => {
   <HvButton startIcon={<Map />}>Map</HvButton>
   <HvButton startIcon={<LocationPin />}>Satellite</HvButton>
   <HvButton startIcon={<Abacus />}>Abacus</HvButton>
-</Playground>
+</Header>
 
 ### Content
 
