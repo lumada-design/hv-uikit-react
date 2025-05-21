@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import { ComponentDataParams, getComponentData } from "../utils/component";
 import { PlaygroundProps } from "./code/Playground";
 import { Description } from "./usage/Description";
@@ -17,7 +19,9 @@ export async function Header({ params, ...playgroundProps }: HeaderProps) {
   return (
     <div>
       <Description meta={meta} />
-      <Tabs meta={meta} playgroundProps={{ ...playgroundProps, meta }} />
+      <Suspense fallback={null}>
+        <Tabs meta={meta} playgroundProps={{ ...playgroundProps, meta }} />
+      </Suspense>
     </div>
   );
 }

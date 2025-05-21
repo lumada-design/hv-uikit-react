@@ -6,12 +6,6 @@ import {
 
 import { Header } from "../../components/Header";
 
-<Callout type="info">
-  The `HvSearchInput` component shares the same API as the `HvInput` component.
-  Please check the [HvInput component page](/components/input) for
-  documentation.
-</Callout>
-
 <Header
   params={{ name: "SearchInput", classes }}
   Component={HvSearchInput}
@@ -24,5 +18,11 @@ import { Header } from "../../components/Header";
     readOnly: { defaultValue: false },
     disabled: { defaultValue: false },
   }}
-  decorator={(c) => <div className="w-full">{c}</div>}
+  decoratorClassName="w-full"
 />
+
+<Callout type="info">
+  The `HvSearchInput` component shares the same API as the `HvInput` component.
+  Please check the [HvInput component page](/components/input) for
+  documentation.
+</Callout>

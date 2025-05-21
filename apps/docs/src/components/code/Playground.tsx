@@ -15,7 +15,7 @@ export interface PlaygroundProps {
   meta?: ComponentMeta;
   controls: Record<string, Control>;
   children?: React.ReactNode;
-  decorator?: (children: React.ReactNode) => React.ReactNode;
+  decoratorClassName?: string;
 }
 
 const parseChildren = (child: React.ReactNode) =>
@@ -66,7 +66,7 @@ export const Playground = ({
   componentProps,
   controls = {},
   children,
-  decorator,
+  decoratorClassName,
 }: PlaygroundProps) => {
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(
@@ -109,7 +109,11 @@ export const Playground = ({
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
         <DocsProvider className="grid place-items-center p-sm h-full">
-          {decorator ? decorator(componentElement) : componentElement}
+          {decoratorClassName ? (
+            <div className={decoratorClassName}>{componentElement}</div>
+          ) : (
+            componentElement
+          )}
         </DocsProvider>
 
         {/* Controls Area */}

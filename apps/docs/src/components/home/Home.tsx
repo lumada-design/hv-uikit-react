@@ -1,5 +1,3 @@
-"use client";
-
 import { CardsSection } from "./CardsSection";
 import { HeroSection } from "./HeroSection";
 

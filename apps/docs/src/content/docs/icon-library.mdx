@@ -1,7 +1,4 @@
-import { HvPanel } from "@hitachivantara/uikit-react-core";
-import { Alert, icons } from "@hitachivantara/uikit-react-icons";
-
-import { Playground } from "../../components/code/Playground";
+import { IconLibrary, IconPlayground } from "../../components/icons";
 
 # Icon Library
 
@@ -15,31 +12,10 @@ import { Alert } from "@hitachivantara/uikit-react-icons";
 
 <br />
 
-<Playground
-  Component={Alert}
-  componentName="Alert"
-  controls={{
-    color: { type: "color", defaultValue: "warning" },
-    size: {
-      type: "slider",
-      defaultValue: "md",
-      values: ["xs", "sm", "md", "lg", "xl"],
-    },
-  }}
-/>
+<IconPlayground />
 
 ## Library
 
 <br />
 
-<HvPanel className="flex flex-wrap gap-xs justify-around px-xs">
-  {Object.entries(icons).map(([name, Icon]) => (
-    <div
-      key={name}
-      className="flex flex-col items-center justify-center w-112px"
-    >
-      <Icon size="S" />
-      <code className="text-sm h-2em text-center break-all">{name}</code>
-    </div>
-  ))}
-</HvPanel>
+<IconLibrary />
