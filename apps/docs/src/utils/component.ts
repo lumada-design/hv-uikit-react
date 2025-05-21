@@ -73,7 +73,9 @@ export const getComponentData = async (
   includeInheritedProps = false,
   componentPath = "",
 ): Promise<Meta> => {
-  const componentLocation = `packages/${packageName}/src/${componentPath}/{componentName}/${componentName}.tsx`;
+  const path =
+    (componentPath !== "" ? componentPath + "/" : "") + componentName;
+  const componentLocation = `packages/${packageName}/src/${path}/${componentName}.tsx`;
   const source = `https://github.com/lumada-design/hv-uikit-react/blob/master/${componentLocation}`;
 
   const parsed = getParsedDocgen(componentLocation);
@@ -87,7 +89,7 @@ export const getComponentData = async (
 
   const parsedSubComponents: Record<string, Docgen> = {};
   for (const subComponent of subComponents) {
-    const subComponentLocation = `packages/${packageName}/src/${componentPath}/${componentName}/${subComponent}/${subComponent}.tsx`;
+    const subComponentLocation = `packages/${packageName}/src/${path}/${subComponent}/${subComponent}.tsx`;
 
     const parsedSubComponent = getParsedDocgen(subComponentLocation);
     const cleanedSubComponentDocgen = cleanUndefinedValues(

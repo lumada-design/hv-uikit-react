@@ -6,6 +6,7 @@ import * as DndKitCore from "@dnd-kit/core";
 import * as DndKitModifiers from "@dnd-kit/modifiers";
 import * as DndKitSortable from "@dnd-kit/sortable";
 import * as DndKitUtilities from "@dnd-kit/utilities";
+import * as emotionCss from "@emotion/css";
 import * as hookFormZod from "@hookform/resolvers/zod";
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
@@ -41,6 +42,7 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-viz": HvViz,
     "@hitachivantara/uikit-react-pentaho": HvPentaho,
     "@hitachivantara/uikit-styles": HvStyles,
+    "@emotion/css": emotionCss,
     "@mui/material": materialUi,
     "react-table": reactTable,
     "react-hook-form": reactHookForm,

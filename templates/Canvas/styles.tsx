@@ -10,21 +10,19 @@ export const classes = {
       borderWidth: "2px",
       borderColor: theme.colors.primary_80,
     },
+    " .react-flow": {
+      minHeight: 700,
+    },
   }),
   flowEmpty: css({ backgroundColor: "transparent" }),
   flowEmptyMessage: css({ color: theme.colors.secondary_80 }),
   tabLabel: css({ display: "flex", alignItems: "center" }),
   root: css({
+    minHeight: 700,
     height: "100%",
     display: "flex",
     width: "100%",
-  }),
-  toolbar: css({
-    top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight} + ${theme.space.md})`,
-  }),
-  panel: css({
-    top: `calc(${theme.header.height} + ${theme.header.secondLevelHeight})`,
-    height: `calc(100% - ${theme.header.height} - ${theme.header.secondLevelHeight})`,
+    position: "relative",
   }),
   titleRoot: css({
     display: "flex",

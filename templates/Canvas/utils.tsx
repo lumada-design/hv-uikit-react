@@ -1,4 +1,3 @@
-import { Modifier } from "@dnd-kit/core";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
   Battery,
@@ -68,28 +67,4 @@ export const flowStatusesSpecs = {
     color: theme.colors.positive,
     description: "Success",
   },
-};
-
-// --- ONLY FOR STORYBOOK, NOT REAL USE CASES ---
-
-// Fixes a problem we have while dragging node types from the sidebar to the flow in storybook docs mode
-type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
-  ? (rootId: string, ...args: A) => R
-  : unknown;
-
-// This is only needed for Storybook
-// Real use cases shouldn't use this modifier
-export const restrictToSample: RestrictToSampleModifier = (
-  rootId,
-  { transform },
-) => {
-  const rect = document.getElementById(rootId)?.getBoundingClientRect();
-
-  const docsMode = window.location.search.includes("?viewMode=docs");
-
-  return {
-    ...transform,
-    x: docsMode && rect?.x ? -rect.x + transform.x : transform.x,
-    y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
-  };
 };

@@ -19,8 +19,5 @@ export default {
   },
   canvas: {
     type: "page",
-    theme: {
-      layout: "full",
-    },
   },
 };
