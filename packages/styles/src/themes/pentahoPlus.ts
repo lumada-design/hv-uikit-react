@@ -304,6 +304,9 @@ const pentahoPlus = makeTheme((theme) => ({
           "&[data-color='bgPageSecondary']": {
             color: theme.colors.text,
           },
+          "&[data-color='primaryDimmed']": {
+            color: theme.colors.primary,
+          },
         },
       },
     },
