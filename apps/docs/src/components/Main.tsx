@@ -1,6 +1,6 @@
 import createCache from "@emotion/cache";
 import { useTheme } from "nextra-theme-docs";
-import { ds5, HvProvider, pentahoPlus } from "@hitachivantara/uikit-react-core";
+import { HvProvider, pentahoPlus } from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 const emotionCache = createCache({
@@ -14,7 +14,7 @@ export const Main = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <HvProvider
-      themes={[pentahoPlus, ds5]}
+      themes={[pentahoPlus]}
       theme="pentahoPlus"
       colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
       emotionCache={emotionCache}

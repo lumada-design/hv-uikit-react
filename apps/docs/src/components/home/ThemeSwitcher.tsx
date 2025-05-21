@@ -1,5 +1,4 @@
-import { useCallback } from "react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { HvSelect } from "@hitachivantara/uikit-react-core";
 
 import { useDocsTheme } from "../../hooks/useDocsTheme";
@@ -18,23 +17,16 @@ const allowedPaths = [
 ];
 
 export const ThemeSwitcher = () => {
-  const router = useRouter();
-  const { docsTheme, setDocsTheme } = useDocsTheme();
+  const pathname = usePathname();
+  const [docsTheme, setDocsTheme] = useDocsTheme();
 
-  const handleThemeChange = useCallback(
-    (value: any) => {
-      setDocsTheme(value);
-    },
-    [setDocsTheme],
-  );
-
-  if (!allowedPaths.some((path) => router.pathname.startsWith(path))) {
+  if (!allowedPaths.some((path) => pathname.startsWith(path))) {
     return null;
   }
 
   return (
     <HvSelect
-      onChange={(e, value) => handleThemeChange(value)}
+      onChange={(e, value) => setDocsTheme(value!)}
       value={themes.find((t) => t.value === docsTheme)?.value}
       className="w-120px"
       title="Change the theme on the samples"

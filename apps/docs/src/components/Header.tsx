@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { HvContainer, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 
@@ -16,13 +15,6 @@ export const Header = () => {
   const { query, push } = useRouter();
 
   const tab = (query.tab as TabId) || "usage";
-
-  useEffect(() => {
-    const tocElement = document.querySelector<HTMLElement>("nav.nextra-toc");
-    if (tocElement) {
-      tocElement.style.display = tab === "usage" ? "block" : "none";
-    }
-  }, [tab]);
 
   return (
     <div

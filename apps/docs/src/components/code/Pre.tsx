@@ -3,9 +3,8 @@ import { Pre as NextraPre } from "nextra/components";
 
 import { CodeBlock } from "./CodeBlock";
 
-interface PreProps extends React.HTMLAttributes<HTMLElement> {
+interface PreProps extends React.ComponentProps<"pre"> {
   live?: boolean;
-  children?: React.ReactNode;
 }
 
 export const Pre = ({ live, children, ...props }: PreProps) => {

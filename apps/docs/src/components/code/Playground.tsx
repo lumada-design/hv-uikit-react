@@ -2,7 +2,6 @@ import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
 
-import useEditorTheme from "../../hooks/useEditorTheme";
 import { Controls, type Control } from "./Controls";
 import { DocsProvider } from "./DocsProvider";
 
@@ -64,8 +63,6 @@ export const Playground = ({
   children,
   decorator,
 }: PlaygroundProps) => {
-  const editorTheme = useEditorTheme();
-
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(
     () =>
@@ -130,12 +127,7 @@ export const Playground = ({
 
       {/* Code editor */}
       <div className="max-h-100 overflow-auto rounded-b-round border border-t-0 max-h-250px">
-        <CodeEditor
-          readOnly
-          className="font-mono text-[.85em]"
-          value={code}
-          theme={editorTheme}
-        />
+        <CodeEditor readOnly className="font-mono text-[.85em]" value={code} />
       </div>
     </section>
   );

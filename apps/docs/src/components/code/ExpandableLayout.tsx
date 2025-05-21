@@ -2,7 +2,6 @@ import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
 import { clsx } from "clsx";
 
-import useEditorTheme from "../../hooks/useEditorTheme";
 import { DocsContainer } from "./DocsProvider";
 import { ExpandableControls } from "./ExpandableControls";
 
@@ -16,7 +15,6 @@ type ExpandableLayoutProps = {
  * with interactive controls for toggling and resetting the code.
  */
 export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
-  const editorTheme = useEditorTheme();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const initialCode = Object.values(code)[0];
@@ -61,7 +59,6 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
         <CodeEditor
           value={editorCode}
           onChange={onChange}
-          theme={editorTheme}
           className="font-mono text-[.85em] rounded-b-inherit border border-color-inherit"
         />
       </div>
