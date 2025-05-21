@@ -18,7 +18,7 @@ import { Header } from "../../components/Header";
     showFullscreen: { defaultValue: true },
     controlsPosition: { defaultValue: "top" },
   }}
-  decorator={(children) => <div className="overflow">{children}</div>}
+  decoratorClassName="overflow"
 >
   {[...Array(7).keys()].map((i) => (
     <HvCarouselSlide

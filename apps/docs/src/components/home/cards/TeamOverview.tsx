@@ -3,7 +3,6 @@ import {
   HvButton,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Open } from "@hitachivantara/uikit-react-icons";
 
 import { Card } from "./Card";
 
@@ -50,7 +49,7 @@ export const TeamOverview = () => (
             variant="primaryGhost"
             aria-label={`View profile of ${name}`}
           >
-            <Open />
+            <div className="i-ph-arrow-square-out" />
           </HvButton>
         </div>
       ))}

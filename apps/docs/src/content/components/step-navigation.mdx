@@ -16,27 +16,9 @@ import { Header } from "../../components/Header";
   }}
   componentProps={{
     steps: [
-      {
-        title: "Completed",
-        state: "Completed",
-        onClick: () => {
-          alert("You clicked on 'Completed' step");
-        },
-      },
-      {
-        title: "Failed",
-        state: "Failed",
-        onClick: () => {
-          alert("You clicked on 'Failed' step");
-        },
-      },
-      {
-        title: "Pending",
-        state: "Pending",
-        onClick: () => {
-          alert("You clicked on 'Pending' step");
-        },
-      },
+      { title: "Completed", state: "Completed" },
+      { title: "Failed", state: "Failed" },
+      { title: "Pending", state: "Pending" },
     ],
   }}
 />
@@ -51,53 +33,29 @@ You can use the `width` prop to pass an array of custom breakpoints for the step
     {
       title: "Completed",
       state: "Completed",
-      onClick: () => {
-        alert("You clicked on 'Completed' step");
-      },
     },
     {
       title: "Failed",
       state: "Failed",
-      onClick: () => {
-        alert("You clicked on 'Failed' step");
-      },
     },
     {
       title: "Pending",
       state: "Pending",
-      onClick: () => {
-        alert("You clicked on 'Pending' step");
-      },
     },
     {
       title: "Current",
       state: "Current",
-      onClick: () => {
-        alert("You clicked on 'Current' step");
-      },
     },
     {
       title: "Enabled",
       state: "Enabled",
-      onClick: () => {
-        alert("You clicked on 'Enabled' step");
-      },
     },
     {
       title: "Disabled",
       state: "Disabled",
-      onClick: () => {
-        alert("You clicked on 'Disabled' step");
-      },
     },
   ]}
-  width={{
-    xs: 200,
-    sm: 400,
-    md: 600,
-    lg: 800,
-    xl: 1000,
-  }}
+  width={{ xs: 200, sm: 400, md: 600, lg: 800, xl: 1000 }}
 />
 ```
 

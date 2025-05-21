@@ -1,3 +1,5 @@
+"use client";
+
 import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 
 import { Card } from "./Card";

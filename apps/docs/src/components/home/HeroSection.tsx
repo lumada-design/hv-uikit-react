@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { ArrowRight } from "@phosphor-icons/react/ArrowRight";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { HvButton } from "@hitachivantara/uikit-react-core";
@@ -81,7 +80,7 @@ export const HeroSection = () => (
       variant="subtle"
       size="lg"
       className="mt-md max-sm:w-full hidden sm:inline-flex"
-      endIcon={<ArrowRight />}
+      endIcon={<div className="i-ph-arrow-right" />}
     >
       Explore components
     </HvButton>

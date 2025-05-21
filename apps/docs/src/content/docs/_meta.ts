@@ -1,3 +1,5 @@
+import type { MetaRecord } from "nextra";
+
 export default {
   "-- Overview": {
     type: "separator",
@@ -20,20 +22,19 @@ export default {
   theming: "Theming",
   "color-tokens": {
     title: "Color Tokens",
-    theme: {
-      toc: false,
-    },
+    theme: { layout: "full", toc: false },
   },
   "color-palette": {
     title: "Color Palette",
-    theme: {
-      toc: false,
-    },
+    theme: { layout: "full", toc: false },
   },
-  icons: "Icons",
+  icons: {
+    title: "Icons",
+    theme: { toc: false },
+  },
   "icon-library": {
     title: "Icon Library",
-    theme: { toc: false },
+    theme: { layout: "full", toc: false },
   },
   "-- Guides": {
     type: "separator",
@@ -43,4 +44,4 @@ export default {
   layout: "Layout",
   forms: "Forms",
   accessibility: "Accessibility",
-};
+} satisfies MetaRecord;

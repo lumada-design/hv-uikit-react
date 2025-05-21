@@ -8,7 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvBadge", {
     ":has($badgeIcon)": {
       width: "fit-content",
       height: "fit-content",
-      "&>div:first-child": {
+      "&>div:first-of-type": {
         minWidth: 32,
         minHeight: 32,
         "--icsize": "100%",
