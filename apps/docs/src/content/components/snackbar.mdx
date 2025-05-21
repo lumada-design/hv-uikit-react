@@ -1,20 +1,12 @@
-import { HvSnackbar, snackbarClasses } from "@hitachivantara/uikit-react-core";
+import {
+  snackbarClasses as classes,
+  HvSnackbar,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Snackbar", "core", snackbarClasses, [
-    "SnackbarContent",
-  ]);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Snackbar", classes, subComponents: ["SnackbarContent"] }}
   Component={HvSnackbar}
   componentName="HvSnackbar"
   controls={{

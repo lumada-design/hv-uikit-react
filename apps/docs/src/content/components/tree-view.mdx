@@ -1,26 +1,15 @@
 import { Callout } from "nextra/components";
 import {
+  treeView2Classes as classes,
   HvPanel,
   HvTreeItem,
   HvTreeView,
-  treeView2Classes,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("TreeView", "core", treeView2Classes, [
-    "TreeItem",
-  ]);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "TreeView", classes, subComponents: ["TreeItem"] }}
   Component={HvTreeView}
   componentName="HvTreeView"
   controls={{
@@ -40,7 +29,7 @@ export const getStaticProps = async ({ params }) => {
     </HvTreeItem>
     <HvTreeItem nodeId="21" label="index.js" />
   </HvTreeItem>
-</Playground>
+</Header>
 
 ### Data object
 

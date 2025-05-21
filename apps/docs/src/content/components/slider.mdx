@@ -1,18 +1,12 @@
-import { HvSlider, sliderClasses } from "@hitachivantara/uikit-react-core";
+import {
+  sliderClasses as classes,
+  HvSlider,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Slider", "core", sliderClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Slider", classes }}
   Component={HvSlider}
   componentName="HvSlider"
   controls={{

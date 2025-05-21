@@ -1,22 +1,13 @@
 import {
-  bladesClasses,
+  bladesClasses as classes,
   HvBlade,
   HvBlades,
 } from "@hitachivantara/uikit-react-lab";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Blades", "lab", bladesClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Blades", packageName: "lab", classes }}
   Component={HvBlades}
   componentName="HvBlades"
   controls={{
@@ -38,7 +29,7 @@ export const getStaticProps = async ({ params }) => {
   <HvBlade label="4">
     <div className="flex items-center p-xs">Content 4</div>
   </HvBlade>
-</Playground>
+</Header>
 
 ### Controlled
 

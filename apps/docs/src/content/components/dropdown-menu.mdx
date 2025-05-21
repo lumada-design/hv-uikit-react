@@ -1,26 +1,13 @@
 import {
-  dropDownMenuClasses,
+  dropDownMenuClasses as classes,
   HvDropDownMenu,
 } from "@hitachivantara/uikit-react-core";
 import { Open, Preview, Save } from "@hitachivantara/uikit-react-icons";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "DropDownMenu",
-    "core",
-    dropDownMenuClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "DropDownMenu", classes }}
   Component={HvDropDownMenu}
   componentName="HvDropDownMenu"
   controls={{

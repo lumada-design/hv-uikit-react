@@ -1,26 +1,12 @@
 import {
-  bulkActionsClasses,
+  bulkActionsClasses as classes,
   HvBulkActions,
-  HvCheckBox,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "BulkActions",
-    "core",
-    bulkActionsClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "BulkActions", classes }}
   Component={HvBulkActions}
   componentName="HvBulkActions"
   controls={{

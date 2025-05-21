@@ -3,17 +3,15 @@ import { PlaygroundProps } from "./code/Playground";
 import { Description } from "./usage/Description";
 import { Tabs } from "./usage/Tabs";
 
+interface HeaderProps extends PlaygroundProps {
+  params: ComponentDataParams;
+}
+
 /**
  * The `Header` component manages a tab-based layout
  * and dynamically displays specific sections based on the selected tab.
  */
-export async function Header({
-  params,
-  playgroundProps,
-}: {
-  params: ComponentDataParams;
-  playgroundProps: PlaygroundProps;
-}) {
+export async function Header({ params, ...playgroundProps }: HeaderProps) {
   const meta = await getComponentData(params);
 
   return (

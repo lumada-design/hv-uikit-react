@@ -1,25 +1,13 @@
 import { User } from "@phosphor-icons/react/User";
 import {
+  iconContainerClasses as classes,
   HvIconContainer,
-  iconContainerClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-import { getComponentData } from "../../utils/component";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "IconContainer",
-    "core",
-    iconContainerClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "IconContainer", classes }}
   Component={HvIconContainer}
   componentName="HvIconContainer"
   controls={{
@@ -33,4 +21,4 @@ export const getStaticProps = async ({ params }) => {
   }}
 >
   <User />
-</Playground>
+</Header>

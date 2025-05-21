@@ -1,6 +1,6 @@
 import { Callout } from "nextra/components";
 import {
-  formElementClasses,
+  formElementClasses as classes,
   HvAdornment,
   HvBaseInput,
   HvFormElement,
@@ -10,17 +10,13 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Fail, Success } from "@hitachivantara/uikit-react-icons";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "FormElement",
-    "core",
-    formElementClasses,
-    [
+<Header
+  params={{
+    name: "FormElement",
+    classes,
+    subComponents: [
       "Adornment",
       "CharCounter",
       "InfoMessage",
@@ -28,32 +24,7 @@ export const getStaticProps = async ({ params }) => {
       "WarningText",
       "Suggestions",
     ],
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Callout type="warning">
-  You probably don't need to use this component directly. Instead, please check
-  out [Related components](#related-components) for a list of *ready-to-use* UI
-  Kit form components.
-</Callout>
-
-`HvFormElement` exposes the common properties to be shared between all form components:
-
-- `required` - Indicates that the form component must be filled out before form submission.
-- `disabled` - Indicates that the form component cannot be interacted with.
-- `readOnly` - Indicates that the form component cannot be modified.
-- `status` - Indicates the validation status of the form component.
-
-Along with the properties above, form components also share the `value`/`defaultValue` + `onChange` props,
-used to control the value of the form component, analogous to the native `input` component.
-The playground below allows for customization of these properties.
-
-<br />
-
-<Playground
+  }}
   Component={HvFormElement}
   componentName="HvFormElement"
   controls={{
@@ -76,7 +47,13 @@ The playground below allows for customization of these properties.
     />
   </HvLabel>
   <HvWarningText disableBorder>This is the error message.</HvWarningText>
-</Playground>
+</Header>
+
+<Callout type="warning">
+  You probably don't need to use this component directly. Instead, please check
+  out [Related components](#related-components) for a list of *ready-to-use* UI
+  Kit form components.
+</Callout>
 
 ### Building blocks
 

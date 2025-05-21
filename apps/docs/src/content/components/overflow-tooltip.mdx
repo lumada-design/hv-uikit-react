@@ -1,33 +1,18 @@
 import { Callout } from "nextra/components";
 import {
+  overflowTooltipClasses as classes,
   HvOverflowTooltip,
-  overflowTooltipClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
-
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "OverflowTooltip",
-    "core",
-    overflowTooltipClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
 
 <Callout type="info">
   Check out the [`HvTooltip`](/components/tooltip) component for our regular
   tooltip component.
 </Callout>
 
-<br />
-
-<Playground
+<Header
+  params={{ name: "OverflowTooltip", classes }}
   Component={HvOverflowTooltip}
   componentName="HvOverflowTooltip"
   controls={{

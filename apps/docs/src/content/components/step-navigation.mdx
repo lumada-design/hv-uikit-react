@@ -1,25 +1,12 @@
 import {
+  stepNavigationClasses as classes,
   HvStepNavigation,
-  stepNavigationClasses,
 } from "@hitachivantara/uikit-react-lab";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "StepNavigation",
-    "lab",
-    stepNavigationClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "StepNavigation", packageName: "lab", classes }}
   Component={HvStepNavigation}
   componentName="HvStepNavigation"
   controls={{

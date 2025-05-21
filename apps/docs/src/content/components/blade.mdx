@@ -1,18 +1,12 @@
-import { bladeClasses, HvBlade } from "@hitachivantara/uikit-react-lab";
+import {
+  bladeClasses as classes,
+  HvBlade,
+} from "@hitachivantara/uikit-react-lab";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Blade", "lab", bladeClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Blade", packageName: "lab", classes }}
   Component={HvBlade}
   componentName="HvBlade"
   controls={{
@@ -36,7 +30,7 @@ export const getStaticProps = async ({ params }) => {
   decorator={(component) => <div className="flex w-full">{component}</div>}
 >
   <div className="p-xs">The answer to all things is 42.</div>
-</Playground>
+</Header>
 
 ### Content
 

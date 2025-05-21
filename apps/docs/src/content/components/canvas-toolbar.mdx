@@ -1,26 +1,18 @@
 import {
-  canvasToolbarClasses,
+  canvasToolbarClasses as classes,
   HvCanvasToolbar,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "Toolbar",
-    "pentaho",
-    canvasToolbarClasses,
-    [],
-    false,
-    "Canvas",
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "Toolbar",
+    packageName: "pentaho",
+    classes,
+    componentPath: "Canvas/Toolbar",
+  }}
+/>
 
 ## Usage
 

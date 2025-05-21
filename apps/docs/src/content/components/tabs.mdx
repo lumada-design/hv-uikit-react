@@ -1,17 +1,13 @@
 import { Callout } from "nextra/components";
-import { HvTab, HvTabs, tabsClasses } from "@hitachivantara/uikit-react-core";
+import {
+  tabsClasses as classes,
+  HvTab,
+  HvTabs,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Tabs", "core", tabsClasses, ["Tab"]);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "Tabs", classes, subComponents: ["Tab"] }} />
 
 ### Usage
 

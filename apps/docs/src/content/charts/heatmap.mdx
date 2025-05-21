@@ -1,15 +1,6 @@
-import { CodeBlock } from "../../components/code/CodeBlock";
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Heatmap", "viz", {}, [], true);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "Heatmap", packageName: "viz", showAllProps: true }} />
 
 ### Usage
 

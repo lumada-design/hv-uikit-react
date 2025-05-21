@@ -1,22 +1,12 @@
 import {
-  buttonClasses,
-  buttonVariant,
+  buttonClasses as classes,
   HvButton,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Button", "core", buttonClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Button", classes }}
   Component={HvButton}
   componentName="HvButton"
   controls={{
@@ -37,7 +27,7 @@ export const getStaticProps = async ({ params }) => {
   }}
 >
   Button
-</Playground>
+</Header>
 
 ### Sizes
 

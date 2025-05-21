@@ -1,42 +1,24 @@
 import { Callout } from "nextra/components";
 import {
-  accordionClasses,
+  accordionClasses as classes,
   HvAccordion,
-  HvPanel,
-  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Accordion", "core", accordionClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Accordion", classes }}
   Component={HvAccordion}
-  componentName="HvAccordion"
+  componentName={"HvAccordion"}
   controls={{
-    label: {
-      type: "text",
-      defaultValue: "Accordion label",
-    },
-    labelVariant: {
-      defaultValue: "label",
-    },
-    disabled: {
-      defaultValue: false,
-    },
+    label: { type: "text", defaultValue: "Accordion label" },
+    labelVariant: { defaultValue: "label" },
+    disabled: { defaultValue: false },
   }}
   componentProps={{ style: { width: "100%" } }}
 >
   <div>My accordion example content</div>
-</Playground>
+</Header>
 
 <Callout type="info">
   You can use the `HvSection` component to create an accordion group that better

@@ -1,25 +1,16 @@
 import { Callout } from "nextra/components";
 
 import {
+  selectClasses as classes,
   HvOption,
   HvOptionGroup,
   HvSelect,
-  selectClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Select", "core", selectClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "Select", classes }}
   Component={HvSelect}
   componentName="HvSelect"
   controls={{
@@ -44,7 +35,7 @@ export const getStaticProps = async ({ params }) => {
     <HvOption value="pl">Poland</HvOption>
     <HvOption value="sp">Spain</HvOption>
   </HvOptionGroup>
-</Playground>
+</Header>
 
 <Callout type="info">
   If you need a search filter or multi-select checkboxes, consider using

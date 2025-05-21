@@ -1,21 +1,10 @@
 import { Callout } from "nextra/components";
-import {
-  HvLineChart,
-  HvPanel,
-  HvVizProvider,
-} from "@hitachivantara/uikit-react-viz";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("LineChart", "viz", {}, [], true);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{ name: "LineChart", packageName: "viz", showAllProps: true }}
+/>
 
 ### Usage
 

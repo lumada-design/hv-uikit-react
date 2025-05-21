@@ -1,26 +1,18 @@
 import {
-  canvasSidePanelClasses,
+  canvasSidePanelClasses as classes,
   HvCanvasSidePanel,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "SidePanel",
-    "pentaho",
-    canvasSidePanelClasses,
-    [],
-    false,
-    "Canvas",
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "SidePanel",
+    packageName: "pentaho",
+    classes,
+    componentPath: "Canvas/SidePanel",
+  }}
+/>
 
 ## Usage
 

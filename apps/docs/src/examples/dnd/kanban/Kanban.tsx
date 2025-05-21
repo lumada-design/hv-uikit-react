@@ -11,7 +11,7 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 
-import ColumnContainer, { TaskCard } from "./Components";
+import { ColumnContainer, TaskCard } from "./Components";
 import { defaultColumns, defaultTasks } from "./data";
 import { Column, Task } from "./types";
 

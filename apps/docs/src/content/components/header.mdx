@@ -1,21 +1,18 @@
 import { Callout } from "nextra/components";
-import { headerClasses, HvHeader } from "@hitachivantara/uikit-react-core";
+import {
+  headerClasses as classes,
+  HvHeader,
+} from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Header", "core", headerClasses, [
-    "Actions",
-    "Brand",
-    "Navigation",
-  ]);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header
+  params={{
+    name: "Header",
+    classes,
+    subComponents: ["Actions", "Brand", "Navigation"],
+  }}
+/>
 
 ### Usage
 

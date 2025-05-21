@@ -1,21 +1,9 @@
 import { Callout } from "nextra/components";
-import { snackbarProviderClasses } from "@hitachivantara/uikit-react-core";
+import { snackbarProviderClasses as classes } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "SnackbarProvider",
-    "core",
-    snackbarProviderClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "SnackbarProvider", classes }} />
 
 <Callout type="info">
   The provider is not meant to be 100% feature complete, but instead, ease the

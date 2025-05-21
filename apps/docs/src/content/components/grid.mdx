@@ -1,16 +1,12 @@
 import { Callout } from "nextra/components";
-import { gridClasses, HvGrid } from "@hitachivantara/uikit-react-core";
-
-import { getComponentData } from "../../utils/component";
+import {
+  gridClasses as classes,
+  HvGrid,
+} from "@hitachivantara/uikit-react-core";
 
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData("Grid", "core", gridClasses);
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
+<Header params={{ name: "Grid", classes }} />
 
 <Callout type="info">
   Please refer to the [Layout documentation](/docs/layout) for more information

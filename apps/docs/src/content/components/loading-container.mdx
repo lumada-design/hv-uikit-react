@@ -1,26 +1,13 @@
 import {
+  loadingContainerClasses as classes,
   HvLoadingContainer,
   HvPanel,
-  loadingContainerClasses,
 } from "@hitachivantara/uikit-react-core";
 
-import { getComponentData } from "../../utils/component";
-
-import { Playground } from "../../components/code/Playground";
 import { Header } from "../../components/Header";
 
-export const getStaticProps = async ({ params }) => {
-  const meta = await getComponentData(
-    "LoadingContainer",
-    "core",
-    loadingContainerClasses,
-  );
-  return { props: { ssg: { meta } } };
-};
-
-<Header />
-
-<Playground
+<Header
+  params={{ name: "LoadingContainer", classes }}
   Component={HvLoadingContainer}
   componentName="HvLoadingContainer"
   controls={{
@@ -37,4 +24,4 @@ export const getStaticProps = async ({ params }) => {
   }}
 >
   <HvPanel className="grid place-items-center h-200px">My content</HvPanel>
-</Playground>
+</Header>
