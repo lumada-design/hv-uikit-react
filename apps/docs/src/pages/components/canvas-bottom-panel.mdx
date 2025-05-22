@@ -1,0 +1,46 @@
+import {
+  canvasBottomPanelClasses,
+  HvCanvasBottomPanel,
+} from "@hitachivantara/uikit-react-pentaho";
+
+import { getComponentData } from "../../utils/component";
+
+import { Playground } from "../../components/code/Playground";
+import { Header } from "../../components/Header";
+
+export const getStaticProps = async ({ params }) => {
+  const meta = await getComponentData(
+    "BottomPanel",
+    "pentaho",
+    canvasBottomPanelClasses,
+    [],
+    false,
+    "Canvas",
+  );
+  return { props: { ssg: { meta } } };
+};
+
+<Header />
+
+## Usage
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvCanvasBottomPanel className="relative" open tabs={tabs}>
+      Content
+    </HvCanvasBottomPanel>
+  );
+}
+
+const tabs = [
+  {
+    id: 0,
+    title: "Tab 1",
+  },
+  {
+    id: 1,
+    title: "Tab 2",
+  },
+];
+```

@@ -5,19 +5,13 @@ import {
   useDndMonitor,
   useDroppable,
 } from "@dnd-kit/core";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-import { useTheme, useUniqueId } from "@hitachivantara/uikit-react-core";
+import { useUniqueId } from "@hitachivantara/uikit-react-core";
 import {
   HvCanvasSidePanel,
   HvCanvasSidePanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { classes } from "./styles";
-import { restrictToSample } from "./utils";
-
 export const CanvasSidebar = (props: HvCanvasSidePanelProps) => {
-  const { rootId } = useTheme();
-
   const [overlay, setOverlay] = useState<React.ReactNode>();
 
   const elementId = useUniqueId("canvas-panel");
@@ -46,21 +40,13 @@ export const CanvasSidebar = (props: HvCanvasSidePanelProps) => {
       <HvCanvasSidePanel
         id={elementId}
         ref={setNodeRef}
-        className={classes.panel}
         labels={{
           open: "Click to Add Nodes & View Files",
         }}
         {...props}
       />
       {/** Shown when the dragged item leaves the sidebar to drop it in the canvas */}
-      <DragOverlay
-        modifiers={[
-          restrictToWindowEdges,
-          (args) => restrictToSample(rootId || "", args), // This modifier shouldn't be used in a real use case. It's only needed for Storybook samples.
-        ]}
-      >
-        {overlay ?? null}
-      </DragOverlay>
+      <DragOverlay>{overlay ?? null}</DragOverlay>
     </>
   );
 };

@@ -242,7 +242,6 @@ const Page = () => {
           <HvFlowControls />
         </HvFlow>
         <HvCanvasToolbar
-          className={classes.toolbar}
           title={<HvInlineEditor defaultValue="My Canvas" variant="title4" />}
         >
           <HvButton variant="primary" onClick={handleExecute}>

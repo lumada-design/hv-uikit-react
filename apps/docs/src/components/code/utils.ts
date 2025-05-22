@@ -6,17 +6,20 @@ import * as DndKitCore from "@dnd-kit/core";
 import * as DndKitModifiers from "@dnd-kit/modifiers";
 import * as DndKitSortable from "@dnd-kit/sortable";
 import * as DndKitUtilities from "@dnd-kit/utilities";
+import * as emotionCss from "@emotion/css";
 import * as hookFormZod from "@hookform/resolvers/zod";
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
 import * as echartsCore from "echarts/core";
+import * as reactflow from "reactflow";
 import useSWR from "swr";
 import * as zod from "zod";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
 import * as HvCore from "@hitachivantara/uikit-react-core";
 import * as HvIcons from "@hitachivantara/uikit-react-icons";
 import * as HvLab from "@hitachivantara/uikit-react-lab";
+import * as HvPentaho from "@hitachivantara/uikit-react-pentaho";
 import * as HvViz from "@hitachivantara/uikit-react-viz";
 import * as HvStyles from "@hitachivantara/uikit-styles";
 
@@ -37,13 +40,16 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
     "@hitachivantara/uikit-react-lab": HvLab,
     "@hitachivantara/uikit-react-viz": HvViz,
+    "@hitachivantara/uikit-react-pentaho": HvPentaho,
     "@hitachivantara/uikit-styles": HvStyles,
+    "@emotion/css": emotionCss,
     "@mui/material": materialUi,
     "react-table": reactTable,
     "react-hook-form": reactHookForm,
     "@hookform/resolvers/zod": hookFormZod,
     zod,
     clsx,
+    reactflow,
     swr: useSWR,
     "echarts/core": echartsCore,
     "echarts/charts": echartsCharts,
@@ -81,7 +87,8 @@ export const resolveComponents = (
     HvIcons[identifier as keyof typeof HvIcons] ||
     HvCodeEditor[identifier as keyof typeof HvCodeEditor] ||
     HvLab[identifier as keyof typeof HvLab] ||
-    HvViz[identifier as keyof typeof HvViz];
+    HvViz[identifier as keyof typeof HvViz] ||
+    HvPentaho[identifier as keyof typeof HvPentaho];
 
   // Normalize input to an array of code strings
   const contents = typeof code === "string" ? [code] : Object.values(code);

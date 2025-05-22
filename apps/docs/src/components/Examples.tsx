@@ -5,6 +5,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
+import canvas from "../pages/examples/canvas.mdx?raw";
 import charts from "../pages/examples/charts.mdx?raw";
 import dnd from "../pages/examples/dnd.mdx?raw";
 import inputs from "../pages/examples/inputs.mdx?raw";
@@ -26,6 +27,7 @@ const sections = [
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
   { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
+  { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
 ] as const;
 
 type Slug = (typeof sections)[number]["slug"];
@@ -42,6 +44,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-speedometer" />;
     case "dnd":
       return <div className="i-ph-hand-swipe-right" />;
+    case "canvas":
+      return <div className="i-ph-flow-arrow" />;
     default:
       return null;
   }
