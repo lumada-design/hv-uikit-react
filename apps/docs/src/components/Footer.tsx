@@ -60,7 +60,7 @@ export const Footer = () => {
             >
               <UIKitLogo />
             </Link>
-            <p className="text-sm mt-sm">by Hitachi Vantara © {year}</p>
+            <p className="text-sm mt-sm">by Pentaho © {year}</p>
           </div>
 
           {/* Link Groups Right-Aligned */}
