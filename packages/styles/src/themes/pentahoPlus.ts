@@ -301,11 +301,13 @@ const pentahoPlus = makeTheme((theme) => ({
       classes: {
         badgePosition: {
           color: ld(theme.colors.textLight, theme.colors.textDark),
-          "&[data-color='bgPageSecondary']": {
-            color: theme.colors.text,
+          "&[data-color='textSubtle']:not(.HvBadge-badgePosition:empty)": {
+            color: theme.colors.textSubtle,
+            backgroundColor: theme.colors.bgPageSecondary,
           },
-          "&[data-color='primaryDimmed']": {
+          "&[data-color='primary']:not(.HvBadge-badgePosition:empty)": {
             color: theme.colors.primary,
+            backgroundColor: theme.colors.primaryDimmed,
           },
         },
       },
