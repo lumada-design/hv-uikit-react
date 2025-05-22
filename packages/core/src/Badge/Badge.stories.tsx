@@ -108,7 +108,10 @@ export const Test: StoryObj = {
       <HvBadge showCount label={8}>
         <HvTypography variant="title4">Events</HvTypography>
       </HvBadge>
-      <HvBadge color="bgPageSecondary" showCount label={88} icon={<Alert />} />
+      <HvBadge color="primary" showCount label={8} icon={<Alert />} />
+      <HvBadge color="primary" label={8} icon={<Alert />} />
+      <HvBadge color="textSubtle" showCount label={8} icon={<Alert />} />
+      <HvBadge color="textSubtle" label={8} icon={<Alert />} />
     </div>
   ),
 };
