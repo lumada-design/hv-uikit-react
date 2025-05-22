@@ -19,7 +19,7 @@ export const DocsProvider = ({
 
   return (
     // ensures docs container styles change according to theme
-    <div id={id} className={className}>
+    <div id={id} className={className} data-pagefind-ignore>
       <HvProvider
         themes={[pentahoPlus, ds5, ds3]}
         theme={docsTheme}
