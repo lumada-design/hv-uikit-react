@@ -104,7 +104,11 @@ export const Playground = ({
   );
 
   return (
-    <section className="[&>*]:border-border" aria-label="Playground">
+    <section
+      data-pagefind-ignore
+      className="[&>*]:border-border"
+      aria-label="Playground"
+    >
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
