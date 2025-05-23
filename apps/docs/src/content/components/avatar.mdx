@@ -1,0 +1,225 @@
+import {
+  avatarClasses as classes,
+  HvAvatar,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Avatar", classes }}
+  Component={HvAvatar}
+  componentName="HvAvatar"
+  controls={{
+    size: {
+      type: "slider",
+      defaultValue: "md",
+    },
+    variant: {
+      type: "radio",
+      defaultValue: "circular",
+    },
+    color: {
+      type: "color",
+      defaultValue: "atmo1",
+    },
+    backgroundColor: {
+      type: "color",
+      defaultValue: "secondary",
+    },
+    status: {
+      type: "color",
+    },
+    badge: {
+      type: "color",
+    },
+  }}
+/>
+
+### Image Avatars
+
+Image avatars can be created by passing the src or srcSet props to the component.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar alt="Ben" src="https://i.imgur.com/56Eeg1g.png" />
+  <HvAvatar alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
+  <HvAvatar alt="Wayne" src="https://i.imgur.com/ea22egF.png" />
+  <HvAvatar alt="Clara Soul" src="https://i.imgur.com/6sYhSb6.png" />
+</div>
+```
+
+### Letter Avatars
+
+Avatars containing simple characters can be created by passing a string as children.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar>BM</HvAvatar>
+  <HvAvatar backgroundColor="sema19">W</HvAvatar>
+  <HvAvatar backgroundColor="sema6">CS</HvAvatar>
+</div>
+```
+
+### Icon Avatars
+
+Icon avatars are created by passing an icon as children. Its size and color aren't Avatar's responsibility.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar>
+    <LogIn color="atmo1" size="XS" />
+  </HvAvatar>
+  <HvAvatar backgroundColor="positive">
+    <Archives color="atmo1" size="XS" />
+  </HvAvatar>
+  <HvAvatar backgroundColor="neutral">
+    <Search color="atmo1" size="XS" />
+  </HvAvatar>
+  <HvAvatar backgroundColor="warning">
+    <Bookmark color="atmo1" size="XS" />
+  </HvAvatar>
+</div>
+```
+
+### Fallbacks
+
+If there is an error loading the avatar image, the component falls back to an alternative in the following order: the provided children, the first letter of the alt text and finally the generic User icon.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar alt="Clara Soul" src="/broken-image.jpg">
+    CS
+  </HvAvatar>
+  <HvAvatar alt="Clara Soul" src="/broken-image.jpg" />
+  <HvAvatar src="/broken-image.jpg" />
+</div>
+```
+
+### Variants
+
+You can configure the `size` and `variant` of an avatar. When using an icon, set its `size` to the size immediately below the avatar size.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar size="xs" />
+  <HvAvatar size="xs" variant="square" />
+  <HvAvatar backgroundColor="sema6" size="sm">
+    NA
+  </HvAvatar>
+  <HvAvatar size="lg" backgroundColor="warning">
+    <Bookmark size="M" color={["base_light", "base_dark"]} />
+  </HvAvatar>
+  <HvAvatar size="xl" alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
+  <HvAvatar
+    size="xl"
+    variant="square"
+    alt="Beatrice"
+    src="https://i.imgur.com/bE7vg3N.png"
+  />
+</div>
+```
+
+### Status
+
+An avatar can have a status, represented by either the status colored border or by the badge dot. The color can be from the theme palette or custom.
+
+```tsx live
+<div className="flex gap-xs">
+  <HvAvatar size="xs" status="positive">
+    AB
+  </HvAvatar>
+  <HvAvatar size="sm" badge="neutral">
+    AB
+  </HvAvatar>
+  <HvAvatar size="md" status="negative">
+    AB
+  </HvAvatar>
+  <HvAvatar size="lg" status="atmo4" badge="atmo4">
+    AB
+  </HvAvatar>
+  <HvAvatar size="xl" status="#8CEB34" badge="#8CEB34">
+    AB
+  </HvAvatar>
+</div>
+```
+
+### Actions
+
+An avatar should be interacted with by wrapping it in an interactable element, such as an `HvButton` or a link. Make sure the elements are labelled accordingly.
+
+```tsx live
+<div className="flex align-start gap-xs">
+  <HvButton
+    component="a"
+    href="#profile-url"
+    aria-label="External link"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
+    <HvAvatar size="md">
+      <Bookmark />
+    </HvAvatar>
+  </HvButton>
+  <HvButton
+    aria-label="Open the user profile"
+    icon
+    radius="base"
+    className="size-fit!"
+  >
+    <HvAvatar variant="square" size="md" />
+  </HvButton>
+  <HvButton
+    aria-label="Business Manager"
+    icon
+    radius="base"
+    className="size-fit!"
+  >
+    <HvAvatar backgroundColor="sema19" size="md" badge="negative">
+      BM
+    </HvAvatar>
+  </HvButton>
+  <HvButton
+    aria-label="Business Manager"
+    radius="round"
+    icon
+    className="size-fit!"
+  >
+    <HvAvatar
+      backgroundColor="sema19"
+      size="md"
+      variant="square"
+      badge="negative"
+    >
+      BM
+    </HvAvatar>
+  </HvButton>
+  <HvButton
+    aria-label="Clara Soul profile"
+    radius="base"
+    icon
+    className="size-fit!"
+  >
+    <HvAvatar
+      alt="Clara Soul"
+      src="https://i.imgur.com/6sYhSb6.png"
+      size="lg"
+      status="positive"
+    />
+  </HvButton>
+  <HvButton
+    aria-label="Clara Soul profile"
+    radius="round"
+    icon
+    className="size-fit!"
+  >
+    <HvAvatar
+      alt="Clara Soul"
+      src="https://i.imgur.com/6sYhSb6.png"
+      size="lg"
+      variant="square"
+      status="positive"
+    />
+  </HvButton>
+</div>
+```

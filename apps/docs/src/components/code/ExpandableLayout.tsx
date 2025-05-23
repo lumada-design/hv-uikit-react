@@ -30,7 +30,10 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
   });
 
   return (
-    <section className="relative mt-md border-border rounded-round">
+    <section
+      data-pagefind-ignore
+      className="relative mt-md border-border rounded-round"
+    >
       {/* Compact Controls */}
       <ExpandableControls
         onToggle={() => setIsExpanded((prev) => !prev)}
@@ -51,7 +54,7 @@ export const ExpandableLayout = ({ scope, code }: ExpandableLayoutProps) => {
 
       {/* Code Editor Section */}
       <div
-        className="max-h-400px overflow-auto rounded-b-inherit -mt-xxs transition-max-height border-color-inherit"
+        className="overflow-auto rounded-b-inherit -mt-xxs transition-max-height border-color-inherit"
         style={{
           maxHeight: isExpanded ? 400 : 0,
         }}

@@ -1,0 +1,28 @@
+import { Callout } from "nextra/components";
+import {
+  inputClasses as classes,
+  HvSearchInput,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "SearchInput", classes }}
+  Component={HvSearchInput}
+  componentName="HvSearchInput"
+  controls={{
+    label: { type: "text", defaultValue: "Search" },
+    description: { type: "text", defaultValue: "Please enter a search term" },
+    placeholder: "Insert search term...",
+    required: { defaultValue: true },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+  decoratorClassName="w-full"
+/>
+
+<Callout type="info">
+  The `HvSearchInput` component shares the same API as the `HvInput` component.
+  Please check the [HvInput component page](/components/input) for
+  documentation.
+</Callout>

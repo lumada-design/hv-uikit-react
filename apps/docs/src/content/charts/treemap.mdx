@@ -1,0 +1,340 @@
+import { Header } from "../../components/Header";
+
+<Header params={{ name: "Treemap", packageName: "viz", showAllProps: true }} />
+
+### Usage
+
+This example shows a simple tree map chart with multiple levels of hierarchical data.
+
+```tsx live
+<HvTreemapChart
+  height={400}
+  name="Treemap"
+  data={[
+    {
+      name: "Category A",
+      value: [100],
+      children: [
+        {
+          name: "Subcategory A1",
+          value: [50],
+          children: [
+            { name: "Item A1-1", value: [20] },
+            {
+              name: "Group A1-2",
+              value: [30],
+              children: [
+                { name: "Item A1-2-1", value: [15] },
+                {
+                  name: "Segment A1-2-2",
+                  value: [15],
+                  children: [
+                    { name: "Item A1-2-2-1", value: [7] },
+                    {
+                      name: "Deep Node A1-2-2-2",
+                      value: [8],
+                      children: [
+                        { name: "Nested Item A1-2-2-2-1", value: [4] },
+                        {
+                          name: "Super Deep A1-2-2-2-2",
+                          value: [4],
+                          children: [
+                            { name: "Final Node A1-2-2-2-2-1", value: [2] },
+                            { name: "Final Node A1-2-2-2-2-2", value: [2] },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        { name: "Item A2", value: [50] },
+      ],
+    },
+    {
+      name: "Category B",
+      value: [80],
+      children: [
+        {
+          name: "Subcategory B1",
+          value: [40],
+          children: [
+            {
+              name: "Group B1-1",
+              value: [20],
+              children: [
+                { name: "Item B1-1-1", value: [10] },
+                { name: "Item B1-1-2", value: [10] },
+              ],
+            },
+            { name: "Item B1-2", value: [20] },
+          ],
+        },
+        {
+          name: "Subcategory B2",
+          value: [40],
+          children: [
+            { name: "Item B2-1", value: [10] },
+            {
+              name: "Segment B2-2",
+              value: [30],
+              children: [
+                { name: "Item B2-2-1", value: [15] },
+                {
+                  name: "Deep Branch B2-2-2",
+                  value: [15],
+                  children: [
+                    { name: "Item B2-2-2-1", value: [7] },
+                    {
+                      name: "Multi-level B2-2-2-2",
+                      value: [8],
+                      children: [
+                        { name: "Item B2-2-2-2-1", value: [4] },
+                        {
+                          name: "Even Deeper B2-2-2-2-2",
+                          value: [4],
+                          children: [
+                            { name: "Final B2-2-2-2-2-1", value: [4] },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Category C",
+      value: [60],
+      children: [
+        { name: "Item C1", value: [30] },
+        {
+          name: "Subcategory C2",
+          value: [30],
+          children: [
+            { name: "Item C2-1", value: [10] },
+            {
+              name: "Deep C2-2",
+              value: [20],
+              children: [
+                {
+                  name: "Multi-Level C2-2-1",
+                  value: [10],
+                  children: [
+                    { name: "Deep Item C2-2-1-1", value: [5] },
+                    {
+                      name: "Layer C2-2-1-2",
+                      value: [5],
+                      children: [
+                        { name: "Final Node C2-2-1-2-1", value: [2] },
+                        { name: "Final Node C2-2-1-2-2", value: [3] },
+                      ],
+                    },
+                  ],
+                },
+                { name: "Item C2-2-2", value: [10] },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+```
+
+### Custom ECharts options
+
+You can customize the chart using ECharts options.  
+In this example, the item styles of the tree map are customized to control appearance and visual distinction.
+
+```tsx live
+<HvTreemapChart
+  height={500}
+  name="Treemap"
+  onOptionChange={(option) => {
+    option.series[0].visibleMin = 100;
+    option.series[0].upperLabel = {
+      show: false,
+      height: 20,
+    };
+    option.series[0].levels = [
+      {
+        itemStyle: {
+          borderColor: "#777",
+          borderWidth: 0,
+          gapWidth: 1,
+        },
+        upperLabel: {
+          show: false,
+        },
+      },
+      {
+        itemStyle: {
+          borderColor: "#555",
+          borderWidth: 5,
+          gapWidth: 1,
+        },
+        emphasis: {
+          itemStyle: {
+            borderColor: "#ddd",
+          },
+        },
+      },
+      {
+        colorSaturation: [0.35, 0.5],
+        itemStyle: {
+          borderWidth: 5,
+          gapWidth: 1,
+          borderColorSaturation: 0.6,
+        },
+      },
+    ];
+    return option;
+  }}
+  data={[
+    {
+      name: "Category A",
+      value: [100],
+      children: [
+        {
+          name: "Subcategory A1",
+          value: [50],
+          children: [
+            { name: "Item A1-1", value: [20] },
+            {
+              name: "Group A1-2",
+              value: [30],
+              children: [
+                { name: "Item A1-2-1", value: [15] },
+                {
+                  name: "Segment A1-2-2",
+                  value: [15],
+                  children: [
+                    { name: "Item A1-2-2-1", value: [7] },
+                    {
+                      name: "Deep Node A1-2-2-2",
+                      value: [8],
+                      children: [
+                        { name: "Nested Item A1-2-2-2-1", value: [4] },
+                        {
+                          name: "Super Deep A1-2-2-2-2",
+                          value: [4],
+                          children: [
+                            { name: "Final Node A1-2-2-2-2-1", value: [2] },
+                            { name: "Final Node A1-2-2-2-2-2", value: [2] },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        { name: "Item A2", value: [50] },
+      ],
+    },
+    {
+      name: "Category B",
+      value: [80],
+      children: [
+        {
+          name: "Subcategory B1",
+          value: [40],
+          children: [
+            {
+              name: "Group B1-1",
+              value: [20],
+              children: [
+                { name: "Item B1-1-1", value: [10] },
+                { name: "Item B1-1-2", value: [10] },
+              ],
+            },
+            { name: "Item B1-2", value: [20] },
+          ],
+        },
+        {
+          name: "Subcategory B2",
+          value: [40],
+          children: [
+            { name: "Item B2-1", value: [10] },
+            {
+              name: "Segment B2-2",
+              value: [30],
+              children: [
+                { name: "Item B2-2-1", value: [15] },
+                {
+                  name: "Deep Branch B2-2-2",
+                  value: [15],
+                  children: [
+                    { name: "Item B2-2-2-1", value: [7] },
+                    {
+                      name: "Multi-level B2-2-2-2",
+                      value: [8],
+                      children: [
+                        { name: "Item B2-2-2-2-1", value: [4] },
+                        {
+                          name: "Even Deeper B2-2-2-2-2",
+                          value: [4],
+                          children: [
+                            { name: "Final B2-2-2-2-2-1", value: [4] },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Category C",
+      value: [60],
+      children: [
+        { name: "Item C1", value: [30] },
+        {
+          name: "Subcategory C2",
+          value: [30],
+          children: [
+            { name: "Item C2-1", value: [10] },
+            {
+              name: "Deep C2-2",
+              value: [20],
+              children: [
+                {
+                  name: "Multi-Level C2-2-1",
+                  value: [10],
+                  children: [
+                    { name: "Deep Item C2-2-1-1", value: [5] },
+                    {
+                      name: "Layer C2-2-1-2",
+                      value: [5],
+                      children: [
+                        { name: "Final Node C2-2-1-2-1", value: [2] },
+                        { name: "Final Node C2-2-1-2-2", value: [3] },
+                      ],
+                    },
+                  ],
+                },
+                { name: "Item C2-2-2", value: [10] },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ]}
+/>
+```

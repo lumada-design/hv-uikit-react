@@ -1,0 +1,73 @@
+import {
+  typographyClasses as classes,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Typography", classes }}
+  Component={HvTypography}
+  componentName="HvTypography"
+  controls={{
+    variant: {
+      defaultValue: "body",
+    },
+    disabled: {
+      defaultValue: false,
+    },
+    noWrap: {
+      defaultValue: false,
+    },
+    link: {
+      defaultValue: false,
+    },
+  }}
+  decoratorClassName="w-200px text-balance"
+  children="Welcome to UI Kit."
+/>
+
+### Root component
+
+The `HvTypography` component is a polymorphic component. Its default component is `p`,
+but it can be changed to any other element through the `component` prop.
+
+```tsx live
+<div className="flex flex-col gap-sm">
+  <HvTypography component="span">Typography as a span</HvTypography>
+  <HvTypography
+    component="a"
+    href="https://lumada-design.github.io/uikit/master"
+    link
+  >
+    Typography as a link
+  </HvTypography>
+</div>
+```
+
+You can also change the root component of the `HvTypography` component to a
+custom component.
+
+```tsx live
+interface CustomLinkProps extends HvTypographyProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
+  <a href={to} {...others}>
+    {children}
+  </a>
+);
+
+export default function Demo() {
+  return (
+    <HvTypography
+      link
+      component={CustomLink}
+      to="https://lumada-design.github.io/uikit/master"
+    >
+      Custom link
+    </HvTypography>
+  );
+}
+```

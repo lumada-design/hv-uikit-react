@@ -1,0 +1,38 @@
+import { HvToggleButton } from "@hitachivantara/uikit-react-core";
+import { Favorite, FavoriteSelected } from "@hitachivantara/uikit-react-icons";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "ToggleButton" }}
+  Component={HvToggleButton}
+  componentName="HvToggleButton"
+  controls={{
+    disabled: { defaultValue: false },
+  }}
+  componentProps={{
+    defaultSelected: false,
+    notSelectedIcon: <Favorite />,
+    selectedIcon: <FavoriteSelected />,
+  }}
+/>
+
+### With tooltip
+
+You can wrap the toggle button with a tooltip to provide additional information.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <HvTooltip title={selected ? "Turn off" : "Turn on"}>
+      <HvToggleButton onClick={() => setSelected(!selected)}>
+        {selected ? <LightOn /> : <LightOff />}
+      </HvToggleButton>
+    </HvTooltip>
+  );
+}
+```

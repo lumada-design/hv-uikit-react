@@ -49,6 +49,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   return (
     <section
       id={id}
+      data-pagefind-ignore
       className="bg-transparent relative border-border border-1 border-t-0 -ml-px h-full"
     >
       <HvDialog

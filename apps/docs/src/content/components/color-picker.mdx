@@ -1,0 +1,74 @@
+import {
+  colorPickerClasses as classes,
+  HvColorPicker,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "ColorPicker", classes }}
+  Component={HvColorPicker}
+  componentName="HvColorPicker"
+  controls={{
+    label: { type: "text", defaultValue: "Color" },
+    iconOnly: { defaultValue: false },
+    showCustomColors: { defaultValue: true },
+    showSavedColors: { defaultValue: true },
+  }}
+  componentProps={{
+    placeholder: "Select color",
+  }}
+/>
+
+### Region customization
+
+You can configure the following Color Picker regions:
+
+- The _recommended colors_ region, via the `recommendedColors` array and `recommendedColorsPosition`;
+- The _custom colors_ picker visibility, via `showCustomColors`;
+- The _saved colors_ region, via the `showSavedColors` and `savedColorsValue` or `defaultSavedColorsValue` (uncontrolled).
+
+```tsx live
+<HvColorPicker
+  defaultValue="#F6941E"
+  showCustomColors
+  showSavedColors
+  className="w-fit"
+  defaultSavedColorsValue={["#95A", "#E95", "#8BA", "#759"]}
+  recommendedColors={["#F00", "#0F0", "#00F", "#FF0", "#0FF", "#F0F"]}
+  recommendedColorsPosition="top"
+/>
+```
+
+### Controlled
+
+The value of the Color Picker can be controlled via the `value`/`onChange` props.
+The value can also be read from `onChangeComplete`, for a throttled value.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [color, setColor] = useState("#95AFE8");
+  const [finalColor, setFinalColor] = useState("#95AFE8");
+
+  return (
+    <div
+      className="flex justify-center font-bold size-240px p-md"
+      style={{ backgroundColor: finalColor }}
+    >
+      <HvColorPicker
+        aria-label="Color"
+        showSavedColors={false}
+        value={color}
+        onChange={setColor}
+        onChangeComplete={setFinalColor}
+      />
+    </div>
+  );
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)

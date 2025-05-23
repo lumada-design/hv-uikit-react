@@ -52,6 +52,11 @@ export interface HvFormElementProps
  * analogous to MUI's [`FormControl`](https://mui.com/material-ui/api/form-control/) component.
  *
  * It is used internally to build UI Kit's form components (eg. `HvInput`, `HvDatePicker`), and can be used to build custom form components.
+ *
+ * It exposes the common properties to be shared between all form components: `required`, `disabled`, `readOnly`, and `status`.
+ *
+ * Along with the properties above, form components also share the `value`/`defaultValue` and `onChange` props,
+ * used to control the value of the form component, analogous to the native `input` component.
  */
 export const HvFormElement = (props: HvFormElementProps) => {
   const {

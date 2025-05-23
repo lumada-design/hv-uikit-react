@@ -1,4 +1,3 @@
-import { useData } from "nextra/hooks";
 import {
   HvTable,
   HvTableBody,
@@ -11,6 +10,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import type { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
 
+import { ComponentMeta } from "../../utils/component";
+
 type ClassItem = {
   name: string;
   selector: string;
@@ -21,15 +22,13 @@ const columns: HvTableColumnConfig<ClassItem, string>[] = [
   { Header: "CSS Class", accessor: "selector" },
 ];
 
-export const Classes = () => {
-  const { meta } = useData();
-
+export const Classes = ({ meta }: { meta: ComponentMeta }) => {
   const classesToShow = Object.entries(meta.classes).map(
     ([name, selector]) => ({ name, selector }) as ClassItem,
   );
 
   return (
-    <div className="flex flex-col">
+    <div className="grid">
       <HvTypography variant="title3">{meta.component} classes</HvTypography>
       <HvTypography className="mt-xs mb-md">
         The following classes are available in the component{" "}

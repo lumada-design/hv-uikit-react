@@ -1,0 +1,190 @@
+import {
+  cardClasses as classes,
+  HvCard,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{
+    name: "Card",
+    classes,
+    subComponents: ["Header", "Content", "Media"],
+  }}
+/>
+
+```tsx live
+<HvCard
+  className="w-380px"
+  bgcolor="atmo1"
+  statusColor="positive"
+  icon={<Leaf size="S" color="positive" />}
+>
+  <HvCardHeader
+    title={<HvTypography variant="title4">Schedule New Job</HvTypography>}
+    icon={<Job size="XS" />}
+    subheader={
+      <HvTypography variant="caption2">
+        Run data backups or maintenance tasks on your schedule
+      </HvTypography>
+    }
+  />
+  <HvCardMedia
+    component="img"
+    alt="Schedule New Job"
+    height={120}
+    image="https://github.com/user-attachments/assets/3d17a64e-b5f3-4ea8-a66d-bc02a31b92e0"
+  />
+  <HvCardContent>
+    <HvTypography>
+      Set up a job to run automatically at your preferred time and frequency.
+    </HvTypography>
+  </HvCardContent>
+  <HvActionBar>
+    <HvButton variant="secondaryGhost">Configure Job</HvButton>
+    <div aria-hidden className="flex-1" />
+    <HvButton variant="secondarySubtle">Set Schedule</HvButton>
+  </HvActionBar>
+</HvCard>
+```
+
+### Media
+
+Use the `HvCardMedia` component to add an image to your card. It automatically adapts to its placement within the card.
+
+```tsx live
+<HvCard className="w-240px" bgcolor="atmo1">
+  <HvCardMedia
+    component="img"
+    alt="Schedule New Job"
+    height={120}
+    image="https://s7d9.scene7.com/is/image/hitachivantara/take-charge-of-your-hybrid-cloud-estate-everflex-control-square:mediumvertical?fmt=webp"
+  />
+  <HvCardContent>
+    <HvTypography>
+      Use the live code editor to change the position of the `HvCardMedia`
+      component in the card.
+    </HvTypography>
+  </HvCardContent>
+</HvCard>
+```
+
+### Actions
+
+To add actions to a card, use the `HvActionBar` component.
+
+```tsx live
+<>
+  <HvCard className="w-380px" bgcolor="atmo1">
+    <HvCardHeader
+      title={
+        <HvTypography variant="title3">Start using UI Kit now</HvTypography>
+      }
+      subheader={
+        <HvTypography>
+          Get started with the UI Kit and build your next project.
+        </HvTypography>
+      }
+    />
+    <HvActionBar className="flex-1">
+      <HvButton startIcon={<Code />} variant="primarySubtle">
+        Github
+      </HvButton>
+      <div aria-hidden className="flex-1" />
+      <HvButton startIcon={<Doc />}>Get Started</HvButton>
+    </HvActionBar>
+  </HvCard>
+</>
+```
+
+### Selectable
+
+Make a card selectable by using the `selectable` prop. Use the `selected` prop to control its selection state.
+
+```tsx live
+import { useState } from "react";
+import { Cloud, Storage } from "@hitachivantara/uikit-react-icons";
+
+export default function Demo() {
+  const [checked, setChecked] = useState(null);
+
+  return (
+    <div className="flex flex-row gap-sm w-full">
+      {storages.map((p, idx) => (
+        <StorageCard
+          key={idx}
+          selected={checked === idx}
+          title={p.name}
+          icon={p.icon}
+          description={p.description}
+          onSelect={() => setChecked(idx)}
+        />
+      ))}
+    </div>
+  );
+}
+
+function StorageCard({
+  selected,
+  title,
+  icon,
+  description,
+  onSelect,
+  ...others
+}: StorageCardProps) {
+  return (
+    <HvCard
+      bgcolor="atmo1"
+      className="flex-1"
+      selectable
+      selected={selected}
+      {...others}
+    >
+      <button
+        type="button"
+        onClick={onSelect}
+        aria-label={`Press enter or space to select the ${title}.`}
+        className="w-full text-left"
+      >
+        <HvCardHeader
+          title={
+            <div className="flex justify-between items-center">
+              <div className="flex gap-xs items-center">
+                {icon}
+                <HvTypography variant="title4">{title}</HvTypography>
+              </div>
+              <HvRadio
+                onChange={onSelect}
+                checked={selected}
+                value="value"
+                aria-label={`Tick to select the ${title} payment.`}
+              />
+            </div>
+          }
+        />
+        <HvCardContent>{description}</HvCardContent>
+      </button>
+    </HvCard>
+  );
+}
+
+interface StorageCardProps extends HvCardProps {
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  onSelect?: () => void;
+}
+
+const storages = [
+  {
+    name: "Local Storage",
+    icon: <Storage size="S" />,
+    description: "Use local storage for quick access to user settings.",
+  },
+  {
+    name: "Cloud Storage",
+    icon: <Cloud size="S" />,
+    description: "Use cloud storage for secure, scalable data access.",
+  },
+];
+```

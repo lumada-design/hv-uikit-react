@@ -1,0 +1,101 @@
+import {
+  sliderClasses as classes,
+  HvSlider,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Slider", classes }}
+  Component={HvSlider}
+  componentName="HvSlider"
+  controls={{
+    label: { type: "text", defaultValue: "Value" },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+    hideInput: { defaultValue: false },
+    markStep: { defaultValue: 10 },
+    divisionQuantity: { defaultValue: 100 },
+    minPointValue: { defaultValue: 0 },
+    maxPointValue: { defaultValue: 100 },
+  }}
+  componentProps={{
+    className: "w-full",
+    defaultValues: [10],
+  }}
+/>
+
+### Controlled
+
+`HvSlider` can be controlled with the `values`/`onChange` props.
+
+Adding a second value to the `values` prop will make the slider a range slider, which also makes the track draggable.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [values, setValues] = useState([40, 80]);
+
+  return (
+    <>
+      <HvSlider
+        label="Failure Rate"
+        values={values}
+        onChange={setValues}
+        minPointValue={0}
+        maxPointValue={200}
+      />
+      <br />
+      <div className="flex gap-xs">
+        <HvButton
+          variant="subtle"
+          onClick={() => setValues(values.map((v) => v - 10))}
+        >
+          Decrement
+        </HvButton>
+        <HvButton
+          variant="subtle"
+          onClick={() => setValues(values.map((v) => v + 10))}
+        >
+          Increment
+        </HvButton>
+      </div>
+    </>
+  );
+}
+```
+
+### Customization
+
+Use `minPointValue`, `maxPointValue`, `divisionQuantity`, and `markStep` to customize the slider limits and steps, and `formatMark` and `formatTooltip` to customize the step labels.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvSlider
+      label="Severity"
+      hideInput
+      defaultValues={[3]}
+      // step customization
+      minPointValue={1}
+      maxPointValue={5}
+      divisionQuantity={4}
+      markStep={1}
+      // label customization
+      formatMark={getLabel}
+      formatTooltip={getLabel}
+    />
+  );
+}
+
+function getLabel(label: string) {
+  const labels = ["Very Low", "Low", "Medium", "High", "Very High"];
+  return labels[Number(label) - 1];
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)

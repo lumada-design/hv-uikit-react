@@ -1,0 +1,80 @@
+import { Callout } from "nextra/components";
+import {
+  globalActionsClasses as classes,
+  HvButton,
+  HvDropDownMenu,
+  HvGlobalActions,
+  HvIconButton,
+} from "@hitachivantara/uikit-react-core";
+import { Backwards } from "@hitachivantara/uikit-react-icons";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "GlobalActions", classes }}
+  Component={HvGlobalActions}
+  componentName="HvGlobalActions"
+  controls={{
+    variant: { defaultValue: "global" },
+    title: { defaultValue: "Title" },
+    position: { defaultValue: "sticky" },
+  }}
+  componentProps={{
+    backButton: (
+      <HvIconButton title="Back">
+        <Backwards />
+      </HvIconButton>
+    ),
+  }}
+  decoratorClassName="w-full"
+>
+  <HvButton variant="primary">Save</HvButton>
+  <HvButton variant="secondarySubtle">Reset</HvButton>
+  <HvDropDownMenu
+    placement="left"
+    dataList={[
+      { label: "Action 1" },
+      { label: "Action 2" },
+      { label: "Action 3" },
+    ]}
+  />
+</Header>
+
+### Custom content
+
+The content of the Global Actions can be customized. This is useful when you want to add different elements other than the title and actions.
+
+```tsx live
+<HvGlobalActions
+  backButton={
+    <HvIconButton title="Go back">
+      <Backwards />
+    </HvIconButton>
+  }
+  title={
+    <>
+      <Home title="Home" />
+      <HvBreadCrumb
+        listRoute={[
+          { label: "Label 1", path: "#route1" },
+          { label: "Label 2", path: "#route2" },
+          { label: "Label 3", path: "#route3" },
+          { label: "Label 4", path: "#route4" },
+          { label: "Label 5", path: "#route5" },
+        ]}
+        maxVisible={2}
+      />
+    </>
+  }
+>
+  <HvButton variant="secondaryGhost">Action</HvButton>
+  <HvDropDownMenu
+    placement="left"
+    dataList={[
+      { label: "Action 2" },
+      { label: "Action 3" },
+      { label: "Action 4" },
+    ]}
+  />
+</HvGlobalActions>
+```

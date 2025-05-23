@@ -1,0 +1,165 @@
+import {
+  tagsInputClasses as classes,
+  HvTagsInput,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "TagsInput", classes }}
+  Component={HvTagsInput}
+  componentName="HvTagsInput"
+  controls={{
+    label: { defaultValue: "Enter your tags" },
+    description: { defaultValue: "This is where you enter your tags" },
+    multiline: { defaultValue: false },
+    resizable: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+/>
+
+### Custom tag addition
+
+Customize tag addition behavior using the `commitTagOn` and `commitOnBlur` props.
+
+```tsx live
+<HvTagsInput
+  label="Custom submission"
+  description="Enter a space, comma, Enter, or blur to add a tag"
+  placeholder="Enter value"
+  commitTagOn={["Space", "Comma", "Enter"]}
+  commitOnBlur
+/>
+```
+
+### Controlled
+
+Control the input using the `value` and `onChange` props.  
+The `value` should be an array of `string` or [`HvTag` props](/components/tag?tab=props).
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState([
+    { label: "success", color: "positive" },
+    { label: "warn", color: "warning" },
+    "tag 3",
+  ]);
+
+  return (
+    <HvTagsInput
+      label="Controlled tags"
+      placeholder="Enter tags"
+      value={value}
+      onChange={(event, value) => setValue(value)}
+    />
+  );
+}
+```
+
+### Controlled validation
+
+Use the `onAdd` and `onRemove` props to control when tags are added or removed.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(["tag-1", "tag-2"]);
+  const [status, setStatus] = useState<HvFormStatus>("valid");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const isInvalidTag = (label?: string) => label?.includes("-");
+
+  return (
+    <HvTagsInput
+      label="Controlled validation"
+      description="Tags with dashes can't be added or removed"
+      value={value}
+      status={status}
+      statusMessage={statusMessage}
+      onAdd={(event, newTag) => {
+        if (isInvalidTag(newTag.label)) {
+          setStatus("invalid");
+          setStatusMessage("Tags with dashes can't be added");
+          return;
+        }
+        setStatus("valid");
+        setStatusMessage("");
+        setValue((curr) => curr.concat(newTag.label));
+      }}
+      onDelete={(event, newTag) => {
+        if (isInvalidTag(newTag)) {
+          setStatus("invalid");
+          setStatusMessage("Tags with dashes can't be removed");
+          return;
+        }
+        setStatus("valid");
+        setStatusMessage("");
+        setValue((curr) => curr.filter((t) => t !== newTag));
+      }}
+    />
+  );
+}
+```
+
+### Suggestions
+
+Show auto-complete suggestions using the `suggestionListCallback` prop, similar to `HvInput`.  
+Use `suggestionsLoose` to allow values outside the suggestion list.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState<HvTagProps[]>([]);
+
+  return (
+    <HvTagsInput
+      className="mb-lg"
+      label="Countries"
+      description="Select countries from South America"
+      placeholder="Select countries"
+      value={value}
+      suggestionsLoose // disable to restrict to suggestions
+      onChange={(event, value) => setValue(value)}
+      suggestionListCallback={findCountries}
+    />
+  );
+}
+
+function findCountries(val: string) {
+  if (!val) return null;
+  const foundCountries = countries.filter((c) =>
+    c.toUpperCase().startsWith(val.toUpperCase()),
+  );
+
+  return foundCountries.length === 0
+    ? null
+    : foundCountries.map((country, id) => ({ id, label: country }));
+}
+
+const countries = [
+  "Argentina",
+  "Bolivia",
+  "Brazil",
+  "Chile",
+  "Colombia",
+  "Ecuador",
+  "French Guiana",
+  "Guyana",
+  "Nicaragua",
+  "Paraguay",
+  "Peru",
+  "Suriname",
+  "Uruguay",
+  "Venezuela",
+];
+```
+
+### Related components
+
+- [`HvInput`](/components/input)
+- [`HvTag`](/components/tag)

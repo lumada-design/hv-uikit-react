@@ -1,0 +1,163 @@
+import { Callout } from "nextra/components";
+
+import {
+  selectClasses as classes,
+  HvOption,
+  HvOptionGroup,
+  HvSelect,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Select", classes }}
+  Component={HvSelect}
+  componentName="HvSelect"
+  controls={{
+    label: { type: "text", defaultValue: "Country" },
+    description: { type: "text", defaultValue: "Please select a country" },
+    multiple: { defaultValue: false },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+  componentProps={{
+    placeholder: "Select a value",
+  }}
+>
+  <HvOptionGroup label="America">
+    <HvOption value="ar">Argentina</HvOption>
+    <HvOption value="us">United States</HvOption>
+  </HvOptionGroup>
+  <HvOptionGroup label="Europe">
+    <HvOption value="bg">Belgium</HvOption>
+    <HvOption value="pt">Portugal</HvOption>
+    <HvOption value="pl">Poland</HvOption>
+    <HvOption value="sp">Spain</HvOption>
+  </HvOptionGroup>
+</Header>
+
+<Callout type="info">
+  If you need a search filter or multi-select checkboxes, consider using
+  [`HvDropdown`](/components/dropdown) instead.
+</Callout>
+
+### Options
+
+In addition to `HvOption` children, `HvSelect` also supports an `options` prop—an array of objects with `value` and `label`.
+For more flexibility (e.g., using `HvOptionGroup` or custom rendering), use `HvOption` as children instead.
+
+```tsx live
+<HvSelect
+  label="Country"
+  description="Please select a country"
+  placeholder="Select a value"
+  options={[
+    { value: "ar", label: "Argentina" },
+    { value: "bg", label: "Belgium" },
+    { value: "pt", label: "Portugal" },
+    { value: "pl", label: "Poland" },
+    { value: "sp", label: "Spain", disabled: true },
+    { value: "us", label: "United States" },
+  ]}
+/>
+```
+
+### Form
+
+To use `HvSelect` in a form, provide a `name` prop.  
+By default, the submitted value will be the selected option’s `value`, or a JSON string of selected values in multi-select mode.
+You can customize the submitted value using the `getSerializedValue` prop.
+
+```tsx live
+<form
+  onSubmit={(evt) => {
+    evt.preventDefault();
+    const formData = new FormData(evt.currentTarget);
+    alert(JSON.stringify(Object.fromEntries(formData)));
+  }}
+>
+  <HvSelect
+    multiple
+    required
+    name="countries"
+    label="Country"
+    description="Select your favorite countries"
+    placeholder="Select countries"
+    getSerializedValue={(values) => values.map((v) => v.value).join(",")}
+    options={[
+      { value: "ar", label: "Argentina" },
+      { value: "bg", label: "Belgium" },
+      { value: "pt", label: "Portugal" },
+      { value: "pl", label: "Poland" },
+      { value: "sp", label: "Spain" },
+      { value: "us", label: "United States" },
+    ]}
+  />
+  <br />
+  <HvButton type="submit" variant="secondarySubtle">
+    Submit
+  </HvButton>
+</form>
+```
+
+### Controlled
+
+The value and open states of `HvSelect` can be controlled by using the `value`/`onChange` and `open`/`onOpenChange` props respectively.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [selection, setSelection] = useState<string[]>([]);
+  const [open, setOpen] = useState(false);
+
+  const anySelected = selection.length > 0;
+
+  return (
+    <>
+      <HvSelect
+        multiple
+        required
+        open={open}
+        name="countries"
+        aria-label="Country"
+        placeholder="Select countries"
+        value={selection}
+        style={{ width: 300 }}
+        onChange={(evt, val) => setSelection(val)}
+        onOpenChange={setOpen}
+      >
+        {options.map(({ value, label, flag }) => (
+          <HvOption key={value} value={value} label={label}>
+            {`${flag} ${label}`}
+          </HvOption>
+        ))}
+      </HvSelect>
+      <HvButton
+        style={{ width: 120 }}
+        variant="secondarySubtle"
+        onClick={() => {
+          setSelection(anySelected ? [] : options.map((o) => o.value));
+        }}
+      >
+        {anySelected ? "Deselect all" : "Select all"}
+      </HvButton>
+    </>
+  );
+}
+
+const options = [
+  { value: "ar", label: "Argentina", flag: "🇦🇷" },
+  { value: "bg", label: "Belgium", flag: "🇧🇪" },
+  { value: "pt", label: "Portugal", flag: "🇵🇹" },
+  { value: "pl", label: "Poland", flag: "🇵🇱" },
+  { value: "sp", label: "Spain", flag: "🇪🇸" },
+  { value: "us", label: "United States", flag: "🇺🇸" },
+];
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvDropdown`](/components/dropdown)

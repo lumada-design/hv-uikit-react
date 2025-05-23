@@ -1,0 +1,23 @@
+import {
+  iconContainerClasses as classes,
+  HvIconContainer,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "IconContainer", classes }}
+  Component={HvIconContainer}
+  componentName="HvIconContainer"
+  controls={{
+    color: { type: "color", defaultValue: "warning" },
+    size: {
+      type: "slider",
+      defaultValue: "md",
+      values: ["xs", "sm", "md", "lg", "xl"],
+    },
+    rotate: { defaultValue: false },
+  }}
+>
+  <div className="i-ph-user" />
+</Header>

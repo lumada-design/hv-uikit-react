@@ -1,0 +1,34 @@
+import {
+  panelClasses as classes,
+  HvPanel,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header params={{ name: "Panel", classes }} />
+
+### Usage
+
+```tsx live
+<HvPanel className="h-100px">Panel Content</HvPanel>
+```
+
+### With scroll
+
+If you give fixed dimensions to the panel and the content exceeds the dimensions, the panel will automatically add a scrollbar.
+
+```tsx live
+export default function Demo() {
+  const chars = "abcdefghijklmnopqrstuvwxyz";
+  return (
+    <HvPanel
+      className="size-300px whitespace-nowrap tracking-1rem"
+      tabIndex={0}
+    >
+      {[...chars].map((char, i) => (
+        <div key={i}>{i === 0 ? chars : char}</div>
+      ))}
+    </HvPanel>
+  );
+}
+```
