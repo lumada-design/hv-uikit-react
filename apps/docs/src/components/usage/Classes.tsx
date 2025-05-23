@@ -28,7 +28,7 @@ export const Classes = ({ meta }: { meta: ComponentMeta }) => {
   );
 
   return (
-    <div className="flex flex-col">
+    <div className="grid">
       <HvTypography variant="title3">{meta.component} classes</HvTypography>
       <HvTypography className="mt-xs mb-md">
         The following classes are available in the component{" "}

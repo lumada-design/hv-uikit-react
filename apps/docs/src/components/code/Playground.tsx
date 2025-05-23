@@ -112,7 +112,7 @@ export const Playground = ({
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
-        <DocsProvider className="grid place-items-center p-sm h-full">
+        <DocsProvider className="grid place-items-center rounded-inherit p-sm h-full">
           {decoratorClassName ? (
             <div className={decoratorClassName}>{componentElement}</div>
           ) : (

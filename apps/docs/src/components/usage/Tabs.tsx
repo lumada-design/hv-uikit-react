@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { HvContainer, HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
+import { HvTab, HvTabs } from "@hitachivantara/uikit-react-core";
 
 import { ComponentMeta } from "../../utils/component";
 import { Playground, PlaygroundProps } from "../code/Playground";
@@ -24,7 +24,7 @@ export function Tabs({
   const tab = (searchParams.get("tab") as TabId) || "usage";
 
   return (
-    <div className="pt-md">
+    <>
       <HvTabs
         variant="fullWidth"
         value={tab}
@@ -39,13 +39,13 @@ export function Tabs({
         <HvTab value="props" label="Props" />
         <HvTab value="classes" label="Classes" />
       </HvTabs>
-      <HvContainer disableGutters className="mb-lg">
+      <div className="mb-lg" data-tab={tab}>
         {tab === "usage" && playgroundProps && (
           <Playground {...playgroundProps} />
         )}
         {tab === "props" && <Props meta={meta} />}
         {tab === "classes" && <Classes meta={meta} />}
-      </HvContainer>
-    </div>
+      </div>
+    </>
   );
 }
