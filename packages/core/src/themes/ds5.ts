@@ -121,6 +121,9 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     },
+    HvStatusIcon: {
+      type: "simple",
+    },
     HvTab: {
       classes: {
         root: {

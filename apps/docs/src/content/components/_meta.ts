@@ -63,6 +63,7 @@ export default {
   snackbar: "Snackbar",
   "snackbar-provider": "Snackbar Provider",
   stack: "Stack",
+  "status-icon": "Status Icon",
   switch: "Switch",
   table: "Table",
   tabs: "Tabs",
