@@ -54,9 +54,9 @@ export interface HvAvatarProps extends HvBaseProps {
   /** A string representing the type of avatar to display, circular or square. */
   variant?: HvAvatarVariant;
   /** A string representing the color of the avatar border that represents its status. */
-  status?: string;
+  status?: HvColorAny;
   /** A string representing the color of the avatar badge. */
-  badge?: string;
+  badge?: HvColorAny;
   /** Attributes applied to the avatar element. */
   avatarProps?: MuiAvatarProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
