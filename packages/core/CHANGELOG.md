@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.95.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.94.0...@hitachivantara/uikit-react-core@5.95.0) (2025-05-23)
+
+### Bug Fixes
+
+- **Badge:** fix P+ styles for primary badges ([#4753](https://github.com/lumada-design/hv-uikit-react/issues/4753)) ([05716f9](https://github.com/lumada-design/hv-uikit-react/commit/05716f9344878cf94f6e7e3fcc066602d58e4b52))
+
+### Features
+
+- **CheckBox:** add `color` prop ([#4732](https://github.com/lumada-design/hv-uikit-react/issues/4732)) ([11f2df7](https://github.com/lumada-design/hv-uikit-react/commit/11f2df726dc0f4e51ee4f77df17d10bda1d5468c))
+- **Radio:** add `color` prop ([#4735](https://github.com/lumada-design/hv-uikit-react/issues/4735)) ([3056fde](https://github.com/lumada-design/hv-uikit-react/commit/3056fde7c08333242fafe11c8332590a54acb659))
+
 # [5.94.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.93.2...@hitachivantara/uikit-react-core@5.94.0) (2025-05-16)
 
 ### Bug Fixes
