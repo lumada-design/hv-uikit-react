@@ -6,6 +6,7 @@ export default {
     display: "hidden",
     theme: {
       layout: "full",
+      timestamp: false,
     },
   },
   docs: {
@@ -29,6 +30,12 @@ export default {
   examples: {
     type: "page",
     title: "Examples",
-    theme: { layout: "full", toc: false },
+    theme: {
+      layout: "full",
+      toc: false,
+      breadcrumb: false,
+      sidebar: false,
+      timestamp: false,
+    },
   },
 } satisfies MetaRecord;
