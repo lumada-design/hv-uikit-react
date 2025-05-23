@@ -1,4 +1,4 @@
-import { ThemeExtender } from "@unocss/core";
+import type { ThemeExtender } from "@unocss/core";
 import type { Theme } from "@unocss/preset-wind3";
 import { ds5 as hvTheme, theme } from "@hitachivantara/uikit-styles";
 
@@ -29,6 +29,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
     hvBreakpoints.map(([k, v]) => [k, `(min-width: ${v})`]),
   ),
   spacing: {
+    ...baseTheme.spacing,
     DEFAULT: hvSpacing.xs,
     ...hvSpacing,
   },
@@ -56,7 +57,7 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   fontWeight: { DEFAULT: hvTheme.fontWeights.normal, ...hvTheme.fontWeights },
 });
 
-/** UI Kit theme mode variants */
+/** UI Kit theme mode variants. @deprecated unused */
 export const themeModes = {
   light: {
     colors: {
