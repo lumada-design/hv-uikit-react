@@ -7,7 +7,8 @@ import {
 
 import { HvActionsGenericProps } from "../../ActionsGeneric";
 import { HvButtonProps } from "../../Button";
-import { HvCallout, HvCalloutVariant } from "../../utils/Callout";
+import { HvCalloutVariant } from "../../types/tokens";
+import { HvCallout } from "../../utils/Callout";
 import { staticClasses, useClasses } from "./BannerContent.styles";
 
 export { staticClasses as bannerContentClasses };

@@ -7,7 +7,8 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionGeneric, HvActionsGenericProps } from "../../ActionsGeneric";
-import { HvCallout, HvCalloutVariant } from "../../utils/Callout";
+import { HvCalloutVariant } from "../../types/tokens";
+import { HvCallout } from "../../utils/Callout";
 import { staticClasses, useClasses } from "./SnackbarContent.styles";
 
 export { staticClasses as snackbarContentClasses };

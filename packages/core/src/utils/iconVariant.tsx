@@ -1,7 +1,7 @@
 import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvIcon } from "../icons";
-import type { HvCalloutVariant } from "./Callout";
+import { HvCalloutVariant } from "../types/tokens";
 
 const variantIconMap = {
   success: "Success",
