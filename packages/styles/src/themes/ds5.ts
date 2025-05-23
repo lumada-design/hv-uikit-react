@@ -306,6 +306,9 @@ const ds5 = makeTheme((theme) => ({
         },
       },
     },
+    HvStatusIcon: {
+      type: "simple",
+    },
   } satisfies Record<string, Record<string, any> | { classes?: CSSProperties }>,
   header: {
     height: "64px",
