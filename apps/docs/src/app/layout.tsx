@@ -1,15 +1,15 @@
+import "nextra-theme-docs/style.css";
+import "./globals.css";
+
 import { type NextraMetadata } from "nextra";
 import { Layout, Navbar, ThemeSwitch } from "nextra-theme-docs";
 import { Head, Search } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 
-import "nextra-theme-docs/style.css";
-import "../globals.css";
-
+import { UIKitLogo } from "../assets/logos";
 import { Footer } from "../components/Footer";
-import { ThemeSwitcher } from "../components/home/ThemeSwitcher";
-import { UIKitLogo } from "../components/logo/uikit";
 import { Main } from "../components/Main";
+import { ThemeSwitcher } from "../components/ThemeSwitcher";
 
 const title = "UI Kit";
 const description = "UI Kit documentation site";

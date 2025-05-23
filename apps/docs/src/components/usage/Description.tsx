@@ -1,12 +1,10 @@
 "use client";
 
 import ReactMarkdown from "react-markdown";
-import { ArrowUpRight } from "@phosphor-icons/react";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
-import { ComponentMeta } from "../../utils/component";
-import { GitHubLogo } from "../logo/gh";
-import { NpmLogo } from "../logo/npm";
+import { GitHubLogo, NpmLogo } from "../../assets/logos";
+import type { ComponentMeta } from "../../utils/component";
 import { AlignmentBadge } from "./AlignmentBadge";
 
 /**
@@ -14,37 +12,42 @@ import { AlignmentBadge } from "./AlignmentBadge";
  * about the current component, including its name, description,
  * GitHub source link, and NPM package link.
  */
-export const Description = ({ meta }: { meta: ComponentMeta }) => {
+export function Description({ meta }: { meta: ComponentMeta }) {
+  const links = [
+    { logo: <GitHubLogo />, label: "Source Code", href: meta.source },
+    {
+      logo: <NpmLogo />,
+      label: `uikit-react-${meta.package}`,
+      href: `https://npm.im/@hitachivantara/uikit-react-${meta.package}`,
+    },
+  ];
+
   return (
     <>
-      <div className="flex flex-row gap-xs items-center">
+      <div className="flex gap-1 items-center">
         <HvTypography variant="title1">{meta.component}</HvTypography>
         <AlignmentBadge component={meta.component} />
       </div>
       <ReactMarkdown className="markdown">
         {meta.docgen?.description}
       </ReactMarkdown>
-      <div className="flex flex-row gap-md mt-md">
-        <div className="flex flex-row gap-xs items-center">
-          <GitHubLogo />
-          <HvTypography link component="a" href={meta.source} target="_blank">
-            Source Code
-          </HvTypography>
-          <ArrowUpRight />
-        </div>
-        <div className="flex flex-row gap-xs items-center">
-          <NpmLogo />
-          <HvTypography
-            link
-            component="a"
-            target="_blank"
-            href={`https://www.npmjs.com/package/@hitachivantara/uikit-react-${meta.package}`}
-          >
-            {`uikit-react-${meta.package}`}
-          </HvTypography>
-          <ArrowUpRight />
-        </div>
+      <div className="flex gap-sm mt-sm">
+        {links.map(({ logo, label, href }, i) => (
+          <div key={i} className="flex gap-xs items-center">
+            {logo}
+            <HvTypography
+              link
+              component="a"
+              href={href}
+              target="_blank"
+              className="flex items-center"
+            >
+              {label}
+              <div className="i-ph-arrow-up-right" />
+            </HvTypography>
+          </div>
+        ))}
       </div>
     </>
   );
-};
+}
