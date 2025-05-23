@@ -17,7 +17,7 @@ export async function Header({ params, ...playgroundProps }: HeaderProps) {
   const meta = await getComponentData(params);
 
   return (
-    <div>
+    <div className="[&:not(:has([data-tab=usage]))_~_*]:hidden">
       <Description meta={meta} />
       <Suspense fallback={null}>
         <Tabs meta={meta} playgroundProps={{ ...playgroundProps, meta }} />

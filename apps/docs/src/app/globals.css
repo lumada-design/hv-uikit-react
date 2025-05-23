@@ -4,77 +4,48 @@
   @apply bg-[#151c26];
 }
 
-body,
-.nextra-nav-container-blur,
-.nextra-sidebar-footer,
-.nextra-toc-footer {
-  @apply bg-transparent;
+html,
+body {
+  height: auto;
 }
 
 pre {
-  @apply mt-4 mb-4;
+  @apply my-4;
 }
 
-.nextra-content,
-.nextra-content.x\:w-full {
+article main,
+article main.x\:w-full {
   font-size: 1rem;
 }
 
-.nextra-content h2,
-.nextra-content.x\:w-full h2 {
-  font-size: 1.7rem !important;
-  @apply !border-none;
-}
-
-.nextra-content h2 + p,
-.nextra-content h3 + p {
-  @apply !mt-2;
-}
-
-.nextra-content.x\:w-full {
-  @apply max-w-5xl mx-auto;
-}
-
-.nextra-sidebar-container .active a {
-  @apply light:bg-slate-100;
-}
-
-.nextra-sidebar-container {
-  @apply w-224px;
-}
-
-.nextra-nav-container nav,
-.nextra-nav-container + div {
-  @apply max-w-1408px;
-}
-
-.nextra-nav-container a:last-of-type svg {
-  @apply w-20px;
-}
-
-.nextra-nav-container button div svg {
-  @apply size-16px;
+header {
+  & a:last-of-type svg {
+    @apply size-20px;
+  }
+  & button svg {
+    @apply size-16px;
+  }
 }
 
 .nextra-toc {
   @apply w-224px;
-}
 
-.nextra-toc a {
-  @apply font-normal;
-}
+  & a {
+    @apply font-normal;
+  }
 
-.nextra-toc p {
-  @apply shadow-none;
-}
-
-.nextra-scrollbar a.x\:text-primary-800 {
-  @apply font-medium text-slate-800 dark:text-slate-200;
+  & p {
+    @apply shadow-none;
+  }
 }
 
 .nextra-sidebar-footer,
 .nextra-toc-footer {
   display: none;
+}
+
+.nextra-breadcrumb {
+  @apply mb-sm;
 }
 
 .nextra-code {
@@ -85,26 +56,12 @@ pre {
   @apply bg-slate-50;
 }
 
-.nextra-breadcrumb {
-  @apply !mb-4;
-}
-
-@media only screen and (max-width: 768px) {
-  .nextra-sidebar-container {
-    @apply w-full;
+.nextra-scrollbar {
+  & [aria-current="true"] {
+    @apply text-text;
   }
-}
 
-@media only screen and (max-width: 1024px) {
-  .nextra-toc {
-    display: none !important;
+  & [aria-current="false"] {
+    @apply text-textSubtle;
   }
-}
-
-[aria-current="true"].nextra-focus {
-  @apply font-medium text-text;
-}
-
-[aria-current="false"].nextra-focus {
-  @apply text-textSubtle;
 }

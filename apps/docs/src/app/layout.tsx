@@ -37,7 +37,10 @@ export const metadata = {
 } satisfies NextraMetadata;
 
 const navbar = (
-  <Navbar logo={<UIKitLogo />}>
+  <Navbar
+    logo={<UIKitLogo />}
+    projectLink="https://github.com/lumada-design/hv-uikit-react"
+  >
     <ThemeSwitch lite />
     <ThemeSwitcher />
   </Navbar>
