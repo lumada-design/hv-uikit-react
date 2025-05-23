@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { HvSelect } from "@hitachivantara/uikit-react-core";
 
-import { useDocsTheme } from "../../hooks/useDocsTheme";
+import { useDocsTheme } from "../hooks/useDocsTheme";
 
 const themes = [
   { value: "pentahoPlus", label: "Pentaho+" },

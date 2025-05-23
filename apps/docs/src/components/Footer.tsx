@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { UIKitLogo } from "./logo/uikit";
+import { UIKitLogo } from "../assets/logos";
 
 const footerLinks = [
   {
