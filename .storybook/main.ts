@@ -1,6 +1,5 @@
 import { dirname, join } from "node:path";
-import { StorybookConfig } from "@storybook/react-vite";
-import remarkGfm from "remark-gfm";
+import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 
 import viteConfig from "./vite.config";
@@ -21,16 +20,7 @@ export default {
   addons: [
     getAbsolutePath("@storybook/addon-controls"),
     getAbsolutePath("@storybook/addon-toolbars"),
-    {
-      name: "@storybook/addon-docs",
-      options: {
-        mdxPluginOptions: {
-          mdxCompileOptions: {
-            remarkPlugins: [remarkGfm],
-          },
-        },
-      },
-    },
+    getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-themes"),
@@ -53,12 +43,7 @@ export default {
     return mergeConfig(config, viteConfig);
   },
   typescript: {
-    reactDocgen: "react-docgen-typescript",
-    reactDocgenTypescriptOptions: {
-      tsconfigPath: "../tsconfig.json",
-      shouldExtractLiteralValuesFromEnum: true,
-      shouldRemoveUndefinedFromOptional: true,
-    },
+    reactDocgen: "react-docgen",
   },
   build: {
     test: {
