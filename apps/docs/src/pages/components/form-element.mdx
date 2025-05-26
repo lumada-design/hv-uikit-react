@@ -89,8 +89,9 @@ along with the following building blocks provided by UI Kit:
 - `<HvWarningText>` - an error message, displayed only when the form element is in an invalid state (`statusMessage` prop)
 
 ```tsx live
-<HvFormElement required status="invalid">
-  <HvLabel label="Name">
+<HvFormElement required status="invalid" className="flex gap-xs">
+  <HvLabel label="Name" className="m-t-md" />
+  <div className="flex flex-col">
     <HvInfoMessage>Input your name</HvInfoMessage>
     <HvBaseInput
       placeholder="Insert name"
@@ -101,8 +102,8 @@ along with the following building blocks provided by UI Kit:
         </>
       }
     />
-  </HvLabel>
-  <HvWarningText disableBorder>This is the error message.</HvWarningText>
+    <HvWarningText disableBorder>This is the error message.</HvWarningText>
+  </div>
 </HvFormElement>
 ```
 
