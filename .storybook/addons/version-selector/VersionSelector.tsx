@@ -3,7 +3,7 @@ import {
   IconButton,
   TooltipLinkList,
   WithTooltip,
-} from "@storybook/components";
+} from "storybook/internal/components";
 
 import { ADDON_ID } from "./constants";
 

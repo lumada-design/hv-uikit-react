@@ -1,8 +1,8 @@
 import createCache from "@emotion/cache";
 import { Global } from "@emotion/react";
 import { DecoratorHelpers } from "@storybook/addon-themes";
-import { useEffect } from "@storybook/preview-api";
-import { Decorator } from "@storybook/react";
+import type { Decorator } from "@storybook/react-vite";
+import { useEffect } from "storybook/preview-api";
 import { HvProvider } from "@hitachivantara/uikit-react-core";
 import { themes } from "@hitachivantara/uikit-styles";
 

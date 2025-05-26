@@ -1,6 +1,6 @@
 import React from "react";
-import { IconButton } from "@storybook/components";
-import { addons, useAddonState, useStorybookApi } from "@storybook/manager-api";
+import { IconButton } from "storybook/internal/components";
+import { addons, useAddonState, useStorybookApi } from "storybook/manager-api";
 import { colors } from "@hitachivantara/uikit-styles";
 
 import { themes } from "../../theme";

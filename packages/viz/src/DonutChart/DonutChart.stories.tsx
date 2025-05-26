@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { css } from "@emotion/css";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
   HvCheckBox,
   HvDropdown,

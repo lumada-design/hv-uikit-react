@@ -1,5 +1,5 @@
 import type { A11yParameters } from "@storybook/addon-a11y";
-import type { StorybookParameters } from "@storybook/types";
+import type { StorybookParameters } from "storybook/internal/types";
 
 interface ChromaticParameters {
   disableSnapshot?: boolean;

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import isChromatic from "chromatic/isChromatic";
+import { expect, userEvent, within } from "storybook/test";
 import {
   HvDialog,
   HvDialogActions,

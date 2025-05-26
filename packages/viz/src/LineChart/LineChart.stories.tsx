@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { css } from "@emotion/css";
-import type { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { loadArrow } from "arquero";
+import { expect, userEvent, within } from "storybook/test";
 import {
   HvButton,
   HvCheckBox,

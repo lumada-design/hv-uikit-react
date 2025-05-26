@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Leaf } from "@hitachivantara/uikit-react-icons";
 import {
   HvCanvasToolbarTabs,
