@@ -1,10 +1,8 @@
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseCheckBox,
   HvCheckBox,
   HvCheckBoxProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvCheckBox> = {
@@ -41,51 +39,6 @@ export const Main: StoryObj<HvCheckBoxProps> = {
   },
 };
 
-export const Custom: StoryObj<HvCheckBoxProps> = {
-  render: () => {
-    const styles = {
-      box: css({
-        "& svg": {
-          borderRadius: "6px",
-          borderColor: theme.colors.warning,
-        },
-      }),
-      checked: css({
-        "& svg": {
-          borderColor: theme.colors.warning,
-          backgroundColor: theme.colors.warning,
-          color: theme.colors.textDimmed,
-        },
-      }),
-      indeterminate: css({
-        "& svg": {
-          borderColor: theme.colors.warningDeep,
-          backgroundColor: theme.colors.warningDeep,
-          color: theme.colors.textDimmed,
-        },
-      }),
-    };
-
-    return (
-      <>
-        <HvCheckBox
-          label="Checkbox 1"
-          classes={{ root: styles.box, checked: styles.checked }}
-        />
-        <HvCheckBox
-          label="Checkbox 1"
-          indeterminate
-          classes={{
-            root: styles.box,
-            checked: styles.checked,
-            indeterminate: styles.indeterminate,
-          }}
-        />
-      </>
-    );
-  },
-};
-
 export const Test: StoryObj<HvCheckBoxProps> = {
   render: () => (
     <>
@@ -116,12 +69,15 @@ export const Test: StoryObj<HvCheckBoxProps> = {
         label="Checkbox 3"
       />
       <div>
-        <HvCheckBox aria-label="Checkbox 1" />
-        <HvCheckBox defaultChecked aria-label="Checkbox 2" />
-        <HvCheckBox indeterminate aria-label="Checkbox 3" />
-        <HvCheckBox semantic aria-label="Checkbox 1" />
-        <HvCheckBox semantic defaultChecked aria-label="Checkbox 2" />
-        <HvCheckBox semantic indeterminate aria-label="Checkbox 3" />
+        <HvCheckBox aria-label="Checkbox" />
+        <HvCheckBox defaultChecked aria-label="Checkbox" />
+        <HvCheckBox indeterminate aria-label="Checkbox" />
+        <HvCheckBox semantic aria-label="Checkbox" />
+        <HvCheckBox semantic defaultChecked aria-label="Checkbox" />
+        <HvCheckBox semantic indeterminate aria-label="Checkbox" />
+        <HvCheckBox color="warning" aria-label="Checkbox" />
+        <HvCheckBox defaultChecked color="warning" aria-label="Checkbox" />
+        <HvCheckBox defaultChecked color="purple" aria-label="Checkbox" />
       </div>
     </>
   ),

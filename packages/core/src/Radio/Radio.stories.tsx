@@ -1,10 +1,8 @@
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   HvBaseRadio,
   HvRadio,
   HvRadioProps,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvRadio> = {
@@ -62,33 +60,6 @@ export const Variants: StoryObj<HvRadioProps> = {
   },
 };
 
-export const Custom: StoryObj<HvRadioProps> = {
-  render: () => {
-    const styles = {
-      box: css({
-        "& svg": {
-          borderRadius: theme.radii.full,
-          borderColor: theme.colors.warning,
-        },
-      }),
-      checked: css({
-        "& svg": {
-          borderColor: theme.colors.warning,
-          backgroundColor: theme.colors.bgContainer,
-          color: theme.colors.warning,
-        },
-      }),
-    };
-
-    return (
-      <HvRadio
-        label="Radio 1"
-        classes={{ root: styles.box, checked: styles.checked }}
-      />
-    );
-  },
-};
-
 export const Test: StoryObj<HvRadioProps> = {
   render: () => (
     <>
@@ -110,6 +81,8 @@ export const Test: StoryObj<HvRadioProps> = {
       <HvRadio aria-label="radio" />
       <HvRadio defaultChecked aria-label="radio" />
       <HvRadio defaultChecked disabled aria-label="radio" />
+      <HvRadio color="warning" aria-label="radio" />
+      <HvRadio defaultChecked color="warning" aria-label="radio" />
     </>
   ),
 };
