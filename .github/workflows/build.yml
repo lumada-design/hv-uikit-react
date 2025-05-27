@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      build-all:
+        type: boolean
+        description: "Build all packages"
+        default: true
+      publish-packages:
+        type: boolean
+        description: "Publish all packages"
+        default: false
+  workflow_call:
+    inputs:
+      build-all:
+        type: boolean
+        description: "Build all packages"
+        default: true
+      publish-packages:
+        type: boolean
+        description: "Publish all packages"
+        default: false
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Build App
+        run: npm run build -w apps/app
+
+      - name: Build Packages
+        run: npm run build -w packages/ -w apps/default-app
+        if: ${{ inputs.build-packages || inputs.publish-packages }}
+
+      - name: Publish Packages
+        if: ${{ inputs.publish-packages }}
+        run: npx -y pkg-pr-new publish './packages/*' --no-template
