@@ -16,11 +16,6 @@ import {
   startsWithSelf,
 } from "./config-utils.js";
 
-enum ViteCommand {
-  BUILD = "build",
-  SERVE = "serve",
-}
-
 type BundleDefinition =
   | HvAppShellProvidersConfig
   | HvAppShellViewsConfig
@@ -114,7 +109,7 @@ export default function processConfiguration(
           },
         },
         // if serve (preview/dev) it uses the basePath. Otherwise(build), use ./
-        base: command === ViteCommand.SERVE ? basePath : "./",
+        base: command === "serve" ? basePath : "./",
       };
     },
 

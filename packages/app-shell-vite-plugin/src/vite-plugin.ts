@@ -15,7 +15,7 @@ import {
   getFinalModuleName,
   loadConfigFile,
 } from "./config-utils.js";
-import { getModulePath, resolveModule } from "./nodeModule.js";
+import { resolveModule } from "./nodeModule.js";
 import SHARED_DEPENDENCIES from "./shared-dependencies.js";
 import getVirtualEntrypoints from "./virtual-entrypoints.js";
 import processConfiguration from "./vite-configuration-processor-plugin.js";
@@ -28,10 +28,10 @@ import generateImportmap, {
 import injectMetadata from "./vite-metadata-plugin.js";
 import serveAppShellConfig from "./vite-watch-config-plugin.js";
 
-enum ViteBuildMode {
-  PRODUCTION = "production",
-  DEVELOPMENT = "development",
-}
+const ViteBuildMode = {
+  PRODUCTION: "production",
+  DEVELOPMENT: "development",
+} as const;
 
 export type ApplicationBundleType = "app" | "bundle";
 
@@ -199,17 +199,15 @@ export function HvAppShellVitePlugin(
       viteStaticCopy({
         targets: [
           {
-            src: getModulePath("es-module-shims", "dist/*"),
+            src: resolveModule("es-module-shims", "*"),
             dest: "bundles",
           },
           // copy the ui kit icons' sprites to the "icons" folder
           {
-            src: [
-              getModulePath(
-                "@hitachivantara/uikit-react-icons",
-                "dist/sprites/*.svg",
-              ),
-            ],
+            src: resolveModule(
+              "@hitachivantara/uikit-react-icons",
+              "../sprites/*.svg",
+            ),
             dest: "icons",
           },
           ...(!devMode && buildEntryPoint
