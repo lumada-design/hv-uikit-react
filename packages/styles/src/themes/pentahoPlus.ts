@@ -824,7 +824,7 @@ const pentahoPlus = makeTheme((theme) => ({
           "& .HvListItem-endAdornment": { backgroundColor: "transparent" },
         },
         listItemSelected: {
-          background: blue[950],
+          background: blue[800],
           borderLeft: "unset",
         },
         listItemFocus: {
@@ -841,7 +841,7 @@ const pentahoPlus = makeTheme((theme) => ({
           borderLeft: "unset",
           borderRadius: theme.radii.round,
           ".HvVerticalNavigationTreeViewItem-selected>&": {
-            background: blue[950],
+            background: blue[800],
             borderLeft: "unset",
           },
           ":not(.HvVerticalNavigationTreeViewItem-disabled>&):not(.HvVerticalNavigationTreeViewItem-selected>&)":
