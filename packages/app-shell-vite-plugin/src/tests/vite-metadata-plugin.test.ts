@@ -5,7 +5,7 @@ import { vi } from "vitest";
 import injectMetadata from "../vite-metadata-plugin";
 
 describe("test vite-metadata plugin", () => {
-  it.skip("it returns the injectMetadata information", () => {
+  it.skip("returns the injectMetadata information", () => {
     const fsTmp = fs.existsSync;
     fs.existsSync = vi.fn().mockImplementation((file: string) => {
       return file.match("/dummyPath/dummyRootProject/app-shell.config.json");

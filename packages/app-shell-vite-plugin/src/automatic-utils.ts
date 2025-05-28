@@ -57,7 +57,7 @@ interface AutomaticView {
  * and the respective module (to be transformed to the final bundle)
  * @param root the absolute path to the views folder
  * @param viewsFolder the relative base folder where the files are included
- * @return an array of viewConfig and their correspondent module definition
+ * @returns an array of viewConfig and their correspondent module definition
  */
 export function mapFolderIndexFilesToRoutes(
   root: string,
@@ -110,7 +110,7 @@ export function mapFolderIndexFilesToRoutes(
  * @param selfAppName The package name of this app
  * @param root Project root folder
  * @param viewsFolder Views folder
- * @return the array of modules to be created by the rollup mechanism
+ * @returns the array of modules to be created by the rollup mechanism
  */
 export function applyAutomaticViewsAndRoutes(
   config: HvAppShellConfig,

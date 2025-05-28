@@ -6,8 +6,6 @@ import { vi } from "vitest";
 
 import { HvCarousel, HvCarouselProps, HvCarouselSlide } from ".";
 
-Element.prototype.scrollIntoView = vi.fn();
-
 const setup = ({
   title = "TITLE",
   numImages = 10,

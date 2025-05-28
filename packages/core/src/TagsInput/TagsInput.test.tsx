@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { HvTagsInput } from ".";
+import { HvTagsInput } from "./";
 import { ControlledTagArray } from "./stories/ControlledTagArray";
 
 describe("TagsInput examples", () => {
@@ -54,8 +54,6 @@ describe("TagsInput Component", () => {
   beforeEach(async () => {
     vi.useRealTimers();
   });
-
-  Element.prototype.scrollTo = () => {};
 
   it("should render the label correctly", () => {
     render(<HvTagsInput label="Custom label" classes={mockClasses} />);

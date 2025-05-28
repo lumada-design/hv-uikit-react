@@ -20,7 +20,7 @@ export default class CalendarModel {
    *
    * @param month - Number of the month (1 to 12).
    * @param year - Number of the year.
-   * @memberOf CalendarModel
+   * @memberof CalendarModel
    */
   updateModel = (month: number, year: number) => {
     let validMonth = month;

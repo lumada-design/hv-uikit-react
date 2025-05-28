@@ -164,7 +164,7 @@ export const Card: StoryObj<HvSkeletonProps> = {
               >
                 <HvCardMedia
                   component="img"
-                  alt="just an image"
+                  alt="Himalayas"
                   height={140}
                   image="https://dyj7luh3166cu.cloudfront.net/wp-content/uploads/sites/8/2016/02/Himalayas.jpg"
                 />

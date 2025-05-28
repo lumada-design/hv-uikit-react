@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "react",
+    "oxc",
+    "import",
+    "jsdoc",
+    "jsx-a11y",
+    "node",
+    "vitest"
+  ],
+  "categories": {
+    "correctness": "error",
+    "perf": "error",
+    "suspicious": "error"
+  },
+  "env": {
+    "builtin": true,
+    "es2022": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {},
+  "rules": {
+    "default-case": "error",
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+
+    "react/jsx-key": "off",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+
+    "jsx_a11y/no-autofocus": "off",
+
+    "👇TODOS": "off",
+    "only-used-in-recursion": "off",
+    "import/default": "off",
+    "import/namespace": "off",
+    "import/no-duplicates": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-unassigned-import": "off",
+    "typescript/no-extraneous-class": "off",
+    "unicorn/prefer-set-has": "off",
+    "unicorn/prefer-array-find": "off",
+    "unicorn/prefer-add-event-listener": "off",
+    "jest/expect-expect": "off",
+    "jest/no-standalone-expect": "off",
+    "jest/no-disabled-tests": "off",
+    "jsx_a11y/role-supports-aria-props": "off",
+    "jsx_a11y/role-has-required-aria-props": "off",
+    "_": "off"
+  },
+  "settings": {
+    "jsdoc": {
+      "tagNamePreference": {
+        "augments": "extends"
+      }
+    },
+    "jsx-a11y": {
+      "polymorphicPropName": "",
+      "components": {
+        "HvButton": "button",
+        "HvButtonBase": "button"
+      }
+    }
+  }
+}

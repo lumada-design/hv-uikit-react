@@ -247,7 +247,7 @@ const Card1 = () => (
     />
     <HvCardMedia
       component="img"
-      alt="madeira island image"
+      alt="madeira island"
       height={240}
       image="https://lumada-design.github.io/assets/madeira.webp"
     />

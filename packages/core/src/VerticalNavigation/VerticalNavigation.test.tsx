@@ -262,7 +262,7 @@ describe("VerticalNavigation", () => {
     expect(link).not.toHaveAttribute("aria-current");
   });
 
-  describe("Slider Navigation", async () => {
+  describe("Slider Navigation", () => {
     it("should not render header on first page", async () => {
       render(<SliderSample />);
 
