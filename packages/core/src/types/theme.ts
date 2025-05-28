@@ -4,7 +4,7 @@ import type {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { type HvExtraDeepPartialProps } from "./generic";
+import type { HvExtraDeepPartialProps } from "./generic";
 
 export { type HvTheme } from "@hitachivantara/uikit-react-shared";
 

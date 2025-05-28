@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import * as React from "react";
 import * as reactHookForm from "react-hook-form";
 import { importCode, type Scope } from "react-live-runner";

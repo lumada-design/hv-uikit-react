@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvInput, HvInputProps } from "../../Input";
 import { HvBaseProps } from "../../types/generic";

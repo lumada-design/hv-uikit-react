@@ -449,6 +449,7 @@ export const HvVerticalNavigationTreeView = forwardRef<
 
       setExpandedState(newExpanded);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [expanded, focusedNodeId, onToggle, setExpandedState],
   );
 

@@ -66,6 +66,7 @@ export const HvThemeProvider = ({
       setTheme(newTheme);
       setColorMode(newMode);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [selectedMode, selectedTheme],
   );
 

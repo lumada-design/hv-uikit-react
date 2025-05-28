@@ -1,7 +1,7 @@
 // to transform commonjs to es6 (required by react-router-dom)
-import fs from "fs";
+import fs from "node:fs";
 import { createRequire } from "node:module";
-import path from "path";
+import path from "node:path";
 import commonjs from "@rollup/plugin-commonjs";
 // for support json manipulation (used by the module to export)
 import json from "@rollup/plugin-json";

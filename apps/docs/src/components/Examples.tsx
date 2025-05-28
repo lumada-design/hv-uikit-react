@@ -1,3 +1,4 @@
+// eslint-disable no-webpack-loader-syntax
 import canvas from "!!raw-loader!../content/examples/canvas.mdx";
 import charts from "!!raw-loader!../content/examples/charts.mdx";
 import dnd from "!!raw-loader!../content/examples/dnd.mdx";

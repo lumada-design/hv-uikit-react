@@ -115,7 +115,7 @@ const KanbanBoard = () => {
       setCreatingTask(true);
 
       const highestId = tasks.reduce((acc, task) => {
-        const taskId = parseInt(task.id.replace("task", ""), 10);
+        const taskId = Number.parseInt(task.id.replace("task", ""), 10);
         return taskId > acc ? taskId : acc;
       }, 0);
 

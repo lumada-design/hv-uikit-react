@@ -410,8 +410,6 @@ const Table = () => {
  * Hero component containing a showcase of the UI Kit components
  */
 export const Component = () => {
-  console.count("render");
-
   return (
     <HvGrid container>
       <HvGrid item xs={12}>

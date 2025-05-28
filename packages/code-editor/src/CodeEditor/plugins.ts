@@ -3,8 +3,8 @@ import { xmlLanguagePlugin } from "./languages/xml";
 import { LanguagePlugin } from "./types";
 
 /**
- * @internal
  * Language plugins supported by the `CodeEditor`
+ * @internal
  */
 export const hvLanguagePlugins: Record<string, LanguagePlugin> = {
   xml: xmlLanguagePlugin,
