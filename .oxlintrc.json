@@ -23,7 +23,7 @@
     "browser": true,
     "node": true
   },
-  "ignorePatterns": [],
+  "ignorePatterns": ["*.d.ts", "dist", "node_modules", "playwright.config.ts"],
   "rules": {
     // #region React
     "react-hooks/exhaustive-deps": "error",
