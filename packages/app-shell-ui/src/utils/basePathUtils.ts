@@ -7,7 +7,7 @@ import { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
  * - App baseUrl don't have case restrictions
  * - If the main app is not discovered, returns "/"
  *
- * @return The main app baseUrl, or "/" otherwise. Value is always returned in lowercase.
+ * @returns The main app baseUrl, or "/" otherwise. Value is always returned in lowercase.
  * @param config The app configuration definition
  */
 const getBasePath = (config: HvAppShellConfig) => {

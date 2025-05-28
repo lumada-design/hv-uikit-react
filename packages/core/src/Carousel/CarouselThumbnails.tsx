@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps } from "../Button";
 import { HvPaginationProps } from "../Pagination";
