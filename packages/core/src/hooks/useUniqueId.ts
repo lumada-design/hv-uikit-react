@@ -1,4 +1,5 @@
-import * as React from "react"; // this can be optimized when react 17 support is dropped
+// eslint-disable-next-line no-restricted-imports
+import * as React from "react"; // TODO: this can be optimized when react 17 support is dropped
 
 import { useEnhancedEffect } from "./useEnhancedEffect";
 

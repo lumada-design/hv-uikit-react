@@ -1,4 +1,4 @@
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { setId } from "../../../utils/setId";
 import { ViewMode } from "../../enums";

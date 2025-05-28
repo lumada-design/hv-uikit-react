@@ -180,7 +180,7 @@ export const HvInlineEditor = fixedForwardRef(function HvInlineEditor<
             />
           }
           className={cx(classes.button, {
-            [classes.largeText]: parseInt(lineHeight as string, 10) >= 28,
+            [classes.largeText]: Number(lineHeight as string) >= 28,
           })}
           onClick={handleClick}
           disabled={disabled}

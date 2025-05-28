@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as reactHookForm from "react-hook-form";

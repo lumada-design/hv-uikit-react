@@ -304,9 +304,9 @@ export const HvList = (props: HvListProps) => {
     return renderListItem(item, index, {
       style: {
         ...style,
-        top: `${parseFloat(style.top) + 5}px`,
-        left: `${parseFloat(style.left) + 5}px`,
-        width: `calc(${parseFloat(style.width)}% - 10px)`,
+        top: `${Number.parseFloat(style.top) + 5}px`,
+        left: `${Number.parseFloat(style.left) + 5}px`,
+        width: `calc(${Number.parseFloat(style.width)}% - 10px)`,
       },
       tabIndex,
       interactive: true,

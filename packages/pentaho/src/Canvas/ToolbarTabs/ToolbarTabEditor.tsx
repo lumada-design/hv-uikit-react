@@ -208,6 +208,7 @@ export const ToolbarTabEditor = ({
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
         // Using children is unstable in React for contentEditable so the value is rendered through dangerouslySetInnerHTML
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: value,
         }}
