@@ -289,6 +289,17 @@ const pentahoPlus = makeTheme((theme) => ({
     round: "8px",
     large: "16px",
   },
+  // icons: {
+  //   viewBox: "0 0 256 256",
+  //   // Semantic icons
+  //   Success:
+  //     "M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z",
+  //   Caution:
+  //     "M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z",
+  //   Fail: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z",
+  //   // Info: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z",
+  //   Info: "M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z",
+  // },
   components: {
     HvLoading: {
       classes: {
@@ -308,6 +319,36 @@ const pentahoPlus = makeTheme((theme) => ({
           "&[data-color='primary']:not(.HvBadge-badgePosition:empty)": {
             color: theme.colors.primary,
             backgroundColor: theme.colors.primaryDimmed,
+          },
+        },
+      },
+    },
+    HvStatusIcon: {
+      classes: {
+        root: {
+          ":not(.HvStatusIcon-simple)": {
+            outline: "1px solid currentcolor",
+          },
+        },
+        ...Object.fromEntries(
+          Object.entries(notificationMap).map(([variant, color]) => [
+            variant,
+            {
+              borderRadius: theme.radii.round,
+              color: theme.colors[color],
+              ":not(.HvStatusIcon-simple)": {
+                outline: `1px solid ${theme.colors[`${color}Border`]}`,
+                backgroundColor: theme.colors[`${color}Subtle`],
+              },
+            },
+          ]),
+        ),
+        default: {
+          borderRadius: theme.radii.round,
+          color: theme.colors.text,
+          ":not(.HvStatusIcon-simple)": {
+            backgroundColor: theme.colors.bgContainerSecondary,
+            outline: `1px solid ${theme.colors.borderSubtle}`,
           },
         },
       },

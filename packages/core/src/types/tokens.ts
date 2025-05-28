@@ -63,3 +63,11 @@ export interface HvThemePalette {
   semantic: HvSemanticColors;
   support: HvSupportColors;
 }
+
+export type HvCalloutVariant =
+  | "success"
+  | "warning"
+  | "error"
+  | "default"
+  | "info"
+  | "accent";
