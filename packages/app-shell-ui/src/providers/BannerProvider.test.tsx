@@ -1,31 +1,24 @@
-import { Button } from "@mui/material";
 import userEvent from "@testing-library/user-event";
-import { vi } from "vitest";
 
 import renderTestProvider from "../tests/testUtils";
 import { useBannerContext } from "./BannerProvider";
-
-vi.mock("uuid", () => ({
-  v4: vi.fn(() => "mocked-uuid"), // Replace 'mocked-uuid' with the desired mock UUID
-}));
 
 const TestComponent = () => {
   const { show } = useBannerContext();
 
   return (
-    <div>
-      <Button
-        onClick={() =>
-          show({
-            type: "banner",
-            variant: "default",
-            message: "Lorem Ipsum",
-          })
-        }
-      >
-        Add Banner
-      </Button>
-    </div>
+    <button
+      type="button"
+      onClick={() =>
+        show({
+          type: "banner",
+          variant: "default",
+          message: "Lorem Ipsum",
+        })
+      }
+    >
+      Add Banner
+    </button>
   );
 };
 

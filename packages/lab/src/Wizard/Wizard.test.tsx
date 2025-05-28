@@ -45,7 +45,9 @@ describe("HvWizard", () => {
 
     expect(document.querySelector(".customClassName")).toBeInTheDocument();
     expect(document.querySelector(".customClassesRoot")).toBeInTheDocument();
-    expect(screen.getByLabelText(/MyContentTitle/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /MyContentTitle/i }),
+    ).toBeInTheDocument();
   });
 
   it("moves across the pages when clicking the wizard actions", () => {
