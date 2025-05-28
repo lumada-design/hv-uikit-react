@@ -20,9 +20,15 @@ jobs:
     uses: ./.github/workflows/tests-visual.yml
     secrets: inherit
 
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+    with:
+      build-all: true
+
   notify-fail:
     name: Notify Fail
-    needs: [tests, visual-tests]
+    needs: [tests, build, visual-tests]
     if: failure()
     runs-on: ubuntu-latest
 
