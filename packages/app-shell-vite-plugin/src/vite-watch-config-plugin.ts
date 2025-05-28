@@ -87,7 +87,7 @@ export default function serveAppShellConfig(
 
       server.middlewares.use(
         `${server.config.base}app-shell.config.json`,
-        async (req, res) => {
+        (req, res) => {
           res.end(
             JSON.stringify(
               prepareConfigForDevMode(appShellConfig, selfAppName),

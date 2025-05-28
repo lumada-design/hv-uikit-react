@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
-import { type SnackbarProps as MuiSnackbarProps } from "@mui/material/Snackbar";
-import { type SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
+import type { SnackbarProps as MuiSnackbarProps } from "@mui/material/Snackbar";
+import type { SnackbarContentProps as MuiSnackbarContentProps } from "@mui/material/SnackbarContent";
 import {
   useDefaultProps,
   type ExtractNames,

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvDropdown, HvDropdownProps } from "../../Dropdown";
 import { HvListValue } from "../../List";

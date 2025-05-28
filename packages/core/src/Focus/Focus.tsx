@@ -1,5 +1,5 @@
 import { cloneElement, useState } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../types/generic";
 import { isBrowser } from "../utils/browser";
