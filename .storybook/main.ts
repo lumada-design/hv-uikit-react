@@ -1,8 +1,11 @@
+import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 
 import viteConfig from "./vite.config";
+
+const require = createRequire(import.meta.url);
 
 export default {
   framework: {
@@ -18,8 +21,6 @@ export default {
   },
   docs: {},
   addons: [
-    getAbsolutePath("@storybook/addon-controls"),
-    getAbsolutePath("@storybook/addon-toolbars"),
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-links"),

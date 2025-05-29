@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
   HvStepNavigation,

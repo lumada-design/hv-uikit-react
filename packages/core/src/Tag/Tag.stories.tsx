@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvTag, HvTagProps, theme } from "@hitachivantara/uikit-react-core";
 import { Abacus } from "@hitachivantara/uikit-react-icons";
 

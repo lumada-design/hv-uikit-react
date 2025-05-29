@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { css } from "@emotion/css";
-import { Decorator, Meta, StoryObj } from "@storybook/react";
+import { Decorator, Meta, StoryObj } from "@storybook/react-vite";
 import {
   HvBaseSwitch,
   HvInfoMessage,

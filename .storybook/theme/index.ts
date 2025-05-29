@@ -1,4 +1,4 @@
-import { create, ThemeVarsPartial } from "@storybook/theming";
+import { create, ThemeVarsPartial } from "storybook/theming";
 import { colors } from "@hitachivantara/uikit-styles";
 
 const getThemeVars = (base: "light" | "dark"): ThemeVarsPartial => ({

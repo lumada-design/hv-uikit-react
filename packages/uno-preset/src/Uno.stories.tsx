@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { setupChromatic } from ".storybook/setupChromatic";

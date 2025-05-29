@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvLabel, HvLabelProps } from "@hitachivantara/uikit-react-core";
 
 const meta: Meta<typeof HvLabel> = {

@@ -1,4 +1,4 @@
-import { Preview } from "@storybook/react";
+import { Preview } from "@storybook/react-vite";
 
 import DocsContainer from "./blocks/DocsContainer";
 import { DocsPage } from "./blocks/DocsPage";

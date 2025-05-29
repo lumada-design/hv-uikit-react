@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import {
   HvCanvasToolbar,

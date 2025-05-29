@@ -6,7 +6,7 @@ import {
   Subtitle,
   Title,
   useOf,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 
 /** @see https://github.com/storybookjs/storybook/blob/v8.0.10/code/ui/blocks/src/blocks/DocsPage.tsx */
 export function DocsPage() {

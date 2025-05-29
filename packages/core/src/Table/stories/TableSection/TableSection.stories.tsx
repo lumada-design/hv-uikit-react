@@ -1,5 +1,5 @@
-import { StoryObj } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
+import { StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, within } from "storybook/test";
 
 import { CompleteTableSection } from "./CompleteTableSection";
 import { PropsTableSection } from "./PropsTableSection";

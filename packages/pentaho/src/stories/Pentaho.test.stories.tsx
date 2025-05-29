@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
 import { Test as BottomPanelTestStory } from "../Canvas/BottomPanel/BottomPanel.stories";
