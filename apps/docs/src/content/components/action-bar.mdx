@@ -1,0 +1,25 @@
+import { Callout } from "nextra/components";
+import {
+  actionBarClasses as classes,
+  HvActionBar,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header params={{ name: "ActionBar", classes }} />
+
+### Usage
+
+```tsx live
+<HvActionBar className="gap-xs">
+  <HvButton variant="secondaryGhost">Reset</HvButton>
+  <div className="flex-1" aria-hidden="true" />
+  <HvButton variant="subtle">Cancel</HvButton>
+  <HvButton variant="primary">Save</HvButton>
+</HvActionBar>
+```
+
+<Callout type="info">
+  Check the [Card](/components/card) component to see an example of the
+  `HvActionBar` in use.
+</Callout>

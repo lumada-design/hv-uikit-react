@@ -1,0 +1,27 @@
+import { Callout } from "nextra/components";
+import {
+  inputClasses as classes,
+  HvNumberInput,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "NumberInput", classes }}
+  Component={HvNumberInput}
+  componentName="HvNumberInput"
+  controls={{
+    label: { type: "text", defaultValue: "Value" },
+    description: { type: "text", defaultValue: "Please enter a number" },
+    placeholder: "Enter a number here...",
+    required: { defaultValue: true },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+  decoratorClassName="w-full"
+/>
+
+<Callout type="info">
+  The `HvNumberInput` component shares the same API as `HvInput`. For full
+  documentation, see the [HvInput component page](/components/input).
+</Callout>

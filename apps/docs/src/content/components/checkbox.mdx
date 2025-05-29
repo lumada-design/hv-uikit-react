@@ -1,0 +1,67 @@
+import {
+  checkBoxClasses as classes,
+  HvCheckBox,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "CheckBox", classes }}
+  Component={HvCheckBox}
+  componentName="HvCheckBox"
+  controls={{
+    checked: { defaultValue: false },
+    indeterminate: { defaultValue: false },
+    required: { defaultValue: true },
+    disabled: { defaultValue: false },
+    color: { type: "color" },
+  }}
+  componentProps={{
+    label: "I have read and agree to the terms and conditions",
+    statusMessage: "Please accept the terms and conditions",
+    checked: false,
+    indeterminate: false,
+  }}
+/>
+
+### Color
+
+You can use the [`color`](/docs/styling#color-prop) prop to style the color of the checkbox.
+
+```tsx live
+<div className="flex gap-sm">
+  <HvCheckBox defaultChecked color="primary" />
+  <HvCheckBox defaultChecked color="positive" />
+  <HvCheckBox defaultChecked color="coral" />
+  <HvCheckBox defaultChecked color="#c73aa8" />
+</div>
+```
+
+### Controlled
+
+You can share state control from a parent component. Clicking **Checkbox 1** has no effect, while clicking **Checkbox 2** updates the state and toggles both checkboxes.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  return (
+    <>
+      <HvCheckBox checked={isChecked} label="Checkbox 1" />
+      <HvCheckBox
+        checked={isChecked}
+        onChange={(_, checked) => setIsChecked(checked)}
+        label="Checkbox 2"
+      />
+    </>
+  );
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvInput`](/components/input)
+- [`HvRadio`](/components/radio)

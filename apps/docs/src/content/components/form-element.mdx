@@ -1,0 +1,119 @@
+import { Callout } from "nextra/components";
+import {
+  formElementClasses as classes,
+  HvAdornment,
+  HvBaseInput,
+  HvFormElement,
+  HvInfoMessage,
+  HvLabel,
+  HvWarningText,
+} from "@hitachivantara/uikit-react-core";
+import { Fail, Success } from "@hitachivantara/uikit-react-icons";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{
+    name: "FormElement",
+    classes,
+    subComponents: [
+      "Adornment",
+      "CharCounter",
+      "InfoMessage",
+      "Label",
+      "WarningText",
+      "Suggestions",
+    ],
+  }}
+  Component={HvFormElement}
+  componentName="HvFormElement"
+  controls={{
+    required: { defaultValue: true },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+    status: { defaultValue: "invalid" },
+  }}
+>
+  <HvLabel label="Name">
+    <HvInfoMessage>Input your name</HvInfoMessage>
+    <HvBaseInput
+      placeholder="Insert name"
+      endAdornment={
+        <>
+          <HvAdornment showWhen="invalid" icon={<Fail color="negative" />} />
+          <HvAdornment showWhen="valid" icon={<Success color="positive" />} />
+        </>
+      }
+    />
+  </HvLabel>
+  <HvWarningText disableBorder>This is the error message.</HvWarningText>
+</Header>
+
+<Callout type="warning">
+  You probably don't need to use this component directly. Instead, please check
+  out [Related components](#related-components) for a list of *ready-to-use* UI
+  Kit form components.
+</Callout>
+
+### Building blocks
+
+The `HvFormElement` component should be constructed using an underlying `<input>` component or equivalent (eg. `<select>`)
+along with the following building blocks provided by UI Kit:
+
+- `<HvAdornment>` - a decorative icon or action that's rendered conditionally
+- `<HvLabel>` - a recognizable name for a given form element (`label` prop)
+- `<HvInfoMessage>` - an additional descriptive text for the form element (`description` prop)
+- `<HvWarningText>` - an error message, displayed only when the form element is in an invalid state (`statusMessage` prop)
+
+```tsx live
+<HvFormElement required status="invalid" className="flex gap-xs">
+  <HvLabel label="Name" className="m-t-md" />
+  <div className="flex flex-col">
+    <HvInfoMessage>Input your name</HvInfoMessage>
+    <HvBaseInput
+      placeholder="Insert name"
+      endAdornment={
+        <>
+          <HvAdornment showWhen="invalid" icon={<Fail color="negative" />} />
+          <HvAdornment showWhen="valid" icon={<Success color="positive" />} />
+        </>
+      }
+    />
+    <HvWarningText disableBorder>This is the error message.</HvWarningText>
+  </div>
+</HvFormElement>
+```
+
+UI Kit form components will automatically handle the rendering of these building blocks,
+whose customization is available via the aforementioned `label`/`description`/`statusMessage` props.
+
+The example below demonstrates how these elements are used in the `HvInput` component:
+
+```tsx live
+<HvInput
+  required
+  label="Name"
+  description="Input your name"
+  placeholder="Insert name"
+  statusMessage="Custom error message."
+  status="invalid"
+/>
+```
+
+### Related components
+
+The following are ready-to-use form components built with `HvFormElement` and its building blocks:
+
+- [`HvCheckbox`](/components/checkbox)
+- [`HvColorPicker`](/components/color-picker)
+- [`HvDatePicker`](/components/date-picker)
+- [`HvFileUploader`](/components/file-uploader)
+- [`HvInput`](/components/input)
+- [`HvRadio`](/components/radio)
+- [`HvRadioGroup`](/components/radio-group)
+- [`HvSelect`](/components/select)
+- [`HvSelectionList`](/components/selection-list)
+- [`HvSlider`](/components/slider)
+- [`HvSwitch`](/components/switch)
+- [`HvTextArea`](/components/textarea)
+- [`HvTimePicker`](/components/time-picker)

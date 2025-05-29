@@ -1,0 +1,192 @@
+import {
+  bulkActionsClasses as classes,
+  HvBulkActions,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "BulkActions", classes }}
+  Component={HvBulkActions}
+  componentName="HvBulkActions"
+  controls={{
+    selectAllLabel: { defaultValue: "Select All Items" },
+    numTotal: { defaultValue: 10 },
+    numSelected: { defaultValue: 3 },
+    actions: {
+      type: "object",
+      defaultValue: [
+        { id: "add", label: "Add" },
+        { id: "delete", label: "Delete" },
+        { id: "lock", label: "Lock" },
+        { id: "put", label: "Preview" },
+      ],
+    },
+    maxVisibleActions: { defaultValue: 2 },
+    semantic: { defaultValue: false },
+  }}
+  componentProps={{
+    className: "w-full",
+  }}
+/>
+
+### With content
+
+Sample of the `HvBulkActions` component with content.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [data, setData] = useState(() =>
+    [...Array(12).keys()].map((id) => ({ id, checked: false })),
+  );
+
+  const handleSelectAll = (checked = false) => {
+    setData(data.map((el) => ({ ...el, checked })));
+  };
+
+  return (
+    <>
+      <HvBulkActions
+        numTotal={data.length}
+        numSelected={data.filter((el) => el.checked).length}
+        onSelectAll={(evt, checked) => handleSelectAll(checked)}
+        onSelectAllPages={(evt) => handleSelectAll(true)}
+        maxVisibleActions={3}
+      />
+      <div className="w-full flex flex-wrap gap-xs items-center justify-center">
+        {data.map((el, i) => (
+          <HvCheckBox
+            key={el.id}
+            classes={{ container: "items-center w-120px h-40px" }}
+            label={`Value ${el.id + 1}`}
+            checked={el.checked}
+            onChange={(e, checked) => (evt, i, checked) => {
+              const newData = [...data];
+              newData[i].checked = checked;
+              setData(newData);
+            }}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+```
+
+### With pagination
+
+Sample of the `HvBulkActions` component with content and pagination.
+
+```tsx live
+import { useState } from "react";
+
+const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
+
+const addEntry = (i: number) => ({
+  id: `val${i + 1}`,
+  value: `Value ${i + 1}`,
+  checked: false,
+});
+
+export default function Demo() {
+  const [data, setData] = useState(() => [...Array(18).keys()].map(addEntry));
+  const [page, setPage] = useState(0);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
+
+  const handleSelectAllPages = (checked = true) => {
+    setData(data.map((el) => ({ ...el, checked })));
+  };
+
+  const handleSelectAll = () => {
+    if (data.some((el) => el.checked)) {
+      handleSelectAllPages(false);
+      return;
+    }
+
+    const start = pageSize * page;
+    const end = pageSize * (page + 1);
+
+    const selectedAll = data
+      .slice(start, end)
+      .reduce((accum, el) => accum || el.checked, false);
+
+    const newData = [...data];
+    newData.forEach((el, i) => {
+      if (i >= start && i < end) newData[i] = { ...el, checked: !selectedAll };
+    });
+    setData(newData);
+  };
+
+  const handleAction: HvBulkActionsProps["onAction"] = (event, action) => {
+    const selected = data.filter((el) => el.checked);
+
+    switch (action.id) {
+      case "add": {
+        const newEls = selected.map((el) =>
+          addEntry(`${el.id}-copy-${Math.random().toString(36).slice(2, 5)}`),
+        );
+        setData([...data, ...newEls]);
+        break;
+      }
+      case "delete": {
+        const selectedIds = selected.map((el) => el.id);
+        setData(data.filter((el) => !selectedIds.includes(el.id)));
+        break;
+      }
+      case "lock":
+      default:
+        break;
+    }
+  };
+
+  const numPages = Math.ceil(data.length / pageSize);
+
+  return (
+    <div className="w-full flex flex-col gap-xs">
+      <HvBulkActions
+        numTotal={data.length}
+        numSelected={data.filter((el) => el.checked).length}
+        onSelectAll={handleSelectAll}
+        onSelectAllPages={() => handleSelectAllPages()}
+        actions={[
+          { id: "add", label: "Add", icon: <Add /> },
+          { id: "delete", label: "Delete", icon: <Delete /> },
+          { id: "lock", label: "Lock", icon: <Lock /> },
+          { id: "put", label: "Preview", icon: <Preview /> },
+        ]}
+        onAction={handleAction}
+        maxVisibleActions={2}
+        showSelectAllPages
+      />
+      <div className="w-full flex flex-wrap gap-xs items-center justify-center">
+        {data.slice(pageSize * page, pageSize * (page + 1)).map((el, i) => (
+          <HvCheckBox
+            key={el.id}
+            classes={{ container: "items-center w-120px h-40px" }}
+            label={el.value}
+            checked={el.checked}
+            onChange={(evt, checked) => {
+              const newData = [...data];
+              newData[i + pageSize * page].checked = checked;
+              setData(newData);
+            }}
+          />
+        ))}
+      </div>
+      <HvPagination
+        pages={numPages}
+        page={page}
+        canPrevious={page > 0}
+        canNext={page < numPages - 1}
+        pageSize={pageSize}
+        pageSizeOptions={pageSizeOptions}
+        onPageChange={(value) => setPage(value)}
+        onPageSizeChange={(value) => setPageSize(value)}
+        labels={{ pageSizeEntryName: "items" }}
+      />
+    </div>
+  );
+}
+```

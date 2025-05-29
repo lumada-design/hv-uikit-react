@@ -1,5 +1,4 @@
 import { HvTypography } from "@hitachivantara/uikit-react-core";
-import { BottomXS, TopXS } from "@hitachivantara/uikit-react-icons";
 
 import { Card } from "./Card";
 
@@ -22,10 +21,10 @@ const Item = ({ title, value, percentage, isPositive }: ItemProps) => {
 
   return (
     <div>
-      <div className="flex items-center">
+      <div className="flex items-center gap-4px">
         <HvTypography variant="caption1">{title}</HvTypography>
-        {isPositive && <TopXS color="positive" />}
-        {!isPositive && <BottomXS color="negative" />}
+        {isPositive && <div className="i-ph-arrow-up text-positive" />}
+        {!isPositive && <div className="i-ph-arrow-down text-negative" />}
         <HvTypography className={percentageColor}>{percentage}%</HvTypography>
       </div>
       <HvTypography variant="title2">{value}</HvTypography>

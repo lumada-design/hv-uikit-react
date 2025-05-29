@@ -1,0 +1,373 @@
+import { Callout } from "nextra/components";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "LineChart", packageName: "viz", showAllProps: true }}
+/>
+
+### Usage
+
+This example shows a simple line chart with one data series.  
+Each dot represents a data point, and a tooltip appears on hover.
+
+Set `horizontalRangeSlider.show` to `true` to display a range slider below the chart for zooming into specific data ranges.
+
+```tsx live
+<HvLineChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+  horizontalRangeSlider={{ show: true }}
+/>
+```
+
+### Area
+
+To fill the area below the line, set the `area` prop to `true`.
+
+```tsx live
+<HvLineChart
+  height={300}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      9.2, 10.2, 12.3, 13.6, 16.3, 19.7, 21.9, 22.1, 20.1, 16.6, 12.5, 10.1,
+    ],
+  }}
+  groupBy="Month"
+  measures="Temperature"
+  area
+/>
+```
+
+### Mixed line and area
+
+Set the `area` prop to `true` to fill the area below the line.  
+You can also enable it for a specific measure to combine area and line views in the same chart.
+
+```tsx live
+<HvLineChart
+  height={300}
+  data={{
+    Quarter: ["Q1", "Q2", "Q3", "Q4"],
+    "Sales Target": [4500, 3700, 4300, 5500],
+    Sales: [5000, 3300, 3760, 6230],
+  }}
+  groupBy="Quarter"
+  measures={["Sales Target", { field: "Sales", area: true }]}
+/>
+```
+
+### Stacked area chart
+
+The following example shows how to use the `stacked` prop to stack multiple lines on top of each other.
+
+```tsx live
+<HvLineChart
+  height={400}
+  data={{
+    Group: ["Group 1", "Group 2", "Group 3"],
+    "Sales Target": [2300, 1000, 8500],
+    "Sales Per Rep": [6000, 1000, 1000],
+    "Monthly Sales": [3700, 7500, 1100],
+    Target: [2100, 8500, 3000],
+    Cash: [500, 8000, 9500],
+  }}
+  groupBy="Group"
+  measures={[
+    "Sales Target",
+    "Sales Per Rep",
+    "Monthly Sales",
+    "Target",
+    "Cash",
+  ]}
+  area
+  stack="total"
+/>
+```
+
+### Mixed line and stacked area
+
+You can mix a stacked area chart with a line chart by setting the `stack` and `area` props on the specific measures you want to stack.
+
+```tsx live
+<HvLineChart
+  height={300}
+  data={{
+    Quarter: ["Q1", "Q2", "Q3", "Q4"],
+    "Sales Dep 1": [2300, 9000, 8500, 1000],
+    "Sales Dep 2": [6000, 2000, 1000, 2000],
+    "Sales Target": [10000, 10000, 10000, 10000],
+  }}
+  groupBy="Quarter"
+  measures={[
+    { field: "Sales Dep 1", stack: "total", area: true },
+    { field: "Sales Dep 2", stack: "total", area: true },
+    { field: "Sales Target" },
+  ]}
+/>
+```
+
+### Multiple lines
+
+You can display multiple lines on the same chart by providing an array of measures to the `measures` prop.
+
+```tsx live
+<HvLineChart
+  height={300}
+  data={new Map<string, (string | number)[]>()
+    .set("Month", [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ])
+    .set(
+      "Minimum",
+      [5.3, 6.0, 7.7, 8.9, 11.4, 14.2, 15.9, 16.1, 14.7, 12.2, 8.6, 6.5],
+    )
+    .set(
+      "Maximum",
+      [13.1, 14.4, 16.9, 18.2, 21.3, 25.1, 27.8, 28.1, 25.6, 21.1, 16.3, 13.7],
+    )}
+  groupBy="Month"
+  measures={["Minimum", "Maximum"]}
+/>
+```
+
+### Multiple lines with splitBy
+
+The following example uses `splitBy` to divide the data by `Country` and `Medal`, generating a line for each combination.
+Try removing or changing the `splitBy` criteria in the live editor to see how it affects the chart.
+
+```tsx live
+<HvLineChart
+  height={400}
+  data={{
+    Country: [
+      "Portugal",
+      "Portugal",
+      "Spain",
+      "Spain",
+      "USA",
+      "USA",
+      "Canada",
+      "Canada",
+      "Portugal",
+      "Portugal",
+      "Spain",
+      "Spain",
+      "USA",
+      "USA",
+      "Canada",
+      "Canada",
+      "Portugal",
+      "Portugal",
+      "Spain",
+      "Spain",
+      "USA",
+      "USA",
+      "Canada",
+      "Canada",
+    ],
+    Year: [
+      2018, 2018, 2018, 2018, 2018, 2018, 2018, 2018, 2019, 2019, 2019, 2019,
+      2019, 2019, 2019, 2019, 2020, 2020, 2020, 2020, 2020, 2020, 2020, 2020,
+    ],
+    Medal: [
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+      "gold",
+      "silver",
+    ],
+    Total: [
+      3, 2, 1, 0, 4, 11, 8, 3, 2, 9, 0, 5, 3, 6, 2, 1, 7, 5, 6, 9, 2, 5, 6, 7,
+    ],
+  }}
+  groupBy="Year"
+  measures="Total"
+  splitBy={["Country", "Medal"]}
+  seriesNameFormatter={(s) => `${s?.split("_").join(" ")}`}
+/>
+```
+
+### Multiple Y axes
+
+```tsx live
+<HvLineChart
+  height={400}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    Temperature: [
+      7.0, 6.2, 4.3, 12.5, 5.3, 12.2, 20.3, 23.4, 25.0, 17.5, 13.0, 11.2,
+    ],
+    Precipitation: [
+      12.6, 15.9, 19.0, 26.0, 28.2, 70.7, 145.6, 132.2, 78.7, 22.8, 4.0, 2.9,
+    ],
+  }}
+  yAxis={[
+    {
+      id: "temp",
+      labelFormatter: (value?: string | number) => `${value} ºC`,
+      name: "Temperature",
+    },
+    {
+      id: "prec",
+      labelFormatter: (value?: string | number) => `${value} mm`,
+      name: "Precipitation",
+    },
+  ]}
+  groupBy="Month"
+  measures={[
+    {
+      field: "Temperature",
+      yAxis: "temp",
+      valueFormatter: (value?: string | number) => `${value} ºC`,
+    },
+    {
+      field: "Precipitation",
+      yAxis: "prec",
+      valueFormatter: (value?: string | number) => `${value} mm`,
+    },
+  ]}
+/>
+```
+
+### Custom ECharts options
+
+You can customize the chart using ECharts options.
+
+In this example:
+
+- The line is rendered as a smooth curve
+- A `markLine` is added to show the average
+- Line and dot colors change based on data point values
+
+```tsx live
+<HvLineChart
+  height={400}
+  data={{
+    Month: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    "Sales Target": [
+      5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146,
+    ],
+  }}
+  groupBy="Month"
+  measures="Sales Target"
+  onOptionChange={(option) => {
+    if (Array.isArray(option.yAxis) && option.yAxis.length === 1) {
+      option.yAxis = [{ ...option.yAxis[0], splitNumber: 8 }];
+    }
+    option.series[0].markLine = {
+      data: [{ yAxis: 3000, name: "Average" }],
+      symbol: "none",
+      itemStyle: {
+        color: "#666",
+      },
+      label: {
+        color: "#666",
+      },
+    };
+    option.series[0].smooth = true;
+    option.series[0].lineStyle = {
+      color: "#999",
+    };
+    option.series[0].itemStyle = {
+      color(params: any) {
+        return params.data[1] > 3000 ? "#090" : "#900";
+      },
+    };
+
+    option.series[0].symbolSize = 8;
+
+    return option;
+  }}
+/>
+```

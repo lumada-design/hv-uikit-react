@@ -1,0 +1,20 @@
+import {
+  containerClasses as classes,
+  HvContainer,
+  HvPanel,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Container", classes }}
+  Component={HvContainer}
+  componentName="HvContainer"
+  controls={{
+    maxWidth: { defaultValue: "sm" },
+    fixed: { defaultValue: false },
+    disableGutters: { defaultValue: false },
+  }}
+>
+  <HvPanel className="h-100px">Content</HvPanel>
+</Header>

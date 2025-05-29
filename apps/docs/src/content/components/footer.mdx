@@ -1,0 +1,45 @@
+import {
+  footerClasses as classes,
+  HvFooter,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Footer", classes }}
+  Component={HvFooter}
+  componentName="HvFooter"
+  controls={{
+    name: {
+      defaultValue: "Pentaho+",
+    },
+    copyright: {
+      defaultValue: "",
+    },
+    links: {
+      defaultValue: "Privacy Policy",
+    },
+  }}
+  componentProps={{
+    className: "w-full",
+  }}
+/>
+
+### Custom labels
+
+You can pass custom content to the `name`, `copyright`, and `links` props.
+
+```tsx live
+<HvFooter
+  className="w-full"
+  name={<HvTypography variant="title4">Pentaho+</HvTypography>}
+  copyright={
+    <HvTypography variant="caption1">Get a Grip On Your Data</HvTypography>
+  }
+  links={
+    <HvTypography link component="a" href="https://pentaho.com/">
+      Visit us
+    </HvTypography>
+  }
+/>
+```

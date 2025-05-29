@@ -1,0 +1,67 @@
+@unocss all;
+
+.dark {
+  @apply bg-[#151c26];
+}
+
+html,
+body {
+  height: auto;
+}
+
+pre {
+  @apply my-4;
+}
+
+article main,
+article main.x\:w-full {
+  font-size: 1rem;
+}
+
+header {
+  & a:last-of-type svg {
+    @apply size-20px;
+  }
+  & button svg {
+    @apply size-16px;
+  }
+}
+
+.nextra-toc {
+  @apply w-224px;
+
+  & a {
+    @apply font-normal;
+  }
+
+  & p {
+    @apply shadow-none;
+  }
+}
+
+.nextra-sidebar-footer,
+.nextra-toc-footer {
+  display: none;
+}
+
+.nextra-breadcrumb {
+  @apply mb-sm;
+}
+
+.nextra-code {
+  @apply !my-0;
+}
+
+.nextra-code .nextra-focus {
+  @apply bg-slate-50;
+}
+
+.nextra-scrollbar {
+  & [aria-current="true"] {
+    @apply text-text;
+  }
+
+  & [aria-current="false"] {
+    @apply text-textSubtle;
+  }
+}

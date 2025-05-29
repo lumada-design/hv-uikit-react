@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useData } from "nextra/hooks";
 import {
   HvCheckBox,
   HvColorPicker,
@@ -11,6 +10,8 @@ import {
   HvSlider,
   useTheme,
 } from "@hitachivantara/uikit-react-core";
+
+import type { ComponentMeta } from "../../utils/component";
 
 type ControlType =
   | "check"
@@ -30,6 +31,7 @@ export type Control = {
 type ControlsProps = {
   prop: string;
   state: Record<string, any>;
+  meta?: ComponentMeta;
   control: Control;
   onChange: (prop: string, value: unknown) => void;
 };
@@ -222,13 +224,18 @@ function ColorControl({ prop, state, control, onChange, label }: ControlProps) {
   );
 }
 
-export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
-  const data = useData();
-  const propMeta = data?.meta?.docgen.props[prop];
+export const Controls = ({
+  prop,
+  state,
+  meta,
+  control,
+  onChange,
+}: ControlsProps) => {
+  const propMeta = meta?.docgen.props[prop];
 
   const type: ControlType =
     control?.type ||
-    defaultMap[propMeta?.type?.name] ||
+    (propMeta?.type?.name && defaultMap[propMeta?.type?.name]) ||
     defaultMap[typeof control.defaultValue] ||
     "text";
 
@@ -263,6 +270,7 @@ export const Controls = ({ prop, state, control, onChange }: ControlsProps) => {
     <ControlComponent
       prop={prop}
       state={state}
+      meta={meta}
       control={control}
       onChange={onChange}
       // TODO: consider adding `capitalize` or `.nextra-code`

@@ -1,0 +1,137 @@
+import { Callout } from "nextra/components";
+import { snackbarProviderClasses as classes } from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header params={{ name: "SnackbarProvider", classes }} />
+
+<Callout type="info">
+  The provider is not meant to be 100% feature complete, but instead, ease the
+  majority of use-cases we have been encountering. If you need any customization
+  or extension to the behavior, please feel free to copy and customize it.
+</Callout>
+
+```tsx
+import {
+  HvSnackbarProvider,
+  useHvSnackbar,
+} from "@hitachivantara/uikit-react-core";
+```
+
+After adding the provider at the root of your app, you can use the `useHvSnackbar` hook in any component.  
+This hook provides the `enqueueSnackbar` function to show a snackbar and `closeSnackbar` to dismiss it programmatically.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <div className="flex gap-sm">
+        <SnackbarButton variant="success" />
+        <SnackbarButton variant="warning" />
+        <SnackbarButton variant="error" />
+        <SnackbarButton variant="default" />
+      </div>
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButton = ({ variant }: { variant: HvSnackbarVariant }) => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <HvButton
+      variant="subtle"
+      className="capitalize"
+      onClick={() => {
+        enqueueSnackbar(`This is a ${variant} snackbar.`, { variant });
+      }}
+    >
+      {variant}
+    </HvButton>
+  );
+};
+```
+
+### Content
+
+The `HvSnackbarProvider` uses `HvSnackbarContent` internally to render snackbars.  
+You can customize the content using the `snackbarContentProps` prop.
+
+For more details, see the [`HvSnackbar`](/components/snackbar) documentation.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <SnackbarButton />
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButton = () => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <HvButton
+      variant="secondarySubtle"
+      onClick={() => {
+        const snackbarId = enqueueSnackbar("This is an action snackbar", {
+          snackbarContentProps: {
+            action: { id: "action", label: "Dismiss" },
+            onAction: (evt, action) => {
+              console.log("Clicked action", action);
+              closeSnackbar(snackbarId);
+            },
+            showIcon: true,
+            variant: "success",
+          },
+        });
+      }}
+    >
+      Action
+    </HvButton>
+  );
+};
+```
+
+### Label
+
+The snackbar `label` accepts a `React.ReactNode`, allowing you to pass any component—including `HvOverflowTooltip` for long messages.
+
+However, avoid displaying lengthy content in a snackbar, as it’s meant for brief, ephemeral messages that auto-dismiss after a short time.
+
+```tsx live
+export default function Demo() {
+  return (
+    <HvSnackbarProvider autoHideDuration={3000}>
+      <SnackbarButton />
+    </HvSnackbarProvider>
+  );
+}
+
+const SnackbarButton = () => {
+  const { enqueueSnackbar, closeSnackbar } = useHvSnackbar();
+
+  return (
+    <HvButton
+      variant="subtle"
+      onClick={() => {
+        enqueueSnackbar(
+          <HvOverflowTooltip
+            paragraphOverflow
+            data={`This is a very ${"very ".repeat(26)}long snackbar.`}
+          />,
+          { variant: "default" },
+        );
+      }}
+    >
+      Overflow
+    </HvButton>
+  );
+};
+```
+
+### Related components
+
+- [`HvSnackbar`](/components/snackbar)
+- [`HvBanner`](/components/banner)

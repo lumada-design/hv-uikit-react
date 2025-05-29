@@ -1,0 +1,145 @@
+import {
+  fileUploaderClasses as classes,
+  HvFileUploader,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{
+    name: "FileUploader",
+    classes,
+    subComponents: ["DropZone", "FileList"],
+  }}
+  Component={HvFileUploader}
+  componentName="HvFileUploader"
+  controls={{
+    label: { defaultValue: "Upload" },
+    accept: { defaultValue: "image/*" },
+    multiple: { defaultValue: true },
+    disabled: { defaultValue: false },
+  }}
+  componentProps={{
+    className: "w-full",
+  }}
+/>
+
+### Controlled
+
+`HvFileUploader` is limited to controlled behavior. Use the `fileList` prop to list the files, and listen to added/removed files with the `onFilesAdded` and `onFileRemoved` props respectively.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [list, setList] = useState<HvFileData[]>([]);
+
+  return (
+    <HvFileUploader
+      className="w-full"
+      accept="image/*"
+      fileList={list}
+      onFilesAdded={(newFiles) => {
+        newFiles.forEach((newFile) => {
+          // simulate instant successful upload
+          // in a real scenario, you would upload the file to the server
+          // and update `.progress` and `.status` accordingly
+          newFile.status = "success";
+          newFile.progress = newFile.size;
+
+          setList((files) => [newFile, ...files]);
+        });
+      }}
+      onFileRemoved={(removedFile) => {
+        setList((files) => files.filter((file) => file !== removedFile));
+      }}
+    />
+  );
+}
+```
+
+### Preview
+
+The `fileList` supports a `preview` prop that can be used to render a custom `ReactNode` preview.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [previewTitle, setPreviewTitle] = useState("");
+
+  function openDialog(url: string, title: string) {
+    setPreviewUrl(url);
+    setPreviewTitle(title);
+    setOpen(true);
+  }
+
+  return (
+    <>
+      <HvFileUploader
+        className="w-full"
+        accept="image/*"
+        disabled
+        fileList={[
+          {
+            id: "1",
+            name: "already_here.jpg",
+            size: 5000,
+            status: "success",
+            preview: (
+              <HvFileUploaderPreview
+                aria-label="Open the bigger preview"
+                onClick={() =>
+                  openDialog(
+                    "https://i.imgur.com/YcVYmM0.jpg",
+                    "already_here.jpg",
+                  )
+                }
+              >
+                <img
+                  alt="Small preview of the uploaded file"
+                  src="https://i.imgur.com/YcVYmM0.jpg"
+                />
+              </HvFileUploaderPreview>
+            ),
+          },
+          {
+            id: "2",
+            name: "code.yaml",
+            size: 200,
+            status: "success",
+            preview: <Code />,
+          },
+          {
+            id: "3",
+            name: "letter.docx",
+            size: 2000,
+            status: "success",
+            preview: (
+              <HvFileUploaderPreview
+                aria-label="Open preview of the document (not!)"
+                onClick={() => {}}
+                disableOverlay
+              >
+                <DocWord />
+              </HvFileUploaderPreview>
+            ),
+          },
+        ]}
+      />
+      <HvDialog open={open} onClose={() => setOpen(false)}>
+        <HvDialogTitle>{previewTitle}</HvDialogTitle>
+        <HvDialogContent>
+          <img
+            alt="Preview of the uploaded file"
+            src={previewUrl}
+            style={{ maxWidth: "100%", maxHeight: "70vh" }}
+          />
+        </HvDialogContent>
+      </HvDialog>
+    </>
+  );
+}
+```

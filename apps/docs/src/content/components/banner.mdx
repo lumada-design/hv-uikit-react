@@ -1,0 +1,112 @@
+import {
+  bannerClasses as classes,
+  HvBanner,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Banner", classes, subComponents: ["BannerContent"] }}
+  Component={HvBanner}
+  componentName="HvBanner"
+  controls={{
+    label: { defaultValue: "This is a success message." },
+    variant: { defaultValue: "success" },
+    showIcon: { defaultValue: true },
+    open: { defaultValue: true },
+  }}
+  componentProps={{
+    style: { position: "relative", top: 0 },
+  }}
+/>
+
+### Actions
+
+You can add a set of actions to the banner by specifying the `actions` prop. The `onAction` prop is a callback function that is called when an action is clicked.
+
+```tsx live
+<HvBanner
+  open
+  offset={0}
+  label="This is a banner."
+  showIcon
+  className="relative"
+  actions={[
+    { id: "action_1", label: "Action 1", disabled: false },
+    { id: "action_2", label: "Action 2", disabled: false },
+  ]}
+  onAction={(event, action) => console.log("Clicked", action)}
+/>
+```
+
+### Custom icons
+
+You can pass a custom icon to the banner by using the `customIcon` prop.
+
+```tsx live
+<HvBanner
+  open
+  offset={0}
+  label="This is a banner with a custom icon."
+  className="relative"
+  customIcon={<LightOn />}
+/>
+```
+
+### Controlled
+
+Controlled banner. Click the buttons to display different banners.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  return (
+    <div className="flex gap-sm">
+      <BannerButton variant="default" label="This is a banner." />
+      <BannerButton variant="success" label="This is a success banner." />
+      <BannerButton variant="warning" label="This is a warning banner." />
+      <BannerButton variant="error" label="This is an error banner." />
+    </div>
+  );
+}
+
+const BannerButton = ({ variant, ...others }: Omit<HvBannerProps, "open">) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <HvButton
+        onClick={() => setOpen(true)}
+        variant={buttonVariantMap[variant]}
+        className="capitalize w-120px"
+      >
+        {variant}
+      </HvButton>
+      <HvBanner
+        open={open}
+        onClose={() => setOpen(false)}
+        offset={10}
+        variant={variant}
+        showIcon
+        actions={
+          <HvButton variant="ghost" color="inherit">
+            Action
+          </HvButton>
+        }
+        bannerContentProps={{
+          actionProps: { "aria-label": "Close the banner" },
+        }}
+        {...others}
+      />
+    </>
+  );
+};
+
+const buttonVariantMap = {
+  default: "secondarySubtle",
+  success: "positiveSubtle",
+  warning: "warningSubtle",
+  error: "negativeSubtle",
+};
+```

@@ -37,8 +37,8 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
   };
 
   return (
-    <>
-      <div className={clsx("flex justify-between items-center mb-2")}>
+    <section data-pagefind-ignore>
+      <div className="flex justify-between items-center mb-xs">
         {/* Title */}
         <HvTypography variant="title4">{title}</HvTypography>
 
@@ -95,6 +95,6 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
           )}
         </>
       )}
-    </>
+    </section>
   );
 };

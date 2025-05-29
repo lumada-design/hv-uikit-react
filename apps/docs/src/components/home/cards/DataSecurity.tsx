@@ -1,5 +1,8 @@
-import { HvTag, HvTypography } from "@hitachivantara/uikit-react-core";
-import { SystemActivity } from "@hitachivantara/uikit-react-icons";
+import {
+  HvIconContainer,
+  HvTag,
+  HvTypography,
+} from "@hitachivantara/uikit-react-core";
 
 import { Card } from "./Card";
 
@@ -14,7 +17,11 @@ export const DataSecurity = () => {
     <Card
       title="Data Security Overview"
       subtitle="Incidents from the last 30 days."
-      icon={<SystemActivity color="primary" />}
+      icon={
+        <HvIconContainer color="primary">
+          <div className="i-ph-presentation-chart" />
+        </HvIconContainer>
+      }
     >
       <div className="flex gap-xs justify-between">
         {securityData.map(({ title, count, color }) => (

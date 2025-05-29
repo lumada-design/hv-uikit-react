@@ -1,3 +1,6 @@
+"use client";
+
+// TODO: 👆 remove this, make HvProvider SSR-friendly
 import createCache from "@emotion/cache";
 import { useTheme } from "nextra-theme-docs";
 import { HvProvider, pentahoPlus } from "@hitachivantara/uikit-react-core";

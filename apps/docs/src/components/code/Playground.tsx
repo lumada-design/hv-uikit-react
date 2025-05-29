@@ -1,18 +1,22 @@
+"use client";
+
 import { Children, isValidElement, useCallback, useState } from "react";
 import jsxToString from "react-element-to-jsx-string";
 import { CodeEditor } from "react-live-runner";
 
+import { ComponentMeta } from "../../utils/component";
 import { Controls, type Control } from "./Controls";
 import { DocsProvider } from "./DocsProvider";
 
-type PlaygroundProps = {
+export interface PlaygroundProps {
   Component: React.ComponentType<{ children?: React.ReactNode }>;
   componentName: string;
   componentProps?: Record<string, unknown>;
+  meta?: ComponentMeta;
   controls: Record<string, Control>;
   children?: React.ReactNode;
-  decorator?: (children: React.ReactNode) => React.ReactNode;
-};
+  decoratorClassName?: string;
+}
 
 const parseChildren = (child: React.ReactNode) =>
   (isValidElement(child) && jsxToString(child)) ||
@@ -58,10 +62,11 @@ const generateCode = (
 export const Playground = ({
   Component,
   componentName,
+  meta,
   componentProps,
   controls = {},
   children,
-  decorator,
+  decoratorClassName,
 }: PlaygroundProps) => {
   // Initialize dynamic props with default values from controls
   const [dynamicProps, setDynamicProps] = useState<Record<string, unknown>>(
@@ -99,12 +104,20 @@ export const Playground = ({
   );
 
   return (
-    <section className="[&>*]:border-border" aria-label="Playground">
+    <section
+      data-pagefind-ignore
+      className="[&>*]:border-border"
+      aria-label="Playground"
+    >
       {/* Component preview and controls */}
       <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
-        <DocsProvider className="grid place-items-center p-sm h-full">
-          {decorator ? decorator(componentElement) : componentElement}
+        <DocsProvider className="grid place-items-center rounded-inherit p-sm h-full">
+          {decoratorClassName ? (
+            <div className={decoratorClassName}>{componentElement}</div>
+          ) : (
+            componentElement
+          )}
         </DocsProvider>
 
         {/* Controls Area */}
@@ -116,6 +129,7 @@ export const Playground = ({
               <Controls
                 key={prop}
                 prop={prop}
+                meta={meta}
                 state={dynamicProps}
                 control={control}
                 onChange={updatePropValue}

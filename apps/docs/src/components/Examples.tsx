@@ -1,16 +1,15 @@
+import canvas from "!!raw-loader!../content/examples/canvas.mdx";
+import charts from "!!raw-loader!../content/examples/charts.mdx";
+import dnd from "!!raw-loader!../content/examples/dnd.mdx";
+import inputs from "!!raw-loader!../content/examples/inputs.mdx";
+import kpis from "!!raw-loader!../content/examples/kpis.mdx";
+import tables from "!!raw-loader!../content/examples/tables.mdx";
 import { clsx } from "clsx";
 import Link from "next/link";
 import {
   HvIconContainer,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
-import canvas from "../pages/examples/canvas.mdx?raw";
-import charts from "../pages/examples/charts.mdx?raw";
-import dnd from "../pages/examples/dnd.mdx?raw";
-import inputs from "../pages/examples/inputs.mdx?raw";
-import kpis from "../pages/examples/kpis.mdx?raw";
-import tables from "../pages/examples/tables.mdx?raw";
 
 /**
  * Extracts the number of CodeBlock components in the given file content.

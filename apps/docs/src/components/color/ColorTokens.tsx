@@ -1,3 +1,5 @@
+"use client";
+
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { DocsProvider } from "../code/DocsProvider";

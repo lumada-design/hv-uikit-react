@@ -2,8 +2,6 @@ import nextra from "nextra";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 
 const withNextra = nextra({
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
   search: {
     codeblocks: false,
@@ -37,6 +35,21 @@ export default withNextra({
           options: {
             search: "import.meta.env.DEV",
             replace: "process.env.NODE_ENV !== 'production'",
+            flags: "g",
+          },
+        },
+      ],
+    });
+
+    // Inject "use client"; to UI Kit packages' entry (index.ts) file
+    config.module.rules.push({
+      test: /packages\/.*\/src\/index\.ts$/,
+      use: [
+        {
+          loader: "string-replace-loader",
+          options: {
+            search: "^",
+            replace: '"use client";\n',
             flags: "g",
           },
         },

@@ -1,0 +1,108 @@
+import { Callout } from "nextra/components";
+import {
+  dotPaginationClasses as classes,
+  HvDotPagination,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header params={{ name: "DotPagination", classes }} />
+
+<Callout type="info">
+  You can use the `HvPagination` component to create a more complete pagination
+  layout. Please refer to the [Pagination documentation](/components/pagination)
+  for usage.
+</Callout>
+
+### Usage
+
+You can use the `HvDotPagination` component to create a simple pagination based on dots.
+The `page` prop is used to control the current page, and the `onPageChange` prop is used to handle page changes.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [page, setPage] = useState(0);
+
+  return (
+    <div className="w-full grid place-items-center gap-sm">
+      <HvTypography>{pages[page]}</HvTypography>
+      <HvDotPagination
+        page={page}
+        pages={pages.length}
+        onPageChange={(_, value) => setPage(value)}
+        getItemAriaLabel={(pageNumber) => {
+          switch (pageNumber) {
+            case 0:
+              return "first page button aria-label";
+            case 4:
+              return "last page button aria-label";
+            default:
+              return `${pageNumber + 1} page aria-label`;
+          }
+        }}
+        role="navigation"
+        aria-label="Example Dot Navigation"
+      />
+    </div>
+  );
+}
+
+const pages = [
+  "This is page 1",
+  "And this is page 2",
+  "This is page 3",
+  "This is page 4",
+  "And finally, this is page 5",
+];
+```
+
+### Custom dots
+
+You can use custom icons for the selected and unselected dots in the `HvDotPagination` component.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [page, setPage] = useState(0);
+
+  return (
+    <div className="w-full grid place-items-center gap-sm">
+      <HvTypography>{pages[page]}</HvTypography>
+      <HvDotPagination
+        unselectedIcon={<RadioButtonUnselected size="XS" />}
+        selectedIcon={<CurrentStep size="XS" />}
+        page={page}
+        pages={pages.length}
+        onPageChange={(_, value) => setPage(value)}
+        getItemAriaLabel={(pageNumber) => {
+          switch (pageNumber) {
+            case 0:
+              return "first page button aria-label";
+            case 4:
+              return "last page button aria-label";
+            default:
+              return `${pageNumber + 1} page aria-label`;
+          }
+        }}
+        role="navigation"
+        aria-label="Example Dot Navigation"
+      />
+    </div>
+  );
+}
+
+const pages = [
+  "This is page 1",
+  "And this is page 2",
+  "Now you can see page 3",
+  "Look, it's page 4",
+  "And finally, this is page 5",
+];
+```
+
+### Related components
+
+- [`HvPagination`](/components/pagination)

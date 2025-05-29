@@ -1,0 +1,91 @@
+import { Callout } from "nextra/components";
+import {
+  textAreaClasses as classes,
+  HvTextArea,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "TextArea", classes }}
+  Component={HvTextArea}
+  componentName="HvTextArea"
+  controls={{
+    label: { type: "text", defaultValue: "Summary" },
+    description: { type: "text", defaultValue: "Project summary" },
+    required: { defaultValue: true },
+    resizable: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+  componentProps={{
+    rows: 5,
+    maxCharQuantity: 50,
+  }}
+/>
+
+<Callout type="info">
+  The `HvTextArea` component is built on top of the [Input](/components/input)
+  component, therefore many properties are shared between the components. Please
+  refer to the [Input documentation](/components/input) for usage, like
+  [validation](/components/input#validation) or [controlled
+  state](/components/input#controlled) management.
+</Callout>
+
+### Maximum length
+
+Use the `maxCharQuantity` prop to limit the number of characters.
+
+- By default, the limited can be exceeded, but you can set the `blockMax` prop to prevent this.
+- The `middleCountLabel` allows customizing the count separator (`/`).
+
+```tsx live
+<>
+  <HvTextArea
+    label="You can write past the limit"
+    defaultValue="Some text"
+    middleCountLabel="of"
+    maxCharQuantity={10}
+    rows={5}
+  />
+  <HvTextArea
+    label="You can't write past the limit"
+    defaultValue="Some text"
+    maxCharQuantity={10}
+    rows={5}
+    blockMax
+  />
+</>
+```
+
+### Auto scroll
+
+Enable automatic scrolling to the bottom using the `autoScroll` prop.  
+Scrolling stops when the user scrolls up and resumes when they return to the bottom.
+
+```tsx live
+import { useEffect, useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState(makeLogLine);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setValue((val) => `${val}\n${makeLogLine()}`);
+    }, 2000);
+
+    return () => clearInterval(id);
+  }, []);
+
+  return <HvTextArea label="Server logs" rows={6} value={value} autoScroll />;
+}
+
+function makeLogLine() {
+  return `${Date.now()}: ${Math.random().toString(36).slice(2)}`;
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvInput`](/components/input)

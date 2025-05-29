@@ -1,0 +1,110 @@
+import {
+  switchClasses as classes,
+  HvSwitch,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Switch", classes }}
+  Component={HvSwitch}
+  componentName="HvSwitch"
+  controls={{
+    label: { type: "text", defaultValue: "Switch" },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+  }}
+/>
+
+### Controlled
+
+The selection state can be controlled by using the `checked`/`onChange` props.
+The `value` prop represents the underlying submission value of the switch when it is checked.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <>
+      <HvButton variant="subtle" onClick={() => setChecked((prev) => !prev)}>
+        Toggle
+      </HvButton>
+      <HvSwitch
+        value="on"
+        checked={checked}
+        aria-label="Switch"
+        onChange={(_evt, newChecked) => setChecked(newChecked)}
+      />
+      <div>The switch is {checked ? "On" : "Off"}</div>
+    </>
+  );
+}
+```
+
+### Custom colors
+
+You can use the [`color`](/docs/styling#color-prop) prop to style the color of the switch.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <HvSwitch
+      checked={checked}
+      aria-label="Engine Control"
+      onChange={(_evt, newChecked) => setChecked(newChecked)}
+      color={checked ? "positive" : "negative"}
+    />
+  );
+}
+```
+
+### Custom switch
+
+A custom switch can be built by using the underlying form components, such as `HvLabel` and `HvInfoMessage`.
+See [`HvFormElement`](/components/form-element) for more information.
+
+```tsx live
+import { useRef } from "react";
+
+export default function Demo() {
+  const inputRef = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div>
+      <div className="flex items-start">
+        <HvLabel label="Engine Control" htmlFor="switch-input" />
+        <HvInfoMessage id="switch-description">
+          This is a custom description
+        </HvInfoMessage>
+      </div>
+      <div className="flex items-center gap-xs">
+        <div aria-hidden onClick={() => inputRef.current?.click()}>
+          Off
+        </div>
+        <HvBaseSwitch
+          id="switch-input"
+          aria-describedby="switch-description"
+          inputRef={inputRef}
+          defaultChecked
+        />
+        <div aria-hidden onClick={() => inputRef.current?.click()}>
+          On
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvRadio`](/components/radio)

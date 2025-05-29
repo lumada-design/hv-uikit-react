@@ -1,0 +1,72 @@
+import {
+  loadingClasses as classes,
+  HvLoading,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Loading", classes }}
+  Component={HvLoading}
+  componentName="HvLoading"
+  controls={{
+    label: {
+      type: "text",
+      defaultValue: "Loading...",
+    },
+    small: {
+      defaultValue: false,
+    },
+  }}
+/>
+
+### Different colors
+
+You can change the default color of the loader by passing a color name from the UI Kit color palette, a CSS color name or a hex color code.
+
+```tsx live
+<div className="flex gap-sm">
+  <HvLoading color="positive" />
+  <HvLoading color="cat2" />
+  <HvLoading color="aquamarine" />
+  <HvLoading color="#c73aa8" />
+</div>
+```
+
+### Loading button
+
+You can easily create a custom `LoadingButton` component to handle async submission operations.
+
+```tsx live
+import { useState } from "react";
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export default function Demo() {
+  return <LoadingButton onClick={() => delay(3000)}>Submit</LoadingButton>;
+}
+
+function LoadingButton({ onClick, children, ...others }: HvButtonProps) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  return (
+    <HvButton
+      className="w-140px"
+      disabled={isLoading}
+      onClick={async (event) => {
+        setIsLoading(true);
+        await onClick?.(event);
+        setIsLoading(false);
+      }}
+      {...others}
+    >
+      {isLoading ? <HvLoading small color="inherit" /> : children}
+    </HvButton>
+  );
+}
+```
+
+### Related components
+
+- [`HvLoadingContainer`](/components/loading-container)
+- [`HvSkeleton`](/components/skeleton)

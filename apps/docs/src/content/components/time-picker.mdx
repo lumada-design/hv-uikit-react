@@ -1,0 +1,90 @@
+import {
+  timePickerClasses as classes,
+  HvTimePicker,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "TimePicker", classes }}
+  Component={HvTimePicker}
+  componentName="HvTimePicker"
+  controls={{
+    label: { type: "text", defaultValue: "Time" },
+    required: { defaultValue: false },
+    readOnly: { defaultValue: false },
+    disabled: { defaultValue: false },
+    showSeconds: { defaultValue: true },
+    timeFormat: { type: "radio", defaultValue: "24" },
+  }}
+  componentProps={{
+    defaultValue: { hours: 20, minutes: 21, seconds: 22 },
+  }}
+/>
+
+### Form
+
+A Time Picker usage inside a `form` element. Give `HvTimePicker` a `name`, and it will be included in the form data,
+following the time [`input` format](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time) specification.
+
+```tsx live
+<form
+  className="flex gap-xs items-end"
+  onSubmit={(event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    alert(JSON.stringify(Object.fromEntries(formData)));
+  }}
+>
+  <HvTimePicker
+    name="scheduleTime"
+    label="Time Picker"
+    defaultValue={{ hours: 5, minutes: 30, seconds: 14 }}
+  />
+  <br />
+  <HvButton type="submit" variant="subtle">
+    Submit
+  </HvButton>
+</form>
+```
+
+### Controlled
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState<HvTimePickerProps["value"]>(null);
+
+  const prettyValue = value
+    ? `${value.hours}h ${value.minutes}'${value.seconds}"`
+    : "—";
+
+  return (
+    <div className="grid gap-sm justify-start">
+      <HvTypography variant="title4">Date: {prettyValue}</HvTypography>
+      <HvTimePicker
+        label="Time Picker"
+        placeholder="Select a time"
+        value={value}
+        onChange={setValue}
+      />
+      <HvButton
+        variant="subtle"
+        disabled={!value}
+        onClick={() => {
+          setValue((d) => d && { ...d, minutes: (d.minutes + 1) % 60 });
+        }}
+      >
+        +1 minute
+      </HvButton>
+    </div>
+  );
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvInput`](/components/input)
+- [`HvDatePicker`](/components/date-picker)

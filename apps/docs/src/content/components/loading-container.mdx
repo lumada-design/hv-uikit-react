@@ -1,0 +1,27 @@
+import {
+  loadingContainerClasses as classes,
+  HvLoadingContainer,
+  HvPanel,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "LoadingContainer", classes }}
+  Component={HvLoadingContainer}
+  componentName="HvLoadingContainer"
+  controls={{
+    hidden: {
+      defaultValue: false,
+    },
+    opacity: {
+      type: "text",
+      defaultValue: 0.8,
+    },
+  }}
+  componentProps={{
+    style: { width: "100%" },
+  }}
+>
+  <HvPanel className="grid place-items-center h-200px">My content</HvPanel>
+</Header>

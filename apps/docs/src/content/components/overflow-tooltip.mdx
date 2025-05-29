@@ -1,0 +1,28 @@
+import { Callout } from "nextra/components";
+import {
+  overflowTooltipClasses as classes,
+  HvOverflowTooltip,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Callout type="info">
+  Check out the [`HvTooltip`](/components/tooltip) component for our regular
+  tooltip component.
+</Callout>
+
+<Header
+  params={{ name: "OverflowTooltip", classes }}
+  Component={HvOverflowTooltip}
+  componentName="HvOverflowTooltip"
+  controls={{
+    placement: { defaultValue: "top" },
+    paragraphOverflow: { defaultValue: false },
+    data: {
+      type: "text",
+      defaultValue:
+        "This is a very long text that should be cut because it so long that it doesn't fit",
+    },
+  }}
+  decoratorClassName="max-w-160px"
+/>

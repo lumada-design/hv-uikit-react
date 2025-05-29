@@ -1,0 +1,350 @@
+import { Callout } from "nextra/components";
+import {
+  tableClasses as classes,
+  HvTable,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{
+    name: "Table",
+    classes,
+    subComponents: [
+      "TableBody",
+      "TableCell",
+      "TableContainer",
+      "TableHead",
+      "TableHeader",
+      "TableRow",
+      "TableSection",
+    ],
+  }}
+/>
+
+<Callout type="info">
+  Please check our [table examples](/examples/tables) and or the [`react-table`
+  examples](https://react-table-v7-docs.netlify.app/docs/examples/basic) for
+  usage scenarios.
+</Callout>
+
+## Table components
+
+Each HTML table element (`<table>`, `<tr>`, `<td>`, etc.) that a corresponding `HvTable*` component.
+These components provide the visual Design System alignment and support features such as _sticky rows and header_, _sorting_, _resizing_, etc.
+
+Check out the [props tab](?tab=props) for the list of components and their properties.
+
+<Callout type="info">
+  Although it is possible to use the components directly, we recommended users
+  to use them along with the [`useHvTable`](#usehvtable) hook, which provides a
+  powerful API for managing tables.
+</Callout>
+
+```tsx live
+<HvTable>
+  <HvTableHead>
+    <HvTableRow>
+      <HvTableHeader>Name</HvTableHeader>
+      <HvTableHeader>Age</HvTableHeader>
+      <HvTableHeader>Role</HvTableHeader>
+    </HvTableRow>
+  </HvTableHead>
+  <HvTableBody>
+    {[
+      ["Alice", 30, "Designer"],
+      ["Bob", 42, "Developer"],
+      ["Charlie", 25, "QA"],
+    ].map(([name, age, role], i) => (
+      <HvTableRow key={i} hover striped>
+        <HvTableCell>{name}</HvTableCell>
+        <HvTableCell>{age}</HvTableCell>
+        <HvTableCell>{role}</HvTableCell>
+      </HvTableRow>
+    ))}
+  </HvTableBody>
+</HvTable>
+```
+
+## Container components
+
+Besides the primary table components, UI Kit provides a set of containers that help to organize the table layout:
+
+- `HvTableSection`, which wraps the content in an [`HvSection`](/components/section) and further styles the children components.
+- `HvTableContainer`, which provides a scrollable area for the table content.
+- [`HvLoadingContainer`](/components/loading-container), a loading container overlay to use while data is being fetched.
+
+See also: [`HvBulkActions`](/components/bulk-actions), [`HvPagination`](/components/pagination).
+
+```tsx live
+<HvTableSection
+  raisedHeader
+  expandable
+  title={<HvTypography variant="title4">Section Title</HvTypography>}
+  actions={<HvButton variant="subtle">Action</HvButton>}
+>
+  <HvBulkActions />
+
+  {/* main table area */}
+  <HvLoadingContainer hidden={false} label="Loading...">
+    <HvTableContainer>
+      <HvTable>
+        <HvTableBody>
+          {[
+            ["Alice", 30, "Designer"],
+            ["Bob", 42, "Developer"],
+            ["Charlie", 25, "QA"],
+          ].map(([name, age, role], i) => (
+            <HvTableRow key={i} hover striped>
+              <HvTableCell>{name}</HvTableCell>
+              <HvTableCell>{age}</HvTableCell>
+              <HvTableCell>{role}</HvTableCell>
+            </HvTableRow>
+          ))}
+        </HvTableBody>
+      </HvTable>
+    </HvTableContainer>
+  </HvLoadingContainer>
+
+  <HvPagination pages={4} />
+</HvTableSection>
+```
+
+## `useHvTable`
+
+The UI Kit library provides a collection of custom hooks that ease the integration with the HvTable components and allows more advanced use cases and better data handling.
+Our custom hooks are built on top of [`react-table@7`](https://react-table-v7-docs.netlify.app), an "headless" UI utility library to build data tables while retaining control over markup and styles.
+It consists of a collection of lightweight, composable, and extensible custom React hooks.
+
+The `useHvTable` hook that wraps the `react-table`'s [`useTable` hook](https://react-table-v7-docs.netlify.app/docs/api/useTable) and provides the additional functionality:
+
+- Ensures the use of the needed core and layout plugins when using any of the UI Kit custom hooks (e.g. adding `useHvPagination` implies the installation of
+  React Table's `usePagination` hook).
+- Automatically installs the `useHvTableStyles` hook.
+- Generates default column metadata from the data fields, if the `columns` option is missing.
+- Defaults to an empty array if no `data` is provided.
+
+Each primary feature (eg. sorting, pagination, etc.) is implemented as opt-in plugin hooks that can be used independently or in combination with other hooks.
+
+The usage of of the `useHvTable` hook along with the `HvTable*` components is as follows:
+
+### Setup
+
+```tsx
+export default function Demo() {
+  // 👇 Define the `data` and `columns` configuration (MUST be memoized).
+  const [data] = useState(() => makeData(1000));
+  const columns = useMemo<HvTableColumnConfig<AssetEvent>[]>(
+    () => [
+      { Header: "Name", accessor: "name" },
+      { Header: "Age", accessor: "age" },
+      { Header: "Role", accessor: "role" },
+    ],
+    [],
+  );
+
+  const table = useHvTable(
+    { columns, data },
+    // 👇 Provide the plugin hooks that you need
+    useHvTableSticky,
+    useHvSortBy,
+    useHvPagination,
+    useHvRowSelection,
+    useHvBulkActions,
+  );
+
+  return (
+    // Spread the table props 👇 in the respective components
+    <HvTable {...table.getTableProps()}>
+      <HvTableHead {...table.getTableHeadProps?.()}>
+        {table.headerGroups.map((headerGroup) => (
+          <HvTableRow {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((col) => (
+              <HvTableHeader {...col.getHeaderProps()}>
+                {col.render("Header")}
+              </HvTableHeader>
+            ))}
+          </HvTableRow>
+        ))}
+      </HvTableHead>
+      <HvTableBody {...table.getTableBodyProps?.()}>
+        {table.page.map((row) => {
+          // Render the Header and Cells using the `render` function:
+          table.prepareRow(row);
+          return (
+            <HvTableRow {...row.getRowProps()}>
+              {row.cells.map((cell) => (
+                <HvTableCell {...cell.getCellProps()}>
+                  {cell.render("Cell")}
+                </HvTableCell>
+              ))}
+            </HvTableRow>
+          );
+        })}
+      </HvTableBody>
+    </HvTable>
+  );
+}
+```
+
+### Usage
+
+By leveraging `HvTable*` components and the `useHvTable` hook, you should be able to address any specific table scenario.
+
+We recommend that you separate the table definition (`HvTable*` and `useHvTable`) from the implementation/usage (`columns` and `data`), by creating a reusable (eg. `<Table>`) table component.
+You should strive to have simple API that allows passing the `data` and `columns`, and not worrying about the layout or hook logic:
+
+```tsx
+// simple usage
+<Table data={data} columns={columns} />
+
+// or with extra configuration
+<Table
+  data={data}
+  columns={columns}
+  actions={[
+    { id: "delete", label: "Delete" },
+    { id: "clone", label: "Clone" },
+  ]}
+  initialState={{
+    pageSize: 20,
+  }}
+/>
+```
+
+## `useHvTable` hooks
+
+The following `react-table` plugin hooks are available to use with `useHvTable`:
+
+- [`useHvPagination`](#usehvpagination): Eases the wiring of the `HvPagination` component when using pagination.
+- [`useHvRowSelection`](#usehvrowselection): Creates and manages the UI for selecting rows.
+- [`useHvBulkActions`](#usehvbulkactions): Eases the wiring of the `HvBulkActions` component.
+- [`useHvSortBy`](#usehvsortby): Manages the table's header sorting functionality.
+- [`useHvRowExpand`](#usehvrowexpand): Manages the row expanding functionality.
+- [`useHvTableSticky`](#usehvtablesticky): Allows defining sticky headers and columns.
+- [`useHvHeaderGroups`](#usehvheadergroups): Allows defining grouped headers.
+- [`useHvResizeColumns`](#usehvresizecolumns): Manages column resizing.
+
+The additional hooks below are simply re-exports of the original `react-table` hooks, or hooks that the UI Kit doesn't re-exports
+but are listed here for visibility. Please refer to the `react-table` docs (linked) below for documentation and examples:
+
+- [`useHvRowState`](https://react-table-v7-docs.netlify.app/docs/api/useRowState): Implements basic state management for prepared rows and their cells.
+- [`useHvGlobalFilter`](https://react-table-v7-docs.netlify.app/docs/api/useGlobalFilter): Manages global filtering.
+- [`useHvFilters`](https://react-table-v7-docs.netlify.app/docs/api/useFilters): Manages column filtering.
+- [`useColumnOrder`](https://react-table-v7-docs.netlify.app/docs/api/useColumnOrder): Manages column ordering.
+- [`useGroupBy`](https://react-table-v7-docs.netlify.app/docs/api/useGroupBy): Manages row grouping.
+- [`useBlockLayout`](https://react-table-v7-docs.netlify.app/docs/api/useBlockLayout), [`useAbsoluteLayout`](https://react-table-v7-docs.netlify.app/docs/api/useAbsoluteLayout), [`useFlexLayout`](https://react-table-v7-docs.netlify.app/docs/api/useFlexLayout)
+
+### `useHvPagination`
+
+Data can be paginated. Optionally, empty lines can be added to the last page to avoid changes in height.
+Check [React Table's `usePagination` documentation](https://react-table-v7-docs.netlify.app/docs/api/usePagination) for configuration details.
+
+The `useHvPagination` hook makes the `getHvPaginationProps` function available on the table instance returned that can be used to setup a
+`HvPagination` component:
+
+```tsx
+const table = useHvTable({ columns, data }, useHvPagination);
+
+return <HvPagination {...table?.getHvPaginationProps()} />;
+```
+
+### `useHvSortBy`
+
+Tables can have the capability of sorting the data by column. Clicking a sortable column header toggles between ascending or descending. Multiple sorting criteria
+is enabled through holding shift while clicking.
+Check [React Table's `useSortBy` documentation](https://react-table-v7-docs.netlify.app/docs/api/useSortBy) for configuration details.
+
+The `useHvSortBy` hook ensures that the proper properties are injected in the `HvTableHeader` (including the on click sorting trigger) and `HvTableCell` (for styling).
+
+### `useHvRowSelection`
+
+Rows can be selected individually.
+Check [React Table's `useRowSelect` documentation](https://react-table-v7-docs.netlify.app/docs/api/useRowSelect) for configuration details.
+
+The `useHvRowSelection` hook injects a new column with a `HvCheckBox` to select each row. It also manages the `HvTableRow's` `isSelected` property via the
+`getRowProps`.
+
+This hook is originally based on the code `useRowSelect` hook from react-table and implements its API, but extends it with support for locking the selection
+state of individual rows.
+
+### `useHvBulkActions`
+
+Rows can also be selected in bulk and actions can be performed on the current selection.
+
+The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available on the table instance returned that can be used to setup a `HvBulkActions` component.
+
+```tsx
+const table = useHvTable({ columns, data }, useHvBulkActions);
+
+return <HvBulkActions {...table?.getHvBulkActionsProps()} />;
+```
+
+### `useHvTableSticky`
+
+The table headers can be fixed at the top, allowing it to keep always visible when table has vertical scrolling enabled.
+It is also possible to stick columns, either on the left or on the right, making them always visible when scrolling horizontally.
+
+When using sticky columns, all column widths will be fixed and a non-table-element layout is applied.
+
+The following options are supported via the main options object passed to `useTable(options)`:
+
+- `stickyHeader: boolean`: Enables the sticky header.
+
+The following options are supported on any `Column` object passed to the `columns` options in `useTable()`:
+
+- `sticky: "left" | "right"`: Sticks this column to the defined side. Columns will be re-orderer if needed.
+- `width: number`: Specifies the width for the column. Defaults to 150.
+- `minWidth: number`: Specifies the minimum width for the column. Defaults to 0.
+
+Note: Ensure the `getTableProps`, `getTableHeadProps`, `getHeaderGroupProps`, `getHeaderProps`, `getTableBodyProps`,
+`getRowProps`, and `getCellProps` prop getters are injected into the corresponding components.
+
+```tsx
+const columns = [
+  { Header: "Name", accessor: "name", sticky: "left" }, // 👈 sticky column
+  { Header: "Age", accessor: "age" },
+  { Header: "Role", accessor: "role", sticky: "right", minWidth: 200 },
+];
+
+const table = useHvTable(
+  { columns, data, stickyHeader: true },
+  useHvTableSticky, // 👆 sticky header and hook
+);
+```
+
+### `useHvResizeColumns`
+
+Columns can be resized using the `useHvResizeColumns` hook. Although this is not an accessible functionality, it allows columns to be resizable via dragging column right border.
+Check [React Table's `useResizeColumns` documentation](https://react-table-v7-docs.netlify.app/docs/api/useResizeColumns) for configuration details.
+
+### `useHvRowExpand`
+
+Tables rows can have the capability of being expanded to show more details.
+Check [React Table's `useExpanded` documentation](https://react-table-v7-docs.netlify.app/docs/api/useExpanded) for configuration details.
+
+The `useHvRowExpand` hook injects a `HvButton` into the first data column that toggles each row expansion. If the column has a custom renderer, an
+extra column is created instead.
+
+### `useHvHeaderGroups`
+
+The table columns can be grouped, allowing it to have header groups.
+Check [React Table's `useTable` documentation](https://react-table-v7-docs.netlify.app/docs/api/useTable#column-options) for configuration details.
+
+This is implemented using the `useHvHeaderGroups` custom React Table hook provided by the UI Kit library.
+
+Note: When using grouped columns, all header group columns text will be centered.
+
+```tsx
+const columns = [
+  {
+    id: "name"
+    Header: "Name",
+    // 👇 nested columns under "name"
+    columns: [
+      { Header: "First", accessor: "firstName" },
+      { Header: "Last", accessor: "lastName" },
+    ],
+  },
+];
+```

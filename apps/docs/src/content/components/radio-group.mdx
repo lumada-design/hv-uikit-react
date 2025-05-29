@@ -1,0 +1,64 @@
+import {
+  radioGroupClasses as classes,
+  HvRadio,
+  HvRadioGroup,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "RadioGroup", classes }}
+  Component={HvRadioGroup}
+  componentName="HvRadioGroup"
+  controls={{
+    label: { defaultValue: "Type" },
+    description: { defaultValue: "Visualization type" },
+    orientation: { defaultValue: "vertical" },
+    required: { defaultValue: true },
+    disabled: { defaultValue: false },
+    readOnly: { defaultValue: false },
+  }}
+  componentProps={{
+    defaultChecked: false,
+  }}
+>
+  <HvRadio label="Bar Chart" value="1" />
+  <HvRadio label="Line Chart" value="2" />
+  <HvRadio label="Pie Chart" value="3" />
+</Header>
+
+### Controlled
+
+Controlled radio button group. Choosing the first option will result in an invalid state of the Radio group.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [value, setValue] = useState("2");
+  const [status, setStatus] = useState<HvFormStatus>("standBy");
+
+  return (
+    <HvRadioGroup
+      label="Choose the best radio button"
+      value={value}
+      status={status}
+      statusMessage={'Don\'t select "None"!'}
+      onChange={(evt, newValue) => {
+        setValue(newValue);
+        setStatus(newValue === "none" ? "invalid" : "valid");
+      }}
+    >
+      <HvRadio label="None" value="none" />
+      <HvRadio label="Radio 1" value="1" />
+      <HvRadio label="Radio 2" value="2" />
+    </HvRadioGroup>
+  );
+}
+```
+
+### Related components
+
+- [`HvFormElement`](/components/form-element)
+- [`HvSelectionList`](/components/selection-list)
+- [`HvRadio`](/components/radio)

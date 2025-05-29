@@ -1,0 +1,75 @@
+import {
+  sectionClasses as classes,
+  HvSection,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "Section", classes }}
+  Component={HvSection}
+  componentName="HvSection"
+  controls={{
+    title: {
+      type: "text",
+      defaultValue: "Section title",
+    },
+    expandable: {
+      defaultValue: false,
+    },
+    raisedHeader: {
+      defaultValue: false,
+    },
+  }}
+>
+  <div>My section example content</div>
+</Header>
+
+### Actions
+
+You can add actions to the section header by using the `actions` prop which can accept any component.
+
+```tsx live
+<HvSection
+  actions={<HvButton variant="primarySubtle">Explore Insights</HvButton>}
+  title={
+    <HvTypography variant="title4">Unlock the Power of Your Data</HvTypography>
+  }
+>
+  <HvTypography>
+    Discover actionable insights hidden within your data. With our advanced
+    tools and intuitive dashboards, transform raw numbers into meaningful
+    strategies that drive success.
+  </HvTypography>
+</HvSection>
+```
+
+### Controlled
+
+You can control the state of `HvSection` by using the `expanded / onToggle` props.
+
+```tsx live
+import { useState } from "react";
+
+export default function Demo() {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="grid gap-sm w-full">
+      <HvButton className="w-1/4" onClick={() => setExpanded((p) => !p)}>
+        Expand
+      </HvButton>
+      <HvSection
+        title="Controlled section"
+        expandable
+        expanded={expanded}
+        onToggle={() => setExpanded((p) => !p)}
+      >
+        <HvTypography>
+          This section is controlled by the state of the parent component.
+        </HvTypography>
+      </HvSection>
+    </div>
+  );
+}
+```
