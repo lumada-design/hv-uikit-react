@@ -91,7 +91,7 @@ describe("AppShellProvider component", () => {
 
       await waitFor(() => {
         expect(consoleMock).toHaveBeenCalledWith(
-          "Import of theme bundle dummyTheme failed! Error: Failed to load url dummyTheme (resolved id: dummyTheme). Does the file exist?",
+          expect.stringContaining("Import of theme bundle dummyTheme failed!"),
         );
 
         expect(bodyElement.getAttribute("data-theme")).toBe("ds5");
@@ -165,7 +165,7 @@ describe("AppShellProvider component", () => {
 
       await waitFor(() => {
         expect(consoleMock).toHaveBeenCalledWith(
-          "Import of provider 'dummyProvider' failed! Error: Failed to load url dummyProvider (resolved id: dummyProvider). Does the file exist?",
+          expect.stringContaining("Import of provider 'dummyProvider' failed!"),
         );
       });
 

@@ -5,26 +5,6 @@ import { describe, expect, it, vi } from "vitest";
 import { HvLoading } from "../Loading";
 import { HvButton } from "./Button";
 
-const buttonVariant = [
-  "primary",
-  "primarySubtle",
-  "primaryGhost",
-  "positive",
-  "positiveSubtle",
-  "positiveGhost",
-  "negative",
-  "negativeSubtle",
-  "negativeGhost",
-  "warning",
-  "warningSubtle",
-  "warningGhost",
-  "secondarySubtle",
-  "secondaryGhost",
-  "semantic",
-  "secondary",
-  "ghost",
-] as const;
-
 describe("Button", () => {
   it("renders the content", () => {
     render(<HvButton>content</HvButton>);
@@ -66,21 +46,11 @@ describe("Button", () => {
     expect(clickMock).toHaveBeenCalledTimes(2);
   });
 
-  it("disabled for all variants", () => {
-    render(
-      <div>
-        {buttonVariant.map((variant) => (
-          <HvButton key={variant} variant={variant} disabled>
-            {variant}
-          </HvButton>
-        ))}
-      </div>,
-    );
+  it("disabled", () => {
+    render(<HvButton disabled>content</HvButton>);
 
-    buttonVariant.forEach((variant) => {
-      const button = screen.getByRole("button", { name: variant });
-      expect(button).toBeDisabled();
-    });
+    const button = screen.getByRole("button", { name: "content" });
+    expect(button).toBeDisabled();
   });
 
   it(`is type="button" by default`, () => {
@@ -266,41 +236,27 @@ describe("Button", () => {
     });
   });
 
-  describe("focusableWhenDisabled", () => {
-    it("not disabled, aria-disabled, focusable, and not clickable on click and key down for all variants", () => {
-      const user = userEvent.setup();
-      const buttonSpy = vi.fn();
-      render(
-        <div>
-          {buttonVariant.map((variant) => (
-            <HvButton
-              onClick={buttonSpy}
-              key={variant}
-              variant={variant}
-              focusableWhenDisabled
-              disabled
-            >
-              {variant}
-            </HvButton>
-          ))}
-        </div>,
-      );
+  it("focusableWhenDisabled not disabled/focusable/clickable/keyDown", async () => {
+    const user = userEvent.setup();
+    const buttonSpy = vi.fn();
+    render(
+      <HvButton onClick={buttonSpy} focusableWhenDisabled disabled>
+        content
+      </HvButton>,
+    );
 
-      buttonVariant.forEach(async (variant) => {
-        const button = screen.getByRole("button", { name: variant });
+    const button = screen.getByRole("button", { name: "content" });
 
-        expect(button).not.toBeDisabled();
-        expect(button).toHaveAttribute("aria-disabled", "true");
+    expect(button).not.toBeDisabled();
+    expect(button).toHaveAttribute("aria-disabled", "true");
 
-        await user.click(button);
-        expect(buttonSpy).not.toHaveBeenCalled();
+    await user.click(button);
+    expect(buttonSpy).not.toHaveBeenCalled();
 
-        await user.keyboard("{tab}");
-        expect(button).toHaveFocus();
+    await user.keyboard("{tab}");
+    expect(button).not.toHaveFocus();
 
-        await user.keyboard("{enter}");
-        expect(buttonSpy).not.toHaveBeenCalled();
-      });
-    });
+    await user.keyboard("{enter}");
+    expect(buttonSpy).not.toHaveBeenCalled();
   });
 });

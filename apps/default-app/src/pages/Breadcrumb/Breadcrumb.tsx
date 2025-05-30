@@ -49,7 +49,7 @@ const Breadcrumb = () => {
 
   return (
     <div className="grid gap-sm">
-      <HvGlobalActions title={t("breadcrumbTitle")} backButton={false} />
+      <HvGlobalActions title={t("breadcrumbTitle" as any)} backButton={false} />
       <HvBreadCrumb
         aria-label="Breadcrumb"
         id="breadcrumb6"

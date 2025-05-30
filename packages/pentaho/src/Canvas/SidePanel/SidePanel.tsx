@@ -27,7 +27,7 @@ const DEFAULT_LABELS = {
 };
 
 export interface HvCanvasSidePanelProps
-  extends HvBaseProps<HTMLDivElement, "onToggle" | "onResize"> {
+  extends HvBaseProps<HTMLDivElement, "onToggle"> {
   /** When controlled, defines id the panel is open or not. */
   open?: boolean;
   /** When uncontrolled, defines the initial state of the panel. */
