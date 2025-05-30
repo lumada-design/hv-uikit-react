@@ -1,10 +1,4 @@
-export {
-  theme,
-  themes,
-  ds3,
-  ds5,
-  pentahoPlus,
-} from "@hitachivantara/uikit-styles";
+export { theme } from "@hitachivantara/uikit-styles";
 export type {
   HvThemeBreakpoint,
   HvThemeColorMode,
@@ -23,7 +17,7 @@ export type {
   HvRadius,
   HvSize,
 } from "@hitachivantara/uikit-styles";
-
+export type { HvTheme } from "@hitachivantara/uikit-react-shared";
 export {
   createClasses,
   useCss,
@@ -31,6 +25,8 @@ export {
   useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+
+export * from "./themes";
 
 // Components that need to be loaded first because of mutual dependencies (preserve order)
 export * from "./Typography";
@@ -143,7 +139,6 @@ export * from "./providers/Provider";
 export * from "./providers/ThemeProvider";
 
 export * from "./types/generic";
-export * from "./types/theme";
 export * from "./types/tokens";
 
 export * from "./utils/browser";
