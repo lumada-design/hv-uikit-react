@@ -128,9 +128,7 @@ export const createTheme = (
       if (!themes[base].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
           ...themes[base].colors.modes.dawn,
-          ...(customizedTheme.colors.modes[mode] as Partial<
-            HvThemeColorModeStructure & { [key: string]: string }
-          >),
+          ...customizedTheme.colors.modes[mode],
         };
       }
     });
