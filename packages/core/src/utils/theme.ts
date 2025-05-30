@@ -179,6 +179,7 @@ export const processThemes = (
   return [themes.ds5];
 };
 
+/** @deprecated */
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
   const root = getElementById(rootElementId || "hv-root");
   if (!root) return undefined;
