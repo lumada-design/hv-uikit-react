@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.7.4...@hitachivantara/app-shell-vite-plugin@1.7.5) (2025-05-30)
+
+### Bug Fixes
+
+- **app-shell-vite-plugin:** cross-platform module resolution ([#4760](https://github.com/lumada-design/hv-uikit-react/issues/4760)) ([06776ee](https://github.com/lumada-design/hv-uikit-react/commit/06776ee5fd9f56132be9e749abafce9ea9c3511a))
+
 ## [1.7.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.7.3...@hitachivantara/app-shell-vite-plugin@1.7.4) (2025-05-23)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-vite-plugin

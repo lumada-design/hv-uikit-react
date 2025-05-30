@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.48.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.48.0...@hitachivantara/uikit-styles@5.48.1) (2025-05-30)
+
+### Bug Fixes
+
+- **Avatar:** fix border radius styles ([#4750](https://github.com/lumada-design/hv-uikit-react/issues/4750)) ([3ff5f33](https://github.com/lumada-design/hv-uikit-react/commit/3ff5f3398cd7e24bbd1cfe50100777ef4c202537))
+- **VerticalNavigation:** update selected item color no P+ theme ([#4762](https://github.com/lumada-design/hv-uikit-react/issues/4762)) ([eab0c37](https://github.com/lumada-design/hv-uikit-react/commit/eab0c37d9d51866bffec6328287a1f7430979eae))
+
 # [5.48.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.47.0...@hitachivantara/uikit-styles@5.48.0) (2025-05-23)
 
 ### Bug Fixes

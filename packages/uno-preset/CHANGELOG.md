@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.64](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.63...@hitachivantara/uikit-uno-preset@0.2.64) (2025-05-30)
+
+### Bug Fixes
+
+- **uno:** spacing for xxs token ([#4755](https://github.com/lumada-design/hv-uikit-react/issues/4755)) ([44be092](https://github.com/lumada-design/hv-uikit-react/commit/44be0924079764325d2e6a1b837faf5ecacb2909))
+
 ## [0.2.63](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.62...@hitachivantara/uikit-uno-preset@0.2.63) (2025-05-23)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset

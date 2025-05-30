@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.95.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.95.0...@hitachivantara/uikit-react-core@5.95.1) (2025-05-30)
+
+### Bug Fixes
+
+- **Avatar:** fix border radius styles ([#4750](https://github.com/lumada-design/hv-uikit-react/issues/4750)) ([3ff5f33](https://github.com/lumada-design/hv-uikit-react/commit/3ff5f3398cd7e24bbd1cfe50100777ef4c202537))
+
 # [5.95.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.94.0...@hitachivantara/uikit-react-core@5.95.0) (2025-05-23)
 
 ### Bug Fixes
