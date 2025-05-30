@@ -4,8 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { userEvent, within } from "storybook/test";
 import type { HvAppShellConfig } from "@hitachivantara/app-shell-shared";
 import HvAppShell from "@hitachivantara/app-shell-ui";
-
-import { setupChromatic } from ".storybook/setupChromatic";
+import { setupChromatic } from "@hitachivantara/internal";
 
 const externalsEntries = [
   "react@18",

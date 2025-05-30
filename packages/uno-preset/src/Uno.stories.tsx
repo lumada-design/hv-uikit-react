@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Tests/Uno",

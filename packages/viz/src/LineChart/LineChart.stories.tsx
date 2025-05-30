@@ -3,6 +3,7 @@ import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { loadArrow } from "arquero";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvButton,
   HvCheckBox,
@@ -16,7 +17,6 @@ import { HvLineChart, HvLineChartProps } from "@hitachivantara/uikit-react-viz";
 import { vizDecorator } from "../BaseChart/stories/utils";
 import { emptyCellMode } from "../types/generic";
 import { chartData } from "./mockData";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvLineChart> = {
   title: "Visualizations/Line Chart",

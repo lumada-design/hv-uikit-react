@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvQueryBuilder,
   HvQueryBuilderProps,
@@ -8,7 +9,6 @@ import { CustomRenderers as CustomRenderersStory } from "./stories/CustomRendere
 import { InitialQuery as InitialQueryStory } from "./stories/InitialQuery";
 import { Main as MainStory } from "./stories/Main";
 import { ReadOnly as ReadOnlyStory } from "./stories/ReadOnly";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvQueryBuilder> = {
   title: "Components/Query Builder",

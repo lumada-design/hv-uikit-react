@@ -1,0 +1,17 @@
+{
+  "name": "@templates/all",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./*",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-react-core": "*",
+    "@hitachivantara/uikit-react-icons": "*",
+    "@hitachivantara/uikit-react-lab": "*",
+    "@hitachivantara/uikit-react-pentaho": "*",
+    "@emotion/react": "^11.11.0",
+    "@emotion/css": "^11.11.0"
+  }
+}

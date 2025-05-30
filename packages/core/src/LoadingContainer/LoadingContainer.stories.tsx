@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvListContainer,
   HvListItem,
@@ -6,8 +7,6 @@ import {
   HvLoadingContainerProps,
   HvPanel,
 } from "@hitachivantara/uikit-react-core";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Components/Loading Container",

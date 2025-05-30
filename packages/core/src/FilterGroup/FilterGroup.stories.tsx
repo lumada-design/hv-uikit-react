@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Decorator, Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvFilterGroup,
   HvFilterGroupProps,
@@ -8,7 +9,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { EmptyFilters as EmptyFiltersStory } from "./stories/EmptyFilters";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const widthDecorator: Decorator = (Story) => (
   <div style={{ width: 180 }}>{Story()}</div>

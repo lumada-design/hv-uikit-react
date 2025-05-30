@@ -2,6 +2,7 @@ import { useState } from "react";
 import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvButton,
   HvDialogActions,
@@ -12,8 +13,6 @@ import {
   HvGlobalActions,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvDrawer> = {
   title: "Components/Drawer",

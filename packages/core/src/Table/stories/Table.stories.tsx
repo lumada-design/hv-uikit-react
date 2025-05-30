@@ -1,5 +1,6 @@
 import { StoryObj } from "@storybook/react-vite";
 import { userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvTable,
   HvTableBody,
@@ -22,7 +23,6 @@ import { NoData as NoDataStory } from "./TableSamples/NoData";
 import { ResponsiveTable as ResponsiveTableStory } from "./TableSamples/ResponsiveTable";
 import { SimpleTable as SimpleTableStory } from "./TableSamples/SimpleTable";
 import { PropsTableSection } from "./TableSection/PropsTableSection";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 export default {
   title: "Visualizations/Table",

@@ -1,4 +1,5 @@
-import { allModes } from "./modes";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { allModes } from ".../../../.storybook/modes";
 
 /**
  * Builds the Chromatic object needed to enable snapshots in Storybook stories
@@ -21,4 +22,8 @@ export const setupChromatic = (
       ...options,
     },
   };
+};
+
+export const renderStory = (story: any, ctx: any) => {
+  return story.render?.(story.args, ctx);
 };

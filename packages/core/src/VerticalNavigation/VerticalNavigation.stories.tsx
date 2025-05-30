@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvVerticalNavigation,
   HvVerticalNavigationAction,
@@ -17,7 +18,6 @@ import { Main as MainStory } from "./stories/Main";
 import { SliderMode as SliderModeStory } from "./stories/SliderMode";
 import { Test as TestStory } from "./stories/Test";
 import { TreeViewMode as TreeViewModeStory } from "./stories/TreeViewMode";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvVerticalNavigation> = {
   title: "Components/Vertical Navigation",

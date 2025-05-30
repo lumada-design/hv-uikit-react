@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvButton,
   HvInput,
@@ -6,8 +7,6 @@ import {
   HvLoginProps,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvLogin> = {
   title: "Components/Login",

@@ -1,15 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { HvPanel } from "@hitachivantara/uikit-react-core";
 import {
   HvConfusionMatrix,
   HvConfusionMatrixProps,
+  HvVizProvider,
 } from "@hitachivantara/uikit-react-viz";
-
-import { confusionMatrixDecorator } from "../BaseChart/stories/utils";
 
 const meta: Meta<typeof HvConfusionMatrix> = {
   title: "Visualizations/Confusion Matrix",
   component: HvConfusionMatrix,
-  decorators: [confusionMatrixDecorator],
+  decorators: [
+    (Story) => (
+      <HvVizProvider>
+        <HvPanel className="flex flex-col">{Story()}</HvPanel>
+      </HvVizProvider>
+    ),
+  ],
 };
 export default meta;
 

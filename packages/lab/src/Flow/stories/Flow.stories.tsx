@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvFlow,
   HvFlowBackground,
@@ -30,7 +31,6 @@ import { SubFlow as SubFlowStory } from "./SubFlow";
 import SubFlowRaw from "./SubFlow?raw";
 import { Visualizations as VisualizationsStory } from "./Visualizations";
 import VisualizationsRaw from "./Visualizations?raw";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvFlow> = {
   title: "Lab/Flow",

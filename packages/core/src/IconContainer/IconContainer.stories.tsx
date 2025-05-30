@@ -2,13 +2,12 @@ import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { User } from "@phosphor-icons/react/User";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvIconContainer,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { User as HvUser } from "@hitachivantara/uikit-react-icons";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvIconContainer> = {
   title: "Components/Icon Container",

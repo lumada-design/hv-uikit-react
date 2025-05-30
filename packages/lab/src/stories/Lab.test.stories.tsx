@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { renderStory, setupChromatic } from "@hitachivantara/internal";
 import { HvSimpleGrid } from "@hitachivantara/uikit-react-core";
 
 import { Variants as BladeVariantsStory } from "../Blade/Blade.stories";
 import { Main as BladesMainStory } from "../Blades/Blades.stories";
 import { Main as DashboardMainStory } from "../Dashboard/Dashboard.stories";
 import { Variants as StepNavigationVariantsStory } from "../StepNavigation/StepNavigation.stories";
-import { setupChromatic } from ".storybook/setupChromatic";
-import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Lab package */
 const meta: Meta = {
