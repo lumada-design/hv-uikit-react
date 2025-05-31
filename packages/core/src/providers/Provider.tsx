@@ -6,6 +6,7 @@ import {
   css as cssReact,
   Global,
 } from "@emotion/react";
+import type { HvTheme } from "@hitachivantara/uikit-react-shared";
 import {
   CssBaseline,
   CssScopedBaseline,
@@ -14,7 +15,6 @@ import {
 } from "@hitachivantara/uikit-styles";
 
 import { useUniqueId } from "../hooks/useUniqueId";
-import { HvTheme } from "../types/theme";
 import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
 import {

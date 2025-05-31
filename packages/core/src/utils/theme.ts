@@ -1,11 +1,51 @@
+import { HvTheme } from "@hitachivantara/uikit-react-shared";
 import {
   HvThemeColorModeStructure,
   HvThemeStructure,
-  themes,
 } from "@hitachivantara/uikit-styles";
+import type { HvBaseTheme } from "@hitachivantara/uikit-styles";
 
-import { HvCreateThemeProps, HvTheme } from "../types/theme";
+import { themes } from "../themes";
+import type { HvExtraDeepPartialProps } from "../types/generic";
 import { getContainerElement, getElementById } from "./document";
+
+/**
+ * Create theme props
+ */
+export interface HvCreateThemeProps extends HvThemeCustomizationProps {
+  /**
+   * The name used for the theme.
+   *
+   * This is a required property to create a theme.
+   */
+  name: string;
+  /**
+   * The theme to be used as base.
+   *
+   * `"ds5"` will be used as default if no value is provided.
+   */
+  base?: HvBaseTheme;
+  /**
+   * If `true` the default color modes (dawn and wicked) of the base theme will be inherited while creating the theme.
+   * If `false`, the new theme doesn't inherit the default color modes.
+   *
+   * By default the color modes are inherited.
+   */
+  inheritColorModes?: boolean;
+}
+
+// Theme customization
+export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
+  Omit<HvThemeStructure, "colors" | "name" | "base">
+> & {
+  colors?: {
+    modes?: {
+      [key: string]: Partial<HvThemeColorModeStructure> & {
+        [key: string]: string;
+      };
+    };
+  };
+};
 
 /**
  * Sets the element attributes and style for a theme and color mode.
@@ -88,9 +128,7 @@ export const createTheme = (
       if (!themes[base].colors.modes[mode]) {
         customizedTheme.colors.modes[mode] = {
           ...themes[base].colors.modes.dawn,
-          ...(customizedTheme.colors.modes[mode] as Partial<
-            HvThemeColorModeStructure & { [key: string]: string }
-          >),
+          ...customizedTheme.colors.modes[mode],
         };
       }
     });
@@ -141,6 +179,7 @@ export const processThemes = (
   return [themes.ds5];
 };
 
+/** @deprecated */
 export const getVarValue = (cssVar: string, rootElementId?: string) => {
   const root = getElementById(rootElementId || "hv-root");
   if (!root) return undefined;

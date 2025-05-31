@@ -114,7 +114,9 @@ export type HvThemeColorMode = "dawn" | "wicked";
 export type HvThemeColorModeType = "light" | "dark";
 
 // Theme color mode structure
-export interface HvThemeColorModeStructure extends HvThemeColors {
+export interface HvThemeColorModeStructure
+  extends HvThemeColors,
+    Record<string, string> {
   type: HvThemeColorModeType;
 }
 

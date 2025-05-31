@@ -1,6 +1,6 @@
 import type { Property } from "csstype";
 
-import { indigo } from "./colorsPalette";
+import { indigo } from "../palette";
 
 type SemanticTypes =
   | "primary"
