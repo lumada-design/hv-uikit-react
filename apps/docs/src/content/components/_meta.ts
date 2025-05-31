@@ -39,6 +39,7 @@ export default {
   header: "Header",
   "icon-container": "Icon Container",
   input: "Input",
+  "list-container": "List Container",
   loading: "Loading",
   "loading-container": "Loading Container",
   "multi-button": "Multi Button",

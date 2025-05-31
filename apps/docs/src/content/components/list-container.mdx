@@ -1,0 +1,44 @@
+import {
+  listContainerClasses as classes,
+  HvListContainer,
+  HvListItem,
+} from "@hitachivantara/uikit-react-core";
+
+import { Header } from "../../components/Header";
+
+<Header
+  params={{ name: "ListContainer", classes, subComponents: ["ListItem"] }}
+  Component={HvListContainer}
+  componentName="HvListContainer"
+  controls={{
+    condensed: { defaultValue: false },
+    interactive: { defaultValue: true },
+  }}
+  decoratorClassName="bg-bgContainer p-sm"
+>
+  <HvListItem>🥑 Avocado</HvListItem>
+  <HvListItem>🍌 Banana</HvListItem>
+  <HvListItem>🥕 Carrot</HvListItem>
+  <HvListItem>🐉 Dragonfruit</HvListItem>
+  <HvListItem>🍆 Eggplant</HvListItem>
+</Header>
+
+### Icons
+
+Icons can be added to `HvListItem` using the `startAdornment` or `endAdornment` props.
+
+```tsx live
+<HvPanel className="w-300px">
+  <HvListContainer interactive>
+    <HvListItem startAdornment={<DataStore />}>SQLite</HvListItem>
+    <HvListItem startAdornment={<DataStore />}>PostgreSQL</HvListItem>
+    <HvListItem startAdornment={<DataStore />}>MySQL</HvListItem>
+    <HvListItem startAdornment={<DataStore />}>MongoDB</HvListItem>
+    <HvListItem startAdornment={<DataStore />}>MariaDB</HvListItem>
+  </HvListContainer>
+</HvPanel>
+```
+
+### Related components
+
+- [`HvSelectionList`](/components/selection-list)
