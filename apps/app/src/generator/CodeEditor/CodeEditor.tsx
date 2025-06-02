@@ -55,7 +55,7 @@ const CodeEditor = ({
 
   const onResetHandler = () => {
     updateCustomTheme({}, { isReset: true, updateThemeChanges: false });
-    changeTheme("pentahoPlus", "dawn");
+    changeTheme("ds6", "dawn");
   };
 
   const codeChangedHandler = (code?: string) => {
@@ -69,7 +69,7 @@ const CodeEditor = ({
     try {
       const parsed = JSON5.parse(snippet);
       if (customTheme.base !== parsed.base) {
-        if (["pentahoPlus", "ds3", "ds5"].includes(parsed.base)) {
+        if (["ds5", "ds6", "pentahoPlus"].includes(parsed.base)) {
           changeTheme(parsed.base, selectedMode);
           updateCustomTheme(
             { ...parsed },

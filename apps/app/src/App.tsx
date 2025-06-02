@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import {
-  ds3,
   ds5,
+  ds6,
   HvProvider,
   pentahoPlus,
 } from "@hitachivantara/uikit-react-core";
@@ -15,8 +15,8 @@ const router = createBrowserRouter(routes, {
 const App = () => {
   return (
     <HvProvider
-      themes={[ds3, ds5, pentahoPlus]}
-      theme="pentahoPlus"
+      themes={[ds5, ds6, pentahoPlus]}
+      theme="ds6"
       rootElementId="hv-root"
       cssTheme="scoped"
     >

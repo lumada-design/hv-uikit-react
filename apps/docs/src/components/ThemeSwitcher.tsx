@@ -6,9 +6,9 @@ import { HvSelect } from "@hitachivantara/uikit-react-core";
 import { useDocsTheme } from "../hooks/useDocsTheme";
 
 const themes = [
-  { value: "pentahoPlus", label: "Pentaho+" },
+  { value: "ds6", label: "NEXT v6" },
   { value: "ds5", label: "NEXT v5" },
-  { value: "ds3", label: "NEXT v3" },
+  { value: "pentahoPlus", label: "Pentaho+" },
 ];
 
 const allowedPaths = [

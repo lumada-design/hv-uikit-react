@@ -1,5 +1,6 @@
 import ds3 from "./themes/ds3";
 import ds5 from "./themes/ds5";
+import ds6 from "./themes/ds6";
 import pentahoPlus from "./themes/pentahoPlus";
 
 export * from "./types";
@@ -10,5 +11,5 @@ export * from "./tokens";
 export * from "./CssBaseline";
 
 // Export each theme individually and a bundle of themes
-export { ds3, ds5, pentahoPlus };
-export const themes = { ds3, ds5, pentahoPlus };
+export { ds3, ds5, ds6, pentahoPlus };
+export const themes = { ds3, ds5, ds6, pentahoPlus };

@@ -3,6 +3,7 @@ export {
   themes,
   ds3,
   ds5,
+  ds6,
   pentahoPlus,
 } from "@hitachivantara/uikit-styles";
 export type {

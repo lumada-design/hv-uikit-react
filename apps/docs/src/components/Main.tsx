@@ -3,7 +3,12 @@
 // TODO: 👆 remove this, make HvProvider SSR-friendly
 import createCache from "@emotion/cache";
 import { useTheme } from "nextra-theme-docs";
-import { HvProvider, pentahoPlus } from "@hitachivantara/uikit-react-core";
+import {
+  pentahoPlus,
+  ds5,
+  ds6,
+  HvProvider
+} from "@hitachivantara/uikit-react-core";
 import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 const emotionCache = createCache({
@@ -17,8 +22,8 @@ export const Main = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <HvProvider
-      themes={[pentahoPlus]}
-      theme="pentahoPlus"
+      themes={[pentahoPlus, ds5, ds6]}
+      theme="ds6"
       colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
       emotionCache={emotionCache}
     >

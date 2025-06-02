@@ -66,7 +66,7 @@ export const createTheme = (
 ): HvTheme | HvThemeStructure => {
   const {
     name,
-    base = "ds5",
+    base = "ds6",
     inheritColorModes = true,
     ...customizations
   } = props;
