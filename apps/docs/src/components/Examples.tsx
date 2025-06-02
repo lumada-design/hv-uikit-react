@@ -3,6 +3,7 @@ import charts from "!!raw-loader!../content/examples/charts.mdx";
 import dnd from "!!raw-loader!../content/examples/dnd.mdx";
 import inputs from "!!raw-loader!../content/examples/inputs.mdx";
 import kpis from "!!raw-loader!../content/examples/kpis.mdx";
+import login from "!!raw-loader!../content/examples/login.mdx";
 import tables from "!!raw-loader!../content/examples/tables.mdx";
 import { clsx } from "clsx";
 import Link from "next/link";
@@ -26,6 +27,7 @@ const sections = [
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
   { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
+  { slug: "login", title: "Login", total: countCodeBlocks(login) },
   { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
 ] as const;
 
@@ -45,6 +47,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-hand-swipe-right" />;
     case "canvas":
       return <div className="i-ph-flow-arrow" />;
+    case "login":
+      return <div className="i-ph-lock-open" />;
     default:
       return null;
   }

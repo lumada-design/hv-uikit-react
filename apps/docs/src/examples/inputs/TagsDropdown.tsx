@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import {
   HvBaseDropdown,
   HvLabel,
@@ -32,32 +33,24 @@ export default function Demo() {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
   const scrollToEnd = () => {
-    setTimeout(
-      () => {
-        if (containerRef.current) {
-          containerRef.current.scrollLeft = containerRef.current.scrollWidth;
-        }
-      },
-
-      0,
-    );
+    containerRef.current?.scrollTo({
+      left: containerRef.current.scrollWidth,
+      behavior: "smooth",
+    });
   };
 
   const handleAddColor = (color: string) => {
-    setSelectedColors((prev) => {
-      const newColors = prev.filter((c) => c !== color);
-      return newColors.length ? [...newColors, color] : [color];
+    flushSync(() => {
+      setSelectedColors((prev) => [...prev.filter((c) => c !== color), color]);
     });
     scrollToEnd();
   };
 
   const handleRemoveColor = (color: string) => {
-    setSelectedColors((prev) => prev.filter((c) => c !== color));
+    flushSync(() => {
+      setSelectedColors((prev) => prev.filter((c) => c !== color));
+    });
     scrollToEnd();
-  };
-
-  const focusOnContainer = () => {
-    focusTarget.current?.focus();
   };
 
   return (
@@ -69,7 +62,7 @@ export default function Demo() {
       />
       <HvBaseDropdown
         aria-labelledby="tags-dropdown-input"
-        onContainerCreation={focusOnContainer}
+        onContainerCreation={() => focusTarget.current?.focus()}
         placeholder={
           selectedColors.length ? (
             <div
