@@ -211,7 +211,7 @@ export const TableFilter = () => {
         id: filters[idx].id,
         value: array
           .map((x) => filters[idx].data.find((i) => i.id === x)?.name)
-          .filter((v) => v),
+          .filter(Boolean),
       })) || [];
     setAllFilters?.(newFilters);
   };

@@ -32,8 +32,8 @@ export function Description({ meta }: { meta: ComponentMeta }) {
         {meta.docgen?.description}
       </ReactMarkdown>
       <div className="flex gap-sm mt-sm">
-        {links.map(({ logo, label, href }, i) => (
-          <div key={i} className="flex gap-xs items-center">
+        {links.map(({ logo, label, href }) => (
+          <div key={href} className="flex gap-xs items-center">
             {logo}
             <HvTypography
               link

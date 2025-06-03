@@ -114,7 +114,7 @@ export const useHvNavigation = () => {
       // local navigation
       if (bundleWithReplacedPlaceholders.startsWith("/")) {
         appId = viewContext?.id;
-        bundle = bundleWithReplacedPlaceholders.substring(1);
+        bundle = bundleWithReplacedPlaceholders.slice(1);
       } else {
         bundle = bundleWithReplacedPlaceholders;
       }
