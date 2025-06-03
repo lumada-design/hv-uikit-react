@@ -214,6 +214,12 @@ export const WithIcons: StoryObj<HvListContainerProps> = {
               Last month
             </HvListItem>
             <HvListItem endAdornment={<DropRightXS />}>Last year</HvListItem>
+            <HvListItem
+              startAdornment={<Calendar />}
+              endAdornment={<DropRightXS />}
+            >
+              Custom Date
+            </HvListItem>
           </HvListContainer>
         </HvPanel>
       </>

@@ -66,34 +66,6 @@ export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
   classes?: HvListItemClasses;
 }
 
-const applyClassNameAndStateToElement = (
-  element: React.ReactNode,
-  selected: boolean | undefined,
-  disabled: boolean | undefined,
-  onClick: React.MouseEventHandler<HTMLLIElement>,
-  className?: string,
-) => {
-  if (element == null) return null;
-
-  return cloneElement(element as ReactElement, {
-    className,
-    checked: !!selected,
-    disabled,
-    onChange: onClick,
-  });
-};
-
-const applyClassNameToElement = (
-  element: React.ReactNode,
-  className?: string,
-) => {
-  if (element == null) return null;
-
-  return cloneElement(element as ReactElement, {
-    className,
-  });
-};
-
 /**
  * Implements the listitem pattern, akin to the `<li>` element.
  * Should be composed within a `<HvListContainer>` component.
@@ -145,45 +117,35 @@ export const HvListItem = forwardRef<
     [disabled, onClick],
   );
 
-  const clonedStartAdornment = useMemo(
-    () =>
-      applyClassNameAndStateToElement(
-        startAdornment,
-        selected,
-        disabled,
-        handleClick,
-        cx(
-          classes.startAdornment,
-          { [classes.disabled]: disabled },
-          isValidElement(startAdornment)
-            ? startAdornment.props.className
-            : undefined,
-        ),
-      ),
-    [
-      cx,
-      classes?.startAdornment,
-      classes?.disabled,
+  const clonedStartAdornment = useMemo(() => {
+    if (!isValidElement(startAdornment)) return startAdornment;
+    return cloneElement(startAdornment as ReactElement, {
+      className: cx(classes.startAdornment, startAdornment.props.className, {
+        // TODO: remove 👇 props below
+        [classes.disabled]: disabled,
+      }),
+      checked: !!selected,
       disabled,
-      handleClick,
-      selected,
-      startAdornment,
-    ],
-  );
-  const clonedEndAdornment = useMemo(
-    () =>
-      applyClassNameToElement(
-        endAdornment,
-        cx(
-          classes.endAdornment,
-          { [classes.disabled]: disabled },
-          isValidElement(endAdornment)
-            ? endAdornment.props.className
-            : undefined,
-        ),
-      ),
-    [cx, classes?.endAdornment, classes?.disabled, disabled, endAdornment],
-  );
+      onChange: handleClick,
+    });
+  }, [
+    cx,
+    classes?.startAdornment,
+    classes?.disabled,
+    disabled,
+    handleClick,
+    selected,
+    startAdornment,
+  ]);
+
+  const clonedEndAdornment = useMemo(() => {
+    if (!isValidElement(endAdornment)) return endAdornment;
+    return cloneElement(endAdornment as ReactElement, {
+      className: cx(classes.endAdornment, endAdornment.props.className, {
+        [classes.disabled]: disabled,
+      }),
+    });
+  }, [cx, classes?.endAdornment, classes?.disabled, disabled, endAdornment]);
 
   const roleOptionAriaProps =
     role === "option" || role === "menuitem"

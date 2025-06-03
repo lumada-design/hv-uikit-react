@@ -32,15 +32,13 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
     },
   },
   focus: { backgroundColor: theme.colors.bgPageSecondary, zIndex: 2 },
-  startAdornment: {},
-  endAdornment: {},
   gutters: {
     padding: `0 ${theme.space.xs}`,
 
-    "&$withStartAdornment": {
+    ":has($startAdornment)": {
       paddingLeft: 0,
     },
-    "&$withEndAdornment": {
+    ":has($endAdornment)": {
       paddingRight: 0,
     },
   },
@@ -59,22 +57,14 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
     color: theme.colors.textDisabled,
     backgroundColor: theme.colors.bgDisabled,
   },
-  withStartAdornment: {
-    "& > div": {
-      float: "left",
-    },
-
-    "& svg": {
-      boxShadow: "none !important",
-      outline: "none !important",
-    },
+  startAdornment: {
+    float: "left",
   },
-  withEndAdornment: {
-    "& > div": { float: "right" },
-
-    "& svg": {
-      boxShadow: "none !important",
-      outline: "none !important",
-    },
+  endAdornment: {
+    float: "right",
   },
+  /** @deprecated use `:has($startAdornment)` instead */
+  withStartAdornment: {},
+  /** @deprecated use `:has($endAdornment)` instead */
+  withEndAdornment: {},
 });
