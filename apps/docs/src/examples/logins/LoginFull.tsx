@@ -1,17 +1,14 @@
+import { useState } from "react";
+import { ClickAwayListener, Popper } from "@mui/material";
 import {
   HvButton,
+  HvIconContainer,
   HvInput,
+  HvPanel,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 export default function LoginFull() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData);
-    console.log(data);
-  };
-
   return (
     <LoginContainer
       title={
@@ -26,7 +23,12 @@ export default function LoginFull() {
       <form
         autoComplete="on"
         className="grid gap-32px max-w-lg"
-        onSubmit={handleSubmit}
+        onSubmit={(event) => {
+          event.preventDefault();
+          const formData = new FormData(event.currentTarget);
+          const data = Object.fromEntries(formData);
+          console.log(data);
+        }}
       >
         <HvTypography variant="title3" className="text-center">
           Log in to your Pentaho+ account
@@ -56,16 +58,59 @@ export default function LoginFull() {
             </HvButton>
           </div>
         </div>
-        <HvButton
-          variant="secondaryGhost"
-          endIcon={<div className="i-ph-caret-down" />}
-        >
-          Log in as evaluator
-        </HvButton>
+        <EvaluatorButton />
       </form>
     </LoginContainer>
   );
 }
+
+function EvaluatorButton() {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement>();
+  const open = Boolean(anchorEl);
+
+  return (
+    <>
+      <HvButton
+        variant="secondaryGhost"
+        endIcon={<div className="i-ph-caret-down" />}
+        onClick={(evt) => setAnchorEl(evt.currentTarget)}
+      >
+        Log in as evaluator
+      </HvButton>
+      <Popper
+        disablePortal
+        anchorEl={anchorEl}
+        open={open}
+        placement="bottom-start"
+        className="top-1px!"
+      >
+        <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
+          <HvPanel className="grid gap-sm w-312px border rounded-large">
+            <ListItem id="Admin" name="Administrator" />
+            <ListItem id="Suzy" name="Business User" />
+          </HvPanel>
+        </ClickAwayListener>
+      </Popper>
+    </>
+  );
+}
+
+const ListItem = ({ id, name }: { id: string; name: string }) => (
+  <div className="flex gap-sm items-center">
+    <div className="grid flex-1">
+      <HvTypography variant="label">{name}</HvTypography>
+      <HvTypography variant="caption1" className="flex gap-xxs">
+        <HvIconContainer size="xs">
+          <div className="i-ph-user" />
+        </HvIconContainer>
+        {id}
+      </HvTypography>
+    </div>
+    <HvButton type="submit" variant="secondarySubtle">
+      Log In
+    </HvButton>
+  </div>
+);
 
 const LoginContainer = ({
   title,
@@ -76,7 +121,7 @@ const LoginContainer = ({
   subtitle: React.ReactNode;
   children: React.ReactNode;
 }) => (
-  <div className="grid min-h-600px grid-cols-2 md:grid-cols-[8fr_4fr]">
+  <div className="grid min-h-700px grid-cols-2 md:grid-cols-[8fr_4fr]">
     <div
       className="flex flex-col justify-between px-lg py-md bg-cover bg-center"
       style={{ backgroundImage: "url(https://i.imgur.com/EivMdmh.jpeg)" }}

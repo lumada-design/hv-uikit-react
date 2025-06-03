@@ -1,17 +1,17 @@
-import { useRef } from "react";
+import { useState } from "react";
+import { ClickAwayListener, Popper } from "@mui/material";
 import {
   HvButton,
-  HvDropDownMenu,
   HvIconContainer,
   HvInput,
+  HvListItem,
   HvMultiButton,
+  HvPanel,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { DropDownXS } from "@hitachivantara/uikit-react-icons";
 
 export default function LoginShort() {
-  const formRef = useRef<HTMLFormElement>(null);
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -31,7 +31,6 @@ export default function LoginShort() {
       subtitle="Pentaho User Console"
     >
       <form
-        ref={formRef}
         autoComplete="on"
         className="flex flex-col justify-center gap-sm mx-auto max-w-lg min-h-500px"
         onSubmit={handleSubmit}
@@ -63,36 +62,7 @@ export default function LoginShort() {
             </HvTypography>
           </div>
           <div className="grid gap-sm">
-            <HvMultiButton split variant="primary" className="w-auto">
-              <HvButton type="submit" variant="primary" className="w-full">
-                Log In
-              </HvButton>
-              <HvDropDownMenu
-                keepOpened={false}
-                icon={<DropDownXS />}
-                onClick={() => {
-                  formRef.current?.requestSubmit();
-                }}
-                dataList={[
-                  {
-                    label: "Log In as Administrator",
-                    icon: (
-                      <HvIconContainer size="sm" className="size-32px">
-                        <div className="i-ph-user-gear" />
-                      </HvIconContainer>
-                    ),
-                  },
-                  {
-                    label: "Log In as Business User",
-                    icon: (
-                      <HvIconContainer size="sm" className="size-32px">
-                        <div className="i-ph-user" />
-                      </HvIconContainer>
-                    ),
-                  },
-                ]}
-              />
-            </HvMultiButton>
+            <LoginMultiButton />
             <Hr>or</Hr>
             <HvButton startIcon={<MsLogo />} variant="secondarySubtle">
               Sign in with Microsoft
@@ -117,6 +87,59 @@ export default function LoginShort() {
     </LoginContainer>
   );
 }
+
+function LoginMultiButton() {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement>();
+  const open = Boolean(anchorEl);
+
+  return (
+    <>
+      <HvMultiButton split variant="primary" className="w-auto">
+        <HvButton type="submit" className="w-full">
+          Log In
+        </HvButton>
+        <HvButton icon onClick={(evt) => setAnchorEl(evt.currentTarget)}>
+          <DropDownXS />
+        </HvButton>
+      </HvMultiButton>
+      <Popper
+        disablePortal
+        anchorEl={anchorEl}
+        open={open}
+        placement="bottom-end"
+        className="top-1px! z-popover"
+      >
+        <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
+          <HvPanel className="grid w-320px border rounded-large">
+            <ListItem name="Administrator" iconId="i-ph-user-gear" />
+            <ListItem name="Business User" iconId="i-ph-user" />
+          </HvPanel>
+        </ClickAwayListener>
+      </Popper>
+    </>
+  );
+}
+
+const ListItem = ({ name, iconId }: { name: string; iconId: string }) => (
+  <HvListItem
+    selectable
+    tabIndex={0}
+    startAdornment={
+      <HvIconContainer size="sm" className="size-32px">
+        <div className={iconId} />
+      </HvIconContainer>
+    }
+    endAdornment={
+      <HvIconContainer size="sm" className="size-32px">
+        <div className="i-ph-sign-in" />
+      </HvIconContainer>
+    }
+  >
+    <span>
+      Log In as <strong>{name}</strong>
+    </span>
+  </HvListItem>
+);
 
 const Hr = ({ children }: { children: React.ReactNode }) => (
   <div className="inline-flex my-xs items-center justify-center w-full">

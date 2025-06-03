@@ -28,9 +28,9 @@ const HvTypographyMap = {
   title4: "h4",
   body: "p",
   label: "span",
-  captionLabel: "p",
-  caption1: "p",
-  caption2: "p",
+  captionLabel: "div",
+  caption1: "div",
+  caption2: "div",
   // LEGACY
   "5xlTitle": "h1",
   "4xlTitle": "h1",
