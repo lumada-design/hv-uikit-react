@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 
+// synced from node_modules/reactflow/dist/style.css
 export const flowStyles = css`
   /* this gets exported as style.css and can be used for the default theming */
   /* these are the necessary styles for React Flow, they get used by base.css and style.css */

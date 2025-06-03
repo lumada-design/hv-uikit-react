@@ -38,7 +38,7 @@ const Radii = () => {
     const value = currValuesRef.current.get(radii);
     if (!value) return;
 
-    const radiiValue = parseInt(value.toString(), 10) || 0;
+    const radiiValue = Number(value) || 0;
 
     const storedValue =
       currValuesRef.current.get(radii) ||
@@ -55,7 +55,7 @@ const Radii = () => {
 
   const onUnitChangedHandler = (selectedUnit: HvListValue, radii: Radius) => {
     const unit = selectedUnit.label;
-    const value = parseInt(
+    const value = Number.parseInt(
       currValuesRef.current.get(radii)?.toString() ||
         customTheme.radii[radii as keyof HvThemeTokens["radii"]].toString(),
       10,
@@ -84,7 +84,7 @@ const Radii = () => {
           return (
             <div key={r} className="flex justify-between gap-xs">
               <UnitSlider
-                defaultSize={parseInt(v, 10)}
+                defaultSize={Number.parseInt(v, 10)}
                 unit={u || "px"}
                 unitsToShow={["px", "%"]}
                 onAfterChange={() => setValueHandler(r)}

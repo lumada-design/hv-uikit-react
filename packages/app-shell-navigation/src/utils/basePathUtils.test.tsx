@@ -5,7 +5,7 @@ describe("getBasePath Utils", () => {
     expect(getBasePath({})).toBe("/");
   });
 
-  it("should return baseUrl for the baseUrl property ", () => {
+  it("should return baseUrl for the baseUrl property", () => {
     expect(getBasePath({ baseUrl: "/dummy-base-url/" })).toBe(
       "/dummy-base-url/",
     );

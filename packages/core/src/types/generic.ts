@@ -66,7 +66,7 @@ export function fixedForwardRef<T, P = {}>(
 // Source code from: https://github.com/piotrwitek/utility-types/blob/master/src/mapped-types.ts
 /**
  * Optional
- * @desc From `T` make a set of properties by key `K` become optional
+ * @description From `T` make a set of properties by key `K` become optional
  * @example
  *    type Props = {
  *      name: string;

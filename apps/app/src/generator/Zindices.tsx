@@ -18,7 +18,7 @@ const Zindices = () => {
 
   const valueChangedHandler = (zIndex: string, value: string) => {
     const map = new Map<string, number>(currValues);
-    map.set(zIndex, parseInt(value, 10));
+    map.set(zIndex, Number(value));
     setCurrValues(map);
   };
 

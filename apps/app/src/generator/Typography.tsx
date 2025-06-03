@@ -67,7 +67,7 @@ const Typography = () => {
 
           if (val)
             map.set(t, {
-              value: typeof val === "number" ? val : parseFloat(val),
+              value: typeof val === "number" ? val : Number.parseFloat(val),
               unit: extractFontSizeUnit(val.toString()) || "",
             });
         }

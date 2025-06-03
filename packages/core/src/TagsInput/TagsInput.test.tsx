@@ -55,8 +55,6 @@ describe("TagsInput Component", () => {
     vi.useRealTimers();
   });
 
-  Element.prototype.scrollTo = () => {};
-
   it("should render the label correctly", () => {
     render(<HvTagsInput label="Custom label" classes={mockClasses} />);
     expect(screen.getByText("Custom label")).toBeInTheDocument();

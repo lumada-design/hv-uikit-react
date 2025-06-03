@@ -416,10 +416,12 @@ describe("CheckBoxGroup", () => {
       );
 
       // There is a visible label element
-      getByText("Favorite Pet", { selector: "label" });
+      expect(
+        getByText("Favorite Pet", { selector: "label" }),
+      ).toBeInTheDocument();
 
       // That label content is properly associated with the group
-      getByRole("group", { name: "Favorite Pet" });
+      expect(getByRole("group", { name: "Favorite Pet" })).toBeInTheDocument();
     });
 
     it("should support an external label", () => {
