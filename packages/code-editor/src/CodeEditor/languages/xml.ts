@@ -114,8 +114,7 @@ const getLastOpenedTag = (content: string, closed = false) => {
           // Last open tag found
           content = content.substring(tagPosition);
           const opened = content.indexOf(">") === -1;
-          if (!closed) return opened ? tag : undefined;
-          return opened ? undefined : tag;
+          return closed ? (opened ? undefined : tag) : opened ? tag : undefined;
         }
 
         // Remove the last closed tag since it

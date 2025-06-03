@@ -13,6 +13,7 @@ import { NavigationMenuItem } from "../types";
  * @returns An array of {@link MenuItem}.
  */
 const createNavigationMenuItems = (
+  // eslint-disable-next-line only-used-in-recursion
   t: (key: string) => string,
   menuItems?: MenuItem[],
   maxDepth?: number,

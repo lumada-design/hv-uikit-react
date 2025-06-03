@@ -121,14 +121,12 @@ const PropsTable = ({ title, propsObj }: PropsTableProps) => {
                 )}
               </HvTableCell>
               <HvTableCell>
-                {propItem.description?.split(/(`[^`]+`)/g).map((part, i) =>
+                {propItem.description?.split(/(`[^`]+`)/g).map((part) =>
                   part.startsWith("`") && part.endsWith("`") ? (
-                    <code key={i} className="nextra-code">
-                      {part.slice(1, -1)}
-                    </code>
+                    <code className="nextra-code">{part.slice(1, -1)}</code>
                   ) : (
                     part.split("@deprecated").map((part, index) => (
-                      <Fragment key={index}>
+                      <Fragment>
                         {index > 0 && <br />}
                         {index === 0 ? part : `@deprecated${part}`}
                       </Fragment>

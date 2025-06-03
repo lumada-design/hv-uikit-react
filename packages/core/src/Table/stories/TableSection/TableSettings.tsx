@@ -443,9 +443,9 @@ export const TableSettings = () => {
     const fixed: HvTableColumnConfig<AssetEvent, string>[] = [];
     for (let i = 0; i < fixedColumns.length; i++) {
       if (fixedColumns[i]) {
-        const col = tableColumns.filter((c) => c.accessor === fixedColumns[i]);
+        const col = tableColumns.find((c) => c.accessor === fixedColumns[i])!;
         // @ts-expect-error sticky isn't part of the column object
-        fixed.push({ ...col[0], sticky: "left" });
+        fixed.push({ ...col, sticky: "left" });
       }
     }
     const rest = tableColumns.filter(
