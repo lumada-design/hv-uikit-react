@@ -3,14 +3,14 @@ import { Navigate, type RouteObject } from "react-router";
 /* eslint-disable import/no-relative-packages */
 const templates: RouteObject[] = [
   { index: true, element: <Navigate to="welcome" replace /> },
-  { path: "assets", lazy: () => import("../../../templates/AssetInventory") },
-  { path: "list-view", lazy: () => import("../../../templates/ListView") },
-  { path: "form", lazy: () => import("../../../templates/Form") },
-  { path: "details", lazy: () => import("../../../templates/DetailsView") },
-  { path: "dashboard", lazy: () => import("../../../templates/Dashboard") },
-  { path: "welcome", lazy: () => import("../../../templates/Welcome") },
-  { path: "kanban", lazy: () => import("../../../templates/KanbanBoard") },
-  { path: "canvas", lazy: () => import("../../../templates/Canvas") },
+  { path: "assets", lazy: () => import("@hv/templates/AssetInventory") },
+  { path: "list-view", lazy: () => import("@hv/templates/ListView") },
+  { path: "form", lazy: () => import("@hv/templates/Form") },
+  { path: "details", lazy: () => import("@hv/templates/DetailsView") },
+  { path: "dashboard", lazy: () => import("@hv/templates/Dashboard") },
+  { path: "welcome", lazy: () => import("@hv/templates/Welcome") },
+  { path: "kanban", lazy: () => import("@hv/templates/KanbanBoard") },
+  { path: "canvas", lazy: () => import("@hv/templates/Canvas") },
 ];
 
 export const routes: RouteObject[] = [

@@ -3,16 +3,17 @@ import { css, cx } from "@emotion/css";
 import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
 import {
   HvButton,
+  HvColorAny,
   HvIconButton,
   HvTooltip,
   HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 import {
   HvFlowNodeInput,
   HvFlowNodeOutput,
   useHvNode,
 } from "@hitachivantara/uikit-react-lab";
-import { HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 import { useCanvasContext } from "./Context";
 import { FlowStatus, flowStatusesSpecs, iconsMapping } from "./utils";

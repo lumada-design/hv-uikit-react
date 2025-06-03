@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["xmllint-wasm"],
   },
-  plugins: [react(),  unoCSS({ presets: [presetHv()] })],
+  plugins: [react(), unoCSS({ presets: [presetHv()] })],
 });

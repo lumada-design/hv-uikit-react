@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { css } from "@emotion/css";
 import {
   HvCard,
@@ -10,7 +9,6 @@ import {
 import { Level0Good } from "@hitachivantara/uikit-react-icons";
 
 const styles = {
-  root: css({}),
   title: css({
     padding: theme.spacing(0, 3, 1),
     textAlign: "center",
@@ -20,9 +18,6 @@ const styles = {
     flexFlow: "column nowrap",
     alignItems: "center",
     paddingTop: theme.space.xs,
-  }),
-  gaugeContainer: css({
-    position: "relative",
   }),
   gaugeOuterSemiCircle: css({
     position: "relative",
@@ -89,15 +84,14 @@ const GaugeChart = ({
 
 interface KpiProps extends HvCardProps {
   title: string;
-  value: ReactNode;
-  unit?: ReactNode;
+  value: React.ReactNode;
+  unit?: React.ReactNode;
   color: HvCardProps["statusColor"];
 }
 
 export const Kpi = ({ title, value, color, unit = "t/h" }: KpiProps) => {
   return (
     <HvCard
-      className={styles.root}
       statusColor={color}
       bgcolor="atmo2"
       icon={<Level0Good title="Good" color="positive" />}
