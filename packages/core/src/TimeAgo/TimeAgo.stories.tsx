@@ -34,7 +34,7 @@ export default meta;
 
 export const Main: StoryObj<HvTimeAgoProps> = {
   args: {
-    timestamp: new Date().getTime(),
+    timestamp: Date.now(),
     locale: "en",
     disableRefresh: false,
     showSeconds: false,

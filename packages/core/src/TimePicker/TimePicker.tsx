@@ -299,9 +299,9 @@ export const HvTimePicker = forwardRef<HTMLDivElement, HvTimePickerProps>(
           {...otherDropdownProps}
         >
           <div ref={timeFieldRef} className={classes.timePopperContainer}>
-            {state.segments.map((segment, i) => (
+            {state.segments.map((segment) => (
               <Unit
-                key={i}
+                key={segment.type}
                 state={state}
                 segment={segment}
                 placeholder={placeholders[segment.type]}

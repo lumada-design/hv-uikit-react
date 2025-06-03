@@ -19,10 +19,8 @@ const outputFolder = outputPath
  * @param dirPath The path to the directory to search.
  * @returns A Promise that resolves with an object that maps each sub-folder name to an array of SVG file paths.
  */
-async function getSvgPathsByGroup(
-  dirPath: string,
-): Promise<{ [key: string]: string[] }> {
-  const svgPathsByGroup: { [key: string]: string[] } = {};
+async function getSvgPathsByGroup(dirPath: string) {
+  const svgPathsByGroup: Record<string, string[]> = {};
   const files = await recursive(dirPath);
   for (const file of files) {
     if (path.extname(file) === ".svg") {

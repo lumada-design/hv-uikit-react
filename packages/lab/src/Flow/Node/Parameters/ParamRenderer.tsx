@@ -17,11 +17,11 @@ const renderers = {
 export const ParamRenderer = ({ params, data }: ParamRendererProps) => {
   return (
     <>
-      {params.map((param, idx) => {
+      {params.map((param) => {
         const Renderer = renderers[param.type];
         if (!Renderer) return null;
 
-        return <Renderer key={idx} param={param} data={data} />;
+        return <Renderer key={param.id} param={param} data={data} />;
       })}
     </>
   );

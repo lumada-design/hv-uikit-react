@@ -114,7 +114,7 @@ export const TaskCard = ({ task, deleteTask }: TaskProps) => {
               <HvTypography variant="caption2">Some time ago</HvTypography>
             </>
           }
-          className={"hover:cursor-grab bg-bgContainer z-200"}
+          className="hover:cursor-grab bg-bgContainer z-200"
           icon={getStatusIcon(task.statusLevel)}
         />
         <HvCardContent>
@@ -191,27 +191,17 @@ export const ColumnContainer = ({
           opacity: 0.2,
         }),
       }}
-      className={"w-full"}
+      className="w-full"
     >
-      <div
-        className={
-          "flex flex-col py-sm px-xs b-1 border-border border-rounded-large bg-bgPage"
-        }
-      >
+      <div className="flex flex-col py-sm px-xs b-1 border-border border-rounded-large bg-bgPage">
         <div
-          className={
-            "flex flex-row justify-between items-center mb-lg py-0 px-xs hover:cursor-grab"
-          }
+          className="flex flex-row justify-between items-center mb-lg py-0 px-xs hover:cursor-grab"
           {...attributes}
           {...listeners}
         >
-          <div className={"flex items-center gap-xs"}>
+          <div className="flex items-center gap-xs">
             <HvTypography variant="title3">{column.title}</HvTypography>
-            <div
-              className={
-                "border-rounded-round w-20px h-20px place-items-center grid bg-bgHover"
-              }
-            >
+            <div className="border-rounded-round w-20px h-20px place-items-center grid bg-bgHover">
               {tasks?.length}
             </div>
           </div>

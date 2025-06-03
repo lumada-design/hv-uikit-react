@@ -19,7 +19,7 @@ export default function Demo() {
       label="Copy to clipboard"
       ref={inputRef}
       className="w-300px"
-      defaultValue={"Copy this text"}
+      defaultValue="Copy this text"
       endAdornment={
         <HvAdornment
           icon={

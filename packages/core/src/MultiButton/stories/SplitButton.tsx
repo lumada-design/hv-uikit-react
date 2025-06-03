@@ -30,7 +30,7 @@ export const SplitButton = () => {
     <div className="flex gap-xs">
       {buttons.map(({ variant, size, disabled }, i) => (
         <HvMultiButton
-          key={i}
+          key={`${variant}-${size}-${disabled}`}
           variant={variant}
           size={size}
           disabled={disabled}
@@ -42,7 +42,7 @@ export const SplitButton = () => {
             icon={<DropDownXS />}
             onClick={(e, item) =>
               setSelectedOption(
-                options.filter((option) => option.label === item.label)[0],
+                options.find((option) => option.label === item.label)!,
               )
             }
           />

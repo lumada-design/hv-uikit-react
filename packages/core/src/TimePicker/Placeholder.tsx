@@ -67,9 +67,9 @@ export const Placeholder = forwardRef<HTMLDivElement, PlaceholderProps>(
           {name && (
             <input type="hidden" name={name} value={getDateValue(value)} />
           )}
-          {segments.map((segment, i) => (
+          {segments.map((segment) => (
             <PlaceholderSegment
-              key={i}
+              key={segment.type}
               segment={segment}
               state={state}
               placeholder={placeholders[segment.type]}

@@ -1,38 +1,7 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "typescript",
-    "unicorn",
-    "react",
-    "oxc",
-    "import",
-    "jsdoc",
-    "jsx-a11y",
-    "node",
-    "vitest"
-  ],
-  "categories": {
-    "correctness": "error",
-    "perf": "error",
-    "restriction": "error",
-    "suspicious": "error"
-  },
-  "env": {
-    "builtin": true,
-    "es2022": true,
-    "browser": true,
-    "node": true
-  },
-  "ignorePatterns": ["*.d.ts", "dist", "node_modules", "playwright.config.ts"],
+  "extends": ["./node_modules/@hitachivantara/uikit-config/oxlint/strict.json"],
   "rules": {
-    // #region React
-    "react/jsx-key": "off",
-    "react/no-array-index-key": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      "error",
-      { "extensions": [".jsx", ".tsx"] }
-    ],
     "react/function-component-definition": [
       "error",
       {
@@ -40,23 +9,6 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
-    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
-    "react/jsx-pascal-case": ["error", { "allowNamespace": true }],
-
-    "react-hooks/exhaustive-deps": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "jsx_a11y/no-autofocus": "off",
-    // #endregion
-
-    // #region Default
-    "typescript/no-explicit-any": "off",
-    "typescript/no-empty-object-type": "off",
-    "typescript/explicit-function-return-type": "off",
-
-    "default-case": "error",
-    "no-console": ["error", { "allow": ["error", "warn", "info"] }],
-    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "no-restricted-imports": [
       "error",
       {
@@ -71,48 +23,7 @@
           }
         ]
       }
-    ],
-
-    "oxc/no-optional-chaining": "off",
-    "oxc/no-rest-spread-properties": "off",
-    "unicorn/no-array-reduce": "off",
-    // #endregion
-
-    // TODO: review this
-    "no-undefined": "off",
-    "no-eq-null": "off",
-    "no-plusplus": "off",
-    "no-empty-function": "off",
-    "no-non-null-assertion": "off",
-    "no-array-for-each": "off",
-    "no-barrel-file": "off",
-    "no-async-await": "off",
-    "no-dynamic-delete": "off",
-    "prefer-tag-over-role": "off",
-    "only-used-in-recursion": "off",
-
-    "import/default": "off",
-    "import/namespace": "off",
-    "import/unambiguous": "off",
-    "import/no-duplicates": "off",
-    "import/no-named-as-default": "off",
-    "import/no-default-export": "off",
-    "import/no-named-as-default-member": "off",
-    "import/no-unassigned-import": "off",
-
-    "typescript/no-extraneous-class": "off",
-    "unicorn/prefer-set-has": "off",
-    "unicorn/prefer-array-find": "off",
-    "unicorn/prefer-add-event-listener": "off",
-    "unicorn/no-nested-ternary": "off",
-    "unicorn/no-anonymous-default-export": "off",
-
-    "jsdoc/empty-tags": "off",
-    "jest/expect-expect": "off",
-    "jest/no-standalone-expect": "off",
-    "jest/no-disabled-tests": "off",
-    "jsx_a11y/role-supports-aria-props": "off",
-    "jsx_a11y/role-has-required-aria-props": "off"
+    ]
   },
   "overrides": [
     {
@@ -121,14 +32,14 @@
         "**/stories/**/*",
         "**/*.test.tsx",
         "**/*.spec.ts",
-        "docs/**/*",
         "apps/*/src/**/*",
         "**/test/**/*",
         "**/templates/**/*.tsx"
       ],
       "rules": {
         "no-alert": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "import/default": "off"
       }
     },
     {
@@ -143,23 +54,5 @@
         "no-console": "off"
       }
     }
-  ],
-  "settings": {
-    "react": {
-      "formComponents": [],
-      "linkComponents": ["HvLink"]
-    },
-    "jsx-a11y": {
-      "polymorphicPropName": "",
-      "components": {
-        "HvButton": "button",
-        "HvButtonBase": "button"
-      }
-    },
-    "jsdoc": {
-      "tagNamePreference": {
-        "augments": "extends"
-      }
-    }
-  }
+  ]
 }
