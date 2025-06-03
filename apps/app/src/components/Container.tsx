@@ -5,8 +5,8 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 
-import { Loading, LoadingProps } from "~/components/common/Loading";
-import { useNavigationContext } from "~/context/navigation";
+import { useNavigationContext } from "../context/navigation";
+import { Loading, LoadingProps } from "./common/Loading";
 
 const useHeaderSpacing = () => {
   const { activePath, navigation } = useNavigationContext();

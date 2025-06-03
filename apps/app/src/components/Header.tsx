@@ -12,9 +12,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Debug, Menu, ThemeSwitcher } from "@hitachivantara/uikit-react-icons";
 
-import logo from "~/assets/logo.png";
-import { useNavigationContext } from "~/context/navigation";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
+import logo from "../assets/logo.png";
+import { useNavigationContext } from "../context/navigation";
+import { useGeneratorContext } from "../generator/GeneratorContext";
 
 export const Header = () => {
   const navigate = useNavigate();

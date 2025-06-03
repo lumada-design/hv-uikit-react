@@ -5,9 +5,9 @@ import {
   useTheme,
 } from "@hitachivantara/uikit-react-core";
 
-import { ScaleProps, UnitSlider } from "~/components/common/UnitSlider";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { extractFontSizeUnit } from "~/generator/utils";
+import { ScaleProps, UnitSlider } from "../components/common/UnitSlider";
+import { useGeneratorContext } from "./GeneratorContext";
+import { extractFontSizeUnit } from "./utils";
 
 const FontSizes = () => {
   const { activeTheme } = useTheme();

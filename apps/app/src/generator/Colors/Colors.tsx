@@ -8,8 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvColor } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-
+import { useGeneratorContext } from "../GeneratorContext";
 import { styles } from "./Colors.styles";
 import { getColorGroupName, getColors, groupsToShow } from "./utils";
 

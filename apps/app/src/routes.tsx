@@ -15,18 +15,18 @@ const templates: RouteObject[] = [
 
 export const routes: RouteObject[] = [
   {
-    lazy: () => import("~/pages/layout/navigation"),
+    lazy: () => import("./pages/layout/navigation"),
     children: [
-      { path: "/", lazy: () => import("~/pages/Instructions") },
-      { path: "/debug", lazy: () => import("~/pages/Debug") },
-      { path: "/components", lazy: () => import("~/pages/Components") },
-      { path: "/flow", lazy: () => import("~/pages/Flow") },
+      { path: "/", lazy: () => import("./pages/Instructions") },
+      { path: "/debug", lazy: () => import("./pages/Debug") },
+      { path: "/components", lazy: () => import("./pages/Components") },
+      { path: "/flow", lazy: () => import("./pages/Flow") },
       { path: "/templates", children: templates },
-      { path: "*", lazy: () => import("~/pages/NotFound") },
+      { path: "*", lazy: () => import("./pages/NotFound") },
     ],
   },
   {
     path: "/dashboard-preview",
-    lazy: () => import("~/pages/Flow/DashboardPreview"),
+    lazy: () => import("./pages/Flow/DashboardPreview"),
   },
 ];

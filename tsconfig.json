@@ -1,6 +1,5 @@
 {
   "extends": "./tsconfig.build.json",
-  "compilerOptions": {},
   "include": [
     ".config/*.ts",
     "*.config.ts",

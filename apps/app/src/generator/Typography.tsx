@@ -12,9 +12,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 
-import { ScaleProps, UnitSlider } from "~/components/common/UnitSlider";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { extractFontSizeUnit } from "~/generator/utils";
+import { ScaleProps, UnitSlider } from "../components/common/UnitSlider";
+import { useGeneratorContext } from "./GeneratorContext";
+import { extractFontSizeUnit } from "./utils";
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
   "display",
