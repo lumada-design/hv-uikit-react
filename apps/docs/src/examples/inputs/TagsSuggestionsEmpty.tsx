@@ -59,14 +59,9 @@ export default function Demo() {
           className="mb-sm"
         />
 
-        <Popper
-          anchorEl={anchorEl}
-          open={open}
-          placement="bottom-start"
-          className="top-1px!"
-        >
+        <Popper anchorEl={anchorEl} open={open} placement="bottom-start">
           <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
-            <HvPanel className="grid gap-xs w-300px border rounded-large!">
+            <HvPanel className="grid gap-xs w-300px my-2px border rounded-large">
               <HvTypography variant="caption1">More colors:</HvTypography>
               <div className="flex flex-wrap gap-xs">
                 {colors

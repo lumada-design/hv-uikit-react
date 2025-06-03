@@ -77,15 +77,9 @@ function EvaluatorButton() {
       >
         Log in as evaluator
       </HvButton>
-      <Popper
-        disablePortal
-        anchorEl={anchorEl}
-        open={open}
-        placement="bottom-start"
-        className="top-1px!"
-      >
+      <Popper disablePortal anchorEl={anchorEl} open={open}>
         <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
-          <HvPanel className="grid gap-sm w-312px border rounded-large">
+          <HvPanel className="grid gap-sm w-312px my-2px border rounded-large">
             <ListItem id="Admin" name="Administrator" />
             <ListItem id="Suzy" name="Business User" />
           </HvPanel>

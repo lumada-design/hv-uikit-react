@@ -84,7 +84,7 @@ export default function Demo() {
         placement="bottom-start"
       >
         <ClickAwayListener onClickAway={() => setOpen(false)}>
-          <HvPanel className="grid gap-xs w-300px border rounded-large!">
+          <HvPanel className="grid gap-xs w-300px my-2px border rounded-large">
             <HvTypography variant="caption1">Last Used:</HvTypography>
             <div className="flex gap-xs">
               {lastUsed.map((color, idx) => (

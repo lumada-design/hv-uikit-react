@@ -107,10 +107,10 @@ function LoginMultiButton() {
         anchorEl={anchorEl}
         open={open}
         placement="bottom-end"
-        className="top-1px! z-popover"
+        className="z-popover"
       >
         <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
-          <HvPanel className="grid w-320px border rounded-large">
+          <HvPanel className="grid w-320px my-2px border rounded-large">
             <ListItem name="Administrator" iconId="i-ph-user-gear" />
             <ListItem name="Business User" iconId="i-ph-user" />
           </HvPanel>
