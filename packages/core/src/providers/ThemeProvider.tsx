@@ -9,11 +9,11 @@ import {
   defaultEmotionCache,
   EmotionContext,
   HvThemeContext,
+  type HvTheme,
   type HvThemeContextValue,
 } from "@hitachivantara/uikit-react-shared";
 import { HvThemeStructure, parseTheme } from "@hitachivantara/uikit-styles";
 
-import { HvTheme } from "../types/theme";
 import { setElementAttrs } from "../utils/theme";
 
 export { HvThemeContext };

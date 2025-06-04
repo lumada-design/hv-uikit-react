@@ -1,7 +1,4 @@
-import {
-  HvThemeColorModeStructure,
-  HvThemeStructure,
-} from "@hitachivantara/uikit-styles";
+import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 
 /**
  * This type allows to pass undetermined extra props to components
@@ -19,10 +16,4 @@ export type HvExtraDeepProps<T> = {
 /**
  * Theme structure
  */
-export type HvTheme = HvExtraDeepProps<Omit<HvThemeStructure, "colors">> & {
-  colors: {
-    modes: {
-      [key: string]: HvThemeColorModeStructure & Record<string, string>;
-    };
-  };
-};
+export type HvTheme = HvExtraDeepProps<HvThemeStructure>;
