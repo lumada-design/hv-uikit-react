@@ -32,6 +32,8 @@ jobs:
           configFile: .config/chromatic.config.json
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           forceRebuild: true
+          # enable TurboSnap in PRs
+          onlyChanged: ${{env.IS_PR}}
           # Perform Checks on "background" in PRs, succeeding ✅ even with visual changes
           exitOnceUploaded: ${{env.IS_PR}}
 
