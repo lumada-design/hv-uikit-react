@@ -78,7 +78,7 @@ export const Variants: StoryObj<typeof HvIconContainer> = {
           <HvIconContainer {...args} size="xl">
             <User />
           </HvIconContainer>
-          <HvIconContainer {...args} size={100}>
+          <HvIconContainer {...args} size={100} color="negative">
             <User />
           </HvIconContainer>
         </div>
