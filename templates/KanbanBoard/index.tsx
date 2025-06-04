@@ -174,4 +174,6 @@ const KanbanBoard = () => {
   );
 };
 
+export { KanbanBoard as Component };
+
 export default KanbanBoard;

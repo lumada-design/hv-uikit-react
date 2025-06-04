@@ -16,39 +16,10 @@ const createDefault = {
 const createRoute = {
   actions: [
     {
-      type: "add",
-      path: "{{path}}/src/lib/routes.tsx",
-      templateFile: "plop-templates/routes.tsx.hbs",
-      skipIfExists: true,
-    },
-    {
       type: "append",
-      path: "{{path}}/src/lib/routes.tsx",
-      pattern: "/* INJECT_IMPORTS */",
-      template: `const {{name}} = lazy(() => import("../pages/{{name}}"));`,
-    },
-    {
-      type: "append",
-      path: "{{path}}/src/lib/routes.tsx",
-      pattern: "{/* INJECT_ROUTES */}",
-      template: `    <Route path="/{{kebabCase name}}" element={<{{precurly name}} />} />`,
-    },
-  ],
-};
-
-const createNavigation = {
-  actions: [
-    {
-      type: "add",
-      path: "{{path}}/src/lib/navigation.ts",
-      templateFile: "plop-templates/navigation.ts.hbs",
-      skipIfExists: true,
-    },
-    {
-      type: "append",
-      path: "{{path}}/src/lib/navigation.ts",
-      pattern: "/* INJECT_NAVIGATION */",
-      template: `  { id: "{{lowerCase name}}", label: "{{name}}", path: "/{{kebabCase name}}" },`,
+      path: "{{path}}/src/routes.tsx",
+      pattern: "// APP ROUTES",
+      template: `{ path: "{{kebabCase name}}", lazy: () => import("./pages/{{name}}") },`,
     },
   ],
 };
@@ -98,7 +69,6 @@ export default (plop) => {
   plop.setHelper("precurly", (t) => `${t}`);
   plop.setGenerator("createDefault", createDefault);
   plop.setGenerator("createRoute", createRoute);
-  plop.setGenerator("createNavigation", createNavigation);
   plop.setGenerator("createReadMe", createReadMe);
   plop.setGenerator("createAppShellIndexHtml", createAppShellIndexHtml);
   plop.setGenerator("createAppShellConfig", createAppShellConfig);

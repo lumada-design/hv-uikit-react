@@ -193,4 +193,6 @@ const AssetInventory = () => {
   );
 };
 
+export { AssetInventory as Component };
+
 export default AssetInventory;

@@ -9,6 +9,7 @@ import { createNavigationFiles } from "./navigation.js";
 import { updatePackageJson } from "./package.js";
 import { __dirname, toPascalCase, toSentenceCase } from "./utils.js";
 
+/** @type import("inquirer").QuestionCollection */
 const questions = [
   {
     type: "input",
@@ -55,7 +56,10 @@ const questions = [
     type: "checkbox",
     message: "Do you want to use templates? If so, choose which:",
     name: "templates",
-    choices: fs.readdirSync(`${__dirname}/templates`).map(toSentenceCase),
+    choices: fs
+      .readdirSync(`${__dirname}/templates`, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => toSentenceCase(d.name)),
     filter(val) {
       return val.map((v) => toPascalCase(v));
     },
@@ -112,8 +116,8 @@ const create = async ({
       packageName,
     );
     console.log(
-      `Documentation regarding App Shell can be found in: ${chalk.yellow(
-        "https://github.com/lumada-design/hv-app-shell/blob/main/README.md",
+      `App Shell documentation: ${chalk.cyan(
+        "https://lumada-design.github.io/uikit-docs/master/app-shell",
       )}`,
     );
   } else {

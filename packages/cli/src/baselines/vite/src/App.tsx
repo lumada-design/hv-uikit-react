@@ -1,29 +1,35 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { HvProvider } from "@hitachivantara/uikit-react-core";
-import { Container } from "./components/common/Container";
-import { Header } from "./components/common/Header";
-import { NavigationProvider } from "./context/NavigationContext";
-
-// @ts-expect-error TODO
-import navigation from "./lib/navigation";
-// @ts-expect-error TODO
-import Routes from "./lib/routes";
-
 import "./lib/i18n";
-
 import "virtual:uno.css";
 
-const App = () => (
-  <Router>
-    <HvProvider rootElementId="hv-root">
-      <NavigationProvider navigation={navigation}>
-        <Header />
-        <Container maxWidth="xl">
-          <Routes />
-        </Container>
-      </NavigationProvider>
-    </HvProvider>
-  </Router>
-);
+import {
+  createBrowserRouter,
+  Navigate,
+  RouteObject,
+  RouterProvider,
+} from "react-router-dom";
+import { HvProvider } from "@hitachivantara/uikit-react-core";
 
-export default App;
+import { appRoutes } from "./routes";
+
+export const routes: RouteObject[] = [
+  {
+    lazy: () => import("./pages/layout/navigation"),
+    children: [
+      ...appRoutes,
+      { index: true, element: <Navigate to={appRoutes[0].path!} replace /> },
+    ],
+  },
+  { path: "*", lazy: () => import("./pages/NotFound") },
+];
+
+export const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL,
+});
+
+export default function App() {
+  return (
+    <HvProvider rootElementId="hv-root">
+      <RouterProvider router={router} />
+    </HvProvider>
+  );
+}
