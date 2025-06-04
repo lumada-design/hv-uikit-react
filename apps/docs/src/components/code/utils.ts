@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as ReactDOM from "react-dom";
 import * as reactHookForm from "react-hook-form";
 import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
@@ -35,6 +36,7 @@ type ResolveContext = {
 const defaultScope: Scope = {
   import: {
     react: React,
+    "react-dom": ReactDOM,
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,

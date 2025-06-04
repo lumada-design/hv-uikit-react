@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ClickAwayListener, Popper } from "@mui/material";
 import {
   HvAdornment,
@@ -29,9 +29,9 @@ const colors = [
 ];
 
 export default function Demo() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement>();
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [open, setOpen] = useState(false);
+  const open = Boolean(anchorEl);
 
   const handleAddColor = (color: string) => {
     setSelectedColors((prev) => [...new Set([...prev, color])]);
@@ -53,21 +53,15 @@ export default function Demo() {
             <HvAdornment
               tabIndex={0}
               icon={<Add rotate={open} size="xs" />}
-              onClick={() => setOpen((o) => !o)}
-              ref={containerRef}
+              onClick={(evt) => setAnchorEl(evt.currentTarget)}
             />
           }
           className="mb-sm"
         />
 
-        <Popper
-          anchorEl={containerRef.current}
-          open={open}
-          placement="bottom-start"
-          className="top-1px!"
-        >
-          <ClickAwayListener onClickAway={() => setOpen(false)}>
-            <HvPanel className="grid gap-xs w-300px border rounded-large!">
+        <Popper anchorEl={anchorEl} open={open} placement="bottom-start">
+          <ClickAwayListener onClickAway={() => setAnchorEl(undefined)}>
+            <HvPanel className="grid gap-xs w-300px my-2px border rounded-large">
               <HvTypography variant="caption1">More colors:</HvTypography>
               <div className="flex flex-wrap gap-xs">
                 {colors
