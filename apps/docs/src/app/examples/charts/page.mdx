@@ -5,8 +5,17 @@ import lineChartStreamingCode from "./LineChartStreaming?raw";
 
 <div className="overflow-hidden mt-20">
   <div className="w-101% grid  divide-border [grid-template-columns:repeat(auto-fit,minmax(480px,1fr))] -mt-px -mb-px">
-    <CodeBlock code={{ main: donutChartTotal }} layout="popup" />
-    <CodeBlock code={{ main: gaugeChart }} layout="popup" />
-    <CodeBlock code={{ main: lineChartStreamingCode }} layout="popup" />
+    <PopupLayoutPreview>
+      <span>A donut chart that includes a total in the middle.</span>
+      <CodeBlock code={{ main: donutChartTotal }} layout="popup" />
+    </PopupLayoutPreview>
+    <PopupLayoutPreview>
+      <span>A gauge charte that includes a threshold indicator.</span>
+      <CodeBlock code={{ main: gaugeChart }} layout="popup" />
+    </PopupLayoutPreview>
+    <PopupLayoutPreview>
+      <span>A line chart with streaming data.</span>
+      <CodeBlock code={{ main: lineChartStreamingCode }} layout="popup" />
+    </PopupLayoutPreview>
   </div>
 </div>
