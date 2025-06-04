@@ -28,14 +28,7 @@ const Navigation = () => {
   const { selectedMode } = useTheme();
   useRootRedirect();
 
-  const {
-    customTheme,
-    open,
-    tutorialOpen,
-    setTutorialOpen,
-    currentStep,
-    setCurrentStep,
-  } = useGeneratorContext();
+  const { customTheme, open, tutorialOpen } = useGeneratorContext();
 
   return (
     <div
@@ -51,13 +44,7 @@ const Navigation = () => {
         cssBaseline="none" // the main provider already applies the baseline styles globally
       >
         <NavigationProvider>
-          {tutorialOpen && (
-            <Tutorial
-              setTutorialOpen={setTutorialOpen}
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-            />
-          )}
+          {tutorialOpen && <Tutorial />}
           <Header />
           <Container maxWidth="xl" component="main">
             <Outlet />
