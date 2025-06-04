@@ -37,7 +37,7 @@ jobs:
 
       - name: Build Packages
         run: npm run build -w packages/ -w apps/default-app
-        if: ${{ inputs.build-packages || inputs.publish-packages }}
+        if: ${{ inputs.build-all || inputs.publish-packages }}
 
       - name: Publish Packages
         if: ${{ inputs.publish-packages }}
