@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import {
+  HvGlobalActions,
   HvGrid,
   HvTypography,
-  HvGlobalActions,
 } from "@hitachivantara/uikit-react-core";
-{{#if useAppShell}}import { withProvider } from "providers/Provider";{{/if}}
+{{#if useAppShell}}import { withProvider } from "../../providers/Provider";{{/if}}
 
 const {{titleCase name}}: React.FC = () => {
   const { t } = useTranslation("{{lowerCase name}}");

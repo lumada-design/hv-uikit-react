@@ -7,7 +7,7 @@ const createDefault = {
     },
     {
       type: "add",
-      path: "{{path}}/src/pages/{{name}}/{{name}}.tsx",
+      path: "{{path}}/src/pages/{{name}}/index.tsx",
       templateFile: "plop-templates/component.tsx.hbs",
     },
   ],
