@@ -1,0 +1,22 @@
+{
+  "name": "@hv/templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./*/index.tsx",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@hitachivantara/uikit-react-core": "*",
+    "@hitachivantara/uikit-react-icons": "*",
+    "@hitachivantara/uikit-react-lab": "*",
+    "@hitachivantara/uikit-react-pentaho": "*",
+    "@hitachivantara/uikit-react-viz": "*",
+    "@emotion/react": "^11.11.0",
+    "@emotion/css": "^11.11.0",
+    "react-google-charts": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1",
+    "usehooks-ts": "^2.16.0"
+  }
+}

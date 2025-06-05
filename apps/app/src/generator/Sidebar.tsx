@@ -18,16 +18,16 @@ import {
   Template,
 } from "@hitachivantara/uikit-react-icons";
 
-import CodeEditor from "~/generator/CodeEditor";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
+import CodeEditor from "./CodeEditor";
+import { useGeneratorContext } from "./GeneratorContext";
 
-const Colors = lazy(() => import("~/generator/Colors"));
-const FontSizes = lazy(() => import("~/generator/FontSizes"));
-const FontFamily = lazy(() => import("~/generator/FontFamily"));
-const Radii = lazy(() => import("~/generator/Radii"));
-const Spacing = lazy(() => import("~/generator/Spacing"));
-const Typography = lazy(() => import("~/generator/Typography"));
-const Zindices = lazy(() => import("~/generator/Zindices"));
+const Colors = lazy(() => import("./Colors"));
+const FontSizes = lazy(() => import("./FontSizes"));
+const FontFamily = lazy(() => import("./FontFamily"));
+const Radii = lazy(() => import("./Radii"));
+const Spacing = lazy(() => import("./Spacing"));
+const Typography = lazy(() => import("./Typography"));
+const Zindices = lazy(() => import("./Zindices"));
 
 const Sidebar = () => {
   const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =

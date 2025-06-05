@@ -22,7 +22,7 @@ import {
   Tool,
 } from "@hitachivantara/uikit-react-icons";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { useGeneratorContext } from "../generator/GeneratorContext";
 
 const Entry = ({
   title,

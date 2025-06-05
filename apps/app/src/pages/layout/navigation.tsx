@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { Outlet, useNavigate, useSearchParams } from "react-router";
 import { HvProvider, useTheme } from "@hitachivantara/uikit-react-core";
 
-import { Container } from "~/components/Container";
-import { Header } from "~/components/Header";
-import { Tutorial } from "~/components/Tutorial";
-import { NavigationProvider } from "~/context/navigation";
+import { Container } from "../../components/Container";
+import { Header } from "../../components/Header";
+import { Tutorial } from "../../components/Tutorial";
+import { NavigationProvider } from "../../context/navigation";
 import GeneratorProvider, {
   useGeneratorContext,
-} from "~/generator/GeneratorContext";
-import Sidebar from "~/generator/Sidebar";
+} from "../../generator/GeneratorContext";
+import Sidebar from "../../generator/Sidebar";
 
 const useRootRedirect = () => {
   const [searchParams] = useSearchParams();

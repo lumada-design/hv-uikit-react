@@ -5,7 +5,6 @@ import react from "@vitejs/plugin-react";
 import { type OutputOptions } from "rollup";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -48,7 +47,6 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, "../tsconfig.build.json"),
     }),
     react(),
-    tsconfigPaths(),
   ],
   build: {
     target: "ES2022",

@@ -9,8 +9,8 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { Add } from "@hitachivantara/uikit-react-icons";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { extractFontsNames } from "~/generator/utils";
+import { useGeneratorContext } from "./GeneratorContext";
+import { extractFontsNames } from "./utils";
 
 const FontFamily = () => {
   const { updateCustomTheme } = useGeneratorContext();

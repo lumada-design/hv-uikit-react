@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvControls,
   HvLeftControl,
@@ -6,7 +7,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { Controls as ControlsStory } from "./stories/Controls";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvControls> = {
   title: "Components/Controls",

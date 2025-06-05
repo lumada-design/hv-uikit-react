@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { userEvent, within } from "storybook/test";
+import { renderStory, setupChromatic } from "@hitachivantara/internal";
 
 import { Disabled as AccordionDisabledStory } from "../Accordion/Accordion.stories";
 import { Main as ActionBarMainStory } from "../ActionBar/ActionBar.stories";
@@ -71,8 +72,6 @@ import { Variants as TagsInputVariantsStory } from "../TagsInput/TagsInput.stori
 import { Variants as TextAreaVariantsStory } from "../TextArea/TextArea.stories";
 import { Multiple as ToggleButtonMultipleStory } from "../ToggleButton/ToggleButton.stories";
 import { Test as TypographyTestStory } from "../Typography/Typography.stories";
-import { setupChromatic } from ".storybook/setupChromatic";
-import { renderStory } from ".storybook/utils";
 
 /** Visual tests for components from the Core package */
 export default {

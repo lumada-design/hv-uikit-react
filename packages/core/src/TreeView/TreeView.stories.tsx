@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvPanel,
   HvTreeItem,
@@ -8,7 +9,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { DataObject as DataObjectStory } from "./stories/DataObject";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 // Function to emulate pausing between interactions
 const sleep = (ms: number) =>

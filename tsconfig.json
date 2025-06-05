@@ -1,11 +1,5 @@
 {
   "extends": "./tsconfig.build.json",
-  "compilerOptions": {
-    "paths": {
-      ".storybook/*": ["./.storybook/*"],
-      "~/*": ["./apps/app/src/*"]
-    }
-  },
   "include": [
     ".config/*.ts",
     "*.config.ts",

@@ -7,7 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
+import { useGeneratorContext } from "./GeneratorContext";
 
 const Zindices = () => {
   const { activeTheme } = useTheme();

@@ -6,9 +6,9 @@ import {
 } from "@hitachivantara/uikit-react-core";
 import { HvThemeTokens } from "@hitachivantara/uikit-styles";
 
-import { UnitSlider } from "~/components/common/UnitSlider";
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { extractFontSizeUnit } from "~/generator/utils";
+import { UnitSlider } from "../components/common/UnitSlider";
+import { useGeneratorContext } from "./GeneratorContext";
+import { extractFontSizeUnit } from "./utils";
 
 type Radius = keyof HvThemeTokens["radii"];
 

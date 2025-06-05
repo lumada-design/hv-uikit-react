@@ -1,0 +1,10 @@
+{
+  "name": "@hitachivantara/internal",
+  "version": "0.0.1",
+  "description": "Internal utilities for docs & other stuff",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  }
+}

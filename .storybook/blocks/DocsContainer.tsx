@@ -12,8 +12,8 @@ import {
 
 import { ADDON_EVENT } from "../addons/mode-selector/constants";
 import { getInitialMode, Mode } from "../addons/mode-selector/utils";
+import { themes } from "../theme";
 import { getDocsStyles } from "../theme/styles/docs";
-import { themes } from ".storybook/theme";
 
 const components: Record<string, ComponentType> = {
   a: (props: HvTypographyProps<"a">) => (

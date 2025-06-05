@@ -3,6 +3,7 @@ import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import isChromatic from "chromatic/isChromatic";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvAccordion,
   HvButton,
@@ -19,7 +20,6 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import mockText from "./mockData";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvWizard> = {
   title: "Lab/Wizard",

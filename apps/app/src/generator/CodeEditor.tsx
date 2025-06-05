@@ -6,8 +6,8 @@ import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import { HvIconButton, useTheme } from "@hitachivantara/uikit-react-core";
 import { Download, Duplicate, Reset } from "@hitachivantara/uikit-react-icons";
 
-import { useGeneratorContext } from "~/generator/GeneratorContext";
-import { getThemeCode } from "~/generator/utils";
+import { useGeneratorContext } from "./GeneratorContext";
+import { getThemeCode } from "./utils";
 
 const codeEditorStyles = css({
   ".margin, .margin-view-overlays": {

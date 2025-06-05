@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvAvatar,
   HvButton,
@@ -8,8 +9,6 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 import { Play } from "@hitachivantara/uikit-react-icons";
-
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvTooltip> = {
   title: "Components/Tooltip",

@@ -2,13 +2,11 @@ import react from "@vitejs/plugin-react";
 import unoCSS from "unocss/vite";
 import { defineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { HvAppShellVitePlugin } from "@hitachivantara/app-shell-vite-plugin";
 
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
-    tsconfigPaths(),
     unoCSS({ mode: "per-module" }),
     cssInjectedByJsPlugin({
       relativeCSSInjection: true,

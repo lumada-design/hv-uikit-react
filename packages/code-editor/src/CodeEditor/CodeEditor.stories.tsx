@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { setupChromatic } from "@hitachivantara/internal";
 import {
   HvCodeEditor,
   HvCodeEditorProps,
@@ -8,7 +9,6 @@ import { CustomPluginStory } from "./stories/CustomPlugin";
 import { MainStory } from "./stories/Main";
 import { SqlStory } from "./stories/Sql";
 import { XmlStory } from "./stories/Xml";
-import { setupChromatic } from ".storybook/setupChromatic";
 
 const meta: Meta<typeof HvCodeEditor> = {
   title: "Components/Code Editor",
