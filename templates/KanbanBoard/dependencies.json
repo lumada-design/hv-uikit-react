@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@hitachivantara/uikit-react-lab": "latest",
+    "@hitachivantara/uikit-react-pentaho": "latest"
+  }
+}
