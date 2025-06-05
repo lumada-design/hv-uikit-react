@@ -47,19 +47,6 @@ const copyTemplateContents = (appPath, templates) => {
   return dependencies;
 };
 
-const createDefaultContents = async (path, useAppShell) => {
-  const createDefault = plop.getGenerator("createDefault");
-
-  console.log(
-    `No templates selected: ${chalk.cyan("Creating default contents")}`,
-  );
-
-  // create default contents from plop template
-  await createDefault.runActions({ path, name: "Project", useAppShell });
-
-  return {};
-};
-
 const createReadMeFile = async (path, name) => {
   await createReadMe.runActions({
     path,
@@ -67,17 +54,10 @@ const createReadMeFile = async (path, name) => {
   });
 };
 
-export const createAppContents = async (
-  appPath,
-  name,
-  templates,
-  useAppShell,
-) => {
+export const createAppContents = async (appPath, name, templates) => {
   console.log(`Creating ${chalk.cyan(name)} contents\n`);
 
   await createReadMeFile(appPath, name);
 
-  return templates?.length
-    ? copyTemplateContents(appPath, templates)
-    : createDefaultContents(appPath, useAppShell);
+  return templates?.length ? copyTemplateContents(appPath, templates) : {};
 };
