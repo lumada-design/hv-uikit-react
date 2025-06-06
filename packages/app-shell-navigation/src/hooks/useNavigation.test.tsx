@@ -1,5 +1,4 @@
-import * as React from "react";
-import { Path } from "react-router-dom";
+import type { Path } from "react-router-dom";
 import { renderHook } from "@testing-library/react";
 import {
   afterEach,

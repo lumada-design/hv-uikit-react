@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { resolve } from "node:path";
 import { withDefaultConfig, type Props } from "react-docgen-typescript";
 
 export interface ComponentMeta {

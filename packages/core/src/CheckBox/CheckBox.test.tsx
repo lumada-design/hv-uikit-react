@@ -321,7 +321,7 @@ describe("CheckBox", () => {
   });
 
   describe("onChange", () => {
-    it("should trigger onChange by checking a checkbox ", async () => {
+    it("should trigger onChange by checking a checkbox", async () => {
       const onChangeMock = vi.fn();
 
       render(<HvCheckBox value="dogs" label="Dogs" onChange={onChangeMock} />);

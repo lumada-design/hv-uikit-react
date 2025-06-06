@@ -36,13 +36,13 @@ const FontSizes = () => {
       const currSize = currSizes.get(size);
       setFontSize(size);
       if (currSize) {
-        const value = parseFloat(currSize);
+        const value = Number.parseFloat(currSize);
         setUnit(currSize.replace(value.toString(), ""));
         setFontValue(value);
       } else {
         const f = activeTheme?.fontSizes[size];
         const u = extractFontSizeUnit(f);
-        setFontValue(parseFloat(f));
+        setFontValue(Number.parseFloat(f));
         setUnit(u || "");
       }
     }

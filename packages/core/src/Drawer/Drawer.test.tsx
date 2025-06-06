@@ -20,6 +20,7 @@ const Sample = ({
     <div>
       <button
         id="openDialog"
+        type="button"
         aria-label="openDialog"
         onClick={() => setOpen(true)}
       >

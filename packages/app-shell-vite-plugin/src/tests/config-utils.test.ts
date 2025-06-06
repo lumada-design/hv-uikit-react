@@ -18,7 +18,7 @@ fs.existsSync = existsSyncMock;
 fs.readFileSync = readFileSyncMock;
 describe("test app-shell-vite-generate-base plugin", () => {
   describe("test `findAppShellConfigFile`", () => {
-    it("it returns the config file location (and its content) if exists", () => {
+    it("returns the config file location (and its content) if exists", () => {
       existsSyncMock.mockImplementation((file: string) => {
         return file.match("/dummyPath/dummyRootProject/app-shell.config.json");
       });
@@ -28,7 +28,7 @@ describe("test app-shell-vite-generate-base plugin", () => {
       );
     });
 
-    it("it returns undefined if config file don't exists", () => {
+    it("returns undefined if config file don't exists", () => {
       existsSyncMock.mockImplementation(() => {
         return false;
       });

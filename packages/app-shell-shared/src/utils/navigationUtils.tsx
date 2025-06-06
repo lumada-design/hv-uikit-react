@@ -150,9 +150,7 @@ const searchHrefMatch = (
     const idx = item.href?.indexOf("?");
     if (idx !== -1) {
       normalizedItemHref = item.href?.slice(0, idx).toLowerCase();
-      normalizedItemHrefParams = item.href
-        ?.slice(idx, item.href.length)
-        .toLowerCase();
+      normalizedItemHrefParams = item.href?.slice(idx).toLowerCase();
     } else {
       normalizedItemHref = item.href?.toLowerCase();
       normalizedItemHrefParams = "";

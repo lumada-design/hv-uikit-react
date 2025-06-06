@@ -33,7 +33,7 @@ export const scaledValueToKnobsPositionValue = (
 ): number =>
   typeof scaledValue === "number"
     ? Math.floor((scaledValue - minPointValue) * inverseStepValue)
-    : NaN;
+    : Number.NaN;
 
 /**
  * Transform the received knobs values into knob positions
@@ -448,4 +448,4 @@ export const knobsValuesToString = (
   );
 
 export const stringValuesToKnobs = (inputsValues: string[]): number[] =>
-  inputsValues.map((inputValue) => parseFloat(inputValue));
+  inputsValues.map((inputValue) => Number.parseFloat(inputValue));

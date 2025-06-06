@@ -4,8 +4,9 @@ import { HvAvatar } from "../Avatar/Avatar";
 import { HvAvatarGroup } from "./AvatarGroup";
 
 describe("HvAvatarGroup", () => {
-  it("renders without crashing", () => {
-    render(<HvAvatarGroup />);
+  it("renders the content", () => {
+    render(<HvAvatarGroup>TEXT</HvAvatarGroup>);
+    expect(screen.getByText("TEXT")).toBeInTheDocument();
   });
 
   it("renders the correct number of avatars", () => {

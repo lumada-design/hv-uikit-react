@@ -1,4 +1,4 @@
-import { type Monaco } from "@monaco-editor/react";
+import type { Monaco } from "@monaco-editor/react";
 import { format, FormatOptionsWithLanguage } from "sql-formatter";
 
 import { LanguagePlugin } from "../types";
@@ -79,8 +79,8 @@ const parseErrorMessage = (errorString: string) => {
   if (match) {
     const res = {
       message: match[1].trim(),
-      line: parseInt(match[2], 10),
-      column: parseInt(match[3], 10),
+      line: Number(match[2]),
+      column: Number(match[3]),
     };
     return res;
   }

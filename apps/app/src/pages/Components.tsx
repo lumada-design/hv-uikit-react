@@ -247,7 +247,7 @@ const Card1 = () => (
     />
     <HvCardMedia
       component="img"
-      alt="madeira island image"
+      alt="madeira island"
       height={240}
       image="https://lumada-design.github.io/assets/madeira.webp"
     />
@@ -410,8 +410,6 @@ const Table = () => {
  * Hero component containing a showcase of the UI Kit components
  */
 export const Component = () => {
-  console.count("render");
-
   return (
     <HvGrid container>
       <HvGrid item xs={12}>
