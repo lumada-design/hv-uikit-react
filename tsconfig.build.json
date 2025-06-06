@@ -1,26 +1,9 @@
 {
+  "extends": "./packages/config/tsconfig.json",
   "compilerOptions": {
-    /* Base Options */
-    "target": "ES2022",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    // "verbatimModuleSyntax": true,
-    "erasableSyntaxOnly": true,
-
-    /* Strictness */
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    // "noUncheckedIndexedAccess": true,
-
     /* Bundling options (vite monorepo) */
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "noEmit": true,
     "composite": true,
     "declaration": true,
     "declarationMap": true,
@@ -28,14 +11,7 @@
     /* Others */
     "lib": ["es2022", "dom", "dom.iterable"],
     "jsx": "react-jsx",
-    "types": [
-      "node",
-      "jest",
-      "@testing-library/jest-dom",
-      "vite/client",
-      "vitest"
-    ]
+    "types": ["@testing-library/jest-dom", "vite/client", "vitest"]
   },
-  "include": ["packages/**/src"],
-  "exclude": ["node_modules"]
+  "include": ["packages/**/src"]
 }
