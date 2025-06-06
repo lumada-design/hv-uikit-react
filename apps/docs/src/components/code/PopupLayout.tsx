@@ -47,11 +47,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
   };
 
   return (
-    <section
-      id={id}
-      data-pagefind-ignore
-      className="bg-transparent relative border-border border-1 border-t-0 -ml-px h-full"
-    >
+    <section id={id} data-pagefind-ignore className="bg-transparent ">
       <HvDialog
         onClose={() => setIsExpanded(false)}
         open={isExpanded}
@@ -77,7 +73,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
       </HvDialog>
 
       {/* Poupup Controls */}
-      <div className="absolute right-0 flex items-center p-xs gap-xs">
+      <div className="absolute right-0 top-0 flex items-center p-xs gap-xs">
         <HvIconButton
           title="Show Code"
           onClick={() => setIsExpanded((prev) => !prev)}
@@ -88,7 +84,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
       <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
         {/* Preview Section */}
         <DocsContainer
-          className="p-md flex items-center justify-center h-full [&>div]:w-full [&>div]:flex-wrap"
+          className="p-sm flex items-center justify-center h-full [&>div]:w-full [&>div]:flex-wrap"
           error={error}
           element={element}
         />
