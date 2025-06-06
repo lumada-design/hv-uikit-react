@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.22.0...@hitachivantara/hv-uikit-cli@1.22.1) (2025-06-06)
+
+### Bug Fixes
+
+- **cli:** routing & navigationData setup ([#4773](https://github.com/lumada-design/hv-uikit-react/issues/4773)) ([d8d228e](https://github.com/lumada-design/hv-uikit-react/commit/d8d228edfea01a34d7a3c07add7e03fe77cdf378))
+
 # [1.22.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.21.2...@hitachivantara/hv-uikit-cli@1.22.0) (2025-04-18)
 
 ### Features

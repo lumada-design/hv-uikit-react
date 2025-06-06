@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.96.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.95.1...@hitachivantara/uikit-react-core@5.96.0) (2025-06-06)
+
+### Bug Fixes
+
+- **cli:** routing & navigationData setup ([#4773](https://github.com/lumada-design/hv-uikit-react/issues/4773)) ([d8d228e](https://github.com/lumada-design/hv-uikit-react/commit/d8d228edfea01a34d7a3c07add7e03fe77cdf378))
+- **ListItem:** start + end adornment positioning ([#4772](https://github.com/lumada-design/hv-uikit-react/issues/4772)) ([c5ac71f](https://github.com/lumada-design/hv-uikit-react/commit/c5ac71f5002508e059c18009731cc0ef03ef0397))
+
+### Features
+
+- **deps:** bump notistack to v3 ([#4764](https://github.com/lumada-design/hv-uikit-react/issues/4764)) ([c0591ec](https://github.com/lumada-design/hv-uikit-react/commit/c0591ec270445f310ab6b569824eec0d0299938a))
+
 ## [5.95.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.95.0...@hitachivantara/uikit-react-core@5.95.1) (2025-05-30)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.10.5...@hitachivantara/app-shell-ui@1.10.6) (2025-06-06)
+
+### Bug Fixes
+
+- **cli:** routing & navigationData setup ([#4773](https://github.com/lumada-design/hv-uikit-react/issues/4773)) ([d8d228e](https://github.com/lumada-design/hv-uikit-react/commit/d8d228edfea01a34d7a3c07add7e03fe77cdf378))
+
 ## [1.10.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.10.4...@hitachivantara/app-shell-ui@1.10.5) (2025-05-30)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-ui

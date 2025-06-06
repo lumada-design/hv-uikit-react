@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-pentaho",
-  "version": "0.9.11",
+  "version": "0.9.12",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@emotion/css": "^11.11.0",
-    "@hitachivantara/uikit-react-core": "^5.95.1",
-    "@hitachivantara/uikit-react-icons": "^5.15.5",
-    "@hitachivantara/uikit-react-utils": "^0.2.38",
+    "@hitachivantara/uikit-react-core": "^5.96.0",
+    "@hitachivantara/uikit-react-icons": "^5.15.6",
+    "@hitachivantara/uikit-react-utils": "^0.2.39",
     "@mui/base": "5.0.0-beta.68",
     "react-resize-detector": "^8.1.0"
   },
