@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "test": "vitest"
   },
+  "prettier": "@hitachivantara/uikit-config/prettier",
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@hitachivantara/app-shell-vite-plugin": "^1.0.0",
+    "@hitachivantara/uikit-config": "^0.2.1",
     "@hitachivantara/uikit-uno-preset": "^0.2.5",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.0.0",

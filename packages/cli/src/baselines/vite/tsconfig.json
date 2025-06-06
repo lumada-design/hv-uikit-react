@@ -1,25 +1,6 @@
 {
+  "extends": "@hitachivantara/uikit-config/tsconfig.json",
   "compilerOptions": {
-    /* Base Options */
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "ES2022",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    // "verbatimModuleSyntax": true,
-
-    /* Strictness */
-    "strict": true,
-    // "noUncheckedIndexedAccess": true,
-
-    /* Bundling with vite */
-    "module": "preserve",
-    "noEmit": true,
-
-    /* Others */
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx"
   },
   "include": ["src"],
