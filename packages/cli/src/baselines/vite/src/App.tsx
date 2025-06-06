@@ -3,7 +3,6 @@ import "virtual:uno.css";
 
 import {
   createBrowserRouter,
-  Navigate,
   RouteObject,
   RouterProvider,
 } from "react-router-dom";
@@ -14,10 +13,7 @@ import { appRoutes } from "./routes";
 export const routes: RouteObject[] = [
   {
     lazy: () => import("./pages/layout/navigation"),
-    children: [
-      ...appRoutes,
-      { index: true, element: <Navigate to={appRoutes[0].path!} replace /> },
-    ],
+    children: appRoutes,
   },
   { path: "*", lazy: () => import("./pages/NotFound") },
 ];

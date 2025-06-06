@@ -2,6 +2,7 @@ import type { NavigationData } from "@hitachivantara/uikit-react-core";
 import type { RouteObject } from "react-router-dom";
 
 export const appRoutes: RouteObject[] = [
+  { index: true, path: "/", lazy: () => import("./pages/Home") },
   // APP ROUTES
 ];
 

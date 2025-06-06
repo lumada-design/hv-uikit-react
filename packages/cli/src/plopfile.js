@@ -1,18 +1,3 @@
-const createDefault = {
-  actions: [
-    {
-      type: "add",
-      path: "{{path}}/public/locales/en/{{lowerCase name}}.json",
-      templateFile: "plop-templates/locale.json.hbs",
-    },
-    {
-      type: "add",
-      path: "{{path}}/src/pages/{{name}}/{{name}}.tsx",
-      templateFile: "plop-templates/component.tsx.hbs",
-    },
-  ],
-};
-
 const createRoute = {
   actions: [
     {
@@ -67,7 +52,6 @@ const createAppShellViteConfig = {
 
 export default (plop) => {
   plop.setHelper("precurly", (t) => `${t}`);
-  plop.setGenerator("createDefault", createDefault);
   plop.setGenerator("createRoute", createRoute);
   plop.setGenerator("createReadMe", createReadMe);
   plop.setGenerator("createAppShellIndexHtml", createAppShellIndexHtml);

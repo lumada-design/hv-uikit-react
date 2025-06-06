@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import {
+  HvGlobalActions,
   HvGrid,
   HvTypography,
-  HvGlobalActions,
 } from "@hitachivantara/uikit-react-core";
-{{#if useAppShell}}import { withProvider } from "providers/Provider";{{/if}}
+import { withProvider } from "../../providers/Provider";
 
-const {{titleCase name}}: React.FC = () => {
-  const { t } = useTranslation("{{lowerCase name}}");
+const Example = () => {
+  const { t } = useTranslation("example");
 
   return (
     <HvGrid container>
@@ -21,4 +21,4 @@ const {{titleCase name}}: React.FC = () => {
   );
 };
 
-export default {{#if useAppShell}}withProvider({{/if}}{{titleCase name}}{{#if useAppShell}}){{/if}};
+export default withProvider(Example);
