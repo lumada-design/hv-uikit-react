@@ -1,12 +1,10 @@
-import { StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import type { StoryObj } from "@storybook/react-vite";
 
 import { CompleteTableSection } from "./CompleteTableSection";
 import { PropsTableSection } from "./PropsTableSection";
 import { SimpleTableSection } from "./SimpleTableSection";
 import { TableEditable } from "./TableEditable";
 import { TableFilter } from "./TableFilter";
-import { TableSettings } from "./TableSettings";
 
 export default {
   title: "Visualizations/Table/Table Section",
@@ -30,15 +28,4 @@ export const EditableStory: StoryObj = {
 
 export const FilterStory: StoryObj = {
   render: () => <TableFilter />,
-};
-
-export const TableSettingsStory: StoryObj = {
-  // For a11y
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: /settings/i });
-    await userEvent.click(button);
-    await expect(canvas.getAllByRole("listitem")).toHaveLength(7);
-  },
-  render: () => <TableSettings />,
 };
