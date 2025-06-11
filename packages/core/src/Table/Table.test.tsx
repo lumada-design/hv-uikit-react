@@ -134,9 +134,9 @@ describe("List Row", () => {
     const { getAllByRole } = render(<ListRow />);
     const rows = getAllByRole("row");
     rows.forEach((element, index) => {
-      if (index !== 0)
-        expect(element.className).toMatch(/HvTableRow-variantList/);
-      else expect(element.className).toMatch(/HvTableRow-variantListHead/);
+      expect(element.className).toMatch(
+        index !== 0 ? /HvTableRow-variantList/ : /HvTableRow-variantListHead/,
+      );
     });
   });
 });

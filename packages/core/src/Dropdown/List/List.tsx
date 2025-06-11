@@ -181,33 +181,15 @@ export const HvDropdownList = (props: HvDropdownListProps) => {
    * @param {String} str - The value that is being looked.
    */
   const handleSearch = (str: string) => {
-    const results = list
-      ? list.filter(
-          ({
-            searchValue,
-            label,
-            value,
-          }: {
-            searchValue?: any;
-            label?: any;
-            value?: any;
-          }) => {
-            let stringValue = "";
-            if (
-              typeof searchValue === "string" ||
-              searchValue instanceof String
-            ) {
-              stringValue = searchValue.toLowerCase();
-            } else if (typeof label === "string" || label instanceof String) {
-              stringValue = label.toLowerCase();
-            } else if (typeof value === "string" || value instanceof String) {
-              stringValue = value.toLowerCase();
-            }
+    const results = list?.filter(({ searchValue, label, value }) => {
+      const stringValue =
+        (typeof searchValue === "string" && searchValue) ||
+        (typeof label === "string" && label) ||
+        (typeof value === "string" && value) ||
+        "";
 
-            return stringValue.indexOf(str.toLowerCase()) >= 0;
-          },
-        )
-      : null;
+      return stringValue.toLowerCase().indexOf(str.toLowerCase()) >= 0;
+    });
 
     if (results != null) {
       const newList = list.map((elem) => {

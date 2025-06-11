@@ -292,7 +292,7 @@ describe("FilterGroup", () => {
     expect(screen.getAllByText("4")).toHaveLength(1);
   });
 
-  it("it's not possible to check a disabled option", async () => {
+  it("isn't possible to check a disabled option", async () => {
     const user = userEvent.setup();
     render(<FilterGroup />);
 

@@ -34,7 +34,7 @@ export const getMonthFirstWeekday = (month: number, year: number) =>
  * @param year - The year of the date.
  * @param monthIndex - The zero indexed month of the year (0 to 11).
  * @param day - The day of the month.
- * @param [hour=1] - The hour of the day.
+ * @param hour - The hour of the day.
  * @returns A `Date` instance in UTC timezone.
  */
 export const makeUTCDate = (

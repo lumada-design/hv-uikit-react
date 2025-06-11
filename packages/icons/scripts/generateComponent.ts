@@ -9,7 +9,7 @@ const hexColorMap: Record<string, HvColor> = {
 
 /**
  * Creates a full component string based upon provided svg data and a component name
- * @return The parsed component string
+ * @returns The parsed component string
  */
 export const generateComponent = (
   svgOutput: string,

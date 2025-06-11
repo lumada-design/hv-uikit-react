@@ -1,4 +1,4 @@
-import { type HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
+import type { HvTableColumnConfig } from "@hitachivantara/uikit-react-core";
 
 const getOption = <T,>(opts: T[], i: number) => opts[i % opts.length];
 

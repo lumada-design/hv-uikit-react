@@ -24,7 +24,7 @@ const Spacing = () => {
     const value = currValuesRef.current.get(spacing);
     if (!value) return;
 
-    const spacingValue = parseInt(
+    const spacingValue = Number.parseInt(
       spacing === "base"
         ? value.toString() || ""
         : currValues.get(spacing)?.toString() || "",
@@ -46,7 +46,7 @@ const Spacing = () => {
           return (
             <div key={s} className="flex justify-between gap-xs">
               <UnitSlider
-                defaultSize={parseInt(
+                defaultSize={Number.parseInt(
                   currValues?.get(s)?.toString() ||
                     customTheme.space[
                       s as keyof HvThemeTokens["space"]

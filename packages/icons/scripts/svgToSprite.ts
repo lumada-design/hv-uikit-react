@@ -41,8 +41,7 @@ async function getSvgPathsByGroup(
 // Create the output directory if it doesn't exist
 fs.mkdir(outputFolder, { recursive: true }, (err) => {
   if (err) {
-    console.error(err);
-    process.exit(1);
+    throw Error(err.message);
   }
 });
 

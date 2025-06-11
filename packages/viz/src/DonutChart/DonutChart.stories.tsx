@@ -7,7 +7,7 @@ import {
   HvDropDownMenu,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Ticket } from "@hitachivantara/uikit-react-icons"; // eslint-disable-line
+import { Ticket } from "@hitachivantara/uikit-react-icons";
 import {
   HvDonutChart,
   HvDonutChartProps,

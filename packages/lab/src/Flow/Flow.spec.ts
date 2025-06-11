@@ -281,12 +281,6 @@ test.describe("Connections", () => {
       await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
     ).toHaveLength(numberConnections);
   });
-
-  /* test('copying a flow does not copy its connections?', async () => {
-  });
-
-  test('deleting a flow should delete its connections?', async () => {
-  }); */
 });
 
 test.describe("Interactive button", () => {
@@ -359,7 +353,4 @@ test.describe("Interactive button", () => {
       page.getByRole("button", { name: "Delete" }),
     ).not.toBeVisible();
   });
-
-  /* test('fit to view button?', async () => {
-  }); */
 });

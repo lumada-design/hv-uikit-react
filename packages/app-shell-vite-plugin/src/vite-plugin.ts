@@ -63,7 +63,7 @@ export interface AppShellVitePluginOptions {
    *    token: "USER_NOTIFICATIONS_URL",
    *    value: "http://localhost:8080"
    * }
-   * Tokens used at config file must be wrapped (at the beginning and at the end) by @@ sequence
+   * Tokens used at config file must be wrapped (at the beginning and at the end) by `@@` sequence
    * e.g.
    * {
    *   "@hv/user-notifications-client": "@@USER_NOTIFICATIONS_URL@@"

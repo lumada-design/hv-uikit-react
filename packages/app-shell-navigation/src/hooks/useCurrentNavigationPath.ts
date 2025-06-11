@@ -13,7 +13,7 @@ export const useHvCurrentNavigationPath = () => {
 
     const selectedPathIds = selectedMenuItemId.split("-");
     selectedPathIds.forEach((item) => {
-      const currentItem = currentItems[parseInt(item, 10)];
+      const currentItem = currentItems[Number(item)];
       paths.push({
         label: currentItem.label,
         path: currentItem.data ? undefined : currentItem.href,
