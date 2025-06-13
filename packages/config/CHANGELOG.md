@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.2.1...@hitachivantara/uikit-config@0.3.0) (2025-06-13)
+
+### Features
+
+- **config:** add `tsconfig.json` to config package ([#4781](https://github.com/lumada-design/hv-uikit-react/issues/4781)) ([530c0f7](https://github.com/lumada-design/hv-uikit-react/commit/530c0f79b4fb7c3f2b16cd129acd6a0b586bc863))
+
 ## [0.2.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.2.0...@hitachivantara/uikit-config@0.2.1) (2025-02-21)
 
 ### Reverts

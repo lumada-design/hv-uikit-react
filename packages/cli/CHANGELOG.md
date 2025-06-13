@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.22.1...@hitachivantara/hv-uikit-cli@1.22.2) (2025-06-13)
+
+### Bug Fixes
+
+- **cli:** add fallback `Project`/`Home` routes ([#4780](https://github.com/lumada-design/hv-uikit-react/issues/4780)) ([42bd444](https://github.com/lumada-design/hv-uikit-react/commit/42bd444c2fe945be088925e8cc4390d59eefa139))
+
 ## [1.22.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.22.0...@hitachivantara/hv-uikit-cli@1.22.1) (2025-06-06)
 
 ### Bug Fixes
