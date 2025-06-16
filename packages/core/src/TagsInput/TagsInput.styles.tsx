@@ -89,10 +89,14 @@ export const { staticClasses, useClasses } = createClasses("HvTagsInput", {
     border: "none",
     margin: 0,
     padding: 0,
-    ...theme.typography.caption1,
+    ...theme.typography.body,
     backgroundColor: "transparent",
     outline: "none",
     boxShadow: "none",
+
+    "&::placeholder": {
+      color: theme.colors.textSubtle,
+    },
   },
   /** @deprecated unused.  use `:focus` or `:focus-visible` instead */
   tagSelected: {},

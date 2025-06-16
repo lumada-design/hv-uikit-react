@@ -208,9 +208,18 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         tagsList: {
           backgroundColor: inputColors.bg,
           padding: theme.space.xxs,
+          borderColor: theme.colors.textDimmed,
         },
         singleLine: {
           height: 32,
+        },
+        disabled: {
+          "& .HvTagsInput-tagsList": {
+            backgroundColor: theme.colors.bgDisabled,
+            "&,:hover": {
+              borderColor: theme.colors.textDisabled,
+            },
+          },
         },
       },
     },
