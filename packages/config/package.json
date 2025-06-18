@@ -24,8 +24,7 @@
   "scripts": {},
   "exports": {
     "./licenses": "./licenses/index.js",
-    "./oxlint/base": "./oxlint/base.json",
-    "./oxlint/strict": "./oxlint/strict.json",
+    "./oxlint/*": "./oxlint/*",
     "./prettier": "./.prettierrc.json",
     "./tsconfig": "./tsconfig.json"
   },

@@ -13,7 +13,7 @@ const HeaderActions = () => {
     <HvHeaderActions>
       {header?.actions.map((action, index) => {
         const headerActionKey = `${action.bundle}${index}`;
-        const Component = internalActions.find(
+        const Component = internalActions.some(
           (a) => a.bundle === action.bundle,
         )
           ? InternalAction
