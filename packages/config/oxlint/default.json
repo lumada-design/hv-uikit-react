@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/tags/oxlint_v1.1.0/npm/oxlint/configuration_schema.json",
+  "extends": ["./base.json"],
+  "categories": {
+    "perf": "warn",
+    "suspicious": "error",
+    "restriction": "error"
+  },
+  "rules": {
+    "unicorn/prefer-set-has": "off",
+
+    "import/no-duplicates": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unassigned-import": "off",
+    "react/react-in-jsx-scope": "off",
+
+    "eslint/default-case": "off",
+    "eslint/no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "eslint/no-empty-function": "off",
+    "eslint/no-eq-null": "off",
+    "eslint/no-plusplus": "off",
+    "eslint/no-undefined": "off",
+    "import/no-default-export": "off",
+    "import/unambiguous": "off",
+    "oxc/no-async-await": "off",
+    "oxc/no-barrel-file": "off",
+    "oxc/no-optional-chaining": "off",
+    "oxc/no-rest-spread-properties": "off",
+    "react/jsx-filename-extension": "off",
+    "typescript/explicit-function-return-type": "off",
+    "typescript/no-dynamic-delete": "off",
+    "typescript/no-empty-object-type": "off",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-non-null-assertion": "off",
+    "unicorn/no-anonymous-default-export": "off",
+    "unicorn/no-array-for-each": "off",
+    "unicorn/no-array-reduce": "off",
+    "unicorn/no-nested-ternary": "off"
+  }
+}

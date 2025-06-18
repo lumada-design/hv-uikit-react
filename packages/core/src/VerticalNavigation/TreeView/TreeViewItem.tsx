@@ -252,7 +252,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
       ) {
         mapFirstChar(
           nodeId,
-          contentRef.current?.textContent.substring(0, 1).toLowerCase(),
+          contentRef.current?.textContent.slice(0, 1).toLowerCase(),
         );
 
         return () => {
@@ -501,7 +501,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
                   size="xs"
                   backgroundColor="textSubtle"
                 >
-                  {payload?.label?.substring(0, 1)}
+                  {payload?.label?.slice(0, 1)}
                 </HvAvatar>
               ) : (
                 useIcons && icon

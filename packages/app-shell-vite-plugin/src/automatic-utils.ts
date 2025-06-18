@@ -80,7 +80,7 @@ export function mapFolderIndexFilesToRoutes(
 
     // fetches what is between the normalizedViewsFolder (inclusive) and the last '/' (exclusive)
     // example: 'dummy/path/src/pages/Page1/index.tsx' and 'src/pages' returns src/pages/Page1
-    const bundle = normalizedFilePath.substring(
+    const bundle = normalizedFilePath.slice(
       normalizedFilePath.lastIndexOf(`/${normalizedViewsFolder}/`) + 1,
       normalizedFilePath.lastIndexOf("/"),
     );

@@ -93,8 +93,8 @@ export const HvAppSwitcherAction = ({
 
     const brokenTitle = name.split(" ");
     const initials =
-      brokenTitle[0].substring(0, 1) +
-      (brokenTitle[1] ? brokenTitle[1].substring(0, 1) : "");
+      brokenTitle[0].slice(0, 1) +
+      (brokenTitle[1] ? brokenTitle[1].slice(0, 1) : "");
 
     return (
       <HvAvatar size="sm" backgroundColor={color} variant="square" aria-hidden>

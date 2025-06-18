@@ -16,7 +16,10 @@
     "react/exhaustive-deps": "error",
     "react/rules-of-hooks": "error",
 
-    "eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "eslint/no-unused-vars": [
+      "warn",
+      { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
+    ],
     "jsx_a11y/no-autofocus": "off",
     "jsx_a11y/role-supports-aria-props": "off",
     "jsx_a11y/role-has-required-aria-props": "off"

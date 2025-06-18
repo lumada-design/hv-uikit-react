@@ -288,9 +288,7 @@ export const HvTextArea = forwardRef<
     const isOverflow =
       maxCharQuantity == null ? false : currentValue.length > maxCharQuantity;
 
-    return !isOverflow
-      ? currentValue
-      : currentValue.substring(0, maxCharQuantity);
+    return !isOverflow ? currentValue : currentValue.slice(0, maxCharQuantity);
   };
 
   /**

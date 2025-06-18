@@ -35,7 +35,7 @@ export const Bar = (props: BarProps) => {
   const isMenu = type === "menu";
 
   const isActive =
-    isMenu && data.filter((item) => item.id === selectionPath?.[1]).length > 0;
+    isMenu && data.some((item) => item.id === selectionPath?.[1]);
 
   return (
     <div

@@ -26,8 +26,7 @@
     "./package.json": "./package.json",
     "./prettier": "./.prettierrc.json",
     "./licenses": "./licenses/index.js",
-    "./oxlint/base": "./oxlint/base.json",
-    "./oxlint/strict": "./oxlint/strict.json",
+    "./oxlint/*": "./oxlint/*",
     "./tsconfig": "./tsconfig.json"
   },
   "peerDependencies": {
