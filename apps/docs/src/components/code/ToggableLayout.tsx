@@ -42,6 +42,20 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
         {/* Title */}
         <HvTypography variant="title4">{title}</HvTypography>
 
+        {/* Tabs for navigating between files in multi-file mode */}
+        {hasMultipleFiles && !showPreview && (
+          <HvTabs
+            floating
+            value={activeTab}
+            onChange={(_, value) => setActiveTab(value)}
+            aria-label="File Tabs"
+          >
+            {fileNames.map((fileName) => (
+              <HvTab key={fileName} label={fileName} />
+            ))}
+          </HvTabs>
+        )}
+
         {/* Toolbar for controls: toggle preview, reset, and copy */}
         <ToggableControls
           code={tmpCode}
@@ -54,47 +68,26 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
       </div>
 
       {/* Main content: Preview or Editor */}
-      {showPreview ? (
-        <DocsContainer
-          className={clsx(
-            "p-md pt-lg min-h-100px mb-lg",
-            "border border-atmo3 rounded-round",
-            "bg-bgContainer [&_tr]:table-row",
-          )}
-          error={error}
-          element={element}
-        />
-      ) : (
-        <>
-          {/* Code editor for active tab */}
-          <div className="max-h-[400px] overflow-auto rounded-round">
-            <CodeEditor
-              value={Object.values(tmpCode)[activeTab]}
-              onChange={handleEditorChange}
-              className="font-mono text-[.88em]"
-            />
-          </div>
-
-          {/* Tabs for navigating between files in multi-file mode */}
-          {hasMultipleFiles && (
-            <HvTabs
-              floating
-              value={activeTab}
-              onChange={(_, value) => setActiveTab(value)}
-              aria-label="File Tabs"
-              className="py-sm"
-            >
-              {fileNames.map((fileName) => (
-                <HvTab
-                  key={fileName}
-                  label={fileName}
-                  aria-label={`Tab for file ${fileName}`}
-                />
-              ))}
-            </HvTabs>
-          )}
-        </>
-      )}
+      <DocsContainer
+        className={clsx(
+          "p-md pt-lg min-h-100px mb-lg",
+          "border border-atmo3 rounded-round",
+          "bg-bgContainer [&_tr]:table-row",
+          !showPreview && "hidden",
+        )}
+        error={error}
+        element={element}
+      />
+      <div className={clsx(showPreview && "hidden")}>
+        {/* Code editor for active tab */}
+        <div className="max-h-[400px] overflow-auto rounded-round">
+          <CodeEditor
+            value={Object.values(tmpCode)[activeTab]}
+            onChange={handleEditorChange}
+            className="font-mono text-[.88em]"
+          />
+        </div>
+      </div>
     </section>
   );
 };

@@ -93,6 +93,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
           element={element}
         />
       </div>
+      <pre className="hidden">{editorCode}</pre>
     </section>
   );
 };
