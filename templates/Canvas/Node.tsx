@@ -174,7 +174,7 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
               onClick={() =>
                 setOpenedTables?.((prev) => {
                   const tables = prev ? [...prev] : [];
-                  if (!tables.find((x) => x.id === tableId)) {
+                  if (!tables.some((x) => x.id === tableId)) {
                     if (tables.length === 0 && selectedTable === "none") {
                       setSelectedTable?.(tableId);
                     }
