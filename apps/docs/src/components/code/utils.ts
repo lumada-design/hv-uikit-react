@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as reactHookForm from "react-hook-form";
@@ -9,6 +10,7 @@ import * as DndKitSortable from "@dnd-kit/sortable";
 import * as DndKitUtilities from "@dnd-kit/utilities";
 import * as emotionCss from "@emotion/css";
 import * as hookFormZod from "@hookform/resolvers/zod";
+// oxlint-disable-next-line no-restricted-imports
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
@@ -128,12 +130,10 @@ export const resolveComponents = (
 export const resolveImports = (
   code: Record<string, string> | string,
 ): Scope => {
-  if (typeof code === "string") {
-    return defaultScope;
-  } else {
-    const additionalFiles = excludePrimaryFile(code);
-    return extendScopeWithFiles(defaultScope, additionalFiles);
-  }
+  if (typeof code === "string") return defaultScope;
+
+  const additionalFiles = excludePrimaryFile(code);
+  return extendScopeWithFiles(defaultScope, additionalFiles);
 };
 
 /**

@@ -39,11 +39,10 @@ export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
   Omit<HvThemeStructure, "colors" | "name" | "base">
 > & {
   colors?: {
-    modes?: {
-      [key: string]: Partial<HvThemeColorModeStructure> & {
-        [key: string]: string;
-      };
-    };
+    modes?: Record<
+      string,
+      Partial<HvThemeColorModeStructure> & Record<string, string>
+    >;
   };
 };
 

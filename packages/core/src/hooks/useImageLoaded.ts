@@ -4,33 +4,32 @@ export const useImageLoaded = (src?: string, srcSet?: string) => {
   const [imageLoaded, setImageLoaded] = useState<boolean | string>(false);
 
   useEffect(() => {
-    if (!src && !srcSet) {
-      return undefined;
-    }
+    if (!src && !srcSet) return;
 
     setImageLoaded(false);
 
-    let active = true;
+    const { abort, signal } = new AbortController();
+
     const image = new Image();
     image.src = src || "";
     image.srcset = srcSet || "";
-    image.onload = () => {
-      if (!active) {
-        return;
-      }
-
-      setImageLoaded("loaded");
-    };
-    image.onerror = () => {
-      if (!active) {
-        return;
-      }
-
-      setImageLoaded("error");
-    };
+    image.addEventListener(
+      "load",
+      () => {
+        setImageLoaded("loaded");
+      },
+      { signal },
+    );
+    image.addEventListener(
+      "error",
+      () => {
+        setImageLoaded("error");
+      },
+      { signal },
+    );
 
     return () => {
-      active = false;
+      abort();
     };
   }, [src, srcSet]);
 

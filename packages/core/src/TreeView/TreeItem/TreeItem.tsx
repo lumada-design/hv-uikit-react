@@ -154,7 +154,7 @@ export const HvTreeItem = forwardRef<HTMLLIElement, HvTreeItemProps>(
       if (instance && label) {
         return instance.mapFirstChar(
           nodeId,
-          (contentRef.current?.textContent ?? "").substring(0, 1).toLowerCase(),
+          (contentRef.current?.textContent ?? "").slice(0, 1).toLowerCase(),
         );
       }
       return undefined;

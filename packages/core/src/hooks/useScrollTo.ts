@@ -42,8 +42,8 @@ export const useScrollTo = (
   ) => void,
   HvScrollToOptionWithLink[],
 ] => {
-  const RETRY_MAX: number = 5;
-  const [selectedIndex, setSelectedIndex] = useState<number>(selectedIndexProp);
+  const RETRY_MAX = 5;
+  const [selectedIndex, setSelectedIndex] = useState(selectedIndexProp);
 
   const scrollEle = useRef<HTMLElement | (Window & typeof globalThis) | null>(
     typeof window !== "undefined" ? window : null,

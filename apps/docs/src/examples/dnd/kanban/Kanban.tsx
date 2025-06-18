@@ -113,7 +113,7 @@ export default function Demo() {
       setCreatingTask(true);
 
       const highestId = tasks.reduce((acc, task) => {
-        const taskId = parseInt(task.id.replace("task", ""), 10);
+        const taskId = Number.parseInt(task.id.replace("task", ""), 10);
         return taskId > acc ? taskId : acc;
       }, 0);
 
@@ -136,14 +136,14 @@ export default function Demo() {
   };
 
   return (
-    <div className={"mt-md"}>
+    <div className="mt-md">
       <DndContext
         sensors={sensors}
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         onDragOver={onDragOver}
       >
-        <div className={"flex gap-sm"}>
+        <div className="flex gap-sm">
           <SortableContext items={columnsId}>
             {columns.map((column) => (
               <ColumnContainer

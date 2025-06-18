@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from "react";
-import { SnackbarCloseReason } from "@mui/material";
+import { SnackbarCloseReason } from "@mui/material/Snackbar";
 import {
   HvButton,
   HvDropdown,

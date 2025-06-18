@@ -1,4 +1,4 @@
-import { type HvColor } from "@hitachivantara/uikit-styles";
+import type { HvColor } from "@hitachivantara/uikit-styles";
 
 import { IconBase, IconBaseProps } from "./IconBase";
 import { isSelector, isSort } from "./utils";
