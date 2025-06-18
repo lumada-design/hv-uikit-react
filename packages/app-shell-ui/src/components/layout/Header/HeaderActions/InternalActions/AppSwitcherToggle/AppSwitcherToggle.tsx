@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
-import { ClickAwayListener } from "@mui/material";
+import { ClickAwayListener } from "@mui/base";
 import {
   CONFIG_TRANSLATIONS_NAMESPACE,
   HvAppShellAppSwitcherConfig,

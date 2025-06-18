@@ -1,5 +1,6 @@
 import { forwardRef, useCallback, useEffect, useState } from "react";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   clamp,
   useDefaultProps,

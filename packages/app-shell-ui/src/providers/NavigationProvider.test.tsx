@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useMediaQuery } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Mock, vi } from "vitest";
@@ -8,11 +8,11 @@ import { LOCAL_STORAGE_KEYS } from "../hooks/useLocalStorage";
 import renderTestProvider from "../tests/testUtils";
 import { NavigationContext } from "./NavigationProvider";
 
-vi.mock("@mui/material", async () => {
-  const mod = await vi.importActual("@mui/material");
+vi.mock("@mui/material/useMediaQuery", async () => {
+  const mod = await vi.importActual("@mui/material/useMediaQuery");
   return {
     ...(mod as object),
-    useMediaQuery: vi.fn().mockReturnValue(false),
+    default: vi.fn().mockReturnValue(false),
   };
 });
 

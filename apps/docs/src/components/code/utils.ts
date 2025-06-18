@@ -10,6 +10,7 @@ import * as DndKitSortable from "@dnd-kit/sortable";
 import * as DndKitUtilities from "@dnd-kit/utilities";
 import * as emotionCss from "@emotion/css";
 import * as hookFormZod from "@hookform/resolvers/zod";
+// oxlint-disable-next-line no-restricted-imports
 import * as materialUi from "@mui/material";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
