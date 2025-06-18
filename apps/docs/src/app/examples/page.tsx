@@ -1,16 +1,17 @@
-import canvas from "!!raw-loader!../content/examples/canvas.mdx";
-import charts from "!!raw-loader!../content/examples/charts.mdx";
-import dnd from "!!raw-loader!../content/examples/dnd.mdx";
-import inputs from "!!raw-loader!../content/examples/inputs.mdx";
-import kpis from "!!raw-loader!../content/examples/kpis.mdx";
-import login from "!!raw-loader!../content/examples/login.mdx";
-import tables from "!!raw-loader!../content/examples/tables.mdx";
 import { clsx } from "clsx";
 import Link from "next/link";
 import {
   HvIconContainer,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
+
+import canvas from "./canvas/page.tsx?raw";
+import charts from "./charts/page.mdx?raw";
+import dnd from "./dnd/page.mdx?raw";
+import inputs from "./inputs/page.mdx?raw";
+import kpis from "./kpis/page.mdx?raw";
+import login from "./login/page.mdx?raw";
+import tables from "./tables/page.mdx?raw";
 
 /**
  * Extracts the number of CodeBlock components in the given file content.
@@ -58,7 +59,7 @@ const getSectionIcon = (title: Slug) => {
  * The `Examples` component displays a collection of categorized sections
  * with details about the number of components in each category.
  */
-export const Examples = () => {
+export default function ExamplesPage() {
   return (
     <div className="max-w-6xl mx-auto px-sm md:px-md py-lg md:py-xl">
       {/* Page Header */}
@@ -120,4 +121,4 @@ export const Examples = () => {
       </div>
     </div>
   );
-};
+}

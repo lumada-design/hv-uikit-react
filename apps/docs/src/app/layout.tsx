@@ -23,16 +23,11 @@ export const metadata = {
   applicationName: title,
   appleWebApp: { title },
   openGraph: {
-    url: "@site",
+    url: "/",
     siteName: title,
     title,
     description,
     type: "website",
-  },
-  twitter: {
-    site: "@site",
-    creator: "@creator",
-    card: "summary",
   },
 } satisfies NextraMetadata;
 
