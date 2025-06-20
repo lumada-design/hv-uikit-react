@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.96.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.1...@hitachivantara/uikit-react-core@5.96.2) (2025-06-20)
+
+### Bug Fixes
+
+- **TagsInput:** input styles ([#4783](https://github.com/lumada-design/hv-uikit-react/issues/4783)) ([cec88fb](https://github.com/lumada-design/hv-uikit-react/commit/cec88fbadc137c991d6826ec6b93ef8772a5f569))
+
 ## [5.96.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.0...@hitachivantara/uikit-react-core@5.96.1) (2025-06-13)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
