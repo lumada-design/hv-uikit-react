@@ -18,6 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+        with:
+          install: false
+
       - name: Run Dependency Check Scans
         uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
@@ -26,7 +31,7 @@ jobs:
           format: "XML"
 
       - name: Upload Reports to CodeDX
-        run: .github/scripts/codedx-upload.sh
+        run: .github/scripts/codedx-upload.js
         env:
           CODE_DX_URL: "${{ secrets.CODE_DX_URL }}"
           CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
@@ -113,32 +118,3 @@ jobs:
           BlackDuck_Api_Token: "${{ secrets.BLACKDUCK_TOKEN }}"
           BlackDuck_Url: "${{ secrets.BLACKDUCK_URL }}"
           ADDITIONAL_ARGS: "${{ env.BLACKDUCK_ARGS }}"
-
-  notify-fail:
-    name: Notify Fail
-    needs: [codedx-scans, citadel-scan, black-duck-scans]
-    if: failure()
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: technote-space/workflow-conclusion-action@v1
-
-      - name: Notify Fail
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
-          COLOR: "#C62828"
-        with:
-          args: |
-            {
-              "channel": "ui-kit-internal",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "color": "${{env.COLOR}}",
-                  "title": "Security Scans failed",
-                  "title_link": "${{ env.RUN_URL }}"
-                }
-              ]
-            }
