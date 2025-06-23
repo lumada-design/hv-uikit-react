@@ -55,6 +55,9 @@ jobs:
   black-duck-scans:
     name: Run Black Duck Scans
     runs-on: [self-hosted, Linux]
+    # disable for now, as `citadel-scan` scan _covers_ this workflow
+    if: false
+
     strategy:
       fail-fast: false
       matrix:
@@ -89,7 +92,8 @@ jobs:
       # To do this we need to remove the package.json and package-lock.json from the root
       - run: |
           rm -rf node_modules package.json package-lock.json
-          cd packages/${{ matrix.PACKAGE }} && npm i
+          cd packages/${{ matrix.PACKAGE }}
+          npm i --legacy-peer-deps
 
       - name: Load BlackDuck variables
         run: |
