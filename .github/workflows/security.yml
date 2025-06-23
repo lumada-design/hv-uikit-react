@@ -26,7 +26,7 @@ jobs:
           format: "XML"
 
       - name: Upload Reports to CodeDX
-        run: .github/scripts/codedx-upload.sh
+        run: .github/scripts/codedx-upload.js
         env:
           CODE_DX_URL: "${{ secrets.CODE_DX_URL }}"
           CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
