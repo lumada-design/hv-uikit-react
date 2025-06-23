@@ -18,6 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Dependencies
+        uses: ./.github/actions/install-dependencies
+        with:
+          install: false
+
       - name: Run Dependency Check Scans
         uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
@@ -26,7 +31,7 @@ jobs:
           format: "XML"
 
       - name: Upload Reports to CodeDX
-        run: .github/scripts/codedx-upload.sh
+        run: .github/scripts/codedx-upload.js
         env:
           CODE_DX_URL: "${{ secrets.CODE_DX_URL }}"
           CODE_DX_API_KEY: ${{ secrets.CODE_DX_API_KEY }}
@@ -89,7 +94,8 @@ jobs:
       # To do this we need to remove the package.json and package-lock.json from the root
       - run: |
           rm -rf node_modules package.json package-lock.json
-          cd packages/${{ matrix.PACKAGE }} && npm i
+          cd packages/${{ matrix.PACKAGE }}
+          npm i --legacy-peer-deps
 
       - name: Load BlackDuck variables
         run: |
