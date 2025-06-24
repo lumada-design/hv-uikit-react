@@ -10,10 +10,10 @@ import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import {
   computeValidationMessage,
   computeValidationState,
-  computeValidationType,
   DEFAULT_ERROR_MESSAGES,
   hasBuiltInValidations,
   HvInputValidity,
+  HvValidationMessages,
   validateInput,
 } from "../BaseInput/validations";
 import type { HvButtonBaseProps } from "../ButtonBase";
@@ -50,18 +50,7 @@ export { staticClasses as inputClasses };
 
 export type HvInputClasses = ExtractNames<typeof useClasses>;
 
-export interface HvValidationMessages {
-  /** The value when a validation fails. */
-  error?: string;
-  /** The message that appears when there are too many characters. */
-  maxCharError?: string;
-  /** The message that appears when there are too few characters. */
-  minCharError?: string;
-  /** The message that appears when the input is empty and required. */
-  requiredError?: string;
-  /** The message that appears when the input is value is incompatible with the expected type. */
-  typeMismatchError?: string;
-}
+export type { HvValidationMessages };
 
 export interface HvInputSuggestion {
   id: string;
@@ -294,7 +283,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
   // validationMessages reference tends to change, as users will not memoize/useState for it;
   // dependencies must be more explicit so we set
-  const errorMessages = useMemo(
+  const errorMessages = useMemo<HvValidationMessages>(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [
@@ -306,8 +295,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     ],
   );
 
-  const validationType = useMemo(() => computeValidationType(type), [type]);
-
   // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
   // and returns the validity state of the input.
   const performValidation = useCallback(() => {
@@ -316,7 +303,6 @@ export const HvInput = fixedForwardRef(function HvInput<
       required,
       minCharQuantity,
       maxCharQuantity,
-      validationType,
       validation,
     );
 
@@ -325,7 +311,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
     // This will only run if statusMessage is uncontrolled
     setValidationMessage(
-      computeValidationMessage(inputValidity, errorMessages),
+      computeValidationMessage(inputValidity, errorMessages) || "",
     );
 
     return inputValidity;
@@ -338,7 +324,6 @@ export const HvInput = fixedForwardRef(function HvInput<
     setValidationMessage,
     setValidationState,
     validation,
-    validationType,
   ]);
 
   // The error message area will only be created if:
@@ -351,7 +336,7 @@ export const HvInput = fixedForwardRef(function HvInput<
       (status === undefined &&
         hasBuiltInValidations(
           required,
-          validationType,
+          type,
           minCharQuantity,
           maxCharQuantity,
           validation,
@@ -370,13 +355,8 @@ export const HvInput = fixedForwardRef(function HvInput<
       return revealPassword ? "text" : "password";
     }
 
-    if (type === "search") {
-      return "search";
-    }
-
-    if (type === "number") {
-      return "number";
-    }
+    // allowed input types
+    if (["search", "number", "email"].includes(type)) return type;
 
     return "text";
   }, [revealPassword, type]);

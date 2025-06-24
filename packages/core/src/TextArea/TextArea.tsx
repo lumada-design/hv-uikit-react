@@ -20,6 +20,7 @@ import {
   DEFAULT_ERROR_MESSAGES,
   hasBuiltInValidations,
   HvInputValidity,
+  HvValidationMessages,
   validateInput,
 } from "../BaseInput/validations";
 import {
@@ -35,7 +36,6 @@ import {
 import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useControlled } from "../hooks/useControlled";
 import { useUniqueId } from "../hooks/useUniqueId";
-import type { HvValidationMessages } from "../Input";
 import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./TextArea.styles";
 
@@ -243,7 +243,7 @@ export const HvTextArea = forwardRef<
 
   // ValidationMessages reference tends to change, as users will not memorize/useState for it;
   // Dependencies must be more explicit so we set
-  const errorMessages = useMemo(
+  const errorMessages = useMemo<HvValidationMessages>(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
     [validationMessages],
   );
@@ -256,7 +256,6 @@ export const HvTextArea = forwardRef<
       required,
       minCharQuantity,
       maxCharQuantity,
-      "none",
       validation,
     );
 
@@ -265,7 +264,7 @@ export const HvTextArea = forwardRef<
 
     // This will only run if statusMessage is uncontrolled
     setValidationMessage(
-      computeValidationMessage(inputValidity, errorMessages),
+      computeValidationMessage(inputValidity, errorMessages) || "",
     );
 
     return inputValidity;
@@ -392,7 +391,7 @@ export const HvTextArea = forwardRef<
       (status === undefined &&
         hasBuiltInValidations(
           required,
-          "none",
+          "text",
           minCharQuantity,
           // If blockMax is true maxCharQuantity will never produce an error
           // unless the value is controlled, so we can't prevent it to overflow maxCharQuantity

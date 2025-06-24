@@ -59,7 +59,7 @@ export default function Demo() {
   label="Greeting"
   description="You must input `hello`"
   placeholder="Insert `hello`"
-  // validation
+  required
   showValidationIcon
   minCharQuantity={2}
   maxCharQuantity={10}
@@ -68,7 +68,7 @@ export default function Demo() {
     maxCharError: "The value is too long",
     minCharError: "The value is too short",
     requiredError: "A value is required",
-    error: "You didn't write 'hello'", // default error message
+    error: "Value must contain 'hello'", // default error message
   }}
   onBlur={(event, value, validationState) => {
     console.log(value, validationState);

@@ -162,6 +162,26 @@ describe("Input", () => {
     expect(capturedValue).toBe(defaultValue);
   });
 
+  it("validates email input", async () => {
+    const user = userEvent.setup();
+    render(
+      <HvInput
+        type="email"
+        label="Email"
+        validationMessages={{ error: "Invalid EMAIL" }}
+      />,
+    );
+
+    const input = screen.getByRole("textbox", { name: "Email" });
+    await user.type(input, "user");
+    await user.click(document.body); // blur
+    expect(input).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByText("Invalid EMAIL")).toBeInTheDocument();
+
+    await user.type(input, "name@example.com");
+    expect(screen.queryByText("Invalid EMAIL")).toBeNull();
+  });
+
   it("resets the value when reset button is pressed", async () => {
     const initialValue = "John Doe";
     render(
