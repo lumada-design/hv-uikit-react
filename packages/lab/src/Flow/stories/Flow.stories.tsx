@@ -21,8 +21,6 @@ import { DynamicHandles as DynamicHandlesStory } from "./DynamicHandles";
 import DynamicHandlesRaw from "./DynamicHandles?raw";
 import { InitialState as InitialStateStory } from "./InitialState";
 import InitialStateRaw from "./InitialState?raw";
-import { Invalid as InvalidStory } from "./Invalid";
-import InvalidRaw from "./Invalid?raw";
 import { Main as MainStory } from "./Main";
 import MainRaw from "./Main?raw";
 import { NoGroups as NoGroupStory } from "./NoGroups";
@@ -165,21 +163,6 @@ export const DynamicHandles: StoryObj<HvFlowProps> = {
     },
   },
   render: () => <DynamicHandlesStory />,
-};
-
-export const InvalidFlow: StoryObj<HvFlowProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "This sample illustrates how to handle an invalid flow and show an error message.",
-      },
-      source: {
-        code: InvalidRaw,
-      },
-    },
-  },
-  render: () => <InvalidStory />,
 };
 
 export const BaseHook: StoryObj<HvFlowProps> = {
