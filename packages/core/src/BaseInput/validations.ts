@@ -1,33 +1,9 @@
-import { InputBaseComponentProps } from "@mui/material/InputBase";
+import type { InputBaseComponentProps } from "@mui/material/InputBase";
 
-import { HvFormStatus } from "../FormElement";
+import type { HvFormStatus } from "../FormElement";
 
-/** Checks if the value is a number. */
-const isNumeric = (num: string) =>
-  // to prevent Number( <spaces> ) = 0
-  num.trim().length > 0 && !Number.isNaN(Number(num));
-
-/** Checks if the value is an email */
-const isEmail = (email: string) => {
-  const regexp =
-    /^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?[.])+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$/i;
-  return regexp.test(email);
-};
-
-type HvValidationType = "none" | "number" | "email";
-
-/** Returns the input's validation type based in the type of the input. */
-export const computeValidationType = (
-  type: React.HTMLInputTypeAttribute,
-): HvValidationType => {
-  switch (type) {
-    case "number":
-      return "number";
-    case "email":
-      return "email";
-    default:
-      return "none";
-  }
+const isTypeValidationIgnored = (type: React.HTMLInputTypeAttribute) => {
+  return type === "text" || type === "password";
 };
 
 /**
@@ -35,14 +11,14 @@ export const computeValidationType = (
  */
 export const hasBuiltInValidations = (
   required: boolean | undefined,
-  validationType: HvValidationType,
+  inputType: React.HTMLInputTypeAttribute,
   minCharQuantity: number | null | undefined,
   maxCharQuantity: number | null | undefined,
   validation?: (value: string) => boolean,
   inputProps?: InputBaseComponentProps,
 ) =>
   required ||
-  validationType !== "none" ||
+  !isTypeValidationIgnored(inputType) ||
   minCharQuantity != null ||
   maxCharQuantity != null ||
   validation != null ||
@@ -51,9 +27,7 @@ export const hasBuiltInValidations = (
   inputProps?.maxLength != null ||
   inputProps?.min != null ||
   inputProps?.max != null ||
-  (inputProps?.type != null &&
-    inputProps?.type !== "text" &&
-    inputProps?.type !== "password") ||
+  (inputProps?.type && !isTypeValidationIgnored(inputProps.type)) ||
   inputProps?.pattern != null;
 
 /** Returns the form element's validation state based in the validity state of the input. */
@@ -83,7 +57,7 @@ export const computeValidationState = (
 export const computeValidationMessage = (
   inputValidity: HvInputValidity,
   /** The available localized error messages. */
-  errorMessages: Record<string, string>,
+  errorMessages: HvValidationMessages,
 ) => {
   if (inputValidity.valid) {
     return "";
@@ -116,22 +90,12 @@ export const validateInput = (
   required: boolean | undefined,
   minCharQuantity: any,
   maxCharQuantity: any,
-  validationType: HvValidationType,
   validation?: (value: string) => boolean,
 ): HvInputValidity => {
   // bootstrap validity object using browser's built-in validation
   const inputValidity: HvInputValidity = {
+    ...input?.validity,
     valid: input?.validity?.valid ?? true,
-    badInput: input?.validity?.badInput,
-    customError: input?.validity?.customError,
-    patternMismatch: input?.validity?.patternMismatch,
-    rangeOverflow: input?.validity?.rangeOverflow,
-    rangeUnderflow: input?.validity?.rangeUnderflow,
-    stepMismatch: input?.validity?.stepMismatch,
-    tooLong: input?.validity?.tooLong,
-    tooShort: input?.validity?.tooShort,
-    typeMismatch: input?.validity?.typeMismatch,
-    valueMissing: input?.validity?.valueMissing,
   };
 
   const value = input?.value;
@@ -155,26 +119,6 @@ export const validateInput = (
       inputValidity.valid = false;
     }
 
-    // the validationType is used instead of type
-    // for the same reason stated above
-    switch (validationType) {
-      case "number":
-        if (!isNumeric(value)) {
-          inputValidity.typeMismatch = true;
-          inputValidity.valid = false;
-        }
-        break;
-
-      case "email":
-        if (!isEmail(value)) {
-          inputValidity.typeMismatch = true;
-          inputValidity.valid = false;
-        }
-        break;
-
-      default:
-    }
-
     if (validation != null && !validation(value)) {
       inputValidity.customError = true;
       inputValidity.valid = false;
@@ -189,9 +133,16 @@ type Mutable<T> = { -readonly [P in keyof T]: T[P] };
 export interface HvInputValidity extends Partial<Mutable<ValidityState>> {}
 
 export const DEFAULT_ERROR_MESSAGES = {
+  /** The value when a validation fails. */
   error: "Invalid value",
-  requiredError: "The value is required",
-  minCharError: "The value is too short",
+  /** The message that appears when there are too many characters. */
   maxCharError: "The value is too long",
+  /** The message that appears when there are too few characters. */
+  minCharError: "The value is too short",
+  /** The message that appears when the input is empty and required. */
+  requiredError: "The value is required",
+  /** The message that appears when the input is value is incompatible with the expected type. */
   typeMismatchError: "Invalid value",
 };
+
+export type HvValidationMessages = Partial<typeof DEFAULT_ERROR_MESSAGES>;

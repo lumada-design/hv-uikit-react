@@ -12,7 +12,10 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { DEFAULT_ERROR_MESSAGES } from "../BaseInput/validations";
+import {
+  DEFAULT_ERROR_MESSAGES,
+  HvValidationMessages,
+} from "../BaseInput/validations";
 import {
   HvCharCounter,
   HvCharCounterProps,
@@ -181,7 +184,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
     const canShowSuggestions = suggestionListCallback != null;
     const hasSuggestions = !!suggestionValues;
 
-    const errorMessages = useMemo(
+    const errorMessages = useMemo<HvValidationMessages>(
       () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
       [validationMessages],
     );
@@ -194,7 +197,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
           currValue.length > maxTagsQuantity
         ) {
           setValidationState("invalid");
-          setValidationMessage(errorMessages.maxCharError);
+          setValidationMessage(errorMessages.maxCharError || "");
           setStateValid(false);
         } else {
           setValidationState("valid");

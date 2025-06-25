@@ -47,6 +47,15 @@ export default function LoginFull() {
               type="password"
               label="Password"
               placeholder="Your password..."
+              minCharQuantity={8}
+              maxCharQuantity={48}
+              validation={(value) => /[^a-zA-Z0-9]/.test(value)}
+              validationMessages={{
+                requiredError: "Password is required",
+                minCharError: "Password must be at least 8 characters",
+                maxCharError: "Password must be at most 48 characters",
+                error: "Password must include a special character",
+              }}
             />
           </div>
           <div className="grid gap-sm">
