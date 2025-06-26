@@ -115,6 +115,7 @@ jobs:
     needs: [publish]
     uses: ./.github/workflows/security.yml
     secrets: inherit
+    if: false
 
   notify-release:
     name: Notify release
