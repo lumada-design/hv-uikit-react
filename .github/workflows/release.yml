@@ -110,13 +110,6 @@ jobs:
     with:
       publish-folder: ${{ github.ref_name }}
 
-  security-scans:
-    name: Security Scans
-    needs: [publish]
-    uses: ./.github/workflows/security.yml
-    secrets: inherit
-    if: false
-
   notify-release:
     name: Notify release
     runs-on: ubuntu-latest
