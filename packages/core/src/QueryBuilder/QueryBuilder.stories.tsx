@@ -6,7 +6,6 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { CustomRenderers as CustomRenderersStory } from "./stories/CustomRenderers";
-import { InitialQuery as InitialQueryStory } from "./stories/InitialQuery";
 import { Main as MainStory } from "./stories/Main";
 import { ReadOnly as ReadOnlyStory } from "./stories/ReadOnly";
 
@@ -35,19 +34,6 @@ export const Main: StoryObj<HvQueryBuilderProps> = {
   render: (args) => {
     return <MainStory {...args} />;
   },
-};
-
-export const InitialQuery: StoryObj<HvQueryBuilderProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Query builder that parses the query to Mongo. You can also control whether you want the confirmation dialogs, which are shown before removing rules and rule groups, to appear or not by clicking on the button at the top of the sample. This button controls the query builder's `disableConfirmation` property.",
-      },
-    },
-    ...setupChromatic(),
-  },
-  render: () => <InitialQueryStory />,
 };
 
 export const ReadOnly: StoryObj<HvQueryBuilderProps> = {

@@ -44,7 +44,7 @@ export default () => (
           label="Country"
           inputProps={{ autoComplete: "off" }}
           endAdornment={<Map />}
-          validation={(val) => !!countries.find((c) => c.label === val)}
+          validation={(val) => countries.some((c) => c.label === val)}
           validationMessages={{ error: "Invalid country" }}
           suggestionListCallback={(val) =>
             countries.filter((c) => c.label === val)

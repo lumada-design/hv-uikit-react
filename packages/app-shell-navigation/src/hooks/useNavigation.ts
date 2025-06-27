@@ -31,7 +31,7 @@ function getActiveViewRoute(
   depth?: number,
 ): string {
   return `/${activeViews
-    .map((view) => view.route.substring(1))
+    .map((view) => view.route.slice(1))
     .slice(0, depth ?? activeViews.length)
     .filter((route) => route !== "") // remove index routes
     .join("/")}`;
@@ -114,7 +114,7 @@ export const useHvNavigation = () => {
       // local navigation
       if (bundleWithReplacedPlaceholders.startsWith("/")) {
         appId = viewContext?.id;
-        bundle = bundleWithReplacedPlaceholders.substring(1);
+        bundle = bundleWithReplacedPlaceholders.slice(1);
       } else {
         bundle = bundleWithReplacedPlaceholders;
       }

@@ -9,7 +9,7 @@ export const extractFontsNames = (webfontLink: string): string[] => {
     return fontNames;
   }
 
-  const query = webfontLink.substring(queryIndex + 1);
+  const query = webfontLink.slice(queryIndex + 1);
   const params = new URLSearchParams(query);
 
   params.forEach((value, key) => {

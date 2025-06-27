@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./node_modules/@hitachivantara/uikit-config/oxlint/strict.json"],
+  "rules": {
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": ["arrow-function", "function-declaration"],
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@hitachivantara/*/*"],
+        "paths": [
+          "..",
+          "../..",
+          {
+            "name": "react",
+            "importNames": ["default"],
+            "message": "React namespace import not allowed"
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.tsx",
+        "**/stories/**/*",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "apps/*/src/**/*",
+        "**/test/**/*",
+        "**/templates/**/*.tsx"
+      ],
+      "rules": {
+        "no-alert": "off",
+        "no-console": "off",
+        "import/default": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off"
+      }
+    },
+    {
+      "files": ["packages/cli/src/**/*"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

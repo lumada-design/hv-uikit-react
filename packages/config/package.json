@@ -23,8 +23,9 @@
   },
   "scripts": {},
   "exports": {
-    "./prettier": "./.prettierrc.json",
     "./licenses": "./licenses/index.js",
+    "./oxlint/*": "./oxlint/*",
+    "./prettier": "./.prettierrc.json",
     "./tsconfig": "./tsconfig.json"
   },
   "peerDependencies": {

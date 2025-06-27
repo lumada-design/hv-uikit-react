@@ -1,7 +1,7 @@
+// eslint-disable no-restricted-imports,no-underscore-dangle
 import React from "react";
 
 export default React;
-/* eslint no-underscore-dangle: "off" */
 export const __esmModule = true;
 export const {
   Fragment,
