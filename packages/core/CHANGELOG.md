@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.96.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.2...@hitachivantara/uikit-react-core@5.96.3) (2025-06-27)
+
+### Bug Fixes
+
+- **Input:** built-in email validation ([#4789](https://github.com/lumada-design/hv-uikit-react/issues/4789)) ([07f8d6a](https://github.com/lumada-design/hv-uikit-react/commit/07f8d6a0bb788aa1e76ca3ee1d61e669bd68edbc))
+
 ## [5.96.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.1...@hitachivantara/uikit-react-core@5.96.2) (2025-06-20)
 
 ### Bug Fixes
