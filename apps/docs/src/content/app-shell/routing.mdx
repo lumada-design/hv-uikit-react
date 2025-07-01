@@ -1,12 +1,10 @@
-import { Callout } from "nextra/components";
-
 # Routing
 
 A _View_ is a React Component exported as an ES module. It is the main building block of any _Product_ and are most commonly known as _pages_.
 
-<Callout type="warning">
-  The component to be rendered must be the **default export** of the module.
-</Callout>
+> [!WARNING]
+>
+> The component to be rendered must be the **default export** of the module.
 
 A Route is a mapping between a URL and a _View_, and it is used to define the navigation tree of a _Product_. The **App Shell** is responsible for loading the _View_ and rendering it at the correct moment and place. On the main panel, it does it according to the active location route.
 
@@ -49,11 +47,11 @@ Routes can contain parameters (the same parameters that react-router supports). 
 
 Nested _Views_ allows coupling segments of the URL to the component hierarchy, nesting layouts. It leverages react-router's [nested routes](https://reactrouter.com/en/main/start/overview#nested-routes) feature.
 
-<Callout type="info">
-  Nested _Views_ are not supported by the file-based routing feature and must be
-  declared manually in the **App Shell** configuration file. The automatic and
-  manual definition of _Views_ will be merged.
-</Callout>
+> [!WARNING]
+>
+> Nested _Views_ are not supported by the file-based routing feature and must be
+> declared manually in the **App Shell** configuration file. The automatic and
+> manual definition of _Views_ will be merged.
 
 Example:
 
