@@ -12,12 +12,30 @@ npm i -D prettier@3 @hitachivantara/uikit-config
 
 ## Usage
 
-Extend the configurations in `package.json` or the config file.
+Extend the configurations in `package.json` or the corresponding config file.
 
-Example for prettier ([Prettier configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations)):
+### Prettier
+
+Example [Prettier configuration](https://prettier.io/docs/en/configuration.html#sharing-configurations) in `package.json`:
 
 ```json
 {
   "prettier": "@hitachivantara/uikit-config/prettier"
+}
+```
+
+### TSConfig
+
+```json
+{
+  "extends": "@hitachivantara/uikit-config/tsconfig"
+}
+```
+
+### oxlint
+
+```json
+{
+  "extends": ["./node_modules/@hitachivantara/uikit-config/oxlint/strict.json"]
 }
 ```
