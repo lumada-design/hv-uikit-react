@@ -48,6 +48,15 @@ header {
   @apply mb-sm;
 }
 
+.nextra-callout {
+  & b {
+    display: none;
+  }
+  & p {
+    margin-top: 0;
+  }
+}
+
 .nextra-code {
   @apply !my-0;
 }

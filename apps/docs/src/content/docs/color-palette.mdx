@@ -1,5 +1,3 @@
-import { Callout } from "nextra/components";
-
 import { ColorPalette } from "../../components/color/ColorPalette";
 
 # Color Palette
@@ -7,11 +5,11 @@ import { ColorPalette } from "../../components/color/ColorPalette";
 The **UI Kit color palette** is designed to provide consistent visual language for **data-rich** enterprise applications.
 Each color spans from **50** (lightest) to **950** (darkest), offering flexibility and accessibility across **light and dark modes**.
 
-<Callout type="warning">
-  Avoid using raw palette values directly in your code. Use **color tokens**
-  instead (e.g. `theme.colors.primary`) to ensure visual consistency, theme
-  support, and accessibility across the system.
-</Callout>
+> [!WARNING]
+>
+> Avoid using raw palette values directly in your code. Use **color tokens**
+> instead (e.g. `theme.colors.primary`) to ensure visual consistency, theme
+> support, and accessibility across the system.
 
 If needed (e.g. for data visualizations or custom elements), you can access palette values via the `theme.palette` object:
 
