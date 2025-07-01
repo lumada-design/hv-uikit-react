@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvPanel } from "../../Panel";
 import { HvTypography } from "../../Typography";

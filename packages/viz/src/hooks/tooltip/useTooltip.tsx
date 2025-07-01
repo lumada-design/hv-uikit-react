@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { type ExtractNames } from "@hitachivantara/uikit-react-utils";
+import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvChartTooltip, HvChartTooltipParams } from "../../types";
 import { HvEChartsOption } from "../../types/common";
@@ -12,7 +12,7 @@ export type HvChartTooltipClasses = ExtractNames<typeof useClasses>;
 interface EChartsTooltipParams {
   seriesName: string;
   value: (string | number)[];
-  encode: { [key: string]: number[] };
+  encode: Record<string, number[]>;
   color: string;
   dimensionNames: string[];
   name: string;

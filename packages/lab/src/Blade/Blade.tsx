@@ -197,6 +197,7 @@ export const HvBlade = (props: HvBladeProps) => {
       <HvTypography
         id={bladeHeaderId}
         component="div"
+        // eslint-disable-next-line prefer-tag-over-role
         role="button"
         className={cx(classes.button, {
           [classes.disabled]: disabled,

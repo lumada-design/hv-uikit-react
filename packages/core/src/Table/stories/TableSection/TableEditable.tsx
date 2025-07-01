@@ -859,7 +859,7 @@ export const TableEditable = () => {
           }}
           onRowAdd={async (row) => {
             await mutateData("add", [
-              { ...row, id: new Date().valueOf().toString() } as AssetEvent,
+              { ...row, id: Date.now().toString() } as AssetEvent,
             ]);
           }}
           onRowUpdate={async (row) => {

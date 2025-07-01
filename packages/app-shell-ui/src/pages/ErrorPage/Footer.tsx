@@ -44,7 +44,7 @@ export const Footer = () => {
       resetBoundary();
       let path = firstMenuItem.href;
       if (path.startsWith(".")) {
-        path = path.substring(1);
+        path = path.slice(1);
       }
       navigate(path);
     }

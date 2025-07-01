@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as reactHookForm from "react-hook-form";
@@ -128,12 +129,10 @@ export const resolveComponents = (
 export const resolveImports = (
   code: Record<string, string> | string,
 ): Scope => {
-  if (typeof code === "string") {
-    return defaultScope;
-  } else {
-    const additionalFiles = excludePrimaryFile(code);
-    return extendScopeWithFiles(defaultScope, additionalFiles);
-  }
+  if (typeof code === "string") return defaultScope;
+
+  const additionalFiles = excludePrimaryFile(code);
+  return extendScopeWithFiles(defaultScope, additionalFiles);
 };
 
 /**

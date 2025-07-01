@@ -10,7 +10,7 @@ export const ActiveUsers = () => {
     <HvCard
       statusColor="positive"
       bgcolor="bgContainer"
-      className={"dark:!outline-border"}
+      className="dark:!outline-border"
     >
       <HvCardContent className="grid gap-sm pb-xs!">
         <div className="flex items-center gap-xxs">

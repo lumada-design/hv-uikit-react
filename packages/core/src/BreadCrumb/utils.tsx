@@ -3,7 +3,7 @@ import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 
 export const removeExtension = (label: string) =>
-  label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
+  label.includes(".") ? label.slice(0, label.lastIndexOf(".")) : label;
 
 export const pathWithSubMenu = (
   id: string | undefined,

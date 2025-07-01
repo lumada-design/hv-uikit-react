@@ -217,13 +217,13 @@ export const HvCanvasToolbarTabs = forwardRef<
           visibleTabs: [
             ...tabs.slice(0, excludedTabIndex),
             temporaryHiddenTabs[selectedTabHiddenIndex],
-          ].filter((tab) => tab),
+          ].filter(Boolean),
           hiddenTabs: [
             tabs[excludedTabIndex],
             ...temporaryHiddenTabs.filter(
               (tab, i) => i !== selectedTabHiddenIndex,
             ),
-          ].filter((tab) => tab),
+          ].filter(Boolean),
         };
       }
 

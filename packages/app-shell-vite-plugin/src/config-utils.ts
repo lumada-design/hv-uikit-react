@@ -116,7 +116,7 @@ export function startsWithSelf(value: string) {
   return value.startsWith("@self/");
 }
 
-export function replaceSelf(value: string, replaceWith: string = "") {
+export function replaceSelf(value: string, replaceWith = "") {
   return value.replace(/^@self\//, replaceWith);
 }
 

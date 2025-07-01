@@ -89,7 +89,7 @@ function fetchData(id: string) {
 
       resolve({
         title: `Title ${id}`,
-        value: parseInt(id.repeat(6), 8) % 10 ** 5,
+        value: Number.parseInt(id.repeat(6), 8) % 10 ** 5,
         unit: "GB",
       });
     }, 4000);

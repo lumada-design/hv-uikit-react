@@ -260,8 +260,7 @@ function reducer(state: any, action: any, previousState: any, instance: any) {
       ? initialRowsById
       : nonGroupedRowsById;
 
-    const selectAll =
-      typeof setSelected !== "undefined" ? setSelected : !isAllRowsSelected;
+    const selectAll = setSelected ?? !isAllRowsSelected;
 
     // Only remove/add the rows that are visible on the screen
     //  Leave all the other rows that are selected alone.
@@ -298,8 +297,7 @@ function reducer(state: any, action: any, previousState: any, instance: any) {
 
     const { rowsById, selectSubRows = true, getSubRows } = instance;
     const isSelected = state.selectedRowIds[id];
-    const shouldExist =
-      typeof setSelected !== "undefined" ? setSelected : !isSelected;
+    const shouldExist = setSelected ?? !isSelected;
 
     if (isSelected === shouldExist) {
       return state;
@@ -343,8 +341,7 @@ function reducer(state: any, action: any, previousState: any, instance: any) {
       getSubRows,
     } = instance;
 
-    const selectAll =
-      typeof setSelected !== "undefined" ? setSelected : !isAllPageRowsSelected;
+    const selectAll = setSelected ?? !isAllPageRowsSelected;
     const newSelectedRowIds = { ...state.selectedRowIds };
 
     const handleRowById = (rowId: any) => {
@@ -385,10 +382,7 @@ function reducer(state: any, action: any, previousState: any, instance: any) {
     const { id, value: setLockedSelection } = action;
     const { rowsById, selectSubRows = true, getSubRows } = instance;
     const isLockedSelection = state.lockedSelectionRowIds[id];
-    const shouldExist =
-      typeof setLockedSelection !== "undefined"
-        ? setLockedSelection
-        : !isLockedSelection;
+    const shouldExist = setLockedSelection ?? !isLockedSelection;
 
     if (isLockedSelection === shouldExist) {
       return state;

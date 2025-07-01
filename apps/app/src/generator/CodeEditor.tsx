@@ -61,10 +61,7 @@ const CodeEditor = ({
   const codeChangedHandler = (code?: string) => {
     if (!code) return;
 
-    const snippet = code.substring(
-      code.indexOf("({") + 1,
-      code.indexOf("});") + 1,
-    );
+    const snippet = code.slice(code.indexOf("({") + 1, code.indexOf("});") + 1);
 
     try {
       const parsed = JSON5.parse(snippet);

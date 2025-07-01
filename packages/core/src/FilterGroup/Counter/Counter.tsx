@@ -46,7 +46,7 @@ export const HvFilterGroupCounter = (props: HvFilterGroupCounterProps) => {
   } = useContext(HvFilterGroupContext);
 
   const options =
-    groupId && filterOptions.find((option) => option.id === groupId)
+    groupId && filterOptions.some((option) => option.id === groupId)
       ? [filterOptions.find((option) => option.id === groupId)!]
       : filterOptions;
   const optionIdx = filterOptions.findIndex((option) => option.id === groupId);

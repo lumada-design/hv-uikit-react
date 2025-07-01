@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/tags/oxlint_v1.1.0/npm/oxlint/configuration_schema.json",
+  "extends": ["./base.json", "./default.json"],
+  "rules": {
+    // #region Pedantic
+    "eslint/eqeqeq": ["error", "always", { "null": "ignore" }],
+    "eslint/max-depth": ["error", { "max": 4 }],
+    "eslint/no-array-constructor": "error",
+    "eslint/no-else-return": "error",
+    "eslint/no-fallthrough": "error",
+    "eslint/no-inner-declarations": "error",
+    "eslint/no-lonely-if": "error",
+    "eslint/no-new-wrappers": "error",
+    "eslint/no-object-constructor": "error",
+    "eslint/no-redeclare": "error",
+    "eslint/no-self-compare": "error",
+    "react/rules-of-hooks": "error",
+    "unicorn/no-instanceof-array": "error",
+    "unicorn/no-static-only-class": "error",
+    "unicorn/no-typeof-undefined": "error",
+    "unicorn/no-unnecessary-slice-end": "error",
+    "unicorn/prefer-array-some": "warn",
+    "unicorn/prefer-date-now": "error",
+    "unicorn/prefer-event-target": "error",
+    "unicorn/prefer-math-min-max": "error",
+    "unicorn/prefer-native-coercion-functions": "error",
+    "unicorn/prefer-string-slice": "warn",
+    // #endregion
+
+    // #region Style
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "never" }
+    ],
+    "react/self-closing-comp": "error",
+    "typescript/consistent-indexed-object-style": "error",
+    "typescript/no-inferrable-types": "error"
+    // #endregion
+  }
+}

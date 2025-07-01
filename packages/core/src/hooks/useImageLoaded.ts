@@ -4,9 +4,7 @@ export const useImageLoaded = (src?: string, srcSet?: string) => {
   const [imageLoaded, setImageLoaded] = useState<boolean | string>(false);
 
   useEffect(() => {
-    if (!src && !srcSet) {
-      return undefined;
-    }
+    if (!src && !srcSet) return;
 
     setImageLoaded(false);
 
@@ -14,17 +12,14 @@ export const useImageLoaded = (src?: string, srcSet?: string) => {
     const image = new Image();
     image.src = src || "";
     image.srcset = srcSet || "";
+    // oxlint-disable prefer-add-event-listener
     image.onload = () => {
-      if (!active) {
-        return;
-      }
+      if (!active) return;
 
       setImageLoaded("loaded");
     };
     image.onerror = () => {
-      if (!active) {
-        return;
-      }
+      if (!active) return;
 
       setImageLoaded("error");
     };

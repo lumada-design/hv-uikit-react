@@ -96,11 +96,11 @@ const getLastOpenedTag = (content: string, closed = false) => {
   for (let i = tags.length - 1; i >= 0; i--) {
     if (tags[i].indexOf("</") === 0) {
       // It's a closing tag since it's beginning with "</"
-      closingTags.push(tags[i].substring("</".length));
+      closingTags.push(tags[i].slice("</".length));
     } else {
       // Get the last position of the tag
       const tagPosition = content.lastIndexOf(tags[i]);
-      const tag = tags[i].substring("<".length);
+      const tag = tags[i].slice("<".length);
 
       // Looking if it's self closing
       const closingBracketIdx = content.indexOf("/>", tagPosition);
@@ -112,10 +112,9 @@ const getLastOpenedTag = (content: string, closed = false) => {
           closingTags[closingTags.length - 1] !== tag
         ) {
           // Last open tag found
-          content = content.substring(tagPosition);
+          content = content.slice(tagPosition);
           const opened = content.indexOf(">") === -1;
-          if (!closed) return opened ? tag : undefined;
-          return opened ? undefined : tag;
+          return closed ? (opened ? undefined : tag) : opened ? tag : undefined;
         }
 
         // Remove the last closed tag since it
@@ -123,7 +122,7 @@ const getLastOpenedTag = (content: string, closed = false) => {
       }
 
       // Remove the last closed tag and continue processing the rest of the content
-      content = content.substring(0, tagPosition);
+      content = content.slice(0, tagPosition);
     }
   }
   return undefined;
