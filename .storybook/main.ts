@@ -12,10 +12,7 @@ export default {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  stories: [
-    "../packages/*/src/**/*.mdx",
-    "../packages/*/src/**/*.stories.@(ts|tsx)",
-  ],
+  stories: ["../packages/*/src/**/*.stories.tsx"],
   core: {
     disableTelemetry: true,
   },
@@ -25,6 +22,7 @@ export default {
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-themes"),
+    getAbsolutePath("@storybook/addon-vitest"),
     `${__dirname}/addons/version-selector`,
     `${__dirname}/addons/mode-selector`,
   ],
@@ -49,7 +47,11 @@ export default {
   build: {
     test: {
       // https://storybook.js.org/docs/api/main-config-build#testdisableblocks
-      disableBlocks: false,
+      disableBlocks: true,
+      disableAutoDocs: true,
+      disableMDXEntries: true,
+      disableDocgen: true,
+      disableSourcemaps: true,
     },
   },
 } as StorybookConfig;

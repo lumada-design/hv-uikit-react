@@ -12,6 +12,19 @@ export default {
   component: HvSelect,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvOption, HvOptionGroup },
+  parameters: {
+    a11y: {
+      options: {
+        rules: {
+          // Axe isn't (incorrectly) identifying the ul <-> li hierarchy
+          list: { enabled: false },
+          listitem: { enabled: false },
+          "aria-required-parent": { enabled: false },
+          "aria-required-children": { enabled: false },
+        },
+      },
+    },
+  },
 } satisfies Meta<typeof HvSelect>;
 
 export const Main: StoryObj<HvSelectProps<{}, false>> = {
@@ -21,20 +34,6 @@ export const Main: StoryObj<HvSelectProps<{}, false>> = {
     variant: "secondarySubtle",
   },
   decorators: [(Story) => <div className="w-300px min-h-300px">{Story()}</div>],
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // Axe isn't (incorrectly) identifying the ul <-> li hierarchy
-          // on HvSelect with grouping (HvOptionGroup)
-          { id: "list", enabled: false },
-          { id: "listitem", enabled: false },
-          { id: "aria-required-parent", enabled: false },
-          { id: "aria-required-children", enabled: false },
-        ],
-      },
-    },
-  },
   // For a11y
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -115,20 +114,6 @@ export const Variants: StoryObj<HvSelectProps<{}, false>> = {
 };
 
 export const Test: StoryObj<HvSelectProps<{}, false>> = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // Axe isn't (incorrectly) identifying the ul <-> li hierarchy
-          // on HvSelect with grouping (HvOptionGroup)
-          { id: "list", enabled: false },
-          { id: "listitem", enabled: false },
-          { id: "aria-required-parent", enabled: false },
-          { id: "aria-required-children", enabled: false },
-        ],
-      },
-    },
-  },
   render: () => (
     <>
       <HvSelect disabled label="Disabled" placeholder="Select an option">
