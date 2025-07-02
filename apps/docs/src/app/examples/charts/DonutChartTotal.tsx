@@ -9,13 +9,7 @@ export default function Demo() {
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "100%",
-        width: "100%",
-      }}
-    >
+    <div className="relative size-full">
       <HvDonutChart
         height={300}
         data={data}
@@ -28,18 +22,7 @@ export default function Demo() {
           },
         }}
       />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
+      <div className="grid place-items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <Ticket size="M" />
         <HvTypography variant="title3">
           {data["Tickets Sold"].reduce((acc, value) => acc + value, 0)}

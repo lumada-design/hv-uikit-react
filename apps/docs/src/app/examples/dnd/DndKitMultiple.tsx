@@ -3,15 +3,12 @@ import {
   DndContext,
   DragEndEvent,
   DragOverEvent,
-  DragOverlay,
   DragStartEvent,
   KeyboardSensor,
-  Modifier,
   PointerSensor,
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import {
@@ -19,7 +16,6 @@ import {
   HvListItem,
   HvTypography,
   theme,
-  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Battery,
@@ -38,18 +34,19 @@ import {
   Time,
 } from "@hitachivantara/uikit-react-icons";
 
-import { Column, Item } from "./types";
-
-export const sampleColumns: Column[] = [
-  {
-    id: "column1",
-    title: "To Do",
-  },
-  {
-    id: "column2",
-    title: "Done",
-  },
+const sampleColumns = [
+  { id: "column1", title: "To Do" },
+  { id: "column2", title: "Done" },
 ];
+
+type Column = (typeof sampleColumns)[number];
+
+type Item = {
+  id: string;
+  columnId: Column["id"];
+  title: string;
+  icon: React.ReactNode;
+};
 
 const sampleItems: Item[] = [
   { id: "item1", title: "Item 1", columnId: "column1", icon: <Ghost /> },
@@ -67,31 +64,6 @@ const sampleItems: Item[] = [
   { id: "item13", title: "Item 13", columnId: "column2", icon: <Time /> },
   { id: "item14", title: "Item 14", columnId: "column2", icon: <Storage /> },
 ];
-
-// #region Fixes a problem we have while dragging items in storybook docs mode
-type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
-  ? (rootId: string, ...args: A) => R
-  : unknown;
-
-export const restrictToSample: RestrictToSampleModifier = (
-  rootId,
-  { transform },
-) => {
-  if (typeof window === "undefined" || typeof document === "undefined") {
-    return transform;
-  }
-
-  const rect = document.getElementById(rootId)?.getBoundingClientRect();
-
-  const docsMode = window.location.search.includes("?viewMode=docs");
-
-  return {
-    ...transform,
-    x: docsMode && rect?.x ? -rect.x + transform.x : transform.x,
-    y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
-  };
-};
-// #endregion
 
 interface ColumnContainerProps {
   column: Column;
@@ -192,7 +164,6 @@ export default function Demo() {
   const [items, setItems] = useState<Item[]>(sampleItems);
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
   const [activeItem, setActiveItem] = useState<Item | null>(null);
-  const { rootId } = useTheme();
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -298,25 +269,18 @@ export default function Demo() {
         </SortableContext>
       </div>
 
-      <DragOverlay
-        modifiers={[
-          restrictToWindowEdges,
-          (args) => restrictToSample(rootId || "", args),
-        ]}
-      >
-        {activeColumn && (
-          <ColumnContainer
-            column={activeColumn}
-            items={items.filter((item) => item.columnId === activeColumn.id)}
-          />
-        )}
-        {activeItem && (
-          <ItemCard
-            item={activeItem}
-            className="b-2px border-primary bg-bgContainer"
-          />
-        )}
-      </DragOverlay>
+      {activeColumn && (
+        <ColumnContainer
+          column={activeColumn}
+          items={items.filter((item) => item.columnId === activeColumn.id)}
+        />
+      )}
+      {activeItem && (
+        <ItemCard
+          item={activeItem}
+          className="b-2px border-primary bg-bgContainer"
+        />
+      )}
     </DndContext>
   );
 }

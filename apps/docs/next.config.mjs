@@ -58,7 +58,12 @@ export default withNextra({
 
     // Add raw file loader
     config.module.rules.push({
-      test: /\.(tsx|ts|mdx)$/,
+      test: /\.mdx$/,
+      resourceQuery: /raw/,
+      type: "asset/source",
+    });
+    config.module.rules.push({
+      test: /\.(tsx|ts)$/,
       resourceQuery: /raw/,
       use: "raw-loader",
     });
