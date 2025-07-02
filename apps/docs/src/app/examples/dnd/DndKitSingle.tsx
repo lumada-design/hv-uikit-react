@@ -2,15 +2,12 @@ import { HTMLAttributes, useMemo, useState } from "react";
 import {
   DndContext,
   DragOverEvent,
-  DragOverlay,
   DragStartEvent,
   KeyboardSensor,
-  Modifier,
   PointerSensor,
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import {
   arrayMove,
   SortableContext,
@@ -22,7 +19,6 @@ import {
   HvListContainer,
   HvListItem,
   theme,
-  useTheme,
 } from "@hitachivantara/uikit-react-core";
 import {
   Battery,
@@ -36,7 +32,11 @@ import {
   Palette,
 } from "@hitachivantara/uikit-react-icons";
 
-import { Item } from "./types";
+interface Item {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+}
 
 const sampleItems: Item[] = [
   { id: "item1", title: "Item 1", icon: <Ghost /> },
@@ -49,31 +49,6 @@ const sampleItems: Item[] = [
   { id: "item8", title: "Item 8", icon: <Heart /> },
   { id: "item9", title: "Item 9", icon: <Favorite /> },
 ];
-
-// #region Fixes a problem we have while dragging items in storybook docs mode
-type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
-  ? (rootId: string, ...args: A) => R
-  : unknown;
-
-export const restrictToSample: RestrictToSampleModifier = (
-  rootId,
-  { transform },
-) => {
-  if (typeof window === "undefined" || typeof document === "undefined") {
-    return transform;
-  }
-
-  const rect = document?.getElementById(rootId)?.getBoundingClientRect();
-
-  const docsMode = window.location.search.includes("?viewMode=docs");
-
-  return {
-    ...transform,
-    x: docsMode && rect?.x ? -rect.x + transform.x : transform.x,
-    y: docsMode && rect?.y ? -rect.y + transform.y : transform.y,
-  };
-};
-// #endregion
 
 interface ItemProps extends HTMLAttributes<HTMLLIElement> {
   item: Item;
@@ -126,7 +101,6 @@ export const ItemCard = ({ item, style: overlayStyle }: ItemProps) => {
 export default function Demo() {
   const [items, setItems] = useState<Item[]>(sampleItems.filter((i) => i.id));
   const [activeItem, setActiveItem] = useState<Item | null>(null);
-  const { rootId } = useTheme();
 
   const itemsIds = useMemo(() => items?.map((task) => task.id), [items]) || [];
 
@@ -190,19 +164,12 @@ export default function Demo() {
         </SortableContext>
       </HvListContainer>
 
-      <DragOverlay
-        modifiers={[
-          restrictToWindowEdges,
-          (args) => restrictToSample(rootId || "", args),
-        ]}
-      >
-        {activeItem && (
-          <ItemCard
-            item={activeItem}
-            className="b-2px border-primary bg-bgContainer"
-          />
-        )}
-      </DragOverlay>
+      {activeItem && (
+        <ItemCard
+          item={activeItem}
+          className="b-2px border-primary bg-bgContainer"
+        />
+      )}
     </DndContext>
   );
 }

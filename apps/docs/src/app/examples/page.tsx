@@ -5,7 +5,7 @@ import {
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
-import canvas from "./canvas/page.tsx?raw";
+import canvas from "./canvas/page.mdx?raw";
 import charts from "./charts/page.mdx?raw";
 import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
@@ -17,7 +17,7 @@ import tables from "./tables/page.mdx?raw";
  * Extracts the number of CodeBlock components in the given file content.
  */
 const countCodeBlocks = (fileContent: string): number => {
-  const codeBlockRegex = /<CodeBlock/g;
+  const codeBlockRegex = /(<CodeBlock|CodeBlock,)/g;
   const matches = fileContent?.match?.(codeBlockRegex);
   return matches ? matches.length : 0;
 };

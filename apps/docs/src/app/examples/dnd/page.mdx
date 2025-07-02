@@ -3,7 +3,6 @@ import { CodeBlock } from "../../../components/code/CodeBlock";
 import dndKitMultiple from "./DndKitMultiple?raw";
 import dndKitSingle from "./DndKitSingle?raw";
 import dndNative from "./DndNative?raw";
-import dndTypes from "./types?raw";
 
 import kanbanComponents from "./kanban/Components?raw";
 import kanbanData from "./kanban/data?raw";
@@ -21,20 +20,20 @@ This sample showcases a scenario where we have a single column and we want to dr
 by their handle or by using the keyboard. In this case you just have to tab your way to the item and press the `Space` key (or `Enter`)
 to select it and then use the arrows to move the item to its new place Then just press `Space` again to release it.
 
-<CodeBlock code={{ main: dndKitSingle, "./types": dndTypes }} />
+<CodeBlock code={{ main: dndKitSingle }} />
 
 ## Multiple Containers
 
 In this sample we showcase how to use drag and drop between different containers. Note that you can reorder the columns by dragging each
 column by its header.
 
-<CodeBlock code={{ main: dndKitMultiple, "./types": dndTypes }} />
+<CodeBlock code={{ main: dndKitMultiple }} />
 
 ## Native Drag and Drop
 
 If you don't want to use any external libraries you can still achieve a similar result by using plain Javascript.
 
-<CodeBlock code={{ main: dndNative, "./types": dndTypes }} />
+<CodeBlock code={{ main: dndNative }} />
 
 ## Complex example
 

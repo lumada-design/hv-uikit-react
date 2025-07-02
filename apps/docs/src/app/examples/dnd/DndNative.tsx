@@ -18,7 +18,11 @@ import {
   Palette,
 } from "@hitachivantara/uikit-react-icons";
 
-import { Item } from "./types";
+interface Item {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+}
 
 const sampleItems: Item[] = [
   { id: "item1", title: "Item 1", icon: <Ghost /> },

@@ -111,14 +111,7 @@ export default function Demo() {
   );
 
   return (
-    <div
-      style={{
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <div className="flex justify-center size-full">
       <HvBaseChart width={400} height={300} option={optionGauge} />
     </div>
   );

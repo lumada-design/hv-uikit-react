@@ -1,24 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { HvLineChart } from "@hitachivantara/uikit-react-viz";
 
+const rand = (diff: number) => Math.random() * diff - diff / 2;
+
+const generateDates = (initialDate: Date, num = 200) =>
+  Array.from(Array(num).keys()).map((i) =>
+    new Date(new Date(initialDate).setDate(initialDate.getDate() + i))
+      .toISOString()
+      .slice(0, 10),
+  );
+
+const generateValues = (num = 10, start = 200, inc = 8) => {
+  const values = [start];
+  for (let i = 0; i <= num; i += 1) {
+    values.push(values[i] + rand(inc));
+  }
+  return values;
+};
+
 export default function Demo() {
-  const rand = (diff: number) => Math.random() * diff - diff / 2;
-
-  const generateDates = (initialDate: Date, num = 200) =>
-    Array.from(Array(num).keys()).map((i) =>
-      new Date(new Date(initialDate).setDate(initialDate.getDate() + i))
-        .toISOString()
-        .slice(0, 10),
-    );
-
-  const generateValues = (num = 10, start = 200, inc = 8) => {
-    const values = [start];
-    for (let i = 0; i <= num; i += 1) {
-      values.push(values[i] + rand(inc));
-    }
-    return values;
-  };
-
   const date = useRef(new Date(2020, 1, 1));
   const values = useRef(generateValues(200));
 
@@ -29,7 +29,7 @@ export default function Demo() {
     };
   };
 
-  const [data, setData] = useState(generateData());
+  const [data, setData] = useState(generateData);
 
   const addDaysToCurrentDate = (num: number) => {
     const currentDay = new Date(date.current);
