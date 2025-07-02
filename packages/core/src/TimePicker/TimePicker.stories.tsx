@@ -11,16 +11,6 @@ import {
 export default {
   title: "Components/Time Picker",
   component: HvTimePicker,
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // TODO: review aria-haspopup on a role-less element
-          { id: "aria-valid-attr-value", enabled: false },
-        ],
-      },
-    },
-  },
 } satisfies Meta<typeof HvTimePicker>;
 
 export const Main: StoryObj<HvTimePickerProps> = {

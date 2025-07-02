@@ -19,7 +19,7 @@ interface DocsParameters extends Record<string, any> {
 }
 
 // https://github.com/storybookjs/storybook/issues/22860
-declare module "@storybook/csf" {
+declare module "@storybook/react-vite" {
   interface Parameters
     extends StorybookParameters,
       A11yParameters,

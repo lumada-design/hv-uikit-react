@@ -1,6 +1,3 @@
-// @vitest-environment node
-import { describe, expect, it } from "vitest";
-
 import { getColumnNames, getTablesNames } from "./sql";
 
 const dbSchema = `

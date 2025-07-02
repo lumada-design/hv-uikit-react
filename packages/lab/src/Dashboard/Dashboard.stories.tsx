@@ -1,19 +1,6 @@
-import { useState } from "react";
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import {
-  HvButton,
-  HvSection,
-  HvTypography,
-} from "@hitachivantara/uikit-react-core";
-import { Tool } from "@hitachivantara/uikit-react-icons";
+import { HvSection, HvTypography } from "@hitachivantara/uikit-react-core";
 import { HvDashboard, HvDashboardProps } from "@hitachivantara/uikit-react-lab";
-import {
-  HvBarChart,
-  HvDonutChart,
-  HvLineChart,
-  HvVizProvider,
-} from "@hitachivantara/uikit-react-viz";
 
 const meta: Meta<typeof HvDashboard> = {
   title: "Lab/Dashboard",
@@ -49,112 +36,6 @@ export const Main: StoryObj<HvDashboardProps> = {
           />
         ))}
       </HvDashboard>
-    );
-  },
-};
-
-const itemIds = ["bar", "line", "donut", "bar"] as const;
-
-const dataDrivenItems = itemIds.map((type, i) => ({
-  id: `${type}-${i}`,
-  type,
-  data: new Map<string, (string | number)[]>()
-    .set("Group", ["Group 1", "Group 2", "Group 3"])
-    .set("Sales Target", [2300, 1000, 7800])
-    .set("Sales Per Rep", [6000, 3900, 1000])
-    .set("Monthly Sales", [3700, 6700, 1100])
-    .set("Target", [2100, 7700, 3000])
-    .set("Cash", [500, 7600, 7800]),
-  groupBy: "Group",
-  measures: ["Sales Target", "Sales Per Rep", "Monthly Sales", "Target"],
-  measure: "Sales Target",
-}));
-
-const componentMap: Record<(typeof itemIds)[number], any> = {
-  bar: HvBarChart,
-  line: HvLineChart,
-  donut: HvDonutChart,
-};
-
-export const DataDriven: StoryObj<HvDashboardProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "This story demonstrates how to construct a dashboard from an array of data elements, where each item holds a `type` of dashboard item to render.",
-      },
-    },
-    a11y: {
-      config: {
-        rules: [
-          { id: "aria-allowed-attr", enabled: false },
-          { id: "aria-prohibited-attr", enabled: false },
-          { id: "color-contrast", enabled: false },
-        ],
-      },
-    },
-  },
-  render: () => {
-    const [canDrag, setCanDrag] = useState(false);
-    const [canResize, setCanResize] = useState(true);
-
-    return (
-      <HvVizProvider>
-        <HvButton
-          variant="secondaryGhost"
-          startIcon={<Tool />}
-          onClick={() => setCanDrag((prev) => !prev)}
-        >
-          {`Drag is ${canDrag ? "enabled" : "disabled"}`}
-        </HvButton>
-        <HvButton
-          variant="secondaryGhost"
-          startIcon={<Tool />}
-          onClick={() => setCanResize((prev) => !prev)}
-        >
-          {`Resize is ${canResize ? "enabled" : "disabled"}`}
-        </HvButton>
-        <br />
-        <HvDashboard
-          margin={[16, 16]}
-          isDraggable={canDrag}
-          isResizable={canResize}
-          layout={dataDrivenItems.map(({ id }, i) => ({
-            i: id,
-            x: (i % 2) * (12 / 2),
-            y: i * 4,
-            w: 12 / 2,
-            h: 3,
-          }))}
-        >
-          {dataDrivenItems.map((item) => {
-            const { id, type, ...props } = item;
-            const Component = componentMap[type];
-
-            if (!Component) {
-              return (
-                <div key={item.id}>❌ Cannot render {type} dashboard item</div>
-              );
-            }
-
-            return (
-              <div key={item.id} className={css({ display: "flex" })}>
-                <HvSection
-                  classes={{ content: css({ height: "100%" }) }}
-                  title={
-                    <HvTypography
-                      variant="title3"
-                      className={css({ textTransform: "capitalize" })}
-                    >{`${item.type} chart`}</HvTypography>
-                  }
-                >
-                  <Component {...props} />
-                </HvSection>
-              </div>
-            );
-          })}
-        </HvDashboard>
-      </HvVizProvider>
     );
   },
 };

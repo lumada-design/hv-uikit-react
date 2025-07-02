@@ -1,5 +1,4 @@
 import { escape, table } from "arquero";
-import { describe, it } from "vitest";
 
 import { getHvArqueroCombinedFilters } from ".";
 import { HvChartFilter } from "../types";
