@@ -64,7 +64,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           Object.entries(notificationMap).map(([variant, color]) => [
             variant,
             {
-              backgroundColor: theme.colors[`${color}Dimmed`],
+              backgroundColor: theme.mix(`${color}Dimmed`, 0.5, "dimmer"),
               "--icolor": theme.colors[color],
               "--outline": theme.colors[`${color}Border`],
               "--bg": theme.colors[`${color}Subtle`],
