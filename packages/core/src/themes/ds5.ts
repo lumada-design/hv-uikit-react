@@ -149,6 +149,15 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     },
+    HvDialogTitle: {
+      classes: {
+        root: {
+          "& .HvIconContainer-root": {
+            color: `${theme.colors.secondary}!important`,
+          },
+        },
+      },
+    },
   } satisfies Record<
     string,
     Record<string, any> | { classes?: React.CSSProperties }

@@ -23,15 +23,15 @@ export const MainStory = (props: HvDialogProps) => {
           visualization. You will need to re-select your fields.
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
-            Apply
-          </HvButton>
           <HvButton
             autoFocus
             variant="secondaryGhost"
             onClick={() => setOpen(false)}
           >
             Cancel
+          </HvButton>
+          <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
+            Apply
           </HvButton>
         </HvDialogActions>
       </HvDialog>
