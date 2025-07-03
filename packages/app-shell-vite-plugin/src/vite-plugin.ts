@@ -199,10 +199,11 @@ export function HvAppShellVitePlugin(
       viteStaticCopy({
         targets: [
           {
-            src: resolveModule("es-module-shims", "*"),
+            src: resolveModule("es-module-shims"),
             dest: "bundles",
           },
           // copy the ui kit icons' sprites to the "icons" folder
+          // TODO: remove, no longer used
           {
             src: resolveModule(
               "@hitachivantara/uikit-react-icons",
