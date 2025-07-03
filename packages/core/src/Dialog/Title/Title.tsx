@@ -6,6 +6,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvStatusIcon } from "../../StatusIcon";
 import { HvTypography } from "../../Typography";
 import { iconVariant } from "../../utils/iconVariant";
 import { useDialogContext } from "../context";
@@ -48,7 +49,7 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
   const { classes, cx } = useClasses(classesProp);
   const { fullScreen } = useDialogContext();
 
-  const icon = customIcon || (showIcon && iconVariant(variant));
+  const icon = customIcon || (showIcon && <HvStatusIcon variant={variant} />);
 
   return (
     <HvTypography

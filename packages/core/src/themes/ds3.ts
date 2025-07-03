@@ -507,6 +507,11 @@ export const ds3 = mergeTheme(ds3Base, {
         titleText: {
           ...theme.typography.xxsTitle,
         },
+        root: {
+          "& .HvIconContainer-root": {
+            color: `${theme.colors.secondary}!important`,
+          },
+        },
       },
     },
     HvDropdown: {
