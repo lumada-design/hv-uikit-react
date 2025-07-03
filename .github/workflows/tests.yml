@@ -63,7 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        PROJECT: ["chrome", "firefox"]
+        BROWSER: ["chrome", "firefox"]
 
     steps:
       - name: Checkout
@@ -73,16 +73,16 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps ${{ matrix.BROWSER }}
 
       - name: Run Playwright tests
-        run: npx playwright test --project=${{ matrix.PROJECT }}
+        run: npx playwright test --project=${{ matrix.BROWSER }}
 
       - name: Archive Playwright report
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: report-[${{ matrix.PROJECT }}]
+          name: report-[${{ matrix.BROWSER }}]
           path: playwright-report/
           retention-days: 5
 
@@ -98,7 +98,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps --only-shell
 
       - name: Build Storybook
         run: npm run build:doc
