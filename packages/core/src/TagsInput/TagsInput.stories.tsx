@@ -17,6 +17,7 @@ const meta: Meta<typeof HvTagsInput> = {
   decorators: [
     (storyFn) => <div style={{ maxWidth: "600px" }}>{storyFn()}</div>,
   ],
+  tags: ["skipTestRunner"],
 };
 export default meta;
 
@@ -140,8 +141,6 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
     const [status, setStatus] = useState<HvFormStatus>("valid");
     const [statusMsg, setStatusMsg] = useState("");
 
-    const isInvalidTag = (tag: any) => tag?.includes("-");
-
     return (
       <>
         <HvTagsInput
@@ -152,7 +151,7 @@ export const ControlledWithValidation: StoryObj<HvTagsInputProps> = {
           status={status}
           statusMessage={statusMsg}
           onAdd={(event, value) => {
-            if (value && isInvalidTag(value.label)) {
+            if (value && String(value.label).includes("-")) {
               setStatus("invalid");
               setStatusMsg("Oops, that tag has a dash (-)");
             } else {

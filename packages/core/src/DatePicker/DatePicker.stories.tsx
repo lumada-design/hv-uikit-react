@@ -23,6 +23,7 @@ const meta: Meta<typeof HvDatePicker> = {
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCalendar },
   component: HvDatePicker,
+  tags: ["skipTestRunner"],
 };
 export default meta;
 

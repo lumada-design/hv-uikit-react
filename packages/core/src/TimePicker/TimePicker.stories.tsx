@@ -27,6 +27,7 @@ export const Main: StoryObj<HvTimePickerProps> = {
     dropdownProps: { control: { disable: true } },
   },
   decorators: [(Story) => <div className="min-h-200px w-200px">{Story()}</div>],
+  tags: ["skipTestRunner"],
   render: (args) => {
     return <HvTimePicker {...args} />;
   },

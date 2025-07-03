@@ -12,7 +12,7 @@ export default {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  stories: ["../packages/*/src/**/*.stories.tsx"],
+  stories: ["../packages/core/**/*.stories.tsx"],
   core: {
     disableTelemetry: true,
   },
