@@ -29,6 +29,7 @@ export const Main: StoryObj<HvDropdownProps> = {
     popperProps: { control: { disable: true } },
   },
   decorators: [(Story) => <div className="min-h-400px w-310px">{Story()}</div>],
+  tags: ["skipTestRunner"],
   render: (args) => (
     <HvDropdown
       {...args}

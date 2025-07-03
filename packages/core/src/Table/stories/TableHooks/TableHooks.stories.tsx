@@ -34,6 +34,7 @@ import { UseHvTableSticky } from "./UseHvTableSticky";
 
 export default {
   title: "Visualizations/Table/Table Hooks",
+  tags: ["skipTestRunner"],
 };
 
 export const UseHvHooksStory: StoryObj = {

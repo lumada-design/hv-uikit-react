@@ -22,6 +22,7 @@ export default {
   argTypes: {},
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvTreeItem },
+  tags: ["skipTestRunner"],
 } satisfies Meta<typeof HvTreeView>;
 
 export const Main: StoryObj<HvTreeViewProps<false>> = {

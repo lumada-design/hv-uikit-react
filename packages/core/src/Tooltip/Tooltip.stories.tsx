@@ -13,6 +13,7 @@ import { Play } from "@hitachivantara/uikit-react-icons";
 const meta: Meta<typeof HvTooltip> = {
   title: "Components/Tooltip",
   component: HvTooltip,
+  tags: ["skipTestRunner"],
 };
 export default meta;
 

@@ -9,7 +9,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      maxWorkers: process.env.CI ? 2 : undefined,
+      slowTestThreshold: process.env.CI ? 1200 : 600,
       projects: [
         // storybook tests
         {

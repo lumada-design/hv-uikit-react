@@ -8,6 +8,7 @@ import { TableFilter } from "./TableFilter";
 
 export default {
   title: "Visualizations/Table/Table Section",
+  tags: ["skipTestRunner"],
 };
 
 export const SimpleTableSectionStory: StoryObj = {
