@@ -1,7 +1,0 @@
-node_modules
-
-# Ignore artifacts:
-*/**.d.ts
-bin
-dist
-coverage
