@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.9.15...@hitachivantara/uikit-react-pentaho@0.10.0) (2025-07-04)
+
+### Features
+
+- **config:** add oxlint configuration ([#4785](https://github.com/lumada-design/hv-uikit-react/issues/4785)) ([fa8f919](https://github.com/lumada-design/hv-uikit-react/commit/fa8f9194ccdfd04732ca6986a5ea13bff7592933))
+
 ## [0.9.15](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-pentaho@0.9.14...@hitachivantara/uikit-react-pentaho@0.9.15) (2025-06-27)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-pentaho

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.4.6...@hitachivantara/uikit-react-shared@5.5.0) (2025-07-04)
+
+### Features
+
+- **config:** add oxlint configuration ([#4785](https://github.com/lumada-design/hv-uikit-react/issues/4785)) ([fa8f919](https://github.com/lumada-design/hv-uikit-react/commit/fa8f9194ccdfd04732ca6986a5ea13bff7592933))
+
 ## [5.4.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-shared@5.4.5...@hitachivantara/uikit-react-shared@5.4.6) (2025-06-06)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-shared

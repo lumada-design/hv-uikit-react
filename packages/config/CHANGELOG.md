@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.3.0...@hitachivantara/uikit-config@0.4.0) (2025-07-04)
+
+### Features
+
+- **config:** add oxlint configuration ([#4785](https://github.com/lumada-design/hv-uikit-react/issues/4785)) ([fa8f919](https://github.com/lumada-design/hv-uikit-react/commit/fa8f9194ccdfd04732ca6986a5ea13bff7592933))
+- **config:** enable package publishing ([#4788](https://github.com/lumada-design/hv-uikit-react/issues/4788)) ([856d5e8](https://github.com/lumada-design/hv-uikit-react/commit/856d5e8bc3db20a00a0326fc5914624561f12e34))
+
 # [0.3.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.2.1...@hitachivantara/uikit-config@0.3.0) (2025-06-13)
 
 ### Features

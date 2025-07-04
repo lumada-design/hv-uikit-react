@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.97.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.3...@hitachivantara/uikit-react-core@5.97.0) (2025-07-04)
+
+### Bug Fixes
+
+- **Banner,Snackbar:** add transparency overlay to background ([#4794](https://github.com/lumada-design/hv-uikit-react/issues/4794)) ([f0f9e3b](https://github.com/lumada-design/hv-uikit-react/commit/f0f9e3b1ccd33ac792c31b5c9e5067bd7ad06d92))
+
+### Features
+
+- **config:** add oxlint configuration ([#4785](https://github.com/lumada-design/hv-uikit-react/issues/4785)) ([fa8f919](https://github.com/lumada-design/hv-uikit-react/commit/fa8f9194ccdfd04732ca6986a5ea13bff7592933))
+
 ## [5.96.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.2...@hitachivantara/uikit-react-core@5.96.3) (2025-06-27)
 
 ### Bug Fixes
