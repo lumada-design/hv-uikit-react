@@ -18,6 +18,12 @@ export const ds5 = mergeTheme(ds5Base, {
         root: {
           borderRadius: 0,
         },
+        iconContainer: {
+          color: `${theme.colors.secondary}!important`,
+          "&.HvStatusIcon-root": {
+            padding: 0,
+          },
+        },
       },
     },
     HvBaseDropdown: {
@@ -120,6 +126,9 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
+    },
+    HvStatusIcon: {
+      type: "simple",
     },
     HvTab: {
       classes: {

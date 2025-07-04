@@ -108,6 +108,7 @@ export * from "./Slider";
 export * from "./Snackbar";
 export * from "./SnackbarProvider";
 export * from "./Stack";
+export * from "./StatusIcon";
 export * from "./Switch";
 export * from "./Table";
 export * from "./Tabs";

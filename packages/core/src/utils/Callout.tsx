@@ -14,6 +14,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 import { HvActionsGeneric, HvActionsGenericProps } from "../ActionsGeneric";
 import { HvButton, HvButtonProps } from "../Button";
 import { HvIcon } from "../icons";
+import { HvStatusIcon } from "../StatusIcon";
 import { iconVariant } from "./iconVariant";
 
 const { useClasses } = createClasses("HvCallout", {
@@ -53,10 +54,7 @@ const { useClasses } = createClasses("HvCallout", {
     overflow: "hidden",
     wordBreak: "break-word",
   },
-  messageIcon: {
-    lineHeight: 0,
-    flexShrink: 0,
-  },
+  messageIcon: {},
   messageTitle: {
     display: "block",
     fontWeight: theme.fontWeights.semibold,
@@ -150,6 +148,7 @@ export const HvCallout = forwardRef<
   } = useDefaultProps("HvCallout", props);
   const { classes, cx } = useClasses(classesProp, false);
   const { activeTheme } = useTheme();
+
   const icon = customIcon || (showIcon && iconVariant(variant));
 
   // TODO: consider making this flex-flow only, so it adapts according to the
@@ -180,7 +179,13 @@ export const HvCallout = forwardRef<
       }}
       message={
         <>
-          {icon && <div className={classes.messageIcon}>{icon}</div>}
+          {icon && (
+            <HvStatusIcon
+              className={classes.messageIcon}
+              variant={variant === "default" ? "info" : variant}
+              customIcon={customIcon}
+            />
+          )}
           <div className={classes.messageContent}>
             {title && <b className={classes.messageTitle}>{title}</b>}
             {children}
