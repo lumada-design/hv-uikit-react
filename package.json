@@ -31,11 +31,9 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "typecheck": "tsc --noEmit",
-    "depcheck": "npx -y owasp-dependency-check --project uikit -o reports --cveStartYear 2015",
-    "publish-dry": "lerna publish --no-push --registry \"http://localhost:4873/\"",
-    "publish": "lerna publish",
     "prepare": "husky install .config/husky",
-    "lab:flow": "node scripts/flow-styles"
+    "publish-dry": "lerna publish --no-push --registry \"http://localhost:4873/\"",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
