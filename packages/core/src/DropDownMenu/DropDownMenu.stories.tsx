@@ -7,16 +7,6 @@ import {
 export default {
   title: "Components/Dropdown Menu",
   component: HvDropDownMenu,
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // TODO: review aria-haspopup on a role-less element
-          { id: "aria-valid-attr-value", enabled: false },
-        ],
-      },
-    },
-  },
 } satisfies Meta<typeof HvDropDownMenu>;
 
 export const Main: StoryObj<HvDropDownMenuProps> = {

@@ -6,7 +6,6 @@ import {
 } from "@hitachivantara/uikit-react-pentaho";
 
 import { ControlledStory } from "./stories/Controlled";
-import ControlledRaw from "./stories/Controlled?raw";
 
 const meta: Meta<typeof HvCanvasToolbarTabs> = {
   title: "Pentaho/Canvas/Toolbar Tabs",
@@ -17,22 +16,12 @@ export default meta;
 export const Main: StoryObj<HvCanvasToolbarTabsProps> = {
   args: {
     icon: (
-      <Leaf
-        // Only for testing purposes
-        data-testid="leaf"
-      />
+      // Only for testing purposes
+      <Leaf data-testid="leaf" />
     ),
     defaultTabs: [
-      {
-        id: "tab1",
-        label: "My first tab",
-        icon: <Leaf />,
-      },
-      {
-        id: "tab2",
-        label: "My tab with a very long label",
-        icon: <Leaf />,
-      },
+      { id: "tab1", label: "My first tab", icon: <Leaf /> },
+      { id: "tab2", label: "My tab with a very long label", icon: <Leaf /> },
     ],
   },
   argTypes: {
@@ -51,13 +40,6 @@ export const Main: StoryObj<HvCanvasToolbarTabsProps> = {
 };
 
 export const Controlled: StoryObj<HvCanvasToolbarTabsProps> = {
-  parameters: {
-    docs: {
-      source: {
-        code: ControlledRaw,
-      },
-    },
-  },
   render: () => <ControlledStory />,
 };
 

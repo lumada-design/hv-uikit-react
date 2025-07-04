@@ -10,6 +10,7 @@ import { Variants as StepNavigationVariantsStory } from "../StepNavigation/StepN
 /** Visual tests for components from the Lab package */
 const meta: Meta = {
   title: "Tests/Lab",
+  tags: ["skipTestRunner"],
 };
 export default meta;
 
@@ -33,11 +34,7 @@ export const Test: StoryObj = {
       ],
       5000,
     ),
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <>
       <HvSimpleGrid

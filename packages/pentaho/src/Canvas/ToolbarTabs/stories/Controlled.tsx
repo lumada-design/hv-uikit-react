@@ -51,9 +51,6 @@ export const ControlledStory = () => {
   const [tabs, setTabs] = useState<HvCanvasToolbarTabsProps["tabs"]>([]);
   const [selectedTab, setSelectedTab] = useState("none");
 
-  const handleChange: HvCanvasToolbarTabsProps["onChange"] = (event, newTabs) =>
-    setTabs(newTabs);
-
   return (
     <HvPanel
       className={classes.panel}
@@ -72,7 +69,7 @@ export const ControlledStory = () => {
         className={classes.toolbarTabs}
         selectedTabId={selectedTab}
         tabs={tabs}
-        onChange={handleChange}
+        onChange={(event, newTabs) => setTabs(newTabs)}
         onTabChange={(event, tabId) => setSelectedTab(tabId ?? "none")}
       />
 

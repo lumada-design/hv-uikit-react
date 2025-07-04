@@ -8,6 +8,7 @@ import { Test as ToolbarTabsTestStory } from "../Canvas/ToolbarTabs/ToolbarTabs.
 /** Visual tests for components from the Pentaho package */
 const meta: Meta = {
   title: "Tests/Pentaho",
+  tags: ["skipTestRunner"],
 };
 export default meta;
 
@@ -19,11 +20,7 @@ export default meta;
 export const Test: StoryObj = {
   parameters: {
     ...setupChromatic(["Pentaho+ dawn", "Pentaho+ wicked"], 5000),
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <HvSimpleGrid
       cols={2}

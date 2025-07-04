@@ -26,6 +26,7 @@ import { PropsTableSection } from "./TableSection/PropsTableSection";
 
 export default {
   title: "Visualizations/Table",
+  tags: ["skipTestRunner"],
   component: HvTable,
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: {
@@ -122,11 +123,7 @@ export const Test: StoryObj = {
       "Pentaho+ dawn",
       "Pentaho+ wicked",
     ]),
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 

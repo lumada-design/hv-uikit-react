@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { renderHook } from "@testing-library/react";
 import { vi } from "vitest";
 import { HvAppShellEventNotificationTrigger } from "@hitachivantara/app-shell-events";
@@ -140,7 +139,7 @@ describe("useNotificationsEventListener Hook", () => {
           detail: {
             type: "snackbar",
             message: "dummyMessage",
-            actions: <Button>Click me</Button>,
+            actions: <button type="button">Click me</button>,
           },
         }),
       );
@@ -148,7 +147,7 @@ describe("useNotificationsEventListener Hook", () => {
       expect(mockedEnqueueSnackbar).toHaveBeenNthCalledWith(1, "dummyMessage", {
         variant: "default",
         snackbarContentProps: {
-          action: <Button>Click me</Button>,
+          action: <button type="button">Click me</button>,
           actionCallback: undefined,
         },
       });

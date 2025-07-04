@@ -1,6 +1,9 @@
 import React, { ComponentType, useEffect, useMemo, useState } from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { DocsContainer, DocsContainerProps } from "@storybook/addon-docs";
+import {
+  DocsContainer,
+  DocsContainerProps,
+} from "@storybook/addon-docs/blocks";
 import { addons } from "storybook/preview-api";
 import { Global } from "storybook/theming";
 import {

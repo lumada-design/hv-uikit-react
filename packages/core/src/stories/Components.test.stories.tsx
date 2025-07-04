@@ -76,6 +76,7 @@ import { Test as TypographyTestStory } from "../Typography/Typography.stories";
 /** Visual tests for components from the Core package */
 export default {
   title: "Tests/Components",
+  tags: ["skipTestRunner"],
 } satisfies Meta;
 
 /** Basic inputs */
@@ -92,11 +93,7 @@ export const TestInputs: StoryObj = {
       ],
       5000,
     ),
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="grid gap-xs">
       <div className="flex gap-xs items-start">
@@ -156,12 +153,7 @@ export const TestPopups: StoryObj = {
       ],
       5000,
     ),
-
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="flex gap-md items-start">
       <div className="grid gap-xs w-240px">
@@ -201,12 +193,7 @@ export const TestButtons: StoryObj = {
       ],
       5000,
     ),
-
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="grid gap-sm">
       <div>{renderStory(ButtonTestStory, context)}</div>
@@ -249,12 +236,7 @@ export const TestSurfaces: StoryObj = {
       ],
       5000,
     ),
-
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="flex gap-sm items-start">
       <div className="flex flex-col gap-xs w-340px">
@@ -289,12 +271,7 @@ export const TestOthers: StoryObj = {
       ],
       5000,
     ),
-
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   play: async ({ canvasElement }) => {
     // Accordion disabled story
     const canvas = within(canvasElement);
@@ -341,12 +318,7 @@ export const TestOthers: StoryObj = {
 export const TestStructure: StoryObj = {
   parameters: {
     ...setupChromatic(["DS5 dawn"], 5000),
-
-    a11y: {
-      disable: true,
-    },
   },
-  tags: ["skipTestRunner"],
   render: (args, context: any) => (
     <div className="grid gap-sm">
       {renderStory(GridTheDesignSystemColumnsStory, context)}

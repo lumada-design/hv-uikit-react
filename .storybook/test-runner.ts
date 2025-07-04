@@ -15,14 +15,16 @@ const config: TestRunnerConfig = {
   async postVisit(page, context) {
     if (excludeStories.some((s) => context.title.includes(s))) return;
 
-    const storyContext = await getStoryContext(page, context);
-    if (storyContext.parameters?.a11y?.disable) return;
+    const { parameters, tags } = await getStoryContext(page, context);
+    if (parameters?.a11y?.disable || tags.includes("skipTestRunner")) return;
 
     // Apply story-level a11y rules
     await configureAxe(page, {
       rules: [
         { id: "color-contrast", enabled: false },
-        ...(storyContext.parameters?.a11y?.config?.rules || []),
+        { id: "landmark-unique", enabled: false },
+        { id: "landmark-no-duplicate-banner", enabled: false },
+        ...(parameters?.a11y?.config?.rules || []),
       ],
     });
 

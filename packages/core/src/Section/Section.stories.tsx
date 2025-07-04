@@ -46,13 +46,6 @@ export const Main: StoryObj<HvSectionProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [{ id: "landmark-unique", enabled: false }],
-      },
-    },
-  },
   decorators: [(Story) => <div className="grid gap-sm">{Story()}</div>],
   render: () => (
     <>

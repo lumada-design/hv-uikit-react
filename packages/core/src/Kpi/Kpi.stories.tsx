@@ -4,17 +4,6 @@ import { HvKpi, HvKpiProps } from "@hitachivantara/uikit-react-core";
 const meta: Meta<typeof HvKpi> = {
   title: "Components/KPI",
   component: HvKpi,
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // disable react-google-chart's labelling elements without role
-          { id: "aria-allowed-attr", enabled: false },
-          { id: "aria-prohibited-attr", enabled: false },
-        ],
-      },
-    },
-  },
 };
 export default meta;
 

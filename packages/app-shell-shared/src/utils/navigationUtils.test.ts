@@ -9,12 +9,10 @@ import {
   searchHrefInMenuItems,
 } from "./navigationUtils";
 
+const tFunction = (key: string) => `translated ${key}`;
+
 describe("test navigation utilities", () => {
   describe("test `createMenuItems` method", () => {
-    const tFunction = (key: string): string => {
-      return `translated ${key}`;
-    };
-
     it("should return empty items from empty config", () => {
       const menuItems: HvAppShellMenuConfig[] = [];
       const navigationData = createMenuItems(tFunction, menuItems);
@@ -502,7 +500,7 @@ describe("test navigation utilities", () => {
       [undefined, undefined],
     ])("Root menu id from path %s matches %s", (value, expected) => {
       const id = getRootIdFromItemId(value);
-      expect(id).toMatchObject(expected!);
+      expect(id).toMatchObject(expected as any);
     });
   });
 });
