@@ -1,5 +1,6 @@
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
+import { normalizePath } from "vite";
 
 export const require = createRequire(import.meta.url);
 
@@ -12,5 +13,5 @@ export const require = createRequire(import.meta.url);
  */
 export function resolveModule(moduleName: string, suffix?: string) {
   const entrypoint = require.resolve(moduleName);
-  return suffix ? join(dirname(entrypoint), suffix) : entrypoint;
+  return normalizePath(suffix ? join(dirname(entrypoint), suffix) : entrypoint);
 }
