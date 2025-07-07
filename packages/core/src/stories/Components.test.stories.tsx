@@ -65,6 +65,7 @@ import { Variants as SkeletonVariantsStory } from "../Skeleton/Skeleton.stories"
 import { RangeVariants as SliderRangeVariantsStory } from "../Slider/Slider.stories";
 import { Variants as SnackbarVariantsStory } from "../Snackbar/Snackbar.stories";
 import { Test as StackTestStory } from "../Stack/Stack.stories";
+import { Test as StatusIconTestStory } from "../StatusIcon/StatusIcon.stories";
 import { Variants as SwitchVariantsStory } from "../Switch/Switch.stories";
 import { Test as TabsTestStory } from "../Tabs/Tabs.stories";
 import { Test as TagTestStory } from "../Tag/Tag.stories";
@@ -299,6 +300,7 @@ export const TestOthers: StoryObj = {
         </div>
       </div>
       {renderStory(BadgeTestStory, context)}
+      {renderStory(StatusIconTestStory, context)}
       <div className="flex gap-sm">
         {renderStory(CarouselEmbeddedStory, context)}
         <div className="w-650px">

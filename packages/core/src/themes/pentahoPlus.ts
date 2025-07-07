@@ -66,8 +66,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             {
               backgroundColor: theme.mix(`${color}Dimmed`, 0.5, "dimmer"),
               "--icolor": theme.colors[color],
-              "--outline": theme.colors[`${color}Border`],
-              "--bg": theme.colors[`${color}Subtle`],
               "--title": theme.colors[`${color}Deep`],
             },
           ]),
@@ -79,10 +77,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
         messageIcon: {
           alignSelf: "start",
-          borderRadius: theme.radii.round,
-          color: "var(--icolor)",
-          outline: `1px solid var(--outline)`,
-          backgroundColor: "var(--bg)",
         },
         messageTitle: {
           color: "var(--title)",
@@ -306,7 +300,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         sm: { fontSize: 20, padding: 2 },
         md: { fontSize: 26, padding: 3 },
         lg: { fontSize: 36, padding: 6 },
-        xl: { fontSize: 48, padding: 8 },
+        xl: { fontSize: 48, padding: 5 },
       },
     },
     HvInlineEditor: {
