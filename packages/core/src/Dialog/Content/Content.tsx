@@ -34,16 +34,28 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
 
   const { classes, cx } = useClasses(classesProp);
   const [hasBorder, setHasBorder] = useState(false);
-
   const elRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = elRef.current as HTMLElement | null;
-    if (el) {
-      const hasOverflow = el.scrollHeight > el.clientHeight;
-      setHasBorder(hasOverflow);
+    if (typeof ResizeObserver !== "undefined") {
+      const resizeObserver = new ResizeObserver(() => {
+        const el = elRef.current as HTMLElement | null;
+        if (el) {
+          const hasOverflow = el.scrollHeight > el.clientHeight;
+          setHasBorder(hasOverflow);
+        }
+      });
+
+      if (elRef.current) {
+        resizeObserver.observe(elRef.current as HTMLElement);
+      }
+
+      return () => {
+        resizeObserver.disconnect();
+      };
     }
-  }, [elRef]);
+    return undefined;
+  }, []);
 
   return (
     <HvTypography
@@ -52,6 +64,7 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
       className={cx(
         classes.root,
         { [classes.textContent]: !!indentContent },
+        { [classes.contentBorder]: hasBorder },
         className,
       )}
       style={{
