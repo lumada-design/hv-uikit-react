@@ -154,6 +154,9 @@ export const ds5 = mergeTheme(ds5Base, {
     HvDialogTitle: {
       classes: {
         root: {
+          "& .HvStatusIcon-root": {
+            padding: 0,
+          },
           "& .HvIconContainer-root": {
             color: `${theme.colors.secondary}!important`,
           },

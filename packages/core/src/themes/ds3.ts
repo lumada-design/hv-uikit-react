@@ -508,6 +508,9 @@ export const ds3 = mergeTheme(ds3Base, {
           ...theme.typography.xxsTitle,
         },
         root: {
+          "& .HvStatusIcon-root": {
+            padding: 0,
+          },
           "& .HvIconContainer-root": {
             color: `${theme.colors.secondary}!important`,
           },
