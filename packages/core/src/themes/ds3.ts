@@ -510,6 +510,14 @@ export const ds3 = mergeTheme(ds3Base, {
         },
       },
     },
+    HvDialogContent: {
+      classes: {
+        root: {
+          borderTop: "none!important",
+          borderBottom: "none!important",
+        },
+      },
+    },
     HvDropdown: {
       classes: {
         readOnly: {
