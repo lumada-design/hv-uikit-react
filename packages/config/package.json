@@ -21,12 +21,15 @@
   "bugs": {
     "url": "https://github.com/lumada-design/hv-uikit-react/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "clean": "npx rimraf package",
+    "prepublishOnly": "npm run clean && npx clean-publish"
+  },
   "exports": {
     "./package.json": "./package.json",
     "./prettier": "./.prettierrc.json",
     "./licenses": "./licenses/index.js",
-    "./oxlint/*": "./oxlint/*",
+    "./oxlint/*.json": "./oxlint/*.json",
     "./tsconfig": "./tsconfig.json"
   },
   "peerDependencies": {
@@ -34,6 +37,11 @@
     "prettier": "^3.0.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "package"
+  },
+  "clean-publish": {
+    "withoutPublish": true,
+    "tempDir": "package"
   }
 }
