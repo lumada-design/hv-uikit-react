@@ -94,6 +94,7 @@ export const HvWizardTitle = ({
         classes.messageContainer,
         classes.titleContainer,
       )}
+      showIcon={false}
     >
       {title && (
         <HvTypography variant="title3" component="div">
