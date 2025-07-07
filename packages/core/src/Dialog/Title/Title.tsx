@@ -8,7 +8,6 @@ import {
 
 import { HvStatusIcon } from "../../StatusIcon";
 import { HvTypography } from "../../Typography";
-import { iconVariant } from "../../utils/iconVariant";
 import { useDialogContext } from "../context";
 import { staticClasses, useClasses } from "./Title.styles";
 
