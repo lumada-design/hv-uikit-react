@@ -41,7 +41,7 @@ const Header = ({ title, onOpen }: { title: string; onOpen: () => void }) => (
       <HvIconButton
         title="Open in new window"
         component="a"
-        href="http://localhost:9001/iframe.html?id=components-code-editor--main"
+        href="#"
         target="_blank"
         rel="noopener noreferrer"
       >

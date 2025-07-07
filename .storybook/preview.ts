@@ -1,4 +1,4 @@
-import { Preview } from "@storybook/react-vite";
+import type { Preview } from "@storybook/react-vite";
 
 import DocsContainer from "./blocks/DocsContainer";
 import { DocsPage } from "./blocks/DocsPage";
@@ -20,19 +20,15 @@ export const parameters: Preview["parameters"] = {
     },
   },
   a11y: {
-    config: {
-      rules: [
-        {
-          // Disable color contrast rule
-          id: "color-contrast",
-          enabled: false,
-        },
-        {
-          // disable because all stories have a `aria-hidden="true"` in the root
-          id: "aria-hidden-focus",
-          enabled: false,
-        },
-      ],
+    test: "error",
+    options: {
+      rules: {
+        // Disable color contrast rule
+        "color-contrast": { enabled: false },
+        // Disabled because tests have repeated components (eg. `HvHeader`)
+        "landmark-unique": { enabled: false },
+        "landmark-no-duplicate-banner": { enabled: false },
+      },
     },
   },
   // Disables Chromatic's snapshotting on a global level

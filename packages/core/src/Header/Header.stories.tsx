@@ -148,16 +148,6 @@ export const Main: StoryObj<HvHeaderProps> = {
 };
 
 export const Test: StoryObj = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          { id: "landmark-no-duplicate-banner", enabled: false },
-          { id: "landmark-unique", enabled: false },
-        ],
-      },
-    },
-  },
   render: () => (
     <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
       <HvHeader position="relative">

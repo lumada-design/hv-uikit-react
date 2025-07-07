@@ -86,14 +86,6 @@ export const SliderMode: StoryObj<HvVerticalNavigationProps> = {
 
 export const Test: StoryObj<HvVerticalNavigationProps> = {
   parameters: {
-    a11y: {
-      config: {
-        rules: [
-          { id: "landmark-unique", enabled: false },
-          { id: "color-contrast", enabled: false },
-        ],
-      },
-    },
     ...setupChromatic(
       [
         "DS3 dawn",

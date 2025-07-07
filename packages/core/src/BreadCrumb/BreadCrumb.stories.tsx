@@ -61,56 +61,11 @@ export const WithURL: StoryObj<HvBreadCrumbProps> = {
   },
 };
 
-export const WithCustomComponent: StoryObj<HvBreadCrumbProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Breadcrumb sample with a `CustomNavLink` component that has a custom `onClick` behavior.",
-      },
-    },
-  },
-  render: () => {
-    const CustomNavLink = ({ children, to, ariaLabel, ...others }: any) => (
-      <a
-        href={to}
-        aria-label={ariaLabel}
-        onClick={() => console.log("clicked", to)}
-        // make sure to forward other props
-        {...others}
-      >
-        {children}
-      </a>
-    );
-
-    return (
-      <HvBreadCrumb
-        listRoute={data.map(({ label, path }) => ({
-          label,
-          path: `#${path}`,
-          to: `#${path}`,
-          ariaLabel: label,
-        }))}
-        aria-label="Breadcrumb"
-        component={CustomNavLink}
-      />
-    );
-  },
-};
-
 export const Test: StoryObj<HvBreadCrumbProps> = {
   parameters: {
     docs: {
       description: {
         story: "Breadcrumb with long labels.",
-      },
-    },
-    a11y: {
-      config: {
-        rules: [
-          // TODO: review aria-haspopup on a role-less element
-          { id: "aria-valid-attr-value", enabled: false },
-        ],
       },
     },
   },

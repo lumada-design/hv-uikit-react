@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import { Favorite, Heart } from "@hitachivantara/uikit-react-icons";
@@ -8,9 +7,6 @@ import {
   HvCanvasBottomPanelProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { MainStory } from "./stories/Main";
-import MainRaw from "./stories/Main?raw";
-
 const meta: Meta<typeof HvCanvasBottomPanel> = {
   title: "Pentaho/Canvas/Bottom Panel",
   component: HvCanvasBottomPanel,
@@ -18,7 +14,13 @@ const meta: Meta<typeof HvCanvasBottomPanel> = {
 export default meta;
 
 export const Main: StoryObj<HvCanvasBottomPanelProps> = {
-  args: { open: true },
+  args: {
+    open: true,
+    tabs: [
+      { id: 0, title: "Tab 1" },
+      { id: 1, title: "Tab 2" },
+    ],
+  },
   argTypes: {
     tabs: { control: { disable: true } },
     classes: { control: { disable: true } },
@@ -26,20 +28,13 @@ export const Main: StoryObj<HvCanvasBottomPanelProps> = {
     leftActions: { control: { disable: true } },
     rightActions: { control: { disable: true } },
   },
-  parameters: {
-    docs: {
-      source: {
-        code: MainRaw,
-      },
-    },
-  },
   render: (args) => {
-    return <MainStory {...args} />;
+    return (
+      <HvCanvasBottomPanel {...args} className="relative">
+        Content
+      </HvCanvasBottomPanel>
+    );
   },
-};
-
-const classes = {
-  panel: css({ position: "relative" }),
 };
 
 const leftActions = [
@@ -63,12 +58,6 @@ export const PlaywrightTest: StoryObj = {
     const [open, setOpen] = useState(true);
     const [selectedTab, setSelectedTab] = useState(tabs[0].id);
 
-    const handleAction: HvCanvasBottomPanelProps["onAction"] = (
-      event,
-      action,
-      tabId,
-    ) => alert(`You clicked action ${action.label} for ${tabId}.`);
-
     return (
       <>
         <HvButton onClick={() => setOpen((prev) => !prev)}>
@@ -79,12 +68,14 @@ export const PlaywrightTest: StoryObj = {
         </HvButton>
         <HvCanvasBottomPanel
           open={open}
-          className={classes.panel}
+          className="relative"
           tabs={tabs}
           leftActions={leftActions}
           rightActions={rightActions}
           overflowActions={[...leftActions, ...rightActions]}
-          onAction={handleAction}
+          onAction={(event, action, tabId) => {
+            alert(`You clicked action ${action.label} for ${tabId}.`);
+          }}
           minimize={minimize}
           selectedTabId={selectedTab}
           onTabChange={(event, id) => setSelectedTab(id as number)}
@@ -101,7 +92,7 @@ export const Test: StoryObj = {
     <>
       <HvCanvasBottomPanel
         open
-        className={classes.panel}
+        className="relative"
         tabs={tabs}
         leftActions={leftActions}
         rightActions={rightActions}
@@ -111,7 +102,7 @@ export const Test: StoryObj = {
       </HvCanvasBottomPanel>
       <HvCanvasBottomPanel
         open
-        className={classes.panel}
+        className="relative"
         tabs={tabs}
         leftActions={[leftActions[0]]}
         rightActions={[rightActions[0], rightActions[1]]}
@@ -120,13 +111,8 @@ export const Test: StoryObj = {
       </HvCanvasBottomPanel>
       <HvCanvasBottomPanel
         open
-        className={classes.panel}
-        tabs={[
-          {
-            id: 1,
-            title: "Tab 2",
-          },
-        ]}
+        className="relative"
+        tabs={[{ id: 1, title: "Tab 2" }]}
         leftActions={[leftActions[0]]}
         rightActions={[rightActions[0], rightActions[1]]}
       >
@@ -135,7 +121,7 @@ export const Test: StoryObj = {
       <HvCanvasBottomPanel
         open
         minimize
-        className={classes.panel}
+        className="relative"
         tabs={tabs}
         leftActions={[leftActions[0]]}
         rightActions={[rightActions[0], rightActions[1]]}
@@ -145,13 +131,8 @@ export const Test: StoryObj = {
       <HvCanvasBottomPanel
         open
         minimize
-        className={classes.panel}
-        tabs={[
-          {
-            id: 1,
-            title: "Tab 2",
-          },
-        ]}
+        className="relative"
+        tabs={[{ id: 1, title: "Tab 2" }]}
         leftActions={[leftActions[0]]}
         rightActions={[rightActions[0], rightActions[1]]}
       >

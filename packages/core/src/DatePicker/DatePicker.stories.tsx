@@ -23,16 +23,6 @@ const meta: Meta<typeof HvDatePicker> = {
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCalendar },
   component: HvDatePicker,
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // TODO: review aria-haspopup on a role-less element
-          { id: "aria-valid-attr-value", enabled: false },
-        ],
-      },
-    },
-  },
 };
 export default meta;
 

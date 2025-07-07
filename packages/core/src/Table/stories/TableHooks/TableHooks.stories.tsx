@@ -105,17 +105,6 @@ export const UseHvTableStickyStory: StoryObj = {
 };
 
 export const UseHvHeaderGroupsStory: StoryObj = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // the th cells without data are hidden to the a11y tree,
-          // but axe-core doesn't correctly understand that
-          { id: "th-has-data-cells", enabled: false },
-        ],
-      },
-    },
-  },
   render: () => <UseHvHeaderGroups />,
 };
 
@@ -125,17 +114,6 @@ export const UseHvRowStateStory: StoryObj = {
 
 /** This was created to test grouped headers with sticky columns */
 export const TestHeaders: StoryObj = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [
-          // the th cells without data are hidden to the a11y tree,
-          // but axe-core doesn't correctly understand that
-          { id: "th-has-data-cells", enabled: false },
-        ],
-      },
-    },
-  },
   render: () => {
     const data = useMemo(
       () => [

@@ -5,23 +5,16 @@ import {
 } from "@hitachivantara/uikit-react-viz";
 
 import { vizDecorator } from "../../BaseChart/stories/utils";
-import { CustomEchartsOptions as CustomEchartsOptionsStory } from "./CustomEchartsOptions";
-import CustomEchartsOptionsRaw from "./CustomEchartsOptions?raw";
-import { HorizontalRangeSlider as HorizontalRangeSliderStory } from "./HorizontalRangeSlider";
-import HorizontalRangeSliderRaw from "./HorizontalRangeSlider?raw";
-import { Main as MainStory } from "./Main";
-import MainRaw from "./Main?raw";
-import { MultiplePlotsWithSplitBy as MultiplePlotsWithSplitByStory } from "./MultiplePlotsWithSplitBy";
-import MultiplePlotsWithSplitByRaw from "./MultiplePlotsWithSplitBy?raw";
-import { MultipleYAxes as MultipleYAxesStory } from "./MultipleYAxes";
-import MultipleYAxesRaw from "./MultipleYAxes?raw";
 
 const meta: Meta<typeof HvScatterPlot> = {
   title: "Visualizations/Scatter Plot",
   component: HvScatterPlot,
   decorators: [vizDecorator],
+  tags: ["skipTestRunner"],
 };
 export default meta;
+
+const temperatureFormatter = (x?: string | number) => `${x}ºC`;
 
 export const Main: StoryObj<HvScatterPlotProps> = {
   argTypes: {
@@ -48,56 +41,31 @@ export const Main: StoryObj<HvScatterPlotProps> = {
     grid: { control: { disable: true } },
     onEvents: { control: { disable: true } },
   },
-  parameters: { docs: { source: { code: MainRaw } } },
-  render: (args) => <MainStory {...args} />,
-};
-
-export const MultiplePlotsWithSplitBy: StoryObj<HvScatterPlotProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Multiple scatter plots created by splitting the data.",
-      },
-      source: { code: MultiplePlotsWithSplitByRaw },
-    },
-  },
-  render: () => <MultiplePlotsWithSplitByStory />,
-};
-
-export const MultipleYAxes: StoryObj<HvScatterPlotProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story: "Scatter plot with multiple y axes.",
-      },
-      source: { code: MultipleYAxesRaw },
-    },
-  },
-  render: () => <MultipleYAxesStory />,
-};
-
-export const HorizontalRangeSlider: StoryObj<HvScatterPlotProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Scatter plot with a range slider to zoom the data along the x axis",
-      },
-      source: { code: HorizontalRangeSliderRaw },
-    },
-  },
-  render: () => <HorizontalRangeSliderStory />,
-};
-
-export const CustomEchartsOptions: StoryObj<HvScatterPlotProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "If necessary, you can customize the chart's option and take advantage of the additional properties offered by ECharts.",
-      },
-      source: { code: CustomEchartsOptionsRaw },
-    },
-  },
-  render: () => <CustomEchartsOptionsStory />,
+  render: (args) => (
+    <HvScatterPlot
+      {...args}
+      data={{
+        Temperature: [
+          20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48,
+        ],
+        Sales: [
+          560, 498, 502, 536, 575, 753, 786, 983, 1025, 1286, 1822, 2150, 2200,
+          1920, 1856,
+        ],
+      }}
+      groupBy="Temperature"
+      measures="Sales"
+      yAxis={{
+        name: "Number of Sales",
+      }}
+      xAxis={{
+        minValue: 20,
+        name: "Temperature",
+        labelFormatter: temperatureFormatter,
+      }}
+      tooltip={{
+        titleFormatter: temperatureFormatter,
+      }}
+    />
+  ),
 };

@@ -1,4 +1,3 @@
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HvButton } from "@hitachivantara/uikit-react-core";
 import {
@@ -6,29 +5,12 @@ import {
   HvCanvasToolbarProps,
 } from "@hitachivantara/uikit-react-pentaho";
 
-import { CustomStory } from "./stories/Custom";
-import CustomRaw from "./stories/Custom?raw";
-
 const meta: Meta<typeof HvCanvasToolbar> = {
   title: "Pentaho/Canvas/Toolbar",
   component: HvCanvasToolbar,
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          height: 54,
-        }}
-      >
-        {Story()}
-      </div>
-    ),
-  ],
+  decorators: [(Story) => <div className="h-54px">{Story()}</div>],
 };
 export default meta;
-
-const classes = {
-  toolbar: css({ position: "relative" }), // for Storybook purposes
-};
 
 export const Main: StoryObj<HvCanvasToolbarProps> = {
   args: {
@@ -42,21 +24,10 @@ export const Main: StoryObj<HvCanvasToolbarProps> = {
   },
   render: (args) => {
     return (
-      <HvCanvasToolbar {...args} className={classes.toolbar}>
+      <HvCanvasToolbar {...args} className="relative">
         <HvButton variant="primary">Save</HvButton>
         <HvButton variant="primaryGhost">Cancel</HvButton>
       </HvCanvasToolbar>
     );
   },
-};
-
-export const Custom: StoryObj<HvCanvasToolbarProps> = {
-  parameters: {
-    docs: {
-      source: {
-        code: CustomRaw,
-      },
-    },
-  },
-  render: () => <CustomStory />,
 };
