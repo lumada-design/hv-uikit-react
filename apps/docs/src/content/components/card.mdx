@@ -22,10 +22,10 @@ import { Header } from "../../components/Header";
 >
   <HvCardHeader
     title={<HvTypography variant="title4">Schedule New Job</HvTypography>}
-    icon={<Job size="XS" />}
+    icon={<HvStatusIcon variant="default" customIcon={<Job />} />}
     subheader={
-      <HvTypography variant="caption2">
-        Run data backups or maintenance tasks on your schedule
+      <HvTypography variant="caption1">
+        Run data maintenance tasks on your schedule
       </HvTypography>
     }
   />
@@ -78,10 +78,10 @@ To add actions to a card, use the `HvActionBar` component.
   <HvCard className="w-380px" bgcolor="atmo1">
     <HvCardHeader
       title={
-        <HvTypography variant="title3">Start using UI Kit now</HvTypography>
+        <HvTypography variant="title4">Start using UI Kit now</HvTypography>
       }
       subheader={
-        <HvTypography>
+        <HvTypography variant="caption1">
           Get started with the UI Kit and build your next project.
         </HvTypography>
       }

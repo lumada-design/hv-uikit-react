@@ -629,12 +629,14 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
         selectable: {
           ":hover": {
-            outlineColor: theme.colors.bgHover,
-            backgroundColor: theme.colors.primaryDimmed,
+            outlineColor: theme.colors.primarySubtle,
+            backgroundColor: theme.colors.bgHover,
           },
         },
         selected: {
-          outlineColor: theme.colors.primaryDeep,
+          "&,&:hover,&:focus": {
+            outlineColor: theme.colors.primary,
+          },
         },
         semanticBar: {
           "--bar-height": "2px",
@@ -647,7 +649,12 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         root: {
           flexDirection: "row-reverse",
           padding: theme.spacing("xs", "sm"),
-          gap: 0,
+        },
+        subheader: {
+          color: theme.colors.textSubtle,
+        },
+        action: {
+          alignSelf: "center",
         },
       },
     },
