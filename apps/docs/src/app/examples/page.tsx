@@ -6,6 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import canvas from "./canvas/page.mdx?raw";
+import cards from "./cards/page.mdx?raw";
 import charts from "./charts/page.mdx?raw";
 import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
@@ -23,6 +24,7 @@ const countCodeBlocks = (fileContent: string): number => {
 };
 
 const sections = [
+  { slug: "cards", title: "Cards", total: countCodeBlocks(cards) },
   { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
   { slug: "charts", title: "Charts", total: countCodeBlocks(charts) },
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
@@ -36,6 +38,8 @@ type Slug = (typeof sections)[number]["slug"];
 
 const getSectionIcon = (title: Slug) => {
   switch (title) {
+    case "cards":
+      return <div className="i-ph-cards" />;
     case "tables":
       return <div className="i-ph-table" />;
     case "charts":
