@@ -8,6 +8,12 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvSectionProps } from "../Section";
+
+type CSSClasses<Props extends Record<string, any>> = Omit<Props, "classes"> & {
+  classes?: Record<string, CSSObject>;
+};
+
 /** light-dark alias */
 const ld = (c1: string, c2: string) => `light-dark(${c1}, ${c2})`;
 
@@ -163,6 +169,13 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     },
+    HvSection: {
+      classes: {
+        content: {
+          backgroundColor: theme.colors.bgPage, // = bgContainerSecondary
+        },
+      },
+    } satisfies CSSClasses<HvSectionProps>,
     HvSelect: {
       classes: {
         root: {

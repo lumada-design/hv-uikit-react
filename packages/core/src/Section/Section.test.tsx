@@ -1,16 +1,16 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
-import { HvButton } from "../Button";
 import { HvSection } from "./Section";
 
 describe("Section", () => {
-  it("should contain all the steps", () => {
+  it("contains all the steps", () => {
     render(<HvSection title="Section Title" />);
     expect(screen.getByText("Section Title")).toBeInTheDocument();
   });
 
-  it("should render the content when it's not expandable", () => {
+  it("renders the content when it's not expandable", () => {
     render(
       <HvSection title="Section Title" expanded>
         <div>Child Content</div>
@@ -19,7 +19,7 @@ describe("Section", () => {
     expect(screen.getByText("Child Content")).toBeInTheDocument();
   });
 
-  it("should render the content when it's expandable and is expanded by default", () => {
+  it("renders the content when it's expandable and is expanded by default", () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded>
         <div>Child Content</div>
@@ -28,7 +28,7 @@ describe("Section", () => {
     expect(screen.queryByText("Child Content")).toBeInTheDocument();
   });
 
-  it("should not render the content when it's expandable and is not expanded by default", () => {
+  it("doesn't render the content when it's expandable and is not expanded by default", () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded={false}>
         <div>Child Content</div>
@@ -37,7 +37,7 @@ describe("Section", () => {
     expect(screen.queryByText("Child Content")).not.toBeVisible();
   });
 
-  it("should toggle the expanded state when the expand button is clicked", async () => {
+  it("toggles the expanded state when the expand button is clicked", async () => {
     render(
       <HvSection title="Section Title" expandable defaultExpanded={false}>
         <div>Child Content</div>
@@ -46,18 +46,58 @@ describe("Section", () => {
 
     expect(screen.queryByText("Child Content")).not.toBeVisible();
 
-    const expandButton = screen.getByRole("button");
-    fireEvent.click(expandButton);
-
+    await userEvent.click(screen.getByRole("button"));
     expect(screen.queryByText("Child Content")).toBeVisible();
 
-    fireEvent.click(expandButton);
-
+    await userEvent.click(screen.getByRole("button"));
     expect(screen.queryByText("Child Content")).not.toBeVisible();
   });
 
-  it("should render the actions prop", () => {
-    const actions = <HvButton>Action 1</HvButton>;
+  it("toggles the expanded state when the header is clicked", async () => {
+    const toggleMock = vi.fn();
+    render(
+      <HvSection
+        title="Section Title"
+        expandable
+        expandableHeader
+        defaultExpanded={false}
+        onToggle={toggleMock}
+      >
+        <div>Child Content</div>
+      </HvSection>,
+    );
+
+    expect(screen.queryByText("Child Content")).not.toBeVisible();
+
+    await userEvent.click(screen.getByText("Section Title"));
+    expect(screen.queryByText("Child Content")).toBeVisible();
+    expect(toggleMock).toHaveBeenCalledWith(expect.anything(), true);
+  });
+
+  it("doesn't toggle the expanded state when an action is clicked", async () => {
+    const toggleMock = vi.fn();
+    render(
+      <HvSection
+        title="Section Title"
+        expandable
+        expandableHeader
+        defaultExpanded={false}
+        actions={<button type="button">Action</button>}
+        onToggle={toggleMock}
+      >
+        <div>Child Content</div>
+      </HvSection>,
+    );
+
+    expect(screen.queryByText("Child Content")).not.toBeVisible();
+
+    await userEvent.click(screen.getByRole("button", { name: "Action" }));
+    expect(screen.queryByText("Child Content")).not.toBeVisible();
+    expect(toggleMock).not.toHaveBeenCalled();
+  });
+
+  it("renders the actions prop", () => {
+    const actions = <button type="button">Action 1</button>;
     render(<HvSection title="Section Title" actions={actions} />);
 
     expect(screen.getByText("Action 1")).toBeInTheDocument();

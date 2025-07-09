@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -20,6 +20,8 @@ export interface HvSectionProps
   title?: React.ReactNode;
   /** Whether or not the section is expandable.  */
   expandable?: boolean;
+  /** Whether or not the section header is expandable. If true, the header will be clickable and will toggle the section content. */
+  expandableHeader?: boolean;
   /** Whether the section is open or not, if this property is defined the accordion must be fully controlled. */
   expanded?: boolean;
   /** When uncontrolled, defines the initial expanded state. */
@@ -53,6 +55,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       title,
       expandable,
       expanded,
+      expandableHeader,
       defaultExpanded = true,
       actions,
       onToggle,
@@ -63,6 +66,7 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
       ...others
     } = useDefaultProps("HvSection", props);
     const { classes, cx } = useClasses(classesProp);
+    const expandButtonRef = useRef<HTMLButtonElement>(null);
 
     const { isOpen, toggleOpen, buttonProps, regionProps } = useExpandable({
       id,
@@ -82,11 +86,22 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
         {...others}
       >
         {hasHeader && (
-          <div className={classes.header}>
+          <div
+            className={cx(classes.header, {
+              [classes.headerExpandable]: expandable && expandableHeader,
+            })}
+            // eslint-disable-next-line click-events-have-key-events
+            onClick={() => {
+              if (!expandableHeader) return;
+              expandButtonRef.current?.click();
+            }}
+          >
             {expandable && (
               <HvButton
+                ref={expandButtonRef}
                 icon
                 onClick={(event) => {
+                  event.stopPropagation();
                   toggleOpen();
                   onToggle?.(event, !isOpen);
                 }}
@@ -98,7 +113,15 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
               </HvButton>
             )}
             {title}
-            <div className={classes.actions}>{actions}</div>
+            <div
+              className={classes.actions}
+              // eslint-disable-next-line click-events-have-key-events
+              onClick={(evt) => {
+                evt.stopPropagation();
+              }}
+            >
+              {actions}
+            </div>
           </div>
         )}
         <div

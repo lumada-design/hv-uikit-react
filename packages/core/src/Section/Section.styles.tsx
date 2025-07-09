@@ -8,6 +8,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     flexDirection: "column",
     backgroundColor: theme.colors.bgContainer,
     borderRadius: theme.radii.round,
+    overflow: "hidden",
     border: `1px solid ${theme.colors.border}`,
   },
   hidden: { height: 0, display: "none" },
@@ -17,11 +18,23 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     borderColor: "inherit",
     position: "relative",
     padding: theme.space.sm,
+
+    "+ $content": {
+      borderTopLeftRadius: 0,
+      borderTopRightRadius: 0,
+    },
+  },
+  headerExpandable: {
+    cursor: "pointer",
+    ":hover": {
+      backgroundColor: theme.colors.bgHover,
+    },
   },
   content: {
     padding: theme.space.sm,
     borderRadius: "inherit",
     borderColor: "inherit",
+    flex: 1,
   },
   hasHeader: {
     paddingTop: 0,
