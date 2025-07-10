@@ -25,6 +25,10 @@ export const ds3 = mergeTheme(ds3Base, {
         root: {
           borderRadius: 0,
         },
+        messageIcon: {
+          color: "inherit !important",
+          padding: 0,
+        },
       },
     },
     HvCheckBoxIcon: {
@@ -1230,16 +1234,6 @@ export const ds3 = mergeTheme(ds3Base, {
     },
     HvStatusIcon: {
       type: "simple",
-    },
-    HvBannerContent: {
-      classes: {
-        iconContainer: {
-          color: `${theme.colors.secondary}!important`,
-          "&.HvStatusIcon-root": {
-            padding: 0,
-          },
-        },
-      },
     },
   },
 });
