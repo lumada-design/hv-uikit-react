@@ -18,12 +18,6 @@ export const ds5 = mergeTheme(ds5Base, {
         root: {
           borderRadius: 0,
         },
-        iconContainer: {
-          color: `${theme.colors.secondary}!important`,
-          "&.HvStatusIcon-root": {
-            padding: 0,
-          },
-        },
       },
     },
     HvBaseDropdown: {
@@ -84,6 +78,14 @@ export const ds5 = mergeTheme(ds5Base, {
               borderColor: theme.colors.negative_80,
             },
           },
+        },
+      },
+    },
+    HvCallout: {
+      classes: {
+        messageIcon: {
+          color: "inherit !important",
+          padding: 0,
         },
       },
     },
