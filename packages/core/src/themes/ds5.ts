@@ -19,7 +19,7 @@ export const ds5 = mergeTheme(ds5Base, {
           borderRadius: 0,
         },
         iconContainer: {
-          color: `${theme.colors.secondary}!important`,
+          color: `${theme.colors.textDark}!important`,
           "&.HvStatusIcon-root": {
             padding: 0,
           },
@@ -146,6 +146,14 @@ export const ds5 = mergeTheme(ds5Base, {
         },
         categorical: {
           "--tagColor": theme.alpha("cat1", 0.2),
+        },
+      },
+    },
+
+    HvSnackbarContent: {
+      classes: {
+        iconVariant: {
+          color: `${theme.colors.textDark}!important`,
         },
       },
     },

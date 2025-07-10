@@ -950,6 +950,9 @@ export const ds3 = mergeTheme(ds3Base, {
         action: {
           marginLeft: "inherit",
         },
+        iconVariant: {
+          color: `${theme.colors.textDark}!important`,
+        },
       },
     },
     HvSwitch: {
@@ -1234,7 +1237,7 @@ export const ds3 = mergeTheme(ds3Base, {
     HvBannerContent: {
       classes: {
         iconContainer: {
-          color: `${theme.colors.secondary}!important`,
+          color: `${theme.colors.textDark}!important`,
           "&.HvStatusIcon-root": {
             padding: 0,
           },
