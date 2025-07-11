@@ -465,6 +465,25 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     },
+    HvDialog: {
+      classes: {
+        paper: {
+          borderRadius: theme.radii.large,
+        },
+        statusBar: {
+          border: "none",
+          borderTopLeftRadius: theme.radii.large,
+          borderTopRightRadius: theme.radii.large,
+        },
+      },
+    },
+    HvDialogActions: {
+      classes: {
+        root: {
+          borderTop: "none",
+        },
+      },
+    },
     HvDropdownButton: {
       classes: {
         disabled: {

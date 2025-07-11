@@ -7,6 +7,7 @@ import {
   HvDialogContent,
   HvDialogProps,
   HvDialogTitle,
+  HvStatusIcon,
 } from "@hitachivantara/uikit-react-core";
 import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
@@ -50,16 +51,16 @@ const SimpleDialog = ({
         </HvDialogContent>
         <HvDialogActions>
           <HvButton
-            variant={variant ? buttonVariantMap[variant] : "secondaryGhost"}
-            onClick={() => setOpen(false)}
-          >
-            Apply
-          </HvButton>
-          <HvButton
             variant={variant ? "secondarySubtle" : "secondaryGhost"}
             onClick={() => setOpen(false)}
           >
             Cancel
+          </HvButton>
+          <HvButton
+            variant={variant ? buttonVariantMap[variant] : "secondaryGhost"}
+            onClick={() => setOpen(false)}
+          >
+            Apply
           </HvButton>
         </HvDialogActions>
       </HvDialog>
@@ -72,7 +73,7 @@ export const SemanticVariantsStory = () => (
     <SimpleDialog
       buttonMessage="Warning"
       variant="warning"
-      title={<HvDialogTitle variant="error">Warning</HvDialogTitle>}
+      title={<HvDialogTitle variant="warning">Warning</HvDialogTitle>}
     />
     <SimpleDialog
       buttonMessage="Success"
@@ -91,7 +92,14 @@ export const SemanticVariantsStory = () => (
     <SimpleDialog
       buttonMessage="Custom"
       title={
-        <HvDialogTitle customIcon={<Ungroup iconSize="S" />}>
+        <HvDialogTitle
+          customIcon={
+            <HvStatusIcon
+              variant="default"
+              customIcon={<div className="i-ph-tree-structure" />}
+            />
+          }
+        >
           Custom
         </HvDialogTitle>
       }

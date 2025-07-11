@@ -64,11 +64,11 @@ export const FormStory = () => {
           </form>
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton type="submit" form="create-post">
-            Create
-          </HvButton>
           <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
             Cancel
+          </HvButton>
+          <HvButton type="submit" form="create-post">
+            Create
           </HvButton>
         </HvDialogActions>
       </HvDialog>

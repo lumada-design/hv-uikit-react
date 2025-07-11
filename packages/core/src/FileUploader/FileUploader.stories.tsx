@@ -306,7 +306,7 @@ export const WithPreviewThumbnails: StoryObj<HvFileUploaderProps> = {
           }}
         />
         <HvDialog open={open} onClose={() => setOpen(false)}>
-          <HvDialogTitle>{previewTitle}</HvDialogTitle>
+          <HvDialogTitle showIcon={false}>{previewTitle}</HvDialogTitle>
           <HvDialogContent>
             <img
               alt="Preview of the uploaded file"

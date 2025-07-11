@@ -6,8 +6,12 @@ export const { staticClasses, useClasses } = createClasses("HvDialog-Content", {
     padding: theme.spacing(0, "sm", "sm"),
   },
   textContent: {
-    marginLeft: "42px",
+    paddingLeft: `calc(42px + ${theme.space.sm})`,
     paddingRight: "62px",
     overflowY: "auto",
+  },
+  contentBorder: {
+    borderTop: "var(--content-border)",
+    borderBottom: "var(--content-border)",
   },
 });
