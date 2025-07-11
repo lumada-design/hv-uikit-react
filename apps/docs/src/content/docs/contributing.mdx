@@ -50,9 +50,9 @@ For contribution steps, see [Submitting a Pull Request](#submitting-a-pull-reque
 
 ## Coding Standards
 
-We enforce consistent code style and formatting using [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
+We enforce consistent code style and formatting using [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [Prettier](https://prettier.io).
 
-Most modern IDEs support these tools via plugins, helping you follow the project’s rules automatically.  
+Most modern IDEs support these tools via plugins, helping you follow the project’s rules automatically.
 You can also run the following commands locally to check and fix issues:
 
 ```sh
@@ -61,6 +61,25 @@ npm run prettier
 ```
 
 Code that doesn’t meet our standards will fail in CI and block the merge.
+
+## Local development
+
+To test your changes in a local project, you can link the UI Kit packages using `npm link`.
+This allows you to use your local version of the UI Kit in other projects without publishing it.
+
+```sh
+# in the UI Kit root directory
+npm link -ws
+
+# in your local project directory
+npm link @hitachivantara/uikit-react-core
+```
+
+If package publishing is required, they can be easily published to a separate registry (eg. [Verdaccio](https://verdaccio.org/)) like so:
+
+```sh
+npm publish -w packages/core --registry http://localhost:4873
+```
 
 ## Commit Message Guidelines
 
@@ -76,10 +95,9 @@ type(scope): description
 
 - `feat:` a feature that is visible for end users.
 - `fix:` a bugfix that is visible for end users.
-- `chore:` a change that doesn't impact end users (e.g. chances to CI pipeline)
+- `chore:` a generic change that doesn't impact end users
 - `docs:` a change on the documentation
-- `refactor:` a change in production code focused on readability, style and/or performance.
-- Others commit types are allowed, for example: `style:`, `perf:`, `test:`.
+- Others commit types are allowed, for example: `refactor:`, `ci:`, `perf:`, `test:`.
 
 ### Examples
 
@@ -94,12 +112,13 @@ fix(button): minor typo in code, fixes #12
 All new features and fixes must include test coverage. Test your changes by running:
 
 ```sh
-npm run test
+npm test
 ```
 
 Our CI pipeline runs:
 
-- Accessibility checks (static a11y analysis)
+- Unit tests (Vitest)
+- Accessibility checks (axe-core)
 - End-to-end tests (Playwright)
 - Visual regression tests (Chromatic)
 
