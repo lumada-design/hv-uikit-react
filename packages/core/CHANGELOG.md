@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.98.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.97.0...@hitachivantara/uikit-react-core@5.98.0) (2025-07-11)
+
+### Bug Fixes
+
+- **Callout:** icon colors in ds3 & ds5 ([#4804](https://github.com/lumada-design/hv-uikit-react/issues/4804)) ([f374db8](https://github.com/lumada-design/hv-uikit-react/commit/f374db8ed6bdda2cc79dfa032685b9d9060f3bf8))
+
+### Features
+
+- **StatusIcon:** add StatusIcon component ([#4757](https://github.com/lumada-design/hv-uikit-react/issues/4757)) ([8989258](https://github.com/lumada-design/hv-uikit-react/commit/898925825480899fe8479156d5e7872c10795bf5))
+
 # [5.97.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.96.3...@hitachivantara/uikit-react-core@5.97.0) (2025-07-04)
 
 ### Bug Fixes

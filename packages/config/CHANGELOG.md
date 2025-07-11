@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.4.0...@hitachivantara/uikit-config@0.4.1) (2025-07-11)
+
+### Bug Fixes
+
+- **config:** package publishing ([#4800](https://github.com/lumada-design/hv-uikit-react/issues/4800)) ([0979318](https://github.com/lumada-design/hv-uikit-react/commit/097931827b3a62427a23278885dccf8a57f58b00))
+
 # [0.4.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.3.0...@hitachivantara/uikit-config@0.4.0) (2025-07-04)
 
 ### Features

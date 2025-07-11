@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.8.0...@hitachivantara/app-shell-vite-plugin@1.8.1) (2025-07-11)
+
+### Bug Fixes
+
+- **AppShell:** vite plugin windows build ([#4797](https://github.com/lumada-design/hv-uikit-react/issues/4797)) ([909ca5f](https://github.com/lumada-design/hv-uikit-react/commit/909ca5fa727e8eb4aa7d0c3f7ba7f1c42107dae0))
+
 # [1.8.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.7.9...@hitachivantara/app-shell-vite-plugin@1.8.0) (2025-07-04)
 
 ### Features
