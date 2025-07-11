@@ -178,12 +178,12 @@ interface StorageCardProps extends HvCardProps {
 const storages = [
   {
     name: "Local Storage",
-    icon: <Storage size="S" />,
+    icon: <HvStatusIcon customIcon={<Storage size="S" />} />,
     description: "Use local storage for quick access to user settings.",
   },
   {
     name: "Cloud Storage",
-    icon: <Cloud size="S" />,
+    icon: <HvStatusIcon customIcon={<Cloud size="S" />} />,
     description: "Use cloud storage for secure, scalable data access.",
   },
 ];
