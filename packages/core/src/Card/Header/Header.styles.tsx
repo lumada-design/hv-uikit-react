@@ -6,6 +6,8 @@ export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
     position: "relative",
     padding: theme.spacing("12px", "xs", "sm", "sm"),
     gap: theme.space.xs,
+    alignItems: "center",
+    display: "flex",
   },
   titleShort: {
     ...theme.typography.label,

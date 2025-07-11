@@ -90,18 +90,18 @@ export default function ExamplesPage() {
       </div>
 
       {/* Section Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-sm">
         {sections.map((section) => (
           <Link
             key={section.slug}
             href={`/examples/${section.slug}`}
-            className="hover:bg-bgContainer rounded-round p-xs"
+            className="hover:bg-bgContainer rounded-round p-xs text-center"
           >
             {/* Placeholder for section preview */}
             <div
               className={clsx(
                 "h-160px bg-bgContainer border border-atmo3",
-                "rounded-round mb-sm flex items-center justify-center",
+                "rounded-round mb-xs flex items-center justify-center",
               )}
             >
               <HvIconContainer color="textSubtle" size="xl">
