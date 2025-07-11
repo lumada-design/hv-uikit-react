@@ -10,13 +10,7 @@ import { tableRowClasses } from "../TableRow";
 
 export const { staticClasses, useClasses } = createClasses("HvTableSection", {
   root: {},
-  header: {
-    // Only apply the border to divide the header and content when both are displayed
-    "+ div": {
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
-    },
-  },
+  header: {},
   actions: {},
   content: {
     marginTop: 0,

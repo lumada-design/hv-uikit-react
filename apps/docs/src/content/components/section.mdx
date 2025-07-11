@@ -10,16 +10,10 @@ import { Header } from "../../components/Header";
   Component={HvSection}
   componentName="HvSection"
   controls={{
-    title: {
-      type: "text",
-      defaultValue: "Section title",
-    },
-    expandable: {
-      defaultValue: false,
-    },
-    raisedHeader: {
-      defaultValue: false,
-    },
+    title: { defaultValue: "Section title" },
+    expandable: { defaultValue: false },
+    expandableHeader: { defaultValue: false },
+    raisedHeader: { defaultValue: false },
   }}
 >
   <div>My section example content</div>
@@ -62,6 +56,7 @@ export default function Demo() {
       <HvSection
         title="Controlled section"
         expandable
+        expandableHeader
         expanded={expanded}
         onToggle={() => setExpanded((p) => !p)}
       >

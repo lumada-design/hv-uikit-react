@@ -80,7 +80,13 @@ export const Test: StoryObj = {
           dapibus accumsan est, a pharetra velit consequat et.
         </HvTypography>
       </HvSection>
-      <HvSection raisedHeader expandable title="My Section">
+      <HvSection
+        raisedHeader
+        expandable
+        expandableHeader
+        title="My Section"
+        actions={<HvButton variant="primaryGhost">Action</HvButton>}
+      >
         <HvTypography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor
           blandit ipsum quis sollicitudin. Aliquam erat volutpat. Praesent nisi
