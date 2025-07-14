@@ -1,6 +1,6 @@
 # @hitachivantara/uikit-react-pentaho
 
-UI Kit Pentaho+ React components.
+UI Kit Pentaho React components.
 
 ## Installation
 

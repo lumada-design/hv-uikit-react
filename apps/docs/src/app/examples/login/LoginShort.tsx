@@ -25,7 +25,7 @@ export default function LoginShort() {
         <>
           <span className="text-32px">Welcome to</span>
           <br />
-          <strong className="text-64px">Pentaho+</strong>
+          <strong className="text-64px">Pentaho</strong>
         </>
       }
       subtitle="Pentaho User Console"

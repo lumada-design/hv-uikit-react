@@ -266,7 +266,7 @@ export const rose = {
 
 /**
  * Base color palette tokens. Should rarely be used directly (eg. charts)
- * @private WIP. Currently in used for Pentaho+ theme
+ * @private WIP. Currently in used for Pentaho theme
  */
 export const palette = {
   slate,

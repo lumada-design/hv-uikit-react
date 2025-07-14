@@ -8,7 +8,7 @@ export default {
 
 export const Test: StoryObj = {
   parameters: {
-    ...setupChromatic(["DS5 dawn", "DS5 wicked", "Pentaho+ wicked"]),
+    ...setupChromatic(["DS5 dawn", "DS5 wicked", "Pentaho wicked"]),
     docs: { disable: true },
   },
   render: () => (

@@ -15,7 +15,7 @@ export default function LoginFull() {
         <>
           <span className="text-32px md:text-48px">Welcome to</span>
           <br />
-          <strong className="text-64px md:text-96px">Pentaho+</strong>
+          <strong className="text-64px md:text-96px">Pentaho</strong>
         </>
       }
       subtitle="Pentaho User Console"
@@ -31,7 +31,7 @@ export default function LoginFull() {
         }}
       >
         <HvTypography variant="title3" className="text-center">
-          Log in to your Pentaho+ account
+          Log in to your Pentaho account
         </HvTypography>
         <div className="grid gap-md">
           <div className="grid gap-xs">

@@ -74,7 +74,7 @@ export const Main: StoryObj<HvAppShellConfig> = {
   argTypes: {},
   parameters: {
     ...setupChromatic(
-      ["DS5 dawn", "DS5 wicked", "Pentaho+ dawn", "Pentaho+ wicked"],
+      ["DS5 dawn", "DS5 wicked", "Pentaho dawn", "Pentaho wicked"],
       5000,
     ),
   },
