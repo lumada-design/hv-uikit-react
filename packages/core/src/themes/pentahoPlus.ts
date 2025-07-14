@@ -682,7 +682,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
       },
     },
     HvFooter: {
-      name: "Pentaho+",
+      name: "Pentaho",
     },
     HvTabs: {
       classes: {

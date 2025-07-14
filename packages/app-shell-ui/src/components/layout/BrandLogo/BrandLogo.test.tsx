@@ -60,7 +60,7 @@ describe("`BrandLogo` component", () => {
   it("should render the Pentaho logo when provided", () => {
     const { getByLabelText } = render(
       <HvProvider>
-        <BrandLogo logo={{ name: "PENTAHO+" }} />
+        <BrandLogo logo={{ name: "PENTAHO" }} />
       </HvProvider>,
     );
 
@@ -104,7 +104,7 @@ describe("`BrandLogo` component", () => {
   it("should have logo default description (explicit null or prop not present)", () => {
     const { getByLabelText } = render(
       <HvProvider>
-        <BrandLogo logo={{ name: "PENTAHO+" }} />
+        <BrandLogo logo={{ name: "PENTAHO" }} />
       </HvProvider>,
     );
 

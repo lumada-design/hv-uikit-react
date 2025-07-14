@@ -14,7 +14,7 @@ export default {
     "@hv/user-notifications-client": VITE_USER_NOTIFICATIONS_URL,
   },
   logo: {
-    name: "PENTAHO+",
+    name: "PENTAHO",
   },
   theming: {
     themes: ["ds5", "pentahoPlus"],
