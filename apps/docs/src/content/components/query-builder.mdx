@@ -297,14 +297,12 @@ In the example above, 4 renderers were provided:
 If necessary, it's also possible to define value renderers at a more broad level using the `DEFAULT` key at the root of the `renderers` object like shown below. You should be aware that `DEFAULT` is a reserved key, you shouldn't use to define your own attribute or operator types.
 
 ```tsx
-// Example 1
-const renderers: HvQueryBuilderProps["renderers"] = {
+const renderers1: HvQueryBuilderProps["renderers"] = {
   // Renderer to customize all attribute types and operators
   DEFAULT: DefaultRenderer,
 };
 
-// Example 2
-const renderers: HvQueryBuilderProps["renderers"] = {
+const renderers2: HvQueryBuilderProps["renderers"] = {
   DEFAULT: {
     // Renderer to customize all attribute types and operators
     DEFAULT: DefaultRenderer,
@@ -644,11 +642,7 @@ const renderers = {
 `dispatchAction` is needed to update the query and can be accessed through the `useQueryBuilderContext` hook exported by the `core` package. This utility can be used to dispatch several action types such as: `reset-query`, `reset-group`, `add-rule`, `add-group`, `remove-node`, `set-combinator`, `set-attribute`, `set-operator`, and `set-value`. However, you'll most likely only need the `set-value` action that enables you to set the value of a condition. This action has the following specification:
 
 ```tsx
-{
-  type: "set-value";
-  id: React.Key;
-  value: any;
-}
+dispatchAction({ type: "set-value", id: "123", value: "myValue" });
 ```
 
 ### Controlled

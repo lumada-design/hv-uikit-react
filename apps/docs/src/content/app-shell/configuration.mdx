@@ -41,13 +41,13 @@ The common structure has the following specification:
 Example:
 
 ```ts
-{
+const moduleConfig = {
   bundle: "@hv-apps/my-app/pages/Hello.js",
   config: {
     name: "John",
     age: 30,
-  }
-}
+  },
+};
 ```
 
 ```tsx
@@ -91,10 +91,10 @@ Key-value object of _Application Bundles_ IDs and their respective locations. Us
 Example:
 
 ```ts
-apps: {
+const apps = {
   "@hv-apps/an-app": "http://localhost:3001/",
-  "@hv-apps/another-app": "http://localhost:5001/"
-}
+  "@hv-apps/another-app": "http://localhost:5001/",
+};
 ```
 
 In order to reference Views and Shared Modules from other Application Bundles', one must be registered in the App Shell's configuration.
@@ -102,7 +102,9 @@ In order to reference Views and Shared Modules from other Application Bundles', 
 When registered, the _Application Bundle_'s contents can then be referenced as "subpaths" of its module ID.
 
 ```ts
-{ route: "/hello", bundle: "@hv-apps/another-app/pages/Other.js" }
+const views = [
+  { route: "/hello", bundle: "@hv-apps/another-app/pages/Other.js" },
+];
 ```
 
 ```tsx
@@ -130,24 +132,24 @@ The `maxWidth` prop defaults to `"xl"`, instead of `false` as in the UI Kit.
 Example:
 
 ```ts
-mainPanel: {
+const mainPanel = {
   maxWidth: "sm",
   views: [
     {
       bundle: "@hv-apps/my-app/pages/Hello.js",
       route: "/hello",
       config: {
-        name: "John"
-      }
+        name: "John",
+      },
     },
     {
       bundle: "@hv-apps/another-app/pages/Person.js",
       route: "/contacts/:name",
       maxWidth: "lg",
-      fixed: true
-    }
-  ]
-}
+      fixed: true,
+    },
+  ],
+};
 ```
 
 See [Routing](./routing) for more information.
@@ -170,7 +172,7 @@ To give more context, when we use the Vertical Navigation panel and perform a me
 Example:
 
 ```ts
-menu: [
+const menu = [
   {
     label: "Page 1",
     icon: { iconType: "uikit", name: "Open" },
@@ -210,17 +212,19 @@ _Header Actions_ that will be displayed on the Header. It follows the [module st
 Example:
 
 ```ts
-actions: [
-  {
-    bundle: "@hv/user-notifications-client/index.js",
-    config: {
-      showCount: false,
+const header = {
+  actions: [
+    {
+      bundle: "@hv/user-notifications-client/index.js",
+      config: {
+        showCount: false,
+      },
     },
-  },
-  {
-    bundle: "@hv/theming-client/colorModeSwitcher.js",
-  },
-];
+    {
+      bundle: "@hv/theming-client/colorModeSwitcher.js",
+    },
+  ],
+};
 ```
 
 See [Header actions](./header-actions) for more information and see the available **App Shell** built-in actions.
@@ -230,7 +234,7 @@ See [Header actions](./header-actions) for more information and see the availabl
 This prop defines the _Providers_ that will wrap all the _Views_ and _Shared Modules_:
 
 ```ts
-providers: [
+const providers = [
   { bundle: "@hv-apps/some-app/providers/SomeProvider.js" },
   { bundle: "@hv-apps/other-app/providers/OtherProvider.js" },
 ];
@@ -250,29 +254,31 @@ These are **NOT** available to the _Views_.
 Being an object, it is required to have as root the language (en, pt, etc.) of the bundle:
 
 ```ts
-name: "translationKey",
-logo: {
-  name: "HITACHI",
-  description: "logoDesc"
-},
-menu: [
-  {
-    label: "pageOne",
-    target: "/page1"
-  }
-],
-translations: {
-  en: {
-    translationKey: "An Amazing App",
-    logoDesc: "Company logo",
-    pageOne: "Page One"
+const config = {
+  name: "translationKey",
+  logo: {
+    name: "HITACHI",
+    description: "logoDesc",
   },
-  pt: {
-    translationKey: "Uma App Fantástica",
-    logoDesc: "Logo da empresa",
-    pageOne: "Página Um"
-  }
-}
+  menu: [
+    {
+      label: "pageOne",
+      target: "/page1",
+    },
+  ],
+  translations: {
+    en: {
+      translationKey: "An Amazing App",
+      logoDesc: "Company logo",
+      pageOne: "Page One",
+    },
+    pt: {
+      translationKey: "Uma App Fantástica",
+      logoDesc: "Logo da empresa",
+      pageOne: "Página Um",
+    },
+  },
+};
 ```
 
 In the example above, the name of the application, that appears on the browser tab and on the header,
@@ -299,11 +305,11 @@ The config object for it has the following options:
 Example:
 
 ```ts
-theming: {
+const theming = {
   themes: ["ds5", "@hv-apps/my-app/tatooine.js"],
   theme: "tatooine",
-  colorMode: "sand"
-}
+  colorMode: "sand",
+};
 ```
 
 #### Custom theme
@@ -315,9 +321,11 @@ Custom themes are a _Shared Module_ that exports a UI Kit theme definition. For 
 The configuration can use environment variables that are to be replaced at build time.
 
 ```ts
-apps: {
-  "@hv/user-notifications-client": process.env.VITE_USER_NOTIFICATIONS_URL || "http://localhost:8080"
-}
+const { VITE_USER_NOTIFICATIONS_URL = "http://localhost:8080" } = process.env;
+
+const apps = {
+  "@hv/user-notifications-client": VITE_USER_NOTIFICATIONS_URL,
+};
 ```
 
 These variables should be set at `.env` files like explained [here](https://vite.dev/guide/env-and-mode).

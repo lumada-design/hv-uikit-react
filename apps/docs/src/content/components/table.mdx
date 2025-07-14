@@ -194,13 +194,11 @@ We recommend that you separate the table definition (`HvTable*` and `useHvTable`
 You should strive to have simple API that allows passing the `data` and `columns`, and not worrying about the layout or hook logic:
 
 ```tsx
-// simple usage
-<Table data={data} columns={columns} />
-
-// or with extra configuration
 <Table
+  // required parameters
   data={data}
   columns={columns}
+  // optional extra configuration
   actions={[
     { id: "delete", label: "Delete" },
     { id: "clone", label: "Clone" },
@@ -245,7 +243,7 @@ The `useHvPagination` hook makes the `getHvPaginationProps` function available o
 ```tsx
 const table = useHvTable({ columns, data }, useHvPagination);
 
-return <HvPagination {...table?.getHvPaginationProps()} />;
+<HvPagination {...table?.getHvPaginationProps()} />;
 ```
 
 ### `useHvSortBy`
@@ -276,7 +274,7 @@ The `useHvBulkActions` hook makes the `getHvBulkActionsProps` function available
 ```tsx
 const table = useHvTable({ columns, data }, useHvBulkActions);
 
-return <HvBulkActions {...table?.getHvBulkActionsProps()} />;
+<HvBulkActions {...table?.getHvBulkActionsProps()} />;
 ```
 
 ### `useHvTableSticky`
@@ -334,10 +332,10 @@ This is implemented using the `useHvHeaderGroups` custom React Table hook provid
 
 Note: When using grouped columns, all header group columns text will be centered.
 
-```tsx
+```ts
 const columns = [
   {
-    id: "name"
+    id: "name",
     Header: "Name",
     // 👇 nested columns under "name"
     columns: [

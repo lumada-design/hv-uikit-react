@@ -182,7 +182,7 @@ You'll need to remove all TypeScript types definitions previously defined for MU
 
 In your project you most likely have definitions like the one below and they should be removed.
 
-```ts
+```diff
 - declare module "@mui/material/styles" {
 -   interface Theme {
 -     hv: HvTheme;
@@ -342,7 +342,7 @@ export default withStyles(styles)(CustomButton);
 If you want to stop using MUI's JSS styling system, you'll need to uninstall `@mui/styles` from your project by running the command below. Ensure that
 you are not using this package for other purposes on your project and that you'll only need to use the UI Kit theme object on your application.
 
-```
+```sh
 npm uninstall @mui/styles
 ```
 
@@ -642,7 +642,7 @@ inside `avatarProps`.
 Since the `HvPanel` component was previously using MUI's `Box` component as its root element it was possible to use CSS properties directly on the
 component as properties. This is no longer possible and you must style the panel using the `style`, `classes`, or `className` properties.
 
-```tsx
+```diff
 + import { css } from "@emotion/css";
   import { HvPanel } from "@hitachivantara/uikit-react-core";
 

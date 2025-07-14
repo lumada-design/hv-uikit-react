@@ -40,15 +40,32 @@ The `data` prop in visualizations supports the **columns format**:
 Both examples below represent a table with 3 columns (`Month`, `Sales Target`, and `Monthly Sales`) and 12 rows.
 
 ```tsx
-{
-    Month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    "Sales Target": [5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146],
-    "Monthly Sales": [4563, 1920, 6738, 1832, 7346, 1938, 7261, 1938, 2739, 5729, 9028, 4562]
-}
+const data = {
+  Month: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
+  "Sales Target": [
+    5929, 2393, 1590, 7817, 4749, 1702, 2381, 2909, 6732, 3098, 2119, 2146,
+  ],
+  "Monthly Sales": [
+    4563, 1920, 6738, 1832, 7346, 1938, 7261, 1938, 2739, 5729, 9028, 4562,
+  ],
+};
 ```
 
 ```tsx
-new Map()
+const data = new Map()
   .set("Month", [
     "January",
     "February",
@@ -78,28 +95,12 @@ new Map()
 
 Example illustrating a table with 3 columns (`Country`, `Population`, and `Area`) and 4 rows.
 
-```tsx
+```ts
 [
-  {
-    Country: "Portugal",
-    Population: 10.33,
-    Area: 92212,
-  },
-  {
-    Country: "Spain",
-    Population: 47.42,
-    Area: 505990,
-  },
-  {
-    Country: "US",
-    Population: 331.9,
-    Area: 9834000,
-  },
-  {
-    Country: "Canada",
-    Population: 38.25,
-    Area: 9984670,
-  },
+  { Country: "Portugal", Population: 10.33, Area: 92212 },
+  { Country: "Spain", Population: 47.42, Area: 505990 },
+  { Country: "US", Population: 331.9, Area: 9834000 },
+  { Country: "Canada", Population: 38.25, Area: 9984670 },
 ];
 ```
 

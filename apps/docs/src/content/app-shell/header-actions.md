@@ -16,7 +16,7 @@ export default function Hello({ planet = "Earth" }: { planet: string }) {
 Add the _Header Action_ to your configuration:
 
 ```ts
-header: {
+const header = {
   actions: [
     {
       bundle: "@hv-apps/my-app/header/SayHelloButton.js",
@@ -24,8 +24,8 @@ header: {
         planet: "Mars",
       },
     },
-  ];
-}
+  ],
+};
 ```
 
 ## Built-in Header Actions
@@ -49,7 +49,7 @@ To use this action, the bundle must be defined as `@hv/app-switcher-client/toggl
 Example:
 
 ```ts
-{
+const headerAction = {
   bundle: "@hv/app-switcher-client/toggle.js",
   config: {
     title: "Apps",
@@ -75,7 +75,7 @@ Example:
       },
     ],
   },
-}
+};
 ```
 
 ### Help Button
@@ -88,13 +88,13 @@ To use this action, the bundle must be defined as `@hv/help-client/button.js` an
 Example:
 
 ```ts
-{
+const headerAction = {
   bundle: "@hv/help-client/button.js",
   config: {
     url: "https://www.hitachivantara.com/",
     description: "Hitachi Vantara Help Link",
   },
-}
+};
 ```
 
 ### Color Mode Switcher
@@ -105,7 +105,7 @@ It will cycle through the available color modes of the active theme, effectively
 To use this action, the bundle must be defined as `@hv/theming-client/colorModeSwitcher.js`. It has no config options:
 
 ```ts
-{
-  bundle: "@hv/theming-client/colorModeSwitcher.js";
-}
+const headerAction = {
+  bundle: "@hv/theming-client/colorModeSwitcher.js",
+};
 ```
