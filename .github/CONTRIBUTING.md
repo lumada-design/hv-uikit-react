@@ -51,8 +51,6 @@ Even better if you submit a Pull Request with the fix instead.
 You can request a new feature by submitting an issue to this repo.
 Features can be **new components** or changes to **existing components**.
 
-Please make sure your features are compliant with the [NEXT Design System](https://designsystem.hitachivantara.com/) guidelines.
-
 <h2 id="submitting-a-pull-request">Submitting a pull request</h2>
 
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.

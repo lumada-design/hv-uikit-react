@@ -29,7 +29,7 @@ body:
   - type: textarea
     attributes:
       label: Examples 🌈
-      description: Provide a link to the NEXT Design System specification, other implementations, or screenshots of the expected behavior.
+      description: Provide a link to the Design specification, other implementations, or screenshots of the expected behavior.
   - type: textarea
     attributes:
       label: Motivation 🔦

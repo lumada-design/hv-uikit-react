@@ -16,7 +16,7 @@ const hvZIndex = Object.entries(hvTheme.zIndices).map(
 );
 // #endregion
 
-/** Extends the current theme with the NEXT Design System utilities */
+/** Extends the current theme with the Design System utilities */
 export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   ...baseTheme,
 

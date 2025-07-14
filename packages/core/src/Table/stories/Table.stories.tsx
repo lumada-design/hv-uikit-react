@@ -120,8 +120,8 @@ export const Test: StoryObj = {
       "DS3 wicked",
       "DS5 dawn",
       "DS5 wicked",
-      "Pentaho+ dawn",
-      "Pentaho+ wicked",
+      "Pentaho dawn",
+      "Pentaho wicked",
     ]),
   },
   play: async ({ canvasElement }) => {

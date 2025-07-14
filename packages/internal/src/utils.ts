@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 
 export const allModes = {
-  "Pentaho+ dawn": {
+  "Pentaho dawn": {
     theme: "pentahoPlus dawn",
   },
-  "Pentaho+ wicked": {
+  "Pentaho wicked": {
     theme: "pentahoPlus wicked",
   },
   "DS5 dawn": {
