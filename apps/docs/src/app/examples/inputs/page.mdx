@@ -9,36 +9,16 @@ import tagsSuggestionsEmpty from "./TagsSuggestionsEmpty?raw";
 
 <div className="overflow-hidden mt-20">
   <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] -mt-px -mb-px auto-rows-min [&>*]:min-h-[200px]">
-    <PopupLayoutPreview>
-      <span>An input with a dropdown prefix.</span>
-      <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>An input that features a copy button.</span>
-      <CodeBlock code={{ main: copyButton }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>A dropdown where the user can select multiple tags.</span>
-      <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>A tags input where the user can enter tags or select from a dropdown of suggestions. When writing, the user
-      can enter the tags with a comma or by pressing the Enter key.</span>
-      <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>An input where the user can enter tags or select from a dropdown of suggestions. 
-      The input remains empty after the user selects a tag.</span>
-      <CodeBlock code={{ main: tagsSuggestionsEmpty }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>An editable input that can be used to edit a value in place.</span>
-      <CodeBlock code={{ main: editableValue }} layout="popup" />
-    </PopupLayoutPreview>
-    <PopupLayoutPreview>
-      <span>An input with a label on the side.</span>
-      <CodeBlock code={{ main: labelSide }} layout="popup" />
-    </PopupLayoutPreview>
-
+    <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
+    <CodeBlock code={{ main: copyButton }} layout="popup" />
+    <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
+    <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
+    <CodeBlock code={{ main: tagsSuggestionsEmpty }} layout="popup" />
+    <CodeBlock
+      code={{ main: editableValue }}
+      layout="popup"
+      title="Inline Editable Text"
+    />
+    <CodeBlock code={{ main: labelSide }} layout="popup" />
   </div>
 </div>

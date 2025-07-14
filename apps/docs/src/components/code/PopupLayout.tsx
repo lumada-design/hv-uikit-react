@@ -6,6 +6,8 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvIconButton,
+  HvTypography,
+  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { DocsContainer } from "./DocsProvider";
@@ -14,13 +16,14 @@ type PopupLayoutProps = {
   id?: string;
   scope: Scope | null;
   code: Record<string, string>;
+  title: string | undefined;
 };
 
 /**
  * PopupLayout renders a live preview and an expandable code editor
  * with interactive controls for toggling and resetting the code.
  */
-export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
+export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
 
@@ -77,7 +80,10 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
       </HvDialog>
 
       {/* Poupup Controls */}
-      <div className="absolute right-0 flex items-center p-xs gap-xs">
+      <div className="absolute flex justify-between items-center p-sm gap-xs w-full">
+        <HvTypography variant="label" className="pl-xs">
+          {title}
+        </HvTypography>
         <HvIconButton
           title="Show Code"
           onClick={() => setIsExpanded((prev) => !prev)}
@@ -88,7 +94,7 @@ export const PopupLayout = ({ id, scope, code }: PopupLayoutProps) => {
       <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
         {/* Preview Section */}
         <DocsContainer
-          className="p-md flex items-center justify-center h-full [&>div]:w-full [&>div]:flex-wrap"
+          className="p-md flex items-center justify-center h-full [&>div]:flex-wrap "
           error={error}
           element={element}
         />

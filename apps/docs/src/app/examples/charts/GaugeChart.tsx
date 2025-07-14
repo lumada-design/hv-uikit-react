@@ -111,7 +111,7 @@ export default function Demo() {
   );
 
   return (
-    <div className="flex justify-center size-full">
+    <div className="flex justify-center size-full w-full">
       <HvBaseChart width={400} height={300} option={optionGauge} />
     </div>
   );
