@@ -12,6 +12,7 @@ export default function Demo() {
     <div className="relative size-full">
       <HvDonutChart
         height={300}
+        width={400}
         data={data}
         groupBy="Country"
         measure="Tickets Sold"

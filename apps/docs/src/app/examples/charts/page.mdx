@@ -3,10 +3,26 @@ import donutChartTotal from "./DonutChartTotal?raw";
 import gaugeChart from "./GaugeChart?raw";
 import lineChartStreamingCode from "./LineChartStreaming?raw";
 
+### Charts
+
+Explore chart component usage and variations, ideal for dashboards and data visualization needs.
+
 <div className="overflow-hidden mt-20">
-  <div className="w-101% grid  divide-border [grid-template-columns:repeat(auto-fit,minmax(480px,1fr))] -mt-px -mb-px">
-    <CodeBlock code={{ main: donutChartTotal }} layout="popup" />
-    <CodeBlock code={{ main: gaugeChart }} layout="popup" />
-    <CodeBlock code={{ main: lineChartStreamingCode }} layout="popup" />
+  <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(480px,1fr))] -mt-px -mb-px [&>*]:min-h-[200px]">
+    <CodeBlock
+      code={{ main: donutChartTotal }}
+      layout="popup"
+      title="Sales by Country"
+    />
+    <CodeBlock
+      code={{ main: gaugeChart }}
+      layout="popup"
+      title="Risk Assessment"
+    />
+    <CodeBlock
+      code={{ main: lineChartStreamingCode }}
+      layout="popup"
+      title="Data Streaming"
+    />
   </div>
 </div>

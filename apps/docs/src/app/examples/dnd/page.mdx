@@ -9,37 +9,32 @@ import kanbanData from "./kanban/data?raw";
 import kanban from "./kanban/Kanban?raw";
 import kanbanTypes from "./kanban/types?raw";
 
-<br />
+### Drag and Drop
 
-For UI Kit users that want to use drag and drop functionality, the UI Kit team recommends the [@dnd-kit](https://docs.dndkit.com/) library
-for its performance, accessibility and extensibility. We strongly recommend checking their documentation.
+Explore accessible and flexible drag-and-drop experiences using mouse or keyboard.  
+These examples demonstrate how to implement sortable lists and rearrange items using the powerful and extensible [`@dnd-kit`](https://github.com/clauderic/dnd-kit) library.
 
-## Simple sortable list
+### Single-Column Sortable List
 
-This sample showcases a scenario where we have a single column and we want to drag items within this column. You can drag the items
-by their handle or by using the keyboard. In this case you just have to tab your way to the item and press the `Space` key (or `Enter`)
-to select it and then use the arrows to move the item to its new place Then just press `Space` again to release it.
+Reorder items in a single column using drag handles or keyboard navigation. Tab to an item, press `Space` or `Enter` to grab it, then use arrow keys to move.
 
 <CodeBlock code={{ main: dndKitSingle }} />
 
-## Multiple Containers
+### Multi-Container Sort
 
-In this sample we showcase how to use drag and drop between different containers. Note that you can reorder the columns by dragging each
-column by its header.
+Drag and drop items between multiple containers. Columns can also be reordered by dragging their headers.
 
 <CodeBlock code={{ main: dndKitMultiple }} />
 
-## Native Drag and Drop
+### Vanilla JS Sort
 
-If you don't want to use any external libraries you can still achieve a similar result by using plain Javascript.
+No external libraries required—this example shows how to build basic drag-and-drop sorting with plain JavaScript.
 
 <CodeBlock code={{ main: dndNative }} />
 
-## Complex example
+### Kanban Board
 
-This example showcases a more complex use case of drag and drop, where we have a kanban board with multiple columns and cards.
-You can drag the cards between columns and reorder them within the same column. You can also reorder the columns by dragging them.
-You can
+A more advanced drag-and-drop example with multiple columns and cards. You can move cards between columns and reorder both cards and columns freely.
 
 <CodeBlock
   code={{
