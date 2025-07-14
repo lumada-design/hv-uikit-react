@@ -55,8 +55,8 @@ const Welcome = () => {
                   Themeable
                 </HvTypography>
                 <HvTypography>
-                  Use Next Design System or customize it to match your design
-                  needs.
+                  Use available Design System or customize it to match your
+                  design needs.
                 </HvTypography>
               </div>
             </HvGrid>

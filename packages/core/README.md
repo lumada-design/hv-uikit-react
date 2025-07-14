@@ -1,6 +1,6 @@
 # @hitachivantara/uikit-react-core
 
-UI Kit core React components for the NEXT Design System.
+UI Kit core React components.
 
 ## Installation
 
