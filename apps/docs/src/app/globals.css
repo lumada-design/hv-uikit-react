@@ -1,12 +1,9 @@
 @unocss all;
 
-.dark {
-  @apply bg-[#151c26];
-}
-
 html,
 body {
   height: auto;
+  @apply bg-white dark:bg-[#151c26];
 }
 
 pre {
@@ -18,6 +15,10 @@ article main.x\:w-full {
   font-size: 1rem;
 }
 
+body:not(:has(.nextra-toc)):not(:has(.nextra-sidebar.x\:hidden)) article {
+  @apply max-w-5xl;
+}
+
 header {
   & a:last-of-type svg {
     @apply size-20px;
@@ -25,6 +26,14 @@ header {
   & button svg {
     @apply size-16px;
   }
+}
+
+header > div {
+  @apply bg-transparent;
+}
+
+main h2 {
+  border: none;
 }
 
 .nextra-toc {

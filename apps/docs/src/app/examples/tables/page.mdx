@@ -6,13 +6,13 @@ import groupingTableCode from "./GroupingTable?raw";
 import makeData from "./makeData?raw";
 import simpleTableCode from "./SimpleTable?raw";
 
-## Simple table
+### Simple table
 
 A simple stateless table leveraging the `columns` configuration.
 
 <CodeBlock code={{ main: simpleTableCode, "./makeData": makeData }} />
 
-## No data table
+### No data table
 
 Custom content, like an `HvEmptyState`, can be displayed inside table cells, by leveraging the native `colSpan` feature.
 
@@ -35,26 +35,26 @@ Custom content, like an `HvEmptyState`, can be displayed inside table cells, by 
 </HvTable>
 ```
 
-## Client-side table
+### Client-side table
 
 A client-side table supporting the most commonly used table features:
 row sorting, selection, and actions, sticky header and columns, pagination, and bulk actions.
 
 <CodeBlock code={{ main: defaultTableCode, "./makeData": makeData }} />
 
-## Filtering
+### Filtering
 
 Row filtering and global filtering can be configured by leveraging the `useHvFilters` and `useHvGlobalFilter` hooks respectively.
 
 <CodeBlock code={{ main: filteringTableCode, "./makeData": makeData }} />
 
-## Grouping
+### Grouping
 
 Example of header grouping and row expansion via grouping
 
 <CodeBlock code={{ main: groupingTableCode, "./makeData": makeData }} />
 
-## Other examples
+### Other examples
 
 You can find more table examples in our [Stackblitz Tables collection](https://stackblitz.com/orgs/github/lumada-design/collections/ui-kit-tables).
 In there, you'll find various custom table use-cases, such as
