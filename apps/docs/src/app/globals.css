@@ -1,12 +1,9 @@
 @unocss all;
 
-.dark {
-  @apply bg-[#151c26];
-}
-
 html,
 body {
   height: auto;
+  @apply bg-white dark:bg-[#151c26];
 }
 
 pre {
@@ -25,6 +22,14 @@ header {
   & button svg {
     @apply size-16px;
   }
+}
+
+header > div {
+  @apply bg-transparent;
+}
+
+main h2 {
+  border: none;
 }
 
 .nextra-toc {

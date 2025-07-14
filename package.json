@@ -2,7 +2,7 @@
   "name": "hv-uikit-react",
   "type": "module",
   "private": true,
-  "description": "The React component library for the Next Design System.",
+  "description": "UI Kit React components library.",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "author": "Hitachi Vantara UI Kit Team",
   "repository": {

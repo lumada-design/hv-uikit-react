@@ -48,7 +48,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-lg border-t border-border">
+    <footer className="py-lg border-t border-borderSubtle">
       <div className="max-w-1400px mx-auto px-md">
         <div className="flex flex-col md:flex-row md:justify-between space-y-md md:space-y-0">
           {/* Logo Section with More Space */}

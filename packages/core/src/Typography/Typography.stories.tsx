@@ -24,9 +24,7 @@ export const Main: StoryObj<HvTypographyProps> = {
     ref: { control: { disable: true } },
   },
   decorators: [(Story) => <div style={{ width: 400 }}>{Story()}</div>],
-  render: (args) => (
-    <HvTypography {...args}>Welcome to NEXT Design System!</HvTypography>
-  ),
+  render: (args) => <HvTypography {...args}>Welcome to UI Kit!</HvTypography>,
 };
 
 export const Variants: StoryObj<HvTypographyProps> = {
@@ -45,9 +43,7 @@ export const Variants: StoryObj<HvTypographyProps> = {
           <div key={variant}>
             <HvTypography variant="label">{variant}</HvTypography>
             <br />
-            <HvTypography variant={variant}>
-              Welcome to NEXT Design System!
-            </HvTypography>
+            <HvTypography variant={variant}>Welcome to UI Kit!</HvTypography>
           </div>
         ))}
       </div>

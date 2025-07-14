@@ -4,7 +4,7 @@ Hitachi Vantara App Shell. Effortless UI integration with top-notch user experie
 
 ## Overview
 
-The App Shell UI is a set of shared client-side modules for common user-focused UI components and services. Together with the [Hitachi NEXT UI Kit](https://www.npmjs.com/package/@hitachivantara/uikit-react-core), it aims to provide a consistent user experience across all Hitachi Vantara applications, adopting the NEXT Design System and addressing Lumada Architecture key concepts of Composability and Portability.
+The App Shell UI is a set of shared client-side modules for common user-focused UI components and services. It aims to provide a consistent user experience across applications, addressing Architecture key concepts of Composability and Portability.
 
 At its core, the App Shell consists of a collection of UI patterns shared by all products within the platform, providing a consistent set of interaction patterns that persist across all products. These include navigation, notifications, user information, and other common UX.
 
