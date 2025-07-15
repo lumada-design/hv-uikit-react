@@ -203,9 +203,18 @@ const categorical = {
   cat28: "#D8265D",
 };
 
+const support = {
+  supp1: "#0F8B8D",
+  supp2: "#734B6D",
+  supp3: "#4E7599",
+  supp4: "#C19C31",
+  supp5: "#546B6B",
+};
+
 const common = {
   ...base,
   ...categorical,
+  ...support,
 };
 
 // #region Light palette
@@ -253,14 +262,6 @@ const semanticLight = {
   sema18: "#1A85A1",
   sema19: "#00838F",
   warning_20: "#FBF2D8",
-};
-
-const supportLight = {
-  supp1: "#0F8B8D",
-  supp2: "#734B6D",
-  supp3: "#4E7599",
-  supp4: "#C19C31",
-  supp5: "#546B6B",
 };
 
 const shadowLight = {
@@ -382,14 +383,6 @@ const semanticDark = {
   warning_20: "#FBF2D8",
 };
 
-const supportDark = {
-  supp2: "#734B6D",
-  supp3: "#4E7599",
-  supp4: "#C19C31",
-  supp5: "#546B6B",
-  supp1: "#0F8B8D",
-};
-
 const shadowDark = {
   shad1: "rgba(0,0,0,.16)",
   shadow: "0 3px 5px rgba(0,0,0,.16)",
@@ -466,7 +459,6 @@ export const colors = {
     ...accentLight,
     ...atmosphereLight,
     ...semanticLight,
-    ...supportLight,
     ...shadowLight,
     ...utilsLight,
     ...newLight,
@@ -475,23 +467,28 @@ export const colors = {
     ...accentDark,
     ...atmosphereDark,
     ...semanticDark,
-    ...supportDark,
     ...shadowDark,
     ...utilsDark,
     ...newDark,
   },
 };
 
-// TODO: remove in favour of `HvColor`/`HvColorAny`?
+/** @deprecated replace with standard UI Kit ColorTokens in v6 */
+type AllColors = typeof colors.common & typeof colors.light;
+
+/** @experimental extendable theme colors */
+export interface HvThemeColors extends ColorTokens, AllColors {}
+
+// TODO: remove in favour of `HvColor`/`HvColorAny`
 export type HvAccentColor = keyof typeof accentLight;
 export type HvAtmosphereColor = keyof typeof atmosphereLight;
 export type HvBaseColor = keyof typeof base;
 export type HvSemanticColor = keyof typeof semanticLight;
-export type HvSupportColor = keyof typeof supportLight;
+export type HvSupportColor = keyof typeof support;
 export type HvCategoricalColor = keyof typeof categorical;
 
 /** A type with all the accepted colors from the color palette */
-export type HvColor = keyof typeof colors.common | keyof typeof colors.light;
+export type HvColor = keyof HvThemeColors;
 
 /**
  * A type representing an `HvColor` from the palette or any other color string
