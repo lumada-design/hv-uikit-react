@@ -19,15 +19,15 @@ interface CSSProperties extends StandardProperties<string | number> {}
 export type HvThemeTokens = typeof flattenTokens;
 
 /** Theme components props */
-export type HvThemeComponentsProps<ComponentNames extends string = string> = {
+export interface HvThemeComponentsProps {
   /** Component properties to override */
-  components?: Record<ComponentNames, Record<string, any>>;
+  components?: Record<string, Record<string, any>>;
   /** Record of icon names and their path, to override the default icons */
   icons?: Record<string, string> & { viewBox: string };
-};
+}
 
 /** Theme components */
-export type HvThemeComponents = {
+export interface HvThemeComponents {
   header: {
     height: string;
     secondLevelHeight: string;
@@ -65,19 +65,20 @@ export type HvThemeComponents = {
   snackbar: {
     actionButtonVariant: string;
   };
-};
+}
 
 // Theme typography
 // TODO: allow arbitrary `CSSProperties` overrides
-export type HvThemeTypographyProps = Pick<
-  CSSProperties,
-  | "color"
-  | "fontSize"
-  | "letterSpacing"
-  | "lineHeight"
-  | "fontWeight"
-  | "textDecoration"
->;
+export interface HvThemeTypographyProps
+  extends Pick<
+    CSSProperties,
+    | "color"
+    | "fontSize"
+    | "letterSpacing"
+    | "lineHeight"
+    | "fontWeight"
+    | "textDecoration"
+  > {}
 
 type TypographyVariants =
   | "display"
@@ -92,9 +93,9 @@ type TypographyVariants =
   | "caption2"
   | (string & {});
 
-export type HvThemeTypography = {
+export interface HvThemeTypography {
   typography: Record<TypographyVariants, HvThemeTypographyProps>;
-};
+}
 
 // Breakpoints
 export type HvThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
@@ -151,6 +152,7 @@ export type DeepString<T> = {
 };
 
 // Theme CSS vars
-export type HvThemeVars = DeepString<HvThemeTokens> &
-  DeepString<HvThemeComponents> &
-  DeepString<HvThemeTypography>;
+export interface HvThemeVars
+  extends DeepString<HvThemeTokens>,
+    DeepString<HvThemeComponents>,
+    DeepString<HvThemeTypography> {}
