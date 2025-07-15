@@ -71,12 +71,12 @@ export const mapCSSVars = <T extends object>(
   return vars;
 };
 
+const isObject = (obj: unknown) => obj && typeof obj === "object";
+
 // TODO: review in v6:
 // - typings: accept any or theme object?
 // - arguments: source/target themes, or any number of theme objects?
-export const mergeTheme = (...objects: any[]) => {
-  const isObject = (obj: unknown) => obj && typeof obj === "object";
-
+export const mergeTheme = (...objects: any[]): HvThemeStructure => {
   return objects.reduce((prev, obj) => {
     Object.keys(obj).forEach((key) => {
       const pVal = prev[key];
@@ -123,6 +123,7 @@ export const parseTheme = (
   };
 };
 
+/** @deprecated unused */
 export const getThemesList = (themes: Record<string, any>) => {
   const list: Record<string, any> = {};
 
@@ -159,7 +160,7 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
 
       // extract properties that shouldn't be mapped to CSS variables
       // @ts-expect-error align HvTheme <-> HvThemeStructure?
-      const { components, name, colors, palette, ...rest } = theme;
+      const { base, components, name, colors, palette, icons, ...rest } = theme;
 
       vars[styleName] = toCSSVars({
         colors: {
