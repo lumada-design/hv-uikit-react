@@ -1,3 +1,12 @@
+export type HvBreakpoints = "xs" | "sm" | "md" | "lg" | "xl";
+
+/** @experimental extendable theme breakpoints */
+export interface HvThemeBreakpoints {
+  unit: string;
+  step: number;
+  values: Record<HvBreakpoints, number>;
+}
+
 export const breakpoints = {
   unit: "px",
   step: 5,
@@ -8,6 +17,4 @@ export const breakpoints = {
     lg: 1270,
     xl: 1920,
   },
-};
-
-export type HvBreakpoints = keyof typeof breakpoints.values;
+} satisfies HvThemeBreakpoints;

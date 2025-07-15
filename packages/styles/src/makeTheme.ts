@@ -1,7 +1,7 @@
 import { HvTheme, theme } from "./theme";
-import * as tokens from "./tokens";
-import { colors, type ColorTokens } from "./tokens";
-import type { HvCustomTheme, HvThemeColors, HvThemeStructure } from "./types";
+import { baseTheme } from "./tokens";
+import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
+import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
 /**
@@ -15,7 +15,7 @@ export const makeTheme = <Mode extends string = string>(
   options: HvCustomTheme<Mode> | ((theme: HvTheme) => HvCustomTheme<Mode>),
 ): HvThemeStructure<Mode> => {
   const customTheme = typeof options === "function" ? options(theme) : options;
-  const newTheme = mergeTheme(tokens, customTheme);
+  const newTheme = mergeTheme(baseTheme, customTheme);
 
   return newTheme;
 };

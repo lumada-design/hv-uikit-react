@@ -1,22 +1,40 @@
 import type { StandardProperties } from "csstype";
 
-import * as tokens from "./tokens";
-import { colors } from "./tokens/colors";
-
-// Theme tokens
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const flattenTokens = {
-  ...tokens,
-  colors: {
-    type: "light",
-    ...tokens.colors.common,
-    ...tokens.colors.light,
-  },
-};
+import type { HvThemeBreakpoints } from "./tokens/breakpoints";
+import type { HvThemeColors } from "./tokens/colors";
+import type { HvThemeRadii } from "./tokens/radii";
+import { sizes } from "./tokens/sizes";
+import { HvThemeSpace, space } from "./tokens/space";
+import {
+  fontFamily,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+} from "./tokens/typography";
+import { zIndices } from "./tokens/zIndices";
 
 interface CSSProperties extends StandardProperties<string | number> {}
 
-export type HvThemeTokens = typeof flattenTokens;
+/** @experimental extendable theme spacing units */
+export interface HvThemeZIndices
+  extends Record<keyof typeof zIndices, number> {}
+
+/** UI Kit static theme tokens */
+export interface HvThemeTokens {
+  breakpoints: HvThemeBreakpoints;
+  colors: { type: HvThemeColorModeType } & HvThemeColors;
+  radii: HvThemeRadii;
+  space: HvThemeSpace;
+  /** @deprecated use `theme.space` or the direct value instead */
+  sizes: typeof sizes;
+  // #region typography
+  fontFamily: typeof fontFamily;
+  fontSizes: typeof fontSizes;
+  fontWeights: typeof fontWeights;
+  lineHeights: typeof lineHeights;
+  // #endregion
+  zIndices: HvThemeZIndices;
+}
 
 /** Theme components props */
 export interface HvThemeComponentsProps {
@@ -68,7 +86,7 @@ export interface HvThemeComponents {
 }
 
 // Theme typography
-// TODO: allow arbitrary `CSSProperties` overrides
+// TODO: remove in favor of `CSSProperties` when supported
 export interface HvThemeTypographyProps
   extends Pick<
     CSSProperties,
@@ -98,12 +116,9 @@ export interface HvThemeTypography {
 }
 
 // Breakpoints
-export type HvThemeBreakpoint = Exclude<keyof typeof tokens.space, "base">;
+export type HvThemeBreakpoint = Exclude<keyof typeof space, "base">;
 
 export type SpacingValue = number | HvThemeBreakpoint | (string & {});
-
-// Theme colors
-export type HvThemeColors = typeof colors.common & typeof colors.light;
 
 // Base themes: DS3 and DS5
 export type HvBaseTheme = "ds3" | "ds5" | "pentahoPlus";
@@ -121,7 +136,7 @@ export interface HvThemeColorModeStructure
   type: HvThemeColorModeType;
 }
 
-// Theme structure
+/** Complete theme structure and values */
 export interface HvThemeStructure<Mode extends string = string>
   extends HvThemeComponents,
     HvThemeComponentsProps,
@@ -136,20 +151,16 @@ export interface HvThemeStructure<Mode extends string = string>
 
 // Custom theme
 export interface HvCustomTheme<Mode extends string = string>
-  extends HvThemeComponents,
-    HvThemeComponentsProps,
-    HvThemeTypography,
-    Partial<Omit<HvThemeTokens, "colors">> {
-  name: string;
-  colors: {
-    modes: Record<Mode, Partial<HvThemeColorModeStructure>>;
-  };
-}
+  extends DeepPartial<Omit<HvThemeStructure<Mode>, "base">> {}
 
 // Deep string: set all props to strings
 export type DeepString<T> = {
   [P in keyof T]: T[P] extends object ? DeepString<T[P]> : string;
 };
+
+type DeepPartial<T> = T extends {}
+  ? Partial<{ [P in keyof T]: DeepPartial<T[P]> }>
+  : T;
 
 // Theme CSS vars
 export interface HvThemeVars

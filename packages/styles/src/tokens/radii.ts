@@ -1,4 +1,9 @@
-export const radii = {
+export type HvRadius = "none" | "base" | "round" | "large" | "circle" | "full";
+
+/** @experimental */
+export interface HvThemeRadii extends Record<HvRadius, string> {}
+
+export const radii: HvThemeRadii = {
   none: "0px",
   base: "2px",
   round: "6px",
@@ -7,5 +12,3 @@ export const radii = {
   circle: "50%",
   full: "9999px",
 };
-
-export type HvRadius = keyof typeof radii;

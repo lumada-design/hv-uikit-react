@@ -7,7 +7,13 @@ export * from "./types";
 export * from "./theme";
 export * from "./makeTheme";
 export * from "./utils";
-export * from "./tokens";
+export * from "./tokens/breakpoints";
+export * from "./tokens/colors";
+export * from "./tokens/radii";
+export * from "./tokens/space";
+export * from "./tokens/sizes";
+export * from "./tokens/typography";
+export * from "./tokens/zIndices";
 export * from "./CssBaseline";
 
 // Export each theme individually and a bundle of themes

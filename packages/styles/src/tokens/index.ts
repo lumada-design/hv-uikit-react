@@ -1,7 +1,24 @@
-export * from "./breakpoints";
-export * from "./colors";
-export * from "./radii";
-export * from "./space";
-export * from "./sizes";
-export * from "./typography";
-export * from "./zIndices";
+import { breakpoints } from "./breakpoints";
+import { colors } from "./colors";
+import { radii } from "./radii";
+import { sizes } from "./sizes";
+import { space } from "./space";
+import { fontFamily, fontSizes, fontWeights, lineHeights } from "./typography";
+import { zIndices } from "./zIndices";
+
+/**
+ * Base theme tokens to use when merging with theme, used to merge with the makeTheme utility.
+ * Mostly just the uses the `tokens` directly, but also adds other properties like `typography` or component vars.
+ */
+export const baseTheme = {
+  breakpoints,
+  colors,
+  radii,
+  space,
+  sizes,
+  zIndices,
+  fontFamily,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+};

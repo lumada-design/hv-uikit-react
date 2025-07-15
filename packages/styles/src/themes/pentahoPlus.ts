@@ -13,7 +13,6 @@ import {
   slate,
   yellow,
 } from "../palette";
-import { radii } from "../tokens";
 
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
@@ -256,7 +255,6 @@ const pentahoPlus = makeTheme((theme) => ({
     xl: "64px",
   },
   radii: {
-    ...radii,
     base: "4px",
     round: "8px",
     large: "16px",
