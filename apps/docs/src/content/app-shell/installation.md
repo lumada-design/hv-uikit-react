@@ -76,12 +76,12 @@ For more information about the **App Shell** configuration check the [configurat
 4. The file `src/App.tsx` can be removed as the vite plugin will add it automatically as a virtual resource if not present.
    However, if you still see the need to have it in your app, then replace its content with the code below:
 
-```ts
+```tsx
 import HvAppShell from "@hitachivantara/app-shell-ui";
 
-export default function App () {
+export default function App() {
   return <HvAppShell configUrl={`${document.baseURI}app-shell.config.json`} />;
-};
+}
 ```
 
 5. You are good to go! Run your brand new **App Shell** app! 🚀

@@ -6,8 +6,6 @@
 
 The **theme** object serves as the **UI Kit** foundation, defining all styling specifications — including colors, font sizes, spacing, shadows, and more.
 
-[Sample]
-
 ## Theme Configuration
 
 **UI Kit** includes three default themes, each available in two color modes: **dawn** (light) and **wicked** (dark):
@@ -125,7 +123,7 @@ const CssVariables = () => {
 
 You can globally define default props and custom styles for any component using the `components` key inside your theme. This reduces boilerplate and improves consistency.
 
-```ts
+```tsx
 const newTheme = createTheme({
   name: "myTheme",
   base: "ds5",
