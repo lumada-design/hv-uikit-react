@@ -2,8 +2,7 @@ name: Pull Request
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: [master, next]
 
 # Cancel previous call in progress
 concurrency:
