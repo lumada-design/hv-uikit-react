@@ -57,7 +57,7 @@ const images = [...Array(7).keys()].map(
 You can use the `HvCarousel` component inside other components, like a card. Use the `xs` prop to make the carousel embeddable.
 
 ```tsx live
-<HvCard bgcolor="atmo1" style={{ width: 300 }}>
+<HvCard bgcolor="bgContainer" style={{ width: 300 }}>
   <HvCardHeader title="Star wars characters" />
   <HvCardMedia role="none">
     <HvCarousel xs height={400} showCounter={false} showSlideControls>
@@ -125,7 +125,7 @@ A Carousel supports any kind of content, not just images.
     .map((src, i) => (
       <HvCarouselSlide key={src} size="50%">
         <div style={{ position: "relative" }}>
-          <div className="absolute w-70% m-md p-xs bg-base_dark text-base_light bg-opacity-40">
+          <div className="absolute w-70% m-md p-xs bg-textDark text-textLight bg-opacity-40">
             <HvTypography className="text-inherit" variant="title3">
               Travel destination {i + 1}
             </HvTypography>

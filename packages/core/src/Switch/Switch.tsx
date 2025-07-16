@@ -259,7 +259,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
                     {
                       backgroundColor: getColor(color),
                       borderColor: isSemantical(color)
-                        ? getColor(`${color}_120`)
+                        ? getColor(`${color}Deep`)
                         : "#00000032",
                     },
                 }),

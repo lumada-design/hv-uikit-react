@@ -141,7 +141,7 @@ export const ColumnContainer = ({ column, items }: ColumnContainerProps) => {
           ? {
               ...style,
               opacity: 0.2,
-              border: `1px solid ${theme.colors.secondary_80}`,
+              border: `1px solid ${theme.colors.textSubtle}`,
             }
           : {}),
       }}

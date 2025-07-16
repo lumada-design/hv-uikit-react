@@ -35,13 +35,13 @@ interface TaskProps {
 const getStatusIcon = (statusLevel?: number) => {
   switch (statusLevel) {
     case 1:
-      return <Level1 color="neutral" />;
+      return <Level1 color="info" />;
     case 2:
-      return <Level3Bad color="warning_120" />;
+      return <Level3Bad color="warningStrong" />;
     case 3:
-      return <Level4 color="negative_80" />;
+      return <Level4 color="negativeStrong" />;
     case 4:
-      return <Level5 color="negative_120" />;
+      return <Level5 color="negativeStrong" />;
     case 5:
       return <Level0Good color="positive" />;
     default:
@@ -58,9 +58,9 @@ const getStatusColor = (statusLevel?: number) => {
     case 3:
       return "negative";
     case 4:
-      return "catastrophic";
+      return "negativeDeep";
     default:
-      return "neutral";
+      return "info";
   }
 };
 
@@ -100,7 +100,7 @@ export const TaskCard = ({ task, deleteTask }: TaskProps) => {
       {...listeners}
     >
       <HvCard
-        bgcolor="atmo1"
+        bgcolor="bgContainer"
         classes={{
           root: "border-rounded-round",
           semanticBar: "h-20px border-rounded-round top--2px",

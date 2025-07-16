@@ -100,7 +100,7 @@ export default function ExamplesPage() {
             {/* Placeholder for section preview */}
             <div
               className={clsx(
-                "h-160px bg-bgContainer border border-atmo3",
+                "h-160px bg-bgContainer border border-borderSubtle",
                 "rounded-round mb-xs flex items-center justify-center",
               )}
             >

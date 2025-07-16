@@ -4,32 +4,32 @@ import { colors } from "@hitachivantara/uikit-styles";
 const getThemeVars = (base: "light" | "dark"): ThemeVarsPartial => ({
   base,
 
-  appBg: colors[base].atmo1,
+  appBg: colors[base].bgContainer,
   appBorderRadius: 0,
-  appContentBg: colors[base].atmo1,
-  barBg: colors[base].atmo1,
+  appContentBg: colors[base].bgContainer,
+  barBg: colors[base].bgContainer,
   barSelectedColor: colors[base].primary,
-  barTextColor: colors[base].secondary,
+  barTextColor: colors[base].text,
   brandImage: `ui-kit-logo-${base}.png`,
-  brandTitle: "NEXT UI Kit",
+  brandTitle: "UI Kit",
 
   colorPrimary: colors[base].primary,
-  colorSecondary: colors[base].secondary,
+  colorSecondary: colors[base].text,
   fontBase: "'Open Sans',sans-serif",
   fontCode: "monospace",
-  textColor: colors[base].secondary,
-  textInverseColor: colors[base === "dark" ? "light" : "dark"].secondary,
-  textMutedColor: colors[base].secondary_80,
+  textColor: colors[base].text,
+  textInverseColor: colors[base === "dark" ? "light" : "dark"].text,
+  textMutedColor: colors[base].textSubtle,
 
   // controls styles
-  booleanBg: colors[base].atmo2,
-  booleanSelectedBg: colors[base].atmo1,
-  buttonBg: colors[base].atmo1,
-  buttonBorder: colors[base].secondary,
-  inputBg: colors[base].atmo1,
-  inputBorder: colors[base].secondary_60,
+  booleanBg: colors[base].bgPage,
+  booleanSelectedBg: colors[base].bgContainer,
+  buttonBg: colors[base].bgContainer,
+  buttonBorder: colors[base].text,
+  inputBg: colors[base].bgContainer,
+  inputBorder: colors[base].textDisabled,
   inputBorderRadius: 2,
-  inputTextColor: colors[base].secondary,
+  inputTextColor: colors[base].text,
 });
 
 export const themes = {

@@ -71,7 +71,7 @@ export const ToggableLayout = ({ title, scope, code }: ToggableLayoutProps) => {
       <DocsContainer
         className={clsx(
           "p-md pt-lg min-h-100px mb-lg",
-          "border border-atmo3 rounded-round",
+          "border border-borderSubtle rounded-round",
           "bg-bgContainer [&_tr]:table-row",
           !showPreview && "hidden",
         )}

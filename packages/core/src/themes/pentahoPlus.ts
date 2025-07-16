@@ -78,7 +78,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         ),
         message: {
           "&&": {
-            color: theme.colors.secondary,
+            color: theme.colors.text,
           },
         },
         messageIcon: {
@@ -88,7 +88,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           color: "var(--title)",
         },
         actionClose: {
-          color: theme.colors.secondary,
+          color: theme.colors.text,
         },
       },
     },
@@ -112,7 +112,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
         checked: {
           "--bg-color": theme.colors.primary,
-          color: theme.colors.atmo1,
+          color: theme.colors.bgContainer,
         },
       },
     },
@@ -321,7 +321,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         button: {
           borderRadius: 2,
           "&:focus": {
-            borderColor: theme.colors.secondary,
+            borderColor: theme.colors.text,
           },
         },
         inputRoot: {
@@ -507,7 +507,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     HvHeader: {
       classes: {
         root: {
-          borderBottom: `1px solid ${theme.colors.atmo3}`,
+          borderBottom: `1px solid ${theme.colors.borderSubtle}`,
           boxShadow: "none",
         },
       },
@@ -515,7 +515,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     HvHeaderBrand: {
       classes: {
         separator: {
-          backgroundColor: theme.colors.atmo4,
+          backgroundColor: theme.colors.border,
           margin: theme.spacing(0, "md"),
           height: 32,
         },
@@ -525,16 +525,16 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
       classes: {
         active: {
           boxShadow: "none",
-          borderBottom: `1px solid ${theme.colors.atmo3}`,
+          borderBottom: `1px solid ${theme.colors.borderSubtle}`,
         },
         list: {
           "& li:hover > .HvHeader-MenuBar-hidden": {
             boxShadow: "none",
-            borderBottom: `1px solid ${theme.colors.atmo3}`,
+            borderBottom: `1px solid ${theme.colors.borderSubtle}`,
           },
           "& li:focus-within > .HvHeader-MenuBar-hidden": {
             boxShadow: "none",
-            borderBottom: `1px solid ${theme.colors.atmo3}`,
+            borderBottom: `1px solid ${theme.colors.borderSubtle}`,
           },
         },
       },
@@ -543,7 +543,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
       classes: {
         root: {
           width: 280,
-          color: theme.colors.base_light,
+          color: theme.colors.textLight,
           backgroundColor: slate[900],
           borderRight: `1px solid ${slate[500]}`,
           "& > :not(nav:first-of-type)": {

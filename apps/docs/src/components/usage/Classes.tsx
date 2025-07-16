@@ -65,7 +65,7 @@ export const Classes = ({ meta }: { meta: ComponentMeta }) => {
                   </a>
                 </HvTableCell>
                 <HvTableCell>
-                  <pre className="!text-primary_80 !text-[12px]">
+                  <pre className="!text-primaryStrong !text-[12px]">
                     {`.${c.selector}`}
                   </pre>
                 </HvTableCell>

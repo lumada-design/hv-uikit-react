@@ -65,13 +65,13 @@ export const Actions: StoryObj<HvAvatarProps> = {
           <HvAvatar size="md" />
         </HvButton>
         <HvButton icon aria-label="Business Manager">
-          <HvAvatar backgroundColor="sema19" size="md" badge="negative">
+          <HvAvatar backgroundColor="info" size="md" badge="negative">
             BM
           </HvAvatar>
         </HvButton>
         <HvButton icon aria-label="Business Manager" radius="none">
           <HvAvatar
-            backgroundColor="sema19"
+            backgroundColor="info"
             size="md"
             variant="square"
             badge="negative"
@@ -106,7 +106,7 @@ export const Test: StoryObj = {
     <div className="flex items-center gap-xs flex-wrap">
       <HvAvatar size="xs" />
       <HvAvatar size="xs" variant="square" />
-      <HvAvatar backgroundColor="sema6" size="sm">
+      <HvAvatar backgroundColor="cat4" size="sm">
         NA
       </HvAvatar>
       <HvAvatar size="lg" backgroundColor="warning">

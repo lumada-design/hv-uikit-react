@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useId, useMemo } from "react";
 import createCache, { EmotionCache } from "@emotion/cache";
 import {
   CacheProvider,
@@ -14,7 +14,6 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { useUniqueId } from "../hooks/useUniqueId";
 import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
 import {
@@ -63,7 +62,7 @@ export interface HvProviderProps {
   emotionCache?: EmotionCache;
   /**
    * List of themes to be used by UI Kit.
-   * You can provide your own themes created with the `createTheme` utility and/or the default themes `ds3` and `ds5` provided by UI Kit.
+   * You can provide your own themes created with the `createTheme` utility and/or the default themes provided by UI Kit.
    *
    * If no value is provided, the `ds5` theme will be used.
    */
@@ -78,12 +77,10 @@ export interface HvProviderProps {
    * The active color mode. It must be one of the color modes of the active theme.
    *
    * If no value is provided, the first color mode defined in the active theme is used.
-   * For the default themes `ds3` and `ds5`, the `dawn` color mode is the one used.
+   * For the default themes, the `dawn` color mode is the one used.
    */
   colorMode?: string;
 }
-
-const scopedRootPrefix = "hv-uikit-scoped-root" as const;
 
 /**
  * Enables theming capabilities and makes cross-component theme properties available down the tree.
@@ -99,8 +96,7 @@ export const HvProvider = ({
   emotionCache: emotionCacheProp,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
-  const generatedId = useUniqueId();
-  const scopedRootId = `${scopedRootPrefix}-${generatedId}`;
+  const scopedRootId = useId();
 
   // Themes
   const themesList = processThemes(themes);

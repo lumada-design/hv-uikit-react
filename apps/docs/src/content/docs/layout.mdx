@@ -93,7 +93,7 @@ Grid items can also span across multiple columns, allowing you to build flexible
     );
   })}
   <HvGrid item xs={4} sm={8} md={12}>
-    <HvCard bgcolor="atmo1">
+    <HvCard bgcolor="bgContainer">
       <HvCardContent>
         <HvVizProvider>
           <HvBarChart
@@ -147,7 +147,7 @@ export default function Demo() {
     >
       {Array.from({ length: 9 }).map((v, i) => {
         return (
-          <HvCard key={i} bgcolor="atmo1">
+          <HvCard key={i} bgcolor="bgContainer">
             <HvCardHeader title={`Card ${i}`} />
             <HvCardContent>
               <HvTypography>
