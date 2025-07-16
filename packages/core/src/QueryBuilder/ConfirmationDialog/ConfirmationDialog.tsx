@@ -45,7 +45,9 @@ export const ConfirmationDialog = ({
       firstFocusable="confirmation-dialog-cancel"
       buttonTitle={closeButtonTooltip}
     >
-      <HvDialogTitle variant="warning">{title}</HvDialogTitle>
+      <HvDialogTitle variant="warning" showIcon={false}>
+        {title}
+      </HvDialogTitle>
       <HvDialogContent indentContent>{message}</HvDialogContent>
       <HvDialogActions>
         <HvButton variant="primaryGhost" onClick={onConfirm}>

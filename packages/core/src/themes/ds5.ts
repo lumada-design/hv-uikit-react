@@ -151,6 +151,26 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     },
+    HvDialogTitle: {
+      classes: {
+        root: {
+          "& .HvStatusIcon-root": {
+            padding: 0,
+          },
+          "& .HvIconContainer-root": {
+            color: `${theme.colors.secondary}!important`,
+          },
+        },
+      },
+    },
+    HvDialogContent: {
+      classes: {
+        root: {
+          borderTop: "none",
+          borderBottom: "none",
+        },
+      },
+    },
   } satisfies Record<
     string,
     Record<string, any> | { classes?: React.CSSProperties }

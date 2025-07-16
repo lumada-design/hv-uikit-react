@@ -70,7 +70,11 @@ export const Main: StoryObj<HvDrawerProps> = {
           open={open}
           {...args}
         >
-          <HvDialogTitle component="div" className={classes.drawerTitle}>
+          <HvDialogTitle
+            component="div"
+            className={classes.drawerTitle}
+            showIcon={false}
+          >
             Lorem Ipsum
           </HvDialogTitle>
           <HvDialogContent className={classes.drawerContent}>
