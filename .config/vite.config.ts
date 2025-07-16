@@ -20,21 +20,8 @@ const external = [
 const esmOutput: OutputOptions = {
   format: "esm",
   preserveModules: true,
-  dir: "dist/esm",
-  // keep react-based packages as `.js` for backwards compatibility
-  entryFileNames:
-    pkg.name.includes("react") || pkg.name.includes("app-shell")
-      ? "[name].js"
-      : "[name].mjs",
-  exports: "named",
-  interop: "auto",
-};
-
-const cjsOutput: OutputOptions = {
-  format: "cjs",
-  preserveModules: true,
-  dir: "dist/cjs",
-  entryFileNames: "[name].cjs",
+  dir: "dist",
+  entryFileNames: "[name].js",
   exports: "named",
   interop: "auto",
 };
@@ -42,7 +29,7 @@ const cjsOutput: OutputOptions = {
 export default defineConfig({
   plugins: [
     dts({
-      outDir: "dist/types",
+      outDir: "dist",
       rollupTypes: true,
       tsconfigPath: resolve(__dirname, "../tsconfig.build.json"),
     }),
@@ -57,10 +44,7 @@ export default defineConfig({
       entry: resolve(process.cwd(), "src/index.ts"),
     },
     rollupOptions: {
-      // TODO: align with AppShell's ESM-only approach
-      output: pkg.name.includes("/app-shell")
-        ? [esmOutput]
-        : [esmOutput, cjsOutput],
+      output: [esmOutput],
       external,
     },
   },
