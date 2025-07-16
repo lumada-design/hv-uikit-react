@@ -202,15 +202,6 @@ export function HvAppShellVitePlugin(
             src: resolveModule("es-module-shims"),
             dest: "bundles",
           },
-          // copy the ui kit icons' sprites to the "icons" folder
-          // TODO: remove, no longer used
-          {
-            src: resolveModule(
-              "@hitachivantara/uikit-react-icons",
-              "../sprites/*.svg",
-            ),
-            dest: "icons",
-          },
           ...(!devMode && buildEntryPoint
             ? [
                 {
