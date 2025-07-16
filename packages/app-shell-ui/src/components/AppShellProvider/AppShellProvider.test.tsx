@@ -101,14 +101,14 @@ describe("AppShellProvider component", () => {
     it("should apply first valid theme from themes list", async () => {
       const { baseElement } = await renderTestProvider(<div>dummy</div>, {
         theming: {
-          themes: ["dummyTheme", "ds3", "ds5", "pentahoPlus"],
+          themes: ["dummyTheme", "ds5", "pentahoPlus"],
         },
       });
 
       const bodyElement = baseElement.ownerDocument.body;
 
       await waitFor(() => {
-        expect(bodyElement.getAttribute("data-theme")).toBe("ds3");
+        expect(bodyElement.getAttribute("data-theme")).toBe("ds5");
         expect(bodyElement.getAttribute("data-color-mode")).toBe("dawn");
         expect(bodyElement).toHaveStyle("color-scheme: light;");
       });
@@ -117,7 +117,7 @@ describe("AppShellProvider component", () => {
     it("should apply chosen theme and color mode", async () => {
       const { baseElement } = await renderTestProvider(<div>dummy</div>, {
         theming: {
-          themes: ["dummyTheme", "ds3", "ds5", "pentahoPlus"],
+          themes: ["dummyTheme", "ds5", "pentahoPlus"],
           theme: "ds5",
           colorMode: "wicked",
         },

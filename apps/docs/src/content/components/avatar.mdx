@@ -55,8 +55,8 @@ Avatars containing simple characters can be created by passing a string as child
 ```tsx live
 <div className="flex gap-xs">
   <HvAvatar>BM</HvAvatar>
-  <HvAvatar backgroundColor="sema19">W</HvAvatar>
-  <HvAvatar backgroundColor="sema6">CS</HvAvatar>
+  <HvAvatar backgroundColor="cat3">W</HvAvatar>
+  <HvAvatar backgroundColor="cat4">CS</HvAvatar>
 </div>
 ```
 
@@ -103,7 +103,7 @@ You can configure the `size` and `variant` of an avatar. When using an icon, set
 <div className="flex gap-xs">
   <HvAvatar size="xs" />
   <HvAvatar size="xs" variant="square" />
-  <HvAvatar backgroundColor="sema6" size="sm">
+  <HvAvatar backgroundColor="cat4" size="sm">
     NA
   </HvAvatar>
   <HvAvatar size="lg" backgroundColor="warning">
@@ -175,7 +175,7 @@ An avatar should be interacted with by wrapping it in an interactable element, s
     radius="base"
     className="size-fit!"
   >
-    <HvAvatar backgroundColor="sema19" size="md" badge="negative">
+    <HvAvatar backgroundColor="info" size="md" badge="negative">
       BM
     </HvAvatar>
   </HvButton>
@@ -186,7 +186,7 @@ An avatar should be interacted with by wrapping it in an interactable element, s
     className="size-fit!"
   >
     <HvAvatar
-      backgroundColor="sema19"
+      backgroundColor="info"
       size="md"
       variant="square"
       badge="negative"

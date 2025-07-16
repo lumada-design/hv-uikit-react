@@ -2,7 +2,7 @@ import { queryHelpers, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { useTheme } from "@hitachivantara/uikit-react-utils";
-import { ds3, ds5 } from "@hitachivantara/uikit-styles";
+import { ds5, pentahoPlus } from "@hitachivantara/uikit-styles";
 
 import { createTheme } from "../utils/theme";
 import { HvProvider } from "./Provider";
@@ -12,7 +12,7 @@ const Main = () => {
 
   return (
     <>
-      <button type="button" onClick={() => changeTheme("ds3", "wicked")}>
+      <button type="button" onClick={() => changeTheme("ds5", "wicked")}>
         Update theme
       </button>
       <p>Theme provider test</p>
@@ -88,7 +88,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds3, customThemeInherit]}
+          themes={[ds5, customThemeInherit]}
           theme="custom-theme"
         >
           <p>Theme provider test</p>
@@ -117,7 +117,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds3, customThemeNoInherit]}
+          themes={[ds5, customThemeNoInherit]}
           theme="custom-theme"
           colorMode="purple"
         >
@@ -147,14 +147,14 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds3, ds5, customThemeInherit]}
+          themes={[ds5, pentahoPlus, customThemeInherit]}
         >
           <p>Theme provider test</p>
         </HvProvider>
       </div>,
     );
 
-    const theme = queryHelpers.queryByAttribute("data-theme", container, "ds3");
+    const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
@@ -171,7 +171,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds3, ds5, customThemeNoInherit]}
+          themes={[ds5, pentahoPlus, customThemeNoInherit]}
           theme="custom-theme"
           colorMode="purple"
         >
@@ -201,7 +201,7 @@ describe("Provider", () => {
     const updatedTheme = queryHelpers.queryByAttribute(
       "data-theme",
       container,
-      "ds3",
+      "ds5",
     );
     const updatedMode = queryHelpers.queryByAttribute(
       "data-color-mode",

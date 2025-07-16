@@ -181,11 +181,7 @@ export const WithNavigation: StoryObj<HvStackProps> = {
             <div style={{ flex: 1 }} />
           </HvActionBar>
         </HvCard>
-        <HvCard
-          bgcolor="bgContainer"
-          statusColor="sema15"
-          style={{ width: 275 }}
-        >
+        <HvCard bgcolor="bgContainer" statusColor="info" style={{ width: 275 }}>
           <HvCardHeader title="Card 3" icon={<Tool />} />
           <HvCardContent>
             <div style={{ marginTop: "20px" }}>
