@@ -5,7 +5,7 @@ import {
   HvBreadCrumb,
   HvButton,
   HvContainer,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvGlobalActions,
   HvGlobalActionsProps,
   HvTab,
@@ -62,7 +62,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
         <HvGlobalActions backButton={backButton} {...args}>
           <HvButton variant="primary">Approve & Share</HvButton>
           <HvButton variant="secondarySubtle">Reset</HvButton>
-          <HvDropDownMenu
+          <HvDropdownMenu
             placement="left"
             dataList={[
               { label: "Action 2" },
@@ -79,7 +79,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
         <HvGlobalActions title="Section Title" variant="section">
           <HvButton variant="secondarySubtle">Remove</HvButton>
           <HvButton variant="secondarySubtle">Share</HvButton>
-          <HvDropDownMenu
+          <HvDropdownMenu
             placement="left"
             dataList={[
               { label: "Action 2" },
@@ -98,7 +98,7 @@ export const Main: StoryObj<HvGlobalActionsProps> = {
         <HvGlobalActions title="Section Title" variant="section">
           <HvButton variant="secondarySubtle">Remove</HvButton>
           <HvButton variant="secondarySubtle">Share</HvButton>
-          <HvDropDownMenu
+          <HvDropdownMenu
             placement="left"
             dataList={[
               { label: "Action 2" },
@@ -176,7 +176,7 @@ export const SectionVariant: StoryObj<HvGlobalActionsProps> = {
       <>
         <HvGlobalActions variant="section" title={customTitle}>
           <HvButton variant="secondaryGhost">Primary</HvButton>
-          <HvDropDownMenu
+          <HvDropdownMenu
             placement="left"
             dataList={[
               { label: "Action 2" },
@@ -245,7 +245,7 @@ export const CustomContent: StoryObj<HvGlobalActionsProps> = {
         }
       >
         <HvButton variant="secondaryGhost">Primary</HvButton>
-        <HvDropDownMenu
+        <HvDropdownMenu
           placement="left"
           dataList={[
             { label: "Action 2" },

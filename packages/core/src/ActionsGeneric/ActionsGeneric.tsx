@@ -5,7 +5,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvButton, HvButtonProps, HvButtonVariant } from "../Button";
-import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
+import { HvDropdownMenu, HvDropdownMenuProps } from "../DropdownMenu";
 import { HvIconButton } from "../IconButton";
 import { HvIcon } from "../icons";
 import { HvBaseProps } from "../types/generic";
@@ -61,7 +61,7 @@ export interface HvActionsGenericProps extends HvBaseProps {
   /** The maximum number of visible actions before they're collapsed into a dropdown menu. */
   maxVisibleActions?: number;
   /** Props to be applied to the dropdown menu. */
-  dropdownMenuProps?: Partial<HvDropDownMenuProps>;
+  dropdownMenuProps?: Partial<HvDropdownMenuProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvActionsGenericClasses;
 }
@@ -155,7 +155,7 @@ export const HvActionsGeneric = forwardRef<
     return (
       <>
         {actsVisible.map((action, idx) => renderButton(action, idx))}
-        <HvDropDownMenu
+        <HvDropdownMenu
           id={setId(idProp, "menu")}
           disabled={disabled}
           variant={variant}

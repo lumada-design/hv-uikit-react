@@ -6,7 +6,7 @@ import {
   NodeProps as ReactFlowNodeProps,
 } from "reactflow";
 import {
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvListValue,
   HvTypography,
   theme,
@@ -136,7 +136,7 @@ export const NodeGroup = ({ id: idProp, groupId, actions = [] }: NodeProps) => {
             {title}
           </HvTypography>
           {actions && (
-            <HvDropDownMenu
+            <HvDropdownMenu
               dataList={actions}
               classes={{ root: classes.actions }}
             />

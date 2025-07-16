@@ -4,7 +4,7 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
-import { HvDropDownMenuProps } from "../DropDownMenu";
+import { HvDropdownMenuProps } from "../DropdownMenu";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { staticClasses, useClasses } from "./BreadCrumb.styles";
@@ -29,8 +29,8 @@ export interface HvBreadCrumbProps
   component?: React.ElementType;
   /** Function passed to the component. If defined the component prop is used as the link node. */
   onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void;
-  /** Props passed down to the DropDownMenu sub-menu component. */
-  dropDownMenuProps?: Partial<HvDropDownMenuProps>;
+  /** Props passed down to the DropdownMenu sub-menu component. */
+  dropDownMenuProps?: Partial<HvDropdownMenuProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBreadCrumbClasses;
 }

@@ -1,7 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-import { dropDownMenuClasses } from "../DropDownMenu";
+import { dropDownMenuClasses } from "../DropdownMenu";
 
 export const { staticClasses, useClasses } = createClasses("HvMultiButton", {
   root: {

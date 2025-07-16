@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
-  HvDropDownMenu,
-  HvDropDownMenuProps,
+  HvDropdownMenu,
+  HvDropdownMenuProps,
 } from "@hitachivantara/uikit-react-core";
 
 export default {
   title: "Components/Dropdown Menu",
-  component: HvDropDownMenu,
-} satisfies Meta<typeof HvDropDownMenu>;
+  component: HvDropdownMenu,
+} satisfies Meta<typeof HvDropdownMenu>;
 
-export const Main: StoryObj<HvDropDownMenuProps> = {
+export const Main: StoryObj<HvDropdownMenuProps> = {
   args: {
     dataList: [{ label: "Item 1" }, { label: "Item 2" }, { label: "Item 3" }],
     placement: "left",
@@ -29,6 +29,6 @@ export const Main: StoryObj<HvDropDownMenuProps> = {
     (Story) => <div className="flex justify-center h-170px">{Story()}</div>,
   ],
   render: (args) => {
-    return <HvDropDownMenu {...args} />;
+    return <HvDropdownMenu {...args} />;
   },
 };

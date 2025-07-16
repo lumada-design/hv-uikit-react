@@ -29,7 +29,7 @@ export const alignmentData: Record<
   DotPagination: { ds3, ds5, pentahoPlus },
   Drawer: { ds3, ds5, pentahoPlus },
   Dropdown: { ds3, ds5, pentahoPlus },
-  DropDownMenu: { ds3, ds5, pentahoPlus },
+  DropdownMenu: { ds3, ds5, pentahoPlus },
   EmptyState: { ds3, ds5, pentahoPlus },
   FileUploader: { ds3, ds5, pentahoPlus },
   FilterGroup: { ds3, ds5, pentahoPlus },

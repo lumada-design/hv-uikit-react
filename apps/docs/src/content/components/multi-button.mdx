@@ -122,7 +122,7 @@ const buttons = [
 
 ### Split button
 
-You can create a split button by using the `HvMultiButton` in conjunction with the `HvButton` and the `HvDropDownMenu` components.
+You can create a split button by using the `HvMultiButton` in conjunction with the `HvButton` and the `HvDropdownMenu` components.
 
 ```tsx live
 import { useState } from "react";
@@ -133,7 +133,7 @@ export default function Demo() {
   return (
     <HvMultiButton split>
       <HvButton>{selectedOption.label}</HvButton>
-      <HvDropDownMenu
+      <HvDropdownMenu
         dataList={options}
         icon={<DropDownXS />}
         onClick={(e, item) =>
@@ -156,4 +156,4 @@ const options = [
 ### Related components
 
 - [`HvButton`](/components/button)
-- [`HvDropDownMenu`](/components/drop-down-menu)
+- [`HvDropdownMenu`](/components/drop-down-menu)

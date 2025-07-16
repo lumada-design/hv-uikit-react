@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   HvCheckBox,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -59,7 +59,7 @@ export const SimpleTable = () => {
                 </HvTypography>
               </HvTableCell>
               <HvTableCell variant="actions">
-                <HvDropDownMenu
+                <HvDropdownMenu
                   keepOpened={false}
                   placement="left"
                   onClick={(e, item) => alert(item.id)}

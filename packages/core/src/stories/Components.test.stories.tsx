@@ -29,7 +29,7 @@ import {
   MultiSelection as DropdownMultiSelectionStory,
   Variants as DropdownVariantsStory,
 } from "../Dropdown/Dropdown.stories";
-import { Main as DropDownMenuMainStory } from "../DropDownMenu/DropDownMenu.stories";
+import { Main as DropdownMenuMainStory } from "../DropdownMenu/DropdownMenu.stories";
 import {
   Minimal as EmptyStateMinimalStory,
   WithAction as EmptyStateWithActionStory,
@@ -171,7 +171,7 @@ export const TestPopups: StoryObj = {
         </div>
       </div>
       <div className="ml-auto">
-        {renderStory(DropDownMenuMainStory, context)}
+        {renderStory(DropdownMenuMainStory, context)}
       </div>
       <div className="grid w-340px">
         {renderStory(SnackbarVariantsStory, context)}
