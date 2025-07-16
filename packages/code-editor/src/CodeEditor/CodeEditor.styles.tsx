@@ -4,33 +4,33 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvCodeEditor", {
   root: {
     minHeight: 200,
-    border: `solid 1px ${theme.colors.atmo4}`,
+    border: `solid 1px ${theme.colors.border}`,
     "& .monaco-editor": {},
     "& .monaco-editor .minimap > canvas": {
-      borderLeft: `solid 1px ${theme.colors.atmo4}`,
+      borderLeft: `solid 1px ${theme.colors.border}`,
     },
     "& .monaco-editor .margin": {
-      background: theme.colors.atmo2,
-      borderRight: `solid 1px ${theme.colors.atmo4}`,
+      background: theme.colors.bgPage,
+      borderRight: `solid 1px ${theme.colors.border}`,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider": {
       borderRadius: theme.radii.base,
-      background: theme.colors.secondary_60,
+      background: theme.colors.textDisabled,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider:hover": {
-      background: theme.colors.secondary,
+      background: theme.colors.text,
     },
     "& .monaco-scrollable-element > .scrollbar > .slider:active": {
-      background: theme.colors.secondary,
+      background: theme.colors.text,
     },
     "& .monaco-scrollable-element > .visible": {
-      background: theme.colors.atmo1,
+      background: theme.colors.bgContainer,
     },
     "& .monaco-scrollable-element > .visible.horizontal": {
-      borderTop: `solid 1px ${theme.colors.atmo4}`,
+      borderTop: `solid 1px ${theme.colors.border}`,
     },
     "& .monaco-scrollable-element > .visible.vertical": {
-      borderLeft: `solid 1px ${theme.colors.atmo4}`,
+      borderLeft: `solid 1px ${theme.colors.border}`,
     },
     "& .monaco-editor .scroll-decoration": {
       display: "none",

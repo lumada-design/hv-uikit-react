@@ -31,7 +31,7 @@ const customThemeNoInherit = createTheme({
   colors: {
     modes: {
       purple: {
-        atmo1: "purple",
+        bgContainer: "purple",
       },
     },
   },

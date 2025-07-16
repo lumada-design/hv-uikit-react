@@ -91,8 +91,8 @@ export const HvCodeEditor = ({
         inherit: true,
         rules: [],
         colors: {
-          "editor.background": colors?.atmo1 || "",
-          "editorLineNumber.foreground": colors?.secondary_60 || "",
+          "editor.background": colors?.bgContainer || "",
+          "editorLineNumber.foreground": colors?.textDisabled || "",
         },
       });
     });
@@ -101,8 +101,8 @@ export const HvCodeEditor = ({
     colorModes,
     selectedTheme,
     colors?.type,
-    colors?.atmo1,
-    colors?.secondary_60,
+    colors?.bgContainer,
+    colors?.textDisabled,
   ]);
 
   useEffect(() => {
