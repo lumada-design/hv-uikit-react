@@ -68,8 +68,8 @@ export const HvDropdownButton = forwardRef<
         classes.root,
         {
           [classes.open]: open,
-          [classes.disabled]: disabled,
           [classes.readOnly]: readOnly,
+          [classes.disabled]: disabled,
         },
         className,
       )}

@@ -479,8 +479,8 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
         className={cx(
           classes.root,
           {
-            [classes.disabled]: disabled,
             [classes.readOnly]: readOnly,
+            [classes.disabled]: disabled,
           },
           className,
         )}

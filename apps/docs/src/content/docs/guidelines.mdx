@@ -141,12 +141,11 @@ export const HvComp = forwardRef<
       ref={ref} // 👈 always forwarding the ref
       // 👇 merge class names with `cx` provided by `useClasses`
       className={cx(
-        css(/* internal styles */), // 👈 pass internal styles first, using `css`
+        css(), // 👈 AVOID inline classes, but pass them styles first when necessary
         classes.root, // 👈 ensure `classes.root` is on the root element
         {
-          // conditional classes 👇 are based on their *condition*
-          [classes.selected]: selected,
-          [classes.disabled]: disabled,
+          [classes.selected]: selected, // 👈 names are based on their *condition*
+          [classes.disabled]: disabled, // 👈 higher priority classes come after
         },
         className, // 👈 pass user-defined `className` last
       )}

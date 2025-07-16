@@ -221,8 +221,8 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
         {hasLabel ? (
           <div
             className={cx(classes.container, {
-              [classes.disabled]: disabled,
               [classes.invalidContainer]: isStateInvalid,
+              [classes.disabled]: disabled,
             })}
           >
             {checkbox}

@@ -155,9 +155,9 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         className={cx(
           classes.root,
           {
-            [classes.disabled]: disabled,
-            [classes.readOnly]: readOnly,
             [classes.focusVisible]: focusVisible,
+            [classes.readOnly]: readOnly,
+            [classes.disabled]: disabled,
           },
           className,
         )}

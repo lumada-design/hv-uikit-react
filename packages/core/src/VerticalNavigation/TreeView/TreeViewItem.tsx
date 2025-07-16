@@ -587,7 +587,6 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
         className={cx(
           classes.node,
           {
-            [classes.disabled]: disabled,
             [classes.expandable]: expandable,
             [classes.collapsed]: expandable && !expanded,
             [classes.expanded]: expandable && expanded,
@@ -602,6 +601,7 @@ export const HvVerticalNavigationTreeViewItem = forwardRef(
             [classes.unselected]: !disabled && selectable && !selected,
             [classes.focused]: focused,
             [classes.hide]: !isOpen && !useIcons,
+            [classes.disabled]: disabled,
           },
           className,
         )}

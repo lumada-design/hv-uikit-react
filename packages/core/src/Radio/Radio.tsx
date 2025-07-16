@@ -249,11 +249,11 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
         {hasLabel ? (
           <div
             className={cx(classes.container, {
-              [classes.disabled]: disabled,
               [classes.focusVisible]: !!(focusVisible && label),
-              [classes.invalidContainer]: isStateInvalid,
-              [classes.checked]: isChecked,
               [classes.semantic]: semantic,
+              [classes.checked]: isChecked,
+              [classes.invalidContainer]: isStateInvalid,
+              [classes.disabled]: disabled,
             })}
           >
             {radio}
