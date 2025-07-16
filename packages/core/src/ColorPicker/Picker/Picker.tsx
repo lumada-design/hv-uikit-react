@@ -15,11 +15,7 @@ import {
 
 import { HvTypography } from "../../Typography";
 import { Fields } from "../Fields";
-import { staticClasses, useClasses } from "./Picker.styles";
-
-export { staticClasses as colorPickerPickerClasses };
-
-export type HvColorPickerPickerClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./Picker.styles";
 
 interface PickerProps
   extends CustomPickerInjectedProps<
@@ -31,7 +27,7 @@ interface PickerProps
         hex?: string;
       }
   > {
-  classes?: HvColorPickerPickerClasses;
+  classes?: ExtractNames<typeof useClasses>;
   title?: string;
 }
 
