@@ -166,8 +166,8 @@ export const ds5 = mergeTheme(ds5Base, {
     HvDialogContent: {
       classes: {
         root: {
-          borderTop: "none!important",
-          borderBottom: "none!important",
+          borderTop: "none",
+          borderBottom: "none",
         },
       },
     },

@@ -3,6 +3,7 @@ import MuiDialogContent, {
   DialogContentProps as MuiDialogContentProps,
 } from "@mui/material/DialogContent";
 import {
+  mergeStyles,
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
@@ -29,6 +30,7 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
     className,
     children,
     indentContent = false,
+    style,
     ...others
   } = useDefaultProps("HvDialogContent", props);
 
@@ -64,14 +66,11 @@ export const HvDialogContent = (props: HvDialogContentProps) => {
       className={cx(
         classes.root,
         { [classes.textContent]: !!indentContent },
-        { [classes.contentBorder]: hasBorder },
         className,
       )}
-      style={{
-        ["--content-border" as string]: hasBorder
-          ? `1px solid ${theme.colors.borderSubtle}`
-          : "none",
-      }}
+      style={mergeStyles(style, {
+        "--borderW": hasBorder ? "1px" : "0px",
+      })}
       {...others}
     >
       {children}
