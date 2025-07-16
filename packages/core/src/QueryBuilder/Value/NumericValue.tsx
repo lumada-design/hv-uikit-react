@@ -1,12 +1,39 @@
-import { memo, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvInput } from "../../../../Input";
-import { uniqueId } from "../../../../utils/helpers";
-import { useQueryBuilderContext } from "../../../Context";
-import { HvQueryBuilderNumericRange } from "../../../types";
-import { useClasses } from "./Numeric.styles";
+import { HvInput } from "../../Input";
+import { uniqueId } from "../../utils/helpers";
+import { useQueryBuilderContext } from "../Context";
+import { HvQueryBuilderNumericRange } from "../types";
+
+const { useClasses } = createClasses("HvQueryBuilderNumericValue", {
+  root: {},
+  label: {
+    paddingBottom: "6px",
+  },
+  inputContainer: {},
+  rangeContainer: {
+    display: "flex",
+    "& $inputContainer": {
+      flexGrow: 1,
+      overflow: "auto",
+    },
+    "& > $inputContainer:not(:last-child)": {
+      marginRight: theme.space.md,
+    },
+  },
+  input: {
+    flexGrow: 1,
+  },
+  isMdDown: {
+    "& > $inputContainer:not(:last-child)": {
+      marginRight: `calc(${theme.space.md} / 2)`,
+    },
+  },
+});
 
 export interface NumericValueProps {
   id: React.Key;
@@ -221,5 +248,3 @@ export const NumericValue = ({
     </div>
   );
 };
-
-export default memo(NumericValue);

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useQueryBuilderContext } from "../../../Context";
+import { useQueryBuilderContext } from "../Context";
 
 export interface EmptyValueProps {
   id: React.Key;

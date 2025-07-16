@@ -252,14 +252,14 @@ export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
         classes={classes}
       />
       <ConfirmationDialog
-        isOpen={pendingAction != null}
+        open={pendingAction != null}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
         title={pendingAction?.dialog.dialogTitle}
         message={pendingAction?.dialog.dialogMessage}
         confirmButtonLabel={pendingAction?.dialog.dialogConfirm}
         cancelButtonLabel={pendingAction?.dialog.dialogCancel}
-        closeButtonTooltip={pendingAction?.dialog.dialogCloseTooltip}
+        buttonTitle={pendingAction?.dialog.dialogCloseTooltip}
       />
     </HvQueryBuilderProvider>
   );

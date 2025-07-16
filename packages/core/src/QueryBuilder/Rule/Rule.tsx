@@ -10,14 +10,10 @@ import { HvGrid } from "../../Grid";
 import { HvIconButton } from "../../IconButton";
 import { HvIcon } from "../../icons";
 import { useQueryBuilderContext } from "../Context";
+import { Value } from "../Value/Value";
 import { Attribute } from "./Attribute";
 import { Operator } from "./Operator";
-import { staticClasses, useClasses } from "./Rule.styles";
-import { Value } from "./Value";
-
-export { staticClasses as queryBuilderRuleClasses };
-
-export type HvQueryBuilderRuleClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./Rule.styles";
 
 export interface RuleProps {
   id: React.Key;
@@ -27,7 +23,7 @@ export interface RuleProps {
   value?: any;
   disabled?: boolean;
   isInvalid: boolean;
-  classes?: HvQueryBuilderRuleClasses;
+  classes?: ExtractNames<typeof useClasses>;
 }
 
 export const Rule = (props: RuleProps) => {

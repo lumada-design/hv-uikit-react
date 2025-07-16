@@ -1,11 +1,9 @@
-import { memo } from "react";
-
-import { useQueryBuilderContext } from "../../Context";
+import { useQueryBuilderContext } from "../Context";
 import {
   defaultRendererKey,
   HvQueryBuilderRendererProps,
   ValueRenderer,
-} from "../../types";
+} from "../types";
 import { BooleanValue } from "./BooleanValue";
 import { DateTimeValue } from "./DateTimeValue";
 import { EmptyValue } from "./EmptyValue";
@@ -102,5 +100,3 @@ export const Value = ({
       );
   }
 };
-
-export default memo(Value);

@@ -1,9 +1,15 @@
-import { memo, useState } from "react";
+import { useState } from "react";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
 
-import { HvFormStatus } from "../../../../FormElement";
-import { HvInput } from "../../../../Input";
-import { useQueryBuilderContext } from "../../../Context";
-import { useClasses } from "./TextValue.styles";
+import { HvFormStatus } from "../../FormElement";
+import { HvInput } from "../../Input";
+import { useQueryBuilderContext } from "../Context";
+
+const { useClasses } = createClasses("HvQueryBuilderTextValue", {
+  location: {
+    flexGrow: 1,
+  },
+});
 
 export interface TextValueProps {
   id: React.Key;
@@ -58,5 +64,3 @@ export const TextValue = ({
     />
   );
 };
-
-export default memo(TextValue);

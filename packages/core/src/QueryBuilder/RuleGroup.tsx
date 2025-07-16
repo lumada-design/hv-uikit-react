@@ -1,16 +1,16 @@
 import { useCallback } from "react";
 import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
-import { HvButton } from "../../Button";
-import { HvEmptyState } from "../../EmptyState";
-import { HvIconButton } from "../../IconButton";
-import { HvIcon } from "../../icons";
-import { HvMultiButton } from "../../MultiButton";
-import { HvTypography } from "../../Typography";
-import { useQueryBuilderContext } from "../Context";
-import { useClasses } from "../QueryBuilder.styles";
-import { Rule } from "../Rule";
-import { HvQueryBuilderQueryCombinator, Query } from "../types";
+import { HvButton } from "../Button";
+import { HvEmptyState } from "../EmptyState";
+import { HvIconButton } from "../IconButton";
+import { HvIcon } from "../icons";
+import { HvMultiButton } from "../MultiButton";
+import { HvTypography } from "../Typography";
+import { useQueryBuilderContext } from "./Context";
+import { useClasses } from "./QueryBuilder.styles";
+import { Rule } from "./Rule/Rule";
+import { HvQueryBuilderQueryCombinator, Query } from "./types";
 
 export interface RuleGroupProps {
   id: React.Key;
