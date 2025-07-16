@@ -10,28 +10,12 @@ import { Header } from "../../components/Header";
   Component={HvAvatar}
   componentName="HvAvatar"
   controls={{
-    size: {
-      type: "slider",
-      defaultValue: "md",
-    },
-    variant: {
-      type: "radio",
-      defaultValue: "circular",
-    },
-    color: {
-      type: "color",
-      defaultValue: "atmo1",
-    },
-    backgroundColor: {
-      type: "color",
-      defaultValue: "secondary",
-    },
-    status: {
-      type: "color",
-    },
-    badge: {
-      type: "color",
-    },
+    size: { type: "slider", defaultValue: "md" },
+    variant: { type: "radio", defaultValue: "circular" },
+    color: { type: "color", defaultValue: "bgContainer" },
+    backgroundColor: { type: "color", defaultValue: "text" },
+    status: { type: "color" },
+    badge: { type: "color" },
   }}
 />
 
@@ -67,16 +51,16 @@ Icon avatars are created by passing an icon as children. Its size and color aren
 ```tsx live
 <div className="flex gap-xs">
   <HvAvatar>
-    <LogIn color="atmo1" size="XS" />
+    <LogIn color="bgContainer" size="XS" />
   </HvAvatar>
   <HvAvatar backgroundColor="positive">
-    <Archives color="atmo1" size="XS" />
+    <Archives color="bgContainer" size="XS" />
   </HvAvatar>
-  <HvAvatar backgroundColor="neutral">
-    <Search color="atmo1" size="XS" />
+  <HvAvatar backgroundColor="info">
+    <Search color="bgContainer" size="XS" />
   </HvAvatar>
   <HvAvatar backgroundColor="warning">
-    <Bookmark color="atmo1" size="XS" />
+    <Bookmark color="bgContainer" size="XS" />
   </HvAvatar>
 </div>
 ```
@@ -107,7 +91,7 @@ You can configure the `size` and `variant` of an avatar. When using an icon, set
     NA
   </HvAvatar>
   <HvAvatar size="lg" backgroundColor="warning">
-    <Bookmark size="M" color={["base_light", "base_dark"]} />
+    <Bookmark size="M" color={["textLight", "textDark"]} />
   </HvAvatar>
   <HvAvatar size="xl" alt="Beatrice" src="https://i.imgur.com/bE7vg3N.png" />
   <HvAvatar
@@ -128,13 +112,10 @@ An avatar can have a status, represented by either the status colored border or 
   <HvAvatar size="xs" status="positive">
     AB
   </HvAvatar>
-  <HvAvatar size="sm" badge="neutral">
+  <HvAvatar size="sm" badge="info">
     AB
   </HvAvatar>
   <HvAvatar size="md" status="negative">
-    AB
-  </HvAvatar>
-  <HvAvatar size="lg" status="atmo4" badge="atmo4">
     AB
   </HvAvatar>
   <HvAvatar size="xl" status="#8CEB34" badge="#8CEB34">

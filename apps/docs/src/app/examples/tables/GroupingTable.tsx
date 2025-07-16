@@ -130,7 +130,7 @@ export function Table<T extends object>({
                   key={key}
                   style={{
                     backgroundColor:
-                      theme.colors[hasSubRows ? "atmo1" : "atmo2"],
+                      theme.colors[hasSubRows ? "bgContainer" : "bgPage"],
                   }}
                   {...rowProps}
                 >

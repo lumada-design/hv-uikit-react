@@ -231,29 +231,10 @@ Use the `colorScale` prop to customize confusion matrix colors:
   groupBy="prediction"
   splitBy="expected"
   colorScale={[
-    {
-      label: "Good",
-      color: "positive",
-      max: 100,
-      min: 75,
-    },
-    {
-      label: "Caution",
-      color: "warning",
-      max: 75,
-      min: 30,
-    },
-    {
-      label: "Bad",
-      color: "negative",
-      max: 30,
-      min: 0,
-    },
-    {
-      label: "Neutral",
-      color: "atmo2",
-      value: 0,
-    },
+    { label: "Good", color: "positive", max: 100, min: 75 },
+    { label: "Caution", color: "warning", max: 75, min: 30 },
+    { label: "Bad", color: "negative", max: 30, min: 0 },
+    { label: "Neutral", color: "bgPage", value: 0 },
   ]}
 />
 ```

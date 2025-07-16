@@ -115,7 +115,7 @@ const PropsTable = ({ title, propsObj }: PropsTableProps) => {
                     see classes docs
                   </HvTypography>
                 ) : (
-                  <pre className="whitespace-pre-wrap break-words !text-[12px] text-primary_80">
+                  <pre className="whitespace-pre-wrap break-words !text-[12px] text-primaryStrong">
                     {propItem.type?.name}
                   </pre>
                 )}

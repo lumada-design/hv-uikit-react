@@ -16,7 +16,7 @@ import { Header } from "../../components/Header";
 ```tsx live
 <HvCard
   className="w-380px"
-  bgcolor="atmo1"
+  bgcolor="bgContainer"
   statusColor="positive"
   icon={<Leaf size="S" color="positive" />}
 >
@@ -53,7 +53,7 @@ import { Header } from "../../components/Header";
 Use the `HvCardMedia` component to add an image to your card. It automatically adapts to its placement within the card.
 
 ```tsx live
-<HvCard className="w-240px" bgcolor="atmo1">
+<HvCard className="w-240px" bgcolor="bgContainer">
   <HvCardMedia
     component="img"
     alt="Schedule New Job"
@@ -75,7 +75,7 @@ To add actions to a card, use the `HvActionBar` component.
 
 ```tsx live
 <>
-  <HvCard className="w-380px" bgcolor="atmo1">
+  <HvCard className="w-380px" bgcolor="bgContainer">
     <HvCardHeader
       title={
         <HvTypography variant="title4">Start using UI Kit now</HvTypography>
@@ -134,7 +134,7 @@ function StorageCard({
 }: StorageCardProps) {
   return (
     <HvCard
-      bgcolor="atmo1"
+      bgcolor="bgContainer"
       className="flex-1"
       selectable
       selected={selected}

@@ -1,26 +1,10 @@
 import { Column, Task } from "./types";
 
 export const defaultColumns: Column[] = [
-  {
-    id: "col1",
-    title: "To Do",
-    color: "neutral",
-  },
-  {
-    id: "col2",
-    title: "In Progress",
-    color: "negative_80",
-  },
-  {
-    id: "col3",
-    title: "In Review",
-    color: "warning_120",
-  },
-  {
-    id: "col4",
-    title: "Reviewed",
-    color: "positive_80",
-  },
+  { id: "col1", title: "To Do", color: "info" },
+  { id: "col2", title: "In Progress", color: "negativeStrong" },
+  { id: "col3", title: "In Review", color: "warningStrong" },
+  { id: "col4", title: "Reviewed", color: "positiveStrong" },
 ];
 
 export const defaultTasks: Task[] = [
