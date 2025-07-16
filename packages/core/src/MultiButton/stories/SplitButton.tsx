@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import {
   HvButton,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvMultiButton,
   HvMultiButtonProps,
 } from "@hitachivantara/uikit-react-core";
@@ -37,7 +37,7 @@ export const SplitButton = () => {
           split
         >
           {i % 2 === 0 && <HvButton>{selectedOption.label}</HvButton>}
-          <HvDropDownMenu
+          <HvDropdownMenu
             dataList={options}
             icon={<DropDownXS />}
             onClick={(e, item) =>

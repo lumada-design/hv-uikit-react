@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
-import { HvDropDownMenu } from ".";
+import { HvDropdownMenu } from ".";
 import { HvListValue } from "../List";
 
 const dataList: HvListValue[] = [
@@ -11,14 +11,14 @@ const dataList: HvListValue[] = [
   { id: "item3", label: "item3" },
 ];
 
-describe("DropDownMenu", () => {
+describe("DropdownMenu", () => {
   it("renders the button", () => {
-    render(<HvDropDownMenu dataList={[]} />);
+    render(<HvDropdownMenu dataList={[]} />);
     expect(screen.getByRole("button")).toBeInTheDocument();
   });
 
   it("opens when clicked", async () => {
-    render(<HvDropDownMenu dataList={dataList} />);
+    render(<HvDropdownMenu dataList={dataList} />);
 
     await userEvent.click(screen.getByRole("button"));
 

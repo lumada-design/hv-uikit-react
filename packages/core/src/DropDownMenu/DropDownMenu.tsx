@@ -18,17 +18,17 @@ import { HvBaseProps } from "../types/generic";
 import { getPrevNextFocus } from "../utils/focusableElementFinder";
 import { isKey } from "../utils/keyboardUtils";
 import { setId } from "../utils/setId";
-import { staticClasses, useClasses } from "./DropDownMenu.styles";
+import { staticClasses, useClasses } from "./DropdownMenu.styles";
 
 export { staticClasses as dropDownMenuClasses };
 
-export type HvDropDownMenuClasses = ExtractNames<typeof useClasses>;
+export type HvDropdownMenuClasses = ExtractNames<typeof useClasses>;
 
 const DEFAULT_LABELS = {
   dropdownMenu: "Dropdown menu",
 };
 
-export interface HvDropDownMenuProps
+export interface HvDropdownMenuProps
   extends HvBaseProps<HTMLDivElement, "onClick" | "onToggle"> {
   /** Icon. */
   icon?: React.ReactElement<any>;
@@ -80,7 +80,7 @@ export interface HvDropDownMenuProps
   /** Button size. */
   size?: HvSize;
   /** A Jss Object used to override or extend the styles applied to the component. */
-  classes?: HvDropDownMenuClasses;
+  classes?: HvDropdownMenuClasses;
   /** An object containing all the labels. */
   labels?: Partial<typeof DEFAULT_LABELS>;
 }
@@ -110,10 +110,10 @@ const HeaderComponent = forwardRef<HTMLButtonElement, HvDropdownButtonProps>(
 /**
  * A dropdown menu is a graphical control element, similar to a list box, that allows the user to choose a value from a list.
  */
-export const HvDropDownMenu = forwardRef<
+export const HvDropdownMenu = forwardRef<
   React.ComponentRef<typeof HvBaseDropdown>,
-  HvDropDownMenuProps
->(function HvDropDownMenu(props, ref) {
+  HvDropdownMenuProps
+>(function HvDropdownMenu(props, ref) {
   const {
     id: idProp,
     classes: classesProp,
@@ -133,7 +133,7 @@ export const HvDropDownMenu = forwardRef<
     size = "md",
     labels: labelsProp,
     ...others
-  } = useDefaultProps("HvDropDownMenu", props);
+  } = useDefaultProps("HvDropdownMenu", props);
 
   const { classes, cx } = useClasses(classesProp);
 

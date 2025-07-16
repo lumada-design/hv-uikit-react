@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import {
   HvButton,
   HvCheckBox,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvTable,
   HvTableBody,
   HvTableCell,
@@ -61,7 +61,7 @@ export const ListRow = () => {
                 >
                   View
                 </HvButton>
-                <HvDropDownMenu
+                <HvDropdownMenu
                   keepOpened={false}
                   placement="left"
                   onClick={(e, item) => alert(item.id)}

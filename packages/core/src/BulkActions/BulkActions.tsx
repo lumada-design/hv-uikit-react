@@ -48,7 +48,7 @@ export interface HvBulkActionsProps extends HvBaseProps {
   actionsCallback?: HvActionsGenericProps["actionsCallback"];
   /** The callback function called when an action is triggered, receiving `action` as parameter. */
   onAction?: HvActionsGenericProps["onAction"];
-  /** The number of maximum visible actions before they're collapsed into a `DropDownMenu`. */
+  /** The number of maximum visible actions before they're collapsed into a `DropdownMenu`. */
   maxVisibleActions?: number;
   /** Properties to be passed onto the checkbox component, the values of the object are equivalent to the HvCheckbox API. */
   checkboxProps?: HvCheckBoxProps;

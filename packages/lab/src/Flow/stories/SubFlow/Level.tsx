@@ -2,7 +2,7 @@ import { useState } from "react";
 import { css, cx } from "@emotion/css";
 import {
   HvButton,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvListValue,
   HvOverflowTooltip,
   HvTypography,
@@ -127,7 +127,7 @@ export const Level = ({
           />
         </div>
         {actions && (
-          <HvDropDownMenu
+          <HvDropdownMenu
             dataList={actions}
             classes={{ root: classes.actions }}
           />

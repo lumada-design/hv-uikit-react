@@ -5,8 +5,8 @@ import {
   getBezierPath,
 } from "reactflow";
 import {
-  HvDropDownMenu,
-  HvDropDownMenuProps,
+  HvDropdownMenu,
+  HvDropdownMenuProps,
 } from "@hitachivantara/uikit-react-core";
 import { useFlowInstance } from "@hitachivantara/uikit-react-lab";
 
@@ -43,7 +43,7 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
 
   const status = data?.status ? flowStatusesSpecs[data.status] : undefined;
 
-  const handleClick: HvDropDownMenuProps["onClick"] = (event, value) => {
+  const handleClick: HvDropdownMenuProps["onClick"] = (event, value) => {
     if (value.id === "remove") {
       instance.setEdges((edges) => edges.filter((edge) => edge.id !== id));
     }
@@ -62,7 +62,7 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
             }}
             className="nodrag nopan nowheel" // ReactFlow specific classes to prevent drag on icon
           >
-            <HvDropDownMenu
+            <HvDropdownMenu
               icon={status.icon}
               dataList={[{ id: "remove", label: "Remove connection" }]}
               onClick={handleClick}

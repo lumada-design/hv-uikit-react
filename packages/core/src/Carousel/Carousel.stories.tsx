@@ -8,7 +8,7 @@ import {
   HvCarousel,
   HvCarouselProps,
   HvCarouselSlide,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvTypography,
   theme,
 } from "@hitachivantara/uikit-react-core";
@@ -91,7 +91,7 @@ export const Actions: StoryObj<HvCarouselProps> = {
         showFullscreen
         onChange={setIndex}
         actions={
-          <HvDropDownMenu
+          <HvDropdownMenu
             placement="left"
             dataList={[{ id: "delete", label: "Delete" }]}
             onClick={(evt, action) => {

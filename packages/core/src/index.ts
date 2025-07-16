@@ -74,7 +74,7 @@ export * from "./Dialog";
 export * from "./DotPagination";
 export * from "./Drawer";
 export * from "./Dropdown";
-export * from "./DropDownMenu";
+export * from "./DropdownMenu";
 export * from "./EmptyState";
 export * from "./FileUploader";
 export * from "./FilterGroup";

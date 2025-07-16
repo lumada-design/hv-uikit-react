@@ -1,4 +1,4 @@
-import { HvDropDownMenu, HvDropDownMenuProps } from "../DropDownMenu";
+import { HvDropdownMenu, HvDropdownMenuProps } from "../DropdownMenu";
 import { HvIcon } from "../icons";
 import { setId } from "../utils/setId";
 
@@ -10,7 +10,7 @@ export const pathWithSubMenu = (
   listRoute: any,
   maxVisible: number,
   onClick?: (event: React.MouseEvent<HTMLElement>, data: any) => void,
-  dropDownMenuProps?: Partial<HvDropDownMenuProps>,
+  dropDownMenuProps?: Partial<HvDropdownMenuProps>,
 ) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
@@ -24,7 +24,7 @@ export const pathWithSubMenu = (
   listRoute.splice(
     1,
     nbrElemToSubMenu,
-    <HvDropDownMenu
+    <HvDropdownMenu
       id={setId(id, "submenu")}
       icon={<HvIcon name="DotsHorizontal" />}
       dataList={subMenuList}

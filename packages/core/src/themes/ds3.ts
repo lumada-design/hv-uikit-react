@@ -522,7 +522,7 @@ export const ds3 = mergeTheme(ds3Base, {
         },
       },
     },
-    HvDropDownMenu: {
+    HvDropdownMenu: {
       classes: {
         iconSelected: {
           border: "none",

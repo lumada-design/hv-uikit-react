@@ -774,7 +774,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     },
-    HvDropDownMenu: {
+    HvDropdownMenu: {
       classes: {
         root: {
           "--r": "calc(var(--HvButton-height) / 2)",

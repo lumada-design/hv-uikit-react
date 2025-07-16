@@ -1,15 +1,15 @@
 import {
   dropDownMenuClasses as classes,
-  HvDropDownMenu,
+  HvDropdownMenu,
 } from "@hitachivantara/uikit-react-core";
 import { Open, Preview, Save } from "@hitachivantara/uikit-react-icons";
 
 import { Header } from "../../components/Header";
 
 <Header
-  params={{ name: "DropDownMenu", classes }}
-  Component={HvDropDownMenu}
-  componentName="HvDropDownMenu"
+  params={{ name: "DropdownMenu", classes }}
+  Component={HvDropdownMenu}
+  componentName="HvDropdownMenu"
   controls={{
     placement: {
       defaultValue: "right",
@@ -37,7 +37,7 @@ import { Header } from "../../components/Header";
 The items in the `dataList` prop can be can be customized, namely with an icon or custom content on the `label` prop. Each item can be individually disabled also.
 
 ```tsx live
-<HvDropDownMenu
+<HvDropdownMenu
   dataList={[
     { id: "save", label: "Save", icon: <Save /> },
     { id: "export", label: "Export", icon: <Open />, disabled: true },
@@ -65,7 +65,7 @@ export default function Demo() {
       <HvButton variant="secondaryGhost" onClick={() => setOpen(!open)}>
         {`Click to ${!open ? "Open" : "Close"}`}
       </HvButton>
-      <HvDropDownMenu
+      <HvDropdownMenu
         expanded={open}
         onClick={(e, item) => console.log(item.label)}
         disablePortal={false}

@@ -5,7 +5,7 @@ import {
   HvBaseProps,
   HvButton,
   HvButtonProps,
-  HvDropDownMenu,
+  HvDropdownMenu,
   HvOverflowTooltip,
   isKey,
   uniqueId,
@@ -325,7 +325,7 @@ export const HvCanvasToolbarTabs = forwardRef<
         )}
         {hiddenTabs.length > 0 && (
           <div className={classes.dropdownMenuContainer}>
-            <HvDropDownMenu
+            <HvDropdownMenu
               classes={{
                 menuListRoot: classes.dropdownMenuListRoot,
               }}

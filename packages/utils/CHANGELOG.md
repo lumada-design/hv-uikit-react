@@ -107,7 +107,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **DropDownMenu:** move getPrevNextFocus for perf & ssr support ([#4441](https://github.com/lumada-design/hv-uikit-react/issues/4441)) ([101d28d](https://github.com/lumada-design/hv-uikit-react/commit/101d28d20f3779aa5043923885540d6e1e389c79))
+- **DropdownMenu:** move getPrevNextFocus for perf & ssr support ([#4441](https://github.com/lumada-design/hv-uikit-react/issues/4441)) ([101d28d](https://github.com/lumada-design/hv-uikit-react/commit/101d28d20f3779aa5043923885540d6e1e389c79))
 
 ## [0.2.16](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.15...@hitachivantara/uikit-react-utils@0.2.16) (2024-11-19)
 
