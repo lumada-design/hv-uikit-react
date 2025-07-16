@@ -132,7 +132,10 @@ export const HvAppSwitcherAction = ({
       disabled={disabled}
       className={cx(
         classes.root,
-        { [classes.disabled]: disabled, [classes.selected]: isSelected },
+        {
+          [classes.selected]: isSelected,
+          [classes.disabled]: disabled,
+        },
         className,
       )}
     >

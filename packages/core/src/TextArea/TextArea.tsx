@@ -422,8 +422,8 @@ export const HvTextArea = forwardRef<
         classes.root,
         {
           [classes.resizable]: resizable,
-          [classes.disabled]: disabled,
           [classes.invalid]: isStateInvalid,
+          [classes.disabled]: disabled,
         },
         className,
       )}

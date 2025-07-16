@@ -200,8 +200,8 @@ export const HvBlade = (props: HvBladeProps) => {
         // eslint-disable-next-line prefer-tag-over-role
         role="button"
         className={cx(classes.button, {
-          [classes.disabled]: disabled,
           [classes.textOnlyLabel]: typeof buttonLabel === "string",
+          [classes.disabled]: disabled,
         })}
         style={{ flexShrink: headingLevel === undefined ? 0 : undefined }}
         disabled={disabled}

@@ -232,8 +232,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
       readOnly={readOnly}
       status={validationState}
       className={cx(classes.root, className, {
-        [classes.disabled]: disabled,
         [classes.readOnly]: readOnly,
+        [classes.disabled]: disabled,
       })}
       {...others}
     >

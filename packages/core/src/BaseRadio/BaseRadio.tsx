@@ -153,10 +153,10 @@ export const HvBaseRadio = forwardRef<HTMLButtonElement, HvBaseRadioProps>(
         className={cx(
           classes.root,
           {
-            [classes.disabled]: disabled,
             [classes.focusVisible]: focusVisible,
             [classes.checked]: checked,
             [classes.semantic]: semantic,
+            [classes.disabled]: disabled,
           },
           className,
         )}
