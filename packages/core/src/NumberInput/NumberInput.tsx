@@ -1,5 +1,5 @@
 import { forwardRef, useMemo, useRef } from "react";
-import { useForkRef } from "@mui/material";
+import { useForkRef } from "@mui/material/utils";
 import { useDefaultProps } from "@hitachivantara/uikit-react-utils";
 
 import { HvAdornment } from "../FormElement";

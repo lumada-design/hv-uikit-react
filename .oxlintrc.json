@@ -12,7 +12,7 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@hitachivantara/*/*"],
+        "patterns": ["@hitachivantara/*/*", "@mui/material"],
         "paths": [
           "..",
           "../..",
