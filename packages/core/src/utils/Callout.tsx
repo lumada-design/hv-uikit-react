@@ -163,6 +163,9 @@ export const HvCallout = forwardRef<
       variant={activeTheme?.snackbar.actionButtonVariant as any}
       actions={actions}
       onAction={onAction}
+      style={{
+        marginTop: actionsPosition === "bottom-right" ? "auto" : undefined,
+      }}
     />
   );
 
