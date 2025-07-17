@@ -1,8 +1,6 @@
-import { memo } from "react";
-
-import { HvDropdown } from "../../../../Dropdown";
-import { useQueryBuilderContext } from "../../../Context";
-import { isBigList } from "../../../utils";
+import { HvDropdown } from "../../Dropdown";
+import { useQueryBuilderContext } from "../Context";
+import { isBigList } from "../utils";
 
 export interface BooleanValueProps {
   id: React.Key;
@@ -43,5 +41,3 @@ export const BooleanValue = ({ id, value = true }: BooleanValueProps) => {
     />
   );
 };
-
-export default memo(BooleanValue);

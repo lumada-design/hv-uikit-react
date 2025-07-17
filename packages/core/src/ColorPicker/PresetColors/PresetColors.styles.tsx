@@ -1,9 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-const name = "HvColorPicker-PresetColors";
-
-export const { staticClasses, useClasses } = createClasses(name, {
+export const { useClasses } = createClasses("HvColorPickerPresetColors", {
   root: { width: "232px" },
   colors: {
     display: "flex",

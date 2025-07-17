@@ -1,8 +1,8 @@
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
-import { HvDropdown } from "../../../Dropdown";
-import { useQueryBuilderContext } from "../../Context";
-import { isBigList } from "../../utils";
+import { HvDropdown } from "../../Dropdown";
+import { useQueryBuilderContext } from "../Context";
+import { isBigList } from "../utils";
 
 export interface OperatorProps {
   id: React.Key;
@@ -70,5 +70,3 @@ export const Operator = ({
     />
   );
 };
-
-export default memo(Operator);

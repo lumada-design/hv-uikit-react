@@ -8,11 +8,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvInput } from "../../Input";
-import { staticClasses, useClasses } from "./Fields.styles";
-
-export { staticClasses as colorPickerFieldsClasses };
-
-export type HvColorPickerFieldsClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./Fields.styles";
 
 interface FieldsProps {
   className?: string;
@@ -29,7 +25,7 @@ interface FieldsProps {
         },
     event: React.ChangeEvent<HTMLInputElement>,
   ) => void;
-  classes?: HvColorPickerFieldsClasses;
+  classes?: ExtractNames<typeof useClasses>;
 }
 
 export const Fields = (props: FieldsProps) => {

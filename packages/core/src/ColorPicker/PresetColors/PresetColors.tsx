@@ -1,5 +1,4 @@
-// @types/react-color seems to be broken
-// @ts-ignore
+// @ts-ignore @types/react-color seems to be broken
 import { Swatch } from "react-color/lib/components/common";
 import {
   useDefaultProps,
@@ -8,18 +7,14 @@ import {
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvTypography } from "../../Typography";
-import { staticClasses, useClasses } from "./PresetColors.styles";
-
-export { staticClasses as colorPickerPresetColorsClasses };
-
-export type HvColorPickerPresetColorsClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./PresetColors.styles";
 
 interface PresetColorsProps {
   colors: HvColorAny[];
   onClick: (color: { hex: string; source: string }) => void;
   title?: string;
   className?: string;
-  classes?: HvColorPickerPresetColorsClasses;
+  classes?: ExtractNames<typeof useClasses>;
 }
 
 export const PresetColors = (props: PresetColorsProps) => {

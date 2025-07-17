@@ -1,19 +1,71 @@
-import { memo, useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import dayjs from "dayjs";
+import { createClasses } from "@hitachivantara/uikit-react-utils";
+import { theme } from "@hitachivantara/uikit-styles";
 
-import { HvDatePicker } from "../../../../DatePicker";
-import { HvWarningText } from "../../../../FormElement";
-import { HvTimePicker, HvTimePickerValue } from "../../../../TimePicker";
-import { uniqueId } from "../../../../utils/helpers";
-import { useQueryBuilderContext } from "../../../Context";
-import { useClasses } from "./DateTimeValue.styles";
-import { padTime, parseDate, parseTime } from "./utils";
+import { HvDatePicker } from "../../DatePicker";
+import { HvWarningText } from "../../FormElement";
+import { HvTimePicker, HvTimePickerValue } from "../../TimePicker";
+import { uniqueId } from "../../utils/helpers";
+import { useQueryBuilderContext } from "../Context";
 
-function valueIsRange(operator?: string) {
-  return operator === "range";
+function formatDate(date?: Date) {
+  return date?.toISOString().slice(0, 10);
 }
+
+function formatTime(time?: HvTimePickerValue) {
+  if (!time) return undefined;
+  const { hours, minutes, seconds } = time;
+  const date = new Date(Date.UTC(2020, 8, 8, hours, minutes, seconds));
+  return date.toISOString().slice(11, 19);
+}
+
+function parseDate(date?: string) {
+  return date ? new Date(date) : undefined;
+}
+
+function parseTime(time: string): HvTimePickerValue | null {
+  if (!time) return null;
+
+  const parts = time.split(":");
+
+  return {
+    hours: Number(parts[0]),
+    minutes: Number(parts[1]),
+    seconds: Number(parts[2]) || 0,
+  };
+}
+
+const { useClasses } = createClasses("HvQueryBuilderDateTimeValue", {
+  root: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  row: {},
+  vertical: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  horizontal: {
+    display: "flex",
+
+    "& > div:not(:last-child)": {
+      marginRight: theme.space.md,
+    },
+  },
+  isMdDown: {
+    "& > div:not(:last-child)": {
+      marginRight: `calc(${theme.space.md} / 2)`,
+    },
+  },
+  datePicker: {
+    flex: 1,
+  },
+  timePicker: {
+    flex: 1,
+  },
+});
 
 export interface DateTimeValueProps {
   id: React.Key;
@@ -32,8 +84,7 @@ export const DateTimeValue = ({
 
   const theme = useTheme();
   const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
-
-  const isRange = valueIsRange(operator);
+  const isRange = operator === "range";
 
   const { labels, dispatchAction, readOnly } = useQueryBuilderContext();
 
@@ -48,11 +99,7 @@ export const DateTimeValue = ({
     (data?: Date) => {
       setTouchedDate(true);
 
-      let date;
-      if (data != null) {
-        date = dayjs(data).format("YYYY-MM-DD");
-      }
-
+      const date = formatDate(data);
       const oldValue = !isRange ? valueProp?.date : valueProp?.start?.date;
 
       if (date !== oldValue) {
@@ -86,13 +133,7 @@ export const DateTimeValue = ({
     (data: HvTimePickerValue) => {
       setTouchedTime(true);
 
-      let time;
-      if (data != null) {
-        time = `${padTime(data.hours)}:${padTime(data.minutes)}:${padTime(
-          data.seconds,
-        )}`;
-      }
-
+      const time = formatTime(data);
       const oldValue = !isRange ? valueProp?.time : valueProp?.start?.time;
 
       if (time !== oldValue) {
@@ -126,11 +167,7 @@ export const DateTimeValue = ({
     (data?: Date) => {
       setTouchedEndDate(true);
 
-      let date;
-      if (data != null) {
-        date = dayjs(data).format("YYYY-MM-DD");
-      }
-
+      const date = formatDate(data);
       if (date !== valueProp?.end?.date) {
         const value = {
           start: valueProp?.start,
@@ -154,13 +191,7 @@ export const DateTimeValue = ({
     (data: HvTimePickerValue) => {
       setTouchedEndTime(true);
 
-      let time;
-      if (data != null) {
-        time = `${padTime(data.hours)}:${padTime(data.minutes)}:${padTime(
-          data.seconds,
-        )}`;
-      }
-
+      const time = formatTime(data);
       if (time !== valueProp?.end?.time) {
         const value = {
           start: valueProp?.start,
@@ -328,5 +359,3 @@ export const DateTimeValue = ({
     </div>
   );
 };
-
-export default memo(DateTimeValue);

@@ -1,9 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-const name = "HvColorPicker-Fields";
-
-export const { staticClasses, useClasses } = createClasses(name, {
+export const { useClasses } = createClasses("HvColorPickerFields", {
   fields: {
     width: "100%",
     display: "flex",

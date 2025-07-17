@@ -7,11 +7,7 @@ import {
 
 import { HvIconButton } from "../../IconButton";
 import { HvIcon } from "../../icons";
-import { staticClasses, useClasses } from "./SavedColors.styles";
-
-export { staticClasses as colorPickerSavedColorsClasses };
-
-export type HvColorPickerSavedColorsClasses = ExtractNames<typeof useClasses>;
+import { useClasses } from "./SavedColors.styles";
 
 interface SavedColorsProps {
   colors: string[];
@@ -20,7 +16,7 @@ interface SavedColorsProps {
   onRemoveColor: (color: string, index: number) => void;
   deleteButtonAriaLabel?: string;
   addButtonAriaLabel?: string;
-  classes?: HvColorPickerSavedColorsClasses;
+  classes?: ExtractNames<typeof useClasses>;
 }
 
 export const SavedColors = (props: SavedColorsProps) => {

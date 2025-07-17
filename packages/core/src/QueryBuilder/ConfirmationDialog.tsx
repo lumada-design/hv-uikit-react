@@ -1,36 +1,30 @@
-import { HvButton, HvButtonProps } from "../../Button";
+import { HvButton, HvButtonProps } from "../Button";
 import {
   HvDialog,
   HvDialogActions,
   HvDialogContent,
   HvDialogProps,
   HvDialogTitle,
-} from "../../Dialog";
-import { useClasses } from "./ConfirmationDialog.styles";
+} from "../Dialog";
 
-export interface ConfirmationDialogProps {
+export interface ConfirmationDialogProps extends HvDialogProps {
   title?: string;
   message?: string;
-  isOpen?: boolean;
   onConfirm?: HvButtonProps["onClick"];
   onCancel?: () => void;
   confirmButtonLabel?: string;
   cancelButtonLabel?: string;
-  closeButtonTooltip?: string;
 }
 
 export const ConfirmationDialog = ({
   title,
   message,
-  isOpen,
   onConfirm,
   onCancel,
   confirmButtonLabel,
   cancelButtonLabel,
-  closeButtonTooltip,
+  ...others
 }: ConfirmationDialogProps) => {
-  const { classes } = useClasses();
-
   const handleClose: HvDialogProps["onClose"] = (_, reason) => {
     if (reason !== "backdropClick") {
       onCancel?.();
@@ -38,13 +32,7 @@ export const ConfirmationDialog = ({
   };
 
   return (
-    <HvDialog
-      classes={{ paper: classes.paper }}
-      open={isOpen}
-      onClose={handleClose}
-      firstFocusable="confirmation-dialog-cancel"
-      buttonTitle={closeButtonTooltip}
-    >
+    <HvDialog onClose={handleClose} {...others}>
       <HvDialogTitle variant="warning" showIcon={false}>
         {title}
       </HvDialogTitle>
@@ -53,11 +41,7 @@ export const ConfirmationDialog = ({
         <HvButton variant="primaryGhost" onClick={onConfirm}>
           {confirmButtonLabel}
         </HvButton>
-        <HvButton
-          id="confirmation-dialog-cancel"
-          variant="primaryGhost"
-          onClick={() => onCancel?.()}
-        >
+        <HvButton autoFocus variant="primaryGhost" onClick={onCancel}>
           {cancelButtonLabel}
         </HvButton>
       </HvDialogActions>

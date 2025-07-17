@@ -1,9 +1,7 @@
 import { createClasses } from "@hitachivantara/uikit-react-utils";
 import { theme } from "@hitachivantara/uikit-styles";
 
-const name = "HvColorPicker-SavedColors";
-
-export const { staticClasses, useClasses } = createClasses(name, {
+export const { useClasses } = createClasses("HvColorPickerSavedColors", {
   addButton: {
     margin: theme.space.xxs,
     width: "32px",

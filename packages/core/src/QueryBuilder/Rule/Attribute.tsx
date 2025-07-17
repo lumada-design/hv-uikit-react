@@ -1,8 +1,8 @@
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
 
-import { HvDropdown } from "../../../Dropdown";
-import { useQueryBuilderContext } from "../../Context";
-import { isBigList } from "../../utils";
+import { HvDropdown } from "../../Dropdown";
+import { useQueryBuilderContext } from "../Context";
+import { isBigList } from "../utils";
 
 export interface AttributeProps {
   id: React.Key;
@@ -79,5 +79,3 @@ export const Attribute = ({
     />
   );
 };
-
-export default memo(Attribute);
