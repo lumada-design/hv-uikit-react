@@ -205,18 +205,9 @@ const categorical = {
   cat28: "#D8265D",
 };
 
-const support = {
-  supp1: "#0F8B8D",
-  supp2: "#734B6D",
-  supp3: "#4E7599",
-  supp4: "#C19C31",
-  supp5: "#546B6B",
-};
-
 const common = {
   ...base,
   ...categorical,
-  ...support,
 };
 
 // #region Light palette
@@ -249,20 +240,9 @@ const semanticLight = {
   negative_80: "#ED4747",
   negative_120: "#B41B3A",
   catastrophic: "#930A80",
-  sema6: "#AA00FF",
   neutral_20: "#D8E6F1",
   positive_20: "#D7E6CF",
   negative_20: "#F4D3D4",
-  sema10: "#CE703D",
-  sema11: "#D36041",
-  sema12: "#CF4E38",
-  sema13: "#CB3B30",
-  sema14: "#BA2626",
-  sema15: "#6589CB",
-  sema16: "#4D8AC0",
-  sema17: "#3388B1",
-  sema18: "#1A85A1",
-  sema19: "#00838F",
   warning_20: "#FBF2D8",
 };
 
@@ -368,20 +348,9 @@ const semanticDark = {
   negative_80: "#EC3D57",
   negative_120: "#D92750",
   catastrophic: "#9A76E7",
-  sema6: "#928FFF",
   neutral_20: "#D8E6F1",
   positive_20: "#D7E6CF",
   negative_20: "#F4D3D4",
-  sema10: "#F4CAB0",
-  sema11: "#F1B7A0",
-  sema12: "#EEA291",
-  sema13: "#E98B82",
-  sema14: "#E57373",
-  sema15: "#80DEEA",
-  sema16: "#4DD0E1",
-  sema17: "#26C6DA",
-  sema18: "#00ACC1",
-  sema19: "#00A0B7",
   warning_20: "#FBF2D8",
 };
 
@@ -486,7 +455,6 @@ export type HvAccentColor = keyof typeof accentLight;
 export type HvAtmosphereColor = keyof typeof atmosphereLight;
 export type HvBaseColor = keyof typeof base;
 export type HvSemanticColor = keyof typeof semanticLight;
-export type HvSupportColor = keyof typeof support;
 export type HvCategoricalColor = keyof typeof categorical;
 
 /** A type with all the accepted colors from the color palette */
