@@ -79,7 +79,7 @@ export const HvBannerContent = forwardRef<
       ref={ref}
       id={id}
       variant={variant}
-      showClose
+      showClose={onClose !== undefined}
       showIcon={showIcon}
       customIcon={customIcon}
       classes={{
