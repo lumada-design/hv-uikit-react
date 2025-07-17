@@ -17,8 +17,15 @@
     "react/rules-of-hooks": "error",
 
     "eslint/no-unused-vars": [
-      "warn",
-      { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
+      "error",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "caughtErrors": "none"
+      }
     ],
     "jsx_a11y/no-autofocus": "off",
     "jsx_a11y/role-supports-aria-props": "off",
