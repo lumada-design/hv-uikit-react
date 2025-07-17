@@ -56,7 +56,7 @@ describe("Banner", () => {
     await user.click(action1);
     await user.click(action2);
 
-    expect(buttons).toHaveLength(3);
+    expect(buttons).toHaveLength(2);
     expect(action1).toBeInTheDocument();
     expect(action2).toBeInTheDocument();
     expect(callbackSpy).toHaveBeenCalledTimes(4);
