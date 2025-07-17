@@ -170,8 +170,6 @@ export const HvListItem = forwardRef<
           [classes.interactive]: interactive || selectable,
           [classes.selected]: selected || props["aria-selected"],
           [classes.disabled]: disabled || props["aria-disabled"],
-          [classes.withStartAdornment]: startAdornment != null,
-          [classes.withEndAdornment]: endAdornment != null,
         },
         className,
       )}
