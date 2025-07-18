@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-navigation@1.4.1...@hitachivantara/app-shell-navigation@1.4.2) (2025-07-18)
+
+**Note:** Version bump only for package @hitachivantara/app-shell-navigation
+
 ## [1.4.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-navigation@1.4.0...@hitachivantara/app-shell-navigation@1.4.1) (2025-07-11)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-navigation

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.50.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.49.0...@hitachivantara/uikit-styles@5.50.0) (2025-07-18)
+
+### Features
+
+- **styles:** allow extending theme tokens ([#4813](https://github.com/lumada-design/hv-uikit-react/issues/4813)) ([ac1de07](https://github.com/lumada-design/hv-uikit-react/commit/ac1de07d3d6aa0ed4f0f53c3ede1359c7a737d79))
+
 # [5.49.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.48.2...@hitachivantara/uikit-styles@5.49.0) (2025-07-11)
 
 ### Features

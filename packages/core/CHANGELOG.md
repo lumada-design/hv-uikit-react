@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.99.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.98.0...@hitachivantara/uikit-react-core@5.99.0) (2025-07-18)
+
+### Features
+
+- **Card:** update Card to P+ 0.6.2 specs ([#4801](https://github.com/lumada-design/hv-uikit-react/issues/4801)) ([d4eb756](https://github.com/lumada-design/hv-uikit-react/commit/d4eb7568be10ac822a6216639e21378ded2c43b9))
+- **Dialog:** update Dialog according to P+ specs ([#4805](https://github.com/lumada-design/hv-uikit-react/issues/4805)) ([5cd1e71](https://github.com/lumada-design/hv-uikit-react/commit/5cd1e714104026b6e4827f9670c5508f1057cca6))
+- **Section:** add expandableHeader ([#4802](https://github.com/lumada-design/hv-uikit-react/issues/4802)) ([3852239](https://github.com/lumada-design/hv-uikit-react/commit/38522396eaac8c6582ad71483f75f4dbd3d4875a))
+
 # [5.98.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.97.0...@hitachivantara/uikit-react-core@5.98.0) (2025-07-11)
 
 ### Bug Fixes

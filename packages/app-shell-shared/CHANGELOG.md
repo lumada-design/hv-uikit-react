@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.5.11...@hitachivantara/app-shell-shared@1.5.12) (2025-07-18)
+
+**Note:** Version bump only for package @hitachivantara/app-shell-shared
+
 ## [1.5.11](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.5.10...@hitachivantara/app-shell-shared@1.5.11) (2025-07-11)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-shared
