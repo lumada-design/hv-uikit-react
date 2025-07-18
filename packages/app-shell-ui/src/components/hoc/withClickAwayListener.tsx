@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { ClickAwayListener } from "@mui/material";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
 
 import createAppContainerElement from "../../utils/documentUtil";
 

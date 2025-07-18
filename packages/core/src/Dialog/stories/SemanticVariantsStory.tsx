@@ -9,7 +9,6 @@ import {
   HvDialogTitle,
   HvStatusIcon,
 } from "@hitachivantara/uikit-react-core";
-import { Ungroup } from "@hitachivantara/uikit-react-icons";
 
 type SimpleDialogProps = Pick<HvDialogProps, "classes" | "variant"> & {
   buttonMessage?: string;

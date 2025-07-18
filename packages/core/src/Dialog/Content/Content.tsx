@@ -7,7 +7,6 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import { HvTypography } from "../../Typography";
 import { staticClasses, useClasses } from "./Content.styles";

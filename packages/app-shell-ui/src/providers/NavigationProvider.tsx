@@ -7,7 +7,8 @@ import {
   useMemo,
   useState,
 } from "react";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { useHvAppShellConfig } from "@hitachivantara/app-shell-shared";
 
 import useLocalStorage from "../hooks/useLocalStorage";
