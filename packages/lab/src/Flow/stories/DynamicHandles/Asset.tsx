@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
+import { Node } from "@xyflow/react";
 import {
   HvFlowNode,
   HvFlowNodeFC,
@@ -49,20 +50,20 @@ export const types = {
 };
 
 // Node data type
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   type?: keyof typeof types;
   inputs?: HvFlowNodeInput[];
   outputs?: HvFlowNodeOutput[];
 }
 
-export const Asset: HvFlowNodeFC<NodeData> = (props) => {
+export const Asset: HvFlowNodeFC<Node<NodeData>> = (props) => {
   const { data, id } = props;
 
   const curType = useRef(data.type);
 
   const reactFlowInstance = useFlowInstance();
 
-  const { setNodeData } = useFlowNodeUtils<NodeData>();
+  const { setNodeData } = useFlowNodeUtils<Node<NodeData>>();
 
   useEffect(() => {
     if (data.type !== curType.current) {
@@ -72,7 +73,9 @@ export const Asset: HvFlowNodeFC<NodeData> = (props) => {
       // Update inputs and outputs for the node
       setNodeData((prev) => ({
         ...prev,
-        ...(prev?.type ? types[prev.type] : {}),
+        ...(prev?.type && typeof prev.type === "string" && prev.type in types
+          ? types[prev.type as keyof typeof types]
+          : {}),
       }));
 
       // Clean up the edges for this node since the inputs and outputs changed

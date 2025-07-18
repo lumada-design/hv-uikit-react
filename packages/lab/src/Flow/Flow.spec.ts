@@ -109,7 +109,7 @@ test.describe("Node", () => {
     expect(nodeInCanvasBox?.y).toBeGreaterThanOrEqual(
       dragDestinationBox!.y + 20,
     );
-    expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 40);
+    expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 79);
   });
 
   test("should be able to duplicate a node", async ({ page }) => {

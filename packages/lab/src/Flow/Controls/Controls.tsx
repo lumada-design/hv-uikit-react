@@ -5,7 +5,7 @@ import {
   ReactFlowState,
   useStore,
   useStoreApi,
-} from "reactflow";
+} from "@xyflow/react";
 import { shallow } from "zustand/shallow";
 import {
   HvButton,

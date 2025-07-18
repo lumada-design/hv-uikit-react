@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { css } from "@emotion/css";
+import { Node } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -24,7 +25,7 @@ import {
 import { LayoutConfig, useLayoutsContext } from "./LayoutsContext";
 import { buildLayout } from "./utils";
 
-interface DashboardData {
+interface DashboardData extends Record<string, unknown> {
   config: LayoutConfig;
 }
 
@@ -40,7 +41,7 @@ const classes = {
   }),
 };
 
-export const Dashboard: HvFlowNodeFC<DashboardData> = (props) => {
+export const Dashboard: HvFlowNodeFC<Node<DashboardData>> = (props) => {
   const { id, data } = props;
 
   const [config, setConfig] = useState<LayoutConfig>();
