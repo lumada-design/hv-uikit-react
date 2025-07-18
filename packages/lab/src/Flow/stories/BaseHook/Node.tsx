@@ -4,7 +4,7 @@ import {
   NodeToolbar,
   Position,
   NodeProps as ReactFlowNodeProps,
-} from "reactflow";
+} from "@xyflow/react";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 import { Level0Good } from "@hitachivantara/uikit-react-icons";
 import {
@@ -138,7 +138,7 @@ export const Node = ({ id, groupId = "teapot", input, output }: NodeProps) => {
           <HvTypography variant="title4" component="h2">
             {title}
           </HvTypography>
-          <HvTypography variant="caption1">{subtitle}</HvTypography>
+          <HvTypography variant="caption1">{subtitle as string}</HvTypography>
         </div>
       </div>
     </div>

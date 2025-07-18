@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ReactFlowInstance } from "reactflow";
+import { ReactFlowInstance } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -33,7 +33,7 @@ import {
 
 import { CanvasProvider, useCanvasContext } from "./Context";
 import { ListView } from "./ListView";
-import { Node, NodeData } from "./Node";
+import { Node } from "./Node";
 import { CanvasSidebar } from "./Sidebar";
 import { StatusEdge } from "./StatusEdge";
 import { classes } from "./styles";
@@ -41,7 +41,7 @@ import { DataTable } from "./Table";
 import { TreeView } from "./TreeView";
 import { flowStatuses } from "./utils";
 
-const nodeTypes = {
+const nodeTypes: HvFlowProps["nodeTypes"] = {
   node: Node,
 };
 const edgeTypes = {
@@ -80,8 +80,7 @@ const Page = () => {
   const [sidePanelTab, setSidePanelTab] = useState(sidePanelTabs[0].id);
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
-  const [flowInstance, setFlowInstance] =
-    useState<ReactFlowInstance<NodeData>>();
+  const [flowInstance, setFlowInstance] = useState<ReactFlowInstance>();
 
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();

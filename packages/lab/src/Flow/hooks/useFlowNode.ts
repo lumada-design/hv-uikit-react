@@ -8,7 +8,7 @@ import {
   useNodes,
   useStore,
   XYPosition,
-} from "reactflow";
+} from "@xyflow/react";
 import { shallow } from "zustand/shallow";
 
 import { useFlowInstance } from "./useFlowInstance";
@@ -30,7 +30,7 @@ export function useFlowNode<T extends Node = Node>(id?: string) {
 
   const nodeSelector = useCallback(
     (state: ReactFlowState) =>
-      state.getNodes().find((n: Node): n is T => n.id === nodeId),
+      state.nodes.find((n: Node): n is T => n.id === nodeId),
     [nodeId],
   );
   return useStore<T | undefined>(nodeSelector, shallow);
@@ -80,7 +80,7 @@ export function useFlowNodeParents(id?: string) {
   const parentNodesSelector = useCallback(
     (state: ReactFlowState) => {
       return inputEdges
-        .map((e) => state.getNodes().find((n: Node) => n.id === e.source))
+        .map((e) => state.nodes.find((n: Node) => n.id === e.source))
         .filter((n): n is Node => n !== null);
     },
     [inputEdges],
@@ -89,7 +89,7 @@ export function useFlowNodeParents(id?: string) {
 }
 
 /** Retrieves the nodes connected to the inputs of the node */
-export function useFlowInputNodes<T = any>(id?: string) {
+export function useFlowInputNodes<T extends Node = Node>(id?: string) {
   const nodeId = useNodeId(id);
   const nodes = useNodes();
   const edges = useEdges();
@@ -98,12 +98,12 @@ export function useFlowInputNodes<T = any>(id?: string) {
     return edges
       .filter((e) => e.target === nodeId)
       .map((e) => nodes.find((n) => n.id === e.source))
-      .filter((n): n is Node<T> => n !== null);
+      .filter((n): n is T => n !== undefined);
   }, [edges, nodeId, nodes]);
 }
 
 /** Retrieves the nodes connected to the outputs of the node */
-export function useFlowOutputNodes<T = any>(id?: string) {
+export function useFlowOutputNodes<T extends Node = Node>(id?: string) {
   const nodeId = useNodeId(id);
   const nodes = useNodes();
   const edges = useEdges();
@@ -112,18 +112,18 @@ export function useFlowOutputNodes<T = any>(id?: string) {
     return edges
       .filter((e) => e.source === nodeId)
       .map((e) => nodes.find((n) => n.id === e.target))
-      .filter((n): n is Node<T> => n !== null);
+      .filter((n): n is T => n !== undefined);
   }, [edges, nodeId, nodes]);
 }
 
 /** Utilities to manipulate a node in the flow */
-export function useFlowNodeUtils<NodeData = any>(id?: string) {
+export function useFlowNodeUtils<T extends Node = Node>(id?: string) {
   const nodeId = useNodeId(id);
-  const reactFlowInstance = useFlowInstance<NodeData>();
+  const reactFlowInstance = useFlowInstance<T>();
 
   /** Mutate the node's `.data` object */
   const setNodeData = useCallback(
-    (setNewData: (newData?: NodeData) => NodeData) => {
+    (setNewData: (newData?: Node["data"]) => Node["data"]) => {
       if (!nodeId) return;
 
       reactFlowInstance.setNodes((nodes) => {
@@ -139,7 +139,7 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
   );
 
   const setNodeParent = useCallback(
-    (node?: Node<any>, extent?: "parent" | CoordinateExtent) => {
+    (node?: Node, extent?: "parent" | CoordinateExtent) => {
       if (!nodeId) return;
 
       reactFlowInstance.setNodes((nodes) => {
@@ -151,7 +151,7 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
               extent,
               position: node
                 ? relativePosition(node.position, n.position)
-                : (n.positionAbsolute ?? n.position),
+                : ((n as any).positionAbsolute ?? n.position),
             };
           }
           return n;
@@ -170,10 +170,12 @@ export function useFlowNodeUtils<NodeData = any>(id?: string) {
   );
 }
 
-export function useFlowNodeIntersections<NodeData = any>(id?: string) {
+export function useFlowNodeIntersections<NodeType extends Node = Node>(
+  id?: string,
+) {
   const nodeId = useNodeId(id);
   const node = useFlowNode(nodeId ?? "");
-  const reactFlowInstance = useFlowInstance<NodeData>();
+  const reactFlowInstance = useFlowInstance<NodeType>();
 
   return node ? reactFlowInstance.getIntersectingNodes(node, false) : [];
 }

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Node } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -54,7 +55,7 @@ const classes = {
   footer: "flex gap-sm justify-center",
 };
 
-export const Dashboard: HvFlowNodeFC<NodeData> = (props) => {
+export const Dashboard: HvFlowNodeFC<Node<NodeData>> = (props) => {
   const { id } = props;
 
   const [open, setOpen] = useState(false);

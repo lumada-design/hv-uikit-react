@@ -1,7 +1,5 @@
-import {
-  HvDashboardProps,
-  HvFlowInstance,
-} from "@hitachivantara/uikit-react-lab";
+import { Node } from "@xyflow/react";
+import { HvDashboardProps } from "@hitachivantara/uikit-react-lab";
 
 export type NodeGroup = "dashboard" | "visualization" | "dataset";
 
@@ -10,17 +8,17 @@ export const DASHBOARDS_STORAGE_KEY = "dashboards";
 
 export const LAYOUT_COLS = 12;
 
-type Node = NonNullable<ReturnType<HvFlowInstance<NodeData>["getNode"]>>;
+type FlowNode = Node<NodeData>;
 
 export interface DashboardSpecs
   extends Pick<HvDashboardProps, "layout" | "cols"> {
-  items: Node[];
+  items: FlowNode[];
 }
 
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;
 // ### Local storage ###
 
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   endpoint?: string;
   columns?: string[];
   title?: string;

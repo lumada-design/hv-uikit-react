@@ -69,11 +69,11 @@ export const nodeGroups = {
   },
 } satisfies HvFlowProps["nodeGroups"];
 
-const nodeTypes = {
-  asset: Asset,
-  model: MLModel,
-  lineChart: LineChart,
-} satisfies HvFlowProps["nodeTypes"];
+const nodeTypes: HvFlowProps["nodeTypes"] = {
+  asset: Asset as any,
+  model: MLModel as any,
+  lineChart: LineChart as any,
+};
 
 export const NoGroups = () => {
   const { rootId } = useTheme();

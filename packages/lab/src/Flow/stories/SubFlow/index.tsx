@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
-import { NodeProps } from "reactflow";
+import { NodeProps } from "@xyflow/react";
 import {
   HvButton,
   HvGlobalActions,

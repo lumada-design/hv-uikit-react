@@ -1,11 +1,11 @@
-import { useReactFlow } from "reactflow";
+import { Edge, Node, useReactFlow } from "@xyflow/react";
 
 import { HvFlowInstance } from "../types";
 
 /** Retrieves the React Flow instance */
 export function useFlowInstance<
-  NodeData = any,
-  EdgeData = any,
->(): HvFlowInstance<NodeData, EdgeData> {
-  return useReactFlow<NodeData, EdgeData>();
+  NodeType extends Node = Node,
+  EdgeType extends Edge = Edge,
+>(): HvFlowInstance<NodeType, EdgeType> {
+  return useReactFlow<NodeType, EdgeType>();
 }

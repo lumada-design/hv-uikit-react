@@ -13,7 +13,7 @@ import {
   NodeChange,
   ReactFlow,
   ReactFlowProps,
-} from "reactflow";
+} from "@xyflow/react";
 import { uid } from "uid";
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
@@ -33,21 +33,21 @@ export { staticClasses as flowClasses };
 export type HvFlowClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDroppableFlowProps<
-  NodeType extends string | undefined = string | undefined,
-  NodeData = any,
+  NodeType extends Node = Node,
+  EdgeType extends Edge = Edge,
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
   /** Flow nodes types. */
-  nodeTypes?: HvFlowNodeTypes<NodeData>;
+  nodeTypes?: HvFlowNodeTypes<NodeType>;
   /** Flow nodes. */
-  nodes?: Node<NodeData, NodeType>[];
+  nodes?: NodeType[];
   /** Flow edges. */
-  edges?: Edge[];
+  edges?: EdgeType[];
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvFlowClasses;
   /** Callback called when the flow changes. Returns the updated nodes and edges. */
-  onFlowChange?: (nodes: Node<NodeData, NodeType>[], edges: Edge[]) => void;
+  onFlowChange?: (nodes: NodeType[], edges: EdgeType[]) => void;
   /**
    * Callback called when a node is dropped in the flow.
    *
@@ -59,15 +59,15 @@ export interface HvDroppableFlowProps<
    *
    * Returns the event and the node to be added to the flow.
    */
-  onDndDrop?: (event: DragEndEvent, node: Node) => void;
+  onDndDrop?: (event: DragEndEvent, node: NodeType) => void;
 }
 
-export const getNode = (nodes: Node[], nodeId: string) => {
+export const getNode = <T extends Node>(nodes: T[], nodeId: string) => {
   return nodes.find((n) => n.id === nodeId);
 };
 
-const validateEdge = (
-  nodes: Node[],
+const validateEdge = <T extends Node>(
+  nodes: T[],
   edges: Edge[],
   connection: Connection,
   nodeMetaRegistry: HvFlowNodeMetaRegistry,
@@ -270,8 +270,18 @@ export const HvDroppableFlow = ({
 
   const { registry } = useNodeMetaRegistry();
 
-  const isValidConnection: ReactFlowProps["isValidConnection"] = (connection) =>
-    validateEdge(nodes, edges, connection, registry);
+  const isValidConnection: ReactFlowProps["isValidConnection"] = (
+    connection,
+  ) => {
+    // Convert Edge to Connection if needed
+    const connectionObj: Connection = {
+      source: connection.source,
+      target: connection.target,
+      sourceHandle: connection.sourceHandle ?? null,
+      targetHandle: connection.targetHandle ?? null,
+    };
+    return validateEdge(nodes, edges, connectionObj, registry);
+  };
 
   const defaultEdgeOptions = {
     markerEnd: {

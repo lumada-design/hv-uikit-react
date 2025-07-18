@@ -1,6 +1,12 @@
 import { isValidElement } from "react";
 import { css, cx } from "@emotion/css";
-import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
+import {
+  Node as FlowNode,
+  Handle,
+  NodeProps,
+  NodeToolbar,
+  Position,
+} from "@xyflow/react";
 import {
   HvButton,
   HvColorAny,
@@ -67,20 +73,18 @@ const classes = {
   }),
 };
 
-export type NodeData =
-  | undefined
-  | {
-      nodeLabel?: string; // nodeLabel is automatically added by HvFlow when the node is dropped
-      tableId?: string;
-      subtitle?: string;
-      color?: HvColorAny;
-      icon?: string;
-      output?: HvFlowNodeOutput;
-      input?: HvFlowNodeInput;
-      status?: FlowStatus;
-    };
+export interface NodeData extends Record<string, unknown> {
+  nodeLabel?: string; // nodeLabel is automatically added by HvFlow when the node is dropped
+  tableId?: string;
+  subtitle?: string;
+  color?: HvColorAny;
+  icon?: string;
+  output?: HvFlowNodeOutput;
+  input?: HvFlowNodeInput;
+  status?: FlowStatus;
+}
 
-export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
+export const Node = ({ id, data }: NodeProps<FlowNode<NodeData>>) => {
   const {
     nodeLabel: titleProp,
     subtitle: subtitleProp,
@@ -90,7 +94,7 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
     output: outputProp,
     status: statusProp,
     tableId,
-  } = data;
+  } = data || {};
 
   const {
     toggleShowActions,
@@ -116,7 +120,10 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
   const { selectedTable, setOpenedTables, setSelectedTable } =
     useCanvasContext();
 
-  const status = statusProp ? flowStatusesSpecs[statusProp] : undefined;
+  const status =
+    statusProp && statusProp in flowStatusesSpecs
+      ? flowStatusesSpecs[statusProp]
+      : undefined;
 
   return (
     <div
@@ -166,7 +173,7 @@ export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
           <HvTypography variant="title4" component="p">
             {title}
           </HvTypography>
-          <HvTypography variant="caption1">{subtitle}</HvTypography>
+          <HvTypography variant="caption1">{subtitle as string}</HvTypography>
           {tableId && (
             <HvButton
               size="sm"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Node as ReactFlowNode } from "@xyflow/react";
 import {
   ExtractNames,
   HvActionsGeneric,
@@ -28,7 +29,8 @@ const DEFAULT_LABELS = {
   expandLabel: "Expand",
 };
 
-export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
+export interface HvFlowNodeProps<T extends ReactFlowNode = ReactFlowNode>
+  extends HvFlowBaseNodeProps<T> {
   /** Node description. */
   description?: string;
   /** Node actions. */
@@ -60,6 +62,13 @@ export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
 export const HvFlowNode = ({
   id,
   type,
+  data,
+  selected,
+  zIndex,
+  isConnectable,
+  dragging,
+  targetPosition,
+  sourcePosition,
   headerItems,
   actions,
   onAction,
@@ -79,7 +88,7 @@ export const HvFlowNode = ({
   color: colorProp,
   icon: iconProp,
   ...props
-}: HvFlowNodeProps<unknown>) => {
+}: HvFlowNodeProps) => {
   const { classes } = useClasses(classesProp);
   const [showParams, setShowParams] = useState(expanded);
   const { nodeGroups, defaultActions } = useFlowContext();
@@ -99,14 +108,21 @@ export const HvFlowNode = ({
   const title = titleProp || nodeGroup?.label;
   const icon = iconProp || nodeGroup?.icon;
   const color = colorProp || nodeGroup?.color;
-  const subtitle = subtitleProp || node?.data.nodeLabel;
+  const subtitle = subtitleProp || (node?.data as any)?.nodeLabel;
 
   const hasParams = !!(params && params.length > 0);
 
   return (
     <HvFlowBaseNode
-      id={id}
-      type={type}
+      id={id as string}
+      type={type as string}
+      data={data}
+      selected={selected}
+      zIndex={zIndex}
+      isConnectable={isConnectable}
+      dragging={dragging}
+      targetPosition={targetPosition}
+      sourcePosition={sourcePosition}
       title={title}
       icon={icon}
       color={color}
@@ -154,7 +170,7 @@ export const HvFlowNode = ({
                   button: classes.inlineEditButton,
                 }}
                 onBlur={(evt, value) =>
-                  setNodeData((prev) => ({ ...prev, nodeLabel: value }))
+                  setNodeData((prev) => ({ ...prev!, nodeLabel: value }))
                 }
               />
             ))}

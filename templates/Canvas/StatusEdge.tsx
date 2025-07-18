@@ -1,9 +1,10 @@
 import {
   BaseEdge,
+  Edge,
   EdgeLabelRenderer,
   EdgeProps,
   getBezierPath,
-} from "reactflow";
+} from "@xyflow/react";
 import {
   HvDropDownMenu,
   HvDropDownMenuProps,
@@ -12,13 +13,11 @@ import { useFlowInstance } from "@hitachivantara/uikit-react-lab";
 
 import { FlowStatus, flowStatusesSpecs } from "./utils";
 
-export type StatusEdgeData =
-  | undefined
-  | {
-      status?: FlowStatus;
-    };
+export interface StatusEdgeData extends Record<string, unknown> {
+  status?: FlowStatus;
+}
 
-export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
+export const StatusEdge = (props: EdgeProps<Edge<StatusEdgeData>>) => {
   const {
     id,
     sourceX,
@@ -28,6 +27,7 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
     targetY,
     targetPosition,
     data,
+    style,
   } = props;
 
   const instance = useFlowInstance();
@@ -41,7 +41,10 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
     targetPosition,
   });
 
-  const status = data?.status ? flowStatusesSpecs[data.status] : undefined;
+  const status =
+    data?.status && data.status in flowStatusesSpecs
+      ? flowStatusesSpecs[data.status]
+      : undefined;
 
   const handleClick: HvDropDownMenuProps["onClick"] = (event, value) => {
     if (value.id === "remove") {
@@ -51,7 +54,7 @@ export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
 
   return (
     <>
-      <BaseEdge {...props} path={edgePath} />
+      <BaseEdge path={edgePath} id={id} style={style} />
       {status && (
         <EdgeLabelRenderer>
           <div

@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Node } from "@xyflow/react";
 import {
   HvFlowNode,
   HvFlowNodeFC,
@@ -9,7 +10,7 @@ import {
 import { NodeData } from "../types";
 
 export const Kpi: HvFlowNodeFC = (props) => {
-  const inputNodes = useFlowInputNodes<NodeData>();
+  const inputNodes = useFlowInputNodes<Node<NodeData>>();
 
   const params: HvFlowNodeProps["params"] = useMemo(() => {
     const columns = inputNodes[0]?.data.columns;

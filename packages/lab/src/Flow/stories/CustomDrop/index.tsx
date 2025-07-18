@@ -58,17 +58,17 @@ export const nodeGroups = {
 export type NodeGroup = keyof typeof nodeGroups;
 
 // Node types
-export const nodeTypes = {
-  precipitation: Precipitation,
-  lineChart: LineChart,
-  barChart: BarChart,
-} satisfies HvFlowProps["nodeTypes"];
+export const nodeTypes: HvFlowProps["nodeTypes"] = {
+  precipitation: Precipitation as any,
+  lineChart: LineChart as any,
+  barChart: BarChart as any,
+};
 
 export type NodeType = keyof typeof nodeTypes;
 
 // Flow
-const nodes: HvFlowProps<NodeGroup, NodeType>["nodes"] = [];
-const edges: HvFlowProps<NodeGroup, NodeType>["edges"] = [];
+const nodes: HvFlowProps["nodes"] = [];
+const edges: HvFlowProps["edges"] = [];
 
 // Classes
 const classes = {

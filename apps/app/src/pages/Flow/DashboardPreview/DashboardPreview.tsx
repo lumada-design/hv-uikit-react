@@ -24,7 +24,11 @@ const buildContent = (items?: DashboardSpecs["items"]) => {
 
   return items.reduce<RendererProps[]>((acc, node) => {
     if (node.type) {
-      acc.push({ ...node, type: node.type });
+      acc.push({
+        id: node.id,
+        type: node.type,
+        data: node.data,
+      });
     }
 
     return acc;

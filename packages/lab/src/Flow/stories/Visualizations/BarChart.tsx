@@ -1,4 +1,5 @@
 import { css } from "@emotion/css";
+import { Node } from "@xyflow/react";
 import {
   HvFlowNode,
   HvFlowNodeFC,
@@ -8,9 +9,9 @@ import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 
 import type { NodeData } from "./data";
 
-export const BarChart: HvFlowNodeFC<NodeData> = (props) => {
-  const inputNodes = useFlowInputNodes<NodeData>();
-  const jsonData = inputNodes[0]?.data.jsonData;
+export const BarChart: HvFlowNodeFC<Node<NodeData>> = (props) => {
+  const inputNodes = useFlowInputNodes<Node<NodeData>>();
+  const jsonData = (inputNodes[0]?.data as NodeData)?.jsonData;
 
   return (
     <HvFlowNode

@@ -7,8 +7,8 @@ import {
 } from "@hitachivantara/uikit-react-icons";
 import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
 
-import { Asset } from "./Asset";
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+import { Asset } from "./Asset";
 import { Dashboard } from "./Dashboard";
 import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";
@@ -139,13 +139,13 @@ export const nodeGroups = {
 export type NodeGroup = keyof typeof nodeGroups;
 
 export const nodeTypes: HvFlowProps["nodeTypes"] = {
-  asset: Asset,
-  model: MLModel,
-  kpi: KPI,
-  lineChart: LineChart,
-  table: Table,
-  dashboard: Dashboard,
-} satisfies HvFlowProps["nodeTypes"];
+  asset: Asset as any,
+  model: MLModel as any,
+  kpi: KPI as any,
+  lineChart: LineChart as any,
+  table: Table as any,
+  dashboard: Dashboard as any,
+};
 
 export type NodeType = keyof typeof nodeTypes;
 

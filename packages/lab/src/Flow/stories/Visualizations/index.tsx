@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
+import { Node } from "@xyflow/react";
 import {
   HvButton,
   HvGlobalActions,
@@ -31,6 +32,29 @@ import { Filter } from "./Filter";
 import { JsonInput } from "./JsonInput";
 import { LineChart } from "./LineChart";
 
+// Data interfaces
+interface BaseNodeData extends Record<string, unknown> {
+  nodeLabel?: string;
+}
+
+interface JsonInputData extends BaseNodeData {
+  jsonData?: any[];
+}
+
+interface FilterData extends BaseNodeData {
+  jsonData?: any[];
+}
+
+interface ChartData extends BaseNodeData {}
+
+// Node types
+type JsonInputNode = Node<JsonInputData, "jsonInput">;
+type FilterNode = Node<FilterData, "filter">;
+type LineChartNode = Node<ChartData, "lineChart">;
+type BarChartNode = Node<ChartData, "barChart">;
+
+type FlowNode = JsonInputNode | FilterNode | LineChartNode | BarChartNode;
+
 // Note types
 const nodeTypes = {
   jsonInput: JsonInput,
@@ -38,8 +62,6 @@ const nodeTypes = {
   lineChart: LineChart,
   barChart: BarChart,
 } satisfies HvFlowProps["nodeTypes"];
-
-type NodeType = keyof typeof nodeTypes;
 
 // Node groups
 const nodeGroups = {
@@ -83,7 +105,7 @@ const nodeGroups = {
 export type NodeGroup = keyof typeof nodeGroups;
 
 // Flow
-const nodes = [
+const nodes: FlowNode[] = [
   {
     id: "jsonInput",
     type: "jsonInput",
@@ -95,19 +117,19 @@ const nodes = [
       jsonData: data,
       nodeLabel: "JSON Input",
     },
-  },
+  } as JsonInputNode,
   {
     id: "lineChart",
     type: "lineChart",
     position: { x: 380, y: 20 },
     data: { nodeLabel: "Line Chart" },
-  },
+  } as LineChartNode,
   {
     id: "barChart",
     type: "barChart",
     position: { x: 980, y: 20 },
     data: { nodeLabel: "Bar Chart" },
-  },
+  } as BarChartNode,
   {
     id: "filter",
     type: "filter",
@@ -116,14 +138,14 @@ const nodes = [
       jsonData: [],
       nodeLabel: "Filter",
     },
-  },
+  } as FilterNode,
   {
     id: "barChartFiltered",
     type: "barChart",
     position: { x: 980, y: 600 },
     data: { nodeLabel: "Bar Chart" },
-  },
-] satisfies HvFlowProps<NodeGroup, NodeType>["nodes"];
+  } as BarChartNode,
+];
 
 const edges = [
   {
@@ -154,7 +176,7 @@ const edges = [
     target: "barChartFiltered",
     targetHandle: "0",
   },
-] satisfies HvFlowProps<NodeGroup, NodeType>["edges"];
+] satisfies HvFlowProps["edges"];
 
 // Classes
 export const classes = {

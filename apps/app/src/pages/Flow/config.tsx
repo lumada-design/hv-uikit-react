@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Node } from "@xyflow/react";
 import {
   Cards,
   LineChartAlt,
@@ -13,7 +14,7 @@ import { DonutChart } from "./Nodes/DonutChart";
 import { Kpi } from "./Nodes/Kpi";
 import { LineChart } from "./Nodes/LineChart";
 import { Table } from "./Nodes/Table";
-import { NodeGroup } from "./types";
+import { NodeData, NodeGroup } from "./types";
 import { useDatasets } from "./utils";
 
 /** Node groups */
@@ -120,6 +121,8 @@ export const nodeTypes = {
 
 export type NodeType = keyof typeof nodeTypes;
 
+export type AppNode = Node<NodeData, NodeType>;
+
 /** Initial Flow */
 export const nodes = [
   {
@@ -132,7 +135,7 @@ export const nodes = [
       measure: "Customer",
       aggregation: "distinct",
     },
-    type: "kpi",
+    type: "kpi" as const,
   },
   {
     id: "4",
@@ -144,7 +147,7 @@ export const nodes = [
       measure: "Product",
       aggregation: "distinct",
     },
-    type: "kpi",
+    type: "kpi" as const,
   },
   {
     id: "e5ffe4f454c",
@@ -152,7 +155,7 @@ export const nodes = [
     data: {
       nodeLabel: "Dashboard",
     },
-    type: "dashboard",
+    type: "dashboard" as const,
   },
   {
     id: "5ffe4f454c9",
@@ -161,24 +164,24 @@ export const nodes = [
       nodeLabel: "Steelwheels 1",
       endpoint: "steelwheels1",
       columns: [
-        { id: "Territory", label: "Territory" },
-        { id: "Country", label: "Country" },
-        { id: "State Province", label: "State Province" },
-        { id: "City", label: "City" },
-        { id: "Type", label: "Type" },
-        { id: "Line", label: "Line" },
-        { id: "Vendor", label: "Vendor" },
-        { id: "Product", label: "Product" },
-        { id: "Years", label: "Years" },
-        { id: "Quarters", label: "Quarters" },
-        { id: "Months", label: "Months" },
-        { id: "Credit Limit", label: "Credit Limit" },
-        { id: "Customer", label: "Customer" },
-        { id: "Quantity", label: "Quantity" },
-        { id: "Sales", label: "Sales" },
+        "Territory",
+        "Country",
+        "State Province",
+        "City",
+        "Type",
+        "Line",
+        "Vendor",
+        "Product",
+        "Years",
+        "Quarters",
+        "Months",
+        "Credit Limit",
+        "Customer",
+        "Quantity",
+        "Sales",
       ],
     },
-    type: "dataset",
+    type: "dataset" as const,
   },
   {
     id: "ffe4f454c94",
@@ -190,7 +193,7 @@ export const nodes = [
       measure: "Sales",
       aggregation: "sum",
     },
-    type: "kpi",
+    type: "kpi" as const,
   },
   {
     id: "fe4f454c946",
@@ -202,7 +205,7 @@ export const nodes = [
       groupBy: ["Territory"],
       splitBy: ["Years"],
     },
-    type: "barChart",
+    type: "barChart" as const,
   },
   {
     id: "e4f454c9469",
@@ -214,7 +217,7 @@ export const nodes = [
       groupBy: ["Country"],
       splitBy: ["Years"],
     },
-    type: "lineChart",
+    type: "lineChart" as const,
   },
   {
     id: "7",
@@ -224,9 +227,9 @@ export const nodes = [
       title: "Sales per territory",
       measure: "EMEA",
     },
-    type: "table",
+    type: "table" as const,
   },
-] satisfies HvFlowProps<NodeGroup, NodeType>["nodes"];
+] satisfies AppNode[];
 
 /** Initial edges */
 export const edges = [
@@ -314,4 +317,4 @@ export const edges = [
     targetHandle: "0",
     id: "reactflow__edge-5ffe4f454c90-70",
   },
-] satisfies HvFlowProps<NodeGroup, NodeType>["edges"];
+] satisfies HvFlowProps<NodeGroup, AppNode>["edges"];
