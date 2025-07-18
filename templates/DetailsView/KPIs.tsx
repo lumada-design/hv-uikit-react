@@ -44,7 +44,7 @@ export const KPIs = () => {
         <HvAvatar
           size="xl"
           status="atmo4"
-          classes={{ status: css({ margin: "auto", width: "fit-content" }) }}
+          classes={{ container: css({ margin: "auto", width: "fit-content" }) }}
           src={imageUrl}
           alt="Asset image"
         />
