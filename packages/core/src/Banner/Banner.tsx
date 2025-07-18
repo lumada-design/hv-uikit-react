@@ -10,7 +10,6 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 
 import { HvActionsGenericProps } from "../ActionsGeneric";
-import { setId } from "../utils/setId";
 import { staticClasses, useClasses } from "./Banner.styles";
 import {
   HvBannerActionPosition,
@@ -79,7 +78,6 @@ export const HvBanner = forwardRef<
   HvBannerProps
 >(function HvBanner(props, ref) {
   const {
-    id,
     classes: classesProp,
     className,
     title,
@@ -124,7 +122,6 @@ export const HvBanner = forwardRef<
   return (
     <Snackbar
       ref={ref}
-      id={id}
       open={open}
       className={className}
       classes={{
@@ -139,7 +136,6 @@ export const HvBanner = forwardRef<
       {...others}
     >
       <HvBannerContent
-        id={setId(id, "content")}
         title={title}
         variant={variant}
         customIcon={customIcon}
