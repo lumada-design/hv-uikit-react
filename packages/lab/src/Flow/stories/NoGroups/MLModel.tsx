@@ -1,14 +1,15 @@
+import { Node } from "@xyflow/react";
 import { HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/NoGroups
 import { MLModelDetection } from "./MLModelDetection";
 import { MLModelPrediction } from "./MLModelPrediction";
 
-interface MLModelData {
+interface MLModelData extends Record<string, unknown> {
   type: "prediction" | "detection";
 }
 
-export const MLModel: HvFlowNodeFC<MLModelData> = (props) => {
+export const MLModel: HvFlowNodeFC<Node<MLModelData>> = (props) => {
   const {
     data: { type },
   } = props;

@@ -1,4 +1,4 @@
-import { Background, BackgroundProps } from "reactflow";
+import { Background, BackgroundProps } from "@xyflow/react";
 import { getColor, HvColorAny, theme } from "@hitachivantara/uikit-styles";
 
 export interface HvFlowBackgroundProps extends Omit<BackgroundProps, "color"> {

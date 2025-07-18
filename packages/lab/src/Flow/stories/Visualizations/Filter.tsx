@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Node } from "@xyflow/react";
 import {
   HvCheckBox,
   HvCheckBoxGroup,
@@ -25,8 +26,8 @@ export const Filter: HvFlowNodeFC = (props) => {
   const { data } = props;
   const { setNodeData } = useFlowNodeUtils();
 
-  const inputNodes = useFlowInputNodes<NodeData>();
-  const jsonData = inputNodes[0]?.data.jsonData;
+  const inputNodes = useFlowInputNodes<Node<NodeData>>();
+  const jsonData = (inputNodes[0]?.data as NodeData)?.jsonData;
 
   const options = useMemo(() => {
     return jsonData ? [...new Set(jsonData.map((item) => item.country))] : [];
@@ -65,7 +66,9 @@ export const Filter: HvFlowNodeFC = (props) => {
       {...props}
     >
       <HvCheckBoxGroup
-        defaultChecked={data.checked}
+        defaultChecked={
+          typeof data.checked === "boolean" ? data.checked : undefined
+        }
         onChange={handleCheck}
         style={{
           padding: theme.spacing("xs", "xs", "xs", "sm"),

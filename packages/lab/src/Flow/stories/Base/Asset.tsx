@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/css";
+import { Node as RFNode } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -23,7 +24,7 @@ import {
 
 type Node = ReturnType<HvFlowInstance["getNode"]>;
 
-interface AssetData {
+interface AssetData extends Record<string, unknown> {
   asset?: string;
 }
 
@@ -39,7 +40,7 @@ const classes = {
   }),
 };
 
-export const Asset: HvFlowNodeFC<AssetData> = (props) => {
+export const Asset: HvFlowNodeFC<RFNode<AssetData>> = (props) => {
   const [showDialog, setShowDialog] = useState(false);
   const [details, setDetails] = useState<Node>();
   const node = useFlowNode();

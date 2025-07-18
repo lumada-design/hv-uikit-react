@@ -7,7 +7,11 @@ import {
   useSensors,
 } from "@dnd-kit/core";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
-import { ReactFlowProvider } from "reactflow";
+import {
+  Edge as ReactFlowEdge,
+  Node as ReactFlowNode,
+  ReactFlowProvider,
+} from "@xyflow/react";
 
 import { HvDroppableFlow, HvDroppableFlowProps } from "./DroppableFlow";
 import { HvFlowProvider } from "./FlowContext";
@@ -15,9 +19,9 @@ import { HvFlowNodeAction, HvFlowNodeGroups } from "./types";
 
 export interface HvFlowProps<
   NodeGroups extends keyof any = string,
-  NodeType extends string | undefined = string | undefined,
-  NodeData = any,
-> extends HvDroppableFlowProps<NodeType, NodeData> {
+  NodeType extends ReactFlowNode = ReactFlowNode,
+  EdgeType extends ReactFlowEdge = ReactFlowEdge,
+> extends HvDroppableFlowProps<NodeType, EdgeType> {
   /** Flow nodes groups. */
   nodeGroups?: HvFlowNodeGroups<NodeGroups>;
   /** Flow sidebar. */

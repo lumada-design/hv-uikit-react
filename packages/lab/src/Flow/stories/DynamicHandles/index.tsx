@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
+import { Node as RFNode } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -95,7 +96,7 @@ const edges: HvFlowProps["edges"] = [
   },
 ];
 
-type Node = ReturnType<HvFlowInstance<NodeData>["getNode"]>;
+type Node = ReturnType<HvFlowInstance<RFNode<NodeData>>["getNode"]>;
 
 type Type = keyof typeof types;
 

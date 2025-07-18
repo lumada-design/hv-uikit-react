@@ -4,7 +4,7 @@ import {
   NodeResizeControl,
   NodeResizer,
   NodeProps as ReactFlowNodeProps,
-} from "reactflow";
+} from "@xyflow/react";
 import {
   HvDropDownMenu,
   HvListValue,
