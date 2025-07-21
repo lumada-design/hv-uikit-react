@@ -47,12 +47,6 @@
       "rules": {
         "react-hooks/rules-of-hooks": "off"
       }
-    },
-    {
-      "files": ["packages/cli/src/**/*"],
-      "rules": {
-        "no-console": "off"
-      }
     }
   ]
 }
