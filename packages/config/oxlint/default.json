@@ -33,6 +33,7 @@
     "typescript/no-empty-object-type": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-non-null-assertion": "off",
+    "unicorn/consistent-function-scoping": "off",
     "unicorn/no-anonymous-default-export": "off",
     "unicorn/no-array-for-each": "off",
     "unicorn/no-array-reduce": "off",
