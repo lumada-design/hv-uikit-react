@@ -315,7 +315,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
               borderColor: theme.colors.textDisabled,
             },
           },
-          "& .HvTagsInput-chipRoot": {
+          "& .HvTagsInput-tag": {
             outlineColor: theme.colors.textDisabled,
           },
         },
@@ -842,10 +842,12 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             borderRadius: theme.radii.full,
           },
         },
-        inputExtension: {
-          backgroundColor: "transparent",
-          height: 0,
-          boxShadow: "none",
+        suggestionsContainer: {
+          "&::before": {
+            backgroundColor: "transparent",
+            height: 0,
+            boxShadow: "none",
+          },
         },
       },
     } satisfies CSSClasses<HvInputProps>,
@@ -873,7 +875,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         root: {
           "--r": "calc(var(--HvButton-height) / 2)",
         },
-        iconSelected: {
+        open: {
           "&[data-color=secondary]": {
             borderColor: theme.colors.textDimmed,
           },
