@@ -260,7 +260,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
               borderColor: theme.colors.textDisabled,
             },
           },
-          "& .HvTagsInput-chipRoot": {
+          "& .HvTagsInput-tag": {
             outlineColor: theme.colors.textDisabled,
           },
         },

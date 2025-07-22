@@ -39,8 +39,6 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
   hasHeader: {
     paddingTop: 0,
   },
-  /** @deprecated use `hasHeader` instead */
-  spaceTop: {},
   actions: {
     display: "flex",
     gap: theme.space.xs,
