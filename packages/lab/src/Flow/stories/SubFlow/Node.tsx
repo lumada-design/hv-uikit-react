@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { css, cx } from "@emotion/css";
-import { NodeProps as ReactFlowNodeProps } from "reactflow";
+import { NodeProps as ReactFlowNodeProps } from "@xyflow/react";
 import { theme } from "@hitachivantara/uikit-react-core";
 import {
   useFlowNodeIntersections,
