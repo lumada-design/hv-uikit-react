@@ -249,13 +249,6 @@ const shadowLight = {
   shadow: "0 2px 12px rgba(65,65,65,0.12)",
 };
 
-const utilsLight = {
-  /** @deprecated use `bgPage` */
-  backgroundColor: atmosphereLight.atmo2,
-  /** @deprecated use `bgHover` */
-  containerBackgroundHover: accentLight.primary_20,
-};
-
 const newLight = {
   primary: accentLight.primary,
   primaryDeep: accentLight.primary_80,
@@ -357,11 +350,6 @@ const shadowDark = {
   shadow: "0 3px 5px rgba(0,0,0,.16)",
 };
 
-const utilsDark = {
-  backgroundColor: atmosphereDark.atmo2,
-  containerBackgroundHover: accentDark.primary_20,
-};
-
 const newDark = {
   primary: accentDark.primary,
   primaryDeep: accentDark.primary_80,
@@ -429,7 +417,6 @@ export const colors = {
     ...atmosphereLight,
     ...semanticLight,
     ...shadowLight,
-    ...utilsLight,
     ...newLight,
   },
   dark: {
@@ -437,7 +424,6 @@ export const colors = {
     ...atmosphereDark,
     ...semanticDark,
     ...shadowDark,
-    ...utilsDark,
     ...newDark,
   },
 };

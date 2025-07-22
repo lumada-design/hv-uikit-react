@@ -43,11 +43,11 @@ export const { staticClasses, useClasses } = createClasses("HvBlade", {
 
     "&:focus": {
       outline: "none",
-      background: theme.colors.containerBackgroundHover,
+      background: theme.colors.bgHover,
     },
 
     "&:hover": {
-      background: theme.colors.containerBackgroundHover,
+      background: theme.colors.bgHover,
     },
 
     "&:focus-visible": {
