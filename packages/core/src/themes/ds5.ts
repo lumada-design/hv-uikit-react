@@ -185,8 +185,5 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvDialogContentProps>,
-  } satisfies Record<
-    string,
-    Record<string, any> | { classes?: React.CSSProperties }
-  >,
+  },
 });
