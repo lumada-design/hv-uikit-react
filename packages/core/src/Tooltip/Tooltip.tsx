@@ -107,7 +107,7 @@ export const HvTooltip = forwardRef<
       TransitionProps={TransitionProps}
       className={className}
       classes={{
-        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        tooltip: classes.tooltip,
         popper: classes.popper,
       }}
       title={title}
