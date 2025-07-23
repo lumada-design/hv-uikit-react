@@ -51,8 +51,6 @@ export interface HvTagProps
   onDelete?: React.EventHandler<any>;
   /** Callback triggered when any item is clicked. */
   onClick?: (event: React.MouseEvent<HTMLElement>, selected?: boolean) => void;
-  /** Aria properties to apply to delete button in tag. @deprecated no longer used */
-  deleteButtonArialLabel?: string;
   /** Props to apply to delete icon */
   deleteButtonProps?: React.HTMLAttributes<HTMLDivElement>;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -96,7 +94,6 @@ export const HvTag = forwardRef<
     onClick,
     onKeyDown,
     onKeyUp,
-    deleteButtonArialLabel,
     deleteButtonProps,
     ...others
   } = useDefaultProps("HvTag", props);
