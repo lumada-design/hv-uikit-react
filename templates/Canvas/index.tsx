@@ -25,8 +25,6 @@ import {
   HvFlowControls,
   HvFlowEmpty,
   HvFlowProps,
-  StickyNode,
-  StickyNodeData,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvCanvasBottomPanel,
@@ -40,6 +38,7 @@ import { ListView } from "./ListView";
 import { Node, NodeData } from "./Node";
 import { CanvasSidebar } from "./Sidebar";
 import { StatusEdge } from "./StatusEdge";
+import { StickyNode, StickyNodeData } from "./StickyNode";
 import { classes } from "./styles";
 import { DataTable } from "./Table";
 import { TreeView } from "./TreeView";
