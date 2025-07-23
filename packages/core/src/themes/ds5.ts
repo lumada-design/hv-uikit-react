@@ -292,22 +292,5 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvDialogContentProps>,
-    HvDialogActions: {
-      classes: {
-        root: {
-          borderTop: `1px solid ${theme.colors.borderSubtle}`,
-        },
-      },
-    } satisfies CSSClasses<HvDialogActionsProps>,
-    HvRadioIcon: {
-      classes: {
-        checked: {
-          "--bg-color": theme.colors.primary,
-        },
-      },
-    } satisfies CSSClasses<HvRadioIconProps>,
-  } satisfies Record<
-    string,
-    Record<string, any> | { classes?: React.CSSProperties }
-  >,
+  },
 });
