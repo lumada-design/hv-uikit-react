@@ -231,7 +231,7 @@ const Panel2 = () => (
 );
 
 const Card1 = () => (
-  <HvCard bgcolor="atmo1">
+  <HvCard bgcolor="bgContainer">
     <HvCardHeader
       avatar={<HvAvatar backgroundColor="rebeccapurple">AB</HvAvatar>}
       title={
@@ -269,7 +269,7 @@ const Card1 = () => (
       <HvToggleButton
         defaultSelected
         aria-label="Star"
-        className="text-warning_140"
+        className="text-warningDeep"
         selectedIcon={<FavoriteSelected />}
         notSelectedIcon={<Favorite />}
       />

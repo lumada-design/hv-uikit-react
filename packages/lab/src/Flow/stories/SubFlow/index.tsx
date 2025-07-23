@@ -190,7 +190,7 @@ const nodeGroups = {
   },
   groupNode: {
     label: "Group Node",
-    color: "primary_20",
+    color: "primaryDimmed",
     icon: <Cube />,
     items: [{ nodeType: "group", label: "Group Node" }],
   },

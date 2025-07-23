@@ -11,7 +11,7 @@ export const { staticClasses, useClasses } = createClasses(
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      border: `1px solid ${theme.colors.atmo4}`,
+      border: `1px solid ${theme.colors.border}`,
       padding: theme.spacing(0, 0, 0, "sm"),
       cursor: "pointer",
       boxShadow: `0 1px 0 ${theme.colors.shad1}`,
@@ -20,6 +20,6 @@ export const { staticClasses, useClasses } = createClasses(
         ...outlineStyles,
       },
     },
-    dragging: { borderColor: theme.colors.primary_80 },
+    dragging: { borderColor: theme.colors.primaryStrong },
   },
 );

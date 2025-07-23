@@ -61,7 +61,7 @@ export const Component = () => {
           { minWidth: 0, cols: 1, spacing: "sm" },
         ]}
       >
-        <HvCard statusColor="positive" bgcolor="atmo1">
+        <HvCard statusColor="positive" bgcolor="bgContainer">
           <HvCardHeader
             title={
               <div className="flex flex-row items-center">
@@ -101,7 +101,7 @@ export const Component = () => {
             </Entry>
           </HvCardContent>
         </HvCard>
-        <HvCard statusColor="positive" bgcolor="atmo1">
+        <HvCard statusColor="positive" bgcolor="bgContainer">
           <HvCardHeader
             title={
               <div className="flex flex-row items-center">

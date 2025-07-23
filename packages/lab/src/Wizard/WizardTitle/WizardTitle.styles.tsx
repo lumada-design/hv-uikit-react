@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvWizardTitle", {
   root: {
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
     justifyContent: "space-between",
     paddingRight: theme.space.sm,
   },

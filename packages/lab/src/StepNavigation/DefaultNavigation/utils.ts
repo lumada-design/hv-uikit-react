@@ -7,9 +7,9 @@ export const getColor = (state: HvStepProps["state"]) =>
     Pending: theme.colors.warning ?? "warning",
     Failed: theme.colors.negative ?? "negative",
     Completed: theme.colors.positive ?? "positive",
-    Current: theme.colors.secondary ?? "secondary",
-    Disabled: theme.colors.secondary_60 ?? "secondary_60",
-    Enabled: theme.colors.secondary ?? "secondary",
+    Current: theme.colors.text ?? "text",
+    Disabled: theme.colors.textDisabled ?? "textDisabled",
+    Enabled: theme.colors.text ?? "text",
   })[state];
 
 export const getSemantic = (state: HvStepProps["state"]) =>
@@ -17,9 +17,9 @@ export const getSemantic = (state: HvStepProps["state"]) =>
     Pending: "warning",
     Failed: "negative",
     Completed: "positive",
-    Current: "secondary",
-    Disabled: "secondary_60",
-    Enabled: "secondary",
+    Current: "text",
+    Disabled: "textDisabled",
+    Enabled: "text",
   })[state];
 
 const EXTRA_SMALL = { container: 32, avatar: 24 };

@@ -20,7 +20,7 @@ const styles = {
     flex: 1,
     padding: theme.spacing("sm", "xs"),
     borderRadius: theme.radii.large,
-    backgroundColor: theme.colors.primary_20,
+    backgroundColor: theme.colors.primaryDimmed,
   }),
   columnHeader: css({
     display: "flex",
@@ -43,7 +43,7 @@ const styles = {
     borderRadius: theme.radii.full,
     width: 20,
     height: 20,
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.border,
     display: "grid",
     placeItems: "center",
   }),
@@ -54,7 +54,7 @@ const styles = {
     "&:hover": {
       cursor: "grab",
     },
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     zIndex: 200,
     borderRadius: `${theme.radii.round} ${theme.radii.round} 0 0`,
   }),

@@ -37,7 +37,7 @@ const PreviewRenderer = ({ label, node }: PreviewProps) => (
     title={<HvTypography variant="title4">{label}</HvTypography>}
     classes={{ content: "mt-0" }}
   >
-    <HvTypography className="text-secondary_60">{node.data.title}</HvTypography>
+    <HvTypography className="text-textDisabled">{node.data.title}</HvTypography>
   </HvSection>
 );
 

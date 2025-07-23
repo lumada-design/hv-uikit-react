@@ -150,7 +150,7 @@ const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
  * Utility function to mix two colors. Accepts theme and CSS colors.
  *
  * @example
- * theme.mix("atmo1", 0.7) // 70% atmo1, 30% transparent
+ * theme.mix("warning", 0.7) // 70% warning, 30% transparent
  * theme.mix("cat1", "60%", "orange") // 60% cat1, 30% orange
  */
 const mix = (

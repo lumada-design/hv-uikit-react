@@ -11,7 +11,7 @@ export const registerTheme = (
   if (!colors) return;
 
   const baseText = {
-    color: colors?.secondary,
+    color: colors?.text,
     fontWeight: themeStructure?.fontWeights.normal,
     fontSize: themeStructure?.fontSizes.sm,
     fontFamily: themeStructure?.fontFamily.body,
@@ -20,22 +20,22 @@ export const registerTheme = (
   const customAxis = {
     nameTextStyle: {
       ...baseText,
-      color: colors?.secondary_80,
+      color: colors?.textSubtle,
     },
     axisLine: {
       show: true,
       lineStyle: {
-        color: colors?.atmo3,
+        color: colors?.borderSubtle,
       },
     },
     axisTick: {
       show: true,
       lineStyle: {
-        color: colors?.atmo3,
+        color: colors?.borderSubtle,
       },
     },
     axisLabel: {
-      color: colors?.secondary_80,
+      color: colors?.textSubtle,
       fontWeight: themeStructure?.fontWeights.normal,
       fontSize: themeStructure?.fontSizes.sm,
       fontFamily: themeStructure?.fontFamily.body,
@@ -43,7 +43,7 @@ export const registerTheme = (
     splitLine: {
       show: true,
       lineStyle: {
-        color: colors?.atmo3,
+        color: colors?.borderSubtle,
       },
     },
   };
@@ -76,7 +76,7 @@ export const registerTheme = (
       },
       axisPointer: {
         lineStyle: {
-          color: colors?.secondary,
+          color: colors?.text,
           width: 1,
         },
       },
@@ -113,16 +113,16 @@ export const registerTheme = (
         fontFamily: baseText.fontFamily,
       },
       itemStyle: {
-        borderColor: colors?.atmo3,
+        borderColor: colors?.borderSubtle,
         borderWidth: 1,
       },
     },
     treemap: {
       breadcrumb: {
         itemStyle: {
-          color: colors?.secondary,
+          color: colors?.text,
           textStyle: {
-            color: colors?.atmo1,
+            color: colors?.bgContainer,
           },
         },
       },

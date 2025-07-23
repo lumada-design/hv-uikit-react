@@ -37,7 +37,7 @@ const Details = () => {
   };
 
   return (
-    <HvCard bgcolor="atmo1" className={classes.card}>
+    <HvCard bgcolor="bgContainer" className={classes.card}>
       <HvCardHeader title={`Selected card id: ${cardId}`} />
       <HvCardContent>
         <div style={{ paddingTop: "20px" }}>

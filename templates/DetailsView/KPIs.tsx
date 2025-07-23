@@ -43,7 +43,7 @@ export const KPIs = () => {
       <HvGrid item xs={12} md={2} lg={2}>
         <HvAvatar
           size="xl"
-          status="atmo4"
+          status="border"
           classes={{ status: css({ margin: "auto", width: "fit-content" }) }}
           src={imageUrl}
           alt="Asset image"

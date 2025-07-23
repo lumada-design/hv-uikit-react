@@ -89,7 +89,7 @@ const entries: Partial<
     label: "Severity",
     Component: ({ value }) => (
       <div className={css({ display: "flex", alignItems: "center" })}>
-        <Caution color="warning_120" /> {value}
+        <Caution color="warningStrong" /> {value}
       </div>
     ),
   },

@@ -1,13 +1,11 @@
-import { css } from "@emotion/css";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { theme } from "@hitachivantara/uikit-react-core";
 import {
   HvStepNavigation,
   HvStepNavigationProps,
 } from "@hitachivantara/uikit-react-lab";
 
 import { HvDefaultNavigation, HvStep, HvStepProps } from "./DefaultNavigation";
-import { dotClasses, HvDot, HvSimpleNavigation } from "./SimpleNavigation";
+import { HvDot, HvSimpleNavigation } from "./SimpleNavigation";
 
 type StepType = Pick<
   HvStepProps,
@@ -18,48 +16,12 @@ type StepType = Pick<
 };
 
 const steps: StepType[] = [
-  {
-    title: "Completed",
-    state: "Completed",
-    onClick: () => {
-      alert("You clicked on 'Completed' step");
-    },
-  },
-  {
-    title: "Failed",
-    state: "Failed",
-    onClick: () => {
-      alert("You clicked on 'Failed' step");
-    },
-  },
-  {
-    title: "Pending",
-    state: "Pending",
-    onClick: () => {
-      alert("You clicked on 'Pending' step");
-    },
-  },
-  {
-    title: "Current",
-    state: "Current",
-    onClick: () => {
-      alert("You clicked on 'Current' step");
-    },
-  },
-  {
-    title: "Enabled",
-    state: "Enabled",
-    onClick: () => {
-      alert("You clicked on 'Enabled' step");
-    },
-  },
-  {
-    title: "Disabled",
-    state: "Disabled",
-    onClick: () => {
-      alert("You clicked on 'Disabled' step");
-    },
-  },
+  { title: "Completed", state: "Completed" },
+  { title: "Failed", state: "Failed" },
+  { title: "Pending", state: "Pending" },
+  { title: "Current", state: "Current" },
+  { title: "Enabled", state: "Enabled" },
+  { title: "Disabled", state: "Disabled" },
 ];
 
 const meta: Meta<typeof HvStepNavigation> = {
@@ -72,20 +34,6 @@ const meta: Meta<typeof HvStepNavigation> = {
     HvSimpleNavigation,
     HvDot,
   } as unknown,
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexWrap: "wrap",
-          overflow: "auto",
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
 };
 export default meta;
 
@@ -111,6 +59,7 @@ export const Variants: StoryObj<HvStepNavigationProps> = {
       },
     },
   },
+  decorators: [(Story) => <div className="grid gap-lg">{Story()}</div>],
   render: () => (
     <div className="flex flex-col gap-md">
       <HvStepNavigation
@@ -160,45 +109,4 @@ export const Width: StoryObj<HvStepNavigationProps> = {
       }}
     />
   ),
-};
-
-export const Customized: StoryObj<HvStepNavigationProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Example of a step navigation with customized styles made by <b>className</b>, <b>separatorClassName</b>, <b>titleClassName</b> properties of each step definition",
-      },
-    },
-  },
-  render: () => {
-    const root = css({
-      backgroundColor: theme.colors.positive,
-      "&:hover": {
-        backgroundColor: theme.colors.positive,
-      },
-      [`&.${dotClasses.ghostDisabled}`]: {
-        backgroundColor: theme.colors.secondary,
-      },
-    });
-    const separator = css({
-      backgroundColor: theme.colors.positive,
-      height: 3,
-    });
-    const title = css({
-      color: theme.colors.secondary,
-    });
-
-    return (
-      <HvStepNavigation
-        type="Simple"
-        steps={steps.map((s) => ({
-          ...s,
-          className: root,
-          separatorClassName: separator,
-          titleClassName: title,
-        }))}
-      />
-    );
-  },
 };
