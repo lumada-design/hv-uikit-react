@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { css } from "@emotion/css";
 import { useDebounceCallback } from "usehooks-ts";
 import {
-  getVarValue,
   HvAccordion,
   HvDropdown,
   HvListValue,
@@ -15,6 +14,15 @@ import { HvThemeTokens, HvThemeTypography } from "@hitachivantara/uikit-styles";
 import { ScaleProps, UnitSlider } from "../components/common/UnitSlider";
 import { useGeneratorContext } from "./GeneratorContext";
 import { extractFontSizeUnit } from "./utils";
+
+export const getVarValue = (cssVar: string, rootElementId?: string) => {
+  const root = document.getElementById(rootElementId || "hv-root");
+  if (!root) return undefined;
+
+  return getComputedStyle(root)
+    .getPropertyValue(cssVar.replace("var(", "").replace(")", ""))
+    .trim();
+};
 
 const typographyToShow: (keyof HvThemeTypography["typography"])[] = [
   "display",
