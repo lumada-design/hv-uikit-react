@@ -63,9 +63,9 @@ export const getStatusIcon = (
       return <Level2Average color="warning" />;
     case "negative":
       return <Level3Bad color="negative" />;
-    case "neutral":
+    case "info":
     default:
-      return <Level1 color="neutral" />;
+      return <Level1 color="info" />;
   }
 };
 
@@ -77,7 +77,7 @@ const getStatusMessage = (status?: AssetInventoryEntry["statusColor"]) => {
       return "Open";
     case "negative":
       return "Error";
-    case "neutral":
+    case "info":
     default:
       return "Unassigned";
   }
@@ -239,7 +239,7 @@ export const createEntry = (i: number): AssetInventoryEntry => {
     priority: getPriority(i),
     time: getTime(getPriority(i), i),
     temperature: `${i + 35}º C`,
-    statusColor: getOption(["neutral", "positive", "negative", "warning"], i),
+    statusColor: getOption(["info", "positive", "negative", "warning"], i),
     image: getOption(images, i),
   };
 };

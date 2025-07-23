@@ -181,7 +181,7 @@ const ListView = () => {
         <HvGrid item {...breakpoints}>
           <Kpi
             title="Unassigned Requests"
-            color="neutral"
+            color="info"
             status={3}
             instance={instance}
             kpiSelection={kpiSelection}

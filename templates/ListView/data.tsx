@@ -56,7 +56,7 @@ export const getStatusIcon = (status?: ListViewEntry["status"]) => {
     case 2:
       return <TooltipIcon title="Open" Icon={Level2Average} color="warning" />;
     default:
-      return <TooltipIcon title="Unassigned" Icon={Level1} color="neutral" />;
+      return <TooltipIcon title="Unassigned" Icon={Level1} color="info" />;
   }
 };
 

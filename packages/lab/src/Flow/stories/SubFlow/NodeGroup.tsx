@@ -14,7 +14,7 @@ import {
 import { Fullscreen } from "@hitachivantara/uikit-react-icons";
 import { useHvNode } from "@hitachivantara/uikit-react-lab";
 
-const dashedBorder = `1px dashed ${theme.colors.atmo4}`;
+const dashedBorder = `1px dashed ${theme.colors.border}`;
 const containerBorderRadius = "0 16px 16px 16px";
 const minWidth = 300;
 const minHeight = 200;
@@ -24,7 +24,7 @@ const classes = {
     display: "flex",
     width: "100%",
     height: "100%",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderRadius: containerBorderRadius,
     minWidth,
     minHeight,
@@ -33,7 +33,7 @@ const classes = {
   content: css({
     display: "flex",
     borderRadius: containerBorderRadius,
-    backgroundColor: theme.colors.primary_20,
+    backgroundColor: theme.colors.primaryDimmed,
     width: "100%",
     border: dashedBorder,
   }),
@@ -47,13 +47,13 @@ const classes = {
     borderBottom: "none",
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: theme.colors.primary_20,
+    backgroundColor: theme.colors.primaryDimmed,
   }),
   headerBackground: css({
     display: "flex",
     position: "absolute",
     top: "-34px",
-    backgroundColor: theme.colors.atmo1,
+    backgroundColor: theme.colors.bgContainer,
     borderRadius: "16px 16px 0 0",
     borderBottom: "none",
   }),

@@ -32,7 +32,7 @@ const styles = {
     width: "110px",
     height: "55px",
     borderRadius: "55px 55px 0px 0px",
-    backgroundColor: theme.colors.atmo2,
+    backgroundColor: theme.colors.bgPage,
     bottom: 0,
     left: 0,
     right: 0,
@@ -47,7 +47,7 @@ const styles = {
     left: 0,
     right: 0,
     margin: "auto",
-    backgroundColor: theme.colors.atmo4,
+    backgroundColor: theme.colors.border,
     transformOrigin: "bottom center",
   }),
   gaugeIndicatorContainer: css({
@@ -93,7 +93,7 @@ export const Kpi = ({ title, value, color, unit = "t/h" }: KpiProps) => {
   return (
     <HvCard
       statusColor={color}
-      bgcolor="atmo2"
+      bgcolor="bgPage"
       icon={<Level0Good title="Good" color="positive" />}
     >
       <HvCardContent className={styles.contentContainer}>

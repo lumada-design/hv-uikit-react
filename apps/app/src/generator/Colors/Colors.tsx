@@ -68,7 +68,7 @@ const Colors = () => {
                       border: "none",
                       backgroundColor: "transparent",
                       "& svg": {
-                        border: `1px solid ${colors?.secondary}`,
+                        border: `1px solid ${colors?.text}`,
                       },
                     },
                   }),
@@ -130,7 +130,7 @@ const Colors = () => {
                               border: "none",
                               backgroundColor: "transparent",
                               "& svg": {
-                                border: `1px solid ${colors?.secondary}`,
+                                border: `1px solid ${colors?.text}`,
                               },
                             },
                           }),

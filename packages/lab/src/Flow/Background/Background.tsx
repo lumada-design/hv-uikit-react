@@ -12,7 +12,7 @@ export const HvFlowBackground = ({
 }: HvFlowBackgroundProps) => {
   return (
     <Background
-      color={getColor(color, theme.colors.secondary_80)}
+      color={getColor(color, theme.colors.textSubtle)}
       gap={16}
       {...others}
     />

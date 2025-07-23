@@ -11,4 +11,4 @@ export const dotSizes = {
 };
 
 export const getColor = (state: HvStepProps["state"]) =>
-  state === "Disabled" ? theme.colors.secondary_60 : theme.colors.secondary;
+  state === "Disabled" ? theme.colors.textDisabled : theme.colors.text;

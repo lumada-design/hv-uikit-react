@@ -32,7 +32,7 @@ export const Kpi = ({
   }, [aggregation, data, measure]);
 
   return (
-    <HvCard className="w-full" bgcolor="atmo1">
+    <HvCard className="w-full" bgcolor="bgContainer">
       {loading ? (
         <div className="flex items-center justify-center h-full p-sm">
           <HvLoading small />

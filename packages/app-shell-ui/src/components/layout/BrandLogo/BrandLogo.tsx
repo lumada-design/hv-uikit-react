@@ -4,9 +4,7 @@ import {
   HvAppShellConfig,
 } from "@hitachivantara/app-shell-shared";
 
-import Hitachi from "./Logos/Hitachi";
-import Lumada from "./Logos/Lumada";
-import Pentaho from "./Logos/Pentaho";
+import { Hitachi, Lumada, Pentaho } from "./logos";
 
 export type HvBrandLogoProps = {
   logo?: HvAppShellConfig["logo"];

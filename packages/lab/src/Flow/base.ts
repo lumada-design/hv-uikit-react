@@ -45,7 +45,7 @@ export const flowStyles = css`
   }
   .react-flow__edge-path,
   .react-flow__connection-path {
-    stroke: ${theme.colors.secondary};
+    stroke: ${theme.colors.text};
     stroke-width: 1;
     fill: none;
   }
@@ -235,13 +235,13 @@ export const flowStyles = css`
     padding: ${theme.space.sm};
     border-radius: ${theme.radii.round};
     width: 150px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.text};
     text-align: center;
     border: 1px solid ${theme.colors.negative};
-    background-color: ${theme.colors.negative_20};
+    background-color: ${theme.colors.negativeDimmed};
   }
   .react-flow__node-group {
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.text};
     text-align: center;
   }
   .react-flow__node-default::before {
@@ -373,7 +373,7 @@ export const flowStyles = css`
   }
   /* line styles */
   .react-flow__resize-control.line {
-    border-color: ${theme.colors.primary_80};
+    border-color: ${theme.colors.primaryStrong};
     border-width: 0;
     border-style: dashed;
   }

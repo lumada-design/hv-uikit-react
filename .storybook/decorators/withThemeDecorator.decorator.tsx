@@ -39,7 +39,7 @@ export const withThemeDecorator = (): Decorator => {
 
     const base = (themes as any)[theme] ?? themes.ds5;
     const storyStyles = getStoryStyles(
-      base.colors.modes[mode as "wicked" | "dawn"].atmo2,
+      base.colors.modes[mode as "wicked" | "dawn"].bgPage,
     );
 
     const containerRef = useDarkClass(mode);

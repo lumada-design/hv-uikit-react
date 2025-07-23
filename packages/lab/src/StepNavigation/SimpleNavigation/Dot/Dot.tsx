@@ -3,6 +3,7 @@ import {
   HvBaseProps,
   HvButton,
 } from "@hitachivantara/uikit-react-core";
+import { mergeStyles } from "@hitachivantara/uikit-react-utils";
 
 import { HvStepProps } from "../../DefaultNavigation";
 import { dotSizes, getColor } from "../utils";
@@ -29,37 +30,31 @@ export const HvDot = ({
   title,
   size = "sm",
   onClick,
-  disabled,
+  disabled: disabledProp,
 }: HvDotProps) => {
-  const { classes, cx, css } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
 
   const dotSize = dotSizes[size] * (state === "Current" ? 1.5 : 1);
+  const disabled = disabledProp ?? ["Current", "Disabled"].includes(state);
 
   return (
     <HvButton
+      style={mergeStyles(undefined, {
+        "--dotColor": getColor(state),
+        "--dotSize": `${dotSize}px`,
+      })}
       className={cx(
-        css({
-          backgroundColor: getColor(state),
-          width: dotSize,
-          height: dotSize,
-          "&:hover, &:disabled": {
-            backgroundColor: getColor(state),
-          },
-        }),
         classes.root,
         {
           [classes.active]: state === "Current",
-          [classes.ghostDisabled]:
-            disabled ?? ["Current", "Disabled"].includes(state),
+          [classes.ghostDisabled]: disabled,
         },
         className,
       )}
-      aria-label={`${title}`}
+      aria-label={title}
       icon
-      disabled={disabled ?? ["Current", "Disabled"].includes(state)}
+      disabled={disabled}
       onClick={onClick}
-    >
-      {[]}
-    </HvButton>
+    />
   );
 };
