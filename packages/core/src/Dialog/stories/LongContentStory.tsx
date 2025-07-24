@@ -16,8 +16,8 @@ export const LongContentStory = () => {
         Open dialog
       </HvButton>
       <HvDialog disableBackdropClick open={open} onClose={() => setOpen(false)}>
-        <HvDialogTitle variant="warning">Terms and Conditions</HvDialogTitle>
-        <HvDialogContent indentContent>
+        <HvDialogTitle>Terms and Conditions</HvDialogTitle>
+        <HvDialogContent indentContent tabIndex={0} role="region">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sem
           mattis, finibus tellus et, fringilla erat. Nulla justo lacus, pharetra
           at fringilla eget, interdum sit amet mauris. Pellentesque metus ex,

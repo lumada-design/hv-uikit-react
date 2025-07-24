@@ -39,8 +39,8 @@ export const HvDialogTitle = (props: HvDialogTitleProps) => {
     classes: classesProp,
     className,
     children,
-    variant = "default",
-    showIcon = true,
+    variant,
+    showIcon = variant != null,
     customIcon,
     ...others
   } = useDefaultProps("HvDialogTitle", props);

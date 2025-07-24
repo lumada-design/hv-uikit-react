@@ -5,7 +5,7 @@ import { HvDialog } from "./Dialog";
 import { HvDialogActions, HvDialogContent, HvDialogTitle } from "./index";
 
 describe("Dialog", () => {
-  it("should render all components correctly", () => {
+  it("renders all components correctly", () => {
     render(
       <HvDialog open>
         <HvDialogTitle>mockTitle</HvDialogTitle>
@@ -18,7 +18,7 @@ describe("Dialog", () => {
     expect(screen.getByText("mockActions")).toBeInTheDocument();
   });
 
-  it("should call the onClose function when the close button is clicked", () => {
+  it("calls the onClose function when the close button is clicked", () => {
     const mockFn = vi.fn();
     const mockBtnTitle = "closeBtn";
 
@@ -28,5 +28,43 @@ describe("Dialog", () => {
     const btn = getByRole("button", { name: mockBtnTitle });
     fireEvent.click(btn);
     expect(mockFn).toHaveBeenCalled();
+  });
+
+  it("renders title icon when variant is specified", () => {
+    render(
+      <HvDialog open>
+        <HvDialogTitle variant="success">mockTitle</HvDialogTitle>
+      </HvDialog>,
+    );
+    const titleElement = screen.queryByRole("heading");
+    expect(titleElement).toBeInTheDocument();
+    expect(
+      titleElement?.querySelector(".HvStatusIcon-root"),
+    ).toBeInTheDocument();
+  });
+
+  it("renders a custom icon", () => {
+    render(
+      <HvDialog open>
+        <HvDialogTitle customIcon={<div data-testid="icon-id" />}>
+          mockTitle
+        </HvDialogTitle>
+      </HvDialog>,
+    );
+    expect(screen.queryByTestId("icon-id")).toBeInTheDocument();
+  });
+
+  it("doesn't render a status icon by default", () => {
+    render(
+      <HvDialog open>
+        <HvDialogTitle>mockTitle</HvDialogTitle>
+      </HvDialog>,
+    );
+
+    const titleElement = screen.queryByRole("heading");
+    expect(titleElement).toBeInTheDocument();
+    expect(
+      titleElement?.querySelector(".HvStatusIcon-root"),
+    ).not.toBeInTheDocument();
   });
 });
