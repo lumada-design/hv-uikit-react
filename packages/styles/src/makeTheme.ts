@@ -51,22 +51,12 @@ const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
   border: "atmo4",
 };
 
-/** Compatibility object between UI Kit tokens and old theme alias */
-const aliasMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
-  bgPage: "backgroundColor",
-  bgHover: "containerBackgroundHover",
-};
-
 /** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
     const compatKey = compatMap[key as keyof typeof compatMap];
     if (compatKey) {
       acc[compatKey] = color;
-    }
-    const aliasKey = aliasMap[key as keyof typeof aliasMap];
-    if (aliasKey) {
-      acc[aliasKey] = color;
     }
     return acc;
   }, {} as Partial<HvThemeColors>);
