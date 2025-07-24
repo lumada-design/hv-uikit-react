@@ -16,6 +16,13 @@ import {
 
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
+  otherColors: {
+    gray: {
+      strong: "lightgray",
+      subtle: "gainsboro",
+      dimmed: "darkgray",
+    },
+  },
   colors: makeColors({
     brand: blue[600],
     catastrophic: [rose[800], pink[600]],
@@ -26,6 +33,8 @@ const pentahoPlus = makeTheme((theme) => ({
     neutral_20: sky[100],
     shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
     shad1: theme.alpha(slate[700], 0.08),
+
+    veryPurple: "rebeccapurple",
 
     primary: [blue[600], blue[500]],
     primaryStrong: [blue[700], blue[600]],
@@ -95,6 +104,15 @@ const pentahoPlus = makeTheme((theme) => ({
       fontSize: theme.fontSizes.xl3,
       lineHeight: theme.lineHeights.xl3,
       letterSpacing: "0.00384em",
+      backgroundColor: "red",
+    },
+    title1Label: {
+      color: "white",
+      fontWeight: theme.fontWeights.bold,
+      fontSize: theme.fontSizes.xl3,
+      lineHeight: theme.lineHeights.xl3,
+      letterSpacing: "0.00384em",
+      backgroundColor: "red",
     },
     title2: {
       color: theme.colors.secondary,
@@ -102,6 +120,14 @@ const pentahoPlus = makeTheme((theme) => ({
       fontSize: theme.fontSizes.xl2,
       lineHeight: theme.lineHeights.xl2,
       letterSpacing: "0.00288em",
+    },
+    title2Label: {
+      color: "white",
+      fontWeight: theme.fontWeights.bold,
+      fontSize: theme.fontSizes.xl2,
+      lineHeight: theme.lineHeights.xl2,
+      letterSpacing: "0.00288em",
+      backgroundColor: "red",
     },
     title3: {
       color: theme.colors.secondary,
