@@ -1,7 +1,7 @@
-import { type i18n, createInstance } from "i18next";
-import Backend, { type HttpBackendOptions } from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+import { createInstance, type i18n } from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import Backend, { type HttpBackendOptions } from "i18next-http-backend";
 
 export const i18nInstance: i18n = createInstance();
 
