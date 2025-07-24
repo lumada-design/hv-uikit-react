@@ -107,6 +107,14 @@ export const LongContent: StoryObj<HvDialogProps> = {
           "With very long content the dialog grows in height, up to a maximum where a margin of 100px is left on top and bottom.",
       },
     },
+    ...setupChromatic(["DS5 dawn", "Pentaho dawn"]),
+  },
+  // For visual testing and a11y
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /open dialog/i });
+    await userEvent.click(button);
+    await expect(canvas.getByRole("dialog")).toBeInTheDocument();
   },
   decorators: [(Story) => <div style={{ minHeight: 400 }}>{Story()}</div>],
   render: () => <LongContentStory />,
