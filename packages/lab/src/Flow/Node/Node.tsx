@@ -28,7 +28,9 @@ const DEFAULT_LABELS = {
   expandLabel: "Expand",
 };
 
-export interface HvFlowNodeProps<T = any> extends HvFlowBaseNodeProps<T> {
+export interface HvFlowNodeProps<
+  T extends Record<string, any> = Record<string, any>,
+> extends HvFlowBaseNodeProps<T> {
   /** Node description. */
   description?: string;
   /** Node actions. */
@@ -79,7 +81,7 @@ export const HvFlowNode = ({
   color: colorProp,
   icon: iconProp,
   ...props
-}: HvFlowNodeProps<unknown>) => {
+}: HvFlowNodeProps) => {
   const { classes } = useClasses(classesProp);
   const [showParams, setShowParams] = useState(expanded);
   const { nodeGroups, defaultActions } = useFlowContext();
@@ -99,7 +101,7 @@ export const HvFlowNode = ({
   const title = titleProp || nodeGroup?.label;
   const icon = iconProp || nodeGroup?.icon;
   const color = colorProp || nodeGroup?.color;
-  const subtitle = subtitleProp || node?.data.nodeLabel;
+  const subtitle = subtitleProp || (node?.data.nodeLabel as string);
 
   const hasParams = !!(params && params.length > 0);
 

@@ -13,7 +13,7 @@ export const data = [
   { country: "japan", year: "2023", population: 124000000 },
 ];
 
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   checked?: string[];
   jsonData?: typeof data;
 }
