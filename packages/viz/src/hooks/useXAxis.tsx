@@ -32,7 +32,8 @@ export const useXAxis = ({
       nameProps && nameStyleKeys
         ? nameStyleKeys.reduce<Record<string, any>>((acc, curr) => {
             acc[curr] =
-              (curr === "color" && colors?.[nameProps[curr] as string]) ||
+              (curr === "color" &&
+                colors?.[nameProps[curr] as keyof typeof colors]) ||
               nameProps[curr as keyof typeof nameProps];
             return acc;
           }, {})

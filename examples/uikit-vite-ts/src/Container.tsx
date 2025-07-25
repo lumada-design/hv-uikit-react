@@ -19,7 +19,7 @@ export const Container = ({ children }: { children: ReactNode }) => {
   const { selectedTheme, selectedMode, changeTheme } = useTheme();
 
   const handleChangeTheme = () => {
-    changeTheme(selectedTheme, selectedMode === "wicked" ? "dawn" : "wicked");
+    changeTheme(selectedTheme, selectedMode === "dark" ? "light" : "dark");
   };
 
   return (

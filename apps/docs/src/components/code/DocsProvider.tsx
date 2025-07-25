@@ -18,7 +18,7 @@ export const DocsProvider = ({
       <HvProvider
         themes={[pentaho, ds5]}
         theme={docsTheme}
-        colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
+        colorMode={resolvedTheme === "dark" ? "dark" : "light"}
         cssTheme="scoped"
         rootElementId={id}
       >

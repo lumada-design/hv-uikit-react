@@ -28,7 +28,7 @@ const UIKitLogo = () => (
 export const Header = () => {
   const navigate = useNavigate();
   const theme = useMuiTheme();
-  const { selectedMode, colorModes, changeTheme } = useTheme();
+  const { changeMode } = useTheme();
   const { activePath, navigation } = useNavigationContext();
 
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
@@ -58,13 +58,7 @@ export const Header = () => {
             <Debug />
           </HvIconButton>
         )}
-        <HvIconButton
-          title="Change color mode"
-          onClick={() => {
-            const nextIdx = colorModes.findIndex((m) => m === selectedMode) + 1;
-            changeTheme(undefined, colorModes[nextIdx % colorModes.length]);
-          }}
-        >
+        <HvIconButton title="Change color mode" onClick={() => changeMode()}>
           <ThemeSwitcher />
         </HvIconButton>
       </HvHeaderActions>

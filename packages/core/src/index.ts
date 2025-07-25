@@ -1,7 +1,6 @@
 export { theme } from "@hitachivantara/uikit-styles";
 export type {
   HvThemeBreakpoint,
-  HvThemeColorMode,
   HvBaseTheme,
   // BREAKPOINTS
   HvBreakpoints,

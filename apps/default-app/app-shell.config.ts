@@ -19,7 +19,7 @@ export default {
   theming: {
     themes: ["ds5", "pentaho"],
     theme: "pentaho",
-    colorMode: "dawn",
+    colorMode: "light",
   },
   menu: [
     {

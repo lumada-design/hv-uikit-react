@@ -26,7 +26,7 @@ export const getInitialTheme = (themes: Theme[]) => {
   const initialTheme = localTheme ? localTheme.split(" ")[0] : DEFAULT_THEME;
   const initialMode = localTheme
     ? localTheme.split(" ")[1]
-    : `${prefersDark ? "wicked" : "dawn"}`;
+    : `${prefersDark ? "dark" : "light"}`;
 
   return (
     themes.find((theme) => theme.label === `${initialTheme} ${initialMode}`) ||
@@ -41,7 +41,7 @@ export const useDarkClass = <T extends HTMLElement = HTMLDivElement>(
   const ref = useRef<T>(null);
 
   useEffect(() => {
-    if (mode === "wicked") {
+    if (mode === "dark") {
       ref.current?.classList.add("dark");
     } else {
       ref.current?.classList.remove("dark");
@@ -59,7 +59,7 @@ export const getThemesList = (themes: Record<string, HvThemeStructure>) => {
     const theme = themes[themeName];
     const colorModes = Object.keys(theme.colors.modes);
     colorModes.forEach((colorMode) => {
-      const isDark = colorMode.includes("dark") || colorMode.includes("wicked");
+      const isDark = colorMode.includes("dark");
       themesList.push({
         label: `${themeName} ${colorMode}`,
         mode: isDark ? "dark" : "light",

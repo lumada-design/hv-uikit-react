@@ -1,9 +1,9 @@
 import { HvTheme } from "@hitachivantara/uikit-react-shared";
-import {
-  HvThemeColorModeStructure,
-  HvThemeStructure,
+import { HvThemeColors, HvThemeStructure } from "@hitachivantara/uikit-styles";
+import type {
+  HvBaseTheme,
+  HvThemeColorMode,
 } from "@hitachivantara/uikit-styles";
-import type { HvBaseTheme } from "@hitachivantara/uikit-styles";
 
 import { themes } from "../themes";
 import type { HvExtraDeepPartialProps } from "../types/generic";
@@ -40,8 +40,8 @@ export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
 > & {
   colors?: {
     modes?: Record<
-      string,
-      Partial<HvThemeColorModeStructure> & Record<string, string>
+      HvThemeColorMode,
+      Partial<HvThemeColors> & Record<string, string>
     >;
   };
 };
@@ -122,25 +122,28 @@ export const createTheme = (
 
   // Fill new color modes with missing colors
   if (customizations) {
-    Object.keys(customizedTheme.colors.modes).forEach((mode) => {
-      // @ts-ignore
-      if (!themes[base].colors.modes[mode]) {
-        customizedTheme.colors.modes[mode] = {
-          ...themes[base].colors.modes.dawn,
-          ...customizedTheme.colors.modes[mode],
-        };
-      }
-    });
+    (Object.keys(customizedTheme.colors.modes) as HvThemeColorMode[]).forEach(
+      (mode) => {
+        if (!themes[base].colors.modes[mode]) {
+          customizedTheme.colors.modes[mode] = {
+            ...themes[base].colors.modes.light,
+            ...customizedTheme.colors.modes[mode],
+          };
+        }
+      },
+    );
   }
 
   // If the flag `inheritColorModes` is false and customizations were given for the color modes,
   // we're removing any color modes that might have been inherited
   if (!inheritColorModes && customizations.colors?.modes) {
-    Object.keys(customizedTheme.colors.modes).forEach((mode) => {
-      if (!Object.keys(customizations.colors?.modes || {}).includes(mode)) {
-        delete customizedTheme.colors.modes[mode];
-      }
-    });
+    (Object.keys(customizedTheme.colors.modes) as HvThemeColorMode[]).forEach(
+      (mode) => {
+        if (!Object.keys(customizations.colors?.modes || {}).includes(mode)) {
+          delete customizedTheme.colors.modes[mode];
+        }
+      },
+    );
   }
 
   // Created theme

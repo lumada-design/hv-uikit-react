@@ -12,7 +12,7 @@ const Main = () => {
 
   return (
     <>
-      <button type="button" onClick={() => changeTheme("ds5", "wicked")}>
+      <button type="button" onClick={() => changeTheme("ds5", "dark")}>
         Update theme
       </button>
       <p>Theme provider test</p>
@@ -30,7 +30,8 @@ const customThemeNoInherit = createTheme({
   inheritColorModes: false,
   colors: {
     modes: {
-      purple: {
+      light: {},
+      dark: {
         bgContainer: "purple",
       },
     },
@@ -51,7 +52,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn",
+      "light",
     );
 
     expect(theme).toBeInTheDocument();
@@ -61,11 +62,7 @@ describe("Provider", () => {
   it("should have the correct theme and color mode selected if only the colorMode property is provided", () => {
     const { container } = render(
       <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          colorMode="wicked"
-        >
+        <HvProvider cssTheme="scoped" rootElementId="hv-root" colorMode="dark">
           <p>Theme provider test</p>
         </HvProvider>
       </div>,
@@ -75,7 +72,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "wicked",
+      "dark",
     );
 
     expect(theme).toBeInTheDocument();
@@ -104,7 +101,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn",
+      "light",
     );
 
     expect(theme).toBeInTheDocument();
@@ -119,7 +116,7 @@ describe("Provider", () => {
           rootElementId="hv-root"
           themes={[ds5, customThemeNoInherit]}
           theme="custom-theme"
-          colorMode="purple"
+          colorMode="dark"
         >
           <p>Theme provider test</p>
         </HvProvider>
@@ -134,7 +131,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "purple",
+      "dark",
     );
 
     expect(theme).toBeInTheDocument();
@@ -158,7 +155,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "dawn",
+      "light",
     );
 
     expect(theme).toBeInTheDocument();
@@ -173,7 +170,7 @@ describe("Provider", () => {
           rootElementId="hv-root"
           themes={[ds5, pentaho, customThemeNoInherit]}
           theme="custom-theme"
-          colorMode="purple"
+          colorMode="dark"
         >
           <Main />
         </HvProvider>
@@ -188,7 +185,7 @@ describe("Provider", () => {
     const mode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "purple",
+      "dark",
     );
 
     expect(theme).toBeInTheDocument();
@@ -206,7 +203,7 @@ describe("Provider", () => {
     const updatedMode = queryHelpers.queryByAttribute(
       "data-color-mode",
       container,
-      "wicked",
+      "dark",
     );
 
     expect(updatedTheme).toBeInTheDocument();

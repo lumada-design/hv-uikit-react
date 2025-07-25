@@ -12,7 +12,11 @@ import {
   type HvTheme,
   type HvThemeContextValue,
 } from "@hitachivantara/uikit-react-shared";
-import { HvThemeStructure, parseTheme } from "@hitachivantara/uikit-styles";
+import {
+  HvThemeColorMode,
+  HvThemeStructure,
+  parseTheme,
+} from "@hitachivantara/uikit-styles";
 
 import { setElementAttrs } from "../utils/theme";
 
@@ -26,7 +30,7 @@ interface HvThemeProviderProps {
   themes: (HvTheme | HvThemeStructure)[];
   theme: string;
   emotionCache: EmotionCache;
-  colorMode: string;
+  colorMode: HvThemeColorMode;
   themeRootId?: string;
 }
 
@@ -44,7 +48,6 @@ export const HvThemeProvider = ({
   const {
     theme: activeTheme,
     selectedTheme,
-    selectedMode,
     colorModes,
     colorScheme,
   } = parseTheme(themesList, theme, colorMode);
@@ -58,15 +61,15 @@ export const HvThemeProvider = ({
   }, [colorModeProp, themeProp]);
 
   useEffect(() => {
-    setElementAttrs(selectedTheme, selectedMode, colorScheme, rootId);
-  }, [colorScheme, rootId, selectedMode, selectedTheme]);
+    setElementAttrs(selectedTheme, colorMode, colorScheme, rootId);
+  }, [colorScheme, rootId, colorMode, selectedTheme]);
 
   const changeTheme = useCallback(
-    (newTheme = selectedTheme, newMode = selectedMode) => {
+    (newTheme = selectedTheme, newMode = colorMode) => {
       setTheme(newTheme);
       setColorMode(newMode);
     },
-    [selectedMode, selectedTheme],
+    [colorMode, selectedTheme],
   );
 
   const value = useMemo<HvThemeContextValue>(
@@ -75,8 +78,11 @@ export const HvThemeProvider = ({
       colorModes,
       activeTheme: activeTheme as HvTheme,
       selectedTheme,
-      selectedMode,
+      selectedMode: colorMode,
       changeTheme,
+      changeMode(newMode?: HvThemeColorMode) {
+        setColorMode(newMode ?? ((m) => (m !== "dark" ? "dark" : "light")));
+      },
       rootId,
     }),
     [
@@ -84,7 +90,7 @@ export const HvThemeProvider = ({
       colorModes,
       activeTheme,
       selectedTheme,
-      selectedMode,
+      colorMode,
       changeTheme,
       rootId,
     ],

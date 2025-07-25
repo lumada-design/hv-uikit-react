@@ -19,7 +19,7 @@ export const Main = ({ children }: { children: React.ReactNode }) => {
     <HvProvider
       themes={[pentaho]}
       theme="pentaho"
-      colorMode={resolvedTheme === "dark" ? "wicked" : "dawn"}
+      colorMode={resolvedTheme === "dark" ? "dark" : "light"}
       emotionCache={emotionCache}
     >
       <HvVizProvider>{children}</HvVizProvider>

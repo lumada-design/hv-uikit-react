@@ -1,9 +1,10 @@
 import * as echarts from "echarts/core";
 import type { HvTheme } from "@hitachivantara/uikit-react-utils";
+import { HvThemeColorMode } from "@hitachivantara/uikit-styles";
 
 export const registerTheme = (
   themeName: string,
-  mode: string,
+  mode: HvThemeColorMode,
   themeStructure?: HvTheme,
 ) => {
   const colors = themeStructure?.colors.modes[mode];

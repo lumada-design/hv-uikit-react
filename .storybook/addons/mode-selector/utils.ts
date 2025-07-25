@@ -1,7 +1,6 @@
 const STORAGE_KEY = "sb-uikit-mode";
 
-const modes = ["dawn", "wicked"] as const;
-export type Mode = (typeof modes)[number];
+export type Mode = "light" | "dark";
 
 export const setLocalMode = (value: Mode) => {
   localStorage?.setItem(STORAGE_KEY, value);
@@ -12,15 +11,13 @@ export const getLocalMode = () => {
 };
 
 export const getInitialMode = (): Mode => {
-  const localMode = getLocalMode() as Mode;
+  const localMode = getLocalMode();
 
-  if (localMode) {
-    return localMode;
-  }
+  if (localMode) return localMode as Mode;
 
   const prefersDark = window?.matchMedia?.(
     "(prefers-color-scheme: dark)",
   )?.matches;
 
-  return prefersDark ? "wicked" : "dawn";
+  return prefersDark ? "dark" : "light";
 };

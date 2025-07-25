@@ -1,7 +1,7 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
 import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
-import type { HvCustomTheme, HvThemeStructure } from "./types";
+import type { HvCustomTheme } from "./types";
 import { mergeTheme } from "./utils";
 
 /**
@@ -11,13 +11,11 @@ import { mergeTheme } from "./utils";
  * @param options The options to generate the theme
  * @returns The generated theme
  */
-export const makeTheme = <Mode extends string = string>(
-  options: HvCustomTheme<Mode> | ((theme: HvTheme) => HvCustomTheme<Mode>),
-): HvThemeStructure<Mode> => {
+export const makeTheme = (
+  options: HvCustomTheme | ((theme: HvTheme) => HvCustomTheme),
+) => {
   const customTheme = typeof options === "function" ? options(theme) : options;
-  const newTheme = mergeTheme(baseTheme, customTheme);
-
-  return newTheme;
+  return mergeTheme(baseTheme, customTheme);
 };
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
@@ -69,7 +67,7 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  */
 export const makeColors = (
   inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
-): HvCustomTheme<"dawn" | "wicked">["colors"] => {
+): HvCustomTheme["colors"] => {
   const [lightColors, darkColors] = Object.entries(inputColors).reduce(
     (acc, [key, color]) => {
       const [lightColor, darkColor] =
@@ -87,17 +85,14 @@ export const makeColors = (
   );
 
   return {
-    // TODO: review allowing generic modes vs light/dark only
     modes: {
-      dawn: {
-        type: "light",
+      light: {
         ...colors.common,
         ...colors.light,
         ...extendCompatColors(lightColors),
         ...lightColors,
       },
-      wicked: {
-        type: "dark",
+      dark: {
         ...colors.common,
         ...colors.dark,
         ...extendCompatColors(darkColors),

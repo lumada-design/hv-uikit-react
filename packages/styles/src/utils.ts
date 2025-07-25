@@ -1,6 +1,7 @@
 import type {
   DeepString,
   HvThemeBreakpoint,
+  HvThemeColorMode,
   HvThemeStructure,
   HvThemeVars,
   SpacingValue,
@@ -96,7 +97,7 @@ export const mergeTheme = (...objects: any[]): HvThemeStructure => {
 export const parseTheme = (
   themes: HvThemeStructure[],
   theme = "",
-  colorMode = "",
+  colorMode: HvThemeColorMode = "light",
 ): {
   theme: HvThemeStructure;
   selectedTheme: string;
@@ -108,18 +109,16 @@ export const parseTheme = (
   const selectedTheme = names.includes(theme) ? theme : names[0];
   const themeStructure =
     themes.find((t) => t.name === selectedTheme) || themes[0];
-  const colorModes = Object.keys(themeStructure.colors.modes);
-  const selectedMode = colorModes.includes(colorMode)
-    ? colorMode
-    : colorModes[0];
-  const colorScheme = themeStructure.colors.modes[selectedMode].type;
+  const colorModes = Object.keys(
+    themeStructure.colors.modes,
+  ) as HvThemeColorMode[];
 
   return {
     theme: themeStructure,
     selectedTheme,
-    selectedMode,
+    selectedMode: colorMode,
     colorModes,
-    colorScheme,
+    colorScheme: colorMode,
   };
 };
 
@@ -127,7 +126,7 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
   const vars: Record<string, any> = {};
 
   themes.forEach((theme) => {
-    const colorModes = Object.keys(theme.colors.modes);
+    const colorModes = Object.keys(theme.colors.modes) as HvThemeColorMode[];
 
     colorModes.forEach((colorMode) => {
       const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;

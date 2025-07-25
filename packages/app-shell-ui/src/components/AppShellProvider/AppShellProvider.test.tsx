@@ -109,7 +109,7 @@ describe("AppShellProvider component", () => {
 
       await waitFor(() => {
         expect(bodyElement.getAttribute("data-theme")).toBe("ds5");
-        expect(bodyElement.getAttribute("data-color-mode")).toBe("dawn");
+        expect(bodyElement.getAttribute("data-color-mode")).toBe("light");
         expect(bodyElement).toHaveStyle("color-scheme: light;");
       });
     });
@@ -119,7 +119,7 @@ describe("AppShellProvider component", () => {
         theming: {
           themes: ["dummyTheme", "ds5", "pentaho"],
           theme: "ds5",
-          colorMode: "wicked",
+          colorMode: "dark",
         },
       });
 
@@ -127,7 +127,7 @@ describe("AppShellProvider component", () => {
 
       await waitFor(() => {
         expect(bodyElement.getAttribute("data-theme")).toBe("ds5");
-        expect(bodyElement.getAttribute("data-color-mode")).toBe("wicked");
+        expect(bodyElement.getAttribute("data-color-mode")).toBe("dark");
         expect(bodyElement).toHaveStyle("color-scheme: dark;");
       });
     });
@@ -138,7 +138,7 @@ describe("AppShellProvider component", () => {
           theming: {
             themes: [theme],
             theme,
-            colorMode: "dawn",
+            colorMode: "light",
           },
         });
 
@@ -146,7 +146,7 @@ describe("AppShellProvider component", () => {
 
         await waitFor(() => {
           expect(bodyElement.getAttribute("data-theme")).toBe(theme);
-          expect(bodyElement.getAttribute("data-color-mode")).toBe("dawn");
+          expect(bodyElement.getAttribute("data-color-mode")).toBe("light");
           expect(bodyElement).toHaveStyle("color-scheme: light;");
         });
       }),
