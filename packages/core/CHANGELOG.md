@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.99.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.99.0...@hitachivantara/uikit-react-core@5.99.1) (2025-07-25)
+
+### Bug Fixes
+
+- **DialogTitle:** render icon when `customIcon` or `variant` is defined ([#4845](https://github.com/lumada-design/hv-uikit-react/issues/4845)) ([7fcd967](https://github.com/lumada-design/hv-uikit-react/commit/7fcd967c237835f617bb3087d07dcfd75d6bcbfa))
+
 # [5.99.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.98.0...@hitachivantara/uikit-react-core@5.99.0) (2025-07-18)
 
 ### Features

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.4.1...@hitachivantara/uikit-config@0.4.2) (2025-07-25)
+
+**Note:** Version bump only for package @hitachivantara/uikit-config
+
 ## [0.4.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.4.0...@hitachivantara/uikit-config@0.4.1) (2025-07-11)
 
 ### Bug Fixes

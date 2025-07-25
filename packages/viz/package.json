@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-viz",
-  "version": "5.16.2",
+  "version": "5.16.3",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -42,8 +42,8 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@hitachivantara/uikit-react-utils": "^0.2.42",
-    "@hitachivantara/uikit-styles": "^5.50.0"
+    "@hitachivantara/uikit-react-utils": "^0.2.43",
+    "@hitachivantara/uikit-styles": "^5.50.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
