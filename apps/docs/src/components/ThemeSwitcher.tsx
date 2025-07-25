@@ -6,7 +6,7 @@ import { HvSelect } from "@hitachivantara/uikit-react-core";
 import { useDocsTheme } from "../hooks/useDocsTheme";
 
 const themes = [
-  { value: "pentahoPlus", label: "Pentaho" },
+  { value: "pentaho", label: "Pentaho" },
   { value: "ds5", label: "NEXT v5" },
 ];
 

@@ -50,7 +50,7 @@ export const GeneratorContext = createContext<GeneratorContextValue | null>(
   null,
 );
 
-const initialTheme = createTheme({ name: "customTheme", base: "pentahoPlus" });
+const initialTheme = createTheme({ name: "customTheme", base: "pentaho" });
 
 const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
@@ -80,7 +80,7 @@ const GeneratorProvider = ({ children }: { children: React.ReactNode }) => {
         if (isReset) {
           setThemeChanges({});
           newTheme = createTheme({
-            base: "pentahoPlus",
+            base: "pentaho",
             name: "customTheme",
           });
           return newTheme;
