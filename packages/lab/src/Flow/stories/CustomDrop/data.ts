@@ -1,4 +1,4 @@
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   country?: keyof typeof data;
 }
 
