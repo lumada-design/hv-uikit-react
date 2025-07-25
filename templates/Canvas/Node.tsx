@@ -1,6 +1,6 @@
 import { isValidElement } from "react";
 import { css, cx } from "@emotion/css";
-import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
+import { Handle, NodeToolbar, Position } from "@xyflow/react";
 import {
   HvButton,
   HvColorAny,
@@ -10,6 +10,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-react-core";
 import {
+  HvFlowNodeFC,
   HvFlowNodeInput,
   HvFlowNodeOutput,
   useHvNode,
@@ -67,20 +68,19 @@ const classes = {
   }),
 };
 
-export type NodeData =
-  | undefined
-  | {
-      nodeLabel?: string; // nodeLabel is automatically added by HvFlow when the node is dropped
-      tableId?: string;
-      subtitle?: string;
-      color?: HvColorAny;
-      icon?: string;
-      output?: HvFlowNodeOutput;
-      input?: HvFlowNodeInput;
-      status?: FlowStatus;
-    };
+export type NodeData = {
+  nodeLabel?: string; // nodeLabel is automatically added by HvFlow when the node is dropped
+  tableId?: string;
+  subtitle?: string;
+  color?: HvColorAny;
+  icon?: string;
+  output?: HvFlowNodeOutput;
+  input?: HvFlowNodeInput;
+  status?: FlowStatus;
+};
 
-export const Node = ({ id, data = {} }: NodeProps<NodeData>) => {
+export const Node: HvFlowNodeFC<NodeData> = (props) => {
+  const { id, data = {} } = props;
   const {
     nodeLabel: titleProp,
     subtitle: subtitleProp,

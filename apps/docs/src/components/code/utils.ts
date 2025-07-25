@@ -14,10 +14,10 @@ import * as muiBase from "@mui/base";
 // oxlint-disable-next-line no-restricted-imports
 import * as muiMaterial from "@mui/material";
 import * as muiUtils from "@mui/utils";
+import * as reactflow from "@xyflow/react";
 import * as clsx from "clsx";
 import * as echartsCharts from "echarts/charts";
 import * as echartsCore from "echarts/core";
-import * as reactflow from "reactflow";
 import useSWR from "swr";
 import * as zod from "zod";
 import * as HvCodeEditor from "@hitachivantara/uikit-react-code-editor";
@@ -57,7 +57,7 @@ const defaultScope: Scope = {
     "@hookform/resolvers/zod": hookFormZod,
     zod,
     clsx,
-    reactflow,
+    "@xyflow/react": reactflow,
     swr: useSWR,
     "echarts/core": echartsCore,
     "echarts/charts": echartsCharts,
