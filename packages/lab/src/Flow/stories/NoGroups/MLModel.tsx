@@ -4,8 +4,8 @@ import { HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 import { MLModelDetection } from "./MLModelDetection";
 import { MLModelPrediction } from "./MLModelPrediction";
 
-interface MLModelData {
-  type: "prediction" | "detection";
+export interface MLModelData {
+  type?: "prediction" | "detection";
 }
 
 export const MLModel: HvFlowNodeFC<MLModelData> = (props) => {

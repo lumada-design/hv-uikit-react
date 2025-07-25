@@ -1,4 +1,4 @@
-import { useNodes } from "reactflow";
+import { useNodes } from "@xyflow/react";
 import {
   HvEmptyState,
   HvEmptyStateProps,

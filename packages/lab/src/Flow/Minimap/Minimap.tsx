@@ -1,4 +1,9 @@
-import { GetMiniMapNodeAttribute, MiniMap, MiniMapProps } from "reactflow";
+import {
+  GetMiniMapNodeAttribute,
+  MiniMap,
+  MiniMapProps,
+  Node,
+} from "@xyflow/react";
 import { ExtractNames } from "@hitachivantara/uikit-react-core";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
@@ -8,16 +13,17 @@ export { staticClasses as flowMinimapClasses };
 
 export type HvFlowMinimapClasses = ExtractNames<typeof useClasses>;
 
-export interface HvFlowMinimapProps<NodeData = any>
-  extends Omit<
-    MiniMapProps<NodeData>,
+export interface HvFlowMinimapProps<
+  NodeData extends Record<string, unknown> = Record<string, unknown>,
+> extends Omit<
+    MiniMapProps<Node<NodeData>>,
     "nodeColor" | "nodeStrokeColor" | "maskColor" | "maskStrokeColor"
   > {
-  /** Node color. */
-  nodeColor?: HvColorAny | GetMiniMapNodeAttribute<NodeData>;
-  /** Node stroke color. */
-  nodeStrokeColor?: HvColorAny | GetMiniMapNodeAttribute<NodeData>;
-  /** Mask color. */
+  /** Node color. Defaults to `atmo4`. */
+  nodeColor?: HvColorAny | GetMiniMapNodeAttribute<Node<NodeData>>;
+  /** Node stroke color. Defaults to `atmo4`. */
+  nodeStrokeColor?: HvColorAny | GetMiniMapNodeAttribute<Node<NodeData>>;
+  /** Mask color. Defaults to `atmo3`. */
   maskColor?: HvColorAny;
   /** Mask stroke color. */
   maskStrokeColor?: HvColorAny;

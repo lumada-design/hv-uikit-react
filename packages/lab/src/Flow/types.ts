@@ -1,4 +1,4 @@
-import { Node, NodeProps, ReactFlowInstance } from "reactflow";
+import { Edge, Node, NodeProps, ReactFlowInstance } from "@xyflow/react";
 import {
   HvActionGeneric,
   HvSliderProps,
@@ -10,13 +10,13 @@ import type { HvFlowNodeProps } from "./Node";
 // Node types
 
 /** HvFlowNode component type. @extends React.FC */
-export interface HvFlowNodeFC<NodeData = any>
-  extends React.FC<NodeProps<NodeData>> {}
+export interface HvFlowNodeFC<
+  NodeData extends Record<string, any> = Record<string, any>,
+> extends React.FC<NodeProps<Node<NodeData>>> {}
 
-export type HvFlowNodeTypes<NodeData = any> = Record<
-  string,
-  HvFlowNodeFC<NodeData>
->;
+export type HvFlowNodeTypes<
+  NodeData extends Record<string, any> = Record<string, any>,
+> = Record<string, HvFlowNodeFC<NodeData>>;
 
 export interface HvFlowGroupItem<NodeData = any>
   extends Pick<HvFlowNodeProps, "params" | "subtitle"> {
@@ -109,7 +109,7 @@ export type HvFlowBuiltInActions = Omit<HvFlowNodeAction, "id" | "callback"> & {
 
 export type HvFlowNodeMetaRegistry = Record<string, HvFlowNodeMeta>;
 
-export type HvFlowInstance<NodeData = any, EdgeData = any> = ReactFlowInstance<
-  NodeData,
-  EdgeData
->;
+export type HvFlowInstance<
+  NodeData extends Record<string, unknown> = Record<string, unknown>,
+  EdgeData extends Record<string, unknown> = Record<string, unknown>,
+> = ReactFlowInstance<Node<NodeData>, Edge<EdgeData>>;

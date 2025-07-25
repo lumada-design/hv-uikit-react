@@ -1,9 +1,10 @@
 import {
   BaseEdge,
+  Edge,
   EdgeLabelRenderer,
   EdgeProps,
   getBezierPath,
-} from "reactflow";
+} from "@xyflow/react";
 import {
   HvDropDownMenu,
   HvDropDownMenuProps,
@@ -12,13 +13,11 @@ import { useFlowInstance } from "@hitachivantara/uikit-react-lab";
 
 import { FlowStatus, flowStatusesSpecs } from "./utils";
 
-export type StatusEdgeData =
-  | undefined
-  | {
-      status?: FlowStatus;
-    };
+export type StatusEdgeData = {
+  status?: FlowStatus;
+};
 
-export const StatusEdge = (props: EdgeProps<StatusEdgeData>) => {
+export const StatusEdge = (props: EdgeProps<Edge<StatusEdgeData>>) => {
   const {
     id,
     sourceX,
