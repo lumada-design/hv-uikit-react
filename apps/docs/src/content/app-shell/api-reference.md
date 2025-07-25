@@ -83,7 +83,7 @@ const customEvent = new CustomEvent<HvAppShellEventTheme>()(
   HvAppShellEventThemeTrigger,
   {
     detail: {
-      colorMode: "wicked",
+      colorMode: "dark",
     },
   },
 );

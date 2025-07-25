@@ -1,8 +1,8 @@
 import { lazy, Suspense, useState } from "react";
 import {
   HvBaseTheme,
-  HvDropdown,
   HvLoading,
+  HvSelect,
   HvSnackbar,
   HvSnackbarProps,
   HvTab,
@@ -29,8 +29,14 @@ const Typography = lazy(() => import("./Typography"));
 const Zindices = lazy(() => import("./Zindices"));
 
 const Sidebar = () => {
-  const { selectedTheme, selectedMode, colorModes, changeTheme, themes } =
-    useTheme();
+  const {
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    changeTheme,
+    changeMode,
+    themes,
+  } = useTheme();
 
   const { customTheme, updateCustomTheme, open } = useGeneratorContext();
 
@@ -44,7 +50,7 @@ const Sidebar = () => {
 
   const handleThemeChange = (base: HvBaseTheme, mode: string) => {
     updateCustomTheme({ base, name: customTheme.name }, { isBaseChange: true });
-    changeTheme(base, mode);
+    changeTheme(base, mode as any);
   };
 
   return (
@@ -70,24 +76,20 @@ const Sidebar = () => {
           </div>
           <div className="flex items-center justify-between gap-sm">
             <HvTypography variant="label">Base:</HvTypography>
-            <HvDropdown
-              values={themes.map((name) => ({
-                value: name,
-                label: name,
-                selected: name === selectedTheme,
-              }))}
-              onChange={(base) => {
-                handleThemeChange(base?.value as any, selectedMode);
+            <HvSelect
+              value={selectedTheme}
+              options={themes.map((name) => ({ value: name, label: name }))}
+              onChange={(evt, value) => {
+                handleThemeChange(value as any, selectedMode);
               }}
             />
             <HvTypography variant="label">Mode:</HvTypography>
-            <HvDropdown
-              values={colorModes.map((name) => ({
-                value: name,
-                label: name,
-                selected: name === selectedMode,
-              }))}
-              onChange={(mode) => changeTheme(selectedTheme, mode?.value)}
+            <HvSelect
+              value={selectedTheme}
+              options={colorModes.map((name) => ({ value: name, label: name }))}
+              onChange={(evt, value) =>
+                changeMode(value === "dark" ? "dark" : "light")
+              }
             />
           </div>
           <div>

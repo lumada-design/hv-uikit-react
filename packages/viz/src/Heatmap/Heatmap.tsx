@@ -105,7 +105,7 @@ export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
     });
 
     const convertedColors = colorScale?.map(
-      (color) => colors?.[color] || color,
+      (color) => colors?.[color as keyof typeof colors] || color,
     );
 
     const chartVisualMap = useVisualMap({

@@ -40,7 +40,7 @@ const Colors = () => {
               <div className={styles.tooltip}>
                 <HvTypography variant="label">Background color</HvTypography>
                 <HvTypography>
-                  {customTheme?.colors?.modes?.[selectedMode]?.backgroundColor}
+                  {customTheme?.colors?.modes?.[selectedMode]?.bgPage}
                 </HvTypography>
               </div>
             }
@@ -49,7 +49,7 @@ const Colors = () => {
               <HvColorPicker
                 iconOnly
                 defaultValue={
-                  customTheme?.colors?.modes?.[selectedMode]?.backgroundColor
+                  customTheme?.colors?.modes?.[selectedMode]?.bgPage
                 }
                 onChangeComplete={(color) =>
                   colorChangedHandler("backgroundColor", color)

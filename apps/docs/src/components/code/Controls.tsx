@@ -202,7 +202,7 @@ function ColorControl({ prop, state, control, onChange, label }: ControlProps) {
       value={
         typeof state[prop] === "string" && state[prop].includes("#")
           ? state[prop]
-          : colors?.[state[prop] as string] || control.defaultValue
+          : colors?.[state[prop] as keyof typeof colors] || control.defaultValue
       }
       onChange={(value) => onChange(prop, value)}
       className="w-full"

@@ -156,7 +156,11 @@ const AppShellProvider = ({
         <HvProvider
           themes={themes}
           theme={theConfig.theming?.theme}
-          colorMode={storedColorModeValue ?? theConfig.theming?.colorMode}
+          colorMode={
+            (storedColorModeValue ?? theConfig.theming?.colorMode) === "dark"
+              ? "dark"
+              : "light"
+          }
         >
           <HvAppShellCombinedProvidersContext.Provider value={providersContext}>
             {children}

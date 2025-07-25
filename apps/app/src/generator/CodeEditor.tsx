@@ -55,7 +55,7 @@ const CodeEditor = ({
 
   const onResetHandler = () => {
     updateCustomTheme({}, { isReset: true, updateThemeChanges: false });
-    changeTheme("pentahoPlus", "dawn");
+    changeTheme("pentahoPlus", "light");
   };
 
   const codeChangedHandler = (code?: string) => {

@@ -29,7 +29,7 @@ const Theming = () => {
         HvAppShellEventThemeTrigger,
         {
           detail: {
-            colorMode,
+            colorMode: colorMode as any,
           },
         },
       );
