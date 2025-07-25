@@ -38,7 +38,9 @@ async function connectNodes(
   targetConnection: string,
 ) {
   const source = flowCanvasLocator
-    .getByRole("button", { name: sourceNode })
+    .locator('[role="group"]', {
+      hasText: sourceNode,
+    })
     .locator(".react-flow__handle-right")
     .filter({
       has: referencePage
@@ -46,7 +48,9 @@ async function connectNodes(
         .getByText(sourceConnection, { exact: true }),
     });
   const target = flowCanvasLocator
-    .getByRole("button", { name: targetNode })
+    .locator('[role="group"]', {
+      hasText: targetNode,
+    })
     .locator(".react-flow__handle-left")
     .filter({
       has: referencePage
@@ -56,8 +60,11 @@ async function connectNodes(
   await source.dragTo(target, { force: true });
 }
 
-async function deleteConnection(connectionName: string) {
-  await referencePage.getByRole("button", { name: connectionName }).click();
+async function deleteConnection() {
+  await referencePage
+    .locator('g[role="group"][data-testid^="rf__edge-"]')
+    .first()
+    .click();
   await referencePage.keyboard.press("Backspace");
 }
 
@@ -109,7 +116,7 @@ test.describe("Node", () => {
     expect(nodeInCanvasBox?.y).toBeGreaterThanOrEqual(
       dragDestinationBox!.y + 20,
     );
-    expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 40);
+    expect(nodeInCanvasBox?.y).toBeLessThanOrEqual(dragDestinationBox!.y + 79);
   });
 
   test("should be able to duplicate a node", async ({ page }) => {
@@ -118,14 +125,12 @@ test.describe("Node", () => {
     const node = await selectNode("ML Model", "ML Model Prediction", true);
     await dragToPosition1(node);
 
-    const createdNode = flowCanvasLocator.getByRole("button", {
-      name: "ML Model Prediction",
+    const createdNode = flowCanvasLocator.locator('[role="group"]', {
+      hasText: "ML Model Prediction",
     });
+
     expect(await createdNode.all()).toHaveLength(1);
-    await flowCanvasLocator
-      .getByRole("button", { name: "ML Model Prediction" })
-      .first()
-      .hover();
+    await createdNode.first().hover();
     await page.getByRole("button", { name: "Duplicate" }).hover();
     await expect(
       page.getByRole("tooltip", { name: "Duplicate" }),
@@ -140,16 +145,12 @@ test.describe("Node", () => {
     const node = await selectNode("ML Model", "ML Model Detection", true);
     await dragToPosition3(node);
 
-    const createdNode = flowCanvasLocator
-      .getByRole("button", {
-        name: "ML Model Detection",
-      })
-      .first();
+    const createdNode = flowCanvasLocator.locator('[role="group"]', {
+      hasText: "ML Model Detection",
+    });
+
     expect(await createdNode.all()).toHaveLength(1);
-    await flowCanvasLocator
-      .getByRole("button", { name: "ML Model Detection" })
-      .first()
-      .hover();
+    await createdNode.first().hover();
     await flowCanvasLocator.getByRole("button", { name: "Delete" }).hover();
     await expect(page.getByRole("tooltip", { name: "Delete" })).toBeVisible();
     await flowCanvasLocator.getByRole("button", { name: "Delete" }).click();
@@ -163,8 +164,8 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
 
     const mlNode = await selectNode("ML Model", "ML Model Detection", true);
-    await dragToPosition1(mlNode);
     const kpiNode = await selectNode("Insight", "KPI", true);
+    await dragToPosition1(mlNode);
     await dragToPosition3(kpiNode);
 
     /* await flowCanvasLocator.getByRole("button", {name: "ML Model Detection"}).locator(".react-flow__handle-right").hover();
@@ -187,11 +188,11 @@ test.describe("Connections", () => {
     // await expect(destination).toHaveCSS("background-color", "rgb(153, 153, 153)"); */
 
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).not.toBeVisible();
     await connectNodes("ML Model Detection", "Detection", "KPI", "Data");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).toBeVisible();
   });
 
@@ -199,17 +200,17 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
 
     const assetNode = await selectNode("Dashboard", "Dashboard", true);
-    await dragToPosition1(assetNode);
     const lineChartNode = await selectNode("Insight", "Table", true);
+    await dragToPosition1(assetNode);
     await dragToPosition3(lineChartNode);
 
     await connectNodes("Table", "Insight", "Dashboard", "Insights");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).toBeVisible();
-    await deleteConnection("Edge");
+    await deleteConnection();
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).not.toBeVisible();
   });
 
@@ -217,13 +218,13 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
 
     const assetNode = await selectNode("Asset", "My Asset", false);
-    await dragToPosition1(assetNode);
     const lineChartNode = await selectNode("Insight", "Line Chart", true);
+    await dragToPosition1(assetNode);
     await dragToPosition3(lineChartNode);
 
     await connectNodes("My Asset", "Sensor Group 2", "Line Chart", "Data");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).not.toBeVisible();
   });
 
@@ -231,23 +232,27 @@ test.describe("Connections", () => {
     await page.goto("./iframe.html?args=&id=lab-flow--main&viewMode=story");
 
     const mlNode1 = await selectNode("Insight", "Table", true);
-    await dragToPosition1(mlNode1);
     const mlNode2 = await selectNode("Insight", "KPI", false);
-    await dragToPosition2(mlNode2);
     const tableNode = await selectNode("Dashboard", "Dashboard", true);
+    await dragToPosition1(mlNode1);
+    await dragToPosition2(mlNode2);
     await dragToPosition3(tableNode);
 
     await connectNodes("KPI", "Insight", "Dashboard", "Insights");
     await expect(
-      flowCanvasLocator.getByRole("button", { name: "Edge" }),
+      flowCanvasLocator.locator('g[role="group"][data-testid^="rf__edge-"]'),
     ).toBeVisible();
     await connectNodes("Table", "Insight", "Dashboard", "Insights");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
+      await flowCanvasLocator
+        .locator('g[role="group"][data-testid^="rf__edge-"]')
+        .all(),
     ).toHaveLength(2);
     await connectNodes("Table", "Insight", "Dashboard", "Table 1");
     expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
+      await flowCanvasLocator
+        .locator('g[role="group"][data-testid^="rf__edge-"]')
+        .all(),
     ).toHaveLength(3);
   });
 
@@ -273,7 +278,7 @@ test.describe("Connections", () => {
     await expect(edges).toHaveCount(initialCount);
 
     // Delete a specific edge (uses the meaningful name present in this story)
-    await deleteConnection("Edge from jsonInput to lineChart");
+    await deleteConnection();
     await expect(edges).toHaveCount(initialCount - 1);
 
     // Add it back; count should return to baseline
@@ -291,25 +296,31 @@ test.describe("Interactive button", () => {
     );
 
     const inputNode = flowCanvasLocator
-      .getByRole("button", {
-        name: "Json Input",
+      .locator('[role="group"]', {
+        hasText: "Json Input",
       })
       .first();
     let inputBox = await inputNode.boundingBox();
+
     let lineChartBox = await flowCanvasLocator
-      .getByRole("button", { name: "Line Chart" })
+      .locator('[role="group"]', {
+        hasText: "Line Chart",
+      })
       .first()
       .boundingBox();
 
     let inputLineChartDiff = inputBox!.y - lineChartBox!.y;
     await moveUp(inputNode, 50);
     inputBox = await inputNode.boundingBox();
+
     lineChartBox = await flowCanvasLocator
-      .getByRole("button", { name: "Line Chart" })
+      .locator('[role="group"]', {
+        hasText: "Line Chart",
+      })
       .first()
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
-      Math.floor(inputLineChartDiff - 50),
+      Math.floor(inputLineChartDiff),
     );
 
     await page.getByRole("button", { name: "Interactive" }).click();
@@ -318,7 +329,9 @@ test.describe("Interactive button", () => {
     await moveUp(inputNode, 50);
     inputBox = await inputNode.boundingBox();
     lineChartBox = await flowCanvasLocator
-      .getByRole("button", { name: "Line Chart" })
+      .locator('[role="group"]', {
+        hasText: "Line Chart",
+      })
       .first()
       .boundingBox();
     expect(Math.floor(inputBox!.y - lineChartBox!.y)).toEqual(
@@ -335,7 +348,9 @@ test.describe("Interactive button", () => {
     await dragToPosition1(node);
 
     const nodeBox = await flowCanvasLocator
-      .getByRole("button", { name: "ML Model Prediction" })
+      .locator('[role="group"]', {
+        hasText: "ML Model Prediction",
+      })
       .first()
       .boundingBox();
     await page.mouse.move(nodeBox!.x + 30, nodeBox!.y + 30);

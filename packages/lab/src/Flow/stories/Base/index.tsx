@@ -5,7 +5,7 @@ import {
   LineChartAlt,
   MachineLearning,
 } from "@hitachivantara/uikit-react-icons";
-import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
+import { HvFlowNodeTypes, HvFlowProps } from "@hitachivantara/uikit-react-lab";
 
 import { Asset } from "./Asset";
 // The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
@@ -138,14 +138,14 @@ export const nodeGroups = {
 
 export type NodeGroup = keyof typeof nodeGroups;
 
-export const nodeTypes: HvFlowProps["nodeTypes"] = {
+export const nodeTypes = {
   asset: Asset,
   model: MLModel,
   kpi: KPI,
   lineChart: LineChart,
   table: Table,
   dashboard: Dashboard,
-} satisfies HvFlowProps["nodeTypes"];
+} satisfies HvFlowNodeTypes;
 
 export type NodeType = keyof typeof nodeTypes;
 

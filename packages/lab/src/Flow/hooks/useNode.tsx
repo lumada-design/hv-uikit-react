@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { NodeToolbarProps } from "reactflow";
+import { NodeToolbarProps } from "@xyflow/react";
 import { uid } from "uid";
 import { useLabels } from "@hitachivantara/uikit-react-core";
 import { Delete, Duplicate } from "@hitachivantara/uikit-react-icons";
@@ -96,7 +96,7 @@ export function useHvNode(props: HvUseNodeParams) {
   const iconColor = getColor(
     (isValidElement(icon) && icon.props.color) || "textDark",
   );
-  const subtitle = subtitleProp || node?.data.nodeLabel;
+  const subtitle = subtitleProp || (node?.data.nodeLabel as string | undefined);
 
   const [showActions, setShowActions] = useState(false);
 
