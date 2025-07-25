@@ -8,10 +8,13 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvBadgeProps } from "../Badge";
 import type { HvSectionProps } from "../Section";
 
-type CSSClasses<Props extends Record<string, any>> = Omit<Props, "classes"> & {
-  classes?: Record<string, CSSObject>;
+type CSSClasses<Props> = Omit<Props, "classes"> & {
+  classes?: Props extends { classes?: Record<string, any> }
+    ? { [K in keyof NonNullable<Props["classes"]>]: CSSObject }
+    : never;
 };
 
 /** light-dark alias */
@@ -50,19 +53,19 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     },
     HvBadge: {
       classes: {
-        badgePosition: {
+        badge: {
           color: ld(theme.colors.textLight, theme.colors.textDark),
-          "&[data-color='textSubtle']:not(.HvBadge-badgePosition:empty)": {
+          "&[data-color='textSubtle']:not(:empty)": {
             color: theme.colors.textSubtle,
             backgroundColor: theme.colors.bgPageSecondary,
           },
-          "&[data-color='primary']:not(.HvBadge-badgePosition:empty)": {
+          "&[data-color='primary']:not(:empty)": {
             color: theme.colors.primary,
             backgroundColor: theme.colors.primaryDimmed,
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvBadgeProps>,
     HvCallout: {
       classes: {
         root: { outline: "1px solid var(--icolor, currentcolor)" },
