@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 
 const STORAGE_KEY = "sb-uikit-stories-theme";
-const DEFAULT_THEME = "pentahoPlus";
+const DEFAULT_THEME = "pentaho";
 
 export interface Theme {
   label: string;

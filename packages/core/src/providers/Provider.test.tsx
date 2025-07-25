@@ -2,7 +2,7 @@ import { queryHelpers, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { useTheme } from "@hitachivantara/uikit-react-utils";
-import { ds5, pentahoPlus } from "@hitachivantara/uikit-styles";
+import { ds5, pentaho } from "@hitachivantara/uikit-styles";
 
 import { createTheme } from "../utils/theme";
 import { HvProvider } from "./Provider";
@@ -147,7 +147,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds5, pentahoPlus, customThemeInherit]}
+          themes={[ds5, pentaho, customThemeInherit]}
         >
           <p>Theme provider test</p>
         </HvProvider>
@@ -171,7 +171,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          themes={[ds5, pentahoPlus, customThemeNoInherit]}
+          themes={[ds5, pentaho, customThemeNoInherit]}
           theme="custom-theme"
           colorMode="purple"
         >
