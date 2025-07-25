@@ -1,5 +1,5 @@
 import { isValidElement } from "react";
-import { Edge } from "reactflow";
+import { Edge } from "@xyflow/react";
 import { HvActionGeneric } from "@hitachivantara/uikit-react-core";
 
 import {

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ReactFlowInstance } from "reactflow";
+import { ReactFlowInstance, Node as RFNode } from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -81,7 +81,7 @@ const Page = () => {
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [flowInstance, setFlowInstance] =
-    useState<ReactFlowInstance<NodeData>>();
+    useState<ReactFlowInstance<RFNode<NodeData>>>();
 
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();

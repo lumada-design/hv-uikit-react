@@ -1,4 +1,4 @@
-import { Handle, NodeProps, NodeToolbar, Position } from "reactflow";
+import { Handle, Node, NodeProps, NodeToolbar, Position } from "@xyflow/react";
 import {
   ExtractNames,
   HvBaseProps,
@@ -34,10 +34,11 @@ export const DEFAULT_LABELS = {
   duplicateActionLabel: "Duplicate",
 };
 
-export interface HvFlowBaseNodeProps<T = any>
-  extends Omit<HvBaseProps, "id" | "color">,
+export interface HvFlowBaseNodeProps<
+  T extends Record<string, unknown> = Record<string, unknown>,
+> extends Omit<HvBaseProps, "id" | "color" | "draggable">,
     Omit<HvUseNodeParams, "id">,
-    NodeProps<T> {
+    NodeProps<Node<T>> {
   /** Header items */
   headerItems?: React.ReactNode;
   /** The content of the node footer */
@@ -62,7 +63,7 @@ export const HvFlowBaseNode = ({
   labels: labelsProp,
   className,
   children,
-}: HvFlowBaseNodeProps<unknown>) => {
+}: HvFlowBaseNodeProps) => {
   const {
     toggleShowActions,
     getNodeToolbarProps,

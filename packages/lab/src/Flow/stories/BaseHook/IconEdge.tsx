@@ -3,7 +3,7 @@ import {
   EdgeLabelRenderer,
   EdgeProps,
   getBezierPath,
-} from "reactflow";
+} from "@xyflow/react";
 import { Level0Good } from "@hitachivantara/uikit-react-icons";
 
 export const CustomEdge = (props: EdgeProps) => {

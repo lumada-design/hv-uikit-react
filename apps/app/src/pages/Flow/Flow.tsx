@@ -69,7 +69,7 @@ const Content = () => {
                 ...vizNode,
                 data: {
                   ...vizNode.data,
-                  endpoint: datasetNode?.data.endpoint,
+                  endpoint: datasetNode?.data.endpoint as string,
                 },
               });
             }

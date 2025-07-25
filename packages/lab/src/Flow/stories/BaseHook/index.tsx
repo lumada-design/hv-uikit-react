@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { restrictToWindowEdges } from "@dnd-kit/modifiers";
 import { css } from "@emotion/css";
-import { NodeProps } from "reactflow";
+import { NodeProps } from "@xyflow/react";
 import {
   HvButton,
   HvGlobalActions,
@@ -37,7 +37,6 @@ const initialState = {
   nodes: [
     {
       width: 250,
-      height: 365,
       id: "1caf2381eaf",
       position: { x: 194, y: -160 },
       data: { nodeLabel: "Custom Label" },
@@ -45,7 +44,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "caf2381eaf3",
       position: { x: 637, y: -367 },
       data: { nodeLabel: "Custom Label" },
