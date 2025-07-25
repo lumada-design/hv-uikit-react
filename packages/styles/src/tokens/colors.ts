@@ -10,7 +10,7 @@ type SemanticTypes =
   | "negative"
   | "info";
 
-type SemanticKeys<Prefix extends string> =
+type SemanticKey<Prefix extends string> =
   | `${Prefix}`
   | `${Prefix}Strong`
   | `${Prefix}Dimmed`
@@ -18,8 +18,10 @@ type SemanticKeys<Prefix extends string> =
   | `${Prefix}Deep`;
 // 🔎: border tokens don't exist for "primary"
 
+// type VizKey = `viz${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`;
+
 export interface ColorTokens
-  extends Record<SemanticKeys<SemanticTypes>, string> {
+  extends Record<SemanticKey<SemanticTypes>, string> {
   // #region semantic
   // 🔎: border tokens don't exist for "primary"
   accentBorder: string;
@@ -77,6 +79,19 @@ const base = {
 };
 
 const categorical = {
+  viz1: "#95AFE8",
+  viz2: "#E89E5D",
+  viz3: "#73BAA5",
+  viz4: "#6F749F",
+  viz5: "#D17A7C",
+  viz6: "#FFDA8A",
+  viz7: "#7DC1DB",
+  viz8: "#B67EA3",
+  viz9: "#F2BC66",
+  viz10: "#2D86B3",
+  viz11: "#FC9AAA",
+  viz12: "#8EBA8C",
+
   cat1_180: "#2D4B87",
   cat1_160: "#4767A7",
   cat1_140: "#5C7CBB",
