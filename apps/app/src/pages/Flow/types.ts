@@ -20,7 +20,7 @@ export interface DashboardSpecs
 export type DashboardsStorage = Record<string, DashboardSpecs | undefined>;
 // ### Local storage ###
 
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   endpoint?: string;
   columns?: string[];
   title?: string;

@@ -22,7 +22,7 @@ export const ThemeSwitcher = () => {
   const pathname = usePathname();
   const [docsTheme, setDocsTheme] = useDocsTheme();
 
-  if (!allowedPaths.some((path) => pathname.startsWith(path))) {
+  if (!allowedPaths.some((path) => pathname?.startsWith(path))) {
     return null;
   }
 

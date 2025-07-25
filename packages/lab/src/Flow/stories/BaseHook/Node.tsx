@@ -4,7 +4,7 @@ import {
   NodeToolbar,
   Position,
   NodeProps as ReactFlowNodeProps,
-} from "reactflow";
+} from "@xyflow/react";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 import { Level0Good } from "@hitachivantara/uikit-react-icons";
 import {
@@ -38,8 +38,8 @@ const classes = {
   }),
   cornerIcon: css({
     position: "absolute",
-    top: -8,
-    right: -8,
+    top: -14,
+    right: -14,
   }),
   contentIcon: css({
     width: 48,
