@@ -87,7 +87,7 @@ export const HvCodeEditor = ({
 
     colorModes.forEach((mode) => {
       monacoInstance?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
-        base: colors?.type === "light" ? "vs" : "vs-dark",
+        base: selectedMode === "light" ? "vs" : "vs-dark",
         inherit: true,
         rules: [],
         colors: {
@@ -100,7 +100,7 @@ export const HvCodeEditor = ({
     monacoInstance,
     colorModes,
     selectedTheme,
-    colors?.type,
+    selectedMode,
     colors?.bgContainer,
     colors?.textDisabled,
   ]);

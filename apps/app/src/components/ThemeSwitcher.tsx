@@ -1,28 +1,30 @@
-import { HvDropdown, useTheme } from "@hitachivantara/uikit-react-core";
+import { HvSelect, useTheme } from "@hitachivantara/uikit-react-core";
 
 export const ThemeSwitcher = () => {
-  const { selectedTheme, selectedMode, colorModes, themes, changeTheme } =
-    useTheme();
+  const {
+    selectedTheme,
+    selectedMode,
+    colorModes,
+    themes,
+    changeTheme,
+    changeMode,
+  } = useTheme();
 
   return (
     <div className="flex gap-sm">
-      <HvDropdown
+      <HvSelect
         className="w-150px"
-        values={themes.map((name) => ({
-          value: name,
-          label: name,
-          selected: name === selectedTheme,
-        }))}
-        onChange={(theme) => changeTheme(theme?.value, selectedMode)}
+        value={selectedTheme}
+        options={themes.map((name) => ({ value: name, label: name }))}
+        onChange={(evt, value) => changeTheme(value!)}
       />
-      <HvDropdown
+      <HvSelect
         className="w-150px"
-        values={colorModes.map((name) => ({
-          value: name,
-          label: name,
-          selected: name === selectedMode,
-        }))}
-        onChange={(mode) => changeTheme(selectedTheme, mode?.value)}
+        value={selectedMode}
+        options={colorModes.map((name) => ({ value: name, label: name }))}
+        onChange={(evt, value) =>
+          changeMode(value === "dark" ? "dark" : "light")
+        }
       />
     </div>
   );

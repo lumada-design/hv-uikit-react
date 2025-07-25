@@ -34,7 +34,7 @@ export const useColorScale = ({
         >((acc, curr) => {
           acc.push({
             ...curr,
-            color: colors?.[curr.color] || curr.color,
+            color: colors?.[curr.color as keyof typeof colors] || curr.color,
           });
           return acc;
         }, []),
@@ -52,7 +52,7 @@ export const useColorScale = ({
     const min = Math.min(...flatData);
 
     const parsedColors = custom?.map((c) =>
-      typeof c === "string" ? colors?.[c] || c : c.color,
+      typeof c === "string" ? colors?.[c as keyof typeof colors] || c : c.color,
     );
 
     return {
@@ -104,7 +104,9 @@ export const useSeries = ({
           show: true,
           ...valuesProps,
           ...(valuesProps?.color && {
-            color: colors?.[valuesProps.color] || valuesProps.color,
+            color:
+              colors?.[valuesProps.color as keyof typeof colors] ||
+              valuesProps.color,
           }),
         },
         emphasis: {

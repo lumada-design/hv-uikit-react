@@ -1,4 +1,4 @@
-import { HvTheme } from "@hitachivantara/uikit-react-core";
+import { HvThemeColors } from "@hitachivantara/uikit-styles";
 
 export const groupsToShow = [
   "acce",
@@ -39,7 +39,7 @@ const semanticColors = [
 
 export const getColors = (
   type: (typeof groupsToShow)[number],
-  colors?: HvTheme["colors"]["modes"][number],
+  colors?: HvThemeColors,
 ) => {
   const res: Record<string, string> = {};
   for (const key in colors) {
@@ -48,7 +48,7 @@ export const getColors = (
       (type === "acce" && accentColors.includes(key)) ||
       (type === "sema" && semanticColors.includes(key))
     ) {
-      res[key] = colors[key];
+      res[key] = colors[key as keyof typeof colors];
     }
   }
   return res;
