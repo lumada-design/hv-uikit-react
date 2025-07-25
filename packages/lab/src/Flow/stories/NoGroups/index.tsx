@@ -12,6 +12,7 @@ import { Add, Backwards } from "@hitachivantara/uikit-react-icons";
 import {
   HvFlow,
   HvFlowControls,
+  HvFlowNodeTypes,
   HvFlowProps,
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
@@ -73,7 +74,7 @@ const nodeTypes = {
   asset: Asset,
   model: MLModel,
   lineChart: LineChart,
-} satisfies HvFlowProps["nodeTypes"];
+} satisfies HvFlowNodeTypes;
 
 export const NoGroups = () => {
   const { rootId } = useTheme();

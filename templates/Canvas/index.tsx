@@ -1,5 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
-import { applyNodeChanges, ReactFlowInstance } from "reactflow";
+import {
+  applyNodeChanges,
+  ReactFlowInstance,
+  Node as RFNode,
+} from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -86,7 +90,7 @@ const Page = () => {
   const [fullscreen, setFullscreen] = useState(false);
   const [nodesHidden, setNodesHidden] = useState(false);
   const [flowInstance, setFlowInstance] =
-    useState<ReactFlowInstance<NodeData | StickyNodeData>>();
+    useState<ReactFlowInstance<RFNode<NodeData | StickyNodeData>>>();
   const [nodes, setNodes] = useState(initialNodes);
 
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =

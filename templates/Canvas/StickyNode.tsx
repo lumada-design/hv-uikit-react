@@ -7,7 +7,7 @@ import {
   NodeToolbar,
   Position,
   useReactFlow,
-} from "reactflow";
+} from "@xyflow/react";
 import {
   HvButton,
   HvCheckBox,
@@ -31,23 +31,21 @@ import {
   Palette,
 } from "@hitachivantara/uikit-react-icons";
 
-export type StickyNodeData =
-  | undefined
-  | {
-      title?: string;
-      backgroundColor?: HvColorAny;
-      borderColor?: HvColorAny;
-      textColor?: HvColorAny;
-      hasShadow?: boolean;
-      bold?: boolean;
-      italic?: boolean;
-      fontSize?: number;
-      expanded?: boolean;
-      visible?: boolean;
-      onDelete?: () => void;
-    };
+export type StickyNodeData = {
+  title?: string;
+  backgroundColor?: HvColorAny;
+  borderColor?: HvColorAny;
+  textColor?: HvColorAny;
+  hasShadow?: boolean;
+  bold?: boolean;
+  italic?: boolean;
+  fontSize?: number;
+  expanded?: boolean;
+  visible?: boolean;
+  onDelete?: () => void;
+};
 
-const defaultData: StickyNodeData = {
+const defaultData: Required<StickyNodeData> = {
   title: "Sticky Note",
   backgroundColor: theme.colors.warningSubtle,
   borderColor: theme.colors.warningSubtle,
@@ -58,6 +56,7 @@ const defaultData: StickyNodeData = {
   fontSize: 14,
   expanded: true,
   visible: true,
+  onDelete: () => {},
 };
 
 const classes = {
@@ -126,11 +125,7 @@ const classes = {
 const colorsToConfig = ["textColor", "backgroundColor", "borderColor"];
 const fontSizes = [10, 11, 12, 14, 16, 20, 24, 32, 36, 40, 48, 64, 96, 128];
 
-export const StickyNode = ({
-  id,
-  selected,
-  data = {},
-}: NodeProps<StickyNodeData>) => {
+export const StickyNode = ({ id, selected, data = {} }: NodeProps) => {
   const mergedData = useMemo(() => ({ ...defaultData, ...data }), [data]);
 
   const [text, setText] = useState("");
@@ -257,7 +252,7 @@ export const StickyNode = ({
               <HvColorPicker
                 key={c}
                 label={`${c.charAt(0).toUpperCase() + c.slice(1).replace("Color", " Color")}`}
-                value={mergedData[c as keyof StickyNodeData] ?? ""}
+                value={String(mergedData[c as keyof StickyNodeData] ?? "")}
                 onChange={(color) => {
                   setNodes((nds) =>
                     nds.map((node) => {
