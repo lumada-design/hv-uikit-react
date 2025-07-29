@@ -24,7 +24,7 @@ export const router = createBrowserRouter(routes, {
 
 export default function App() {
   return (
-    <HvProvider rootElementId="hv-root">
+    <HvProvider>
       <RouterProvider router={router} />
     </HvProvider>
   );

@@ -14,7 +14,6 @@ import {
 import { HvListItem } from "../../ListContainer";
 import { HvSelectionList } from "../../SelectionList";
 import { HvBaseProps } from "../../types/generic";
-import { getContainerElement } from "../../utils/document";
 import { setId } from "../../utils/setId";
 import { HvFormElementContext } from "../context";
 import { staticClasses, useClasses } from "./Suggestions.styles";
@@ -73,8 +72,7 @@ export const HvSuggestions = forwardRef<
   } = useDefaultProps("HvSuggestions", props);
 
   const { classes, cx } = useClasses(classesProp);
-
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const context = useContext(HvFormElementContext);
   const id = idProp ?? setId(context.id, "suggestions");
@@ -99,7 +97,7 @@ export const HvSuggestions = forwardRef<
           }}
           open={openProp}
           disablePortal={!enablePortal}
-          container={enablePortal ? getContainerElement(rootId) : undefined}
+          container={enablePortal ? rootElement : undefined}
           anchorEl={anchorEl}
           className={cx(classes.popper, {
             [classes.portal]: enablePortal,

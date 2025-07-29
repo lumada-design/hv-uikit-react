@@ -151,14 +151,14 @@ export type NodeType = keyof typeof nodeTypes;
 
 // Fixes a problem we have while dragging node types from the sidebar to the flow in storybook docs mode
 type RestrictToSampleModifier = Modifier extends (...args: infer A) => infer R
-  ? (rootId: string, ...args: A) => R
+  ? (rootElement?: HTMLElement, ...args: A) => R
   : unknown;
 
 export const restrictToSample: RestrictToSampleModifier = (
-  rootId,
+  rootElement,
   { transform },
 ) => {
-  const rect = document.getElementById(rootId)?.getBoundingClientRect();
+  const rect = rootElement?.getBoundingClientRect();
 
   const docsMode = window.location.search.includes("?viewMode=docs");
 

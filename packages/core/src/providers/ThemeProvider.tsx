@@ -27,7 +27,7 @@ interface HvThemeProviderProps {
   theme: string;
   emotionCache: EmotionCache;
   colorMode: string;
-  themeRootId?: string;
+  rootElement?: HTMLElement;
 }
 
 export const HvThemeProvider = ({
@@ -36,7 +36,7 @@ export const HvThemeProvider = ({
   theme: themeProp,
   emotionCache,
   colorMode: colorModeProp,
-  themeRootId: rootId,
+  rootElement,
 }: HvThemeProviderProps) => {
   const [theme, setTheme] = useState(themeProp);
   const [colorMode, setColorMode] = useState(colorModeProp);
@@ -58,8 +58,9 @@ export const HvThemeProvider = ({
   }, [colorModeProp, themeProp]);
 
   useEffect(() => {
-    setElementAttrs(selectedTheme, selectedMode, colorScheme, rootId);
-  }, [colorScheme, rootId, selectedMode, selectedTheme]);
+    if (!rootElement) return;
+    setElementAttrs(rootElement, selectedTheme, selectedMode, colorScheme);
+  }, [colorScheme, rootElement, selectedMode, selectedTheme]);
 
   const changeTheme = useCallback(
     (newTheme = selectedTheme, newMode = selectedMode) => {
@@ -77,7 +78,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
-      rootId,
+      rootElement,
     }),
     [
       themes,
@@ -86,7 +87,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
-      rootId,
+      rootElement,
     ],
   );
 

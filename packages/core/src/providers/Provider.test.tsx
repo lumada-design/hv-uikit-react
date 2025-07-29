@@ -1,4 +1,4 @@
-import { queryHelpers, render } from "@testing-library/react";
+import { queryHelpers, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { useTheme } from "@hitachivantara/uikit-react-utils";
@@ -40,11 +40,9 @@ const customThemeNoInherit = createTheme({
 describe("Provider", () => {
   it("should have the correct theme and color mode selected if no properties are provided", () => {
     const { container } = render(
-      <div id="hv-root">
-        <HvProvider cssTheme="scoped" rootElementId="hv-root">
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
+      <HvProvider cssTheme="scoped">
+        <p>Theme provider test</p>
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
@@ -60,15 +58,9 @@ describe("Provider", () => {
 
   it("should have the correct theme and color mode selected if only the colorMode property is provided", () => {
     const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          colorMode="wicked"
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
+      <HvProvider cssTheme="scoped" colorMode="wicked">
+        <p>Theme provider test</p>
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
@@ -84,16 +76,13 @@ describe("Provider", () => {
 
   it("should have the correct theme and color mode selected if the themes and theme properties are provided", () => {
     const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          themes={[ds5, customThemeInherit]}
-          theme="custom-theme"
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
+      <HvProvider
+        cssTheme="scoped"
+        themes={[ds5, customThemeInherit]}
+        theme="custom-theme"
+      >
+        <p>Theme provider test</p>
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute(
@@ -113,17 +102,14 @@ describe("Provider", () => {
 
   it("should have the correct theme and color mode selected if themes, theme and colorMode are provided", () => {
     const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          themes={[ds5, customThemeNoInherit]}
-          theme="custom-theme"
-          colorMode="purple"
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
+      <HvProvider
+        cssTheme="scoped"
+        themes={[ds5, customThemeNoInherit]}
+        theme="custom-theme"
+        colorMode="purple"
+      >
+        <p>Theme provider test</p>
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute(
@@ -143,15 +129,9 @@ describe("Provider", () => {
 
   it("should have the correct theme and color mode selected if only themes is provided", () => {
     const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          themes={[ds5, pentaho, customThemeInherit]}
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
+      <HvProvider cssTheme="scoped" themes={[ds5, pentaho, customThemeInherit]}>
+        <p>Theme provider test</p>
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute("data-theme", container, "ds5");
@@ -166,18 +146,15 @@ describe("Provider", () => {
   });
 
   it("should update the theme and color mode correctly", async () => {
-    const { container, getByRole } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          themes={[ds5, pentaho, customThemeNoInherit]}
-          theme="custom-theme"
-          colorMode="purple"
-        >
-          <Main />
-        </HvProvider>
-      </div>,
+    const { container } = render(
+      <HvProvider
+        cssTheme="scoped"
+        themes={[ds5, pentaho, customThemeNoInherit]}
+        theme="custom-theme"
+        colorMode="purple"
+      >
+        <Main />
+      </HvProvider>,
     );
 
     const theme = queryHelpers.queryByAttribute(
@@ -194,9 +171,7 @@ describe("Provider", () => {
     expect(theme).toBeInTheDocument();
     expect(mode).toBeInTheDocument();
 
-    const button = getByRole("button");
-
-    await userEvent.click(button);
+    await userEvent.click(screen.getByRole("button"));
 
     const updatedTheme = queryHelpers.queryByAttribute(
       "data-theme",

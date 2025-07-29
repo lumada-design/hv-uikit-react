@@ -82,7 +82,7 @@ const classes = {
 type Node = ReturnType<HvFlowInstance["getNode"]>;
 
 export const CustomDrop = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
 
@@ -153,7 +153,7 @@ export const CustomDrop = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

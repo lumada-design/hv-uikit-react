@@ -7,7 +7,6 @@ import type { HvBaseTheme } from "@hitachivantara/uikit-styles";
 
 import { themes } from "../themes";
 import type { HvExtraDeepPartialProps } from "../types/generic";
-import { getContainerElement } from "./document";
 
 /**
  * Create theme props
@@ -50,21 +49,17 @@ export type HvThemeCustomizationProps = HvExtraDeepPartialProps<
  * Sets the element attributes and style for a theme and color mode.
  */
 export const setElementAttrs = (
+  element: HTMLElement,
   themeName: string,
   modeName: string,
   colorScheme: string,
-  themeRootId?: string,
 ) => {
-  const element = getContainerElement(themeRootId);
+  element.setAttribute(`data-theme`, themeName);
+  element.setAttribute(`data-color-mode`, modeName);
 
-  if (element) {
-    element.setAttribute(`data-theme`, themeName);
-    element.setAttribute(`data-color-mode`, modeName);
-
-    // set default styles for child components to inherit
-    element.classList.add(`uikit-root-element`);
-    element.style.colorScheme = colorScheme;
-  }
+  // set default styles for child components to inherit
+  element.classList.add(`uikit-root-element`);
+  element.style.colorScheme = colorScheme;
 };
 
 /**
