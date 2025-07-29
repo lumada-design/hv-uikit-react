@@ -26,7 +26,7 @@ interface HvThemeProviderProps {
   themes: (HvTheme | HvThemeStructure)[];
   theme: string;
   emotionCache: EmotionCache;
-  colorMode: string;
+  defaultColorMode: string;
   rootElement?: HTMLElement;
 }
 
@@ -35,11 +35,11 @@ export const HvThemeProvider = ({
   themes: themesList,
   theme: themeProp,
   emotionCache,
-  colorMode: colorModeProp,
+  defaultColorMode,
   rootElement,
 }: HvThemeProviderProps) => {
   const [theme, setTheme] = useState(themeProp);
-  const [colorMode, setColorMode] = useState(colorModeProp);
+  const [colorMode, setColorMode] = useState(defaultColorMode);
 
   const {
     theme: activeTheme,
@@ -50,12 +50,6 @@ export const HvThemeProvider = ({
   } = parseTheme(themesList, theme, colorMode);
 
   const themes = themesList.map((t) => t.name);
-
-  // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
-  useEffect(() => {
-    setTheme(themeProp);
-    setColorMode(colorModeProp);
-  }, [colorModeProp, themeProp]);
 
   useEffect(() => {
     if (!rootElement) return;
