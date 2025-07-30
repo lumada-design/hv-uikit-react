@@ -43,7 +43,7 @@ jobs:
 
       - name: Build App
         if: ${{ env.PUBLISH_APP == 'true' }}
-        run: npm run build:app -- --base=/uikit-app/${{ env.PUBLISH_FOLDER }}/
+        run: npm run build -w apps/app -- --base=/uikit-app/${{ env.PUBLISH_FOLDER }}/
 
       - name: Archive App
         if: ${{ env.PUBLISH_APP == 'true' }}
