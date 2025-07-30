@@ -24,12 +24,13 @@ export default meta;
 
 export const Main: StoryObj<HvSwitchProps> = {
   args: {
+    size: "small",
     value: "on",
     label: "Main Switch",
     required: false,
     readOnly: false,
     disabled: false,
-    checked: undefined,
+    checked: false,
     defaultChecked: false,
   },
   argTypes: {
