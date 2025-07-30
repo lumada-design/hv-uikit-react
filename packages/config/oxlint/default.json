@@ -29,6 +29,7 @@
     "oxc/no-rest-spread-properties": "off",
     "react/jsx-filename-extension": "off",
     "typescript/explicit-function-return-type": "off",
+    "typescript/explicit-module-boundary-types": "off",
     "typescript/no-dynamic-delete": "off",
     "typescript/no-empty-object-type": "off",
     "typescript/no-explicit-any": "off",
