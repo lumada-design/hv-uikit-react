@@ -90,7 +90,7 @@ export type HvThemeBreakpoint = Exclude<keyof typeof space, "base">;
 
 export type SpacingValue = number | HvThemeBreakpoint | (string & {});
 
-export type HvBaseTheme = "ds5" | "pentahoPlus";
+export type HvBaseTheme = "ds5" | "pentaho";
 
 // Theme color modes
 export type HvThemeColorMode = "dawn" | "wicked";

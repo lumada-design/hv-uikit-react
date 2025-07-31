@@ -2,10 +2,10 @@
 
 export const allModes = {
   "Pentaho dawn": {
-    theme: "pentahoPlus dawn",
+    theme: "pentaho dawn",
   },
   "Pentaho wicked": {
-    theme: "pentahoPlus wicked",
+    theme: "pentaho wicked",
   },
   "DS5 dawn": {
     theme: "ds5 dawn",
