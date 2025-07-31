@@ -434,13 +434,6 @@ type AllColors = typeof colors.common & typeof colors.light;
 /** @experimental extendable theme colors */
 export interface HvThemeColors extends ColorTokens, AllColors {}
 
-// TODO: remove in favour of `HvColor`/`HvColorAny`
-export type HvAccentColor = keyof typeof accentLight;
-export type HvAtmosphereColor = keyof typeof atmosphereLight;
-export type HvBaseColor = keyof typeof base;
-export type HvSemanticColor = keyof typeof semanticLight;
-export type HvCategoricalColor = keyof typeof categorical;
-
 /** A type with all the accepted colors from the color palette */
 export type HvColor = keyof HvThemeColors;
 
