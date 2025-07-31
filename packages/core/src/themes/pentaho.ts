@@ -3,7 +3,7 @@ import {
   blue,
   mergeTheme,
   neutral,
-  pentahoPlus as pentahoPlusBase,
+  pentaho as pentahoBase,
   slate,
   theme,
 } from "@hitachivantara/uikit-styles";
@@ -42,7 +42,7 @@ const popperStyles = {
   boxShadow: `0px 0px 6px 0px rgba(65, 65, 65, 0.08)`,
 };
 
-export const pentahoPlus = mergeTheme(pentahoPlusBase, {
+export const pentaho = mergeTheme(pentahoBase, {
   components: {
     HvLoading: {
       classes: {
