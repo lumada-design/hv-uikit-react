@@ -17,8 +17,8 @@ export default {
     name: "PENTAHO",
   },
   theming: {
-    themes: ["ds5", "pentahoPlus"],
-    theme: "pentahoPlus",
+    themes: ["ds5", "pentaho"],
+    theme: "pentaho",
     colorMode: "dawn",
   },
   menu: [

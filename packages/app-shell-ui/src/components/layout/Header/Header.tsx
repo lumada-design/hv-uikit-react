@@ -60,7 +60,7 @@ const Header = () => {
     }
   };
 
-  const isPentahoTheme = activeTheme?.name === "pentahoPlus";
+  const isPentahoTheme = activeTheme?.name === "pentaho";
   const shouldShrinkHeader = isPentahoTheme && verticalNavigationWidth > 0;
   const name = appShellConfig.name ? tConfig(appShellConfig.name) : "";
 
