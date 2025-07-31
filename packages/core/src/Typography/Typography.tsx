@@ -18,6 +18,9 @@ import {
 
 export { staticClasses as typographyClasses };
 
+/** extend this interface with your custom typography variants */
+export interface HvCustomTypographyVariants {}
+
 export type HvTypographyClasses = ExtractNames<typeof useClasses>;
 
 const HvTypographyMap = {
@@ -62,7 +65,11 @@ export type HvTypographyProps<C extends React.ElementType = "p"> =
     C,
     {
       /** Use the variant prop to change the visual style of the Typography. */
-      variant?: HvTypographyVariants | HvTypographyLegacyVariants;
+      variant?:
+        | HvTypographyVariants
+        | HvTypographyLegacyVariants
+        | keyof HvCustomTypographyVariants
+        | (string & {});
       /** If `true` the typography will display the look of a link. */
       link?: boolean;
       /** If `true` the typography will display the look of a disabled state. */
@@ -95,10 +102,10 @@ export const HvTypography = fixedForwardRef(function HvTypography<
     component: ComponentProp,
     classes: classesProp,
     variant: variantProp = "body",
-    link = false,
-    noWrap = false,
-    paragraph = false,
-    disabled = false,
+    link,
+    noWrap,
+    paragraph,
+    disabled,
     ...others
   } = useDefaultProps("HvTypography", props);
   const { classes, css, cx } = useClasses(classesProp);
