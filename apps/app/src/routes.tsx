@@ -1,6 +1,5 @@
 import { Navigate, type RouteObject } from "react-router";
 
-/* eslint-disable import/no-relative-packages */
 const templates: RouteObject[] = [
   { index: true, element: <Navigate to="welcome" replace /> },
   { path: "assets", lazy: () => import("@hv/templates/AssetInventory") },
@@ -17,9 +16,8 @@ export const routes: RouteObject[] = [
   {
     lazy: () => import("./pages/layout/navigation"),
     children: [
-      { path: "/", lazy: () => import("./pages/Instructions") },
+      { path: "/", lazy: () => import("./pages/Components") },
       { path: "/debug", lazy: () => import("./pages/Debug") },
-      { path: "/components", lazy: () => import("./pages/Components") },
       { path: "/flow", lazy: () => import("./pages/Flow") },
       { path: "/templates", children: templates },
       { path: "*", lazy: () => import("./pages/NotFound") },

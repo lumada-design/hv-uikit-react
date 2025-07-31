@@ -9,12 +9,7 @@ const router = createBrowserRouter(routes, {
 
 const App = () => {
   return (
-    <HvProvider
-      themes={[ds5, pentahoPlus]}
-      theme="pentahoPlus"
-      rootElementId="hv-root"
-      cssTheme="scoped"
-    >
+    <HvProvider themes={[ds5, pentahoPlus]} theme="pentahoPlus">
       <RouterProvider router={router} />
     </HvProvider>
   );

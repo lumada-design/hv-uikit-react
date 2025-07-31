@@ -1,6 +1,5 @@
 export const navigationData = [
-  { id: "home", label: "Home", path: "/" },
-  { id: "components", label: "Components", path: "/components" },
+  { id: "components", label: "Components", path: "/" },
   {
     id: "templates",
     label: "Templates",
