@@ -27,7 +27,7 @@ export const { staticClasses, useClasses } = createClasses(name, {
     fontSize: 4,
     color: theme.colors.textDisabled,
   },
-  // TODO: remove in v6 (use classes.button)
+  /** @deprecated: use classes.button instead */
   text: {},
   button: {
     display: "flex",

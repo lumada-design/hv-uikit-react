@@ -8,29 +8,28 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     alignItems: "center",
     justifyContent: "center",
     gap: theme.space.xs,
+
+    "&[data-size=small]": {
+      "--bar-size": "2px",
+      "--size": "18px",
+      "--height": "40%",
+    },
   },
   barContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
 
-    ":has($regular)": {
-      width: 30,
-      height: 30,
-    },
-
-    ":has($small)": {
-      "--height": "40%",
-      width: 18,
-      height: 18,
-    },
+    width: "var(--size, 30px)",
+    height: "var(--size, 30px)",
   },
   loadingBar: {
     backgroundColor: "currentcolor",
     display: "inline-block",
     animation: "loading 1s ease-in-out infinite",
     // TODO: make this the default when it has better support
-    width: "round(up, 0.11em, 2px)",
+    // width: "round(up, 0.11em, 2px)",
+    width: "var(--bar-size, 4px)",
     height: "100%",
 
     "@keyframes loading": {
@@ -49,12 +48,12 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
   overlay: {},
   blur: {},
   hidden: { display: "none" },
-  small: {
-    width: 2,
-  },
-  regular: {
-    width: 4,
-  },
+  /** @deprecated use data-size=small instead */
+  small: {},
+  /** @deprecated use data-size=regular instead */
+  regular: {},
+  /** @deprecated leverage data-size=small instead */
   smallColor: {},
+  /** @deprecated leverage data-size=regular instead */
   regularColor: {},
 });
