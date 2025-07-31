@@ -6,7 +6,7 @@ export type { HvAppShellServicesConfig };
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
 
 export type HvAppShellLogo = {
-  name?: "LUMADA" | "HITACHI" | "PENTAHO+" | "PENTAHO";
+  name?: "LUMADA" | "HITACHI" | "PENTAHO";
   description?: string;
 };
 

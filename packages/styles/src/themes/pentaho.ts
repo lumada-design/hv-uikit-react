@@ -20,8 +20,8 @@ import {
   yellow,
 } from "../palette";
 
-const pentahoPlus = makeTheme((theme) => ({
-  name: "pentahoPlus",
+const pentaho = makeTheme((theme) => ({
+  name: "pentaho",
   colors: makeColors({
     brand: blue[600],
     catastrophic: [rose[800], pink[600]],
@@ -206,4 +206,4 @@ const pentahoPlus = makeTheme((theme) => ({
   },
 }));
 
-export default pentahoPlus;
+export default pentaho;
