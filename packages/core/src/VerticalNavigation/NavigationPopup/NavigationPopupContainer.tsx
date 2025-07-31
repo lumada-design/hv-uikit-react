@@ -3,7 +3,6 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../../types/generic";
-import { getContainerElement } from "../../utils/document";
 import { HvVerticalNavigation } from "../VerticalNavigation";
 import { staticClasses, useClasses } from "./NavigationPopup.styles";
 
@@ -26,8 +25,7 @@ export const NavigationPopupContainer = ({
   ...others
 }: NavigationPopupContainerProps) => {
   const { classes, cx } = useClasses(classesProp);
-
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const handleClickAway = () => onClose?.();
 
@@ -36,7 +34,7 @@ export const NavigationPopupContainer = ({
       open
       anchorEl={anchorEl}
       placement="right-start"
-      container={getContainerElement(rootId)}
+      container={rootElement}
       className={cx(classes.popper, classes.popup, className)}
       {...others}
     >

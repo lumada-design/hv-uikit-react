@@ -6,7 +6,6 @@ import { Portal } from "@mui/base/Portal";
 import { useCss, useTheme } from "@hitachivantara/uikit-react-utils";
 
 import { HvPanel } from "../Panel";
-import { getContainerElement } from "../utils/document";
 import type {
   HvBaseDropdownClasses,
   HvBaseDropdownProps,
@@ -36,7 +35,7 @@ export const BaseDropdownPanel = ({
   const { popperPlacement, popper, referenceElement, setPopperElement } =
     useBaseDropdownContext();
 
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const extensionWidth = referenceElement
     ? referenceElement?.offsetWidth
@@ -87,10 +86,7 @@ export const BaseDropdownPanel = ({
   );
 
   return (
-    <Portal
-      container={getContainerElement(rootId)}
-      disablePortal={disablePortal}
-    >
+    <Portal container={rootElement} disablePortal={disablePortal}>
       <ClickAwayListener onClickAway={onClickAway}>
         {container}
       </ClickAwayListener>

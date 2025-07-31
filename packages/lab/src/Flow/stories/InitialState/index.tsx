@@ -226,7 +226,7 @@ export const classes = {
 };
 
 const Flow = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [instance, setInstance] = useState<HvFlowInstance>();
   const [open, setOpen] = useState(false);
@@ -319,7 +319,7 @@ const Flow = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

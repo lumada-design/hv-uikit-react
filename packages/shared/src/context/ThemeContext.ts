@@ -9,7 +9,7 @@ export interface HvThemeContextValue {
   selectedTheme: string;
   selectedMode: string;
   changeTheme: (theme?: string, mode?: string) => void;
-  rootId?: string;
+  rootElement?: HTMLElement;
 }
 
 export const HvThemeContext = createContext<HvThemeContextValue>({
@@ -19,5 +19,5 @@ export const HvThemeContext = createContext<HvThemeContextValue>({
   selectedTheme: "",
   selectedMode: "",
   changeTheme: () => {},
-  rootId: undefined,
+  rootElement: undefined,
 });

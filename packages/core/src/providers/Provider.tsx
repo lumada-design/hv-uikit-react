@@ -1,4 +1,4 @@
-import { useId, useMemo } from "react";
+import { useMemo, useRef } from "react";
 import createCache, { EmotionCache } from "@emotion/cache";
 import {
   CacheProvider,
@@ -14,7 +14,6 @@ import {
   HvThemeStructure,
 } from "@hitachivantara/uikit-styles";
 
-import { getElementById } from "../utils/document";
 import { processThemes } from "../utils/theme";
 import {
   defaultCacheKey,
@@ -31,7 +30,7 @@ export interface HvProviderProps {
   /**
    * Id of your root element.
    */
-  rootElementId?: string;
+  rootElement?: HTMLElement | null;
   /**
    * By default the baseline styles are applied globally, `global`, to the application for the UI Kit components to work properly.
    * If you need to scope the baseline styles to avoid styling conflicts, you can set this property to `scoped`.
@@ -87,7 +86,7 @@ export interface HvProviderProps {
  */
 export const HvProvider = ({
   children,
-  rootElementId,
+  rootElement,
   cssBaseline = "global",
   cssTheme = "global",
   themes,
@@ -96,7 +95,7 @@ export const HvProvider = ({
   emotionCache: emotionCacheProp,
   classNameKey = defaultCacheKey,
 }: HvProviderProps) => {
-  const scopedRootId = useId();
+  const scopedEl = useRef<HTMLDivElement>(null);
 
   // Themes
   const themesList = processThemes(themes);
@@ -131,34 +130,32 @@ export const HvProvider = ({
         theme={theme || themesList[0].name}
         emotionCache={emotionCache}
         colorMode={colorMode || Object.keys(themesList[0].colors.modes)[0]}
-        themeRootId={
-          cssTheme === "scoped" ? rootElementId || scopedRootId : undefined
+        rootElement={
+          cssTheme === "scoped"
+            ? rootElement || scopedEl.current || undefined
+            : undefined
         }
       >
         <ClassNames>
           {({ css }) => {
-            if (cssBaseline === "scoped") {
-              const rootElement = getElementById(rootElementId);
-
-              if (rootElement) {
-                rootElement.classList.add(
-                  css({
-                    [`@layer ${rootElementId}-baseline`]: {
-                      ...CssScopedBaseline,
-                    },
-                  }),
-                );
-              }
+            if (cssBaseline === "scoped" && rootElement) {
+              rootElement.classList.add(
+                css({
+                  [`@layer uikit-baseline`]: {
+                    ...CssScopedBaseline,
+                  },
+                }),
+              );
             }
 
             return (cssTheme === "scoped" || cssBaseline === "scoped") &&
-              !rootElementId ? (
+              !rootElement ? (
               <div
-                id={scopedRootId}
+                ref={scopedEl}
                 className={
                   cssBaseline === "scoped"
                     ? css({
-                        [`@layer ${rootElementId}-baseline`]: {
+                        [`@layer uikit-baseline`]: {
                           ...CssScopedBaseline,
                         },
                       })

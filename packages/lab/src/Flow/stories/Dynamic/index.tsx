@@ -78,7 +78,7 @@ const nodeGroups = {
 } satisfies HvFlowProps["nodeGroups"];
 
 export const Dynamic = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
   const [open, setOpen] = useState(false);
 
   return (
@@ -122,7 +122,7 @@ export const Dynamic = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

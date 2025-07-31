@@ -8,7 +8,6 @@ import {
 
 import { HvIconButton } from "../IconButton";
 import { HvIcon } from "../icons";
-import { getElementById } from "../utils/document";
 import { DialogContext } from "./context";
 import { staticClasses, useClasses } from "./Dialog.styles";
 
@@ -70,13 +69,13 @@ export const HvDialog = forwardRef<
   } = useDefaultProps("HvDialog", props);
 
   const { classes, cx } = useClasses(classesProp);
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const contextValue = useMemo(() => ({ fullScreen }), [fullScreen]);
 
   return (
     <MuiDialog
-      container={getElementById(rootId)}
+      container={rootElement}
       className={className}
       classes={{
         root: classes.root,

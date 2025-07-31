@@ -27,7 +27,6 @@ import { HvLabelContainer } from "../FormElement/LabelContainer";
 import { useUniqueId } from "../hooks/useUniqueId";
 import { HvListContainer } from "../ListContainer";
 import { fixedForwardRef } from "../types/generic";
-import { getContainerElement } from "../utils/document";
 import { setId } from "../utils/setId";
 import { HvOption } from "./Option";
 import { staticClasses, useClasses } from "./Select.styles";
@@ -146,8 +145,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     ...others
   } = useDefaultProps("HvSelect", props);
   const { classes, cx } = useClasses(classesProp);
-
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [placement, setPlacement] = useState<Placement>("bottom-start");
 
@@ -276,7 +274,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         open={isOpen}
         keepMounted
         disablePortal={!enablePortal}
-        container={enablePortal ? getContainerElement(rootId) : undefined}
+        container={enablePortal ? rootElement : undefined}
         anchorEl={buttonRef.current}
         className={classes.popper}
         placement={placement}

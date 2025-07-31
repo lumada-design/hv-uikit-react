@@ -166,7 +166,7 @@ export const classes = {
 };
 
 export const Visualizations = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -212,7 +212,7 @@ export const Visualizations = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

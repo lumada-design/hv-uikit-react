@@ -26,8 +26,8 @@ interface HvThemeProviderProps {
   themes: (HvTheme | HvThemeStructure)[];
   theme: string;
   emotionCache: EmotionCache;
-  colorMode: string;
-  themeRootId?: string;
+  defaultColorMode: string;
+  rootElement?: HTMLElement;
 }
 
 export const HvThemeProvider = ({
@@ -35,11 +35,11 @@ export const HvThemeProvider = ({
   themes: themesList,
   theme: themeProp,
   emotionCache,
-  colorMode: colorModeProp,
-  themeRootId: rootId,
+  defaultColorMode,
+  rootElement,
 }: HvThemeProviderProps) => {
   const [theme, setTheme] = useState(themeProp);
-  const [colorMode, setColorMode] = useState(colorModeProp);
+  const [colorMode, setColorMode] = useState(defaultColorMode);
 
   const {
     theme: activeTheme,
@@ -51,15 +51,10 @@ export const HvThemeProvider = ({
 
   const themes = themesList.map((t) => t.name);
 
-  // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
   useEffect(() => {
-    setTheme(themeProp);
-    setColorMode(colorModeProp);
-  }, [colorModeProp, themeProp]);
-
-  useEffect(() => {
-    setElementAttrs(selectedTheme, selectedMode, colorScheme, rootId);
-  }, [colorScheme, rootId, selectedMode, selectedTheme]);
+    if (!rootElement) return;
+    setElementAttrs(rootElement, selectedTheme, selectedMode, colorScheme);
+  }, [colorScheme, rootElement, selectedMode, selectedTheme]);
 
   const changeTheme = useCallback(
     (newTheme = selectedTheme, newMode = selectedMode) => {
@@ -77,7 +72,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
-      rootId,
+      rootElement,
     }),
     [
       themes,
@@ -86,7 +81,7 @@ export const HvThemeProvider = ({
       selectedTheme,
       selectedMode,
       changeTheme,
-      rootId,
+      rootElement,
     ],
   );
 

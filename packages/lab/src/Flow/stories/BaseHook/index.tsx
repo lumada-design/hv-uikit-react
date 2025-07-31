@@ -124,7 +124,7 @@ export const classes = {
 };
 
 export const BaseHook = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -166,7 +166,7 @@ export const BaseHook = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

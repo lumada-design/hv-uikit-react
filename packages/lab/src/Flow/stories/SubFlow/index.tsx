@@ -210,7 +210,7 @@ export const classes = {
 };
 
 export const SubFlow = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -250,7 +250,7 @@ export const SubFlow = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />

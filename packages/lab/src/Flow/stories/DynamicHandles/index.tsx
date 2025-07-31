@@ -100,7 +100,7 @@ type Node = ReturnType<HvFlowInstance<NodeData>["getNode"]>;
 type Type = keyof typeof types;
 
 export const DynamicHandles = () => {
-  const { rootId } = useTheme();
+  const { rootElement } = useTheme();
 
   const [reactFlowInstance, setReactFlowInstance] = useState<HvFlowInstance>();
 
@@ -172,7 +172,7 @@ export const DynamicHandles = () => {
               dragOverlayProps={{
                 modifiers: [
                   restrictToWindowEdges,
-                  (args) => restrictToSample(rootId || "", args),
+                  (args) => restrictToSample(rootElement, args),
                 ],
               }}
             />
