@@ -101,7 +101,7 @@ describe("AppShellProvider component", () => {
     it("should apply first valid theme from themes list", async () => {
       const { baseElement } = await renderTestProvider(<div>dummy</div>, {
         theming: {
-          themes: ["dummyTheme", "ds5", "pentahoPlus"],
+          themes: ["dummyTheme", "ds5", "pentaho"],
         },
       });
 
@@ -117,7 +117,7 @@ describe("AppShellProvider component", () => {
     it("should apply chosen theme and color mode", async () => {
       const { baseElement } = await renderTestProvider(<div>dummy</div>, {
         theming: {
-          themes: ["dummyTheme", "ds5", "pentahoPlus"],
+          themes: ["dummyTheme", "ds5", "pentaho"],
           theme: "ds5",
           colorMode: "wicked",
         },
