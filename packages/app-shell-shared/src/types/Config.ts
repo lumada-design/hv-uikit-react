@@ -3,7 +3,7 @@ import type { HvContainerProps } from "@hitachivantara/uikit-react-core";
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
 
 export type HvAppShellLogo = {
-  name?: "LUMADA" | "HITACHI" | "PENTAHO+" | "PENTAHO";
+  name?: "LUMADA" | "HITACHI" | "PENTAHO";
   description?: string;
 };
 
