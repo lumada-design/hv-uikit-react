@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { EmotionCache } from "@emotion/cache";
 import {
   createTheme,
@@ -43,7 +43,6 @@ export const HvThemeProvider = ({
 
   const {
     theme: activeTheme,
-    selectedTheme,
     selectedMode,
     colorModes,
     colorScheme,
@@ -58,36 +57,22 @@ export const HvThemeProvider = ({
   }, [colorModeProp, themeProp]);
 
   useEffect(() => {
-    setElementAttrs(selectedTheme, selectedMode, colorScheme, rootId);
-  }, [colorScheme, rootId, selectedMode, selectedTheme]);
-
-  const changeTheme = useCallback(
-    (newTheme = selectedTheme, newMode = selectedMode) => {
-      setTheme(newTheme);
-      setColorMode(newMode);
-    },
-    [selectedMode, selectedTheme],
-  );
+    setElementAttrs(activeTheme.name, selectedMode, colorScheme, rootId);
+  }, [colorScheme, rootId, selectedMode, activeTheme.name]);
 
   const value = useMemo<HvThemeContextValue>(
     () => ({
       themes,
       colorModes,
       activeTheme: activeTheme as HvTheme,
-      selectedTheme,
       selectedMode,
-      changeTheme,
+      changeTheme(newTheme = activeTheme.name, newMode = selectedMode) {
+        setTheme(newTheme);
+        setColorMode(newMode);
+      },
       rootId,
     }),
-    [
-      themes,
-      colorModes,
-      activeTheme,
-      selectedTheme,
-      selectedMode,
-      changeTheme,
-      rootId,
-    ],
+    [themes, colorModes, activeTheme, selectedMode, rootId],
   );
 
   const muiTheme = useMemo(() => {

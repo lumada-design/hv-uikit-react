@@ -4,7 +4,7 @@ import { useTheme } from "@hitachivantara/uikit-react-core";
 import useLocalStorage from "./useLocalStorage";
 
 const useThemeEventListener = () => {
-  const { selectedTheme, changeTheme, selectedMode, colorModes } = useTheme();
+  const { selectedMode, colorModes } = useTheme();
   const { setStoredValue } = useLocalStorage("COLOR_MODE");
 
   const getNextColorMode = () => {
@@ -22,7 +22,7 @@ const useThemeEventListener = () => {
         : colorMode;
 
     // For now we only want to change the colorMode
-    changeTheme(selectedTheme, newColorMode);
+    changeTheme(undefined, newColorMode);
     setStoredValue(newColorMode);
   };
 

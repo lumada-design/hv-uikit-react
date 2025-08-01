@@ -15,7 +15,6 @@ vi.mock("@hitachivantara/uikit-react-core", async () => {
     ...(mod as object),
     useTheme: () => {
       return {
-        selectedTheme: "dummyTheme",
         changeTheme: mockedChangeTheme,
         selectedMode: "dummyColor1",
         colorModes: [
