@@ -50,18 +50,18 @@ export const registerTheme = (
 
   echarts.registerTheme(themeName, {
     color: [
-      colors?.cat1,
-      colors?.cat2,
-      colors?.cat3,
-      colors?.cat4,
-      colors?.cat5,
-      colors?.cat6,
-      colors?.cat7,
-      colors?.cat8,
-      colors?.cat9,
-      colors?.cat10,
-      colors?.cat11,
-      colors?.cat12,
+      colors?.viz1,
+      colors?.viz2,
+      colors?.viz3,
+      colors?.viz4,
+      colors?.viz5,
+      colors?.viz6,
+      colors?.viz7,
+      colors?.viz8,
+      colors?.viz9,
+      colors?.viz10,
+      colors?.viz11,
+      colors?.viz12,
     ],
     legend: {
       textStyle: {
