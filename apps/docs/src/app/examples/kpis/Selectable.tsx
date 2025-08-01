@@ -3,8 +3,8 @@ import {
   HvCard,
   HvCardContent,
   HvColor,
-  HvIconContainer,
   HvRadio,
+  HvStatusIcon,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
@@ -56,12 +56,10 @@ function Kpi({
   return (
     <HvCardContent className="grid gap-sm pb-xs!">
       <div className="flex items-center gap-xxs">
-        <HvIconContainer
+        <HvStatusIcon
           size="xs"
-          className="p-4px rounded-round bg-bgContainerSecondary border border-borderSubtle"
-        >
-          <div className="i-ph-copy-simple" />
-        </HvIconContainer>
+          customIcon={<div className="i-ph-copy-simple" />}
+        />
         <span id={titleId}>{title}</span>
       </div>
       <div className="flex justify-between items-center">

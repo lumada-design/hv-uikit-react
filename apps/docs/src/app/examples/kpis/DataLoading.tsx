@@ -3,10 +3,10 @@ import useSWR from "swr";
 import {
   HvCard,
   HvCardContent,
-  HvIconContainer,
   HvLoading,
   HvRadio,
   HvRadioGroup,
+  HvStatusIcon,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
@@ -44,9 +44,7 @@ function KpiData({ id }: { id: string }) {
   if (error) {
     return (
       <div className="flex gap-xs items-center justify-center text-negative">
-        <HvIconContainer className="rounded-4px bg-negativeDimmed border border-negativeBorder">
-          <div className="i-ph-warning-diamond" />
-        </HvIconContainer>
+        <HvStatusIcon variant="error" />
         <HvTypography>{error.message}</HvTypography>
       </div>
     );
@@ -55,12 +53,10 @@ function KpiData({ id }: { id: string }) {
   return (
     <>
       <div className="flex items-center gap-xxs">
-        <HvIconContainer
+        <HvStatusIcon
           size="xs"
-          className="p-4px rounded-round bg-bgContainerSecondary border border-borderSubtle"
-        >
-          <div className="i-ph-copy-simple" />
-        </HvIconContainer>
+          customIcon={<div className="i-ph-copy-simple" />}
+        />
         <span>{data?.title}</span>
       </div>
       <div className="flex items-baseline gap-2px">
