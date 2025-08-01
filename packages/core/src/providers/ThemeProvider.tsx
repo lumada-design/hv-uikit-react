@@ -12,7 +12,7 @@ import {
   type HvTheme,
   type HvThemeContextValue,
 } from "@hitachivantara/uikit-react-shared";
-import { HvThemeStructure, parseTheme } from "@hitachivantara/uikit-styles";
+import { HvThemeStructure } from "@hitachivantara/uikit-styles";
 
 import { setElementAttrs } from "../utils/theme";
 
@@ -23,8 +23,7 @@ export { defaultCacheKey, defaultEmotionCache, EmotionContext };
 
 interface HvThemeProviderProps {
   children: React.ReactNode;
-  themes: (HvTheme | HvThemeStructure)[];
-  theme: string;
+  theme: HvTheme | HvThemeStructure;
   emotionCache: EmotionCache;
   colorMode: string;
   themeRootId?: string;
@@ -32,13 +31,11 @@ interface HvThemeProviderProps {
 
 export const HvThemeProvider = ({
   children,
-  themes: themesList,
-  theme: themeProp,
+  theme,
   emotionCache,
   colorMode: colorModeProp,
   themeRootId: rootId,
 }: HvThemeProviderProps) => {
-  const [theme, setTheme] = useState(themeProp);
   const [colorMode, setColorMode] = useState(colorModeProp);
 
   const {
@@ -46,15 +43,25 @@ export const HvThemeProvider = ({
     selectedMode,
     colorModes,
     colorScheme,
-  } = parseTheme(themesList, theme, colorMode);
+  } = useMemo(() => {
+    const colorModes = Object.keys(theme.colors.modes);
+    const selectedMode = colorModes.includes(colorMode)
+      ? colorMode
+      : colorModes[0];
+    const colorScheme = theme.colors.modes[selectedMode].type;
 
-  const themes = themesList.map((t) => t.name);
+    return {
+      theme,
+      selectedMode,
+      colorModes,
+      colorScheme,
+    };
+  }, [theme, colorMode]);
 
   // review in v6 so that theme/colorMode isn't both controlled & uncontrolled
   useEffect(() => {
-    setTheme(themeProp);
     setColorMode(colorModeProp);
-  }, [colorModeProp, themeProp]);
+  }, [colorModeProp]);
 
   useEffect(() => {
     setElementAttrs(activeTheme.name, selectedMode, colorScheme, rootId);
@@ -62,17 +69,15 @@ export const HvThemeProvider = ({
 
   const value = useMemo<HvThemeContextValue>(
     () => ({
-      themes,
       colorModes,
       activeTheme: activeTheme as HvTheme,
       selectedMode,
-      changeTheme(newTheme = activeTheme.name, newMode = selectedMode) {
-        setTheme(newTheme);
+      changeMode(newMode = selectedMode) {
         setColorMode(newMode);
       },
       rootId,
     }),
-    [themes, colorModes, activeTheme, selectedMode, rootId],
+    [colorModes, activeTheme, selectedMode, rootId],
   );
 
   const muiTheme = useMemo(() => {
