@@ -1,4 +1,7 @@
-import type { HvContainerProps } from "@hitachivantara/uikit-react-core";
+import type {
+  HvBaseTheme,
+  HvContainerProps,
+} from "@hitachivantara/uikit-react-core";
 
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
 
@@ -61,8 +64,7 @@ export type HvAppShellConfig = {
 };
 
 export type HvAppShellThemingConfig = {
-  themes?: string[];
-  theme?: string;
+  theme?: HvBaseTheme | (string & {});
   colorMode?: string;
 };
 
