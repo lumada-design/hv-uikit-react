@@ -1,12 +1,4 @@
-import {
-  cloneElement,
-  forwardRef,
-  isValidElement,
-  ReactElement,
-  useCallback,
-  useContext,
-  useMemo,
-} from "react";
+import { forwardRef, useCallback, useContext } from "react";
 import {
   useDefaultProps,
   type ExtractNames,
@@ -117,36 +109,6 @@ export const HvListItem = forwardRef<
     [disabled, onClick],
   );
 
-  const clonedStartAdornment = useMemo(() => {
-    if (!isValidElement(startAdornment)) return startAdornment;
-    return cloneElement(startAdornment as ReactElement, {
-      className: cx(classes.startAdornment, startAdornment.props.className, {
-        // TODO: remove 👇 props below
-        [classes.disabled]: disabled,
-      }),
-      checked: !!selected,
-      disabled,
-      onChange: handleClick,
-    });
-  }, [
-    cx,
-    classes?.startAdornment,
-    classes?.disabled,
-    disabled,
-    handleClick,
-    selected,
-    startAdornment,
-  ]);
-
-  const clonedEndAdornment = useMemo(() => {
-    if (!isValidElement(endAdornment)) return endAdornment;
-    return cloneElement(endAdornment as ReactElement, {
-      className: cx(classes.endAdornment, endAdornment.props.className, {
-        [classes.disabled]: disabled,
-      }),
-    });
-  }, [cx, classes?.endAdornment, classes?.disabled, disabled, endAdornment]);
-
   const roleOptionAriaProps =
     role === "option" || role === "menuitem"
       ? {
@@ -178,9 +140,9 @@ export const HvListItem = forwardRef<
       {...roleOptionAriaProps}
       {...others}
     >
-      {clonedStartAdornment}
+      {startAdornment}
       {children}
-      {clonedEndAdornment}
+      {endAdornment}
     </li>
   );
 

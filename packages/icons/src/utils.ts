@@ -25,10 +25,6 @@ export const isSemantic = (iconName: string) => largerIcons.includes(iconName);
 
 export const isXS = (iconName: string) => iconName.endsWith("XS");
 
-// TODO: remove in v6?
-const getCustomSize = (size: number, iconName: string) =>
-  isSemantic(iconName) ? size + 8 : size;
-
 /** sizes for the <svg> icon */
 const getSvgSize = (size: IconBaseProps["size"]) => {
   switch (size) {
@@ -56,11 +52,10 @@ export const getSizeStyles = (
   iconName: string,
   size: IconBaseProps["size"] = isXS(iconName) ? "XS" : "S",
 ) => {
-  const baseSize = getSvgSize(size);
-  const fontSize = getCustomSize(baseSize, iconName);
+  const fontSize = getSvgSize(size);
   if (fontSize === 16) return; // use default values
 
-  const containerSize = baseSize + 2 * (baseSize === 12 ? 10 : 8);
+  const containerSize = fontSize + 2 * (fontSize === 12 ? 10 : 8);
 
   return {
     fontSize,
