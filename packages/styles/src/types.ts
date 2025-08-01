@@ -21,7 +21,7 @@ export interface HvThemeZIndices
 /** UI Kit static theme tokens */
 export interface HvThemeTokens {
   breakpoints: HvThemeBreakpoints;
-  colors: { type: HvThemeColorModeType } & HvThemeColors;
+  colors: { type: HvThemeColorMode } & HvThemeColors;
   radii: HvThemeRadii;
   space: HvThemeSpace;
   // #region typography
@@ -92,21 +92,16 @@ export type SpacingValue = number | HvThemeBreakpoint | (string & {});
 
 export type HvBaseTheme = "ds5" | "pentaho";
 
-// Theme color modes
-export type HvThemeColorMode = "dawn" | "wicked";
+/** Theme color mode */
+export type HvThemeColorMode = "light" | "dark";
 
-// Theme color mode type
-export type HvThemeColorModeType = "light" | "dark";
-
-// Theme color mode structure
-export interface HvThemeColorModeStructure
+/** extendable `HvThemeColors` type */
+export interface HvThemeColorsAny
   extends HvThemeColors,
-    Record<string, string> {
-  type: HvThemeColorModeType;
-}
+    Record<string, string> {}
 
 /** Complete theme structure and values */
-export interface HvThemeStructure<Mode extends string = string>
+export interface HvThemeStructure
   extends HvThemeComponents,
     HvThemeComponentsProps,
     HvThemeTypography,
@@ -114,13 +109,16 @@ export interface HvThemeStructure<Mode extends string = string>
   name: string;
   base: HvBaseTheme;
   colors: {
-    modes: Record<Mode, HvThemeColorModeStructure>;
+    defaultType: HvThemeColorMode;
+    common: HvThemeColorsAny;
+    light: HvThemeColorsAny;
+    dark: HvThemeColorsAny;
   };
 }
 
 // Custom theme
-export interface HvCustomTheme<Mode extends string = string>
-  extends DeepPartial<Omit<HvThemeStructure<Mode>, "base">> {}
+export interface HvCustomTheme
+  extends DeepPartial<Omit<HvThemeStructure, "base">> {}
 
 // Deep string: set all props to strings
 export type DeepString<T> = {

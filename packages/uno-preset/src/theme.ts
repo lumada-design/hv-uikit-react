@@ -3,7 +3,10 @@ import type { Theme } from "@unocss/preset-wind3";
 import { ds5 as hvTheme, theme } from "@hitachivantara/uikit-styles";
 
 // #region theme conversion utils
-const { dawn: defaultColors } = hvTheme.colors.modes;
+const defaultColors = {
+  ...hvTheme.colors.common,
+  ...hvTheme.colors.light,
+};
 const { base, ...hvSpacing } = hvTheme.space;
 
 /** HV breakpoints with added `px` suffix */
