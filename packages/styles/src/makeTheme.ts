@@ -11,9 +11,9 @@ import { mergeTheme } from "./utils";
  * @param options The options to generate the theme
  * @returns The generated theme
  */
-export const makeTheme = <Mode extends string = string>(
-  options: HvCustomTheme<Mode> | ((theme: HvTheme) => HvCustomTheme<Mode>),
-): HvThemeStructure<Mode> => {
+export const makeTheme = (
+  options: HvCustomTheme | ((theme: HvTheme) => HvCustomTheme),
+): HvThemeStructure => {
   const customTheme = typeof options === "function" ? options(theme) : options;
   const newTheme = mergeTheme(baseTheme, customTheme);
 
@@ -69,40 +69,49 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  */
 export const makeColors = (
   inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
-): HvCustomTheme<"dawn" | "wicked">["colors"] => {
-  const [lightColors, darkColors] = Object.entries(inputColors).reduce(
+): HvCustomTheme["colors"] => {
+  const [commonColors, lightColors, darkColors] = Object.entries(
+    inputColors,
+  ).reduce(
     (acc, [key, color]) => {
-      const [lightColor, darkColor] =
-        typeof color === "string" ? [color, color] : color;
+      // common colors
+      if (typeof color === "string") {
+        acc[0][key as keyof ColorTokens] = color;
+        return acc;
+      }
+
+      const [lightColor, darkColor] = color;
 
       if (lightColor) {
-        acc[0][key as keyof ColorTokens] = lightColor;
+        acc[1][key as keyof ColorTokens] = lightColor;
       }
       if (darkColor) {
-        acc[1][key as keyof ColorTokens] = darkColor;
+        acc[2][key as keyof ColorTokens] = darkColor;
       }
       return acc;
     },
-    [{}, {}] as [Partial<HvThemeColors>, Partial<HvThemeColors>],
+    [{}, {}, {}] as [
+      Partial<HvThemeColors>,
+      Partial<HvThemeColors>,
+      Partial<HvThemeColors>,
+    ],
   );
 
   return {
     // TODO: review allowing generic modes vs light/dark only
-    modes: {
-      dawn: {
-        type: "light",
-        ...colors.common,
-        ...colors.light,
-        ...extendCompatColors(lightColors),
-        ...lightColors,
-      },
-      wicked: {
-        type: "dark",
-        ...colors.common,
-        ...colors.dark,
-        ...extendCompatColors(darkColors),
-        ...darkColors,
-      },
+    common: {
+      ...colors.common,
+      ...commonColors,
+    },
+    light: {
+      ...colors.light,
+      ...extendCompatColors(lightColors),
+      ...lightColors,
+    },
+    dark: {
+      ...colors.dark,
+      ...extendCompatColors(darkColors),
+      ...darkColors,
     },
   };
 };
