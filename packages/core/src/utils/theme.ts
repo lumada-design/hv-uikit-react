@@ -1,28 +1,25 @@
 import { HvTheme } from "@hitachivantara/uikit-react-shared";
-import { HvThemeStructure } from "@hitachivantara/uikit-styles";
+import {
+  HvThemeColorMode,
+  HvThemeStructure,
+} from "@hitachivantara/uikit-styles";
 
 import { themes } from "../themes";
-import { getContainerElement } from "./document";
 
 /**
  * Sets the element attributes and style for a theme and color mode.
  */
 export const setElementAttrs = (
+  element: HTMLElement,
   themeName: string,
-  modeName: string,
-  colorScheme: string,
-  themeRootId?: string,
+  modeName: HvThemeColorMode,
 ) => {
-  const element = getContainerElement(themeRootId);
+  element.dataset.theme = themeName;
+  element.dataset.colorMode = modeName;
 
-  if (element) {
-    element.setAttribute(`data-theme`, themeName);
-    element.setAttribute(`data-color-mode`, modeName);
-
-    // set default styles for child components to inherit
-    element.classList.add(`uikit-root-element`);
-    element.style.colorScheme = colorScheme;
-  }
+  // set default styles for child components to inherit
+  element.classList.add("uikit-root-element");
+  element.style.colorScheme = modeName;
 };
 
 /**

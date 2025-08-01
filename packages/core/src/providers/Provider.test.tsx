@@ -19,7 +19,7 @@ describe("Provider", () => {
     );
 
     const theme = container.querySelector("[data-theme=ds5]");
-    const mode = container.querySelector("[data-color-mode=dawn]");
+    const mode = container.querySelector("[data-color-mode=light]");
 
     expect(theme).toBeInTheDocument();
     expect(mode).toBeInTheDocument();
@@ -28,18 +28,14 @@ describe("Provider", () => {
   it("has the color mode selected if only the colorMode property is provided", () => {
     const { container } = render(
       <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          colorMode="wicked"
-        >
+        <HvProvider cssTheme="scoped" rootElementId="hv-root" colorMode="dark">
           <p>Theme provider test</p>
         </HvProvider>
       </div>,
     );
 
     const theme = container.querySelector("[data-theme=ds5]");
-    const mode = container.querySelector("[data-color-mode=wicked]");
+    const mode = container.querySelector("[data-color-mode=dark]");
 
     expect(theme).toBeInTheDocument();
     expect(mode).toBeInTheDocument();
@@ -59,7 +55,7 @@ describe("Provider", () => {
     );
 
     const theme = container.querySelector("[data-theme=custom-theme]");
-    const mode = container.querySelector("[data-color-mode=dawn]");
+    const mode = container.querySelector("[data-color-mode=light]");
 
     expect(theme).toBeInTheDocument();
     expect(mode).toBeInTheDocument();
