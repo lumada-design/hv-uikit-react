@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { EmotionCache } from "@emotion/cache";
 import {
-  createTheme,
+  createTheme as createMuiTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 import {
@@ -82,7 +82,7 @@ export const HvThemeProvider = ({
 
   const muiTheme = useMemo(() => {
     const colors = activeTheme.colors.modes[colorMode];
-    return createTheme({
+    return createMuiTheme({
       colorSchemes: { light: true, dark: true },
       spacing: activeTheme.space.base,
       typography: {

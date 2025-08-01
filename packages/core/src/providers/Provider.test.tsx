@@ -1,23 +1,11 @@
 import { render } from "@testing-library/react";
+import { mergeTheme } from "@hitachivantara/uikit-styles";
 
-import { createTheme } from "../utils/theme";
+import { ds5 } from "../themes/ds5";
 import { HvProvider } from "./Provider";
 
-const customThemeInherit = createTheme({
+const customTheme = mergeTheme(ds5, {
   name: "custom-theme",
-  inheritColorModes: true,
-});
-
-const customThemeNoInherit = createTheme({
-  name: "custom-theme",
-  inheritColorModes: false,
-  colors: {
-    modes: {
-      purple: {
-        bgContainer: "purple",
-      },
-    },
-  },
 });
 
 describe("Provider", () => {
@@ -63,7 +51,7 @@ describe("Provider", () => {
         <HvProvider
           cssTheme="scoped"
           rootElementId="hv-root"
-          theme={customThemeInherit}
+          theme={customTheme}
         >
           <p>Theme provider test</p>
         </HvProvider>
@@ -72,27 +60,6 @@ describe("Provider", () => {
 
     const theme = container.querySelector("[data-theme=custom-theme]");
     const mode = container.querySelector("[data-color-mode=dawn]");
-
-    expect(theme).toBeInTheDocument();
-    expect(mode).toBeInTheDocument();
-  });
-
-  it("should have the correct theme and color mode selected if themes, theme and colorMode are provided", () => {
-    const { container } = render(
-      <div id="hv-root">
-        <HvProvider
-          cssTheme="scoped"
-          rootElementId="hv-root"
-          theme={customThemeNoInherit}
-          colorMode="purple"
-        >
-          <p>Theme provider test</p>
-        </HvProvider>
-      </div>,
-    );
-
-    const theme = container.querySelector("[data-theme=custom-theme]");
-    const mode = container.querySelector("[data-color-mode=purple]");
 
     expect(theme).toBeInTheDocument();
     expect(mode).toBeInTheDocument();

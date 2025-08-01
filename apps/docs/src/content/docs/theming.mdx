@@ -27,17 +27,15 @@ Use the `HvProvider` to configure the active theme and color mode:
 
 ## Creating a New Theme
 
-Use `createTheme()` to define a custom theme based on existing ones. This allows you to:
+Use `mergeTheme()` to define a custom theme based on existing ones. This allows you to:
 
 - Create custom color modes
 - Override design tokens like colors, spacing, or fonts
 - Extend the theme with new properties
 
 ```tsx
-const myTheme = createTheme({
+const myTheme = mergeTheme(pentaho, {
   name: "myTheme",
-  base: "pentaho",
-  inheritColorModes: false,
   colors: {
     modes: {
       sand: {
@@ -122,9 +120,8 @@ const CssVariables = () => {
 You can globally define default props and custom styles for any component using the `components` key inside your theme. This reduces boilerplate and improves consistency.
 
 ```tsx
-const newTheme = createTheme({
+const newTheme = mergeTheme(ds5, {
   name: "myTheme",
-  base: "ds5",
   components: {
     HvAvatar: {
       variant: "square",
