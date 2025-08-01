@@ -75,6 +75,7 @@ const createAppBaseline = (appPath) => {
   fs.copySync(basePath, appPath, { overwrite: true });
   fs.moveSync(`${appPath}/_gitignore`, `${appPath}/.gitignore`);
   fs.moveSync(`${appPath}/_package.json`, `${appPath}/package.json`);
+  fs.moveSync(`${appPath}/_oxlintrc.json`, `${appPath}/.oxlintrc.json`);
 };
 
 const create = async ({
