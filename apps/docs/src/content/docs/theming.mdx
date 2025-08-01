@@ -65,9 +65,8 @@ Use the `useTheme()` hook to dynamically access or update theme information:
 ```tsx
 const {
   selectedMode, // Active color mode
-  themes, // Available themes
   colorModes, // Modes for the current theme
-  changeTheme, // Function to switch theme or color mode
+  changeMode, // Function to switch color mode
   activeTheme, // The active theme object
   colors, // Active color palette
 } = useTheme();
@@ -79,15 +78,15 @@ Toggle themes or color modes at runtime — ideal for user preferences (e.g. lig
 
 ```tsx
 const MyComponent = () => {
-  const { selectedMode, changeTheme } = useTheme();
+  const { selectedMode, changeMode } = useTheme();
 
   return (
     <HvButton
       icon
       variant="secondaryGhost"
-      onClick={() =>
-        changeTheme(undefined, selectedMode === "dawn" ? "wicked" : "dawn")
-      }
+      onClick={() => {
+        changeMode(selectedMode === "dawn" ? "wicked" : "dawn");
+      }}
     >
       <ThemeSwitcher />
     </HvButton>
