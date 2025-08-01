@@ -17,7 +17,6 @@ export default {
     name: "PENTAHO",
   },
   theming: {
-    themes: ["ds5", "pentaho"],
     theme: "pentaho",
     colorMode: "dawn",
   },
