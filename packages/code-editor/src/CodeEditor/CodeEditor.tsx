@@ -79,14 +79,16 @@ export const HvCodeEditor = ({
     ...options,
   };
 
-  const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
+  const { colors, selectedMode, activeTheme, colorModes } = useTheme();
   const monacoInstance = useMonaco();
+
+  const themeName = activeTheme?.name || "default";
 
   const handleActiveThemes = useCallback(() => {
     if (!monacoInstance) return;
 
     colorModes.forEach((mode) => {
-      monacoInstance?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
+      monacoInstance?.editor.defineTheme(`hv-${themeName}-${mode}`, {
         base: colors?.type === "light" ? "vs" : "vs-dark",
         inherit: true,
         rules: [],
@@ -99,7 +101,7 @@ export const HvCodeEditor = ({
   }, [
     monacoInstance,
     colorModes,
-    selectedTheme,
+    themeName,
     colors?.type,
     colors?.bgContainer,
     colors?.textDisabled,
@@ -214,7 +216,7 @@ export const HvCodeEditor = ({
     <div className={classes.root}>
       <Editor
         options={mergedOptions}
-        theme={`hv-${selectedTheme}-${selectedMode}`}
+        theme={`hv-${themeName}-${selectedMode}`}
         language={languageProp}
         defaultLanguage={defaultLanguage}
         beforeMount={handleBeforeMount}
