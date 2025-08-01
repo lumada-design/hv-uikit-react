@@ -94,11 +94,13 @@ export const HvCodeEditor = ({
       });
   }, []);
 
+  const themeName = activeTheme?.name || "default";
+
   const handleActiveThemes = useCallback(() => {
     if (!monacoInstance) return;
 
     colorModes.forEach((mode) => {
-      monacoInstance?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
+      monacoInstance?.editor.defineTheme(`hv-${themeName}-${mode}`, {
         base: colors?.type === "light" ? "vs" : "vs-dark",
         inherit: true,
         rules: [],
@@ -111,7 +113,7 @@ export const HvCodeEditor = ({
   }, [
     monacoInstance,
     colorModes,
-    selectedTheme,
+    themeName,
     colors?.type,
     colors?.bgContainer,
     colors?.textDisabled,
