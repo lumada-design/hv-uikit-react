@@ -189,9 +189,7 @@ export const ds3 = mergeTheme(ds3Base, {
     HvBaseSwitch: {
       classes: {
         root: {
-          width: "32px",
-          height: "16px",
-          borderRadius: 0,
+          padding: 0,
           "&:hover": {
             backgroundColor: "transparent",
           },
@@ -214,6 +212,7 @@ export const ds3 = mergeTheme(ds3Base, {
         thumb: {
           width: 12,
           height: 12,
+          left: -9,
         },
       },
     },

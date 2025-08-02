@@ -11,6 +11,7 @@ import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
 import kpis from "./kpis/page.mdx?raw";
 import login from "./login/page.mdx?raw";
+import switches from "./switches/page.mdx?raw";
 import tables from "./tables/page.mdx?raw";
 
 /**
@@ -23,13 +24,14 @@ const countCodeBlocks = (fileContent: string): number => {
 };
 
 const sections = [
-  { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
+  { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
   { slug: "charts", title: "Charts", total: countCodeBlocks(charts) },
+  { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
-  { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
   { slug: "login", title: "Login", total: countCodeBlocks(login) },
-  { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
+  { slug: "switches", title: "Switches", total: countCodeBlocks(switches) },
+  { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
 ] as const;
 
 type Slug = (typeof sections)[number]["slug"];
@@ -50,6 +52,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-flow-arrow" />;
     case "login":
       return <div className="i-ph-lock-open" />;
+    case "switches":
+      return <div className="i-ph-toggle-left" />;
     default:
       return null;
   }

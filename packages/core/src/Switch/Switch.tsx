@@ -6,7 +6,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { HvBaseSwitch } from "../BaseSwitch";
+import { HvBaseSwitch, HvBaseSwitchProps } from "../BaseSwitch";
 import {
   HvFormElement,
   HvFormStatus,
@@ -25,7 +25,7 @@ export { staticClasses as switchClasses };
 export type HvSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSwitchProps
-  extends Omit<MuiSwitchProps, "color" | "onChange" | "classes"> {
+  extends Omit<MuiSwitchProps, "color" | "onChange" | "classes" | "size"> {
   /**
    * A Jss Object used to override or extend the styles applied to the switch.
    */
@@ -115,6 +115,8 @@ export interface HvSwitchProps
   component?: MuiSwitchProps["component"];
   /** Color applied to the switch. */
   color?: HvColorAny;
+  /** The size of the switch. */
+  size?: HvBaseSwitchProps["size"];
 }
 
 const isSemantical = (color: HvColorAny) =>

@@ -81,6 +81,10 @@ export interface HvBaseSwitchProps
    * @ignore
    */
   onBlur?: (event: React.FocusEvent<any>) => void;
+  /**
+   * The size of the switch.
+   */
+  size?: MuiSwitchProps["size"];
 }
 
 /**
@@ -112,6 +116,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
 
       onFocusVisible,
       onBlur,
+      size = "sm",
 
       ...others
     } = useDefaultProps("HvBaseSwitch", props);
@@ -180,6 +185,7 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         inputProps={inputProps}
         onFocusVisible={onFocusVisibleCallback}
         onBlur={onBlurCallback}
+        data-size={size}
         {...others}
       />
     );
