@@ -1,7 +1,7 @@
 import { palette } from "./palette";
 import { baseTheme as tokens } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
-import {
+import type {
   DeepString,
   HvThemeComponents,
   HvThemeTypography,
@@ -48,20 +48,25 @@ const typographySpec: DeepString<HvThemeTypography> = {
   },
 };
 
-const colorTokens = {
-  ...tokens.colors.common,
-  ...tokens.colors.light,
+const themeVars: HvThemeVars = {
+  ...mapCSSVars({
+    ...tokens,
+    ...componentsSpec,
+    ...typographySpec,
+  }),
+  colors: makeCssVars("--uikit-colors") as any,
 };
 
-const themeVars: HvThemeVars = mapCSSVars({
-  ...tokens,
-  colors: {
-    type: "light",
-    ...colorTokens,
-  }, // Flatten colors and add background color
-  ...componentsSpec,
-  ...typographySpec,
-});
+/** returns a Proxy that returns the CSS var for any (flat) token */
+function makeCssVars(prefix: string) {
+  const initialValue: Record<string, any> = {};
+  return new Proxy(initialValue, {
+    get(target, prop) {
+      if (typeof prop !== "string") return undefined;
+      return `var(${prefix}-${prop})`;
+    },
+  });
+}
 
 function getColorOrFallback(color?: HvColorAny) {
   return themeVars.colors[color as HvColor] || color;
