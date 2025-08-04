@@ -3,7 +3,6 @@ import type { Theme } from "@unocss/preset-wind3";
 import { ds5 as hvTheme, theme } from "@hitachivantara/uikit-styles";
 
 // #region theme conversion utils
-const { light: defaultColors } = hvTheme.colors;
 const { base, ...hvSpacing } = hvTheme.space;
 
 /** HV breakpoints with added `px` suffix */
@@ -38,12 +37,11 @@ export const extendTheme: ThemeExtender<Theme> = (baseTheme) => ({
   // colors
   colors: {
     ...baseTheme.colors,
-    ...defaultColors,
     ...theme.colors,
   },
-  accentColor: { DEFAULT: defaultColors.primary },
-  textColor: { DEFAULT: defaultColors.text },
-  backgroundColor: { DEFAULT: defaultColors.bgPage },
+  accentColor: { DEFAULT: theme.colors.primary },
+  textColor: { DEFAULT: theme.colors.text },
+  backgroundColor: { DEFAULT: theme.colors.bgPage },
 
   // typography
   fontFamily: {

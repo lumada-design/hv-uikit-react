@@ -4,6 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvDialogContent", {
   root: {
     padding: theme.spacing(0, "sm", "sm"),
+    backgroundColor: "inherit",
     borderColor: theme.colors.borderSubtle,
     borderTopWidth: "var(--borderW)",
     borderBottomWidth: "var(--borderW)",

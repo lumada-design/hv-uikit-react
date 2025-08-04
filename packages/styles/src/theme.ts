@@ -52,18 +52,41 @@ const colorTokens = {
   ...colors.light,
 };
 
-const themeVars: HvThemeVars = mapCSSVars({
-  ...tokens,
-  colors: {
-    type: "light",
-    ...colorTokens,
-  }, // Flatten colors and add background color
-  ...componentsSpec,
-  ...typographySpec,
-});
+const themeVars: HvThemeVars = {
+  ...mapCSSVars({
+    ...tokens,
+    ...componentsSpec,
+    ...typographySpec,
+  }),
+  colors: makeCssVars("--uikit-colors") as any,
+};
+
+/** returns a Proxy that returns the CSS var for any (flat) token */
+function makeCssVars(prefix: string) {
+  const themeTokens = Object.keys(colorTokens);
+  return new Proxy(colorTokens, {
+    get(target, prop) {
+      if (typeof prop !== "string") return undefined;
+      return `var(${prefix}-${prop})`;
+    },
+    ownKeys() {
+      return themeTokens;
+    },
+    getOwnPropertyDescriptor(target, prop) {
+      if (themeTokens.includes(prop as string)) {
+        return { enumerable: true, configurable: true };
+      }
+      return undefined;
+    },
+  });
+}
 
 function getColorOrFallback(color?: HvColorAny) {
-  return themeVars.colors[color as HvColor] || color;
+  // TODO: support for custom colors
+  return (
+    (colorTokens[color as HvColor] && themeVars.colors[color as HvColor]) ||
+    color
+  );
 }
 
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */
