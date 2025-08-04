@@ -2,16 +2,16 @@
 
 export const allModes = {
   "Pentaho dawn": {
-    theme: "pentaho dawn",
+    theme: "pentaho light",
   },
   "Pentaho wicked": {
-    theme: "pentaho wicked",
+    theme: "pentaho dark",
   },
   "DS5 dawn": {
-    theme: "ds5 dawn",
+    theme: "ds5 light",
   },
   "DS5 wicked": {
-    theme: "ds5 wicked",
+    theme: "ds5 dark",
   },
 };
 

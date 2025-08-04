@@ -18,7 +18,7 @@ export default {
   },
   theming: {
     theme: "pentaho",
-    colorMode: "dawn",
+    colorMode: "light",
   },
   menu: [
     {
