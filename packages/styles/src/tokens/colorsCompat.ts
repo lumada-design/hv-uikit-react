@@ -1,4 +1,4 @@
-export const compatColorsLight = {
+const light = {
   base_light: "#CCCCCC",
   base_dark: "#414141",
 
@@ -35,7 +35,7 @@ export const compatColorsLight = {
   warning_20: "#FBF2D8",
 };
 
-export const compatColorsDark = {
+const dark = {
   base_light: "#CCCCCC",
   base_dark: "#414141",
 
@@ -72,4 +72,6 @@ export const compatColorsDark = {
   warning_20: "#FBF2D8",
 };
 
-export type HvThemeColorsCompat = typeof compatColorsLight;
+export const compatColors = { light, dark };
+
+export type HvThemeColorsCompat = typeof compatColors.light;
