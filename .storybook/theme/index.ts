@@ -38,6 +38,6 @@ const getThemeVars = (base: "light" | "dark"): ThemeVarsPartial => ({
 });
 
 export const themes = {
-  wicked: create(getThemeVars("dark")),
-  dawn: create(getThemeVars("light")),
+  dark: create(getThemeVars("dark")),
+  light: create(getThemeVars("light")),
 };
