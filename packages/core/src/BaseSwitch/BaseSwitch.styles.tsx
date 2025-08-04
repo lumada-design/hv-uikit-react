@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
           backgroundColor: theme.colors.primary,
           borderColor: "transparent",
         },
-        "& $thumb:not:has($disabled)": {
+        "&:not($disabled) $thumb": {
           borderColor: "transparent",
         },
         "&:hover": {
@@ -63,18 +63,18 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     width: "40px",
     height: "32px",
     padding: 0,
-    [`&[data-size="medium"]`]: {
+    "&[data-size=medium]": {
       "+.HvBaseSwitch-track": {
         width: 48,
         height: 22,
       },
-      "& .HvBaseSwitch-thumb": {
+      "& $thumb": {
         left: -2,
         top: 3,
         width: 18,
         height: 18,
       },
-      "&.HvBaseSwitch-checked .HvBaseSwitch-thumb": {
+      "&$checked $thumb": {
         left: 8,
         top: 3,
       },

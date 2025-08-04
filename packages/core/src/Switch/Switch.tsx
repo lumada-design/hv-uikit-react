@@ -4,7 +4,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { HvBaseSwitch, HvBaseSwitchProps } from "../BaseSwitch";
 import {
@@ -119,9 +119,6 @@ export interface HvSwitchProps
   size?: HvBaseSwitchProps["size"];
 }
 
-const isSemantical = (color: HvColorAny) =>
-  ["positive", "negative", "warning"].includes(color);
-
 /**
  * A Switch is **binary** and works as a digital on/off button.
  *
@@ -156,13 +153,10 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       "aria-errormessage": ariaErrorMessage,
 
       inputProps,
-
-      color,
-
       ...others
     } = useDefaultProps("HvSwitch", props);
 
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
 
@@ -254,19 +248,6 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
               "aria-describedby": ariaDescribedBy,
               ...inputProps,
             }}
-            {...(color && {
-              classes: {
-                switchBase: css({
-                  "&&&+.HvBaseSwitch-track,&&&.HvBaseSwitch-checked+.HvBaseSwitch-track":
-                    {
-                      backgroundColor: getColor(color),
-                      borderColor: isSemantical(color)
-                        ? getColor(`${color}Deep`)
-                        : "#00000032",
-                    },
-                }),
-              },
-            })}
             {...others}
           />
         </div>

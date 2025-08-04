@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
+  HvBaseSwitch,
   HvButtonBase,
-  HvSwitch,
   theme,
 } from "@hitachivantara/uikit-react-core";
 
@@ -12,8 +12,9 @@ export default function Demo() {
     <HvButtonBase
       className="relative items-center rounded-full [&_.HvBaseSwitch-root]:bg-transparent"
       onClick={() => setChecked((prev) => !prev)}
+      component="div"
     >
-      <HvSwitch
+      <HvBaseSwitch
         size="medium"
         value="on"
         checked={checked}

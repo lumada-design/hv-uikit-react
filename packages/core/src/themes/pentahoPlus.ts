@@ -170,7 +170,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
                 border: "none",
               },
             },
-            [`&[data-size="medium"]`]: {
+            "&[data-size=medium]": {
               "+.HvBaseSwitch-track": {
                 width: 48,
                 height: 24,
