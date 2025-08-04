@@ -11,9 +11,9 @@ import { mergeTheme } from "./utils";
  * @param options The options to generate the theme
  * @returns The generated theme
  */
-export const makeTheme = <Mode extends string = string>(
-  options: HvCustomTheme<Mode> | ((theme: HvTheme) => HvCustomTheme<Mode>),
-): HvThemeStructure<Mode> => {
+export const makeTheme = (
+  options: HvCustomTheme | ((theme: HvTheme) => HvCustomTheme),
+): HvThemeStructure => {
   const customTheme = typeof options === "function" ? options(theme) : options;
   const newTheme = mergeTheme(baseTheme, customTheme);
 
@@ -69,7 +69,7 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  */
 export const makeColors = (
   inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
-): HvCustomTheme<"dawn" | "wicked">["colors"] => {
+): HvCustomTheme["colors"] => {
   const [lightColors, darkColors] = Object.entries(inputColors).reduce(
     (acc, [key, color]) => {
       const [lightColor, darkColor] =
@@ -87,22 +87,17 @@ export const makeColors = (
   );
 
   return {
-    // TODO: review allowing generic modes vs light/dark only
-    modes: {
-      dawn: {
-        type: "light",
-        ...colors.common,
-        ...colors.light,
-        ...extendCompatColors(lightColors),
-        ...lightColors,
-      },
-      wicked: {
-        type: "dark",
-        ...colors.common,
-        ...colors.dark,
-        ...extendCompatColors(darkColors),
-        ...darkColors,
-      },
+    light: {
+      ...colors.common,
+      ...colors.light,
+      ...extendCompatColors(lightColors),
+      ...lightColors,
+    },
+    dark: {
+      ...colors.common,
+      ...colors.dark,
+      ...extendCompatColors(darkColors),
+      ...darkColors,
     },
   };
 };
