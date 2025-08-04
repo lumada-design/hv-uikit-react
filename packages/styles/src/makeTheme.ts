@@ -1,6 +1,6 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
-import { colors, HvThemeColors, type HvColorTokens } from "./tokens/colors";
+import type { HvColorTokens, HvThemeColors } from "./tokens/colors";
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
@@ -59,7 +59,7 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
       acc[compatKey as keyof HvThemeColors] = color;
     }
     return acc;
-  }, {} as Partial<HvThemeColors>);
+  }, colors);
 };
 
 /**
@@ -87,15 +87,13 @@ export const makeColors = (
   );
 
   return {
-    light: {
-      ...colors.light,
-      ...extendCompatColors(lightColors),
+    light: extendCompatColors({
+      ...baseTheme.colors.light,
       ...lightColors,
-    },
-    dark: {
-      ...colors.dark,
-      ...extendCompatColors(darkColors),
+    }),
+    dark: extendCompatColors({
+      ...baseTheme.colors.dark,
       ...darkColors,
-    },
+    }),
   };
 };

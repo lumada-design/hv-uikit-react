@@ -71,7 +71,7 @@ export interface HvProviderProps {
    * The active color mode. It must be one of the color modes of the active theme.
    *
    * If no value is provided, the first color mode defined in the active theme is used.
-   * For the default themes, the `dawn` color mode is the one used.
+   * @default "light"
    */
   colorMode?: HvThemeColorMode;
 }
