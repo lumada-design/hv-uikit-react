@@ -185,22 +185,6 @@ const categorical = {
   cat12_60: "#B9D3B8",
   cat12_40: "#D0E2D0",
   cat12_20: "#E5EFE6",
-  cat13: "#DE64BD",
-  cat14: "#419393",
-  cat15: "#F5996E",
-  cat16: "#528BBF",
-  cat17: "#EB95AF",
-  cat18: "#73BF9C",
-  cat19: "#B55984",
-  cat20: "#F7B552",
-  cat21: "#869F1E",
-  cat22: "#A4991C",
-  cat23: "#C4931A",
-  cat24: "#E68C17",
-  cat25: "#F27034",
-  cat26: "#FF5252",
-  cat27: "#EC3D57",
-  cat28: "#D8265D",
 };
 
 const common = {
