@@ -48,6 +48,11 @@ const typographySpec: DeepString<HvThemeTypography> = {
   },
 };
 
+const colorTokens = {
+  ...tokens.colors.common,
+  ...tokens.colors.light,
+};
+
 const themeVars: HvThemeVars = {
   ...mapCSSVars({
     ...tokens,
@@ -59,17 +64,30 @@ const themeVars: HvThemeVars = {
 
 /** returns a Proxy that returns the CSS var for any (flat) token */
 function makeCssVars(prefix: string) {
-  const initialValue: Record<string, any> = {};
-  return new Proxy(initialValue, {
+  const themeTokens = Object.keys(colorTokens);
+  return new Proxy(colorTokens, {
     get(target, prop) {
       if (typeof prop !== "string") return undefined;
       return `var(${prefix}-${prop})`;
+    },
+    ownKeys() {
+      return themeTokens;
+    },
+    getOwnPropertyDescriptor(target, prop) {
+      if (themeTokens.includes(prop as string)) {
+        return { enumerable: true, configurable: true };
+      }
+      return undefined;
     },
   });
 }
 
 function getColorOrFallback(color?: HvColorAny) {
-  return themeVars.colors[color as HvColor] || color;
+  // TODO: support for custom colors
+  return (
+    (colorTokens[color as HvColor] && themeVars.colors[color as HvColor]) ||
+    color
+  );
 }
 
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */
