@@ -1,5 +1,5 @@
 import { palette } from "./palette";
-import { baseTheme as tokens } from "./tokens";
+import { baseTheme } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
 import type {
   DeepString,
@@ -49,13 +49,13 @@ const typographySpec: DeepString<HvThemeTypography> = {
 };
 
 const colorTokens = {
-  ...tokens.colors.common,
-  ...tokens.colors.light,
+  ...baseTheme.colors.common,
+  ...baseTheme.colors.light,
 };
 
 const themeVars: HvThemeVars = {
   ...mapCSSVars({
-    ...tokens,
+    ...baseTheme,
     ...componentsSpec,
     ...typographySpec,
   }),
