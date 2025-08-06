@@ -117,10 +117,7 @@ export const HvHeatmap = forwardRef<ReactECharts, HvHeatmapProps>(
       position: {
         y: "bottom",
       },
-      colorScale: convertedColors || [
-        colors?.cat1_180 || "",
-        colors?.cat1_20 || "",
-      ],
+      colorScale: convertedColors || ["#2D4B87", "#95AFE8", "#E7EDF9"],
     });
 
     const option = useOption({
