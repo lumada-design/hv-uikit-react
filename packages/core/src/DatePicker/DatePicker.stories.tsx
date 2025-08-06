@@ -19,7 +19,6 @@ const containerDecorator: Decorator = (Story) => (
 
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
-  // TODO: HvCalendar should have its own docs
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCalendar },
   component: HvDatePicker,
