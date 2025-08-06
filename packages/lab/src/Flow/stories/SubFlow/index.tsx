@@ -184,7 +184,7 @@ const nodeGroups = {
   },
   factTable: {
     label: "Fact Table",
-    color: "cat2_40",
+    color: "cat2",
     icon: <Table />,
     items: [{ nodeType: "factTable", label: "Fact Table" }],
   },

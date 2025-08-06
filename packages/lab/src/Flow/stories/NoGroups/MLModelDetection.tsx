@@ -8,7 +8,7 @@ export const MLModelDetection: HvFlowNodeFC = (props) => {
       subtitle="ML Model Detection"
       icon={<MachineLearning />}
       description="Anomaly Detection description"
-      color="cat8_80"
+      color="cat8"
       outputs={[
         {
           label: "Detection",

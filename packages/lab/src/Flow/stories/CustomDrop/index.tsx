@@ -38,14 +38,14 @@ import { Precipitation } from "./Precipitation";
 export const nodeGroups = {
   sources: {
     label: "Data Source",
-    color: "cat3_80",
+    color: "cat3",
     description: "Find here all the available data sources.",
     icon: <DataSource />,
     items: [{ nodeType: "precipitation", label: "Precipitation" }],
   },
   visualizations: {
     label: "Visualization",
-    color: "cat1_80",
+    color: "cat1",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
     items: [

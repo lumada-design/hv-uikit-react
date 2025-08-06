@@ -24,7 +24,7 @@ export const useNodeGroups = () => {
     () => ({
       dataset: {
         label: "Dataset",
-        color: "cat3_80",
+        color: "cat3",
         description: "Find here all the available datasets.",
         icon: <Storage />,
         items: datasets.map((ds) => ({
@@ -41,7 +41,7 @@ export const useNodeGroups = () => {
       },
       visualization: {
         label: "Visualization",
-        color: "cat1_80",
+        color: "cat1",
         description: "Find here all the available visualizations.",
         icon: <LineChartAlt />,
         items: [
@@ -97,7 +97,7 @@ export const useNodeGroups = () => {
       },
       dashboard: {
         label: "Dashboard",
-        color: "cat2_80",
+        color: "cat2",
         description: "Find here all the available dashboards.",
         icon: <Cards />,
         items: [{ nodeType: "dashboard", label: "Dashboard" }],

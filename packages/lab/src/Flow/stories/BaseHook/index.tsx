@@ -95,7 +95,7 @@ const nodeGroups = {
   },
   teapot: {
     label: "Teapot",
-    color: "cat2_40",
+    color: "cat2",
     icon: <Teapot />,
     items: [{ nodeType: "teapot", label: "Teapot" }],
   },
