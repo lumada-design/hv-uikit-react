@@ -32,7 +32,7 @@ export const classes = {
     width: "100%",
     alignItems: "center",
     "& svg path": {
-      fill: theme.colors.base_light,
+      fill: theme.colors.textLight,
     },
     gap: theme.space.xs,
   }),

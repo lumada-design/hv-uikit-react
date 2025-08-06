@@ -124,7 +124,7 @@ export const HvFlowNode = ({
           {headerItems}
           {description && (
             <HvTooltip title={description}>
-              <Info color="base_dark" />
+              <Info color="textDark" />
             </HvTooltip>
           )}
           {hasParams && (
@@ -136,7 +136,7 @@ export const HvFlowNode = ({
               }
               {...expandParamsButtonProps}
             >
-              <DropDownXS rotate={showParams} color="base_dark" />
+              <DropDownXS rotate={showParams} color="textDark" />
             </HvButton>
           )}
         </>

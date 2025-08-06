@@ -93,9 +93,9 @@ export function useHvNode(props: HvUseNodeParams) {
   const title = titleProp || nodeGroup?.label;
   const icon = iconProp || nodeGroup?.icon;
   const color = getColor(colorProp || nodeGroup?.color);
-  const iconColor = isValidElement(icon)
-    ? getColor(icon.props.color || "base_dark")
-    : getColor("base_dark");
+  const iconColor = getColor(
+    (isValidElement(icon) && icon.props.color) || "textDark",
+  );
   const subtitle = subtitleProp || node?.data.nodeLabel;
 
   const [showActions, setShowActions] = useState(false);

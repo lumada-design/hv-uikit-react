@@ -25,7 +25,7 @@ export const { staticClasses, useClasses } = createClasses("HvFlowBaseNode", {
     "& svg *.color0": { fill: "var(--icon-color)" },
   },
   title: {
-    color: theme.colors.base_dark,
+    color: theme.colors.textDark,
   },
   inputsTitleContainer: {
     display: "flex",

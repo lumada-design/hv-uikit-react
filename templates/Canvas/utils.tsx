@@ -20,15 +20,15 @@ export const delay = (ms: number) =>
   });
 
 export const iconsMapping = {
-  table: <Table color="base_dark" />,
-  ghost: <Ghost color="base_dark" />,
-  cloud: <Cloud color="base_dark" />,
-  battery: <Battery color="base_dark" />,
-  fire: <Fire color="base_dark" />,
-  palette: <Palette color="base_dark" />,
-  edit: <Edit color="base_dark" />,
-  heart: <Heart color="base_dark" />,
-  favorite: <Favorite color="base_dark" />,
+  table: <Table color="textDark" />,
+  ghost: <Ghost color="textDark" />,
+  cloud: <Cloud color="textDark" />,
+  battery: <Battery color="textDark" />,
+  fire: <Fire color="textDark" />,
+  palette: <Palette color="textDark" />,
+  edit: <Edit color="textDark" />,
+  heart: <Heart color="textDark" />,
+  favorite: <Favorite color="textDark" />,
 };
 
 export const iconsMappingKeys = Object.keys(iconsMapping);

@@ -72,7 +72,9 @@ export interface ColorTokens
 }
 
 const base = {
+  /** @deprecated use `textLight` instead */
   base_light: "#FBFCFC",
+  /** @deprecated use `textDark` instead */
   base_dark: "#414141",
 };
 

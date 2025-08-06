@@ -56,10 +56,7 @@ export const useColorScale = ({
     );
 
     return {
-      colorScale: parsedColors || [
-        colors?.base_light || "",
-        colors?.cat3 || "",
-      ],
+      colorScale: parsedColors || [colors?.textLight || "", colors?.cat3 || ""],
       max,
       min,
     };
@@ -90,7 +87,7 @@ export const useSeries = ({
         return colors?.negative;
       }
 
-      return colors?.base_light;
+      return colors?.textLight;
     },
     [colors],
   );
