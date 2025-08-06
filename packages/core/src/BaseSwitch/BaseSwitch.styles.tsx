@@ -5,10 +5,10 @@ import { outlineStyles } from "../utils/focusUtils";
 
 export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
   root: {
-    padding: 0,
+    padding: theme.space.xs,
     cursor: "pointer",
-    width: "40px",
-    height: "32px",
+    width: "fit-content",
+    height: "fit-content",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: theme.radii.round,
@@ -30,7 +30,7 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
           backgroundColor: theme.colors.primary,
           borderColor: "transparent",
         },
-        "& $thumb:not:has($disabled)": {
+        "&:not($disabled) $thumb": {
           borderColor: "transparent",
         },
         "&:hover": {
@@ -63,20 +63,38 @@ export const { staticClasses, useClasses } = createClasses("HvBaseSwitch", {
     width: "40px",
     height: "32px",
     padding: 0,
+    "&[data-size=medium]": {
+      "+.HvBaseSwitch-track": {
+        width: 48,
+        height: 22,
+      },
+      "& $thumb": {
+        left: -2,
+        top: 3,
+        width: 18,
+        height: 18,
+      },
+      "&$checked $thumb": {
+        left: 8,
+        top: 3,
+      },
+    },
   },
   track: {
     opacity: 1,
     borderRadius: theme.radii.full,
     height: "16px",
     width: "32px",
+
     border: `solid 1px ${theme.colors.borderStrong}`,
     backgroundColor: theme.colors.bgContainer,
   },
   thumb: {
     position: "relative",
-    left: "-9px",
+    left: "-5px",
     width: "10px",
     height: "10px",
+
     border: `solid 1px ${theme.colors.borderStrong}`,
     backgroundColor: theme.colors.bgContainer,
     marginLeft: "2px",

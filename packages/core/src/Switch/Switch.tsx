@@ -4,9 +4,9 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
-import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
+import { HvColorAny } from "@hitachivantara/uikit-styles";
 
-import { HvBaseSwitch } from "../BaseSwitch";
+import { HvBaseSwitch, HvBaseSwitchProps } from "../BaseSwitch";
 import {
   HvFormElement,
   HvFormStatus,
@@ -25,7 +25,7 @@ export { staticClasses as switchClasses };
 export type HvSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvSwitchProps
-  extends Omit<MuiSwitchProps, "color" | "onChange" | "classes"> {
+  extends Omit<MuiSwitchProps, "color" | "onChange" | "classes" | "size"> {
   /**
    * A Jss Object used to override or extend the styles applied to the switch.
    */
@@ -115,10 +115,9 @@ export interface HvSwitchProps
   component?: MuiSwitchProps["component"];
   /** Color applied to the switch. */
   color?: HvColorAny;
+  /** The size of the switch. */
+  size?: HvBaseSwitchProps["size"];
 }
-
-const isSemantical = (color: HvColorAny) =>
-  ["positive", "negative", "warning"].includes(color);
 
 /**
  * A Switch is **binary** and works as a digital on/off button.
@@ -154,13 +153,10 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       "aria-errormessage": ariaErrorMessage,
 
       inputProps,
-
-      color,
-
       ...others
     } = useDefaultProps("HvSwitch", props);
 
-    const { classes, cx, css } = useClasses(classesProp);
+    const { classes, cx } = useClasses(classesProp);
 
     const elementId = useUniqueId(id);
 
@@ -252,19 +248,6 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
               "aria-describedby": ariaDescribedBy,
               ...inputProps,
             }}
-            {...(color && {
-              classes: {
-                switchBase: css({
-                  "&&&+.HvBaseSwitch-track,&&&.HvBaseSwitch-checked+.HvBaseSwitch-track":
-                    {
-                      backgroundColor: getColor(color),
-                      borderColor: isSemantical(color)
-                        ? getColor(`${color}Deep`)
-                        : "#00000032",
-                    },
-                }),
-              },
-            })}
             {...others}
           />
         </div>

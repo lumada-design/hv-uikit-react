@@ -4,6 +4,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
 import { staticClasses, useClasses } from "./BaseSwitch.styles";
 
@@ -12,7 +13,7 @@ export { staticClasses as baseSwitchClasses };
 export type HvBaseSwitchClasses = ExtractNames<typeof useClasses>;
 
 export interface HvBaseSwitchProps
-  extends Omit<MuiSwitchProps, "onChange" | "classes"> {
+  extends Omit<MuiSwitchProps, "onChange" | "classes" | "color"> {
   /**
    * Class names to be applied.
    */
@@ -81,6 +82,12 @@ export interface HvBaseSwitchProps
    * @ignore
    */
   onBlur?: (event: React.FocusEvent<any>) => void;
+  /**
+   * The size of the switch.
+   */
+  size?: MuiSwitchProps["size"];
+  /** Color applied to the switch. */
+  color?: HvColorAny;
 }
 
 /**
@@ -112,11 +119,13 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
 
       onFocusVisible,
       onBlur,
+      size = "sm",
+      color,
 
       ...others
     } = useDefaultProps("HvBaseSwitch", props);
 
-    const { classes, cx } = useClasses(classesProp);
+    const { classes, cx, css } = useClasses(classesProp);
 
     const [focusVisible, setFocusVisible] = useState(false);
 
@@ -161,7 +170,6 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
           },
           className,
         )}
-        color="default"
         disabled={disabled}
         required={required}
         readOnly={readOnly}
@@ -171,15 +179,31 @@ export const HvBaseSwitch = forwardRef<HTMLButtonElement, HvBaseSwitchProps>(
         defaultChecked={defaultChecked}
         classes={{
           root: classes.switch,
-          switchBase: classes.switchBase,
+          switchBase: cx(classes.switchBase),
           checked: classes.checked,
-          track: classes.track,
-          thumb: classes.thumb,
+          track: cx(
+            classes.track,
+            color
+              ? css({
+                  backgroundColor: `${getColor(color, "transparent")}!important`,
+                  border: "none",
+                })
+              : undefined,
+          ),
+          thumb: cx(
+            classes.thumb,
+            color
+              ? css({
+                  border: "none",
+                })
+              : undefined,
+          ),
           disabled: classes.disabled,
         }}
         inputProps={inputProps}
         onFocusVisible={onFocusVisibleCallback}
         onBlur={onBlurCallback}
+        data-size={size}
         {...others}
       />
     );

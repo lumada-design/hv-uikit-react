@@ -133,39 +133,72 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     HvBaseSwitch: {
       classes: {
         root: {
-          borderRadius: theme.radii.base,
+          padding: theme.space.xxs,
+          borderRadius: theme.radii.full,
           "&:hover": {
             backgroundColor: theme.colors.bgHover,
           },
           "& .HvBaseSwitch-switchBase": {
             "& .HvBaseSwitch-thumb": {
               borderColor: "transparent",
-              boxShadow: `0px 1px 1px 0px ${theme.alpha(slate[700], 0.16)}`,
+              backgroundColor: "#FFFFFF",
+              left: -8,
+              top: -3,
+              width: 14,
+              height: 14,
             },
             "+.HvBaseSwitch-track": {
-              height: 14,
               backgroundColor: theme.colors.textDimmed,
-              borderColor: theme.colors.textSubtle,
+              border: "none",
+              width: 40,
+              height: 18,
             },
             "&.HvBaseSwitch-checked": {
-              "& .HvBaseSwitch-thumb": {
-                border: `1px solid ${theme.colors.bgContainer}`,
-              },
               "+.HvBaseSwitch-track": {
-                borderColor: theme.colors.primaryStrong,
+                backgroundColor: theme.colors.positive,
+              },
+              "& .HvBaseSwitch-thumb": {
+                left: -2,
               },
             },
             "&.HvBaseSwitch-disabled": {
               "& .HvBaseSwitch-thumb": {
-                backgroundColor: theme.colors.borderDisabled,
-                borderColor: theme.colors.borderDisabled,
+                borderColor: theme.colors.textDisabled,
               },
               "+.HvBaseSwitch-track": {
-                borderColor: theme.colors.borderDisabled,
                 backgroundColor: theme.colors.bgDisabled,
+                border: "none",
+              },
+            },
+            "&[data-size=medium]": {
+              "+.HvBaseSwitch-track": {
+                width: 48,
+                height: 24,
+              },
+              "& .HvBaseSwitch-thumb": {
+                left: -5,
+                top: 0,
+                width: 16,
+                height: 16,
+              },
+              "&.HvBaseSwitch-checked .HvBaseSwitch-thumb": {
+                left: 3,
+                top: 0,
               },
             },
           },
+        },
+        readOnly: {
+          ":hover": {
+            backgroundColor: "transparent",
+          },
+          "& .HvBaseSwitch-switchBase + .HvBaseSwitch-track": {
+            backgroundColor: theme.colors.border,
+          },
+          "& .HvBaseSwitch-switchBase.HvBaseSwitch-checked + .HvBaseSwitch-track":
+            {
+              backgroundColor: theme.mix("positive", 0.5, "dimmer"),
+            },
         },
       },
     },
