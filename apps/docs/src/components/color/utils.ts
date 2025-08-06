@@ -1,9 +1,7 @@
-import { HvColorTokens, HvThemeColors } from "@hitachivantara/uikit-styles";
+import { HvThemeColors } from "@hitachivantara/uikit-styles";
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
-export const compatMap: Partial<
-  Record<keyof HvColorTokens, keyof HvThemeColors>
-> = {
+export const compatMap: Partial<Record<keyof HvThemeColors, string>> = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
   positiveStrong: "positive_80",
@@ -52,7 +50,9 @@ export const groupColorTokensByCategory = (
 };
 
 // Placeholder schema for all required keys
-export const colorTokensSpec: HvColorTokens = {
+export const colorTokensSpec: HvThemeColors = {
+  brand: "string",
+
   // Semantic
   primary: "string",
   primaryStrong: "string",
@@ -119,6 +119,11 @@ export const colorTokensSpec: HvColorTokens = {
   bgOverlay: "string",
   dimmer: "string",
 
+  // Shadows
+  shad1: "string",
+  shadow: "string",
+
+  // Viz colors
   cat1: "string",
   cat2: "string",
   cat3: "string",

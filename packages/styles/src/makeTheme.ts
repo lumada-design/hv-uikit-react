@@ -21,7 +21,7 @@ export const makeTheme = (
 };
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
-const compatMap: Partial<Record<keyof HvColorTokens, keyof HvThemeColors>> = {
+const compatMap: Partial<Record<keyof HvColorTokens, string>> = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
   positiveStrong: "positive_80",
@@ -52,9 +52,9 @@ const compatMap: Partial<Record<keyof HvColorTokens, keyof HvThemeColors>> = {
 /** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
-    const compatKey = compatMap[key as keyof typeof compatMap];
+    const compatKey = compatMap[key as keyof HvThemeColors];
     if (compatKey) {
-      acc[compatKey] = color;
+      acc[compatKey as keyof HvThemeColors] = color;
     }
     return acc;
   }, {} as Partial<HvThemeColors>);
