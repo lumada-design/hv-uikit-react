@@ -158,7 +158,7 @@ export const ds5 = mergeTheme(ds5Base, {
     HvTag: {
       classes: {
         root: {
-          "--tagColor": theme.colors.neutral_20,
+          "--tagColor": theme.colors.infoDimmed,
         },
         categorical: {
           "--tagColor": theme.alpha("cat1", 0.2),
@@ -172,7 +172,7 @@ export const ds5 = mergeTheme(ds5Base, {
             padding: 0,
           },
           "& .HvIconContainer-root": {
-            color: `${theme.colors.text}!important`,
+            color: theme.colors.text,
           },
         },
       },

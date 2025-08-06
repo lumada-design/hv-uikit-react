@@ -16,7 +16,7 @@ import { ModelDetails, useModelData } from "./data";
 import { MetadataItem } from "./MetadataItem";
 
 const ProgressBar = ({
-  color = "secondary",
+  color = "text",
   value,
 }: {
   color?: HvColor;
@@ -102,7 +102,7 @@ const entries: Partial<
   risk: {
     label: "Risk",
     Component: ({ value }) => (
-      <ProgressBar color="catastrophic" value={value * 100} />
+      <ProgressBar color="negative" value={value * 100} />
     ),
   },
 };

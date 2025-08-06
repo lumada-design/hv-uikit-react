@@ -18,8 +18,11 @@ type SemanticKeys<Prefix extends string> =
   | `${Prefix}Deep`;
 // 🔎: border tokens don't exist for "primary"
 
-export interface ColorTokens
-  extends Record<SemanticKeys<SemanticTypes>, string> {
+type VizKeys = `cat${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`;
+
+export interface HvColorTokens
+  extends Record<SemanticKeys<SemanticTypes>, string>,
+    Record<VizKeys, string> {
   // #region semantic
   // 🔎: border tokens don't exist for "primary"
   accentBorder: string;
@@ -69,16 +72,23 @@ export interface ColorTokens
   /** color to use for opacity */
   dimmer: string;
   // #endregion
+
+  // #region others
+  /** brand color */
+  brand: string;
+  /** shadow color */
+  shad1: string;
+  /** box shadow */
+  shadow: string;
+  // #endregion
 }
 
-const base = {
-  /** @deprecated use `textLight` instead */
-  base_light: "#FBFCFC",
-  /** @deprecated use `textDark` instead */
-  base_dark: "#414141",
-};
+const common = {
+  brand: "#CC0000",
 
-const categorical = {
+  textLight: "#FBFCFC",
+  textDark: "#414141",
+
   cat1: "#95AFE8",
   cat2: "#E89E5D",
   cat3: "#73BAA5",
@@ -91,84 +101,39 @@ const categorical = {
   cat10: "#2D86B3",
   cat11: "#FC9AAA",
   cat12: "#8EBA8C",
-};
-
-const common = {
-  ...base,
-  ...categorical,
-};
+} satisfies Partial<HvColorTokens>;
 
 // #region Light palette
-const accentLight = {
-  secondary: "#414141",
+const light = {
   primary: "#2064B4",
-  primary_80: "#1775E0",
-  primary_20: "#1775E019",
-  brand: "#CC0000",
-  secondary_80: "#6C6B6B",
-  secondary_60: "#999999",
-};
-
-const atmosphereLight = {
-  atmo1: "#FBFCFC",
-  atmo2: "#F4F5F5",
-  atmo3: "#E8E8E8",
-  atmo4: "#CCCED0",
-};
-
-const semanticLight = {
+  primaryDeep: "#1775E0",
+  primaryStrong: "#1775E0",
+  primarySubtle: "#1775E019",
+  primaryDimmed: "#1775E019",
   positive: "#478B1A",
-  positive_80: "#709C27",
-  positive_120: "#227A10",
-  neutral: "#4D8AC0",
+  positiveDeep: "#227A10",
+  positiveStrong: "#709C27",
+  positiveDimmed: "#D7E6CF",
+  positiveSubtle: "#D7E6CF",
+  positiveBorder: "#D7E6CF",
   warning: "#F9C846",
-  warning_120: "#F8AC39",
-  warning_140: "#F27C27",
+  warningDeep: "#F27C27",
+  warningStrong: "#F8AC39",
+  warningDimmed: "#FBF2D8",
+  warningSubtle: "#FBF2D8",
+  warningBorder: "#FBF2D8",
   negative: "#D43136",
-  negative_80: "#ED4747",
-  negative_120: "#B41B3A",
-  catastrophic: "#930A80",
-  neutral_20: "#D8E6F1",
-  positive_20: "#D7E6CF",
-  negative_20: "#F4D3D4",
-  warning_20: "#FBF2D8",
-};
-
-const shadowLight = {
-  shad1: "rgba(65, 65, 65, 0.12)",
-  shadow: "0 2px 12px rgba(65,65,65,0.12)",
-};
-
-const newLight = {
-  primary: accentLight.primary,
-  primaryDeep: accentLight.primary_80,
-  primaryStrong: accentLight.primary_80,
-  primarySubtle: accentLight.primary_20,
-  primaryDimmed: accentLight.primary_20,
-  positive: semanticLight.positive,
-  positiveDeep: semanticLight.positive_120,
-  positiveStrong: semanticLight.positive_80,
-  positiveDimmed: semanticLight.positive_20,
-  positiveSubtle: semanticLight.positive_20,
-  positiveBorder: semanticLight.positive_20,
-  warning: semanticLight.warning,
-  warningDeep: semanticLight.warning_140,
-  warningStrong: semanticLight.warning_120,
-  warningDimmed: semanticLight.warning_20,
-  warningSubtle: semanticLight.warning_20,
-  warningBorder: semanticLight.warning_20,
-  negative: semanticLight.negative,
-  negativeDeep: semanticLight.negative_120,
-  negativeStrong: semanticLight.negative_80,
-  negativeDimmed: semanticLight.negative_20,
-  negativeSubtle: semanticLight.negative_20,
-  negativeBorder: semanticLight.negative_20,
-  info: semanticLight.neutral,
-  infoDeep: semanticLight.neutral,
-  infoStrong: semanticLight.neutral,
-  infoDimmed: semanticLight.neutral_20,
-  infoSubtle: semanticLight.neutral_20,
-  infoBorder: semanticLight.neutral_20,
+  negativeDeep: "#B41B3A",
+  negativeStrong: "#ED4747",
+  negativeDimmed: "#F4D3D4",
+  negativeSubtle: "#F4D3D4",
+  negativeBorder: "#F4D3D4",
+  info: "#4D8AC0",
+  infoDeep: "#4D8AC0",
+  infoStrong: "#4D8AC0",
+  infoDimmed: "#D8E6F1",
+  infoSubtle: "#D8E6F1",
+  infoBorder: "#D8E6F1",
   accent: indigo[600] as string,
   accentDeep: indigo[800] as string,
   accentStrong: indigo[700] as string,
@@ -176,100 +141,62 @@ const newLight = {
   accentDimmed: indigo[50] as string,
   accentBorder: indigo[200] as string,
 
-  text: accentLight.secondary,
-  textSubtle: accentLight.secondary_80,
-  textDisabled: accentLight.secondary_60,
-  textDimmed: atmosphereLight.atmo1,
-  textLight: base.base_light,
-  textDark: base.base_dark,
+  text: "#414141",
+  textSubtle: "#6C6B6B",
+  textDisabled: "#999999",
+  textDimmed: "#FBFCFC",
 
-  border: atmosphereLight.atmo4,
-  borderSubtle: atmosphereLight.atmo3,
-  borderStrong: accentLight.secondary_80,
-  borderDisabled: accentLight.secondary_60,
+  border: "#CCCED0",
+  borderSubtle: "#E8E8E8",
+  borderStrong: "#6C6B6B",
+  borderDisabled: "#999999",
 
-  bgPage: atmosphereLight.atmo2,
-  bgContainer: atmosphereLight.atmo1,
-  bgPageSecondary: atmosphereLight.atmo3,
-  bgContainerSecondary: atmosphereLight.atmo1,
-  bgHover: accentLight.primary_20,
-  bgDisabled: atmosphereLight.atmo3,
-  bgOverlay: `color-mix(in srgb, ${atmosphereLight.atmo4} 80%, transparent)`,
+  bgPage: "#F4F5F5",
+  bgContainer: "#FBFCFC",
+  bgPageSecondary: "#E8E8E8",
+  bgContainerSecondary: "#FBFCFC",
+  bgHover: "#1775E019",
+  bgDisabled: "#E8E8E8",
+  bgOverlay: `color-mix(in srgb, #CCCED0 80%, transparent)`,
   dimmer: "#FFFFFF",
-} satisfies ColorTokens;
+
+  shad1: "rgba(65, 65, 65, 0.12)",
+  shadow: "0 2px 12px rgba(65,65,65,0.12)",
+  ...common,
+} satisfies HvColorTokens;
 // #endregion
 
 // #region Dark palette
-const accentDark = {
-  secondary: "#CCCCCC",
+const dark = {
   primary: "#639FE3",
-  primary_80: "#82B2E8",
-  primary_20: "#82B2E84C",
-  brand: "#CC0000",
-  secondary_80: "#9A9999",
-  secondary_60: "#656565",
-};
-
-const atmosphereDark = {
-  atmo1: "#313131",
-  atmo2: "#282828",
-  atmo3: "#1F1F1F",
-  atmo4: "#4B4B4B",
-};
-
-const semanticDark = {
+  primaryDeep: "#82B2E8",
+  primaryStrong: "#82B2E8",
+  primarySubtle: "#82B2E84C",
+  primaryDimmed: "#82B2E84C",
   positive: "#84D930",
-  positive_80: "#70BF21",
-  positive_120: "#63A621",
-  neutral: "#7EBAD6",
+  positiveDeep: "#63A621",
+  positiveStrong: "#70BF21",
+  positiveDimmed: "#D7E6CF",
+  positiveSubtle: "#D7E6CF",
+  positiveBorder: "#D7E6CF",
   warning: "#E68C17",
-  warning_120: "#F57B36",
-  warning_140: "#FE6B51",
+  warningDeep: "#F57B36",
+  warningStrong: "#F57B36",
+  warningDimmed: "#FBF2D8",
+  warningSubtle: "#FBF2D8",
+  warningBorder: "#FBF2D8",
   negative: "#FF5E6C",
-  negative_80: "#EC3D57",
-  negative_120: "#D92750",
-  catastrophic: "#9A76E7",
-  neutral_20: "#D8E6F1",
-  positive_20: "#D7E6CF",
-  negative_20: "#F4D3D4",
-  warning_20: "#FBF2D8",
-};
-
-const shadowDark = {
-  shad1: "rgba(0,0,0,.16)",
-  shadow: "0 3px 5px rgba(0,0,0,.16)",
-};
-
-const newDark = {
-  primary: accentDark.primary,
-  primaryDeep: accentDark.primary_80,
-  primaryStrong: accentDark.primary_80,
-  primarySubtle: accentDark.primary_20,
-  primaryDimmed: accentDark.primary_20,
-  positive: semanticDark.positive,
-  positiveDeep: semanticDark.positive_120,
-  positiveStrong: semanticDark.positive_80,
-  positiveDimmed: semanticDark.positive_20,
-  positiveSubtle: semanticDark.positive_20,
-  positiveBorder: semanticDark.positive_20,
-  warning: semanticDark.warning,
-  warningDeep: semanticDark.warning_140,
-  warningStrong: semanticDark.warning_120,
-  warningDimmed: semanticDark.warning_20,
-  warningSubtle: semanticDark.warning_20,
-  warningBorder: semanticDark.warning_20,
-  negative: semanticDark.negative,
-  negativeDeep: semanticDark.negative_120,
-  negativeStrong: semanticDark.negative_80,
-  negativeDimmed: semanticDark.negative_20,
-  negativeSubtle: semanticDark.negative_20,
-  negativeBorder: semanticDark.negative_20,
-  info: semanticDark.neutral,
-  infoDeep: semanticDark.neutral,
-  infoStrong: semanticDark.neutral,
-  infoDimmed: semanticDark.neutral_20,
-  infoSubtle: semanticDark.neutral_20,
-  infoBorder: semanticDark.neutral_20,
+  negativeDeep: "#D92750",
+  negativeStrong: "#EC3D57",
+  negativeDimmed: "#F4D3D4",
+  negativeSubtle: "#F4D3D4",
+  negativeBorder: "#F4D3D4",
+  info: "#7EBAD6",
+  infoDeep: "#7EBAD6",
+  infoStrong: "#7EBAD6",
+  infoDimmed: "#D8E6F1",
+  infoSubtle: "#D8E6F1",
+  infoBorder: "#D8E6F1",
   accent: indigo[500] as string,
   accentDeep: indigo[700] as string,
   accentStrong: indigo[600] as string,
@@ -277,52 +204,38 @@ const newDark = {
   accentDimmed: indigo[950] as string,
   accentBorder: indigo[800] as string,
 
-  text: accentDark.secondary,
-  textSubtle: accentDark.secondary_80,
-  textDisabled: accentDark.secondary_60,
-  textDimmed: atmosphereDark.atmo1,
-  textLight: base.base_light,
-  textDark: base.base_dark,
+  text: "#CCCCCC",
+  textSubtle: "#9A9999",
+  textDisabled: "#656565",
+  textDimmed: "#313131",
 
-  border: atmosphereDark.atmo4,
-  borderSubtle: atmosphereDark.atmo3,
-  borderStrong: accentLight.secondary_80,
-  borderDisabled: accentLight.secondary_60,
+  border: "#4B4B4B",
+  borderSubtle: "#1F1F1F",
+  borderStrong: "#9A9999",
+  borderDisabled: "#656565",
 
-  bgPage: atmosphereDark.atmo2,
-  bgContainer: atmosphereDark.atmo1,
-  bgPageSecondary: atmosphereDark.atmo3,
-  bgContainerSecondary: atmosphereDark.atmo1,
-  bgHover: accentDark.primary_20,
-  bgDisabled: atmosphereDark.atmo3,
-  bgOverlay: `color-mix(in srgb, ${atmosphereDark.atmo4} 80%, transparent)`,
+  bgPage: "#282828",
+  bgContainer: "#313131",
+  bgPageSecondary: "#1F1F1F",
+  bgContainerSecondary: "#313131",
+  bgHover: "#82B2E84C",
+  bgDisabled: "#1F1F1F",
+  bgOverlay: `color-mix(in srgb, #4B4B4B 80%, transparent)`,
   dimmer: "#000000",
-} satisfies ColorTokens;
+
+  shad1: "rgba(0,0,0,.16)",
+  shadow: "0 3px 5px rgba(0,0,0,.16)",
+  ...common,
+} satisfies HvColorTokens;
 // #endregion
 
 export const colors = {
-  common,
-  light: {
-    ...accentLight,
-    ...atmosphereLight,
-    ...semanticLight,
-    ...shadowLight,
-    ...newLight,
-  },
-  dark: {
-    ...accentDark,
-    ...atmosphereDark,
-    ...semanticDark,
-    ...shadowDark,
-    ...newDark,
-  },
+  light,
+  dark,
 };
 
-/** @deprecated replace with standard UI Kit ColorTokens in v6 */
-type AllColors = typeof colors.common & typeof colors.light;
-
 /** @experimental extendable theme colors */
-export interface HvThemeColors extends ColorTokens, AllColors {}
+export interface HvThemeColors extends HvColorTokens {}
 
 /** A type with all the accepted colors from the color palette */
 export type HvColor = keyof HvThemeColors;
