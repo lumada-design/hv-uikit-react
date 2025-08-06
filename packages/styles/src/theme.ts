@@ -49,7 +49,6 @@ const typographySpec: DeepString<HvThemeTypography> = {
 };
 
 const colorTokens = {
-  ...colors.common,
   ...colors.light,
 };
 

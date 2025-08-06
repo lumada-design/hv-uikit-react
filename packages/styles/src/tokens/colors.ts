@@ -1,7 +1,7 @@
 import type { Property } from "csstype";
 
 import { indigo } from "../palette";
-import { ds5Colors as dsColors, getColors, oldVizColors } from "./colorsCompat";
+import { ds5Colors as dsColors, getColors } from "./colorsCompat";
 
 type SemanticTypes =
   | "primary"
@@ -20,9 +20,6 @@ type SemanticKeys<Prefix extends string> =
 // 🔎: border tokens don't exist for "primary"
 
 type VizKeys = `cat${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`;
-
-/** @deprecated use `HvColorTokens` instead */
-export type ColorTokens = HvColorTokens;
 
 export interface HvColorTokens
   extends Record<SemanticKeys<SemanticTypes>, string>,
@@ -78,6 +75,8 @@ export interface HvColorTokens
   // #endregion
 
   // #region others
+  /** brand color */
+  brand: string;
   /** shadow color */
   shad1: string;
   /** box shadow */
@@ -85,14 +84,12 @@ export interface HvColorTokens
   // #endregion
 }
 
-const base = {
-  /** @deprecated use `textLight` instead */
-  base_light: "#FBFCFC",
-  /** @deprecated use `textDark` instead */
-  base_dark: "#414141",
-};
+const common = {
+  brand: "#CC0000",
 
-const categorical = {
+  textLight: "#FBFCFC",
+  textDark: "#414141",
+
   cat1: "#95AFE8",
   cat2: "#E89E5D",
   cat3: "#73BAA5",
@@ -105,12 +102,6 @@ const categorical = {
   cat10: "#2D86B3",
   cat11: "#FC9AAA",
   cat12: "#8EBA8C",
-};
-
-const common = {
-  ...base,
-  ...categorical,
-  ...oldVizColors,
 } satisfies Partial<HvColorTokens>;
 
 // #region Light palette
@@ -157,8 +148,6 @@ const light = {
   textSubtle: dsColors.secondary_80[0],
   textDisabled: dsColors.secondary_60[0],
   textDimmed: dsColors.atmo1[0],
-  textLight: base.base_light,
-  textDark: base.base_dark,
 
   border: dsColors.atmo4[0],
   borderSubtle: dsColors.atmo3[0],
@@ -176,9 +165,8 @@ const light = {
 
   shad1: "rgba(65, 65, 65, 0.12)",
   shadow: "0 2px 12px rgba(65,65,65,0.12)",
-
-  ...categorical,
-} satisfies HvColorTokens & Record<string, string>;
+  ...common,
+} satisfies HvColorTokens;
 // #endregion
 
 // #region Dark palette
@@ -225,8 +213,6 @@ const dark = {
   textSubtle: dsColors.secondary_80[1],
   textDisabled: dsColors.secondary_60[1],
   textDimmed: dsColors.atmo1[1],
-  textLight: base.base_light,
-  textDark: base.base_dark,
 
   border: dsColors.atmo4[1],
   borderSubtle: dsColors.atmo3[1],
@@ -244,22 +230,17 @@ const dark = {
 
   shad1: "rgba(0,0,0,.16)",
   shadow: "0 3px 5px rgba(0,0,0,.16)",
-
-  ...categorical,
-} satisfies HvColorTokens & Record<string, string>;
+  ...common,
+} satisfies HvColorTokens;
 // #endregion
 
 export const colors = {
-  common,
   light,
   dark,
 };
 
-/** @deprecated replace with standard UI Kit ColorTokens in v6 */
-type AllColors = typeof colors.common & typeof colors.light;
-
 /** @experimental extendable theme colors */
-export interface HvThemeColors extends HvColorTokens, AllColors {}
+export interface HvThemeColors extends HvColorTokens {}
 
 /** A type with all the accepted colors from the color palette */
 export type HvColor = keyof HvThemeColors;

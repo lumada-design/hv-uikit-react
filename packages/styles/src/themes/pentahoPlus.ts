@@ -24,7 +24,6 @@ const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
   colors: makeColors({
     brand: blue[600],
-    catastrophic: [rose[800], pink[600]],
     // TODO: review _20 token differences
     negative_20: red[100],
     warning_20: amber[100],

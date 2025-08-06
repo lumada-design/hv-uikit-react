@@ -80,7 +80,7 @@ const ds5 = makeTheme((theme) => ({
     secondLevelHeight: "56px",
   },
   form: {
-    errorColor: theme.colors.negative_120,
+    errorColor: theme.colors.negativeDeep,
   },
   snackbar: {
     actionButtonVariant: "semantic",

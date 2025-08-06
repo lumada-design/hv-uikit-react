@@ -1,4 +1,4 @@
-import { HvColorTokens, HvThemeColors } from "@hitachivantara/uikit-styles";
+import { HvThemeColors } from "@hitachivantara/uikit-styles";
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
 export const compatMap: Partial<Record<keyof HvThemeColors, string>> = {
@@ -52,7 +52,9 @@ export const groupColorTokensByCategory = (
 };
 
 // Placeholder schema for all required keys
-export const colorTokensSpec: HvColorTokens = {
+export const colorTokensSpec: HvThemeColors = {
+  brand: "string",
+
   // Semantic
   primary: "string",
   primaryStrong: "string",
