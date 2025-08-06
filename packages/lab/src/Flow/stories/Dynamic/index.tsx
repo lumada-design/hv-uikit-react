@@ -65,7 +65,7 @@ const nodeTypes = {
 const nodeGroups = {
   assets: {
     label: "Asset",
-    color: "cat3_80",
+    color: "cat3",
     description:
       "Find here all the available assets. Scroll to see all the options.",
     icon: <DataSource />,

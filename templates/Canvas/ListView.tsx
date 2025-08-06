@@ -40,7 +40,7 @@ const classes = {
   }),
   icon: css({
     borderRadius: theme.radii.round,
-    backgroundColor: theme.colors.cat6_60,
+    backgroundColor: theme.colors.cat6,
   }),
   dragging: css({
     border: `2px solid ${theme.colors.primaryStrong}`,
@@ -106,7 +106,7 @@ const DraggableItemCard = ({ icon, title, id, subtitle }: ItemProps) => {
           // Values to be added to the node's data
           data: {
             subtitle,
-            color: "cat6_60",
+            color: "cat6",
             icon,
             output: {
               id: "data",

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HvButton } from "@hitachivantara/uikit-react-core";
-import { theme } from "@hitachivantara/uikit-styles";
 
 import {
   HvFlow,
@@ -19,7 +18,7 @@ import {
 const nodeGroups: HvFlowNodeGroups = {
   asset: {
     label: "Assets",
-    color: "cat3_80",
+    color: "cat3",
     description: "This is my description 1.",
     icon: <div />,
     items: [
@@ -29,7 +28,7 @@ const nodeGroups: HvFlowNodeGroups = {
   },
   digitalTwin: {
     label: "Digital Twin",
-    color: "cat2_80",
+    color: "cat2",
     description: "This is my description 2.",
     icon: <div />,
     items: [{ nodeType: "toyStory", label: "Toy Story" }],
@@ -41,7 +40,7 @@ const BoomArm = (props: HvFlowBaseNodeProps) => (
     title="Asset"
     subtitle="Boom Arm"
     groupId="asset"
-    color={theme.colors.cat3_40}
+    color="cat3"
     {...props}
   />
 );
@@ -50,7 +49,7 @@ const ToyStory = (props: HvFlowBaseNodeProps) => (
     title="Digital Twin"
     subtitle="Toy Story"
     groupId="digitalTwin"
-    color={theme.colors.cat2_40}
+    color="cat2"
     {...props}
   />
 );
@@ -59,7 +58,7 @@ const SpaceMountain = (props: HvFlowBaseNodeProps) => (
     title="Asset"
     subtitle="Space Mountain"
     groupId="asset"
-    color={theme.colors.cat3_40}
+    color="cat3"
     {...props}
   />
 );

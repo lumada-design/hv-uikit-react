@@ -45,7 +45,7 @@ type NodeType = keyof typeof nodeTypes;
 const nodeGroups = {
   inputs: {
     label: "Input",
-    color: "cat3_80",
+    color: "cat3",
     description: "Find here all the available inputs.",
     icon: <DataSource />,
     items: [
@@ -58,7 +58,7 @@ const nodeGroups = {
   },
   transformations: {
     label: "Transformation",
-    color: "cat5_80",
+    color: "cat5",
     description: "Find here all the available transformations.",
     icon: <Operation />,
     items: [
@@ -70,7 +70,7 @@ const nodeGroups = {
   },
   visualizations: {
     label: "Visualization",
-    color: "cat1_80",
+    color: "cat1",
     description: "Find here all the available visualizations.",
     icon: <LineChartAlt />,
     items: [

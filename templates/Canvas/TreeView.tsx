@@ -154,7 +154,7 @@ const DraggableTreeItem = (props: DraggableTreeItemProps) => {
           data: {
             tableId: nodeId,
             subtitle,
-            color: "cat3_40",
+            color: "cat3",
             icon: "table",
             output: {
               id: "data",

@@ -76,7 +76,7 @@ const predefinedLayout = {
 export const nodeGroups = {
   assets: {
     label: "Asset",
-    color: "cat3_80",
+    color: "cat3",
     description: "Find here all the available assets.",
     icon: <Cluster />,
     items: [
@@ -89,7 +89,7 @@ export const nodeGroups = {
   },
   models: {
     label: "ML Model",
-    color: "cat1_80",
+    color: "cat1",
     description: "Find here all the available ML models.",
     icon: <MachineLearning />,
     items: [
@@ -107,7 +107,7 @@ export const nodeGroups = {
   },
   insights: {
     label: "Insight",
-    color: "cat6_80",
+    color: "cat6",
     description: "Find here all the available insights.",
     icon: <LineChartAlt />,
     items: [
@@ -118,7 +118,7 @@ export const nodeGroups = {
   },
   dashboards: {
     label: "Dashboard",
-    color: "cat2_80",
+    color: "cat2",
     description: "Find here all the available dashboards.",
     icon: <Cards />,
     items: [
