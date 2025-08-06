@@ -1,8 +1,8 @@
-import { ColorTokens, HvThemeColors } from "@hitachivantara/uikit-styles";
+import { HvColorTokens, HvThemeColors } from "@hitachivantara/uikit-styles";
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
 export const compatMap: Partial<
-  Record<keyof ColorTokens, keyof HvThemeColors>
+  Record<keyof HvColorTokens, keyof HvThemeColors>
 > = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
@@ -22,8 +22,6 @@ export const compatMap: Partial<
   textSubtle: "secondary_80",
   textDisabled: "secondary_60",
   textDimmed: "atmo1",
-  textLight: "base_light",
-  textDark: "base_dark",
 
   bgHover: "primary_20",
   bgDisabled: "atmo3",
@@ -54,7 +52,7 @@ export const groupColorTokensByCategory = (
 };
 
 // Placeholder schema for all required keys
-export const colorTokensSpec: ColorTokens = {
+export const colorTokensSpec: HvColorTokens = {
   // Semantic
   primary: "string",
   primaryStrong: "string",
@@ -120,4 +118,17 @@ export const colorTokensSpec: ColorTokens = {
   bgDisabled: "string",
   bgOverlay: "string",
   dimmer: "string",
+
+  cat1: "string",
+  cat2: "string",
+  cat3: "string",
+  cat4: "string",
+  cat5: "string",
+  cat6: "string",
+  cat7: "string",
+  cat8: "string",
+  cat9: "string",
+  cat10: "string",
+  cat11: "string",
+  cat12: "string",
 };

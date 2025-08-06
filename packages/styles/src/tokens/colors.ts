@@ -18,8 +18,11 @@ type SemanticKeys<Prefix extends string> =
   | `${Prefix}Deep`;
 // 🔎: border tokens don't exist for "primary"
 
-export interface ColorTokens
-  extends Record<SemanticKeys<SemanticTypes>, string> {
+type VizKeys = `cat${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}`;
+
+export interface HvColorTokens
+  extends Record<SemanticKeys<SemanticTypes>, string>,
+    Record<VizKeys, string> {
   // #region semantic
   // 🔎: border tokens don't exist for "primary"
   accentBorder: string;
@@ -71,126 +74,20 @@ export interface ColorTokens
   // #endregion
 }
 
-const base = {
-  base_light: "#FBFCFC",
-  base_dark: "#414141",
-};
-
 const categorical = {
-  cat1_180: "#2D4B87",
-  cat1_160: "#4767A7",
-  cat1_140: "#5C7CBB",
-  cat1_120: "#7795D1",
   cat1: "#95AFE8",
-  cat1_80: "#B3C6EE",
-  cat1_60: "#BDCDEF",
-  cat1_40: "#D2DEF5",
-  cat1_20: "#E7EDF9",
-  cat2_180: "#764419",
-  cat2_160: "#9B5F2A",
-  cat2_140: "#B4733A",
-  cat2_120: "#CD884B",
   cat2: "#E89E5D",
-  cat2_80: "#EBB07C",
-  cat2_60: "#EFC39B",
-  cat2_40: "#F4D7BD",
-  cat2_20: "#F8EADC",
-  cat3_180: "#0B513E",
-  cat3_160: "#1C6F58",
-  cat3_140: "#328871",
-  cat3_120: "#50A18B",
   cat3: "#73BAA5",
-  cat3_80: "#8EC6B6",
-  cat3_60: "#A9D3C7",
-  cat3_40: "#C5E2DA",
-  cat3_20: "#E0EFEB",
-  cat4_180: "#131D55",
-  cat4_160: "#283373",
-  cat4_140: "#3C4784",
-  cat4_120: "#525C93",
   cat4: "#6F749F",
-  cat4_80: "#8A8EB1",
-  cat4_60: "#A6A9C3",
-  cat4_40: "#C3C6D7",
-  cat4_20: "#DFE1EA",
-  cat5_180: "#561C1E",
-  cat5_160: "#722D30",
-  cat5_140: "#8F4245",
-  cat5_120: "#AC5B5E",
   cat5: "#D17A7C",
-  cat5_80: "#D99395",
-  cat5_60: "#E1ADAE",
-  cat5_40: "#EBC9C9",
-  cat5_20: "#F3E2E3",
-  cat6_180: "#A27B21",
-  cat6_160: "#BC9336",
-  cat6_140: "#CFA74D",
-  cat6_120: "#E3BD66",
   cat6: "#FFDA8A",
-  cat6_80: "#FEE0A0",
-  cat6_60: "#FDE7B7",
-  cat6_40: "#FDEFCF",
-  cat6_20: "#FCF6E6",
-  cat7_180: "#0A4A61",
-  cat7_160: "#1B6783",
-  cat7_140: "#31809D",
-  cat7_120: "#519FBB",
   cat7: "#7DC1DB",
-  cat7_80: "#96CCE1",
-  cat7_60: "#AFD8E7",
-  cat7_40: "#C9E5F0",
-  cat7_20: "#E2F1F6",
-  cat8_180: "#45243A",
-  cat8_160: "#613753",
-  cat8_140: "#7B4B6B",
-  cat8_120: "#996487",
   cat8: "#B67EA3",
-  cat8_80: "#C396B4",
-  cat8_60: "#D1AFC6",
-  cat8_40: "#E0CAD9",
-  cat8_20: "#EDE3EB",
-  cat9_180: "#946D42",
-  cat9_160: "#AD804E",
-  cat9_140: "#C59259",
-  cat9_120: "#D9A162",
   cat9: "#F2BC66",
-  cat9_80: "#F3C883",
-  cat9_60: "#F5D5A1",
-  cat9_40: "#F8E3C1",
-  cat9_20: "#FAF0DE",
-  cat10_180: "#11415B",
-  cat10_160: "#1E5877",
-  cat10_140: "#2A6C91",
-  cat10_120: "#347BA2",
   cat10: "#2D86B3",
-  cat10_80: "#569DC1",
-  cat10_60: "#7FB4CF",
-  cat10_40: "#A9CDE0",
-  cat10_20: "#D2E5EE",
-  cat11_180: "#873E4A",
-  cat11_160: "#A1525E",
-  cat11_140: "#B86774",
-  cat11_120: "#CF7D8A",
   cat11: "#FC9AAA",
-  cat11_80: "#FBADBA",
-  cat11_60: "#FBC0CA",
-  cat11_40: "#FCD5DC",
-  cat11_20: "#FCE9EC",
-  cat12_180: "#375736",
-  cat12_160: "#476C46",
-  cat12_140: "#5C855B",
-  cat12_120: "#719B70",
   cat12: "#8EBA8C",
-  cat12_80: "#A3C6A2",
-  cat12_60: "#B9D3B8",
-  cat12_40: "#D0E2D0",
-  cat12_20: "#E5EFE6",
-};
-
-const common = {
-  ...base,
-  ...categorical,
-};
+} satisfies Record<VizKeys, string>;
 
 // #region Light palette
 const accentLight = {
@@ -274,8 +171,8 @@ const newLight = {
   textSubtle: accentLight.secondary_80,
   textDisabled: accentLight.secondary_60,
   textDimmed: atmosphereLight.atmo1,
-  textLight: base.base_light,
-  textDark: base.base_dark,
+  textLight: "#FBFCFC",
+  textDark: "#414141",
 
   border: atmosphereLight.atmo4,
   borderSubtle: atmosphereLight.atmo3,
@@ -290,7 +187,9 @@ const newLight = {
   bgDisabled: atmosphereLight.atmo3,
   bgOverlay: `color-mix(in srgb, ${atmosphereLight.atmo4} 80%, transparent)`,
   dimmer: "#FFFFFF",
-} satisfies ColorTokens;
+
+  ...categorical,
+} satisfies HvColorTokens;
 // #endregion
 
 // #region Dark palette
@@ -375,8 +274,8 @@ const newDark = {
   textSubtle: accentDark.secondary_80,
   textDisabled: accentDark.secondary_60,
   textDimmed: atmosphereDark.atmo1,
-  textLight: base.base_light,
-  textDark: base.base_dark,
+  textLight: "#FBFCFC",
+  textDark: "#414141",
 
   border: atmosphereDark.atmo4,
   borderSubtle: atmosphereDark.atmo3,
@@ -391,11 +290,12 @@ const newDark = {
   bgDisabled: atmosphereDark.atmo3,
   bgOverlay: `color-mix(in srgb, ${atmosphereDark.atmo4} 80%, transparent)`,
   dimmer: "#000000",
-} satisfies ColorTokens;
+
+  ...categorical,
+} satisfies HvColorTokens;
 // #endregion
 
 export const colors = {
-  common,
   light: {
     ...accentLight,
     ...atmosphereLight,
@@ -412,11 +312,11 @@ export const colors = {
   },
 };
 
-/** @deprecated replace with standard UI Kit ColorTokens in v6 */
-type AllColors = typeof colors.common & typeof colors.light;
+/** @deprecated replace with standard UI Kit HvColorTokens in v6 */
+type AllColors = typeof colors.light;
 
 /** @experimental extendable theme colors */
-export interface HvThemeColors extends ColorTokens, AllColors {}
+export interface HvThemeColors extends HvColorTokens, AllColors {}
 
 /** A type with all the accepted colors from the color palette */
 export type HvColor = keyof HvThemeColors;
