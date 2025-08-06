@@ -16,7 +16,7 @@ export const ActiveUsers = () => {
         <div className="flex items-center gap-xxs">
           <HvIconContainer
             size="xs"
-            className="p-4px rounded-round bg-bgContainerSecondary border-borderSubtle"
+            className="p-4px rounded-round bg-bgPage border-borderSubtle"
           >
             <div className="i-ph-copy-simple" />
           </HvIconContainer>

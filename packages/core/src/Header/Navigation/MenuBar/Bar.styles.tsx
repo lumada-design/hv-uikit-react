@@ -3,7 +3,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 const show = {
   top: theme.header.height,
-  transition: ["top"],
+  transitionProperty: "top",
   boxShadow: theme.colors.shadow,
   transitionDuration: "500ms",
   backgroundColor: theme.colors.bgPage,
@@ -11,7 +11,7 @@ const show = {
 
 const hide = {
   top: 0,
-  transition: ["top"],
+  transitionProperty: "top",
   boxShadow: "none",
   transitionDuration: "300ms",
 };
