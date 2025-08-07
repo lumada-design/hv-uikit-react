@@ -1,6 +1,6 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
-import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
+import type { ColorTokens, HvThemeColors } from "./tokens/colors";
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
@@ -88,14 +88,14 @@ export const makeColors = (
 
   return {
     light: {
-      ...colors.common,
-      ...colors.light,
+      ...baseTheme.colors.common,
+      ...baseTheme.colors.light,
       ...extendCompatColors(lightColors),
       ...lightColors,
     },
     dark: {
-      ...colors.common,
-      ...colors.dark,
+      ...baseTheme.colors.common,
+      ...baseTheme.colors.dark,
       ...extendCompatColors(darkColors),
       ...darkColors,
     },
