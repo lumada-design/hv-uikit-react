@@ -2,11 +2,13 @@ import { cloneElement, forwardRef, isValidElement } from "react";
 import {
   mergeStyles,
   useDefaultProps,
+  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 import {
   getColor,
   theme,
+  type HvColor,
   type HvColorAny,
   type HvSize,
 } from "@hitachivantara/uikit-styles";
@@ -22,6 +24,13 @@ import { staticClasses, useClasses } from "./Tag.styles";
 export { staticClasses as tagClasses };
 
 export type HvTagClasses = ExtractNames<typeof useClasses>;
+
+const colorMap: Partial<Record<HvColorAny, HvColor>> = {
+  positive_20: "positive",
+  negative_20: "negative",
+  warning_20: "warning",
+  neutral_20: "info",
+};
 
 export interface HvTagProps
   extends Omit<
@@ -89,7 +98,7 @@ export const HvTag = forwardRef<
     selected,
     defaultSelected = false,
     showSelectIcon = selectable,
-    color,
+    color: colorProp,
     icon: iconProp,
     deleteIcon: deleteIconProp,
     onDelete,
@@ -101,6 +110,7 @@ export const HvTag = forwardRef<
     ...others
   } = useDefaultProps("HvTag", props);
   const { classes, cx } = useClasses(classesProp);
+  const { activeTheme } = useTheme();
 
   const [isSelected, setIsSelected] = useControlled(
     selected,
@@ -112,6 +122,9 @@ export const HvTag = forwardRef<
     event.stopPropagation();
     onDelete?.(event);
   };
+
+  const color =
+    (activeTheme?.name === "pentahoPlus" && colorMap[colorProp!]) || colorProp;
 
   const tagColor =
     // backwards-compatibility for `type` prop
