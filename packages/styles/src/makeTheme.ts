@@ -1,6 +1,6 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
-import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
+import { colors, HvThemeColors, type HvColorTokens } from "./tokens/colors";
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
@@ -21,7 +21,7 @@ export const makeTheme = (
 };
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
-const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
+const compatMap: Partial<Record<keyof HvColorTokens, string>> = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
   positiveStrong: "positive_80",
@@ -40,8 +40,6 @@ const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
   textSubtle: "secondary_80",
   textDisabled: "secondary_60",
   textDimmed: "atmo1",
-  textLight: "base_light",
-  textDark: "base_dark",
 
   bgHover: "primary_20",
   bgDisabled: "atmo3",
@@ -54,9 +52,9 @@ const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
 /** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
-    const compatKey = compatMap[key as keyof typeof compatMap];
+    const compatKey = compatMap[key as keyof HvThemeColors];
     if (compatKey) {
-      acc[compatKey] = color;
+      acc[compatKey as keyof HvThemeColors] = color;
     }
     return acc;
   }, {} as Partial<HvThemeColors>);
@@ -76,10 +74,10 @@ export const makeColors = (
         typeof color === "string" ? [color, color] : color;
 
       if (lightColor) {
-        acc[0][key as keyof ColorTokens] = lightColor;
+        acc[0][key as keyof HvColorTokens] = lightColor;
       }
       if (darkColor) {
-        acc[1][key as keyof ColorTokens] = darkColor;
+        acc[1][key as keyof HvColorTokens] = darkColor;
       }
       return acc;
     },
@@ -88,13 +86,11 @@ export const makeColors = (
 
   return {
     light: {
-      ...colors.common,
       ...colors.light,
       ...extendCompatColors(lightColors),
       ...lightColors,
     },
     dark: {
-      ...colors.common,
       ...colors.dark,
       ...extendCompatColors(darkColors),
       ...darkColors,
