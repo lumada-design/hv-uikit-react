@@ -1,0 +1,70 @@
+import { BreakpointTokens } from "../../components/tokens/BreakpointTokens";
+import { RadiiTokens } from "../../components/tokens/RadiiTokens";
+import { SpaceTokens } from "../../components/tokens/SpaceTokens";
+import { TypographyTokens } from "../../components/tokens/TypographyTokens";
+import { ZIndexTokens } from "../../components/tokens/ZIndexTokens";
+
+# UI Kit tokens
+
+UI Kit tokens are the **semantic layer** of the **UI Kit** system, providing **consistent**, and **themeable** values for UI development.
+They ensure design integrity, maintainability, and seamless alignment between design and implementation.
+
+> [!NOTE]
+>
+> Think of UI Kit tokens as the handshake between design and development. They
+> keep everyone on the same page - so always use them to ensure things stay
+> consistent and clean.
+
+UI Kit tokens can be accessed through the `theme` object:
+
+```tsx
+import { theme } from "@hitachivantara/uikit-react-core";
+
+const MyComponent = () => (
+  <div style={{ color: theme.colors.primary }}>
+    This text uses the semantic primary color.
+  </div>
+);
+```
+
+These tokens are categorized into several groups, each serving a specific purpose in the UI Kit design system and can be
+accessed through the `theme` object.
+
+When creating a new theme, you can extend any of the supported themes by overriding these tokens (or adding new ones).
+This allows you to customize the UI Kit to fit your brand or application needs while maintaining the core design principles.
+
+> [!NOTE]
+>
+> Check the [Color tokens page](/docs/color-tokens) for more information on how to use color tokens in your components.
+
+Below is a summary of the available token categories:
+
+## Radii
+
+Accessible through the `theme.radii` object, these tokens define the border radius values used across the UI Kit components.
+
+<RadiiTokens />
+
+## Spacing
+
+Accessible through the `theme.spacing` object, these tokens define the spacing values used for margins, paddings, and gaps in the UI Kit components.
+
+<SpaceTokens />
+
+## ZIndex
+
+Accessible through the `theme.zIndex` object, these tokens define the stacking order of UI Kit components.
+
+<ZIndexTokens />
+
+## Typography
+
+These tokens define the typography styles used in the UI Kit components.
+
+<TypographyTokens />
+
+## Breakpoints
+
+Accessible through the `theme.breakpoints` object, these tokens define the responsive breakpoints used in the UI Kit components.
+
+<BreakpointTokens />

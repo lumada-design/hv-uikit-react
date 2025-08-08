@@ -19,11 +19,15 @@ export default {
     type: "separator",
     title: "Foundation",
   },
-  theming: "Theming",
+  "theme-tokens": {
+    title: "Theme Tokens",
+    theme: { layout: "full", toc: false },
+  },
   "color-tokens": {
     title: "Color Tokens",
     theme: { layout: "full", toc: false },
   },
+  theming: "Theming",
   "color-palette": {
     title: "Color Palette",
     theme: { layout: "full", toc: false },
