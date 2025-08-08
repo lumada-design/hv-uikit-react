@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.100.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.99.1...@hitachivantara/uikit-react-core@5.100.0) (2025-08-08)
+
+### Bug Fixes
+
+- **Loading:** deprecate unused classes & leverage data-\* ([#4855](https://github.com/lumada-design/hv-uikit-react/issues/4855)) ([e8c75ad](https://github.com/lumada-design/hv-uikit-react/commit/e8c75add15b139a26bdbcad7390cf3628bbf7a84))
+
+### Features
+
+- **Switch:** update to PD 0.7 specs ([#4852](https://github.com/lumada-design/hv-uikit-react/issues/4852)) ([60d395f](https://github.com/lumada-design/hv-uikit-react/commit/60d395f80f334331c00da949b44c196fb8040d8d))
+
 ## [5.99.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.99.0...@hitachivantara/uikit-react-core@5.99.1) (2025-07-25)
 
 ### Bug Fixes

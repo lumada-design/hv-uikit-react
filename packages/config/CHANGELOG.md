@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.4.3...@hitachivantara/uikit-config@0.5.0) (2025-08-08)
+
+### Features
+
+- **cli:** use uikit-config package (oxlint, tsconfig, prettier) ([#4834](https://github.com/lumada-design/hv-uikit-react/issues/4834)) ([48ce736](https://github.com/lumada-design/hv-uikit-react/commit/48ce7367eceddca6c3c7dedf0374ef18ec56129b))
+
 ## [0.4.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.4.2...@hitachivantara/uikit-config@0.4.3) (2025-08-01)
 
 **Note:** Version bump only for package @hitachivantara/uikit-config
