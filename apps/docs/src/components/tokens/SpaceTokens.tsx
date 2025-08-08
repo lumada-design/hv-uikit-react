@@ -25,10 +25,10 @@ export const SpaceTokensInternal = () => {
               className="flex"
               style={{ gap: activeTheme.space[categoryKey] }}
             >
-              <div className="p-md bg-[#BFDBFE] w-50px h-50px" />
-              <div className="p-md bg-[#BFDBFE] w-50px h-50px" />
+              <div className="p-md border-dashed border-1 border-borderStrong bg-bgContainer w-50px h-50px" />
+              <div className="p-md border-dashed border-1 border-borderStrong bg-bgContainer w-50px h-50px" />
             </div>
-            <code>{categoryKey}</code>
+            <HvTypography component="code">{categoryKey}</HvTypography>
             <HvTypography variant="caption1">
               {activeTheme.space[categoryKey]}
             </HvTypography>

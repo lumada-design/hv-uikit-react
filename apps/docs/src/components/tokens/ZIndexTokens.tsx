@@ -27,12 +27,12 @@ export const ZIndexTokensInternal = () => {
 
         return (
           <div
-            className="absolute border-1 border-dashed border-[#BFDBFE] bg-white w-300px h-50px"
+            className="absolute border-1 border-dashed border-borderStrong bg-bgContainer w-300px h-50px "
             style={{ left, top }}
             key={categoryKey}
           >
-            <div className="absolute flex top-5px w-100% h-[100%] gap-md justify-center">
-              <code>{categoryKey}</code>
+            <div className="absolute flex top-5px w-100% h-[100%] gap-md justify-center color-text">
+              <HvTypography component="code">{categoryKey}</HvTypography>
               <HvTypography variant="caption1">
                 {activeTheme.zIndices[categoryKey]}
               </HvTypography>

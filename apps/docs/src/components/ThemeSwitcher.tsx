@@ -16,7 +16,7 @@ const allowedPaths = [
   "/charts",
   "/examples",
   "/docs/color-tokens",
-  "/docs/ui-kit-tokens",
+  "/docs/theme-tokens",
 ];
 
 export const ThemeSwitcher = () => {

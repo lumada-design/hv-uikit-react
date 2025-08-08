@@ -33,10 +33,10 @@ export const BreakpointTokensInternal = () => {
             key={categoryKey}
           >
             <div
-              className="h-20px bg-#BFDBFE"
+              className="h-20px border-1 border-dashed border-borderStrong bg-bgContainer"
               style={{ width: `${barWidth}%` }}
             >
-              <code>{categoryKey}</code>
+              <HvTypography component="code">{categoryKey}</HvTypography>
             </div>
 
             <HvTypography variant="caption1">{breakpointValue}px</HvTypography>

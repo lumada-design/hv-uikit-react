@@ -19,8 +19,8 @@ export default {
     type: "separator",
     title: "Foundation",
   },
-  "ui-kit-tokens": {
-    title: "UI Kit Tokens",
+  "theme-tokens": {
+    title: "Theme Tokens",
     theme: { layout: "full", toc: false },
   },
   "color-tokens": {

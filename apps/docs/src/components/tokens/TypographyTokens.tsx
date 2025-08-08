@@ -1,7 +1,6 @@
 "use client";
 
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
-import { fontFamily } from "@hitachivantara/uikit-styles";
 
 import { DocsProvider } from "../code/DocsProvider";
 
@@ -26,10 +25,6 @@ export const TypographyTokensInternal = () => {
 
   return (
     <section className="flex flex-col gap-sm w-100% justify-center mt-sm">
-      {/* <HvTypography variant="title4" className="font-semibold">
-        fontFamily
-      </HvTypography>
-      <HvTypography>{activeTheme.fontFamily.body}</HvTypography> */}
       {(Object.keys(sections) as Array<keyof typeof sections>).map(
         (section) => (
           <section

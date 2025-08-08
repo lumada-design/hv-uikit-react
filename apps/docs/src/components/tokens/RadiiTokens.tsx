@@ -25,9 +25,9 @@ export const RadiiTokensInternal = () => {
           <div className="flex flex-col items-center" key={categoryKey}>
             <div
               style={{ borderRadius: activeTheme.radii[categoryKey] }}
-              className="p-md bg-[#BFDBFE] w-100px h-100px"
+              className="p-md border-dashed border-1 border-borderStrong bg-bgContainer w-100px h-100px"
             />
-            <code>{categoryKey}</code>
+            <HvTypography component="code">{categoryKey}</HvTypography>
             <HvTypography variant="caption1">
               {activeTheme.radii[categoryKey]}
             </HvTypography>
