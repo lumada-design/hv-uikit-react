@@ -19,11 +19,11 @@ export default {
     type: "separator",
     title: "Foundation",
   },
-  theming: "Theming",
-  "color-tokens": {
-    title: "Color Tokens",
+  "ui-kit-tokens": {
+    title: "UI Kit Tokens",
     theme: { layout: "full", toc: false },
   },
+  theming: "Theming",
   "color-palette": {
     title: "Color Palette",
     theme: { layout: "full", toc: false },
