@@ -49,33 +49,33 @@ export const ds5 = mergeTheme(ds5Base, {
       classes: {
         root: {
           ":where(:not(.HvButton-disabled,.HvButton-contained))": {
-            "&[data-color=warning]": { color: theme.colors.warning_140 },
+            "&[data-color=warning]": { color: theme.colors.warningDeep },
           },
         },
         contained: {
           ":where([data-color=primary]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
-              backgroundColor: theme.colors.primary_80,
-              borderColor: theme.colors.primary_80,
+              backgroundColor: theme.colors.primaryStrong,
+              borderColor: theme.colors.primaryStrong,
             },
           },
           ":where([data-color=positive]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
-              backgroundColor: theme.colors.positive_80,
-              borderColor: theme.colors.positive_80,
+              backgroundColor: theme.colors.positiveStrong,
+              borderColor: theme.colors.positiveStrong,
             },
           },
           ":where([data-color=warning]:not(.HvButton-disabled))": {
-            backgroundColor: theme.colors.warning_120,
+            backgroundColor: theme.colors.warningStrong,
             ":hover, &:focus-visible": {
-              backgroundColor: theme.colors.warning_140,
-              borderColor: theme.colors.warning_140,
+              backgroundColor: theme.colors.warningDeep,
+              borderColor: theme.colors.warningDeep,
             },
           },
           ":where([data-color=negative]:not(.HvButton-disabled))": {
             ":hover, &:focus-visible": {
-              backgroundColor: theme.colors.negative_80,
-              borderColor: theme.colors.negative_80,
+              backgroundColor: theme.colors.negativeStrong,
+              borderColor: theme.colors.negativeStrong,
             },
           },
         },
@@ -108,10 +108,10 @@ export const ds5 = mergeTheme(ds5Base, {
         splitGroup: {
           // NEXT5 subtle multi-buttons have a custom background
           "& .HvButton-subtle": {
-            backgroundColor: theme.colors.atmo1,
+            backgroundColor: theme.colors.bgContainer,
           },
           "&& .HvButton-disabled": {
-            backgroundColor: theme.colors.atmo3,
+            backgroundColor: theme.colors.bgDisabled,
           },
         },
       },
@@ -136,7 +136,7 @@ export const ds5 = mergeTheme(ds5Base, {
       classes: {
         root: {
           "&.HvTab-selected": {
-            color: theme.colors.secondary,
+            color: theme.colors.text,
           },
         },
       },
@@ -158,7 +158,7 @@ export const ds5 = mergeTheme(ds5Base, {
             padding: 0,
           },
           "& .HvIconContainer-root": {
-            color: `${theme.colors.secondary}!important`,
+            color: `${theme.colors.text}!important`,
           },
         },
       },

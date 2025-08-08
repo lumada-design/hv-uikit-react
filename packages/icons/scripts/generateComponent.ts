@@ -1,10 +1,10 @@
 import { HvColor } from "@hitachivantara/uikit-styles";
 
 const hexColorMap: Record<string, HvColor> = {
-  "#414141": "secondary",
-  "#fff": "atmo1",
-  "#f0f0f0": "atmo2",
-  "#ccced0": "atmo4",
+  "#414141": "text", // secondary
+  "#fff": "bgContainer", // atmo1
+  "#f0f0f0": "bgPage", // atmo2
+  "#ccced0": "border", // atmo4
 };
 
 /**
