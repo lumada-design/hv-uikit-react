@@ -4,10 +4,10 @@ import { IconBase, IconBaseProps } from "./IconBase";
 import { isSelector, isSort } from "./utils";
 
 const getSecondaryColor = (iconName: string): HvColor => {
-  if (isSelector(iconName)) return "atmo1";
-  if (isSort(iconName)) return "atmo4";
+  if (isSelector(iconName)) return "bgContainer"; // atmo1
+  if (isSort(iconName)) return "border"; // atmo4
 
-  return "atmo2";
+  return "bgPage"; // atmo2
 };
 
 export interface HvIconSpriteProps
@@ -28,7 +28,7 @@ export const HvIconSprite = ({
   ...others
 }: HvIconSpriteProps) => {
   // this color array is fragile... we know it currently covers all the existing icons
-  const baseColors: HvColor[] = ["secondary", getSecondaryColor(iconName)];
+  const baseColors: HvColor[] = ["text", getSecondaryColor(iconName)];
 
   return (
     <IconBase iconName={iconName} palette={baseColors} {...others}>

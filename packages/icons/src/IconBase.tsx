@@ -156,7 +156,7 @@ const IconBaseInternal = (
   const title = titleProp ?? ariaLabel;
 
   const inheritColor =
-    !color && palette?.length === 1 && palette?.[0] === "secondary";
+    !color && palette?.length === 1 && palette?.[0] === "text";
 
   return (
     <HvIconContainer
