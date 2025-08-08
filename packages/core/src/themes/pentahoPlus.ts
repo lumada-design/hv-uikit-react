@@ -205,7 +205,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     HvSection: {
       classes: {
         content: {
-          backgroundColor: theme.colors.bgPage, // = bgContainerSecondary
+          backgroundColor: theme.colors.bgPage,
         },
       },
     } satisfies CSSClasses<HvSectionProps>,
@@ -415,7 +415,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             },
             "&[data-color=secondary]": {
               borderColor: theme.colors.border,
-              backgroundColor: theme.colors.bgContainerSecondary,
+              backgroundColor: theme.colors.bgPage,
             },
             ":hover": {
               backgroundColor: theme.colors.primaryDimmed,

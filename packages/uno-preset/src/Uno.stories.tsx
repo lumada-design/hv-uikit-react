@@ -18,7 +18,7 @@ export const Test: StoryObj = {
         <div className="size-12 bg-positive z-modal" />
         <div className="size-11 bg-warning z-docked" />
         <div className="size-10 bg-warningDeep z-8" />
-        <div className="size-9 bg-base_dark" />
+        <div className="size-9 bg-textDark" />
         <div className="size-8 bg-negative -z-1" />
       </section>
       <br />
@@ -32,7 +32,7 @@ export const Test: StoryObj = {
           "rounded-2",
           "rounded-full",
         ].map((classes) => (
-          <div key={classes} className="bg-secondary p-xs">
+          <div key={classes} className="bg-text p-xs">
             <div className={`size-64px bg-primary ${classes}`} />
           </div>
         ))}

@@ -41,7 +41,7 @@ export const { staticClasses, useClasses } = createClasses("HvStatusIcon", {
     ),
     [`&[data-variant="default"]`]: {
       color: theme.colors.text,
-      backgroundColor: theme.colors.bgContainerSecondary,
+      backgroundColor: theme.colors.bgPage,
       outline: `1px solid ${theme.colors.borderSubtle}`,
       [`&[data-type="simple"]`]: {
         outline: "none",

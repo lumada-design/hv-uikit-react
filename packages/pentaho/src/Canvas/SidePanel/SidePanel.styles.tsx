@@ -1,6 +1,6 @@
 import { createClasses, theme } from "@hitachivantara/uikit-react-core";
 
-const boxShadow = `4px 0px 8px -4px ${theme.alpha("base_dark", "12%")}`;
+const boxShadow = `4px 0px 8px -4px ${theme.alpha("textDark", "12%")}`;
 
 export const { staticClasses, useClasses } = createClasses(
   "HvCanvasSidePanel",

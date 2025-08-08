@@ -21,7 +21,6 @@ export interface BarProps extends HvBaseProps {
 
 export const Bar = (props: BarProps) => {
   const {
-    id,
     data = [],
     type = "menubar",
     className,
@@ -49,7 +48,7 @@ export const Bar = (props: BarProps) => {
         className,
       )}
     >
-      <ul className={classes.list} id={id} onFocus={() => {}}>
+      <ul className={classes.list} onFocus={() => {}}>
         {children}
       </ul>
     </div>
