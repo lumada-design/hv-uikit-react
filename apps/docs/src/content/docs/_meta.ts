@@ -23,6 +23,10 @@ export default {
     title: "UI Kit Tokens",
     theme: { layout: "full", toc: false },
   },
+  "color-tokens": {
+    title: "Color Tokens",
+    theme: { layout: "full", toc: false },
+  },
   theming: "Theming",
   "color-palette": {
     title: "Color Palette",

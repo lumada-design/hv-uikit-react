@@ -3,12 +3,12 @@
 import { HvTypography, useTheme } from "@hitachivantara/uikit-react-core";
 
 import { DocsProvider } from "../code/DocsProvider";
-import { descriptions } from "./descriptions";
+import { descriptions } from "../color/descriptions";
 import {
   colorTokensSpec,
   compatMap,
   groupColorTokensByCategory,
-} from "./utils";
+} from "../color/utils";
 
 export const ColorTokens = () => {
   return (

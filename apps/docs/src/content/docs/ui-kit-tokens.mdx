@@ -1,4 +1,8 @@
-import { ColorTokens } from "../../components/color/ColorTokens";
+import { BreakpointTokens } from "../../components/tokens/BreakpointTokens";
+import { RadiiTokens } from "../../components/tokens/RadiiTokens";
+import { SpaceTokens } from "../../components/tokens/SpaceTokens";
+import { TypographyTokens } from "../../components/tokens/TypographyTokens";
+import { ZIndexTokens } from "../../components/tokens/ZIndexTokens";
 
 # UI Kit tokens
 
@@ -8,7 +12,7 @@ They ensure design integrity, maintainability, and seamless alignment between de
 > [!NOTE]
 >
 > Think of UI Kit tokens as the handshake between design and development. They
-> keep everyone on the same page — so always use them to ensure things stay
+> keep everyone on the same page - so always use them to ensure things stay
 > consistent and clean.
 
 UI Kit tokens can be accessed through the `theme` object:
@@ -35,98 +39,28 @@ Below is a summary of the available token categories:
 
 Accessible through the `theme.radii` object, these tokens define the border radius values used across the UI Kit components.
 
-| token   | value    |
-| ------- | -------- |
-| `none`  | `0px`    |
-| `base`  | `2px`    |
-| `round` | `6px`    |
-| `large` | `8px`    |
-| `full`  | `9999px` |
+<RadiiTokens />
 
 ## Spacing
 
 Accessible through the `theme.spacing` object, these tokens define the spacing values used for margins, paddings, and gaps in the UI Kit components.
 
-| token | value  |
-| ----- | ------ |
-| `xxs` | `4px`  |
-| `xs`  | `8px`  |
-| `sm`  | `16px` |
-| `md`  | `24px` |
-| `lg`  | `48px` |
-| `xl`  | `80px` |
+<SpaceTokens />
 
 ## ZIndex
 
 Accessible through the `theme.zIndex` object, these tokens define the stacking order of UI Kit components.
 
-| token      | value  |
-| ---------- | ------ |
-| `hide`     | `-1`   |
-| `base`     | `0`    |
-| `docked`   | `10`   |
-| `sticky`   | `1000` |
-| `fab`      | `1050` |
-| `banner`   | `1100` |
-| `overlay`  | `1200` |
-| `modal`    | `1300` |
-| `dropdown` | `1400` |
-| `popover`  | `1500` |
-| `tooltip`  | `1600` |
-| `skipLink` | `1700` |
-| `toast`    | `1800` |
-
-## Breakpoints
-
-Accessible through the `theme.breakpoints` object, these tokens define the responsive breakpoints used in the UI Kit components.
-
-| token                              | value    |
-| ---------------------------------- | -------- |
-| `unit`                             | `px`     |
-| `step`                             | `5`      |
-| `values`                           |          |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`xs` | `0px`    |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`sm` | `600px`  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`md` | `960px`  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`lg` | `1270px` |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`xl` | `1920px` |
+<ZIndexTokens />
 
 ## Typography
 
 These tokens define the typography styles used in the UI Kit components.
 
-| theme path          | token        | value                                      |
-| ------------------- | ------------ | ------------------------------------------ |
-| `theme`             | `fontFamily` | 'Open Sans', Arial, Helvetica, sans-serif` |
-| `theme.fontSizes`   | `xs`         | `10px`                                     |
-|                     | `sm`         | `12px`                                     |
-|                     | `base`       | `14px`                                     |
-|                     | `lg`         | `16px`                                     |
-|                     | `xl`         | `20px`                                     |
-|                     | `xl2`        | `24px`                                     |
-|                     | `xl3`        | `32px`                                     |
-|                     | `xl4`        | `42px`                                     |
-| `theme.fontWeights` | `hairline`   | `100`                                      |
-|                     | `thin`       | `200`                                      |
-|                     | `light`      | `300`                                      |
-|                     | `normal`     | `400`                                      |
-|                     | `medium`     | `500`                                      |
-|                     | `semibold`   | `600`                                      |
-|                     | `bold`       | `700`                                      |
-|                     | `extrabold`  | `800`                                      |
-|                     | `black`      | `900`                                      |
-| `theme.lineHeights` | `none`       | `21px`                                     |
-|                     | `xs`         | `16px`                                     |
-|                     | `sm`         | `18px`                                     |
-|                     | `base`       | `21px`                                     |
-|                     | `lg`         | `24px`                                     |
-|                     | `xl`         | `30px`                                     |
-|                     | `xl2`        | `36px`                                     |
-|                     | `xl3`        | `48px`                                     |
-|                     | `xl4`        | `63px`                                     |
+<TypographyTokens />
 
-## Colors
+## Breakpoints
 
-<br />
+Accessible through the `theme.breakpoints` object, these tokens define the responsive breakpoints used in the UI Kit components.
 
-<ColorTokens />
+<BreakpointTokens />
