@@ -1,0 +1,30 @@
+import { w } from "happy-dom/lib/PropertySymbol.js";
+
+import { CodeBlock } from "../../../components/code/CodeBlock";
+import overflowTags from "./OverflowTags?raw";
+import plusTags from "./PlusTags?raw";
+import wrapTags from "./WrapTags?raw";
+
+### Tags Components
+
+A set of examples demonstrating the usage of the Tags component in various containers.
+
+<div className="overflow-hidden mt-20">
+  <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(480px,1fr))] -mt-px -mb-px [&>*]:min-h-[200px]">
+    <CodeBlock
+      code={{ main: overflowTags }}
+      layout="popup"
+      title="Tags on scrollable container"
+    />
+    <CodeBlock
+      code={{ main: wrapTags }}
+      layout="popup"
+      title="Tags on wrapping container"
+    />
+    <CodeBlock
+      code={{ main: plusTags }}
+      layout="popup"
+      title="Tags on limited container with plus indicator (resizable container)"
+    />
+  </div>
+</div>
