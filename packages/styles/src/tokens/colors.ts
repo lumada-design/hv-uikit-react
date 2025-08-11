@@ -494,6 +494,6 @@ export type HvColor = keyof HvThemeColors;
 
 /**
  * A type representing an `HvColor` from the palette or any other color string
- * @example "secondary" "brand" "atmo2" "#FF0000" "purple" "inherit"
+ * @example "primary" "bgPage" "#FF0000" "purple" "inherit"
  * */
 export type HvColorAny = HvColor | Property.Color;

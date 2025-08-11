@@ -36,7 +36,7 @@ export interface HvIconContainerProps
   /**
    * A color to override the default icon colors.
    * Accepts any valid CSS color or color from the UI Kit palette.
-   * @example "brand"
+   * @example "primary"
    */
   color?: HvColorAny;
   /**

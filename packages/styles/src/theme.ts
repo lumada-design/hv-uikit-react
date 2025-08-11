@@ -175,7 +175,7 @@ const alpha = (color: HvColorAny, factor: number | string) =>
  * UI Kit static theme object, containing values and utility functions that leverage the injected CSS variables.
  * @returns string values that can be used as CSS values.
  * @example
- * theme.colors.brand // "var(--uikit-colors-brand)"
+ * theme.colors.primary // "var(--uikit-colors-primary)"
  * theme.spacing("xs", "sm") // "var(--uikit-space-xs) var(--uikit-space-sm)"
  */
 export const theme = {
