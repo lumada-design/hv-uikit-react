@@ -56,7 +56,6 @@ export const HvLoading = forwardRef<
       hidden={!!hidden}
       data-size={size}
       style={mergeStyles(style, {
-        color: getColor(color, small ? "text" : "brand"),
         "--customColor": getColor(color),
       })}
       className={cx(

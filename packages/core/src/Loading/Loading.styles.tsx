@@ -8,11 +8,13 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     alignItems: "center",
     justifyContent: "center",
     gap: theme.space.xs,
+    "--baseColor": theme.colors.primary,
 
     "&[data-size=small]": {
       "--bar-size": "2px",
       "--size": "18px",
       "--height": "40%",
+      "--baseColor": theme.colors.text,
     },
   },
   barContainer: {
@@ -24,7 +26,7 @@ export const { staticClasses, useClasses } = createClasses("HvLoading", {
     height: "var(--size, 30px)",
   },
   loadingBar: {
-    backgroundColor: "currentcolor",
+    backgroundColor: "var(--customColor, var(--baseColor))",
     display: "inline-block",
     animation: "loading 1s ease-in-out infinite",
     // TODO: make this the default when it has better support

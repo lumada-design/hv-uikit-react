@@ -75,8 +75,6 @@ export interface HvColorTokens
   // #endregion
 
   // #region others
-  /** brand color */
-  brand: string;
   /** shadow color */
   shad1: string;
   /** box shadow */
@@ -85,8 +83,6 @@ export interface HvColorTokens
 }
 
 const common = {
-  brand: "#CC0000",
-
   textLight: "#FBFCFC",
   textDark: "#414141",
 

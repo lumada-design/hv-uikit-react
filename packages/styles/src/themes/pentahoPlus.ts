@@ -23,12 +23,6 @@ import {
 const pentahoPlus = makeTheme((theme) => ({
   name: "pentahoPlus",
   colors: makeColors({
-    brand: blue[600],
-    // TODO: review _20 token differences
-    negative_20: red[100],
-    warning_20: amber[100],
-    positive_20: green[100],
-    neutral_20: sky[100],
     shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
     shad1: theme.alpha(slate[700], 0.08),
 
