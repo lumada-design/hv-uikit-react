@@ -30,9 +30,8 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
-    "@vitejs/plugin-react": "^4.2.0",
     "i18next": "^24.2.2",
-    "vite": "^6.2.2"
+    "vite": "^7.1.1"
   },
   "files": [
     "dist"

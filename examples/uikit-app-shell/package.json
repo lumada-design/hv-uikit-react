@@ -24,9 +24,9 @@
     "@hitachivantara/uikit-uno-preset": "latest",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^4.1.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "typescript": "^5.5.4",
-    "unocss": "^66.0.0",
+    "unocss": "^66.4.2",
     "vite": "^5.1.0",
     "vite-plugin-css-injected-by-js": "^3.4.0",
     "vite-tsconfig-paths": "^4.0.5"
