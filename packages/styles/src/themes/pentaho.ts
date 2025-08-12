@@ -15,15 +15,6 @@ import {
 const pentaho = makeTheme((theme) => ({
   name: "pentaho",
   colors: makeColors({
-    brand: blue[600],
-    // TODO: review _20 token differences
-    negative_20: red[100],
-    warning_20: amber[100],
-    positive_20: green[100],
-    neutral_20: sky[100],
-    shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
-    shad1: theme.alpha(slate[700], 0.08),
-
     primary: [blue[600], blue[500]],
     primaryStrong: [blue[700], blue[600]],
     primaryDeep: [blue[800], blue[700]],
@@ -74,6 +65,9 @@ const pentaho = makeTheme((theme) => ({
     bgDisabled: [neutral[200], neutral[900]],
     bgOverlay: [theme.alpha(slate[950], 0.6), theme.alpha(slate[900], 0.4)],
     dimmer: ["#FFFFFF", "#000000"],
+
+    shadow: `0px 2px 4px -1px ${theme.alpha(slate[700], 0.08)}`,
+    shad1: theme.alpha(slate[700], 0.08),
   }),
   fontFamily: {
     body: "Inter, Arial, Helvetica, sans-serif",

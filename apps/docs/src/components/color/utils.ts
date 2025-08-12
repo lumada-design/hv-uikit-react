@@ -53,8 +53,6 @@ export const groupColorTokensByCategory = (
 
 // Placeholder schema for all required keys
 export const colorTokensSpec: HvThemeColors = {
-  brand: "string",
-
   // Semantic
   primary: "string",
   primaryStrong: "string",
