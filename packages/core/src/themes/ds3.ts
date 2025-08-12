@@ -4,6 +4,82 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvActionBarProps } from "../ActionBar";
+import type { HvBaseCheckBoxProps } from "../BaseCheckBox";
+import type { HvCheckBoxIconProps } from "../BaseCheckBox/CheckBoxIcon";
+import type { HvBaseDropdownProps } from "../BaseDropdown";
+import type { HvBaseInputProps } from "../BaseInput";
+import type { HvBaseRadioProps } from "../BaseRadio";
+import type { HvRadioIconProps } from "../BaseRadio/RadioIcon";
+import type { HvBaseSwitchProps } from "../BaseSwitch";
+import type { HvBreadCrumbPageProps } from "../BreadCrumb/Page";
+import type { HvBulkActionsProps } from "../BulkActions";
+import type { HvButtonProps } from "../Button";
+import type { HvCalendarHeaderProps } from "../Calendar";
+import type { HvCardHeaderProps, HvCardProps } from "../Card";
+import type { HvCarouselProps } from "../Carousel";
+import type { HvCheckBoxProps } from "../CheckBox";
+import type { HvColorPickerProps } from "../ColorPicker";
+import type { HvDatePickerProps } from "../DatePicker";
+import type {
+  HvDialogContentProps,
+  HvDialogProps,
+  HvDialogTitleProps,
+} from "../Dialog";
+import type { HvDropdownProps } from "../Dropdown";
+import type { HvDropDownMenuProps } from "../DropDownMenu";
+import type { HvEmptyStateProps } from "../EmptyState";
+import type { HvFileProps, HvFileUploaderPreviewProps } from "../FileUploader";
+import type { HvDropZoneProps } from "../FileUploader/DropZone";
+import type { HvFilterGroupCounterProps } from "../FilterGroup/Counter";
+import type { HvFilterGroupContentProps } from "../FilterGroup/FilterContent";
+import type {
+  HvInfoMessageProps,
+  HvLabelProps,
+  HvWarningTextProps,
+} from "../FormElement";
+import type { HvLabelContainerProps } from "../FormElement/LabelContainer";
+import type { HvSuggestionsProps } from "../FormElement/Suggestions";
+import type { HvGlobalActionsProps } from "../GlobalActions";
+import type { HvHeaderProps } from "../Header";
+import { BarProps } from "../Header/Navigation/MenuBar/Bar";
+import type { HvHeaderMenuItemProps } from "../Header/Navigation/MenuItem";
+import type { HvInlineEditorProps } from "../InlineEditor";
+import type { HvListProps } from "../List";
+import type { HvListItemProps } from "../ListContainer";
+import type { HvMultiButtonProps } from "../MultiButton";
+import type { HvPaginationProps } from "../Pagination";
+import type { HvPaginationSelectProps } from "../Pagination/Select";
+import type { HvQueryBuilderProps } from "../QueryBuilder";
+import { RuleProps } from "../QueryBuilder/Rule/Rule";
+import type { HvRadioProps } from "../Radio";
+import type { HvScrollToHorizontalProps } from "../ScrollToHorizontal";
+import type { HvHorizontalScrollListItemProps } from "../ScrollToHorizontal/HorizontalScrollListItem";
+import type { HvScrollToVerticalProps } from "../ScrollToVertical";
+import type { HvVerticalScrollListItemProps } from "../ScrollToVertical/VerticalScrollListItem";
+import type { HvSelectProps } from "../Select";
+import type { HvSliderProps } from "../Slider";
+import type { HvSnackbarContentProps } from "../Snackbar";
+import type { HvStatusIconProps } from "../StatusIcon";
+import type { HvSwitchProps } from "../Switch";
+import type {
+  HvTableCellProps,
+  HvTableHeaderProps,
+  HvTableRowProps,
+} from "../Table";
+import type { HvTabProps } from "../Tabs";
+import type { HvTagProps } from "../Tag";
+import type { HvTagsInputProps } from "../TagsInput";
+import type { HvTooltipProps } from "../Tooltip";
+import type { HvCalloutProps } from "../utils/Callout";
+import type {
+  HvVerticalNavigationActionsProps,
+  HvVerticalNavigationProps,
+  HvVerticalNavigationSliderProps,
+  HvVerticalNavigationTreeViewItemProps,
+} from "../VerticalNavigation";
+import type { CSSClasses } from "./utils";
+
 export const ds3 = mergeTheme(ds3Base, {
   components: {
     HvActionBar: {
@@ -12,14 +88,14 @@ export const ds3 = mergeTheme(ds3Base, {
           borderTop: `3px solid ${theme.colors.atmo2}`,
         },
       },
-    },
+    } satisfies CSSClasses<HvActionBarProps>,
     HvBaseCheckBox: {
       classes: {
         root: {
           borderRadius: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseCheckBoxProps>,
     HvCallout: {
       classes: {
         root: {
@@ -30,7 +106,7 @@ export const ds3 = mergeTheme(ds3Base, {
           padding: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvCalloutProps>,
     HvCheckBoxIcon: {
       classes: {
         root: {
@@ -51,7 +127,7 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.text,
         },
       },
-    },
+    } satisfies CSSClasses<HvCheckBoxIconProps>,
     HvBaseDropdown: {
       classes: {
         header: {
@@ -92,14 +168,14 @@ export const ds3 = mergeTheme(ds3Base, {
           borderLeft: "1px solid transparent",
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseDropdownProps>,
     HvLabelContainer: {
       classes: {
         root: {
           height: "auto",
         },
       },
-    },
+    } satisfies CSSClasses<HvLabelContainerProps>,
     HvBaseInput: {
       classes: {
         root: {
@@ -168,7 +244,7 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.secondary,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseInputProps>,
     HvBaseRadio: {
       classes: {
         root: {
@@ -177,7 +253,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseRadioProps>,
     HvRadioIcon: {
       classes: {
         checked: {
@@ -185,7 +261,7 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.bgPage,
         },
       },
-    },
+    } satisfies CSSClasses<HvRadioIconProps>,
     HvBaseSwitch: {
       classes: {
         root: {
@@ -215,7 +291,7 @@ export const ds3 = mergeTheme(ds3Base, {
           left: -9,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseSwitchProps>,
     HvBreadCrumbPage: {
       classes: {
         link: {
@@ -224,7 +300,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvBreadCrumbPageProps>,
     HvBulkActions: {
       classes: {
         root: {
@@ -247,7 +323,7 @@ export const ds3 = mergeTheme(ds3Base, {
           display: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvBulkActionsProps>,
     HvButton: {
       classes: {
         root: {
@@ -275,7 +351,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvButtonProps>,
     HvCalendarHeader: {
       classes: {
         root: {
@@ -296,7 +372,7 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.secondary,
         },
       },
-    },
+    } satisfies CSSClasses<HvCalendarHeaderProps>,
     HvCard: {
       classes: {
         root: {
@@ -313,7 +389,7 @@ export const ds3 = mergeTheme(ds3Base, {
           right: `calc(-24px + ${theme.space.xs})`,
         },
       },
-    },
+    } satisfies CSSClasses<HvCardProps>,
     HvCardHeader: {
       classes: {
         root: {
@@ -329,7 +405,7 @@ export const ds3 = mergeTheme(ds3Base, {
           ...theme.typography.body,
         },
       },
-    },
+    } satisfies CSSClasses<HvCardHeaderProps>,
     HvCarousel: {
       classes: {
         xs: {
@@ -356,7 +432,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvCarouselProps>,
     HvCheckBox: {
       classes: {
         container: {
@@ -365,7 +441,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvCheckBoxProps>,
     HvColorPicker: {
       classes: {
         panel: {
@@ -384,7 +460,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvColorPickerProps>,
     HvColorPickerFields: {
       classes: {
         fields: {
@@ -400,7 +476,7 @@ export const ds3 = mergeTheme(ds3Base, {
           paddingRight: "20px",
         },
       },
-    },
+    } satisfies CSSClasses<any>,
     HvColorPickerPicker: {
       classes: {
         pickers: {
@@ -445,7 +521,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderRadius: "1px",
         },
       },
-    },
+    } satisfies CSSClasses<any>,
     HvColorPickerPresetColors: {
       classes: {
         root: { width: "205px" },
@@ -463,7 +539,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<any>,
     HvColorPickerSavedColors: {
       classes: {
         addButton: {
@@ -485,7 +561,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<any>,
     HvDatePicker: {
       classes: {
         inputText: {
@@ -493,14 +569,14 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.secondary_60,
         },
       },
-    },
+    } satisfies CSSClasses<HvDatePickerProps>,
     HvDialog: {
       classes: {
         paper: {
           borderRadius: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogProps>,
     HvDialogTitle: {
       classes: {
         titleText: {
@@ -515,7 +591,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogTitleProps>,
     HvDialogContent: {
       classes: {
         root: {
@@ -523,7 +599,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderBottom: "none!important",
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogContentProps>,
     HvDropdown: {
       classes: {
         readOnly: {
@@ -536,7 +612,7 @@ export const ds3 = mergeTheme(ds3Base, {
           color: theme.colors.secondary_60,
         },
       },
-    },
+    } satisfies CSSClasses<HvDropdownProps>,
     HvDropDownMenu: {
       classes: {
         iconSelected: {
@@ -546,7 +622,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDropDownMenuProps>,
     HvEmptyState: {
       classes: {
         titleContainer: {
@@ -554,7 +630,7 @@ export const ds3 = mergeTheme(ds3Base, {
           ...theme.typography.xxsTitle,
         },
       },
-    },
+    } satisfies CSSClasses<HvEmptyStateProps>,
     HvFile: {
       classes: {
         root: {
@@ -573,7 +649,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvFileProps>,
     HvFileUploaderPreview: {
       classes: {
         previewButton: {
@@ -586,7 +662,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderRadius: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvFileUploaderPreviewProps>,
     HvDropZone: {
       classes: {
         dropZoneContainer: {
@@ -606,14 +682,14 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDropZoneProps>,
     HvFilterGroupCounter: {
       classes: {
         partialCounter: {
           fontWeight: theme.fontWeights.bold,
         },
       },
-    },
+    } satisfies CSSClasses<HvFilterGroupCounterProps>,
     HvFilterGroupContent: {
       classes: {
         rightSidePanel: {
@@ -624,7 +700,7 @@ export const ds3 = mergeTheme(ds3Base, {
           marginRight: "0px",
         },
       },
-    },
+    } satisfies CSSClasses<HvFilterGroupContentProps>,
     HvGlobalActions: {
       classes: {
         section: {
@@ -644,7 +720,7 @@ export const ds3 = mergeTheme(ds3Base, {
           ...theme.typography.sectionTitle,
         },
       },
-    },
+    } satisfies CSSClasses<HvGlobalActionsProps>,
     HvHeader: {
       classes: {
         root: {
@@ -652,7 +728,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderTop: `4px solid ${theme.colors.brand}`,
         },
       },
-    },
+    } satisfies CSSClasses<HvHeaderProps>,
     HvHeaderMenuBarBar: {
       classes: {
         active: {
@@ -667,7 +743,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<BarProps>,
     HvHeaderMenuItem: {
       classes: {
         root: {
@@ -686,7 +762,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvHeaderMenuItemProps>,
     HvHorizontalScrollListItem: {
       classes: {
         root: {
@@ -718,7 +794,7 @@ export const ds3 = mergeTheme(ds3Base, {
           display: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvHorizontalScrollListItemProps>,
     HvSelect: {
       classes: {
         select: {
@@ -730,7 +806,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderColor: theme.colors.atmo4,
         },
       },
-    },
+    } satisfies CSSClasses<HvSelectProps<any>>,
     HvVerticalScrollListItem: {
       classes: {
         icon: {
@@ -757,7 +833,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalScrollListItemProps>,
     HvInlineEditor: {
       classes: {
         button: {
@@ -770,20 +846,20 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvInlineEditorProps>,
     HvInfoMessage: {
       classes: {
         root: {
           color: theme.colors.secondary,
         },
       },
-    },
+    } satisfies CSSClasses<HvInfoMessageProps>,
     HvLabel: {
       classes: {
         root: { fontWeight: theme.fontWeights.semibold },
         childGutter: { paddingBottom: 6 },
       },
-    },
+    } satisfies CSSClasses<HvLabelProps>,
     HvList: {
       classes: {
         itemSelector: {
@@ -792,14 +868,14 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvListProps>,
     HvListItem: {
       classes: {
         disabled: {
           backgroundColor: "transparent",
         },
       },
-    },
+    } satisfies CSSClasses<HvListItemProps>,
     HvPagination: {
       classes: {
         root: {
@@ -843,7 +919,7 @@ export const ds3 = mergeTheme(ds3Base, {
           alignItems: "stretch",
         },
       },
-    },
+    } satisfies CSSClasses<HvPaginationProps>,
     HvPaginationSelect: {
       classes: {
         header: {
@@ -853,7 +929,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvPaginationSelectProps>,
     HvQueryBuilder: {
       classes: {
         topGroup: {
@@ -881,7 +957,7 @@ export const ds3 = mergeTheme(ds3Base, {
           textDecoration: "underline",
         },
       },
-    },
+    } satisfies CSSClasses<HvQueryBuilderProps>,
     HvQueryBuilderRule: {
       classes: {
         root: {
@@ -901,7 +977,7 @@ export const ds3 = mergeTheme(ds3Base, {
           marginTop: "22px",
         },
       },
-    },
+    } satisfies CSSClasses<RuleProps>,
     HvRadio: {
       classes: {
         container: {
@@ -910,21 +986,21 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvRadioProps>,
     HvScrollToHorizontal: {
       classes: {
         root: {
           backgroundColor: theme.alpha("atmo2", 0.8),
         },
       },
-    },
+    } satisfies CSSClasses<HvScrollToHorizontalProps>,
     HvScrollToVertical: {
       classes: {
         root: {
           backgroundColor: theme.alpha("atmo2", 0.8),
         },
       },
-    },
+    } satisfies CSSClasses<HvScrollToVerticalProps>,
     HvSlider: {
       classes: {
         trackDragging: {
@@ -963,21 +1039,21 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvSliderProps>,
     HvSnackbarContent: {
       classes: {
         action: {
           marginLeft: "inherit",
         },
       },
-    },
+    } satisfies CSSClasses<HvSnackbarContentProps>,
     HvSwitch: {
       classes: {
         invalidSwitch: {
           paddingBottom: "0px",
         },
       },
-    },
+    } satisfies CSSClasses<HvSwitchProps>,
     HvSuggestions: {
       classes: {
         list: {
@@ -985,7 +1061,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderRadius: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvSuggestionsProps>,
     HvTab: {
       classes: {
         root: {
@@ -1000,7 +1076,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTabProps>,
     HvTag: {
       classes: {
         root: {
@@ -1010,7 +1086,7 @@ export const ds3 = mergeTheme(ds3Base, {
           "--tagColor": theme.alpha("cat1", 0.2),
         },
       },
-    },
+    } satisfies CSSClasses<HvTagProps>,
     HvTagsInput: {
       classes: {
         disabled: {
@@ -1040,7 +1116,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTagsInputProps>,
     HvTableCell: {
       classes: {
         root: {
@@ -1066,7 +1142,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderRight: `solid 2px ${theme.colors.atmo2}`,
         },
       },
-    },
+    } satisfies CSSClasses<HvTableCellProps>,
     HvTableHeader: {
       classes: {
         head: {
@@ -1098,7 +1174,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTableHeaderProps>,
     HvTableRow: {
       classes: {
         root: {
@@ -1170,7 +1246,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTableRowProps>,
     HvMultiButton: {
       variant: "secondaryGhost",
       classes: {
@@ -1179,11 +1255,8 @@ export const ds3 = mergeTheme(ds3Base, {
             height: 32,
           },
         },
-        splitDisabled: {
-          backgroundColor: theme.colors.atmo3,
-        },
       },
-    },
+    } satisfies CSSClasses<HvMultiButtonProps>,
     HvTooltip: {
       classes: {
         popper: {
@@ -1192,21 +1265,21 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTooltipProps>,
     HvVerticalNavigation: {
       classes: {
         root: {
           justifyContent: "space-between",
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationProps>,
     HvVerticalNavigationActions: {
       classes: {
         root: {
           marginTop: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationActionsProps>,
     HvVerticalNavigationSlider: {
       classes: {
         root: {
@@ -1216,7 +1289,7 @@ export const ds3 = mergeTheme(ds3Base, {
           borderLeft: `2px solid ${theme.colors.brand}`,
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationSliderProps>,
     HvVerticalNavigationTreeViewItem: {
       classes: {
         content: {
@@ -1226,7 +1299,7 @@ export const ds3 = mergeTheme(ds3Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationTreeViewItemProps>,
     HvWarningText: {
       classes: {
         warningText: {
@@ -1239,16 +1312,16 @@ export const ds3 = mergeTheme(ds3Base, {
           margin: 8,
         },
       },
-    },
+    } satisfies CSSClasses<HvWarningTextProps>,
     HvWizardContainer: {
       classes: {
         paper: {
           maxHeight: "calc(100% - (2 * 100px))",
         },
       },
-    },
+    } satisfies CSSClasses<any>,
     HvStatusIcon: {
       type: "simple",
-    },
+    } satisfies CSSClasses<HvStatusIconProps>,
   },
 });
