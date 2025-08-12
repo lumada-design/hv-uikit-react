@@ -1,4 +1,3 @@
-import type { CSSObject } from "@emotion/serialize";
 import {
   blue,
   mergeTheme,
@@ -8,11 +7,50 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvBadgeProps } from "../Badge";
+import type { HvBaseCheckBoxProps } from "../BaseCheckBox";
+import type { HvCheckBoxIconProps } from "../BaseCheckBox/CheckBoxIcon";
+import type { HvBaseDropdownProps } from "../BaseDropdown";
+import type { HvBaseInputProps } from "../BaseInput";
+import type { HvBaseRadioProps } from "../BaseRadio";
+import type { HvRadioIconProps } from "../BaseRadio/RadioIcon";
+import type { HvBaseSwitchProps } from "../BaseSwitch";
+import type { HvButtonProps } from "../Button";
+import type { HvButtonBaseProps } from "../ButtonBase";
+import type {
+  HvCardContentProps,
+  HvCardHeaderProps,
+  HvCardProps,
+} from "../Card";
+import type { HvDialogActionsProps, HvDialogProps } from "../Dialog";
+import type { HvDropdownButtonProps } from "../DropdownButton";
+import type { HvDropDownMenuProps } from "../DropDownMenu";
+import type { HvFooterProps } from "../Footer";
+import type { HvLabelProps } from "../FormElement";
+import type { HvSuggestionsProps } from "../FormElement/Suggestions";
+import type { HvHeaderBrandProps, HvHeaderProps } from "../Header";
+import { BarProps } from "../Header/Navigation/MenuBar/Bar";
+import type { HvIconContainerProps } from "../IconContainer";
+import type { HvInlineEditorProps } from "../InlineEditor";
+import type { HvInputProps } from "../Input";
+import type { HvLoadingProps } from "../Loading";
+import type { HvMultiButtonProps } from "../MultiButton";
+import type { HvNumberInputProps } from "../NumberInput";
 import type { HvSectionProps } from "../Section";
-
-type CSSClasses<Props extends Record<string, any>> = Omit<Props, "classes"> & {
-  classes?: Record<string, CSSObject>;
-};
+import type { HvSelectProps } from "../Select";
+import type { HvSnackbarProps } from "../Snackbar";
+import type { HvSnackbarProviderProps } from "../SnackbarProvider";
+import type { HvTabsProps } from "../Tabs";
+import type { HvTagProps } from "../Tag";
+import type { HvTagsInputProps } from "../TagsInput";
+import type { HvCalloutProps } from "../utils/Callout";
+import type {
+  HvVerticalNavigationActionProps,
+  HvVerticalNavigationProps,
+  HvVerticalNavigationSliderProps,
+  HvVerticalNavigationTreeViewItemProps,
+} from "../VerticalNavigation";
+import type { CSSClasses } from "./utils";
 
 /** light-dark alias */
 const ld = (c1: string, c2: string) => `light-dark(${c1}, ${c2})`;
@@ -47,7 +85,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderRadius: 1,
         },
       },
-    },
+    } satisfies CSSClasses<HvLoadingProps>,
     HvBadge: {
       classes: {
         badgePosition: {
@@ -62,7 +100,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvBadgeProps>,
     HvCallout: {
       classes: {
         root: { outline: "1px solid var(--icolor, currentcolor)" },
@@ -91,20 +129,20 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           color: theme.colors.text,
         },
       },
-    },
+    } satisfies CSSClasses<HvCalloutProps>,
     HvSnackbar: {
       anchorOrigin: { vertical: "bottom", horizontal: "center" },
-    },
+    } satisfies CSSClasses<HvSnackbarProps>,
     HvSnackbarProvider: {
       anchorOrigin: { vertical: "bottom", horizontal: "center" },
-    },
+    } satisfies CSSClasses<HvSnackbarProviderProps>,
     HvBaseCheckBox: {
       classes: {
         root: {
           borderRadius: theme.radii.base,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseCheckBoxProps>,
     HvCheckBoxIcon: {
       classes: {
         root: {
@@ -115,21 +153,21 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           color: theme.colors.bgContainer,
         },
       },
-    },
+    } satisfies CSSClasses<HvCheckBoxIconProps>,
     HvBaseRadio: {
       classes: {
         root: {
           borderRadius: theme.radii.base,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseRadioProps>,
     HvRadioIcon: {
       classes: {
         checked: {
           "--bg-color": theme.colors.primary,
         },
       },
-    },
+    } satisfies CSSClasses<HvRadioIconProps>,
     HvBaseSwitch: {
       classes: {
         root: {
@@ -201,7 +239,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             },
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseSwitchProps>,
     HvSection: {
       classes: {
         content: {
@@ -235,14 +273,14 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvSelectProps<any>>,
     HvSuggestions: {
       classes: {
         list: {
           ...popperStyles,
         },
       },
-    },
+    } satisfies CSSClasses<HvSuggestionsProps>,
     HvTagsInput: {
       classes: {
         tagsList: {
@@ -265,7 +303,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTagsInputProps>,
     HvTag: {
       showSelectIcon: false,
       size: "sm",
@@ -336,7 +374,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTagProps>,
     HvIconContainer: {
       classes: {
         root: {
@@ -348,7 +386,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         lg: { fontSize: 36, padding: 6 },
         xl: { fontSize: 48, padding: 5 },
       },
-    },
+    } satisfies CSSClasses<HvIconContainerProps>,
     HvInlineEditor: {
       classes: {
         button: {
@@ -361,7 +399,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderRadius: 2,
         },
       },
-    },
+    } satisfies CSSClasses<HvInlineEditorProps>,
     HvButtonBase: {
       classes: {
         root: {
@@ -371,7 +409,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvButtonBaseProps>,
     HvButton: {
       radius: "full",
       classes: {
@@ -474,7 +512,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvButtonProps>,
     HvMultiButton: {
       classes: {
         multiple: {
@@ -497,7 +535,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderColor: theme.colors.border,
         },
       },
-    },
+    } satisfies CSSClasses<HvMultiButtonProps>,
     HvDialog: {
       classes: {
         paper: {
@@ -509,14 +547,14 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderTopRightRadius: theme.radii.large,
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogProps>,
     HvDialogActions: {
       classes: {
         root: {
           borderTop: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogActionsProps>,
     HvDropdownButton: {
       classes: {
         disabled: {
@@ -536,7 +574,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDropdownButtonProps>,
     HvHeader: {
       classes: {
         root: {
@@ -544,7 +582,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           boxShadow: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvHeaderProps>,
     HvHeaderBrand: {
       classes: {
         separator: {
@@ -553,7 +591,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           height: 32,
         },
       },
-    },
+    } satisfies CSSClasses<HvHeaderBrandProps>,
     HvHeaderMenuBarBar: {
       classes: {
         active: {
@@ -571,7 +609,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<BarProps>,
     HvVerticalNavigation: {
       classes: {
         root: {
@@ -593,7 +631,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationProps>,
     HvVerticalNavigationAction: {
       classes: {
         action: {
@@ -603,7 +641,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationActionProps>,
     HvVerticalNavigationSlider: {
       classes: {
         root: {
@@ -635,7 +673,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           padding: theme.space.sm,
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationSliderProps>,
     HvVerticalNavigationTreeViewItem: {
       classes: {
         content: {
@@ -669,7 +707,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvVerticalNavigationTreeViewItemProps>,
     HvCard: {
       classes: {
         root: {
@@ -708,7 +746,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderRadius: `${theme.radii.base} ${theme.radii.base} 0 0`,
         },
       },
-    },
+    } satisfies CSSClasses<HvCardProps>,
     HvCardHeader: {
       classes: {
         root: {
@@ -722,7 +760,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           alignSelf: "center",
         },
       },
-    },
+    } satisfies CSSClasses<HvCardHeaderProps>,
     HvCardContent: {
       classes: {
         content: {
@@ -732,10 +770,10 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvCardContentProps>,
     HvFooter: {
       name: "Pentaho",
-    },
+    } satisfies CSSClasses<HvFooterProps>,
     HvTabs: {
       classes: {
         floating: {
@@ -767,7 +805,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTabsProps>,
     HvLabel: {
       classes: {
         root: {
@@ -776,7 +814,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvLabelProps>,
     HvBaseInput: {
       classes: {
         root: {
@@ -787,7 +825,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           backgroundColor: theme.colors.bgDisabled,
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseInputProps>,
     HvInput: {
       classes: {
         label: {
@@ -806,7 +844,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           boxShadow: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvInputProps>,
     HvBaseDropdown: {
       classes: {
         header: {
@@ -825,7 +863,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             },
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseDropdownProps>,
     HvDropDownMenu: {
       classes: {
         root: {
@@ -837,7 +875,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDropDownMenuProps>,
     HvNumberInput: {
       classes: {
         root: {
@@ -851,9 +889,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
           borderRadius: theme.radii.none,
         },
       },
-    },
-  } satisfies Record<
-    string,
-    Record<string, any> & { classes?: Record<string, CSSObject> }
-  >,
+    } satisfies CSSClasses<HvNumberInputProps>,
+  },
 });

@@ -4,6 +4,20 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvAvatarProps } from "../Avatar";
+import type { HvBannerContentProps } from "../Banner";
+import type { HvBaseDropdownProps } from "../BaseDropdown";
+import type { HvButtonProps } from "../Button";
+import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
+import type { HvDropdownButtonProps } from "../DropdownButton";
+import type { HvMultiButtonProps } from "../MultiButton";
+import type { HvSelectProps } from "../Select";
+import type { HvStatusIconProps } from "../StatusIcon";
+import type { HvTabProps } from "../Tabs";
+import type { HvTagProps } from "../Tag";
+import type { HvCalloutProps } from "../utils/Callout";
+import type { CSSClasses } from "./utils";
+
 export const ds5 = mergeTheme(ds5Base, {
   components: {
     HvAvatar: {
@@ -12,14 +26,14 @@ export const ds5 = mergeTheme(ds5Base, {
           borderRadius: theme.radii.round,
         },
       },
-    },
+    } satisfies CSSClasses<HvAvatarProps>,
     HvBannerContent: {
       classes: {
         root: {
           borderRadius: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvBannerContentProps>,
     HvBaseDropdown: {
       classes: {
         headerOpen: {
@@ -43,7 +57,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvBaseDropdownProps>,
     HvButton: {
       radius: "round",
       classes: {
@@ -80,7 +94,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvButtonProps>,
     HvCallout: {
       classes: {
         messageIcon: {
@@ -88,7 +102,7 @@ export const ds5 = mergeTheme(ds5Base, {
           padding: 0,
         },
       },
-    },
+    } satisfies CSSClasses<HvCalloutProps>,
     HvDropdownButton: {
       classes: {
         open: {
@@ -102,7 +116,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDropdownButtonProps>,
     HvMultiButton: {
       classes: {
         splitGroup: {
@@ -115,7 +129,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvMultiButtonProps>,
     HvSelect: {
       classes: {
         popper: {
@@ -128,10 +142,10 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvSelectProps<any>>,
     HvStatusIcon: {
       type: "simple",
-    },
+    } satisfies CSSClasses<HvStatusIconProps>,
     HvTab: {
       classes: {
         root: {
@@ -140,7 +154,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvTabProps>,
     HvTag: {
       classes: {
         root: {
@@ -150,7 +164,7 @@ export const ds5 = mergeTheme(ds5Base, {
           "--tagColor": theme.alpha("cat1", 0.2),
         },
       },
-    },
+    } satisfies CSSClasses<HvTagProps>,
     HvDialogTitle: {
       classes: {
         root: {
@@ -162,7 +176,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogTitleProps>,
     HvDialogContent: {
       classes: {
         root: {
@@ -170,7 +184,7 @@ export const ds5 = mergeTheme(ds5Base, {
           borderBottom: "none",
         },
       },
-    },
+    } satisfies CSSClasses<HvDialogContentProps>,
   } satisfies Record<
     string,
     Record<string, any> | { classes?: React.CSSProperties }
