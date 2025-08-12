@@ -11,7 +11,7 @@ const classes = {
   root: css({
     height: "100%",
     padding: theme.space.xl,
-    background: `linear-gradient(70deg, ${theme.colors.bgPage} 55%, transparent 55%), linear-gradient(180deg, ${theme.colors.brand}, #000)`,
+    background: `linear-gradient(70deg, ${theme.colors.bgPage} 55%, transparent 55%), linear-gradient(180deg, ${theme.colors.primary}, #000)`,
   }),
   glossaryContainer: css({
     margin: theme.spacing("sm", 0),

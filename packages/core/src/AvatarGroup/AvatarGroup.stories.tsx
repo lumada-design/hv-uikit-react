@@ -5,9 +5,6 @@ import {
   HvAvatarGroupProps,
 } from "@hitachivantara/uikit-react-core";
 
-import { CustomOverflow as CustomOverflowStory } from "./stories/CustomOverflow";
-import { WithTooltip as WithTooltipStory } from "./stories/WithTooltip";
-
 const meta: Meta<typeof HvAvatarGroup> = {
   title: "Components/Avatar Group",
   component: HvAvatarGroup,
@@ -42,30 +39,6 @@ export const Main: StoryObj<HvAvatarGroupProps> = {
       </HvAvatarGroup>
     );
   },
-};
-
-export const CustomOverflow: StoryObj<HvAvatarGroupProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "You can customize the overflow component that's displayed by passing your own component on the `overflowComponent` property. This property will receive the overflow count as a parameter. When `undefined` a default `HvAvatar` will be displayed with the count of overflowing items.",
-      },
-    },
-  },
-  render: () => <CustomOverflowStory />,
-};
-
-export const WithTooltip: StoryObj<HvAvatarGroupProps> = {
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "The `HvAvatarGroup` component accepts `HvAvatar` as children. But you can wrap them with a `HvTooltip` component to display a tooltip on hover.",
-      },
-    },
-  },
-  render: () => <WithTooltipStory />,
 };
 
 export const Test: StoryObj = {

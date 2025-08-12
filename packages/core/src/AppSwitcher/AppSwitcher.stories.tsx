@@ -31,13 +31,13 @@ const applicationsList: HvAppSwitcherActionApplication[] = [
   },
   {
     name: "No Icon App",
-    color: "brand",
+    color: "primary",
     description: "This is a disabled App without an icon",
     disabled: true,
   },
   {
     name: "No Description App",
-    color: "brand",
+    color: "primary",
   },
 ];
 
