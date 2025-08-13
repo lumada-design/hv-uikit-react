@@ -149,7 +149,7 @@ export const getThemesList = (themes: Record<string, any>) => {
 };
 
 export const getThemesVars = (themes: HvThemeStructure[]) => {
-  const vars: Record<string, any> = {};
+  const cssVars: Record<string, any> = {};
 
   themes.forEach((theme) => {
     const colorModes = Object.keys(theme.colors.modes);
@@ -160,19 +160,20 @@ export const getThemesVars = (themes: HvThemeStructure[]) => {
 
       // extract properties that shouldn't be mapped to CSS variables
       // @ts-expect-error align HvTheme <-> HvThemeStructure?
-      const { base, components, name, colors, palette, icons, ...rest } = theme;
+      const { base, components, name, colors, palette, icons, vars, ...rest } =
+        theme;
 
-      vars[styleName] = toCSSVars({
+      cssVars[styleName] = toCSSVars({
         colors: {
           ...colors.modes[colorMode],
         },
       });
 
-      vars[themeName] = toCSSVars({
+      cssVars[themeName] = toCSSVars({
         ...rest,
       });
     });
   });
 
-  return vars;
+  return cssVars;
 };
