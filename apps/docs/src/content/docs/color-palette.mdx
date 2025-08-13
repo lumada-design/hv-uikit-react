@@ -11,13 +11,13 @@ Each color spans from **50** (lightest) to **950** (darkest), offering flexibili
 > instead (e.g. `theme.colors.primary`) to ensure visual consistency, theme
 > support, and accessibility across the system.
 
-If needed (e.g. for data visualizations or custom elements), you can access palette values via the `theme.palette` object:
+If needed (e.g. for data visualizations or custom elements), you can access palette values via the `palette` object:
 
 ```tsx
-import { theme } from "@hitachivantara/uikit-react-core";
+import { palette } from "@hitachivantara/uikit-styles";
 
 const MyComponent = () => (
-  <div style={{ color: theme.palette.blue[500] }}>
+  <div style={{ color: palette.blue[500] }}>
     This text uses a raw palette color.
   </div>
 );

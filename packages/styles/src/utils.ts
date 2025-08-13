@@ -89,8 +89,7 @@ export const getThemeVars = (theme: HvThemeStructure) => {
     const themeName = `[data-theme="${theme.name}"]`;
 
     // exclude properties that shouldn't be mapped to CSS variables
-    // @ts-expect-error align HvTheme <-> HvThemeStructure
-    const { base, components, name, colors, palette, icons, ...rest } = theme;
+    const { base, components, name, colors, icons, ...rest } = theme;
 
     cssVars[styleName] = toCSSVars({
       colors: {

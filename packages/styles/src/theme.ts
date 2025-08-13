@@ -1,4 +1,3 @@
-import { palette } from "./palette";
 import { baseTheme } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
 import { compatColors } from "./tokens/colorsCompat";
@@ -153,7 +152,6 @@ const alpha = (color: HvColorAny, factor: number | string) =>
  */
 export const theme = {
   ...themeVars,
-  palette,
   spacing,
   alpha,
   mix,
