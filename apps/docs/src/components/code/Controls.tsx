@@ -212,7 +212,6 @@ function ColorControl({ prop, state, control, onChange, label }: ControlProps) {
         "warning",
         "info",
         "accent",
-        "catastrophic",
         "primary",
         "secondary",
         "cat1",

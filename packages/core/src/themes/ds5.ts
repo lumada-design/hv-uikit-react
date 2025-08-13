@@ -10,6 +10,7 @@ import type { HvBaseDropdownProps } from "../BaseDropdown";
 import type { HvButtonProps } from "../Button";
 import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
+import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvSelectProps } from "../Select";
 import type { HvStatusIconProps } from "../StatusIcon";
@@ -18,8 +19,19 @@ import type { HvTagProps } from "../Tag";
 import type { HvCalloutProps } from "../utils/Callout";
 import type { CSSClasses } from "./utils";
 
+const colors = {
+  brand: "#CC0000",
+};
+
 export const ds5 = mergeTheme(ds5Base, {
   components: {
+    HvLoading: {
+      classes: {
+        root: {
+          "--baseColor": colors.brand,
+        },
+      },
+    } satisfies CSSClasses<HvLoadingProps>,
     HvAvatar: {
       classes: {
         square: {
@@ -158,7 +170,7 @@ export const ds5 = mergeTheme(ds5Base, {
     HvTag: {
       classes: {
         root: {
-          "--tagColor": theme.colors.neutral_20,
+          "--tagColor": theme.colors.infoDimmed,
         },
         categorical: {
           "--tagColor": theme.alpha("cat1", 0.2),
@@ -172,7 +184,7 @@ export const ds5 = mergeTheme(ds5Base, {
             padding: 0,
           },
           "& .HvIconContainer-root": {
-            color: `${theme.colors.text}!important`,
+            color: theme.colors.text,
           },
         },
       },

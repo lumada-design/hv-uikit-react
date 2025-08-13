@@ -1,11 +1,13 @@
 import React from "react";
 import { IconButton } from "storybook/internal/components";
 import { addons, useAddonState, useStorybookApi } from "storybook/manager-api";
-import { colors, HvThemeColorMode } from "@hitachivantara/uikit-styles";
+import { HvThemeColorMode, pentaho } from "@hitachivantara/uikit-styles";
 
 import { themes } from "../../theme";
 import { ADDON_EVENT, ADDON_ID } from "./constants";
 import { getInitialMode, setLocalMode } from "./utils";
+
+const { colors } = pentaho;
 
 const ModeSelector = () => {
   const api = useStorybookApi();
