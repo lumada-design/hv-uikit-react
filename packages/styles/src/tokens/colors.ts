@@ -236,10 +236,10 @@ export const colors = {
 };
 
 /** @experimental extendable theme colors */
-export interface HvThemeColors extends HvColorTokens {}
+export interface HvThemeColors extends HvColorTokens, Record<string, string> {}
 
 /** A type with all the accepted colors from the color palette */
-export type HvColor = keyof HvThemeColors;
+export type HvColor = keyof HvColorTokens;
 
 /**
  * A type representing an `HvColor` from the palette or any other color string

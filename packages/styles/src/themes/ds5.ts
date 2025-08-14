@@ -1,8 +1,16 @@
 import { makeColors, makeTheme } from "../makeTheme";
+import { dsColors } from "../tokens/colorsCompat";
 
 const ds5 = makeTheme((theme) => ({
   name: "ds5",
-  colors: makeColors({}),
+  colors: makeColors({
+    // add tokens that aren't part of UI Kit tokens, or map to multiple tokens
+    brand: "#CC0000",
+    primary_20: dsColors.primary_20,
+    secondary_60: dsColors.secondary_60,
+    atmo1: dsColors.atmo1,
+    atmo3: dsColors.atmo3,
+  }),
   typography: {
     display: {
       color: theme.colors.text,
