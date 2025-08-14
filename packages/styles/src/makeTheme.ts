@@ -49,14 +49,16 @@ const compatMap: Partial<Record<keyof HvColorTokens, string>> = {
   bgContainer: "atmo1",
   bgPageSecondary: "atmo3",
   border: "atmo4",
+  borderSubtle: "atmo3",
+  borderDisabled: "secondary_60",
 };
 
-/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
+/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
-    const compatKey = compatMap[key as keyof HvThemeColors];
-    if (compatKey) {
-      acc[compatKey as keyof HvThemeColors] = color;
+    const compatKey = compatMap[key as keyof typeof compatMap];
+    if (compatKey && !acc[compatKey as keyof typeof acc]) {
+      acc[compatKey as keyof typeof acc] = color;
     }
     return acc;
   }, colors);
@@ -68,10 +70,11 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  * @private @internal internal use only
  */
 export const makeColors = (
-  inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
+  inputColors: Partial<Record<keyof HvThemeColors, string[] | string>>,
 ): HvCustomTheme["colors"] => {
   const [lightColors, darkColors] = Object.entries(inputColors).reduce(
     (acc, [key, color]) => {
+      if (!color) return acc;
       const [lightColor, darkColor] =
         typeof color === "string" ? [color, color] : color;
 

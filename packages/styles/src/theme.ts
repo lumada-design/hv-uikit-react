@@ -1,6 +1,6 @@
 import { baseTheme } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
-import { compatColors } from "./tokens/colorsCompat";
+import { dsColors } from "./tokens/colorsCompat";
 import type {
   DeepString,
   HvThemeComponents,
@@ -50,7 +50,7 @@ const typographySpec: DeepString<HvThemeTypography> = {
 
 const colorTokens = {
   ...baseTheme.colors.light,
-  ...compatColors.light,
+  ...dsColors,
 };
 
 const themeVars: HvThemeVars = {
