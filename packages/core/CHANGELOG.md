@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.100.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.100.0...@hitachivantara/uikit-react-core@5.100.1) (2025-08-15)
+
+### Bug Fixes
+
+- **Tag:** map semantic \_20 colors in Pentaho theme ([#4863](https://github.com/lumada-design/hv-uikit-react/issues/4863)) ([661cd85](https://github.com/lumada-design/hv-uikit-react/commit/661cd8509fc26874f876b67c24c9b5fe74007ffe))
+- **theme:** deprecate old `base_light`/`base_dark` colors ([#4864](https://github.com/lumada-design/hv-uikit-react/issues/4864)) ([f675f61](https://github.com/lumada-design/hv-uikit-react/commit/f675f611e4b10d2112c932ccbcf4de42123706ef))
+
 # [5.100.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.99.1...@hitachivantara/uikit-react-core@5.100.0) (2025-08-08)
 
 ### Bug Fixes

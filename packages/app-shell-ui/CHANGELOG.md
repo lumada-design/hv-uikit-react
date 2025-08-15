@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.11.4...@hitachivantara/app-shell-ui@1.11.5) (2025-08-15)
+
+### Bug Fixes
+
+- **theme:** deprecate old `base_light`/`base_dark` colors ([#4864](https://github.com/lumada-design/hv-uikit-react/issues/4864)) ([f675f61](https://github.com/lumada-design/hv-uikit-react/commit/f675f611e4b10d2112c932ccbcf4de42123706ef))
+
 ## [1.11.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.11.3...@hitachivantara/app-shell-ui@1.11.4) (2025-08-08)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-ui

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.46.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.46.2...@hitachivantara/uikit-react-lab@5.46.3) (2025-08-15)
+
+### Bug Fixes
+
+- **theme:** deprecate old `base_light`/`base_dark` colors ([#4864](https://github.com/lumada-design/hv-uikit-react/issues/4864)) ([f675f61](https://github.com/lumada-design/hv-uikit-react/commit/f675f611e4b10d2112c932ccbcf4de42123706ef))
+
 ## [5.46.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.46.1...@hitachivantara/uikit-react-lab@5.46.2) (2025-08-08)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab

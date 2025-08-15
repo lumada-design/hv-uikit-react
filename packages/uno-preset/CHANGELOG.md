@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.69](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.68...@hitachivantara/uikit-uno-preset@0.2.69) (2025-08-15)
+
+### Bug Fixes
+
+- **theme:** deprecate old `base_light`/`base_dark` colors ([#4864](https://github.com/lumada-design/hv-uikit-react/issues/4864)) ([f675f61](https://github.com/lumada-design/hv-uikit-react/commit/f675f611e4b10d2112c932ccbcf4de42123706ef))
+
 ## [0.2.68](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-uno-preset@0.2.67...@hitachivantara/uikit-uno-preset@0.2.68) (2025-07-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-uno-preset
