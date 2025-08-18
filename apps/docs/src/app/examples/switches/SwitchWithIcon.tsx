@@ -23,9 +23,9 @@ export default function Demo() {
         color={checked ? "warning" : "border"}
       />
       <div
-        className="bg-white border-1 border-borderString rounded-full w-28px h-28px flex items-center justify-center absolute top-2px cursor-pointer transition-left duration-200 ease"
+        className="bg-white border-1 border-borderString rounded-full w-28px h-28px flex items-center justify-center absolute top-[calc-(50%-14px)] cursor-pointer transition-left duration-200 ease"
         style={{
-          left: checked ? 25 : 3,
+          left: checked ? "calc(100% - 32px)" : "calc(0% + 4px)",
           borderColor: checked
             ? theme.colors.warning
             : theme.colors.borderStrong,
