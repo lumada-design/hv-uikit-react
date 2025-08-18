@@ -1,7 +1,12 @@
 import { ComponentType, ReactElement, ReactNode, useCallback } from "react";
 
 type CombinedProvidersProps = {
-  providers: ComponentType<{ children: ReactNode }>[] | undefined;
+  providers:
+    | Array<{
+        component: ComponentType<{ children: ReactNode }>;
+        config?: Record<string, unknown>;
+      }>
+    | undefined;
   children: ReactNode;
 };
 
@@ -14,8 +19,8 @@ const CombinedProviders = ({
       let result = children;
 
       if (providers && providers.length > 0) {
-        result = providers.reduceRight((Acc, Curr) => {
-          return <Curr>{Acc}</Curr>;
+        result = providers.reduceRight((Acc, { component: Curr, config }) => {
+          return <Curr {...config}>{Acc}</Curr>;
         }, children);
       }
 

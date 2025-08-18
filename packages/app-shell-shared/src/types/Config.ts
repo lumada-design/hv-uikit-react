@@ -43,6 +43,7 @@ export interface HvAppShellMainPanelConfig extends ViewHvContainerProps {
 
 export type HvAppShellProvidersConfig = {
   bundle: string;
+  config?: Record<string, unknown>;
 };
 
 export type HvAppShellConfig = {
