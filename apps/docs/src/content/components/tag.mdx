@@ -48,10 +48,11 @@ Add an icon using the `icon` prop. To show a built-in checkbox icon, use the `sh
 ```tsx live
 <div className="flex gap-xs">
   <HvTag
-    selectable
     icon={<Abacus size="xs" className="size-12px" />}
     label="Tag with icon"
     size="sm"
+    selectable
+    showSelectIcon={false}
   />
   <HvTag selectable showSelectIcon label="Tag with checkbox" size="sm" />
 </div>
