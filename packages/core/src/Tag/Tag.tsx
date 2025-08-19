@@ -45,7 +45,9 @@ export interface HvTagProps
   type?: "semantic" | "categorical";
   /** @deprecated */
   variant?: "filled" | "outlined";
+  /** The size of the tag element. */
   size?: Extract<HvSize, "xs" | "sm" | "md">;
+  /** The icon to use in the tag. */
   icon?: React.ReactNode;
   /** Whether to show the select icon checkbox. */
   showSelectIcon?: boolean;
