@@ -48,7 +48,14 @@ export const { staticClasses, useClasses } = createClasses("HvPagination", {
     display: "flex",
     alignItems: "center",
     [`& .${baseDropdownClasses.arrowContainer}`]: {
-      marginTop: -2,
+      display: "flex",
+      alignItems: "center",
+      top: "unset",
+      height: 24,
+      "> svg": {
+        marginTop: 0,
+        marginBottom: 0,
+      },
     },
   },
   pageSizeRoot: {
