@@ -119,6 +119,22 @@ export const ds5 = mergeTheme(ds5Base, {
     } satisfies CSSClasses<HvDropdownButtonProps>,
     HvMultiButton: {
       classes: {
+        multiple: {
+          borderRadius: theme.radii.round,
+          "& .HvMultiButton-button.HvMultiButton-selected": {
+            borderRadius: theme.radii.round,
+            borderColor: theme.colors.primary,
+            borderWidth: 2,
+          },
+        },
+        vertical: {
+          borderRadius: theme.radii.round,
+          "& .HvMultiButton-button.HvMultiButton-selected": {
+            borderRadius: theme.radii.round,
+            borderColor: theme.colors.primary,
+            borderWidth: 2,
+          },
+        },
         splitGroup: {
           // NEXT5 subtle multi-buttons have a custom background
           "& .HvButton-subtle": {
