@@ -327,7 +327,6 @@ export const pentaho = mergeTheme(pentahoBase, {
         root: {
           outline: `1px solid ${theme.colors.border}`,
           outlineOffset: -1,
-          borderRadius: theme.radii.round,
           ":where(:not([data-color],.HvTag-disabled))": {
             color: theme.colors.text,
             "--tagColor": theme.colors.bgContainer,
