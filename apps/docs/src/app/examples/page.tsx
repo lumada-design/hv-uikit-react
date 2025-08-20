@@ -13,6 +13,7 @@ import kpis from "./kpis/page.mdx?raw";
 import login from "./login/page.mdx?raw";
 import switches from "./switches/page.mdx?raw";
 import tables from "./tables/page.mdx?raw";
+import tags from "./tags/page.mdx?raw";
 
 /**
  * Extracts the number of CodeBlock components in the given file content.
@@ -32,6 +33,7 @@ const sections = [
   { slug: "login", title: "Login", total: countCodeBlocks(login) },
   { slug: "switches", title: "Switches", total: countCodeBlocks(switches) },
   { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
+  { slug: "tags", title: "Tags", total: countCodeBlocks(tags) },
 ] as const;
 
 type Slug = (typeof sections)[number]["slug"];
@@ -54,6 +56,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-lock-open" />;
     case "switches":
       return <div className="i-ph-toggle-left" />;
+    case "tags":
+      return <div className="i-ph-tag-simple" />;
     default:
       return null;
   }
