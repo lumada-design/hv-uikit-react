@@ -10,7 +10,6 @@ import {
   HvOverflowTooltipProps,
 } from "../../OverflowTooltip";
 import { HvTag, HvTagProps } from "../../Tag";
-import { HvTypography } from "../../Typography";
 import { setId } from "../../utils/setId";
 import type {
   HvCellProps,
@@ -172,7 +171,7 @@ export function hvTagColumn<
 
       return (
         <HvTag
-          label={<HvTypography variant="body">{name}</HvTypography>}
+          label={name}
           type="semantic"
           color={color}
           style={textColor != null ? { color: textColor } : {}}

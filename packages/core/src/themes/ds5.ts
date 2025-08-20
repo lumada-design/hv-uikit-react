@@ -163,6 +163,9 @@ export const ds5 = mergeTheme(ds5Base, {
         categorical: {
           "--tagColor": theme.alpha("cat1", 0.2),
         },
+        xs: {
+          height: 19,
+        },
       },
     } satisfies CSSClasses<HvTagProps>,
     HvDialogTitle: {

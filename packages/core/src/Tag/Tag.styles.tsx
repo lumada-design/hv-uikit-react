@@ -9,7 +9,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     cursor: "default",
     color: theme.colors.textDark,
     borderColor: theme.colors.border,
-    borderRadius: 0,
+    borderRadius: theme.radii.round,
     maxWidth: 180,
     whiteSpace: "nowrap",
     transition: "background-color 0.3s ease",
@@ -24,7 +24,7 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     },
   },
   hasIcon: {
-    paddingLeft: 2,
+    paddingLeft: theme.space.xxs,
   },
   /** @deprecated */
   outlined: {
@@ -67,11 +67,12 @@ export const { staticClasses, useClasses } = createClasses("HvTag", {
     },
   },
   label: {
-    padding: theme.spacing(0, "xxs"),
+    padding: theme.spacing(0, "xs"),
     color: "inherit",
   },
   deleteIcon: {
     margin: 0,
+    marginRight: theme.space.xxs,
     padding: 2,
     ":hover": {
       backgroundColor: theme.colors.bgHover,
