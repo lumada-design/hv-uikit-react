@@ -9,6 +9,7 @@ import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
 import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
+import type { HvCalendarProps } from "../Calendar";
 import type { HvColorPickerProps } from "../ColorPicker";
 import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
@@ -104,6 +105,26 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvButtonProps>,
+    HvCalendar: {
+      classes: {
+        root: {
+          " .HvCalendarCell-cellContainer": {
+            borderRadius: theme.radii.round,
+            "& .HvCalendarCell-startBookend": {
+              borderTopLeftRadius: theme.radii.round,
+              borderBottomLeftRadius: theme.radii.round,
+            },
+            "& .HvCalendarCell-endBookend": {
+              borderTopRightRadius: theme.radii.round,
+              borderBottomRightRadius: theme.radii.round,
+            },
+          },
+          " .HvCalendarCell-calendarDateSelected": {
+            borderRadius: theme.radii.round,
+          },
+        },
+      },
+    } satisfies CSSClasses<HvCalendarProps>,
     HvCallout: {
       classes: {
         messageIcon: {
