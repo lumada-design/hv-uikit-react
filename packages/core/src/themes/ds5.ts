@@ -7,6 +7,7 @@ import {
 import type { HvAvatarProps } from "../Avatar";
 import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
+import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
 import type { HvColorPickerProps } from "../ColorPicker";
 import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
@@ -59,6 +60,13 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvBaseDropdownProps>,
+    HvBreadCrumb: {
+      classes: {
+        link: {
+          borderRadius: theme.radii.round,
+        },
+      },
+    } satisfies CSSClasses<HvBreadCrumbProps>,
     HvButton: {
       radius: "round",
       classes: {
