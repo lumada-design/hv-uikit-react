@@ -8,6 +8,7 @@ import type { HvAvatarProps } from "../Avatar";
 import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
 import type { HvButtonProps } from "../Button";
+import type { HvColorPickerProps } from "../ColorPicker";
 import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvMultiButtonProps } from "../MultiButton";
@@ -49,7 +50,7 @@ export const ds5 = mergeTheme(ds5Base, {
           "--r": theme.radii.round,
           "&[data-popper-placement*='top']": {
             top: 1,
-            borderRadius: "var(--r) var(--r) 0 0",
+            borderRadius: "var(--r) var(--r) var(--r) 0",
           },
           "&[data-popper-placement*='top']:has([data-is-dropdown='true'])": {
             top: 1,
@@ -57,7 +58,7 @@ export const ds5 = mergeTheme(ds5Base, {
           },
           "&[data-popper-placement*='bottom']": {
             top: -1,
-            borderRadius: "0 0 var(--r) var(--r)",
+            borderRadius: "0 var(--r) var(--r) var(--r)",
           },
           "&[data-popper-placement*='bottom']:has([data-is-dropdown='true'])": {
             top: -1,
@@ -111,6 +112,27 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvCalloutProps>,
+    HvColorPicker: {
+      classes: {
+        colorPicker: {
+          " .HvColorPickerPresetColors-swatchWrap > span > div": {
+            borderRadius: theme.radii.round,
+          },
+          " .HvColorPickerSavedColors-swatchWrap > span > div": {
+            borderRadius: theme.radii.round,
+          },
+          " .HvColorPickerPicker-saturation > div": {
+            borderRadius: theme.radii.round,
+            " .saturation-white": {
+              borderRadius: theme.radii.round,
+              " .saturation-black": {
+                borderRadius: theme.radii.round,
+              },
+            },
+          },
+        },
+      },
+    } satisfies CSSClasses<HvColorPickerProps>,
     HvDropdownButton: {
       classes: {
         open: {
