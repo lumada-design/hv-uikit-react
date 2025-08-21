@@ -55,9 +55,17 @@ export const ds5 = mergeTheme(ds5Base, {
             top: 1,
             borderRadius: "var(--r) var(--r) var(--r) 0",
           },
+          "&[data-popper-placement*='top']:has([data-is-dropdown='true'])": {
+            top: 1,
+            borderRadius: "var(--r) var(--r) 0 0",
+          },
           "&[data-popper-placement*='bottom']": {
             top: -1,
             borderRadius: "0 var(--r) var(--r) var(--r)",
+          },
+          "&[data-popper-placement*='bottom']:has([data-is-dropdown='true'])": {
+            top: -1,
+            borderRadius: "0 0 var(--r) var(--r)",
           },
         },
       },
