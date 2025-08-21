@@ -518,6 +518,7 @@ export const HvDropdown = fixedForwardRef(function HvDropdown<
           height={height}
           maxHeight={maxHeight}
           virtualized={virtualized}
+          data-is-dropdown="true"
           {...listProps}
         />
       </HvBaseDropdown>
