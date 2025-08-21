@@ -61,7 +61,7 @@ const defaultIconPathMap = {
   Search:
     "M15.07 14.52 10.5 9.95a5.96 5.96 0 1 0-.72.7l4.58 4.58zM5.9 11A4.95 4.95 0 0 1 1 6v-.1A4.95 4.95 0 0 1 6 1h.1A4.95 4.95 0 0 1 11 6v.1A4.95 4.95 0 0 1 6 11z",
   SortAsc: "M.08 6.07 6.5.01l6.42 6.06Zm0 0",
-  SortDesc: "M1.76 5 6 .76 10.24 5z",
+  SortDesc: "M12.92 8.93 6.5 14.99.08 8.93Zm0 0",
   Sort: "M10.24 7 6 11.24 1.76 7zM1.76 5 6 .76 10.24 5z",
   // single-use icons in Widgets
   Calendar:

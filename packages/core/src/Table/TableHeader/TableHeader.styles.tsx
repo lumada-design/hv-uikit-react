@@ -95,6 +95,8 @@ export const { staticClasses, useClasses } = createClasses("HvTableHeader", {
   },
   sortable: {},
   sortButton: {
+    paddingLeft: 4,
+    paddingTop: 4,
     ":focus-visible": {
       boxShadow: "none",
       backgroundColor: "transparent",
