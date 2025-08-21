@@ -231,12 +231,17 @@ See [Header actions](./header-actions) for more information and see the availabl
 
 ### `providers`
 
-This prop defines the _Providers_ that will wrap all the _Views_ and _Shared Modules_:
+This prop defines the _Providers_ that will wrap all the _Views_ and _Shared Modules_. It follows the [module structure](#module-structure) object API.
 
 ```ts
 const providers = [
   { bundle: "@hv-apps/some-app/providers/SomeProvider.js" },
-  { bundle: "@hv-apps/other-app/providers/OtherProvider.js" },
+  {
+    bundle: "@hv-apps/other-app/providers/OtherProvider.js",
+    config: {
+      someConfig: "value",
+    },
+  },
 ];
 ```
 
