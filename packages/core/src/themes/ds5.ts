@@ -15,6 +15,7 @@ import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvSelectProps } from "../Select";
+import type { HvSnackbarContentProps } from "../Snackbar";
 import type { HvStatusIconProps } from "../StatusIcon";
 import type { HvTabProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
@@ -210,6 +211,13 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvSelectProps<any>>,
+    HvSnackbarContent: {
+      classes: {
+        root: {
+          borderRadius: theme.radii.round,
+        },
+      },
+    } satisfies CSSClasses<HvSnackbarContentProps>,
     HvStatusIcon: {
       type: "simple",
     } satisfies CSSClasses<HvStatusIconProps>,
