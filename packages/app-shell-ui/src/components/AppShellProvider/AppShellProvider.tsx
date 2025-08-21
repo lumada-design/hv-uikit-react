@@ -70,8 +70,13 @@ const AppShellProvider = ({
   }
 
   const [theme, setTheme] = useState<HvThemeStructure>();
-  const [providers, setProviders] =
-    useState<React.ComponentType<{ children: React.ReactNode }>[]>();
+  const [providers, setProviders] = useState<
+    | Array<{
+        component: ComponentType<{ children: ReactNode }>;
+        config?: Record<string, unknown>;
+      }>
+    | undefined
+  >(undefined);
 
   useEffect(() => {
     const theme = theConfig?.theming?.theme;
@@ -92,25 +97,28 @@ const AppShellProvider = ({
   }, [theConfig?.theming?.theme]);
 
   useEffect(() => {
-    if (!theConfig?.providers) return;
-
-    Promise.all(
-      theConfig.providers.map((provider) => {
-        return import(/* @vite-ignore */ provider.bundle)
-          .then((module) => module.default)
-          .catch((e) => {
-            console.error(
-              `Import of provider '${provider.bundle}' failed! ${e}`,
-            );
-          });
-      }),
-    )
-      .then((loadedProviders) =>
-        setProviders(loadedProviders.filter((provider) => !!provider)),
+    if (theConfig?.providers) {
+      Promise.all(
+        theConfig.providers.map((provider) => {
+          return import(/* @vite-ignore */ provider.bundle)
+            .then((module) => ({
+              component: module.default,
+              config: provider.config,
+            }))
+            .catch((e) => {
+              console.error(
+                `Import of provider '${provider.bundle}' failed! ${e}`,
+              );
+            });
+        }),
       )
-      .catch((e) => {
-        console.error(`Import of providers failed!`, e);
-      });
+        .then((loadedProviders) =>
+          setProviders(loadedProviders.filter((provider) => !!provider)),
+        )
+        .catch((e) => {
+          console.error(`Import of providers failed!`, e);
+        });
+    }
   }, [theConfig?.providers]);
 
   const runtimeContext = useMemo(

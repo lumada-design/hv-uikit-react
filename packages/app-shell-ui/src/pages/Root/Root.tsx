@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, type ComponentType, type ReactNode } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Outlet } from "react-router-dom";
 
@@ -12,9 +12,12 @@ import GenericError from "../GenericError";
 import LoadingPage from "../LoadingPage";
 
 interface RootProps {
-  providers?: React.ComponentType<{
-    children: React.ReactNode;
-  }>[];
+  providers?: Array<{
+    component: ComponentType<{
+      children: ReactNode;
+    }>;
+    config?: Record<string, unknown>;
+  }>;
 }
 
 const Root = ({ providers }: RootProps) => (
