@@ -15,6 +15,7 @@ import type { HvColorPickerProps } from "../ColorPicker";
 import type {
   HvDialogActionsProps,
   HvDialogContentProps,
+  HvDialogProps,
   HvDialogTitleProps,
 } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
@@ -263,6 +264,14 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvTagProps>,
+    HvDialog: {
+      classes: {
+        statusBar: {
+          borderTopLeftRadius: theme.radii.round,
+          borderTopRightRadius: theme.radii.round,
+        },
+      },
+    } satisfies CSSClasses<HvDialogProps>,
     HvDialogTitle: {
       classes: {
         root: {
