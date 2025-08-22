@@ -14,7 +14,7 @@ export default function Demo() {
       onClick={() => setChecked((prev) => !prev)}
       component="div"
     >
-      <HvTypography variant="caption1">{checked ? "On" : "Off"}</HvTypography>
+      <HvTypography>{checked ? "On" : "Off"}</HvTypography>
       <HvBaseSwitch
         checked={checked}
         aria-label="Custom Switch"
