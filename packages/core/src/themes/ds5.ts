@@ -11,7 +11,12 @@ import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
 import type { HvCalendarProps } from "../Calendar";
 import type { HvColorPickerProps } from "../ColorPicker";
-import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
+import type {
+  HvDialogActionsProps,
+  HvDialogContentProps,
+  HvDialogProps,
+  HvDialogTitleProps,
+} from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvSelectProps } from "../Select";
@@ -258,6 +263,14 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvTagProps>,
+    HvDialog: {
+      classes: {
+        statusBar: {
+          borderTopLeftRadius: theme.radii.round,
+          borderTopRightRadius: theme.radii.round,
+        },
+      },
+    } satisfies CSSClasses<HvDialogProps>,
     HvDialogTitle: {
       classes: {
         root: {
@@ -278,6 +291,13 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvDialogContentProps>,
+    HvDialogActions: {
+      classes: {
+        root: {
+          borderTop: `1px solid ${theme.colors.borderSubtle}`,
+        },
+      },
+    } satisfies CSSClasses<HvDialogActionsProps>,
   } satisfies Record<
     string,
     Record<string, any> | { classes?: React.CSSProperties }
