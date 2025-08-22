@@ -53,10 +53,7 @@ function KpiData({ id }: { id: string }) {
   return (
     <>
       <div className="flex items-center gap-xxs">
-        <HvStatusIcon
-          size="xs"
-          customIcon={<div className="i-ph-copy-simple" />}
-        />
+        <HvStatusIcon size="xs" variant="info" />
         <span>{data?.title}</span>
       </div>
       <div className="flex items-baseline gap-2px">

@@ -11,7 +11,10 @@ import { Header } from "../../components/Header";
   Component={HvStatusIcon}
   componentName="HvStatusIcon"
   controls={{
-    variant: { defaultValue: "success" },
+    variant: {
+      defaultValue: "success",
+      values: ["success", "warning", "error", "info"],
+    },
     size: { defaultValue: "sm", type: "slider" },
     type: { defaultValue: "full" },
   }}
@@ -19,9 +22,19 @@ import { Header } from "../../components/Header";
 
 ## Custom icon
 
+The `HvStatusIcon` component supports two other variants that you can use to customize the icon's appearance: `default` and `accent`.
+These don't have a default icon, so you need to provide a custom icon using the `customIcon` prop. If no icon is provided, a placeholder will be displayed.
+
 ```tsx live
-<HvStatusIcon
-  customIcon={<div className="i-ph-tree-structure" />}
-  variant="default"
-/>
+<div className="flex items-center gap-xs">
+  <HvStatusIcon
+    customIcon={<div className="i-ph-tree-structure" />}
+    variant="default"
+  />
+  <HvStatusIcon
+    customIcon={<div className="i-ph-sparkle" />}
+    variant="accent"
+  />
+  <HvStatusIcon variant="default" />
+</div>
 ```
