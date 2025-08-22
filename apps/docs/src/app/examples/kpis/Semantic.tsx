@@ -13,7 +13,7 @@ export default function Demo() {
     <div className="grid gap-sm grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
       {colors.map((color) => (
         <HvCard key={color} statusColor={color} bgcolor="bgContainer">
-          <Kpi title="KPI Label" value="10 352" unit="GB" />
+          <Kpi title="KPI Label" value="10 352" unit="GB" variant={color} />
         </HvCard>
       ))}
     </div>
@@ -24,18 +24,17 @@ function Kpi({
   title,
   value,
   unit,
+  variant,
 }: {
   title: React.ReactNode;
   value: React.ReactNode;
   unit: React.ReactNode;
+  variant: keyof typeof colorVariantMap;
 }) {
   return (
     <HvCardContent className="grid gap-sm pb-xs!">
       <div className="flex items-center gap-xxs">
-        <HvStatusIcon
-          size="xs"
-          customIcon={<div className="i-ph-copy-simple" />}
-        />
+        <HvStatusIcon size="xs" variant={colorVariantMap[variant]} />
         <span>{title}</span>
       </div>
       <div className="flex items-baseline gap-2px">
@@ -47,3 +46,10 @@ function Kpi({
     </HvCardContent>
   );
 }
+
+const colorVariantMap = {
+  positive: "success",
+  warning: "warning",
+  negative: "error",
+  info: "info",
+} as const;

@@ -29,6 +29,7 @@ export default function Demo() {
             title="KPI Label"
             value="10 352"
             unit="GB"
+            variant={color}
             selected={i === selectedIndex}
             onSelect={() => setSelectedIndex(i)}
           />
@@ -42,12 +43,14 @@ function Kpi({
   title,
   value,
   unit,
+  variant,
   selected,
   onSelect,
 }: {
   title: React.ReactNode;
   value: React.ReactNode;
   unit: React.ReactNode;
+  variant: keyof typeof colorVariantMap;
   selected: boolean;
   onSelect: () => void;
 }) {
@@ -56,10 +59,7 @@ function Kpi({
   return (
     <HvCardContent className="grid gap-sm pb-xs!">
       <div className="flex items-center gap-xxs">
-        <HvStatusIcon
-          size="xs"
-          customIcon={<div className="i-ph-copy-simple" />}
-        />
+        <HvStatusIcon size="xs" variant={colorVariantMap[variant]} />
         <span id={titleId}>{title}</span>
       </div>
       <div className="flex justify-between items-center">
@@ -79,3 +79,10 @@ function Kpi({
     </HvCardContent>
   );
 }
+
+const colorVariantMap = {
+  positive: "success",
+  warning: "warning",
+  negative: "error",
+  info: "info",
+} as const;
