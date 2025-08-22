@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.101.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.100.1...@hitachivantara/uikit-react-core@5.101.0) (2025-08-22)
+
+### Bug Fixes
+
+- **Table:** fix sort arrows ([#4884](https://github.com/lumada-design/hv-uikit-react/issues/4884)) ([4fcff8e](https://github.com/lumada-design/hv-uikit-react/commit/4fcff8e8b1a9f4a852591e4ed8a48a0f97d2bf02))
+
+### Features
+
+- **BreadCrumb:** update to DS 5.9.5 specs ([#4878](https://github.com/lumada-design/hv-uikit-react/issues/4878)) ([fb68458](https://github.com/lumada-design/hv-uikit-react/commit/fb6845862cdf8827eb8551812bd0e5897504c946))
+- **ColorPicker:** update to DS 5.9.5 specs ([#4877](https://github.com/lumada-design/hv-uikit-react/issues/4877)) ([d33549f](https://github.com/lumada-design/hv-uikit-react/commit/d33549fe1a6a42b6661ec2b2771fee376332d3d5))
+- **DatePicker:** update to DS 5.9.5 specs ([#4879](https://github.com/lumada-design/hv-uikit-react/issues/4879)) ([c4ce3cf](https://github.com/lumada-design/hv-uikit-react/commit/c4ce3cf5ebe59a6e233731d7a8a9867c1a962713))
+- **MultiButton:** update to DS 5.9.5 specs ([#4875](https://github.com/lumada-design/hv-uikit-react/issues/4875)) ([9d033da](https://github.com/lumada-design/hv-uikit-react/commit/9d033da431be870ae67bfe0e8a60c3e4d6a7fac4))
+- **Snackbar:** update to DS 5.9.5 specs ([#4880](https://github.com/lumada-design/hv-uikit-react/issues/4880)) ([55f8895](https://github.com/lumada-design/hv-uikit-react/commit/55f8895f2f51226274867bfd17b4a9534ac0d8d1))
+- **Tag:** update to DS 5.9.5 specs ([#4874](https://github.com/lumada-design/hv-uikit-react/issues/4874)) ([c73f6c5](https://github.com/lumada-design/hv-uikit-react/commit/c73f6c5fadac90f814eb069a570810a9cdce120b))
+
 ## [5.100.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.100.0...@hitachivantara/uikit-react-core@5.100.1) (2025-08-15)
 
 ### Bug Fixes
