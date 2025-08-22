@@ -17,7 +17,7 @@ import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarContentProps } from "../Snackbar";
 import type { HvStatusIconProps } from "../StatusIcon";
-import type { HvTabProps } from "../Tabs";
+import type { HvTabProps, HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvCalloutProps } from "../utils/Callout";
 import type { CSSClasses } from "./utils";
@@ -238,6 +238,13 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvTabProps>,
+    HvTabs: {
+      classes: {
+        indicator: {
+          backgroundColor: theme.colors.primaryStrong,
+        },
+      },
+    } satisfies CSSClasses<HvTabsProps>,
     HvTag: {
       classes: {
         root: {
