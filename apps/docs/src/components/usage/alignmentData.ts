@@ -1,7 +1,7 @@
 // latest versions
 const ds3 = "3.6.0";
 const ds5 = "5.9.5";
-const pentahoPlus = "0.4.0";
+const pentahoPlus = "0.6.0";
 
 export const alignmentData: Record<
   string,
