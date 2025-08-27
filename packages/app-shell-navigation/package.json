@@ -32,10 +32,10 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
-    "i18next": "^24.2.2",
+    "i18next": "^25.4.2",
     "i18next-browser-languagedetector": "^8.0.3",
     "react-error-boundary": "^4.0.10",
-    "react-i18next": "^15.4.0",
+    "react-i18next": "^15.7.2",
     "vite": "^7.1.1"
   },
   "files": [
