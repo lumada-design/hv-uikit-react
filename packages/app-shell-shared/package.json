@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
-    "i18next": "^24.2.2",
+    "i18next": "^25.4.2",
     "vite": "^7.1.1"
   },
   "files": [
@@ -65,5 +65,8 @@
     "files": [
       "tsconfig.json"
     ]
+  },
+  "dependencies": {
+    "react-i18next": "^15.7.2"
   }
 }
