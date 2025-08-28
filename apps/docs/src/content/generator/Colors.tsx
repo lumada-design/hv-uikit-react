@@ -12,6 +12,7 @@ import { useGeneratorContext } from "./GeneratorContext";
 
 const colorsToDisplay = [
   "bgPage",
+  "bgContainer",
   "positive",
   "negative",
   "warning",

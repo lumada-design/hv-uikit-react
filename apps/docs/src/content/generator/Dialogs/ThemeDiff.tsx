@@ -1,6 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
+"use client";
+
+import { Dispatch, SetStateAction, useState } from "react";
 import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 import {
+  HvButton,
   HvDialog,
   HvDialogActions,
   HvDialogContent,
@@ -18,7 +21,18 @@ export const ThemeDiff = ({
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const { customTheme } = useGeneratorContext();
+  const { customTheme, updateCustomTheme } = useGeneratorContext();
+  const [currLocalTheme, setCurrLocalTheme] = useState(
+    diffObjects(customTheme, pentahoPlus),
+  );
+
+  const [initialValue] = useState(currLocalTheme);
+
+  const handleSave = () => {
+    updateCustomTheme(currLocalTheme);
+    setOpen(false);
+  };
+
   return (
     <HvDialog
       open={open}
@@ -33,6 +47,11 @@ export const ThemeDiff = ({
           height={400}
           language="json"
           value={JSON.stringify(diffObjects(customTheme, pentahoPlus), null, 2)}
+          onChange={(value) =>
+            setCurrLocalTheme(
+              value ? JSON.parse(value as string) : ({} as typeof customTheme),
+            )
+          }
         />
       </HvDialogContent>
       <HvDialogActions className="flex justify-start">
@@ -43,6 +62,15 @@ export const ThemeDiff = ({
         >
           Check here to learn how to create a custom theme
         </HvTypography>
+        <div className="flex-1" />
+        <HvButton
+          disabled={
+            JSON.stringify(currLocalTheme) === JSON.stringify(initialValue)
+          }
+          onClick={handleSave}
+        >
+          Save
+        </HvButton>
       </HvDialogActions>
     </HvDialog>
   );

@@ -9,6 +9,7 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvTypography,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 
 import { useGeneratorContext } from "../GeneratorContext";
@@ -24,6 +25,7 @@ export const ColorsConfig = ({
     Record<string, string>
   >({});
 
+  const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme, colorMode } = useGeneratorContext();
 
   const handleSave = useCallback(() => {
@@ -37,24 +39,27 @@ export const ColorsConfig = ({
       },
     });
     setOpen(false);
-  }, [
-    localColorValues,
-    // customTheme.colors,
-    updateCustomTheme,
-    setOpen,
-    colorMode,
-  ]);
+  }, [localColorValues, updateCustomTheme, setOpen, colorMode]);
+
+  const handleReset = useCallback(() => {
+    setlocalColorValues(activeTheme?.colors.modes[colorMode] || {});
+  }, [activeTheme, colorMode]);
 
   return (
     <HvDialog
       open={open}
       onClose={() => setOpen((p) => !p)}
-      maxWidth="xs"
+      maxWidth="md"
       fullWidth
     >
       <HvDialogTitle>Radius Settings</HvDialogTitle>
       <HvDialogContent>
-        <div className="gap-[var(--uikit-space-xxs)]">
+        <div
+          className="grid grid-auto-flow-col grid-cols-2 gap-x-[var(--uikit-space-lg)] gap-y-0"
+          style={{
+            gridTemplateRows: `repeat(${Math.ceil(colorTokens.length / 2)}, auto)`,
+          }}
+        >
           {colorTokens.map((c) => (
             <div
               key={c}
@@ -77,6 +82,10 @@ export const ColorsConfig = ({
         </div>
       </HvDialogContent>
       <HvDialogActions>
+        <HvButton variant="ghost" onClick={handleReset}>
+          Reset to Defaults
+        </HvButton>
+        <div className="flex-1" />
         <HvButton variant="secondarySubtle" onClick={() => setOpen(false)}>
           Cancel
         </HvButton>
@@ -137,4 +146,16 @@ const colorTokens = [
   "bgPageSecondary",
   "bgContainerSecondary",
   "bgDisabled",
+  "cat1",
+  "cat2",
+  "cat3",
+  "cat4",
+  "cat5",
+  "cat6",
+  "cat7",
+  "cat8",
+  "cat9",
+  "cat10",
+  "cat11",
+  "cat12",
 ];

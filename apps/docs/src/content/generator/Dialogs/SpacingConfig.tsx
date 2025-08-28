@@ -9,6 +9,7 @@ import {
   HvDialogTitle,
   HvInput,
   HvTypography,
+  useTheme,
 } from "@hitachivantara/uikit-react-core";
 
 import { useGeneratorContext } from "../GeneratorContext";
@@ -26,6 +27,7 @@ export const SpacingConfig = ({
     Record<string, string>
   >({});
 
+  const { activeTheme } = useTheme();
   const { customTheme, updateCustomTheme } = useGeneratorContext();
 
   const handleSave = useCallback(() => {
@@ -36,6 +38,10 @@ export const SpacingConfig = ({
     });
     setOpen(false);
   }, [localSpacingValues, updateCustomTheme, setOpen]);
+
+  const handleReset = useCallback(() => {
+    setLocalSpacingValues(activeTheme?.space || {});
+  }, [activeTheme]);
 
   return (
     <HvDialog
@@ -72,6 +78,10 @@ export const SpacingConfig = ({
         </div>
       </HvDialogContent>
       <HvDialogActions>
+        <HvButton variant="ghost" onClick={handleReset}>
+          Reset to Defaults
+        </HvButton>
+        <div className="flex-1" />
         <HvButton variant="secondarySubtle" onClick={() => setOpen(false)}>
           Cancel
         </HvButton>

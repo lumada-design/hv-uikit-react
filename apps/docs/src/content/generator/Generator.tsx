@@ -1,6 +1,7 @@
 "use client";
 
 import { HvProvider } from "@hitachivantara/uikit-react-core";
+import { HvVizProvider } from "@hitachivantara/uikit-react-viz";
 
 import { ActiveUsers } from "../../components/home/cards/ActiveUsers";
 import { ApiUsage } from "../../components/home/cards/ApiUsage";
@@ -34,26 +35,28 @@ const GeneratorInternal = () => {
           rootElementId="generator-root"
           cssTheme="scoped"
         >
-          <div className="flex-1 bg-bgPage border-border border-rounded-round">
-            <div className="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[var(--uikit-space-md)] p-md mx-auto">
-              <div className="flex flex-col gap-[var(--uikit-space-md)]">
-                <DataInsights />
-                <Orders />
-                <DataProcessing />
-              </div>
-              <div className="flex flex-col gap-[var(--uikit-space-md)]">
-                <FinancialPerformance />
-                <StorageOverview />
-                <DataConfig />
-              </div>
-              <div className="flex flex-col gap-[var(--uikit-space-md)]">
-                <ApiUsage />
-                <DataSecurity />
-                <TeamOverview />
-                <ActiveUsers />
+          <HvVizProvider>
+            <div className="flex-1 bg-bgPage border-border border-rounded-round">
+              <div className="grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[var(--uikit-space-md)] p-md mx-auto">
+                <div className="flex flex-col gap-[var(--uikit-space-md)]">
+                  <DataInsights />
+                  <Orders />
+                  <DataProcessing />
+                </div>
+                <div className="flex flex-col gap-[var(--uikit-space-md)]">
+                  <FinancialPerformance />
+                  <StorageOverview />
+                  <DataConfig />
+                </div>
+                <div className="flex flex-col gap-[var(--uikit-space-md)]">
+                  <ApiUsage />
+                  <DataSecurity />
+                  <TeamOverview />
+                  <ActiveUsers />
+                </div>
               </div>
             </div>
-          </div>
+          </HvVizProvider>
         </HvProvider>
       </div>
     </div>

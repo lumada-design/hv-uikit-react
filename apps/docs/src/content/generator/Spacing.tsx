@@ -1,50 +1,68 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
-  HvButton,
   HvIconButton,
+  HvSlider,
   HvTypography,
-  theme,
 } from "@hitachivantara/uikit-react-core";
 
 import { SpacingConfig } from "./Dialogs/SpacingConfig";
 import { useGeneratorContext } from "./GeneratorContext";
 
-const spacings = [
-  {
-    Tight: {
-      base: 6,
-      xxs: "2px",
-      xs: "4px",
-      sm: "8px",
-      md: "16px",
-      lg: "24px",
-      xl: "40px",
-    },
-  },
-  {
-    Loose: {
-      base: 10,
-      xxs: "6px",
-      xs: "12px",
-      sm: "20px",
-      md: "32px",
-      lg: "64px",
-      xl: "96px",
-    },
-  },
-];
-
 export const Spacing = () => {
   const [configOpen, setConfigOpen] = useState(false);
   const { customTheme, updateCustomTheme } = useGeneratorContext();
+  const [currSpacing, setCurrSpacing] = useState<number>(3);
+
+  useEffect(() => {
+    if (JSON.stringify(customTheme.space) === JSON.stringify(defaultSpacing)) {
+      setCurrSpacing(3);
+    }
+  }, [customTheme.space]);
 
   const updateTheme = useCallback(
     (changes: Record<string, any>) => {
       updateCustomTheme(changes);
     },
     [updateCustomTheme],
+  );
+
+  const handleSliderChange = useCallback(
+    (value: number) => {
+      let multiplier;
+      switch (value) {
+        case 1:
+          multiplier = 0.25;
+          break;
+        case 2:
+          multiplier = 0.5;
+          break;
+        case 3:
+          multiplier = 1;
+          break;
+        case 4:
+          multiplier = 1.5;
+          break;
+        case 5:
+          multiplier = 2;
+          break;
+        default:
+          multiplier = 1;
+      }
+      const newSpacing = {
+        base: 8 * multiplier,
+        xxs: `${4 * multiplier}px`,
+        xs: `${8 * multiplier}px`,
+        sm: `${16 * multiplier}px`,
+        md: `${24 * multiplier}px`,
+        lg: `${48 * multiplier}px`,
+        xl: `${80 * multiplier}px`,
+      };
+      setCurrSpacing(value);
+      updateTheme({ space: newSpacing });
+    },
+    [updateTheme],
   );
 
   return (
@@ -65,63 +83,54 @@ export const Spacing = () => {
             <div className="i-ph-gear" />
           </HvIconButton>
         </div>
-        <div className="flex justify-center gap-sm">
-          {spacings.map((spacing, i) => {
-            const isSpacingSelected =
-              JSON.stringify(Object.values(spacings[i])[0]) ===
-              JSON.stringify(customTheme.space);
-
-            return (
-              <div
-                key={Object.keys(spacing)[0]}
-                className="flex flex-col gap-xxs"
-              >
-                <HvButton
-                  variant="ghost"
-                  className="p-0"
-                  onClick={() =>
-                    updateTheme({
-                      space: Object.values(spacings[i])[0],
-                    })
-                  }
-                >
-                  <div
-                    className="flex bg-negativeSubtle"
-                    style={{
-                      gap: Object.keys(spacing)[0] === "Tight" ? "4px" : "24px",
-                    }}
-                  >
-                    <div
-                      className="w-28px h-28px bg-bgContainer border-dashed rounded-none"
-                      style={{
-                        borderWidth: isSpacingSelected ? 2 : 1,
-                        borderColor: isSpacingSelected
-                          ? theme.colors.primary
-                          : theme.colors.borderStrong,
-                      }}
-                    />
-                    <div
-                      className="w-28px h-28px bg-bgContainer border-dashed rounded-none"
-                      style={{
-                        borderWidth: isSpacingSelected ? 2 : 1,
-                        borderColor: isSpacingSelected
-                          ? theme.colors.primary
-                          : theme.colors.borderStrong,
-                      }}
-                    />
-                  </div>
-                </HvButton>
-                <HvTypography
-                  variant="caption2"
-                  className="flex justify-center"
-                >
-                  {Object.keys(spacing)[0]}
-                </HvTypography>
-              </div>
-            );
-          })}
+        <div className="flex flex-col justify-center gap-sm">
+          <div className="flex justify-center">
+            <div
+              className="flex bg-primaryDimmed w-fit"
+              style={{
+                gap: `${currSpacing * 8}px`,
+              }}
+            >
+              <div className="w-28px h-28px bg-bgContainer border-dashed rounded-none border-borderStrong border-1" />
+              <div className="w-28px h-28px bg-bgContainer border-dashed rounded-none border-borderStrong border-1" />
+            </div>
+          </div>
+          <div>
+            <HvSlider
+              minPointValue={1}
+              maxPointValue={5}
+              divisionQuantity={4}
+              markStep={1}
+              values={[currSpacing]}
+              hideInput
+              className="w-full"
+              onChange={(value) => handleSliderChange(value[0] as number)}
+              classes={{
+                labelContainer: "hidden",
+                sliderBase: "p-xs",
+                sliderTooltip: "hidden",
+              }}
+              formatMark={getLabel}
+            />
+          </div>
         </div>
       </div>
     </>
   );
+};
+
+const getLabel = (label: React.ReactNode) => {
+  if (typeof label !== "string") return "Default";
+  const labels = ["Tight", "Snug", "Default", "Open", "Loose"];
+  return labels[Number(label) - 1];
+};
+
+const defaultSpacing = {
+  base: 8,
+  xxs: "4px",
+  xs: "8px",
+  sm: "16px",
+  md: "24px",
+  lg: "48px",
+  xl: "80px",
 };
