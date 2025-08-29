@@ -38,4 +38,15 @@ export default {
       timestamp: false,
     },
   },
+  generator: {
+    type: "page",
+    title: "Theme Generator",
+    theme: {
+      layout: "full",
+      toc: false,
+      breadcrumb: false,
+      sidebar: false,
+      timestamp: false,
+    },
+  },
 } satisfies MetaRecord;
