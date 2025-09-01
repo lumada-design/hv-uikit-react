@@ -36,7 +36,7 @@
     "i18next-browser-languagedetector": "^8.0.3",
     "react-error-boundary": "^4.0.10",
     "react-helmet-async": "^2.0.1",
-    "react-i18next": "^15.4.0",
+    "react-i18next": "15.7.1",
     "uid": "^2.0.2"
   },
   "peerDependencies": {
