@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.102.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.101.0...@hitachivantara/uikit-react-core@5.102.0) (2025-09-01)
+
+### Features
+
+- **Dialog:** update to DS 5.9.5 specs ([#4888](https://github.com/lumada-design/hv-uikit-react/issues/4888)) ([70d2260](https://github.com/lumada-design/hv-uikit-react/commit/70d22603e9b7a6dfc0be23683b2fe6d1a1e64f11))
+- **Tabs:** update to DS 5.9.5 specs ([#4887](https://github.com/lumada-design/hv-uikit-react/issues/4887)) ([5c58502](https://github.com/lumada-design/hv-uikit-react/commit/5c585024de6701c12e95bc49293f6ba1b0a9976e))
+
 # [5.101.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.100.1...@hitachivantara/uikit-react-core@5.101.0) (2025-08-22)
 
 ### Bug Fixes
