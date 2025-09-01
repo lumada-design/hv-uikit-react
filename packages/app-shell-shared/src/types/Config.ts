@@ -46,6 +46,56 @@ export type HvAppShellProvidersConfig = {
   config?: Record<string, unknown>;
 };
 
+// region Services types
+export type HvAppShellServicesConfig = Record<
+  HvAppShellServiceId,
+  HvAppShellServiceConfig[]
+>;
+
+export type HvAppShellServiceId = string; //NOSONAR
+
+export type HvAppShellServiceConfig =
+  | HvAppShellInstanceServiceConfig
+  | HvAppShellBundleServiceConfig
+  | HvAppShellFactoryServiceConfig
+  | HvAppShellComponentServiceConfig;
+
+export type HvAppShellServiceConfigBase = {
+  ranking?: number;
+};
+
+export type HvAppShellInstanceServiceConfig = HvAppShellServiceConfigBase & {
+  instance: unknown;
+};
+
+export type HvAppShellBundleServiceConfig = HvAppShellServiceConfigBase & {
+  bundle: string;
+};
+
+export type HvAppShellFactoryConfig = Record<string, unknown>;
+
+export type HvAppShellFactoryService<TService> = (
+  config?: HvAppShellFactoryConfig,
+) => TService;
+
+export type HvAppShellFactoryServiceConfig = HvAppShellServiceConfigBase & {
+  factory: {
+    // bundle whose default export is a service factory {@link HvAppShellFactoryService}
+    bundle: string;
+
+    config?: HvAppShellFactoryConfig;
+  };
+};
+
+export type HvAppShellComponentServiceConfig = HvAppShellServiceConfigBase & {
+  component: {
+    bundle: string;
+
+    props?: Record<string, unknown>;
+  };
+};
+// endregion
+
 export type HvAppShellConfig = {
   baseUrl?: string;
   name?: string;
@@ -58,6 +108,7 @@ export type HvAppShellConfig = {
   theming?: HvAppShellThemingConfig;
   header?: HvAppShellHeader;
   providers?: HvAppShellProvidersConfig[];
+  services?: HvAppShellServicesConfig;
 };
 
 export type HvAppShellThemingConfig = {

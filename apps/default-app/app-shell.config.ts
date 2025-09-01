@@ -125,6 +125,9 @@ export default {
   header: {
     actions: [
       {
+        bundle: "@self/services/headerActions/CreateNewContentDropDownMenu.js",
+      },
+      {
         bundle: "@hv/user-notifications-client/index.js",
         config: {
           showCount: false,
@@ -248,8 +251,15 @@ export default {
       },
     ],
   },
-  providers: [
-    { bundle: "@self/providers/DefaultAppProvider.js" },
-    { bundle: "@hv/sample-app/providers/CandyAppProvider.js" },
-  ],
+  services: {
+    "default-app/services:UseCreateNewContentAction": [
+      {
+        bundle: "default-app/services/create/useCreateNewReportAction.js",
+        ranking: 100,
+      },
+      {
+        bundle: "bundle-to-fail.js",
+      },
+    ],
+  },
 } satisfies HvAppShellConfig;

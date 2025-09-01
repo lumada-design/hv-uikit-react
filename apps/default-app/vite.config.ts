@@ -27,6 +27,8 @@ export default defineConfig(({ mode }) => ({
         "src/pages/Theming",
         "src/pages/TabLayout",
         "src/pages/DisplayDefaultAppContext",
+        "src/services/headerActions/CreateNewContentDropDownMenu",
+        "src/services/create/useCreateNewReportAction",
       ],
     }),
   ],

@@ -27,6 +27,8 @@ These are the current shared dependencies and their versions:
 | `react-router-dom`                   | `^6.9.0`   |
 | `@emotion/cache`, `@emotion/react`   | `^11.11.0` |
 | `@hitachivantara/uikit-react-shared` | `latest`   |
+| `@hitachivantara/app-shell-shared`   | `latest`   |
+| `@hitachivantara/app-shell-services` | `latest`   |
 
 ## Shared Modules
 
@@ -49,6 +51,7 @@ The **App Shell** itself is able to load the following types of _Shared Modules_
 - **View**: Module exporting a React Component intended to be rendered in a **App Shell** panel (usually the main panel, as a page). It's configured in the **App Shell** configuration file in the `mainPanel.views` array. Detailed in the [next section](./routing).
 - **Header Action**: Module exporting a React Component that provides a button (or other small UI component) to be rendered in the right-hand side of the **App Shell** header. It's configured in the **App Shell** configuration file in the `header.actions` array. Detailed in the [Header Actions](./header-actions) section.
 - **Provider**: Module exporting a React Component that provides a React Context to be used by other _Shared Modules_. It's configured in the **App Shell** configuration file in the [`providers`](./configuration#providers) array.
+- - **Service**: Modules that follows a provider/consumer model and is handled by the `@hitachivantara/app-shell-services` package. It's configured in the **App Shell** configuration file in the [`services`](./configuration#services) object.
 - **Theme**: Module that exports a UI Kit theme definition. They can be referenced in the **App Shell** configuration file in the [`theming`](./configuration#theming) section.
 
 All the above _Shared Modules_ types assume its subject is exported as the default export of the module.
