@@ -31,6 +31,7 @@
   "devDependencies": {
     "@types/react": "^18.0.28",
     "i18next": "^24.2.2",
+    "react-i18next": "15.7.1",
     "vite": "^7.1.1"
   },
   "files": [
