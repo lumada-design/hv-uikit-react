@@ -1,6 +1,8 @@
 import { Suspense, type ComponentType, type ReactNode } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Outlet } from "react-router-dom";
+import ServiceManagerProvider from "@hitachivantara/app-shell-services";
+import { HvAppShellServicesConfig } from "@hitachivantara/app-shell-shared";
 
 import CustomHooksInitializer from "../../components/CustomHooksInitializer";
 import Header from "../../components/layout/Header";
@@ -18,23 +20,26 @@ interface RootProps {
     }>;
     config?: Record<string, unknown>;
   }>;
+  services?: HvAppShellServicesConfig;
 }
 
-const Root = ({ providers }: RootProps) => (
+const Root = ({ providers, services }: RootProps) => (
   <ErrorBoundary fallback={<GenericError fullPage />}>
-    <CombinedProviders providers={providers}>
-      <NavigationProvider>
-        <BannerProvider>
-          <CustomHooksInitializer />
-          <Header />
-          <Main>
-            <Suspense fallback={<LoadingPage />}>
-              <Outlet />
-            </Suspense>
-          </Main>
-        </BannerProvider>
-      </NavigationProvider>
-    </CombinedProviders>
+    <ServiceManagerProvider config={{ services }}>
+      <CombinedProviders providers={providers}>
+        <NavigationProvider>
+          <BannerProvider>
+            <CustomHooksInitializer />
+            <Header />
+            <Main>
+              <Suspense fallback={<LoadingPage />}>
+                <Outlet />
+              </Suspense>
+            </Main>
+          </BannerProvider>
+        </NavigationProvider>
+      </CombinedProviders>
+    </ServiceManagerProvider>
   </ErrorBoundary>
 );
 

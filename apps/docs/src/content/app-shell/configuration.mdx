@@ -251,6 +251,70 @@ Notes:
 - The **App Shell** will instantiate the _Providers_ in the order they are declared in the configuration file. However, dependencies between _Providers_ should be avoided, and never rely on the existence of another _Provider_.
 - This shouldn't be abused: Context only needed for the rendering of a _View_ shouldn't be put on a global _Provider_ just because another _View_ needs it. E.g. the i18next provider should continue to be instantiated on every view, using a HOC for example, instead of having a global provider for each _Application Bundle_, each with its own i18next provider always instanced in case it is needed.
 
+### `services`
+
+This prop defines the _Services_ that are to be handled by the `@hitachivantara/app-shell-services` package.
+
+The services property is a key-value object, where the key is the service identifier and the value is an array of supported service definitions:
+
+- **Instance Service:** Directly provides an instance (`value`), or references a module that exports the instance (`bundle`).
+- **Factory Service:** Provides a factory function (`value`), or references a module that exports a factory function (`bundle`). The factory function is called with a `config` object if provided to produce the service instance.
+- **Component Service:** Provides a React component (`value`), or references a module exporting a React component (`bundle`). The component is used as-is or bound with a config object if provided.
+
+Each service definition can be configured in one of two ways:
+
+- **Direct Value:**
+  `{ value: ... }`
+  The value is provided directly in the configuration.
+
+- **Bundle Reference:**
+  `{ bundle: "...", config?: {...} }`
+  The bundle follows the [module structure](#module-structure) object API that exports the required value (instance, factory function, or React component). The optional config is passed to the module when loaded.
+
+A `ranking` property is used to determine the order of precedence when multiple implementations are available. Higher ranking values indicate higher precedence.
+
+```ts
+const appShellConfig = {
+  services: {
+    "my-app/services:UseCreateAction": [
+      // Instance - direct value
+      {
+        instance: {
+          value: {
+            key1: "some value",
+            key2: 11,
+            key3: { nested: "value" },
+          },
+        },
+        ranking: 10,
+      },
+      // Instance - module reference
+      {
+        instance: {
+          bundle: "some-app/actions/create/useCreateReportAction.js",
+        },
+        ranking: 50,
+      },
+      // Factory - module reference
+      {
+        factory: {
+          bundle: "some-app/factories/factory.js",
+          config: { option: true },
+        },
+      },
+      // Component - module reference
+      {
+        component: {
+          bundle: "@my-app/components/HelloComponent.js",
+          config: { name: "John" },
+        },
+        ranking: 50,
+      },
+    ],
+  },
+};
+```
+
 ### `translations`
 
 This property defines bundles of translations that need to be added in runtime to **App Shell** translation bundle.

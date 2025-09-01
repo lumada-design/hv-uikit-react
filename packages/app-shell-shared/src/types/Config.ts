@@ -1,4 +1,7 @@
+import type { ServicesConfig as HvAppShellServicesConfig } from "@hitachivantara/app-shell-services";
 import type { HvContainerProps } from "@hitachivantara/uikit-react-core";
+
+export type { HvAppShellServicesConfig };
 
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
 
@@ -58,6 +61,7 @@ export type HvAppShellConfig = {
   theming?: HvAppShellThemingConfig;
   header?: HvAppShellHeader;
   providers?: HvAppShellProvidersConfig[];
+  services?: HvAppShellServicesConfig;
 };
 
 export type HvAppShellThemingConfig = {

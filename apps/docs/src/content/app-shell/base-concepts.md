@@ -27,6 +27,8 @@ These are the current shared dependencies and their versions:
 | `react-router-dom`                   | `^6.9.0`   |
 | `@emotion/cache`, `@emotion/react`   | `^11.11.0` |
 | `@hitachivantara/uikit-react-shared` | `latest`   |
+| `@hitachivantara/app-shell-shared`   | `latest`   |
+| `@hitachivantara/app-shell-services` | `latest`   |
 
 ## Shared Modules
 
@@ -50,5 +52,6 @@ The **App Shell** itself is able to load the following types of _Shared Modules_
 - **Header Action**: Module exporting a React Component that provides a button (or other small UI component) to be rendered in the right-hand side of the **App Shell** header. It's configured in the **App Shell** configuration file in the `header.actions` array. Detailed in the [Header Actions](./header-actions) section.
 - **Provider**: Module exporting a React Component that provides a React Context to be used by other _Shared Modules_. It's configured in the **App Shell** configuration file in the [`providers`](./configuration#providers) array.
 - **Theme**: Module that exports a UI Kit theme definition. They can be referenced in the **App Shell** configuration file in the [`theming`](./configuration#theming) section.
+- **Service**: Module that follows a provider/consumer model and is configured in the **App Shell** configuration file in the [`services`](./configuration#services) object, when using the `bundle` reference syntax of a service definition. This module can be explicitly consumed by application code.
 
-All the above _Shared Modules_ types assume its subject is exported as the default export of the module.
+All the above _Shared Modules_ types assume its subject is exported as the default export of the module. In the case of `services`, the nature of the default export can be configured.
