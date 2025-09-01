@@ -26,6 +26,7 @@
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.1",
+    "@hitachivantara/app-shell-services": "^0.0.1",
     "@hitachivantara/app-shell-shared": "^1.6.1",
     "@hitachivantara/app-shell-ui": "^1.12.1",
     "@hitachivantara/uikit-react-icons": "^5.16.4",
