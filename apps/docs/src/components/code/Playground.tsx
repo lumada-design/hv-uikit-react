@@ -122,7 +122,7 @@ export const Playground = ({
 
         {/* Controls Area */}
         <div className="rounded-inherit border-l border-color-inherit bg-white h-full">
-          <div className="flex flex-col gap-xs  py-sm px-xs">
+          <div className="flex flex-col gap-xs py-sm px-xs">
             {Object.entries(controls).map(([prop, control]) => {
               if (!control) return null;
 
