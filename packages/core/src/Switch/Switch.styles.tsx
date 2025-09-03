@@ -9,6 +9,20 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
   },
   label: {},
   error: {},
+  container: {
+    display: "flex",
+    "&$left": {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    "&$right": {
+      flexDirection: "row-reverse",
+      alignItems: "center",
+    },
+    "&$top": {
+      flexDirection: "column",
+    },
+  },
   switchContainer: {
     height: "32px",
     display: "flex",
@@ -20,4 +34,7 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
     paddingBottom: "1px",
     borderBottom: `1px solid ${theme.form.errorColor}`,
   },
+  top: {},
+  left: {},
+  right: {},
 });

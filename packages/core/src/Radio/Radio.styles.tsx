@@ -18,6 +18,13 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
     ":where(:has($label)) $radio": {
       borderRadius: "inherit",
     },
+    "&$left": {
+      flexDirection: "row-reverse",
+      justifyContent: "flex-end",
+    },
+    "&$right": {
+      flexDirection: "row",
+    },
   },
   invalidContainer: {},
   disabled: {
@@ -32,12 +39,12 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
   invalidRadio: {},
   label: {
     verticalAlign: "middle",
-    paddingRight: theme.space.xs,
     ...theme.typography.body,
     cursor: "pointer",
     lineHeight: "32px",
-    width: "100%",
   },
   checked: {},
   semantic: {},
+  left: {},
+  right: {},
 });

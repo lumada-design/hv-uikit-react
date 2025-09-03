@@ -118,6 +118,10 @@ export interface HvRadioProps
   onFocusVisible?: (event: React.FocusEvent<any>) => void;
   /** @ignore */
   ref?: MuiRadioProps["ref"];
+  /**
+   * The position of the label relative to the control.
+   */
+  labelPosition?: "left" | "right";
   /** @ignore */
   component?: MuiRadioProps["component"];
 }
@@ -143,6 +147,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       "aria-labelledby": ariaLabelledBy,
       "aria-describedby": ariaDescribedBy,
       labelProps,
+      labelPosition = "right",
       checked,
       defaultChecked = false,
       onChange,
@@ -248,7 +253,7 @@ export const HvRadio = forwardRef<HTMLButtonElement, HvRadioProps>(
       >
         {hasLabel ? (
           <div
-            className={cx(classes.container, {
+            className={cx(classes.container, classes[labelPosition], {
               [classes.focusVisible]: !!(focusVisible && label),
               [classes.semantic]: semantic,
               [classes.checked]: isChecked,
