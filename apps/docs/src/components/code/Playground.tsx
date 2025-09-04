@@ -110,34 +110,36 @@ export const Playground = ({
       aria-label="Playground"
     >
       {/* Component preview and controls */}
-      <div className="grid grid-cols-[2fr_1fr] border rounded-t-round">
+      <DocsProvider className="grid grid-cols-[2fr_1fr] border rounded-t-round">
         {/* Preview Area */}
-        <DocsProvider className="grid place-items-center rounded-inherit p-sm h-full">
+        <div className="grid place-items-center rounded-inherit p-sm h-full">
           {decoratorClassName ? (
             <div className={decoratorClassName}>{componentElement}</div>
           ) : (
             componentElement
           )}
-        </DocsProvider>
+        </div>
 
         {/* Controls Area */}
-        <div className="flex flex-col gap-xs border-l border-color-inherit py-sm px-xs">
-          {Object.entries(controls).map(([prop, control]) => {
-            if (!control) return null;
+        <div className="rounded-inherit border-l border-color-inherit bg-white h-full">
+          <div className="flex flex-col gap-xs py-sm px-xs">
+            {Object.entries(controls).map(([prop, control]) => {
+              if (!control) return null;
 
-            return (
-              <Controls
-                key={prop}
-                prop={prop}
-                meta={meta}
-                state={dynamicProps}
-                control={control}
-                onChange={updatePropValue}
-              />
-            );
-          })}
+              return (
+                <Controls
+                  key={prop}
+                  prop={prop}
+                  meta={meta}
+                  state={dynamicProps}
+                  control={control}
+                  onChange={updatePropValue}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </DocsProvider>
 
       {/* Code editor */}
       <div className="max-h-100 overflow-auto rounded-b-round border border-t-0 max-h-250px">
