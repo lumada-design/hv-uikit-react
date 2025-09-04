@@ -7,6 +7,7 @@ import {
 import type { HvAvatarProps } from "../Avatar";
 import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
+import { HvRadioIconProps } from "../BaseRadio/RadioIcon";
 import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
 import type { HvCalendarProps } from "../Calendar";
@@ -298,6 +299,13 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvDialogActionsProps>,
+    HvRadioIcon: {
+      classes: {
+        checked: {
+          "--bg-color": theme.colors.primary,
+        },
+      },
+    } satisfies CSSClasses<HvRadioIconProps>,
   } satisfies Record<
     string,
     Record<string, any> | { classes?: React.CSSProperties }
