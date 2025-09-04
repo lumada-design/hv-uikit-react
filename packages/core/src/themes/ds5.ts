@@ -7,11 +7,16 @@ import {
 import type { HvAvatarProps } from "../Avatar";
 import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
+import { HvRadioIconProps } from "../BaseRadio/RadioIcon";
 import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
 import type { HvCalendarProps } from "../Calendar";
 import type { HvColorPickerProps } from "../ColorPicker";
-import type { HvDialogContentProps, HvDialogTitleProps } from "../Dialog";
+import type {
+  HvDialogActionsProps,
+  HvDialogContentProps,
+  HvDialogTitleProps,
+} from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvSelectProps } from "../Select";
@@ -278,5 +283,19 @@ export const ds5 = mergeTheme(ds5Base, {
         },
       },
     } satisfies CSSClasses<HvDialogContentProps>,
+    HvDialogActions: {
+      classes: {
+        root: {
+          borderTop: `1px solid ${theme.colors.borderSubtle}`,
+        },
+      },
+    } satisfies CSSClasses<HvDialogActionsProps>,
+    HvRadioIcon: {
+      classes: {
+        checked: {
+          "--bg-color": theme.colors.primary,
+        },
+      },
+    } satisfies CSSClasses<HvRadioIconProps>,
   },
 });

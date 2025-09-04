@@ -17,11 +17,7 @@ import type { HvRadioIconProps } from "../BaseRadio/RadioIcon";
 import type { HvBaseSwitchProps } from "../BaseSwitch";
 import type { HvButtonProps } from "../Button";
 import type { HvButtonBaseProps } from "../ButtonBase";
-import type {
-  HvCardContentProps,
-  HvCardHeaderProps,
-  HvCardProps,
-} from "../Card";
+import type { HvCardHeaderProps, HvCardProps } from "../Card";
 import type { HvDialogActionsProps, HvDialogProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvDropDownMenuProps } from "../DropDownMenu";
@@ -741,7 +737,6 @@ export const pentaho = mergeTheme(pentahoBase, {
             paddingBottom: theme.space.sm,
           },
           "& .HvActionBar-root": {
-            padding: theme.spacing("xs", "sm"),
             borderTop: "none",
           },
         },
@@ -766,7 +761,6 @@ export const pentaho = mergeTheme(pentahoBase, {
       classes: {
         root: {
           flexDirection: "row-reverse",
-          padding: theme.spacing("xs", "sm"),
         },
         subheader: {
           color: theme.colors.textSubtle,
@@ -776,16 +770,6 @@ export const pentaho = mergeTheme(pentahoBase, {
         },
       },
     } satisfies CSSClasses<HvCardHeaderProps>,
-    HvCardContent: {
-      classes: {
-        content: {
-          padding: theme.spacing("xs", "sm"),
-          "&:last-child": {
-            paddingBottom: theme.space.xs,
-          },
-        },
-      },
-    } satisfies CSSClasses<HvCardContentProps>,
     HvFooter: {
       name: "Pentaho",
     } satisfies CSSClasses<HvFooterProps>,
