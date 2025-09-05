@@ -117,6 +117,10 @@ export interface HvSwitchProps
   color?: HvColorAny;
   /** The size of the switch. */
   size?: HvBaseSwitchProps["size"];
+  /**
+   * The position of the label relative to the control.
+   */
+  labelPosition?: "top" | "left" | "right";
 }
 
 /**
@@ -142,6 +146,7 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
       "aria-labelledby": ariaLabelledBy,
       "aria-describedby": ariaDescribedBy,
       labelProps,
+      labelPosition = "top",
 
       checked,
       defaultChecked = false,
@@ -215,41 +220,43 @@ export const HvSwitch = forwardRef<HTMLButtonElement, HvSwitchProps>(
         readOnly={readOnly}
         className={cx(classes.root, className)}
       >
-        {label && (
-          <HvLabel
-            showGutter
-            id={setId(elementId, "label")}
-            htmlFor={setId(elementId, "input")}
-            label={label}
-            className={classes.label}
-            {...labelProps}
-          />
-        )}
-        <div
-          className={cx(classes.switchContainer, {
-            [classes.invalidSwitch]: isStateInvalid,
-          })}
-        >
-          <HvBaseSwitch
-            ref={ref}
-            id={label ? setId(elementId, "input") : setId(id, "input")}
-            name={name}
-            disabled={disabled}
-            readOnly={readOnly}
-            required={required}
-            onChange={onLocalChange}
-            value={value}
-            checked={isChecked}
-            inputProps={{
-              "aria-invalid": isStateInvalid ? true : undefined,
-              "aria-errormessage": errorMessageId,
-              "aria-label": ariaLabel,
-              "aria-labelledby": ariaLabelledBy,
-              "aria-describedby": ariaDescribedBy,
-              ...inputProps,
-            }}
-            {...others}
-          />
+        <div className={cx(classes.container, classes[labelPosition])}>
+          {label && (
+            <HvLabel
+              showGutter
+              id={setId(elementId, "label")}
+              htmlFor={setId(elementId, "input")}
+              label={label}
+              className={classes.label}
+              {...labelProps}
+            />
+          )}
+          <div
+            className={cx(classes.switchContainer, {
+              [classes.invalidSwitch]: isStateInvalid,
+            })}
+          >
+            <HvBaseSwitch
+              ref={ref}
+              id={label ? setId(elementId, "input") : setId(id, "input")}
+              name={name}
+              disabled={disabled}
+              readOnly={readOnly}
+              required={required}
+              onChange={onLocalChange}
+              value={value}
+              checked={isChecked}
+              inputProps={{
+                "aria-invalid": isStateInvalid ? true : undefined,
+                "aria-errormessage": errorMessageId,
+                "aria-label": ariaLabel,
+                "aria-labelledby": ariaLabelledBy,
+                "aria-describedby": ariaDescribedBy,
+                ...inputProps,
+              }}
+              {...others}
+            />
+          </div>
         </div>
         {canShowError && (
           <HvWarningText

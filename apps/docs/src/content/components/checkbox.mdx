@@ -37,6 +37,17 @@ You can use the [`color`](/docs/styling#color-prop) prop to style the color of t
 </div>
 ```
 
+### Label position
+
+Use the `labelPosition` prop to change the position of the label.
+
+```tsx live
+<div className="flex flex-col gap-sm">
+  <HvCheckBox label="Label on the left" labelPosition="left" />
+  <HvCheckBox label="Label on the right" labelPosition="right" />
+</div>
+```
+
 ### Controlled
 
 You can share state control from a parent component. Clicking **Checkbox 1** has no effect, while clicking **Checkbox 2** updates the state and toggles both checkboxes.

@@ -50,6 +50,10 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
    */
   statusMessage?: React.ReactNode;
   /**
+   * The position of the label relative to the control.
+   */
+  labelPosition?: "left" | "right";
+  /**
    * A Jss Object used to override or extend the styles applied to the checkbox.
    */
   classes?: HvCheckBoxClasses;
@@ -72,6 +76,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
       statusMessage,
       label,
       labelProps,
+      labelPosition = "right",
       inputProps,
       value = "on",
       required,
@@ -220,7 +225,7 @@ export const HvCheckBox = forwardRef<HTMLButtonElement, HvCheckBoxProps>(
       >
         {hasLabel ? (
           <div
-            className={cx(classes.container, {
+            className={cx(classes.container, classes[labelPosition], {
               [classes.invalidContainer]: isStateInvalid,
               [classes.disabled]: disabled,
             })}
