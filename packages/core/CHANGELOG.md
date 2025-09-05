@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.102.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.102.0...@hitachivantara/uikit-react-core@5.102.1) (2025-09-05)
+
+### Bug Fixes
+
+- **Card:** update card styles to latest specs ([#4897](https://github.com/lumada-design/hv-uikit-react/issues/4897)) ([7803918](https://github.com/lumada-design/hv-uikit-react/commit/7803918452adb1bfc7c9cd5298c46ee24238f102))
+
 # [5.102.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.101.0...@hitachivantara/uikit-react-core@5.102.0) (2025-09-01)
 
 ### Features
