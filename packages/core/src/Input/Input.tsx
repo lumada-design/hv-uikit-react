@@ -448,7 +448,7 @@ export const HvInput = fixedForwardRef(function HvInput<
 
     const inputValidity = performValidation();
 
-    onBlur?.(event as any, event.target.value, inputValidity);
+    onBlur?.(event as any, event.target?.value, inputValidity);
   };
 
   /**
