@@ -1,75 +1,145 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 import { ServiceId } from "../types/config";
 import {
   ServiceReference,
-  UseGetServiceReferenceOptions,
-  UseGetServiceReferencesOptions,
   UseServiceOptions,
-  UseServiceReferenceResult,
+  UseServiceReferenceOptions,
+  UseServiceReferencesOptions,
   UseServiceResult,
   UseServicesOptions,
   UseServicesResult,
 } from "../types/service";
-import { useAsyncGeneric } from "./useAsyncGeneric";
-import useServiceManager from "./useServiceManager";
+import { useAsync } from "./useAsync";
+import { useServicesContext } from "./useServicesContext";
 
-const EMPTY_SERVICE_OPTIONS: Readonly<UseServiceOptions> = Object.freeze({});
-const EMPTY_SERVICES_OPTIONS: Readonly<UseServicesOptions> = Object.freeze({});
+/**
+ * Services entrypoint in the form of hooks for consuming service instances and service references.
+ *
+ * See the {@link ServiceManager} and related types for full, authoritative details.
+ */
+
+/**
+ * Resolves and returns the service instance for a given service id or reference.
+ *
+ * Overloads:
+ * - useService<TService>(serviceReference: ServiceReference<TService>): UseServiceResult<TService>
+ * - useService<TService>(serviceId: ServiceId, options?: UseServiceOptions): UseServiceResult<TService>
+ *
+ * @param serviceReference - A {@link ServiceReference} object to resolve to a service instance.
+ * @param serviceId - The identifier of the service to resolve.
+ * @param options - Options to control service resolution.
+ * @returns A {@link UseServiceResult} object representing the loading state, error, and resolved service instance.
+ *
+ * When called with a {@link ServiceReference}, resolves that reference using its getService().
+ * When called with a {@link ServiceId}, resolves and returns the highest-ranked service instance for that id.
+ * If resolution fails, the error is available in the result.
+ */
+export function useService<TService>(
+  serviceReference: ServiceReference<TService>,
+): UseServiceResult<TService>;
 
 export function useService<TService>(
   serviceId: ServiceId,
   options?: UseServiceOptions,
-): UseServiceResult<TService> {
-  const { getService } = useServiceManager();
-  const opts = options ?? EMPTY_SERVICE_OPTIONS;
+): UseServiceResult<TService>;
 
-  const promiseFactory = useCallback(
-    () => getService<TService>(serviceId, opts),
-    [getService, serviceId, opts],
+/**
+ * Implementation of useService.
+ */
+export function useService<TService>(
+  serviceIdOrRef: ServiceId | ServiceReference<TService>,
+  options?: UseServiceOptions,
+): UseServiceResult<TService> {
+  const { getService } = useServicesContext();
+
+  // this is required to stabilize the options object reference, otherwise it would trigger a new fetch
+  // on every render if the developer does not stabilize it themselves (e.g. using useMemo).
+  // Alternatively, we could use a deep comparison (lodash.isEqual), but that would add complexity and a new dependency.
+  const opts = useMemo(
+    () => Object.freeze(options ? { ...options } : {}),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [options ? JSON.stringify(options) : ""],
   );
 
-  return useAsyncGeneric(promiseFactory, "service", undefined);
+  const promiseFactory = useCallback(
+    () =>
+      isServiceReference<TService>(serviceIdOrRef)
+        ? serviceIdOrRef.getService()
+        : getService<TService>(serviceIdOrRef, opts),
+    [serviceIdOrRef, getService, opts],
+  );
+
+  return useAsync(promiseFactory, { dataProp: "service" });
 }
 
+/**
+ * Gets all service instances for a given service id.
+ *
+ * @param serviceId - The identifier of the services to resolve.
+ * @param options - Options to control services resolution, like error handling strategy.
+ * @returns A {@link UseServicesResult} object representing the loading state, error, and resolved array of service instances.
+ */
 export function useServices<TService>(
   serviceId: ServiceId,
   options?: UseServicesOptions,
 ): UseServicesResult<TService> {
-  const { getServices } = useServiceManager();
-  const opts = options ?? EMPTY_SERVICES_OPTIONS;
+  const { getServices } = useServicesContext();
+
+  // Required to stabilize the options object reference, otherwise it would trigger a new fetch
+  // on every render if the developer does not stabilize it themselves (e.g. using useMemo).
+  // Alternatively, we could use a deep comparison (lodash.isEqual), but that would add complexity and a new dependency.
+  const opts = useMemo(
+    () => Object.freeze(options ? { ...options } : {}),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [options ? JSON.stringify(options) : ""],
+  );
 
   const promiseFactory = useCallback(
     () => getServices<TService>(serviceId, opts),
     [getServices, serviceId, opts],
   );
 
-  return useAsyncGeneric(promiseFactory, "services", []);
+  return useAsync(promiseFactory, { dataProp: "services", pendingData: [] });
 }
 
-export function useGetServiceReference<TService>(
+/**
+ * Gets the highest-ranked service reference for the given id.
+ *
+ * @param serviceId - The identifier of the service to get a reference for.
+ * @param options - Options to control the service reference to return.
+ * @returns A {@link ServiceReference} object.
+ */
+export function useServiceReference<TService>(
   serviceId: ServiceId,
-  options: UseGetServiceReferenceOptions = {},
+  options: UseServiceReferenceOptions = {},
 ): ServiceReference<TService> {
-  const { getServiceReference } = useServiceManager();
+  const { getServiceReference } = useServicesContext();
   return getServiceReference<TService>(serviceId, options);
 }
 
-export function useGetServiceReferences<TService>(
+/**
+ * Gets all service references for the given service id, sorted by descending ranking.
+ *
+ * @param serviceId - The identifier of the service to get references for.
+ * @param options - Options to control the service references to return.
+ * @returns An array of {@link ServiceReference} objects.
+ */
+export function useServiceReferences<TService>(
   serviceId: ServiceId,
-  options: UseGetServiceReferencesOptions = {},
+  options: UseServiceReferencesOptions = {},
 ): ServiceReference<TService>[] {
-  const { getServiceReferences } = useServiceManager();
+  const { getServiceReferences } = useServicesContext();
   return getServiceReferences<TService>(serviceId, options);
 }
 
-// Takes an existing service reference and returns its service instance as an async {isPending, error, service} result.
-export function useServiceReference<TService>(
-  serviceReference: ServiceReference<TService>,
-): UseServiceReferenceResult<TService> {
-  const promiseFactory = useCallback(
-    () => serviceReference.getService(),
-    [serviceReference],
+// Type guard to detect a ServiceReference relying on the presence of getService method.
+function isServiceReference<TService>(
+  value: unknown,
+): value is ServiceReference<TService> {
+  return (
+    !!value &&
+    typeof value === "object" &&
+    typeof (value as ServiceReference<TService>).getService === "function"
   );
-  return useAsyncGeneric(promiseFactory, "service", undefined);
 }

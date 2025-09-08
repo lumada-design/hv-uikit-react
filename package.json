@@ -32,7 +32,7 @@
     "lint:fix": "oxlint --fix",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install .config/husky",
-    "publish-dry": "lerna publish --no-push --no-changelog --no-git-tag-version --registry \"http://localhost:4873/\"",
+    "publish-dry": "lerna publish --no-push --registry \"http://localhost:4873/\"",
     "publish": "lerna publish"
   },
   "devDependencies": {
@@ -92,7 +92,7 @@
     "swr": "^2.2.4",
     "typescript": "^5.8.2",
     "unocss": "^66.4.2",
-    "vite": "^7.1.1",
+    "vite": "^7.1.5",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
   },

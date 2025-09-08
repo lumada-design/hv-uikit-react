@@ -9,10 +9,7 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import { ServiceDefinitions } from "../serviceDefinition";
-import {
-  CreateNewContentAction,
-  UseCreateNewContentAction,
-} from "../types/UseCreateNewContentAction";
+import { CreateNewContentAction, UseCreateNewContentAction } from "../types";
 
 type OnDropDownMenuClickCallback = NonNullable<HvDropDownMenuProps["onClick"]>;
 

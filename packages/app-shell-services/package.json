@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-services",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -8,7 +8,6 @@
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
   "sideEffects": false,
   "license": "Apache-2.0",
-  "main": "./src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
@@ -20,15 +19,8 @@
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
-  "dependencies": {
-    "@hitachivantara/app-shell-shared": "^1.6.1"
-  },
   "peerDependencies": {
     "react": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.28",
-    "vite": "^7.1.1"
   },
   "files": [
     "dist"

@@ -262,19 +262,22 @@ The services property is a key-value object, where the key is the service ID and
 - _FactoryServiceConfig_: A factory-style provider: a function (or a bundle that exports one) that is invoked to create the service instance. Supports on-demand instantiation and configuration injection.
 - _ComponentServiceConfig_: Specifically for React component providers (a component or a bundle that exports a component). Useful when consumers expect renderable components.
 
+Each service definition can optionally include a `ranking` property to determine the order of precedence when multiple implementations are available. Higher ranking values indicate higher precedence.
+
 ```ts
 const appShellConfig = {
   services: {
     "my-app/services:UseCreateAction": [
       // Instance
-      { instance: myLocalHookOrFn, ranking: 10 },
-
+      {
+        instance: myLocalHookOrFn,
+        ranking: 10,
+      },
       // Bundle
       {
         bundle: "some-app/actions/create/useCreateReportAction.js",
         ranking: 50,
       },
-
       // Factory
       {
         factory: {
@@ -282,7 +285,6 @@ const appShellConfig = {
           config: { foo: 1 },
         },
       },
-
       // Component
       {
         component: { bundle: "some-app/ui/MyButton.js" },

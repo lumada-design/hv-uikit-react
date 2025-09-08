@@ -11,10 +11,11 @@ At its core, **App Shell** consists of:
 
 ## App Shell Packages
 
-The **App Shell** is comprised of the following packages:
+The **App Shell** comprises the following packages:
 
 - [`@hitachivantara/app-shell-events`](https://npm.im/@hitachivantara/app-shell-events)
 - [`@hitachivantara/app-shell-navigation`](https://npm.im/@hitachivantara/app-shell-navigation)
+- [`@hitachivantara/app-shell-services`](https://npm.im/@hitachivantara/app-shell-services)
 - [`@hitachivantara/app-shell-shared`](https://npm.im/@hitachivantara/app-shell-shared)
 - [`@hitachivantara/app-shell-ui`](https://npm.im/@hitachivantara/app-shell-ui)
 - [`@hitachivantara/app-shell-vite-plugin`](https://npm.im/@hitachivantara/app-shell-vite-plugin)

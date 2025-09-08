@@ -13,14 +13,35 @@ export const ServiceDefinitions = {
   },
 
   /**
-   * The {@const UseContentTypeInfo} service represents UI information for a
-   * type of the given content of a given application, including the content
-   * type's identifier, label, description and icon.
+   * Simple data service that provides basic application configuration data.
+   * Instance service type - provides a direct object instance.
    *
-   * Instances of this service are React hook functions, of type
-   * {@link UseContentTypeInfo}.
+   * Service type: {@link SimpleDataService}
    */
-  UseContentTypeInfo: {
-    id: "default-app/services:UseContentTypeInfo",
+  SimpleDataService: {
+    id: "default-app/services:SimpleDataService",
+  },
+
+  /**
+   * Message service created by a factory function with configuration.
+   * Factory service type - creates service instances through a factory function.
+   *
+   * Factory function type: {@link CreateMessageService}
+   * Service instance type: {@link MessageService}
+   * Configuration type: {@link MessageServiceConfig}
+   */
+  MessageService: {
+    id: "default-app/services:MessageService",
+  },
+
+  /**
+   * Simple notification React component service.
+   * Component service type - provides React components with props.
+   *
+   * Component type: {@link SimpleNotification}
+   * Props type: {@link SimpleNotificationProps}
+   */
+  SimpleNotification: {
+    id: "default-app/services:SimpleNotification",
   },
 };

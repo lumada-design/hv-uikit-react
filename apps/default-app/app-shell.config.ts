@@ -94,6 +94,14 @@ export default {
           label: "Nested Views",
           target: "/nested",
         },
+        {
+          label: "Services Demo",
+          target: "/services-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Settings",
+          },
+        },
       ],
     },
     {
@@ -249,16 +257,66 @@ export default {
         bundle: "@hv/sample-app/pages/Main.js",
         route: "/candy-route/*",
       },
+      // Services Demo Page
+      {
+        bundle: "@self/pages/ServicesDemo.js",
+        route: "/services-demo",
+      },
     ],
   },
+  providers: [
+    { bundle: "@self/providers/DefaultAppProvider.js" },
+    { bundle: "@hv/sample-app/providers/CandyAppProvider.js" },
+  ],
   services: {
+    // Bundle Service - Basic hook service (consumer is a header action: CreateNewContentDropDownMenu)
     "default-app/services:UseCreateNewContentAction": [
       {
         bundle: "default-app/services/create/useCreateNewReportAction.js",
         ranking: 100,
       },
       {
-        bundle: "bundle-to-fail.js",
+        bundle: "default-app/services/create/useCreateNewDashboardAction.js",
+        ranking: 100,
+      },
+    ],
+
+    // Instance Service - Simple configuration data
+    "default-app/services:SimpleDataService": [
+      {
+        instance: {
+          appName: "Default App",
+          version: "1.0.0",
+          environment: "development",
+          debug: true,
+        },
+        ranking: 100,
+      },
+    ],
+
+    // Factory Service - Simple message service
+    "default-app/services:MessageService": [
+      {
+        factory: {
+          bundle: "default-app/services/factories/createMessageService.js",
+          config: {
+            prefix: "App Message: ",
+          },
+        },
+        ranking: 100,
+      },
+    ],
+
+    // Component Service - Simple notification component
+    "default-app/services:SimpleNotification": [
+      {
+        component: {
+          bundle: "default-app/services/components/SimpleNotification.js",
+          props: {
+            message: "Service is active!",
+          },
+        },
+        ranking: 100,
       },
     ],
   },

@@ -30,7 +30,7 @@ function createServiceReferenceBase<TService>(
   };
 }
 
-// Helper function to validate imported modules and extract the correct export
+// Helper function to validate imported ESM modules and extract the default export.
 function validateImportedModule<TService>(
   imported: unknown,
   serviceId: ServiceId,
@@ -42,20 +42,18 @@ function validateImportedModule<TService>(
     );
   }
 
-  if (typeof imported === "object" && "default" in imported) {
-    const defaultExport = (imported as { default: unknown }).default;
-    if (defaultExport) {
-      return defaultExport as TService;
-    }
+  if (
+    typeof imported === "object" &&
+    "default" in imported &&
+    (imported as { default: unknown }).default != null
+  ) {
+    return (imported as { default: unknown }).default as TService;
   }
 
-  // For direct function exports (React components, hooks)
-  if (typeof imported === "function") {
-    return imported as TService;
-  }
-
-  // Return the imported value as-is if we can't determine the structure
-  return imported as TService;
+  // Enforce policy: no CommonJS or direct function root exports allowed.
+  throw new Error(
+    `ESM default export missing for ${bundlePath} (service ${serviceId}). Ensure the module uses a default export.`,
+  );
 }
 
 function createInstanceReference<TService>(
@@ -156,8 +154,7 @@ function createComponentReference<TService extends FC>(
  *
  * Supported provider configuration shapes:
  * - instance: wraps and returns the provided instance (resolved Promise).
- * - bundle: dynamically imports the specified bundle and returns its default export
- *   (or the module itself) as the service instance.
+ * - bundle: dynamically imports the specified bundle and returns its default export as the service instance.
  * - factory: dynamically imports a bundle that exports a factory function, calls it
  *   with the provided factory config, and returns the produced service instance.
  * - component: dynamically imports a React component bundle, binds the configured
@@ -166,11 +163,10 @@ function createComponentReference<TService extends FC>(
  * @template TService The concrete service type returned by the created reference.
  * @template TConfig  The ServiceProviderConfig subtype used to create the reference.
  *
- * @param {ServiceId} serviceId Identifier for the service being referenced.
- * @param {TConfig} serviceConfig Configuration that determines how the service is provided.
+ * @param serviceId Identifier for the service being referenced.
+ * @param serviceConfig Configuration that determines how the service is provided.
  *
- * @returns {ServiceReference<TService>} A service reference exposing metadata and a
- *                                      getService loader that resolves the service.
+ * @returns A {@link ServiceReference} object exposing metadata and a getService() loader that resolves the service.
  *
  * @throws {Error} If the provided configuration shape is unsupported. Errors from
  *                 dynamic imports, missing exports, or invalid factory/component
@@ -209,8 +205,10 @@ function bindComponent<
   P extends Record<string, unknown>,
 >(Component: TComponent, configProps: P): TComponent {
   const BoundComponent = (props: PropsWithChildren) => {
+    // Explicitly passed props override the ones from coming from the config
+    const mergedProps = { ...configProps, ...props };
     // @ts-expect-error TODO fix the types!
-    return <Component {...props} {...configProps} />;
+    return <Component {...mergedProps} />;
   };
 
   return BoundComponent as TComponent;
