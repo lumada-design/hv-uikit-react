@@ -18,7 +18,6 @@ import type { HvBaseSwitchProps } from "../BaseSwitch";
 import type { HvButtonProps } from "../Button";
 import type { HvButtonBaseProps } from "../ButtonBase";
 import type { HvCardHeaderProps, HvCardProps } from "../Card";
-import { HvCheckBoxProps } from "../CheckBox";
 import type { HvDialogActionsProps, HvDialogProps } from "../Dialog";
 import type { HvDropdownButtonProps } from "../DropdownButton";
 import type { HvDropDownMenuProps } from "../DropDownMenu";
@@ -33,7 +32,6 @@ import type { HvInputProps } from "../Input";
 import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvNumberInputProps } from "../NumberInput";
-import { HvRadioProps } from "../Radio";
 import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
@@ -153,20 +151,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvCheckBoxIconProps>,
-    HvCheckBox: {
-      classes: {
-        left: {
-          "& .HvCheckBox-label": {
-            paddingLeft: theme.space.xs,
-          },
-        },
-        right: {
-          "& .HvCheckBox-label": {
-            paddingRight: theme.space.xs,
-          },
-        },
-      },
-    } satisfies CSSClasses<HvCheckBoxProps>,
     HvBaseRadio: {
       classes: {
         root: {
@@ -254,21 +238,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
       },
     } satisfies CSSClasses<HvBaseSwitchProps>,
     HvSwitch: {
-      labelPosition: "left",
       classes: {
-        label: {
-          paddingBottom: 0,
-        },
-        left: {
-          "& .HvSwitch-label": {
-            paddingLeft: theme.space.xxs,
-          },
-        },
-        right: {
-          "& .HvSwitch-label": {
-            paddingRight: theme.space.xxs,
-          },
-        },
         container: {
           borderRadius: theme.radii.full,
           "&:hover": {
@@ -282,20 +252,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvSwitchProps>,
-    HvRadio: {
-      classes: {
-        left: {
-          "& .HvRadio-label": {
-            paddingLeft: theme.space.xs,
-          },
-        },
-        right: {
-          "& .HvRadio-label": {
-            paddingRight: theme.space.xs,
-          },
-        },
-      },
-    } satisfies CSSClasses<HvRadioProps>,
     HvSection: {
       classes: {
         content: {

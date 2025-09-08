@@ -45,6 +45,14 @@ export const { staticClasses, useClasses } = createClasses("HvRadio", {
   },
   checked: {},
   semantic: {},
-  left: {},
-  right: {},
+  left: {
+    "& .HvRadio-label": {
+      paddingLeft: theme.space.xs,
+    },
+  },
+  right: {
+    "& .HvRadio-label": {
+      paddingRight: theme.space.xs,
+    },
+  },
 });

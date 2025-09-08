@@ -11,16 +11,25 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
   error: {},
   container: {
     display: "flex",
+    "&$left, &$right": {
+      alignItems: "center",
+    },
     "&$left": {
       flexDirection: "row",
-      alignItems: "center",
+      paddingLeft: theme.space.xs,
     },
     "&$right": {
       flexDirection: "row-reverse",
-      alignItems: "center",
+      paddingRight: theme.space.xs,
     },
     "&$top": {
       flexDirection: "column",
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
+      "& $switchContainer:hover .HvBaseSwitch-root": {
+        backgroundColor: theme.colors.bgHover,
+      },
     },
   },
   switchContainer: {
@@ -35,6 +44,16 @@ export const { staticClasses, useClasses } = createClasses("HvSwitch", {
     borderBottom: `1px solid ${theme.form.errorColor}`,
   },
   top: {},
-  left: {},
-  right: {},
+  left: {
+    "& .HvSwitch-label": {
+      paddingBottom: 0,
+      paddingRight: theme.space.xxs,
+    },
+  },
+  right: {
+    "& .HvSwitch-label": {
+      paddingBottom: 0,
+      paddingLeft: theme.space.xxs,
+    },
+  },
 });

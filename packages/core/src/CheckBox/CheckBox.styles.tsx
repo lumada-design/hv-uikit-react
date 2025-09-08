@@ -46,6 +46,14 @@ export const { staticClasses, useClasses } = createClasses("HvCheckBox", {
   checked: {},
   indeterminate: {},
   semantic: {},
-  left: {},
-  right: {},
+  left: {
+    "& .HvCheckBox-label": {
+      paddingLeft: theme.space.xs,
+    },
+  },
+  right: {
+    "& .HvCheckBox-label": {
+      paddingRight: theme.space.xs,
+    },
+  },
 });
