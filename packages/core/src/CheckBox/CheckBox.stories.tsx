@@ -68,6 +68,8 @@ export const Test: StoryObj<HvCheckBoxProps> = {
         indeterminate
         label="Checkbox 3"
       />
+      <HvCheckBox label="Left" labelPosition="left" />
+      <HvCheckBox label="Right" labelPosition="right" defaultChecked />
       <div>
         <HvCheckBox aria-label="Checkbox" />
         <HvCheckBox defaultChecked aria-label="Checkbox" />

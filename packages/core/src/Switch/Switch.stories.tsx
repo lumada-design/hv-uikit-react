@@ -79,6 +79,12 @@ export const Variants: StoryObj<HvSwitchProps> = {
             aria-label="Engine 2"
           />
         </div>
+        <div className={styles.group}>
+          <HvSwitch label="Left" labelPosition="left" defaultChecked />
+        </div>
+        <div className={styles.group}>
+          <HvSwitch label="Right" labelPosition="right" />
+        </div>
       </>
     );
   },
@@ -123,6 +129,51 @@ export const WithLabels: StoryObj<HvSwitchProps> = {
           <ToggleLabel>On</ToggleLabel>
         </div>
       </>
+    );
+  },
+};
+
+export const LabelPosition: StoryObj<HvSwitchProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "The label can be positioned in different locations relative to the switch using the `labelPosition` prop. Available options are `top` (default), `left`, and `right`.",
+      },
+    },
+  },
+  render: () => {
+    return (
+      <div className="flex flex-col gap-lg">
+        <div className="flex flex-col gap-sm">
+          <h4>Label on Top (default)</h4>
+          <HvSwitch label="Engine Control" labelPosition="top" defaultChecked />
+        </div>
+        <div className="flex flex-col gap-sm">
+          <h4>Label on Left</h4>
+          <HvSwitch
+            label="Engine Control"
+            labelPosition="left"
+            defaultChecked
+          />
+        </div>
+        <div className="flex flex-col gap-sm">
+          <h4>Label on Right</h4>
+          <HvSwitch
+            label="Engine Control"
+            labelPosition="right"
+            defaultChecked
+          />
+        </div>
+        <div className="flex flex-col gap-sm">
+          <h4>Multiple switches with different positions</h4>
+          <div className="flex flex-wrap gap-lg">
+            <HvSwitch label="Top Position" labelPosition="top" />
+            <HvSwitch label="Left Position" labelPosition="left" />
+            <HvSwitch label="Right Position" labelPosition="right" />
+          </div>
+        </div>
+      </div>
     );
   },
 };
