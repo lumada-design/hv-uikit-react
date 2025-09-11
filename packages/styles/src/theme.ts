@@ -1,7 +1,8 @@
 import { palette } from "./palette";
-import { baseTheme as tokens } from "./tokens";
+import { baseTheme } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
-import {
+import { compatColors } from "./tokens/colorsCompat";
+import type {
   DeepString,
   HvThemeComponents,
   HvThemeTypography,
@@ -49,22 +50,45 @@ const typographySpec: DeepString<HvThemeTypography> = {
 };
 
 const colorTokens = {
-  ...tokens.colors.common,
-  ...tokens.colors.light,
+  ...baseTheme.colors.light,
+  ...compatColors.light,
 };
 
-const themeVars: HvThemeVars = mapCSSVars({
-  ...tokens,
-  colors: {
-    type: "light",
-    ...colorTokens,
-  }, // Flatten colors and add background color
-  ...componentsSpec,
-  ...typographySpec,
-});
+/** returns a Proxy that returns the CSS var for any (flat) token */
+function makeCssVars(prefix: string) {
+  const themeTokens = Object.keys(colorTokens);
+  return new Proxy(colorTokens, {
+    get(_target, prop) {
+      if (typeof prop !== "string") return undefined;
+      return `var(${prefix}-${prop})`;
+    },
+    ownKeys() {
+      return themeTokens;
+    },
+    getOwnPropertyDescriptor(_target, prop) {
+      if (themeTokens.includes(prop as string)) {
+        return { enumerable: true, configurable: true };
+      }
+      return undefined;
+    },
+  });
+}
+
+const themeVars: HvThemeVars = {
+  ...mapCSSVars({
+    ...baseTheme,
+    ...componentsSpec,
+    ...typographySpec,
+  }),
+  colors: makeCssVars("--uikit-colors") as any,
+};
 
 function getColorOrFallback(color?: HvColorAny) {
-  return themeVars.colors[color as HvColor] || color;
+  // TODO: support for custom colors
+  return (
+    (colorTokens[color as HvColor] && themeVars.colors[color as HvColor]) ||
+    color
+  );
 }
 
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */
