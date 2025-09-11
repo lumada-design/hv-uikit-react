@@ -30,7 +30,7 @@ export type PolymorphicComponentRef<
 /** HV Base Props. Extends `React.HTMLAttributes` of an element `E`, and filters `K` keys. */
 export type HvBaseProps<
   E extends HTMLElement = HTMLDivElement,
-  K extends keyof React.HTMLAttributes<E> = never,
+  K extends string = never,
 > = Omit<React.HTMLAttributes<E>, K>;
 
 /** This type allows to do a deep partial by applying the Partial type to each key recursively */
