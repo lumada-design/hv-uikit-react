@@ -1,5 +1,9 @@
-import { useMemo, useState } from "react";
-import { ReactFlowInstance, Node as RFNode } from "@xyflow/react";
+import { useCallback, useMemo, useState } from "react";
+import {
+  applyNodeChanges,
+  Edge as FlowEdge,
+  Node as FlowNode,
+} from "@xyflow/react";
 import {
   HvButton,
   HvDialog,
@@ -24,9 +28,8 @@ import {
   HvFlowBackground,
   HvFlowControls,
   HvFlowEmpty,
-  HvFlowProps,
+  HvFlowInstance,
   StickyNode,
-  StickyNodeData,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvCanvasBottomPanel,
@@ -37,7 +40,7 @@ import {
 
 import { CanvasProvider, useCanvasContext } from "./Context";
 import { ListView } from "./ListView";
-import { Node, NodeData } from "./Node";
+import { Node } from "./Node";
 import { CanvasSidebar } from "./Sidebar";
 import { StatusEdge } from "./StatusEdge";
 import { classes } from "./styles";
@@ -48,12 +51,12 @@ import { flowStatuses } from "./utils";
 const nodeTypes = {
   node: Node,
   sticky: StickyNode,
-};
+} as any;
 const edgeTypes = {
   status: StatusEdge,
 };
-const initialNodes: HvFlowProps["nodes"] = [];
-const initialEdges: HvFlowProps["edges"] = [];
+const initialNodes: FlowNode[] = [];
+const initialEdges: FlowEdge[] = [];
 
 const sidePanelTabs = [
   {
@@ -86,8 +89,8 @@ const Page = () => {
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [nodesHidden, setNodesHidden] = useState(false);
-  const [flowInstance, setFlowInstance] =
-    useState<ReactFlowInstance<RFNode<NodeData>>>();
+  const [flowInstance, setFlowInstance] = useState<HvFlowInstance>();
+  const [nodes, setNodes] = useState(initialNodes);
 
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();
@@ -115,7 +118,7 @@ const Page = () => {
   };
 
   const handleChangeTab: HvCanvasBottomPanelProps["onTabChange"] = (
-    event,
+    _event,
     value,
   ) => {
     setSelectedTable?.(value as string);
@@ -178,7 +181,7 @@ const Page = () => {
 
   const handleAddSticky = () => {
     const id = Date.now().toString();
-    const newNode = {
+    const newNode: FlowNode = {
       id,
       type: "sticky",
       position: {
@@ -205,7 +208,7 @@ const Page = () => {
               ...node,
               data: {
                 ...node.data,
-                visible: !((node.data as StickyNodeData)?.visible ?? true),
+                visible: !((node.data as any)?.visible ?? true),
               },
             }
           : node,
@@ -234,17 +237,17 @@ const Page = () => {
     {
       id: "fullscreen",
       label: "Fullscreen",
-      icon: <Fullscreen iconSize="XS" />,
+      icon: <Fullscreen size="XS" />,
     },
     {
       id: "close",
       label: "Close",
-      icon: <Close iconSize="XS" />,
+      icon: <Close size="XS" />,
     },
   ];
 
   const onNodesChange = useCallback((changes: any) => {
-    return setNodes((nds) => applyNodeChanges(changes, nds));
+    setNodes((nds) => applyNodeChanges(changes, nds));
   }, []);
 
   return (
@@ -264,8 +267,8 @@ const Page = () => {
               tabs={sidePanelTabs}
               open={sidePanelOpen}
               tab={sidePanelTab}
-              onToggle={(event, value) => setSidePanelOpen(value)}
-              onTabChange={(event, value) => setSidePanelTab(value as number)}
+              onToggle={(_event, value) => setSidePanelOpen(value)}
+              onTabChange={(_event, value) => setSidePanelTab(value as number)}
             >
               {sidePanelContent[sidePanelTab]}
             </CanvasSidebar>

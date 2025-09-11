@@ -1,4 +1,3 @@
-import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
@@ -6,15 +5,14 @@ import type { OutputOptions } from "rollup";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
-const require = createRequire(import.meta.url);
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import pkg from "../package.json";
 
-const pkg = require(resolve(process.cwd(), "package.json"));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // dependencies that should not be bundled.
 const external = [
-  ...Object.keys(pkg.dependencies || {}),
-  ...Object.keys(pkg.peerDependencies || {}),
+  ...Object.keys((pkg as any).dependencies || {}),
+  ...Object.keys((pkg as any).peerDependencies || {}),
 ].map((ext) => new RegExp(`^${ext.split("/")[0]}`));
 
 const esmOutput: OutputOptions = {

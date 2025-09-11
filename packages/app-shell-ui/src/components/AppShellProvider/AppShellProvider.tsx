@@ -70,8 +70,12 @@ const AppShellProvider = ({
   }
 
   const [theme, setTheme] = useState<HvThemeStructure>();
-  const [providers, setProviders] =
-    useState<React.ComponentType<{ children: React.ReactNode }>[]>();
+  const [providers, setProviders] = useState<
+    Array<{
+      component: React.ComponentType<{ children: React.ReactNode }>;
+      config?: Record<string, unknown>;
+    }>
+  >();
 
   useEffect(() => {
     const theme = theConfig?.theming?.theme;
@@ -97,11 +101,15 @@ const AppShellProvider = ({
     Promise.all(
       theConfig.providers.map((provider) => {
         return import(/* @vite-ignore */ provider.bundle)
-          .then((module) => module.default)
+          .then((module) => ({
+            component: module.default,
+            config: provider.config,
+          }))
           .catch((e) => {
             console.error(
               `Import of provider '${provider.bundle}' failed! ${e}`,
             );
+            return null;
           });
       }),
     )

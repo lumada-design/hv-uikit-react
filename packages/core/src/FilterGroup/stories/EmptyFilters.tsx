@@ -45,7 +45,7 @@ export const EmptyFilters = () => {
       <HvSwitch
         checked={hasFilters}
         onChange={(_, checked) => setHasFilters(checked)}
-        aria-label="Loaded state"
+        label="Loaded state"
       />
       <HvTypography>
         {hasFilters ? "Filters in loaded state" : "Filters in loading state"}

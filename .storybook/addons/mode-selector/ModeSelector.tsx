@@ -1,3 +1,4 @@
+/*eslint-disable no-restricted-imports */
 import React from "react";
 import { IconButton } from "storybook/internal/components";
 import { addons, useAddonState, useStorybookApi } from "storybook/manager-api";

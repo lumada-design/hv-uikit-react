@@ -9,4 +9,5 @@ export type { HvFlowClasses } from "./DroppableFlow";
 export { flowClasses } from "./DroppableFlow";
 export * from "./types";
 export * from "./hooks";
+export * from "./nodes";
 export { useNodeMetaRegistry } from "./FlowContext/NodeMetaContext";

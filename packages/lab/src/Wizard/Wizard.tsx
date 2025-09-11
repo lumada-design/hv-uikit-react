@@ -111,7 +111,7 @@ export const HvWizard = ({
 
   const value = useMemo(
     () => ({ context, setContext, summary, setSummary, tab, setTab }),
-    [context, setContext, summary, setSummary, tab, setTab],
+    [context, summary, tab],
   );
 
   return (

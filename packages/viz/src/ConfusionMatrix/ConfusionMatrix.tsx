@@ -195,7 +195,10 @@ export const HvConfusionMatrix = forwardRef<
         data: chartData
           .columnNames()
           .filter((p) => p !== groupByKey)
-          .reverse(),
+          .reduceRight<string[]>((acc, item) => {
+            acc.push(item);
+            return acc;
+          }, []),
       },
     ],
   });

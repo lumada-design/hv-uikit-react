@@ -34,7 +34,6 @@ Here's what there is to know about migrating from v1.x to v2.x:
 - Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to [this](https://github.com/pentaho/hv-uikit-react) repository. The package will continue to be published under the same name, only the repository's location has changed.
 
 - Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, and will no longer receive updates. You can still use the other releases, if you need them. As for their contents:
-
   - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
   - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
 
@@ -117,19 +116,16 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
 - `defaultAriaLabel`, `defaultAriaLabelledBy`, `defaultAriaDescribedBy` removed. You should instead pass these props to `cardButtonProps`
 
 - #### Card header
-
   - `needsBorder` removed (was not in use)
   - `onClickAction` renamed to `onClick`
 
 - #### Card content
-
   - `needsBorder` removed (was not in use)
   - `buttomBorder` class removed
   - `innerCardContent` renamed to `children`
   - `onClickAction` renamed to `onClick`
 
 - #### Card footer
-
   - `actions.icon` renamed to `actions.iconCallback`
   - `checkboxSelected` changed to `checked`
   - `checkboxValue` changed to `checkboxProps.value`

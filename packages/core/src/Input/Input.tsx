@@ -283,14 +283,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   // dependencies must be more explicit so we set
   const errorMessages = useMemo<HvValidationMessages>(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [
-      validationMessages?.error,
-      validationMessages?.requiredError,
-      validationMessages?.minCharError,
-      validationMessages?.maxCharError,
-      validationMessages?.typeMismatchError,
-    ],
+    [validationMessages],
   );
 
   // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
