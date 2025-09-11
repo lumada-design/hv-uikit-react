@@ -67,7 +67,8 @@ export const HvThemeProvider = ({
   );
 
   const muiTheme = useMemo(() => {
-    const colors = theme.colors[colorMode];
+    const colors = theme.colors[colorMode] || theme.colors.light || {};
+
     return createMuiTheme({
       colorSchemes: { light: true, dark: true },
       spacing: theme.space.base,
@@ -75,27 +76,27 @@ export const HvThemeProvider = ({
         fontFamily: theme.fontFamily.body,
       },
       palette: {
-        primary: { main: colors.primary },
-        success: { main: colors.positive },
-        warning: { main: colors.warning },
-        error: { main: colors.negative },
-        info: { main: colors.info },
+        primary: { main: colors.primary || "#007acc" },
+        success: { main: colors.positive || "#4caf50" },
+        warning: { main: colors.warning || "#ff9800" },
+        error: { main: colors.negative || "#f44336" },
+        info: { main: colors.info || "#2196f3" },
         text: {
-          primary: colors.text,
-          secondary: colors.textSubtle,
-          disabled: colors.textDisabled,
+          primary: colors.text || "#000000",
+          secondary: colors.textSubtle || "#666666",
+          disabled: colors.textDisabled || "#999999",
         },
         background: {
-          default: colors.bgPage,
-          paper: colors.bgContainer,
+          default: colors.bgPage || "#ffffff",
+          paper: colors.bgContainer || "#ffffff",
         },
-        divider: colors.border,
+        divider: colors.border || "#e0e0e0",
         action: {
-          active: colors.primary,
-          hover: colors.primaryStrong,
-          selected: colors.primaryStrong,
-          disabled: colors.textDisabled,
-          disabledBackground: colors.bgDisabled,
+          active: colors.primary || "#007acc",
+          hover: colors.primaryStrong || "#005a9e",
+          selected: colors.primaryStrong || "#005a9e",
+          disabled: colors.textDisabled || "#999999",
+          disabledBackground: colors.bgDisabled || "#f5f5f5",
         },
       },
       components: {

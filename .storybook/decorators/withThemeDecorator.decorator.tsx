@@ -38,7 +38,9 @@ export const withThemeDecorator = (): Decorator => {
     const [theme, mode] = selected.split(" ");
 
     const base = (themes as any)[theme] ?? themes.ds5;
-    const storyStyles = getStoryStyles(base.colors[mode].bgPage);
+    const storyStyles = getStoryStyles(
+      base.colors[mode]?.bgPage || base.colors.light?.bgPage || "#ffffff",
+    );
 
     const containerRef = useDarkClass(mode);
 

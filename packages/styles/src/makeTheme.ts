@@ -35,7 +35,7 @@ export const makeTheme = (
   const newTheme = mergeTheme(baseTheme, customTheme);
 
   // Add the vars proxy for accessing CSS variables
-  newTheme.vars = makeVarsProxy(newTheme);
+  newTheme.vars = makeVarsProxy(newTheme) as any;
 
   return newTheme;
 };

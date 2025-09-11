@@ -1,4 +1,11 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import {
+  ComponentType,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { I18nContext } from "react-i18next";
 import {
   CONFIG_TRANSLATIONS_NAMESPACE,
