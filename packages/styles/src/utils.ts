@@ -18,8 +18,12 @@ export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
   }
 };
 
-const toCSSVars = (obj: object, prefix = "--uikit") => {
+const toCSSVars = (obj: object | null | undefined, prefix = "--uikit") => {
   const vars: Record<string, string> = {};
+
+  if (!obj || typeof obj !== "object") {
+    return vars;
+  }
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -94,7 +98,7 @@ export const getThemeVars = (theme: HvThemeStructure) => {
 
     cssVars[styleName] = toCSSVars({
       colors: {
-        ...colors[colorMode],
+        ...colors?.[colorMode],
       },
     });
 
