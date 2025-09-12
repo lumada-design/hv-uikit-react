@@ -17,7 +17,6 @@ import { HvContainer } from "@hitachivantara/uikit-react-core";
 import GenericError from "../../pages/GenericError";
 import LoadingPage from "../../pages/LoadingPage";
 import RootRoute from "../../pages/Root";
-import getBasePath from "../../utils/basePathUtils";
 import { getAppIdFromBundle } from "../../utils/navigationUtil";
 import AppShellViewProvider from "../AppShellViewProvider";
 
@@ -124,7 +123,7 @@ function renderErrorRoutes(
 }
 
 const AppShellRoutes = () => {
-  const config = useHvAppShellConfig();
+  const { baseUrl, mainPanel, services } = useHvAppShellConfig();
   const { providers } = useHvAppShellCombinedProviders();
 
   return (
@@ -133,15 +132,15 @@ const AppShellRoutes = () => {
       router={createBrowserRouter(
         [
           {
-            element: <RootRoute providers={providers} />, // All routes live inside `RootRoute`
+            element: <RootRoute providers={providers} services={services} />, // All routes live inside `RootRoute`
             errorElement: <GenericError fullPage />,
             children: [
-              ...renderRoutes(config.mainPanel),
-              ...renderErrorRoutes(config.mainPanel),
+              ...renderRoutes(mainPanel),
+              ...renderErrorRoutes(mainPanel),
             ],
           },
         ],
-        { basename: getBasePath(config) },
+        { basename: baseUrl ?? "/" },
       )}
     />
   );

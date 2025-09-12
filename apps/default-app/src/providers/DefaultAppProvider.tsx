@@ -22,7 +22,7 @@ type DefaultAppProviderProps = {
 
 let clickNumber = 0;
 
-export const DefaultAppProvider = ({ children }: DefaultAppProviderProps) => {
+const DefaultAppProvider = ({ children }: DefaultAppProviderProps) => {
   const [text, setText] = useState<string>("Initial default-app context value");
   const { menu } = useContext(HvAppShellContext) as HvAppShellContextValue;
 
@@ -45,3 +45,5 @@ export const DefaultAppProvider = ({ children }: DefaultAppProviderProps) => {
     </DefaultAppContext.Provider>
   );
 };
+
+export default DefaultAppProvider;

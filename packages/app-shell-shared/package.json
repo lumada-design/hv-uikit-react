@@ -21,18 +21,15 @@
     "clean": "npx rimraf dist package",
     "prepublishOnly": "npm run build && npx clean-publish"
   },
+  "dependencies": {
+    "@hitachivantara/app-shell-services": "^1.0.0"
+  },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-router-dom": "^6.9.0"
   },
   "optionalDependencies": {
     "@hitachivantara/uikit-react-core": "^5.103.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.28",
-    "i18next": "^24.2.2",
-    "react-i18next": "15.7.1",
-    "vite": "^7.1.1"
   },
   "files": [
     "dist"
