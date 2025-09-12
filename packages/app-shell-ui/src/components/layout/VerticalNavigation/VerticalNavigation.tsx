@@ -71,23 +71,25 @@ const VerticalNavigation = () => {
       useIcons
       slider={isCompactMode}
     >
-      {isPentahoTheme ? (
-        <NavigationHeader isOpen={open} />
-      ) : (
-        <HvVerticalNavigationHeader
-          title={t("title")}
-          onCollapseButtonClick={
-            !isCompactMode ? switchVerticalNavigationMode : undefined
-          }
-          collapseButtonProps={{
-            "aria-label": t(open ? "ariaLabelCollapse" : "ariaLabelExpand"),
-            "aria-expanded": open,
-          }}
-          backButtonProps={{
-            "aria-label": t("ariaLabelHeaderBackButton"),
-          }}
-        />
-      )}
+      <div>
+        {isPentahoTheme && <NavigationHeader isOpen={open} />}
+
+        {(!isPentahoTheme || isCompactMode) && (
+          <HvVerticalNavigationHeader
+            title={t("title")}
+            onCollapseButtonClick={
+              !isCompactMode ? switchVerticalNavigationMode : undefined
+            }
+            collapseButtonProps={{
+              "aria-label": t(open ? "ariaLabelCollapse" : "ariaLabelExpand"),
+              "aria-expanded": open,
+            }}
+            backButtonProps={{
+              "aria-label": t("ariaLabelHeaderBackButton"),
+            }}
+          />
+        )}
+      </div>
 
       <HvVerticalNavigationTree
         key={rootMenuItemId}
