@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.103.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.102.1...@hitachivantara/uikit-react-core@5.103.0) (2025-09-12)
+
+### Bug Fixes
+
+- **input:** optional chaining for input blur event ([#4900](https://github.com/lumada-design/hv-uikit-react/issues/4900)) ([3fcbf6b](https://github.com/lumada-design/hv-uikit-react/commit/3fcbf6b61c96cd4ca02e0ee8fe1ba9a990a7daea))
+
+### Features
+
+- **CheckBox, Radio, Switch:** add `labelPosition` prop ([#4898](https://github.com/lumada-design/hv-uikit-react/issues/4898)) ([4061719](https://github.com/lumada-design/hv-uikit-react/commit/406171900cd5c7b76819f81e33f218eb2c884ad4))
+
 ## [5.102.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.102.0...@hitachivantara/uikit-react-core@5.102.1) (2025-09-05)
 
 ### Bug Fixes

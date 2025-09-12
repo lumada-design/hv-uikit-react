@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-vite-plugin",
-  "version": "1.8.8",
+  "version": "1.8.9",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -26,8 +26,8 @@
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.1",
-    "@hitachivantara/app-shell-shared": "^1.6.2",
-    "@hitachivantara/app-shell-ui": "^1.12.2",
+    "@hitachivantara/app-shell-shared": "^1.6.3",
+    "@hitachivantara/app-shell-ui": "^1.12.3",
     "@hitachivantara/uikit-react-icons": "^5.16.4",
     "@hitachivantara/uikit-react-shared": "^5.5.4",
     "@rollup/plugin-commonjs": "^25.0.7",
