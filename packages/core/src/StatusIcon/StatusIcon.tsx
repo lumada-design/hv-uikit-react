@@ -1,6 +1,14 @@
 import { forwardRef } from "react";
 import {
+  CheckCircle,
+  IconWeight,
+  Question,
+  Warning,
+  WarningDiamond,
+} from "@phosphor-icons/react";
+import {
   useDefaultProps,
+  useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 import { HvSize } from "@hitachivantara/uikit-styles";
@@ -28,6 +36,8 @@ export interface HvStatusIconProps extends HvBaseProps {
   size?: HvSize;
   /** The type of status icon. */
   type?: HvStatusIconType;
+  /** Icon style */
+  weight?: IconWeight;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvStatusIconClasses;
 }
@@ -38,6 +48,13 @@ const variantIconMap = {
   error: "Fail",
   info: "Info",
 } as const;
+
+const pentahoIconsMap = {
+  success: (props: any) => <CheckCircle {...props} />,
+  warning: (props: any) => <Warning {...props} />,
+  error: (props: any) => <WarningDiamond {...props} />,
+  info: (props: any) => <Question {...props} />,
+};
 
 /**
  * A status icon represents the status of a process or an entity.
@@ -57,8 +74,10 @@ export const HvStatusIcon = forwardRef<
     customIcon,
     size = "sm",
     type = "full",
+    weight = "regular",
   } = useDefaultProps("HvStatusIcon", props);
   const { classes, cx } = useClasses(classesProp);
+  const { selectedTheme } = useTheme();
 
   return (
     <div
@@ -68,15 +87,23 @@ export const HvStatusIcon = forwardRef<
       data-size={size}
       className={cx(classes.root, className)}
     >
-      <HvIconContainer size={size}>
-        {customIcon || (
-          <HvIcon
-            compact
-            className={classes.icon}
-            name={variantIconMap[variant as keyof typeof variantIconMap]}
-          />
-        )}
-      </HvIconContainer>
+      {selectedTheme === "pentahoPlus" && !customIcon ? (
+        <HvIconContainer size={size}>
+          {pentahoIconsMap[variant as keyof typeof pentahoIconsMap]?.({
+            weight,
+          })}
+        </HvIconContainer>
+      ) : (
+        <HvIconContainer size={size}>
+          {customIcon || (
+            <HvIcon
+              compact
+              className={classes.icon}
+              name={variantIconMap[variant as keyof typeof variantIconMap]}
+            />
+          )}
+        </HvIconContainer>
+      )}
     </div>
   );
 });

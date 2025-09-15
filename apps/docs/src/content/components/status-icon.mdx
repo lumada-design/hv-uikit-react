@@ -35,6 +35,66 @@ These don't have a default icon, so you need to provide a custom icon using the 
     customIcon={<div className="i-ph-sparkle" />}
     variant="accent"
   />
-  <HvStatusIcon variant="default" />
+</div>
+```
+
+## Icon weight
+
+### Semantic icons
+
+For semantic icons (`success`, `warning`, `error`, and `info`), you can use the `weight` prop to choose between three different weights:
+`regular`, `duotone`, and `fill`.
+
+```tsx live
+<div className="flex items-center gap-xs">
+  <HvStatusIcon weight="regular" variant="success" />
+  <HvStatusIcon weight="duotone" variant="success" />
+  <HvStatusIcon weight="fill" variant="success" />
+  <HvStatusIcon weight="regular" variant="warning" />
+  <HvStatusIcon weight="duotone" variant="warning" />
+  <HvStatusIcon weight="fill" variant="warning" />
+  <HvStatusIcon weight="regular" variant="error" />
+  <HvStatusIcon weight="duotone" variant="error" />
+  <HvStatusIcon weight="fill" variant="error" />
+  <HvStatusIcon weight="regular" variant="info" />
+  <HvStatusIcon weight="duotone" variant="info" />
+  <HvStatusIcon weight="fill" variant="info" />
+</div>
+```
+
+### Custom icons
+
+Because the `weight` prop will only affect semantic icons, if you want to use different weights for custom icons,
+you need to provide the appropriate Phosphor classname for each weight.
+
+```tsx live
+<div className="flex items-center gap-xs">
+  <HvStatusIcon
+    customIcon={<div className="i-ph-tree-structure" />}
+    variant="default"
+  />
+  <HvStatusIcon
+    customIcon={<div className="i-ph-tree-structure-duotone" />}
+    variant="default"
+  />
+  <HvStatusIcon
+    customIcon={<div className="i-ph-tree-structure-fill" />}
+    variant="default"
+  />
+  <HvStatusIcon
+    variant="accent"
+    customIcon={<div className="i-ph-sparkle" />}
+    variant="accent"
+  />
+  <HvStatusIcon
+    variant="accent"
+    customIcon={<div className="i-ph-sparkle-duotone" />}
+    variant="accent"
+  />
+  <HvStatusIcon
+    variant="accent"
+    customIcon={<div className="i-ph-sparkle-fill" />}
+    variant="accent"
+  />
 </div>
 ```
