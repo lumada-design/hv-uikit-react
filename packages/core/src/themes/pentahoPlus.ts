@@ -255,7 +255,12 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     HvSection: {
       classes: {
         content: {
-          backgroundColor: theme.colors.bgPage,
+          backgroundColor: theme.colors.bgContainer,
+        },
+        raisedHeader: {
+          "& .HvSection-header": {
+            boxShadow: "none",
+          },
         },
       },
     } satisfies CSSClasses<HvSectionProps>,

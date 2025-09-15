@@ -31,6 +31,7 @@ export const { staticClasses, useClasses } = createClasses("HvSection", {
     },
   },
   content: {
+    backgroundColor: theme.colors.bgPage,
     padding: theme.space.sm,
     borderRadius: "inherit",
     borderColor: "inherit",
