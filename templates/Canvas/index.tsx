@@ -85,7 +85,7 @@ const Page = () => {
   const [sidePanelTab, setSidePanelTab] = useState(sidePanelTabs[0].id);
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
-  const [nodesHidde, setNodesHidden] = useState(false);
+  const [nodesHidden, setNodesHidden] = useState(false);
   const [flowInstance, setFlowInstance] =
     useState<ReactFlowInstance<NodeData | StickyNodeData>>();
   const [nodes, setNodes] = useState(initialNodes);
