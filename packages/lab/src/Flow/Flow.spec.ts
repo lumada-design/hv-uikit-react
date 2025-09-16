@@ -256,30 +256,29 @@ test.describe("Connections", () => {
   }) => {
     await page.goto(
       "./iframe.html?args=&id=lab-flow--visualizations&viewMode=story",
-      { waitUntil: "networkidle" },
     );
 
+    // Sanity check: at least one named edge is visible in this story
     await expect(
       flowCanvasLocator.getByRole("button", {
         name: "Edge from jsonInput to lineChart",
       }),
-    ).toBeVisible(); // This more meaningfull name occurs in this sample but not on the other tried on this file. Should we adapt the other sample?
-    const numberConnections = (
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all()
-    ).length;
+    ).toBeVisible();
+    // Count ALL edges using a locator that matches all edge elements
+    const edges = flowCanvasLocator.getByRole("button", { name: /Edge/ });
+    const initialCount = await edges.count();
 
+    // Try to add a connection (should be limited by max connections)
     await connectNodes("Filter", "Filtered Data", "Line Chart", "Data");
-    expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
-    ).toHaveLength(numberConnections);
+    await expect(edges).toHaveCount(initialCount);
+
+    // Delete a specific edge (uses the meaningful name present in this story)
     await deleteConnection("Edge from jsonInput to lineChart");
-    expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
-    ).toHaveLength(numberConnections - 1);
+    await expect(edges).toHaveCount(initialCount - 1);
+
+    // Add it back; count should return to baseline
     await connectNodes("Filter", "Filtered Data", "Line Chart", "Data");
-    expect(
-      await flowCanvasLocator.getByRole("button", { name: "Edge" }).all(),
-    ).toHaveLength(numberConnections);
+    await expect(edges).toHaveCount(initialCount);
   });
 });
 
