@@ -196,7 +196,7 @@ const Page = () => {
   };
 
   const handleHideNotes = () => {
-    setNodesHidden(!nodesHidde);
+    setNodesHidden(!nodesHidden);
     flowInstance?.setNodes((nds) => {
       if (!nds.some((node) => node.type === "sticky")) return nds;
 
