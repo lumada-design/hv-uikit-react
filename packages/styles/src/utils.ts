@@ -1,6 +1,7 @@
 import type {
   DeepString,
   HvThemeBreakpoint,
+  HvThemeColorMode,
   HvThemeStructure,
   HvThemeVars,
   SpacingValue,
@@ -17,23 +18,12 @@ export const spacingUtil = (value: SpacingValue, vars: HvThemeVars): string => {
   }
 };
 
-// TODO: remove in favour or `spacingUtil` in v6
-export const spacingUtilOld = (
-  value: SpacingValue,
-  vars: HvThemeVars,
-): string => {
-  switch (typeof value) {
-    case "number":
-      return `${value}px`;
-    case "string":
-      return vars.space[value as HvThemeBreakpoint] || value;
-    default:
-      return "0px";
-  }
-};
-
-const toCSSVars = (obj: object, prefix = "--uikit") => {
+const toCSSVars = (obj: object | null | undefined, prefix = "--uikit") => {
   const vars: Record<string, string> = {};
+
+  if (!obj || typeof obj !== "object") {
+    return vars;
+  }
 
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === "object") {
@@ -93,86 +83,29 @@ export const mergeTheme = (...objects: any[]): HvThemeStructure => {
   }, {});
 };
 
-export const parseTheme = (
-  themes: HvThemeStructure[],
-  theme = "",
-  colorMode = "",
-): {
-  theme: HvThemeStructure;
-  selectedTheme: string;
-  selectedMode: string;
-  colorModes: string[];
-  colorScheme: string;
-} => {
-  const names = themes.map((t) => t.name);
-  const selectedTheme = names.includes(theme) ? theme : names[0];
-  const themeStructure =
-    themes.find((t) => t.name === selectedTheme) || themes[0];
-  const colorModes = Object.keys(themeStructure.colors.modes);
-  const selectedMode = colorModes.includes(colorMode)
-    ? colorMode
-    : colorModes[0];
-  const colorScheme = themeStructure.colors.modes[selectedMode].type;
+export const getThemeVars = (theme: HvThemeStructure) => {
+  const cssVars: Record<string, any> = {};
 
-  return {
-    theme: themeStructure,
-    selectedTheme,
-    selectedMode,
-    colorModes,
-    colorScheme,
-  };
-};
+  const colorModes: HvThemeColorMode[] = ["light", "dark"];
 
-/** @deprecated unused */
-export const getThemesList = (themes: Record<string, any>) => {
-  const list: Record<string, any> = {};
+  colorModes.forEach((colorMode) => {
+    const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
+    const themeName = `[data-theme="${theme.name}"]`;
 
-  Object.keys(themes).forEach((themeName) => {
-    const theme = themes[themeName];
-    const colorModes = Object.keys(theme.colors.modes);
+    // exclude properties that shouldn't be mapped to CSS variables
+    // @ts-expect-error align HvTheme <-> HvThemeStructure
+    const { base, components, name, colors, palette, icons, ...rest } = theme;
 
-    list[themeName] = {
-      colorModes: {},
-    };
+    cssVars[styleName] = toCSSVars({
+      colors: {
+        ...colors?.[colorMode],
+      },
+    });
 
-    colorModes.forEach((colorMode) => {
-      list[themeName].colorModes[colorMode] = toCSSVars({
-        ...theme,
-        colors: {
-          ...theme.colors.modes[colorMode],
-        },
-      });
+    cssVars[themeName] = toCSSVars({
+      ...rest,
     });
   });
 
-  return list;
-};
-
-export const getThemesVars = (themes: HvThemeStructure[]) => {
-  const vars: Record<string, any> = {};
-
-  themes.forEach((theme) => {
-    const colorModes = Object.keys(theme.colors.modes);
-
-    colorModes.forEach((colorMode) => {
-      const styleName = `[data-theme="${theme.name}"][data-color-mode="${colorMode}"]`;
-      const themeName = `[data-theme="${theme.name}"]`;
-
-      // extract properties that shouldn't be mapped to CSS variables
-      // @ts-expect-error align HvTheme <-> HvThemeStructure?
-      const { base, components, name, colors, palette, icons, ...rest } = theme;
-
-      vars[styleName] = toCSSVars({
-        colors: {
-          ...colors.modes[colorMode],
-        },
-      });
-
-      vars[themeName] = toCSSVars({
-        ...rest,
-      });
-    });
-  });
-
-  return vars;
+  return cssVars;
 };

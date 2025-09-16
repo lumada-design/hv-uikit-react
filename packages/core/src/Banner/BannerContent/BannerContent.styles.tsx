@@ -7,6 +7,7 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
     width: "100%",
     position: "relative",
     gap: theme.space.xs,
+    minHeight: 48,
   },
   success: {},
   warning: {},
@@ -37,10 +38,4 @@ export const { useClasses, staticClasses } = createClasses("HvBannerContent", {
   },
   actionContainer: {},
   closeAction: {},
-  /** @deprecated use ´classes.root` instead */
-  baseVariant: {},
-  /** @deprecated use `classes.root` instead */
-  outContainer: {},
-  /** @deprecated use `classes.actionContainer` instead */
-  actionsInnerContainer: {},
 });

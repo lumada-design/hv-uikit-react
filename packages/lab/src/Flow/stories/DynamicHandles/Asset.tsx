@@ -49,7 +49,7 @@ export const types = {
 };
 
 // Node data type
-export interface NodeData {
+export interface NodeData extends Record<string, unknown> {
   type?: keyof typeof types;
   inputs?: HvFlowNodeInput[];
   outputs?: HvFlowNodeOutput[];
@@ -62,7 +62,9 @@ export const Asset: HvFlowNodeFC<NodeData> = (props) => {
 
   const reactFlowInstance = useFlowInstance();
 
-  const { setNodeData } = useFlowNodeUtils<NodeData>();
+  const { setNodeData } = useFlowNodeUtils<
+    NodeData & Record<string, unknown>
+  >();
 
   useEffect(() => {
     if (data.type !== curType.current) {

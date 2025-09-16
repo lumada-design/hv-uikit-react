@@ -1,6 +1,5 @@
-import { ds3 } from "./ds3";
 import { ds5 } from "./ds5";
-import { pentahoPlus } from "./pentahoPlus";
+import { pentaho } from "./pentaho";
 
-export { ds3, ds5, pentahoPlus };
-export const themes = { ds3, ds5, pentahoPlus };
+export { ds5, pentaho };
+export const themes = { ds5, pentaho };

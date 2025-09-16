@@ -1,4 +1,3 @@
-import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
@@ -6,35 +5,21 @@ import type { OutputOptions } from "rollup";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
-const require = createRequire(import.meta.url);
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import pkg from "../package.json";
 
-const pkg = require(resolve(process.cwd(), "package.json"));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // dependencies that should not be bundled.
 const external = [
-  ...Object.keys(pkg.dependencies || {}),
-  ...Object.keys(pkg.peerDependencies || {}),
+  ...Object.keys((pkg as any).dependencies || {}),
+  ...Object.keys((pkg as any).peerDependencies || {}),
 ].map((ext) => new RegExp(`^${ext.split("/")[0]}`));
 
 const esmOutput: OutputOptions = {
   format: "esm",
   preserveModules: true,
-  dir: "dist/esm",
-  // keep react-based packages as `.js` for backwards compatibility
-  entryFileNames:
-    pkg.name.includes("react") || pkg.name.includes("app-shell")
-      ? "[name].js"
-      : "[name].mjs",
-  exports: "named",
-  interop: "auto",
-};
-
-const cjsOutput: OutputOptions = {
-  format: "cjs",
-  preserveModules: true,
-  dir: "dist/cjs",
-  entryFileNames: "[name].cjs",
+  dir: "dist",
+  entryFileNames: "[name].js",
   exports: "named",
   interop: "auto",
 };
@@ -42,7 +27,7 @@ const cjsOutput: OutputOptions = {
 export default defineConfig({
   plugins: [
     dts({
-      outDir: "dist/types",
+      outDir: "dist",
       rollupTypes: true,
       tsconfigPath: resolve(__dirname, "../tsconfig.build.json"),
     }),
@@ -57,10 +42,7 @@ export default defineConfig({
       entry: resolve(process.cwd(), "src/index.ts"),
     },
     rollupOptions: {
-      // TODO: align with AppShell's ESM-only approach
-      output: pkg.name.includes("/app-shell")
-        ? [esmOutput]
-        : [esmOutput, cjsOutput],
+      output: [esmOutput],
       external,
     },
   },

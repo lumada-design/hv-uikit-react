@@ -8,12 +8,13 @@ import {
   Connection,
   Edge,
   EdgeChange,
+  IsValidConnection,
   MarkerType,
   Node,
   NodeChange,
   ReactFlow,
   ReactFlowProps,
-} from "reactflow";
+} from "@xyflow/react";
 import { uid } from "uid";
 import { ExtractNames, useUniqueId } from "@hitachivantara/uikit-react-core";
 
@@ -34,7 +35,7 @@ export type HvFlowClasses = ExtractNames<typeof useClasses>;
 
 export interface HvDroppableFlowProps<
   NodeType extends string | undefined = string | undefined,
-  NodeData = any,
+  NodeData extends Record<string, any> = Record<string, any>,
 > extends Omit<ReactFlowProps, "nodes" | "edges" | "nodeTypes"> {
   /** Flow content: background, controls, and minimap. */
   children?: React.ReactNode;
@@ -69,7 +70,7 @@ export const getNode = (nodes: Node[], nodeId: string) => {
 const validateEdge = (
   nodes: Node[],
   edges: Edge[],
-  connection: Connection,
+  connection: Connection | Edge,
   nodeMetaRegistry: HvFlowNodeMetaRegistry,
 ) => {
   const {
@@ -270,8 +271,9 @@ export const HvDroppableFlow = ({
 
   const { registry } = useNodeMetaRegistry();
 
-  const isValidConnection: ReactFlowProps["isValidConnection"] = (connection) =>
-    validateEdge(nodes, edges, connection, registry);
+  const isValidConnection: IsValidConnection = (
+    connection: Edge | Connection,
+  ) => validateEdge(nodes, edges, connection, registry);
 
   const defaultEdgeOptions = {
     markerEnd: {

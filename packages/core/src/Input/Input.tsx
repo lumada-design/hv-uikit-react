@@ -180,8 +180,6 @@ export interface HvInputProps<
 const DEFAULT_LABELS = {
   /** The label of the clear button. */
   clearButtonLabel: "Clear the text",
-  /** The label of the reveal password button. @deprecated unused */
-  revealPasswordButtonLabel: "Reveal password",
   /** The tooltip of the reveal password button when the password is hidden. */
   revealPasswordButtonClickToShowTooltip: "Click to show password.",
   /** The tooltip of the reveal password button when the password is revealed. */
@@ -259,7 +257,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const [description, infoMessage] =
-    activeTheme?.name === "pentahoPlus"
+    activeTheme?.name === "pentaho"
       ? [infoMessageProp, descriptionProp]
       : [descriptionProp, infoMessageProp];
 
@@ -285,14 +283,7 @@ export const HvInput = fixedForwardRef(function HvInput<
   // dependencies must be more explicit so we set
   const errorMessages = useMemo<HvValidationMessages>(
     () => ({ ...DEFAULT_ERROR_MESSAGES, ...validationMessages }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [
-      validationMessages?.error,
-      validationMessages?.requiredError,
-      validationMessages?.minCharError,
-      validationMessages?.maxCharError,
-      validationMessages?.typeMismatchError,
-    ],
+    [validationMessages],
   );
 
   // Validates the input, sets the status and the statusMessage accordingly (if uncontrolled)
@@ -782,7 +773,7 @@ export const HvInput = fixedForwardRef(function HvInput<
             root: classes.suggestionsContainer,
             list: classes.suggestionList,
           }}
-          expanded={hasSuggestions}
+          open={hasSuggestions}
           anchorEl={inputRef.current?.parentElement}
           onClose={suggestionClearHandler}
           onKeyDown={onSuggestionKeyDown}

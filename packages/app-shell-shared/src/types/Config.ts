@@ -1,9 +1,13 @@
-import type { HvContainerProps } from "@hitachivantara/uikit-react-core";
+import type {
+  HvBaseTheme,
+  HvContainerProps,
+  HvThemeColorMode,
+} from "@hitachivantara/uikit-react-core";
 
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
 
 export type HvAppShellLogo = {
-  name?: "LUMADA" | "HITACHI" | "PENTAHO+" | "PENTAHO";
+  name?: "LUMADA" | "HITACHI" | "PENTAHO";
   description?: string;
 };
 
@@ -61,9 +65,8 @@ export type HvAppShellConfig = {
 };
 
 export type HvAppShellThemingConfig = {
-  themes?: string[];
-  theme?: string;
-  colorMode?: string;
+  theme?: HvBaseTheme | (string & {});
+  colorMode?: HvThemeColorMode;
 };
 
 export type HvAppShellAppSwitcherConfig = {

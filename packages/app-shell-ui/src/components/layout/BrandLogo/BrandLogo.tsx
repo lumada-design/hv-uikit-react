@@ -30,7 +30,7 @@ const BrandLogo = ({ logo }: HvBrandLogoProps) => {
   if (logo.name === "LUMADA") {
     return <Lumada description={description} />;
   }
-  if (logo.name === "PENTAHO" || logo.name === "PENTAHO+") {
+  if (logo.name === "PENTAHO") {
     return <Pentaho description={description} />;
   }
   return <Hitachi description={description} />;

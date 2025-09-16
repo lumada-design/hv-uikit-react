@@ -24,8 +24,8 @@ import {
 import { LayoutConfig, useLayoutsContext } from "./LayoutsContext";
 import { buildLayout } from "./utils";
 
-interface DashboardData {
-  config: LayoutConfig;
+export interface DashboardData {
+  config?: LayoutConfig;
 }
 
 const INSIGHTS_INPUT_ID = "insights";
@@ -75,7 +75,7 @@ export const Dashboard: HvFlowNodeFC<DashboardData> = (props) => {
     }
 
     return ins;
-  }, [data.config.items]);
+  }, [data.config?.items]);
 
   const updateLayout = useCallback(
     (cfg?: LayoutConfig) => {

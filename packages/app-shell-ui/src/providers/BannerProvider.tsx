@@ -39,7 +39,7 @@ export const BannerProvider = ({ children }: BannerProviderProps) => {
   const { verticalNavigationWidth, setBannerMaxHeight } = useLayoutContext();
   const [banners, setBanners] = useState<Banner[]>([]);
 
-  const isPentahoTheme = activeTheme?.name === "pentahoPlus";
+  const isPentahoTheme = activeTheme?.name === "pentaho";
 
   const show = (notification: HvAppShellEventNotification) => {
     const id = uid();
@@ -136,7 +136,7 @@ export const BannerProvider = ({ children }: BannerProviderProps) => {
           label={banner.message}
           showIcon
           actions={banner.actions}
-          actionsCallback={banner.actionsCallback}
+          onAction={banner.onAction}
           bannerContentProps={{
             actionProps: { "aria-label": t("close") },
           }}
