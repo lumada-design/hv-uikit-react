@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
-import { ReactFlowInstance } from "reactflow";
+import { useCallback, useMemo, useState } from "react";
+import { applyNodeChanges, ReactFlowInstance } from "reactflow";
 import {
   HvButton,
   HvDialog,
   HvDialogContent,
   HvDialogTitle,
+  HvIconButton,
   HvInlineEditor,
   HvOverflowTooltip,
   HvTypography,
@@ -15,6 +16,7 @@ import {
   DataSource,
   DropUpXS,
   Fullscreen,
+  Report,
   Table,
 } from "@hitachivantara/uikit-react-icons";
 import {
@@ -23,6 +25,8 @@ import {
   HvFlowControls,
   HvFlowEmpty,
   HvFlowProps,
+  StickyNode,
+  StickyNodeData,
 } from "@hitachivantara/uikit-react-lab";
 import {
   HvCanvasBottomPanel,
@@ -43,6 +47,7 @@ import { flowStatuses } from "./utils";
 
 const nodeTypes = {
   node: Node,
+  sticky: StickyNode,
 };
 const edgeTypes = {
   status: StatusEdge,
@@ -80,8 +85,10 @@ const Page = () => {
   const [sidePanelTab, setSidePanelTab] = useState(sidePanelTabs[0].id);
   const [minimize, setMinimize] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
+  const [nodesHidden, setNodesHidden] = useState(false);
   const [flowInstance, setFlowInstance] =
-    useState<ReactFlowInstance<NodeData>>();
+    useState<ReactFlowInstance<NodeData | StickyNodeData>>();
+  const [nodes, setNodes] = useState(initialNodes);
 
   const { selectedTable, openedTables, setOpenedTables, setSelectedTable } =
     useCanvasContext();
@@ -142,7 +149,10 @@ const Page = () => {
   const handleExecute = () => {
     flowInstance?.setNodes((nodes) =>
       nodes.map((node) => {
+        if (node.type === "sticky") return node;
+
         const random = Math.floor(Math.random() * flowStatuses.length);
+
         return {
           ...node,
           data: {
@@ -165,6 +175,43 @@ const Page = () => {
         };
       }),
     );
+  };
+
+  const handleAddSticky = () => {
+    const id = Date.now().toString();
+    const newNode = {
+      id,
+      type: "sticky",
+      position: {
+        x: Math.random() * 250 + 350,
+        y: Math.random() * 250 + 200,
+      },
+      style: {
+        width: 150,
+        height: 125,
+      },
+      data: {},
+    };
+    flowInstance?.addNodes(newNode);
+  };
+
+  const handleHideNotes = () => {
+    setNodesHidden(!nodesHidden);
+    flowInstance?.setNodes((nds) => {
+      if (!nds.some((node) => node.type === "sticky")) return nds;
+
+      return nds.map((node) =>
+        node.type === "sticky"
+          ? {
+              ...node,
+              data: {
+                ...node.data,
+                visible: !((node.data as StickyNodeData)?.visible ?? true),
+              },
+            }
+          : node,
+      );
+    });
   };
 
   const bottomPanelOpen = useMemo(
@@ -197,14 +244,19 @@ const Page = () => {
     },
   ];
 
+  const onNodesChange = useCallback((changes: any) => {
+    return setNodes((nds) => applyNodeChanges(changes, nds));
+  }, []);
+
   return (
     <div className={classes.root}>
       <HvCanvasProvider>
         <HvFlow
           className={classes.flow}
-          nodes={initialNodes}
+          nodes={nodes}
           edges={initialEdges}
           nodeTypes={nodeTypes}
+          onNodesChange={onNodesChange}
           edgeTypes={edgeTypes}
           onInit={setFlowInstance}
           /** Flow sidebar passed as prop to access the flow's Dnd context inside CanvasSidePanel */
@@ -239,14 +291,28 @@ const Page = () => {
             icon={null}
           />
           <HvFlowBackground />
-          <HvFlowControls />
+          <HvFlowControls>
+            <HvIconButton
+              variant="secondarySubtle"
+              onClick={handleHideNotes}
+              aria-label={nodesHidden ? "Show notes" : "Hide notes"}
+              title={nodesHidden ? "Show notes" : "Hide notes"}
+            >
+              <Report />
+            </HvIconButton>
+          </HvFlowControls>
         </HvFlow>
         <HvCanvasToolbar
           title={<HvInlineEditor defaultValue="My Canvas" variant="title4" />}
         >
-          <HvButton variant="primary" onClick={handleExecute}>
-            Execute
-          </HvButton>
+          <div className="flex gap-sm">
+            <HvButton variant="secondarySubtle" onClick={handleAddSticky}>
+              Add note
+            </HvButton>
+            <HvButton variant="primary" onClick={handleExecute}>
+              Execute
+            </HvButton>
+          </div>
         </HvCanvasToolbar>
         {bottomTabs.length > 0 && bottomPanelOpen && (
           <HvCanvasBottomPanel
