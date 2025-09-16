@@ -27,7 +27,15 @@ You can add actions to the section header by using the `actions` prop which can 
 <HvSection
   actions={<HvButton variant="primarySubtle">Explore Insights</HvButton>}
   title={
-    <HvTypography variant="title4">Unlock the Power of Your Data</HvTypography>
+    <div className="flex gap-xs items-center">
+      <HvStatusIcon
+        variant="default"
+        customIcon={<div className="i-ph-tree-structure" />}
+      />
+      <HvTypography variant="title4">
+        Unlock the Power of Your Data
+      </HvTypography>
+    </div>
   }
 >
   <HvTypography>
