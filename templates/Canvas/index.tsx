@@ -295,8 +295,8 @@ const Page = () => {
             <HvIconButton
               variant="secondarySubtle"
               onClick={handleHideNotes}
-              aria-label={nodesHidde ? "Show notes" : "Hide notes"}
-              title={nodesHidde ? "Show notes" : "Hide notes"}
+              aria-label={nodesHidden ? "Show notes" : "Hide notes"}
+              title={nodesHidden ? "Show notes" : "Hide notes"}
             >
               <Report />
             </HvIconButton>
