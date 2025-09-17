@@ -12,8 +12,8 @@ import {
 
 import { ServiceDefinitions } from "../../services/serviceDefinition";
 import {
-  BasicNotification,
   MessageService,
+  NotificationComponentProps,
   SimpleDataService,
   UseCreateNewContentAction,
 } from "../../services/types";
@@ -30,11 +30,6 @@ const InstanceServiceDemo: FC = () => {
   if (error) {
     const errorMessage = `Failed to load instance type service: ${ServiceDefinitions.SimpleDataService.id}`;
     return <HvTypography>{errorMessage}</HvTypography>;
-  }
-
-  if (!service) {
-    const warnMessage = `No instance service available: ${ServiceDefinitions.SimpleDataService.id}`;
-    return <HvTypography>{warnMessage}</HvTypography>;
   }
 
   return (
@@ -188,12 +183,20 @@ const InstanceBundleServiceDemo: FC = () => {
   return <InstanceBundleServiceDemoInner actionHooks={actionHooks} />;
 };
 
+// The Notification component contract defines 'message' as mandatory prop. However, that is the contract of the service
+// that providers should comply with and assuming that all providers are compliant, we need to use the Partial<>
+// utility type instead because any explicit passed prop overrides the ones from configuration.
+// This is required otherwise Typescript's type checker would complain about missing props if using the contract type: BasicNotification.
+type NotificationComponent = FC<Partial<NotificationComponentProps>>;
+
 const ComponentServiceDemo: FC = () => {
   const {
     service: Notification,
     isPending,
     error,
-  } = useService<BasicNotification>(ServiceDefinitions.BasicNotification.id);
+  } = useService<NotificationComponent>(
+    ServiceDefinitions.BasicNotification.id,
+  );
 
   if (isPending) {
     return <HvLoading>Loading component type services...</HvLoading>;
@@ -213,7 +216,6 @@ const ComponentServiceDemo: FC = () => {
         <HvTypography style={{ marginBottom: "16px" }}>
           This demonstrates a component service that renders React components.
         </HvTypography>
-
         <Notification />
       </HvCardContent>
     </HvCard>
