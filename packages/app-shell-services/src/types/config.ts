@@ -31,10 +31,6 @@ export type BundleConfig = Record<string, unknown>;
 
 export type InstanceValueOrBundle = Value | Bundle;
 
-export type FactoryOrComponentValueOrBundle<TBundleConfig = BundleConfig> =
-  | Value
-  | (Bundle & { config?: TBundleConfig });
-
 export type InstanceServiceConfig = ServiceConfigBase & {
   instance: InstanceValueOrBundle;
 };
@@ -60,6 +56,10 @@ export type FactoryServiceConfig = ServiceConfigBase & {
   factory: FactoryValueOrBundle;
 };
 
+export type ComponentValueOrBundle<TBundleConfig = BundleConfig> =
+  | Value
+  | (Bundle & { config?: TBundleConfig });
+
 export type ComponentServiceConfig = ServiceConfigBase & {
-  component: FactoryOrComponentValueOrBundle;
+  component: ComponentValueOrBundle;
 };

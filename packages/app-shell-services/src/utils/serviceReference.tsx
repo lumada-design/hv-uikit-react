@@ -50,40 +50,60 @@ function validateImportedModule<TService>(
   );
 }
 
+/**
+ * Generic helper to pick between a direct value and a bundle definition, enforcing that
+ * value takes precedence when both are (incorrectly) present.
+ */
+function selectValueOrBundle(
+  provider: any,
+  serviceId: ServiceId,
+  kind: "instance" | "factory" | "component",
+):
+  | { mode: "value"; value: unknown }
+  | { mode: "bundle"; bundle: string; config?: BundleConfig } {
+  const hasValue = "value" in provider && provider.value !== undefined;
+  const hasBundle = "bundle" in provider && typeof provider.bundle === "string";
+
+  if (hasValue) {
+    if (hasBundle) {
+      console.warn(
+        `${kind} service config for ${serviceId} contains both 'value' and 'bundle'. 'value' takes precedence and 'bundle' will be ignored.`,
+      );
+    }
+    return { mode: "value", value: provider.value };
+  }
+
+  if (hasBundle) {
+    return { mode: "bundle", bundle: provider.bundle, config: provider.config };
+  }
+
+  throw new Error(`Invalid ${kind} service config for ${serviceId}`);
+}
+
 function createInstanceReference<TService>(
   serviceId: ServiceId,
   config: InstanceServiceConfig,
 ): ServiceReference<TService> {
-  const instanceConfig = config.instance;
+  const selection = selectValueOrBundle(
+    config.instance as any,
+    serviceId,
+    "instance",
+  );
 
-  if ("value" in instanceConfig) {
-    const serviceInstance = instanceConfig.value as TService;
-    const serviceLoader: ServiceLoader<TService> = () =>
-      Promise.resolve(serviceInstance);
-    return createServiceReferenceBase<TService>(
+  const serviceLoader: ServiceLoader<TService> = async () => {
+    if (selection.mode === "value") {
+      return selection.value as TService;
+    }
+
+    const imported = await import(/* @vite-ignore */ selection.bundle);
+    return validateImportedModule<TService>(
+      imported,
       serviceId,
-      config,
-      serviceLoader,
+      selection.bundle,
     );
-  }
+  };
 
-  if ("bundle" in instanceConfig) {
-    const serviceLoader: ServiceLoader<TService> = async () => {
-      const imported = await import(/* @vite-ignore */ instanceConfig.bundle);
-      return validateImportedModule<TService>(
-        imported,
-        serviceId,
-        instanceConfig.bundle,
-      );
-    };
-    return createServiceReferenceBase<TService>(
-      serviceId,
-      config,
-      serviceLoader,
-    );
-  }
-
-  throw new Error(`Invalid instance service config for ${serviceId}`);
+  return createServiceReferenceBase<TService>(serviceId, config, serviceLoader);
 }
 
 function createFactoryReference<TService>(
@@ -93,23 +113,27 @@ function createFactoryReference<TService>(
   let loaded = false;
   let serviceInstance: TService | undefined;
 
-  const factoryConfig = config.factory;
+  const selection = selectValueOrBundle(
+    config.factory as any,
+    serviceId,
+    "factory",
+  );
 
   const serviceLoader: ServiceLoader<TService> = async () => {
     if (!loaded) {
       let factoryExport: unknown;
+      let providedConfig: BundleConfig | undefined;
 
-      if ("value" in factoryConfig) {
-        factoryExport = factoryConfig.value;
-      } else if ("bundle" in factoryConfig) {
-        const imported = await import(/* @vite-ignore */ factoryConfig.bundle);
+      if (selection.mode === "value") {
+        factoryExport = selection.value;
+      } else {
+        const imported = await import(/* @vite-ignore */ selection.bundle);
         factoryExport = validateImportedModule<unknown>(
           imported,
           serviceId,
-          factoryConfig.bundle,
+          selection.bundle,
         );
-      } else {
-        throw new Error(`Invalid factory service config for ${serviceId}`);
+        providedConfig = selection.config;
       }
 
       if (typeof factoryExport !== "function") {
@@ -119,10 +143,7 @@ function createFactoryReference<TService>(
       }
 
       const factoryFn = factoryExport as FactoryServiceFunction<TService>;
-      const providedConfig =
-        "bundle" in factoryConfig ? factoryConfig.config : undefined;
       serviceInstance = factoryFn(providedConfig);
-
       loaded = true;
     }
 
@@ -139,27 +160,27 @@ function createComponentReference<TService extends FC>(
   let loaded = false;
   let serviceInstance: TService | undefined;
 
-  const componentServiceConfig = config.component;
+  const selection = selectValueOrBundle(
+    config.component as any,
+    serviceId,
+    "component",
+  );
 
   const serviceLoader: ServiceLoader<TService> = async () => {
     if (!loaded) {
       let componentExport: unknown;
       let providedConfig: BundleConfig | undefined;
 
-      if ("value" in componentServiceConfig) {
-        componentExport = componentServiceConfig.value;
-      } else if ("bundle" in componentServiceConfig) {
-        const imported = await import(
-          /* @vite-ignore */ componentServiceConfig.bundle
-        );
+      if (selection.mode === "value") {
+        componentExport = selection.value;
+      } else {
+        const imported = await import(/* @vite-ignore */ selection.bundle);
         componentExport = validateImportedModule<unknown>(
           imported,
           serviceId,
-          componentServiceConfig.bundle,
+          selection.bundle,
         );
-        providedConfig = componentServiceConfig.config;
-      } else {
-        throw new Error(`Invalid component service config for ${serviceId}`);
+        providedConfig = selection.config;
       }
 
       if (typeof componentExport !== "function") {
