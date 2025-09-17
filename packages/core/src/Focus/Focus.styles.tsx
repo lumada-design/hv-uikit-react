@@ -21,5 +21,19 @@ export const { staticClasses, useClasses } = createClasses("HvFocus", {
       ...outlineStyles,
     },
   },
+  focusedVisible: {
+    "&:focus-visible": {
+      ...outlineStyles,
+      "@media (-webkit-min-device-pixel-ratio:0)": {
+        ...outlineStyles,
+      },
+    },
+    "&:focus-within:has(:focus-visible)": {
+      ...outlineStyles,
+      "@media (-webkit-min-device-pixel-ratio:0)": {
+        ...outlineStyles,
+      },
+    },
+  },
   focus: {},
 });

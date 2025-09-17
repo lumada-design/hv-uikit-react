@@ -150,10 +150,16 @@ export const HvFocus = ({
   };
 
   const addFocusClass = (evt: any) => {
-    // evt.currentTarget.classList.add(classes.focused);
-    classes.focused
-      .split(" ")
-      .forEach((c) => evt.currentTarget.classList.add(c));
+    if (focusOnClick) {
+      classes.focused
+        .split(" ")
+        .forEach((c) => evt.currentTarget.classList.add(c));
+    } else {
+      classes.focusedVisible
+        .split(" ")
+        .forEach((c) => evt.currentTarget.classList.add(c));
+    }
+
     // add global class HvIsFocused as a marker
     // not to be styled directly, only as helper in specific css queries
     evt.currentTarget.classList.add("HvIsFocused");
@@ -164,8 +170,10 @@ export const HvFocus = ({
 
   const removeFocusClass = () => {
     getFocuses().forEach((element) => {
-      // element.classList.remove(classes.focused);
       classes.focused.split(" ").forEach((c) => element.classList.remove(c));
+      classes.focusedVisible
+        .split(" ")
+        .forEach((c) => element.classList.remove(c));
       // remove the global class HvIsFocused
       element.classList.remove("HvIsFocused");
       classes?.focus?.split(" ").forEach((c) => element.classList.remove(c));
@@ -191,12 +199,6 @@ export const HvFocus = ({
 
     setFocusTo(evt.currentTarget);
     setTabIndex(evt.currentTarget, 0);
-    // remove focus outline unless explicitly enabled
-    if (!focusOnClick) {
-      // TODO this piece of code works only because onMouseDown is happening after the focus event
-      // There is nothing in here that guarantees the order of these events, so it may present a problem in the future
-      removeFocusClass();
-    }
   };
 
   const focusAndUpdateIndex = (
