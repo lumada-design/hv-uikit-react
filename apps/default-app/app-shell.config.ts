@@ -312,7 +312,7 @@ export default {
     ],
 
     // Component Service (bundle) - Basic notification component
-    "default-app/services:BasicNotification": [
+    "default-app/services:NotificationComponentProps": [
       {
         component: {
           bundle: "default-app/services/components/NotificationComponent.js",

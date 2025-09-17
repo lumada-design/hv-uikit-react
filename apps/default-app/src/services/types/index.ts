@@ -8,7 +8,4 @@ export type {
   MessageServiceConfig,
   CreateMessageService,
 } from "./MessageService";
-export type {
-  BasicNotification,
-  NotificationComponentProps,
-} from "./BasicNotification";
+export type { NotificationComponentProps } from "./BasicNotification";

@@ -38,10 +38,9 @@ export const ServiceDefinitions = {
    * Basic notification React component service.
    * Component service type - provides React components with props.
    *
-   * Component type: {@link BasicNotification}
    * Props type: {@link NotificationComponentProps}
    */
-  BasicNotification: {
-    id: "default-app/services:BasicNotification",
+  NotificationComponentProps: {
+    id: "default-app/services:NotificationComponentProps",
   },
 };

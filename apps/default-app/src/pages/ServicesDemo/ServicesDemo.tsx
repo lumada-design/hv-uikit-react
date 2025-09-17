@@ -12,8 +12,8 @@ import {
 
 import { ServiceDefinitions } from "../../services/serviceDefinition";
 import {
-  BasicNotification,
   MessageService,
+  NotificationComponentProps,
   SimpleDataService,
   UseCreateNewContentAction,
 } from "../../services/types";
@@ -30,11 +30,6 @@ const InstanceServiceDemo: FC = () => {
   if (error) {
     const errorMessage = `Failed to load instance type service: ${ServiceDefinitions.SimpleDataService.id}`;
     return <HvTypography>{errorMessage}</HvTypography>;
-  }
-
-  if (!service) {
-    const warnMessage = `No instance service available: ${ServiceDefinitions.SimpleDataService.id}`;
-    return <HvTypography>{warnMessage}</HvTypography>;
   }
 
   return (
@@ -193,17 +188,22 @@ const ComponentServiceDemo: FC = () => {
     service: Notification,
     isPending,
     error,
-  } = useService<BasicNotification>(ServiceDefinitions.BasicNotification.id);
+  } = useService<FC<Partial<NotificationComponentProps>>>(
+    ServiceDefinitions.NotificationComponentProps.id,
+  );
 
   if (isPending) {
     return <HvLoading>Loading component type services...</HvLoading>;
   }
 
   if (error) {
-    const errorMessage = `Failed to load component type service: ${ServiceDefinitions.BasicNotification.id}`;
+    const errorMessage = `Failed to load component type service: ${ServiceDefinitions.NotificationComponentProps.id}`;
     return <HvTypography>{errorMessage}</HvTypography>;
   }
 
+  // Notification component has 'message' has mandatory props, however, that is the contract of the service
+  // that providers should comply with. Assuming that all providers are compliant, the type here is
+  // Partial<NotificationComponentProps> so that Typescript's type checker does not complain about missing props.
   return (
     <HvCard>
       <HvCardContent>
@@ -213,7 +213,6 @@ const ComponentServiceDemo: FC = () => {
         <HvTypography style={{ marginBottom: "16px" }}>
           This demonstrates a component service that renders React components.
         </HvTypography>
-
         <Notification />
       </HvCardContent>
     </HvCard>

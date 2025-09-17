@@ -12,7 +12,7 @@ export type UseAsyncBaseResult<
 > = {
   isPending: boolean;
   error: TError | null;
-} & PropertyWithName<TDataProp, TDataPending>;
+} & PropertyWithName<TDataProp, TData | TDataPending | undefined>;
 
 export type UseAsyncResult<
   TData,
@@ -32,9 +32,7 @@ export type UseAsyncPendingResult<
 > = UseAsyncBaseResult<TData, TError, TDataProp> & {
   isPending: true;
   error: null;
-} & {
-  [P in TDataProp]: TDataPending;
-};
+} & PropertyWithName<TDataProp, TDataPending>;
 
 export type UseAsyncErrorResult<
   TData,
@@ -44,9 +42,7 @@ export type UseAsyncErrorResult<
 > = UseAsyncBaseResult<TData, TError, TDataProp, TDataPending> & {
   isPending: false;
   error: TError;
-} & {
-  [P in TDataProp]: undefined;
-};
+} & PropertyWithName<TDataProp, undefined>;
 
 export type UseAsyncSuccessResult<
   TData,
@@ -56,6 +52,4 @@ export type UseAsyncSuccessResult<
 > = UseAsyncBaseResult<TData, TError, TDataProp, TDataPending> & {
   isPending: false;
   error: null;
-} & {
-  [P in TDataProp]: TData;
-};
+} & PropertyWithName<TDataProp, TData>;
