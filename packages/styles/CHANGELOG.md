@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.51.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.50.2...@hitachivantara/uikit-styles@5.51.0) (2025-09-17)
+
+### Features
+
+- **StatusIcon:** add `weight` prop ([#4907](https://github.com/lumada-design/hv-uikit-react/issues/4907)) ([901ef07](https://github.com/lumada-design/hv-uikit-react/commit/901ef0785378286421af1addede90d54ddacf64c))
+
 ## [5.50.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.50.1...@hitachivantara/uikit-styles@5.50.2) (2025-08-15)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-shared",
-  "version": "1.6.3",
+  "version": "1.7.0",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -22,14 +22,14 @@
     "prepublishOnly": "npm run build && npx clean-publish"
   },
   "dependencies": {
-    "@hitachivantara/app-shell-services": "^1.0.0"
+    "@hitachivantara/app-shell-services": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-router-dom": "^6.9.0"
   },
   "optionalDependencies": {
-    "@hitachivantara/uikit-react-core": "^5.103.0"
+    "@hitachivantara/uikit-react-core": "^5.104.0"
   },
   "files": [
     "dist"

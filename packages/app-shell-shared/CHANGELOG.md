@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.6.3...@hitachivantara/app-shell-shared@1.7.0) (2025-09-17)
+
+### Features
+
+- **AppShell:** add Services package to the App Shell suite [PPUC-187] ([#4895](https://github.com/lumada-design/hv-uikit-react/issues/4895)) ([80a9f4e](https://github.com/lumada-design/hv-uikit-react/commit/80a9f4e5c68be5dd4534eb3926de44f50e569d08))
+
 ## [1.6.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.6.2...@hitachivantara/app-shell-shared@1.6.3) (2025-09-12)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-shared

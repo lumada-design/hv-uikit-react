@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.104.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.103.0...@hitachivantara/uikit-react-core@5.104.0) (2025-09-17)
+
+### Features
+
+- **DropDownMenu:** add support for item separators ([#4915](https://github.com/lumada-design/hv-uikit-react/issues/4915)) ([4db30c6](https://github.com/lumada-design/hv-uikit-react/commit/4db30c60fac2077d4eebf6f52dd00fe163193197))
+- **Section:** update to latest specs ([#4906](https://github.com/lumada-design/hv-uikit-react/issues/4906)) ([3992ff6](https://github.com/lumada-design/hv-uikit-react/commit/3992ff6d9fbaaf36585d3473a1be0e4da8c806fe))
+- **StatusIcon:** add `weight` prop ([#4907](https://github.com/lumada-design/hv-uikit-react/issues/4907)) ([901ef07](https://github.com/lumada-design/hv-uikit-react/commit/901ef0785378286421af1addede90d54ddacf64c))
+
 # [5.103.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.102.1...@hitachivantara/uikit-react-core@5.103.0) (2025-09-12)
 
 ### Bug Fixes
