@@ -47,6 +47,7 @@ export interface HvListProps
    * - icon: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
+   * - separator: Whether to show a separator after this list item.
    */
   values: HvListValue[];
   /** If true renders a multi select list. */
@@ -274,6 +275,10 @@ export const HvList = (props: HvListProps) => {
     );
   };
 
+  const renderSeparator = (index: number) => (
+    <hr key={`separator-${index}`} className={classes.separator} />
+  );
+
   const filteredList = list.filter((it) => !it.isHidden);
   const anySelected = list
     .map((item) => item.selected && !item.disabled)
@@ -345,6 +350,21 @@ export const HvList = (props: HvListProps) => {
     ariaMultiSelectable,
   ]);
 
+  const renderListWithSeparators = () => {
+    const items: React.ReactNode[] = [];
+
+    filteredList.forEach((item, i) => {
+      items.push(renderListItem(item, i));
+
+      // Add separator after item if it has separator property, and it's not the last item
+      if (item.separator && i < filteredList.length - 1) {
+        items.push(renderSeparator(i));
+      }
+    });
+
+    return items;
+  };
+
   // Render nothing if there are no items
   if (filteredList.length === 0) return null;
 
@@ -363,7 +383,7 @@ export const HvList = (props: HvListProps) => {
           aria-multiselectable={ariaMultiSelectable}
           {...others}
         >
-          {filteredList.map((item, i) => renderListItem(item, i))}
+          {renderListWithSeparators()}
         </HvListContainer>
       ) : (
         <FixedSizeList

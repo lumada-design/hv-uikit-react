@@ -11,7 +11,11 @@ export default {
 
 export const Main: StoryObj<HvDropDownMenuProps> = {
   args: {
-    dataList: [{ label: "Item 1" }, { label: "Item 2" }, { label: "Item 3" }],
+    dataList: [
+      { label: "Item 1" },
+      { label: "Item 2", separator: true },
+      { label: "Item 3" },
+    ],
     placement: "left",
     keepOpened: false,
     disabled: false,

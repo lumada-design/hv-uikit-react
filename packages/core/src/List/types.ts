@@ -15,4 +15,6 @@ export interface HvListValue extends Record<string, any> {
   path?: string;
   params?: object;
   tabIndex?: number;
+  /** Whether to show a separator after this list item */
+  separator?: boolean;
 }
