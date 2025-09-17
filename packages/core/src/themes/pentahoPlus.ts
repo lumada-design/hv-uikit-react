@@ -734,7 +734,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             overflow: "hidden",
             height: "fit-content",
             "--rt": theme.radii.large,
-            "& .HvCard-semanticContainer": {
+            "& .HvCard-semanticBar": {
               display: "none",
             },
           },

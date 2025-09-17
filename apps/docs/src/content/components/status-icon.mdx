@@ -17,8 +17,20 @@ import { Header } from "../../components/Header";
     },
     size: { defaultValue: "sm", type: "slider" },
     type: { defaultValue: "full" },
+    weight: { defaultValue: "regular", values: ["regular", "duotone", "fill"] },
   }}
 />
+
+## Container
+
+You can use the prop `type` to choose whether or not the icon will have a surrounding container.
+
+```tsx live
+<div className="flex items-center gap-xs">
+  <HvStatusIcon variant="success" type="full" />
+  <HvStatusIcon variant="success" type="simple" />
+</div>
+```
 
 ## Custom icon
 
