@@ -1,8 +1,15 @@
 import {
   dropDownMenuClasses as classes,
   HvDropDownMenu,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
-import { Open, Preview, Save } from "@hitachivantara/uikit-react-icons";
+import {
+  Delete,
+  Duplicate,
+  Open,
+  Save,
+  Share,
+} from "@hitachivantara/uikit-react-icons";
 
 import { Header } from "../../components/Header";
 
@@ -34,20 +41,40 @@ import { Header } from "../../components/Header";
 
 ### Customized items
 
-The items in the `dataList` prop can be can be customized, namely with an icon or custom content on the `label` prop. Each item can be individually disabled also.
+The items in the `dataList` prop can be customized with icons, custom content on the `label` prop, separators, and individual disabled states. Use the `separator` property to add visual separators between logical groups of actions.
 
 ```tsx live
-<HvDropDownMenu
-  dataList={[
-    { id: "save", label: "Save", icon: <Save /> },
-    { id: "export", label: "Export", icon: <Open />, disabled: true },
-    {
-      id: "preview",
-      label: <HvTypography variant="label">Preview</HvTypography>,
-      icon: <Preview />,
-    },
-  ]}
-/>
+import { theme } from "@hitachivantara/uikit-react-core";
+
+export default function Demo() {
+  return (
+    <HvDropDownMenu
+      dataList={[
+        { id: "save", label: "Save", icon: <Save /> },
+        {
+          id: "duplicate",
+          label: "Duplicate",
+          icon: <Duplicate />,
+          separator: true,
+        },
+        { id: "export", label: "Export", icon: <Open />, disabled: true },
+        { id: "share", label: "Share", icon: <Share />, separator: true },
+        {
+          id: "delete",
+          label: (
+            <HvTypography
+              variant="label"
+              style={{ color: theme.colors.negativeStrong }}
+            >
+              Delete
+            </HvTypography>
+          ),
+          icon: <Delete color={theme.colors.negativeStrong} />,
+        },
+      ]}
+    />
+  );
+}
 ```
 
 ### Controlled

@@ -25,13 +25,18 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
       marginBottom: 0,
     },
 
-    "&.HvIsFocused": {
+    "&.HvIsFocused:focus-visible": {
       ...outlineStyles,
       backgroundColor: theme.colors.bgPageSecondary,
       zIndex: 2,
     },
   },
-  focus: { backgroundColor: theme.colors.bgPageSecondary, zIndex: 2 },
+  focus: {
+    "&:focus-visible": {
+      backgroundColor: theme.colors.bgPageSecondary,
+      zIndex: 2,
+    },
+  },
   gutters: {
     padding: `0 ${theme.space.xs}`,
 

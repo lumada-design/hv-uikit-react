@@ -19,5 +19,7 @@ export const { staticClasses, useClasses } = createClasses("HvDropDownMenu", {
   menuListRoot: {
     padding: theme.space.sm,
   },
-  menuList: {},
+  menuList: {
+    overflowClipMargin: theme.space.sm,
+  },
 });
