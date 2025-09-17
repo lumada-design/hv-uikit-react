@@ -94,6 +94,14 @@ export default {
           label: "Nested Views",
           target: "/nested",
         },
+        {
+          label: "Services Demo",
+          target: "/services-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Settings",
+          },
+        },
       ],
     },
     {
@@ -124,6 +132,9 @@ export default {
   },
   header: {
     actions: [
+      {
+        bundle: "@self/services/headerActions/CreateNewContentDropDownMenu.js",
+      },
       {
         bundle: "@hv/user-notifications-client/index.js",
         config: {
@@ -246,10 +257,71 @@ export default {
         bundle: "@hv/sample-app/pages/Main.js",
         route: "/candy-route/*",
       },
+      // Services Demo Page
+      {
+        bundle: "@self/pages/ServicesDemo.js",
+        route: "/services-demo",
+      },
     ],
   },
   providers: [
     { bundle: "@self/providers/DefaultAppProvider.js" },
     { bundle: "@hv/sample-app/providers/CandyAppProvider.js" },
   ],
+  services: {
+    // Instance Service (bundle) - Basic hooks service consumed by ServicesDemo page and CreateNewContentDropDownMenu header action
+    "default-app/services:UseCreateNewContentAction": [
+      {
+        instance: {
+          bundle: "default-app/services/create/useCreateNewReportAction.js",
+        },
+        ranking: 100,
+      },
+      {
+        instance: {
+          bundle: "default-app/services/create/useCreateNewDashboardAction.js",
+        },
+      },
+    ],
+
+    // Instance Service (direct values) - Simple configuration data
+    "default-app/services:SimpleDataService": [
+      {
+        instance: {
+          value: {
+            appName: "Default App",
+            version: "1.0.0",
+            environment: "development",
+            debug: true,
+          },
+        },
+        ranking: 100,
+      },
+    ],
+
+    // Factory Service (bundle) - Message service
+    "default-app/services:MessageService": [
+      {
+        factory: {
+          bundle: "default-app/services/factories/createMessageService.js",
+          config: {
+            prefix: "App Message: ",
+          },
+        },
+      },
+    ],
+
+    // Component Service (bundle) - Basic notification component
+    "default-app/services:BasicNotification": [
+      {
+        component: {
+          bundle: "default-app/services/components/NotificationComponent.js",
+          config: {
+            message: "Service is active!",
+          },
+        },
+        ranking: 100,
+      },
+    ],
+  },
 } satisfies HvAppShellConfig;
