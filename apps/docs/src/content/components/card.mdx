@@ -14,36 +14,31 @@ import { Header } from "../../components/Header";
 />
 
 ```tsx live
-<HvCard
-  className="w-380px"
-  bgcolor="bgContainer"
-  statusColor="positive"
-  icon={<Leaf size="S" color="positive" />}
->
+<HvCard className="w-440px" bgcolor="bgContainer">
   <HvCardHeader
-    title={<HvTypography variant="title4">Schedule New Job</HvTypography>}
-    icon={<HvStatusIcon variant="default" customIcon={<Job />} />}
+    title={<HvTypography variant="title4">Card Title</HvTypography>}
+    icon={
+      <HvStatusIcon
+        variant="default"
+        customIcon={<div className="i-ph-tree-structure" />}
+      />
+    }
     subheader={
       <HvTypography variant="caption1">
-        Run data maintenance tasks on your schedule
+        Optional description or hint text
       </HvTypography>
     }
   />
-  <HvCardMedia
-    component="img"
-    alt="Schedule New Job"
-    height={120}
-    image="https://github.com/user-attachments/assets/3d17a64e-b5f3-4ea8-a66d-bc02a31b92e0"
-  />
+
   <HvCardContent>
     <HvTypography>
-      Set up a job to run automatically at your preferred time and frequency.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus,
+      odio sed scelerisque tempor, diam libero consectetur leo, ac tristique
+      lectus velit in nisl. Cras eu consectetur turpis, in imperdiet nulla.
     </HvTypography>
   </HvCardContent>
   <HvActionBar>
-    <HvButton variant="secondaryGhost">Configure Job</HvButton>
-    <div aria-hidden className="flex-1" />
-    <HvButton variant="secondarySubtle">Set Schedule</HvButton>
+    <HvButton variant="primarySubtle">Button</HvButton>
   </HvActionBar>
 </HvCard>
 ```
@@ -86,15 +81,62 @@ To add actions to a card, use the `HvActionBar` component.
         </HvTypography>
       }
     />
-    <HvActionBar className="flex-1">
-      <HvButton startIcon={<Code />} variant="primarySubtle">
+    <HvActionBar className="flex-1 gap-xs">
+      <HvButton startIcon={<Code />} variant="secondarySubtle">
         Github
       </HvButton>
-      <div aria-hidden className="flex-1" />
       <HvButton startIcon={<Doc />}>Get Started</HvButton>
     </HvActionBar>
   </HvCard>
 </>
+```
+
+### Status bar
+
+The `HvCard` component can have a status color on the top. Use the `statusColor` prop to set it with any [color](/docs/styling#color-prop).
+
+```tsx live
+<HvCard className="w-240px" bgcolor="bgContainer" statusColor="negative">
+  <HvCardHeader title={<HvTypography variant="title4">Error</HvTypography>} />
+  <HvCardContent>
+    <HvTypography>Something went wrong. Please try again later.</HvTypography>
+  </HvCardContent>
+</HvCard>
+```
+
+### Status Icon
+
+```tsx live
+<HvCard
+  className="w-440px"
+  bgcolor="bgContainer"
+  icon={<HvStatusIcon variant="success" weight="duotone" type="simple" />}
+>
+  <HvCardHeader
+    title={<HvTypography variant="title4">Card Title</HvTypography>}
+    icon={
+      <HvStatusIcon
+        variant="default"
+        customIcon={<div className="i-ph-tree-structure" />}
+      />
+    }
+    subheader={
+      <HvTypography variant="caption1">
+        Optional description or hint text
+      </HvTypography>
+    }
+  />
+  <HvCardContent>
+    <HvTypography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus,
+      odio sed scelerisque tempor, diam libero consectetur leo, ac tristique
+      lectus velit in nisl. Cras eu consectetur turpis, in imperdiet nulla.
+    </HvTypography>
+  </HvCardContent>
+  <HvActionBar>
+    <HvButton variant="primarySubtle">Button</HvButton>
+  </HvActionBar>
+</HvCard>
 ```
 
 ### Selectable
