@@ -40,6 +40,7 @@ import { HvSwitchProps } from "../Switch";
 import type { HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvTagsInputProps } from "../TagsInput";
+import { HvTypographyProps } from "../Typography";
 import type { HvCalloutProps } from "../utils/Callout";
 import type {
   HvVerticalNavigationActionProps,
@@ -894,5 +895,8 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvNumberInputProps>,
+    HvTypography: {
+      external: true,
+    } satisfies CSSClasses<HvTypographyProps>,
   },
 });

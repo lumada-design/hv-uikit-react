@@ -14,6 +14,13 @@ export const { useClasses, staticClasses } = createClasses("HvTypography", {
     color: theme.colors.primary,
     textDecoration: "underline",
   },
+  externalLinkIcon: {
+    " svg": {
+      margin: 0,
+      marginTop: -3,
+      fontSize: "inherit",
+    },
+  },
   noWrap: {
     overflow: "hidden",
     textOverflow: "ellipsis",

@@ -3,7 +3,9 @@ import {
   useTheme,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { getColor, HvColorAny } from "@hitachivantara/uikit-styles";
 
+import { HvIcon } from "../icons";
 import {
   fixedForwardRef,
   PolymorphicComponentRef,
@@ -65,6 +67,10 @@ export type HvTypographyProps<C extends React.ElementType = "p"> =
       variant?: HvTypographyVariants | HvTypographyLegacyVariants;
       /** If `true` the typography will display the look of a link. */
       link?: boolean;
+      /** If `true` the typography will display the look of an external link. */
+      external?: boolean;
+      /** The color of the typography. */
+      color?: HvColorAny;
       /** If `true` the typography will display the look of a disabled state. */
       disabled?: boolean;
       /**
@@ -96,9 +102,12 @@ export const HvTypography = fixedForwardRef(function HvTypography<
     classes: classesProp,
     variant: variantProp = "body",
     link = false,
+    external = false,
+    color,
     noWrap = false,
     paragraph = false,
     disabled = false,
+    children,
     ...others
   } = useDefaultProps("HvTypography", props);
   const { classes, css, cx } = useClasses(classesProp);
@@ -110,21 +119,38 @@ export const HvTypography = fixedForwardRef(function HvTypography<
     ComponentProp || (paragraph && "p") || HvTypographyMap[variant] || "span";
 
   return (
-    <Component
-      ref={ref}
-      className={cx(
-        css({ ...activeTheme?.typography[variant] }),
-        classes.root,
-        classes[variant],
-        {
-          [classes.isLink]: link,
-          [classes.noWrap]: noWrap,
-          [classes.disabled]: disabled,
-        },
-        className,
-      )}
-      disabled={disabled}
-      {...others}
-    />
+    <>
+      <Component
+        ref={ref}
+        className={cx(
+          css({ ...activeTheme?.typography[variant] }),
+          classes.root,
+          classes[variant],
+          {
+            [classes.isLink]: link,
+            [classes.noWrap]: noWrap,
+            [classes.disabled]: disabled,
+          },
+          className,
+        )}
+        disabled={disabled}
+        style={{
+          color: color && color !== "inherit" ? getColor(color) : undefined,
+        }}
+        {...(external && ComponentProp === "a"
+          ? {
+              target: "_blank",
+            }
+          : {})}
+        {...others}
+      >
+        {children}
+        {link && external && (
+          <span className={classes.externalLinkIcon}>
+            <HvIcon name="Open" />
+          </span>
+        )}
+      </Component>
+    </>
   );
 });
