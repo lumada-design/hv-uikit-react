@@ -43,7 +43,6 @@ export function Description({ meta }: { meta: ComponentMeta }) {
               className="flex items-center"
             >
               {label}
-              <div className="i-ph-arrow-square-out mb-xxs" />
             </HvTypography>
           </div>
         ))}
