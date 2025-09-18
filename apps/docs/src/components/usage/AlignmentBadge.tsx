@@ -1,4 +1,4 @@
-import { Info } from "@phosphor-icons/react";
+import { Info } from "@phosphor-icons/react/Info";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { alignmentData } from "./alignmentData";

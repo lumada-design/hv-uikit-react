@@ -41,6 +41,7 @@
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/serialize": "^1.1.2",
+    "@phosphor-icons/react": "^2.1.7",
     "@hitachivantara/uikit-react-shared": "^5.5.5",
     "@hitachivantara/uikit-react-utils": "^0.2.45",
     "@hitachivantara/uikit-styles": "^5.51.0",
