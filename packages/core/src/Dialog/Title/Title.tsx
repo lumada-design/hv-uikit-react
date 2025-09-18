@@ -23,7 +23,7 @@ export type HvDialogTitleVariant =
   | "default";
 
 export interface HvDialogTitleProps
-  extends Omit<MuiDialogTitleProps, "variant" | "classes"> {
+  extends Omit<MuiDialogTitleProps, "variant" | "classes" | "color"> {
   /** Variant of the dialog title. */
   variant?: HvDialogTitleVariant;
   /** Controls if the associated icon to the variant should be shown. */
