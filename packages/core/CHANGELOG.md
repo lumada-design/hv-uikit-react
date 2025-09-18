@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.104.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.104.0...@hitachivantara/uikit-react-core@5.104.1) (2025-09-18)
+
+### Bug Fixes
+
+- **StatusIcon:** fix imports of phosphor icons ([#4918](https://github.com/lumada-design/hv-uikit-react/issues/4918)) ([819a5ab](https://github.com/lumada-design/hv-uikit-react/commit/819a5ab7b5bfaa11e2e6653c438d81d007950a77))
+
 # [5.104.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.103.0...@hitachivantara/uikit-react-core@5.104.0) (2025-09-17)
 
 ### Features
