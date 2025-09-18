@@ -9,6 +9,7 @@ import dts from "vite-plugin-dts";
 const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// eslint-disable-next-line import/no-dynamic-require
 const pkg = require(resolve(process.cwd(), "package.json"));
 
 // dependencies that should not be bundled.
@@ -20,6 +21,7 @@ const external = [
 const esmOutput: OutputOptions = {
   format: "esm",
   preserveModules: true,
+  preserveModulesRoot: "src",
   dir: "dist/esm",
   // keep react-based packages as `.js` for backwards compatibility
   entryFileNames:
@@ -33,6 +35,7 @@ const esmOutput: OutputOptions = {
 const cjsOutput: OutputOptions = {
   format: "cjs",
   preserveModules: true,
+  preserveModulesRoot: "src",
   dir: "dist/cjs",
   entryFileNames: "[name].cjs",
   exports: "named",
