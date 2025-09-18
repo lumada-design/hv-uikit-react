@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { ArrowCounterClockwise, Check, Copy } from "@phosphor-icons/react";
+import { ArrowCounterClockwise } from "@phosphor-icons/react/ArrowCounterClockwise";
+import { Check } from "@phosphor-icons/react/Check";
+import { Copy } from "@phosphor-icons/react/Copy";
 import { HvButton, HvTooltip } from "@hitachivantara/uikit-react-core";
 
 type ExpandableControlsProps = {
