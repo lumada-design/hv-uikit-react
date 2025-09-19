@@ -12,6 +12,7 @@ import { Header } from "../../components/Header";
   controls={{
     label: { defaultValue: "This is a success message." },
     variant: { defaultValue: "success" },
+    type: { defaultValue: "regular" },
     showIcon: { defaultValue: true },
     open: { defaultValue: true },
   }}
@@ -19,6 +20,53 @@ import { Header } from "../../components/Header";
     style: { position: "relative", top: 0 },
   }}
 />
+
+### Banner types
+
+```tsx live
+<div className="flex flex-col gap-sm">
+  <HvBanner
+    open
+    offset={0}
+    title="Notification title"
+    label="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    variant="info"
+    showIcon
+    className="relative"
+    type="full"
+    actionsPosition="bottom-right"
+    actions={
+      <div className="flex gap-xs">
+        <HvButton variant="secondaryGhost">Read more</HvButton>
+        <HvButton
+          variant="secondarySubtle"
+          startIcon={<div className="i-ph-check" />}
+        >
+          Accept
+        </HvButton>
+      </div>
+    }
+  />
+  <HvBanner
+    open
+    offset={0}
+    label="This is a regular banner."
+    variant="info"
+    showIcon
+    className="relative"
+    type="regular"
+  />
+  <HvBanner
+    open
+    offset={0}
+    label="This is a micro banner."
+    variant="info"
+    showIcon
+    className="relative"
+    type="micro"
+  />
+</div>
+```
 
 ### Actions
 
@@ -35,6 +83,29 @@ You can add a set of actions to the banner by specifying the `actions` prop. The
     { id: "action_1", label: "Action 1", disabled: false },
     { id: "action_2", label: "Action 2", disabled: false },
   ]}
+  onAction={(event, action) => console.log("Clicked", action)}
+/>
+```
+
+When passing an array of actions, the `HvBanner` component will render them as buttons with a variant of `semantic`. Often times
+you might want to customize the actions, in which case you can pass your own buttons as children of the `actions` prop.
+
+```tsx live
+<HvBanner
+  open
+  offset={0}
+  variant="success"
+  label="This is a banner."
+  showIcon
+  className="relative"
+  actions={
+    <>
+      <HvButton variant="successGhost">Read more</HvButton>
+      <HvButton variant="positive" startIcon={<div className="i-ph-check" />}>
+        Accept
+      </HvButton>
+    </>
+  }
   onAction={(event, action) => console.log("Clicked", action)}
 />
 ```

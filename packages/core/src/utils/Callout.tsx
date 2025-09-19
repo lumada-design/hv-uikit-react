@@ -22,7 +22,6 @@ const { useClasses } = createClasses("HvCallout", {
     position: "relative",
     boxShadow: "none",
     flexWrap: "nowrap",
-    padding: 0,
     borderRadius: theme.radii.round,
   },
   success: {
@@ -47,6 +46,7 @@ const { useClasses } = createClasses("HvCallout", {
     display: "flex",
     alignItems: "center",
     padding: 0,
+    width: "100%",
     color: theme.colors.textDark,
   },
   messageContent: {
@@ -66,7 +66,7 @@ const { useClasses } = createClasses("HvCallout", {
     display: "flex",
     flexDirection: "column",
     height: "100%",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     gap: theme.space.xs,
   },
   actionCustom: {
@@ -190,24 +190,25 @@ export const HvCallout = forwardRef<
             {title && <b className={classes.messageTitle}>{title}</b>}
             {children}
           </div>
+          <div style={{ flex: "1" }} />
           {actions && actionsPosition === "inline" && actionsContent}
+          {showClose && (
+            <HvButton
+              icon
+              className={classes.actionClose}
+              variant="semantic"
+              aria-label="Close"
+              onClick={(evt) => onClose?.(evt, "clickaway")}
+              {...actionProps}
+            >
+              <HvIcon size="xs" name="Close" />
+            </HvButton>
+          )}
         </>
       }
       action={
-        (showClose || showCustomActions) && (
+        showCustomActions && (
           <div className={classes.actionContent}>
-            {showClose && (
-              <HvButton
-                icon
-                className={classes.actionClose}
-                variant="semantic"
-                aria-label="Close"
-                onClick={(evt) => onClose?.(evt, "clickaway")}
-                {...actionProps}
-              >
-                <HvIcon size="xs" name="Close" />
-              </HvButton>
-            )}
             {showCustomActions && actionsContent}
           </div>
         )
