@@ -19,7 +19,8 @@ export default {
 export const Main: StoryObj<HvBannerProps> = {
   args: {
     open: true,
-    variant: "default",
+    variant: "success",
+    type: "regular",
     label: "This is an informational message.",
     showIcon: true,
     offset: 0,
@@ -32,7 +33,13 @@ export const Main: StoryObj<HvBannerProps> = {
     actionsCallback: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvBanner style={{ position: "relative", top: 0 }} {...args} />;
+    return (
+      <HvBanner
+        style={{ position: "relative", top: 0 }}
+        type="micro"
+        {...args}
+      />
+    );
   },
 };
 

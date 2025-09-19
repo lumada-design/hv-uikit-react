@@ -69,6 +69,8 @@ export interface HvBannerProps
   classes?: HvBannerClasses;
   /** @ignore */
   ref?: MuiSnackbarProps["ref"];
+
+  type?: HvBannerContentProps["type"];
 }
 
 /**
@@ -99,6 +101,7 @@ export const HvBanner = forwardRef<
     label,
     offset = 60,
     bannerContentProps,
+    type,
     ...others
   } = useDefaultProps("HvBanner", props);
   const { classes, cx } = useClasses(classesProp);
@@ -149,6 +152,7 @@ export const HvBanner = forwardRef<
         onAction={onAction}
         actionsPosition={actionsPosition}
         onClose={onClose}
+        type={type}
         {...bannerContentProps}
       >
         {label}

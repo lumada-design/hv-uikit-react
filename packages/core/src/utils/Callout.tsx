@@ -22,9 +22,9 @@ const { useClasses } = createClasses("HvCallout", {
     position: "relative",
     boxShadow: "none",
     flexWrap: "nowrap",
-    padding: 0,
     borderRadius: theme.radii.round,
   },
+
   success: {
     backgroundColor: theme.colors.positiveDimmed,
   },
@@ -48,6 +48,7 @@ const { useClasses } = createClasses("HvCallout", {
     alignItems: "center",
     padding: 0,
     color: theme.colors.textDark,
+    width: "100%",
   },
   messageContent: {
     textWrap: "balance",
@@ -190,6 +191,7 @@ export const HvCallout = forwardRef<
             {title && <b className={classes.messageTitle}>{title}</b>}
             {children}
           </div>
+          <div style={{ flex: "1" }} />
           {actions && actionsPosition === "inline" && actionsContent}
         </>
       }

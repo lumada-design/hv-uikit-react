@@ -48,6 +48,8 @@ export interface HvBannerContentProps
   actionProps?: Partial<HvButtonProps>;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvBannerContentClasses;
+
+  type?: "full" | "regular" | "micro";
 }
 
 export const HvBannerContent = forwardRef<
@@ -70,6 +72,7 @@ export const HvBannerContent = forwardRef<
     content,
     children,
     actionProps,
+    type = "regular",
     ...others
   } = useDefaultProps("HvBannerContent", props);
   const { classes, cx } = useClasses(classesProp);
@@ -88,6 +91,7 @@ export const HvBannerContent = forwardRef<
           classes.outContainer,
           classes.baseVariant,
           classes[variant],
+          classes[type],
           className,
         ),
         message: classes.message,
@@ -99,7 +103,7 @@ export const HvBannerContent = forwardRef<
           classes.actionContainer,
           classes.actionsInnerContainer,
         ),
-        actionClose: classes.closeAction,
+        actionClose: cx(classes.closeAction),
       }}
       actions={actions}
       actionsPosition={actionsPosition}
