@@ -1,5 +1,6 @@
 import { useCallback, useRef } from "react";
-import { cloneDeep, isEqual } from "lodash";
+import cloneDeep from "lodash/cloneDeep";
+import isEqual from "lodash/isEqual";
 
 import { ServiceId } from "../types/config";
 import {
