@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react";
+import { createElement, FC, PropsWithChildren } from "react";
 
 import {
   BundleConfig,
@@ -251,8 +251,7 @@ function bindComponent<
   const BoundComponent = (props: PropsWithChildren<P>) => {
     // Explicitly passed props override the ones from coming from the config
     const mergedProps = { ...configProps, ...props };
-    // @ts-expect-error TODO fix the types!
-    return <Component {...mergedProps} />;
+    return createElement(Component, mergedProps);
   };
 
   return BoundComponent as TComponent;

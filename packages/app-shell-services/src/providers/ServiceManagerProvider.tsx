@@ -1,4 +1,10 @@
-import { createContext, FC, PropsWithChildren, useMemo } from "react";
+import {
+  createContext,
+  createElement,
+  FC,
+  PropsWithChildren,
+  useMemo,
+} from "react";
 
 import { ServiceId, ServicesConfig } from "../types/config";
 import {
@@ -147,10 +153,10 @@ interface Props extends PropsWithChildren {
 const ServiceManagerProvider: FC<Props> = ({ config, children }) => {
   const serviceManager = useMemo(() => createServiceManager(config), [config]);
 
-  return (
-    <ServicesContext.Provider value={serviceManager}>
-      {children}
-    </ServicesContext.Provider>
+  return createElement(
+    ServicesContext.Provider,
+    { value: serviceManager },
+    children,
   );
 };
 

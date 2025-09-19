@@ -20,7 +20,7 @@
     "prepublishOnly": "npm run build && npx clean-publish"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "react": "^18.2.0"
