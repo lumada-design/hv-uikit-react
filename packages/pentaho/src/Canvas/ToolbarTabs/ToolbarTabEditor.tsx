@@ -151,7 +151,10 @@ export const ToolbarTabEditor = ({
 
   // Update cursor when value updates: otherwise it goes to the start
   useEnhancedEffect(() => {
-    if (isEditing) moveCursorToEnd();
+    if (isEditing && contentEditableRef.current) {
+      contentEditableRef.current.textContent = value;
+      moveCursorToEnd();
+    }
   }, [isEditing, value]);
 
   const handleInput: HvTypographyProps["onInput"] = (event) => {
@@ -207,13 +210,10 @@ export const ToolbarTabEditor = ({
         onClick={handleClick}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
-        // Using children is unstable in React for contentEditable so the value is rendered through dangerouslySetInnerHTML
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{
-          __html: value,
-        }}
         {...others}
-      />
+      >
+        {!isEditing ? value : null}
+      </HvTypography>
       <Edit className={classes.editIcon} iconSize="XS" />
     </div>
   );

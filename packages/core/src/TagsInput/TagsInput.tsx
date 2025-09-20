@@ -520,6 +520,7 @@ export const HvTagsInput = forwardRef<HTMLElement, HvTagsInputProps>(
           })}
           onKeyDown={onKeyDownHandler}
           onClick={onContainerClickHandler}
+          tabIndex={disabled || readOnly ? undefined : 0}
         >
           {value?.map((t, i) => {
             const tag: HvTagProps =

@@ -71,3 +71,20 @@ export default function Demo() {
   );
 }
 ```
+
+### Color
+
+You can use the [`color`](/docs/styling#color-prop) prop to style the color of the typography.
+
+```tsx live
+<div className="flex flex-col gap-sm">
+  <HvTypography color="text">This is a typography</HvTypography>
+  <HvTypography color="positive">This is a typography</HvTypography>
+  <HvTypography color="coral">This is a typography</HvTypography>
+  <HvTypography color="#c73aa8">This is a typography</HvTypography>
+  <HvTypography link>This is a typography working as a link</HvTypography>
+  <HvTypography link color="text">
+    This is a typography working as a link
+  </HvTypography>
+</div>
+```
