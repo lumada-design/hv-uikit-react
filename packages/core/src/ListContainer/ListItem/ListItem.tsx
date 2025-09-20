@@ -60,6 +60,8 @@ export interface HvListItemProps extends HvBaseProps<HTMLLIElement> {
    * If unwanted, the element should be placed directly as a child.
    */
   endAdornment?: React.ReactNode;
+  /** Whether to show a separator after this list item */
+  separator?: boolean;
   /** The value to be set on the 'li' element */
   value?: any;
   /** A Jss Object used to override or extend the styles applied to the component. */
@@ -86,6 +88,7 @@ export const HvListItem = forwardRef<
     interactive: interactiveProp,
     condensed: condensedProp,
     disableGutters: disableGuttersProp,
+    separator,
     startAdornment,
     endAdornment,
     onClick,
@@ -186,7 +189,7 @@ export const HvListItem = forwardRef<
     </li>
   );
 
-  return interactive ? (
+  const item = interactive ? (
     <HvFocus
       rootRef={topContainerRef}
       selected={selected}
@@ -202,4 +205,15 @@ export const HvListItem = forwardRef<
   ) : (
     listItem
   );
+
+  if (separator) {
+    return (
+      <>
+        {item}
+        <li role="separator" className={classes.separator} aria-hidden="true" />
+      </>
+    );
+  }
+
+  return item;
 });

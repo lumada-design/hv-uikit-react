@@ -72,4 +72,15 @@ export const { staticClasses, useClasses } = createClasses("HvListItem", {
   withStartAdornment: {},
   /** @deprecated use `:has($endAdornment)` instead */
   withEndAdornment: {},
+  separator: {
+    height: 1,
+    backgroundColor: theme.colors.border,
+    margin: `${theme.space.xs} calc(${theme.space.sm} * -1)`,
+    border: "none",
+    padding: 0,
+    listStyleType: "none",
+    "&:last-child": {
+      display: "none",
+    },
+  },
 });

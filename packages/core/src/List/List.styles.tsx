@@ -29,12 +29,6 @@ export const { staticClasses, useClasses } = createClasses("HvList", {
       backgroundColor: theme.colors.bgHover,
     },
   },
-  separator: {
-    height: 1,
-    backgroundColor: theme.colors.border,
-    margin: `${theme.space.xs} calc(${theme.space.sm} * -1)`,
-    border: "none",
-  },
   link: {
     ...theme.typography.body,
     textDecoration: "none",

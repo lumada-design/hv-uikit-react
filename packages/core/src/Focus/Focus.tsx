@@ -1,4 +1,4 @@
-import { cloneElement, useState } from "react";
+import { cloneElement, useRef, useState } from "react";
 import type { ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { HvBaseProps } from "../types/generic";
@@ -45,10 +45,11 @@ export interface HvFocusProps extends HvBaseProps<HTMLElement, "children"> {
 interface Focuses {
   first: Element;
   last: Element;
-  previous: Element;
-  next: Element;
-  fall: Element;
-  jump: Element;
+  previous: Element | undefined;
+  current: Element | undefined;
+  next: Element | undefined;
+  fall: Element | undefined;
+  jump: Element | undefined;
 }
 
 /** @deprecated internal use only. this component has navigation issues. */
@@ -69,6 +70,8 @@ export const HvFocus = ({
   const [childFocus, setChildFocus] = useState<any>();
   const [hasRunConfig, setHasRunConfig] = useState(false);
   const { classes, cx } = useClasses(classesProp);
+
+  const hasFocusVisible = useRef(false);
 
   const getFocuses = () => {
     const focuses = rootRef?.current
@@ -181,6 +184,9 @@ export const HvFocus = ({
   };
 
   const onFocus = (evt: any) => {
+    // check if the focus came from keyboard navigation (i.e. the focus is visible)
+    hasFocusVisible.current = evt.currentTarget.matches(":focus-visible");
+
     addFocusClass(evt);
     // give focus to child element if any focusable
 
@@ -259,6 +265,36 @@ export const HvFocus = ({
     if (!isOneOfKeys(evt, ["Enter", "Space"])) {
       evt.preventDefault();
       evt.stopPropagation();
+    }
+
+    // if the focus is not visible, first key press should just make it visible and potentially not move the focus
+    if (!hasFocusVisible.current) {
+      // keyboard was definitely used, so mark the focus as visible so that next keys move the focus
+      hasFocusVisible.current = true;
+
+      // if user pressed Enter and Space, just make the focus visible and return
+      // otherwise it would trigger a click on an expected item
+      if (evt.code === "Space" || evt.code === "Enter") {
+        focusAndUpdateIndex(
+          focuses.current || focuses.first,
+          evt.current,
+          focusesList,
+        );
+
+        return;
+      }
+
+      if (focuses.current === focuses.first) {
+        // clear focuses.previous, focuses.next, focuses.jump and focuses.fall
+        // so that pressing ArrowUp goes to the last item,
+        // and ArrowDown just makes the focus visible on the first item
+        focuses.previous = undefined;
+        focuses.next = undefined;
+        focuses.jump = undefined;
+        focuses.fall = undefined;
+      }
+
+      // let if fall through to the regular logic
     }
 
     const blockedKeys = getEnabledKeys(
@@ -348,6 +384,34 @@ export const HvFocus = ({
     evt.preventDefault();
     evt.stopPropagation();
 
+    // if the focus is not visible, first key press should just make it visible and potentially not move the focus
+    if (!hasFocusVisible.current) {
+      // keyboard was definitely used, so mark the focus as visible so that next keys move the focus
+      hasFocusVisible.current = true;
+
+      // if user pressed Enter and Space, just make the focus visible and return
+      // otherwise it would trigger a click on an expected item
+      if (evt.code === "Space" || evt.code === "Enter") {
+        focusAndUpdateIndex(
+          focuses.current || focuses.first,
+          evt.current,
+          focusesList,
+        );
+
+        return;
+      }
+
+      if (focuses.current === focuses.first) {
+        // clear focuses.previous and focuses.next
+        // so that pressing ArrowUp goes to the last item,
+        // and ArrowDown just makes the focus visible on the first item
+        focuses.previous = undefined;
+        focuses.next = undefined;
+      }
+
+      // let if fall through to the regular logic
+    }
+
     switch (evt.code) {
       case "Space":
       case "Enter":
@@ -417,6 +481,7 @@ export const HvFocus = ({
       first: focusesList[0],
       last: focusesList[focusesList.length - 1],
       previous: focusesList[currentFocus - 1],
+      current: focusesList[currentFocus],
       next: focusesList[currentFocus + 1],
       fall: focusesList[currentFocus + navigationJump],
       jump: focusesList[currentFocus - navigationJump],

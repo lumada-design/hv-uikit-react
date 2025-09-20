@@ -268,16 +268,13 @@ export const HvList = (props: HvListProps) => {
             <HvIcon name="CaretRight" className={classes.box} size="xs" />
           )
         }
+        separator={item.separator}
         {...otherProps}
       >
         {renderSelectItem(item, itemId)}
       </HvListItem>
     );
   };
-
-  const renderSeparator = (index: number) => (
-    <hr key={`separator-${index}`} className={classes.separator} />
-  );
 
   const filteredList = list.filter((it) => !it.isHidden);
   const anySelected = list
@@ -350,21 +347,6 @@ export const HvList = (props: HvListProps) => {
     ariaMultiSelectable,
   ]);
 
-  const renderListWithSeparators = () => {
-    const items: React.ReactNode[] = [];
-
-    filteredList.forEach((item, i) => {
-      items.push(renderListItem(item, i));
-
-      // Add separator after item if it has separator property, and it's not the last item
-      if (item.separator && i < filteredList.length - 1) {
-        items.push(renderSeparator(i));
-      }
-    });
-
-    return items;
-  };
-
   // Render nothing if there are no items
   if (filteredList.length === 0) return null;
 
@@ -383,7 +365,7 @@ export const HvList = (props: HvListProps) => {
           aria-multiselectable={ariaMultiSelectable}
           {...others}
         >
-          {renderListWithSeparators()}
+          {filteredList.map((item, i) => renderListItem(item, i))}
         </HvListContainer>
       ) : (
         <FixedSizeList
