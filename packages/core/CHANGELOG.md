@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.105.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.104.1...@hitachivantara/uikit-react-core@5.105.0) (2025-09-22)
+
+### Features
+
+- **DropDownMenu:** only show focus ring when using keyboard ([#4921](https://github.com/lumada-design/hv-uikit-react/issues/4921)) ([7f12d32](https://github.com/lumada-design/hv-uikit-react/commit/7f12d32accbedbf20a69b105312230a9f18418dc))
+
 ## [5.104.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.104.0...@hitachivantara/uikit-react-core@5.104.1) (2025-09-18)
 
 ### Bug Fixes
