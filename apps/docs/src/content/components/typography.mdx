@@ -33,11 +33,11 @@ The `HvTypography` component is a polymorphic component. Its default component i
 but it can be changed to any other element through the `component` prop.
 
 ```tsx live
-<div className="flex flex-col gap-sm">
+<div className="flex flex-col gap-xs">
   <HvTypography component="span">Typography as a span</HvTypography>
   <HvTypography
     component="a"
-    href="https://lumada-design.github.io/uikit/master"
+    href="https://lumada-design.github.io/uikit-docs/master/"
     link
   >
     Typography as a link
@@ -64,9 +64,50 @@ export default function Demo() {
     <HvTypography
       link
       component={CustomLink}
-      to="https://lumada-design.github.io/uikit/master"
+      to="https://lumada-design.github.io/uikit-docs/master/"
     >
       Custom link
+    </HvTypography>
+  );
+}
+```
+
+### Color
+
+You can style the text color using any of the [styling strategies](/docs/styling#styling-strategies) we recommend.
+
+```tsx live
+<div className="flex flex-col gap-xs">
+  <HvTypography className="color-text">This is a typography</HvTypography>
+  <HvTypography className="color-positive">This is a typography</HvTypography>
+  <HvTypography className="color-[coral]">This is a typography</HvTypography>
+</div>
+```
+
+### External link icon
+
+While the `HvTypography` component doesn't directly support having an external link icon, you can easily
+create a custom component that includes this functionality and use it as the root component for `HvTypography`.
+
+```tsx live
+interface CustomLinkProps extends HvTypographyProps<"a"> {
+  to: string;
+}
+
+const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
+  <a href={to} target="_blank" rel="noopener noreferrer" {...others}>
+    {children} <span className="i-ph-arrow-square-out inline-block" />
+  </a>
+);
+
+export default function Demo() {
+  return (
+    <HvTypography
+      link
+      component={CustomLink}
+      to="https://lumada-design.github.io/uikit-docs/master/"
+    >
+      Read more
     </HvTypography>
   );
 }
