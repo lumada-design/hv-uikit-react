@@ -1,6 +1,4 @@
 import { useCallback, useRef } from "react";
-import cloneDeep from "lodash/cloneDeep";
-import isEqual from "lodash/isEqual";
 
 import { ServiceId } from "../types/config";
 import {
@@ -12,6 +10,7 @@ import {
   UseServicesOptions,
   UseServicesResult,
 } from "../types/service";
+import { isEqual } from "../utils/isEqual";
 import { useAsync } from "./useAsync";
 import { useServicesContext } from "./useServicesContext";
 
@@ -29,7 +28,7 @@ function useDeepMemo<T>(value: T): T {
   const ref = useRef<T>();
 
   if (!isEqual(value, ref.current)) {
-    ref.current = cloneDeep(value);
+    ref.current = structuredClone(value);
   }
 
   return ref.current as T;
