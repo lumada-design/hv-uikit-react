@@ -110,3 +110,30 @@ const buttonVariantMap = {
   error: "negativeSubtle",
 };
 ```
+
+### Showing a banner inline with content
+
+The `HvBanner` component is typically used as a global banner with a fixed position and transition.
+For inline usage within content, use the `HvBannerContent` component instead.
+
+```tsx live
+<div className="flex flex-col gap-sm">
+  <HvSelect label="Target status" />
+  <HvBannerContent
+    variant="error"
+    showIcon
+    actions={
+      <HvButton color="negative" startIcon={<div className="i-ph-wrench" />}>
+        Fix
+      </HvButton>
+    }
+  >
+    You need to select a target status before you can proceed.
+  </HvBannerContent>
+  <HvInput
+    placeholder="Please select the assignees..."
+    label="Assign to"
+    className="mb-sm"
+  />
+</div>
+```
