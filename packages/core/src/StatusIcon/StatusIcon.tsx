@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import { IconWeight } from "@phosphor-icons/react";
-import { CheckCircle } from "@phosphor-icons/react/CheckCircle";
-import { Question } from "@phosphor-icons/react/Question";
-import { Warning } from "@phosphor-icons/react/Warning";
-import { WarningDiamond } from "@phosphor-icons/react/WarningDiamond";
+import { CheckCircle } from "@phosphor-icons/react/dist/csr/CheckCircle";
+import { Question } from "@phosphor-icons/react/dist/csr/Question";
+import { Warning } from "@phosphor-icons/react/dist/csr/Warning";
+import { WarningDiamond } from "@phosphor-icons/react/dist/csr/WarningDiamond";
 import {
   useDefaultProps,
   useTheme,
