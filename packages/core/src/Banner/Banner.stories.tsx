@@ -19,7 +19,8 @@ export default {
 export const Main: StoryObj<HvBannerProps> = {
   args: {
     open: true,
-    variant: "default",
+    variant: "success",
+    type: "regular",
     label: "This is an informational message.",
     showIcon: true,
     offset: 0,
@@ -32,7 +33,13 @@ export const Main: StoryObj<HvBannerProps> = {
     actionsCallback: { control: { disable: true } },
   },
   render: (args) => {
-    return <HvBanner style={{ position: "relative", top: 0 }} {...args} />;
+    return (
+      <HvBanner
+        style={{ position: "relative", top: 0 }}
+        type="micro"
+        {...args}
+      />
+    );
   },
 };
 
@@ -92,6 +99,7 @@ export const Variants: StoryObj<HvBannerProps> = {
           actionsPosition="inline"
         />
         <HvBannerContent
+          type="full"
           customIcon={<Deploy />}
           content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
           actions={actionArray("banner2")}
