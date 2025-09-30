@@ -27,6 +27,8 @@ export interface HvSnackbarContentProps
   variant?: HvSnackbarVariant;
   /** Controls if the associated icon to the variant should be shown. */
   showIcon?: boolean;
+  /** Controls whether to show the close icon */
+  showClose?: boolean;
   /** Custom icon to replace the variant default. */
   customIcon?: React.ReactNode;
   /** Action to display. */
@@ -56,6 +58,7 @@ export const HvSnackbarContent = forwardRef<
     label,
     variant = "default",
     showIcon,
+    showClose,
     customIcon,
     action,
     actionCallback, // TODO - remove in v6
@@ -78,6 +81,7 @@ export const HvSnackbarContent = forwardRef<
         action: classes.action,
       }}
       showIcon={showIcon}
+      showClose={showClose}
       customIcon={customIcon}
       actions={isActionGeneric(action) ? [action] : action}
       onClose={onClose}

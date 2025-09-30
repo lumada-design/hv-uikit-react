@@ -13,6 +13,7 @@ import { Header } from "../../components/Header";
     label: { defaultValue: "This is a success message." },
     variant: { defaultValue: "success" },
     showIcon: { defaultValue: true },
+    showClose: { defaultValue: true },
     open: { defaultValue: true },
   }}
   componentProps={{
@@ -119,9 +120,7 @@ export default function Demo() {
         transitionDirection={transitionDirection}
         autoHideDuration={autoHideDuration}
         onClose={(evt, reason) => {
-          if (reason === "timeout") {
-            setOpen(false);
-          }
+          setOpen(false);
         }}
       />
       <div className="flex flex-col gap-md">
