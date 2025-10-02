@@ -147,6 +147,7 @@ export interface HvThemeStructure<Mode extends string = string>
   colors: {
     modes: Record<Mode, HvThemeColorModeStructure>;
   };
+  vars: HvThemeVars;
 }
 
 // Custom theme
