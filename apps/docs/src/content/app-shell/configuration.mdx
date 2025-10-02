@@ -14,8 +14,10 @@ export default {
   baseUrl: "/",
   navigationMode: "ONLY_LEFT",
   apps: {
-    "@hv-apps/my-app": "https://example.com:3001/",
-    "@hv-apps/another-app": "https://example.com:5001/",
+    "@hv-apps/my-app/": "https://example.com:3001/",
+    "@hv-apps/another-app/": "https://example.com:5001/",
+    "@hv-apps/other-app/someFile.js": "https://example.com:6001/someFile.js",
+    "@hv-apps/other-app/entryPoint": "https://example.com:7001/index.js",
   },
   // ...
 } satisfies HvAppShellConfig;
