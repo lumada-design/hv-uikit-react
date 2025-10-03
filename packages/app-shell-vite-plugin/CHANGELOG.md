@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.9.4...@hitachivantara/app-shell-vite-plugin@1.9.5) (2025-10-03)
+
+**Note:** Version bump only for package @hitachivantara/app-shell-vite-plugin
+
 ## [1.9.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.9.3...@hitachivantara/app-shell-vite-plugin@1.9.4) (2025-09-25)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-vite-plugin

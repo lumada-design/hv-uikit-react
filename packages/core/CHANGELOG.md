@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.106.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.105.1...@hitachivantara/uikit-react-core@5.106.0) (2025-10-03)
+
+### Bug Fixes
+
+- **Section:** fix incorrect height ([#4928](https://github.com/lumada-design/hv-uikit-react/issues/4928)) ([b75026b](https://github.com/lumada-design/hv-uikit-react/commit/b75026b12a298889119e315d9b078507e9870387))
+
+### Features
+
+- **Snackbar:** add close button ([#4929](https://github.com/lumada-design/hv-uikit-react/issues/4929)) ([5256b0d](https://github.com/lumada-design/hv-uikit-react/commit/5256b0dbb6064981d77a64d5617455e811908f9f))
+
 ## [5.105.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.105.0...@hitachivantara/uikit-react-core@5.105.1) (2025-09-25)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core
