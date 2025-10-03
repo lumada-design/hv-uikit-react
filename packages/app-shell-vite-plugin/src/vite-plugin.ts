@@ -248,7 +248,7 @@ export function HvAppShellVitePlugin(
 
         ...Object.entries(appShellConfiguration?.apps ?? {}).reduce(
           (acc, [key, value]) => {
-            acc[`${key}/`] = value;
+            acc[`${key}`] = value;
             return acc;
           },
           {} as Record<string, string>,

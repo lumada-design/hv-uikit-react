@@ -9,9 +9,9 @@ const {
 export default {
   baseUrl: "/",
   apps: {
-    "@hv/sample-app": VITE_SAMPLE_APP_URL,
-    "@hv/user-information-client": VITE_USER_INFORMATION_URL,
-    "@hv/user-notifications-client": VITE_USER_NOTIFICATIONS_URL,
+    "@hv/sample-app/": VITE_SAMPLE_APP_URL,
+    "@hv/user-information-client/": VITE_USER_INFORMATION_URL,
+    "@hv/user-notifications-client/": VITE_USER_NOTIFICATIONS_URL,
   },
   logo: {
     name: "PENTAHO",
