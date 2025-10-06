@@ -90,7 +90,7 @@ If you don't want to add a logo to the header, explicitly set the menu item `log
 
 Key-value object of _Application Bundles_ IDs and their respective locations. Used by the **App Shell** to generate the importmap and thus allowing the import of ES Modules from different _Application Bundles_.
 
-Example:
+Example of the apps object:
 
 ```ts
 const apps = {
@@ -98,6 +98,21 @@ const apps = {
   "@hv-apps/another-app": "http://localhost:5001/",
 };
 ```
+
+Result in the importmap:
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "@hv-apps/an-app/": "http://localhost:3001/",
+      "@hv-apps/another-app/": "http://localhost:5001/"
+    }
+  }
+</script>
+```
+
+As per the example above, the `apps` keys will have a trailing forward slash concatenated to it by default, added by the App Shell Vite plugin. In order to provide more control to the developer of the app, the `disableAppsKeyNormalization` parameter of the App Shell Vite plugin can be used to disable this behavior.
 
 In order to reference Views and Shared Modules from other Application Bundles', one must be registered in the App Shell's configuration.
 
