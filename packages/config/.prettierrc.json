@@ -1,22 +1,39 @@
 {
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-
-  "importOrder": [
-    "<BUILTIN_MODULES>",
-    "^react$",
-    "^react-.*",
-    "<THIRD_PARTY_MODULES>",
-    "^@hitachivantara/(.*)$",
-    "",
-    "^~/(.*)$",
-    "^#/(.*)$",
-    "^[./]"
-  ],
-
   "overrides": [
     {
-      "files": ["*.hbs", "pnpm-lock.yaml", "yarn.lock"],
+      "files": ["*.{js,jsx,ts,tsx}"],
+      "options": {
+        "importOrder": [
+          "<BUILTIN_MODULES>",
+          "^react$",
+          "^react-.*",
+          "<THIRD_PARTY_MODULES>",
+          "^@hitachivantara/(.*)$",
+          "",
+          "^~/(.*)$",
+          "^#/(.*)$",
+          "^[./]"
+        ]
+      }
+    },
+    {
+      "files": ["*.hbs"],
       "options": { "rangeEnd": 0 }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "parser": "markdown",
+        "embeddedLanguageFormatting": "off"
+      }
+    },
+    {
+      "files": ["*.mdx"],
+      "options": {
+        "parser": "mdx",
+        "embeddedLanguageFormatting": "off"
+      }
     }
   ]
 }

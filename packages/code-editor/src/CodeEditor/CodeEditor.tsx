@@ -29,14 +29,14 @@ export interface HvCodeEditorProps extends EditorProps {
   disableAutoFormat?: boolean;
   /** Language plugin. This will override the default language plugin used internally. */
   languagePlugin?: LanguagePlugin;
+  /** Enable offline mode for Monaco Editor. Use local resources instead of CDN. */
+  offline?: boolean;
 }
 
 const defaultCodeEditorOptions: EditorProps["options"] = {
   automaticLayout: true,
   overviewRulerLanes: 0,
-  minimap: {
-    enabled: true,
-  },
+  minimap: { enabled: true },
   scrollBeyondLastLine: false,
   scrollbar: {
     horizontal: "visible",
@@ -64,16 +64,14 @@ export const HvCodeEditor = ({
   onMount: onMountProp,
   beforeMount: beforeMountProp,
   languagePlugin: languagePluginProp,
+  offline = false,
   ...others
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
-
   const language = languageProp ?? editorProps?.language ?? defaultLanguage;
-
   const editorRef = useRef<any>(null);
   const completionProviderRef = useRef<any>(null);
 
-  // Merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions: EditorProps["options"] = {
     ...defaultCodeEditorOptions,
     ...options,
@@ -82,11 +80,22 @@ export const HvCodeEditor = ({
   const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
   const monacoInstance = useMonaco();
 
+  // Configure Monaco for offline use
+  useEffect(() => {
+    if (!offline) return;
+
+    import("../monaco-config")
+      .then(({ configureMonacoOffline }) => configureMonacoOffline())
+      .catch(() => {
+        // Silently fall back to CDN
+      });
+  }, [offline]);
+
   const handleActiveThemes = useCallback(() => {
     if (!monacoInstance) return;
 
     colorModes.forEach((mode) => {
-      monacoInstance?.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
+      monacoInstance.editor.defineTheme(`hv-${selectedTheme}-${mode}`, {
         base: colors?.type === "light" ? "vs" : "vs-dark",
         inherit: true,
         rules: [],
@@ -120,7 +129,6 @@ export const HvCodeEditor = ({
       const formattedCode = await formatter(content, editor, monaco);
       if (formattedCode) editorRef.current.setValue(formattedCode);
     } catch (error) {
-      // eslint-disable-next-line no-console
       if (import.meta.env.DEV) console.error(error);
     }
   };
@@ -134,14 +142,12 @@ export const HvCodeEditor = ({
     editorRef.current = editor;
     onMountProp?.(editor, monaco);
 
-    // Get language plugin
     const languagePlugin =
       languagePluginProp ??
       (language ? hvLanguagePlugins[language] : undefined);
 
     if (!language || !languagePlugin) return;
 
-    // Register language
     monaco.languages.register({ id: language });
 
     const {
@@ -152,28 +158,22 @@ export const HvCodeEditor = ({
       formatter,
     } = languagePlugin;
 
-    // Update options
-    if (editorOptions)
-      editor.updateOptions({
-        ...options,
-        ...editorOptions,
-      });
+    if (editorOptions) {
+      editor.updateOptions({ ...options, ...editorOptions });
+    }
 
-    // Register completion provider, but first dispose of any previous one
-    completionProviderRef.current?.dispose(); // Clean up previous provider
+    // Clean up previous completion provider
+    completionProviderRef.current?.dispose();
 
-    // Register completion provider
     if (completionProvider) {
-      const providerDisposable =
+      completionProviderRef.current =
         monaco.languages.registerCompletionItemProvider(
           language,
           completionProvider(monaco, schema),
         );
-      completionProviderRef.current = providerDisposable;
     }
 
-    // Validate content and get error markers
-    if (validator)
+    if (validator) {
       editor.onDidChangeModelContent(async () => {
         const model = editor.getModel();
         if (!model) return;
@@ -181,33 +181,23 @@ export const HvCodeEditor = ({
         const validate = await validator(content, editor, monaco, schema);
         monaco.editor.setModelMarkers(model, language, validate);
       });
+    }
 
-    // Listen for key down events
-    if (keyDownListener)
+    if (keyDownListener) {
       editor.onKeyDown((event: any) => keyDownListener(event, editor, monaco));
+    }
 
-    // Listen for events to auto format code
     if (formatter && !disableAutoFormat) {
-      // On mount
       handleFormatCode(editor, monaco, formatter);
-
-      // On blur
       editor.onDidBlurEditorText(() =>
         handleFormatCode(editor, monaco, formatter),
       );
-
-      // On paste
       editor.onDidPaste(() => handleFormatCode(editor, monaco, formatter));
     }
   };
 
   useEffect(() => {
-    return () => {
-      // Cleanup on unmount
-      if (completionProviderRef.current) {
-        completionProviderRef.current.dispose();
-      }
-    };
+    return () => completionProviderRef.current?.dispose();
   }, []);
 
   return (
