@@ -128,6 +128,13 @@ export interface AppShellVitePluginOptions {
    *
    */
   modules?: string[];
+  /**
+   * If true, the keys of the `apps` property in the configuration file will be used as-is in the importmap,
+   * without enforcing a trailing slash. If false, a trailing slash will be appended to each key.
+   *
+   * @default false
+   */
+  disableAppsKeyNormalization?: boolean;
 }
 
 /**
@@ -149,6 +156,7 @@ export function HvAppShellVitePlugin(
     inlineConfig = opts.generateEmptyShell ?? false,
     generateEmptyShell = false,
     modules = [],
+    disableAppsKeyNormalization = false,
   } = opts;
 
   const globalEnv = loadEnv(mode, process.cwd(), "");
@@ -248,7 +256,8 @@ export function HvAppShellVitePlugin(
 
         ...Object.entries(appShellConfiguration?.apps ?? {}).reduce(
           (acc, [key, value]) => {
-            acc[`${key}`] = value;
+            const normalizedKey = disableAppsKeyNormalization ? key : `${key}/`;
+            acc[normalizedKey] = value;
             return acc;
           },
           {} as Record<string, string>,

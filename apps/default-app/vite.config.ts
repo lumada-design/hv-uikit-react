@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     HvAppShellVitePlugin({
       mode,
       type: "app",
+      disableAppsKeyNormalization: true,
       modules: [
         "src/providers/DefaultAppProvider",
         "src/modules/HelloDefaultApp",
