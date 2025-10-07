@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.9.5...@hitachivantara/app-shell-vite-plugin@1.10.0) (2025-10-07)
+
+### Features
+
+- **AppShell:** add vite plugin parameter to control importmap normalization [PPUC-199] ([#4932](https://github.com/lumada-design/hv-uikit-react/issues/4932)) ([95b7608](https://github.com/lumada-design/hv-uikit-react/commit/95b7608a9289d380b5a5155a25e86d515d881b41))
+
 ## [1.9.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.9.4...@hitachivantara/app-shell-vite-plugin@1.9.5) (2025-10-03)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-vite-plugin

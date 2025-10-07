@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/app-shell-vite-plugin",
-  "version": "1.9.5",
+  "version": "1.10.0",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
