@@ -5,7 +5,7 @@ import {
   HvCodeEditorProps,
 } from "@hitachivantara/uikit-react-code-editor";
 
-import { MainStory } from "./stories/Main";
+import { MainStory, OfflineStory } from "./stories/Main";
 
 const meta: Meta<typeof HvCodeEditor> = {
   title: "Components/Code Editor",
@@ -18,4 +18,16 @@ export const Main: StoryObj<HvCodeEditorProps> = {
     ...setupChromatic(["DS5 dawn"], 5000),
   },
   render: () => <MainStory />,
+};
+
+export const Offline: StoryObj<HvCodeEditorProps> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Monaco Editor configured for offline use. This example shows how to configure Monaco to work offline by calling `configureMonacoOffline()` before using the editor.",
+      },
+    },
+  },
+  render: () => <OfflineStory />,
 };

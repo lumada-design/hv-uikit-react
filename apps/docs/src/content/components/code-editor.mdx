@@ -1,5 +1,7 @@
 import {
   codeEditorClasses as classes,
+  configureMonaco,
+  configureMonacoOffline,
   HvCodeEditor,
 } from "@hitachivantara/uikit-react-code-editor";
 
@@ -208,3 +210,112 @@ export default function Demo() {
   );
 }
 ```
+
+## Offline Support
+
+By default, Monaco Editor loads from a CDN. For offline/bundled usage in environments without internet access:
+
+### Setup
+
+```bash
+npm install monaco-editor  # Required for offline mode
+```
+
+To enable offline support, call `configureMonacoOffline()` before using the Code Editor.
+
+**Important**: `configureMonacoOffline()` is a **global configuration** that only needs to be called **once** per application, not per component instance.
+
+```tsx live
+import { useEffect, useState } from "react";
+import {
+  configureMonacoOffline,
+  HvCodeEditor,
+} from "@hitachivantara/uikit-react-code-editor";
+
+export default function OfflineCodeEditor() {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    configureMonacoOffline()
+      .then(() => setIsReady(true))
+      .catch(() => setIsReady(true)); // Continue with CDN fallback
+  }, []);
+
+  if (!isReady) {
+    return <div>Configuring Monaco Editor for offline use...</div>;
+  }
+
+  return (
+    <HvCodeEditor
+      height={270}
+      language="json"
+      defaultValue={`{
+  "name": "offline-example",
+  "version": "1.0.0",
+  "description": "Monaco Editor working offline"
+}`}
+    />
+  );
+}
+```
+
+#### Recommended Setup Patterns
+
+#### Option 1: Configure at App Level (Recommended)
+
+```tsx
+// App.tsx or main.tsx
+import { configureMonacoOffline } from "@hitachivantara/uikit-react-code-editor";
+
+function App() {
+  useEffect(() => {
+    configureMonacoOffline().catch(console.warn);
+  }, []);
+
+  return <Router>...</Router>;
+}
+```
+
+#### Option 2: Configure Before First Use
+
+```tsx
+import { useEffect, useState } from "react";
+import {
+  configureMonacoOffline,
+  HvCodeEditor,
+} from "@hitachivantara/uikit-react-code-editor";
+
+export default function MyComponent() {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    configureMonacoOffline()
+      .then(() => setIsReady(true))
+      .catch(() => setIsReady(true)); // CDN fallback
+  }, []);
+
+  if (!isReady) return <div>Loading...</div>;
+
+  return (
+    <HvCodeEditor
+      language="typescript"
+      defaultValue="console.log('Hello World!');"
+    />
+  );
+}
+```
+
+#### Supported Languages
+
+The offline configuration provides different levels of support:
+
+- **Full Worker Support**: JSON, CSS, HTML, TypeScript, JavaScript
+- **Advanced Plugin Support**: XML (validation, formatting, IntelliSense), SQL (IntelliSense)
+- **Basic Support**: All other Monaco-supported languages (syntax highlighting only)
+
+### Behavior
+
+- **CDN by default** - Zero bundle impact without configuration
+- **Global configuration** - Configure once, use everywhere
+- **Automatic fallback** - Falls back to CDN if offline setup fails
+- **Vite optimized** - Designed for Vite bundler (manual config needed for other bundlers)
