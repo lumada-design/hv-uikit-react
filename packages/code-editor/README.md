@@ -1,15 +1,33 @@
 # @hitachivantara/uikit-react-code-editor
 
-A wrapper to the React Monaco editor (https://github.com/suren-atoyan/monaco-react) using the Hitachi Vantara's Design System styles.
+React Monaco editor wrapper with Hitachi Vantara Design System styles.
 
 ## Installation
-
-Install the package in your project directory with:
 
 ```sh
 npm install @hitachivantara/uikit-react-code-editor
 ```
 
-## Getting Started
+## Usage
 
-Additional configuration information can be found here: [Monaco Editor for React](https://github.com/suren-atoyan/monaco-react).
+```jsx
+import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
+
+<HvCodeEditor
+  language="javascript"
+  defaultValue="console.log('Hello, World!');"
+/>
+```
+
+## Offline Support
+
+The editor automatically handles offline support:
+
+- **Vite**: Workers are bundled by default
+- **Other bundlers**: Falls back to CDN
+
+No configuration required!
+
+## Documentation
+
+See [Monaco Editor for React](https://github.com/suren-atoyan/monaco-react) for additional options.
