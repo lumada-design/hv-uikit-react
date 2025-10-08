@@ -42,6 +42,7 @@
     "@hitachivantara/uikit-react-utils": "^0.2.45",
     "@hitachivantara/uikit-styles": "^5.51.0",
     "@monaco-editor/react": "^4.5.1",
+    "monaco-editor": "^0.54.0",
     "sql-formatter": "^15.4.2",
     "xml-formatter": "^3.6.3",
     "xmllint-wasm": "^4.0.2"

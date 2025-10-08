@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef } from "react";
-import { Editor, useMonaco, type EditorProps } from "@monaco-editor/react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Editor, type EditorProps, type Monaco } from "@monaco-editor/react";
 import { useTheme, type ExtractNames } from "@hitachivantara/uikit-react-utils";
 
 import { staticClasses, useClasses } from "./CodeEditor.styles";
+import { configureMonaco } from "./monaco-config";
 import { hvLanguagePlugins } from "./plugins";
 import { Formatter, LanguagePlugin } from "./types";
 
@@ -29,6 +30,8 @@ export interface HvCodeEditorProps extends EditorProps {
   disableAutoFormat?: boolean;
   /** Language plugin. This will override the default language plugin used internally. */
   languagePlugin?: LanguagePlugin;
+  /** Whether to use offline mode with Monaco Editor workers bundled (Vite-compatible only) */
+  offlineMode?: boolean;
 }
 
 const defaultCodeEditorOptions: EditorProps["options"] = {
@@ -61,12 +64,14 @@ export const HvCodeEditor = ({
   defaultLanguage,
   language: languageProp,
   disableAutoFormat = false,
+  offlineMode = false,
   onMount: onMountProp,
   beforeMount: beforeMountProp,
   languagePlugin: languagePluginProp,
   ...others
 }: HvCodeEditorProps) => {
   const { classes } = useClasses(classesProp);
+  const [monacoInstance, setMonacoInstance] = useState<Monaco | null>(null);
 
   const language = languageProp ?? editorProps?.language ?? defaultLanguage;
 
@@ -80,7 +85,19 @@ export const HvCodeEditor = ({
   };
 
   const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
-  const monacoInstance = useMonaco();
+
+  // Configure Monaco with optional offline support
+  useEffect(() => {
+    configureMonaco({ offlineMode })
+      .then((monaco) => {
+        setMonacoInstance(monaco);
+      })
+      .catch((error) => {
+        if (import.meta.env.DEV) {
+          console.warn("Monaco configuration failed:", error);
+        }
+      });
+  }, [offlineMode]);
 
   const handleActiveThemes = useCallback(() => {
     if (!monacoInstance) return;
@@ -212,16 +229,22 @@ export const HvCodeEditor = ({
 
   return (
     <div className={classes.root}>
-      <Editor
-        options={mergedOptions}
-        theme={`hv-${selectedTheme}-${selectedMode}`}
-        language={languageProp}
-        defaultLanguage={defaultLanguage}
-        beforeMount={handleBeforeMount}
-        onMount={handleMount}
-        {...editorProps}
-        {...others}
-      />
+      {monacoInstance ? (
+        <Editor
+          options={mergedOptions}
+          theme={`hv-${selectedTheme}-${selectedMode}`}
+          language={languageProp}
+          defaultLanguage={defaultLanguage}
+          beforeMount={handleBeforeMount}
+          onMount={handleMount}
+          {...editorProps}
+          {...others}
+        />
+      ) : (
+        <div className={classes.loading} style={{ ...others }}>
+          <span>{others?.loading || "Loading..."}</span>
+        </div>
+      )}
     </div>
   );
 };

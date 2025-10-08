@@ -94,6 +94,7 @@ export const MainStory = () => {
         setEditorContent(input || "");
       }}
       value={editorContent}
+      offlineMode
     />
   );
 
