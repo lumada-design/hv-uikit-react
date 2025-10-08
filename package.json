@@ -76,6 +76,8 @@
     "clean-publish": "^5.2.1",
     "clsx": "^2.0.0",
     "cpy-cli": "^5.0.0",
+    "echarts": "^5.5.1",
+    "echarts-for-react": "^3.0.2",
     "happy-dom": "^17.5.6",
     "husky": "^8.0.3",
     "jsdom": "^26.1.0",
