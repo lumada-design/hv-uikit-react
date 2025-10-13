@@ -39,4 +39,10 @@ export const { staticClasses, useClasses } = createClasses("HvCodeEditor", {
       display: "none",
     },
   },
+  loading: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: 200,
+  },
 });
