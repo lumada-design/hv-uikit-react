@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.9.5...@hitachivantara/uikit-react-code-editor@5.10.0) (2025-10-13)
+
+### Features
+
+- **CodeEditor:** add Monaco Editor offline support with bundled workers ([#4936](https://github.com/lumada-design/hv-uikit-react/issues/4936)) ([b676e36](https://github.com/lumada-design/hv-uikit-react/commit/b676e361f552e4bf858585e83b00d00134a7fac2))
+
 ## [5.9.5](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.9.4...@hitachivantara/uikit-react-code-editor@5.9.5) (2025-09-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-code-editor
