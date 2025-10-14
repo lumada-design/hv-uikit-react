@@ -27,8 +27,8 @@ describe("Switch", () => {
         <HvSwitch defaultChecked aria-label="Engine 2" />
       </>,
     );
-    const switch1 = screen.getByRole("checkbox", { name: "Engine 1" });
-    const switch2 = screen.getByRole("checkbox", { name: "Engine 2" });
+    const switches = screen.getAllByRole("switch");
+    const [switch1, switch2] = switches;
     expect(switch1).not.toBeChecked();
     expect(switch2).toBeChecked();
   });
@@ -36,7 +36,7 @@ describe("Switch", () => {
   it("changes state when clicked Uncontrolled", async () => {
     render(<HvSwitch aria-label="Engine 1" />);
 
-    const switchElement = screen.getByLabelText("Engine 1");
+    const switchElement = screen.getByRole("switch");
 
     expect(switchElement).not.toBeChecked();
     await userEvent.click(switchElement);
@@ -46,7 +46,7 @@ describe("Switch", () => {
   it("changes state when clicked Controlled", async () => {
     render(<ControlledSwitch />);
 
-    const switchElement = screen.getByRole("checkbox");
+    const switchElement = screen.getByRole("switch");
 
     expect(switchElement).not.toBeChecked();
     await userEvent.click(switchElement);
@@ -64,7 +64,7 @@ describe("Switch", () => {
       />,
     );
 
-    const switchElement = screen.getByRole("checkbox");
+    const switchElement = screen.getByRole("switch");
 
     expect(switchElement).not.toBeChecked();
     await userEvent.click(switchElement);
@@ -84,8 +84,8 @@ describe("Switch", () => {
         <HvSwitch defaultChecked disabled aria-label="Engine 2" />
       </>,
     );
-    const switch1 = screen.getByLabelText("Engine 1");
-    const switch2 = screen.getByLabelText("Engine 2");
+    const switches = screen.getAllByRole("switch");
+    const [switch1, switch2] = switches;
     expect(switch1).not.toBeChecked();
     expect(switch2).toBeChecked();
   });
@@ -93,7 +93,7 @@ describe("Switch", () => {
   it("doesn't change state when disabled", async () => {
     render(<HvSwitch disabled aria-label="Engine 1" />);
 
-    const switchComponent = screen.getByLabelText("Engine 1");
+    const switchComponent = screen.getByRole("switch");
 
     expect(switchComponent).not.toBeChecked();
     await userEvent.click(switchComponent, {

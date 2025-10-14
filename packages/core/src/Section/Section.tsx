@@ -87,10 +87,16 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
             className={cx(classes.header, {
               [classes.headerExpandable]: expandable && expandableHeader,
             })}
-            // eslint-disable-next-line click-events-have-key-events
             onClick={() => {
               if (!expandableHeader) return;
               expandButtonRef.current?.click();
+            }}
+            onKeyDown={(event) => {
+              if (!expandableHeader) return;
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                expandButtonRef.current?.click();
+              }
             }}
           >
             {expandable && (
@@ -112,9 +118,13 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
             {title}
             <div
               className={classes.actions}
-              // eslint-disable-next-line click-events-have-key-events
               onClick={(evt) => {
                 evt.stopPropagation();
+              }}
+              onKeyDown={(evt) => {
+                if (evt.key === "Enter" || evt.key === " ") {
+                  evt.stopPropagation();
+                }
               }}
             >
               {actions}

@@ -40,7 +40,7 @@ const RadioGroupComp = ({ onChange = () => {}, defaultValue = "2" }) => {
       value={value}
       onChange={handleOnChange}
       status={status}
-      statusMessage={'Don\'t select "None"!'}
+      statusMessage="Don't select \'None\'!"
       defaultValue={defaultValue}
     >
       <HvRadio label="None" value="none" />

@@ -7,13 +7,11 @@ import {
 import type { HvAvatarProps } from "../Avatar";
 import type { HvBannerContentProps } from "../Banner";
 import type { HvBaseDropdownProps } from "../BaseDropdown";
-import { HvRadioIconProps } from "../BaseRadio/RadioIcon";
 import type { HvBreadCrumbProps } from "../BreadCrumb";
 import type { HvButtonProps } from "../Button";
 import type { HvCalendarProps } from "../Calendar";
 import type { HvColorPickerProps } from "../ColorPicker";
 import type {
-  HvDialogActionsProps,
   HvDialogContentProps,
   HvDialogProps,
   HvDialogTitleProps,
