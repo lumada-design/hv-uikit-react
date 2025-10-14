@@ -113,6 +113,8 @@ export interface HvThemeStructure
     light: HvThemeColorsAny;
     dark: HvThemeColorsAny;
   };
+  /** Proxy object that provides CSS variable access to any theme property */
+  vars: DeepString<Omit<HvThemeStructure, "vars" | "base">>;
 }
 
 // Custom theme
