@@ -1,4 +1,4 @@
-import { RocketLaunchIcon } from "@phosphor-icons/react";
+import { RocketLaunch } from "@phosphor-icons/react";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { BasicNotification } from "../types";
@@ -6,7 +6,7 @@ import { BasicNotification } from "../types";
 const NotificationComponent: BasicNotification = ({ message, variant }) => {
   return (
     <>
-      <RocketLaunchIcon />
+      <RocketLaunch />
       <HvTypography variant={variant} style={{ marginBottom: "16px" }}>
         {message}
       </HvTypography>

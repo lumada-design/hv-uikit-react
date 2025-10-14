@@ -81,7 +81,7 @@ export const HvCodeEditor = ({
     ...options,
   };
 
-  const { colors, selectedMode, selectedTheme, colorModes } = useTheme();
+  const { colors, selectedMode, activeTheme, colorModes } = useTheme();
 
   // Configure Monaco with optional offline support
   useEffect(() => {
@@ -229,7 +229,7 @@ export const HvCodeEditor = ({
       {monacoInstance ? (
         <Editor
           options={mergedOptions}
-          theme={`hv-${selectedTheme}-${selectedMode}`}
+          theme={`hv-${activeTheme?.name}-${selectedMode}`}
           language={languageProp}
           defaultLanguage={defaultLanguage}
           beforeMount={handleBeforeMount}

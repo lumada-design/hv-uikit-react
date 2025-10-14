@@ -21,6 +21,7 @@ const external = [
 const esmOutput: OutputOptions = {
   format: "esm",
   preserveModules: true,
+  preserveModulesRoot: "src",
   dir: "dist",
   entryFileNames: "[name].js",
   exports: "named",

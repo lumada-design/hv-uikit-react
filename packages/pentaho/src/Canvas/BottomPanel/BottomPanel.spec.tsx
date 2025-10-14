@@ -22,7 +22,7 @@ const goToUncontrolledSample = async (page: Page) => {
 };
 
 test.beforeEach(async ({ page }) => {
-  page.setViewportSize({ width: 800, height: 500 });
+  await page.setViewportSize({ width: 800, height: 500 });
 });
 
 test("opens and closes by controlling the component and renders correctly when closed", async ({
@@ -199,7 +199,7 @@ test("render overflow actions when the tab content is overflowing", async ({
   page,
 }) => {
   // Change viewport
-  page.setViewportSize({ width: 300, height: 500 });
+  await page.setViewportSize({ width: 300, height: 500 });
 
   await goToControlledSample(page);
 
