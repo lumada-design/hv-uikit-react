@@ -1,5 +1,5 @@
 import { FC, useCallback, useMemo } from "react";
-import { PlusCircleIcon } from "@phosphor-icons/react";
+import { PlusCircleIcon } from "@phosphor-icons/react/PlusCircle";
 import { useServices } from "@hitachivantara/app-shell-services";
 import {
   HvDropDownMenu,

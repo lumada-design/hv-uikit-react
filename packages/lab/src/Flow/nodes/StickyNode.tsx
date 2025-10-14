@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import { css, cx } from "@emotion/css";
-/* eslint-disable import/no-restricted-imports */
-import { Popover } from "@mui/material";
+import Popover from "@mui/material/Popover";
 import {
   NodeProps,
   NodeResizer,

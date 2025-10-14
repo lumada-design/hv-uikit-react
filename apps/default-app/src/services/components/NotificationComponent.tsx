@@ -1,4 +1,4 @@
-import { RocketLaunchIcon } from "@phosphor-icons/react";
+import { RocketLaunchIcon } from "@phosphor-icons/react/RocketLaunch";
 import { HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { BasicNotification } from "../types";
