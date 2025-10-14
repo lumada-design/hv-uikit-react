@@ -26,7 +26,17 @@ The editor automatically handles offline support:
 - **Vite**: Workers are bundled by default
 - **Other bundlers**: Falls back to CDN
 
-No configuration required!
+### Vite Configuration
+
+To prevent Vite from pre-bundling Monaco Editor, add the following to your `vite.config.js`:
+
+```js
+export default {
+  optimizeDeps: {
+    exclude: ['monaco-editor'],
+  },
+}
+```
 
 ## Documentation
 
