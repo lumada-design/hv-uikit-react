@@ -27,6 +27,18 @@ import { Header } from "../../components/Header";
   children="Welcome to UI Kit."
 />
 
+### Color
+
+You can style the text color using any of the [styling strategies](/docs/styling#styling-strategies) we recommend.
+
+```tsx live
+<div className="flex flex-col gap-xs">
+  <HvTypography className="color-text">This is a typography</HvTypography>
+  <HvTypography className="color-positive">This is a typography</HvTypography>
+  <HvTypography className="color-[coral]">This is a typography</HvTypography>
+</div>
+```
+
 ### Root component
 
 The `HvTypography` component is a polymorphic component. Its default component is `p`,
@@ -45,17 +57,18 @@ but it can be changed to any other element through the `component` prop.
 </div>
 ```
 
-You can also change the root component of the `HvTypography` component to a
-custom component.
+You can also change the root component of the `HvTypography` component to a custom component.
+The example below shows how to create an a component that opens a link in a new tab with an indicator icon.
 
 ```tsx live
-interface CustomLinkProps extends HvTypographyProps<"a"> {
+interface ExternalLinkProps extends HvTypographyProps<"a"> {
   to: string;
 }
 
-const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
-  <a href={to} {...others}>
+const ExternalLink = ({ to, children, ...others }: ExternalLinkProps) => (
+  <a href={to} target="_blank" rel="noopener noreferrer" {...others}>
     {children}
+    <span className="i-ph-arrow-square-out inline-block" />
   </a>
 );
 
@@ -63,51 +76,10 @@ export default function Demo() {
   return (
     <HvTypography
       link
-      component={CustomLink}
+      component={ExternalLink}
       to="https://lumada-design.github.io/uikit-docs/master/"
     >
       Custom link
-    </HvTypography>
-  );
-}
-```
-
-### Color
-
-You can style the text color using any of the [styling strategies](/docs/styling#styling-strategies) we recommend.
-
-```tsx live
-<div className="flex flex-col gap-xs">
-  <HvTypography className="color-text">This is a typography</HvTypography>
-  <HvTypography className="color-positive">This is a typography</HvTypography>
-  <HvTypography className="color-[coral]">This is a typography</HvTypography>
-</div>
-```
-
-### External link icon
-
-While the `HvTypography` component doesn't directly support having an external link icon, you can easily
-create a custom component that includes this functionality and use it as the root component for `HvTypography`.
-
-```tsx live
-interface CustomLinkProps extends HvTypographyProps<"a"> {
-  to: string;
-}
-
-const CustomLink = ({ to, children, ...others }: CustomLinkProps) => (
-  <a href={to} target="_blank" rel="noopener noreferrer" {...others}>
-    {children} <span className="i-ph-arrow-square-out inline-block" />
-  </a>
-);
-
-export default function Demo() {
-  return (
-    <HvTypography
-      link
-      component={CustomLink}
-      to="https://lumada-design.github.io/uikit-docs/master/"
-    >
-      Read more
     </HvTypography>
   );
 }
