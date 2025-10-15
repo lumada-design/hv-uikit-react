@@ -22,7 +22,7 @@
     "@hitachivantara/uikit-styles": "*",
     "@hv/templates": "*",
     "@mui/material": "^5.14.20",
-    "@phosphor-icons/react": "^2.1.7",
+    "@phosphor-icons/react": "^2.1.10",
     "arquero": "^5.3.0",
     "clsx": "^2.0.0",
     "json5": "^2.2.3",

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ArrowCounterClockwise } from "@phosphor-icons/react/ArrowCounterClockwise";
-import { Check } from "@phosphor-icons/react/Check";
-import { Copy } from "@phosphor-icons/react/Copy";
+import { ArrowCounterClockwiseIcon } from "@phosphor-icons/react/ArrowCounterClockwise";
+import { CheckIcon } from "@phosphor-icons/react/Check";
+import { CopyIcon } from "@phosphor-icons/react/Copy";
 import { HvButton, HvTooltip } from "@hitachivantara/uikit-react-core";
 
 type ExpandableControlsProps = {
@@ -50,7 +50,7 @@ export const ExpandableControls = ({
           onClick={onReset}
           aria-label="Reset Code"
         >
-          <ArrowCounterClockwise />
+          <ArrowCounterClockwiseIcon />
         </HvButton>
       </HvTooltip>
 
@@ -63,7 +63,7 @@ export const ExpandableControls = ({
           onClick={handleCopyToClipboard}
           aria-label="Copy Code"
         >
-          {copySuccess ? <Check /> : <Copy />}
+          {copySuccess ? <CheckIcon /> : <CopyIcon />}
         </HvButton>
       </HvTooltip>
     </div>
