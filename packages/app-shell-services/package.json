@@ -2,7 +2,7 @@
   "name": "@hitachivantara/app-shell-services",
   "version": "1.1.2",
   "type": "module",
-  "private": false,
+  "private": true,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Services",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
