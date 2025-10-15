@@ -24,25 +24,13 @@ export const getExtraDependenciesString = (): string => {
   return extraDependenciesString;
 };
 
-function replaceIdPrefix(
-  keys: (string | RegExp)[],
-  packageName: string,
-): PluginOption {
-  const reg = new RegExp(
-    `(/${packageName})?${ID_PREFIX}(${keys.join("|")})`,
-    "g",
-  );
-
+function markExternal(keys: (string | RegExp)[]): PluginOption {
   return {
-    name: "vite-plugin-importmap-replace-idprefix",
+    name: "vite-plugin-importmap-mark-external",
     enforce: "pre",
     apply: "serve",
 
-    // while in dev, we need to prevent 'vite:import-analysis' on runtime modules
-    transform: (code) =>
-      reg.test(code) ? code.replace(reg, (m, s1, s2) => s2) : code,
-
-    // and to say its resolved (as external)
+    // while in dev, we need to mark keys from the importmapElements that match the id as external)
     resolveId: (id: string) =>
       keys.some((key) =>
         typeof key === "string" ? id.startsWith(key) : key.test(id),
@@ -66,17 +54,29 @@ function replaceIdPrefix(
   };
 }
 
+function replaceIdPrefix(keys: (string | RegExp)[]): PluginOption {
+  const reg = new RegExp(`${ID_PREFIX}(${keys.join("|")})`, "g");
+
+  return {
+    name: "vite-plugin-importmap-replace-idprefix",
+    enforce: "pre",
+    apply: "serve",
+
+    // while in dev, we need to prevent 'vite:import-analysis' on runtime modules
+    transform: (code) =>
+      reg.test(code) ? code.replace(reg, (m, s1) => s1) : code,
+  };
+}
+
 /**
  * Generate and injects the importmap tag into index.html
  * @param importmapElements The importmap elements to be included
- * @param packageName The application name identifier
  * @param sharedDependencies The shared packages (other than application bundles)
  * @param externalImportMap Flag to control if the importmap should be externalized
  * @param placeholderEntryPoint Flag to control if the importmap should be a placeholder
  */
 export default function generateImportmap(
   importmapElements: Record<string, string>,
-  packageName: string,
   sharedDependencies: string[],
   externalImportMap = false,
   placeholderEntryPoint = false,
@@ -180,8 +180,26 @@ document.currentScript.after(im);
           return;
         }
 
-        // @ts-expect-error an hack: we want to add the plugin only after the config is resolved
-        resolvedConfig.plugins.push(replaceIdPrefix(devKeys, packageName));
+        // this is a hack: we want to add the plugins only after the config is resolved,
+        // however, because vite:react-refresh overrides the `resolveId` hook,
+        // we need to add our `markExternal` before it
+        const index = resolvedConfig.plugins.findIndex(
+          (plugin) => plugin.name === "vite:react-refresh",
+        );
+
+        // if the plugin changes its name or is removed, fallback to as it was
+        if (index === -1) {
+          // @ts-expect-error
+          resolvedConfig.plugins.push(markExternal(devKeys));
+        } else {
+          // if present, `markExternal` will be put right before the `vite:react-refresh` plugin
+          // @ts-expect-error
+          resolvedConfig.plugins.splice(index, 0, markExternal(devKeys));
+        }
+
+        // `replaceIdPrefix` transformation can be put at the end as it was
+        // @ts-expect-error
+        resolvedConfig.plugins.push(replaceIdPrefix(devKeys));
       },
 
       /**
