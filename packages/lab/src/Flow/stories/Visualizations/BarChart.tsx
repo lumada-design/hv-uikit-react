@@ -9,7 +9,7 @@ import { HvBarChart } from "@hitachivantara/uikit-react-viz";
 import type { NodeData } from "./data";
 
 export const BarChart: HvFlowNodeFC<NodeData> = (props) => {
-  const inputNodes = useFlowInputNodes<NodeData>();
+  const inputNodes = useFlowInputNodes<NodeData & Record<string, unknown>>();
   const jsonData = inputNodes[0]?.data.jsonData;
 
   return (

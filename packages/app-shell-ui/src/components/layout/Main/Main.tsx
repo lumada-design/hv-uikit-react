@@ -21,7 +21,7 @@ const Main = ({ children }: MainProps) => {
   const { bannerMaxHeight, verticalNavigationWidth } = useLayoutContext();
   const { activeTheme } = useTheme();
 
-  const isPentahoTheme = activeTheme?.name === "pentahoPlus";
+  const isPentahoTheme = activeTheme?.name === "pentaho";
 
   return (
     <StyledContainer

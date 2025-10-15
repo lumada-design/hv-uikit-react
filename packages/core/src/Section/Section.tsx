@@ -49,7 +49,6 @@ export interface HvSectionProps
 export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
   function HvSection(props, ref) {
     const {
-      id,
       classes: classesProp,
       className,
       title,
@@ -69,7 +68,6 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
     const expandButtonRef = useRef<HTMLButtonElement>(null);
 
     const { isOpen, toggleOpen, buttonProps, regionProps } = useExpandable({
-      id,
       expanded,
       defaultExpanded,
     });
@@ -79,7 +77,6 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
     return (
       <div
         ref={ref}
-        id={id}
         className={cx(classes.root, className, {
           [classes.raisedHeader]: raisedHeader && isOpen,
         })}
@@ -90,10 +87,16 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
             className={cx(classes.header, {
               [classes.headerExpandable]: expandable && expandableHeader,
             })}
-            // eslint-disable-next-line click-events-have-key-events
             onClick={() => {
               if (!expandableHeader) return;
               expandButtonRef.current?.click();
+            }}
+            onKeyDown={(event) => {
+              if (!expandableHeader) return;
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                expandButtonRef.current?.click();
+              }
             }}
           >
             {expandable && (
@@ -115,9 +118,13 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
             {title}
             <div
               className={classes.actions}
-              // eslint-disable-next-line click-events-have-key-events
               onClick={(evt) => {
                 evt.stopPropagation();
+              }}
+              onKeyDown={(evt) => {
+                if (evt.key === "Enter" || evt.key === " ") {
+                  evt.stopPropagation();
+                }
               }}
             >
               {actions}
@@ -129,7 +136,6 @@ export const HvSection = forwardRef<HTMLDivElement, HvSectionProps>(
           hidden={!isOpen}
           className={cx(classes.content, {
             [classes.hidden]: expandable && !isOpen,
-            [classes.spaceTop]: !hasHeader,
             [classes.hasHeader]: hasHeader,
           })}
           {...(expandable && regionProps)}

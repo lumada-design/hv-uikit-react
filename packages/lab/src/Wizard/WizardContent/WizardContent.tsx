@@ -47,12 +47,13 @@ export const HvWizardContent = ({
 }: HvWizardContentProps) => {
   const { classes, cx } = useClasses(classesProp);
 
-  const { context, setContext, summary, tab } = useContext(HvWizardContext);
+  const { setContext, summary, tab } = useContext(HvWizardContext);
 
   const arrayChildren = Children.toArray(children) as ChildElement[];
 
   const summaryRef = useRef<HTMLElement | undefined>(undefined);
   const resizedRef = useRef({ height: 0, width: 0 });
+  const contextInitializedRef = useRef(false);
   const [containerRef, sizes] = useElementSize();
 
   const [summaryHeight, setSummaryHeight] = useState(0);
@@ -89,27 +90,34 @@ export const HvWizardContent = ({
   }, [tab, sizes, summary, updateSummaryMeasures]);
 
   useEffect(() => {
-    const initialContext = arrayChildren.reduce<HvWizardTabs>(
-      (acc, child, index) => {
-        const invalid =
-          "mustValidate" in child.props && child.props.mustValidate === true
-            ? false
-            : null;
-        const valid = invalid ?? (index === 0 || null);
-        acc[index] = { ...child.props, form: {}, valid, touched: index === 0 };
-        return acc;
-      },
-      {},
-    );
+    if (!contextInitializedRef.current) {
+      const initialContext = arrayChildren.reduce<HvWizardTabs>(
+        (acc, child, index) => {
+          const invalid =
+            "mustValidate" in child.props && child.props.mustValidate === true
+              ? false
+              : null;
+          const valid = invalid ?? (index === 0 || null);
+          acc[index] = {
+            ...child.props,
+            form: {},
+            valid,
+            touched: index === 0,
+          };
+          return acc;
+        },
+        {},
+      );
 
-    setContext(initialContext);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      setContext(initialContext);
+      contextInitializedRef.current = true;
+    }
+  }, [arrayChildren, setContext]);
 
   useEffect(() => {
-    if (tab && !context[tab]?.touched) {
-      setContext((oldContext) =>
-        Object.entries(oldContext).reduce<HvWizardTabs>(
+    setContext((oldContext) => {
+      if (tab && !oldContext[tab]?.touched) {
+        return Object.entries(oldContext).reduce<HvWizardTabs>(
           (acc, [key, childState]) => {
             acc[Number(key)] =
               +key <= tab
@@ -122,10 +130,11 @@ export const HvWizardContent = ({
             return acc;
           },
           {},
-        ),
-      );
-    }
-  }, [tab, context, setContext]);
+        );
+      }
+      return oldContext;
+    });
+  }, [tab, setContext]);
 
   const translateX = summaryWidth ? summaryWidth + 10 : 450;
 

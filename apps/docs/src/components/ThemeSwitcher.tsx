@@ -6,9 +6,8 @@ import { HvSelect } from "@hitachivantara/uikit-react-core";
 import { useDocsTheme } from "../hooks/useDocsTheme";
 
 const themes = [
-  { value: "pentahoPlus", label: "Pentaho" },
+  { value: "pentaho", label: "Pentaho" },
   { value: "ds5", label: "NEXT v5" },
-  { value: "ds3", label: "NEXT v3" },
 ];
 
 const allowedPaths = [
@@ -23,7 +22,7 @@ export const ThemeSwitcher = () => {
   const pathname = usePathname();
   const [docsTheme, setDocsTheme] = useDocsTheme();
 
-  if (!allowedPaths.some((path) => pathname.startsWith(path))) {
+  if (!allowedPaths.some((path) => pathname?.startsWith(path))) {
     return null;
   }
 

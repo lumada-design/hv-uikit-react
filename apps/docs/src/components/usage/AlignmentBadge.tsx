@@ -13,9 +13,8 @@ export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
   if (!values) return null;
 
   const items = [
-    ["Pentaho", values.pentahoPlus || "—"],
+    ["Pentaho", values.pentaho || "—"],
     ["NEXT v5", values.ds5 || "—"],
-    ["NEXT v3", values.ds3 || "—"],
   ];
 
   return (

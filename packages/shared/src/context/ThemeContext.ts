@@ -1,23 +1,20 @@
 import { createContext } from "react";
+import { HvThemeColorMode } from "@hitachivantara/uikit-styles";
 
 import { HvTheme } from "../types/theme";
 
 export interface HvThemeContextValue {
-  themes: string[];
-  colorModes: string[];
+  colorModes: HvThemeColorMode[];
   activeTheme?: HvTheme;
-  selectedTheme: string;
-  selectedMode: string;
-  changeTheme: (theme?: string, mode?: string) => void;
+  selectedMode: HvThemeColorMode;
+  changeMode: (mode?: HvThemeColorMode) => void;
   rootId?: string;
 }
 
 export const HvThemeContext = createContext<HvThemeContextValue>({
-  themes: [],
   activeTheme: undefined,
   colorModes: [],
-  selectedTheme: "",
-  selectedMode: "",
-  changeTheme: () => {},
+  selectedMode: "light",
+  changeMode: () => {},
   rootId: undefined,
 });

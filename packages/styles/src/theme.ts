@@ -1,7 +1,8 @@
 import { palette } from "./palette";
-import { baseTheme as tokens } from "./tokens";
+import { baseTheme } from "./tokens";
 import type { HvColor, HvColorAny } from "./tokens/colors";
-import {
+import { compatColors } from "./tokens/colorsCompat";
+import type {
   DeepString,
   HvThemeComponents,
   HvThemeTypography,
@@ -9,12 +10,7 @@ import {
   HvThemeVars,
   SpacingValue,
 } from "./types";
-import {
-  hasMultipleArgs,
-  mapCSSVars,
-  spacingUtil,
-  spacingUtilOld,
-} from "./utils";
+import { hasMultipleArgs, mapCSSVars, spacingUtil } from "./utils";
 
 const componentsSpec: DeepString<HvThemeComponents> = {
   header: {
@@ -23,32 +19,6 @@ const componentsSpec: DeepString<HvThemeComponents> = {
   },
   form: {
     errorColor: "string",
-  },
-  bulkActions: {
-    actionButtonVariant: "string",
-  },
-  table: {
-    rowStripedBackgroundColorEven: "string",
-    rowStripedBackgroundColorOdd: "string",
-    rowExpandBackgroundColor: "string",
-    rowSortedColor: "string",
-    rowSortedColorAlpha: "string",
-  },
-  stepNavigation: {
-    separatorMargin: "string",
-    defaultSeparatorHeight: "string",
-    simpleSeparatorHeight: "string",
-  },
-  filterGroup: {
-    applyButtonVariant: "string",
-    cancelButtonVariant: "string",
-  },
-  scrollTo: {
-    dotSelectedSize: "string",
-    backgroundColorOpacity: "string",
-  },
-  colorPicker: {
-    hueDirection: "string",
   },
   snackbar: {
     actionButtonVariant: "string",
@@ -66,7 +36,6 @@ const typographyProps: DeepString<HvThemeTypographyProps> = {
 
 const typographySpec: DeepString<HvThemeTypography> = {
   typography: {
-    // DS5
     display: { ...typographyProps },
     title1: { ...typographyProps },
     title2: { ...typographyProps },
@@ -77,40 +46,49 @@ const typographySpec: DeepString<HvThemeTypography> = {
     captionLabel: { ...typographyProps },
     caption1: { ...typographyProps },
     caption2: { ...typographyProps },
-    // LEGACY UNMAPPABLE (DS3)
-    "5xlTitle": { ...typographyProps },
-    "4xlTitle": { ...typographyProps },
-    xxlTitle: { ...typographyProps },
-    lTitle: { ...typographyProps },
-    sTitle: { ...typographyProps },
-    xxsTitle: { ...typographyProps },
-    sectionTitle: { ...typographyProps },
-    placeholderText: { ...typographyProps },
-    link: { ...typographyProps },
-    disabledText: { ...typographyProps },
-    selectedNavText: { ...typographyProps },
-    vizTextDisabled: { ...typographyProps },
-    xsInlineLink: { ...typographyProps },
   },
 };
 
 const colorTokens = {
-  ...tokens.colors.common,
-  ...tokens.colors.light,
+  ...baseTheme.colors.light,
+  ...compatColors.light,
 };
 
-const themeVars: HvThemeVars = mapCSSVars({
-  ...tokens,
-  colors: {
-    type: "light",
-    ...colorTokens,
-  }, // Flatten colors and add background color
-  ...componentsSpec,
-  ...typographySpec,
-});
+/** returns a Proxy that returns the CSS var for any (flat) token */
+function makeCssVars(prefix: string) {
+  const themeTokens = Object.keys(colorTokens);
+  return new Proxy(colorTokens, {
+    get(_target, prop) {
+      if (typeof prop !== "string") return undefined;
+      return `var(${prefix}-${prop})`;
+    },
+    ownKeys() {
+      return themeTokens;
+    },
+    getOwnPropertyDescriptor(_target, prop) {
+      if (themeTokens.includes(prop as string)) {
+        return { enumerable: true, configurable: true };
+      }
+      return undefined;
+    },
+  });
+}
+
+const themeVars: HvThemeVars = {
+  ...mapCSSVars({
+    ...baseTheme,
+    ...componentsSpec,
+    ...typographySpec,
+  }),
+  colors: makeCssVars("--uikit-colors") as any,
+};
 
 function getColorOrFallback(color?: HvColorAny) {
-  return themeVars.colors[color as HvColor] || color;
+  // TODO: support for custom colors
+  return (
+    (colorTokens[color as HvColor] && themeVars.colors[color as HvColor]) ||
+    color
+  );
 }
 
 /** Get a `color` from the theme palette, or `fallbackColor` if not found */
@@ -125,9 +103,9 @@ export function getColor(color?: HvColorAny, fallbackColor?: HvColorAny) {
  * theme.spacing(2) // 16px (2*8px)
  * theme.spacing("md", "inherit", "42px") // 24px inherit 42px
  */
-const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
+const spacing = (...args: [SpacingValue[]] | SpacingValue[]): string => {
   if (hasMultipleArgs(args)) {
-    return args.map((arg) => spacingUtil(arg, themeVars)).join(" ");
+    return args.map((arg) => spacing(arg)).join(" ");
   }
 
   const [value] = args;
@@ -136,11 +114,6 @@ const spacing = (...args: [SpacingValue[]] | SpacingValue[]) => {
     case "number":
     case "string":
       return spacingUtil(value, themeVars);
-    // TODO: remove in v6
-    case "object":
-      return value && value.length > 0
-        ? value.map((val) => spacingUtilOld(val, themeVars)).join(" ")
-        : "0px";
     default:
       return "0px";
   }

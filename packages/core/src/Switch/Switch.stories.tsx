@@ -55,15 +55,15 @@ export const Variants: StoryObj<HvSwitchProps> = {
       <>
         <div className={styles.group}>
           <HvSwitch required aria-label="Engine 1" label="Required" />
-          <HvSwitch defaultChecked required aria-label="Engine 2" />
+          <HvSwitch defaultChecked required label="Required" />
         </div>
         <div className={styles.group}>
           <HvSwitch disabled aria-label="Engine 1" label="Disabled" />
-          <HvSwitch defaultChecked disabled aria-label="Engine 2" />
+          <HvSwitch defaultChecked disabled label="Disabled" />
         </div>
         <div className={styles.group}>
           <HvSwitch readOnly aria-label="Engine 1" label="Readonly" />
-          <HvSwitch defaultChecked readOnly aria-label="Engine 2" />
+          <HvSwitch defaultChecked readOnly label="Readonly" />
         </div>
         <div className={styles.group}>
           <HvSwitch
@@ -76,7 +76,7 @@ export const Variants: StoryObj<HvSwitchProps> = {
             defaultChecked
             status="invalid"
             statusMessage="On no!"
-            aria-label="Engine 2"
+            label="Invalid"
           />
         </div>
         <div className={styles.group}>
@@ -190,7 +190,7 @@ export const WithCustomColors: StoryObj<HvSwitchProps> = {
     return (
       <HvSwitch
         checked={checked}
-        aria-label="Engine Control"
+        label="Engine Control"
         onChange={(_evt, newChecked) => setChecked(newChecked)}
         color={checked ? "positive" : "negative"}
       />

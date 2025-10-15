@@ -191,7 +191,7 @@ export const AlternativeLayout = () => {
           </pre>
           <HvSwitch
             checked={tableElements}
-            aria-label="Use table html elements"
+            label="Use table html elements"
             onChange={(_evt, newChecked) => setTableElements(newChecked)}
           />
           <pre aria-hidden onClick={() => setTableElements((v) => !v)}>

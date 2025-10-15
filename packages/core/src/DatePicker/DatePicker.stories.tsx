@@ -19,7 +19,6 @@ const containerDecorator: Decorator = (Story) => (
 
 const meta: Meta<typeof HvDatePicker> = {
   title: "Components/Date Picker",
-  // TODO: HvCalendar should have its own docs
   // @ts-ignore https://github.com/storybookjs/storybook/issues/23170
   subcomponents: { HvCalendar },
   component: HvDatePicker,
@@ -284,7 +283,7 @@ export const Test: StoryObj<HvDatePickerProps> = {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole("button", { name: /october/i }));
   },
-  ...setupChromatic(["DS3 dawn", "DS5 dawn", "Pentaho dawn"], 5000),
+  ...setupChromatic(["DS5 dawn", "Pentaho dawn"], 5000),
   render: (args, context: any) => {
     const value = new Date("2023-01-01");
     return (

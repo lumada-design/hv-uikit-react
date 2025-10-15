@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import { HvScrollToOption } from "../types/scroll";
 import {
   findFirstVisibleElement,
   getScrollTop,
@@ -8,6 +7,13 @@ import {
   scrollElement,
   verticalScrollOffset,
 } from "../utils/scroll";
+
+export interface HvScrollToOption {
+  key?: React.Key;
+  label: string;
+  value: string;
+  offset?: number;
+}
 
 interface HvScrollToOptionWithLink extends HvScrollToOption {
   href: string;
@@ -178,8 +184,7 @@ export const useScrollTo = (
 
     // We really want to run this just in the first load
     // in fact this doesn't even belong here, the logic should be external
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [navigationMode, options, offset]);
 
   const baseUrl =
     relativeLinks || typeof window === "undefined" || window == null

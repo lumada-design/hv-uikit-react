@@ -34,7 +34,6 @@ const initialState = {
   nodes: [
     {
       width: 250,
-      height: 365,
       id: "1caf2381eaf",
       position: { x: 194, y: -160 },
       data: { asset: "option1", nodeLabel: "Custom Label" },
@@ -42,7 +41,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "caf2381eaf3",
       position: { x: 637, y: -367 },
       data: { type: "prediction", nodeLabel: "ML Model Prediction" },
@@ -50,7 +48,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "af2381eaf37",
       position: { x: 643, y: 314 },
       data: { type: "detection", nodeLabel: "ML Model Detection" },
@@ -58,7 +55,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "f2381eaf379",
       position: { x: 1146, y: -444 },
       data: { nodeLabel: "KPI" },
@@ -66,7 +62,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "2381eaf3791",
       position: { x: 1144, y: -133 },
       data: { nodeLabel: "KPI" },
@@ -74,7 +69,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "381eaf37916",
       position: { x: 1142, y: 246 },
       data: { nodeLabel: "LineChart" },
@@ -82,7 +76,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 274,
       id: "81eaf379163",
       position: { x: 1146, y: 552 },
       data: { nodeLabel: "Table" },
@@ -90,7 +83,6 @@ const initialState = {
     },
     {
       width: 250,
-      height: 479,
       id: "1eaf3791634",
       position: { x: 1716, y: -129 },
       data: {

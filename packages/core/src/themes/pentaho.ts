@@ -2,7 +2,7 @@ import {
   blue,
   mergeTheme,
   neutral,
-  pentahoPlus as pentahoPlusBase,
+  pentaho as pentahoBase,
   slate,
   theme,
 } from "@hitachivantara/uikit-styles";
@@ -74,7 +74,7 @@ const popperStyles = {
   boxShadow: `0px 0px 6px 0px rgba(65, 65, 65, 0.08)`,
 };
 
-export const pentahoPlus = mergeTheme(pentahoPlusBase, {
+export const pentaho = mergeTheme(pentahoBase, {
   components: {
     HvLoading: {
       classes: {
@@ -85,13 +85,13 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
     } satisfies CSSClasses<HvLoadingProps>,
     HvBadge: {
       classes: {
-        badgePosition: {
+        badge: {
           color: ld(theme.colors.textLight, theme.colors.textDark),
-          "&[data-color='textSubtle']:not(.HvBadge-badgePosition:empty)": {
+          "&[data-color='textSubtle']:not(:empty)": {
             color: theme.colors.textSubtle,
             backgroundColor: theme.colors.bgPageSecondary,
           },
-          "&[data-color='primary']:not(.HvBadge-badgePosition:empty)": {
+          "&[data-color='primary']:not(:empty)": {
             color: theme.colors.primary,
             backgroundColor: theme.colors.primaryDimmed,
           },
@@ -273,7 +273,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
       classes: {
         root: {
           borderRadius: theme.radii.round,
-          "&& .HvButton-secondarySubtle": {
+          "& .HvButton-subtle[data-color=secondary]": {
             borderColor: theme.colors.textDimmed,
             backgroundColor: inputColors.bg,
           },
@@ -320,7 +320,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
               borderColor: theme.colors.textDisabled,
             },
           },
-          "& .HvTagsInput-chipRoot": {
+          "& .HvTagsInput-tag": {
             outlineColor: theme.colors.textDisabled,
           },
         },
@@ -847,10 +847,12 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
             borderRadius: theme.radii.full,
           },
         },
-        inputExtension: {
-          backgroundColor: "transparent",
-          height: 0,
-          boxShadow: "none",
+        suggestionsContainer: {
+          "&::before": {
+            backgroundColor: "transparent",
+            height: 0,
+            boxShadow: "none",
+          },
         },
       },
     } satisfies CSSClasses<HvInputProps>,
@@ -878,7 +880,7 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         root: {
           "--r": "calc(var(--HvButton-height) / 2)",
         },
-        iconSelected: {
+        open: {
           "&[data-color=secondary]": {
             borderColor: theme.colors.textDimmed,
           },

@@ -1,5 +1,5 @@
 import { FC, useCallback, useMemo } from "react";
-import { PlusCircleIcon } from "@phosphor-icons/react";
+import { PlusCircle } from "@phosphor-icons/react";
 import { useServices } from "@hitachivantara/app-shell-services";
 import {
   HvDropDownMenu,
@@ -58,7 +58,7 @@ const CreateNewContentDropDownMenuInner: FC<{
     <HvDropDownMenu
       icon={
         <HvIconContainer size="sm">
-          <PlusCircleIcon />
+          <PlusCircle />
         </HvIconContainer>
       }
       dataList={dataList}
