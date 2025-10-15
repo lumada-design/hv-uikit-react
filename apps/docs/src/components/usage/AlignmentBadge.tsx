@@ -1,4 +1,4 @@
-import { Info } from "@phosphor-icons/react/Info";
+import { InfoIcon } from "@phosphor-icons/react/Info";
 import { HvIconButton, HvTypography } from "@hitachivantara/uikit-react-core";
 
 import { alignmentData } from "./alignmentData";
@@ -34,7 +34,7 @@ export const AlignmentBadge = ({ component }: AlignmentBadgeProps) => {
         </div>
       }
     >
-      <Info size={18} />
+      <InfoIcon size={18} />
     </HvIconButton>
   );
 };

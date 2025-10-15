@@ -1,6 +1,6 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { User } from "@phosphor-icons/react/User";
+import { UserIcon as User } from "@phosphor-icons/react/User";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { setupChromatic } from "@hitachivantara/internal";
 import {

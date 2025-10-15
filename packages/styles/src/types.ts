@@ -41,7 +41,7 @@ export interface HvThemeComponentsProps {
   /** Component properties to override */
   components?: Record<string, Record<string, any>>;
   /** Record of icon names and their path, to override the default icons */
-  icons?: Record<string, string | string[]> & { viewBox: string };
+  icons?: Record<string, string> & { viewBox: string };
 }
 
 /** Theme components */

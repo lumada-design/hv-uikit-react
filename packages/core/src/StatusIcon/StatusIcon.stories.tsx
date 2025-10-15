@@ -51,6 +51,20 @@ export const Test: StoryObj = {
         <HvStatusIcon variant="success" size="lg" />
         <HvStatusIcon variant="success" size="xl" />
       </div>
+      <div className="flex items-center gap-sm">
+        <HvStatusIcon weight="regular" variant="success" />
+        <HvStatusIcon weight="duotone" variant="success" />
+        <HvStatusIcon weight="fill" variant="success" />
+        <HvStatusIcon weight="regular" variant="warning" />
+        <HvStatusIcon weight="duotone" variant="warning" />
+        <HvStatusIcon weight="fill" variant="warning" />
+        <HvStatusIcon weight="regular" variant="error" />
+        <HvStatusIcon weight="duotone" variant="error" />
+        <HvStatusIcon weight="fill" variant="error" />
+        <HvStatusIcon weight="regular" variant="info" />
+        <HvStatusIcon weight="duotone" variant="info" />
+        <HvStatusIcon weight="fill" variant="info" />
+      </div>
     </>
   ),
 };

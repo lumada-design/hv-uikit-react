@@ -12,7 +12,11 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@hitachivantara/*/*", "@mui/material"],
+        "patterns": [
+          "@hitachivantara/*/*",
+          "@mui/material",
+          "@phosphor-icons/react"
+        ],
         "paths": [
           "..",
           "../..",

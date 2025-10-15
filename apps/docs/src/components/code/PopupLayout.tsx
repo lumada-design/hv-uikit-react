@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CodeEditor, useLiveRunner, type Scope } from "react-live-runner";
-import { Check } from "@phosphor-icons/react/Check";
-import { Code } from "@phosphor-icons/react/Code";
-import { Copy } from "@phosphor-icons/react/Copy";
+import { CheckIcon } from "@phosphor-icons/react/Check";
+import { CodeIcon } from "@phosphor-icons/react/Code";
+import { CopyIcon } from "@phosphor-icons/react/Copy";
 import {
   HvDialog,
   HvDialogContent,
@@ -70,7 +70,7 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
             onClick={handleCopyToClipboard}
             className="z-1 absolute right-md top-64px"
           >
-            {copySuccess ? <Check /> : <Copy />}
+            {copySuccess ? <CheckIcon /> : <CopyIcon />}
           </HvIconButton>
           <CodeEditor
             value={editorCode}
@@ -89,7 +89,7 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
           title="Show Code"
           onClick={() => setIsExpanded((prev) => !prev)}
         >
-          <Code />
+          <CodeIcon />
         </HvIconButton>
       </div>
       <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
