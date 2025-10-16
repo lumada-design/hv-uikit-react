@@ -276,7 +276,6 @@ export function HvAppShellVitePlugin(
             )
           : {}),
       },
-      packageJson.name,
       [...SHARED_DEPENDENCIES.map((dep) => dep.moduleId), packageJson.name],
       externalImportMap && buildEntryPoint,
       generateEmptyShell,
