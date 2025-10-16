@@ -13,7 +13,7 @@ export const getLocalMode = () => {
 export const getInitialMode = (): HvThemeColorMode => {
   const localMode = getLocalMode();
 
-  if (localMode) return localMode as HvThemeColorMode;
+  if (localMode) return localMode === "dark" ? "dark" : "light";
 
   const prefersDark = window?.matchMedia?.(
     "(prefers-color-scheme: dark)",

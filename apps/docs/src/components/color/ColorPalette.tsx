@@ -1,11 +1,12 @@
 "use client";
 
-import { HvTypography, theme } from "@hitachivantara/uikit-react-core";
+import { HvTypography } from "@hitachivantara/uikit-react-core";
+import { palette } from "@hitachivantara/uikit-styles";
 
 export const ColorPalette = () => {
   return (
     <div className="space-y-md">
-      {Object.entries(theme.palette).map(([colorName, shades]) => (
+      {Object.entries(palette).map(([colorName, shades]) => (
         <section key={colorName} id={colorName}>
           <HvTypography className="font-semibold mb-2">
             {colorName.charAt(0).toUpperCase() + colorName.slice(1)}

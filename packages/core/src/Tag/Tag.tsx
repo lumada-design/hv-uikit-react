@@ -7,6 +7,7 @@ import {
 } from "@hitachivantara/uikit-react-utils";
 import {
   getColor,
+  palette,
   theme,
   type HvColor,
   type HvColorAny,
@@ -129,7 +130,7 @@ export const HvTag = forwardRef<
     // backwards-compatibility for `type` prop
     (type === "categorical" && theme.alpha(color || "cat1", 0.2)) ||
     // use the palette color if it matches
-    theme.palette[color as keyof typeof theme.palette]?.[600] ||
+    palette[color as keyof typeof palette]?.[600] ||
     getColor(color);
 
   const isClickable = !!(onClick || onDelete || selectable);

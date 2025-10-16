@@ -1,6 +1,6 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
-import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
+import type { HvColorTokens, HvThemeColors } from "./tokens/colors";
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
@@ -21,7 +21,7 @@ export const makeTheme = (
 };
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
-const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
+const compatMap: Partial<Record<keyof HvColorTokens, string>> = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
   positiveStrong: "positive_80",
@@ -49,17 +49,19 @@ const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
   bgContainer: "atmo1",
   bgPageSecondary: "atmo3",
   border: "atmo4",
+  borderSubtle: "atmo3",
+  borderDisabled: "secondary_60",
 };
 
-/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
+/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
     const compatKey = compatMap[key as keyof typeof compatMap];
-    if (compatKey) {
-      acc[compatKey] = color;
+    if (compatKey && !acc[compatKey as keyof typeof acc]) {
+      acc[compatKey as keyof typeof acc] = color;
     }
     return acc;
-  }, {} as Partial<HvThemeColors>);
+  }, colors);
 };
 
 /**
@@ -68,18 +70,19 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  * @private @internal internal use only
  */
 export const makeColors = (
-  inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
+  inputColors: Partial<Record<keyof HvThemeColors, string[] | string>>,
 ): HvCustomTheme["colors"] => {
   const [lightColors, darkColors] = Object.entries(inputColors).reduce(
     (acc, [key, color]) => {
+      if (!color) return acc;
       const [lightColor, darkColor] =
         typeof color === "string" ? [color, color] : color;
 
       if (lightColor) {
-        acc[0][key as keyof ColorTokens] = lightColor;
+        acc[0][key as keyof HvColorTokens] = lightColor;
       }
       if (darkColor) {
-        acc[1][key as keyof ColorTokens] = darkColor;
+        acc[1][key as keyof HvColorTokens] = darkColor;
       }
       return acc;
     },
@@ -87,17 +90,13 @@ export const makeColors = (
   );
 
   return {
-    light: {
-      ...colors.common,
-      ...colors.light,
-      ...extendCompatColors(lightColors),
+    light: extendCompatColors({
+      ...baseTheme.colors.light,
       ...lightColors,
-    },
-    dark: {
-      ...colors.common,
-      ...colors.dark,
-      ...extendCompatColors(darkColors),
+    }),
+    dark: extendCompatColors({
+      ...baseTheme.colors.dark,
       ...darkColors,
-    },
+    }),
   };
 };
