@@ -127,14 +127,16 @@ export const HvDrawer = forwardRef<
       onClose={handleOnClose}
       {...others}
     >
-      <HvIconButton
-        id={setId(id, "close")}
-        className={classes.closeButton}
-        onClick={onClose}
-        title={buttonTitle}
-      >
-        <HvIcon name="Close" />
-      </HvIconButton>
+      {onClose && (
+        <HvIconButton
+          id={setId(id, "close")}
+          className={classes.closeButton}
+          onClick={onClose}
+          title={buttonTitle}
+        >
+          <HvIcon name="Close" />
+        </HvIconButton>
+      )}
       {children}
     </MuiDrawer>
   );

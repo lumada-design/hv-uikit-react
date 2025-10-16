@@ -118,14 +118,16 @@ export const HvDialog = (props: HvDialogProps) => {
       }}
       {...others}
     >
-      <HvIconButton<"button">
-        title={buttonTitle}
-        id={setId(id, "close")}
-        className={classes.closeButton}
-        onClick={(event) => onClose?.(event, undefined)}
-      >
-        <HvIcon name="Close" compact />
-      </HvIconButton>
+      {onClose && (
+        <HvIconButton<"button">
+          title={buttonTitle}
+          id={setId(id, "close")}
+          className={classes.closeButton}
+          onClick={(event) => onClose?.(event, undefined)}
+        >
+          <HvIcon name="Close" compact />
+        </HvIconButton>
+      )}
       <DialogContext.Provider value={contextValue}>
         {children}
       </DialogContext.Provider>

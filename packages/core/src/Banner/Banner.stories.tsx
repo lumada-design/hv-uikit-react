@@ -84,16 +84,19 @@ export const Variants: StoryObj<HvBannerProps> = {
           showIcon
           actions={[{ id: "post", label: "Action", disabled: false }]}
           onAction={(event, action) => console.log("Clicked", action)}
+          onClose={() => {}}
           className={css({ position: "relative", top: 0 })}
         />
         <HvBannerContent
           content="This is a banner with two actions."
+          onClose={() => {}}
           actions={actionArray("banner3")}
           actionsPosition="inline"
         />
         <HvBannerContent
           customIcon={<Deploy />}
           content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
+          onClose={() => {}}
           actions={actionArray("banner2")}
           actionsPosition="bottom-right"
         />
