@@ -2,7 +2,7 @@
   "name": "@hitachivantara/uikit-config",
   "version": "0.5.1",
   "type": "module",
-  "private": false,
+  "private": true,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit Sharable projects configurations",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
