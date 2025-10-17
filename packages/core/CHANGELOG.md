@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.0...@hitachivantara/uikit-react-core@6.0.0-next.1) (2025-10-17)
+
+### Bug Fixes
+
+- **Accordion:** default disableEventHandling ([#4835](https://github.com/lumada-design/hv-uikit-react/issues/4835)) ([2be78b6](https://github.com/lumada-design/hv-uikit-react/commit/2be78b6af92fa2c1bbcd49faba084a7d214d5d35))
+- **Badge:** remove deprecated APIs ([#4842](https://github.com/lumada-design/hv-uikit-react/issues/4842)) ([8f72ad4](https://github.com/lumada-design/hv-uikit-react/commit/8f72ad49fc8ba5bd7243142ca5e8c40c5a62c195))
+- consistent component classes naming ([#4826](https://github.com/lumada-design/hv-uikit-react/issues/4826)) ([b2da9f7](https://github.com/lumada-design/hv-uikit-react/commit/b2da9f7e85a8687d5783141a232ac5715b8fe785))
+- typos in props names ([#4823](https://github.com/lumada-design/hv-uikit-react/issues/4823)) ([4b21c12](https://github.com/lumada-design/hv-uikit-react/commit/4b21c12106d593f7aa5c63f752640f92f602b7ff))
+
+### Features
+
+- **icons:** remove deprecated `inverted` & `semantic` props ([#4820](https://github.com/lumada-design/hv-uikit-react/issues/4820)) ([9ec2122](https://github.com/lumada-design/hv-uikit-react/commit/9ec2122ecf90e114da86b88f79e3a88fc00e0151))
+- **theme:** support only light/dark color modes ([#4857](https://github.com/lumada-design/hv-uikit-react/issues/4857)) ([749fc5a](https://github.com/lumada-design/hv-uikit-react/commit/749fc5add9c473298b7ff0f178236feab8057109))
+
 # [5.106.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.105.1...@hitachivantara/uikit-react-core@5.106.0) (2025-10-03)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.46.12...@hitachivantara/uikit-react-lab@6.0.0-next.1) (2025-10-17)
+
+### Features
+
+- **Flow:** update reactflow to v12 ([#4840](https://github.com/lumada-design/hv-uikit-react/issues/4840)) ([1ed94b3](https://github.com/lumada-design/hv-uikit-react/commit/1ed94b34a9b0071cc7d505c2db4f317c339385de))
+
 ## [5.46.12](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-lab@5.46.11...@hitachivantara/uikit-react-lab@5.46.12) (2025-10-03)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-lab
