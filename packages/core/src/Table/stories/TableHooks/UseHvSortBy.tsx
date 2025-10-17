@@ -8,41 +8,46 @@ import {
   HvTableHead,
   HvTableHeader,
   HvTableRow,
-  useHvData,
   useHvSortBy,
+  useHvTable,
 } from "@hitachivantara/uikit-react-core";
 
 import { AssetEvent, getColumns, makeData } from "../storiesUtils";
 
+const makeSortType =
+  (items: string[]): HvTableColumnConfig<AssetEvent>["sortType"] =>
+  (rowA, rowB, columnId) => {
+    const a = items.indexOf(rowA.values[columnId]?.toLowerCase());
+    const b = items.indexOf(rowB.values[columnId]?.toLowerCase());
+
+    return a - b;
+  };
+
 export const UseHvSortBy = () => {
-  const colSort: HvTableColumnConfig<AssetEvent>["sortType"] = useMemo(() => {
-    const levels = ["minor", "average", "major", "critical"];
-
-    return (rowA, rowB, columnId) => {
-      const a = levels.indexOf(rowA.values[columnId]?.toLowerCase());
-      const b = levels.indexOf(rowB.values[columnId]?.toLowerCase());
-
-      return a === b ? 0 : a > b ? 1 : -1;
-    };
-  }, []);
-
   const columns = useMemo(() => {
     const cols = getColumns();
     cols[2].disableSortBy = true;
-    cols[5].sortType = colSort;
+    cols[5].sortType = makeSortType(["minor", "average", "major", "critical"]);
+    cols[6].sortType = makeSortType(["low", "medium", "high"]);
     return cols;
-  }, [colSort]);
+  }, []);
 
   const data = useMemo(() => makeData(5), []);
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useHvData<AssetEvent, string>({ columns, data }, useHvSortBy);
+  const table = useHvTable<AssetEvent, string>(
+    {
+      columns,
+      data,
+      initialState: { sortBy: [{ id: "severity", desc: true }] },
+    },
+    useHvSortBy,
+  );
 
   return (
     <HvTableContainer>
-      <HvTable {...getTableProps()}>
-        <HvTableHead>
-          {headerGroups.map((headerGroup) => (
+      <HvTable {...table.getTableProps()}>
+        <HvTableHead {...table.getTableHeadProps?.()}>
+          {table.headerGroups.map((headerGroup) => (
             <HvTableRow
               {...headerGroup.getHeaderGroupProps()}
               key={headerGroup.getHeaderGroupProps().key}
@@ -58,9 +63,9 @@ export const UseHvSortBy = () => {
             </HvTableRow>
           ))}
         </HvTableHead>
-        <HvTableBody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
+        <HvTableBody {...table.getTableBodyProps()}>
+          {table.rows.map((row) => {
+            table.prepareRow(row);
             const { key, ...rowProps } = row.getRowProps();
 
             return (
