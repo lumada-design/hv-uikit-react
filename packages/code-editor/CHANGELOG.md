@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.10.0...@hitachivantara/uikit-react-code-editor@5.11.0) (2025-10-17)
+
+### Features
+
+- **code-editor:** move monaco-editor to peerDependencies ([#4938](https://github.com/lumada-design/hv-uikit-react/issues/4938)) ([7ddce66](https://github.com/lumada-design/hv-uikit-react/commit/7ddce669469bd0bdb681ed800fb203b55f4a835a))
+
 # [5.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.9.5...@hitachivantara/uikit-react-code-editor@5.10.0) (2025-10-13)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.10.0...@hitachivantara/app-shell-vite-plugin@1.10.1) (2025-10-17)
+
+### Bug Fixes
+
+- **AppShell:** improve external marking and id prefix replacement [PPUC-199] ([#4941](https://github.com/lumada-design/hv-uikit-react/issues/4941)) ([409b6ff](https://github.com/lumada-design/hv-uikit-react/commit/409b6ff34dac7b718db429ec23212dd4f3ca705c))
+
 # [1.10.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-vite-plugin@1.9.5...@hitachivantara/app-shell-vite-plugin@1.10.0) (2025-10-07)
 
 ### Features
