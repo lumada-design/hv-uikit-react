@@ -30,7 +30,7 @@ export const Test: StoryObj = {
           {Object.entries(icons).map(([name, Icon]) => (
             <Icon
               key={name}
-              color={["secondary", "negative", "positive"]}
+              color={["text", "negative", "positive"]}
               size="md"
             />
           ))}

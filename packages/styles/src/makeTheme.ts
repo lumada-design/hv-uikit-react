@@ -1,6 +1,10 @@
 import { HvTheme, theme } from "./theme";
 import { baseTheme } from "./tokens";
-import { colors, HvThemeColors, type ColorTokens } from "./tokens/colors";
+import {
+  colors,
+  type HvColorTokens,
+  type HvThemeColors,
+} from "./tokens/colors";
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
@@ -21,7 +25,7 @@ export const makeTheme = <Mode extends string = string>(
 };
 
 /** Compatibility object between UI Kit tokens and NEXT tokens */
-const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
+const compatMap: Partial<Record<keyof HvThemeColors, string>> = {
   primaryStrong: "primary_80",
   primaryDimmed: "primary_20",
   positiveStrong: "positive_80",
@@ -52,24 +56,24 @@ const compatMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
 };
 
 /** Compatibility object between UI Kit tokens and old theme alias */
-const aliasMap: Partial<Record<keyof ColorTokens, keyof HvThemeColors>> = {
+const aliasMap: Partial<Record<keyof HvThemeColors, keyof HvThemeColors>> = {
   bgPage: "backgroundColor",
   bgHover: "containerBackgroundHover",
 };
 
-/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `backgroundColor` => `atmo2` */
+/** Adds the NEXT compatibility colors for a given palette. @example `bgPage` => `bgPage` => `atmo2` */
 const extendCompatColors = (colors: Partial<HvThemeColors>) => {
   return Object.entries(colors).reduce((acc, [key, color]) => {
     const compatKey = compatMap[key as keyof typeof compatMap];
     if (compatKey) {
-      acc[compatKey] = color;
+      acc[compatKey as keyof typeof acc] = color;
     }
     const aliasKey = aliasMap[key as keyof typeof aliasMap];
     if (aliasKey) {
       acc[aliasKey] = color;
     }
     return acc;
-  }, {} as Partial<HvThemeColors>);
+  }, colors);
 };
 
 /**
@@ -78,7 +82,7 @@ const extendCompatColors = (colors: Partial<HvThemeColors>) => {
  * @private @internal internal use only
  */
 export const makeColors = (
-  inputColors: Partial<Record<keyof HvThemeColors, [string, string] | string>>,
+  inputColors: Partial<Record<keyof HvThemeColors, string[] | string>>,
 ): HvCustomTheme<"dawn" | "wicked">["colors"] => {
   const [lightColors, darkColors] = Object.entries(inputColors).reduce(
     (acc, [key, color]) => {
@@ -86,10 +90,10 @@ export const makeColors = (
         typeof color === "string" ? [color, color] : color;
 
       if (lightColor) {
-        acc[0][key as keyof ColorTokens] = lightColor;
+        acc[0][key as keyof HvColorTokens] = lightColor;
       }
       if (darkColor) {
-        acc[1][key as keyof ColorTokens] = darkColor;
+        acc[1][key as keyof HvColorTokens] = darkColor;
       }
       return acc;
     },
@@ -101,17 +105,19 @@ export const makeColors = (
     modes: {
       dawn: {
         type: "light",
-        ...colors.common,
-        ...colors.light,
-        ...extendCompatColors(lightColors),
-        ...lightColors,
+        ...extendCompatColors({
+          ...colors.common,
+          ...colors.light,
+          ...lightColors,
+        }),
       },
       wicked: {
         type: "dark",
-        ...colors.common,
-        ...colors.dark,
-        ...extendCompatColors(darkColors),
-        ...darkColors,
+        ...extendCompatColors({
+          ...colors.common,
+          ...colors.dark,
+          ...darkColors,
+        }),
       },
     },
   };
