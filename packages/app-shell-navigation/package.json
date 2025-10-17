@@ -2,7 +2,7 @@
   "name": "@hitachivantara/app-shell-navigation",
   "version": "1.4.15",
   "type": "module",
-  "private": false,
+  "private": true,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Navigation",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",

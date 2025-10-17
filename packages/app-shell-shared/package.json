@@ -2,7 +2,7 @@
   "name": "@hitachivantara/app-shell-shared",
   "version": "1.7.5",
   "type": "module",
-  "private": false,
+  "private": true,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Shared",
   "homepage": "https://github.com/lumada-design/hv-uikit-react",
@@ -29,7 +29,7 @@
     "react-router-dom": "^6.9.0"
   },
   "optionalDependencies": {
-    "@hitachivantara/uikit-react-core": "^5.106.0"
+    "@hitachivantara/uikit-react-core": "^6.0.0-next.0"
   },
   "files": [
     "dist"
