@@ -124,6 +124,7 @@ export * from "./VerticalNavigation";
 export * from "./IconButton";
 export * from "./IconContainer";
 export * from "./Skeleton";
+export * from "./PopperMenu";
 
 export * from "./hooks/useClickOutside";
 export * from "./hooks/useComputation";
