@@ -1,0 +1,25 @@
+import {
+  HvButton, HvPopperMenu,
+} from "@hitachivantara/uikit-react-core";
+
+```tsx live
+import { useRef, useState } from "react";
+
+export default function Demo() {
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLButtonElement | null>(null);
+
+  return (
+    <>
+    <HvButton onClick={() => setOpen(!open)} ref={anchorRef}>
+      Popper Menu
+    </HvButton>
+    <HvPopperMenu open={open} anchorEl={anchorRef.current}>
+        <div>This is a simple popper menu. You can put any content here, such as
+        links, buttons, or other components.
+      </div>
+    </HvPopperMenu>
+    </>
+  );
+}
+```

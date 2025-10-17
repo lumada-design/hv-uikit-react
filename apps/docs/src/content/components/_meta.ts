@@ -47,6 +47,7 @@ export default {
   "overflow-tooltip": "Overflow Tooltip",
   pagination: "Pagination",
   panel: "Panel",
+  "popper-menu": "Popper Menu",
   "progress-bar": "Progress Bar",
   "query-builder": "Query Builder",
   radio: "Radio",
