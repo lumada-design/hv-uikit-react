@@ -83,10 +83,10 @@ function parseVariant(variant: HvButtonVariant): [HvColorAny, Variant] {
   }
 
   if (variant === "semantic") return ["inherit", "ghost"];
-  if (variant === "secondary") return ["secondary", "subtle"];
+  if (variant === "secondary") return ["text", "subtle"];
   if (variant === "ghost") return ["primary", "ghost"];
   if (variant === "contained" || variant === "subtle") {
-    return ["secondary", variant];
+    return ["text", variant];
   }
 
   const result = variant.split(/(?=[A-Z])/);
