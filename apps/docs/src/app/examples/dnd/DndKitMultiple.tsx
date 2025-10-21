@@ -3,6 +3,7 @@ import {
   DndContext,
   DragEndEvent,
   DragOverEvent,
+  DragOverlay,
   DragStartEvent,
   KeyboardSensor,
   PointerSensor,
@@ -269,18 +270,20 @@ export default function Demo() {
         </SortableContext>
       </div>
 
-      {activeColumn && (
-        <ColumnContainer
-          column={activeColumn}
-          items={items.filter((item) => item.columnId === activeColumn.id)}
-        />
-      )}
-      {activeItem && (
-        <ItemCard
-          item={activeItem}
-          className="b-2px border-primary bg-bgContainer"
-        />
-      )}
+      <DragOverlay>
+        {activeColumn && (
+          <ColumnContainer
+            column={activeColumn}
+            items={items.filter((item) => item.columnId === activeColumn.id)}
+          />
+        )}
+        {activeItem && (
+          <ItemCard
+            item={activeItem}
+            className="b-2px border-primary bg-bgContainer"
+          />
+        )}
+      </DragOverlay>
     </DndContext>
   );
 }
