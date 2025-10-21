@@ -99,7 +99,14 @@ const MyComponent = () => {
 ## CSS Variables
 
 All theme tokens are exported as CSS variables prefixed with `--uikit-*`.
-You can access them directly via the `theme` object from `@hitachivantara/uikit-react-core`:
+You can access them either via:
+
+- the static `theme` object from `@hitachivantara/uikit-react-core`
+- the `vars` property of the theme instance that you just created (eg. `myTheme.vars`)
+
+```tsx
+myTheme.vars.colors.primary; // "var(--uikit-colors-primary)"
+```
 
 ```tsx
 import { HvTypography, theme } from "@hitachivantara/uikit-react-core";

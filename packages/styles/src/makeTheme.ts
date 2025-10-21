@@ -8,6 +8,23 @@ import {
 import type { HvCustomTheme, HvThemeStructure } from "./types";
 import { mergeTheme } from "./utils";
 
+const getKey = (...keys: string[]) => keys.filter(Boolean).join("-");
+
+/** Uses a Proxy to output the CSS Vars based on the `themeObject` */
+const makeVarsProxy = (themeObject: Record<string, any>, parentKey = "") => {
+  return new Proxy(themeObject, {
+    get(target, prop) {
+      if (prop === "vars" || typeof prop !== "string") return null;
+
+      if (typeof target[prop] === "object" && target[prop] != null) {
+        return makeVarsProxy(target[prop], getKey(parentKey, prop));
+      }
+
+      return `var(--${getKey("uikit", parentKey, prop)})`;
+    },
+  });
+};
+
 /**
  * Generate a theme base on the options received.
  * Takes an incomplete theme object and adds the missing parts.
@@ -20,6 +37,9 @@ export const makeTheme = <Mode extends string = string>(
 ): HvThemeStructure<Mode> => {
   const customTheme = typeof options === "function" ? options(theme) : options;
   const newTheme = mergeTheme(baseTheme, customTheme);
+
+  // @ts-expect-error type this correctly
+  newTheme.vars = makeVarsProxy(newTheme);
 
   return newTheme;
 };
