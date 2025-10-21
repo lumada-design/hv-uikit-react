@@ -1,0 +1,25 @@
+---
+title: "Dashboard"
+---
+
+import { CodeBlock } from "../../../components/code/CodeBlock";
+
+import dashboard from "./Dashboard?raw";
+import responsive from "./Responsive?raw";
+import dashboardStyles from "./Dashboard.styles?raw";
+
+### Dashboards
+
+While UI Kit doesn't provide a dedicated Dashboard component out of the box, it's still possible to create dynamic
+and responsive dashboards along with UI Kit components. Our recommendation is to use the
+[`react-grid-layout`](https://github.com/react-grid-layout/react-grid-layout) library to achieve this functionality.
+
+<CodeBlock code={{ main: dashboard, "./Dashboard.styles": dashboardStyles }} />
+
+## Responsive dashboards
+
+You can configure different layouts for various screen sizes. Resize the window to see how the dashboard adapts.
+
+<CodeBlock code={{ main: responsive, "./Dashboard.styles": dashboardStyles }} />
+
+Check their [documentation](https://github.com/react-grid-layout/react-grid-layout/tree/master?tab=readme-ov-file#usage) for more details on how to use it.

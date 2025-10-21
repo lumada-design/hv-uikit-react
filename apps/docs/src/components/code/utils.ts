@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import * as reactGridLayout from "react-grid-layout";
 import * as reactHookForm from "react-hook-form";
 import { importCode, type Scope } from "react-live-runner";
 import * as reactTable from "react-table";
@@ -9,6 +10,7 @@ import * as DndKitModifiers from "@dnd-kit/modifiers";
 import * as DndKitSortable from "@dnd-kit/sortable";
 import * as DndKitUtilities from "@dnd-kit/utilities";
 import * as emotionCss from "@emotion/css";
+import * as emotionReact from "@emotion/react";
 import * as hookFormZod from "@hookform/resolvers/zod";
 import * as muiBase from "@mui/base";
 // oxlint-disable-next-line no-restricted-imports
@@ -41,6 +43,7 @@ const defaultScope: Scope = {
   import: {
     react: React,
     "react-dom": ReactDOM,
+    "react-grid-layout": reactGridLayout,
     "@hitachivantara/uikit-react-core": HvCore,
     "@hitachivantara/uikit-react-icons": HvIcons,
     "@hitachivantara/uikit-react-code-editor": HvCodeEditor,
@@ -49,6 +52,7 @@ const defaultScope: Scope = {
     "@hitachivantara/uikit-react-pentaho": HvPentaho,
     "@hitachivantara/uikit-styles": HvStyles,
     "@emotion/css": emotionCss,
+    "@emotion/react": emotionReact,
     "@mui/base": muiBase,
     "@mui/material": muiMaterial,
     "@mui/utils": muiUtils,
