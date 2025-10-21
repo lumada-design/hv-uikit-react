@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-next.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.46...@hitachivantara/uikit-react-utils@6.0.0-next.2) (2025-10-21)
+
+### Features
+
+- **theme:** support only light/dark color modes ([#4857](https://github.com/lumada-design/hv-uikit-react/issues/4857)) ([35d3599](https://github.com/lumada-design/hv-uikit-react/commit/35d3599b29232c7bd7dcc157fdaebf77ccf9ed57))
+
 ## [0.2.46](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.45...@hitachivantara/uikit-react-utils@0.2.46) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-utils

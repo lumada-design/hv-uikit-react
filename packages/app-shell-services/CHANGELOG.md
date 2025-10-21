@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-services@1.1.2...@hitachivantara/app-shell-services@2.0.0-next.1) (2025-10-21)
+
+**Note:** Version bump only for package @hitachivantara/app-shell-services
+
 ## [1.1.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-services@1.1.1...@hitachivantara/app-shell-services@1.1.2) (2025-09-25)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-services

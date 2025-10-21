@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-next.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.1...@hitachivantara/uikit-react-core@6.0.0-next.2) (2025-10-21)
+
+### Bug Fixes
+
+- **Accordion:** default disableEventHandling ([#4835](https://github.com/lumada-design/hv-uikit-react/issues/4835)) ([19839af](https://github.com/lumada-design/hv-uikit-react/commit/19839af8d2b9b41272864dcfe3360da9b5390f30))
+- **Badge:** remove deprecated APIs ([#4842](https://github.com/lumada-design/hv-uikit-react/issues/4842)) ([dea470f](https://github.com/lumada-design/hv-uikit-react/commit/dea470f1c228e12b81acff399b039c5fda82f3e9))
+- consistent component classes naming ([#4826](https://github.com/lumada-design/hv-uikit-react/issues/4826)) ([840baf4](https://github.com/lumada-design/hv-uikit-react/commit/840baf4bca776f0ea5cd90b262bbce394c8d667c))
+- **Table:** sorted icons ([#4947](https://github.com/lumada-design/hv-uikit-react/issues/4947)) ([3f8c46f](https://github.com/lumada-design/hv-uikit-react/commit/3f8c46f0612f1f8fb97fdd8fa4f45b5e213d1bdc))
+- typos in props names ([#4823](https://github.com/lumada-design/hv-uikit-react/issues/4823)) ([210b0d3](https://github.com/lumada-design/hv-uikit-react/commit/210b0d3fff047609cb5983c2bc942a7e0817e82b))
+
+### Features
+
+- **icons:** remove deprecated `inverted` & `semantic` props ([#4820](https://github.com/lumada-design/hv-uikit-react/issues/4820)) ([db25b21](https://github.com/lumada-design/hv-uikit-react/commit/db25b21dc82268eac02b7c6c63bcfe64d50a956d))
+- **theme:** support only light/dark color modes ([#4857](https://github.com/lumada-design/hv-uikit-react/issues/4857)) ([35d3599](https://github.com/lumada-design/hv-uikit-react/commit/35d3599b29232c7bd7dcc157fdaebf77ccf9ed57))
+
 ## [5.106.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.0...@hitachivantara/uikit-react-core@5.106.1) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

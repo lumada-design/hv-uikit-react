@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.7.6...@hitachivantara/app-shell-shared@2.0.0-next.1) (2025-10-21)
+
+### Features
+
+- **theme:** support only light/dark color modes ([#4857](https://github.com/lumada-design/hv-uikit-react/issues/4857)) ([35d3599](https://github.com/lumada-design/hv-uikit-react/commit/35d3599b29232c7bd7dcc157fdaebf77ccf9ed57))
+
 ## [1.7.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-shared@1.7.5...@hitachivantara/app-shell-shared@1.7.6) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-shared
