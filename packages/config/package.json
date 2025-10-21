@@ -27,7 +27,7 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    "./prettier": "./.prettierrc.json",
+    "./prettier": "./prettier.config.json",
     "./licenses": "./licenses/index.js",
     "./oxlint/*.json": "./oxlint/*.json",
     "./tsconfig": "./tsconfig.json"
