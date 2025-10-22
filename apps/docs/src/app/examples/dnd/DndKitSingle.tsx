@@ -2,6 +2,7 @@ import { HTMLAttributes, useMemo, useState } from "react";
 import {
   DndContext,
   DragOverEvent,
+  DragOverlay,
   DragStartEvent,
   KeyboardSensor,
   PointerSensor,
@@ -164,12 +165,14 @@ export default function Demo() {
         </SortableContext>
       </HvListContainer>
 
-      {activeItem && (
-        <ItemCard
-          item={activeItem}
-          className="b-2px border-primary bg-bgContainer"
-        />
-      )}
+      <DragOverlay>
+        {activeItem && (
+          <ItemCard
+            item={activeItem}
+            className="b-2px border-primary bg-bgContainer"
+          />
+        )}
+      </DragOverlay>
     </DndContext>
   );
 }
