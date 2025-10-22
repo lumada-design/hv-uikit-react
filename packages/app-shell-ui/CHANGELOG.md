@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.7](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.13.6...@hitachivantara/app-shell-ui@1.13.7) (2025-10-22)
+
+**Note:** Version bump only for package @hitachivantara/app-shell-ui
+
 ## [1.13.6](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/app-shell-ui@1.13.5...@hitachivantara/app-shell-ui@1.13.6) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/app-shell-ui

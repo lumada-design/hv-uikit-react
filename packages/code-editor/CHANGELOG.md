@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.11.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.11.0...@hitachivantara/uikit-react-code-editor@5.11.1) (2025-10-22)
+
+### Bug Fixes
+
+- **code-editor:** downgrade monaco-editor to v0.52.2 ([#4956](https://github.com/lumada-design/hv-uikit-react/issues/4956)) ([aaed674](https://github.com/lumada-design/hv-uikit-react/commit/aaed674ca33947e96730a469e602358cb93786e4))
+
 # [5.11.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.10.0...@hitachivantara/uikit-react-code-editor@5.11.0) (2025-10-17)
 
 ### Features

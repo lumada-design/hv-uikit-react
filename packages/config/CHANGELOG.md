@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.5.1...@hitachivantara/uikit-config@0.5.2) (2025-10-22)
+
+### Bug Fixes
+
+- **config:** rename prettierrc so its not ignored ([#4953](https://github.com/lumada-design/hv-uikit-react/issues/4953)) ([e8e72f0](https://github.com/lumada-design/hv-uikit-react/commit/e8e72f02c4a32f9abefc1348286e8474a058b996))
+
 ## [0.5.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-config@0.5.0...@hitachivantara/uikit-config@0.5.1) (2025-10-10)
 
 **Note:** Version bump only for package @hitachivantara/uikit-config

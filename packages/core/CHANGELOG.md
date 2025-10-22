@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.106.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.1...@hitachivantara/uikit-react-core@5.106.2) (2025-10-22)
+
+### Bug Fixes
+
+- **Table:** sorted icons ([#4947](https://github.com/lumada-design/hv-uikit-react/issues/4947)) ([3f8c46f](https://github.com/lumada-design/hv-uikit-react/commit/3f8c46f0612f1f8fb97fdd8fa4f45b5e213d1bdc))
+
 ## [5.106.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.0...@hitachivantara/uikit-react-core@5.106.1) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-core

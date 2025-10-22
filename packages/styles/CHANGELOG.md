@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.51.1...@hitachivantara/uikit-styles@5.52.0) (2025-10-22)
+
+### Features
+
+- **styles:** add theme .vars to access any variable ([#4832](https://github.com/lumada-design/hv-uikit-react/issues/4832)) ([56b8b11](https://github.com/lumada-design/hv-uikit-react/commit/56b8b1199dea3482e9536827f9c40fc34bd0f285))
+
 ## [5.51.1](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.51.0...@hitachivantara/uikit-styles@5.51.1) (2025-10-17)
 
 **Note:** Version bump only for package @hitachivantara/uikit-styles

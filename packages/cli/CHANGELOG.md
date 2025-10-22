@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.24.2...@hitachivantara/hv-uikit-cli@1.24.3) (2025-10-22)
+
+### Bug Fixes
+
+- **cli:** update tsconfig's `moduleResolution` to match create-vite guide ([#4955](https://github.com/lumada-design/hv-uikit-react/issues/4955)) ([0c0380f](https://github.com/lumada-design/hv-uikit-react/commit/0c0380f10748c6f85086e2875ca68019df543a31))
+
 ## [1.24.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.24.1...@hitachivantara/hv-uikit-cli@1.24.2) (2025-09-01)
 
 **Note:** Version bump only for package @hitachivantara/hv-uikit-cli

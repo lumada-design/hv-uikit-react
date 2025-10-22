@@ -1,6 +1,6 @@
 {
   "name": "@hitachivantara/uikit-react-utils",
-  "version": "0.2.46",
+  "version": "0.2.47",
   "type": "module",
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
@@ -36,7 +36,7 @@
   "dependencies": {
     "@emotion/serialize": "^1.1.2",
     "@emotion/utils": "^1.4.0",
-    "@hitachivantara/uikit-react-shared": "^5.5.6",
+    "@hitachivantara/uikit-react-shared": "^5.5.7",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
