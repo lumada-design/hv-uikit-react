@@ -35,7 +35,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.16.14",
-    "monaco-editor": "^0.54.0",
+    "monaco-editor": "^0.52.2",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },

@@ -1,10 +1,5 @@
 import { loader, type Monaco } from "@monaco-editor/react";
 
-declare global {
-  // eslint-disable-next-line no-var
-  var MonacoEnvironment: import("monaco-editor").Environment | undefined;
-}
-
 // Singleton state
 let monacoInstance: Monaco | null = null;
 let initPromise: Promise<Monaco> | null = null;
@@ -67,8 +62,8 @@ export const configureMonaco = async (): Promise<Monaco | null> => {
         default: editorWorker,
       };
 
-      globalThis.MonacoEnvironment = {
-        getWorker: (_, label) => {
+      MonacoEnvironment = {
+        getWorker: (_moduleId: string, label: string) => {
           const worker = workerMap[label as WorkerLabel] ?? workerMap.default;
           return new worker.default();
         },
