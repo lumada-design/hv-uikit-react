@@ -24,9 +24,12 @@ import { Header } from "../../components/Header";
       />
     }
     subheader={
-      <HvTypography variant="caption1">
-        Optional description or hint text
-      </HvTypography>
+        <div className="flex items-center gap-xxs">
+          <HvIconContainer size="xs">
+            <div className="i-ph-gear" />
+          </HvIconContainer>
+          <HvTypography variant="caption1">Optional description or hint text</HvTypography>
+        </div>
     }
   />
 
@@ -38,6 +41,9 @@ import { Header } from "../../components/Header";
     </HvTypography>
   </HvCardContent>
   <HvActionBar>
+    <HvButton variant="secondaryGhost">Discard</HvButton>
+    <div className="flex-1" />
+    <HvButton variant="secondaryGhost">Cancel</HvButton>
     <HvButton variant="primarySubtle">Button</HvButton>
   </HvActionBar>
 </HvCard>
@@ -48,7 +54,7 @@ import { Header } from "../../components/Header";
 Use the `HvCardMedia` component to add an image to your card. It automatically adapts to its placement within the card.
 
 ```tsx live
-<HvCard className="w-240px" bgcolor="bgContainer">
+<HvCard className="w-340px" bgcolor="bgContainer">
   <HvCardMedia
     component="img"
     alt="Schedule New Job"
@@ -70,7 +76,7 @@ To add actions to a card, use the `HvActionBar` component.
 
 ```tsx live
 <>
-  <HvCard className="w-380px" bgcolor="bgContainer">
+  <HvCard className="w-440px" bgcolor="bgContainer">
     <HvCardHeader
       title={
         <HvTypography variant="title4">Start using UI Kit now</HvTypography>
@@ -91,50 +97,38 @@ To add actions to a card, use the `HvActionBar` component.
 </>
 ```
 
-### Status bar
+### Status
 
 The `HvCard` component can have a status color on the top. Use the `statusColor` prop to set it with any [color](/docs/styling#color-prop).
 
 ```tsx live
-<HvCard className="w-240px" bgcolor="bgContainer" statusColor="negative">
+<HvCard className="w-440px" bgcolor="bgContainer" statusColor="negative">
   <HvCardHeader title={<HvTypography variant="title4">Error</HvTypography>} />
   <HvCardContent>
     <HvTypography>Something went wrong. Please try again later.</HvTypography>
   </HvCardContent>
+  <HvActionBar>
+    <HvButton variant="primarySubtle">Dismiss</HvButton>
+  </HvActionBar>
 </HvCard>
 ```
 
-### Status Icon
+The status can also be represented with an icon by using the `icon` prop.
 
 ```tsx live
 <HvCard
   className="w-440px"
   bgcolor="bgContainer"
-  icon={<HvStatusIcon variant="success" weight="duotone" type="simple" />}
+  icon={<HvStatusIcon variant="error" weight="duotone" type="simple" />}
 >
-  <HvCardHeader
-    title={<HvTypography variant="title4">Card Title</HvTypography>}
-    icon={
-      <HvStatusIcon
-        variant="default"
-        customIcon={<div className="i-ph-tree-structure" />}
-      />
-    }
-    subheader={
-      <HvTypography variant="caption1">
-        Optional description or hint text
-      </HvTypography>
-    }
-  />
+  <HvCardHeader title={<HvTypography variant="title4">Error</HvTypography>} />
   <HvCardContent>
     <HvTypography>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus,
-      odio sed scelerisque tempor, diam libero consectetur leo, ac tristique
-      lectus velit in nisl. Cras eu consectetur turpis, in imperdiet nulla.
+      Something went wrong. Please try again later.
     </HvTypography>
   </HvCardContent>
   <HvActionBar>
-    <HvButton variant="primarySubtle">Button</HvButton>
+    <HvButton variant="primarySubtle">Dismiss</HvButton>
   </HvActionBar>
 </HvCard>
 ```

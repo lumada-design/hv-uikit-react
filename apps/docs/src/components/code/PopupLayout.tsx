@@ -18,13 +18,20 @@ type PopupLayoutProps = {
   scope: Scope | null;
   code: Record<string, string>;
   title: string | undefined;
+  description: string | undefined;
 };
 
 /**
  * PopupLayout renders a live preview and an expandable code editor
  * with interactive controls for toggling and resetting the code.
  */
-export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
+export const PopupLayout = ({
+  id,
+  scope,
+  code,
+  title,
+  description,
+}: PopupLayoutProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
 
@@ -54,7 +61,7 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
     <section
       id={id}
       data-pagefind-ignore
-      className="bg-transparent relative border-border border-1 border-t-0 -ml-px h-full"
+      className=" p-sm bg-bgContainer h-ful border-1 border-border border-rounded-large h-full"
     >
       <HvDialog
         onClose={() => setIsExpanded(false)}
@@ -81,24 +88,33 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
       </HvDialog>
 
       {/* Poupup Controls */}
-      <div className="absolute flex justify-between items-center p-sm gap-xs w-full">
-        <HvTypography variant="label" className="pl-xs">
-          {title}
-        </HvTypography>
-        <HvIconButton
-          title="Show Code"
-          onClick={() => setIsExpanded((prev) => !prev)}
-        >
-          <CodeIcon />
-        </HvIconButton>
-      </div>
-      <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
-        {/* Preview Section */}
-        <DocsContainer
-          className="p-md flex items-center justify-center h-full [&>div]:flex-wrap "
-          error={error}
-          element={element}
-        />
+      <div className="flex flex-col justify-between gap-sm">
+        <div className="flex justify-between items-center gap-xs w-full">
+          <div>
+            {title && (
+              <HvTypography variant="label" className="pl-xs">
+                {title}
+              </HvTypography>
+            )}
+            {description && (
+              <HvTypography className="pl-xs">{description}</HvTypography>
+            )}
+          </div>
+          <HvIconButton
+            title="Show Code"
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            <CodeIcon />
+          </HvIconButton>
+        </div>
+        <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
+          {/* Preview Section */}
+          <DocsContainer
+            className="flex items-center justify-center h-full [&>div]:flex-wrap "
+            error={error}
+            element={element}
+          />
+        </div>
       </div>
       <pre className="hidden">{editorCode}</pre>
     </section>

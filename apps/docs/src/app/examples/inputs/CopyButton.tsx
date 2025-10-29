@@ -1,3 +1,6 @@
+/**
+ * An input with a button to copy its content to the clipboard.
+ */
 import { useRef, useState } from "react";
 import { HvAdornment, HvInput } from "@hitachivantara/uikit-react-core";
 import { Copy, Success } from "@hitachivantara/uikit-react-icons";

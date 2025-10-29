@@ -1,3 +1,6 @@
+/**
+ * An input with a label on the side.
+ */
 import {
   HvFormElement,
   HvInput,

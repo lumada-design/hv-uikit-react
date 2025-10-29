@@ -1,3 +1,6 @@
+/**
+ * A dropdown that opens a popper with custom content.
+ */
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import {
@@ -6,25 +9,6 @@ import {
   HvPanel,
   HvTag,
 } from "@hitachivantara/uikit-react-core";
-
-const colors = [
-  "Blue",
-  "Red",
-  "Green",
-  "Yellow",
-  "Purple",
-  "White",
-  "Black",
-  "Orange",
-  "Pink",
-  "Brown",
-  "Gray",
-  "Cyan",
-  "Magenta",
-  "Lime",
-  "Teal",
-  "Lavender",
-];
 
 export default function Demo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -98,3 +82,22 @@ export default function Demo() {
     </div>
   );
 }
+
+const colors = [
+  "Blue",
+  "Red",
+  "Green",
+  "Yellow",
+  "Purple",
+  "White",
+  "Black",
+  "Orange",
+  "Pink",
+  "Brown",
+  "Gray",
+  "Cyan",
+  "Magenta",
+  "Lime",
+  "Teal",
+  "Lavender",
+];

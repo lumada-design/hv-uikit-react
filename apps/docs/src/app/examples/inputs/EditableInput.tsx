@@ -1,3 +1,6 @@
+/**
+ * An editable input.
+ */
 import { useRef, useState } from "react";
 import {
   HvBaseInput,

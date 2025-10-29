@@ -9,6 +9,7 @@ import { resolveComponents, resolveImports } from "./utils";
 
 type CodeBlockProps = {
   title?: string;
+  description?: string;
   layout?: "expandable" | "toggable" | "popup";
   code: Record<string, string> | string;
 };
@@ -25,6 +26,7 @@ const layoutMap = {
  */
 export const CodeBlock = ({
   title,
+  description,
   layout = "toggable",
   code,
 }: CodeBlockProps) => {
@@ -50,5 +52,12 @@ export const CodeBlock = ({
   // Select the layout component based on the `layout` prop.
   const ComponentLayout = layoutMap[layout] || layoutMap.toggable;
 
-  return <ComponentLayout title={title} code={normalizedCode} scope={scope} />;
+  return (
+    <ComponentLayout
+      title={title}
+      description={description}
+      code={normalizedCode}
+      scope={scope}
+    />
+  );
 };

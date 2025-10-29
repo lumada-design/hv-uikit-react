@@ -8,4 +8,11 @@ export const rules: UserConfig<Theme>["rules"] = [
   ["gap-xxs", { gap: hvCssVars.space.xxs }],
   ["m-xxs", { margin: hvCssVars.space.xxs }],
   ["p-xxs", { padding: hvCssVars.space.xxs }],
+  [
+    "px-xxs",
+    {
+      "padding-right": hvCssVars.space.xxs,
+      "padding-left": hvCssVars.space.xxs,
+    },
+  ],
 ];

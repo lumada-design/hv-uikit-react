@@ -1,3 +1,6 @@
+/**
+ * An input with a dropdown prefix.
+ */
 import { useState } from "react";
 import { HvInput, HvOption, HvSelect } from "@hitachivantara/uikit-react-core";
 

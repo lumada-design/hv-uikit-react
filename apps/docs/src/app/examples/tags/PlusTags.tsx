@@ -1,18 +1,8 @@
+/**
+ * Tags on limited container with plus indicator
+ */
 import { useEffect, useRef, useState } from "react";
 import { HvTag, HvTooltip } from "@hitachivantara/uikit-react-core";
-
-const TAGS = [
-  "Tag 1",
-  "Tag 2",
-  "Tag 3",
-  "Tag 4",
-  "Tag 5",
-  "Tag 6",
-  "Tag 7",
-  "Tag 8",
-  "Tag 9",
-  "Tag 10",
-];
 
 export default function Demo() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -114,3 +104,16 @@ export default function Demo() {
     </>
   );
 }
+
+const TAGS = [
+  "Tag 1",
+  "Tag 2",
+  "Tag 3",
+  "Tag 4",
+  "Tag 5",
+  "Tag 6",
+  "Tag 7",
+  "Tag 8",
+  "Tag 9",
+  "Tag 10",
+];
