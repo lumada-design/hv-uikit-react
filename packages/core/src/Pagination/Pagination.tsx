@@ -6,6 +6,7 @@ import {
   useDefaultProps,
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
+import { HvSize } from "@hitachivantara/uikit-styles";
 
 import { useLabels } from "../hooks/useLabels";
 import { HvIconButton } from "../IconButton";
@@ -83,6 +84,8 @@ export interface HvPaginationProps extends HvBaseProps {
   navigationProps?: React.HTMLAttributes<HTMLDivElement>;
   /** Extra properties passed to the input component representing the current pages. */
   currentPageInputProps?: HvInputProps;
+  /** The size to use on the icons */
+  iconSize?: HvSize;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvPaginationClasses;
 }
@@ -113,6 +116,7 @@ export const HvPagination = forwardRef<
     showPageProps,
     navigationProps,
     currentPageInputProps,
+    iconSize = "xs",
     ...others
   } = useDefaultProps("HvPagination", props);
   const { classes, cx } = useClasses(classesProp);
@@ -219,7 +223,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(0)}
           title={labels?.firstPage || labels?.paginationFirstPageTitle}
         >
-          <HvIcon name="Start" className={classes.icon} size="xs" />
+          <HvIcon name="Start" className={classes.icon} size={iconSize} />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "previousPage-button")}
@@ -228,7 +232,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(page - 1)}
           title={labels?.previousPage || labels?.paginationPreviousPageTitle}
         >
-          <HvIcon name="Backwards" className={classes.icon} size="xs" />
+          <HvIcon name="Backwards" className={classes.icon} size={iconSize} />
         </HvIconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -254,7 +258,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(page + 1)}
           title={labels?.nextPage || labels?.paginationNextPageTitle}
         >
-          <HvIcon name="Forwards" className={classes.icon} size="xs" />
+          <HvIcon name="Forwards" className={classes.icon} size={iconSize} />
         </HvIconButton>
         <HvIconButton
           id={setId(id, "lastPage-button")}
@@ -263,7 +267,7 @@ export const HvPagination = forwardRef<
           onClick={() => changePage(pages - 1)}
           title={labels?.lastPage || labels?.paginationLastPageTitle}
         >
-          <HvIcon name="End" className={classes.icon} size="xs" />
+          <HvIcon name="End" className={classes.icon} size={iconSize} />
         </HvIconButton>
       </div>
     </div>

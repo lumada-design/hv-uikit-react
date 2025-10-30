@@ -32,6 +32,7 @@ import type { HvInputProps } from "../Input";
 import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvNumberInputProps } from "../NumberInput";
+import { HvPaginationProps } from "../Pagination";
 import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
@@ -899,5 +900,24 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvNumberInputProps>,
+    HvPagination: {
+      classes: {
+        root: {
+          [`& .HvPagination-pageSizeInput`]: {
+            ...theme.typography.caption1,
+          },
+        },
+        pageSizeTextContainer: {
+          ...theme.typography.caption1,
+        },
+        totalPagesTextContainer: {
+          ...theme.typography.caption1,
+        },
+        pageSizeOptionsSelect: {
+          ...theme.typography.caption1,
+        },
+      },
+      iconSize: "sm",
+    } satisfies CSSClasses<HvPaginationProps>,
   },
 });
