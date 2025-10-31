@@ -81,24 +81,27 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
       </HvDialog>
 
       {/* Poupup Controls */}
-      <div className="absolute flex justify-between items-center p-sm gap-xs w-full">
-        <HvTypography variant="label" className="pl-xs">
-          {title}
-        </HvTypography>
-        <HvIconButton
-          title="Show Code"
-          onClick={() => setIsExpanded((prev) => !prev)}
-        >
-          <CodeIcon />
-        </HvIconButton>
-      </div>
-      <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
-        {/* Preview Section */}
-        <DocsContainer
-          className="p-md flex items-center justify-center h-full [&>div]:flex-wrap "
-          error={error}
-          element={element}
-        />
+      <div className="flex flex-col gap-xxs items-center">
+        <div className="p-sm gap-xs w-full flex justify-between items-center">
+          <HvTypography variant="label" className="pl-xs">
+            {title}
+          </HvTypography>
+          <HvIconButton
+            title="Show Code"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            className="z-popover"
+          >
+            <CodeIcon />
+          </HvIconButton>
+        </div>
+        <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
+          {/* Preview Section */}
+          <DocsContainer
+            className="p-md p-t-0 flex items-center justify-center h-full [&>div]:flex-wrap "
+            error={error}
+            element={element}
+          />
+        </div>
       </div>
       <pre className="hidden">{editorCode}</pre>
     </section>
