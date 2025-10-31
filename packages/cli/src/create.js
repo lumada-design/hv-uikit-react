@@ -44,9 +44,8 @@ const questions = [
   },
   {
     type: "confirm",
-    name: "viteOptionsAppShell",
-    message:
-      "Use file based routing and automatic menu generation in App Shell?",
+    name: "appShellAutoMenu",
+    message: "Use automatic menu generation in App Shell?",
     default: true,
     when(answers) {
       return answers.useAppShell;
@@ -82,7 +81,7 @@ const create = async ({
   name = "uikit-app",
   useAppShell = true,
   appShellFeatures = [],
-  viteOptionsAppShell = true,
+  appShellAutoMenu = true,
   templates = [],
 }) => {
   console.log(chalk.cyan("\nUI kit app generator\n"));
@@ -113,7 +112,7 @@ const create = async ({
       appPath,
       name,
       appShellFeatures,
-      viteOptionsAppShell,
+      appShellAutoMenu,
       packageName,
     );
     console.log(
@@ -166,7 +165,7 @@ export const createCommand = new Command()
         name,
         useAppShell: !withoutAppShell,
         appShellFeatures: appShellFeatures?.split(",").map(toPascalCase),
-        viteOptionsAppShell: !disableFileBasedRouting,
+        appShellAutoMenu: !disableFileBasedRouting,
         templates: templates?.split(",").map(toPascalCase),
       });
     }
