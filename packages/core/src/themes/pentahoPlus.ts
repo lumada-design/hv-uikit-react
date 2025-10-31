@@ -25,18 +25,19 @@ import type { HvFooterProps } from "../Footer";
 import type { HvLabelProps } from "../FormElement";
 import type { HvSuggestionsProps } from "../FormElement/Suggestions";
 import type { HvHeaderBrandProps, HvHeaderProps } from "../Header";
-import { BarProps } from "../Header/Navigation/MenuBar/Bar";
+import type { BarProps } from "../Header/Navigation/MenuBar/Bar";
 import type { HvIconContainerProps } from "../IconContainer";
 import type { HvInlineEditorProps } from "../InlineEditor";
 import type { HvInputProps } from "../Input";
 import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvNumberInputProps } from "../NumberInput";
+import type { HvPaginationProps } from "../Pagination";
 import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
 import type { HvSnackbarProviderProps } from "../SnackbarProvider";
-import { HvSwitchProps } from "../Switch";
+import type { HvSwitchProps } from "../Switch";
 import type { HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvTagsInputProps } from "../TagsInput";
@@ -596,6 +597,16 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvDropdownButtonProps>,
+    HvPagination: {
+      classes: {
+        root: {
+          ...theme.typography.caption1,
+        },
+        icon: {
+          fontSize: 16,
+        },
+      },
+    } satisfies CSSClasses<HvPaginationProps>,
     HvHeader: {
       classes: {
         root: {

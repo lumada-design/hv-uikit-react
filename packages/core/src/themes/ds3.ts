@@ -879,19 +879,18 @@ export const ds3 = mergeTheme(ds3Base, {
     HvPagination: {
       classes: {
         root: {
-          [`& .HvPagination-pageSizeInput`]: {
-            ...theme.typography.label,
-            "&:focus": {
-              padding: "unset",
-            },
+          ...theme.typography.body,
+        },
+        pageSizeInput: {
+          ...theme.typography.label,
+          "&:focus": {
+            padding: "unset",
           },
-          [`& .HvPagination-pageSizeInputContainer`]: {
-            width: 40,
-            minWidth: 40,
-          },
-          [`&& .HvPagination-pageSizeInputRoot`]: {
-            height: 32,
-          },
+        },
+        pageJump: {
+          width: 40,
+          minWidth: 40,
+          height: 32,
         },
         icon: {
           fontSize: 16,
@@ -901,19 +900,9 @@ export const ds3 = mergeTheme(ds3Base, {
         },
         pageSizeHeader: {
           height: "unset",
-          [`& .HvBaseDropdown-arrowContainer`]: {
-            marginTop: 0,
-          },
         },
         pageSizeTextContainer: {
           height: 32,
-          ...theme.typography.body,
-        },
-        pageSizeOptionsSelect: {
-          ...theme.typography.body,
-        },
-        totalPagesTextContainer: {
-          ...theme.typography.body,
         },
         pageNavigator: {
           alignItems: "stretch",

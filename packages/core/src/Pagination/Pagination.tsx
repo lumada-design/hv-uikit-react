@@ -7,10 +7,10 @@ import {
   type ExtractNames,
 } from "@hitachivantara/uikit-react-utils";
 
+import { HvBaseInput, HvBaseInputProps } from "../BaseInput";
 import { useLabels } from "../hooks/useLabels";
 import { HvIconButton } from "../IconButton";
 import { HvIcon } from "../icons";
-import { HvInput, HvInputProps } from "../Input";
 import { HvBaseProps } from "../types/generic";
 import { HvTypography } from "../Typography";
 import { setId } from "../utils/setId";
@@ -82,7 +82,7 @@ export interface HvPaginationProps extends HvBaseProps {
   /** Other props to pagination component. */
   navigationProps?: React.HTMLAttributes<HTMLDivElement>;
   /** Extra properties passed to the input component representing the current pages. */
-  currentPageInputProps?: HvInputProps;
+  currentPageInputProps?: HvBaseInputProps;
   /** A Jss Object used to override or extend the styles applied to the component. */
   classes?: HvPaginationClasses;
 }
@@ -144,29 +144,31 @@ export const HvPagination = forwardRef<
   }, [page]);
 
   const renderPageJump = () => (
-    <div className={classes.pageJump}>
-      <HvInput
-        id={setId(id, "currentPage")}
-        labels={labels}
-        inputProps={{
-          "aria-label": labels?.paginationInputLabel,
-          // We really want the native number input
-          type: "number",
-        }}
-        classes={{
-          root: classes?.pageSizeInputContainer,
-          input: classes?.pageSizeInput,
-          inputRoot: classes?.pageSizeInputRoot,
-        }}
-        value={String(pageInput + 1)}
-        onChange={(event, value) => setPageInput(Number(value) - 1)}
-        onBlur={(evt, value) => changePage(Math.round(Number(value)) - 1)}
-        onEnter={(evt, value) => changePage(Math.round(Number(value)) - 1)}
-        disabled={pageSize === 0}
-        disableClear
-        {...currentPageInputProps}
-      />
-    </div>
+    <HvBaseInput
+      id={setId(id, "currentPage")}
+      inputProps={{
+        "aria-label": labels?.paginationInputLabel,
+        // We really want the native number input
+        type: "number",
+      }}
+      classes={{
+        root: cx(
+          classes.pageJump,
+          classes.pageSizeInputRoot,
+          classes.pageSizeInputContainer,
+        ),
+        input: classes.pageSizeInput,
+      }}
+      value={String(pageInput + 1)}
+      onChange={(event, value) => setPageInput(Number(value) - 1)}
+      onBlur={(evt) => changePage(Math.round(Number(evt.target.value)) - 1)}
+      onKeyDown={(evt) => {
+        if (evt.key !== "Enter") return;
+        changePage(Math.round(Number(evt.currentTarget.value)) - 1);
+      }}
+      disabled={pageSize === 0}
+      {...currentPageInputProps}
+    />
   );
 
   return (
@@ -175,23 +177,19 @@ export const HvPagination = forwardRef<
         {showPageSizeOptions && (
           <>
             {!isXsDown && (
-              <HvTypography
-                component="span"
-                className={classes?.pageSizeTextContainer}
-              >
+              <span className={classes?.pageSizeTextContainer}>
                 {labels?.pageSizePrev}
-              </HvTypography>
+              </span>
             )}
             <HvSelect
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
-              className={classes.pageSizeOptionsSelect}
               aria-label={labels?.pageSizeSelectorDescription}
-              onChange={(_: any, val: number) => onPageSizeChange?.(val)}
+              onChange={(evt, val) => onPageSizeChange?.(val)}
               value={pageSize}
               classes={{
                 header: classes.pageSizeHeader,
-                root: classes.pageSizeRoot,
+                root: cx(classes.pageSizeOptionsSelect, classes.pageSizeRoot),
               }}
             >
               {pageSizeOptions.map((option) => (
@@ -201,12 +199,9 @@ export const HvPagination = forwardRef<
               ))}
             </HvSelect>
             {!isXsDown && (
-              <HvTypography
-                component="span"
-                className={classes.pageSizeTextContainer}
-              >
+              <span className={classes.pageSizeTextContainer}>
                 {labels?.pageSizeEntryName}
-              </HvTypography>
+              </span>
             )}
           </>
         )}
@@ -231,21 +226,9 @@ export const HvPagination = forwardRef<
           <HvIcon name="Backwards" className={classes.icon} size="xs" />
         </HvIconButton>
         <div className={classes.pageInfo}>
-          {showPageJump ? (
-            renderPageJump()
-          ) : (
-            <HvTypography variant="caption2" component="span">{`${
-              page + 1
-            }`}</HvTypography>
-          )}
+          {showPageJump ? renderPageJump() : <span>{`${page + 1}`}</span>}
           <HvTypography component="span">{`${labels?.pagesSeparator} `}</HvTypography>
-          <HvTypography
-            component="span"
-            id={setId(id, "totalPages")}
-            className={classes.totalPagesTextContainer}
-          >
-            {pages}
-          </HvTypography>
+          <span className={classes.totalPagesTextContainer}>{pages}</span>
         </div>
         <HvIconButton
           id={setId(id, "nextPage-button")}
