@@ -4,7 +4,7 @@ const createRoute = {
       type: "append",
       path: "{{path}}/src/routes.tsx",
       pattern: "// APP ROUTES",
-      template: `{ path: "{{kebabCase name}}", lazy: () => import("./pages/{{name}}") },`,
+      template: `  { path: "{{kebabCase name}}", lazy: () => import("./pages/{{name}}") },`,
     },
   ],
 };
@@ -40,12 +40,13 @@ const createAppShellConfig = {
   ],
 };
 
-const createAppShellViteConfig = {
+const createAppShellAutoMenu = {
   actions: [
     {
-      type: "add",
+      type: "append",
       path: "{{path}}/vite.config.ts",
-      templateFile: "plop-templates/app-shell/vite.config.ts.hbs",
+      pattern: "autoViewsAndRoutes: true,",
+      template: `      autoMenu: true,`,
     },
   ],
 };
@@ -56,5 +57,5 @@ export default (plop) => {
   plop.setGenerator("createReadMe", createReadMe);
   plop.setGenerator("createAppShellIndexHtml", createAppShellIndexHtml);
   plop.setGenerator("createAppShellConfig", createAppShellConfig);
-  plop.setGenerator("createAppShellViteConfig", createAppShellViteConfig);
+  plop.setGenerator("createAppShellAutoMenu", createAppShellAutoMenu);
 };
