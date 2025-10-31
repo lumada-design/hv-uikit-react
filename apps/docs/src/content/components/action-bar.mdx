@@ -11,9 +11,12 @@ import { Header } from "../../components/Header";
 
 ```tsx live
 <HvActionBar className="gap-xs">
+  <HvIconContainer>
+    <div className="i-ph-question" />
+  </HvIconContainer>
   <HvButton variant="secondaryGhost">Reset</HvButton>
   <div className="flex-1" aria-hidden="true" />
-  <HvButton variant="subtle">Cancel</HvButton>
+  <HvButton variant="secondarySubtle">Cancel</HvButton>
   <HvButton variant="primary">Save</HvButton>
 </HvActionBar>
 ```
