@@ -1,0 +1,26 @@
+---
+title: "Cards"
+---
+
+import { CodeBlock } from "../../../components/code/CodeBlock";
+import selectable from "./Selectable?raw";
+import selectableCentered from "./SelectableCentered?raw";
+import selectableRadio from "./SelectableRadio?raw";
+import selectableRadioCentered from "./SelectableRadioCentered?raw";
+import selectableCheck from "./SelectableCheck?raw";
+import selectableCheckCentered from "./SelectableCheckCentered?raw";
+
+### Card Components
+
+Explore different card types and features—like image cards, text cards, and more
+
+<div className="overflow-hidden mt-20">
+  <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] -mt-px -mb-px auto-rows-min [&>*]:min-h-[240px]">
+    <CodeBlock code={selectable} layout="popup" title="Selectable card" />
+    <CodeBlock code={selectableCentered} layout="popup" title="Selectable centered card" />
+    <CodeBlock code={selectableRadio} layout="popup" title="Selectable radio card" />
+    <CodeBlock code={selectableRadioCentered} layout="popup" title="Selectable radio centered card" />
+    <CodeBlock code={selectableCheck} layout="popup" title="Selectable checkbox card" />
+    <CodeBlock code={selectableCheckCentered} layout="popup" title="Selectable checkbox centered card" />
+  </div>
+</div>
