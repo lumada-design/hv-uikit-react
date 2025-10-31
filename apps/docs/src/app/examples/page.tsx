@@ -7,6 +7,7 @@ import {
 
 import canvas from "./canvas/page.mdx?raw";
 import charts from "./charts/page.mdx?raw";
+import dialogs from "./dialogs/page.mdx?raw";
 import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
 import kpis from "./kpis/page.mdx?raw";
@@ -27,6 +28,7 @@ const countCodeBlocks = (fileContent: string): number => {
 const sections = [
   { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
   { slug: "charts", title: "Charts", total: countCodeBlocks(charts) },
+  { slug: "dialogs", title: "Dialogs", total: countCodeBlocks(dialogs) },
   { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
@@ -58,6 +60,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-toggle-left" />;
     case "tags":
       return <div className="i-ph-tag-simple" />;
+    case "dialogs":
+      return <div className="i-ph-browser" />;
     default:
       return null;
   }
