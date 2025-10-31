@@ -7,6 +7,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvActionBarProps } from "../ActionBar";
 import type { HvBadgeProps } from "../Badge";
 import type { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import type { HvCheckBoxIconProps } from "../BaseCheckBox/CheckBoxIcon";
@@ -25,7 +26,7 @@ import type { HvFooterProps } from "../Footer";
 import type { HvLabelProps } from "../FormElement";
 import type { HvSuggestionsProps } from "../FormElement/Suggestions";
 import type { HvHeaderBrandProps, HvHeaderProps } from "../Header";
-import { BarProps } from "../Header/Navigation/MenuBar/Bar";
+import type { BarProps } from "../Header/Navigation/MenuBar/Bar";
 import type { HvIconContainerProps } from "../IconContainer";
 import type { HvInlineEditorProps } from "../InlineEditor";
 import type { HvInputProps } from "../Input";
@@ -36,7 +37,7 @@ import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
 import type { HvSnackbarProviderProps } from "../SnackbarProvider";
-import { HvSwitchProps } from "../Switch";
+import type { HvSwitchProps } from "../Switch";
 import type { HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvTagsInputProps } from "../TagsInput";
@@ -899,5 +900,13 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvNumberInputProps>,
+    HvActionBar: {
+      classes: {
+        root: {
+          borderTop: "none",
+          backgroundColor: theme.colors.bgContainer,
+        },
+      },
+    } satisfies CSSClasses<HvActionBarProps>,
   },
 });
