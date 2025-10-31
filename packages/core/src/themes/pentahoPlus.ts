@@ -25,18 +25,19 @@ import type { HvFooterProps } from "../Footer";
 import type { HvLabelProps } from "../FormElement";
 import type { HvSuggestionsProps } from "../FormElement/Suggestions";
 import type { HvHeaderBrandProps, HvHeaderProps } from "../Header";
-import { BarProps } from "../Header/Navigation/MenuBar/Bar";
+import type { BarProps } from "../Header/Navigation/MenuBar/Bar";
 import type { HvIconContainerProps } from "../IconContainer";
 import type { HvInlineEditorProps } from "../InlineEditor";
 import type { HvInputProps } from "../Input";
 import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvNumberInputProps } from "../NumberInput";
+import type { HvPaginationProps } from "../Pagination";
 import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
 import type { HvSnackbarProviderProps } from "../SnackbarProvider";
-import { HvSwitchProps } from "../Switch";
+import type { HvSwitchProps } from "../Switch";
 import type { HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvTagsInputProps } from "../TagsInput";
@@ -75,6 +76,23 @@ const popperStyles = {
 };
 
 export const pentahoPlus = mergeTheme(pentahoPlusBase, {
+  icons: {
+    viewBox: "0 0 256 256",
+    // Semantic icons
+    Success:
+      "M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z",
+    Caution:
+      "M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z",
+    Fail: "M128,72a8,8,0,0,1,8,8v56a8,8,0,0,1-16,0V80A8,8,0,0,1,128,72ZM116,172a12,12,0,1,0,12-12A12,12,0,0,0,116,172Zm124-44a15.85,15.85,0,0,1-4.67,11.28l-96.05,96.06a16,16,0,0,1-22.56,0h0l-96-96.06a16,16,0,0,1,0-22.56l96.05-96.06a16,16,0,0,1,22.56,0l96.05,96.06A15.85,15.85,0,0,1,240,128Zm-16,0L128,32,32,128,128,224h0Z",
+    Info: "M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z",
+    Start:
+      "M205.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L131.31,128ZM51.31,128l74.35-74.34a8,8,0,0,0-11.32-11.32l-80,80a8,8,0,0,0,0,11.32l80,80a8,8,0,0,0,11.32-11.32Z",
+    Backwards:
+      "M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z",
+    Forwards:
+      "M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z",
+    End: "M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z",
+  },
   components: {
     HvLoading: {
       classes: {
@@ -596,6 +614,16 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvDropdownButtonProps>,
+    HvPagination: {
+      classes: {
+        root: {
+          ...theme.typography.caption1,
+        },
+        icon: {
+          fontSize: 16,
+        },
+      },
+    } satisfies CSSClasses<HvPaginationProps>,
     HvHeader: {
       classes: {
         root: {
