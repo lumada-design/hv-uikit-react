@@ -6,6 +6,7 @@ import {
   HvDialogContent,
   HvDialogTitle,
   HvInput,
+  HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 type FormData = {
@@ -15,7 +16,7 @@ type FormData = {
 
 type StepProps = {
   data: FormData;
-  onChange: (changes: Partial<FormData>) => void;
+  onChange?: (changes: Partial<FormData>) => void;
 };
 
 export default function Demo() {
@@ -49,6 +50,10 @@ export default function Demo() {
           onChange={(val) => setFormData((d) => ({ ...d, ...val }))}
         />
       ),
+    },
+    {
+      title: "Is this information correct?",
+      content: <Step3 data={formData} />,
     },
   ];
 
@@ -92,7 +97,7 @@ export default function Demo() {
           </div>
         </HvDialogActions>
       </HvDialog>
-      <HvButton variant="secondaryGhost" onClick={() => setOpen(true)}>
+      <HvButton variant="secondarySubtle" onClick={() => setOpen(true)}>
         Open Multi-Step Dialog
       </HvButton>
     </>
@@ -104,7 +109,7 @@ const Step1 = ({ data, onChange }: StepProps) => {
     <HvInput
       label="Name"
       value={data.name}
-      onChange={(e) => onChange({ name: e.target.value })}
+      onChange={(e) => onChange?.({ name: e.target.value })}
     />
   );
 };
@@ -114,7 +119,22 @@ const Step2 = ({ data, onChange }: StepProps) => {
     <HvInput
       label="Email"
       value={data.email}
-      onChange={(e) => onChange({ email: e.target.value })}
+      onChange={(e) => onChange?.({ email: e.target.value })}
     />
+  );
+};
+
+const Step3 = ({ data }: StepProps) => {
+  return (
+    <div className="flex flex-col gap-xxs">
+      <div className="flex gap-xs">
+        <HvTypography>Name:</HvTypography>
+        <HvTypography>{data.name}</HvTypography>
+      </div>
+      <div className="flex gap-xs">
+        <HvTypography>Email:</HvTypography>
+        <HvTypography>{data.email}</HvTypography>
+      </div>
+    </div>
   );
 };
