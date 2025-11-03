@@ -56,12 +56,12 @@ export default function Demo() {
   return (
     <div className="w-300px">
       <HvLabel
-        label="Tags dropdown input"
-        id="tags-dropdown-input"
+        label="Dropdown with tags on header"
+        id="tags-dropdown"
         showGutter
       />
       <HvBaseDropdown
-        aria-labelledby="tags-dropdown-input"
+        aria-labelledby="tags-dropdown"
         onContainerCreation={() => focusTarget.current?.focus()}
         placeholder={
           selectedColors.length ? (
@@ -78,7 +78,7 @@ export default function Demo() {
               ))}
             </div>
           ) : (
-            "Select colors"
+            "Select colors from the dropdown..."
           )
         }
       >
