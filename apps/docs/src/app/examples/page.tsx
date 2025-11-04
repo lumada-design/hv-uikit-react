@@ -13,6 +13,7 @@ import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
 import kpis from "./kpis/page.mdx?raw";
 import login from "./login/page.mdx?raw";
+import menus from "./menus/page.mdx?raw";
 import switches from "./switches/page.mdx?raw";
 import tables from "./tables/page.mdx?raw";
 import tags from "./tags/page.mdx?raw";
@@ -35,6 +36,7 @@ const sections = [
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
   { slug: "login", title: "Login", total: countCodeBlocks(login) },
+  { slug: "menus", title: "Menus", total: countCodeBlocks(menus) },
   { slug: "switches", title: "Switches", total: countCodeBlocks(switches) },
   { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
   { slug: "tags", title: "Tags", total: countCodeBlocks(tags) },
@@ -58,6 +60,8 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-flow-arrow" />;
     case "login":
       return <div className="i-ph-lock-open" />;
+    case "menus":
+      return <div className="i-ph-list" />;
     case "switches":
       return <div className="i-ph-toggle-left" />;
     case "tags":
