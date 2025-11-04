@@ -4,7 +4,7 @@ import { theme } from "@hitachivantara/uikit-styles";
 export const { staticClasses, useClasses } = createClasses("HvCardHeader", {
   root: {
     position: "relative",
-    padding: theme.spacing("sm", "sm"),
+    padding: theme.spacing("xs", "sm"),
     gap: theme.space.xs,
     alignItems: "center",
     display: "flex",
