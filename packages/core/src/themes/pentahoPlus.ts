@@ -771,9 +771,6 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
               display: "none",
             },
           },
-          "& > :last-child:not(.HvCardMedia-root)": {
-            paddingBottom: theme.space.sm,
-          },
           "& .HvActionBar-root": {
             borderTop: "none",
           },
