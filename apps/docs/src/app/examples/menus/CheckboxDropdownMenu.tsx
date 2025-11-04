@@ -82,6 +82,7 @@ export default function Demo() {
                           <HvCheckBox
                             key={option.id}
                             value={option.label}
+                            checked={selected?.includes(option.label)}
                             label={<HvOverflowTooltip data={option.label} />}
                           />
                         ))}

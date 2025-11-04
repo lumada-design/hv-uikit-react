@@ -89,7 +89,6 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
           <HvIconButton
             title="Show Code"
             onClick={() => setIsExpanded((prev) => !prev)}
-            className="z-popover"
           >
             <CodeIcon />
           </HvIconButton>
