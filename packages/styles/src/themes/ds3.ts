@@ -1,15 +1,40 @@
 import { makeColors, makeTheme } from "../makeTheme";
-import { colors } from "../tokens/colors";
 
 const ds3 = makeTheme((theme) => ({
   name: "ds3",
   colors: makeColors({
-    bgPage: ["#F0F0F0", colors.dark.atmo2],
-    bgHover: [colors.light.atmo3, colors.dark.atmo3],
-    primaryStrong: ["#477DBD", ""],
-    positive: ["", "#63A621"],
+    // atmo1
+    textDimmed: ["#FBFCFC", "#313131"],
+    bgContainer: ["#FBFCFC", "#313131"],
+    // atmo2
+    bgPage: ["#F0F0F0", "#282828"],
+    // atmo3
+    bgPageSecondary: ["#E8E8E8", "#1F1F1F"],
+    borderSubtle: ["#E8E8E8", "#1F1F1F"],
+    bgDisabled: ["#E8E8E8", "#1F1F1F"],
+    // atmo4
+    bgHover: ["#E8E8E8", "#1F1F1F"],
+
+    border: ["#CCCED0", "#4B4B4B"],
+
+    primaryStrong: ["#477DBD", "#82B2E8"],
+
+    positive: ["#478B1A", "#63A621"],
+    positiveStrong: ["", "#70BF21"],
+    positiveDeep: ["#227A10", "#63A621"],
+    positiveDimmed: "#D7E6CF",
+    warning: ["#F9C846", "#E68C17"],
+    warningStrong: ["", "#F57B36"],
+    warningDeep: ["#F27C27", "#FE6B51"],
+    warningDimmed: "#FBF2D8",
+    negative: ["#D43136", "#FF5E6C"],
+    negativeStrong: ["", "#EC3D57"],
+    negativeDeep: ["#B41B3A", "#D92750"],
+    negativeDimmed: "#F4D3D4",
     info: ["#4D9284", "#72CCCB"],
+    infoDimmed: "#D8E6F1",
     catastrophic: ["#C51162", "#E26BD2"],
+
     cat1: "#6EAFFF",
     cat2: "#FFAB5C",
     cat3: "#5CD1B2",
