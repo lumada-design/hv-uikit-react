@@ -8,7 +8,7 @@ const plop = await nodePlop(`${__dirname}/plopfile.js`);
 
 const createAppShellIndexHtml = plop.getGenerator("createAppShellIndexHtml");
 const createAppShellConfig = plop.getGenerator("createAppShellConfig");
-const createAppShellViteConfig = plop.getGenerator("createAppShellViteConfig");
+const createAppShellAutoMenu = plop.getGenerator("createAppShellAutoMenu");
 
 const createAppShellIndexHtmlFile = async (path, name) => {
   await createAppShellIndexHtml.runActions({
@@ -21,7 +21,7 @@ const createAppShellConfigFile = async (
   path,
   name,
   appShellFeatures = [],
-  viteOptionsAppShell = {},
+  appShellAutoMenu = true,
 ) => {
   const pagesPath = `${path}/src/pages`;
   const pages = fs.readdirSync(pagesPath);
@@ -58,24 +58,7 @@ const createAppShellConfigFile = async (
     appName: name.replace(/([a-z])([A-Z])/g, "$1 $2"),
     pages: templatePages,
     feats: appShellFeats,
-    viteOptionsAppShell,
-  });
-};
-
-const createAppShellViteConfigFile = async (path, viteOptionsAppShell) => {
-  const pagesPath = `${path}/src/pages`;
-  const pages = fs.readdirSync(pagesPath);
-
-  const templatePages = pages.map((page) => ({
-    path,
-    pagesPath: "src/pages",
-    name: page,
-  }));
-
-  await createAppShellViteConfig.runActions({
-    path,
-    pages: templatePages,
-    viteOptionsAppShell,
+    appShellAutoMenu,
   });
 };
 
@@ -94,8 +77,8 @@ export const createAppShellBaseline = async (appPath) => {
 export const setupAppShell = async (
   appPath,
   name,
-  appShellFeatures,
-  viteOptionsAppShell,
+  appShellFeatures = [],
+  appShellAutoMenu = true,
   packageName,
 ) => {
   console.log(`\nConfiguring App Shell environment\n`);
@@ -108,11 +91,12 @@ export const setupAppShell = async (
     appPath,
     name,
     appShellFeatures,
-    viteOptionsAppShell,
+    appShellAutoMenu,
   );
 
-  // generate app shell vite config file
-  await createAppShellViteConfigFile(appPath, viteOptionsAppShell);
+  if (appShellAutoMenu) {
+    await createAppShellAutoMenu.runActions({ path: appPath });
+  }
 
   // replace package name in i18n.ts file
   const i18nFile = `${appPath}/src/lib/i18n.ts`;
