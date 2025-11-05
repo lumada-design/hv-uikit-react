@@ -7,6 +7,7 @@ import {
   theme,
 } from "@hitachivantara/uikit-styles";
 
+import type { HvActionBarProps } from "../ActionBar";
 import type { HvBadgeProps } from "../Badge";
 import type { HvBaseCheckBoxProps } from "../BaseCheckBox";
 import type { HvCheckBoxIconProps } from "../BaseCheckBox/CheckBoxIcon";
@@ -927,5 +928,12 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvNumberInputProps>,
+    HvActionBar: {
+      classes: {
+        root: {
+          borderTop: "none",
+        },
+      },
+    } satisfies CSSClasses<HvActionBarProps>,
   },
 });
