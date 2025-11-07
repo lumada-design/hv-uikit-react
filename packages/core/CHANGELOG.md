@@ -3,13 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.107.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.2...@hitachivantara/uikit-react-core@5.107.0) (2025-11-07)
-
-### Features
-
-- **ActionBar:** update to latest specs ([#4962](https://github.com/lumada-design/hv-uikit-react/issues/4962)) ([c7e0ef5](https://github.com/lumada-design/hv-uikit-react/commit/c7e0ef5cab52e97f72d52161cbc0392e17c04050))
-- **Pagination:** update to latest specs ([#4961](https://github.com/lumada-design/hv-uikit-react/issues/4961)) ([1be7f5a](https://github.com/lumada-design/hv-uikit-react/commit/1be7f5a30d6ad2d5052822e1d1a8f2fd4ed0a115))
-
 ## [5.106.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.1...@hitachivantara/uikit-react-core@5.106.2) (2025-10-22)
 
 ### Bug Fixes
