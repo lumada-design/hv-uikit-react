@@ -63,9 +63,9 @@ For more flexibility (e.g., using `HvOptionGroup` or custom rendering), use `HvO
 
 ### Form
 
-To use `HvSelect` in a form, provide a `name` prop.  
+To use `HvSelect` in a form, provide a `name` prop.
 By default, the submitted value will be the selected option’s `value`, or a JSON string of selected values in multi-select mode.
-You can customize the submitted value using the `getSerializedValue` prop.
+You can customize the submitted value using the `getSerializedValue` prop, and a custom selected value with the `renderValue` prop.
 
 ```tsx live
 <form
@@ -83,6 +83,7 @@ You can customize the submitted value using the `getSerializedValue` prop.
     description="Select your favorite countries"
     placeholder="Select countries"
     getSerializedValue={(values) => values.map((v) => v.value).join(",")}
+    renderValue={(value) => value.map((v) => v.value.toUpperCase()).join(", ")}
     options={[
       { value: "ar", label: "Argentina" },
       { value: "bg", label: "Belgium" },

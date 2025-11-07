@@ -108,4 +108,39 @@ describe("Select", () => {
     await userEvent.click(getSelect());
     expect(screen.getAllByRole("option").length).toBe(3);
   });
+
+  it("renders with custom renderValue function", async () => {
+    render(
+      <HvSelect
+        label={name}
+        renderValue={(option) => option && `${option.value} - ${option.label}`}
+        defaultValue="opt1"
+        options={[
+          { value: "opt1", label: "Option1" },
+          { value: "opt2", label: "Option2" },
+          { value: "opt3", label: "Option3" },
+        ]}
+      />,
+    );
+
+    expect(getSelect()).toHaveTextContent("opt1 - Option1");
+  });
+
+  it("renders with custom renderValue function for multiple selection", async () => {
+    render(
+      <HvSelect
+        multiple
+        label={name}
+        renderValue={(option) => option.map((o) => o.label).join(" | ")}
+        defaultValue={["opt1", "opt3"]}
+        options={[
+          { value: "opt1", label: "Option1" },
+          { value: "opt2", label: "Option2" },
+          { value: "opt3", label: "Option3" },
+        ]}
+      />,
+    );
+
+    expect(getSelect()).toHaveTextContent("Option1 | Option3");
+  });
 });
