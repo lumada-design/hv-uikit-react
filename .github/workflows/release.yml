@@ -53,12 +53,9 @@ jobs:
 
       - name: Publish to NPM
         id: publish-npm
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.HV_NPM_AUTOMATION_TOKEN}}
         run: |
           VERSION=v$(npm pkg get version -ws | sed -n 's/.*uikit-react-core": "\(.*\)".*/\1/p')
           echo "CURRENT_VERSION=$VERSION" >> "$GITHUB_ENV"
-          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm run publish 2>&1 | tee publish_logs.txt
 
       - name: Check if packages were updated
