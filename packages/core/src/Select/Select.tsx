@@ -4,7 +4,8 @@ import { SelectOption } from "@mui/base/useOption";
 import {
   SelectProvider,
   useSelect,
-  UseSelectParameters,
+  type SelectValue,
+  type UseSelectParameters,
 } from "@mui/base/useSelect";
 import { useControlled, useForkRef } from "@mui/material/utils";
 import type { Placement } from "@popperjs/core";
@@ -34,9 +35,8 @@ import { staticClasses, useClasses } from "./Select.styles";
 
 function defaultRenderValue<Value>(
   options: SelectOption<Value> | SelectOption<Value>[] | null,
-) {
+): React.ReactNode {
   if (Array.isArray(options)) {
-    if (options.length === 0) return null;
     return <>{options.map((o) => o.label).join(", ")}</>;
   }
 
@@ -81,6 +81,10 @@ export interface HvSelectProps<
   classes?: HvSelectClasses;
   placeholder?: React.ReactNode;
   autoComplete?: string;
+  /** Custom render function for rendering the selected value. */
+  renderValue?: (
+    option: SelectValue<SelectOption<OptionValue>, Multiple>,
+  ) => React.ReactNode;
   /** Whether the width of the select panel can vary independently. */
   variableWidth?: boolean;
   /**
@@ -125,6 +129,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     defaultOpen,
     multiple,
     autoComplete,
+    renderValue: renderValueProp,
     options: optionsProp,
     variableWidth,
     value: valueProp,
@@ -179,6 +184,8 @@ export const HvSelect = fixedForwardRef(function HvSelect<
     onChange,
     onOpenChange: handleOpenChange,
   });
+
+  const renderValue = renderValueProp ?? defaultRenderValue;
 
   const id = useUniqueId(idProp);
   const labelId = useUniqueId(setId(idProp, "label"));
@@ -269,7 +276,7 @@ export const HvSelect = fixedForwardRef(function HvSelect<
         })}
         {...getButtonProps()}
       >
-        {defaultRenderValue(actualValue) ?? placeholder}
+        {renderValue(actualValue as any) ?? placeholder}
       </HvDropdownButton>
       <Popper
         role="none"
