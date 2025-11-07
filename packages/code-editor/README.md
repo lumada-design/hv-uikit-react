@@ -16,7 +16,7 @@ import { HvCodeEditor } from "@hitachivantara/uikit-react-code-editor";
 <HvCodeEditor
   language="javascript"
   defaultValue="console.log('Hello, World!');"
-/>
+/>;
 ```
 
 ## Offline Support
@@ -33,9 +33,9 @@ To prevent Vite from pre-bundling Monaco Editor, add the following to your `vite
 ```js
 export default {
   optimizeDeps: {
-    exclude: ['monaco-editor'],
+    exclude: ["monaco-editor"],
   },
-}
+};
 ```
 
 ## Documentation
