@@ -21,7 +21,11 @@ export default function Demo() {
         <HvDialogTitle variant="error">Are you sure?</HvDialogTitle>
         <HvDialogContent>This action cannot be undone.</HvDialogContent>
         <HvDialogActions>
-          <HvButton variant="secondarySubtle" onClick={() => setOpen(false)}>
+          <HvButton
+            autoFocus
+            variant="secondarySubtle"
+            onClick={() => setOpen(false)}
+          >
             Cancel
           </HvButton>
           <HvButton

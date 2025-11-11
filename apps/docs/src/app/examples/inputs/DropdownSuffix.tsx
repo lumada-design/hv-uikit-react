@@ -20,13 +20,14 @@ export default function Demo() {
           value={role}
           onChange={(_, val) => setRole(val)}
           classes={{
-            root: "w-100px! border-l-1! border-l-border! rounded-none!",
+            root: "w-140px! border-l-1! border-l-border! rounded-none!",
             panel: "w-150px! p-sm",
             select:
               "border-none! rounded-none! bg-bgContainer! hover:bg-primaryDimmed",
-            popper: "m-l-[-50px]!",
+            popper: "m-l-[-10px]!",
           }}
           options={roles}
+          placeholder="Select..."
         />
       }
     />

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { _ } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
 import {
   HvBaseDropdown,
@@ -15,6 +15,7 @@ export default function Demo() {
   const [selected, setSelected] = useState<string[] | null>(null);
   const [open, setOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const filteredGroups = useMemo(
     () => filterGroups(searchValue, groups),
@@ -45,9 +46,11 @@ export default function Demo() {
           {selected?.map((item) => <HvTag label={item} />)}
         </div>
       }
+      onContainerCreation={() => searchRef.current?.focus()}
     >
       <HvPanel>
         <HvSearchInput
+          ref={searchRef}
           placeholder="Search..."
           onChange={(_, val) => setSearchValue(val || "")}
           className="m-b-xxs p-l-0"

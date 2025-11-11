@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  HvButtonBase,
   HvCard,
   HvCardContent,
   HvCardHeader,
@@ -18,30 +19,25 @@ export default function Demo() {
         selectable
         selected={selected}
       >
-        <button
-          type="button"
+        <HvButtonBase
           onClick={() => setSelected(!selected)}
           aria-label="Press enter or space to select the Card."
-          className="w-full text-left"
+          className="flex flex-col w-full text-left p-0 hover:cursor-pointer bg-transparent"
         >
           <HvCardHeader
-            title={
-              <div className="flex justify-start items-center">
-                <div className="flex gap-xxs items-center">
-                  <HvStatusIcon
-                    variant="default"
-                    customIcon={<div className="i-ph-gear" />}
-                  />
-                  <HvTypography variant="title4">Title</HvTypography>
-                </div>
-              </div>
+            icon={
+              <HvStatusIcon
+                variant="default"
+                customIcon={<div className="i-ph-gear" />}
+              />
             }
+            title={<HvTypography variant="title4">Title</HvTypography>}
           />
-          <HvCardContent className="p-t-0">
+          <HvCardContent className="pt-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             fermentum, sem quis lobortis varius.
           </HvCardContent>
-        </button>
+        </HvButtonBase>
       </HvCard>
     </div>
   );

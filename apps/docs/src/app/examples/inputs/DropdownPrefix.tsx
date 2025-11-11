@@ -1,25 +1,15 @@
 import { useState } from "react";
 import {
-  HvBaseDropdown,
   HvInput,
-  HvListItem,
-  HvPanel,
-  HvSearchInput,
-  HvSelectionList,
-  HvSelectionListProps,
+  HvOption,
+  HvOverflowTooltip,
+  HvSelect,
   HvTypography,
 } from "@hitachivantara/uikit-react-core";
 
 export default function Demo() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [value, setValue] = useState<string | null>(null);
-  const [open, setOpen] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
-
-  const handleSelect: HvSelectionListProps["onChange"] = (evt, val) => {
-    setValue(val);
-    setOpen(false);
-  };
 
   return (
     <HvInput
@@ -31,59 +21,36 @@ export default function Demo() {
       placeholder="Type phone number..."
       value={phoneNumber}
       startAdornment={
-        <HvBaseDropdown
-          expanded={open}
-          onToggle={(_evt, s) => setOpen(s)}
-          placeholder={value}
+        <HvSelect
+          enablePortal
+          value={value}
+          onChange={(_, val) => setValue(val)}
           classes={{
-            root: "w-95px! border-r-1! border-r-border!",
-            header:
-              "border-none bg-bgContainer hover:bg-primaryDimmed rounded-none!",
+            root: "w-95px! border-r-1! border-r-border! rounded-none!",
             panel: "w-200px! max-h-260px!",
+            select:
+              "border-none bg-bgContainer hover:bg-primaryDimmed rounded-none!",
           }}
+          placeholder="Select..."
+          renderValue={(option) => option?.value ?? ""}
         >
-          <HvPanel>
-            <HvSearchInput
-              placeholder="Search..."
-              value={searchValue}
-              onChange={(_, val) => setSearchValue(val)}
-              classes={{
-                root: "p-l-0 m-b-xxs",
-              }}
-            />
-            <HvSelectionList
-              value={value}
-              onChange={handleSelect}
-              className="w-full"
+          {countries.map((country) => (
+            <HvOption
+              key={country.code}
+              value={`${country.flag} ${country.code}`}
             >
-              {countries
-                .filter((country) =>
-                  country.label
-                    .toLowerCase()
-                    .includes(searchValue.toLowerCase()),
-                )
-                .map((country) => (
-                  <HvListItem
-                    key={country.code}
-                    value={`${country.flag} ${country.code}`}
-                    className=""
-                  >
-                    <div className="flex justify-between items-center">
-                      <>
-                        {country.flag} {country.label}
-                      </>
-                      <HvTypography
-                        variant="captionLabel"
-                        className="color-text-subtle"
-                      >
-                        {country.code}
-                      </HvTypography>
-                    </div>
-                  </HvListItem>
-                ))}
-            </HvSelectionList>
-          </HvPanel>
-        </HvBaseDropdown>
+              <div className="flex justify-between items-center">
+                <HvOverflowTooltip data={`${country.flag} ${country.label}`} />
+                <HvTypography
+                  variant="captionLabel"
+                  className="color-text-subtle"
+                >
+                  {country.code}
+                </HvTypography>
+              </div>
+            </HvOption>
+          ))}
+        </HvSelect>
       }
     />
   );

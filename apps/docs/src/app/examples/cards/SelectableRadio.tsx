@@ -15,21 +15,28 @@ export default function Demo() {
     <div className="flex">
       <HvCard
         bgcolor="bgContainer"
-        className="w-full rounded-round"
+        className="w-full rounded-round hover:cursor-pointer"
         selectable
         selected={selected}
       >
-        <button
-          type="button"
-          onClick={() => setSelected(!selected)}
+        <div
+          // oxlint-disable-next-line prefer-tag-over-role
+          role="button"
           aria-label="Press enter or space to select the Card."
           className="w-full text-left"
+          onClick={() => setSelected(!selected)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setSelected(!selected);
+            }
+          }}
         >
           <HvCardHeader
             title={
               <div className="flex justify-start items-center">
                 <HvRadio checked={selected} />
-                <div className="flex gap-xxs items-center">
+                <div className="flex gap-xs items-center">
                   <HvStatusIcon
                     variant="default"
                     customIcon={<div className="i-ph-gear" />}
@@ -39,11 +46,11 @@ export default function Demo() {
               </div>
             }
           />
-          <HvCardContent className="p-l-lg p-t-0 ">
+          <HvCardContent className="pl-lg pt-0 ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             fermentum, sem quis lobortis varius.
           </HvCardContent>
-        </button>
+        </div>
       </HvCard>
     </div>
   );

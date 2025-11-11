@@ -21,9 +21,8 @@ type StepProps = {
 
 export default function Demo() {
   const [open, setOpen] = useState(false);
-
   const [step, setStep] = useState(0);
-  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [formData, setFormData] = useState<FormData>({ name: "", email: "" });
 
   useEffect(() => {
     if (!open) {
@@ -32,36 +31,20 @@ export default function Demo() {
     }
   }, [open]);
 
-  const steps = [
-    {
-      title: "Enter your name",
-      content: (
-        <Step1
-          data={formData}
-          onChange={(val) => setFormData((d) => ({ ...d, ...val }))}
-        />
-      ),
-    },
-    {
-      title: "Enter your email",
-      content: (
-        <Step2
-          data={formData}
-          onChange={(val) => setFormData((d) => ({ ...d, ...val }))}
-        />
-      ),
-    },
-    {
-      title: "Is this information correct?",
-      content: <Step3 data={formData} />,
-    },
-  ];
+  const handleChange = (changes: Partial<FormData>) =>
+    setFormData((d) => ({ ...d, ...changes }));
 
   const handleNext = () => setStep((s) => s + 1);
   const handleBack = () => setStep((s) => s - 1);
-  const handleSubmit = () => {
-    console.log(formData);
-    setOpen(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (step < 2) {
+      handleNext();
+    } else {
+      console.log(formData);
+      setOpen(false);
+    }
   };
 
   return (
@@ -72,31 +55,43 @@ export default function Demo() {
         maxWidth="sm"
         fullWidth
       >
-        <HvDialogTitle>{steps[step].title}</HvDialogTitle>
-        <HvDialogContent>{steps[step].content}</HvDialogContent>
+        <HvDialogTitle>
+          {step === 0
+            ? "Enter your name"
+            : step === 1
+              ? "Enter your email"
+              : "Is this information correct?"}
+        </HvDialogTitle>
 
-        <HvDialogActions>
-          <HvButton variant="secondarySubtle" onClick={() => setOpen(false)}>
-            Cancel
-          </HvButton>
-          <div className="flex gap-xs">
-            {step > 0 && (
-              <HvButton variant="secondarySubtle" onClick={handleBack}>
-                Previous
+        <form onSubmit={handleSubmit}>
+          <HvDialogContent>
+            {step === 0 && <Step1 data={formData} onChange={handleChange} />}
+            {step === 1 && <Step2 data={formData} onChange={handleChange} />}
+            {step === 2 && <Step3 data={formData} />}
+          </HvDialogContent>
+
+          <HvDialogActions>
+            <HvButton variant="secondarySubtle" onClick={() => setOpen(false)}>
+              Cancel
+            </HvButton>
+            <div className="flex gap-xs">
+              {step > 0 && (
+                <HvButton
+                  variant="secondarySubtle"
+                  type="button"
+                  onClick={handleBack}
+                >
+                  Previous
+                </HvButton>
+              )}
+              <HvButton variant="primary" type="submit">
+                {step < 2 ? "Next" : "Confirm"}
               </HvButton>
-            )}
-            {step < steps.length - 1 ? (
-              <HvButton variant="primary" onClick={handleNext}>
-                Next
-              </HvButton>
-            ) : (
-              <HvButton variant="primary" onClick={handleSubmit}>
-                Confirm
-              </HvButton>
-            )}
-          </div>
-        </HvDialogActions>
+            </div>
+          </HvDialogActions>
+        </form>
       </HvDialog>
+
       <HvButton variant="secondarySubtle" onClick={() => setOpen(true)}>
         Open Multi-Step Dialog
       </HvButton>
@@ -104,37 +99,34 @@ export default function Demo() {
   );
 }
 
-const Step1 = ({ data, onChange }: StepProps) => {
-  return (
-    <HvInput
-      label="Name"
-      value={data.name}
-      onChange={(e) => onChange?.({ name: e.target.value })}
-    />
-  );
-};
+const Step1 = ({ data, onChange }: StepProps) => (
+  <HvInput
+    label="Name"
+    name="name"
+    value={data.name}
+    onChange={(e) => onChange?.({ name: e.target.value })}
+  />
+);
 
-const Step2 = ({ data, onChange }: StepProps) => {
-  return (
-    <HvInput
-      label="Email"
-      value={data.email}
-      onChange={(e) => onChange?.({ email: e.target.value })}
-    />
-  );
-};
+const Step2 = ({ data, onChange }: StepProps) => (
+  <HvInput
+    label="Email"
+    name="email"
+    type="email"
+    value={data.email}
+    onChange={(e) => onChange?.({ email: e.target.value })}
+  />
+);
 
-const Step3 = ({ data }: StepProps) => {
-  return (
-    <div className="flex flex-col gap-xxs">
-      <div className="flex gap-xs">
-        <HvTypography>Name:</HvTypography>
-        <HvTypography>{data.name}</HvTypography>
-      </div>
-      <div className="flex gap-xs">
-        <HvTypography>Email:</HvTypography>
-        <HvTypography>{data.email}</HvTypography>
-      </div>
+const Step3 = ({ data }: StepProps) => (
+  <div className="flex flex-col gap-xxs">
+    <div className="flex gap-xs">
+      <HvTypography>Name:</HvTypography>
+      <HvTypography>{data.name}</HvTypography>
     </div>
-  );
-};
+    <div className="flex gap-xs">
+      <HvTypography>Email:</HvTypography>
+      <HvTypography>{data.email}</HvTypography>
+    </div>
+  </div>
+);

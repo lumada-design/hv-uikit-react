@@ -96,7 +96,7 @@ export const PopupLayout = ({ id, scope, code, title }: PopupLayoutProps) => {
         <div className="h-full [&>*]:h-full [&>*]:bg-transparent">
           {/* Preview Section */}
           <DocsContainer
-            className="p-md p-t-0 flex items-center justify-center h-full [&>div]:flex-wrap "
+            className="p-md pt-0 flex items-center justify-center h-full [&>div]:flex-wrap "
             error={error}
             element={element}
           />
