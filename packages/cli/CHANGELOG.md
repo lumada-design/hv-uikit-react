@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.24.4](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.24.3...@hitachivantara/hv-uikit-cli@1.24.4) (2025-11-11)
+
+### Bug Fixes
+
+- **cli:** bump config version & fix scripts ([#4963](https://github.com/lumada-design/hv-uikit-react/issues/4963)) ([9a4aa86](https://github.com/lumada-design/hv-uikit-react/commit/9a4aa86bee2c4ed13bef784221a66a98cac6ab56))
+
+### Reverts
+
+- Revert "chore(release): publish" (#4969) ([c3e10b0](https://github.com/lumada-design/hv-uikit-react/commit/c3e10b015cdd1b36183c8a733d604a238f0d298c)), closes [#4969](https://github.com/lumada-design/hv-uikit-react/issues/4969)
+
 ## [1.24.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/hv-uikit-cli@1.24.2...@hitachivantara/hv-uikit-cli@1.24.3) (2025-10-22)
 
 ### Bug Fixes
