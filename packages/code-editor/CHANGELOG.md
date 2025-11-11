@@ -3,12 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [5.11.3](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.11.2...@hitachivantara/uikit-react-code-editor@5.11.3) (2025-11-11)
-
-### Reverts
-
-- Revert "chore(release): publish" (#4969) ([c3e10b0](https://github.com/lumada-design/hv-uikit-react/commit/c3e10b015cdd1b36183c8a733d604a238f0d298c)), closes [#4969](https://github.com/lumada-design/hv-uikit-react/issues/4969)
-
 ## [5.11.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-code-editor@5.11.1...@hitachivantara/uikit-react-code-editor@5.11.2) (2025-10-22)
 
 ### Bug Fixes
