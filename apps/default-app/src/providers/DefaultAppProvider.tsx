@@ -1,4 +1,10 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 import {
   HvAppShellContext,
   HvAppShellContextValue,
@@ -16,9 +22,7 @@ export const DefaultAppContext = createContext<DefaultAppContextValue>({
   },
 });
 
-type DefaultAppProviderProps = {
-  children: React.ReactNode;
-};
+interface DefaultAppProviderProps extends PropsWithChildren {}
 
 let clickNumber = 0;
 

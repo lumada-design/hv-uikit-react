@@ -5,6 +5,7 @@ type CombinedProvidersProps = {
     | Array<{
         component: ComponentType<{ children: ReactNode }>;
         config?: Record<string, unknown>;
+        $key?: string | number;
       }>
     | undefined;
   children: ReactNode;
@@ -19,9 +20,16 @@ const CombinedProviders = ({
       let result = children;
 
       if (providers && providers.length > 0) {
-        result = providers.reduceRight((Acc, { component: Curr, config }) => {
-          return <Curr {...config}>{Acc}</Curr>;
-        }, children);
+        result = providers.reduceRight(
+          (Acc, { component: Curr, config, $key }) => {
+            return (
+              <Curr key={$key} {...config}>
+                {Acc}
+              </Curr>
+            );
+          },
+          children,
+        );
       }
 
       return result as ReactElement;

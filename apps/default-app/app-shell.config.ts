@@ -1,18 +1,8 @@
 import type { HvAppShellConfig } from "@hitachivantara/app-shell-vite-plugin";
 
-const {
-  VITE_SAMPLE_APP_URL = "https://lumada-design.github.io/modules/sample-app/",
-  VITE_USER_INFORMATION_URL = "http://localhost:8081/",
-  VITE_USER_NOTIFICATIONS_URL = "http://localhost:8080/",
-} = process.env;
-
 export default {
   baseUrl: "/",
-  apps: {
-    "@hv/sample-app/": VITE_SAMPLE_APP_URL,
-    "@hv/user-information-client/": VITE_USER_INFORMATION_URL,
-    "@hv/user-notifications-client/": VITE_USER_NOTIFICATIONS_URL,
-  },
+  apps: {},
   logo: {
     name: "PENTAHO",
   },
@@ -21,35 +11,17 @@ export default {
     theme: "pentahoPlus",
     colorMode: "dawn",
   },
+
+  navigationMode: "ONLY_LEFT",
+
   menu: [
     {
-      label: "Default App",
+      label: "asset",
+      icon: {
+        iconType: "uikit",
+        name: "Desktop",
+      },
       submenus: [
-        {
-          label: "asset",
-          icon: {
-            iconType: "uikit",
-            name: "Desktop",
-          },
-          submenus: [
-            {
-              label: "asset",
-              target: "/asset-inventory",
-              icon: {
-                iconType: "uikit",
-                name: "Cards",
-              },
-            },
-            {
-              label: "list",
-              target: "/list-view",
-              icon: {
-                iconType: "uikit",
-                name: "List",
-              },
-            },
-          ],
-        },
         {
           label: "asset",
           target: "/asset-inventory",
@@ -66,61 +38,171 @@ export default {
             name: "List",
           },
         },
-        {
-          label: "notifications",
-          target: "/notifications",
-          icon: {
-            iconType: "uikit",
-            name: "Alert",
-          },
-        },
-        {
-          label: "Multi-level Breadcrumb",
-          target: "/breadcrumb",
-        },
-        {
-          label: "Theming",
-          target: "/theming",
-          icon: {
-            iconType: "uikit",
-            name: "ColorPicker",
-          },
-        },
-        {
-          label: "Display Context",
-          target: "/displayContext",
-        },
-        {
-          label: "Nested Views",
-          target: "/nested",
-        },
-        {
-          label: "Services Demo",
-          target: "/services-demo",
-          icon: {
-            iconType: "uikit",
-            name: "Settings",
-          },
-        },
       ],
     },
     {
-      label: "Not found",
-      target: "/not-found",
+      label: "asset",
+      target: "/asset-inventory",
+      icon: {
+        iconType: "uikit",
+        name: "Cards",
+      },
     },
     {
-      label: "Menu breadcrumb",
+      label: "list",
+      target: "/list-view",
+      icon: {
+        iconType: "uikit",
+        name: "List",
+      },
+    },
+    {
+      label: "notifications",
+      target: "/notifications",
+      icon: {
+        iconType: "uikit",
+        name: "Alert",
+      },
+    },
+    {
+      label: "Multi-level Breadcrumb",
       target: "/breadcrumb",
     },
     {
-      label: "Navigation",
-      target: "/navigation",
+      label: "Theming",
+      target: "/theming",
+      icon: {
+        iconType: "uikit",
+        name: "ColorPicker",
+      },
     },
-    { label: "Simple App Home", target: "/simple-app/home" },
-    { label: "Candy App Context", target: "/candy-route/displayContext" },
     {
-      label: "Candy-Default App Context",
-      target: "/candy-route/displayDefaultAppContext",
+      label: "Nested Views",
+      target: "/nested",
+    },
+    {
+      label: "Services Demo",
+      target: "/services-demo",
+      icon: {
+        iconType: "uikit",
+        name: "Settings",
+      },
+    },
+    {
+      label: "Providers Demo",
+      target: "/providers-demo",
+      icon: {
+        iconType: "uikit",
+        name: "Package",
+      },
+    },
+    // ========================================
+    // CONDITIONS EXAMPLES
+    // Menus inherit conditions from matching views!
+    // ========================================
+    {
+      label: "Conditions Demo",
+      icon: {
+        iconType: "uikit",
+        name: "Eye",
+      },
+      submenus: [
+        {
+          label: "Sync True (Always Visible)",
+          target: "/sync-true-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Check",
+          },
+        },
+        {
+          label: "Sync False (Always Hidden)",
+          target: "/sync-false-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Close",
+          },
+        },
+        {
+          label: "Async True (0.5s delay)",
+          target: "/async-true-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Clock",
+          },
+        },
+        {
+          label: "Async False (0.5s delay)",
+          target: "/async-false-demo",
+          icon: {
+            iconType: "uikit",
+            name: "ClockStop",
+          },
+        },
+        {
+          label: "Dynamic (Appears after 10s)",
+          target: "/dynamic-condition-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Refresh",
+          },
+        },
+        {
+          label: "Sync True + Async True",
+          target: "/multiple-conditions-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Hierarchy",
+          },
+        },
+        {
+          label: "Sync True + Sync False",
+          target: "/multiple-fail-demo",
+          icon: {
+            iconType: "uikit",
+            name: "Ban",
+          },
+        },
+        {
+          label: "Inverse Dynamic (view) + Async True",
+          target: "/inverse-dynamic",
+          icon: {
+            iconType: "uikit",
+            name: "Ban",
+          },
+          conditions: [
+            {
+              bundle: "default-app/conditions/useAsyncTrue.js",
+            },
+          ],
+        },
+        {
+          label: "Nested Submenus",
+          icon: {
+            iconType: "uikit",
+            name: "Tree",
+          },
+          submenus: [
+            {
+              label: "Sync True",
+              target: "/nested-visible",
+            },
+            {
+              label: "Sync False",
+              target: "/nested-hidden",
+            },
+            {
+              label: "Async True",
+              target: "/nested-async",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      label: "Not found",
+      target: "/not-found",
     },
   ],
   translations: {
@@ -135,13 +217,6 @@ export default {
       {
         bundle: "@self/services/headerActions/CreateNewContentDropDownMenu.js",
       },
-      {
-        bundle: "@hv/user-notifications-client/index.js",
-        config: {
-          showCount: false,
-        },
-      },
-      { bundle: "@hv/user-information-client/index.js" },
       { bundle: "@hv/theming-client/colorModeSwitcher.js" },
       {
         bundle: "@hv/app-switcher-client/toggle.js",
@@ -177,12 +252,11 @@ export default {
           description: "Hitachi Vantara Help Link",
         },
       },
-      { bundle: "@hv/sample-app/headerActions/HelloSimpleApp.js" },
       { bundle: "@self/modules/HelloDefaultApp.js" },
       { bundle: "@self/modules/ChangeContextValue.js" },
-      { bundle: "@hv/sample-app/headerActions/ChangeDefaultAppContext.js" },
     ],
   },
+
   mainPanel: {
     views: [
       // @self app
@@ -242,31 +316,161 @@ export default {
           },
         ],
       },
-      // Simple App
-      {
-        bundle: "@hv/sample-app/pages/Home.js",
-        route: "/simple-app/home",
-      },
-      // Scoped Simple App
-      {
-        bundle: "@hv/sample-app/pages/Home.js",
-        route: "/scoped-home",
-      },
-      // Candy App
-      {
-        bundle: "@hv/sample-app/pages/Main.js",
-        route: "/candy-route/*",
-      },
       // Services Demo Page
       {
         bundle: "@self/pages/ServicesDemo.js",
         route: "/services-demo",
       },
+      // Providers Demo Page
+      {
+        bundle: "@self/pages/ProvidersDemo.js",
+        route: "/providers-demo",
+      },
+
+      // ========================================
+      // CONDITIONS EXAMPLES - VIEWS
+      // ========================================
+
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/sync-true-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysTrue.js",
+          },
+        ],
+      },
+
+      // Example 2: Sync False - Never accessible (404)
+      {
+        bundle: "@self/pages/ShouldNotBeVisible.js",
+        route: "/sync-false-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysFalse.js",
+          },
+        ],
+      },
+
+      // Example 3: Async True - Accessible after delay
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/async-true-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAsyncTrue.js",
+          },
+        ],
+      },
+
+      // Example 4: Async False - Not accessible (404 after delay)
+      {
+        bundle: "@self/pages/ShouldNotBeVisible.js",
+        route: "/async-false-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAsyncFalse.js",
+          },
+        ],
+      },
+
+      // Example 5: Multiple conditions (both true)
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/multiple-conditions-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysTrue.js",
+          },
+          {
+            bundle: "default-app/conditions/useAsyncTrue.js",
+          },
+        ],
+      },
+
+      // Example 6: Multiple conditions (one false)
+      {
+        bundle: "@self/pages/ShouldNotBeVisible.js",
+        route: "/multiple-fail-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysTrue.js",
+          },
+          {
+            bundle: "default-app/conditions/useAlwaysFalse.js",
+          },
+        ],
+      },
+
+      // Example 7: Inverse dynamic (false after 10s)
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/inverse-dynamic",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useInverseDynamicCondition.js",
+          },
+        ],
+      },
+
+      // Nested menu views
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/nested-visible",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysTrue.js",
+          },
+        ],
+      },
+      {
+        bundle: "@self/pages/ShouldNotBeVisible.js",
+        route: "/nested-hidden",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAlwaysFalse.js",
+          },
+        ],
+      },
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/nested-async",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAsyncTrue.js",
+          },
+        ],
+      },
+
+      // Dynamic condition example - appears after 10 seconds
+      {
+        bundle: "@self/pages/ShouldBeVisible.js",
+        route: "/dynamic-condition-demo",
+        conditions: [
+          {
+            bundle: "default-app/conditions/useDynamicCondition.js",
+          },
+        ],
+      },
     ],
   },
   providers: [
-    { bundle: "@self/providers/DefaultAppProvider.js" },
-    { bundle: "@hv/sample-app/providers/CandyAppProvider.js" },
+    {
+      bundle: "@self/providers/DefaultAppProvider.js",
+      // Always visible provider (no conditions)
+    },
+    {
+      bundle: "@self/providers/AsyncProvider.js",
+      conditions: [{ bundle: "default-app/conditions/useAsyncTrue.js" }],
+    },
+    {
+      bundle: "@self/providers/HiddenProvider.js",
+      conditions: [{ bundle: "default-app/conditions/useAlwaysFalse.js" }],
+    },
+    {
+      bundle: "@self/providers/DynamicProvider.js",
+      conditions: [{ bundle: "default-app/conditions/useDynamicCondition.js" }],
+    },
   ],
   services: {
     // Instance Service (bundle) - Basic hooks service consumed by ServicesDemo page and CreateNewContentDropDownMenu header action
@@ -276,11 +480,21 @@ export default {
           bundle: "default-app/services/create/useCreateNewReportAction.js",
         },
         ranking: 100,
+        conditions: [
+          {
+            bundle: "default-app/conditions/useInverseDynamicCondition.js",
+          },
+        ],
       },
       {
         instance: {
           bundle: "default-app/services/create/useCreateNewDashboardAction.js",
         },
+        conditions: [
+          {
+            bundle: "default-app/conditions/useAsyncTrue.js",
+          },
+        ],
       },
     ],
 
