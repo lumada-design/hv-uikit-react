@@ -5,6 +5,10 @@ on:
     - cron: "0 5 * * 5" # at 05:00 on fridays
   workflow_dispatch:
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   tests:
     name: Tests
