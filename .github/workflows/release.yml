@@ -51,6 +51,9 @@ jobs:
       - name: Install Dependencies
         uses: ./.github/actions/install-dependencies
 
+      - name: Check for package changes
+        run: npx lerna changed
+
       - name: Publish to NPM
         id: publish-npm
         run: |
