@@ -28,7 +28,7 @@ runs:
     - name: Checkout Artifacts Repository
       uses: actions/checkout@v4
       with:
-        repository: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+        repository: lumada-design/lumada-design.github.io
         ref: master
         token: ${{ env.ORG_GHPAGES_DEPLOY_KEY }}
         path: gh-docs
@@ -64,4 +64,4 @@ runs:
         env: ${{env.PUBLISH_FOLDER}}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-        env_url: https://${{ github.repository_owner }}.github.io/${{ env.PUBLISH_FOLDER }}/
+        env_url: https://lumada-design.github.io/${{ env.PUBLISH_FOLDER }}/
