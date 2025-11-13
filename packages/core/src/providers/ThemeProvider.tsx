@@ -91,7 +91,7 @@ export const HvThemeProvider = ({
   );
 
   const muiTheme = useMemo(() => {
-    const colors = activeTheme.colors.modes[colorMode];
+    const colors = activeTheme.colors.modes[selectedMode];
     return createTheme({
       spacing: activeTheme.space.base,
       typography: {
@@ -131,7 +131,7 @@ export const HvThemeProvider = ({
       },
       breakpoints: activeTheme.breakpoints,
     });
-  }, [activeTheme, colorMode]);
+  }, [activeTheme, selectedMode]);
 
   const emotionCacheValue = useMemo(
     () => ({ cache: emotionCache }),
