@@ -6,11 +6,14 @@ import {
 } from "@hitachivantara/uikit-react-core";
 
 import canvas from "./canvas/page.mdx?raw";
+import cards from "./cards/page.mdx?raw";
 import charts from "./charts/page.mdx?raw";
+import dialogs from "./dialogs/page.mdx?raw";
 import dnd from "./dnd/page.mdx?raw";
 import inputs from "./inputs/page.mdx?raw";
 import kpis from "./kpis/page.mdx?raw";
 import login from "./login/page.mdx?raw";
+import menus from "./menus/page.mdx?raw";
 import switches from "./switches/page.mdx?raw";
 import tables from "./tables/page.mdx?raw";
 import tags from "./tags/page.mdx?raw";
@@ -26,11 +29,14 @@ const countCodeBlocks = (fileContent: string): number => {
 
 const sections = [
   { slug: "canvas", title: "Canvas", total: countCodeBlocks(canvas) },
+  { slug: "cards", title: "Cards", total: countCodeBlocks(cards) },
   { slug: "charts", title: "Charts", total: countCodeBlocks(charts) },
+  { slug: "dialogs", title: "Dialogs", total: countCodeBlocks(dialogs) },
   { slug: "dnd", title: "Drag and Drop", total: countCodeBlocks(dnd) },
   { slug: "inputs", title: "Inputs", total: countCodeBlocks(inputs) },
   { slug: "kpis", title: "KPIs", total: countCodeBlocks(kpis) },
   { slug: "login", title: "Login", total: countCodeBlocks(login) },
+  { slug: "menus", title: "Menus", total: countCodeBlocks(menus) },
   { slug: "switches", title: "Switches", total: countCodeBlocks(switches) },
   { slug: "tables", title: "Tables", total: countCodeBlocks(tables) },
   { slug: "tags", title: "Tags", total: countCodeBlocks(tags) },
@@ -54,10 +60,16 @@ const getSectionIcon = (title: Slug) => {
       return <div className="i-ph-flow-arrow" />;
     case "login":
       return <div className="i-ph-lock-open" />;
+    case "menus":
+      return <div className="i-ph-list" />;
     case "switches":
       return <div className="i-ph-toggle-left" />;
     case "tags":
       return <div className="i-ph-tag-simple" />;
+    case "cards":
+      return <div className="i-ph-squares-four" />;
+    case "dialogs":
+      return <div className="i-ph-browser" />;
     default:
       return null;
   }

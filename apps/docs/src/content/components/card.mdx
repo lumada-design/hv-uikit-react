@@ -13,6 +13,10 @@ import { Header } from "../../components/Header";
   }}
 />
 
+> [!TIP]
+>
+> Check out our [card examples](/examples/cards)!
+
 ```tsx live
 <HvCard className="w-440px" bgcolor="bgContainer">
   <HvCardHeader
@@ -195,12 +199,6 @@ function StorageCard({
                 {icon}
                 <HvTypography variant="title4">{title}</HvTypography>
               </div>
-              <HvRadio
-                onChange={onSelect}
-                checked={selected}
-                value="value"
-                aria-label={`Tick to select the ${title} payment.`}
-              />
             </div>
           }
         />
@@ -230,3 +228,7 @@ const storages = [
   },
 ];
 ```
+
+### Related components
+
+- [`HvActionBar`](/components/action-bar)

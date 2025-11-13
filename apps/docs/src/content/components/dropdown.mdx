@@ -28,6 +28,85 @@ import { Header } from "../../components/Header";
   }}
 />
 
+### Groups
+
+Use the `separator` property on any data item to create groups of items within the dropdown.
+
+```tsx live
+<HvDropdown
+  values={[
+    {
+      id: "import",
+      label: "Import",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-download-simple" />}
+        />
+      ),
+    },
+    {
+      id: "export",
+      label: "Export",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-export" />}
+        />
+      ),
+    },
+    {
+      id: "share",
+      label: "Share",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-share-network" />}
+        />
+      ),
+      separator: true,
+    },
+    {
+      id: "settings",
+      label: "Settings",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-sliders" />}
+        />
+      ),
+    },
+    {
+      id: "filters",
+      label: "Filters",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-funnel" />}
+        />
+      ),
+      separator: true,
+    },
+    {
+      id: "delete",
+      label: "Delete",
+      icon: (
+        <HvStatusIcon
+          variant="default"
+          type="simple"
+          customIcon={<div className="i-ph-trash" />}
+        />
+      ),
+    },
+  ]}
+/>
+```
+
 ### Customized items
 
 The items in the `values` prop can be can be customized, namely with an icon or custom content on the `label` prop. Each item can be individually disabled also.

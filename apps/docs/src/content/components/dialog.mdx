@@ -103,11 +103,11 @@ const SemanticDialog = ({ variant }: HvDialogProps) => {
           visualization. You will need to re-select your fields.
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton variant={buttonVariantMap[variant]} onClick={handleClose}>
-            Apply
-          </HvButton>
           <HvButton autoFocus variant="secondaryGhost" onClick={handleClose}>
             Cancel
+          </HvButton>
+          <HvButton variant={buttonVariantMap[variant]} onClick={handleClose}>
+            Apply
           </HvButton>
         </HvDialogActions>
       </HvDialog>
@@ -316,11 +316,11 @@ export default function Demo() {
           </form>
         </HvDialogContent>
         <HvDialogActions>
-          <HvButton type="submit" form="create-post">
-            Create
-          </HvButton>
           <HvButton variant="secondaryGhost" onClick={() => setOpen(false)}>
             Cancel
+          </HvButton>
+          <HvButton type="submit" form="create-post">
+            Create
           </HvButton>
         </HvDialogActions>
       </HvDialog>
@@ -342,3 +342,7 @@ const DialogForm = () => (
   </HvGrid>
 );
 ```
+
+### Related components
+
+- [`HvDrawer`](/components/drawer)

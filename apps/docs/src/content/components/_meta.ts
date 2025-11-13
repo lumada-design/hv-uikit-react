@@ -83,8 +83,6 @@ export default {
   },
   lab: "Get started",
   // eslint-disable-next-line sort-keys
-  blade: "Blade",
-  blades: "Blades",
   dashboard: "Dashboard",
   "step-navigation": "Step Navigation",
   wizard: "Wizard",

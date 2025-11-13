@@ -772,6 +772,9 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
               display: "none",
             },
           },
+          "& .MuiCardContent-root:last-child": {
+            paddingBottom: 0,
+          },
           "& > :last-child:not(.HvCardMedia-root)": {
             paddingBottom: theme.space.sm,
           },

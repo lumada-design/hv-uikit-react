@@ -55,7 +55,8 @@ export default function Demo() {
   return (
     <div className="w-300px">
       <HvTagsInput
-        label="Tags with suggestions"
+        label="TagsInput with Dropdown"
+        placeholder="Enter tags or select from the dropdown..."
         ref={containerRef}
         onChange={(event, value) => {
           setSelectedColors(

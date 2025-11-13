@@ -5,11 +5,13 @@ title: "Inputs"
 import { CodeBlock } from "../../../components/code/CodeBlock";
 import copyButton from "./CopyButton?raw";
 import dropdownPrefix from "./DropdownPrefix?raw";
+import dropdownSuffix from "./DropdownSuffix?raw";
+import dropdownTreeview from "./DropdownTreeview?raw";
 import editableValue from "./EditableInput?raw";
 import labelSide from "./LabelSide?raw";
+import leadingIcon from "./LeadingIcon?raw";
 import tagsDropdown from "./TagsDropdown?raw";
-import tagsSuggestions from "./TagsSuggestions?raw";
-import tagsSuggestionsEmpty from "./TagsSuggestionsEmpty?raw";
+import tagsInputDropdown from "./TagsInputDropdown?raw";
 
 ### Input Components
 
@@ -17,20 +19,18 @@ Explore different input types and features—like dropdowns, tags, editable text
 
 <div className="overflow-hidden mt-20">
   <div className="w-101% grid divide-border [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] -mt-px -mb-px auto-rows-min [&>*]:min-h-[200px]">
-    <CodeBlock code={{ main: dropdownPrefix }} layout="popup" />
-    <CodeBlock code={{ main: copyButton }} layout="popup" />
-    <CodeBlock code={{ main: tagsDropdown }} layout="popup" />
-    <CodeBlock code={{ main: tagsSuggestions }} layout="popup" />
-    <CodeBlock code={{ main: tagsSuggestionsEmpty }} layout="popup" />
+    <CodeBlock code={leadingIcon} layout="popup" />
+    <CodeBlock code={copyButton} layout="popup" />
+    <CodeBlock code={labelSide} layout="popup" title="Label left side" />
+    <CodeBlock code={dropdownPrefix} layout="popup" />
+    <CodeBlock code={dropdownSuffix} layout="popup" />
+    <CodeBlock code={dropdownTreeview} layout="popup" />
+    <CodeBlock code={tagsDropdown} layout="popup" />
+    <CodeBlock code={tagsInputDropdown} layout="popup" />
     <CodeBlock
-      code={{ main: editableValue }}
+      code={editableValue}
       layout="popup"
       title="Inline Editable Text"
-    />
-    <CodeBlock
-      code={{ main: labelSide }}
-      layout="popup"
-      title="Label left side"
     />
   </div>
 </div>

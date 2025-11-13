@@ -1,77 +1,7 @@
-import {
-  accordionClasses as classes,
-  HvAccordion,
-} from "@hitachivantara/uikit-react-core";
-
-import { Header } from "../../components/Header";
-
-<Header
-  params={{ name: "Accordion", classes }}
-  Component={HvAccordion}
-  componentName={"HvAccordion"}
-  controls={{
-    label: { type: "text", defaultValue: "Accordion label" },
-    labelVariant: { defaultValue: "label" },
-    disabled: { defaultValue: false },
-  }}
-  componentProps={{ style: { width: "100%" } }}
+> [!IMPORTANT]
 >
-  <div>My accordion example content</div>
-</Header>
-
-> [!NOTE]
->
-> You can use the `HvSection` component to create an accordion group that better
-> fits your needs. Please refer to the [Section
+> You should use the `HvSection` component to create accordions. Please refer to the [Section
 > documentation](/components/section#multiple) for usage.
-
-### Controlled
-
-You can control the state of `HvAccordion` by using the `expanded`/`onChange` props.
-
-```tsx live
-import { useState } from "react";
-
-export default function Demo() {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <HvAccordion
-      expanded={expanded}
-      onChange={(evt, isExpanded) => setExpanded(!isExpanded)}
-      label="Accordion label"
-      labelVariant="label"
-    >
-      <div>My accordion content</div>
-    </HvAccordion>
-  );
-}
-```
-
-### Multiple accordions
-
-If you need an accordion group, you can use multiple `HvAccordion` components.
-
-```tsx live
-<>
-  <HvTypography className="pb-xs" variant="title3">
-    UI Kit
-  </HvTypography>
-
-  <HvAccordion label="Components" labelVariant="title4">
-    UI Building blocks that can be used in various combinations to create a
-    larger user interface
-  </HvAccordion>
-  <HvAccordion label="Widgets" labelVariant="title4">
-    Specialized components that address specific use cases and can be used as
-    base to support other scenarios.
-  </HvAccordion>
-  <HvAccordion label="Templates" labelVariant="title4">
-    Pre-designed layouts that address common UI patterns and can be used to
-    quickly create a consistent design.
-  </HvAccordion>
-</>
-```
 
 ### Related components
 
