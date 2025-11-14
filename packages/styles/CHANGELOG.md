@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.53.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.52.0...@hitachivantara/uikit-styles@5.53.0) (2025-11-14)
+
+### Features
+
+- **Pagination:** update to latest specs ([#4961](https://github.com/lumada-design/hv-uikit-react/issues/4961)) ([1be7f5a](https://github.com/lumada-design/hv-uikit-react/commit/1be7f5a30d6ad2d5052822e1d1a8f2fd4ed0a115))
+
+### Reverts
+
+- Revert "chore(release): publish" (#4969) ([c3e10b0](https://github.com/lumada-design/hv-uikit-react/commit/c3e10b015cdd1b36183c8a733d604a238f0d298c)), closes [#4969](https://github.com/lumada-design/hv-uikit-react/issues/4969)
+- "chore(release): publish" ([#4972](https://github.com/lumada-design/hv-uikit-react/issues/4972)) ([fd92a30](https://github.com/lumada-design/hv-uikit-react/commit/fd92a30f57c51d41ee3dce9c4920a15f16abb59a))
+
 # [5.52.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-styles@5.51.1...@hitachivantara/uikit-styles@5.52.0) (2025-10-22)
 
 ### Features
