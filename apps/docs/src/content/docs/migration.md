@@ -1,6 +1,11 @@
 # Migration from v4.x to v5.x
 
-The NEXT UI Kit v5 is one of our most ambitious release to date. In this version, we **implemented our own theming system** to help reduce the gap between the
+> [!NOTE]
+>
+> Migration guides for older versions can be found in the [old Storybook documentation](https://lumada-design.github.io/uikit/master/?path=/docs/overview-migration-from-v3-x--docs)
+> or in the corresponding [GitHub `v*.x` branches](https://github.com/pentaho/hv-uikit-react/branches/all?query=.x).
+
+The UI Kit v5 is one of our most ambitious release to date. In this version, we **implemented our own theming system** to help reduce the gap between the
 Design System and UI Kit releases as well as improve our customization capabilities.
 
 Furthermore, we also took the opportunity to **migrate our packages from MUI's JSS styling system to Emotion**. This change was due mainly to performance benefits
@@ -15,14 +20,14 @@ Here's what there is to know about this migration:
 - [UI Kit packages](#ui-kit-packages)
 - [Emotion packages](#emotion-packages)
 - [MUI packages](#mui-packages)
-  - [Breaking changes in the theme object](#theme-object)
-  - [Update styling and theme utilities](#update-utilities)
+  - [Breaking changes in the theme object](#breaking-changes-in-the-theme-object)
+  - [Update styling and theme utilities](#update-styling-and-theme-utilities)
 - [Promoted components](#promoted-components)
 - [Removed components](#removed-components)
-- [Renamed components and types](#renamed-components-types)
+- [Renamed components and types](#renamed-components-and-types)
 - [Colors](#colors)
 - [Visualizations](#visualizations)
-- [Breaking changes and deprecated values in components](#breaking-changes-deprecated-components)
+- [Breaking changes and deprecated values in components](#breaking-changes-and-deprecated-values-in-components)
   - [Provider](#provider)
   - [Button](#button)
   - [Typography](#typography)
@@ -40,11 +45,11 @@ Here's what there is to know about this migration:
   - [Color picker](#color-picker)
   - [Carousel](#carousel)
   - [Time Picker](#time-picker)
-  - [Table Renderer - Expand Column](#table-renderer-expand-column)
+  - [Table Renderer hvExpandColumn](#table-renderer-hvexpandcolumn)
   - [Drawer](#drawer)
   - [Query Builder](#query-builder)
 
-## React packages <a id="react-packages" />
+## React packages
 
 UI Kit v5.x supports React `17.x` and `18.x`. If you are using an older version, you'll need to upgrade the `react` and `react-dom` packages.
 
@@ -52,7 +57,7 @@ UI Kit v5.x supports React `17.x` and `18.x`. If you are using an older version,
 npm i react@18 react-dom@18
 ```
 
-## UI Kit packages <a id="ui-kit-packages" />
+## UI Kit packages
 
 Before proceeding to this upgrade, you should also note that **you can't use UI Kit packages v4.x and v5.x simultaneously** due to the introduction of a new theming
 system not compatible with v4.x components.
@@ -74,12 +79,12 @@ npm i @hitachivantara/uikit-react-core@5.x @hitachivantara/uikit-react-icons@5.x
 
 For more information about the project status access this [page](./?path=/docs/overview-project-status--docs).
 
-## Emotion packages <a id="emotion-packages" />
+## Emotion packages
 
 In UI Kit v5.x, the `@emotion/react` and `@emotion/styled` packages are still peer dependencies. However, it is expected that you already have them installed
 in your project since UI Kit v4.x already required them.
 
-## MUI packages <a id="mui-packages" />
+## MUI packages
 
 Even though we created a new theming system in this new version, we are still relying on some of the solutions provided by [MUI](https://mui.com/) as we have been
 in previous versions. Our approach has always been to use the features we find value and enable them to our users. This philosophy did not change, and `@mui/material`
@@ -91,7 +96,7 @@ is no longer a peer dependency for the `uikit-react-core` package.
 Since we are no longer using JSS styling system in our packages, we recommend that you also make the transition to Emotion. However, the NEXT UI Kit was not built
 to be used with one specific styling library so you can keep using the one best suited for your needs.
 
-### Breaking changes in the theme object <a id="theme-object" />
+### Breaking changes in the theme object
 
 As mentioned, with UI Kit v5 we introduced our own theming system dropping the one from MUI. Due to this breaking change it's **no longer possible to solely
 rely on MUI to access the `theme` object where all the theme's properties are stored**.
@@ -105,7 +110,7 @@ can use in cases where the usage of CSS variables is not possible. Find more inf
 In future versions we expect these media queries to be added to our own theme but until then use the ones from MUI.
 
 Because of these changes, it's necessary to update the styling MUI utilities used in your application, namely `useTheme`, `withStyles`, and `makeStyles`.
-This will be more thoroughly discussed in the [next section](#update-utilities).
+This will be more thoroughly discussed in the [next section](#update-styling-and-theme-utilities).
 
 Since the theme has a different structure from the one provided on v4.x, find below a mapping of the `theme` object where changes were introduced.
 
@@ -167,7 +172,7 @@ Regarding the spacing methods, we only have one in v5.x when there were previous
 both methods and create a `theme.spacing()` method in the new theme object. Note that while the previously base used for the `theme.spacing()` function was 7.5px,
 we now use different ones for the DS5 and DS3 themes. Read more about this on this [page](./?path=/docs/guides-theming--docs#spacing).
 
-### Update styling and theme utilities <a id="update-utilities" />
+### Update styling and theme utilities
 
 Due to the breaking changes introduced with UI Kit v5.x, all the MUI's utilities used to access the theme object and style your components must be updated.
 
@@ -425,7 +430,7 @@ that can be consumed all over your code. Furthermore, your components can contin
 + export default CustomButton;
 ```
 
-## Promoted components <a id="promoted-components" />
+## Promoted components
 
 In v5.x the components below were promoted from the lab to the core package:
 
@@ -443,7 +448,7 @@ In order to use them, you'll need to update the necessary imports. Please find a
 +  import { HvTimeAgo } from "@hitachivantara/uikit-react-core"
 ```
 
-## Removed components <a id="removed-components" />
+## Removed components
 
 From `@hitachivantara/uikit-react-lab`:
 
@@ -454,7 +459,7 @@ From `@hitachivantara/uikit-react-core`:
 
 - `User Preferences` (this component was removed because it was not generic enough and should be easy to compose using the available components.)
 
-## Renamed components and types <a id="renamed-components-types" />
+## Renamed components and types
 
 In v5.x some components and types were renamed as detailed in the table below.
 
@@ -498,7 +503,7 @@ In v5.x some components and types were renamed as detailed in the table below.
 | Type              | StackDirection         | HvStackDirection                      |
 | Type              | TagSuggestion          | HvTagSuggestion                       |
 
-## Colors <a id="colors" />
+## Colors
 
 Colors names have changed in v5.x from previous versions. The table below maps the previous names to the new ones. Note that even if you're using DS3, you'll have to update the colors to the new names.
 
@@ -530,7 +535,7 @@ Colors names have changed in v5.x from previous versions. The table below maps t
 | Semantic    | sema20 | warning_20   |
 | Categorical | cviz\* | cat\*        |
 
-## Visualizations <a id="visualizations" />
+## Visualizations
 
 In v5.x we revisited the visualizations package, `uikit-react-viz`, since several concerns were raised regarding the rendering library Plotly used in v4.x, namely:
 
@@ -548,9 +553,9 @@ and aggregating data points.
 
 For more information about how to get started with the visualizations, please take a look at the [visualizations guide](./?path=/docs/guides-visualizations--docs).
 
-## Breaking changes and deprecated values in components <a id="breaking-changes-deprecated-components" />
+## Breaking changes and deprecated values in components
 
-### Provider <a id="provider" />
+### Provider
 
 Since we implemented our new theming system, the `HvProvider` API changed significantly. Because of this we recommend that you read the [provider](./?path=/docs/guides-provider--docs)
 and [theming](./?path=/docs/guides-theming--docs) documentation where the new API is thoroughly explained.
@@ -565,7 +570,7 @@ Briefly, the following properties where removed and/or updated:
 - `theme`: the `themes` property is now used to define your themes and the `theme` only accepts the name of the active theme;
 - `changeTheme`: removed from the provider and added to the `useTheme` hook from the `react-core-package`.
 
-### Button <a id="button" />
+### Button
 
 The `HvButton` API suffered various changes since we stopped using MUI's button under the hood. In this sense, it is expected you'll no longer be able to use
 MUI's specific properties since they were dropped. We recommend you take a look at the button's API available on this [page](./?path=/docs/components-button--docs)
@@ -591,7 +596,7 @@ The following `classes` were also removed:
 - `semantic`
 - `semanticDisabled`
 
-### Typography <a id="typography" />
+### Typography
 
 In DS5, new variants were added to the `HvTypography` component and all the DS3 variants are now considered deprecated. You can still use DS3 variants and,
 when possible, they are mapped to a corresponding DS5 variant. However, since the support for these deprecated variants could be removed at any time, we strongly
@@ -601,27 +606,27 @@ The `link` and `disabled` properties were also added to the component.
 
 Learn more about the typography variants on this [page](./?path=/docs/foundation-typography-usage--docs).
 
-### Card <a id="card" />
+### Card
 
 The `semantic` property was removed and the border color at the top of the card must be set with the `statusColor` instead.
 
-### Global actions <a id="global-action" />
+### Global actions
 
 The properties `backButtonAction`, `backButtonAriaLabel`, and `backwardsIcon` were removed from `HvGlobalActions` and the `backButton` property must be used
 instead to pass in the button for the back action.
 
-### Dropdown menu <a id="dropdown-menu" />
+### Dropdown menu
 
 The `onToggleOpen` property was removed from the `HvDropdownMenu` and `onToggle` must be used instead. Furthermore, the `disablePortal` is now `true` by default.
 
-### Dot pagination <a id="dot-pagination" />
+### Dot pagination
 
 The `HvDotPagination` component has different specifications for DS3 and DS5. However, due to limitations, it was only possible to implement the component with
 the DS5 specifications. Thus, if you are using the DS3 theme on your application, the `HvDotPagination` component will be the one from DS5. However, the new properties
 `unselectedIcon` and `selectedIcon` were added to the component in order to easily customize it and meet the DS3 guidelines.
 Learn how to do this on this [page](./?path=/docs/components-pagination-dot-pagination--docs).
 
-### Avatar <a id="avatar" />
+### Avatar
 
 The `size` property values from the `HvAvatar` component were updated to the values below and the corresponding `classes` were also updated to the same values.
 
@@ -637,7 +642,7 @@ The `containerProps` property was removed and a new `avatarProps` property was a
 must be directly used on the component. On the other hand, the properties that should be used on the avatar and not the container must now be defined
 inside `avatarProps`.
 
-### Panel <a id="panel" />
+### Panel
 
 Since the `HvPanel` component was previously using MUI's `Box` component as its root element it was possible to use CSS properties directly on the
 component as properties. This is no longer possible and you must style the panel using the `style`, `classes`, or `className` properties.
@@ -660,7 +665,7 @@ component as properties. This is no longer possible and you must style the panel
   };
 ```
 
-### Vertical navigation <a id="vertical-navigation" />
+### Vertical navigation
 
 The properties below were removed from the `HvVerticalNavigation` component since all the logic of opening and closing the navigation should be external
 to the component. For example, the `HvVerticalNavigation` could be used inside a drawer component.
@@ -684,7 +689,7 @@ Furthermore, on the `HvVerticalNavigationTree` component, the following properti
 - `onClick`: Use `onChange` for selection and `onToggle` for node expansion/collapse;
 - `label`: Use directly the `aria-label` property instead.
 
-### Table <a id="table" />
+### Table
 
 The following types and utilities were reviewed and type definitions changes were introduced to enable the definition of the columns' header type:
 
@@ -710,19 +715,19 @@ The following types and utilities were reviewed and type definitions changes wer
 - `HvRowInstance`
 - `HvCellInstance`
 
-### Slider <a id="slider" />
+### Slider
 
 The `theme` property was removed since the component accesses the theme object internally.
 
-### Code editor <a id="code-editor" />
+### Code editor
 
 The `theme` property was removed since the component accesses the theme object internally.
 
-### Date picker <a id="date-picker" />
+### Date picker
 
 The locale must be passed as a prop as the component no longer reads the locale from the provider.
 
-### Color picker <a id="color-picker" />
+### Color picker
 
 The properties listed below were added to the color picker component to support the various use cases defined in the DS5 specifications. If you need to
 use the DS3 version, the component can easily be customized to meet the guidelines as shown in the example provided in this [story](./?path=/docs/widgets-color-picker--docs#customized-color-picker).
@@ -742,7 +747,7 @@ use the DS3 version, the component can easily be customized to meet the guidelin
 - `onSavedColorRemoved`
 - `deleteSavedColorButtonArialLabel`
 
-### Carousel <a id="carousel" />
+### Carousel
 
 The `HvImageCarousel` component was renamed to `HvCarousel`. It can now scroll through any type of content.
 
@@ -779,26 +784,26 @@ const images = ["img1.png", "img2.png", "img3.png"];
 +</HvCarousel>
 ```
 
-### Table Renderer - hvExpandColumn <a id="table-renderer-expand-column" />
+### Table Renderer hvExpandColumn
 
 The default icon for this component has changed to the one specified in DS5 specifications, in order to be possible to revert to the previous icon or customize to any other, the following properties were added:
 
 - `ExpandedIcon`
 - `CollapsedIcon`
 
-### Drawer <a id="drawer" />
+### Drawer
 
 This component was moved from the lab to the core package in this ui-kit version.
 In the story of this component in the previous uikit version we used a prop called: `disableBackdropClick`,
 this prop was deprecated by the underlining component from material ui and you should use `onClose` instead.
 
-### Time Picker <a id="time-picker" />
+### Time Picker
 
 - The deprecated props `hours`, `minutes`, and `seconds` were removed.
   - Users should now use either `defaultValue` or `value` to set the time, in an uncontrolled or controlled way respectively (which follows the `HvTimePickerValue` type).
 - The `HvTimePickerValue` no longer has the `period` property, as it uses the 24-hour format for consistency
 
-### Query Builder <a id="query-builder" />
+### Query Builder
 
 - All of the types exported from this component now have the `HvQueryBuilder` prefix. (e.g. the type: `Attribute` is now `HvQueryBuilderAttribute`).
 - The default values from this component have also changed to have a `hvQueryBuilder` prefix. (e.g. `defaultLabels` is now `hvQuerybuilderDefaultLabels`)

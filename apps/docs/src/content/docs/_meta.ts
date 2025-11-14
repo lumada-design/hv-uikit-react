@@ -48,4 +48,5 @@ export default {
   layout: "Layout",
   forms: "Forms",
   accessibility: "Accessibility",
+  migration: "Migration",
 } satisfies MetaRecord;
