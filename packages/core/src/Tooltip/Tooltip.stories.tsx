@@ -111,7 +111,7 @@ export const CustomElements: StoryObj<HvTooltipProps> = {
         <HvTypography
           link
           component="a"
-          href="https://github.com/lumada-design/hv-uikit-react"
+          href="https://github.com/pentaho/hv-uikit-react"
         >
           UI Kit
         </HvTypography>

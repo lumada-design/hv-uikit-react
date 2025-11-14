@@ -22,9 +22,9 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
+// The code for these values are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import { restrictToSample } from "../Base";
-// The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Visualizations
+// The code for these components are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Visualizations
 import { BarChart } from "./BarChart";
 import { data } from "./data";
 import { Filter } from "./Filter";

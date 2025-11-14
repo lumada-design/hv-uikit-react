@@ -8,7 +8,7 @@ import {
 import { HvFlowProps } from "@hitachivantara/uikit-react-lab";
 
 import { Asset } from "./Asset";
-// The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+// The code for these components are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { Dashboard } from "./Dashboard";
 import { KPI } from "./KPI";
 import { LineChart } from "./LineChart";

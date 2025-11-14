@@ -17,7 +17,7 @@ Here are a few guidelines that will help you along the way:
 
 ```sh
 # Clone the repository
-git clone git@github.com:lumada-design/hv-uikit-react.git
+git clone git@github.com:pentaho/hv-uikit-react.git
 cd hv-uikit-react
 # Install the dependencies
 npm ci
@@ -37,12 +37,12 @@ Check out our [Component Guidelines](./?path=/docs/overview-community-component-
 
 <h2 id="submitting-an-issue">Submitting an issue</h2>
 
-You can file new issues by selecting from our [issue templates](https://github.com/lumada-design/hv-uikit-react/issues/new/choose) and filling out the issue template.
+You can file new issues by selecting from our [issue templates](https://github.com/pentaho/hv-uikit-react/issues/new/choose) and filling out the issue template.
 Before submitting an issue, please search the repository, as your issue might have been already answered.
 
 ### Bugs 🐛
 
-If your issue appears to be a bug, please report it by opening [a new bug report](https://github.com/lumada-design/hv-uikit-react/issues/new?template=1.bug_report.yml).
+If your issue appears to be a bug, please report it by opening [a new bug report](https://github.com/pentaho/hv-uikit-react/issues/new?template=1.bug_report.yml).
 
 Even better if you submit a Pull Request with the fix instead.
 

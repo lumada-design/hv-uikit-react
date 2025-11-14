@@ -26,7 +26,7 @@ const footerLinks = [
     links: [
       {
         label: "Team",
-        href: "https://github.com/lumada-design/hv-uikit-react?tab=readme-ov-file#team-",
+        href: "https://github.com/pentaho/hv-uikit-react?tab=readme-ov-file#team-",
       },
       {
         label: "Slack",
@@ -34,11 +34,11 @@ const footerLinks = [
       },
       {
         label: "GitHub",
-        href: "https://github.com/lumada-design/hv-uikit-react",
+        href: "https://github.com/pentaho/hv-uikit-react",
       },
       {
         label: "License",
-        href: "https://github.com/lumada-design/hv-uikit-react/?tab=Apache-2.0-1-ov-file#readme",
+        href: "https://github.com/pentaho/hv-uikit-react/?tab=Apache-2.0-1-ov-file#readme",
       },
     ],
   },

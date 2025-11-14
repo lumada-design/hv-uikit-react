@@ -86,7 +86,7 @@ const Welcome = () => {
           <HvTypography
             link
             component="a"
-            href="https://lumada-design.github.io/uikit/master/"
+            href="https://pentaho.github.io/uikit-docs/master/"
           >
             More details
           </HvTypography>

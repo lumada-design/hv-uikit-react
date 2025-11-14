@@ -3,14 +3,14 @@
   "type": "module",
   "private": true,
   "description": "UI Kit React components library.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "author": "Hitachi Vantara UI Kit Team",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lumada-design/hv-uikit-react.git"
+    "url": "git+https://github.com/pentaho/hv-uikit-react.git"
   },
   "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+    "url": "https://github.com/pentaho/hv-uikit-react/issues"
   },
   "license": "Apache-2.0",
   "scripts": {

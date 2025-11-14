@@ -5,7 +5,7 @@
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "Shared React contexts for the NEXT UI Kit.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "main": "src/index.ts",
   "sideEffects": false,
   "keywords": [
@@ -17,12 +17,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "url": "git+https://github.com/pentaho/hv-uikit-react.git",
     "directory": "packages/shared"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+    "url": "https://github.com/pentaho/hv-uikit-react/issues"
   },
   "scripts": {
     "build": "npm run clean && vite build",

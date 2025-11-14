@@ -26,12 +26,12 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+// The code for these utils are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
 import { BarChart } from "./BarChart";
 import { data } from "./data";
 import { LineChart } from "./LineChart";
-// The code for these components and values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
+// The code for these components and values are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomDrop
 import { Precipitation } from "./Precipitation";
 
 // Node groups

@@ -93,7 +93,7 @@ export interface HvQueryBuilderProps {
  * This component allows you to create conditions and group them using logical operators.
  * It outputs a structured set of rules which can be easily parsed to create SQL/NoSQL/whatever queries.
  *
- * Take a look at the [usage page](https://lumada-design.github.io/uikit/master/?path=/docs/widgets-query-builder-usage--docs) to learn more about this component.
+ * Take a look at the [usage page](https://pentaho.github.io/uikit-docs/master/components/query-builder) to learn more about this component.
  */
 export const HvQueryBuilder = (props: HvQueryBuilderProps) => {
   const {

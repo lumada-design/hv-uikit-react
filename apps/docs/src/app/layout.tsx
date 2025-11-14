@@ -15,7 +15,7 @@ const title = "UI Kit";
 const description = "UI Kit documentation site";
 
 export const metadata = {
-  metadataBase: new URL("https://github.com/lumada-design/hv-uikit-react"),
+  metadataBase: new URL("https://github.com/pentaho/hv-uikit-react"),
   title: { default: "UI Kit", template: "%s - UI Kit" },
   description,
   icons: "https://lumada-design.github.io/assets/uikit-icon.svg",
@@ -34,7 +34,7 @@ export const metadata = {
 const navbar = (
   <Navbar
     logo={<UIKitLogo />}
-    projectLink="https://github.com/lumada-design/hv-uikit-react"
+    projectLink="https://github.com/pentaho/hv-uikit-react"
   >
     <ThemeSwitch lite />
     <ThemeSwitcher />
@@ -62,7 +62,7 @@ export default async function RootLayout({
           search={<Search placeholder="Search..." />}
           footer={<Footer />}
           editLink={null}
-          docsRepositoryBase="https://github.com/lumada-design/hv-uikit-react/tree/master/apps/docs"
+          docsRepositoryBase="https://github.com/pentaho/hv-uikit-react/tree/master/apps/docs"
           sidebar={{ defaultMenuCollapseLevel: 1, toggleButton: false }}
           pageMap={await getPageMap()}
         >
