@@ -3,13 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.2.48](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.47...@hitachivantara/uikit-react-utils@0.2.48) (2025-11-14)
-
-### Reverts
-
-- Revert "chore(release): publish" (#4969) ([c3e10b0](https://github.com/lumada-design/hv-uikit-react/commit/c3e10b015cdd1b36183c8a733d604a238f0d298c)), closes [#4969](https://github.com/lumada-design/hv-uikit-react/issues/4969)
-- "chore(release): publish" ([#4972](https://github.com/lumada-design/hv-uikit-react/issues/4972)) ([fd92a30](https://github.com/lumada-design/hv-uikit-react/commit/fd92a30f57c51d41ee3dce9c4920a15f16abb59a))
-
 ## [0.2.47](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-utils@0.2.46...@hitachivantara/uikit-react-utils@0.2.47) (2025-10-22)
 
 **Note:** Version bump only for package @hitachivantara/uikit-react-utils
