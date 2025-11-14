@@ -5,15 +5,15 @@
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "AppShell Shared",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "sideEffects": false,
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "url": "git+https://github.com/pentaho/hv-uikit-react.git",
     "directory": "packages/app-shell-shared"
   },
-  "bugs": "https://github.com/lumada-design/hv-uikit-react/issues",
+  "bugs": "https://github.com/pentaho/hv-uikit-react/issues",
   "scripts": {
     "build": "npm run clean && vite build",
     "test": "vitest",

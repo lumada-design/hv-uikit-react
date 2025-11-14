@@ -1,6 +1,6 @@
 import { HvFlowNodeFC } from "@hitachivantara/uikit-react-lab";
 
-// The code for these components are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+// The code for these components are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { MLModelDetection } from "./MLModelDetection";
 import { MLModelPrediction } from "./MLModelPrediction";
 

@@ -28,7 +28,7 @@ import {
 } from "@hitachivantara/uikit-react-lab";
 
 import { restrictToSample } from "../Base";
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/BaseHook
+// The code for these utils are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/BaseHook
 import { CustomEdge } from "./IconEdge";
 import { Node } from "./Node";
 

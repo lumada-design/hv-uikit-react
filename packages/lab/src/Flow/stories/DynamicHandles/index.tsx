@@ -21,9 +21,9 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
+// The code for these utils are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base
 import { restrictToSample } from "../Base";
-// The code for these utils are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomNode
+// The code for these utils are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/CustomNode
 import { Asset, NodeData, types } from "./Asset";
 
 // Classes

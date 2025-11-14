@@ -15,7 +15,7 @@ Open-source **React UI library** to build high-quality digital products.
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![React](https://img.shields.io/badge/react-17+-blue.svg)
 ![Node](https://img.shields.io/badge/node-16+-brightgreen.svg)
-[![Nightly](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml/badge.svg)](https://github.com/lumada-design/hv-uikit-react/actions/workflows/nightly.yml)
+[![Nightly](https://github.com/pentaho/hv-uikit-react/actions/workflows/nightly.yml/badge.svg)](https://github.com/pentaho/hv-uikit-react/actions/workflows/nightly.yml)
 
 </div>
 
@@ -37,7 +37,7 @@ Check the [project status](https://lumada-design.github.io/uikit-docs/master/doc
 
 ## Installation 🚀
 
-The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cli`](./packages/cli). Follow the link for usage documentation. If you're migrating from an older UI Kit version, please follow the [Migration Guides](https://github.com/lumada-design/hv-uikit-react/tree/master/docs/overview/migration).
+The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cli`](./packages/cli). Follow the link for usage documentation. If you're migrating from an older UI Kit version, please follow the [Migration Guides](https://github.com/pentaho/hv-uikit-react/tree/master/docs/overview/migration).
 
 ```sh
 npx @hitachivantara/hv-uikit-cli@latest create
@@ -66,8 +66,8 @@ Please check out our [Contribution Guidelines](/.github/CONTRIBUTING.md) and let
 
 ## Contributors 🤟
 
-<a href="https://github.com/lumada-design/hv-uikit-react/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=lumada-design/hv-uikit-react" />
+<a href="https://github.com/pentaho/hv-uikit-react/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pentaho/hv-uikit-react" />
 </a>
 
 ## License

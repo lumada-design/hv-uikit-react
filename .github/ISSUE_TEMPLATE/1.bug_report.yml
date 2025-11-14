@@ -49,7 +49,7 @@ body:
 
         Please use one of our StackBlitz templates as a starting point:
 
-        https://stackblitz.com/github/lumada-design/hv-uikit-react/tree/master/examples/uikit-vite-ts
+        https://stackblitz.com/github/pentaho/hv-uikit-react/tree/master/examples/uikit-vite-ts
 
         **Issues that we can't reproduce will be closed.**
       value: |

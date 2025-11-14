@@ -18,7 +18,7 @@ import {
   HvFlowSidebar,
 } from "@hitachivantara/uikit-react-lab";
 
-// The code for these values are available here: https://github.com/lumada-design/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
+// The code for these values are available here: https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/components/Flow/stories/Base/index.tsx
 import { nodeGroups, NodeType, nodeTypes, restrictToSample } from "../Base";
 import { LayoutsProvider } from "../Base/LayoutsContext";
 

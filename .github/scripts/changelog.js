@@ -20,7 +20,7 @@ async function main() {
   if (!newVersion) throw new Error("newVersion arg is required");
 
   const { md } = await generate({
-    repo: "lumada-design/hv-uikit-react",
+    repo: "pentaho/hv-uikit-react",
     from: currentVersion,
     to: newVersion,
     dry: true,
@@ -39,7 +39,7 @@ async function main() {
     // cleanup newlines
     .replace(/\n/g, "\n");
 
-  const releaseUrl = `https://github.com/lumada-design/hv-uikit-react/releases/tag/${newVersion}`;
+  const releaseUrl = `https://github.com/pentaho/hv-uikit-react/releases/tag/${newVersion}`;
   const mdSections = [
     `*<${releaseUrl}|UI-Kit \`${newVersion}\` released>*`,
     text,

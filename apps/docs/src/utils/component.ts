@@ -74,7 +74,7 @@ export const getComponentData = async ({
   showAllProps = false,
 }: ComponentDataParams): Promise<ComponentMeta> => {
   const componentLocation = `packages/${packageName}/src/${componentPath}/${name}.tsx`;
-  const source = `https://github.com/lumada-design/hv-uikit-react/blob/master/${componentLocation}`;
+  const source = `https://github.com/pentaho/hv-uikit-react/blob/master/${componentLocation}`;
 
   const parsed = getParsedDocgen(componentLocation);
 

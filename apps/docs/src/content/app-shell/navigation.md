@@ -16,7 +16,7 @@ menu: [
 Check the [configuration file reference](./configuration#menu) for more information on how to build the _Product's_ navigation menu.
 
 You can also enable the `autoMenu` option that when set, will have the plugin trying to automatically add the configured views as menu entries. Any menu defined in the App Shell config file will be overwritten.
-For more details refer to the [plugin documentation](https://github.com/lumada-design/hv-uikit-react/tree/master/packages/app-shell-vite-plugin#readme).
+For more details refer to the [plugin documentation](https://github.com/pentaho/hv-uikit-react/tree/master/packages/app-shell-vite-plugin#readme).
 
 ## Navigation between Views
 

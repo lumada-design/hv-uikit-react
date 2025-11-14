@@ -20,7 +20,7 @@ const applicationsList: HvAppSwitcherActionApplication[] = [
     name: "UI Kit repository (New Tab)",
     iconElement: <Code />,
     description: "This is the UI Kit repository on Github",
-    url: "https://github.com/lumada-design/hv-uikit-react/",
+    url: "https://github.com/pentaho/hv-uikit-react/",
     target: "_blank",
   },
   {
@@ -89,7 +89,7 @@ export const ManyEntries: StoryObj<HvAppSwitcherProps> = {
         index % 5 === 0
           ? `This is the auto-generated application number ${index}`
           : undefined,
-      url: "https://github.com/lumada-design/hv-uikit-react",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: index % 2 === 0 ? "_top" : "_blank",
     }));
 

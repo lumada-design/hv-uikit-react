@@ -5,7 +5,7 @@
   "type": "module",
   "author": "Hitachi Vantara UI Kit Team",
   "description": "The Hitachi Vantara CLI for UI Kit apps.",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "bin": {
@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lumada-design/hv-uikit-react.git",
+    "url": "git+https://github.com/pentaho/hv-uikit-react.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+    "url": "https://github.com/pentaho/hv-uikit-react/issues"
   },
   "scripts": {
     "clean": "npx rimraf package",

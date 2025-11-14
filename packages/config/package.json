@@ -5,7 +5,7 @@
   "private": false,
   "author": "Hitachi Vantara UI Kit Team",
   "description": "UI Kit Sharable projects configurations",
-  "homepage": "https://github.com/lumada-design/hv-uikit-react",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
   "sideEffects": false,
   "keywords": [
     "hitachi-vantara",
@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lumada-design/hv-uikit-react.git",
+    "url": "https://github.com/pentaho/hv-uikit-react.git",
     "directory": "packages/config"
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/lumada-design/hv-uikit-react/issues"
+    "url": "https://github.com/pentaho/hv-uikit-react/issues"
   },
   "scripts": {
     "clean": "npx rimraf package",
