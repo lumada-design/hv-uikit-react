@@ -3,25 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [5.107.0](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.2...@hitachivantara/uikit-react-core@5.107.0) (2025-11-14)
-
-### Bug Fixes
-
-- **ActionBar:** add border on top ([#4979](https://github.com/lumada-design/hv-uikit-react/issues/4979)) ([a7e8d55](https://github.com/lumada-design/hv-uikit-react/commit/a7e8d5523c296cb2c5a59df8bfe7d2d30a653b96))
-- **ThemeProvider:** fallback to valid colorMode ([#4977](https://github.com/lumada-design/hv-uikit-react/issues/4977)) ([b34b9f7](https://github.com/lumada-design/hv-uikit-react/commit/b34b9f721ff0cc12eb5956250870e71cc31d6c95))
-
-### Features
-
-- **ActionBar:** update to latest specs ([#4962](https://github.com/lumada-design/hv-uikit-react/issues/4962)) ([c7e0ef5](https://github.com/lumada-design/hv-uikit-react/commit/c7e0ef5cab52e97f72d52161cbc0392e17c04050))
-- **Icons:** update `Info` icon ([#4978](https://github.com/lumada-design/hv-uikit-react/issues/4978)) ([f9005d5](https://github.com/lumada-design/hv-uikit-react/commit/f9005d51eee2ee75c8c379461899032eec0b03b0))
-- **Pagination:** update to latest specs ([#4961](https://github.com/lumada-design/hv-uikit-react/issues/4961)) ([1be7f5a](https://github.com/lumada-design/hv-uikit-react/commit/1be7f5a30d6ad2d5052822e1d1a8f2fd4ed0a115))
-- **Select:** add renderValue for custom header rendering ([#4971](https://github.com/lumada-design/hv-uikit-react/issues/4971)) ([97f320f](https://github.com/lumada-design/hv-uikit-react/commit/97f320f0eaecec2648127a7dd8275f9fda5ca4de))
-
-### Reverts
-
-- Revert "chore(release): publish" (#4969) ([c3e10b0](https://github.com/lumada-design/hv-uikit-react/commit/c3e10b015cdd1b36183c8a733d604a238f0d298c)), closes [#4969](https://github.com/lumada-design/hv-uikit-react/issues/4969)
-- "chore(release): publish" ([#4972](https://github.com/lumada-design/hv-uikit-react/issues/4972)) ([fd92a30](https://github.com/lumada-design/hv-uikit-react/commit/fd92a30f57c51d41ee3dce9c4920a15f16abb59a))
-
 ## [5.106.2](https://github.com/lumada-design/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.1...@hitachivantara/uikit-react-core@5.106.2) (2025-10-22)
 
 ### Bug Fixes
