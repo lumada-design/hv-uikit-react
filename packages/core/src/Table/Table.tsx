@@ -79,7 +79,7 @@ const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
  * You can rely on these **elements** when your table doesn’t have many interactions or you need it to be very lightweight.
  *
  * For better data handling and **advanced features** we recommend the use of the utility hooks collection.
- * See the [Table Hooks documentation](https://lumada-design.github.io/uikit/master/?path=/docs/visualizations-table-table-hooks--docs) for more details.
+ * See the [Table Hooks documentation](https://pentaho.github.io/uikit-docs/master/components/table#usehvtable-hooks) for more details.
  */
 export const HvTable = forwardRef<
   // no-indent

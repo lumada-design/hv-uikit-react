@@ -117,7 +117,7 @@ const create = async ({
     );
     console.log(
       `App Shell documentation: ${chalk.cyan(
-        "https://lumada-design.github.io/uikit-docs/master/app-shell",
+        "https://pentaho.github.io/uikit-docs/master/app-shell",
       )}`,
     );
   } else {

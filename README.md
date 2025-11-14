@@ -33,7 +33,7 @@ Open-source **React UI library** to build high-quality digital products.
 - **Accessibility-Centric**  
   Built to meet accessibility standards and ensure inclusivity for all users.
 
-Check the [project status](https://lumada-design.github.io/uikit-docs/master/docs/project-status) so you can stay up-to-date on the project development, available packages, components status and supported versions.
+Check the [project status](https://pentaho.github.io/uikit-docs/master/docs/project-status) so you can stay up-to-date on the project development, available packages, components status and supported versions.
 
 ## Installation 🚀
 
@@ -43,11 +43,11 @@ The fastest way to setup a new **NEXT UI Kit** project is by using [`hv-uikit-cl
 npx @hitachivantara/hv-uikit-cli@latest create
 ```
 
-If you're adding UI Kit to an existing project, please follow our [Get Started](https://lumada-design.github.io/uikit-docs/master/docs/get-started) guide for more information.
+If you're adding UI Kit to an existing project, please follow our [Get Started](https://pentaho.github.io/uikit-docs/master/docs/get-started) guide for more information.
 
 ## Documentation
 
-See our documentation site [here](https://lumada-design.github.io/) for full how-to docs and guidelines.
+See our documentation site [here](https://pentaho.github.io/uikit-docs/master/) for full how-to docs and guidelines.
 
 ## Team ✨
 
