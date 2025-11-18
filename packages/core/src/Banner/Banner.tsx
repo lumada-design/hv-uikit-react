@@ -34,7 +34,7 @@ export interface HvBannerProps
    * */
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** The message to display. */
-  label?: string;
+  label?: React.ReactNode;
   /** The anchor of the Snackbar. */
   anchorOrigin?: "top" | "bottom";
   /** Variant of the snackbar. */

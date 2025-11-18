@@ -20,7 +20,7 @@ export interface HvAccordionProps
   /** Content to be rendered. */
   children: React.ReactNode;
   /** The accordion label button. */
-  label?: string;
+  label?: React.ReactNode;
   /** The function that will be executed whenever the accordion toggles. It will receive the state of the accordion. */
   onChange?: (event: React.SyntheticEvent, value: boolean) => void;
   /** Whether the accordion is open or not. If this property is defined the accordion must be fully controlled. */
