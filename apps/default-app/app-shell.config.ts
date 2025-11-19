@@ -172,7 +172,7 @@ export default {
           },
           conditions: [
             {
-              bundle: "default-app/conditions/useAsyncTrue.js",
+              bundle: "@self/conditions/useAsyncTrue.js",
             },
           ],
         },
@@ -336,7 +336,7 @@ export default {
         route: "/sync-true-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysTrue.js",
+            bundle: "@self/conditions/useAlwaysTrue.js",
           },
         ],
       },
@@ -347,7 +347,7 @@ export default {
         route: "/sync-false-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysFalse.js",
+            bundle: "@self/conditions/useAlwaysFalse.js",
           },
         ],
       },
@@ -358,7 +358,7 @@ export default {
         route: "/async-true-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAsyncTrue.js",
+            bundle: "@self/conditions/useAsyncTrue.js",
           },
         ],
       },
@@ -369,7 +369,7 @@ export default {
         route: "/async-false-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAsyncFalse.js",
+            bundle: "@self/conditions/useAsyncFalse.js",
           },
         ],
       },
@@ -380,10 +380,10 @@ export default {
         route: "/multiple-conditions-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysTrue.js",
+            bundle: "@self/conditions/useAlwaysTrue.js",
           },
           {
-            bundle: "default-app/conditions/useAsyncTrue.js",
+            bundle: "@self/conditions/useAsyncTrue.js",
           },
         ],
       },
@@ -394,10 +394,10 @@ export default {
         route: "/multiple-fail-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysTrue.js",
+            bundle: "@self/conditions/useAlwaysTrue.js",
           },
           {
-            bundle: "default-app/conditions/useAlwaysFalse.js",
+            bundle: "@self/conditions/useAlwaysFalse.js",
           },
         ],
       },
@@ -408,7 +408,7 @@ export default {
         route: "/inverse-dynamic",
         conditions: [
           {
-            bundle: "default-app/conditions/useInverseDynamicCondition.js",
+            bundle: "@self/conditions/useInverseDynamicCondition.js",
           },
         ],
       },
@@ -419,7 +419,7 @@ export default {
         route: "/nested-visible",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysTrue.js",
+            bundle: "@self/conditions/useAlwaysTrue.js",
           },
         ],
       },
@@ -428,7 +428,7 @@ export default {
         route: "/nested-hidden",
         conditions: [
           {
-            bundle: "default-app/conditions/useAlwaysFalse.js",
+            bundle: "@self/conditions/useAlwaysFalse.js",
           },
         ],
       },
@@ -437,7 +437,7 @@ export default {
         route: "/nested-async",
         conditions: [
           {
-            bundle: "default-app/conditions/useAsyncTrue.js",
+            bundle: "@self/conditions/useAsyncTrue.js",
           },
         ],
       },
@@ -448,7 +448,7 @@ export default {
         route: "/dynamic-condition-demo",
         conditions: [
           {
-            bundle: "default-app/conditions/useDynamicCondition.js",
+            bundle: "@self/conditions/useDynamicCondition.js",
           },
         ],
       },
@@ -461,45 +461,45 @@ export default {
     },
     {
       bundle: "@self/providers/AsyncProvider.js",
-      conditions: [{ bundle: "default-app/conditions/useAsyncTrue.js" }],
+      conditions: [{ bundle: "@self/conditions/useAsyncTrue.js" }],
     },
     {
       bundle: "@self/providers/HiddenProvider.js",
-      conditions: [{ bundle: "default-app/conditions/useAlwaysFalse.js" }],
+      conditions: [{ bundle: "@self/conditions/useAlwaysFalse.js" }],
     },
     {
       bundle: "@self/providers/DynamicProvider.js",
-      conditions: [{ bundle: "default-app/conditions/useDynamicCondition.js" }],
+      conditions: [{ bundle: "@self/conditions/useDynamicCondition.js" }],
     },
   ],
   services: {
     // Instance Service (bundle) - Basic hooks service consumed by ServicesDemo page and CreateNewContentDropDownMenu header action
-    "default-app/services:UseCreateNewContentAction": [
+    "@self/services:UseCreateNewContentAction": [
       {
         instance: {
-          bundle: "default-app/services/create/useCreateNewReportAction.js",
+          bundle: "@self/services/create/useCreateNewReportAction.js",
         },
         ranking: 100,
         conditions: [
           {
-            bundle: "default-app/conditions/useInverseDynamicCondition.js",
+            bundle: "@self/conditions/useInverseDynamicCondition.js",
           },
         ],
       },
       {
         instance: {
-          bundle: "default-app/services/create/useCreateNewDashboardAction.js",
+          bundle: "@self/services/create/useCreateNewDashboardAction.js",
         },
         conditions: [
           {
-            bundle: "default-app/conditions/useAsyncTrue.js",
+            bundle: "@self/conditions/useAsyncTrue.js",
           },
         ],
       },
     ],
 
     // Instance Service (direct values) - Simple configuration data
-    "default-app/services:SimpleDataService": [
+    "@self/services:SimpleDataService": [
       {
         instance: {
           value: {
@@ -514,10 +514,10 @@ export default {
     ],
 
     // Factory Service (bundle) - Message service
-    "default-app/services:MessageService": [
+    "@self/services:MessageService": [
       {
         factory: {
-          bundle: "default-app/services/factories/createMessageService.js",
+          bundle: "@self/services/factories/createMessageService.js",
           config: {
             prefix: "App Message: ",
           },
@@ -526,10 +526,10 @@ export default {
     ],
 
     // Component Service (bundle) - Basic notification component
-    "default-app/services:BasicNotification": [
+    "@self/services:BasicNotification": [
       {
         component: {
-          bundle: "default-app/services/components/NotificationComponent.js",
+          bundle: "@self/services/components/NotificationComponent.js",
           config: {
             message: "Service is active!",
           },
