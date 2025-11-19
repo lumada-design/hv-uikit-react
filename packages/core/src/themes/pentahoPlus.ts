@@ -33,6 +33,7 @@ import type { HvLoadingProps } from "../Loading";
 import type { HvMultiButtonProps } from "../MultiButton";
 import type { HvNumberInputProps } from "../NumberInput";
 import type { HvPaginationProps } from "../Pagination";
+import type { HvPanelProps } from "../Panel";
 import type { HvSectionProps } from "../Section";
 import type { HvSelectProps } from "../Select";
 import type { HvSnackbarProps } from "../Snackbar";
@@ -624,6 +625,13 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvPaginationProps>,
+    HvPanel: {
+      classes: {
+        root: {
+          padding: theme.spacing("xs", "sm"),
+        },
+      },
+    } satisfies CSSClasses<HvPanelProps>,
     HvHeader: {
       classes: {
         root: {
