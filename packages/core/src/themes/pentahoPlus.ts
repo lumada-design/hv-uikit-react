@@ -69,6 +69,7 @@ const inputColors = {
 };
 
 const popperStyles = {
+  margin: theme.spacing("xxs", 0),
   backgroundColor: theme.colors.bgContainer,
   border: `1px solid ${theme.colors.borderSubtle}`,
   borderRadius: theme.radii.large,
