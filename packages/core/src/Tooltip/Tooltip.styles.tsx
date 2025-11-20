@@ -4,18 +4,19 @@ import { theme } from "@hitachivantara/uikit-styles";
 
 export const { staticClasses, useClasses } = createClasses("HvTooltip", {
   root: {},
-  tooltip: {},
+  tooltip: {
+    ...theme.typography.body,
+    display: "flex",
+    width: "fit-content",
+    maxWidth: 532,
+    backgroundColor: theme.colors.bgContainer,
+    boxShadow: theme.colors.shadow,
+    padding: theme.space.sm,
+    borderRadius: theme.radii.round,
+  },
   popper: {
-    // TODO: move this to `tooltip` in v6 and make class always be applied
+    // TODO: remove these overrides in v6
     [`& .${MuitooltipClasses.tooltip}`]: {
-      ...theme.typography.body,
-      display: "flex",
-      width: "fit-content",
-      maxWidth: 532,
-      backgroundColor: theme.colors.bgContainer,
-      boxShadow: theme.colors.shadow,
-      padding: 0,
-
       "& p": {
         display: "-webkit-box",
         width: "fit-content",
@@ -52,8 +53,6 @@ export const { staticClasses, useClasses } = createClasses("HvTooltip", {
       padding: theme.space.sm,
     },
     "& $tooltip": {
-      padding: theme.space.sm,
-      borderRadius: theme.radii.round,
       "& p": {
         wordBreak: "break-word",
       },
