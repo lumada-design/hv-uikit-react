@@ -108,15 +108,21 @@ Since it labels the target element and isn’t keyboard-navigable, avoid complex
   </HvTooltip>
   <HvTooltip
     title={
-      <div className={"flex flex-col gap-xs"}>
-        <HvTypography variant="label">January</HvTypography>
-        <div className="border-b-3px border-bgPage m-xs -mx-sm" />
+      <div className="w-160px flex flex-col gap-xs">
+        <div>
+          <HvTypography variant="label">January</HvTypography>
+          <HvTypography>Total sales</HvTypography>
+        </div>
+        <div className="border-b-3px border-bgPage -mx-sm" />
         {[
           ["Sales", "52,000 units"],
           ["Profit", "50%"],
         ].map(([name, value]) => (
-          <div key={name} className={"flex justify-between g-xs"}>
-            <HvTypography variant="label">{name}</HvTypography>
+          <div key={name} className="flex items-center gap-xxs">
+            <div className="size-8px bg-positive" />
+            <HvTypography className="flex-1" variant="label">
+              {name}
+            </HvTypography>
             <HvTypography>{value}</HvTypography>
           </div>
         ))}

@@ -41,6 +41,7 @@ import type { HvSwitchProps } from "../Switch";
 import type { HvTabsProps } from "../Tabs";
 import type { HvTagProps } from "../Tag";
 import type { HvTagsInputProps } from "../TagsInput";
+import { HvTooltipProps } from "../Tooltip";
 import type { HvCalloutProps } from "../utils/Callout";
 import type {
   HvVerticalNavigationActionProps,
@@ -931,5 +932,14 @@ export const pentahoPlus = mergeTheme(pentahoPlusBase, {
         },
       },
     } satisfies CSSClasses<HvNumberInputProps>,
+    HvTooltip: {
+      classes: {
+        popper: {
+          "& .HvTooltip-tooltip": {
+            padding: theme.spacing("xs", "sm"),
+          },
+        },
+      },
+    } satisfies CSSClasses<HvTooltipProps>,
   },
 });
