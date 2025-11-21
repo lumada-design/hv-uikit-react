@@ -7,7 +7,6 @@ import {
 
 import { HvTooltip, HvTooltipProps } from "../Tooltip";
 import { HvBaseProps } from "../types/generic";
-import { HvTypography } from "../Typography";
 import { staticClasses, useClasses } from "./OverflowTooltip.styles";
 
 export { staticClasses as overflowTooltipClasses };
@@ -121,11 +120,8 @@ export const HvOverflowTooltip = (props: HvOverflowTooltipProps) => {
       disableHoverListener={!isOverflowing}
       open={open}
       placement={placement}
-      title={
-        <HvTypography className={classes.tooltipData} variant="body">
-          {data}
-        </HvTypography>
-      }
+      classes={{ tooltip: classes.tooltipData }}
+      title={data}
       // unset since `content` *is* the label
       aria-label={null as any}
       aria-labelledby={null as any}

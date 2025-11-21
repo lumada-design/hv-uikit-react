@@ -87,7 +87,7 @@ export const HvTooltip = forwardRef<
   } = useDefaultProps("HvTooltip", props);
 
   const { rootId } = useTheme();
-  const { classes } = useClasses(classesProp);
+  const { classes, cx } = useClasses(classesProp);
   const [container, setContainer] = useState(() =>
     getElementById(containerId ?? rootId),
   );
@@ -107,7 +107,7 @@ export const HvTooltip = forwardRef<
       TransitionProps={TransitionProps}
       className={className}
       classes={{
-        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        tooltip: cx(classes.tooltip, !useSingle && classes.tooltipMulti),
         popper: classes.popper,
       }}
       title={title}
