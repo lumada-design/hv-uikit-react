@@ -1,54 +1,33 @@
+import { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import {
-  ComponentType,
-  ReactNode,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { I18nContext } from "react-i18next";
-import {
-  CONFIG_TRANSLATIONS_NAMESPACE,
-  HvAppShellCombinedProvidersContext,
+  extractConditionsMetadata,
   HvAppShellConfig,
-  HvAppShellContext,
-  HvAppShellContextValue,
-  HvAppShellRuntimeContext,
+  processConfig,
+  useLoadAllConditionHooks,
 } from "@hitachivantara/app-shell-shared";
-import {
-  themes as baseThemes,
-  HvProvider,
-  HvProviderProps,
-} from "@hitachivantara/uikit-react-core";
 
-import useLocalStorage from "../../hooks/useLocalStorage";
-import { addResourceBundles } from "../../i18n";
+import AppShellProviderInner from "./AppShellProviderInner";
 
-export type AppShellProviderProps = {
-  children: ReactNode;
+interface AppShellProviderProps extends PropsWithChildren {
   config?: Partial<HvAppShellConfig>;
   configUrl?: string;
-};
+}
 
 const AppShellProvider = ({
   children,
   config: localConfig,
   configUrl,
 }: AppShellProviderProps) => {
-  const { i18n } = useContext(I18nContext);
-  const { value: storedColorModeValue } = useLocalStorage("COLOR_MODE");
   const [loadedConfig, setLoadedConfig] = useState<
     HvAppShellConfig | undefined
   >(undefined);
-
   const [hasError, setHasError] = useState<boolean>(false);
 
+  // Load config from URL
   useEffect(() => {
     if (!localConfig && configUrl) {
       fetch(new URL(configUrl))
-        .then((result) => {
-          return result.json();
-        })
+        .then((result) => result.json())
         .then((data) => setLoadedConfig(data))
         .catch((e) => {
           console.error(
@@ -61,116 +40,67 @@ const AppShellProvider = ({
     }
   }, [localConfig, configUrl]);
 
-  const theConfig: HvAppShellContextValue | undefined = useMemo(
+  const rawConfig = useMemo(
     () => localConfig ?? loadedConfig,
     [localConfig, loadedConfig],
   );
 
-  if (hasError) {
-    throw Error("It was not possible to obtain the configuration");
-  }
-
-  if (theConfig?.translations) {
-    addResourceBundles(
-      i18n,
-      theConfig.translations,
-      CONFIG_TRANSLATIONS_NAMESPACE,
-    );
-  }
-
-  const [themes, setThemes] = useState<HvProviderProps["themes"]>(undefined);
-  const [providers, setProviders] = useState<
-    | Array<{
-        component: ComponentType<{ children: ReactNode }>;
-        config?: Record<string, unknown>;
-      }>
-    | undefined
+  // Store the config once it's loaded
+  const [initialConfig, setInitialConfig] = useState<
+    HvAppShellConfig | undefined
   >(undefined);
 
   useEffect(() => {
-    if (theConfig?.theming?.themes) {
-      Promise.all(
-        theConfig.theming.themes?.map((bundle) => {
-          return (
-            baseThemes[bundle as keyof typeof baseThemes] ??
-            import(/* @vite-ignore */ bundle)
-              .then((module) => module.default)
-              .catch((e) => {
-                console.error(`Import of theme bundle ${bundle} failed! ${e}`);
-              })
-          );
-        }),
-      )
-        .then((loadedThemes) => {
-          setThemes(loadedThemes.filter((theme) => !!theme));
-        })
-        .catch((e) => {
-          console.error(`Import of themes failed! ${e}`);
-        });
+    if (rawConfig && !initialConfig) {
+      setInitialConfig(rawConfig);
     }
-  }, [theConfig?.theming?.themes]);
+  }, [rawConfig, initialConfig]);
 
-  useEffect(() => {
-    if (theConfig?.providers) {
-      Promise.all(
-        theConfig.providers.map((provider) => {
-          return import(/* @vite-ignore */ provider.bundle)
-            .then((module) => ({
-              component: module.default,
-              config: provider.config,
-            }))
-            .catch((e) => {
-              console.error(
-                `Import of provider '${provider.bundle}' failed! ${e}`,
-              );
-            });
-        }),
-      )
-        .then((loadedProviders) =>
-          setProviders(loadedProviders.filter((provider) => !!provider)),
-        )
-        .catch((e) => {
-          console.error(`Import of providers failed!`, e);
-        });
+  // Process config to add $key properties
+  const processedConfig = useMemo(() => {
+    if (!initialConfig) {
+      return initialConfig;
     }
-  }, [theConfig?.providers]);
 
-  const runtimeContext = useMemo(
-    () => ({
-      i18n,
-    }),
-    [i18n],
+    return processConfig(initialConfig);
+  }, [initialConfig]);
+
+  // Extract metadata from processed config
+  const metadata = useMemo(
+    () => extractConditionsMetadata(processedConfig),
+    [processedConfig],
   );
 
-  const providersContext = useMemo(
-    () => ({
-      providers,
-    }),
-    [providers],
-  );
+  // Create stable bundle list
+  const bundleList = useMemo(() => metadata.map((m) => m.bundle), [metadata]);
 
-  if (
-    !theConfig ||
-    (theConfig.theming?.themes && !themes) ||
-    (theConfig.providers != null && providers === undefined)
-  ) {
+  // Load all conditions
+  const { hooks: loadedHooks, isLoading: isLoadingHooks } =
+    useLoadAllConditionHooks(bundleList);
+
+  if (hasError) {
+    throw new Error("It was not possible to obtain the configuration");
+  }
+
+  // Wait for config and hooks to load
+  if (!rawConfig || isLoadingHooks || !processedConfig) {
     return null;
   }
 
+  // Check if any hooks failed to load (are null)
+  const hasNullHooks = loadedHooks.includes(null);
+  if (hasNullHooks) {
+    console.error("Some conditions failed to load. Check console for errors.");
+  }
+
   return (
-    <HvAppShellContext.Provider value={theConfig}>
-      <HvAppShellRuntimeContext.Provider value={runtimeContext}>
-        <HvProvider
-          themes={themes}
-          theme={theConfig.theming?.theme}
-          colorMode={storedColorModeValue ?? theConfig.theming?.colorMode}
-        >
-          <HvAppShellCombinedProvidersContext.Provider value={providersContext}>
-            {children}
-          </HvAppShellCombinedProvidersContext.Provider>
-        </HvProvider>
-      </HvAppShellRuntimeContext.Provider>
-    </HvAppShellContext.Provider>
+    <AppShellProviderInner
+      rawConfig={processedConfig}
+      conditionHooks={loadedHooks}
+      metadata={metadata}
+    >
+      {children}
+    </AppShellProviderInner>
   );
 };
 

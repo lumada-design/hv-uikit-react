@@ -1,9 +1,24 @@
-import type { ServicesConfig as HvAppShellServicesConfig } from "@hitachivantara/app-shell-services";
+import type {
+  ServiceConfig,
+  ServiceId,
+} from "@hitachivantara/app-shell-services";
 import type { HvContainerProps } from "@hitachivantara/uikit-react-core";
 
-export type { HvAppShellServicesConfig };
+import type { HvAppShellConditionConfig } from "./condition";
 
 type ViewHvContainerProps = Omit<HvContainerProps, "children">;
+
+// Extend ServiceConfig to add conditions at the app-shell level
+export type HvAppShellServiceConfig = ServiceConfig & {
+  conditions?: HvAppShellConditionConfig[];
+  $key?: string | number;
+};
+
+// App-shell's version of ServicesConfig with condition support
+export type HvAppShellServicesConfig = Record<
+  ServiceId,
+  HvAppShellServiceConfig[]
+>;
 
 export type HvAppShellLogo = {
   name?: "LUMADA" | "HITACHI" | "PENTAHO+" | "PENTAHO";
@@ -20,6 +35,8 @@ export type HvAppShellMenuConfig = {
   icon?: HvAppShellIcon;
   target?: string;
   submenus?: HvAppShellMenuConfig[];
+  conditions?: HvAppShellConditionConfig[];
+  $key?: string | number;
 };
 
 type RouteString = `/${string}`;
@@ -28,7 +45,9 @@ export type HvAppShellViewsConfig = {
   bundle: string;
   route: RouteString;
   config?: Record<string, unknown>;
+  conditions?: HvAppShellConditionConfig[];
   views?: HvAppShellViewsConfig[];
+  $key?: string | number;
 };
 
 export interface HvAppShellTopViewConfig
@@ -47,6 +66,8 @@ export interface HvAppShellMainPanelConfig extends ViewHvContainerProps {
 export type HvAppShellProvidersConfig = {
   bundle: string;
   config?: Record<string, unknown>;
+  conditions?: HvAppShellConditionConfig[];
+  $key?: string | number;
 };
 
 export type HvAppShellConfig = {
@@ -94,4 +115,6 @@ export type HvAppShellHeaderAction = {
     | HvAppShellHelp
     | HvAppShellAppSwitcherConfig
     | Record<string, unknown>;
+  conditions?: HvAppShellConditionConfig[];
+  $key?: string | number;
 };

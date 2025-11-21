@@ -11,8 +11,7 @@ const HeaderActions = () => {
 
   return (
     <HvHeaderActions>
-      {header?.actions.map((action, index) => {
-        const headerActionKey = `${action.bundle}${index}`;
+      {header?.actions.map((action) => {
         const Component = internalActions.some(
           (a) => a.bundle === action.bundle,
         )
@@ -21,7 +20,7 @@ const HeaderActions = () => {
 
         return (
           <Component
-            key={headerActionKey}
+            key={action.$key}
             bundle={action.bundle}
             {...action.config}
           />
