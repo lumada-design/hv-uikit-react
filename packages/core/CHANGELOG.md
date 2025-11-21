@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.108.0](https://github.com/pentaho/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.107.0...@hitachivantara/uikit-react-core@5.108.0) (2025-11-21)
+
+### Bug Fixes
+
+- **BaseDropdown:** Pentaho popper spacing ([#4991](https://github.com/pentaho/hv-uikit-react/issues/4991)) ([d95696f](https://github.com/pentaho/hv-uikit-react/commit/d95696f98ba116bb84d98d41f726d712af35c133))
+- **SearchInput:** remove root padding ([#4992](https://github.com/pentaho/hv-uikit-react/issues/4992)) ([b05f4a7](https://github.com/pentaho/hv-uikit-react/commit/b05f4a7bf561a8dab367e65ce6692f177396a976))
+- **types:** ReactNode labels in Accordion & Banner ([#4990](https://github.com/pentaho/hv-uikit-react/issues/4990)) ([68cfeb3](https://github.com/pentaho/hv-uikit-react/commit/68cfeb3f523cd8326c537ad4ea43d5b4f64ef0e6))
+
+### Features
+
+- **Tooltip:** update to PD 0.9 specs ([#4984](https://github.com/pentaho/hv-uikit-react/issues/4984)) ([236fdc5](https://github.com/pentaho/hv-uikit-react/commit/236fdc5fac820ec3b4fe67ce9c0cb770731a0183))
+
 # [5.107.0](https://github.com/pentaho/hv-uikit-react/compare/@hitachivantara/uikit-react-core@5.106.2...@hitachivantara/uikit-react-core@5.107.0) (2025-11-14)
 
 ### Bug Fixes
