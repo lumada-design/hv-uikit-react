@@ -16,37 +16,32 @@ export const { staticClasses, useClasses } = createClasses("HvStatusIcon", {
     lineHeight: 0,
     flexShrink: 0,
     padding: theme.space.xxs,
+    borderRadius: theme.radii.base,
     "--icsize": "auto",
-    [`&[data-size=xs]`]: { borderRadius: theme.radii.base },
-    [`&[data-size=sm]`]: { borderRadius: theme.radii.base },
-    [`&[data-size=md]`]: { borderRadius: theme.radii.round },
-    [`&[data-size=lg]`]: { borderRadius: theme.radii.large },
-    [`&[data-size=xl]`]: { borderRadius: theme.radii.large },
-    [`:not([data-type="simple"])`]: {
+    ":where([data-size=md])": { borderRadius: theme.radii.round },
+    ":where([data-size=lg])": { borderRadius: theme.radii.large },
+    ":where([data-size=xl])": { borderRadius: theme.radii.large },
+    ":where([data-type=full])": {
       outline: "1px solid currentcolor",
     },
     ...Object.fromEntries(
       Object.entries(notificationMap).map(([variant, color]) => [
-        [`&[data-variant="${variant}"]`],
+        [`:where([data-variant=${variant}])`],
         {
           color: theme.colors[color],
           outline: `1px solid ${theme.colors[`${color}Border`]}`,
           backgroundColor: theme.colors[`${color}Dimmed`],
-          [`&[data-type="simple"]`]: {
+          ":where([data-type=simple])": {
             outline: "none",
             backgroundColor: "transparent",
           },
         },
       ]),
     ),
-    [`&[data-variant="default"]`]: {
+    ":where([data-variant=default][data-type=full])": {
       color: theme.colors.text,
       backgroundColor: theme.colors.bgPage,
       outline: `1px solid ${theme.colors.borderSubtle}`,
-      [`&[data-type="simple"]`]: {
-        outline: "none",
-        backgroundColor: "transparent",
-      },
     },
   },
   icon: {

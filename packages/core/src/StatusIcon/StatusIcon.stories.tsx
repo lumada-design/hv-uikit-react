@@ -41,7 +41,12 @@ export const Test: StoryObj = {
           variant="default"
           customIcon={<div className="i-ph-tree-structure" />}
         />
-        <HvStatusIcon variant="default" />
+        <HvStatusIcon />
+        <HvStatusIcon
+          type="full"
+          customIcon={<div className="i-ph-tree-structure" />}
+          className="text-positive bg-bgContainer outline-positive"
+        />
         <HvStatusIcon type="simple" variant="success" />
       </div>
       <div className="flex items-start gap-sm">
