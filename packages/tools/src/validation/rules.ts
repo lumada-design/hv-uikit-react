@@ -13,26 +13,28 @@ export interface ValidationRule {
   enforcement: "error" | "warn" | "info";
 }
 
+// Mirrors HvButtonVariant in packages/core/src/Button/Button.tsx:
+// contained | subtle | ghost | semantic, plus {primary|secondary|positive|negative|warning}{"" | Subtle | Ghost}
 const HVBUTTON_VALID_VARIANTS = [
   "contained",
   "subtle",
   "ghost",
-  "positiveContained",
-  "positiveSutle",
-  "positiveGhost",
-  "negativeContained",
-  "negativeSutle",
-  "negativeGhost",
-  "warningContained",
-  "warningSutle",
-  "warningGhost",
-  "primaryContained",
-  "primarySutle",
-  "primaryGhost",
-  "secondaryContained",
-  "secondarySutle",
-  "secondaryGhost",
   "semantic",
+  "primary",
+  "secondary",
+  "positive",
+  "negative",
+  "warning",
+  "primarySubtle",
+  "secondarySubtle",
+  "positiveSubtle",
+  "negativeSubtle",
+  "warningSubtle",
+  "primaryGhost",
+  "secondaryGhost",
+  "positiveGhost",
+  "negativeGhost",
+  "warningGhost",
 ];
 
 const HVAVATAR_VALID_VARIANTS = ["circular", "square"];

@@ -30,17 +30,16 @@ List all valid variants and their semantic meaning. Used to teach agents which v
 ```typescript
 /**
  * @variantSemantics
- * - `contained`: primary action, filled/contained style
+ * - `primary`: main action of a view, form, or dialog; filled style, the default variant
  * - `subtle`: secondary action, low visual weight
  * - `ghost`: tertiary, minimal emphasis
- * - `{color}Contained`: emphasis for semantic colors (positive, negative, warning, primary, secondary)
  * - `{color}Subtle`: secondary emphasis for semantic colors
  * - `{color}Ghost`: tertiary for semantic colors
  * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
  */
 ```
 
-**Why:** Agents need to understand _intent_ behind variants. "Use `primary`" is vague; "`contained` = primary action" is actionable.
+**Why:** Agents need to understand _intent_ behind variants. "Use a filled button" is vague; "`primary` = main action" is actionable.
 
 ---
 
@@ -109,7 +108,7 @@ Common mistakes and the correct approach. This is critical for agent guidance.
 ```typescript
 /**
  * @antiPatterns
- * - Do not invent custom variant names; only use defined variants — Use one of: contained, subtle, ghost, {color}Contained, {color}Subtle, {color}Ghost, semantic
+ * - Do not invent custom variant names; only use defined variants — Use one of: primary, subtle, ghost, {color}Subtle, {color}Ghost, semantic
  * - Do not use "selected" for momentary/transient button states; it implies aria-pressed toggle semantics — Use selected only for true toggle buttons (e.g., view mode toggles)
  * - Do not use raw color hex/rgb values; use color tokens instead — Replace #FF0000 with variant="negative" or color token
  * - Do not apply custom CSS directly; use the classes prop and theme tokens — Use className or classes prop with design tokens
@@ -185,10 +184,9 @@ Here's the HvButton contract, used as the template:
  * Button component is used to trigger an action or event.
  *
  * @variantSemantics
- * - `contained`: primary action, filled/contained style
+ * - `primary`: main action of a view, form, or dialog; filled style, the default variant
  * - `subtle`: secondary action, low visual weight
  * - `ghost`: tertiary, minimal emphasis
- * - `{color}Contained`: emphasis for semantic colors (positive, negative, warning, primary, secondary)
  * - `{color}Subtle`: secondary emphasis for semantic colors
  * - `{color}Ghost`: tertiary for semantic colors
  * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
@@ -204,7 +202,7 @@ Here's the HvButton contract, used as the template:
  * - radius: use radius tokens (none, sm, md, lg), never raw px values
  *
  * @antiPatterns
- * - Do not invent custom variant names; only use defined variants — Use one of: contained, subtle, ghost, {color}Contained, {color}Subtle, {color}Ghost, semantic
+ * - Do not invent custom variant names; only use defined variants — Use one of: primary, subtle, ghost, {color}Subtle, {color}Ghost, semantic
  * - Do not use "selected" for momentary/transient button states; it implies aria-pressed toggle semantics — Use selected only for true toggle buttons (e.g., view mode toggles)
  * - Do not use raw color hex/rgb values; use color tokens instead — Replace #FF0000 with variant="negative" or color token
  * - Do not apply custom CSS directly; use the classes prop and theme tokens — Use className or classes prop with design tokens
@@ -233,7 +231,7 @@ export const HvButton = fixedForwardRef(function HvButton<...>(props, ref) {
 ## Key Rules
 
 1. **Be specific.** "Use theme.colors.primary" is better than "use colors."
-2. **Include corrective guidance in anti-patterns.** Bad: "Don't use custom variants." Good: "Don't use custom variants — use one of: contained, subtle, ghost, ..."
+2. **Include corrective guidance in anti-patterns.** Bad: "Don't use custom variants." Good: "Don't use custom variants — use one of: primary, subtle, ghost, ..."
 3. **Link to accessibility.** Every state or prop with a11y implications must mention it.
 4. **Validate the important stuff.** Mark contract violations as `error`, style suggestions as `warn`, informational as `info`.
 5. **Use em-dashes for corrections.** Format: `Problem; reason — solution` enables proper extraction.

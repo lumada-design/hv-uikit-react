@@ -242,7 +242,6 @@ function extractComponentContract(filePath, componentName) {
   const tags = parseJSDocTags(filePath);
 
   if (!tags.purpose) {
-    console.warn(`No purpose found for ${componentName}`);
     return null;
   }
 
@@ -276,6 +275,7 @@ function extractComponentContract(filePath, componentName) {
 async function extractMetadata() {
   const srcDir = path.join(projectRoot, "src");
   const components = [];
+  const missingPurpose = [];
 
   // Scan src directory for component folders
   const entries = fs.readdirSync(srcDir, { withFileTypes: true });
@@ -300,6 +300,8 @@ async function extractMetadata() {
 
     if (contract) {
       components.push(contract);
+    } else {
+      missingPurpose.push(hvComponentName);
     }
   }
 
@@ -312,6 +314,7 @@ async function extractMetadata() {
     version: process.env.npm_package_version || "7.0.0",
     generatedAt: new Date().toISOString(),
     components: components,
+    missingPurpose: missingPurpose,
   };
 
   const outputDir = path.join(projectRoot, "dist");
@@ -323,8 +326,40 @@ async function extractMetadata() {
   }
 
   fs.writeFileSync(outputPath, JSON.stringify(metadata, null, 2));
+
+  // Full: purpose plus at least one contract tag.
+  const contractTags = [
+    "variantSemantics",
+    "stateRules",
+    "tokenConstraints",
+    "antiPatterns",
+    "a11y",
+    "validationRules",
+  ];
+  const full = [];
+  for (const component of components) {
+    const hasContract = contractTags.some((key) => key in component.tags);
+    if (hasContract) {
+      full.push(component.name);
+    }
+  }
+
+  // Print a heading followed by one indented name per line.
+  const printList = (heading, names) => {
+    if (names.length === 0) {
+      console.log(`  ${heading} none`);
+      return;
+    }
+    console.log(`  ${heading}`);
+    for (const name of names) {
+      console.log(`    - ${name}`);
+    }
+  };
+
+  console.log(`Total components: ${components.length + missingPurpose.length}`);
   console.log(`✓ Metadata extracted to ${outputPath}`);
-  console.log(`  Components: ${components.map((c) => c.name).join(", ")}`);
+  printList("Full metadata extracted for:", full);
+  printList("No purpose found for:", missingPurpose);
 }
 
 // Run if called directly

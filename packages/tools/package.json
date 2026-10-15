@@ -39,7 +39,8 @@
     "rimraf": "^5.0.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "engines": {
     "node": ">=18"

@@ -53,6 +53,8 @@ export interface ComponentMetadata {
   version: string;
   generatedAt: string;
   components: ComponentContract[];
+  /** Components skipped during extraction because they have no purpose tag. */
+  missingPurpose?: string[];
 }
 
 /**
