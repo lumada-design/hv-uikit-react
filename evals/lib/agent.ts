@@ -110,9 +110,11 @@ export function runAgent(opts: {
   timeoutMs?: number;
   /** Extra tools to withhold, e.g. everything but Read for the reviewer. */
   disallow?: string[];
+  /** Extra environment for the agent and its hooks. */
+  env?: Record<string, string>;
 }): AgentResult {
   const sessionId = randomUUID();
-  const env = { ...process.env };
+  const env = { ...process.env, ...opts.env };
   for (const k of STRIP_ENV) delete env[k];
   const args = [
     "-p",

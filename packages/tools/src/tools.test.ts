@@ -389,7 +389,7 @@ export function Component() {
   const clear = () => { params.delete("q"); tags.delete("a"); };
   const confirmDelete = () => api.deleteAsset("1");
   return (
-    <div className={cx("flex flex-col", "p-md")}>
+    <div className={classes.page}>
       <HvGlobalActions title="Assets" />
       <HvButton icon>{t("Save")}</HvButton>
       <HvButton onClick={clear}>Clear</HvButton>
@@ -417,7 +417,7 @@ export function Component() {
   it("checks catch off-system code they used to miss", async () => {
     const { metadata } = loadMetadata(consumer);
     const app = path.join(consumer, "edge-dirty");
-    const src = `import { HvDialog, HvDialogTitle, HvButton } from "@pentaho/uikit-react-core";
+    const src = `import { HvDialog, HvDialogTitle, HvDialogActions, HvButton } from "@pentaho/uikit-react-core";
 const t = (s: string) => s;
 export const Row = ({ created }: { created?: string }) => {
   const del = useDeleteAsset();
@@ -425,7 +425,8 @@ export const Row = ({ created }: { created?: string }) => {
     <div className="bg-gray-100 p-4">
       {createdAt ?? "-"}
       <HvButton onClick={() => del.mutate("1")}>x</HvButton>
-      <HvDialog open><HvDialogTitle variant="warning">{t("Delete asset")}</HvDialogTitle></HvDialog>
+      <HvDialog open><HvDialogTitle variant="warning">{t("Delete asset")}</HvDialogTitle>
+        <HvDialogActions><HvButton variant="secondaryGhost">{t("assets.delete.cancel")}</HvButton></HvDialogActions></HvDialog>
     </div>
   );
 };`;

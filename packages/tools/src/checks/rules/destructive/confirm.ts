@@ -165,7 +165,7 @@ export default defineCheck({
           !ctx.isInside(b.element, "HvDialogActions")
         )
           continue;
-        if (!DESTRUCTIVE_TEXT.test(ctx.textOf(b))) continue;
+        if (!DESTRUCTIVE_TEXT.test(ctx.textOf(b, { keys: "last" }))) continue;
         const bv = b.attrs.get("variant")?.literal ?? "primary";
         choices.push(`confirm button: ${bv}`);
         if (bv !== "negativeGhost") {

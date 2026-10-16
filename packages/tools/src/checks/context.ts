@@ -98,13 +98,25 @@ export class FileContext {
     return this.ancestors(node).some((a) => tags.includes(a.tag));
   }
 
-  /** Visible text of an element: JSX text and string literals among its children, plus label/title props. */
-  textOf(el: JsxEl): string {
+  /**
+   * Visible text of an element: JSX text and string literals among its
+   * children, plus label/title props. Translation keys (`t("assets.delete.cancel")`)
+   * stand for their text: by default every segment ("assets delete cancel"),
+   * with `keys: "last"` only the last one ("cancel"), which is what a button says.
+   */
+  textOf(el: JsxEl, { keys = "all" }: { keys?: "all" | "last" } = {}): string {
+    const keyText = (t: string) =>
+      /^[\w-]+(\.[\w-]+)+$/.test(t)
+        ? keys === "last"
+          ? t.split(".").at(-1)!
+          : t.split(".").join(" ")
+        : t;
     const parts: string[] = [];
     for (const name of ["label", "title", "aria-label"]) {
       const attr = el.attrs.get(name);
       if (typeof attr?.literal === "string") parts.push(attr.literal);
-      else if (attr?.value) parts.push(...this.stringsIn(attr.value));
+      else if (attr?.value)
+        parts.push(...this.stringsIn(attr.value).map(keyText));
     }
     if (ts.isJsxElement(el.element)) {
       for (const n of this.walk(el.element)) {
@@ -117,7 +129,7 @@ export class FileContext {
               n.parent.arguments[0] === n &&
               /(^|\.)t$/.test(n.parent.expression.getText(this.sf))))
         )
-          parts.push(n.text);
+          parts.push(keyText(n.text));
       }
     }
     return parts.join(" ").replace(/\s+/g, " ").trim();

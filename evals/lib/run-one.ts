@@ -138,7 +138,7 @@ export async function runOne(
 
   // What the agent changed, before scoring adds anything (dist/ and .uikit-check/ are ignored).
   const changed = changedSince(dir);
-  if (!setup.guide) restoreAgentFiles(dir);
+  if (!setup.agentFiles) restoreAgentFiles(dir);
 
   const checkFile = path.join(resDir, "check.json");
   const checkOut = sh(

@@ -18,6 +18,12 @@ export interface Setup {
   skill: boolean;
   /** Gate: `uikit-tools check --gate` as a Stop hook, up to 3 correction rounds. */
   gate: boolean;
+  /**
+   * The UI Kit's agent files are installed (guide and metadata in core,
+   * @pentaho/uikit-tools). Only the baseline goes without: every other setup
+   * is something a team would install, and the gate needs the tools.
+   */
+  agentFiles: boolean;
 }
 
 export const SETUPS: Record<string, Setup> = {
@@ -28,6 +34,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: false,
     skill: false,
     gate: false,
+    agentFiles: false,
   },
   context: {
     id: "context",
@@ -36,6 +43,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: false,
     skill: false,
     gate: false,
+    agentFiles: true,
   },
   checks: {
     id: "checks",
@@ -44,6 +52,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: false,
     skill: false,
     gate: true,
+    agentFiles: true,
   },
   both: {
     id: "both",
@@ -52,6 +61,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: false,
     skill: false,
     gate: true,
+    agentFiles: true,
   },
   // Deliveries, compared on the CRUD scenario. "Guide only" is the context setup.
   "guide-mcp": {
@@ -61,6 +71,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: true,
     skill: false,
     gate: false,
+    agentFiles: true,
   },
   "guide-skill": {
     id: "guide-skill",
@@ -69,6 +80,7 @@ export const SETUPS: Record<string, Setup> = {
     mcp: false,
     skill: true,
     gate: false,
+    agentFiles: true,
   },
 };
 
@@ -83,10 +95,10 @@ const AGENT_FILES = [
 ];
 
 /**
- * Setups without the guide get the UI Kit as it was before it shipped agent
- * context: no guide or metadata in core, no tools package (nor its entry in
- * package.json, so `npx` has nothing to find). Otherwise agents find the
- * guide in node_modules on their own and the baseline is not one.
+ * Baseline gets the UI Kit as it was before it shipped agent context: no
+ * guide or metadata in core, no tools package (nor its entry in package.json,
+ * so `npx` has nothing to find). Otherwise agents find the guide in
+ * node_modules on their own and the baseline is not one.
  */
 function stripAgentFiles(dir: string) {
   for (const f of AGENT_FILES)
@@ -112,20 +124,6 @@ export function restoreAgentFiles(dir: string) {
   }
 }
 
-/**
- * The gate runs the base install's tools (same UI Kit, same checks) on the
- * run's files, so it works in setups whose own install has no tools or
- * metadata, and is identical in every gated setup.
- */
-const gateCommand = (dir: string) =>
-  [
-    `cd ${JSON.stringify(BASE)} &&`,
-    `node node_modules/${TOOLS}/dist/cli.js check --gate`,
-    `--max-rounds ${MAX_GATE_ROUNDS}`,
-    `--state ${JSON.stringify(path.join(dir, ".uikit-check", "gate.json"))}`,
-    JSON.stringify(path.join(dir, "src/**/*.{tsx,jsx,ts,js}")),
-  ].join(" ");
-
 export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
   const claudeDir = path.join(dir, ".claude");
   fs.mkdirSync(claudeDir, { recursive: true });
@@ -148,7 +146,7 @@ export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
     fs.rmSync(mcpFile, { force: true });
   }
 
-  if (!setup.guide) stripAgentFiles(dir);
+  if (!setup.agentFiles) stripAgentFiles(dir);
 
   if (setup.skill) {
     const from = path.join(
@@ -171,7 +169,7 @@ export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
           hooks: [
             {
               type: "command",
-              command: gateCommand(dir),
+              command: `npx --no-install uikit-tools check --gate --max-rounds ${MAX_GATE_ROUNDS} --state .uikit-check/gate.json`,
               timeout: 120,
             },
           ],

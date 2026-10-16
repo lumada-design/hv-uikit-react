@@ -116,7 +116,17 @@ export default defineCheck({
           : clsAttr?.value
             ? ctx.stringsIn(clsAttr.value).join(" ")
             : "";
-      const padded = TOKEN_PADDING.test(cls);
+      // classes.page, css({ padding: theme.space.md }), style={…}: padding the
+      // check cannot read is not a violation (tokens/space judges raw values).
+      const unreadable =
+        (!!clsAttr?.value &&
+          typeof clsAttr.literal !== "string" &&
+          !TOKEN_PADDING.test(cls) &&
+          /\b(classes|styles)\.\w+|\bcss\(/.test(
+            clsAttr.value.getText(ctx.sf),
+          )) ||
+        /padding/.test(stack.attrs.get("style")?.value?.getText(ctx.sf) ?? "");
+      const padded = TOKEN_PADDING.test(cls) || unreadable;
       if (!padded) {
         findings.push({
           node: stack.opening,

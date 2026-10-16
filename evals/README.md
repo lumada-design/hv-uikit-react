@@ -32,9 +32,9 @@ One scenario × setup × model × repetition:
 
    | Setup                    | Guide (AGENTS.md / CLAUDE.md) | Lookups                       | Gate |
    | ------------------------ | ----------------------------- | ----------------------------- | ---- |
-   | `baseline`               | –                             | –                             | –    |
+   | `baseline`               | –                             | – (no agent files installed)  | –    |
    | `context`                | ✓                             | CLI, named by the guide       | –    |
-   | `checks`                 | –                             | –                             | ✓    |
+   | `checks`                 | –                             | installed, not named          | ✓    |
    | `both`                   | ✓                             | CLI                           | ✓    |
    | `guide-mcp` (delivery)   | ✓                             | CLI + MCP server              | –    |
    | `guide-skill` (delivery) | ✓                             | CLI + `build-list-page` skill | –    |
@@ -49,12 +49,13 @@ One scenario × setup × model × repetition:
    - each gate message carries each violation's fix, so a `checks` agent gets
      some rule text, but only for rules it broke.
 
-   Setups without the guide (`baseline`, `checks`) get the UI Kit as it was
-   before it shipped agent context: no guide or metadata in core and no
-   `@pentaho/uikit-tools`. Without this, agents find the guide in
-   `node_modules` on their own (they did, in the first runs). The gate runs
-   the work area's base install on the run's files, and a run whose agent
-   reaches that install is invalid.
+   Only `baseline` gets the UI Kit as it was before it shipped agent
+   context: no guide or metadata in core and no `@pentaho/uikit-tools`.
+   Without that, agents find the guide in `node_modules` on their own (they
+   did, in the first runs). Every other setup is something a team would
+   install, so `checks` has the tools (the gate needs them) but nothing
+   points the agent at the guide; agents that go looking anyway find
+   `uikit-tools rule`, and the report counts how often (UI Kit tool use).
 
 3. **Agent.** Headless Claude Code (`claude -p`) with the ticket as the prompt,
    a pinned model ID (`lib/paths.ts`), a fresh session, project settings only
