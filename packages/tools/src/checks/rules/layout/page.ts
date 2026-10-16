@@ -10,9 +10,18 @@ import { defineCheck, result, type Finding } from "../../define.js";
 
 const TOKEN_PADDING = /(^|\s)p[xytrbl]?-(xxs|xs|sm|md|lg|xl)(\s|$)/;
 
+/**
+ * A page is a route module: it exports a `…Page` component, or sits under a
+ * `pages/` folder and exports a route component (`Component`, the react-router
+ * lazy convention, or a default export). Other components in `pages/`, such as
+ * a page's dialogs, are not pages.
+ */
 const isPageFile = (ctx: FileContext) =>
-  /(^|\/)pages\//.test(ctx.file) ||
-  /export\s+(default\s+)?(function|const)\s+\w*Page\b/.test(ctx.source);
+  /export\s+(default\s+)?(function|const)\s+\w*Page\b/.test(ctx.source) ||
+  (/(^|\/)pages\//.test(ctx.file) &&
+    /export\s+(default\b|(function|const)\s+Component\b|\{[^}]*\bComponent\b)/.test(
+      ctx.source,
+    ));
 
 /** The JSX of the last return of the exported page component (or of the file's last top-level component). */
 function mainReturn(ctx: FileContext): ts.Node | undefined {

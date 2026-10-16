@@ -353,6 +353,26 @@ describe("check", () => {
     expect(report.choices["destructive/confirm"]).toContain("HvDialog");
   });
 
+  it("layout/page judges route modules only, not other components in pages/", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const app = path.join(consumer, "pages-app");
+    fs.mkdirSync(path.join(app, "src", "pages", "assets"), { recursive: true });
+    fs.writeFileSync(
+      path.join(app, "src", "pages", "assets", "EditDialog.tsx"),
+      "export const EditDialog = () => <div />;\n",
+    );
+    fs.writeFileSync(
+      path.join(app, "src", "pages", "assets", "index.tsx"),
+      "export function Component() { return <div />; }\n",
+    );
+    const report = runChecks(await loadChecks(), metadata, undefined, app);
+    expect(
+      report.violations
+        .filter((v) => v.rule === "layout/page")
+        .map((v) => v.file),
+    ).toEqual(["src/pages/assets/index.tsx"]);
+  });
+
   it("gate: returns violations for up to 3 rounds, then lets the agent stop", async () => {
     const { metadata } = loadMetadata(consumer);
     const report = runChecks(
