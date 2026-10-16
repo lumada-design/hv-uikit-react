@@ -10,7 +10,13 @@ import { chromium, type Browser } from "playwright-core";
 
 import { BASE, sh, TEMPLATE } from "./paths.ts";
 
-/** Fresh app in `dir`: template sources and config, base node_modules hard-linked, base package.json. */
+/**
+ * Fresh app in `dir`: template sources and config, a private copy of the base
+ * node_modules (not hard links: an agent that edits or reinstalls a package must
+ * not change the base other runs use), base package.json, and a git repo
+ * (`commitStart` commits the starting state), so the folder is a project root
+ * of its own and the agent's changes are its diff.
+ */
 export function createApp(dir: string, extraFiles?: string) {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
@@ -33,11 +39,49 @@ export function createApp(dir: string, extraFiles?: string) {
   );
   sh(
     "cp",
-    ["-al", path.join(BASE, "node_modules"), path.join(dir, "node_modules")],
+    ["-a", path.join(BASE, "node_modules"), path.join(dir, "node_modules")],
     { cwd: dir },
   );
   if (extraFiles && fs.existsSync(extraFiles))
     fs.cpSync(extraFiles, dir, { recursive: true });
+  fs.writeFileSync(
+    path.join(dir, ".gitignore"),
+    "node_modules/\ndist/\n.uikit-check/\n",
+  );
+  git(dir, "init", "-q", "-b", "main");
+}
+
+const git = (dir: string, ...args: string[]) =>
+  sh("git", args, {
+    cwd: dir,
+    quiet: true,
+    env: {
+      ...process.env,
+      GIT_AUTHOR_NAME: "eval",
+      GIT_AUTHOR_EMAIL: "eval@example.invalid",
+      GIT_COMMITTER_NAME: "eval",
+      GIT_COMMITTER_EMAIL: "eval@example.invalid",
+    },
+  });
+
+/** Commit the starting state (template, scenario files, mocks, setup): what the agent changes is the diff. */
+export function commitStart(dir: string) {
+  git(dir, "add", "-A");
+  git(dir, "commit", "-q", "-m", "start");
+}
+
+/** Files the agent added or changed since the starting commit. */
+export function changedSince(dir: string): string[] {
+  const out = sh("git", ["status", "--porcelain", "-uall", "--no-renames"], {
+    cwd: dir,
+    quiet: true,
+  });
+  return out
+    .split("\n")
+    .filter(Boolean)
+    .filter((l) => !l.startsWith(" D") && !l.startsWith("D "))
+    .map((l) => l.slice(3).trim())
+    .toSorted();
 }
 
 export function typecheck(dir: string): {
@@ -107,10 +151,11 @@ export async function screenshots(
 ): Promise<Record<string, string>> {
   fs.mkdirSync(outDir, { recursive: true });
   const port = await freePort();
+  // vite itself (not npx, which leaves the server behind when killed), in its own process group.
   const server = spawn(
-    "npx",
-    ["vite", "preview", "--port", String(port), "--strictPort"],
-    { cwd: dir, stdio: "ignore" },
+    path.join(dir, "node_modules", ".bin", "vite"),
+    ["preview", "--port", String(port), "--strictPort"],
+    { cwd: dir, stdio: "ignore", detached: true },
   );
   const errors: Record<string, string> = {};
   try {
@@ -161,7 +206,11 @@ export async function screenshots(
       }
     }
   } finally {
-    server.kill();
+    try {
+      process.kill(-server.pid!, "SIGTERM");
+    } catch {
+      server.kill();
+    }
   }
   return errors;
 }

@@ -8,19 +8,22 @@
  *      `uikit-tools check --report`, type check, build, screenshots;
  *   5. keep the agent's code, the scores and the screenshots under results/.
  */
+import { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 
 import { runAgent, type AgentResult } from "./agent.ts";
 import {
   build,
+  changedSince,
   closeBrowser,
+  commitStart,
   createApp,
   screenshots,
   typecheck,
   type Screen,
 } from "./app.ts";
-import { CACHE, RESULTS, SCENARIOS, sh, TEMPLATE } from "./paths.ts";
+import { MODELS, RESULTS, RUNS, SCENARIOS, sh } from "./paths.ts";
 import { applySetup, SETUPS } from "./setups.ts";
 
 export interface Scenario {
@@ -44,9 +47,15 @@ export interface RunSpec {
 
 export interface RunResult extends RunSpec {
   id: string;
+  /** The run's folder name (random), for matching logs. */
+  dir: string;
   startedAt: string;
   agent: AgentResult;
+  /** Why the run does not count, if it does not. Invalid runs are reported, not averaged. */
+  invalid: string[];
   gate: {
+    /** Gate hook ran but failed (error, timeout): the setup did not get its gate. */
+    error: string | null;
     rounds: number;
     passed: boolean | null;
     remaining: number | null;
@@ -80,35 +89,6 @@ export function promptFor(scenario: Scenario): string {
   ].join("\n");
 }
 
-/** Files under src that differ from the template: what the agent wrote or changed. */
-function changedFiles(dir: string, scenario: Scenario): string[] {
-  const out: string[] = [];
-  const walk = (rel: string) => {
-    for (const e of fs.readdirSync(path.join(dir, rel), {
-      withFileTypes: true,
-    })) {
-      const r = path.join(rel, e.name);
-      if (e.isDirectory()) walk(r);
-      else {
-        const original = [
-          path.join(TEMPLATE, r),
-          scenario.files
-            ? path.join(SCENARIOS, scenario.id, scenario.files, r)
-            : "",
-        ].find((f) => f && fs.existsSync(f));
-        if (
-          !original ||
-          fs.readFileSync(original, "utf8") !==
-            fs.readFileSync(path.join(dir, r), "utf8")
-        )
-          out.push(r);
-      }
-    }
-  };
-  walk("src");
-  return out.toSorted();
-}
-
 export async function runOne(
   spec: RunSpec,
   { force = false } = {},
@@ -121,7 +101,8 @@ export async function runOne(
   const setup = SETUPS[spec.setup];
   if (!setup) throw new Error(`unknown setup ${spec.setup}`);
 
-  const dir = path.join(CACHE, "runs", id);
+  // Random folder name: nothing the agent sees names the scenario, setup or model.
+  const dir = path.join(RUNS, randomBytes(6).toString("hex"));
   fs.rmSync(resDir, { recursive: true, force: true });
   fs.mkdirSync(resDir, { recursive: true });
   const startedAt = new Date().toISOString();
@@ -138,13 +119,14 @@ export async function runOne(
       path.join(dir, mock),
     );
   const { mcpConfig } = applySetup(dir, setup);
+  commitStart(dir);
 
   const agent = runAgent({
     dir,
     prompt: promptFor(scenario),
-    model: spec.model,
+    model: MODELS[spec.model] ?? spec.model,
     mcpConfig,
-    outFile: path.join(resDir, "agent.json"),
+    outFile: path.join(resDir, "agent.jsonl"),
   });
 
   // --- scoring: after the agent, invisible to it ---------------------------------
@@ -154,20 +136,19 @@ export async function runOne(
     : undefined;
   if (gateState) fs.copyFileSync(gateFile, path.join(resDir, "gate.json"));
 
-  sh(
+  // What the agent changed, before scoring adds anything (dist/ and .uikit-check/ are ignored).
+  const changed = changedSince(dir);
+
+  const checkFile = path.join(resDir, "check.json");
+  const checkOut = sh(
     "npx",
-    [
-      "--no-install",
-      "uikit-tools",
-      "check",
-      "--report",
-      path.join(resDir, "check.json"),
-    ],
+    ["--no-install", "uikit-tools", "check", "--report", checkFile],
     { cwd: dir, quiet: true, allowFail: true },
   );
-  const report = fs.existsSync(path.join(resDir, "check.json"))
-    ? JSON.parse(fs.readFileSync(path.join(resDir, "check.json"), "utf8"))
-    : { violations: [], counts: {}, choices: {} };
+  const report = fs.existsSync(checkFile)
+    ? JSON.parse(fs.readFileSync(checkFile, "utf8"))
+    : undefined;
+  if (!report) fs.writeFileSync(path.join(resDir, "check-error.txt"), checkOut);
 
   const types = typecheck(dir);
   fs.writeFileSync(path.join(resDir, "typecheck.txt"), types.output);
@@ -177,18 +158,34 @@ export async function runOne(
     : { build: built.output.slice(0, 500) };
   await closeBrowser();
 
-  const changed = changedFiles(dir, scenario);
   for (const f of changed) {
     fs.mkdirSync(path.dirname(path.join(resDir, f)), { recursive: true });
     fs.copyFileSync(path.join(dir, f), path.join(resDir, f));
   }
 
+  // A gate setup whose hook never wrote its state, or wrote an error, did not get its gate.
+  const gateError = !setup.gate
+    ? null
+    : !gateState
+      ? "no gate state (the Stop hook did not run)"
+      : (gateState.error ?? null);
+  const invalid: string[] = [];
+  if (agent.timedOut) invalid.push("agent timed out");
+  else if (!agent.ok) invalid.push("agent failed");
+  if (!report) invalid.push("check did not produce a report");
+  if (!changed.some((f) => /^src\/.*\.[jt]sx$/.test(f)))
+    invalid.push("no UI file changed");
+  if (gateError) invalid.push(`gate: ${gateError}`);
+
   const result: RunResult = {
     ...spec,
     id,
+    dir: path.basename(dir),
     startedAt,
+    invalid,
     agent,
     gate: {
+      error: gateError,
       rounds: gateState?.rounds?.length ?? 0,
       passed: gateState ? (gateState.passed ?? null) : null,
       remaining: gateState?.remaining ?? null,
@@ -197,9 +194,20 @@ export async function runOne(
       ),
     },
     check: {
-      total: report.violations.length,
-      counts: report.counts,
-      choices: report.choices,
+      total: report?.violations.length ?? 0,
+      counts: report?.counts ?? {},
+      // Only what the agent wrote: template files make the same choice in every run.
+      choices: Object.fromEntries(
+        Object.entries(report?.fileChoices ?? {})
+          .filter(([file]) => changed.includes(file))
+          .flatMap(([, byRule]) =>
+            Object.entries(byRule as Record<string, string[]>),
+          )
+          .reduce((acc, [rule, cs]) => {
+            acc.set(rule, [...(acc.get(rule) ?? []), ...cs]);
+            return acc;
+          }, new Map<string, string[]>()),
+      ),
     },
     typecheck: { ok: types.ok, errors: types.errors },
     build: { ok: built.ok },

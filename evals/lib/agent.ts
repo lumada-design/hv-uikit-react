@@ -50,6 +50,53 @@ export interface AgentResult {
   cacheReadTokens: number;
   cacheWriteTokens: number;
   result: string;
+  /** Tool calls by name, from the transcript (MCP tools keep their full mcp__ name). */
+  tools: Record<string, number>;
+  /** How the agent used the UI Kit's own tools. */
+  uikit: {
+    /** `uikit-tools …` commands the agent ran itself (lookups, check), by subcommand. */
+    cli: Record<string, number>;
+    /** Calls to the UI Kit MCP server's tools. */
+    mcp: number;
+    /** Skill invocations. */
+    skill: number;
+    /** Reads of the installed guide or metadata (node_modules/@pentaho/uikit-react-core/agents/…). */
+    guideReads: number;
+  };
+}
+
+/** Count tool use in a stream-json transcript. */
+function toolUsage(lines: Record<string, any>[]) {
+  const tools: Record<string, number> = {};
+  const uikit = {
+    cli: {} as Record<string, number>,
+    mcp: 0,
+    skill: 0,
+    guideReads: 0,
+  };
+  for (const line of lines) {
+    if (line.type !== "assistant") continue;
+    for (const block of line.message?.content ?? []) {
+      if (block.type !== "tool_use") continue;
+      const name = String(block.name);
+      tools[name] = (tools[name] ?? 0) + 1;
+      const input = block.input ?? {};
+      if (/^mcp__.*uikit/i.test(name)) uikit.mcp++;
+      if (name === "Skill") uikit.skill++;
+      const text = JSON.stringify(input);
+      if (/uikit-react-core\/agents\//.test(text) && name !== "Bash")
+        uikit.guideReads++;
+      if (name === "Bash") {
+        for (const m of String(input.command ?? "").matchAll(
+          /uikit-tools\s+([a-z-]+)/g,
+        ))
+          uikit.cli[m[1]] = (uikit.cli[m[1]] ?? 0) + 1;
+        if (/uikit-react-core\/agents\//.test(String(input.command ?? "")))
+          uikit.guideReads++;
+      }
+    }
+  }
+  return { tools, uikit };
 }
 
 export function runAgent(opts: {
@@ -82,7 +129,8 @@ export function runAgent(opts: {
     ...DISALLOWED,
     ...(opts.disallow ?? []),
     "--output-format",
-    "json",
+    "stream-json",
+    "--verbose",
   ];
   const started = Date.now();
   let raw = "";
@@ -99,16 +147,23 @@ export function runAgent(opts: {
     const msg = String((error as Error).message);
     timedOut = /SIGTERM|ETIMEDOUT/.test(msg);
     exitCode = 1;
-    raw = msg.slice(msg.indexOf("{"));
+    // sh() puts stdout after the first line of its message; keep the JSON lines
+    raw = msg;
   }
   fs.mkdirSync(path.dirname(opts.outFile), { recursive: true });
   fs.writeFileSync(opts.outFile, raw);
-  let json: Record<string, any> = {};
-  try {
-    json = JSON.parse(raw.trim().split("\n").filter(Boolean).at(-1) ?? "{}");
-  } catch {
-    /* not JSON: timeout or crash */
+  // stream-json: one event per line; the last `result` event has cost, turns and usage.
+  const lines: Record<string, any>[] = [];
+  for (const l of raw.split("\n")) {
+    if (!l.startsWith("{")) continue;
+    try {
+      lines.push(JSON.parse(l));
+    } catch {
+      /* partial line from a killed process */
+    }
   }
+  const json = lines.findLast((l) => l.type === "result") ?? {};
+  if (!lines.some((l) => l.type === "result")) exitCode ||= 1;
   const usage = json.usage ?? {};
   return {
     sessionId,
@@ -127,5 +182,6 @@ export function runAgent(opts: {
     cacheReadTokens: Number(usage.cache_read_input_tokens ?? 0),
     cacheWriteTokens: Number(usage.cache_creation_input_tokens ?? 0),
     result: String(json.result ?? "").slice(0, 2000),
+    ...toolUsage(lines),
   };
 }

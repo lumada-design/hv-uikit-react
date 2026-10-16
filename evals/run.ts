@@ -116,13 +116,15 @@ async function runPool(specs: RunSpec[], concurrency: number, force: boolean) {
 
 async function reviewAll(concurrency: number) {
   const ids = fs.existsSync(RESULTS)
-    ? fs
-        .readdirSync(RESULTS)
-        .filter(
-          (id) =>
-            fs.existsSync(path.join(RESULTS, id, "result.json")) &&
-            !fs.existsSync(path.join(RESULTS, id, "review.json")),
-        )
+    ? fs.readdirSync(RESULTS).filter(
+        (id) =>
+          fs.existsSync(path.join(RESULTS, id, "result.json")) &&
+          !fs.existsSync(path.join(RESULTS, id, "review.json")) &&
+          // invalid runs are not averaged, so not reviewed either
+          JSON.parse(
+            fs.readFileSync(path.join(RESULTS, id, "result.json"), "utf8"),
+          ).invalid?.length === 0,
+      )
     : [];
   console.info(`review: ${ids.length} runs to review`);
   let next = 0;
@@ -162,7 +164,7 @@ switch (command) {
     );
     console.info(
       result
-        ? `${result.id}: ${result.check.total} violation(s), ${result.gate.rounds} gate round(s), $${result.agent.costUsd.toFixed(3)}, ${result.agent.turns} turns`
+        ? `${result.id}: ${result.invalid.length ? `INVALID (${result.invalid.join("; ")}), ` : ""}${result.check.total} violation(s), ${result.gate.rounds} gate round(s), $${result.agent.costUsd.toFixed(3)}, ${result.agent.turns} turns`
         : `${runId({ scenario, setup, model, rep: Number(rep) })}: skipped (has results)`,
     );
     break;

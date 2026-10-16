@@ -16,6 +16,8 @@ export interface RunRecord {
   setup: string;
   model: string;
   rep: number;
+  /** Why the run does not count (empty: valid). Invalid runs are listed, not averaged. */
+  invalid: string[];
   agentOk: boolean;
   costUsd: number;
   turns: number;
@@ -29,6 +31,14 @@ export interface RunRecord {
   typecheck: boolean;
   build: boolean;
   review: Review["scores"] | null;
+  reviewer: string | null;
+  /** The agent's own use of the UI Kit's tools. */
+  uikit: {
+    cli: Record<string, number>;
+    mcp: number;
+    skill: number;
+    guideReads: number;
+  } | null;
 }
 
 const MAIN_SETUPS = ["baseline", "context", "checks", "both"];
@@ -42,7 +52,6 @@ const DECISION_RULES = [
   "destructive/confirm",
   "date/format",
   "layout/page",
-  "components/prefer",
   "HvTable/section",
 ];
 
@@ -65,6 +74,7 @@ export function loadRecords(): RunRecord[] {
         setup: r.setup,
         model: r.model,
         rep: r.rep,
+        invalid: r.invalid ?? [],
         agentOk: r.agent.ok,
         costUsd: r.agent.costUsd,
         turns: r.agent.turns,
@@ -84,6 +94,8 @@ export function loadRecords(): RunRecord[] {
         typecheck: r.typecheck.ok,
         build: r.build.ok,
         review: review?.scores ?? null,
+        reviewer: review?.reviewer ?? null,
+        uikit: r.agent.uikit ?? null,
       };
     })
     .toSorted((a, b) => a.id.localeCompare(b.id));
@@ -137,9 +149,11 @@ function cellRows(
   const rows: string[][] = [];
   for (const setup of setups) {
     for (const model of models) {
-      const rs = records.filter((r) => r.setup === setup && r.model === model);
-      if (!rs.length) continue;
+      const all = records.filter((r) => r.setup === setup && r.model === model);
+      if (!all.length) continue;
+      const rs = all.filter((r) => r.invalid.length === 0);
       const gated = SETUPS[setup]?.gate;
+      const gate = rs.filter((r) => r.gatePassed !== null);
       const ds = reviewMean(rs, "data_states");
       const sc = reviewMean(rs, "status_color");
       const vl = reviewMean(rs, "visual_layout");
@@ -147,20 +161,40 @@ function cellRows(
         label(setup),
         model,
         String(rs.length),
+        String(all.length - rs.length),
         fmt(mean(rs.map((r) => r.violations))),
         ...rules.map((rule) => fmt(mean(rs.map((r) => r.byRule[rule] ?? 0)))),
-        gated ? fmt(mean(rs.map((r) => r.gateRounds))) : "–",
-        gated ? pct(mean(rs.map((r) => (r.gatePassed ? 1 : 0)))) : "–",
+        gated ? fmt(mean(rs.map((r) => r.gateRounds))) : "n/a",
+        gated
+          ? `${pct(mean(gate.map((r) => (r.gatePassed ? 1 : 0))))} (${gate.length})`
+          : "n/a",
         `$${fmt(mean(rs.map((r) => r.costUsd)), 2)}`,
         fmt(mean(rs.map((r) => r.turns)), 0),
         `${fmt(ds.value)} (${ds.n})`,
         `${fmt(sc.value)} (${sc.n})`,
         `${fmt(vl.value)} (${vl.n})`,
         pct(mean(rs.map((r) => (r.typecheck ? 1 : 0)))),
+        usage(rs),
       ]);
     }
   }
   return rows;
+}
+
+/** Average per run of the agent's own UI Kit tool use: CLI lookups, MCP calls, skill uses, checks run. */
+function usage(rs: RunRecord[]): string {
+  const u = rs.map((r) => r.uikit).filter((x) => x !== null);
+  if (!u.length) return "–";
+  const cli = (x: (typeof u)[number]) =>
+    Object.entries(x.cli)
+      .filter(([cmd]) => cmd !== "check" && cmd !== "init")
+      .reduce((a, [, n]) => a + n, 0);
+  return [
+    `cli ${fmt(mean(u.map(cli)))}`,
+    `mcp ${fmt(mean(u.map((x) => x.mcp)))}`,
+    `skill ${fmt(mean(u.map((x) => x.skill)))}`,
+    `self-check ${fmt(mean(u.map((x) => x.cli.check ?? 0)))}`,
+  ].join(", ");
 }
 
 const table = (head: string[], rows: string[][]) =>
@@ -187,13 +221,17 @@ export function writeReport(): { records: number; file: string } {
   const rules = [
     ...new Set(records.flatMap((r) => Object.keys(r.byRule))),
   ].toSorted();
+  const valid = records.filter((r) => r.invalid.length === 0);
+  const invalidRuns = records.filter((r) => r.invalid.length > 0);
   const main = records.filter((r) => MAIN_SETUPS.includes(r.setup));
+  const mainValid = valid.filter((r) => MAIN_SETUPS.includes(r.setup));
   const models = [...new Set(records.map((r) => r.model))].toSorted();
   const scenarios = [...new Set(records.map((r) => r.scenario))].toSorted();
   const head = [
     "Setup",
     "Model",
     "n",
+    "Invalid",
     "Violations",
     ...rules.map(shortRule),
     "Gate rounds",
@@ -204,12 +242,15 @@ export function writeReport(): { records: number; file: string } {
     "Status color (n)",
     "Layout (n)",
     "tsc ok",
+    "UI Kit tool use / run",
   ];
 
   const consistencyRows: string[][] = [];
   for (const setup of MAIN_SETUPS) {
     for (const model of models) {
-      const rs = main.filter((r) => r.setup === setup && r.model === model);
+      const rs = mainValid.filter(
+        (r) => r.setup === setup && r.model === model,
+      );
       if (!rs.length) continue;
       consistencyRows.push([
         SETUPS[setup].label,
@@ -226,7 +267,7 @@ export function writeReport(): { records: number; file: string } {
     s,
     ...MAIN_SETUPS.flatMap((setup) =>
       models.map((model) => {
-        const rs = main.filter(
+        const rs = mainValid.filter(
           (r) => r.scenario === s && r.setup === setup && r.model === model,
         );
         return rs.length
@@ -239,7 +280,7 @@ export function writeReport(): { records: number; file: string } {
   const commonDecisions = (rule: string) =>
     MAIN_SETUPS.map((setup) => {
       const counts = new Map<string, number>();
-      for (const r of main.filter(
+      for (const r of mainValid.filter(
         (x) => x.setup === setup && x.decisions[rule],
       ))
         counts.set(r.decisions[rule], (counts.get(r.decisions[rule]) ?? 0) + 1);
@@ -252,12 +293,15 @@ export function writeReport(): { records: number; file: string } {
   const s1 = records.filter((r) => r.scenario === "s1-crud");
   const md = `# Evaluation report
 
-Generated from ${records.length} runs in \`evals/results\` by \`node evals/run.ts report\`. Raw per-run numbers: \`runs.json\`.
+Generated from ${records.length} runs (${valid.length} valid, ${invalidRuns.length} invalid) in \`evals/results\` by \`node evals/run.ts report\`. Raw per-run numbers: \`runs.json\`.
+
+**n** counts valid runs only; every mean is over them. A run is **invalid** when the agent failed or timed out, the check could not report, the agent changed no UI file, or a gated setup's gate did not run or errored. Invalid runs are listed at the end, not averaged.
 
 Scores: **violations** are \`uikit-tools check --report\` findings on the finished code (never shown to the agent), per run.
 **Gate rounds** are correction rounds the gate returned (max 3); **gate passed** means the checks were clean when the agent stopped.
-**Review** columns are blind 0–2 scores (reviewer model: see review.json) with the number of reviewed runs in brackets.
+**Review** columns are blind 0–2 scores (reviewer: ${[...new Set(valid.map((r) => r.reviewer).filter(Boolean))].join(", ") || "–"}) with the number of reviewed runs in brackets.
 Cost is the agent's own cost per run (list price), excluding the review.
+**UI Kit tool use** is what the agent did by itself, from its transcript: \`uikit-tools\` lookups (cli), MCP tool calls, skill uses, and \`uikit-tools check\` runs (self-check; the gate's own runs are not counted).
 
 ## Setups × models (all scenarios)
 
@@ -297,6 +341,17 @@ ${table(
     rules,
   ),
 )}
+
+## Invalid runs
+
+${
+  invalidRuns.length
+    ? table(
+        ["Run", "Why"],
+        invalidRuns.map((r) => [r.id, r.invalid.join("; ")]),
+      )
+    : "None."
+}
 `;
   const file = path.join(REPORTS, "report.md");
   fs.writeFileSync(file, md);

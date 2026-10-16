@@ -3,18 +3,28 @@
  *
  *  1. build the UI Kit packages from this checkout and `npm pack` them, so runs
  *     use exactly this version of the UI Kit, its metadata and its tools;
- *  2. install the template once into .cache/base, with the UI Kit packages from
+ *  2. install the template once into the work area (outside the repo), with the UI Kit packages from
  *     those tarballs and third-party packages at the exact versions pinned in
  *     evals/template/package.json;
  *  3. check the template is clean: types, build and `uikit-tools check`.
  *
- * Runs then copy the template sources and hard-link .cache/base/node_modules.
+ * Runs then copy the template sources and the base node_modules.
  */
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
-import { BASE, CACHE, REPO, sh, TARBALLS, TEMPLATE } from "./paths.ts";
+import {
+  BASE,
+  CACHE,
+  MODELS,
+  REPO,
+  RESULTS,
+  REVIEW_MODEL,
+  sh,
+  TARBALLS,
+  TEMPLATE,
+} from "./paths.ts";
 
 /** UI Kit packages the template installs from this checkout, in build order. */
 const PACKAGES = [
@@ -31,6 +41,11 @@ const PACKAGES = [
 export interface Manifest {
   builtAt: string;
   commit: string;
+  /** Agent host version: results are only comparable on the same one. */
+  claude: string;
+  models: Record<string, string>;
+  reviewer: string;
+  node: string;
   packages: Record<string, { version: string; tarball: string }>;
 }
 
@@ -129,14 +144,21 @@ export function prepare({ rebuild = true } = {}): Manifest {
       cwd: REPO,
       encoding: "utf8",
     }).trim(),
+    claude: sh("claude", ["--version"], { cwd: CACHE, quiet: true }).trim(),
+    models: MODELS,
+    reviewer: REVIEW_MODEL,
+    node: process.version,
     packages,
   };
-  fs.writeFileSync(
-    path.join(CACHE, "manifest.json"),
-    `${JSON.stringify(manifest, null, 2)}\n`,
-  );
+  for (const dir of [CACHE, RESULTS]) {
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(
+      path.join(dir, "manifest.json"),
+      `${JSON.stringify(manifest, null, 2)}\n`,
+    );
+  }
   console.info(
-    `prepare: base ready at ${path.relative(REPO, BASE)} (UI Kit from ${manifest.commit})`,
+    `prepare: base ready at ${BASE} (UI Kit from ${manifest.commit}, ${manifest.claude})`,
   );
   return manifest;
 }

@@ -7,12 +7,28 @@
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import ts from "typescript";
 
 import { runAgent } from "./agent.ts";
-import { CACHE, RESULTS, SCENARIOS } from "./paths.ts";
+import { RESULTS, REVIEW_MODEL, REVIEWS, SCENARIOS } from "./paths.ts";
 import { loadScenario, type RunResult } from "./run-one.ts";
 
-export const REVIEW_MODEL = "sonnet";
+/**
+ * Code without comments: an agent's comments can name what it was given
+ * ("per the UI Kit guide…", "fixed for uikit-tools check"), which would unblind
+ * the review.
+ */
+function stripComments(file: string, source: string): string {
+  if (!/\.[jt]sx?$/.test(file)) return source;
+  const sf = ts.createSourceFile(
+    file,
+    source,
+    ts.ScriptTarget.Latest,
+    true,
+    file.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  );
+  return ts.createPrinter({ removeComments: true }).printFile(sf);
+}
 
 export interface Review {
   reviewer: string;
@@ -48,7 +64,7 @@ export function reviewRun(result: RunResult): Review | undefined {
   if (!fs.existsSync(screens) || fs.readdirSync(screens).length === 0)
     return undefined;
 
-  const dir = path.join(CACHE, "reviews", randomUUID().slice(0, 8));
+  const dir = path.join(REVIEWS, randomUUID().slice(0, 8));
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(path.join(dir, "code"), { recursive: true });
   const scenario = loadScenario(result.scenario);
@@ -64,14 +80,17 @@ export function reviewRun(result: RunResult): Review | undefined {
     if (!/\.(tsx?|jsx?|css)$/.test(f)) continue;
     const target = path.join(dir, "code", f.replace(/^src\//, ""));
     fs.mkdirSync(path.dirname(target), { recursive: true });
-    fs.copyFileSync(path.join(resDir, f), target);
+    fs.writeFileSync(
+      target,
+      stripComments(f, fs.readFileSync(path.join(resDir, f), "utf8")),
+    );
   }
 
   const agent = runAgent({
     dir,
     prompt: RUBRIC,
     model: REVIEW_MODEL,
-    outFile: path.join(dir, "reviewer.json"),
+    outFile: path.join(dir, "reviewer.jsonl"),
     timeoutMs: 10 * 60_000,
     disallow: ["Bash", "Write", "Edit", "NotebookEdit", "Skill"],
   });

@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import os from "node:os";
 import path from "node:path";
 
 export const EVALS = path.resolve(import.meta.dirname, "..");
@@ -6,9 +7,25 @@ export const REPO = path.resolve(EVALS, "..");
 export const TEMPLATE = path.join(EVALS, "template");
 export const SCENARIOS = path.join(EVALS, "scenarios");
 export const MOCKS = path.join(EVALS, "mocks");
-export const CACHE = path.join(EVALS, ".cache");
+/**
+ * Working area for installs, runs and reviews: outside the repo, so an agent
+ * can never walk up into this checkout (its CLAUDE.md, AGENTS.md, rules or
+ * other runs), and no path it sees names the repo. Override with UIKIT_EVALS_WORK.
+ */
+export const CACHE =
+  process.env.UIKIT_EVALS_WORK ?? path.join(os.tmpdir(), "uikit-evals");
 export const TARBALLS = path.join(CACHE, "tarballs");
 export const BASE = path.join(CACHE, "base");
+/** One folder per run (random name) and per review, deleted when done. */
+export const RUNS = path.join(CACHE, "runs");
+export const REVIEWS = path.join(CACHE, "reviews");
+
+/** Models under test (label → pinned model ID) and the reviewer. */
+export const MODELS: Record<string, string> = {
+  sonnet: "claude-sonnet-5-5",
+  haiku: "claude-haiku-5-5",
+};
+export const REVIEW_MODEL = "claude-opus-5-5";
 /** Raw results of every run, one folder per run. Not committed. */
 export const RESULTS = path.join(EVALS, "results");
 /** Generated report. Committed. */
