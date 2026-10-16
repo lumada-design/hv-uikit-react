@@ -1,8 +1,11 @@
-export { init } from "./commands/init.js";
+export * from "./core/index.js";
+export { init, runInit, type Host } from "./commands/init.js";
+export { info, rule } from "./commands/lookup.js";
+export { createServer, mcp, TOOLS } from "./commands/mcp.js";
 export { validate } from "./commands/validate.js";
-export { mcp } from "./commands/mcp.js";
 export {
-  loadMetadata,
-  type ComponentMetadata,
-  type ComponentContract,
-} from "./utils/metadata.js";
+  validateFile,
+  validateFiles,
+  type Violation,
+} from "./validation/validator.js";
+export { CHECKS, type Check } from "./validation/rules.js";

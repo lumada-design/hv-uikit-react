@@ -1,263 +1,134 @@
 /**
- * Validation rules extracted from component contracts (JSDoc @tags)
- * Hard-coded for HvButton and HvAvatar to test validation runner
+ * Checks run by `uikit-tools validate`. These are the POC's eight checks for
+ * HvButton and HvAvatar; each now reports the id of the rule it enforces, and
+ * takes allowed values from the installed metadata instead of a copied list.
+ * Rule text shown to users comes from the metadata, never from here.
  */
+import type { AgentsMetadata } from "../core/types.js";
 
-export interface ValidationRule {
+export type Props = Record<string, unknown>;
+
+export interface CheckResult {
+  pass: boolean;
+  /** What is wrong in this instance, e.g. `variant "danger" is not valid`. */
+  detail?: string;
+}
+
+export interface Check {
   componentName: string;
-  ruleName: string;
-  type: "variant" | "token" | "antiPattern" | "a11y";
-  check: (props: Record<string, any>) => { pass: boolean; reason?: string };
-  failureMessage: string;
-  suggestion: string;
-  enforcement: "error" | "warn" | "info";
+  /** Design rule id (`tokens/color`) or component rule id (`HvButton/variant`). */
+  ruleId: string;
+  /** How serious a failure is. Not the rule's enforcement (checked/context). */
+  severity: "error" | "warn" | "info";
+  check: (props: Props, metadata: AgentsMetadata) => CheckResult;
 }
 
-// Mirrors HvButtonVariant in packages/core/src/Button/Button.tsx:
-// contained | subtle | ghost | semantic, plus {primary|secondary|positive|negative|warning}{"" | Subtle | Ghost}
-const HVBUTTON_VALID_VARIANTS = [
-  "contained",
-  "subtle",
-  "ghost",
-  "semantic",
-  "primary",
-  "secondary",
-  "positive",
-  "negative",
-  "warning",
-  "primarySubtle",
-  "secondarySubtle",
-  "positiveSubtle",
-  "negativeSubtle",
-  "warningSubtle",
-  "primaryGhost",
-  "secondaryGhost",
-  "positiveGhost",
-  "negativeGhost",
-  "warningGhost",
-];
+const RAW_COLOR = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$|^(rgb|hsl)a?\(/i;
 
-const HVAVATAR_VALID_VARIANTS = ["circular", "square"];
+const variantValues = (m: AgentsMetadata, component: string) =>
+  m.components[component]?.props.find((p) => p.name === "variant")?.values ??
+  [];
 
-/**
- * HvButton validation rules
- */
-export const HV_BUTTON_RULES: ValidationRule[] = [
-  {
-    componentName: "HvButton",
-    ruleName: "variant-valid",
-    type: "variant",
-    check: (props) => {
-      const variant = props.variant;
-      if (!variant) return { pass: true }; // default is valid
-      const isValid = HVBUTTON_VALID_VARIANTS.includes(variant);
-      return {
-        pass: isValid,
-        reason: isValid
-          ? undefined
-          : `variant "${variant}" is not a valid HvButton variant`,
-      };
-    },
-    failureMessage: "Invalid variant name",
-    suggestion: `Use one of: ${HVBUTTON_VALID_VARIANTS.join(", ")}`,
-    enforcement: "error",
-  },
-  {
-    componentName: "HvButton",
-    ruleName: "no-raw-colors",
-    type: "token",
-    check: (props) => {
-      const color = props.color;
-      const style = props.style as Record<string, any> | undefined;
-      const styleColor = style?.color;
-
-      // Check for raw hex/rgb colors
-      const isRawHex =
-        typeof color === "string" &&
-        /^#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}/.test(color);
-      const isRawRgb = typeof color === "string" && /^rgb(a?)\(/.test(color);
-      const isStyleRaw =
-        styleColor &&
-        (/^#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}/.test(styleColor) ||
-          /^rgb(a?)\(/.test(styleColor));
-
-      return {
-        pass: !(isRawHex || isRawRgb || isStyleRaw),
-        reason:
-          isRawHex || isRawRgb || isStyleRaw
-            ? "Raw color value instead of design token"
-            : undefined,
-      };
-    },
-    failureMessage: "Raw color value instead of design token",
-    suggestion:
-      'Use variant="negative" or import color token from @pentaho/uikit-styles',
-    enforcement: "error",
-  },
-  {
-    componentName: "HvButton",
-    ruleName: "selected-toggle-semantics",
-    type: "antiPattern",
-    check: (props) => {
-      const selected = props.selected;
-      const ariaPressed = props["aria-pressed"];
-
-      // If selected is true but aria-pressed is not set, this is likely wrong
-      if (selected === true && ariaPressed === undefined) {
-        return {
-          pass: false,
-          reason:
-            "selected prop implies aria-pressed toggle semantics but aria-pressed is not set",
-        };
-      }
-
+const validVariant =
+  (component: string): Check["check"] =>
+  (props, m) => {
+    const variant = props.variant;
+    if (typeof variant !== "string") return { pass: true };
+    const allowed = variantValues(m, component);
+    if (allowed.length === 0 || allowed.includes(variant))
       return { pass: true };
-    },
-    failureMessage:
-      '"selected" prop without aria-pressed implies incorrect toggle usage',
-    suggestion:
-      "Add aria-pressed={isActive} and onClick handler for true toggles, or remove selected prop",
-    enforcement: "warn",
+    return {
+      pass: false,
+      detail: `variant "${variant}" is not a ${component} variant (${allowed.join(", ")})`,
+    };
+  };
+
+export const CHECKS: Check[] = [
+  {
+    componentName: "HvButton",
+    ruleId: "HvButton/variant",
+    severity: "error",
+    check: validVariant("HvButton"),
   },
   {
     componentName: "HvButton",
-    ruleName: "icon-only-needs-aria-label",
-    type: "a11y",
+    ruleId: "tokens/color",
+    severity: "error",
     check: (props) => {
-      const children = props.children;
-      const ariaLabel = props["aria-label"];
-      const title = props.title;
-
-      // Only flag if it looks like an icon (emoji or icon element)
-      // Don't flag text content like "Save", "Cancel", etc
-      if (children && (children.includes("🔍") || children.includes("Icon"))) {
-        if (!ariaLabel && !title) {
-          return {
-            pass: false,
-            reason: "Icon-only button must have aria-label for accessibility",
-          };
-        }
-      }
-
-      return { pass: true };
+      const style = props.style as Record<string, unknown> | undefined;
+      const values = [props.color, style?.color].filter(
+        (v): v is string => typeof v === "string",
+      );
+      const raw = values.find((v) => RAW_COLOR.test(v));
+      return raw
+        ? { pass: false, detail: `raw color "${raw}" on HvButton` }
+        : { pass: true };
     },
-    failureMessage: "Icon-only button missing aria-label",
-    suggestion: 'Add aria-label="Button label here" for accessibility',
-    enforcement: "error",
+  },
+  {
+    componentName: "HvButton",
+    ruleId: "HvButton/selected-toggle",
+    severity: "warn",
+    check: (props) =>
+      props.selected === true && props["aria-pressed"] === undefined
+        ? { pass: false, detail: "selected is set without aria-pressed" }
+        : { pass: true },
+  },
+  {
+    componentName: "HvButton",
+    ruleId: "HvButton/icon-name",
+    severity: "error",
+    check: (props) => {
+      const emojiOnly =
+        typeof props.children === "string" &&
+        /^\s*\p{Extended_Pictographic}+\s*$/u.test(props.children);
+      return (props.icon === true || emojiOnly) &&
+        !props["aria-label"] &&
+        !props.title
+        ? { pass: false, detail: "icon-only HvButton has no aria-label" }
+        : { pass: true };
+    },
+  },
+  {
+    componentName: "HvAvatar",
+    ruleId: "HvAvatar/variant",
+    severity: "error",
+    check: validVariant("HvAvatar"),
+  },
+  {
+    componentName: "HvAvatar",
+    ruleId: "HvAvatar/alt",
+    severity: "error",
+    check: (props) =>
+      (props.src || props.srcSet) && !props.alt
+        ? { pass: false, detail: "HvAvatar has src but no alt" }
+        : { pass: true },
+  },
+  {
+    componentName: "HvAvatar",
+    ruleId: "HvAvatar/group-background",
+    severity: "warn",
+    check: (props) => {
+      const style = props.style as Record<string, unknown> | undefined;
+      return props.backgroundColor || style?.backgroundColor
+        ? { pass: false, detail: "HvAvatar sets backgroundColor" }
+        : { pass: true };
+    },
+  },
+  {
+    componentName: "HvAvatar",
+    ruleId: "HvAvatar/image-and-initials",
+    severity: "warn",
+    check: (props) =>
+      props.src && typeof props.children === "string" && props.children.trim()
+        ? { pass: false, detail: "HvAvatar has both src and initials" }
+        : { pass: true },
   },
 ];
 
-/**
- * HvAvatar validation rules
- */
-export const HV_AVATAR_RULES: ValidationRule[] = [
-  {
-    componentName: "HvAvatar",
-    ruleName: "variant-valid",
-    type: "variant",
-    check: (props) => {
-      const variant = props.variant;
-      if (!variant) return { pass: true }; // default is circular
-      const isValid = HVAVATAR_VALID_VARIANTS.includes(variant);
-      return {
-        pass: isValid,
-        reason: isValid
-          ? undefined
-          : `variant "${variant}" is not a valid HvAvatar variant`,
-      };
-    },
-    failureMessage: "Invalid variant name",
-    suggestion: `Use one of: ${HVAVATAR_VALID_VARIANTS.join(", ")}`,
-    enforcement: "error",
-  },
-  {
-    componentName: "HvAvatar",
-    ruleName: "image-needs-alt",
-    type: "a11y",
-    check: (props) => {
-      const src = props.src;
-      const srcSet = props.srcSet;
-      const alt = props.alt;
+export const checksFor = (component: string) =>
+  CHECKS.filter((c) => c.componentName === component);
 
-      if ((src || srcSet) && !alt) {
-        return {
-          pass: false,
-          reason: "Image avatar missing alt text",
-        };
-      }
-
-      return { pass: true };
-    },
-    failureMessage: "Missing alt text for image",
-    suggestion: 'Add alt="User description" prop for accessibility',
-    enforcement: "error",
-  },
-  {
-    componentName: "HvAvatar",
-    ruleName: "no-bg-color-in-group",
-    type: "antiPattern",
-    check: (props) => {
-      const backgroundColor = props.backgroundColor;
-      const bgColor = props["bg-color"];
-      const style = (props.style as Record<string, any> | undefined)
-        ?.backgroundColor;
-
-      if (backgroundColor || bgColor || style) {
-        return {
-          pass: false,
-          reason:
-            "Custom backgroundColor should not be set when avatar will be in AvatarGroup",
-        };
-      }
-
-      return { pass: true };
-    },
-    failureMessage: "Custom backgroundColor conflicts with AvatarGroup styling",
-    suggestion:
-      "Remove backgroundColor prop and let AvatarGroup control styling",
-    enforcement: "warn",
-  },
-  {
-    componentName: "HvAvatar",
-    ruleName: "no-image-and-initials",
-    type: "antiPattern",
-    check: (props) => {
-      const src = props.src;
-      const children = props.children;
-
-      // If both src and text children exist, this is confusing
-      if (src && typeof children === "string" && children.trim().length > 0) {
-        return {
-          pass: false,
-          reason: "Providing both image and initials is ambiguous",
-        };
-      }
-
-      return { pass: true };
-    },
-    failureMessage: "Ambiguous: both image src and initials provided",
-    suggestion: "Provide either src or children (initials), not both",
-    enforcement: "warn",
-  },
+export const checkedComponents = () => [
+  ...new Set(CHECKS.map((c) => c.componentName)),
 ];
-
-/**
- * Get all rules for a component
- */
-export function getRulesForComponent(componentName: string): ValidationRule[] {
-  switch (componentName) {
-    case "HvButton":
-      return HV_BUTTON_RULES;
-    case "HvAvatar":
-      return HV_AVATAR_RULES;
-    default:
-      return [];
-  }
-}
-
-/**
- * Get all known components with rules
- */
-export function getKnownComponents(): string[] {
-  return ["HvButton", "HvAvatar"];
-}

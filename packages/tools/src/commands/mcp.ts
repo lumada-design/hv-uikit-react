@@ -1,239 +1,124 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import type { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
   type Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 
-interface ComponentContract {
-  name: string;
-  displayName: string;
-  purpose: string;
-  variantSemantics?: Array<{
-    name: string;
-    semanticMeaning?: string;
-    description: string;
-  }>;
-  stateRules?: Array<{ name: string; description: string; rules?: unknown[] }>;
-  tokenConstraints?: Array<{
-    category: string;
-    notes: string;
-    allowedValues?: string[];
-  }>;
-  antiPatterns?: Array<{ description: string }>;
-  a11y?: Array<{ description: string }>;
-  validationRules?: Array<{ name: string; description: string }>;
-  tags?: Record<string, string>;
-}
+import {
+  loadMetadata,
+  query,
+  type OutputFormat,
+  type Query,
+} from "../core/index.js";
 
-interface ComponentMetadata {
-  version: string;
-  generatedAt: string;
-  components: ComponentContract[];
-}
+const formatArg = {
+  format: {
+    type: "string",
+    enum: ["text", "json"],
+    description: "text (Markdown, default) or json",
+  },
+} as const;
 
-let cachedMetadata: ComponentMetadata | null = null;
+export const TOOLS: Tool[] = [
+  {
+    name: "get_component",
+    description:
+      "Look up a UI Kit component in the installed version: props, what each variant means, state props, component rules, applicable design rules and accessibility. Call before using a component.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        component: {
+          type: "string",
+          description: "Component name, e.g. HvTable",
+        },
+        ...formatArg,
+      },
+      required: ["component"],
+    },
+  },
+  {
+    name: "get_rule",
+    description:
+      "Look up a rule by id: a design rule (e.g. destructive/confirm) or a component rule (e.g. HvButton/variant). Returns the rule, rationale and do/don't examples.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        id: { type: "string", description: "Rule id, e.g. tokens/color" },
+        ...formatArg,
+      },
+      required: ["id"],
+    },
+  },
+  {
+    name: "list_components",
+    description:
+      "List the UI Kit components that have guidance, with their purpose.",
+    inputSchema: { type: "object", properties: { ...formatArg } },
+  },
+  {
+    name: "list_rules",
+    description:
+      "List the design rules with their ids, titles and enforcement.",
+    inputSchema: { type: "object", properties: { ...formatArg } },
+  },
+];
 
-async function loadMetadata(): Promise<ComponentMetadata> {
-  if (cachedMetadata) {
-    return cachedMetadata;
+function toQuery(name: string, args: Record<string, unknown>): Query | string {
+  const text = (key: string) =>
+    typeof args[key] === "string" ? (args[key] as string).trim() : "";
+  switch (name) {
+    case "get_component":
+      return text("component")
+        ? { kind: "component", name: text("component") }
+        : "component is required";
+    case "get_rule":
+      return text("id") ? { kind: "rule", id: text("id") } : "id is required";
+    case "list_components":
+      return { kind: "component" };
+    case "list_rules":
+      return { kind: "rule" };
+    default:
+      return `Unknown tool: ${name}`;
   }
-
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const metadataPath = path.resolve(
-    __dirname,
-    "../../../core/dist/component-metadata.json",
-  );
-
-  const content = fs.readFileSync(metadataPath, "utf8");
-  cachedMetadata = JSON.parse(content);
-  return cachedMetadata!;
 }
 
-function getComponentContract(
-  componentName: string,
-  metadata: ComponentMetadata,
-): ComponentContract | null {
-  return metadata.components.find((c) => c.name === componentName) || null;
-}
-
-/**
- * Start the MCP server on stdio.
- * Phase 5.1: Proper MCP Protocol Implementation
- *
- * The server exposes two tools:
- * - list_components: Paginated list of components
- * - get_component_contract: Retrieve full component contract
- *
- * Clients connect via MCP protocol (stdio transport) and invoke tools.
- */
-export async function mcp(): Promise<void> {
-  const metadata = await loadMetadata();
-
+/** Build the server for the project at `cwd`. Exposed for tests. */
+export function createServer(cwd = process.cwd()): Server {
+  const { metadata } = loadMetadata(cwd);
   const server = new Server(
-    {
-      name: "hv-uikit-mcp",
-      version: metadata.version,
-    },
-    {
-      capabilities: {
-        tools: {},
-      },
-    },
+    { name: "hv-uikit", version: metadata.version },
+    { capabilities: { tools: {} } },
   );
 
-  // Define tools
-  const tools: Tool[] = [
-    {
-      name: "list_components",
-      description:
-        "Get a paginated list of all UI components in the design system",
-      inputSchema: {
-        type: "object" as const,
-        properties: {
-          limit: {
-            type: "number",
-            description: "Maximum number of components to return (default: 10)",
-            default: 10,
-          },
-          offset: {
-            type: "number",
-            description:
-              "Number of components to skip for pagination (default: 0)",
-            default: 0,
-          },
-        },
-      },
-    },
-    {
-      name: "get_component_contract",
-      description:
-        "Get the full semantic contract of a specific component (variants, state rules, token constraints, antipatterns, a11y, validation rules)",
-      inputSchema: {
-        type: "object" as const,
-        properties: {
-          component: {
-            type: "string",
-            description:
-              "Name of the component (e.g., HvButton, HvAvatar, HvBadge)",
-          },
-        },
-        required: ["component"],
-      },
-    },
-  ];
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({
+    tools: TOOLS,
+  }));
 
-  // List tools handler
-  server.setRequestHandler(ListToolsRequestSchema, async () => {
-    return { tools };
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    const args = (request.params.arguments ?? {}) as Record<string, unknown>;
+    const q = toQuery(request.params.name, args);
+    if (typeof q === "string") {
+      return { content: [{ type: "text", text: q }], isError: true };
+    }
+    const format: OutputFormat = args.format === "json" ? "json" : "text";
+    const { text, isError } = query(q, { format, cwd });
+    return { content: [{ type: "text", text }], isError };
   });
 
-  // Call tool handler
-  server.setRequestHandler(CallToolRequestSchema, async (request: unknown) => {
-    const callRequest = request as {
-      params: { name: string; arguments?: Record<string, unknown> };
-    };
-    const { name, arguments: args } = callRequest.params;
+  return server;
+}
 
-    if (name === "list_components") {
-      const limit = (args?.limit as number) || 10;
-      const offset = (args?.offset as number) || 0;
-
-      if (offset < 0 || limit < 0) {
-        return {
-          content: [
-            {
-              type: "text" as const,
-              text: "Error: limit and offset must be non-negative",
-            },
-          ],
-          isError: true,
-        };
-      }
-
-      const components = metadata.components.slice(offset, offset + limit);
-      const response = {
-        components: components.map((c) => ({
-          name: c.name,
-          displayName: c.displayName,
-          purpose: c.purpose,
-        })),
-        total: metadata.components.length,
-        offset,
-        limit,
-      };
-
-      return {
-        content: [
-          {
-            type: "text" as const,
-            text: JSON.stringify(response, null, 2),
-          },
-        ],
-      };
-    }
-
-    if (name === "get_component_contract") {
-      const componentName = args?.component as string;
-
-      if (!componentName) {
-        return {
-          content: [
-            {
-              type: "text" as const,
-              text: "Error: component is required",
-            },
-          ],
-          isError: true,
-        };
-      }
-
-      const contract = getComponentContract(componentName, metadata);
-
-      if (!contract) {
-        return {
-          content: [
-            {
-              type: "text" as const,
-              text: `Error: Component "${componentName}" not found. Available components: ${metadata.components.map((c) => c.name).join(", ")}`,
-            },
-          ],
-          isError: true,
-        };
-      }
-
-      return {
-        content: [
-          {
-            type: "text" as const,
-            text: JSON.stringify(contract, null, 2),
-          },
-        ],
-      };
-    }
-
-    return {
-      content: [
-        {
-          type: "text" as const,
-          text: `Unknown tool: ${name}`,
-        },
-      ],
-      isError: true,
-    };
-  });
-
-  const transport = new StdioServerTransport();
+/** `uikit-tools mcp`: serve lookups over stdio for the project in the current directory. */
+export async function mcp(
+  transport: Transport = new StdioServerTransport(),
+): Promise<void> {
+  const server = createServer();
   await server.connect(transport);
-
-  // eslint-disable-next-line no-console
-  console.error(`[hv-uikit-mcp] Server started (v${metadata.version})`);
-  // eslint-disable-next-line no-console
-  console.error(
-    `[hv-uikit-mcp] Loaded ${metadata.components.length} components`,
+  const { metadata } = loadMetadata();
+  process.stderr.write(
+    `[hv-uikit] MCP server for ${metadata.package}@${metadata.version}: ${Object.keys(metadata.components).length} components, ${Object.keys(metadata.rules).length} rules\n`,
   );
 }

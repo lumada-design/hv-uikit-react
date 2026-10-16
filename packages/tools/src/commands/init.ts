@@ -1,362 +1,213 @@
+/**
+ * `uikit-tools init [targetDir] --host <copilot|claude>`
+ *
+ * Writes a pointer to the guide shipped in the installed UI Kit, never a copy,
+ * so upgrading the UI Kit updates the guide without running init again:
+ *
+ *   AGENTS.md            marked block pointing at the guide (all hosts)
+ *   CLAUDE.md            marked block importing AGENTS.md and the guide (claude)
+ *   .vscode/mcp.json     hv-uikit MCP server (copilot)
+ *   .mcp.json            hv-uikit MCP server (claude)
+ *
+ * Re-running replaces the marked blocks and server entries; everything else in
+ * those files is kept. Run it in the folder the editor or agent opens: hosts
+ * read these files, and start the MCP server, from there.
+ */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-import chalk from "chalk";
 
-import { loadMetadata, type ComponentMetadata } from "../utils/metadata.js";
+import { CORE_PACKAGE, loadMetadata } from "../core/load.js";
 
-type Harness = "claude" | "copilot";
+export type Host = "copilot" | "claude";
+export const HOSTS: Host[] = ["copilot", "claude"];
 
-interface InitOptions {
-  harness: Harness;
+const START = "<!-- uikit-tools:start -->";
+const END = "<!-- uikit-tools:end -->";
+const SERVER_NAME = "hv-uikit";
+const SERVER = { command: "npx", args: ["--no-install", "uikit-tools", "mcp"] };
+const GUIDE_IN_PACKAGE = `${CORE_PACKAGE}/dist/agents/guide.md`;
+
+export interface InitResult {
+  written: string[];
+  /** The guide as the project sees it, e.g. node_modules/…/guide.md or ../../node_modules/…. */
+  guidePointer: string;
+  version: string;
+  staleCopies: string[];
+  /** Files init could not update, with the entry to add by hand. */
+  manual: { file: string; add: string }[];
 }
 
 /**
- * Static templates (guide, instructions, rule files) live in packages/tools/templates.
- * Resolved relative to this module so it works from both src/ and dist/.
+ * The guide's path as the project sees it: the nearest `node_modules` at or
+ * above `dir` that holds the UI Kit, the way Node resolves it. Lexical, never
+ * the symlink target, so it stays valid across upgrades (pnpm's real paths
+ * carry the version) and works when the UI Kit is hoisted to a workspace root.
  */
-const templatesDir = fileURLToPath(
-  new URL("../../templates/", import.meta.url),
-);
+export function findGuidePointer(dir: string): string | undefined {
+  for (let current = dir; ; current = path.dirname(current)) {
+    const guide = path.join(current, "node_modules", GUIDE_IN_PACKAGE);
+    if (existsSync(guide)) {
+      return path.relative(dir, guide).split(path.sep).join("/");
+    }
+    if (path.dirname(current) === current) return undefined;
+  }
+}
+
+export function agentsBlock(guidePointer: string): string {
+  return [
+    START,
+    "## HV UI Kit",
+    "",
+    "UI in this project is built with the HV UI Kit. Before writing UI code, read the",
+    `agent guide shipped with the installed version: \`${guidePointer}\`.`,
+    "",
+    "It lists the design rules and how to look up components and rules in the installed",
+    `version (\`npx uikit-tools info <Component>\`, \`npx uikit-tools rule <id>\`, or the \`${SERVER_NAME}\``,
+    'MCP server). Run `npx uikit-tools validate "src/**/*.tsx"` on the files you change.',
+    END,
+  ].join("\n");
+}
+
+export function claudeBlock(guidePointer: string): string {
+  return [START, "@AGENTS.md", `@${guidePointer}`, END].join("\n");
+}
+
+/** Insert or replace the marked block, keeping the rest of the file. */
+export function upsertBlock(
+  existing: string | undefined,
+  block: string,
+): string {
+  if (!existing?.trim()) return `${block}\n`;
+  const start = existing.indexOf(START);
+  const end = existing.indexOf(END);
+  if (start !== -1 && end > start) {
+    return existing.slice(0, start) + block + existing.slice(end + END.length);
+  }
+  return `${existing.replace(/\s*$/, "")}\n\n${block}\n`;
+}
+
+function upsertFile(file: string, block: string): string {
+  const existing = existsSync(file) ? readFileSync(file, "utf8") : undefined;
+  writeFileSync(file, upsertBlock(existing, block));
+  return file;
+}
 
 /**
- * Generate lean agent guide and auto-discoverable instructions.
- * Phase 5.1b: Non-destructive initialization for agents.
- *
- * Creates (harness-dependent):
- * - .claude/rules/hv-uikit.md or .github/rules/hv-uikit.md (guide built from the rule templates)
- * - .claude/instructions.md or .github/copilot-instructions.md (auto-discovered)
- * - .vscode/mcp.json (Copilot only)
+ * Add the server to the host's MCP config. A file that is not plain JSON (VS
+ * Code allows comments) is left untouched and reported, rather than rewritten
+ * without its comments.
  */
-export async function init(
-  targetDir?: string,
-  options?: InitOptions,
-): Promise<void> {
-  const dir = targetDir ?? ".";
-  const harness = options?.harness ?? "copilot";
+function writeMcpConfig(
+  dir: string,
+  host: Host,
+): { written?: string; manual?: InitResult["manual"][number] } {
+  const file =
+    host === "copilot"
+      ? path.join(dir, ".vscode", "mcp.json")
+      : path.join(dir, ".mcp.json");
+  const key = host === "copilot" ? "servers" : "mcpServers";
+  const entry = host === "copilot" ? { type: "stdio", ...SERVER } : SERVER;
 
-  if (!["claude", "copilot"].includes(harness)) {
-    // eslint-disable-next-line no-console
-    console.error(
-      chalk.red(`✗ Invalid harness: ${harness}. Use 'claude' or 'copilot'.`),
+  let config: Record<string, unknown> = {};
+  if (existsSync(file)) {
+    try {
+      config = JSON.parse(readFileSync(file, "utf8"));
+    } catch {
+      return {
+        manual: {
+          file,
+          add: `"${key}": { "${SERVER_NAME}": ${JSON.stringify(entry)} }`,
+        },
+      };
+    }
+  }
+  config[key] = {
+    ...(config[key] as Record<string, unknown>),
+    [SERVER_NAME]: entry,
+  };
+  mkdirSync(path.dirname(file), { recursive: true });
+  writeFileSync(file, `${JSON.stringify(config, null, 2)}\n`);
+  return { written: file };
+}
+
+export function runInit(targetDir: string, host: Host): InitResult {
+  const dir = path.resolve(targetDir);
+  if (!HOSTS.includes(host))
+    throw new Error(`Unknown host "${host}". Use one of: ${HOSTS.join(", ")}.`);
+
+  // Fails early, with a useful message, if the UI Kit is missing or predates the guide.
+  const { metadata } = loadMetadata(dir);
+  const guidePointer = findGuidePointer(dir);
+  if (!guidePointer) {
+    throw new Error(
+      `No node_modules/${GUIDE_IN_PACKAGE} at or above ${dir}. Install the UI Kit in this project, then run init again.`,
     );
-    // eslint-disable-next-line no-process-exit
-    process.exit(1);
   }
 
+  const written = [
+    upsertFile(path.join(dir, "AGENTS.md"), agentsBlock(guidePointer)),
+  ];
+  if (host === "claude") {
+    written.push(
+      upsertFile(path.join(dir, "CLAUDE.md"), claudeBlock(guidePointer)),
+    );
+  }
+  const mcp = writeMcpConfig(dir, host);
+  if (mcp.written) written.push(mcp.written);
+
+  // Copies written by the POC's init go stale on upgrade; point them out.
+  const staleCopies = [
+    ".github/rules/hv-uikit.md",
+    ".claude/rules/hv-uikit.md",
+    ".github/copilot-instructions.md",
+    ".claude/instructions.md",
+  ].filter(
+    (f) =>
+      existsSync(path.join(dir, f)) &&
+      readFileSync(path.join(dir, f), "utf8").includes("HV UI Kit"),
+  );
+
+  return {
+    written,
+    guidePointer,
+    version: metadata.version,
+    staleCopies,
+    manual: mcp.manual ? [mcp.manual] : [],
+  };
+}
+
+export async function init(
+  targetDir: string | undefined,
+  options: { host?: string } = {},
+): Promise<void> {
   try {
-    const metadata = loadMetadata();
-
-    // Determine folder structure based on harness
-    const agentDir = harness === "claude" ? ".claude" : ".github";
-    const instructionsFileName =
-      harness === "claude" ? "instructions.md" : "copilot-instructions.md";
-
-    // Create rules directory
-    const rulesDir = path.join(dir, agentDir, "rules");
-    mkdirSync(rulesDir, { recursive: true });
-
-    // Generate and write lean guide
-    const agentsPath = path.join(rulesDir, "hv-uikit.md");
-    const agentsContent = generateLeanAgentsMd(metadata);
-    writeFileSync(agentsPath, agentsContent, "utf-8");
-
-    // Create or update instructions (auto-discovered)
-    const agentConfigDir = path.join(dir, agentDir);
-    mkdirSync(agentConfigDir, { recursive: true });
-    const instructionsPath = path.join(agentConfigDir, instructionsFileName);
-    createInstructions(instructionsPath, harness);
-
-    // Register MCP server for Copilot only
-    let mcpConfigPath: string | undefined;
-    if (harness === "copilot") {
-      const vscodeDir = path.join(dir, ".vscode");
-      mkdirSync(vscodeDir, { recursive: true });
-      mcpConfigPath = path.join(vscodeDir, "mcp.json");
-      updateMcpConfig(mcpConfigPath);
-    }
-
-    // eslint-disable-next-line no-console
-    console.log(chalk.green(`✓ Generated HV UI Kit agent guide`));
-    // eslint-disable-next-line no-console
-    console.log(chalk.gray(`  Harness: ${harness}`));
-    // eslint-disable-next-line no-console
-    console.log(chalk.gray(`  Rules: ${agentsPath}`));
-    // eslint-disable-next-line no-console
-    console.log(chalk.gray(`  Instructions: ${instructionsPath}`));
-    if (mcpConfigPath) {
-      // eslint-disable-next-line no-console
-      console.log(chalk.gray(`  MCP: ${mcpConfigPath}`));
-    }
-    // eslint-disable-next-line no-console
-    console.log(chalk.gray(`  Version: ${metadata.version}`));
-    // eslint-disable-next-line no-console
-    console.log(chalk.gray(`  Components: ${metadata.components.length}`));
-    const summary = summarizeMetadata(metadata);
-    // eslint-disable-next-line no-console
-    console.log(
-      chalk.gray(`  No purpose found for: ${formatList(summary.noPurpose)}`),
+    const result = runInit(
+      targetDir ?? ".",
+      (options.host ?? "copilot") as Host,
     );
-    // eslint-disable-next-line no-console
-    console.log(
-      chalk.gray(`  Full metadata extracted for: ${formatList(summary.full)}`),
-    );
-    // eslint-disable-next-line no-console
-    console.log(
-      chalk.gray(
-        `  Simple metadata extracted for: ${formatList(summary.simple)}`,
-      ),
+    const rel = (f: string) => path.relative(process.cwd(), f) || f;
+    process.stdout.write(
+      [
+        `✓ Pointed agents at the UI Kit guide (${CORE_PACKAGE}@${result.version})`,
+        ...result.written.map((f) => `  wrote ${rel(f)}`),
+        `  guide: ${result.guidePointer} (updates with the UI Kit; no need to re-run init)`,
+        ...result.manual.flatMap((m) => [
+          "",
+          `  ${rel(m.file)} is not plain JSON, so it was left as is. Add this entry by hand:`,
+          `    ${m.add}`,
+        ]),
+        ...(result.staleCopies.length
+          ? [
+              "",
+              "  These files look like copies from an older init and will go stale; delete them:",
+              ...result.staleCopies.map((f) => `    ${f}`),
+            ]
+          : []),
+        "",
+      ].join("\n"),
     );
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(chalk.red(`✗ Failed to initialize agent guide: ${error}`));
-    // eslint-disable-next-line no-process-exit
-    process.exit(1);
+    process.stderr.write(`✗ init failed: ${(error as Error).message}\n`);
+    process.exitCode = 1;
   }
-}
-
-/**
- * Group components by the depth of their contract metadata.
- * Full: at least one structured section (variants, states, tokens, anti-patterns, a11y, or validation rules).
- * Simple: purpose only.
- */
-function summarizeMetadata(metadata: ComponentMetadata): {
-  noPurpose: string[];
-  full: string[];
-  simple: string[];
-} {
-  const structuredKeys = [
-    "variantSemantics",
-    "stateRules",
-    "tokenConstraints",
-    "antiPatterns",
-    "a11y",
-    "validationRules",
-  ] as const;
-
-  const full: string[] = [];
-  const simple: string[] = [];
-  for (const component of metadata.components) {
-    const hasStructured = structuredKeys.some((key) => {
-      const value = component[key];
-      return Array.isArray(value) ? value.length > 0 : value !== undefined;
-    });
-    (hasStructured ? full : simple).push(component.name);
-  }
-
-  return { noPurpose: metadata.missingPurpose ?? [], full, simple };
-}
-
-function formatList(names: string[]): string {
-  return names.length > 0 ? names.join(", ") : "none";
-}
-
-/**
- * Add the HV UI Kit MCP server to a VS Code MCP configuration.
- * Existing servers are preserved; invalid JSON must be fixed manually.
- */
-function updateMcpConfig(mcpConfigPath: string): void {
-  let config: { servers?: Record<string, unknown> } = {};
-
-  if (existsSync(mcpConfigPath)) {
-    try {
-      config = JSON.parse(readFileSync(mcpConfigPath, "utf-8"));
-    } catch (error) {
-      throw new Error(
-        `Cannot update ${mcpConfigPath}: the existing file is not valid JSON.`,
-        { cause: error },
-      );
-    }
-  }
-
-  config.servers = {
-    ...config.servers,
-    "hv-uikit": {
-      type: "stdio",
-      command: "npx",
-      args: ["--no-install", "uikit-tools", "mcp"],
-    },
-  };
-
-  writeFileSync(mcpConfigPath, `${JSON.stringify(config, null, 2)}\n`, "utf-8");
-}
-
-/**
- * Create instructions file for auto-discovery by agents (harness-dependent).
- * This file is automatically loaded when opening a workspace.
- * Idempotent: overwrites existing file.
- */
-function createInstructions(instructionsPath: string, harness: Harness): void {
-  const rulesPath =
-    harness === "claude"
-      ? ".claude/rules/hv-uikit.md"
-      : ".github/rules/hv-uikit.md";
-
-  const content = renderTemplate("instructions/instructions.md", {
-    RULES_PATH: rulesPath,
-  });
-
-  writeFileSync(instructionsPath, content, "utf-8");
-}
-
-/**
- * Render a template file from packages/tools/templates, replacing `{{NAME}}` placeholders.
- */
-function renderTemplate(
-  relativePath: string,
-  vars: Record<string, string> = {},
-): string {
-  const template = readFileSync(path.join(templatesDir, relativePath), "utf-8");
-  return template.replace(/\{\{([A-Z_]+)\}\}/g, (match, name: string) =>
-    name in vars ? vars[name] : match,
-  );
-}
-
-/**
- * Generic rule templates merged into the guide, in this order.
- */
-const RULE_FILES = [
-  "tokens.md",
-  "accessibility.md",
-  "forms.md",
-  "layout.md",
-  "actions.md",
-  "anti-patterns.md",
-  "workflow.md",
-];
-
-/**
- * Read every rule template and join them into one block for the guide.
- */
-function loadRuleSections(): string {
-  return RULE_FILES.map((file) => {
-    const content = readFileSync(
-      path.join(templatesDir, "rules", file),
-      "utf-8",
-    );
-    return nestHeadings(content.trim());
-  }).join("\n\n");
-}
-
-/**
- * Nest Markdown headings two levels deeper so rule titles sit under the guide's "## Rules" heading.
- * Lines inside fenced code blocks are left unchanged.
- */
-function nestHeadings(markdown: string): string {
-  let inFence = false;
-  return markdown
-    .split("\n")
-    .map((line) => {
-      if (/^\s*(```|~~~)/.test(line)) {
-        inFence = !inFence;
-        return line;
-      }
-      return !inFence && /^#{1,4} /.test(line) ? `##${line}` : line;
-    })
-    .join("\n");
-}
-
-/**
- * Generate lean AGENTS.md content from component metadata.
- * Focus: Inventory + inlined rule files + MCP delegation
- * CRITICAL: Emphasizes that MCP queries are mandatory before implementation
- */
-function generateLeanAgentsMd(metadata: any): string {
-  const { version, generatedAt, components } = metadata;
-
-  // Group components by category based on naming patterns
-  const categorized = categorizeComponents(components);
-  const componentSections = Object.entries(categorized)
-    .map(([category, comps]: [string, any[]]) => {
-      const items = (comps as any[])
-        .map((c) => `- **${c.displayName}** — ${c.purpose}`)
-        .join("\n");
-      return `### ${category}\n${items}`;
-    })
-    .join("\n\n");
-
-  return renderTemplate("guide/hv-uikit.md", {
-    VERSION: version,
-    GENERATED_AT: generatedAt,
-    COMPONENT_SECTIONS: componentSections,
-    RULES: loadRuleSections(),
-  });
-}
-
-/**
- * Categorize components by functional group.
- */
-function categorizeComponents(components: any[]): Record<string, any[]> {
-  const categories: Record<string, any[]> = {
-    "Input Components": [],
-    "Selection Components": [],
-    "Display Components": [],
-    "Container Components": [],
-    "Feedback Components": [],
-    "Other Components": [],
-  };
-
-  components.forEach((c: any) => {
-    const name = c.name;
-
-    // Categorize based on naming patterns and purpose
-    if (
-      name.includes("Input") ||
-      name.includes("Select") ||
-      name.includes("DatePicker") ||
-      name.includes("TimePicker") ||
-      name.includes("ColorPicker") ||
-      name.includes("TextArea") ||
-      name.includes("TagsInput") ||
-      name.includes("SearchInput")
-    ) {
-      categories["Input Components"].push(c);
-    } else if (
-      name.includes("CheckBox") ||
-      name.includes("Radio") ||
-      name.includes("Switch") ||
-      name.includes("Toggle")
-    ) {
-      categories["Selection Components"].push(c);
-    } else if (
-      name.includes("Button") ||
-      name.includes("Badge") ||
-      name.includes("Avatar") ||
-      name.includes("Tag") ||
-      name.includes("Typography") ||
-      name.includes("Icon") ||
-      name.includes("Status")
-    ) {
-      categories["Display Components"].push(c);
-    } else if (
-      name.includes("Card") ||
-      name.includes("Dialog") ||
-      name.includes("Drawer") ||
-      name.includes("Table") ||
-      name.includes("List") ||
-      name.includes("Accordion") ||
-      name.includes("Panel") ||
-      name.includes("TreeView") ||
-      name.includes("Grid") ||
-      name.includes("Section")
-    ) {
-      categories["Container Components"].push(c);
-    } else if (
-      name.includes("Snackbar") ||
-      name.includes("Banner") ||
-      name.includes("Tooltip") ||
-      name.includes("Loading") ||
-      name.includes("Progress") ||
-      name.includes("EmptyState")
-    ) {
-      categories["Feedback Components"].push(c);
-    } else {
-      categories["Other Components"].push(c);
-    }
-  });
-
-  // Filter out empty categories
-  return Object.fromEntries(
-    Object.entries(categories).filter(([, comps]) => comps.length > 0),
-  );
 }

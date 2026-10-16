@@ -3,20 +3,20 @@
  * This file should have ~8 violations that the validator catches
  */
 
-import React from "react";
 import { HvAvatar, HvButton } from "@pentaho/uikit-react-core";
 
 export function ViolationExamples() {
   return (
     <div>
       {/* Violation 1: Invalid variant */}
+      {/* @ts-expect-error intentional: not a variant */}
       <HvButton variant="custom">Invalid Variant</HvButton>
 
       {/* Violation 2: Raw color instead of token */}
       <HvButton style={{ color: "#FF0000" }}>Delete Me</HvButton>
 
       {/* Violation 3: Selected without aria-pressed */}
-      <HvButton selected={true}>Toggle?</HvButton>
+      <HvButton selected>Toggle?</HvButton>
 
       {/* Violation 4: Icon-only without aria-label */}
       <HvButton>🔍</HvButton>
@@ -25,6 +25,7 @@ export function ViolationExamples() {
       <HvAvatar src="user.jpg" />
 
       {/* Violation 6: Avatar with invalid variant */}
+      {/* @ts-expect-error intentional: not a variant */}
       <HvAvatar variant="circular-mini">JD</HvAvatar>
 
       {/* Violation 7: Avatar with backgroundColor (implies AvatarGroup context) */}
@@ -36,12 +37,7 @@ export function ViolationExamples() {
       {/* Valid examples (no violations) */}
       <HvButton variant="contained">Save</HvButton>
       <HvButton variant="subtle">Cancel</HvButton>
-      <HvButton
-        variant="ghost"
-        selected={true}
-        aria-pressed={true}
-        onClick={() => {}}
-      >
+      <HvButton variant="ghost" selected aria-pressed onClick={() => {}}>
         Toggle
       </HvButton>
       <HvButton aria-label="Search">🔍</HvButton>
