@@ -27,12 +27,11 @@ const NATIVE: Record<string, string> = {
   h5: "HvTypography",
   h6: "HvTypography",
 };
+// Matched per class token: "card", "user-card" (the element is the card), not
+// "card-header" or "cardinality" (a part of something, or another word).
 const LOOK_ALIKE: [RegExp, string][] = [
-  [/(^|[\s_-])(card|tile)([\s_-]|$)/i, "HvCard"],
-  [
-    /(^|[\s_-])(tag|chip|pill|badge|label-status|status-pill)([\s_-]|$)/i,
-    "HvTag",
-  ],
+  [/^([\w-]*[_-])?(card|tile)$/i, "HvCard"],
+  [/^([\w-]*[_-])?(tag|chip|pill|badge)$/i, "HvTag"],
 ];
 const EMOJI = /\p{Extended_Pictographic}/u;
 const NOT_EMOJI = /^[©®™‼⁉↔-↙↩↪⌚⌛⏏]+$/u;
@@ -58,10 +57,17 @@ export default defineCheck({
         el.tag === "section" ||
         el.tag === "article"
       ) {
-        const cls = el.attrs.get("className")?.literal;
+        const clsAttr = el.attrs.get("className");
+        const cls =
+          typeof clsAttr?.literal === "string"
+            ? clsAttr.literal
+            : clsAttr?.value
+              ? ctx.stringsIn(clsAttr.value).join(" ")
+              : undefined;
+        const tokens = cls?.split(/\s+/).filter(Boolean) ?? [];
         const style = el.attrs.get("style")?.value?.getText(ctx.sf) ?? "";
         for (const [re, component] of LOOK_ALIKE) {
-          if (typeof cls === "string" && re.test(cls)) {
+          if (cls !== undefined && tokens.some((t) => re.test(t))) {
             choices.add(`look-alike ${component}`);
             findings.push({
               node: el.opening,

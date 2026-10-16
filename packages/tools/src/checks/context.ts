@@ -102,20 +102,34 @@ export class FileContext {
   textOf(el: JsxEl): string {
     const parts: string[] = [];
     for (const name of ["label", "title", "aria-label"]) {
-      const v = el.attrs.get(name)?.literal;
-      if (typeof v === "string") parts.push(v);
+      const attr = el.attrs.get(name);
+      if (typeof attr?.literal === "string") parts.push(attr.literal);
+      else if (attr?.value) parts.push(...this.stringsIn(attr.value));
     }
     if (ts.isJsxElement(el.element)) {
       for (const n of this.walk(el.element)) {
         if (ts.isJsxText(n)) parts.push(n.text);
         else if (
           (ts.isStringLiteral(n) || ts.isNoSubstitutionTemplateLiteral(n)) &&
-          ts.isJsxExpression(n.parent)
+          (ts.isJsxExpression(n.parent) ||
+            // t("Delete"), i18n.t("…"): translated labels
+            (ts.isCallExpression(n.parent) &&
+              n.parent.arguments[0] === n &&
+              /(^|\.)t$/.test(n.parent.expression.getText(this.sf))))
         )
           parts.push(n.text);
       }
     }
     return parts.join(" ").replace(/\s+/g, " ").trim();
+  }
+
+  /** String literals inside an expression (e.g. `title={t("Delete")}`). */
+  stringsIn(node: ts.Node): string[] {
+    return [...this.walk(node)]
+      .filter(
+        (n) => ts.isStringLiteral(n) || ts.isNoSubstitutionTemplateLiteral(n),
+      )
+      .map((n) => (n as ts.StringLiteral).text);
   }
 
   /** Element children (ignoring whitespace text and expressions). */

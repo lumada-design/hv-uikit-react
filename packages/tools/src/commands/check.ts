@@ -45,6 +45,22 @@ export interface GateState {
   passed?: boolean;
   /** Violations left when the gate let the agent stop. */
   remaining?: number;
+  /** Set when the check could not run (rules/check mismatch, crash): the gate let the agent stop unchecked. */
+  error?: string;
+}
+
+/** Record in the gate state that the check could not run, so a scorer can tell. */
+function recordGateError(stateFile: string, error: string) {
+  const state: GateState = fs.existsSync(stateFile)
+    ? JSON.parse(fs.readFileSync(stateFile, "utf8"))
+    : { maxRounds: 0, rounds: [] };
+  state.error = error;
+  fs.mkdirSync(path.dirname(stateFile), { recursive: true });
+  fs.writeFileSync(
+    stateFile,
+    `${JSON.stringify(state, null, 2)}
+`,
+  );
 }
 
 function gateMessage(report: CheckReport, round: number, max: number): string {
@@ -90,15 +106,20 @@ export async function check(
   patterns: string[],
   options: CheckOptions = {},
 ): Promise<void> {
+  const stateFile = options.state ?? ".uikit-check/gate.json";
+  const fail = (message: string) => {
+    process.stderr.write(message);
+    if (options.gate) recordGateError(stateFile, message.trim());
+    process.exitCode = 3;
+  };
   try {
     const { metadata } = loadMetadata();
     const checks = await loadChecks();
     const problems = parityProblems(checks, metadata);
     if (problems.length) {
-      process.stderr.write(
+      fail(
         `uikit-tools check: checks and rules disagree:\n${problems.map((p) => `  ${p}`).join("\n")}\n`,
       );
-      process.exitCode = 3;
       return;
     }
     const report = runChecks(
@@ -116,11 +137,7 @@ export async function check(
     }
     if (options.gate) {
       const max = Number(options.maxRounds ?? 3);
-      const { exitCode, message } = runGate(
-        report,
-        options.state ?? ".uikit-check/gate.json",
-        max,
-      );
+      const { exitCode, message } = runGate(report, stateFile, max);
       if (message) process.stderr.write(`${message}\n`);
       process.exitCode = exitCode;
       return;
@@ -132,7 +149,6 @@ export async function check(
     );
     process.exitCode = report.violations.length ? 1 : 0;
   } catch (error) {
-    process.stderr.write(`uikit-tools check: ${(error as Error).message}\n`);
-    process.exitCode = 3;
+    fail(`uikit-tools check: ${(error as Error).message}\n`);
   }
 }

@@ -373,6 +373,74 @@ describe("check", () => {
     ).toEqual(["src/pages/assets/index.tsx"]);
   });
 
+  it("checks do not flag on-system code they used to misread", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const app = path.join(consumer, "edge-clean");
+    const files: Record<string, string> = {
+      // handler passed to a custom confirmation component in another file
+      "src/pages/assets/index.tsx": `import { HvGlobalActions, HvButton, hvDateColumn } from "@pentaho/uikit-react-core";
+import { ConfirmDelete } from "./ConfirmDelete";
+import { api } from "../../api";
+const t = (s: string) => s;
+const columns = [hvDateColumn({ accessor: "createdAt" }), { ...base, accessor: "updatedAt" }];
+export function Component() {
+  const params = new URLSearchParams();
+  const tags = new Map<string, string>();
+  const clear = () => { params.delete("q"); tags.delete("a"); };
+  const confirmDelete = () => api.deleteAsset("1");
+  return (
+    <div className={cx("flex flex-col", "p-md")}>
+      <HvGlobalActions title="Assets" />
+      <HvButton icon>{t("Save")}</HvButton>
+      <HvButton onClick={clear}>Clear</HvButton>
+      <ConfirmDelete onConfirm={confirmDelete} />
+      <div className={cx("card-header user-cardinality")} />
+      <a href="#add">{responseTime}</a>
+    </div>
+  );
+}`,
+      // hooks and helpers: no UI here, nothing to judge
+      "src/api/useDelete.ts": `export const useDelete = () => (id: string) => api.deleteAsset(id);`,
+      // a dialog in pages/ is not a page
+      "src/pages/assets/ConfirmDelete.tsx": `export default function ConfirmDelete() { return <div />; }`,
+    };
+    for (const [f, src] of Object.entries(files)) {
+      fs.mkdirSync(path.dirname(path.join(app, f)), { recursive: true });
+      fs.writeFileSync(path.join(app, f), src);
+    }
+    const report = runChecks(await loadChecks(), metadata, undefined, app);
+    expect(
+      report.violations.map((v) => `${v.file}:${v.line} ${v.rule} ${v.detail}`),
+    ).toEqual([]);
+  });
+
+  it("checks catch off-system code they used to miss", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const app = path.join(consumer, "edge-dirty");
+    const src = `import { HvDialog, HvDialogTitle, HvButton } from "@pentaho/uikit-react-core";
+const t = (s: string) => s;
+export const Row = ({ created }: { created?: string }) => {
+  const del = useDeleteAsset();
+  return (
+    <div className="bg-gray-100 p-4">
+      {createdAt ?? "-"}
+      <HvButton onClick={() => del.mutate("1")}>x</HvButton>
+      <HvDialog open><HvDialogTitle variant="warning">{t("Delete asset")}</HvDialogTitle></HvDialog>
+    </div>
+  );
+};`;
+    fs.mkdirSync(path.join(app, "src"), { recursive: true });
+    fs.writeFileSync(path.join(app, "src", "Row.tsx"), src);
+    const report = runChecks(await loadChecks(), metadata, undefined, app);
+    expect(report.violations.map((v) => `${v.line} ${v.rule}`)).toEqual([
+      "6 tokens/color",
+      "6 tokens/space",
+      "7 date/format",
+      "8 destructive/confirm",
+      "9 destructive/confirm",
+    ]);
+  });
+
   it("gate: returns violations for up to 3 rounds, then lets the agent stop", async () => {
     const { metadata } = loadMetadata(consumer);
     const report = runChecks(

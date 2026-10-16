@@ -54,7 +54,23 @@ rule. Modes:
 Checks live one per file in `src/checks/rules/<rule id>.ts` and are found by
 path, so adding a checked rule takes its metadata entry (`enforcement: checked`
 and a `fix`) and one check file. Checks parse each file with the TypeScript
-compiler and look at one file at a time.
+compiler and look at one file at a time, so they judge only what that file
+makes explicit:
+
+- `destructive/confirm` flags a delete/remove call (or a delete hook's
+  `mutate`/`trigger`, or `fetch` with `DELETE`) that a handler in the same file
+  reaches outside a confirmation. Handlers inside an `HvDialog`, or passed to a
+  `*Dialog`/`*Confirm*`/`*Modal` component, count as confirmed; calls no
+  handler in the file reaches (hooks, API modules) are not judged.
+- `date/format` flags date-like values (`createdAt`, `…Date`, `…Timestamp`)
+  rendered as is, cut by hand or built from `getDate()`; table columns from
+  `hv*Column` helpers or spread-in parts are trusted to format themselves.
+- `tokens/color` looks at color contexts only (style and CSS properties, color
+  props, CSS text, color-named variables) and at class names, where it also
+  flags the default palette (`bg-gray-100`); `tokens/space` also flags
+  numeric spacing classes (`p-4`), which work but are not the UI Kit scale.
+- `layout/page` judges route modules only: files exporting a `…Page`
+  component, or `pages/**/index.*` and `pages/**/*Page.*`.
 
 ## Set up agents in a project
 

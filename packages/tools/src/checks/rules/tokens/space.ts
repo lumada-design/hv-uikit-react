@@ -15,6 +15,9 @@ const CSS_TEXT =
   /\b(margin|padding|gap|row-gap|column-gap)(-(top|right|bottom|left))?\s*:\s*[^;'"`]*\b\d+(px|rem|em)\b/;
 const ARBITRARY =
   /(^|\s)-?(m|p|gap|space)[xytrbl]?(-[xy])?-\[\d*\.?\d+(px|rem|em)\]/;
+// Wind's numeric scale (p-4, gap-2, mt-6) works but is not the UI Kit scale (p-sm, gap-md).
+const NUMERIC =
+  /(^|\s)-?(m|p|gap|space)[xytrbl]?(-[xy])?-(?!0(\s|$))\d+(\.\d+)?(\s|$)/;
 
 const inClassName = (node: ts.Node) => {
   for (let n = node.parent; n; n = n.parent) {
@@ -64,6 +67,11 @@ export default defineCheck({
             findings.push({
               node: n,
               detail: `arbitrary spacing class in "${text.slice(0, 50)}"`,
+            });
+          else if (NUMERIC.test(text))
+            findings.push({
+              node: n,
+              detail: `numeric spacing class in "${text.slice(0, 50)}" (not a UI Kit token)`,
             });
         } else if (CSS_TEXT.test(text)) {
           findings.push({

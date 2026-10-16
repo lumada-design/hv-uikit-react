@@ -9,7 +9,8 @@ import ts from "typescript";
 import type { FileContext } from "../../context.js";
 import { defineCheck, result, type Finding } from "../../define.js";
 
-const DATE_NAME = /(^date$|Date$|At$|^timestamp$|Timestamp$|^time$|Time$)/;
+// Not a generic Time$: responseTime, runTime are durations, not dates.
+const DATE_NAME = /(^date$|Date$|At$|^timestamp$|Timestamp$|DateTime$)/;
 
 const lastName = (e: ts.Expression): string | undefined => {
   if (ts.isIdentifier(e)) return e.text;
@@ -24,19 +25,34 @@ const lastName = (e: ts.Expression): string | undefined => {
   return undefined;
 };
 
-const isDateLike = (ctx: FileContext, e: ts.Expression) => {
+const isDateLike = (_ctx: FileContext, e: ts.Expression) => {
   const name = lastName(e);
   return name !== undefined && DATE_NAME.test(name);
 };
 
 /** The expression is shown to the user: a JSX child, or a text prop of an element. */
 const isRendered = (node: ts.Node) => {
-  const p = node.parent;
+  // Climb through fallbacks and ternaries: {createdAt ?? "—"}, {ok ? createdAt : "-"}
+  let n = node;
+  for (;;) {
+    const up = n.parent;
+    if (ts.isParenthesizedExpression(up)) n = up;
+    else if (
+      ts.isBinaryExpression(up) &&
+      [ts.SyntaxKind.QuestionQuestionToken, ts.SyntaxKind.BarBarToken].includes(
+        up.operatorToken.kind,
+      )
+    )
+      n = up;
+    else if (ts.isConditionalExpression(up) && up.condition !== n) n = up;
+    else break;
+  }
+  const p = n.parent;
   if (!ts.isJsxExpression(p)) return false;
   if (ts.isJsxElement(p.parent) || ts.isJsxFragment(p.parent)) return true;
   return (
     ts.isJsxAttribute(p.parent) &&
-    /^(label|title|description|subheader|value|children|message|caption)$/.test(
+    /^(label|title|description|subheader|children|message|caption)$/.test(
       p.parent.name.getText(),
     )
   );
@@ -120,7 +136,15 @@ export default defineCheck({
         });
       }
       // HvTable column: { accessor: "createdAt" } with no Cell formatter
-      if (ts.isObjectLiteralExpression(n)) {
+      // (columns from hv*Column helpers or with spread-in parts format themselves)
+      if (
+        ts.isObjectLiteralExpression(n) &&
+        !n.properties.some(ts.isSpreadAssignment) &&
+        !(
+          ts.isCallExpression(n.parent) &&
+          /(^|\.)hv\w*Column$/.test(n.parent.expression.getText(ctx.sf))
+        )
+      ) {
         const props = new Map(
           n.properties
             .filter(ts.isPropertyAssignment)

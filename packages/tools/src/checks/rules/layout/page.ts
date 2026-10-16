@@ -18,7 +18,8 @@ const TOKEN_PADDING = /(^|\s)p[xytrbl]?-(xxs|xs|sm|md|lg|xl)(\s|$)/;
  */
 const isPageFile = (ctx: FileContext) =>
   /export\s+(default\s+)?(function|const)\s+\w*Page\b/.test(ctx.source) ||
-  (/(^|\/)pages\//.test(ctx.file) &&
+  // under pages/, only the route module itself: pages/x/index.tsx or pages/XPage.tsx
+  (/(^|\/)pages\/(.+\/)?(index|\w*Page)\.[jt]sx?$/.test(ctx.file) &&
     /export\s+(default\b|(function|const)\s+Component\b|\{[^}]*\bComponent\b)/.test(
       ctx.source,
     ));
@@ -107,8 +108,15 @@ export default defineCheck({
     const choices: string[] = [];
 
     if (stack) {
-      const cls = stack.attrs.get("className")?.literal;
-      const padded = typeof cls === "string" && TOKEN_PADDING.test(cls);
+      // className="p-md" or className={cx("p-md", …)}
+      const clsAttr = stack.attrs.get("className");
+      const cls =
+        typeof clsAttr?.literal === "string"
+          ? clsAttr.literal
+          : clsAttr?.value
+            ? ctx.stringsIn(clsAttr.value).join(" ")
+            : "";
+      const padded = TOKEN_PADDING.test(cls);
       if (!padded) {
         findings.push({
           node: stack.opening,

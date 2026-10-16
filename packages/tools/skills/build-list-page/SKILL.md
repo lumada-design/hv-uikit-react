@@ -63,8 +63,9 @@ npx uikit-tools check
 ```
 
 For each failure, run `npx uikit-tools rule <id>` with the reported id, fix the
-code, and run the check again until there are no errors. Checks cover only part of
-the rules, so a clean run is not enough: before finishing, go through the rule
+code, and run the check again until there are no errors. Checks catch only part of
+what the rules require (they read one file at a time and only what the code makes
+explicit), so a clean run is not enough: before finishing, go through the rule
 ids from step 3 and confirm the code follows each one.
 
 ## 6. Report

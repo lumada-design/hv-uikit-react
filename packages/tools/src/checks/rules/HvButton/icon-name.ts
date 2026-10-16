@@ -18,16 +18,30 @@ export default defineCheck({
         .textOf(el)
         .replace(/\p{Extended_Pictographic}/gu, "")
         .trim();
+      // {label}, {t("Save")}: an expression child is (probably) text
+      const textExpression =
+        ts.isJsxElement(el.element) &&
+        el.element.children.some(
+          (c) =>
+            ts.isJsxExpression(c) &&
+            c.expression !== undefined &&
+            !ts.isJsxElement(c.expression) &&
+            !ts.isJsxSelfClosingElement(c.expression),
+        );
       const onlyIconChild =
         ts.isJsxElement(el.element) &&
         !text &&
+        !textExpression &&
         el.element.children.some(
           (c) =>
             ts.isJsxElement(c) ||
             ts.isJsxSelfClosingElement(c) ||
             (ts.isJsxText(c) && /\p{Extended_Pictographic}/u.test(c.text)),
         );
-      if (el.attrs.get("icon")?.literal === true || onlyIconChild) {
+      if (
+        (el.attrs.get("icon")?.literal === true && !text && !textExpression) ||
+        onlyIconChild
+      ) {
         findings.push({
           node: el.opening,
           detail: "icon-only HvButton has no aria-label",

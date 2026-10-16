@@ -32,6 +32,8 @@ export interface CheckReport {
   violations: Violation[];
   /** Per rule: what the code chose, compliant or not (one entry per occurrence). */
   choices: Record<string, string[]>;
+  /** The same choices per file (file → rule → choices), to look at only some files. */
+  fileChoices: Record<string, Record<string, string[]>>;
   /** Per checked rule: number of violations (0 included, so every rule appears). */
   counts: Record<string, number>;
 }
@@ -138,6 +140,7 @@ export function runChecks(
   ].toSorted();
   const violations: Violation[] = [];
   const choices: Record<string, string[]> = {};
+  const fileChoices: Record<string, Record<string, string[]>> = {};
   const counts = Object.fromEntries(checks.map((c) => [c.rule, 0]));
 
   for (const file of files) {
@@ -148,7 +151,10 @@ export function runChecks(
     );
     for (const check of checks) {
       const { findings, choices: made } = check.run(ctx);
-      if (made.length) (choices[check.rule] ??= []).push(...made);
+      if (made.length) {
+        (choices[check.rule] ??= []).push(...made);
+        ((fileChoices[file] ??= {})[check.rule] ??= []).push(...made);
+      }
       for (const f of findings) {
         const { line, column } = ctx.at(f.node);
         violations.push({
@@ -173,6 +179,7 @@ export function runChecks(
     files: files.length,
     violations,
     choices,
+    fileChoices,
     counts,
   };
 }
