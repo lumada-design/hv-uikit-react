@@ -106,7 +106,7 @@ function changedFiles(dir: string, scenario: Scenario): string[] {
     }
   };
   walk("src");
-  return out.sort();
+  return out.toSorted();
 }
 
 export async function runOne(

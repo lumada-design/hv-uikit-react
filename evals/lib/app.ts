@@ -16,7 +16,9 @@ export function createApp(dir: string, extraFiles?: string) {
   fs.mkdirSync(dir, { recursive: true });
   for (const entry of fs.readdirSync(TEMPLATE)) {
     if (entry === "node_modules" || entry === "package.json") continue;
-    fs.cpSync(path.join(TEMPLATE, entry), path.join(dir, entry), {
+    // Stored as _oxlintrc.json (like the CLI does) so the repo's lint ignores it.
+    const target = entry === "_oxlintrc.json" ? ".oxlintrc.json" : entry;
+    fs.cpSync(path.join(TEMPLATE, entry), path.join(dir, target), {
       recursive: true,
     });
   }

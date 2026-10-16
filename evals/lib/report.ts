@@ -74,7 +74,10 @@ export function loadRecords(): RunRecord[] {
         decisions: Object.fromEntries(
           Object.entries(r.check.choices ?? {})
             .filter(([rule]) => DECISION_RULES.includes(rule))
-            .map(([rule, cs]) => [rule, [...new Set(cs)].sort().join(" + ")]),
+            .map(([rule, cs]) => [
+              rule,
+              [...new Set(cs)].toSorted().join(" + "),
+            ]),
         ),
         gateRounds: r.gate.rounds,
         gatePassed: r.gate.passed,
@@ -83,11 +86,11 @@ export function loadRecords(): RunRecord[] {
         review: review?.scores ?? null,
       };
     })
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .toSorted((a, b) => a.id.localeCompare(b.id));
 }
 
 const mean = (xs: number[]) =>
-  xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : NaN;
+  xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : Number.NaN;
 const fmt = (x: number, d = 1) => (Number.isNaN(x) ? "–" : x.toFixed(d));
 const pct = (x: number) => (Number.isNaN(x) ? "–" : `${Math.round(x * 100)}%`);
 
@@ -114,7 +117,7 @@ function consistency(
     agree += Math.max(...counts.values());
     n += ds.length;
   }
-  return { value: n ? agree / n : NaN, n };
+  return { value: n ? agree / n : Number.NaN, n };
 }
 
 function reviewMean(records: RunRecord[], key: keyof Review["scores"]) {
@@ -130,7 +133,7 @@ function cellRows(
   label: (s: string) => string,
   rules: string[],
 ) {
-  const models = [...new Set(records.map((r) => r.model))].sort();
+  const models = [...new Set(records.map((r) => r.model))].toSorted();
   const rows: string[][] = [];
   for (const setup of setups) {
     for (const model of models) {
@@ -183,10 +186,10 @@ export function writeReport(): { records: number; file: string } {
 
   const rules = [
     ...new Set(records.flatMap((r) => Object.keys(r.byRule))),
-  ].sort();
+  ].toSorted();
   const main = records.filter((r) => MAIN_SETUPS.includes(r.setup));
-  const models = [...new Set(records.map((r) => r.model))].sort();
-  const scenarios = [...new Set(records.map((r) => r.scenario))].sort();
+  const models = [...new Set(records.map((r) => r.model))].toSorted();
+  const scenarios = [...new Set(records.map((r) => r.scenario))].toSorted();
   const head = [
     "Setup",
     "Model",
@@ -240,7 +243,9 @@ export function writeReport(): { records: number; file: string } {
         (x) => x.setup === setup && x.decisions[rule],
       ))
         counts.set(r.decisions[rule], (counts.get(r.decisions[rule]) ?? 0) + 1);
-      const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+      const top = [...counts.entries()]
+        .toSorted((a, b) => b[1] - a[1])
+        .slice(0, 3);
       return `- **${SETUPS[setup].label}:** ${top.map(([d, n]) => `${d} ×${n}`).join("; ") || "–"}`;
     }).join("\n");
 
