@@ -26,8 +26,13 @@ export interface HvContractAntiPattern {
   dont: string;
   /** Why it is wrong. */
   why: string;
-  /** What to do instead. */
+  /** What to do instead. Shown as the fix when a check reports this rule. */
   instead: string;
+  /**
+   * `checked` when `uikit-tools check` must enforce it (a check with this id
+   * must exist); `context` (default) when it is guidance.
+   */
+  enforcement?: "checked" | "context";
 }
 
 export interface HvContractA11y {

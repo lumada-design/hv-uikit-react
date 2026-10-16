@@ -3,6 +3,7 @@ id: tokens/color
 title: Use color tokens, never raw color values
 components: []
 enforcement: checked
+fix: "Use a semantic variant or color prop, a UnoCSS color utility, or theme.colors.* instead of a raw color value."
 status: example
 ---
 

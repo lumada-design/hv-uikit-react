@@ -135,7 +135,7 @@ Design review — all rules start there.
   become design rules; their form-label and typography guidance has no rule yet.
 - Contract files are build-time only: not exported from `index.ts`, not bundled
   (nothing imports them), and type-only imports keep them dependency-free.
-- `validate` keeps the POC's 8 checks; each now reports a rule id, a `severity`
+- (Superseded by `uikit-tools check`, HVUIKIT checks story.) `validate` keeps the POC's 8 checks; each now reports a rule id, a `severity`
   (error/warn/info — not to be confused with a rule's enforcement) and takes
   allowed values from the metadata. Tags are read lexically, not with an AST. Writing checks for the `checked` rules is a
   separate story — the list-page run (`docs/agents/runs/2026-10-16-list-page.md`)

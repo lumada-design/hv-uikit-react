@@ -45,6 +45,7 @@ export const contract = {
       why: "The section applies the table layout and spacing.",
       instead:
         "Wrap the table, HvBulkActions and HvPagination in one HvTableSection.",
+      enforcement: "checked",
     },
     {
       id: "pagination",

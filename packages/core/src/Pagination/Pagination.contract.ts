@@ -31,10 +31,10 @@ export const contract = {
     },
     {
       id: "one-page",
-      dont: "Hide pagination by removing it when there is one page.",
+      dont: "Remove HvPagination when there is a single page.",
       why: "The layout jumps as data changes.",
       instead:
-        "Keep it rendered; it disables the controls when there is nothing to page.",
+        "Keep it rendered and pass canPrevious and canNext (or getHvPaginationProps) so its controls disable when there is nothing to page.",
     },
   ],
   a11y: {

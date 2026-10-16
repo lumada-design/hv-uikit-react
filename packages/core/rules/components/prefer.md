@@ -3,6 +3,7 @@ id: components/prefer
 title: Use UI Kit components instead of plain HTML or look-alikes
 components: [HvButton, HvInput, HvSelect, HvTable, HvCard, HvTag, HvTypography]
 enforcement: checked
+fix: "Use the UI Kit component (HvButton, HvInput, HvSelect, HvTable, HvCard, HvTag…) and icons from @pentaho/uikit-react-icons instead of plain HTML, look-alikes or emoji."
 status: example
 ---
 

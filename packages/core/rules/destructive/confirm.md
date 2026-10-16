@@ -4,6 +4,7 @@ title: Confirm destructive actions in a dialog
 components:
   [HvDialog, HvDialogTitle, HvDialogContent, HvDialogActions, HvButton]
 enforcement: checked
+fix: "Open a plain HvDialog (no status variant) from the trigger; run the action from its negativeGhost confirm button, with a secondaryGhost cancel."
 status: example
 ---
 

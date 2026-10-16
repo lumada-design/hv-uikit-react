@@ -42,6 +42,7 @@ export const contract = {
       why: "Unknown variants fall back to defaults and lose their meaning.",
       instead:
         "Use one of the defined variants, e.g. primary, secondaryGhost, negativeGhost.",
+      enforcement: "checked",
     },
     {
       id: "main-action",
@@ -60,6 +61,7 @@ export const contract = {
       dont: "Render an icon-only button without an accessible name.",
       why: "Screen readers announce nothing for it.",
       instead: 'Add aria-label, e.g. <HvButton icon aria-label="Refresh">.',
+      enforcement: "checked",
     },
     {
       id: "color-and-variant",
@@ -76,4 +78,5 @@ export const contract = {
       "selected sets aria-pressed; use it only for toggle buttons.",
     ],
   },
+  props: { hide: ["ref", "className"] },
 } as const satisfies HvContract<HvButtonProps>;

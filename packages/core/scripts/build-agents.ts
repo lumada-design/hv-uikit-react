@@ -238,6 +238,11 @@ function readRules(): RuleEntry[] {
       );
     if (!Array.isArray(front.components))
       fail(file, "components must be a list");
+    if (front.enforcement === "checked" && !front.fix)
+      fail(
+        file,
+        'a "checked" rule needs a one-line `fix` (what to change), shown by checks',
+      );
 
     rules.push({
       id: expectedId,
@@ -247,6 +252,7 @@ function readRules(): RuleEntry[] {
         : [],
       enforcement: front.enforcement as RuleEntry["enforcement"],
       status: front.status as RuleEntry["status"],
+      ...(front.fix ? { fix: String(front.fix) } : {}),
       rule: sections.Rule ?? "",
       rationale: sections.Rationale ?? "",
       do: sections.Do ?? "",
@@ -392,6 +398,7 @@ async function main() {
       antiPatterns: (c.antiPatterns ?? []).map((ap) => ({
         ...ap,
         id: `${c.name}/${ap.id}`,
+        enforcement: ap.enforcement ?? "context",
       })),
       ...(c.a11y && {
         a11y: { ...c.a11y, requirements: [...c.a11y.requirements] },

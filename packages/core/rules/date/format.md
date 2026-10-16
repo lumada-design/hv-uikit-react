@@ -3,6 +3,7 @@ id: date/format
 title: Show dates in the user's locale, never as raw ISO strings
 components: [HvDatePicker]
 enforcement: checked
+fix: "Format dates for display with Intl.DateTimeFormat (or toLocaleDateString) in the user's locale; pass HvDatePicker a Date."
 status: example
 ---
 

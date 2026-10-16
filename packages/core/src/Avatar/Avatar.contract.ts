@@ -28,12 +28,14 @@ export const contract = {
       why: "Unknown variants fall back to the default shape.",
       instead:
         'Use variant="circular" for people or variant="square" for brands.',
+      enforcement: "checked",
     },
     {
       id: "alt",
       dont: "Set src without alt.",
       why: "The image has no accessible name.",
       instead: 'Always pass alt with src, e.g. alt="John Doe".',
+      enforcement: "checked",
     },
     {
       id: "image-and-initials",

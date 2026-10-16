@@ -19,6 +19,7 @@ export interface AntiPatternEntry {
   dont: string;
   why: string;
   instead: string;
+  enforcement: "checked" | "context";
 }
 
 export interface ComponentEntry {
@@ -45,6 +46,8 @@ export interface RuleEntry {
   components: string[];
   enforcement: "checked" | "context";
   status: "example" | "approved";
+  /** One line: what to change. Required when enforcement is "checked"; shown by checks. */
+  fix?: string;
   rule: string;
   rationale: string;
   do: string;
@@ -85,17 +88,18 @@ in the installed version before writing code. Do not guess props or variants.
 | A rule's text, rationale and do/don't examples | \`npx uikit-tools rule <id>\` | \`get_rule\` |
 | All components with guidance | \`npx uikit-tools info\` | \`list_components\` |
 | All rules | \`npx uikit-tools rule\` | \`list_rules\` |
-| Check code against the rules | \`npx uikit-tools validate "src/**/*.tsx"\` | — |
+| Check code against the \`checked\` rules (file, line, rule id, fix) | \`npx uikit-tools check\` | — |
 
 Check failures name a rule id; run \`rule <id>\` to see what it requires.
 
 ## Rules
 
 \`checked\` rules are meant to be enforced by checks; \`context\` rules are guidance.
-Checks cover only part of the \`checked\` rules today, so a clean \`validate\` is not
-proof of compliance: follow every rule you looked up.
+Every \`checked\` rule has a check, but checks see one file at a time and only
+what the code makes explicit, so a clean \`check\` is not proof of compliance:
+follow every rule you looked up, \`context\` rules included.
 Component rules use \`<Component>/<id>\` (e.g. \`HvButton/variant\`), are listed by
-\`info\`, and are guidance unless a check reports them.
+\`info\` with their enforcement; checked ones are enforced by \`check\` too.
 
 | Id | Rule | Enforcement |
 | --- | --- | --- |

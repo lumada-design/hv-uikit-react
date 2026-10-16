@@ -3,6 +3,7 @@ id: layout/page
 title: Pages start with HvGlobalActions inside a padded page container
 components: [HvGlobalActions, HvContainer]
 enforcement: checked
+fix: "Make HvGlobalActions (title + page actions) the first child of a page stack padded with spacing tokens, e.g. flex flex-col gap-md p-md."
 status: example
 ---
 

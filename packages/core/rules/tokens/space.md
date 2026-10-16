@@ -3,6 +3,7 @@ id: tokens/space
 title: Use spacing tokens, never raw pixel values
 components: []
 enforcement: checked
+fix: "Use spacing tokens (xxs to xl) via UnoCSS utilities like p-sm or gap-md, or theme.space.*, instead of pixel values."
 status: example
 ---
 
