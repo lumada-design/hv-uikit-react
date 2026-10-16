@@ -173,10 +173,11 @@ export function runAgent(opts: {
     costUsd: Number(json.total_cost_usd ?? 0),
     durationMs: Number(json.duration_ms ?? Date.now() - started),
     turns: Number(json.num_turns ?? 0),
+    // modelUsage also lists the host's own small-model calls; record the one asked for if it ran.
     model:
-      Object.keys(json.modelUsage ?? {}).find(
-        (m) => !m.includes("haiku") || opts.model.includes("haiku"),
-      ) ?? opts.model,
+      Object.keys(json.modelUsage ?? {}).find((m) =>
+        m.startsWith(opts.model),
+      ) ?? `${opts.model} (not in modelUsage)`,
     inputTokens: Number(usage.input_tokens ?? 0),
     outputTokens: Number(usage.output_tokens ?? 0),
     cacheReadTokens: Number(usage.cache_read_input_tokens ?? 0),
