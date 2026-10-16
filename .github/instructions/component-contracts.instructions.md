@@ -1,265 +1,74 @@
 ---
-applyTo: "packages/*/**/*.tsx"
-name: Component Contract JSDoc Tags
-description: Guide for writing semantic JSDoc tags that power AGENTS.md, validation, and MCP retrieval
+applyTo: "packages/core/{src/**/*.contract.ts,rules/**/*.md}"
+name: Component contracts and design rules
+description: How to write component contracts and design rules that power the agent guide, lookups and checks
 ---
 
-## Overview
+Design decisions live in two places, both in `packages/core`. This is the
+authoring how-to; the decisions and their trade-offs are in
+`docs/adr/0001-design-rules-and-metadata.md`, which wins if the two disagree.
 
-Component contracts encode semantic information about usage patterns, state rules, tokens, anti-patterns, and accessibility requirements. These tags are extracted during build to generate:
+## Component contracts — `src/<C>/<C>.contract.ts`
 
-- **AGENTS.md** — Quick-start guide for agents/developers using the component
-- **component-metadata.json** — Canonical contract published with the package
-- **Validation rules** — Pre-flight checks when consumers run `uikit-tools validate`
-- **MCP tools** — On-demand retrieval via `uikit-tools mcp`
+How one component is meant to be used. Typed against the component's props, so
+a variant or prop that does not exist is a compile error.
 
-## JSDoc Tags
+```ts
+import type { HvContract } from "../types/contract";
+import type { HvButtonProps } from "./Button";
 
-### `@variantSemantics`
-
-List all valid variants and their semantic meaning. Used to teach agents which variant to use for which intent.
-
-**Format:**
-
-```
-- `variantName`: semantic meaning
-```
-
-**Example:**
-
-```typescript
-/**
- * @variantSemantics
- * - `primary`: main action of a view, form, or dialog; filled style, the default variant
- * - `subtle`: secondary action, low visual weight
- * - `ghost`: tertiary, minimal emphasis
- * - `{color}Subtle`: secondary emphasis for semantic colors
- * - `{color}Ghost`: tertiary for semantic colors
- * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
- */
+export const contract = {
+  name: "HvButton",
+  parts: [], // exported sub-components to compose with it
+  rules: ["tokens/color"], // design rule ids that apply
+  variants: { primary: "The main action; one per context." },
+  states: {
+    disabled: "Leaves the tab order unless focusableWhenDisabled is set.",
+  },
+  tokens: { color: "Semantic variants or theme tokens only." },
+  antiPatterns: [
+    { id: "variant", dont: "Invent variant names.", why: "…", instead: "…" },
+  ],
+  a11y: { role: "button", requirements: ["Needs an accessible name."] },
+} as const satisfies HvContract<HvButtonProps>;
 ```
 
-**Why:** Agents need to understand _intent_ behind variants. "Use a filled button" is vague; "`primary` = main action" is actionable.
+- Only `import type`. Contract files are build-time only and must not be imported by component code or `index.ts`.
+- Do not restate props, types or defaults: they are extracted from the component with docgen.
+- Do not restate a design rule: name its id in `rules` (or reference it, "see `destructive/confirm`").
+  The rule ↔ component link may be written in the contract's `rules` or the rule's `components`; the build publishes both ways.
+- Write the component description as JSDoc on the component; it becomes `purpose` unless `purpose` is set.
+- `variants` explains meaning, not appearance: "the main action", not "filled".
+- Anti-pattern ids are kebab-case and unique per component; their full id is `HvButton/variant`.
+- Use `props.only` / `props.hide` when extraction over-reports (e.g. props inherited from MUI).
 
+## Design rules — `rules/<group>/<name>.md`
+
+Decisions that span components. The id is the path: `rules/tokens/color.md` → `tokens/color`.
+
+```md
+---
+id: tokens/color
+title: Use color tokens, never raw color values
+components: [] # exported component names the rule is about
+enforcement: checked # checked (a check enforces it) | context (guidance)
+status: example # example (not yet reviewed by Product Design) | approved
 ---
 
-### `@stateRules`
+## Rule
 
-Describe how states behave and their accessibility implications.
+## Rationale
 
-**Format:**
+## Do
 
-```
-- "stateName": behavior description, accessibility implication
-```
-
-**Example:**
-
-```typescript
-/**
- * @stateRules
- * - "disabled": when true, click handlers do not fire, aria-disabled=true, button is not focusable unless focusableWhenDisabled=true
- * - "selected": implies aria-pressed=true, should only be used for true toggle actions (not momentary/transient actions)
- * - "focusableWhenDisabled": when true, disabled button remains in tab order and can be focused (improves a11y for screen readers)
- */
+## Don't
 ```
 
-**Why:** Developers need to understand the semantic implications of using state props, especially for accessibility.
+All four sections are required. Do/Don't hold real, minimal code.
 
----
+## Build
 
-### `@tokenConstraints`
-
-Define which design tokens are required for each category (color, spacing, radius, etc.).
-
-**Format:**
-
-```
-- category: requirement; allowed values (if specific)
-```
-
-**Example:**
-
-```typescript
-/**
- * @tokenConstraints
- * - color: use semantic tokens only (primary, secondary, positive, negative, warning, or inherit for semantic)
- * - size: use size tokens (xs, sm, md, lg, xl), never raw px values
- * - radius: use radius tokens (none, sm, md, lg), never raw px values
- */
-```
-
-**Why:** Validation can check that consumers don't use raw hex/rgb values or hardcoded px. Token rules are aggregated into AGENTS.md.
-
----
-
-### `@antiPatterns`
-
-Common mistakes and the correct approach. This is critical for agent guidance.
-
-**Format:**
-
-```
-- Problem statement; why it's wrong — correct approach or alternative
-```
-
-**Example:**
-
-```typescript
-/**
- * @antiPatterns
- * - Do not invent custom variant names; only use defined variants — Use one of: primary, subtle, ghost, {color}Subtle, {color}Ghost, semantic
- * - Do not use "selected" for momentary/transient button states; it implies aria-pressed toggle semantics — Use selected only for true toggle buttons (e.g., view mode toggles)
- * - Do not use raw color hex/rgb values; use color tokens instead — Replace #FF0000 with variant="negative" or color token
- * - Do not apply custom CSS directly; use the classes prop and theme tokens — Use className or classes prop with design tokens
- * - Do not mix semantic color variants with explicit color prop; choose one approach — Choose either variant="negative" OR color="..." but not both
- */
-```
-
-**Key:** Include concrete corrective guidance separated by `—` (em-dash). This appears as "✓ Instead:" in AGENTS.md.
-
-**Why:** Anti-patterns teach agents what NOT to do. Without corrections, guidance is incomplete.
-
----
-
-### `@a11y`
-
-Accessibility requirements and implications.
-
-**Format:**
-
-```
-- aspect: requirement and implications
-```
-
-**Example:**
-
-```typescript
-/**
- * @a11y
- * - role: button (or implicit if component="button")
- * - name: must have accessible name via children or aria-label
- * - disabled state: uses aria-disabled=true; when disabled without focusableWhenDisabled, not in tab order
- * - selected state: uses aria-pressed when selected prop is set, for toggle buttons
- * - required: focusableWhenDisabled should be true when a disabled button needs to be discoverable by assistive tech
- */
-```
-
-**Why:** Accessibility is not optional. Agents need to know which props have a11y implications and what attributes are automatically set.
-
----
-
-### `@validationRules`
-
-Rules that validation (`uikit-tools validate`) should enforce in consumer code.
-
-**Format:**
-
-```
-- rule statement: error|warn|info
-```
-
-**Example:**
-
-```typescript
-/**
- * @validationRules
- * - variant must be one of the defined HvButtonVariant values (no custom variants): error
- * - color must not be a raw hex/rgb value; use tokens instead: error
- * - selected should only be used with toggle-like interactions; flag if used with momentary actions: warn
- * - disabled + focusableWhenDisabled trade-off: warn if both true for extended periods in UI: info
- */
-```
-
-**Why:** Validation catches mistakes before code review. Each rule includes severity level.
-
----
-
-## Complete Example
-
-Here's the HvButton contract, used as the template:
-
-```typescript
-/**
- * Button component is used to trigger an action or event.
- *
- * @variantSemantics
- * - `primary`: main action of a view, form, or dialog; filled style, the default variant
- * - `subtle`: secondary action, low visual weight
- * - `ghost`: tertiary, minimal emphasis
- * - `{color}Subtle`: secondary emphasis for semantic colors
- * - `{color}Ghost`: tertiary for semantic colors
- * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
- *
- * @stateRules
- * - "disabled": when true, click handlers do not fire, aria-disabled=true, button is not focusable unless focusableWhenDisabled=true
- * - "selected": implies aria-pressed=true, should only be used for true toggle actions (not momentary/transient actions)
- * - "focusableWhenDisabled": when true, disabled button remains in tab order and can be focused (improves a11y for screen readers)
- *
- * @tokenConstraints
- * - color: use semantic tokens only (primary, secondary, positive, negative, warning, or inherit for semantic)
- * - size: use size tokens (xs, sm, md, lg, xl), never raw px values
- * - radius: use radius tokens (none, sm, md, lg), never raw px values
- *
- * @antiPatterns
- * - Do not invent custom variant names; only use defined variants — Use one of: primary, subtle, ghost, {color}Subtle, {color}Ghost, semantic
- * - Do not use "selected" for momentary/transient button states; it implies aria-pressed toggle semantics — Use selected only for true toggle buttons (e.g., view mode toggles)
- * - Do not use raw color hex/rgb values; use color tokens instead — Replace #FF0000 with variant="negative" or color token
- * - Do not apply custom CSS directly; use the classes prop and theme tokens — Use className or classes prop with design tokens
- * - Do not mix semantic color variants with explicit color prop; choose one approach — Choose either variant="negative" OR color="..." but not both
- *
- * @a11y
- * - role: button (or implicit if component="button")
- * - name: must have accessible name via children or aria-label
- * - disabled state: uses aria-disabled=true; when disabled without focusableWhenDisabled, not in tab order
- * - selected state: uses aria-pressed when selected prop is set, for toggle buttons
- * - required: focusableWhenDisabled should be true when a disabled button needs to be discoverable by assistive tech
- *
- * @validationRules
- * - variant must be one of the defined HvButtonVariant values (no custom variants): error
- * - color must not be a raw hex/rgb value; use tokens instead: error
- * - selected should only be used with toggle-like interactions; flag if used with momentary actions: warn
- * - disabled + focusableWhenDisabled trade-off: warn if both true for extended periods in UI: info
- */
-export const HvButton = fixedForwardRef(function HvButton<...>(props, ref) {
-  // implementation
-});
-```
-
----
-
-## Key Rules
-
-1. **Be specific.** "Use theme.colors.primary" is better than "use colors."
-2. **Include corrective guidance in anti-patterns.** Bad: "Don't use custom variants." Good: "Don't use custom variants — use one of: primary, subtle, ghost, ..."
-3. **Link to accessibility.** Every state or prop with a11y implications must mention it.
-4. **Validate the important stuff.** Mark contract violations as `error`, style suggestions as `warn`, informational as `info`.
-5. **Use em-dashes for corrections.** Format: `Problem; reason — solution` enables proper extraction.
-
----
-
-## Usage
-
-Contract tags are extracted when core builds:
-
-```bash
-npm run build -w packages/core
-# Runs: node scripts/extract-contracts.js
-# Output: packages/core/dist/component-metadata.json
-```
-
-Consumers then use init to generate AGENTS.md:
-
-```bash
-npm install @pentaho/uikit-react-core @pentaho/uikit-tools
-npx @pentaho/uikit-tools init .
-# Output: AGENTS.md (with patterns, anti-patterns, token rules, validation commands)
-```
-
----
-
-## Questions?
-
-- For component implementation: See [component.instructions.md](component.instructions.md)
-- For testing: See [test.instructions.md](test.instructions.md)
-- For stories: See [stories.instructions.md](stories.instructions.md)
+`npm run build:agents -w packages/core` (part of `build`) writes
+`dist/agents/metadata.json` and `dist/agents/guide.md`. It fails on type errors
+in contracts, unknown variants, props, rule ids, components or parts, and
+malformed rules. `npm run check:agents -w packages/core` validates without writing.

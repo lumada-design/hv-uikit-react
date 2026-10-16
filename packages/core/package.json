@@ -23,8 +23,9 @@
     "url": "https://github.com/pentaho/hv-uikit-react/issues"
   },
   "scripts": {
-    "extract:contracts": "node scripts/extract-contracts.js",
-    "build": "npm run extract:contracts && vite build",
+    "build": "vite build && npm run build:agents",
+    "build:agents": "node scripts/build-agents.ts",
+    "check:agents": "node scripts/build-agents.ts --check",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "clean": "rimraf dist",
@@ -64,7 +65,9 @@
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "@types/react-window": "^1.8.8"
+    "@types/react-window": "^1.8.8",
+    "react-docgen-typescript": "^2.4.0",
+    "yaml": "^2.9.0"
   },
   "files": [
     "dist"
@@ -77,6 +80,7 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./agents/*": "./dist/agents/*",
     "./package.json": "./package.json"
   },
   "publishConfig": {
