@@ -1,0 +1,22 @@
+{
+  "id": "p2-glossary-term",
+  "source": "Pentaho-like screen: Business Glossary term detail",
+  "title": "Glossary term detail page",
+  "prompt": "Ticket: Glossary term page\n\nAdd a page at /glossary/:termId that shows one business glossary term. Use the glossary API in src/api/glossary.ts; the term \"gt-1\" exists for testing.\n\n- The top of the page shows the term name, its status, and the actions \"Edit\" (for now it only logs to the console) and \"Delete term\".\n- Below, three tabs:\n  - Overview: definition, steward, domain, synonyms, and when the term was created and last updated.\n  - Related assets: the assets linked to the term, with their type.\n  - History: who changed what, and when.\n- Deleting a term cannot be undone. After deleting, go to /glossary (that page is out of scope).\n\nThe design mocks are mock.png (the page) and mock-delete.png (deleting a term) in the project root.",
+  "mocks": ["mock.png", "mock-delete.png"],
+  "files": "files",
+  "screens": [
+    { "path": "/glossary/gt-1", "name": "term" },
+    { "path": "/glossary/gt-1", "click": "Delete term", "name": "delete" }
+  ],
+  "rules": [
+    "layout/page",
+    "destructive/confirm",
+    "date/format",
+    "status/semantic-color",
+    "tokens/color",
+    "tokens/space",
+    "components/prefer"
+  ],
+  "notes": "Seeded off-system mock (disclosed in the report, never to the agent): the status is a pill in a raw hex green, the page uses off-scale 13px/30px spacing, and the delete confirmation is a warning-status dialog. Measures whether context and checks keep agents from copying off-system details from a design."
+}

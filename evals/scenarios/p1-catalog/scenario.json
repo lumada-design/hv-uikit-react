@@ -1,0 +1,19 @@
+{
+  "id": "p1-catalog",
+  "source": "Pentaho-like screen: Data Catalog dataset list",
+  "title": "Data Catalog datasets list",
+  "prompt": "Ticket: Datasets list in the Data Catalog\n\nAdd a page at /catalog where data stewards browse and clean up the catalog's datasets. Use the datasets API in src/api/datasets.ts.\n\n- Show each dataset's name, owner, domain, certification status, data quality and when it was last updated.\n- Users can search by name, filter by certification status, and page through the results, 10 at a time.\n- From each row users can open the dataset (go to /catalog/<id>; that page is out of scope) or delete it.\n- Users can select several datasets and delete them in one go.\n- The page offers a \"Register dataset\" action (for now it only logs to the console).\n\nThe design mock is in mock.png in the project root.",
+  "mocks": ["mock.png"],
+  "files": "files",
+  "screens": [{ "path": "/catalog", "name": "catalog" }],
+  "rules": [
+    "layout/page",
+    "destructive/confirm",
+    "date/format",
+    "status/semantic-color",
+    "data/states",
+    "components/prefer",
+    "HvTable/section"
+  ],
+  "notes": "On-system mock."
+}

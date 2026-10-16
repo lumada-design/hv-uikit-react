@@ -1,0 +1,18 @@
+{
+  "id": "s2-cardview",
+  "source": "HVUIKIT-7482 scenario 2 (Bruno), prompt verbatim",
+  "title": "AssetEvent card view and detail view",
+  "prompt": "Create a /cardview Page for listing the AssetEvents in a list of Cards.\nEach card must have a \"View\" button link, that navigates to a dedicated view for each AssetEvent",
+  "screens": [
+    { "path": "/cardview", "name": "cardview" },
+    { "path": "/cardview", "click": "View", "name": "detail" }
+  ],
+  "rules": [
+    "layout/page",
+    "components/prefer",
+    "date/format",
+    "status/semantic-color",
+    "tokens/space"
+  ],
+  "notes": "Bruno's goal: HvCard layout and pagination, navigation, visual quality of the detail view."
+}

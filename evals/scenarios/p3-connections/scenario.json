@@ -1,0 +1,21 @@
+{
+  "id": "p3-connections",
+  "source": "Pentaho-like screen: data source connections",
+  "title": "Data source connections",
+  "prompt": "Ticket: Data source connections page\n\nAdd a page at /connections where admins see and manage the data sources the platform connects to. Use the connections API in src/api/connections.ts.\n\n- Show each connection as a card: name, type, host, connection status, and when it last synced successfully (some never synced).\n- Each card offers \"Test connection\" (show whether it worked) and \"Remove\". Removing a connection cannot be undone.\n- The page offers an \"Add connection\" action (for now it only logs to the console).\n- When there are no connections, tell the user how to add one.\n\nThe design mock is in mock.png in the project root.",
+  "mocks": ["mock.png"],
+  "files": "files",
+  "screens": [
+    { "path": "/connections", "name": "connections" },
+    { "path": "/connections", "click": "Remove", "name": "remove" }
+  ],
+  "rules": [
+    "layout/page",
+    "destructive/confirm",
+    "date/format",
+    "components/prefer",
+    "status/semantic-color",
+    "data/states"
+  ],
+  "notes": "On-system mock."
+}

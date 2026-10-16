@@ -1,0 +1,16 @@
+{
+  "id": "s1-crud",
+  "source": "HVUIKIT-7482 scenario 1 (Bruno), prompt verbatim",
+  "title": "CRUD AssetEvent page",
+  "prompt": "Create an /assets Page for the CRUD operations for AssetEvent.\n1. List the AssetEvents in a paginated table.\n2. Add actions for editing and removing entries.\n3. Add a create button on top.\nCreate & Update actions are done in a Dialog form.",
+  "screens": [{ "path": "/assets", "name": "assets" }],
+  "rules": [
+    "layout/page",
+    "destructive/confirm",
+    "date/format",
+    "components/prefer",
+    "data/states",
+    "HvTable/section"
+  ],
+  "notes": "Bruno's goal: HvTable + HvPagination, HvDialog forms and confirmations, correct API and form usage."
+}

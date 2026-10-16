@@ -1,0 +1,9 @@
+{
+  "id": "s3-landing",
+  "source": "HVUIKIT-7482 scenario 3 (Bruno), prompt verbatim",
+  "title": "Landing page",
+  "prompt": "Create a /home Landing Page with a brief summary, and navigation links for the /assets and /cardview pages. Make it a beautiful looking landing page",
+  "screens": [{ "path": "/home", "name": "home" }],
+  "rules": ["layout/page", "tokens/color", "tokens/space", "components/prefer"],
+  "notes": "Visual-freedom control. Bruno's run used emoji (no icon set loaded) and skipped HvCard/HvTag; the template now ships the icon set."
+}
