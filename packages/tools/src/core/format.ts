@@ -63,7 +63,7 @@ export function formatComponent(m: AgentsMetadata, c: ComponentInfo): string {
     out.push("", "## Component rules");
     for (const ap of c.antiPatterns) {
       out.push(
-        `- \`${ap.id}\` — Don't: ${ap.dont} Why: ${ap.why} Instead: ${ap.instead}`,
+        `- \`${ap.id}\` (${ap.enforcement}) — Don't: ${ap.dont} Why: ${ap.why} Instead: ${ap.instead}`,
       );
     }
   }
@@ -89,7 +89,7 @@ export function formatRule(m: AgentsMetadata, r: RuleLookup): string {
       header(m),
       `# ${ap.id}`,
       "",
-      `Component rule of ${r.component}. Look up the component with \`info ${r.component}\`.`,
+      `Component rule of ${r.component} (${ap.enforcement}). Look up the component with \`info ${r.component}\`.`,
       "",
       `**Don't:** ${ap.dont}`,
       "",

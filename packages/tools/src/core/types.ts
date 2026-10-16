@@ -18,6 +18,7 @@ export interface AntiPatternEntry {
   dont: string;
   why: string;
   instead: string;
+  enforcement: "checked" | "context";
 }
 
 export interface ComponentEntry {
@@ -43,6 +44,8 @@ export interface RuleEntry {
   components: string[];
   enforcement: "checked" | "context";
   status: "example" | "approved";
+  /** One line: what to change. Required when enforcement is "checked"; shown by checks. */
+  fix?: string;
   rule: string;
   rationale: string;
   do: string;

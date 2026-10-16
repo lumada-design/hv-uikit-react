@@ -63,7 +63,7 @@ export function agentsBlock(guidePointer: string): string {
     "",
     "It lists the design rules and how to look up components and rules in the installed",
     `version (\`npx uikit-tools info <Component>\`, \`npx uikit-tools rule <id>\`, or the \`${SERVER_NAME}\``,
-    'MCP server). Run `npx uikit-tools validate "src/**/*.tsx"` on the files you change.',
+    "MCP server). Run `npx uikit-tools check` before you finish and fix what it reports.",
     END,
   ].join("\n");
 }

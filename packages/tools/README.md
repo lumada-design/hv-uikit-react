@@ -14,10 +14,47 @@ npx uikit-tools info                    # components with guidance
 npx uikit-tools rule destructive/confirm
 npx uikit-tools rule HvButton/variant   # component rules use <Component>/<id>
 npx uikit-tools rule                    # all design rules
-npx uikit-tools validate "src/**/*.tsx" # failures reported by rule id
+npx uikit-tools check                   # every checked rule over src: file, line, rule id, fix
 ```
 
-Add `--json` to `info`, `rule` or `validate` for JSON.
+Add `--json` to `info`, `rule` or `check` for JSON.
+
+## Checks
+
+`check` enforces every rule the installed UI Kit marks `checked`: design rules
+(e.g. `destructive/confirm`) and component rules (e.g. `HvButton/variant`). It
+refuses to run (exit 3) if a checked rule has no check or a check has no checked
+rule. Modes:
+
+- default: prints `file:line rule: detail` and the fix; exits 1 on violations;
+- `--report <file>`: writes the JSON report (violations, counts per rule, and the
+  choice made for each rule) and exits 0, for scoring a run;
+- `--gate`: for an agent host's stop hook. On violations it prints them to
+  stderr and exits 2, so the agent keeps working; it lets the agent stop when
+  the checks pass or after `--max-rounds` (default 3) correction rounds. For
+  Claude Code, in `.claude/settings.json`:
+
+  ```json
+  {
+    "hooks": {
+      "Stop": [
+        {
+          "hooks": [
+            {
+              "type": "command",
+              "command": "npx --no-install uikit-tools check --gate"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  ```
+
+Checks live one per file in `src/checks/rules/<rule id>.ts` and are found by
+path, so adding a checked rule takes its metadata entry (`enforcement: checked`
+and a `fix`) and one check file. Checks parse each file with the TypeScript
+compiler and look at one file at a time.
 
 ## Set up agents in a project
 

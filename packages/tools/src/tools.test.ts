@@ -13,6 +13,13 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
+import {
+  checkedRules,
+  loadChecks,
+  parityProblems,
+  runChecks,
+} from "./checks/engine.js";
+import { runGate } from "./commands/check.js";
 import { agentsBlock, runInit, upsertBlock } from "./commands/init.js";
 import { createServer } from "./commands/mcp.js";
 import {
@@ -22,7 +29,6 @@ import {
   loadMetadata,
   query,
 } from "./core/index.js";
-import { validateFile, validateFiles } from "./validation/validator.js";
 
 const GUIDE_PATH =
   "node_modules/@pentaho/uikit-react-core/dist/agents/guide.md";
@@ -273,46 +279,148 @@ describe("init", () => {
   });
 });
 
-describe("validate", () => {
-  it("reports the POC fixture's violations by rule id with the rule text", () => {
+describe("check", () => {
+  const app = path.join(toolsDir, "test-fixtures", "app");
+
+  it("has a check for every checked rule and no check without one", async () => {
     const { metadata } = loadMetadata(consumer);
-    const violations = validateFiles(
-      [path.join(toolsDir, "test-fixtures/validation-violations.tsx")],
-      metadata,
+    const checks = await loadChecks();
+    expect(parityProblems(checks, metadata)).toEqual([]);
+    expect(checks.map((c) => c.rule).toSorted()).toEqual(
+      checkedRules(metadata),
     );
-    const ids = new Set(violations.map((v) => v.ruleId));
-    expect([...ids].toSorted()).toEqual([
-      "HvAvatar/alt",
-      "HvAvatar/group-background",
-      "HvAvatar/image-and-initials",
-      "HvAvatar/variant",
-      "HvButton/icon-name",
-      "HvButton/selected-toggle",
-      "HvButton/variant",
-      "tokens/color",
-    ]);
-    const color = violations.find((v) => v.ruleId === "tokens/color")!;
-    expect(color.ruleText).toContain(metadata.rules["tokens/color"].title);
+    expect(checkedRules(metadata)).toEqual(
+      expect.arrayContaining([
+        "components/prefer",
+        "date/format",
+        "destructive/confirm",
+        "layout/page",
+        "tokens/color",
+        "tokens/space",
+      ]),
+    );
   });
 
-  it("reads whole tags across lines, arrow functions and spreads", () => {
+  it("reports every checked rule on the off-system fixture, by file, line, rule and fix", async () => {
     const { metadata } = loadMetadata(consumer);
-    const file = path.join(consumer, "Tags.tsx");
+    const report = runChecks(
+      await loadChecks(),
+      metadata,
+      ["src/pages/OffSystem.tsx"],
+      app,
+    );
+    const found = report.violations.map((v) => `${v.line} ${v.rule}`);
+    expect(found).toEqual([
+      "18 date/format",
+      "21 destructive/confirm",
+      "23 layout/page",
+      "23 tokens/space",
+      "23 tokens/color",
+      "24 components/prefer",
+      "24 components/prefer",
+      "25 HvButton/variant",
+      "26 HvButton/icon-name",
+      "26 destructive/confirm",
+      "29 components/prefer",
+      "30 HvAvatar/alt",
+      "31 HvAvatar/variant",
+      "32 components/prefer",
+      "33 components/prefer",
+      "34 date/format",
+      "35 HvTable/section",
+      "39 destructive/confirm",
+      "43 destructive/confirm",
+      "46 tokens/color",
+      "46 tokens/space",
+    ]);
+    expect(Object.values(report.counts).every((n) => n > 0)).toBe(true);
+    const warning = report.violations.find((v) => v.line === 39)!;
+    expect(warning.file).toBe("src/pages/OffSystem.tsx");
+    expect(warning.detail).toBe('delete dialog uses variant="warning"');
+    const space = report.violations.find((v) => v.rule === "tokens/space")!;
+    expect(space.fix).toBe(metadata.rules["tokens/space"].fix);
+  });
+
+  it("passes the on-system page from the 7487 run", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const report = runChecks(
+      await loadChecks(),
+      metadata,
+      ["src/pages/OnSystem.tsx"],
+      app,
+    );
+    expect(report.violations).toEqual([]);
+    expect(report.choices["destructive/confirm"]).toContain("HvDialog");
+  });
+
+  it("gate: returns violations for up to 3 rounds, then lets the agent stop", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const report = runChecks(
+      await loadChecks(),
+      metadata,
+      ["src/pages/OffSystem.tsx"],
+      app,
+    );
+    const state = path.join(consumer, "gate.json");
+    const codes = [1, 2, 3, 4].map(() => runGate(report, state, 3).exitCode);
+    expect(codes).toEqual([2, 2, 2, 0]);
+    const final = JSON.parse(fs.readFileSync(state, "utf8"));
+    expect(final.rounds).toHaveLength(3);
+    expect(final.passed).toBe(false);
+    const clean = runChecks(
+      await loadChecks(),
+      metadata,
+      ["src/pages/OnSystem.tsx"],
+      app,
+    );
+    const fresh = path.join(consumer, "gate-clean.json");
+    expect(runGate(clean, fresh, 3).exitCode).toBe(0);
+    expect(JSON.parse(fs.readFileSync(fresh, "utf8")).passed).toBe(true);
+  });
+
+  it("adds a checked rule with only its metadata entry and its check file", async () => {
+    const { metadata } = loadMetadata(consumer);
+    const withRule = structuredClone(metadata);
+    withRule.rules["copy/no-lorem"] = {
+      ...metadata.rules["tokens/color"],
+      id: "copy/no-lorem",
+      title: "No placeholder copy",
+      fix: "Write real copy.",
+    };
+    // A copy of the checks plus one new file: nothing else changes.
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), "checks-"));
+    fs.cpSync(path.join(toolsDir, "src", "checks"), root, { recursive: true });
+    const dir = path.join(root, "rules");
+    fs.mkdirSync(path.join(dir, "copy"));
     fs.writeFileSync(
-      file,
-      [
-        "<HvButton onClick={() => remove(id)} icon>x</HvButton>",
-        "<HvButton",
-        "  onClick={() => { if (a > b) go(); }}",
-        '  style={{ color: "#f00" }}',
-        "  {...rest}",
-        ">Save</HvButton>",
-        "<HvButtonBase icon />",
-      ].join("\n"),
+      path.join(dir, "copy", "no-lorem.ts"),
+      `import ts from "typescript";
+export default {
+  rule: "copy/no-lorem",
+  run(ctx: any) {
+    const findings = [...ctx.walk()]
+      .filter((n: any) => ts.isJsxText(n) && /lorem/i.test(n.text))
+      .map((node: any) => ({ node, detail: "placeholder copy" }));
+    return { findings, choices: [] };
+  },
+};
+`,
     );
-    const found = validateFile(file, metadata).map(
-      (v) => `${v.line} ${v.ruleId}`,
+    const target = path.join(consumer, "lorem");
+    fs.mkdirSync(path.join(target, "src"), { recursive: true });
+    fs.writeFileSync(
+      path.join(target, "src", "A.tsx"),
+      "export const A = () => <p>Lorem ipsum</p>;\n",
     );
-    expect(found).toEqual(["1 HvButton/icon-name", "2 tokens/color"]);
+
+    const checks = await loadChecks(dir);
+    expect(parityProblems(checks, metadata)).toEqual([
+      'check "copy/no-lorem" has no rule in @pentaho/uikit-react-core@7.0.0',
+    ]);
+    expect(parityProblems(checks, withRule)).toEqual([]);
+    const report = runChecks(checks, withRule, undefined, target);
+    expect(report.violations.map((v) => `${v.rule} ${v.fix}`)).toContain(
+      "copy/no-lorem Write real copy.",
+    );
   });
 });

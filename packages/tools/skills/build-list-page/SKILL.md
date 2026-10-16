@@ -59,11 +59,11 @@ column shows dates, `status/semantic-color` when a column shows status, and the
 ## 5. Check and fix by rule id
 
 ```bash
-npx uikit-tools validate "src/**/*.tsx"
+npx uikit-tools check
 ```
 
 For each failure, run `npx uikit-tools rule <id>` with the reported id, fix the
-code, and validate again until there are no errors. Checks cover only part of
+code, and run the check again until there are no errors. Checks cover only part of
 the rules, so a clean run is not enough: before finishing, go through the rule
 ids from step 3 and confirm the code follows each one.
 

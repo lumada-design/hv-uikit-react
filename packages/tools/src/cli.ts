@@ -2,10 +2,10 @@
 import { createRequire } from "node:module";
 import { program } from "commander";
 
+import { check } from "./commands/check.js";
 import { init } from "./commands/init.js";
 import { info, rule } from "./commands/lookup.js";
 import { mcp } from "./commands/mcp.js";
-import { validate } from "./commands/validate.js";
 
 const { version } = createRequire(import.meta.url)("../package.json") as {
   version: string;
@@ -14,7 +14,7 @@ const { version } = createRequire(import.meta.url)("../package.json") as {
 program
   .name("uikit-tools")
   .description(
-    "HV UI Kit tools: look up components and rules, validate code, set up agents",
+    "HV UI Kit tools: look up components and rules, check code, set up agents",
   )
   .version(version);
 
@@ -35,12 +35,22 @@ program
   .action(rule);
 
 program
-  .command("validate <paths...>")
+  .command("check [patterns...]")
   .description(
-    "Check code against the rules of the installed UI Kit; failures are reported by rule id",
+    "Enforce every checked UI Kit rule over the app (default: src); reports file, line, rule id and fix",
   )
-  .option("--json", "Output JSON")
-  .action(validate);
+  .option("--json", "Output the report as JSON")
+  .option(
+    "--report <file>",
+    "Write the JSON report to a file and exit 0 (scoring)",
+  )
+  .option(
+    "--gate",
+    "Stop-hook mode: exit 2 with violations until they pass or rounds run out",
+  )
+  .option("--max-rounds <n>", "Correction rounds in gate mode", "3")
+  .option("--state <file>", "Gate state file", ".uikit-check/gate.json")
+  .action(check);
 
 program
   .command("init [targetDir]")

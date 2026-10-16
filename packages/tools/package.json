@@ -1,7 +1,7 @@
 {
   "name": "@pentaho/uikit-tools",
   "version": "1.0.0",
-  "description": "HV UI Kit tools for consumers: look up components and rules (CLI and MCP), validate code, point agents at the UI Kit guide",
+  "description": "HV UI Kit tools for consumers: look up components and rules (CLI and MCP), check code against the rules, point agents at the UI Kit guide",
   "license": "Apache-2.0",
   "type": "module",
   "exports": {
@@ -24,14 +24,14 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.7.0",
     "commander": "^11.1.0",
-    "glob": "^10.3.0"
+    "glob": "^11.0.0",
+    "typescript": "^5.9.0"
   },
   "peerDependencies": {
     "@pentaho/uikit-react-core": ">=7.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.3.0",
     "vitest": "^1.0.0",
     "rimraf": "^5.0.0"
   },
