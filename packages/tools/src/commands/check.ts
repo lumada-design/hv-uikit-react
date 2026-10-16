@@ -66,7 +66,9 @@ function recordGateError(stateFile: string, error: string) {
 function gateMessage(report: CheckReport, round: number, max: number): string {
   return [
     `uikit-tools check: ${report.violations.length} violation(s) of UI Kit rules (correction round ${round} of ${max}).`,
-    "Fix them, then finish. Look up a rule with `npx uikit-tools rule <id>`.",
+    // Each violation carries its fix; the message names no other tool, so it
+    // works the same whether or not the project has the lookups set up.
+    "Fix them, then finish.",
     "",
     formatText(report).trimEnd(),
   ].join("\n");

@@ -46,11 +46,15 @@ One scenario × setup × model × repetition:
    - the guide names `uikit-tools check`, so a `context` agent may run the
      checks itself. That is part of "context"; the report counts it
      (self-check) so its effect can be told apart from the gate's.
-   - each gate message carries the rule's fix and names `uikit-tools rule <id>`,
-     so a `checks` agent gets some rule text, but only for rules it broke.
-   - the lookups CLI is installed in every setup (it ships with the UI Kit);
-     without the guide, nothing tells the agent it exists. The report counts
-     lookups per run.
+   - each gate message carries each violation's fix, so a `checks` agent gets
+     some rule text, but only for rules it broke.
+
+   Setups without the guide (`baseline`, `checks`) get the UI Kit as it was
+   before it shipped agent context: no guide or metadata in core and no
+   `@pentaho/uikit-tools`. Without this, agents find the guide in
+   `node_modules` on their own (they did, in the first runs). The gate runs
+   the work area's base install on the run's files, and a run whose agent
+   reaches that install is invalid.
 
 3. **Agent.** Headless Claude Code (`claude -p`) with the ticket as the prompt,
    a pinned model ID (`lib/paths.ts`), a fresh session, project settings only

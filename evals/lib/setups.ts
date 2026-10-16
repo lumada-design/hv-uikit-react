@@ -5,7 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { sh } from "./paths.ts";
+import { BASE, sh } from "./paths.ts";
 
 export interface Setup {
   id: string;
@@ -74,6 +74,58 @@ export const SETUPS: Record<string, Setup> = {
 
 export const MAX_GATE_ROUNDS = 3;
 
+const TOOLS = "@pentaho/uikit-tools";
+/** What the UI Kit ships for agents: the guide and metadata in core, and the tools package. */
+const AGENT_FILES = [
+  "node_modules/@pentaho/uikit-react-core/dist/agents",
+  `node_modules/${TOOLS}`,
+  "node_modules/.bin/uikit-tools",
+];
+
+/**
+ * Setups without the guide get the UI Kit as it was before it shipped agent
+ * context: no guide or metadata in core, no tools package (nor its entry in
+ * package.json, so `npx` has nothing to find). Otherwise agents find the
+ * guide in node_modules on their own and the baseline is not one.
+ */
+function stripAgentFiles(dir: string) {
+  for (const f of AGENT_FILES)
+    fs.rmSync(path.join(dir, f), { recursive: true, force: true });
+  const pkgFile = path.join(dir, "package.json");
+  const pkg = JSON.parse(fs.readFileSync(pkgFile, "utf8"));
+  for (const field of ["dependencies", "devDependencies", "overrides"])
+    delete pkg[field]?.[TOOLS];
+  fs.writeFileSync(pkgFile, `${JSON.stringify(pkg, null, 2)}\n`);
+  const lockFile = path.join(dir, "package-lock.json");
+  const lock = JSON.parse(fs.readFileSync(lockFile, "utf8"));
+  delete lock.packages?.[`node_modules/${TOOLS}`];
+  for (const field of ["dependencies", "devDependencies"])
+    delete lock.packages?.[""]?.[field]?.[TOOLS];
+  fs.writeFileSync(lockFile, `${JSON.stringify(lock, null, 2)}\n`);
+}
+
+/** Put the agent files back after the agent is done, so the run can be scored like every other. */
+export function restoreAgentFiles(dir: string) {
+  for (const f of AGENT_FILES) {
+    if (fs.existsSync(path.join(dir, f))) continue;
+    sh("cp", ["-a", path.join(BASE, f), path.join(dir, f)], { cwd: dir });
+  }
+}
+
+/**
+ * The gate runs the base install's tools (same UI Kit, same checks) on the
+ * run's files, so it works in setups whose own install has no tools or
+ * metadata, and is identical in every gated setup.
+ */
+const gateCommand = (dir: string) =>
+  [
+    `cd ${JSON.stringify(BASE)} &&`,
+    `node node_modules/${TOOLS}/dist/cli.js check --gate`,
+    `--max-rounds ${MAX_GATE_ROUNDS}`,
+    `--state ${JSON.stringify(path.join(dir, ".uikit-check", "gate.json"))}`,
+    JSON.stringify(path.join(dir, "src/**/*.{tsx,jsx,ts,js}")),
+  ].join(" ");
+
 export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
   const claudeDir = path.join(dir, ".claude");
   fs.mkdirSync(claudeDir, { recursive: true });
@@ -96,6 +148,8 @@ export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
     fs.rmSync(mcpFile, { force: true });
   }
 
+  if (!setup.guide) stripAgentFiles(dir);
+
   if (setup.skill) {
     const from = path.join(
       dir,
@@ -117,7 +171,7 @@ export function applySetup(dir: string, setup: Setup): { mcpConfig?: string } {
           hooks: [
             {
               type: "command",
-              command: `npx --no-install uikit-tools check --gate --max-rounds ${MAX_GATE_ROUNDS} --state .uikit-check/gate.json`,
+              command: gateCommand(dir),
               timeout: 120,
             },
           ],

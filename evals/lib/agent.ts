@@ -60,8 +60,10 @@ export interface AgentResult {
     mcp: number;
     /** Skill invocations. */
     skill: number;
-    /** Reads of the installed guide or metadata (node_modules/@pentaho/uikit-react-core/agents/…). */
+    /** Reads of the installed guide or metadata (…/uikit-react-core/dist/agents/…). */
     guideReads: number;
+    /** Tool calls that touched the work area's base install (where the gate's tools live): should be 0. */
+    baseReads: number;
   };
 }
 
@@ -73,6 +75,7 @@ function toolUsage(lines: Record<string, any>[]) {
     mcp: 0,
     skill: 0,
     guideReads: 0,
+    baseReads: 0,
   };
   for (const line of lines) {
     if (line.type !== "assistant") continue;
@@ -84,15 +87,14 @@ function toolUsage(lines: Record<string, any>[]) {
       if (/^mcp__.*uikit/i.test(name)) uikit.mcp++;
       if (name === "Skill") uikit.skill++;
       const text = JSON.stringify(input);
-      if (/uikit-react-core\/agents\//.test(text) && name !== "Bash")
+      if (/agents\/(guide\.md|metadata\.json)|dist\/agents\b/.test(text))
         uikit.guideReads++;
+      if (/uikit-evals\/base\b/.test(text)) uikit.baseReads++;
       if (name === "Bash") {
         for (const m of String(input.command ?? "").matchAll(
           /uikit-tools\s+([a-z-]+)/g,
         ))
           uikit.cli[m[1]] = (uikit.cli[m[1]] ?? 0) + 1;
-        if (/uikit-react-core\/agents\//.test(String(input.command ?? "")))
-          uikit.guideReads++;
       }
     }
   }

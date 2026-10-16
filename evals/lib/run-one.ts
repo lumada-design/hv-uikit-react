@@ -24,7 +24,7 @@ import {
   type Screen,
 } from "./app.ts";
 import { MODELS, RESULTS, RUNS, SCENARIOS, sh } from "./paths.ts";
-import { applySetup, SETUPS } from "./setups.ts";
+import { applySetup, restoreAgentFiles, SETUPS } from "./setups.ts";
 
 export interface Scenario {
   id: string;
@@ -138,6 +138,7 @@ export async function runOne(
 
   // What the agent changed, before scoring adds anything (dist/ and .uikit-check/ are ignored).
   const changed = changedSince(dir);
+  if (!setup.guide) restoreAgentFiles(dir);
 
   const checkFile = path.join(resDir, "check.json");
   const checkOut = sh(
@@ -176,6 +177,10 @@ export async function runOne(
   if (!changed.some((f) => /^src\/.*\.[jt]sx$/.test(f)))
     invalid.push("no UI file changed");
   if (gateError) invalid.push(`gate: ${gateError}`);
+  if (agent.uikit.baseReads > 0)
+    invalid.push(
+      "agent reached the work area's base install (the gate's tools)",
+    );
 
   const result: RunResult = {
     ...spec,
