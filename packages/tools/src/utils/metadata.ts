@@ -37,10 +37,18 @@ export interface ValidationRule {
   enforcement: "error" | "warn" | "info";
 }
 
+export interface ComponentProp {
+  name: string;
+  type: string;
+  required: boolean;
+  description: string;
+}
+
 export interface ComponentContract {
   name: string;
   displayName: string;
   purpose: string;
+  props?: ComponentProp[];
   variantSemantics?: VariantSemantics[];
   stateRules?: StateRule[];
   tokenConstraints?: TokenConstraint[];

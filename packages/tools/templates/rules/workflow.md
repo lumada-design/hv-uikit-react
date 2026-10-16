@@ -12,6 +12,7 @@ The init command registers the server in `.vscode/mcp.json`. Use the MCP tools e
 
 **Returns:**
 
+- Props with their types, whether they are required, and descriptions
 - All available variants and their semantic meaning
 - State rules (when to use `checked`, `disabled`, `selected`, etc.)
 - Token constraints (allowed color/size values)

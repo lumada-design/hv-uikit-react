@@ -22,20 +22,22 @@ List all valid variants and their semantic meaning. Used to teach agents which v
 **Format:**
 
 ```
-- `variantName`: semantic meaning
+- "variantName": semantic meaning
 ```
+
+Variant names must be in double quotes; the extractor does not read backtick names.
 
 **Example:**
 
 ```typescript
 /**
  * @variantSemantics
- * - `primary`: main action of a view, form, or dialog; filled style, the default variant
- * - `subtle`: secondary action, low visual weight
- * - `ghost`: tertiary, minimal emphasis
- * - `{color}Subtle`: secondary emphasis for semantic colors
- * - `{color}Ghost`: tertiary for semantic colors
- * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
+ * - "primary": main action of a view, form, or dialog; filled style, the default variant
+ * - "subtle": secondary action, low visual weight
+ * - "ghost": tertiary, minimal emphasis
+ * - "{color}Subtle": secondary emphasis for semantic colors
+ * - "{color}Ghost": tertiary for semantic colors
+ * - "semantic": inherits color from context via CSS variable, use only for custom color contexts
  */
 ```
 
@@ -129,15 +131,18 @@ Accessibility requirements and implications.
 **Format:**
 
 ```
+role: <element role>
 - aspect: requirement and implications
 ```
+
+The first line must be the `role:` line without a dash; the extractor reads it as the role.
 
 **Example:**
 
 ```typescript
 /**
  * @a11y
- * - role: button (or implicit if component="button")
+ * role: button (or implicit if component="button")
  * - name: must have accessible name via children or aria-label
  * - disabled state: uses aria-disabled=true; when disabled without focusableWhenDisabled, not in tab order
  * - selected state: uses aria-pressed when selected prop is set, for toggle buttons
@@ -156,18 +161,20 @@ Rules that validation (`uikit-tools validate`) should enforce in consumer code.
 **Format:**
 
 ```
-- rule statement: error|warn|info
+- rule: message (error|warn|info)
 ```
+
+The rule needs a colon after the subject and the level in parentheses at the end of the line. Lines without them are dropped by the extractor.
 
 **Example:**
 
 ```typescript
 /**
  * @validationRules
- * - variant must be one of the defined HvButtonVariant values (no custom variants): error
- * - color must not be a raw hex/rgb value; use tokens instead: error
- * - selected should only be used with toggle-like interactions; flag if used with momentary actions: warn
- * - disabled + focusableWhenDisabled trade-off: warn if both true for extended periods in UI: info
+ * - variant: must be one of the defined HvButtonVariant values; no custom variants (error)
+ * - color: must not be a raw hex or rgb value; use tokens instead (error)
+ * - selected: should only be used with toggle-like interactions; flag momentary actions (warn)
+ * - disabled: focusableWhenDisabled trade-off; warn if both are true for extended periods (info)
  */
 ```
 
@@ -184,12 +191,12 @@ Here's the HvButton contract, used as the template:
  * Button component is used to trigger an action or event.
  *
  * @variantSemantics
- * - `primary`: main action of a view, form, or dialog; filled style, the default variant
- * - `subtle`: secondary action, low visual weight
- * - `ghost`: tertiary, minimal emphasis
- * - `{color}Subtle`: secondary emphasis for semantic colors
- * - `{color}Ghost`: tertiary for semantic colors
- * - `semantic`: inherits color from context via CSS variable, use only for custom color contexts
+ * - "primary": main action of a view, form, or dialog; filled style, the default variant
+ * - "subtle": secondary action, low visual weight
+ * - "ghost": tertiary, minimal emphasis
+ * - "{color}Subtle": secondary emphasis for semantic colors
+ * - "{color}Ghost": tertiary for semantic colors
+ * - "semantic": inherits color from context via CSS variable, use only for custom color contexts
  *
  * @stateRules
  * - "disabled": when true, click handlers do not fire, aria-disabled=true, button is not focusable unless focusableWhenDisabled=true
@@ -209,17 +216,17 @@ Here's the HvButton contract, used as the template:
  * - Do not mix semantic color variants with explicit color prop; choose one approach — Choose either variant="negative" OR color="..." but not both
  *
  * @a11y
- * - role: button (or implicit if component="button")
+ * role: button (or implicit if component="button")
  * - name: must have accessible name via children or aria-label
  * - disabled state: uses aria-disabled=true; when disabled without focusableWhenDisabled, not in tab order
  * - selected state: uses aria-pressed when selected prop is set, for toggle buttons
  * - required: focusableWhenDisabled should be true when a disabled button needs to be discoverable by assistive tech
  *
  * @validationRules
- * - variant must be one of the defined HvButtonVariant values (no custom variants): error
- * - color must not be a raw hex/rgb value; use tokens instead: error
- * - selected should only be used with toggle-like interactions; flag if used with momentary actions: warn
- * - disabled + focusableWhenDisabled trade-off: warn if both true for extended periods in UI: info
+ * - variant: must be one of the defined HvButtonVariant values; no custom variants (error)
+ * - color: must not be a raw hex or rgb value; use tokens instead (error)
+ * - selected: should only be used with toggle-like interactions; flag momentary actions (warn)
+ * - disabled: focusableWhenDisabled trade-off; warn if both are true for extended periods (info)
  */
 export const HvButton = fixedForwardRef(function HvButton<...>(props, ref) {
   // implementation

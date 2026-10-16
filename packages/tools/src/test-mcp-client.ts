@@ -8,9 +8,12 @@
  *   npx tsx src/test-mcp-client.ts list_components --limit 3
  *   npx tsx src/test-mcp-client.ts get_component_contract --component HvAvatar
  */
-import { spawn } from "child_process";
+import { fileURLToPath } from "url";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+// Resolve the CLI relative to this file so the client works from any cwd.
+const cliPath = fileURLToPath(new URL("../dist/cli.js", import.meta.url));
 
 async function main() {
   const args = process.argv.slice(2);
@@ -41,13 +44,10 @@ async function main() {
     }
   }
 
-  // Spawn the MCP server
-  const serverProcess = spawn("node", ["packages/tools/dist/cli.js", "mcp"]);
-
-  // Create stdio client transport
+  // Create stdio client transport (spawns the MCP server)
   const transport = new StdioClientTransport({
     command: "node",
-    args: ["packages/tools/dist/cli.js", "mcp"],
+    args: [cliPath, "mcp"],
   });
 
   const client = new Client(
