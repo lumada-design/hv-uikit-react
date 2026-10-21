@@ -1,39 +1,16 @@
 # HV UI Kit Form Rules
 
-## Labels
+## Labelled form controls
 
-- Every input must have a label or `aria-label`
-  ```tsx
-  <HvInput label="Name" />  // or
-  <HvInput aria-label="Search" placeholder="Type..." />
-  ```
+- **Id:** forms/label
+- **Rule:** Give every form control an accessible name using its `label`, `aria-label`, or `aria-labelledby`. Prefer visible labels; placeholders are hints, not labels.
+- **Rationale:** Users need to identify a field both visually and through assistive technology.
+- **Components:** HvInput, HvSelect, HvCheckBox, HvRadio, HvDatePicker
+- **Enforcement:** context-only
 
-## Example: Building a Form
-
-```tsx
-import { HvButton, HvCheckBox, HvInput } from "@pentaho/uikit-react-core";
-
-export function LoginForm() {
-  return (
-    <form>
-      {/* Input with label (a11y requirement) */}
-      <HvInput label="Email" type="email" required />
-
-      {/* Checkbox with label (a11y requirement) */}
-      <HvCheckBox label="Remember me" />
-
-      {/* Primary button for form submission */}
-      <HvButton variant="primary" type="submit">
-        Sign In
-      </HvButton>
-    </form>
-  );
-}
-```
-
-Run validation:
-
-```bash
-npx uikit-tools validate LoginForm.tsx
-# ✓ All validations passed
+```diff
+- <HvInput placeholder="Email" />
++ <HvInput label="Email" type="email" required />
++ <HvCheckBox label="Remember me" />
++ <HvInput aria-label="Search" placeholder="Type a query" />
 ```

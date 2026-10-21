@@ -31,6 +31,39 @@ export interface A11yRequirement {
   requirements: string[];
 }
 
+/**
+ * Universal guidance authored in templates/rules/*.md, separate from the
+ * component-level ValidationRule records produced by contract extraction.
+ * Markdown examples use a fenced diff block: + lines map to do, - lines to dont.
+ */
+export interface GlobalRuleBase {
+  /** Stable, unique category/name identifier, e.g. "destructive/confirm". */
+  id: `${string}/${string}`;
+  /** A specific, actionable requirement. */
+  rule: string;
+  /** Why the requirement matters to users or maintainers. */
+  rationale: string;
+  /** Relevant component names; an empty list means component-independent. */
+  components: string[];
+  /** At least one compliant code snippet or concrete scenario. */
+  do: [string, ...string[]];
+  /** At least one noncompliant code snippet or concrete scenario. */
+  dont: [string, ...string[]];
+}
+
+/**
+ * "checked" rules are review/checker requirements with an actionable fix;
+ * this label does not imply the current CLI implements the check.
+ * "context-only" rules require product context and are advisory, not failures.
+ * Fixes are remediation instructions, not a promise of automatic code edits.
+ * See templates/rules/workflow.md for the Markdown authoring format.
+ */
+export type GlobalRule = GlobalRuleBase &
+  (
+    | { enforcement: "checked"; fix: string }
+    | { enforcement: "context-only"; fix?: never }
+  );
+
 export interface ValidationRule {
   rule: string;
   failureMessage: string;
