@@ -5,8 +5,8 @@
  * Spawns the MCP server and invokes tools.
  *
  * Usage:
- *   npx tsx src/test-mcp-client.ts list_components --limit 3
- *   npx tsx src/test-mcp-client.ts get_component_contract --component HvAvatar
+ *   npx tsx src/test-mcp-client.ts components --limit 3
+ *   npx tsx src/test-mcp-client.ts info --component HvAvatar
  */
 import { fileURLToPath } from "url";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -21,8 +21,8 @@ async function main() {
   if (!args[0]) {
     console.error(
       "Usage: test-mcp-client.ts <tool> [options]\n" +
-        "  test-mcp-client.ts list_components --limit 3\n" +
-        "  test-mcp-client.ts get_component_contract --component HvAvatar",
+        "  test-mcp-client.ts components --limit 3\n" +
+        "  test-mcp-client.ts info --component HvAvatar",
     );
     process.exit(1);
   }
@@ -68,17 +68,17 @@ async function main() {
     console.log(`[test-client] Connected to MCP server`);
 
     // Call the tool
-    if (toolName === "list_components") {
+    if (toolName === "components") {
       const limit = (toolArgs.limit as number) || 10;
       const offset = (toolArgs.offset as number) || 0;
 
       // eslint-disable-next-line no-console
       console.log(
-        `[test-client] Calling list_components (limit=${limit}, offset=${offset})`,
+        `[test-client] Calling components (limit=${limit}, offset=${offset})`,
       );
 
       const result = await client.callTool({
-        name: "list_components",
+        name: "components",
         arguments: { limit, offset },
       });
 
@@ -91,7 +91,7 @@ async function main() {
           ? content[0]?.text
           : JSON.stringify(content, null, 2),
       );
-    } else if (toolName === "get_component_contract") {
+    } else if (toolName === "info") {
       const componentName = toolArgs.component as string;
 
       if (!componentName) {
@@ -100,12 +100,10 @@ async function main() {
       }
 
       // eslint-disable-next-line no-console
-      console.log(
-        `[test-client] Calling get_component_contract (component=${componentName})`,
-      );
+      console.log(`[test-client] Calling info (component=${componentName})`);
 
       const result = await client.callTool({
-        name: "get_component_contract",
+        name: "info",
         arguments: { component: componentName },
       });
 

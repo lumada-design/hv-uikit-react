@@ -66,8 +66,8 @@ function getComponentContract(
  * Phase 5.1: Proper MCP Protocol Implementation
  *
  * The server exposes two tools:
- * - list_components: Paginated list of components
- * - get_component_contract: Retrieve full component contract
+ * - components: Paginated list of components
+ * - info: Retrieve full component contract
  *
  * Clients connect via MCP protocol (stdio transport) and invoke tools.
  */
@@ -86,10 +86,10 @@ export async function mcp(): Promise<void> {
     },
   );
 
-  // Define tools
+  // Define canonical tools
   const tools: Tool[] = [
     {
-      name: "list_components",
+      name: "components",
       description:
         "Get a paginated list of all UI components in the design system",
       inputSchema: {
@@ -110,7 +110,7 @@ export async function mcp(): Promise<void> {
       },
     },
     {
-      name: "get_component_contract",
+      name: "info",
       description:
         "Get the full semantic contract of a specific component (variants, state rules, token constraints, antipatterns, a11y, validation rules)",
       inputSchema: {
@@ -139,7 +139,7 @@ export async function mcp(): Promise<void> {
     };
     const { name, arguments: args } = callRequest.params;
 
-    if (name === "list_components") {
+    if (name === "components") {
       const limit = (args?.limit as number) || 10;
       const offset = (args?.offset as number) || 0;
 
@@ -177,7 +177,7 @@ export async function mcp(): Promise<void> {
       };
     }
 
-    if (name === "get_component_contract") {
+    if (name === "info") {
       const componentName = args?.component as string;
 
       if (!componentName) {

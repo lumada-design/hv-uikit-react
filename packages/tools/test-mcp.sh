@@ -2,13 +2,13 @@
 
 # Wrapper script to test MCP server using the test client
 # Usage:
-#   ./packages/tools/test-mcp.sh list_components --limit 3
-#   ./packages/tools/test-mcp.sh get_component_contract --component HvAvatar
+#   ./packages/tools/test-mcp.sh components --limit 3
+#   ./packages/tools/test-mcp.sh info --component HvAvatar
 
 if [ $# -eq 0 ]; then
   echo "Usage: $0 <tool> [options]"
-  echo "  list_components --limit <n> [--offset <n>]"
-  echo "  get_component_contract --component <name>"
+  echo "  components --limit <n> [--offset <n>]"
+  echo "  info --component <name>"
   exit 1
 fi
 

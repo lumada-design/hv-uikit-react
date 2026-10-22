@@ -15,11 +15,11 @@ Load the full component reference:
 
 ### Step 1: Discover Available Components
 
-**Before coding anything, call the `list_components` MCP tool** to see all available HV UI Kit components and their purposes.
+**Before coding anything, call the `components` MCP tool** to see all available HV UI Kit components and their purposes.
 
 ### Step 2: Query Component Contracts
 
-For each component you plan to use, **call the `get_component_contract` MCP tool** with the component name (e.g., `{ component: "HvInput" }`) to get:
+For each component you plan to use, **call the `info` MCP tool** with the component name (e.g., `{ component: "HvInput" }`) to get:
 
 - Required props (many components have mandatory props like `label` or `aria-label`)
 - Variant definitions and their semantic meanings
@@ -50,7 +50,7 @@ npx uikit-tools validate src/**/*.tsx
 
 1. Read the error messages carefully
 2. Identify which components are violating the contract
-3. Call `get_component_contract` again for the problematic component
+3. Call `info` again for the problematic component
 4. Fix the implementation
 5. Run validation again
 6. **Repeat until validation passes**
@@ -61,8 +61,8 @@ npx uikit-tools validate src/**/*.tsx
 
 ✅ Task is complete ONLY when ALL of the following are true:
 
-- [ ] All components discovered via `list_components` MCP tool
-- [ ] Each component's contract reviewed via `get_component_contract`
+- [ ] All components discovered via `components` MCP tool
+- [ ] Each component's contract reviewed via `info`
 - [ ] Code implements components according to their contracts
 - [ ] `npx uikit-tools validate src/**/*.tsx` runs with ZERO errors
 - [ ] No plain HTML elements used (no `<input>`, `<button>`, `<select>`, etc.)
@@ -85,8 +85,8 @@ npx uikit-tools validate src/**/*.tsx
 
 ✅ **ALWAYS:**
 
-1. Call `list_components` to see what's available
-2. Call `get_component_contract` for each component before using it
+1. Call `components` to see what's available
+2. Call `info` for each component before using it
 3. Use HV UI Kit components for ALL UI elements
 4. Run `npx uikit-tools validate src/**/*.tsx` and verify ZERO errors
 

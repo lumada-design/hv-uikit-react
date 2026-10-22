@@ -65,10 +65,10 @@ npx --no-install uikit-tools mcp
 
 ## MCP tools
 
-| Tool                     | Input                             | Returns                                                                                                                            |
-| ------------------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `list_components`        | `limit?`, `offset?`               | `components` (`name`, `displayName`, `purpose`), `total`, `offset`, `limit`                                                        |
-| `get_component_contract` | `component` (for example `HvTag`) | The component's metadata entry: purpose, contract tags, and props. Unknown names return an error listing the available components. |
+| Tool         | Input                             | Returns                                                                                                                            |
+| ------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `components` | `limit?`, `offset?`               | `components` (`name`, `displayName`, `purpose`), `total`, `offset`, `limit`                                                        |
+| `info`       | `component` (for example `HvTag`) | The component's metadata entry: purpose, contract tags, and props. Unknown names return an error listing the available components. |
 
 ## Architecture: library side
 
@@ -134,17 +134,17 @@ The build at the time of writing produced 73 components. Five had no purpose tag
 
 The tools package is an ESM TypeScript package built with `tsc`.
 
-| Module                                                     | Responsibility                                                                                                           |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| [src/cli.ts](src/cli.ts)                                   | Commander entry point. Defines `init`, `validate`, and `mcp`.                                                            |
-| [src/commands/init.ts](src/commands/init.ts)               | Loads metadata, renders templates, writes harness files, and merges the MCP config.                                      |
-| [src/commands/mcp.ts](src/commands/mcp.ts)                 | MCP server (`@modelcontextprotocol/sdk`, stdio transport) with the `list_components` and `get_component_contract` tools. |
-| [src/commands/validate.ts](src/commands/validate.ts)       | Expands glob patterns, runs the validator, prints results, and sets the exit code.                                       |
-| [src/validation/validator.ts](src/validation/validator.ts) | Scans JSX for the supported components and extracts simplified prop values (string, boolean, and expression markers).    |
-| [src/validation/rules.ts](src/validation/rules.ts)         | Hard-coded rules for `HvButton` and `HvAvatar`.                                                                          |
-| [src/utils/metadata.ts](src/utils/metadata.ts)             | `loadMetadata()` and `findComponent()`, plus TypeScript interfaces for the metadata.                                     |
-| [src/test-mcp-client.ts](src/test-mcp-client.ts)           | MCP test client. [test-mcp.sh](test-mcp.sh) runs it against the built server.                                            |
-| [templates/](templates)                                    | `guide/hv-uikit.md`, `instructions/instructions.md`, and `rules/*.md`.                                                   |
+| Module                                                     | Responsibility                                                                                                        |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [src/cli.ts](src/cli.ts)                                   | Commander entry point. Defines `init`, `validate`, and `mcp`.                                                         |
+| [src/commands/init.ts](src/commands/init.ts)               | Loads metadata, renders templates, writes harness files, and merges the MCP config.                                   |
+| [src/commands/mcp.ts](src/commands/mcp.ts)                 | MCP server (`@modelcontextprotocol/sdk`, stdio transport) with the `components` and `info` tools.                     |
+| [src/commands/validate.ts](src/commands/validate.ts)       | Expands glob patterns, runs the validator, prints results, and sets the exit code.                                    |
+| [src/validation/validator.ts](src/validation/validator.ts) | Scans JSX for the supported components and extracts simplified prop values (string, boolean, and expression markers). |
+| [src/validation/rules.ts](src/validation/rules.ts)         | Hard-coded rules for `HvButton` and `HvAvatar`.                                                                       |
+| [src/utils/metadata.ts](src/utils/metadata.ts)             | `loadMetadata()` and `findComponent()`, plus TypeScript interfaces for the metadata.                                  |
+| [src/test-mcp-client.ts](src/test-mcp-client.ts)           | MCP test client. [test-mcp.sh](test-mcp.sh) runs it against the built server.                                         |
+| [templates/](templates)                                    | `guide/hv-uikit.md`, `instructions/instructions.md`, and `rules/*.md`.                                                |
 
 `init` flow: `loadMetadata()` → summarize components → render templates (`{{NAME}}` placeholders) → write files → update `.vscode/mcp.json` (copilot only).
 
@@ -160,9 +160,9 @@ sequenceDiagram
     participant MCP as hv-uikit MCP server
     Dev->>CLI: init --harness copilot
     CLI-->>Dev: rules, instructions, .vscode/mcp.json
-    Agent->>MCP: list_components
+    Agent->>MCP: components
     MCP-->>Agent: component summaries
-    Agent->>MCP: get_component_contract (HvTag)
+    Agent->>MCP: info (HvTag)
     MCP-->>Agent: component metadata
     Agent-->>Dev: code using HV UI Kit components
     Dev->>CLI: validate "src/**/*.tsx"
@@ -228,8 +228,8 @@ node packages/tools/dist/cli.js init /tmp/hv-init-check --harness copilot
 node packages/tools/dist/cli.js validate "packages/tools/test-fixtures/validation-violations.tsx"
 
 # Exercise the MCP server with the test client (run from the repo root)
-packages/tools/test-mcp.sh list_components --limit 3
-packages/tools/test-mcp.sh get_component_contract --component HvAvatar
+packages/tools/test-mcp.sh components --limit 3
+packages/tools/test-mcp.sh info --component HvAvatar
 ```
 
 The `test-mcp.sh` commands need the core metadata and the tools build. Run the build steps first.

@@ -5,7 +5,7 @@
 These rule files cover universal rules only. For detailed information about a specific component, **ALWAYS call the registered MCP tool before implementing**:
 
 ```text
-get_component_contract({ component: "HvButton" })
+info({ component: "HvButton" })
 ```
 
 The init command registers the server in `.vscode/mcp.json`. Use the MCP tools exposed by your agent; `uikit-tools mcp` starts the stdio server and does not accept tool calls as terminal arguments.
@@ -34,7 +34,7 @@ The init command registers the server in `.vscode/mcp.json`. Use the MCP tools e
 To see the full inventory programmatically, call:
 
 ```text
-list_components({ limit: 10, offset: 0 })
+components({ limit: 10, offset: 0 })
 ```
 
 ## Validation
@@ -56,9 +56,9 @@ Checks:
 
 1. **Understand the task**: What are you building?
 2. **Check the rule files**: What components exist? What are the universal rules?
-3. **Query the MCP server for each component**: Call `get_component_contract` before writing code
+3. **Query the MCP server for each component**: Call `info` before writing code
    ```text
-   get_component_contract({ component: "HvInput" })
+   info({ component: "HvInput" })
    ```
    This is **CRITICAL** to find:
    - Required props
@@ -76,7 +76,7 @@ Checks:
 
 - **Need variants or props for a component?** → **QUERY MCP FIRST**
   ```text
-  get_component_contract({ component: "HvComponentName" })
+  info({ component: "HvComponentName" })
   ```
 - **Component display is wrong or empty?** → Check MCP for required boolean flags (showCount, etc.)
 - **Want examples?** → See component Storybook stories
