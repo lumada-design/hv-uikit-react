@@ -9,7 +9,7 @@ import {
   type Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 
-interface ComponentContract {
+export interface ComponentContract {
   name: string;
   displayName: string;
   purpose: string;
@@ -30,7 +30,7 @@ interface ComponentContract {
   tags?: Record<string, string>;
 }
 
-interface ComponentMetadata {
+export interface ComponentMetadata {
   version: string;
   generatedAt: string;
   components: ComponentContract[];
@@ -38,7 +38,7 @@ interface ComponentMetadata {
 
 let cachedMetadata: ComponentMetadata | null = null;
 
-async function loadMetadata(): Promise<ComponentMetadata> {
+export function loadMetadata(): ComponentMetadata {
   if (cachedMetadata) {
     return cachedMetadata;
   }
@@ -54,11 +54,44 @@ async function loadMetadata(): Promise<ComponentMetadata> {
   return cachedMetadata!;
 }
 
-function getComponentContract(
-  componentName: string,
+export function listComponents(
   metadata: ComponentMetadata,
+  options: { limit?: number; offset?: number } = {},
+): {
+  components: Array<{ name: string; displayName: string; purpose: string }>;
+  total: number;
+  offset: number;
+  limit: number;
+} {
+  const limit = options.limit ?? 10;
+  const offset = options.offset ?? 0;
+
+  if (offset < 0 || limit < 0) {
+    throw new Error("limit and offset must be non-negative");
+  }
+
+  const components = metadata.components.slice(offset, offset + limit);
+  return {
+    components: components.map((c) => ({
+      name: c.name,
+      displayName: c.displayName,
+      purpose: c.purpose,
+    })),
+    total: metadata.components.length,
+    offset,
+    limit,
+  };
+}
+
+export function getComponentInfo(
+  metadata: ComponentMetadata,
+  componentName: string,
 ): ComponentContract | null {
-  return metadata.components.find((c) => c.name === componentName) || null;
+  return (
+    metadata.components.find((c) => c.name === componentName) ||
+    metadata.components.find((c) => c.displayName === componentName) ||
+    null
+  );
 }
 
 /**
@@ -155,17 +188,7 @@ export async function mcp(): Promise<void> {
         };
       }
 
-      const components = metadata.components.slice(offset, offset + limit);
-      const response = {
-        components: components.map((c) => ({
-          name: c.name,
-          displayName: c.displayName,
-          purpose: c.purpose,
-        })),
-        total: metadata.components.length,
-        offset,
-        limit,
-      };
+      const response = listComponents(metadata, { limit, offset });
 
       return {
         content: [
@@ -192,7 +215,7 @@ export async function mcp(): Promise<void> {
         };
       }
 
-      const contract = getComponentContract(componentName, metadata);
+      const contract = getComponentInfo(metadata, componentName);
 
       if (!contract) {
         return {

@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 
+import { getComponentInfo, listComponents, loadMetadata } from "./mcp.js";
 import { init } from "./init.js";
 
 const tempDirs: string[] = [];
@@ -43,5 +44,26 @@ describe("init", () => {
     await init(dir, { harness: "claude" });
 
     expect(readFileSync(agentsPath, "utf-8")).toBe(original);
+  });
+});
+
+describe("component metadata helpers", () => {
+  it("lists components with pagination metadata", () => {
+    const metadata = loadMetadata();
+    const response = listComponents(metadata, { limit: 2, offset: 0 });
+
+    expect(response.components.length).toBe(2);
+    expect(response.total).toBeGreaterThan(0);
+    expect(response.limit).toBe(2);
+    expect(response.offset).toBe(0);
+  });
+
+  it("retrieves a component contract by name", () => {
+    const metadata = loadMetadata();
+    const contract = getComponentInfo(metadata, "HvButton");
+
+    expect(contract).not.toBeNull();
+    expect(contract?.name).toBe("HvButton");
+    expect(contract?.purpose).toBeTruthy();
   });
 });
