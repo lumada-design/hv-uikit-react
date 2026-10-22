@@ -26,13 +26,14 @@ npx --no-install uikit-tools init . --harness copilot
 npx --no-install uikit-tools init . --harness claude
 ```
 
-| Harness             | Files written                                                                      |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| `copilot` (default) | `.github/copilot-instructions.md`, `.github/rules/hv-uikit.md`, `.vscode/mcp.json` |
-| `claude`            | `.claude/instructions.md`, `.claude/rules/hv-uikit.md`                             |
+| Harness             | Files written                                                                                   |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `copilot` (default) | `.github/copilot-instructions.md`, `.github/rules/hv-uikit.md`, `.vscode/mcp.json`, `AGENTS.md` |
+| `claude`            | `.claude/instructions.md`, `.claude/rules/hv-uikit.md`, `AGENTS.md`                             |
 
 - The rules file is generated from `templates/guide/hv-uikit.md` and includes the sections from `templates/rules/*.md`.
 - The instructions file points the agent to the rules file and tells it to use the MCP server for component discovery.
+- A root `AGENTS.md` is created as a compatibility fallback for generic agent hosts. If the consumer app already has an `AGENTS.md`, `init` leaves it alone.
 - For `copilot`, `.vscode/mcp.json` gets an `hv-uikit` server entry. Other entries are kept. If the existing file is not valid JSON, `init` fails and does not overwrite it.
 - The `claude` harness does not write an MCP config.
 - An unknown harness value prints an error and exits with code 1.

@@ -67,6 +67,10 @@ export async function init(
     const instructionsPath = path.join(agentConfigDir, instructionsFileName);
     createInstructions(instructionsPath, harness);
 
+    // A repo-level AGENTS.md is a compatibility fallback for generic agent hosts.
+    // If the consumer app already has one, leave it intact.
+    const rootAgentsPath = ensureRootAgentsFile(dir, harness);
+
     // Register MCP server for Copilot only
     let mcpConfigPath: string | undefined;
     if (harness === "copilot") {
@@ -84,6 +88,8 @@ export async function init(
     console.log(chalk.gray(`  Rules: ${agentsPath}`));
     // eslint-disable-next-line no-console
     console.log(chalk.gray(`  Instructions: ${instructionsPath}`));
+    // eslint-disable-next-line no-console
+    console.log(chalk.gray(`  Root AGENTS: ${rootAgentsPath}`));
     if (mcpConfigPath) {
       // eslint-disable-next-line no-console
       console.log(chalk.gray(`  MCP: ${mcpConfigPath}`));
@@ -197,6 +203,47 @@ function createInstructions(instructionsPath: string, harness: Harness): void {
   });
 
   writeFileSync(instructionsPath, content, "utf-8");
+}
+
+/**
+ * Create a root AGENTS.md compatibility file for generic agent hosts.
+ * If the consumer project already has an AGENTS.md, keep it unchanged.
+ */
+function ensureRootAgentsFile(targetDir: string, harness: Harness): string {
+  const rootAgentsPath = path.join(targetDir, "AGENTS.md");
+
+  if (existsSync(rootAgentsPath)) {
+    const content = readFileSync(rootAgentsPath, "utf-8").trim();
+    if (content.length > 0) {
+      return rootAgentsPath;
+    }
+  }
+
+  const instructionsPath =
+    harness === "claude"
+      ? ".claude/instructions.md"
+      : ".github/copilot-instructions.md";
+  const rulesPath =
+    harness === "claude"
+      ? ".claude/rules/hv-uikit.md"
+      : ".github/rules/hv-uikit.md";
+
+  const content = [
+    "# AGENTS.md",
+    "",
+    "This project uses the HV UI Kit agent guidance.",
+    "",
+    `- Harness: ${harness}`,
+    `- Instructions: ${instructionsPath}`,
+    `- Rules: ${rulesPath}`,
+    "",
+    "If your AI tool supports a repo-level AGENTS.md, this file is the compatibility entry point.",
+    "The harness-specific files contain the full setup and MCP configuration for the selected agent.",
+    "",
+  ].join("\n");
+
+  writeFileSync(rootAgentsPath, content, "utf-8");
+  return rootAgentsPath;
 }
 
 /**
