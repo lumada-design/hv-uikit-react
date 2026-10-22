@@ -2,17 +2,17 @@
 
 ## Introduction
 
-Forms must make it clear what information users need to provide and how to identify each control.
+- Forms must make it clear what information users need to provide and how to identify each control.
+- Forms should use a form element and the UI Kit form components whenever possible to ensure consistency, accessibility, and theme support.
+- Handle the native form submission using the `onSubmit` event.
 
-## Labelled form controls
+Example:
 
-Give every form control an accessible name using its `label`, `aria-label`, or `aria-labelledby`. Prefer visible labels so users can identify fields both visually and through assistive technology. Placeholders are hints, not labels.
-
-Examples:
-
-```diff
-- <HvInput placeholder="Email" />
-+ <HvInput label="Email" type="email" required />
-+ <HvCheckBox label="Remember me" />
-+ <HvInput aria-label="Search" placeholder="Type a query" />
+```tsx
+<form onSubmit={handleSubmit}>
+  <HvInput required name="email" label="Email" type="email" />
+  <HvInput required name="password" label="Password" type="password" />
+  <HvCheckBox name="remember" label="Remember me" />
+  <HvButton type="submit">Sign In</HvButton>
+</form>
 ```

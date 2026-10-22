@@ -4,19 +4,18 @@
 
 Actions must communicate their consequences and protect users from accidental data loss.
 
-## Confirm destructive actions
+## Color Actions accordingly
 
-Confirm destructive actions (delete, remove, discard, or irreversible changes) in an `HvDialog` before mutating data. Name the affected item and explain the consequence.
+Use the correct theme color to indicate the nature of the action, such as `primary` for main actions, `negative` or `warning` for destructive actions.
 
-- The trigger only opens the dialog; only the explicit confirmation performs the change.
-- Cancel, Escape, and dismissal leave data unchanged.
-- Use `HvButton` with `variant="negativeGhost"` for the destructive trigger and a clearly named destructive confirmation action.
+## Prevent accidental and destructive actions
+
+Prevent accidental and destructive actions by requiring explicit user intent before performing potentially destructive operations, or a way to recover from the change.
+This can include confirmation dialogs, undo options, or additional verification steps.
 
 Examples:
 
 ```diff
-- <HvButton variant="negativeGhost" onClick={deleteAsset}>Delete asset</HvButton>
-+ <HvButton variant="negativeGhost" onClick={() => setConfirmOpen(true)}>Delete asset</HvButton>
-- // Delete from the dialog's onClose handler.
-+ // Delete only from the explicit confirmation handler; onClose only closes the dialog.
+- <HvButton variant="negative" onClick={deleteAsset}>Delete asset</HvButton>
++ <HvButton variant="negative" onClick={() => setConfirmOpen(true)}>Delete asset</HvButton>
 ```

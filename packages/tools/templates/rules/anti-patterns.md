@@ -4,7 +4,7 @@
 
 Use UI Kit components consistently to preserve shared behavior, accessibility, and theme support.
 
-## Prefer using UI Kit components
+## Prefer UI Kit components
 
 Prefer an existing UI Kit component over native controls, third-party widgets, or custom implementations of the same interaction. Consult the component inventory and contract first to preserve accessibility, behavior, and theme consistency.
 
