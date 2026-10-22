@@ -1,12 +1,14 @@
-# HV UI Kit Form Rules
+# Form Rules
+
+## Introduction
+
+Forms must make it clear what information users need to provide and how to identify each control.
 
 ## Labelled form controls
 
-- **Id:** forms/label
-- **Rule:** Give every form control an accessible name using its `label`, `aria-label`, or `aria-labelledby`. Prefer visible labels; placeholders are hints, not labels.
-- **Rationale:** Users need to identify a field both visually and through assistive technology.
-- **Components:** HvInput, HvSelect, HvCheckBox, HvRadio, HvDatePicker
-- **Enforcement:** context-only
+Give every form control an accessible name using its `label`, `aria-label`, or `aria-labelledby`. Prefer visible labels so users can identify fields both visually and through assistive technology. Placeholders are hints, not labels.
+
+Examples:
 
 ```diff
 - <HvInput placeholder="Email" />

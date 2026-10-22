@@ -1,18 +1,14 @@
-# HV UI Kit Accessibility Rules
+# Accessibility Rules
 
-## Image names
+## Introduction
 
-- **Id:** accessibility/name
-- **Rule:** Provide meaningful text alternatives for informative images and avatars, and accessible names for icon-only controls. Use `alt` for image content and `aria-label` or `aria-labelledby` for controls. Purely decorative images use empty alt text and must not duplicate an adjacent accessible name.
-- **Rationale:** Assistive technology needs the image's meaning or the action's purpose, not just its visual appearance. Whether an image is informative depends on its context.
-- **Components:** HvAvatar, HvButton
-- **Enforcement:** context-only
+The interfaces we produce must be accessible, according to the [WCAG Level AA](https://www.w3.org/TR/WCAG22/) and US Section 508 directives.
 
-Examples:
+## Rules of ARIA
 
-```diff
-- <HvAvatar src="user.jpg" />
-+ <HvAvatar src="user.jpg" alt="John Doe" />
-- <HvButton icon><Search /></HvButton>
-+ <HvButton icon aria-label="Search"><Search /></HvButton>
-```
+- Prefer native HTML — Use <button> not <div role="button">. Native elements have built-in keyboard, focus, and semantics.
+- No ARIA is better than Bad ARIA — Use only ARIA when necessary, as incorrect ARIA harms the user experience.
+- Don't change native semantics where prohibited — Don't add role="heading" to a <button>. Use the correct element.
+- All ARIA controls must be keyboard operable — If role="button", handle Enter and Space key events.
+- Don't use aria-hidden="true" on focusable elements — Hidden from assistive tech but still focusable creates a "ghost" element.
+- All interactive elements need an accessible name — Via label, aria-label, aria-labelledby, or visible text content.
