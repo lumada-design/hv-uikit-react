@@ -62,7 +62,7 @@ export interface HvCardProps extends HvBaseProps {
  * - primary: HvActionBar must contain at most one variant="primary" HvButton for the main action (error)
  * - status icon: the icon prop of HvCard must contain an HvStatusIcon that conveys the card status (warn)
  * - header icon: the icon prop of HvCardHeader must contain an HvStatusIcon that is decorative or informative (warn)
- * - color: bgcolor and statusColor must be theme tokens, never raw hex or rgb values (error)
+ * - color: bgcolor and statusColor follow rule tokens/colors (error)
  */
 export const HvCard = forwardRef<
   // no-indent

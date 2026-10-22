@@ -103,7 +103,7 @@ export interface HvAvatarProps extends HvBaseProps {
  * - variant (circular | square): must be one of the defined variants only (error)
  * - size (xs | sm | md | lg | xl): must be one of the defined size tokens only (error)
  * - alt text: should be provided when src is set (warn)
- * - semantic tokens: status and badge colors should use semantic tokens (warn)
+ * - semantic tokens: status and badge colors follow rule tokens/colors (warn)
  * - backgroundColor: should be omitted if parent is HvAvatarGroup (info)
  */
 export const HvAvatar = forwardRef<

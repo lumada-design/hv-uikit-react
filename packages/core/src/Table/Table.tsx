@@ -85,7 +85,7 @@ const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
  *
  * @tokenConstraints
  * - color: use theme and variant styling only; never raw hex or rgb values in cells or the table
- * - spacing: cell padding and row gaps use space tokens (xxs, xs, sm, md, lg, xl), never raw px values
+ * - spacing: cell padding and row gaps follow rule tokens/spacing
  *
  * @antiPatterns
  * - Do not render HvTable outside HvTableSection; the section applies the DS table layout and spacing — Wrap the table, HvBulkActions, and HvPagination in one HvTableSection
@@ -106,9 +106,9 @@ const computeTablePartComponents = (rootComponent: React.ElementType<any>) => {
  * - section: every HvTable must be inside HvTableSection (error)
  * - pagination: every HvTable must be followed by HvPagination in the same HvTableSection (error)
  * - bulk actions: actions that apply to multiple selected rows must use HvBulkActions, not per-row or toolbar buttons (warn)
- * - plain elements: native table elements (table, thead, tbody, tr, th, td) must be replaced by HvTable parts (error)
+ * - plain elements: use HvTable parts, per rule anti-patterns/prefer-ui-kit-components (error)
  * - variant: must be default or listrow (error)
- * - name: a table must have a caption or aria-label (warn)
+ * - name: a caption or aria-label, per rule accessibility/rules-of-aria (warn)
  * - hooks: selection and pagination state should come from useHvTable hooks instead of local state (info)
  */
 export const HvTable = forwardRef<

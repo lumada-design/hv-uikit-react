@@ -64,7 +64,7 @@ export interface HvDialogProps extends Omit<
  *
  * @tokenConstraints
  * - color: status variants use semantic colors only (success, error, warning); never raw hex or rgb values
- * - spacing: content and custom layout inside the dialog use space tokens (xxs, xs, sm, md, lg, xl), never raw px values
+ * - spacing: content and custom layout inside the dialog follow rule tokens/spacing
  * - size: use the maxWidth values (xs, sm, md, lg, xl) or fullWidth instead of custom width styles
  *
  * @antiPatterns
@@ -74,8 +74,8 @@ export interface HvDialogProps extends Omit<
  * - Do not put more than 3 buttons in one HvDialogActions; too many choices overwhelm the user — Limit actions to 3 buttons or fewer and move other choices into the content
  * - Do not use more than one primary button in HvDialogActions; the main action must be unambiguous — Use one variant="primary" button for the main action
  * - Do not use a subtle or primary variant for the secondary action; it competes with the main action — Use variant="secondaryGhost" for the secondary action
- * - Do not run a destructive action directly from its trigger button; the user loses the chance to stop — Open a confirmation HvDialog and run the action from its confirm button
- * - Do not use variants other than negativeGhost for destructive buttons; they do not signal the destructive intent — Use variant="negativeGhost" for destructive buttons
+ * - Do not run a destructive action directly from its trigger button with no way back; the user loses the chance to stop — Require explicit intent first, for example a confirmation HvDialog that runs the action only from its confirm button, or let the user undo the change
+ * - Do not use primary or neutral variants for destructive buttons; they do not signal the destructive intent — Use a negative or warning variant, such as variant="negative"
  * - Do not set disableBackdropClick for ordinary dialogs; it also blocks Escape — Leave it unset and handle unsaved changes in onClose
  *
  * @a11y
@@ -93,8 +93,8 @@ export interface HvDialogProps extends Omit<
  * - button count: HvDialogActions must contain at most 3 buttons (error)
  * - primary: HvDialogActions should contain one variant="primary" button for the main action (warn)
  * - secondary: the secondary action must use variant="secondaryGhost" (error)
- * - destructive: destructive buttons must use variant="negativeGhost" (error)
- * - destructive flow: a destructive action must open a confirmation HvDialog before it runs (warn)
+ * - destructive: destructive buttons follow rule actions/color-actions-accordingly (error)
+ * - destructive flow: follows rule actions/prevent-accidental-and-destructive-actions (warn)
  * - variant: must be one of success, error, or warning (error)
  * - disableBackdropClick: also blocks the Escape key; leave unset unless required (warn)
  * - onClose: without onClose the dialog cannot be dismissed with the close button or Escape (info)
