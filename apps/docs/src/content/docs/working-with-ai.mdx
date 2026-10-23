@@ -2,7 +2,7 @@ import { Tabs } from "nextra/components";
 
 # Working with AI
 
-**UI Kit** gives your AI coding agent what it needs to build with UI Kit correctly: the right components, rules and checks, always matched to the version your app uses. One command sets it up.
+**UI Kit** gives your AI coding agent what it needs to build with UI Kit correctly: the right components and rules, always matched to the version your app uses. One command sets it up.
 
 > [!NOTE]
 >
@@ -14,7 +14,6 @@ Once your project is set up, your agent has access to:
 
 - **Design rules**: what applies to every screen, such as using design tokens, labelling form controls and protecting users from destructive actions.
 - **Component guidance**: for each component, its props, what each variant is for, how its states behave and what it needs to be accessible. Your agent looks a component up before using it.
-- **Design checks**: a command that finds code breaking **UI Kit**'s rules and suggests a fix, whether a person or an agent wrote it.
 
 All of it comes from the **UI Kit** packages installed in your app. Your project only keeps a pointer and a little configuration, so when you upgrade, your agent follows the new version with no extra work.
 
@@ -99,7 +98,6 @@ The `uikit-tools` command line is the core. The `hv-uikit` MCP server is a thin 
 | Look up a component's guidance and props | `uikit-tools info <component>` | `get_component`   |
 | List the design rules                    | `uikit-tools rules`            | `list_rules`      |
 | Read a design rule                       | `uikit-tools rule <id>`        | `get_rule`        |
-| Check your code                          | `uikit-tools check [paths...]` | —                 |
 | Start the MCP server                     | `uikit-tools mcp`              | —                 |
 
 Your agent starts the MCP server from the configuration `init` adds. It runs locally, only reads UI Kit's data and makes no network calls. Run `npx --no-install uikit-tools --help` to see every option.
@@ -113,17 +111,9 @@ npx --no-install uikit-tools rule tokens/colors
 
 These print the same text your agent gets from `get_component` and `get_rule`, so you can see exactly what it sees.
 
-### Check your code
-
-```sh
-npx --no-install uikit-tools check
-```
-
-`check` looks at `src` by default; pass files, folders or quoted globs such as `'src/**/*.tsx'` to check others instead. Each problem comes with its file, line, the rule it breaks and a suggested fix. The command exits with `0` when the code is clean, `1` when it finds problems and `2` when it can't run, so you can use it in scripts and CI. Add `--format json` for a machine-readable report, and `--rules <ids>` to check only some rules. Not every rule can be checked automatically, so a clean result is a good sign, not proof: review the others against the real screen.
-
 ## Keep it current
 
-Upgrade the UI Kit packages as usual. The design rules, component guidance and checks all come with the new versions, and your project's pointer still leads to them, so there is no need to run `init` again. Restart your agent's MCP server to pick up the change; the command line reads it right away.
+Upgrade the UI Kit packages as usual. The design rules and component guidance come with the new versions, and your project's pointer still leads to them, so there is no need to run `init` again. Restart your agent's MCP server to pick up the change; the command line reads it right away.
 
 ## Help shape it
 
