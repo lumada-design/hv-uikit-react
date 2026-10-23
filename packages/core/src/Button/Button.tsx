@@ -110,7 +110,7 @@ function parseVariant(variant: HvButtonVariant): [HvColorAny, Variant] {
  * Button component is used to trigger an action or event.
  *
  * @variantSemantics
- * - "primary": default variant, for the main action of a view, form, or dialog; use only one per context
+ * - "primary": default variant, for the main action of a view, form, or dialog; use only one per context; destructive actions use a negative or warning variant instead
  * - "secondary" (subtle): secondary emphasis, deprecated, use secondarySubtle or secondaryGhost
  * - "ghost": tertiary emphasis, lowest visual weight
  * - "{color}Subtle": secondary emphasis for semantic colors
@@ -129,7 +129,7 @@ function parseVariant(variant: HvButtonVariant): [HvColorAny, Variant] {
  *
  * @antiPatterns
  * - Do not invent custom variant names; only use defined variants — Use one of: primary, subtle, ghost, {color}Subtle, {color}Ghost, semantic
- * - Do not use subtle or ghost variants for the main action; they lower its emphasis — Use variant="primary" (the default) for the main action
+ * - Do not use subtle or ghost variants for the main action; they lower its emphasis — Use variant="primary" (the default) for the main action; destructive actions use a negative or warning variant, such as variant="negative"
  * - Do not use "selected" for momentary/transient button states; it implies aria-pressed toggle semantics — Use selected only for true toggle buttons (e.g., view mode toggles)
  * - Do not use raw color hex/rgb values; use color tokens instead — Replace #FF0000 with variant="negative" or color token
  * - Do not apply custom CSS directly; use the classes prop and theme tokens — Use className or classes prop with design tokens
@@ -144,7 +144,7 @@ function parseVariant(variant: HvButtonVariant): [HvColorAny, Variant] {
  *
  * @validationRules
  * - variant: must be one of the defined HvButtonVariant values only (error)
- * - color: must not be a raw hex/rgb value, use tokens instead (error)
+ * - color: follows rule tokens/colors (error)
  * - selected: should only be used with toggle-like interactions (warn)
  * - disabled + focusableWhenDisabled: warn if both true for extended periods in UI (info)
  */

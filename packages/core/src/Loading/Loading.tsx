@@ -51,9 +51,9 @@ export interface HvLoadingProps extends HvBaseProps {
  * - visual only: the animated bars carry no information on their own; the label or a status message elsewhere must convey the process
  *
  * @validationRules
- * - color: must be a theme token, never a raw hex or rgb value (error)
- * - name: must have label or aria-label so the process has an accessible name (warn)
- * - placeholder: use HvSkeleton instead when the shape of the loading content is known (info)
+ * - color: follows rule tokens/colors (error)
+ * - name: label or aria-label, per rule accessibility/rules-of-aria (warn)
+ * - placeholder: HvSkeleton when the content's shape is known, per rule layout/loading-states (info)
  */
 export const HvLoading = forwardRef<
   // no-indent

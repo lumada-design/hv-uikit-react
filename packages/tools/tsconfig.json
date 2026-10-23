@@ -6,11 +6,11 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "lib": ["ES2022"],
+    "lib": ["ES2023"],
     "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "target": "ES2022",
+    "target": "ES2023",
     "noEmit": false,
     "emitDeclarationOnly": false,
     "allowImportingTsExtensions": false

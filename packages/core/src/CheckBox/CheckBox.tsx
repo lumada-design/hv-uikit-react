@@ -91,7 +91,7 @@ export interface HvCheckBoxProps extends Omit<HvBaseCheckBoxProps, "classes"> {
  * - describedby: statusMessage is announced via aria-describedby
  *
  * @validationRules
- * - label or aria-label: must have one; checkbox cannot be used without accessible name (error)
+ * - label or aria-label: one is required, per rule accessibility/rules-of-aria (error)
  * - controlled vs uncontrolled: should not mix checked (controlled) with defaultChecked (uncontrolled) (warn)
  * - status: must be one of 'standBy', 'valid', 'invalid' (error)
  * - indeterminate + checked: both should not be true simultaneously; indeterminate takes precedence (warn) */

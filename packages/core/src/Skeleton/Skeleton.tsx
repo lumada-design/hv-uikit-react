@@ -53,8 +53,8 @@ export interface HvSkeletonProps extends HvBaseProps {
  *
  * @validationRules
  * - variant: must be circle, square, or text (error)
- * - status: a skeleton that stands in for loading content must set role="progressbar" and aria-label (warn)
- * - color: must not use raw hex or rgb values for color overrides (error)
+ * - status: role="progressbar" and aria-label when it stands in for loading content, per rule accessibility/rules-of-aria (warn)
+ * - color: overrides follow rule tokens/colors (error)
  */
 export const HvSkeleton = (props: HvSkeletonProps) => {
   const {

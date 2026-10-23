@@ -66,7 +66,7 @@ export interface HvBadgeProps extends HvBaseProps {
  * - hidden: if badge is purely decorative (e.g., visual accent only), parent wrapper should have aria-hidden=true on badge
  *
  * @validationRules
- * - color: must be a semantic token or undefined (error)
+ * - color: a semantic token or undefined, per rule tokens/colors (error)
  * - label: should be numeric or short React node; long text is poor UX (warn)
  * - maxCount: should be >= 0 (error)
  * - showCount + non-numeric label: showCount should only be true with numeric labels (warn)

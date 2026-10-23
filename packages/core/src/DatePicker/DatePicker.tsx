@@ -154,7 +154,7 @@ export interface HvDatePickerProps
  * @validationRules
  * - value: value must be a Date object, not a string (error)
  * - range: in rangeMode, use startValue and endValue instead of value (warn)
- * - name: label, aria-label, or aria-labelledby must be provided (error)
+ * - name: label, aria-label or aria-labelledby, per rule accessibility/rules-of-aria (error)
  * - showClear: has no effect unless showActions or rangeMode is true (info)
  */
 export const HvDatePicker = forwardRef<HTMLDivElement, HvDatePickerProps>(
