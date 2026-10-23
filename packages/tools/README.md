@@ -1,235 +1,119 @@
 # @pentaho/uikit-tools
 
-CLI and MCP server for consumers of HV UI Kit. It generates agent guidance for a project, serves component contracts to AI coding agents over MCP, and validates HV UI Kit usage in source files.
+Tools for apps built with HV UI Kit and the coding agents that work on them:
 
-- Package: `@pentaho/uikit-tools` (version 1.0.0)
-- Binary: `uikit-tools` (`dist/cli.js`)
-- Data source: `component-metadata.json`, produced by `@pentaho/uikit-react-core`
+- **The UI Kit design rules**, in [templates/rules](templates/rules), which agents read before writing UI.
+- **Lookups** of components and design rules, from the command line or over MCP. Both return the same text.
+- **`init`**, which points the project's agents at the rules and the MCP server.
+- **`check`**, which finds code that breaks the design rules that have checks.
 
-## Contents
+Component props and guidance are read from the metadata shipped in the installed `@pentaho/uikit-react-core` (`dist/component-metadata.json`), so they always match the UI Kit version the app uses. The design follows the HVUIKIT-7492 architecture decision.
 
-- [Commands](#commands)
-- [MCP tools](#mcp-tools)
-- [Architecture: library side](#architecture-library-side)
-- [Architecture: client app side](#architecture-client-app-side)
-- [Known limitations](#known-limitations)
-- [Development](#development)
+## Set up an app
+
+```bash
+npm install --save-dev @pentaho/uikit-tools
+npx --no-install uikit-tools init
+```
+
+`init` writes:
+
+| File               | Content                                                                                                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AGENTS.md`        | A marked block that imports each rule file from the installed tools (`@node_modules/@pentaho/uikit-tools/templates/rules/<file>.md`) and lists the commands. The rest of the file is kept. |
+| `CLAUDE.md`        | `@AGENTS.md`, added if missing, so Claude Code loads the same block.                                                                                                                       |
+| `.mcp.json`        | The `hv-uikit` MCP server for Claude Code. Other servers are kept.                                                                                                                         |
+| `.vscode/mcp.json` | The `hv-uikit` MCP server for Copilot. Other servers are kept.                                                                                                                             |
+
+Nothing is copied. Upgrading `@pentaho/uikit-tools` updates the rules and upgrading `@pentaho/uikit-react-core` updates the component guidance, without running `init` again. Use `--agents claude` or `--agents copilot` to set up one agent.
 
 ## Commands
 
-### `init [targetDir]`
+| Command                        | Output                                                                                                                                                                                                                       |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `uikit-tools info <Component>` | Import, props and design guidance (variants, states, tokens, don'ts, accessibility). `info dialog` and `info HvDialog` both work; close names are suggested.                                                                 |
+| `uikit-tools components`       | Every component with a one-line description; `--limit` and `--offset` page through them.                                                                                                                                     |
+| `uikit-tools rules`            | Every design rule section by id (`<file>/<section>`), marking the ones `check` finds.                                                                                                                                        |
+| `uikit-tools rule <id>`        | A rule section as written (`rule tokens/colors`), with the fix for checked rules, or a whole rule file (`rule tokens`).                                                                                                      |
+| `uikit-tools check [paths...]` | Violations of the rules that have checks. Paths are files, folders or quoted globs (`'src/**/*.tsx'`), default `src`. `--format json` for a report; `--rules a,b` to limit; exit code 0 clean, 1 violations, 2 couldn't run. |
+| `uikit-tools mcp`              | The `hv-uikit` MCP server on stdio, with `list_components`, `get_component`, `list_rules` and `get_rule`, which return the same text as `components`, `info`, `rules` and `rule`.                                            |
 
-Generates agent guidance for a project. `targetDir` defaults to the current directory and `--harness` defaults to `copilot`.
+## Checks
 
-```bash
-npx --no-install uikit-tools init . --harness copilot
-npx --no-install uikit-tools init . --harness claude
-```
+One check per rule section that can be checked, in [src/checks/rules](src/checks/rules). Rule ids are the rule file and section heading, so `tokens/colors` is the "Colors" section of [tokens.md](templates/rules/tokens.md).
 
-| Harness             | Files written                                                                                   |
-| ------------------- | ----------------------------------------------------------------------------------------------- |
-| `copilot` (default) | `.github/copilot-instructions.md`, `.github/rules/hv-uikit.md`, `.vscode/mcp.json`, `AGENTS.md` |
-| `claude`            | `.claude/instructions.md`, `.claude/rules/hv-uikit.md`, `AGENTS.md`                             |
+| Rule                                                 | Finds                                                                                                                                                                |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `anti-patterns/prefer-ui-kit-components`             | Native `button`, `input`, `select`, `textarea`, `table`, `dialog` and `progress` elements. Semantic elements such as headings are fine.                              |
+| `actions/prevent-accidental-and-destructive-actions` | Delete, remove and discard triggers whose handler deletes straight away (followed one function deep), in files that offer no undo and don't ask with `confirm()`     |
+| `tokens/colors`                                      | Raw hex, `rgb()`, `hsl()` and named colors in style objects, CSS-in-JS, arbitrary utility classes and stylesheets; on `Hv*` color props only hex and color functions |
+| `tokens/spacing`                                     | Raw px, rem and em in spacing styles and `sx` string shorthands (`p: "12px"`), and spacing classes off the scale (`p-[13px]`, `mt-4`, `mt-12px`)                     |
 
-- The rules file is generated from `templates/guide/hv-uikit.md` and includes the sections from `templates/rules/*.md`.
-- The instructions file points the agent to the rules file and tells it to use the MCP server for component discovery.
-- A root `AGENTS.md` is created as a compatibility fallback for generic agent hosts. If the consumer app already has an `AGENTS.md`, `init` leaves it alone.
-- For `copilot`, `.vscode/mcp.json` gets an `hv-uikit` server entry. Other entries are kept. If the existing file is not valid JSON, `init` fails and does not overwrite it.
-- The `claude` harness does not write an MCP config.
-- An unknown harness value prints an error and exits with code 1.
-- The summary lists components in three groups: full (purpose plus at least one contract tag), simple (purpose only), and no purpose (missing the purpose tag).
+The checks are static heuristics. They can miss a violation they can't see, or flag a harmless one, and the other rules have no check, so a clean result doesn't mean every rule is met. Each check has good and bad samples in [test-fixtures/checks](test-fixtures/checks); the lines that must be reported are marked `✗`.
 
-Running `init .` inside this monorepo overwrites the repository's own `.github/` and `.vscode/` files. Use a temporary directory when testing.
+### Adding a check
 
-### `validate <paths...>`
+1. Add `src/checks/rules/<name>.ts` exporting a `Check` whose `source` names the rule file and its `## ` section, and list it in [registry.ts](src/checks/registry.ts).
+2. Add a fixture folder named after the rule id, with `/` as `-` (more than one: add `-<case>`), with sample files under `src/`, and mark each line that must be reported with `✗`.
+3. Run `npm test -w packages/tools`. The tests fail if a check points at a section that doesn't exist, or a check has no fixture.
 
-Checks source files against the validation rules.
-
-```bash
-npx --no-install uikit-tools validate "src/**/*.tsx"
-```
-
-- Quote glob patterns so the shell does not expand them.
-- Prints each error or warning with file, line, column, and a suggested fix.
-- Exits with code 1 when there is at least one error or when no files match. Otherwise exits with code 0.
-- `--fix` is declared but not implemented.
-- Coverage is limited: rules are hard-coded in [src/validation/rules.ts](src/validation/rules.ts) for `HvButton` and `HvAvatar` only. The validator does not read `component-metadata.json`. See [Known limitations](#known-limitations).
-
-### `mcp`
-
-Starts a stdio MCP server named `hv-uikit-mcp`. It loads the metadata at startup and logs the component count to stderr.
-
-```bash
-npx --no-install uikit-tools mcp
-```
-
-## MCP tools
-
-| Tool         | Input                             | Returns                                                                                                                            |
-| ------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `components` | `limit?`, `offset?`               | `components` (`name`, `displayName`, `purpose`), `total`, `offset`, `limit`                                                        |
-| `info`       | `component` (for example `HvTag`) | The component's metadata entry: purpose, contract tags, and props. Unknown names return an error listing the available components. |
-
-## Architecture: library side
-
-The library side is `@pentaho/uikit-react-core`. Contract data is written in JSDoc in the component source and turned into JSON at build time. The tools package only reads that JSON.
+## End-to-end flow
 
 ```mermaid
 flowchart LR
-    src["core src/Name/Name.tsx<br/>JSDoc contract tags"] --> ext["scripts/extract-contracts.js"]
-    ext --> meta["core dist/component-metadata.json"]
-    meta --> init["uikit-tools init"]
-    meta --> mcp["uikit-tools mcp"]
+  subgraph kit["UI Kit repo"]
+    rules["templates/rules/*.md<br/>design rules"]
+    jsdoc["component JSDoc<br/>contract tags"] -->|extract:contracts| meta["core dist/component-metadata.json"]
+  end
+  subgraph app["App"]
+    init["uikit-tools init"] --> files["AGENTS.md, CLAUDE.md,<br/>.mcp.json, .vscode/mcp.json"]
+    agent["Coding agent"]
+  end
+  rules -->|"@pentaho/uikit-tools"| app
+  meta -->|"@pentaho/uikit-react-core"| app
+  files -->|"rules, via node_modules"| agent
+  agent -->|"get_component, get_rule (MCP)<br/>info, rule (CLI)"| lookups["lookups"]
+  agent -->|"uikit-tools check"| check["violations with fix"]
 ```
 
-### Build pipeline
+| Step              | Who               | What happens                                                                                                                                                                                 | Tested by                                                |
+| ----------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| 1. Write rules    | Rule owners       | One file per topic in `templates/rules`, one `## ` section per rule. A rule's id is its file and section: `tokens/colors`.                                                                   | `checks.test.ts`: each check names a section that exists |
+| 2. Write guidance | UI Kit developers | JSDoc contract tags on the component (see `.github/instructions/component-contracts.instructions.md`). The core build runs `extract:contracts`, which writes `dist/component-metadata.json`. | the core build                                           |
+| 3. Release        | UI Kit            | Publish `@pentaho/uikit-react-core` (component guidance) and `@pentaho/uikit-tools` (rules, lookups, checks).                                                                                | not done yet                                             |
+| 4. Set up the app | App team          | `npm i -D @pentaho/uikit-tools`, then `npx --no-install uikit-tools init`. Commit the files it writes.                                                                                       | `init.test.ts`, `test:e2e`                               |
+| 5. Read the rules | Agent             | Claude Code loads the rule files through the `@` imports in `AGENTS.md`. Other agents read `AGENTS.md` and open the listed files, or call `list_rules`/`get_rule`.                           | the agent run below                                      |
+| 6. Look things up | Agent, people     | MCP tools or the CLI; both return the same text.                                                                                                                                             | `lookup.test.ts` (CLI = MCP), `test:e2e`                 |
+| 7. Check the code | Agent, people, CI | `uikit-tools check` reports file, line, rule and fix; exit code 1 on violations.                                                                                                             | `checks.test.ts` fixtures, `test:e2e`                    |
+| 8. Upgrade        | App team          | Upgrading either package changes what agents read, with no `init`.                                                                                                                           | `test:e2e`                                               |
 
-- The core `build` script runs `vite build && npm run extract:contracts`.
-- The order matters. `vite build` empties `dist/`, so extraction runs after it. Running extraction first would delete its own output.
-- `npm run extract:contracts -w packages/core` regenerates the metadata without a full build.
+### Running it with a real agent
 
-### Extractor
+`test:e2e` covers steps 4 to 8 without an agent. To see an agent go through it, keep the app it builds and run Claude Code there (this uses API credits):
 
-[packages/core/scripts/extract-contracts.js](../core/scripts/extract-contracts.js) does the following:
-
-- Scans `src/<Name>/<Name>.tsx` for each component folder and uses the component name `Hv<Name>`.
-- Components without a purpose tag go to `missingPurpose` and are left out of `components`.
-- Parses contract tags with regular expressions into structured arrays: `variantSemantics`, `stateRules`, `tokenConstraints`, `antiPatterns`, `a11y`, and `validationRules`. The raw tags are kept in `tags`.
-- Reads props with the TypeScript compiler API. One shared program is used for all components. Only props declared under `src/` are kept, so React's built-in HTML attributes are excluded. `required` comes from the optional flag, and `description` comes from the prop's JSDoc.
-- Writes `dist/component-metadata.json` and prints a summary.
-
-The tag syntax and the regex rules are documented in [component-contracts.instructions.md](../../.github/instructions/component-contracts.instructions.md). Check that file before writing contract tags.
-
-### Output shape
-
-```json
-{
-  "version": "7.0.0",
-  "generatedAt": "2026-10-16T14:00:49.726Z",
-  "components": [
-    {
-      "name": "HvTag",
-      "displayName": "Tag",
-      "purpose": "...",
-      "variantSemantics": [{ "name": "semantic", "description": "..." }],
-      "stateRules": [{ "name": "selected", "description": "...", "rules": [] }],
-      "tags": {},
-      "props": [
-        {
-          "name": "color",
-          "type": "...",
-          "required": false,
-          "description": "..."
-        }
-      ]
-    }
-  ],
-  "missingPurpose": ["HvExample"]
-}
+```bash
+npm run test:e2e -w packages/tools -- --keep    # prints "Working in <dir>"; the app is <dir>/app
+cd <dir>/app
+claude -p --strict-mcp-config --mcp-config .mcp.json --permission-mode dontAsk \
+  --allowedTools "Read Glob Grep Edit Write mcp__hv-uikit Bash(npx --no-install uikit-tools:*)" \
+  "Fix the problems \`npx --no-install uikit-tools check\` reports. Look up each component before using it."
+npx --no-install uikit-tools check
 ```
 
-The build at the time of writing produced 73 components. Five had no purpose tag.
-
-## Architecture: tools package
-
-The tools package is an ESM TypeScript package built with `tsc`.
-
-| Module                                                     | Responsibility                                                                                                        |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [src/cli.ts](src/cli.ts)                                   | Commander entry point. Defines `init`, `validate`, and `mcp`.                                                         |
-| [src/commands/init.ts](src/commands/init.ts)               | Loads metadata, renders templates, writes harness files, and merges the MCP config.                                   |
-| [src/commands/mcp.ts](src/commands/mcp.ts)                 | MCP server (`@modelcontextprotocol/sdk`, stdio transport) with the `components` and `info` tools.                     |
-| [src/commands/validate.ts](src/commands/validate.ts)       | Expands glob patterns, runs the validator, prints results, and sets the exit code.                                    |
-| [src/validation/validator.ts](src/validation/validator.ts) | Scans JSX for the supported components and extracts simplified prop values (string, boolean, and expression markers). |
-| [src/validation/rules.ts](src/validation/rules.ts)         | Hard-coded rules for `HvButton` and `HvAvatar`.                                                                       |
-| [src/utils/metadata.ts](src/utils/metadata.ts)             | `loadMetadata()` and `findComponent()`, plus TypeScript interfaces for the metadata.                                  |
-| [src/test-mcp-client.ts](src/test-mcp-client.ts)           | MCP test client. [test-mcp.sh](test-mcp.sh) runs it against the built server.                                         |
-| [templates/](templates)                                    | `guide/hv-uikit.md`, `instructions/instructions.md`, and `rules/*.md`.                                                |
-
-`init` flow: `loadMetadata()` → summarize components → render templates (`{{NAME}}` placeholders) → write files → update `.vscode/mcp.json` (copilot only).
-
-## Architecture: client app side
-
-A consumer app gets its agent setup from `init`. The agent then calls the MCP server for component facts, and `validate` checks the code the agent writes.
-
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant CLI as uikit-tools
-    participant Agent as AI agent
-    participant MCP as hv-uikit MCP server
-    Dev->>CLI: init --harness copilot
-    CLI-->>Dev: rules, instructions, .vscode/mcp.json
-    Agent->>MCP: components
-    MCP-->>Agent: component summaries
-    Agent->>MCP: info (HvTag)
-    MCP-->>Agent: component metadata
-    Agent-->>Dev: code using HV UI Kit components
-    Dev->>CLI: validate "src/**/*.tsx"
-    CLI-->>Dev: errors and warnings
-```
-
-### Setup
-
-1. Install `@pentaho/uikit-react-core` and `@pentaho/uikit-tools` as dev dependencies.
-2. Run `npx --no-install uikit-tools init . --harness copilot` (or `claude`).
-3. Commit the generated files.
-4. Copilot starts the MCP server from `.vscode/mcp.json`:
-
-   ```json
-   {
-     "servers": {
-       "hv-uikit": {
-         "type": "stdio",
-         "command": "npx",
-         "args": ["--no-install", "uikit-tools", "mcp"]
-       }
-     }
-   }
-   ```
-
-5. Run `validate` locally or in CI.
-6. After upgrading core, run `init` again to refresh the generated guide. Regeneration is not automatic (see [Known limitations](#known-limitations)).
-
-The `--no-install` flag makes `npx` use the local `uikit-tools` binary and never download a package.
-
-## Known limitations
-
-These are current behaviors, not planned fixes.
-
-1. **`validate` covers two components.** It uses hard-coded rules for `HvButton` and `HvAvatar` and does not read the metadata. The generated guide tells agents to validate their code, but most components are not checked.
-2. **Some defined rules do not fire.** [src/validation/rules.ts](src/validation/rules.ts) defines eight rules. Running `validate` on [test-fixtures/validation-violations.tsx](test-fixtures/validation-violations.tsx) reports 5 errors and 1 warning. Rules `no-raw-colors`, `selected-toggle-semantics`, `icon-only-needs-aria-label`, and `no-image-and-initials` are not reported. The validator's simplified prop extraction is the likely cause; this has not been traced in detail. The fixture header says it has about 8 violations.
-3. **`--fix` is not implemented.** The flag is declared in the CLI and does nothing.
-4. **Metadata lookup works only in the monorepo.** [src/commands/mcp.ts](src/commands/mcp.ts) resolves `../../../core/dist/component-metadata.json` relative to its own file. [src/utils/metadata.ts](src/utils/metadata.ts) tries a `node_modules` candidate, then a dev fallback. Both are relative paths computed from the package's `dist` folder. Working through the path logic for a registry install, neither path reaches `@pentaho/uikit-react-core`, so `mcp` and `init` would fail to load metadata. This has not been run in a registry install. The `node_modules` candidate in `metadata.ts` also resolves to a nonexistent folder even in the monorepo, and the dev fallback is what works there.
-5. **Regeneration is manual.** The generated guide says it is "Regenerated on `npm install`". No package in this repo has a `postinstall` hook. The guide is regenerated only when `init` is run.
-6. **Interfaces do not match the output.** The `ComponentMetadata` interfaces in [src/utils/metadata.ts](src/utils/metadata.ts) (`AntiPattern`, `A11yRequirement`, `ValidationRule`) do not match what the extractor writes. The MCP server returns the raw JSON, so served data is not affected, but TypeScript types for those fields are not reliable.
-7. **Unused dependency.** `ts-morph` is declared in `package.json` but not used by the validator.
-8. **Stale build output.** `dist/guidance/` has no matching source in `src/` and can be deleted.
+Expect the agent to call `get_component` before editing and `check` to come back clean. Then review what `check` can't see: rules without a check, such as `tokens/typography` and `layout/grid`, are often still broken.
 
 ## Development
 
 ```bash
-# Build metadata (vite build, then extraction)
-npm run build -w packages/core
-
-# Regenerate metadata only
-npm run extract:contracts -w packages/core
-
-# Build the tools package
+npm run extract:contracts -w packages/core    # component metadata → packages/core/dist/component-metadata.json
 npm run build -w packages/tools
-
-# Unit tests (vitest)
 npm test -w packages/tools
 
-# Generate into a temporary directory instead of the repo
-node packages/tools/dist/cli.js init /tmp/hv-init-check --harness copilot
-
-# Validate the fixture (exits 1 by design: 5 errors, 1 warning)
-node packages/tools/dist/cli.js validate "packages/tools/test-fixtures/validation-violations.tsx"
-
-# Exercise the MCP server with the test client (run from the repo root)
-packages/tools/test-mcp.sh components --limit 3
-packages/tools/test-mcp.sh info --component HvAvatar
+# In an app outside the repo (needs a full core build):
+npm run build -w packages/core
+npm run test:e2e -w packages/tools
 ```
 
-The `test-mcp.sh` commands need the core metadata and the tools build. Run the build steps first.
+The end-to-end script packs core and tools, installs them in a temporary app, and checks that the CLI and MCP return the same lookups, that upgrades change the rules and component guidance without re-running `init`, and that `check` reports file, line, rule and fix.
+
+Not done yet: publishing to npm, adding the tools to `uikit-cli create`, CI.

@@ -6,7 +6,7 @@ Consult component contracts before implementation and validate usage afterward. 
 
 ## Component contracts
 
-Before implementing a component, retrieve its contract using the registered MCP tool `get_component_contract`. Use `list_components` to discover the inventory. Check supported props, required boolean flags, variants, state semantics, token constraints, accessibility requirements, and anti-patterns rather than guessing.
+Before implementing a component, retrieve its contract using the registered MCP tool `get_component`. Use `list_components` to discover the inventory. Check supported props, required boolean flags, variants, state semantics, token constraints, accessibility requirements, and anti-patterns rather than guessing.
 
 Examples:
 
@@ -15,7 +15,7 @@ Examples:
 - // Pass MCP tool calls as terminal arguments to uikit-tools mcp (a stdio server).
 + // Call the agent's registered MCP tools before implementing a form:
 + list_components({ limit: 10, offset: 0 })
-+ get_component_contract({ component: "HvInput" })
++ get_component({ name: "HvInput" })
 + // Consult component stories for usage examples.
 ```
 
