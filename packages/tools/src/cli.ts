@@ -18,16 +18,18 @@ const program = new Command("uikit-tools")
   .version(version);
 
 program
-  .command("init [targetDir]")
+  .command("init [folder]")
   .description(
-    "Generate agent instructions in the target directory (default: current directory)",
+    "Point the project's agents at the installed UI Kit rules: AGENTS.md, CLAUDE.md and MCP config",
   )
   .option(
-    "--harness <type>",
-    "Target harness: 'claude' or 'copilot' (default: copilot)",
-    "copilot",
+    "--agents <list>",
+    "comma-separated: claude, copilot",
+    "claude,copilot",
   )
-  .action(init);
+  .action((folder: string | undefined, options: { agents: string }) =>
+    init(folder, options),
+  );
 
 program
   .command("validate <paths...>")
